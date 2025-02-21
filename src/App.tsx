@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { NotesService } from './services/NotesService'
+import { type Note } from './types'
 
 interface Course {
   id: string;
@@ -11,6 +12,7 @@ interface Week {
   number: number;
   title: string;
   isGenerated: boolean;
+  notes?: Note;
 }
 
 function App() {
@@ -20,6 +22,9 @@ function App() {
   const [educationLevel, setEducationLevel] = useState('')
   const [field, setField] = useState('')
   const [isSetupComplete, setIsSetupComplete] = useState(false)
+  const [isGenerating, setIsGenerating] = useState(false)
+  const [currentWeek, setCurrentWeek] = useState<number | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
   const firstTermCourses = [
     {
@@ -83,13 +88,55 @@ function App() {
 
   const courses = currentTerm === 'first' ? firstTermCourses : secondTermCourses
 
-  const handleGenerateNotes = async () => {
+  const handleGenerateNotes = async (weekNumber: number) => {
     if (!transcript) return
+    setIsGenerating(true)
+    setError(null)
+    setCurrentWeek(weekNumber)
     try {
       const result = await NotesService.generateNotes(transcript)
-      // Handle generated notes
+      
+      if (selectedCourse) {
+        const updatedCourse = {
+          ...selectedCourse,
+          weeks: selectedCourse.weeks.map(week => ({
+            ...week,
+            isGenerated: week.number === weekNumber ? true : week.isGenerated,
+            notes: week.number === weekNumber ? result : week.notes
+          }))
+        }
+        setSelectedCourse(updatedCourse)
+      }
     } catch (error) {
       console.error('Error generating notes:', error)
+      setError('Failed to generate notes. Please try again.')
+    } finally {
+      setIsGenerating(false)
+      setCurrentWeek(null)
+      setTranscript('')
+    }
+  }
+
+  const handleDownloadNotes = async (week: Week) => {
+    if (week.notes) {
+      try {
+        const blob = await NotesService.generatePDF(
+          week.notes.content,
+          selectedCourse?.name || 'Lecture',
+          week.title
+        );
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${selectedCourse?.name} - ${week.title}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error('Error downloading PDF:', error);
+        setError('Failed to download PDF. Please try again.');
+      }
     }
   }
 
@@ -237,34 +284,67 @@ function App() {
                   value={transcript}
                   onChange={(e) => setTranscript(e.target.value)}
                 />
-                <button
-                  className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-lg font-medium"
-                  onClick={handleGenerateNotes}
-                >
-                  Generate Notes
-                </button>
               </div>
 
               {/* Weekly Sections */}
               <div className="space-y-6">
                 {selectedCourse.weeks.map(week => (
                   <div key={week.number} className="border-b border-gray-200 pb-6">
-                    <div className="flex justify-between items-start">
+                    <div className="flex justify-between items-center">
                       <div>
                         <h3 className="font-medium">Week {week.number}</h3>
                         <p className="text-gray-600">{week.title}</p>
                       </div>
-                      <button className="flex items-center space-x-2 text-indigo-600">
-                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                          <path d="M4 16V17C4 18.7 5.3 20 7 20H17C18.7 20 20 18.7 20 17V16" stroke="currentColor" strokeWidth="2"/>
-                          <path d="M12 4V16M12 4L8 8M12 4L16 8" stroke="currentColor" strokeWidth="2"/>
-                        </svg>
-                        <span>Generate Notes First</span>
-                      </button>
+                      <div className="flex items-center space-x-4">
+                        {week.isGenerated ? (
+                          <button
+                            onClick={() => handleDownloadNotes(week)}
+                            className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700"
+                          >
+                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                              <path d="M4 16V17C4 18.7 5.3 20 7 20H17C18.7 20 20 18.7 20 17V16" stroke="currentColor" strokeWidth="2"/>
+                              <path d="M12 4V16M12 16L8 12M12 16L16 12" stroke="currentColor" strokeWidth="2"/>
+                            </svg>
+                            <span>Download Notes</span>
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => handleGenerateNotes(week.number)}
+                            disabled={isGenerating}
+                            className={`flex items-center space-x-2 ${
+                              isGenerating && currentWeek === week.number
+                                ? 'text-gray-400 cursor-not-allowed'
+                                : 'text-indigo-600 hover:text-indigo-700'
+                            }`}
+                          >
+                            {isGenerating && currentWeek === week.number ? (
+                              <>
+                                <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
+                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                                </svg>
+                                <span>Generating...</span>
+                              </>
+                            ) : (
+                              <>
+                                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                                  <path d="M12 4L3 8L12 12L21 8L12 4Z" stroke="currentColor" strokeWidth="2"/>
+                                  <path d="M3 8V16L12 20L21 16V8" stroke="currentColor" strokeWidth="2"/>
+                                </svg>
+                                <span>Generate Notes</span>
+                              </>
+                            )}
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
+              
+              {error && (
+                <p className="mt-4 text-red-600 text-sm">{error}</p>
+              )}
             </div>
           )}
         </div>
