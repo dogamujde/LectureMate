@@ -1,0 +1,1049 @@
+How are you?
+Okay, let's get started.
+And, .
+Hi.
+So today we're going to start talking about back propagation.
+, this was meant to be on Friday, and we
+didn't get to it because of the storm.
+, I have compressed the rest of the course so
+that we can make up for the for the missing
+lecture.
+, back propagation is obviously important, so I haven't compressed
+this.
+I've just moved it.
+, and, , I'll start by actually giving you a
+brief recap of the perceptron, which is what we talked
+about on Thursday.
+All right.
+Here's also the wall clock in case people haven't signed
+up.
+Give you a second or 2 or 2 to scan
+the QR code.
+And then we'll start with the perceptron.
+So just to to remind you of the big picture,
+the big picture is one where we want to basically
+learn from input patterns to generate output patterns.
+So this could be, I don't know, sensory information coming
+in let's say from the retina.
+And the output is an object classification right.
+We want to recognise dogs and cats and so on.
+Or if you are in the speech domain then the
+input could be the speech signal and the output could
+then be the word that you've just heard.
+Okay.
+So in this general idea of associating inputs with outputs
+, that underlies essentially all of machine learning.
+But in our case, it's also the basis of modelling
+certain cognitive functions.
+And in particular, this is a purely empirical approach where
+you just learn from data using a very general learning
+mechanism and a very general model structure without having to
+posit anything innate.
+You don't have to posit any rules.
+If you're in the linguistic domain, you don't have to
+even posit a lexicon and so on.
+And but before we can talk about that aspect, we
+first need to get the technicalities out of the way.
+So just to remind you of the perceptron, , this
+was a very simple neural, neural inspired, , structure which
+looks this.
+, we have our inputs here, which range from x1
+to xn.
+For simplicity, we just assume the binary numbers and we
+have our outputs y here.
+In this case just one output, which we also assume
+to be binary and the the cell body of the
+neurone.
+If you want to call it that, computes a very
+simple function which is just a weighted sum of the
+input.
+So you have the inputs coming in, and then you
+have your weights which are the weights of the connection
+from the input x1 to this simple computational unit.
+And the weights are called w1 to w n.
+And so the input function is simply the weighted sum.
+And we will call this u of x, where x
+is the input and the function just computes the weighted
+sum.
+So w w I times w times x I over
+all the i's over all the inputs.
+And then how do we decide whether to generate an
+output.
+We pass the input through an activation function.
+In this case we've assumed a simple threshold function.
+If we reach a threshold of theta then we output
+a one.
+Otherwise we output at zero.
+So it's.
+You can think of it as a neurone that needs
+to reach a certain activation state, a certain level of
+excitation before it can fire.
+And that's what's going on here.
+And here again, we are assuming the activation is just
+0 or 1.
+And we've seen how a simple computational unit this
+can for example implement binary logical functions and and
+or not as well actually.
+But there are certain functions it's not able to implement
+for example XOR.
+And we said that this is because certain functions can
+be represented by simple lines where you have a set
+of points on each side of the line.
+So for example, the ones in the zero for and
+or or but then there are certain other functions where
+a single line is not sufficient sufficient.
+And the XOR function is one of these functions because
+here the output should be zero for one one and
+zero zero, but it should be one for one for
+zero one and one zero.
+Okay.
+So we need two lines.
+Or we need a curve which is something more complicated
+to separate the two classes the zero class and the
+one class.
+And this is a non-linearly separable function.
+And a single layer perceptron is not able to capture
+these functions.
+And so that is obviously a very serious restriction because
+most interesting functions are not linearly separable.
+And today we're going to talk about the multilayer perceptron,
+which is really just a way of stacking simple perceptron,
+simple computational units to compute more complicated functions.
+And in fact the the MLP, the multi-layer perceptron can
+compute arbitrary function functions.
+This is actually something you could show mathematically.
+Okay.
+Then the second question is, so we have this lovely
+architecture, but where do the weights come from?
+Right.
+So where do you how do you get these W's
+to make the model compute the right functions.
+And this is the question of learning.
+Of of learning the weights of computing the parameters of
+the model.
+And here we've used a simple idea, , that if
+we learn from examples.
+So we have a set of inputs associated with the
+correct outputs.
+Call them targets.
+So this is our training data.
+This is the data we learn from right.
+Everything is binary at this point.
+This is not a necessary assumption but we're just making
+it for simplicity.
+So for example we have this input here 0100.
+And then we know that the output should be one
+and so on.
+So we can use this data this training data to
+compute what the correct weights should be.
+And this is this is how we model learning here.
+, so, , and we do this by computing the
+current output.
+So we assume we have the weights somewhere, right?
+Just assume all the weights are zero or we assign
+them random numbers, but we have the weights and we
+compute the current output.
+And this is here an orange the O.
+And then we compare the current output to the target.
+So here this is incorrect.
+It output zero even though the target is one this
+one is correct.
+The target is zero, the output is zero and so
+on.
+And then we essentially take this difference, this error that
+the model makes and use it to adjust the weights.
+So this is how learning works in the perceptron.
+And we have a very simple rule where we update
+a weight.
+We by taking w I and adding a small
+quantity delta w I, which we compute by taking the
+difference between the target and the output right down here,
+target and output, , multiplied by ETA.
+ETA is a learning rate which allows you to control
+how fast you're going to learn, how big the changes
+are that you're going to make.
+And x I x I is the input at this
+point.
+So the intuition is if there's a big input, then
+you want to make larger changes as small input.
+You want to make smaller changes.
+And this actually works.
+And if you've already been to the tutorial this week,
+then you will have worked through an example where you
+actually compute the weight updates and keep keep applying this
+learning rule until the weights stabilised, until the weights don't
+change anymore, and then learning terminates.
+And if it's a function that the perceptron can learn,
+then you will have learned the function at that point.
+So and this is a worked example.
+, let's just go through this quickly.
+I don't want to spend too much time on the
+recap.
+So this is our update rule.
+This is how we compute our delta.
+And let's assume we have a simple example where the
+weights the weight is 0.5, the threshold is zero, and
+we have an input x y.
+Learning rate is 0.6.
+So we first compute the output right.
+We need the output because otherwise we don't know what
+error we're making.
+So that's just y times x 0.5 times minus one
+is -0.5.
+This is smaller than theta.
+Theta was zero so the output is zero.
+And the the target what's the target.
+The target is one so output is zero.
+Target is one.
+So it's an error.
+We need to update our weights.
+So we compute our delta W1 by taking the learning
+rate 0.6 times the difference between the target which is
+one, and the current output which is zero times minus
+one, which is the input at this point.
+It's the same input here.
+And we get -0.6.
+So we make an update.
+Current weight is 0.5.
+-0.6 is -0.1.
+So we reduce the weight by 0.1.
+And now in this particular example I've chosen it such
+that.
+That's actually enough so that the new output w1 x1
+where w1 is now the updated w1 gives us the
+correct output.
+Often you'll take multiple steps and multiple examples, or you
+need to go through a training set several times to
+get the correct weights.
+Here the example is set up so that a single
+weight update is enough to now give us the correct
+output.
+Okay?
+And in general the learning algorithm goes as follows.
+You initialise your weights randomly.
+Then you look at each training example.
+Right.
+We have a set of examples where we know the
+correct output.
+You apply the learning rule right.
+The one up here, and you end until you do
+this, until you've seen all the Examples, and then you
+repeat the whole thing until the error is either zero
+or small or doesn't change anymore.
+Whatever your criterion you're using, sometimes you also use a
+timeout, right?
+You say, let's do 100 epochs and then stop.
+Because the error in realistic cases will never reach zero.
+Okay.
+So here the for loop goes through all the training
+example and the repeat until the error is small enough.
+This is the epochs.
+Epoch is what we call if we go through the
+whole training set okay.
+And often you need to go through the training set
+multiple times before you reach the error.
+Okay.
+So this is all great.
+However it's too simple right?
+Remember this is just a linear classifier.
+If a problem is not linearly separable then we cannot
+compute it.
+So we need something more complicated.
+And this is the multi-layer perceptron which is the.
+that is the, , the object of today's lecture.
+Okay, so this is what I've just talked about.
+So multi-layer perceptron.
+Basically, you just take lots of perceptrons of the kind
+we've just seen and you stack them.
+And for this to be a maximally powerful, you need
+at least three layers.
+You need an input layer which is one set of
+neurones.
+And then you have a hidden layer and an output
+layer.
+So the hidden layer is the is called the hidden
+layer because it's not directly connected to either the input
+or the output.
+It's hidden in that sense, right?
+It does an implicit computation that is not directly dependent
+on the input and output.
+So in an architecture this , is called multi-layer
+perceptron, obviously because it has multiple layers, the individual units
+are just perceptrons, just in different colours depending on which
+layer they're in.
+And it's fully connected.
+So that means that here we have weights.
+So these lines are weights connecting each unit in each
+layer to the previous layer or the subsequent layer.
+So this green unit here is connected to all the
+units in the input layer and all the units in
+the output layer okay.
+So this is a really small network.
+But as you can see we already get a lot
+of weights because obviously this multiplies out with the number
+of units in each layer.
+And this is a feed forward network, which means that
+the information only flows in this way in input to
+output.
+There's other more complicated architectures that don't that are not
+feedforward.
+But this is the simplest architecture that and that's the
+one we'll we'll look at here today.
+You can have multiple hidden layers.
+Mathematically a single hidden layer is enough to approximate any
+function.
+But Well.
+Deep learning takes its name from the fact that the
+models have lots of hidden layers, right?
+They're very deep in the sense that there's lots of
+these green units stacked on top of each other.
+And this doesn't make the network more powerful, but it
+makes it much easier to train.
+Right.
+Deep networks are easier to train than shallow ones, even
+if they have the same number of hidden hidden units.
+So that was the the inside.
+That's that's behind the recent developments in neural networks.
+And as I said, it's fully connected in the sense
+that each layer is connected.
+Each unit in a layer is connected to each unit
+in a previous previous layer.
+And this kind of architecture solves the problem of linear
+separability, right.
+So it can learn functions that are not linearly separable.
+There's another change that we're going to make.
+Remember in our perceptron.
+What it does.
+It sums up the input, and then it pipes it
+through a function f, which we've called activation function.
+And here we're going to vary the activation function.
+So far we've assumed the step function which basically goes
+from 1 to 0.
+Once a threshold is reached which is here h.
+But I've called theta so far.
+We're moving to what's called a sigmoid function, which is
+an exponential function this which is essentially similar to
+a step function.
+But we've sort of cut off the the edges, right.
+So it's smooth at the edges.
+And it has a gradual change from 0 to 1
+rather than an abrupt threshold.
+And this has a bunch of advantages that will come
+to in a moment.
+That's why we're moving to the sigmoid function here.
+There's other activation functions.
+There's a whole set of maybe a dozen different activation
+functions to choose from.
+Okay.
+So again we need to find a way of finding
+the weights.
+Right.
+So the weights are the numbers associated with each connections
+with the connections which you can think of as the
+strength of a synapse.
+Right.
+If you go back to the biological metaphor and then
+the red units and the green units are unit neurones
+and they're connected through synapses.
+Synapses are actually where the learning happens in biology.
+Right.
+You can change the strength of the synapse in the
+sense that you can regulate when it fires, you can
+modulate the threshold.
+And that's what we're doing here.
+Basically we're changing learning changes, the connections here, the strength
+of these connections that can be zero, which means there's
+no connection or there can be positive or negative values,
+which means there's an excitatory or inhibitory Connection between the
+two units.
+Okay, so learning is now more difficult because we have
+these hidden units.
+And we'll talk about this in a second.
+Why learning with hidden units is more complicated.
+And so we need a more complicated algorithm which is
+called backpropagation, which is essentially a generalisation of the perceptron
+learning rule that we've already seen.
+So the idea remains the same.
+We minimise the error in the training set.
+So this is still a supervised learning algorithm right.
+So we have a training set.
+And for the training examples we know the correct output.
+And from that we derive the errors that the model
+makes.
+And the errors tell us how we need to adjust
+the weights.
+Okay.
+So this is this idea just written down more cleanly.
+So we have our MLP our multi-layer perceptron.
+We have a pattern X from our training set.
+We get the output Y or O, as it's often
+called, and in the rest of the lecture this will
+be called oh, that's the output.
+And then we compare this to the correct answer.
+And we take the difference between the correct answer, what
+we've called the target.
+So we have a set of examples.
+And for each of let's write it this.
+So x is our our input.
+And so on.
+And for each of these we have the correct answer
+which we call t.
+And then we compute the the actual output of the
+network at this point.
+And this may be the same or may be different.
+And the learning happens by taking these differences between the
+target and the and the correct output.
+Okay.
+And in the perceptron learning rule actually we wrote this
+directly T minus o.
+And here it's slightly more complicated but not much more
+complicated.
+Okay.
+And so we go through all the axes for all
+the examples, through all the examples in the training set.
+Okay.
+, as I said, this was the perceptron learning rule
+which we've just seen.
+So we take t minus.
+Oh right.
+The target that we want to have in blue and
+the actual output that we're seeing in black here.
+And this gives us our error if these two are
+the same right.
+Do I have an example this.
+Let's assume they're the same here.
+Then the error is zero.
+Nothing to learn here as well.
+Here, however, the target and the output are different.
+So that's something I can learn from.
+Okay.
+So it's this quantity here.
+And then we have our ETA which controls how how
+quickly we learn how big the changes are that we
+make.
+And we have the x which is the output at
+that point.
+So if you think of this as a network work,
+here.
+Then you have your.
+, you have your inputs, and you're adjusting this weight.
+So you want to make this dependent on the input,
+right?
+Because the overall error.
+Right.
+You're interested in all the errors here.
+Depends on how big the input is at that point.
+If it's if the input is large, then you get
+more of an error.
+So this is why this is weighted by XI okay.
+So in order to make this work in in the
+general case with various activation functions but also in a
+larger network, we need something slightly more complicated than just
+taking the difference here between T and O.
+, we actually compute an error function e of w
+, where w is a vector of weights.
+So let's assume that all the weights in our network,
+and we take this by taking the the error t
+minus.
+Oh just here for a given pattern p.
+And we square it so that it's positive.
+And then we sum this over all the training examples.
+And then we just have a simple constant here which
+is one over 2NN is the number of training examples
+training patterns okay.
+So this gives us the overall error not over a
+single output in target but over all the targets and
+outputs okay.
+And then we square this to make this positive.
+So n is the number of patterns p is the
+pattern T is the target owes the output.
+And the two is really just there for mathematical convenience.
+It's just a constant okay.
+So this was quite a lot of stuff.
+So let's take a take a step back and look
+at a few things that are entailed by what I've
+said and think about.
+For example the error function we've just seen.
+Also think about conceptually what's going on.
+Think about the activation functions and so on.
+So I have a few questions prepared.
+So in case you haven't scanned the QR code now's
+a good time.
+Okay.
+Let's get started.
+So I have just assumed that our architecture is a
+feedforward architecture where we have multiple layers and they are
+connected to each other.
+What kind of other architectures could you imagine?
+Could we use lots of layers?
+I've already indicated that that's that's possible.
+Could we use maybe backwards connections?
+Could we use connections within the same layer connection that
+skip layers?
+Could we use something called attention which you may have
+heard about?
+So how would you make this even more complicated and
+maybe more powerful?
+What kind of alternative architectures?
+Here we'll just talk about feedforward networks.
+Multilayer perceptrons.
+But there's a lot of different architectures out there.
+I want to.
+Thank you all.
+So Thank you.
+Thank you so.
+Much.
+Thank you.
+Thank you.
+Thank.
+You.
+Okay.
+Let's look at a few examples.
+So what do people think?
+Okay.
+So more or less everything possible.
+Maybe.
+Attention.
+People don't that much.
+So.
+Let's look at each of the examples.
+So first of all let's look at the things that
+actually make sense.
+So connections within the same layer.
+So you might be wondering is this actually possible?
+Well, you can have these connections of units to themselves
+or of the layer to itself.
+And this is called the recurrent connection.
+And actually in the next lecture we will see an
+example.
+Very high level.
+But we'll see an example of a network that uses
+recurrent connections.
+So you might think that is really silly.
+Why would you connect it to yourself.
+But this makes sense because you can then model information
+that flows over time.
+That where the recurrent connection corresponds to different time steps.
+So this is actually a clever thing.
+Then this number four was connections that skip layers.
+So for example we could have a connection this
+that skips that layer here.
+That is also possible.
+This is , a so-called bottleneck connection.
+And in, let's say, about 4 to 5 years ago,
+this type of architecture was very common in computer vision
+models.
+So again, it's not something we'll talk about here, but
+it's a possible connection.
+I need to remove this because I want to use.
+The diagram later on.
+Let's quickly talk about the others.
+Lots of layers.
+, yes, that's fine.
+But that's not really an alternative to using forward connections.
+Backward connections.
+It's not entirely clear what this would mean.
+So let's assume these are forward connections and then backward
+connections this.
+these are type of recurrent connections as well.
+So it's this is not commonly used but it would
+not be impossible.
+Attention is a different mechanism that people have used, for
+example, in Transformers, and it's not something that we'll talk
+about in this in this course, but it's basically a
+way of selecting your input or figuring out which parts
+of the input are most important and learning separate weights
+for that.
+So that's also possible.
+Okay.
+So now let's think about the activation function.
+Remember we we take a add a unit here.
+We take all the inputs.
+We multiply them with the weight.
+And then we pass the weighted sum through an activation
+function.
+So we've said we are going to use the sigmoid
+function rather than the step function.
+Why do you think this is good.
+Here's the number of possible solutions.
+Sigmoid function is easy to compute.
+It's differentiable.
+It returns a continuous value, not just zero and one.
+The derivative is easy to compute.
+Which of these things do you think are important?
+Do you?
+Think.
+What do we do?
+What do?
+We.
+Do.
+Okay, let's have a look.
+All right.
+So.
+, differentiable and derivative.
+Easy to compute.
+Is is the most important properties.
+, the sigmoid function is easy to compute, but so
+is the threshold function.
+Right.
+So it's not really an advantage.
+It's differentiable.
+Whereas the step function of course here at our threshold
+it's not differentiable, right?
+It goes to infinity.
+And that can be a problem.
+And we'll see why in a moment.
+Returns continuous values.
+Yeah we don't really care.
+Either way.
+We can set up the threshold function so that it
+returns continuous values.
+The derivative is easy to compute.
+That's also something we will care about.
+Okay here we don't even have a derivative at all
+points right.
+So that's why the function isn't good.
+And last one.
+So this error function which I've given you here again
+where we take the target and the output and we
+take the difference and square it.
+And then we sum this up over all the input
+patterns of all the training patterns.
+Is it something that maybe you've seen before in other
+contexts?
+And here's a few possibilities.
+So is it the perceptron error function?
+Is it the variance in statistics?
+Have you seen this in the context of linear regression?
+Perhaps.
+Or maybe it's a statistical estimator.
+So this term is hopefully or maybe familiar to some
+of you.
+Okay.
+Sure.
+My answers.
+Okay.
+Variants.
+Most of you variants.
+So all these all three things are correct.
+So I mean, arguably even one is correct because we
+have the T minus.
+All right.
+Which is similar to what we have in the perceptron
+error function.
+But the variance in statistics is basically defined this.
+Except that we write this as the mean right.
+So it's the difference between the individual points and the
+mean in linear regression.
+This mean squared error is actually the error that we
+use to fit the line right.
+In regression we have a bunch of points.
+And then we fit the line that's closest to those
+points.
+And these distances here they're called residuals in in regression
+terminology.
+But these are the errors.
+And we fit the line.
+So that minimises the error.
+So it actually minimises the same error function that we're
+minimising here.
+And you can actually show that certain architectures of neural
+networks are equivalent to linear regression.
+And in statistics this is a moment based maximum entropy
+maximum likelihood estimator.
+But that's sort of a yeah, sort of, you know,
+if you're interested in that kind of thing.
+So there's a connection to statistical estimation as well.
+So this is of course no coincidence.
+Right.
+This error function was chosen to do something meaningful.
+And that is something that occurs in other contexts such
+as regression or statistical estimation as well.
+Okay.
+Let's go back to.
+Yeah.
+Okay.
+So now we're going to talk about gradient descent which
+is at the heart of backpropagation.
+And I'll start with an intuition.
+So what we want to do now is to update
+the weights which I've written slightly differently.
+Right.
+So the weights now have two indices indicating the unit
+that.
+So this is unit j and this is unit I.
+So and the weight that connects the two is called
+w I j right.
+We have a more complicated structure.
+Everything has multiple weights.
+So we need slightly more complicated indices.
+So we update this w I j by taking the
+previous weight w I j and adding a small
+delta.
+So at that abstract level, it's exactly the same thing
+that we did for perceptrons.
+So and now the question is of course how do
+we get our delta ij.
+And the idea is.
+So we have painstakingly defined this error function.
+Why don't we pick the why?
+To minimise that error function function.
+And how do you minimise functions.
+Well this is something that you should remember from high
+school math.
+The derivative is very useful when you want to minimise
+functions.
+That's also why we wanted the activation function to be
+differentiable, because otherwise it would be very hard to compute
+the derivative.
+Okay.
+So and this is exploited in a technique called gradient
+descent which takes the error function.
+So here it's a simple parabola.
+And then on the y axis we have the error.
+On the x axis we have the possible values for
+the weight.
+In this case it's just a single weight.
+If you have multiple weights then this would be a
+multi-dimensional space, right?
+If you have two weights it will be three dimensional
+and so on.
+And we want to go to this point here where
+the error is minimal.
+And then we take the weight at that point.
+Okay.
+And of course we're starting with random weights.
+We're initialising the weights in in a random way so
+we can be anywhere on this parabola.
+And we need to find the minimum.
+Right.
+So and doing the step by step, let's say we're
+starting here.
+And then we're moving towards the minimum.
+And then we're stopping here.
+This is called gradient descent because we're going along the
+gradient.
+So along the derivative to try and find the minimum.
+And then we stop right when the error is minimal
+okay.
+So this sounds great as a concept but how does
+it work in practice.
+So as I've said the derivative is useful here because
+it indicates the rate of change of a function.
+So let's assume we have a function y equals f
+of x.
+Then the derivative is dy dx and it indicates how
+much the function how much y changes in response to
+a change in X.
+Okay.
+So again if you remember from from high school hopefully
+that , if you have our function here in blue
+then the derivative is a tangent line.
+, and the slope of that line indicates the
+whether the function is going up or down.
+Essentially the direction of change.
+, so we want to look at the slope or
+gradient for our gradient descent.
+Right.
+We want to move along the error function to find
+the minimum bit by bit.
+So and if the derivative is bigger than zero then
+that implies that y increases as x increases.
+Right.
+So we're going this way.
+So we need to move in the opposite direction to
+reach the minimum.
+If the derivative is smaller than zero then y decreases
+as x increases.
+So we're moving this way.
+So we're moving towards the minimum.
+So we need to keep increasing x.
+If the derivative is zero then we found the minimum
+or the maximum or a plateau where the function doesn't
+change.
+Okay.
+So that brings us to the following idea.
+If we want to move closer to the minimum then
+we need to update our x value.
+Right.
+So the value here on the parabola from the old
+value minus the derivative.
+And eta is again our learning rate.
+Okay.
+So either increase or decrease the x and okay.
+So that sounds good.
+But how do we do this for our weights.
+Okay.
+Let's take stock first.
+So we have looked at multilayer perceptrons.
+We have looked at the learning rule here which is
+essentially the same as our perception learning rule.
+And now the delta y needs to tell us the
+direction of the change and how much we need to
+change each weight, and for that, we're hoping to set
+it up so that we follow our error function, and
+the direction will be indicated by the slope, by the
+gradient, by the derivative of that error function.
+Okay.
+So how do we calculate this.
+And this is called the generalised delta rule or perceptron.
+Sorry.
+Or MLP update rule okay.
+So this is just our error function again.
+How do we compute the oh here.
+Right.
+The output we need to take our input UI.
+Apply the activation function.
+This slightly complicated term is the sigmoid function, right?
+Where a is the constant and u is the input.
+Okay.
+So this gives us the the curvy threshold function here.
+And how do we get the U.
+Well as before we just do the weighted sum of
+the inputs x is the input w I j is
+the weights.
+So this u goes in here.
+This gives us the o.
+And the o goes into the error function here.
+Okay.
+But how do we then turn this into a weight
+update.
+Well we compute the difference between t and O as
+before the target and the output.
+Then we look at the derivative of our input right.
+So this is the this here the activation function we
+look at the derivative.
+This tells us which direction we're moving, whether we need
+to decrease or increase the weights, and then we multiply
+it by the input, which is x I j.
+Just in the perceptron learning rule.
+Okay.
+So this is basically a fancier version of the perceptron
+learning rule where we've stuck in the derivative derivative.
+Here f I ui to be able to figure out
+which direction we should be moving in.
+So f f prime of UI is the derivative.
+So that's df over.
+DUI.
+DUI was our our input function.
+And for the sigmoid function the derivative is.
+This is AF times f of ui times one minus
+f of UI.
+Okay, so if we have this sigmoid as our activation
+function, then the derivative as promised, the derivative is really
+easy to compute.
+So we can just plug this term in here.
+And then we're essentially done.
+note that this is specific to this particular error
+function and this particular activation function.
+In the literature people have decided that other error functions
+are also.
+Other error functions are also useful.
+Sorry.
+Here we have assumed this function right.
+The mean squared error.
+Other error functions are possible and we have assumed this
+activation function, but other activation functions are also possible.
+However, if we make these two assumptions mean squared error
+and sigmoid function, then we can compute the derivative
+this.
+And our perceptron learning rule becomes really easy.
+See.
+Okay.
+In order to generalise this a little bit.
+We take the blue bits here, which is the magnitude
+and the direction of the error.
+Right.
+So this is the magnitude and this is the direction
+of the error.
+And we just write it as delta pi where p
+is the pattern and is the the weight we're updating.
+And this is known as the generalised delta rule.
+And now we have one problem.
+And this is really where sort of the all the
+magic happens in back propagation.
+Let's see.
+So let's here we've just substituted this by delta.
+But let's go one step back.
+So let's try to actually compute these things.
+So f prime of UI easy to compute right.
+We just need to to sum up the input times
+the weight.
+Take the derivative using this function here.
+Fine.
+This here.
+Also easy to compute.
+I just take the the target pattern and the output
+and the difference.
+So that is the case for let's say this unit
+here which has these inputs.
+And I can just take in each case I can
+take the the target.
+So I know the target here.
+And I can compute.
+no sorry I have written this the wrong way
+around.
+So sorry.
+This is my input.
+And then the output, let's say.
+So the output.
+So I and the target is here.
+So I can just compute the difference.
+And then I can update this weight.
+But what if I want to update that weight.
+Wait.
+What is the problem there?
+So here.
+This weight is easy.
+I plug in the O and the T.
+If I want to update that.
+Wait, do I have an output here?
+Do I have a target here?
+Output is actually possible to compute right.
+It's just the the weighted sum.
+But I don't have a target.
+Right.
+It's a hidden unit and it's called hidden unit because
+it's not directly connected to the inputs X or the
+outputs O or y.
+And that means I don't have a target.
+So how can I learn.
+So that's the problem with the hidden units right.
+So here if I adjust the weight that's directly connected
+to an output unit, then I know the correct answer.
+If I want to adjust the weight that's connected to
+a hidden unit, then I don't know the correct answer.
+And the idea is to distribute, to take the errors
+from here and distribute them.
+Distribute them across all the inputs.
+So this is what backpropagation does, right?
+You you compute all the outputs at each at each
+unit.
+So here and here.
+And then you can compute the error.
+At.
+This point.
+And you take the error at this point to also
+adjust the errors at that point.
+So that seems a bit magic but it's actually relatively
+straightforward.
+So let's start with the generalised delta rule.
+So remember we want to compute delta w I j.
+And this is our delta which is our update times
+the learning rate times the input.
+And we've computed the delta by taking the difference between
+the target and the output and the derivative to know
+which direction we need to move on.
+So this doesn't work for hidden units.
+So what do we do for hidden units instead?
+For hidden units instead of the arrow here in blue?
+We compute the error at the previous layer and weighted
+by the weights, and sum this all up.
+So let's assume we have more outputs here.
+one two.
+So we can compute the delta here and here right.
+That's easy.
+We can use the first equation here because we have
+the targets.
+So here we have a target.
+Here we have a target.
+And that gives us these two deltas.
+But let's assume we want to adjust this weight here.
+Then what we do is instead of relying on the
+output we take the deltas from here and from here
+and we add these deltas and each of them weighted
+by the connection.
+So basically we're saying okay so you have a certain
+output at this point.
+And this output depends on these weights.
+And these weights are responsible for the error to some
+extent.
+Right.
+This weight is responsible for the error at this output.
+This is responsible for the error this output.
+And we take these errors in terms of the deltas.
+And we sum them up to compute the weight update
+here okay.
+So we basically distribute the error over all the previous
+over the whole previous layer.
+So this is this is why we're writing here delta
+k.
+So this is the delta of the previous layer.
+And we update this by the weight between I which
+is the current the current weight we're updating.
+And this k that the delta belongs to.
+And we sum this this up.
+So over here we sum up over the over the
+deltas and so we can get a delta at this
+point.
+We're basically distributing the blame.
+Right.
+We know that at some point there is the output.
+And at that point we know the error.
+But we're distributing this across all the units that were
+involved in generating this output.
+Okay.
+And we call this delta AI.
+So now we have a version of this update that
+we can apply to the output units and to the
+hidden units.
+Okay.
+So this is a lot to take in.
+But we have a few minutes for a quick quiz.
+Okay.
+So let's actually let's skip this just in the interest
+of time.
+So I have written down the different delta rules here.
+And I would you to associate them with the
+correct.
+expression.
+So Delta rule for hidden units.
+Delta rule for output units.
+That rule for the perceptron, which we've seen from last
+time.
+I have left out the ETA the the learning rate.
+Or.
+Something that.
+Okay.
+Let's quickly look at the correct answer.
+So most people got this correct.
+This is the one for .
+This is the one for the hidden units.
+This is the one for the perceptron, which doesn't have
+the derivative in it.
+And this is the one for the output.
+Okay, so we're out of time, but I'll leave you
+with a, , quick animation.
+So why?
+Why is this even called backpropagation?
+Right.
+You might have been wondering.
+, and this you can, you can illustrate with an
+animation quite easily.
+So we have our input.
+This is the axis here x1, x2, x3.
+You have your output y which is your prediction.
+And then you have the correct output which we've called
+t.
+And the difference is the error.
+So you start by doing forward propagation.
+Right.
+So you you compute the output at this layer at
+the second layer third layer.
+And then you get the overall output.
+This allows you to calculate your error.
+And then you.
+You do the update here at the output right which
+is just error minus output t minus.
+Oh.
+And then the updates here at the hidden layers you
+do by taking the deltas right.
+So you go back.
+So you basically do forward propagation to calculate calculate the
+error.
+And then you do back propagation in the opposite direction
+to calculate the output.
+This is the learning algorithm and I'm afraid we're out
+of time.
+I'll skip the remaining quiz.
+Thank you very much.

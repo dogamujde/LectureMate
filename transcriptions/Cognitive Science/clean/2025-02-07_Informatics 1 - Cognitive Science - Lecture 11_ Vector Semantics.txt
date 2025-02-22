@@ -1,0 +1,1023 @@
+Yeah.
+Okay, let's get started.
+Welcome, everyone to lecture 11.
+, small crowd today.
+Maybe Friday afternoon.
+Anyway, , today we're going to talk about vector semantics.
+, this is really about words again.
+, this time we're going to talk about what the
+words mean and how you could figure that out, and
+not so much about what the words refer to.
+Remember last time we talked about the problem of mapping
+words onto objects?
+So, for example, a child who has a new noun
+doesn't know what the object, what the noun refers to.
+But there's an object in the immediate context, and the
+child is somehow able to figure out that, for example,
+the noun refers to a new object that that they're
+seeing for the first time, and we have discussed how
+exactly that process works and what kind of assumptions we
+need to make.
+Particularly, we've talked about assumptions to do with biases or
+priors.
+So things that we know before the learning even starts,
+maybe because they're innate or maybe because they're learned by
+another process.
+But we've said, well, if we combine these priors, these
+biases, for example, the whole word bias, the taxonomic bias
+or the mutual exclusivity assumption, then we actually make the
+learning problem tractable, because if we don't have prior information
+this, then arbitrary mappings are possible and there's never
+enough data to actually converge on the meaningful words.
+And then in particular, we've looked at an example that
+enables us to make that precise.
+And that example is a model of number learning, learning
+of number words that happens in children between 20 and
+40 months, approximately.
+And we've seen this model being formulated in Bayesian terms,
+and the Bayesian approach is attractive here because it allows
+us to combine prior knowledge in the form of a
+prior distribution that is there before we've seen any data
+with a distribution learned from the data, which is called
+the likelihood distribution.
+And let me just go back to that.
+Sorry to that part of the lecture because we didn't
+quite finish last time.
+So this was the mathematical formulation of that model.
+And what we're dealing with is a set of input
+pairs that pair words with sets.
+So for example the word three with three cookies.
+And now the idea is you test the hypothesis.
+You figure out what kind of mapping procedure you have,
+a procedure that maps Cookies or objects in general.
+Sets of objects onto number words.
+And here we've talked about a model that assumes these
+mappings to be just little programs, which are written here
+in Lisp notation.
+And these programs correspond to children knowing to count to
+one, to 2 to 3.
+And then eventually they will hopefully acquire.
+At around 40 months they'll acquire the the facility of
+counting up to an arbitrary number.
+And this is sometimes called CP the cardinal principle.
+And so what we're doing here is we are computing
+the probability of H which is a hypothesis.
+So these are our hypotheses these programs given some data.
+And then this can be written as p of h.
+Given w and s w and s are the words
+in the set here.
+And this according to Bayes law is proportional to the
+be inverse.
+Conditional p of w given s and h times p
+of h, which is the probability of the hypothesis.
+The prior probability.
+And so the output is.
+Basically we, , we output the posterior here with the
+highest probability.
+And that will correspond to one of these programs or
+lower levels.
+Know how to count to one, to 2 to 3
+and so on or knows the cardinality principle.
+Then the likelihood term we've defined as either one over
+n, where n is the length of the number sequence
+if the program returns undefined, and for example, this one,
+sorry, this one returns one if it's a set of
+size one and undefined otherwise this one returns 1 or
+2 or undefined, and so on.
+Or if we are able to generate the correct number
+word with this hypothesis h of s s is the
+set, W is the word.
+Then we output this with a probability alpha, where alpha
+is a parameter typically chosen to be close to one,
+let's say 0.7 or 0.9.
+And this is the probability of guessing correctly, because if
+we don't output undefined and we don't output the correct
+word, then we guess right.
+The child has a number line.
+Maybe they can count to ten, but they can only
+map objects up to five.
+Set size five.
+So for all the other sets they need to guess.
+And of course they randomly pick a number and it
+might be correct by chance.
+And this is what this model's here one minus alpha
+times one over n.
+And then the next ingredient that we need is of
+course the prior here this h.
+So where does this come from.
+So the authors here They work in this probabilistic programming
+framework, right.
+With these little Lisp programs.
+And so they assume that a prior is defined in
+terms of two dimensions, the first of which is what
+they call a rational rules prior, where they count the
+primitives that are present in the program.
+So these are functions essentially.
+And of course simpler is better.
+Remember we've seen this for example in the context of
+the minimum description length principle where we said that simpler
+lexicons simpler codes are better.
+So this is a related assumption.
+It's not exactly the same but it's related.
+And so they assume a set of primitives here,
+checking whether it's a singleton set or a set of
+two set of three functions set different logical functions
+counting.
+To do with the number line, the counting routine one
+two, three, four go to the next or the previous
+one.
+Incidentally, children find it quite easy to go to the
+next number, but they find it hard to go back
+to the previous number.
+So, for example, here we could assume that previous of
+W is harder and more costly than the next of
+W.
+And of course recursion, right?
+Recursion is if you then apply the function to itself
+and they assume that first of all, recursion is costly.
+This is because recursion is required to acquire the cardinality
+principle, right?
+They assume this is implemented using recursion.
+And as we said, there is a story behind this
+that has to do with the fact that recursion is
+used in other parts of acquisition, for example grammar acquisition.
+So they assume recursion is available, but it's not so
+easy to acquire it.
+So we attach a cost gamma.
+And then PRR of H is the the cost of
+all the other primitives in a given hypothesis.
+So, for example, , this hypothesis would be pretty cheap.
+It really just includes one function here the single function.
+This would be more, , costly or less probable because
+it has multiple functions here, and this one is a
+relatively short one.
+It has a singleton.
+The next difference, it has about four different, , primitives,
+but in particular it has recursion.
+So that means it would be, , more costly than,
+than the other hypotheses.
+However by how much is a parameter this gamma here.
+And in the paper they experiment with different values of
+gamma.
+, and this is, this is our prior then.
+And so that means we can now compute the posterior
+down here.
+, we need a bit more information.
+So they also take into account the probabilities for the
+individual number words because, as we said, the environment and
+the data that you're exposed to also obviously has an
+effect on your learning.
+And so this is from a corpus of child directed
+speech where they've basically counted, counted how often a different
+number of words occur.
+And they take that into account.
+And then they can they can train their model and
+test it on data.
+So the data comes in the form of something
+this, right?
+Where for a given language we know at what age,
+, children know how to count to one, to 2
+to 3, or when they acquire the cardinality principle, which
+is in purple here, and the sequence is the same
+across languages, the exact timing can vary.
+, and so they get this, , this curve out
+of the model where we have the different hypotheses here.
+1234 Noah and then cardinality principle, and then a few
+other hypotheses that they throw in just to make the
+task more realistic.
+And then here is the probability on the y axis.
+So and on the x axis is the amount of
+data.
+So more and more data is available.
+More and more examples are available to the child or
+to the model in this case.
+And initially the one Noah is very probable and then
+reduces in probability.
+Then the two Noah.
+The three Noah.
+And finally at this point here the cardinality principle becomes
+the most probable.
+And also then the model converges and more training will
+not make any more difference okay.
+And then they they in the paper if you look
+at the paper they vary the gamma and the alpha
+parameter.
+They vary the amount and the type of data.
+They vary the hypothesis space.
+So they experiment quite a lot with this model.
+But it is able to produce this pattern, which is
+quite close to what we see in the in the
+child data.
+Okay.
+So that was sort of finishing up from last time.
+And now for something completely different.
+Well, not completely good for something different.
+Okay.
+So we've seen word learning and I've just talked about
+biases.
+Things the whole object the whole object bias or
+mutual exclusivity or for example in the in the word
+learning the the the learning model.
+We've seen a bias towards shorter hypotheses.
+Right.
+So that is is another type of bias.
+And this is then combined with the data.
+And we've talked about fast mapping where children on a
+single utterance Map a word into an object.
+And we've seen that there's some evidence for this, but
+there's also evidence that it's not actually the whole story
+because it's very fleeting.
+The children might be able to to name the word
+the object correctly, but then they forget the name quite
+quickly.
+So something the Bayesian inference model that we've seen
+a moment ago might be more plausible.
+And so if we take a step back now, then
+we've talked about various components of word learning.
+We've talked about word segmentation where you take the speech
+stream coming in and you chop it up into words
+because the speech stream for the child doesn't have any
+pauses or any, , any segments.
+So you need to infer those.
+Once you've done this, maybe you're able to infer reference.
+So you're mapping words and objects or numbers, number words
+and set sizes as we've just seen.
+So that's one aspect of word learning.
+But of course, not all the words refer to objects,
+right?
+For a word dog or table.
+You can reasonably argue that its meaning is really whatever
+object it can refer to.
+But what about what about words that are, for example,
+abstract or words that are not nouns, verbs, prepositions, articles,
+and so on.
+How do we learn those?
+And again we'll talk about context.
+The number learning model is essentially about context right.
+You have you have heard this word in the context
+of a set of a certain size.
+And that's how the child learns.
+But we are going to generalise, generalise this notion of
+learning a meaning representation from context.
+And if I don't run out of time again, we'll
+also talk about some experiments that show that these representations
+perhaps are cognitively plausible.
+And neural networks are back in today's lecture.
+Okay.
+But let's start with the short quiz.
+And this is basically to give you an intuition of
+what we mean by context.
+So take a moment to scan the QR code.
+Oops.
+Okay.
+So this is about learning a word from context or
+guessing the meaning of a word from context.
+Just the child will have to guess that you're
+referring to this dog, or that you're referring to these
+five cookies in the right context.
+Okay.
+So and this is philosophers have been worrying about this
+for at least a hundred years.
+So Wittgenstein has a quote.
+The meaning of a word is its use in the
+language, which is really just a way of saying that
+you should rely on context.
+So I have a bunch of words here in uppercase,
+and I have sentences that they occur in.
+And maybe you are familiar with this with these words,
+in which case it's easy.
+But I've tried really hard to find rare words.
+And so if you could match them to the right
+synonyms.
+So she filled the samovar.
+I bought the beer below.
+He mastered the crisis with a remarkable, remarkable sangfroid.
+In the nest there was a sower.
+They go to the pub to drink and enjoy the
+crack.
+Can you figure out what the word means and associate
+the correct translation or the synonym?
+For.
+That.
+So these are all real words.
+I didn't make them up.
+So.
+I want.
+To know.
+What are.
+You going.
+To say.
+Okay, let's wait until we have 50 responses.
+Sure.
+More.
+Okay, let's have a look.
+Okay, so crack is, , a word that means something
+atmosphere.
+Things chat and, , being convivial.
+, I think it's Irish.
+Samovar is a type of kettle.
+This is, again, a lone word.
+Russian song for self-possession.
+Very good.
+Sarah is a hawk.
+And below is a type of trinket.
+, okay, so you all got this right?
+Maybe it was too easy.
+, but let's assume these were words that you had
+never seen before.
+You still would have been able to figure them out
+from the context and that.
+, yeah.
+So this was the, , the answer.
+, and that is the idea.
+So this is the, , the key idea that you
+need to hold on to throughout the whole lecture today.
+Right?
+That we're not going to define the meaning of a
+word, or try to work it out in any sort
+of logical or semantic way.
+We're just going to for each word, we're just going
+to look what other words it occurs with, right.
+So we're figuring out the meaning by looking at the
+context of a word.
+And we'll see two approaches where this idea can be
+made computationally precise.
+And it's an idea that has been extremely successful in
+AI over the last 15 years a bit last 12
+years, let's say.
+And that is in all the LMS that you're all
+using.
+But it is an idea that initially comes from cognitive
+science as well.
+So let's have a look.
+At this.
+Okay so we've talked about reference.
+But what about abstract nouns?
+Verbs?
+Adjectives function words every but from they.
+The approach we'll see works for all of them.
+Not just for nouns, not just for concrete things.
+, and this is the the type of example we've
+just seen.
+Right?
+So if you don't know what some of our means,
+you can figure it out from the context.
+And this is also an everyday experience, right.
+Sometimes you will encounter words that you haven't heard before,
+but you can often figure it out by the way
+these words are used without actually having to look them
+up or see a definition.
+So we will talk about representations for these for the
+meaning of these words.
+And these are called word vectors or sometimes called word
+embeddings.
+And as I said these are also heavily used in
+in language models.
+Let's look at a let's look at an example.
+So here's a bunch of text.
+Doesn't actually matter that much what the text is.
+The field anthropologists must gain understanding and start with the
+explanations and commentaries, blah blah blah, some sort of scientific
+text.
+And now let's assume we want to figure out the
+meaning of certain words in this text.
+Let's focus on those three here.
+Learn this.
+Sorry.
+First learn.
+Discover.
+And here's another instance of first.
+So how can we make this idea more precise?
+This idea that the meaning should be the context of
+the word, or should be represented as the context of
+the world?
+Well, first of all, let's define context.
+So here what I've done for each of these words.
+First learn discover in red I've given a context, and
+the context is simply the previous three words and the
+next three words for each of them.
+And I'm ignoring punctuation marks.
+So sentence boundaries for example, don't matter.
+So this is one way of defining context, just the
+immediate, sometimes called a window, a context window before and
+after the word that we're interested in.
+Okay.
+So this is the same text with the same windows.
+And now we can tabulate right.
+We can take our words first learn discover.
+These are the three words we're interested in.
+And then for each of the context words.
+So here these is the context of first here's another
+occurrence.
+Meaning doesn't actually occur in this context.
+But here we we just write down all the words
+that occur in these contexts.
+And then we just count.
+So these occurs twice in the context of first come
+across twice as well.
+Learn the context.
+Meaning occurs once two occurs once discover meaning occurs once
+two occurs once, calm occurs once, and so on.
+So we get a table this, where we count
+for each word how often other words occur in their
+context.
+And this is the same table just introducing some terminology.
+So these words here are called target words.
+These are the words for which we're trying to figure
+out the meaning.
+And these words here are the context words.
+So these are the words that occur around the target
+in our window right here.
+We've just assumed A33 word window on either side.
+And then these numbers here they're called context vectors.
+Right.
+You can you can think of them as a vector.
+So this is the vector for discover.
+This is the vector for learn and so on.
+And of course in reality you have a lot more
+context words.
+And you have a lot more counts in these vectors
+okay.
+And so we can construct these context vectors very simply.
+We can.
+First of all, we need to decide what our target
+words are, the words that we would to compute
+the meaning for.
+Then we need to figure out the context window.
+Right here we just said three words before three words
+after in our text.
+, and then we just count how often we get
+all the occurrences of the target words.
+Right?
+All occurrences are first learned discover.
+And then for each of them, we count how often
+the other words, the context words occur in the context
+window.
+And that's really it.
+And the idea is just to do this for lots
+of text.
+And then we will get , vectors here with, ,
+lots of context words.
+Do you normally start by saying I will have a
+vocabulary of, I don't know, 10,000 words.
+And then you essentially get a matrix 10,000 by 10,000,
+right?
+With 10,000 target words and 10,000 context words.
+They don't have to be the same.
+But often people assume that the target word and the
+set of target words and the set of context words
+are the same.
+And so with this little algorithm and a large amount
+of text, we can turn a word into a vector.
+Okay.
+What could this possibly be good for.
+So that's what we're going to ask next.
+So I'm turning words into vectors of numbers into rows
+of numbers.
+What can I do now.
+What could this be useful for.
+So here I have a number of suggestions right.
+We can do arithmetic on the vectors.
+Maybe compute distances between the vectors.
+Maybe we can even compute vectors for sentences, not just
+for words.
+Maybe we can cluster them to find similar words.
+, we can use these as input for other models.
+Remember neural networks, they deal in vectors.
+They don't understand any words.
+They can only understand numbers.
+So maybe that's that's something we can do.
+Or maybe the other way around.
+We can use neural networks to compute these vectors.
+So if you could just select all of all of
+these that you think apply.
+All of them that are possible applications of these vectors.
+I don't.
+Know how much.
+Right.
+Now.
+I don't.
+Know.
+What to do.
+Yeah.
+Okay.
+30s.
+Few more answers.
+Okay.
+So let's see.
+Okay.
+Interesting.
+So this was a trick question.
+All of the answers are correct.
+So these are all things we can do with the
+vectors.
+So we can do addition and subtraction.
+And we'll actually see this later in the lecture.
+We can compute distances to figure out how similar words
+are.
+We'll see that too.
+We're not going to talk much about averaging but that's
+also something we can do.
+And that works surprisingly well.
+You can basically figure out the meaning of a sentence
+by averaging the word meanings.
+We can cluster them.
+Make sense that, for example cat and dog have similar
+vectors.
+So you should be able to cluster them and find
+similar words and use them as input for neural networks.
+And you can also compute them using neural networks.
+And we'll see that in a moment.
+Okay.
+So this was this is the first idea.
+Once we have these vectors, we can compute similarity between
+them.
+So here and you might remember this.
+You know a bit of linear algebra from high school.
+It won't get very complicated, but let's assume we just
+have a two dimensional vector.
+Then we can represent this as a point in Euclidean
+space.
+Right.
+So dog cat computer.
+In reality of course these vectors will have hundreds, maybe
+thousands of dimensions.
+But here, just to be able to visualise it, we
+just assume two dimensions and then we can compute the
+distance.
+So for example we see that dog and cat have
+similar vectors.
+So they're close together.
+Cat and computer.
+The vectors are more distant because the meanings are different.
+And the red line here is the Euclidean distance.
+The blue line here this is called Manhattan distance or
+city block distance, which is the distance if you just
+travel along the axes.
+So it's a different way of measuring distance or again
+a bit of linear algebra.
+If you take these vectors here and then you draw
+a line to the to the origin and you measure
+the angle.
+Take the cosine of the angle.
+Then that's another way of measuring how similar to vectors
+are.
+So for example dog and cat would be similar.
+Whereas cat and computer have a big angle so they're
+less similar.
+Okay.
+And this is literally what people do.
+Oftentimes they use a cosine between two vectors to figure
+out how similar these vectors are.
+, and here's just the definition of cosine, which is
+the dot product of two vectors normalised by the product
+of the length of x and y.
+And this is the definition if you want to work
+it out for each of the elements, or the Euclidean
+distance is just the the geometric distance, you know, using
+.
+, using Pythagoras essentially.
+And this is the formula for that.
+So these are just two distance measures.
+There's a whole zoo of different distance measures.
+Cosine is probably the most commonly used one.
+But, , you take your words, you transform it into
+vectors, and then you have a very convenient way of
+figuring out which, which words are similar, namely the ones
+that have the same or similar, , vectors.
+And you measure that by taking the cosine between the
+two vectors, right?
+The vectors close together are similar, and the ones that
+are far apart are not.
+, and this can be used for all sorts of
+things.
+People have used it to learn syntactic categories, for example,
+things noun, verb and so on, because children need
+to learn that as well.
+Right.
+If you think about it, they maybe learn the words
+first, but then eventually they need to learn syntax as
+well.
+, for that you often set the context window to
+be small.
+Three words.
+For example, if a in a larger window could be
+a whole document or a paragraph, then you get more
+meaning based vectors.
+This count based approach that we've seen is sometimes referred
+to as latent semantic analysis.
+In the literature LSA, the problem is with the count
+based approach that the vectors end up having lots of
+zeros, right?
+Let's assume you have 10,000 context words.
+Then for any given target word, a lot of those
+will be zero will never occur together.
+And so you actually need dimensionality reduction which is a
+way of making these vectors more compact, basically combining dimensions
+that are similar.
+We're not going to talk about this because this is
+an outdated approach that people don't really use anymore, but
+it's a good way of introducing the concept.
+What people do use is ways of learning these vectors,
+right, rather than just counting.
+We'll now introduce a way where we can actually learn
+these representations, and we can just use a neural network.
+Initially, people just use very simple feedforward neural networks to
+learn these representations.
+And that worked surprisingly well and worked much better than
+the the count based approach.
+Okay, so counting versus learning, the traditional approach is you
+count the word co-occurrence, right?
+You have a big table.
+And you have all the words in your vocabulary.
+And you just count how often.
+How often these occur together.
+And so on.
+Right.
+So you get this Huge table.
+And then each of these rows in the table is
+a vector.
+And that's really really straightforward.
+You might want to compress the table a little bit.
+And that works already surprisingly well.
+But the learning approach works much better.
+So what if we could learn these vectors here rather
+than just counting?
+And this is the idea between the idea behind these
+word embeddings.
+So word embeddings are just a particular kind of
+context vectors.
+And they're typically learned using a neural network.
+Right.
+So you assume the input is a representation of the
+context, and the output is the word that you want
+to learn the meaning of.
+Okay.
+And training data.
+Again, just lots of text.
+So you basically slide through your text with your contacts
+window and, , the.
+The word that we're trying to learn, which are called
+w, and then you have context words before and after.
+, so.
+You take these context words as an input, and you
+predict the word that you want to learn.
+And in between you have a neural network.
+Okay.
+And what is the clever idea when you do this.
+Right.
+Where the input is the context and the output is
+the word that you're trying to learn.
+Why is that good?
+What do I not not need if I do this?
+I don't actually need any training data.
+Right.
+Because the Y here is of course in my text.
+I know what this word is supposed to be.
+So at training time I have this word.
+But at a test time, I assume it's not there.
+I predict the context word.
+Okay.
+And this is sometimes called self-training and is again, this
+is in a more complicated form is what makes LMS
+work, right?
+They're all pre-trained on billions of words to start with.
+And this is using this self-training approach for which we
+are just seeing a very, very simple version today.
+But it's enough to to learn this word embeddings.
+Okay.
+Yeah.
+Self-training for neural networks.
+Self-training is still supervised learning, right?
+You still have a training signal, but you don't need
+any annotation.
+Nobody needs to tell you what the correct answer is.
+The correct answer is already in your training data.
+Okay, so how do we get the context vectors.
+Let's look at the architecture.
+So this is the architecture I have here just 90
+degrees on its side.
+Okay.
+So we have an input layer which is our context.
+So here we just have a list of context words
+x1 x2 until xk where c is the size of
+the the context the number of context words.
+And then we have our output word right.
+So the word that we've left out here, this is
+our output word right.
+We take the words to the left and to the
+right of the target.
+And we predict the target.
+And this is y here.
+And then in between we just have a single hidden
+layer.
+Doesn't even use an activation function.
+It's just a linear hidden layer.
+Actually in this particular model.
+This model is called word to vec.
+And it was the first successful word embedding model came
+out 20 2013 okay.
+And then what is in between.
+We have these weight matrix matrices here which connect the
+input layer to the hidden layer.
+And then we have another weight matrix W prime that
+contains connects the hidden layer to the output layer.
+And that is it.
+Then we can just train this on tons of text.
+Okay, so x is the context words.
+Here h is the hidden layer, w and w prime
+are the weights here and here that we're learning sees
+the number of context words.
+N is the size of the embedding.
+So this is here the size of the hidden layer.
+And v is the size of the vocabulary right.
+So we have 10,000 words that we want to learn.
+Then v would be 10,000 n here is typically much
+smaller.
+So in this paper n is 300.
+So we will get vectors that are 300 dimensional right.
+Because you're wondering so where is where's our word vector
+in this?
+The word vector is the activation here at the hidden
+layer.
+That's what we're interested in.
+And so we set the hidden layer to a dimensionality
+that's convenient for us.
+In this paper as I said it's 300.
+The the embeddings will be not sparse.
+They will not have lots of zeros.
+Right.
+Because it's much more compressed than the input.
+The input can be, can have many thousands of dimensions
+here.
+There's a few other tricks.
+So the weights are tight.
+So the weight matrix here and here and here is
+the same.
+And the hidden layer activation is simply the the average
+of the activations for each word.
+So it's a very simple form of neural network.
+And the authors on purpose have designed it that.
+So that training is is cheap.
+Because if training is cheap then you can you can
+throw lots of data at it.
+And here they are training this on 1.6 billion words.
+Okay, so use the context to predict the target word.
+Only a single hidden layer weights are shared as I've
+just said.
+Context window.
+They set to five, probably experimented a lot and this
+was the what worked best towards to the left and
+two words to the right.
+Note that there is no representation of word order, right?
+Because these matrices are the same for all the context
+words.
+It doesn't matter which order the context is in, right?
+If the context is.
+The dog.
+.
+Right.
+Then the word that we need to guess here is
+probably a verb, right?
+Could be runs.
+But because the position doesn't matter, the matrices are the
+same.
+If this was doc, then we would get exactly the
+same result, right?
+So the representation we're using here doesn't care about the
+order of the words.
+That's why this model is sometimes also called cbow which
+means continuous bag of words.
+There's another variant of this model which I'm not going
+to talk about, but this one is called Bag of
+Words model.
+Okay, then I owe you one element of this model
+without which it is not going to work.
+So here I have just, you know, we have these
+little dots here that are supposed to represent the words.
+So what are these?
+Right.
+Obviously It's a neural network, so there have to be
+numbers of some kind.
+But how do I represent the input words?
+The idea is very simple.
+We just assume that we have a vector the size
+of the vocabulary.
+Right.
+So let's assume here we have 10,000 words.
+Then we have a vector of size 10,000, all of
+which is zero except for a single one which represents
+a given word.
+So this is for example, if this is one then
+this is dog.
+If this is one then this is cat.
+And so on.
+Okay.
+And this is called a one hot encoding.
+Vector of all zeros except an index.
+And the index tells you which word you're dealing with.
+And of course with 10,000 a vector of length 10,000.
+We can then represent 10,000 different words just by turning
+on one of the one of the dimensions for this
+word, and this is called the one hot encoding.
+Here's another illustration.
+Right.
+We have a vector length v where v is the
+size of the vocabulary.
+And then if we turn on one then this indicates
+Rome.
+If we turn on the second one then indicates Paris
+and so on.
+So and you can easily imagine that we can.
+If we make our vector sufficiently large, we can represent
+all the words that we're interested in.
+And this is called one hot encoding.
+And this is how we get the words into our
+model.
+So here all the context words are one hot encoded
+okay.
+And then what it learns basically is it learns a
+mapping here in the weights onto the hidden layer.
+And the hidden layer is much smaller.
+It's just a few hundred dimensions.
+And the hidden layer is then our embedding.
+Right.
+The activation of the hidden layer.
+So this is just another quick illustration.
+Let's assume this cover is our target word.
+So that would be why in the notation we've used
+and semantics to the and meaning semantics to the meaning
+RR for context words.
+And how do you train the thing just back propagation.
+Not even with .
+Yeah.
+It has a hidden layer right.
+So you need you need back propagation.
+It's simple because there's no activation function.
+And that also means it's very fast to train, but
+it's trained any other neural network.
+And, , then the hidden layer h for word y
+is the context vector vector.
+And that's the word embedding.
+Okay.
+So we have now much cleverer word embeddings that are
+trained on lots of data and that are also much
+more compressed because we can do this with just a
+few hundred dimensions, right?
+A hidden layer is, , is much shorter than the
+input, right?
+So the input here, these will have, let's say 10,000
+dimensions.
+So if I have for context words this would be
+40,000 dimensions in total.
+But here this compressed into 300 dimensions.
+Okay.
+So we get these embeddings which are quite different
+from the counting in particular, much less sparse and much
+more compact.
+Okay.
+What can we do now.
+So we have these embeddings.
+And now we can do stuff adding and subtracting
+them.
+To make computations with meanings.
+We can compute distances to figure out whether two worlds
+are similar.
+We compute the distance between the vector.
+So for example, if I take a word, let's call
+it the question.
+Then we can find an answer that's semantically or syntactically
+related.
+And we'll see examples in a moment.
+And for that we just take the embedding for the
+question and compare it to the embedding for the answers.
+And then we just take the one that's most similar.
+And here as I said they've trained this on 1.6
+billion words.
+They have a vocabulary that's larger than what I said.
+It's a million words.
+Actually it's not just 10,000.
+And they've tested this on these question answer pairs.
+And this is best illustrated with an example.
+So we take a relationship for example a capital city.
+And then we take the word embeddings for lots of
+cities and the word embeddings for lots of countries.
+And then if we want to figure out the capital
+of sorry the country that Athens is the capital of.
+Then we just look at all the countries and return
+the one that's closest.
+Right?
+So we have our vector for Athens and we have
+our vector for Greece.
+So these are really close in terms of the cosine.
+And then let's say this is the vector for Italy.
+And this is much further away.
+Right.
+So Greece is the correct answer.
+All right.
+We can do all of this just by computing the
+the similarity between pairs of vectors.
+So Athens will return Greece.
+Oslo would return Norway.
+This works also for more exotic capitals.
+Astana, the capital of Kazakhstan, Harare is the capital of
+Zimbabwe.
+It works for currencies.
+Currency of Angola is the kwanza currency of Iran is
+the real, and so on.
+Cities in a state, in a US state.
+Chicago is in Illinois, and so on.
+Computing a man woman relationship.
+So the female form of brothers.
+Sister.
+Female form of grants and his granddaughter.
+But it also works for syntactic relationships.
+So a parent apparently possibly, possibly, , is the opposite.
+, comparative?
+Great.
+Great.
+Superlative, and so on.
+Works for nationalities.
+Swiss is the nationality for Switzerland, Cambodian is the nationality
+for Cambodia, and so on.
+So and this is not always correct.
+I think they get about 60% correct on this test.
+But all of this just by computing the vectors and
+then doing cosine similarity between pairs of vectors.
+55% of the semantic relations and 64% of the Syntactic
+relations.
+Okay.
+You can do arithmetic as well.
+So vectors of course you can add them and subtract
+them.
+Right.
+So we take the vector for what is this example
+for Paris.
+And we subtract the vector for France.
+And by that I mean we take each dimension right.
+And subtract that dimension.
+So we do minus here on each dimension.
+So we get another vector.
+Right.
+And now we add the vector for Italy.
+And then we compute the nearest token the nearest word
+in the vocabulary.
+And this is Rome.
+So Paris minus France plus Italy is Rome bigger minus
+big plus cold is called sushi, minus Japan plus Germany
+is bratwurst and so on.
+The symbol for copper minus copper plus gold is the
+symbol for gold, and so on.
+This is also a fun one.
+Windows minus, Microsoft Plus, Google is Android, and so on.
+So this is of course a bit, you know, a
+bit of a party trick, but it can do a
+surprising number of relations that just by doing arithmetic
+on the vectors.
+Okay.
+And I think I'll stop here because we're out of
+time.
+I'll talk about this next time.
+This is a cognitive application of these vectors.
+But let's quickly summarise.
+So we have seen an approach that can learn what
+representations just from context just from seeing lots of text
+or listening to lots of speech.
+The simple approach is we just count which words co-occur
+together in one big table, and this is sometimes called
+latent semantic analysis.
+or a more complicated approach, is that we use a
+simple learning model, a neural network to infer the
+correct representations, and this has lots of strengths.
+For example, it's really simple.
+We just need a corpus, a set of text.
+We don't need any annotation.
+We don't need any additional assumptions.
+It's of course language independent.
+This will work for any language.
+You have a set of text for cognitively plausible.
+I've skipped over the example.
+There's disadvantages.
+It's often quite ad hoc, right?
+There's lots of parameters the dimensionality of your vectors,
+the size of your vocabulary and so on.
+It cannot deal with ambiguity, right?
+You only get a single vector, even if a word
+can have multiple meaning.
+And a lot of words can have multiple meanings.
+And there's no representation representation of context, right here.
+The order of the axes of the context words doesn't
+matter.
+So that means these two sentences would have the same
+representation.
+These two sentences would have the same representation, even though
+the first one makes sense.
+The other one doesn't make sense.
+So that's a limitation.
+And I'm out of time.
+Thank you very much.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.

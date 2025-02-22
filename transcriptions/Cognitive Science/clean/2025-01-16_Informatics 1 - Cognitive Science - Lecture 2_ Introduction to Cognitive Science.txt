@@ -1,0 +1,990 @@
+Okay, let's get started.
+.
+Welcome back to Informatics one cognitive science.
+.
+I'm sorry, where in this room has a nice organ.
+Maybe I can use this in a lecture on music
+cognition.
+, this is obviously a church.
+, Thomas Bayes was a reverend.
+We will encounter Thomas Bayes later in the course.
+Anyway, , so today's lecture is about cognitive science generally.
+, it's it's going to provide an introduction to two
+important concepts.
+And, , the underlying readings.
+Let me quickly explain those.
+, as you've probably seen, , there's three readings.
+The first one is Aston Martin.
+This is a paper arguing for the value of computational
+modelling, and this will form the basis of the first
+part of today.
+And then Haz is.
+I don't want to say a blog post, but it's
+a summary of one of the books and it's making
+the case for cognitive gadgets.
+And we'll come back to what that is.
+Here the interesting point is about innate ness.
+So we'll talk about innate ness a little bit.
+And then I'll start introducing language, which will occupy us
+for a few more lectures in the coming weeks, and
+in particular from the perspective of ineptness.
+This paper is a bit more of a long read
+and more advanced read, so it's optional, but it talks
+about the existence of a critical period for language, so
+I'll touch upon that as well in this lecture.
+All right.
+So cognitive modelling, cognitive technology.
+And then about language.
+That's sort of the game plan for today.
+Just to revise quickly.
+Last time we talked about cognitive science in general and
+in particular, we talked about it being the signs of
+mental representations and processes.
+So representation representations are things that store information in a
+certain format, typically in a structured format.
+And processes are algorithms that operate on those representations.
+So these things all go on in our minds, in
+our brains, in some form or another.
+And that's essentially what we're trying to study here.
+So and these processes, they they can transform sensory information,
+you know, raw signal that comes in from the retina
+for example, into representation.
+Or they can just transform representation into other representations, or
+they can take representations and turn them into actions.
+It can be very small actions, for example eye movements
+or bigger ones.
+Walking.
+Talking.
+Moving around in the world.
+And we have seen this conundrum here about pizzas.
+So let's assume you either get two 12 inch pizzas
+or one 18 inch pizza for the same price.
+Which one do you choose?
+And intuitively, if you ask people, a lot of them
+choose the two 12 inch pizzas.
+Pizzas.
+And Aston Martin that's the the reading, one of the
+readings.
+They talk about that in a lot more detail.
+However, you can easily convince yourself by working out the
+area.
+So let's assume pizza.
+We can abstract it and treat it as a circle.
+So work out the area of the circle and the
+two pizzas is actually a worse deal than the one
+large pizza, because the area is smaller.
+And so that is interesting.
+This is obviously something that we would to explain.
+And Gaston Martin argued that modelling is something that helps
+us explain that.
+How so?
+So we've already implicitly done a tiny little bit of
+modelling by computing the radius.
+And that's what we see here.
+This is the formula for the radius.
+Call it phi I.
+Where for for the area.
+Sorry.
+Call it phi I.
+Where n is the number of pizzas.
+Pi is the constant pi and r squared is the
+radius of the pizza squared.
+That's just the formula of the area of a circle,
+right.
+Times n because we have n pizzas.
+And then we can assume a decision is made based
+on the based on the area.
+So call this decision function.
+Omega takes the areas of two pizzas, Phi I and
+Phi J, and returns the one with a larger area.
+So if Phi I.
+Is bigger than Phi J, then we return I the
+the first pizza.
+Otherwise we return J the second pizza.
+So this is a very, very simple way of formalising
+the intuition here.
+And of course we can do one better by writing
+a little bit of Python and actually implementing this decision
+function.
+First of all implementing the computation here computation of the
+area.
+Then here we apply this to two particular pizzas, the
+two 12 inch ones and the the 18 inch one.
+And then this is our decision rule right.
+And just decides whether the amount of food, the area
+of the food is bigger in the first case, in
+the second case.
+And so this has the advantage of making precise what
+our assumptions are.
+Right?
+We assume that people take the area to decide.
+We assume that they have a way of computing the
+area, or at least estimating the area.
+We also assume that that's the only thing they decide
+on, right?
+This decision function doesn't have access to anything else.
+For example, I don't know the amount of topping might
+be interesting, the thickness, the weight and so on.
+There might in principle, there might be lots of other
+things.
+But by by formalising and ultimately implementing this idea of
+this way of pizza selection, we have to make our
+assumptions explicit.
+So this is obviously a trivial example of very, very
+simple and uninteresting example, but it illustrates this general point.
+And , according to Gaston Martin.
+So first of all, what is cognitive modelling?
+It takes a verbal description.
+So I told you well people compare the area or
+people just compare the number of pizzas.
+Right.
+Intuitively maybe they make this mistake and that's why they
+prefer the two pizzas even though the area is small.
+So there's a verbal description which we have formalised to
+an extent to make it implementable.
+Right.
+So this is the formalisation which is just a very
+small bit of mass.
+And then this is an implementation which we can essentially
+read off of the the mathematical formulation.
+Okay.
+And this process is is called computational modelling.
+And here is a typo.
+Yeah.
+So this is, this is supposed to say forces us
+to make a theory explicit and to specify its scope,
+its assumptions, and its computational repercussions.
+, so the theory here is people use the area
+to decide or people use the number of pizzas to
+decide.
+Right.
+Those two different competing theories.
+, and but by implementing this I need to specify
+the scope.
+So it only looks at pizzas it doesn't look at
+I don't know, it only looks at round pizzas.
+If you have square pizzas, it no longer works, for
+example.
+And also the computational repercussions in this case.
+This is a very simple piece of code.
+But more complicated models, for example, might require a lot
+of computation, a lot of memory, a lot of auxiliary
+assumptions, and so on.
+All of these I need to make explicit if I
+want to implement my theory.
+And ultimately this will improve the theory by uncovering aspects
+that I've not specified very well.
+Right in the verbal statement.
+For example, the verbal statement here doesn't necessarily say that
+the pizza has to be a circle, but if I
+make this explicit and I write down the formula of
+the area of the circle, then I need to make
+this assumption clear and explicit.
+If anything is ambiguous, then then And formalising the theory
+will force me to to resolve the ambiguity.
+It stops us from just testing hypotheses that seem intuitively
+interesting, right?
+So without having a clear theory of why this is
+the right hypothesis.
+So it forces us to work in a theoretical manner.
+And that basically constrains the search space, right?
+Because if we just test arbitrary hypotheses, then we might
+end up, , you know, going down a dead end
+and we can't do all the possible experiments that we
+can think of.
+But if we have a theory, then the theory will
+tell us what kind of experiments are useful in the
+context of that theory.
+And ultimately, this will allow us to generate new hypotheses,
+compare existing theories, generate new hypotheses.
+So this is the high level idea.
+And Aston Martin they break break this down.
+So cognitive modelling is a multi-step process in their in
+their conceptualisation.
+You start with a framework which is sort of a
+meta theory, a theory of theories.
+Then within that framework you formulate a particular theory, for
+example, of pizza selection.
+Then you specify this so you make it more explicit.
+We did this by providing a mathematical formula.
+You implement this.
+We did this by providing a bit of Python code.
+And then this will generate hypotheses.
+So for example it will tell us that.
+The it's the area rather than the number of pizzas
+that's important or.
+Or the weight or something that.
+And then that's a hypothesis we can test.
+So for example what will happen if we have two
+small pizzas and one big pizzas.
+But the area is the same, or the area of
+the two small pizzas is bigger.
+Would people then select the two small pizzas?
+Right.
+So it generates hypotheses this which we can test.
+We can run an experiment.
+Ask, ask people what kind of pizzas they prefer.
+And this will give us data.
+And then as you can see there's errors in both
+directions right.
+So we start from the framework then go down through
+theory specification and so on to data.
+Once we have new data we climb back up and
+revise our hypothesis depending on what the data says, maybe
+modify our implementation and our specification.
+Ultimately, if the data doesn't conform with our theory, we
+need to we need to change our theory.
+Okay.
+So it's a circular process operating in both directions.
+So to explain this a little bit more what the
+individual components are.
+So starting with the framework up here.
+So framework is basically a conceptual system and is a
+meta theory that allows us to, to generate, , more
+generate , models and theories for a range of different
+phenomena.
+And we'll see a number of frameworks in this course.
+So we'll actually start with what used to be called
+connectionism.
+It's now called neural networks or deep learning.
+and that is very, very general mechanism for modelling
+cognitive processes.
+And it has been applied all over the place from
+language to vision to more to control lots of cognitive
+domains.
+And that is not a theory or a model.
+That is a framework.
+It's a system for building models.
+Okay.
+And the theory is a particular, , a particular instantiation
+of this framework for example, to model food selection or
+to model language acquisition, or to model object recognition, whatever
+cognitive, , whatever cognitive process you're interested in, you build
+a theory.
+And initially this is verbally specified, right?
+You just talk about it.
+Or maybe you have a diagram with boxes and arrows
+we saw last time.
+So the theory is at that level, it is not
+formal yet, but it's within a given framework.
+And then based on the theory, which can be, as
+I said, described in various ways, could be mathematical, natural
+language diagrams and so on, and basically tries to explain
+the phenomena that you're trying to explain, to explain, say,
+object recognition.
+And the specification then is the formal description of the
+system.
+Right.
+So you have your theory, you specify it formally.
+And that means you also delineate the scope of what
+you do.
+And that's quite important.
+For example, back to our pizza example.
+This only works for round pizzas, right?
+We said this because the formula is specified as the
+area of a circle.
+So it is important to also say what your theory
+doesn't do right.
+So you have a theory of language acquisition for example.
+It doesn't explain the acquisition of numbers or the acquisition
+of.
+Colour systems or something that, or the acquisition of
+object categories.
+Or maybe you have a very general theory that explains
+all these things, but you need to make clear what
+the limits are, what the boundaries are, and what's outside
+the realm of your theory.
+So that's part of the process of specifying it.
+So the theory, relevant claims theory irrelevant additional assumptions, things
+that is outside the realm of your theory and inside
+the realm of your theory and so on.
+And this is very important because it also constrains the
+space of, of possible computational models.
+And that's the next step, right?
+Once you have your theory and you have specified it
+sufficiently in sufficient detail, then you can build an implementation.
+This is often software code, but it doesn't have to
+be.
+You could also build a physical model in some.
+In some cases that's possible.
+Maybe in robotics if you're interested in particular motor control
+systems and so on.
+But most of the time it's going to be a
+piece of software.
+And then from that you can derive a hypothesis.
+So a hypothesis is a testable statement right.
+It's something that you can potentially measure and find out
+whether it's true or not.
+So an example I gave with the pizzas was that
+if you make if you have people compare two small
+pizzas and one big pizzas, if you make the small
+pizzas large enough so that the area is the same
+or bigger than the area of the big pizza, then
+they should choose the small pizzas.
+So it should flip at some point.
+And this is something you can test.
+You can get people to compare 12 inch and 18
+inch, 14 inch, 18 and 16 inch and 18 inch
+and so on and see when do their decisions flip
+from big small bits or the big pizza or the
+other way around?
+Okay, that's a hypothesis that this this happens.
+And then I need to, , I need to get
+data.
+In this case, I can just give people I don't
+have to even have to give people pizzas, right?
+I can just get them to compare pictures if they
+are to scale.
+Here's a bunch of pictures of pizzas.
+Which ones would you choose?
+And then I count how often do people choose one
+option over the other?
+And that is the the data.
+Okay.
+Let's look at another example.
+And this is sort of already transitioning slowly towards language
+acquisition.
+And we'll come back to that next week.
+So let.
+And as I said this is a the process works
+in both directions right.
+So often you actually don't start with the framework or
+the theory.
+You start with the data.
+So let's start down here and let's assume we have
+observed some data.
+So this is about children learning learning language.
+And they make lots of mistakes.
+And we'll come back to that.
+And these mistakes are actually very interesting scientifically.
+So let's assume the child says I eat it the
+Cheerios okay.
+It is a irregular verb in English.
+The child at this point seems to assume that it's
+regular, and that is already a hypothesis, right?
+If we say it assumes that it is regular, then
+it should say sorry.
+He or she should say, eat it.
+A lot more than eight, maybe.
+Occasionally they use the correct form.
+Probably heard it's a high frequency verb, so maybe they've
+heard the correct form.
+So that is our hypothesis in this case.
+And we can implement this very easily.
+Right.
+Just sort of one line.
+One line of code.
+We take a verb and we add ed to it.
+This is of course, the beauty of assuming all verbs
+are regular.
+It's a very, very simple process.
+And here the, the, , the assumption is the child
+doesn't know about irregular verbs yet.
+They just add ed if they want to form the
+past tense.
+So that would be a more that would be a
+specification.
+Specification.
+, the specification is more abstract as you can see
+here.
+It doesn't And include a function definition or anything
+that.
+It's a verbal specification of what's going on.
+And the theory overall is that.
+And again, we'll come back to that is that language
+works in terms of words and rules.
+So words are things 8 or 8.
+And rules are things that stick these words together to
+form more complex words eat, eat or to build
+sentences.
+Okay.
+So that is a theory that doesn't only work for
+past tense, right?
+That is a more general theory that would also work
+for, I don't know, parol formation or compounding and other
+linguistic phenomena.
+Okay.
+So that's the theory behind that.
+And the general framework is one where we assume that
+cognitive processes, they manipulate symbols things rules and discrete
+entities verbs and so on.
+An alternative would be, for example, the neural networks, where
+we just assume it's all basically vectors of numbers and
+even words and rules and so on are encoded as
+vectors of numbers.
+Right.
+So these are two competing frameworks that we could use
+to explain this.
+Okay.
+So we have our framework words and rules as a
+theory specification.
+And then the implementation.
+And then of course we can go down the hierarchy
+again.
+So if we go back so we start from the
+data and gone all the way up to the framework.
+And now we can use this framework theory, specification and
+implementation to generate a new hypothesis that we can hopefully
+test by getting some more data.
+As I said it's it's an iterative process.
+So hypotheses Then let's start with, , other irregular verbs.
+Right.
+So C should become seed rather than saw and helped.
+And help should become help.
+Help is regular right.
+So we have rather than helping which would be in
+a in irregular form.
+take taken.
+Right.
+So we have made two claims here.
+Right.
+The first one is that this is not just for
+the single verb here.
+Right.
+Remember we've only observed a single verb here.
+But we are saying this applies to other verbs as
+well.
+And it also applies to regular verbs, which kind of
+makes sense, but it's something we haven't tested yet.
+Okay.
+And now we can get data.
+We can, I don't know, record children while they speak.
+We can check different ages.
+Children normally start to speak at the age of two,
+approximately so we can record two year olds, three year
+olds, four year olds and see if that makes a
+difference to our hypothesis.
+We can look at irregular verbs, irregular verbs.
+We can see if they understand them versus generate them.
+There's quite a lot of possibilities then for getting data.
+Okay, so I've talked for long enough.
+We'll have a quick quiz to look at some of
+the concepts I've introduced.
+So if you haven't scanned this yet give you a
+few minutes to scan it.
+Okay.
+That's the same barcode.
+Okay.
+Thank you.
+Okay.
+Okay.
+So this is just a very simple question to check
+whether you're paying attention.
+So, , we have seen the pizza example, and we
+have seen a little Python program that decides whether 1
+or 2 pizzas should be preferred.
+Is this a framework, an implementation or a specification?
+Okay.
+So please vote now.
+Okay.
+Let's see.
+Yay!
+Implementation.
+Most of you got that right.
+Then a t test.
+Does anyone know what the t test is?
+I can quickly explain.
+Okay.
+A few people don't know.
+A t test is a statistical test that is used
+in psychology to decide whether two meanings are the same.
+Let's assume I do this pizza experiment, and I count
+how often people take two pizzas.
+How often do they take one pizza?
+Then I get two to count two averages, and the
+t test will tell me whether those two averages are
+reliably different or whether they're the same.
+So it's a statistical test used to analyse data.
+And now in the guessed and margin framework is the
+t test the hypothesis?
+Is it data or is it a specification.
+What do you think?
+Yeah.
+Okay.
+Data is the correct answer, though about half of you
+are unsure.
+, it is interesting because it's not raw data, right?
+It's not individual observations or individual measurements.
+It's some statistic you've computed on the data, but it's
+still data.
+It doesn't.
+The T test is theoretically neutral, right?
+It doesn't impose any models or theories or hypotheses.
+Okay.
+So that's why it would count as data even though
+it is not the raw observation.
+Okay.
+Last one.
+So we have looked a little bit at irregular verbs.
+Let's assume we look at plural formation, which also is
+interesting in English because it has some regular some irregular
+form.
+Dog dogs.
+But sheep.
+Sheep.
+, if we have a verbal description, something you
+add an s to the end of the noun.
+Would that be a hypothesis, a theory or a specification?
+It's a verbal description of how people form the plural
+of English nouns.
+Okay.
+Matt.
+Interesting.
+So about an equal even split between theory and specification.
+I think it's a specification because it is sufficiently it's
+sufficiently formal, but it is not theoretical in the sense
+that it is not general enough.
+And it also doesn't, for example, distinguish between regular and
+irregular verbs.
+So it's a specification.
+It's not a theory.
+Yet you would expect the theory to be more general.
+Okay.
+That is it.
+Okay.
+Before we move on to cognitive technology, is there any
+any questions at this point?
+No.
+Everyone is happy or too shy.
+Okay.
+Let's let's look at cognitive technology.
+So this is a bit of a strange term.
+So it's not something I don't know, a laptop
+or a mobile phone.
+the underlying reading is, is by Cecilia Hayes who's
+a psychologist mostly to do with , she's mostly looked
+at evolutionary psychology.
+, she calls the same thing cognitive gadgets.
+So I will use these two terms interchangeably.
+Cognitive gadget, cognitive technology.
+, and her starting point is one where people in
+the past, psychologists in the past have talked about instincts
+a lot.
+So Steven Pinker, you know, well-known psychologist with lots of
+popular books, talks about the language instinct.
+And by that he means that language is something that's
+innate, that is, , I don't know, other instincts,
+the I don't know the sucking reflex that the a
+newborns have, right?
+They're born and immediately they start to suck.
+There's not something they need to learn.
+So it must be innate.
+And this is called an instinct.
+And he says language is an instinct that.
+And people have argued for all sorts of instincts, the
+instinct to imitate and to learn by imitation.
+The instinct of mind reading.
+Mind reading here just means that you figure out other
+people's mental states from their behaviour, from their facial expressions,
+and so on.
+And this has been a mainstay of psychology, in particular
+of what's called evolutionary psychology, which assumes that our cognitive
+processes, our cognitive capabilities are evolved and basically haven't changed
+since, I don't know, the Stone age or something
+that, and also then explains how our cognitive capacities don't
+quite fit the modern world because they're actually Stone age
+and so on.
+That's another story.
+But the main claim is that it's all based on
+instincts, and these instincts allow us to acquire certain cognitive
+capabilities, and the instincts are innate, right?
+They are not learned.
+They're there from birth.
+However, and Hayes has quite a number of examples, for
+example, to do with imitation learning.
+There's increasing evidence that these abilities are actually not innate,
+and they're also much less general than previously thought.
+Also, they vary from culture to culture, which again mitigates
+against the claim that the innate and so on.
+So this evidence for innate is becoming increasingly tenuous.
+And instead, she argues, and certain psychologists have argued this
+for a long time, that all you need is a
+general learning mechanism.
+And with that general learning mechanism, you can then acquire
+all these different things.
+They don't need to be innate.
+Language doesn't need to be innate.
+Some aspects of language we know are not innate.
+For example, reading.
+Reading is historically very young.
+It's about 5000 6000 years old reading and writing.
+So this cannot be the result of evolution, right?
+Biological evolution.
+It cannot be innate.
+And why not assume that the rest of language is
+also not innate?
+So and this is also theoretically driven.
+So people who've used, for example, neural network modelling, they
+traditionally argue against ineptness because a neural network of course
+is one of these powerful general learning mechanisms.
+So they want to use that to explain it.
+But what's the what's the alternative.
+Right.
+So how do these cognitive capabilities evolve even if we
+don't assume they are innate?
+And how are they transmitted from one generation to the
+next.
+So the assumption there is then that they are culturally
+transmitted, right?
+Language is obviously learned from one generation to the next.
+Parents talk with their children.
+The children then talk to their children and so on
+and so on and so forth.
+So cultural evolution offers an additional or alternative mechanism for
+transmitting cognitive capabilities.
+And this is what Hayes calls cognitive gadgets or cognitive
+technologies.
+And these can be representations.
+So for example I don't know kinship system is can
+be represented as a tree or as a graph.
+A food chain is obviously a sequential structure.
+So it can be representations this maps for example.
+But they can also be capabilities.
+Navigation language.
+Numeracy.
+So the ability to count and to estimate quantities.
+So in her world all of this is acquired through
+a general learning mechanism and is transmitted through cultural transmission
+from one generation to the next.
+Rather than being hardwired in our DNA so it's not
+innate.
+Of course, you have to assume some innate stuff, right?
+For example, this general learning mechanism, whatever it is, has
+to be innate.
+Otherwise things wouldn't work.
+And so how does the cultural transmission happen?
+Through interaction and communication.
+Right.
+You interact with your peers.
+You interact with your parents.
+And so you acquire all this stuff.
+And then the question is language itself.
+Is that a cognitive technology as well.
+And this is something we'll discuss in more detail throughout
+the course.
+, probably it has aspects that are innate and aspects
+that are not.
+Language is special because it's the vehicle of a lot
+of cultural transmission.
+Right?
+We transmit things by speaking, by writing it up and
+so on.
+So this is just a diagram that illustrates that a
+little bit.
+So cognitive technologies would be things this is supposed
+to be a kinship hierarchy.
+This is supposed to be a representation of, you know,
+solar system and motions of of of planets.
+This is supposed to represent navigation, which is a cognitive
+skill.
+This is supposed to represent the, , a food chain
+and understanding of how food chains work.
+So the sun and then there's grass, and then there's
+an insect and and the toad and so on.
+, and then at the centre of all of this
+is language.
+And language, of course, allows us to express all of
+this, right?
+Maps can be explained in language.
+Concepts time can be explained in language.
+Numbers and reasoning with numbers.
+And of course we can also write it down and
+transmit it, even if it's not direct from person to
+person or from parent to child and so on.
+So language in some sense is at the centre of
+this.
+And all these ideas about cultural transmission of cognitive technology
+wouldn't work without language, communication, interaction and so on.
+So this is trying to illustrate this.
+Here's our child.
+The child here is an utterance three koalas.
+But at the same time of course they they see
+the koalas most of the time.
+And that way they construct these representations that we talked
+about.
+And the cognitive technologies ultimately are the representations that are
+being built up.
+And they construct them.
+And then hopefully at some point they can utilise them.
+And this is just a quote to to sort of
+summarise what I've said.
+So humans have created technology, physical machines, right?
+We know this of course.
+And the cognitive gadgets are the mental equivalent of this.
+Right.
+Are structures and processes and so on that we've we've
+acquired over many generations of cultural evolution.
+That's that's Hay's claim at least.
+And, , they basically extend our mind, just tools
+extend what our body can, can do.
+And she calls them gadgets to distinguish them from instinct.
+Instincts is what people have called them so far and
+transmitted through cultural evolution rather than genetic evolution.
+Biological evolution.
+And this also it makes an important prediction, and one
+that hasn't been tested yet, that people can adapt their
+cognitive functions fairly easily.
+Right.
+If you assume it's all innate, it's all in the
+DNA.
+It was all fixed 100,000 years ago.
+Then we have trouble adapting to a changing environment, right?
+And there's obviously new stuff coming out all the time.
+Smartphones, internet, ChatGPT and so on.
+If you take the traditional evolutionary view, then it should
+be really hard for us to adapt to this.
+But under Hayes's view, with the way it's culturally transmitted,
+it is fairly easy for new cognitive skills to emerge
+and then pass down from one generation to the next.
+Right.
+They don't have to be encoded in the DNA.
+And the process might look something this.
+So the the adults here, they have a certain counting
+procedure that allows them to say three koalas.
+The child initially doesn't share this counting procedure, but then
+ultimately through the interaction is able to basically reconstruct.
+This is just a little bit of code here, but
+whatever it looks.
+It looks in the brain they're able to reconstruct
+this way.
+So the cognitive technology would be the representations and processes.
+Cognitive artefact would be the linguistic signal.
+So here I'm saying three koalas.
+And then the environment is there's the teacher.
+And we can also see the three koalas.
+Right.
+And then we're interacting with the environment.
+This would not work with speech alone.
+Without any visual input.
+Without any interaction presumably.
+Okay.
+Short quiz on cognitive technology.
+Okay.
+So choose your cognitive technology.
+Here is a number of candidates.
+And are you supposed to just tap on on the
+ones that you think are our cognitive technologies numbers are
+the cognitive technology, language time, reading and writing and so
+on.
+And so forth.
+You know.
+I think.
+This is this.
+Is.
+Okay, let's have a quick look.
+Numbers.
+Definitely cognitive technology.
+Right.
+And most people wouldn't think that numbers are innate.
+So that's something that we acquire.
+We acquire the number system.
+Language , would be a bit less clear.
+Probably some aspects of language are innate.
+.
+You can see this, for example, by the fact that
+we are the only species that has has language.
+So something must have happened in our brains to enable
+that.
+But the truth is, we don't know for sure.
+Time.
+That's a good question.
+So again, if you look at other species, some animals
+have a notion of time.
+So possibly that's innate as well.
+But it could also be a cultural technology.
+Reading and writing.
+Definitely cultural technology.
+Right.
+It's too young.
+As I've said.
+It's too young to be innate.
+So it has to be cultural transmission.
+Kinship terms probably also cultural technology because of the differences
+between languages.
+Sorry, between cultures.
+In what kind of whether you have a special word
+for, I don't know, the uncle of your uncle and
+so on.
+Food chains?
+I'm not sure.
+Could be.
+Probably.
+Probably.
+Cognitive technology.
+Trees?
+No, but if you have a theory of trees.
+I don't know how the different trees belong together.
+Which ones are descended from each other, which ones are
+edible, and so on.
+Then maybe that becomes a cognitive technology.
+Mountains?
+No, but maybe a method for navigating them would be
+cognitive technology.
+Heliocentric model of the universe cannot be named, right?
+So it must be a cognitive technology.
+Maps also very likely, though some navigation skills might be
+innate.
+Koalas.
+Again, this was a distractor.
+Great.
+And can you think of other cognitive technologies.
+So let's see.
+Yeah.
+Just briefly.
+We're almost out of time.
+Yeah.
+You can just write whatever you can think of and
+I will show it as a close.
+Yeah, I guess, but there are more tools.
+Maths.
+Definitely cooking.
+Yeah.
+Very good.
+And, .
+Whaling.
+Yeah.
+These are all great examples.
+What's your.
+Sense of rhythm?
+could be innate.
+Some kids, some animals have a sense of rhythm.
+Logic.
+Hunting.
+Art.
+Great examples.
+We have to move on because we're almost out of
+time.
+So talking a little bit about language.
+So that's sort of the million dollar question.
+Is language also a cognitive technology which would present us
+with a bit of a problem because language is obviously
+also the vehicle for cultural transmission.
+And here is of course the the Orthodox claim no
+language is innate, right.
+Language has remarkable complexity.
+It is not specifically designed to accomplish a task.
+So.
+That is basically why animals don't have language, because they
+don't have the innate capability and it's .
+Doesn't require specific training.
+I mean, kids don't speak from the beginning, but they
+definitely speak before they enter school and learn to write
+and other cultural skills.
+So here it's the assumption that this is innate.
+That's the only way to explain it.
+That's sort of the orthodox view.
+However, this is not sort of an armchair question, but
+it's an empirical question, of course.
+So we could look at genetic and neuroscientific evidence.
+And Hayes in her in her article talks about this
+a little bit.
+People have until recently thought they had found a language
+gene, a specific gene that if it's knocked out, you're
+not able to acquire language, at least not fully.
+However, there is now evidence that this gene does other
+things as well, so we're not sure.
+Animal communication.
+You can teach chimpanzees and bonobos to some extent to
+communicate.
+They cannot speak, but they can sign.
+Can teach some sign language to some extent.
+Maybe that's an argument against Chomsky's claim.
+, of course there are some things that are universal
+across languages.
+All languages have verbs, for example, but other things that
+are different.
+And in general, we have 6000 languages in the world
+and they can really be quite diverse.
+So that would be an argument against innate.
+That's probably.
+And one argument that we will quickly look at is
+critical periods.
+So for quite a lot of cognitive functions there's a
+period during which it needs to be acquired.
+Otherwise it goes away.
+You're no longer able to acquire that function.
+So for example, , the visual system needs to be
+exposed to visual stimuli very early on.
+Otherwise it doesn't develop properly.
+And you can test this in animals.
+So it's language that as well.
+Does it have a critical period and there is pretty
+good evidence for that.
+, child versus adult language learning works quite differently, right?
+Children learn the language automatically, whereas adults have to study
+them in a classroom.
+, non-native speakers versus native speakers.
+They sound different.
+They make mistakes.
+If they're non-native speakers, they have an accent.
+The age of immigration to a new country often determines
+whether you end up as a native speaker or not,
+and so on.
+, if you arrive before six, generally you end up
+as a native speaker.
+If you arrive after puberty, generally no longer.
+Then there's evidence from feral children and so on, and
+I won't have time to go into that.
+But here's an interesting diagram from a relatively recent study
+where the authors, , gave speakers of English a test.
+This is a grammatical test that basically gives you a
+bunch of sentences and asks you, are these sentences correct
+or not?
+and then counted the accuracy here on the y axis
+is the accuracy on this test.
+M here in red are the native speakers of English
+as the mother tongue.
+And here on the y axis is the age.
+So as you can see from the age of 1215,
+something that, they use they get maximum performance on
+the test.
+And only in the native speakers show that.
+However, people who start learning the language at the age
+of two, at the age of five, at the age
+of eight, and so on, they get very close to
+native performance and then older age of onset started learning
+English at 11.
+At 1417 you are less and less close.
+And then if you start as an adult, 17, 23,
+29 and so on, then you don't reach native performance
+anymore.
+So that seems to be indicating that there is a
+critical period and is actually a bit longer than people
+have previously thought.
+It's maybe until the age of 11 or 14 or
+something that.
+Then, as I said, there is also evidence from language
+deprivation.
+So this is children who were deprived of language input.
+And it's obviously very heartbreaking, but also very interesting from
+a linguistic point of view.
+So Jeannie is a is a famous example who was
+basically abused by her father and tied to a chair
+until she was rescued at 13 and she knew only
+a few words.
+And then, of course, the linguists try to see is
+she able to learn language after 13?
+And the answer is really the.
+She learned quite a lot of words, but she didn't
+really learn sentence structure.
+She didn't learn syntax.
+It's hard to interpret these case studies because there is,
+of course, deprivation.
+There is other mental faculties that are affected.
+It's not just language.
+And it's hard to, , to generalise, but anecdotally at
+least, that would be evidence for a critical period as
+well.
+And so the existence of the critical period.
+Why is that interesting?
+It's interesting because it indicates that language may be innate,
+or aspects of language at least may be innate.
+If you want to find out more about geni.
+Here's a link that has explanations, videos, all sorts of
+things.
+Okay, we're out of time.
+Here's a graphical summary of the of the lecture.
+Any questions before I let you go?
+Yes, please.
+You can also come to me after class.
+Thank you.

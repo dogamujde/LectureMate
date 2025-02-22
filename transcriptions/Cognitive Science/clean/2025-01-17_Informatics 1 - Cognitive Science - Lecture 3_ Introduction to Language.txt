@@ -1,0 +1,1065 @@
+Okay, let's get started.
+, don't forget to sign up for book club.
+, it's a different barcode every time.
+So if you could just scan the barcode for the
+interactive elements of the lecture.
+While you do that, I can tell you roughly what
+today's lecture will be about.
+It will be about language.
+, so, as I said, there will be several large
+themes in the course.
+So that includes language, but later on also vision, memory,
+Various aspects of neural cognition.
+And we'll start with the language.
+So we saw yesterday a sort of general introduction to
+various themes in cognitive science.
+In particular we talked about modelling, but then we also
+talked about this question of whether our cognitive faculties are
+innate or to what extent they are innate rather than
+acquired or learned.
+And this is a question that looms large when it
+comes to language as well.
+We saw yesterday a bit of evidence about a critical
+period for language acquisition.
+That would be evidence that the maintenance camp normally sites
+as an argument for maintenance.
+But we'll see other evidence.
+And today we'll talk about language as a system.
+If you if you're studying linguistics or you've taken a
+linguistics class already, then this will all seem very familiar.
+But obviously I'm not assuming that.
+So I'm introducing some basic concepts, in particular words and
+rules and how they interact.
+And then in the next lecture on Tuesday, we're going
+to talk about language acquisition specifically and what kind of
+aspects of language acquisition acquisition we would to model.
+So there we're going to talk about things regular
+versus irregular verbs and how this sort of system can
+be acquired during acquisition and so on.
+And after that we'll look at modelling.
+This is the first modelling part which will be about
+neural network modelling.
+That will take us 2 or 3 lectures.
+And then we'll apply this to language acquisition.
+So we'll introduce a neural network model of language acquisition.
+That will not be until lecture three.
+But that's sort of the overall game plan for the
+first part of the course.
+All right.
+So let's get started with language.
+Words and rules are the most important components I'll talk
+about.
+And then I'll talk about anatomy of language more generally.
+And also how this relates to the anatomy of cognition
+and in wider terms, just beyond language.
+Okay, so what is the word?
+This is a fairly intuitive thing.
+And you have seen written words.
+Heard spoken words.
+, a linguist would define it abstractly as an association
+between, , form and meaning.
+So typically a spoken form such as rose would be
+associated with the certain meaning referring to objects that look
+roughly this.
+Okay, we'll come back to meaning actually later in this
+course.
+At the moment, let's just say there's this arbitrary association.
+Typically you would have other properties.
+You would know that it's a noun.
+For example, you know, the part of speech.
+You would know, for example, that it's , a concrete
+object rather than an abstract noun, , I don't know,
+democracy or something that.
+, so somehow the language community, in this case, speakers
+of English, they have agreed on mapping this particular set
+of phonemes rose onto this particular object, and this is
+conventional.
+This is arbitrary.
+The rose doesn't really.
+The word rose doesn't really smell a rose, or
+looks a rose, or have thorns and so on.
+It's a conventional pairing.
+And you might say, well, but what about words
+oink and crash that sound a bit the thing
+that they're describing or sound symbolism?
+Things mellifluous or rancorous, which also symbolise a little
+bit what they are denoting.
+Sure, these pockets exist in the lexicon.
+There are some, , omnium onomatopoeia, as it's called, and
+some sound symbolism, but most words are not that.
+Okay, so we'll ignore this for the for the purposes
+of this, this lecture.
+This all goes back to the sorcerer, who was a
+Swiss linguist and who came up with this idea of
+the arbitrary sine, the arbitrary pairing between a sequence of
+letters or a sequence of phonemes and, , a concept,
+a meaning.
+And if we look at the overall set of all
+these pairings, then this is called the mental lexicon.
+It's a bit a dictionary, right?
+It lists words and meanings, but we're talking about the
+way this is stored in the cognitive system ultimately in
+in neural tissue in the brain okay.
+So this is called the mental lexicon.
+And we'll talk a little bit about how this is
+different or similar compared to a dictionary.
+Right.
+Something that a linguist would come up with.
+Often the structure is actually assumed to be a hierarchy
+or network, rather than just a simple list.
+Alphabetical list of words or something that.
+And also you can then define a language as.
+A system where two speakers can understand each other because
+the lexical entries are the same or at least intelligible
+to each other.
+Right?
+Obviously you have different dialects, different accents, different variants of
+of of a language.
+But if there's enough lexical overlap, then the speakers can
+understand each other.
+Okay, here's here's an example.
+And this is actually taken from the AI literature.
+This is something called WordNet which is a lexical hierarchy.
+So it's a type of a lexicon not necessarily a
+mental lexicon, but something that is not just a list
+of words in the dictionary.
+And you can see certain interesting things.
+So first of all, it's organised as a tree Essentially.
+And you have general concepts here animal or artefact
+up here.
+And then animal will be subdivided into, , vertebrate, aquatic
+vertebrate, aquatic invertebrate and so on.
+Vertebrate would be bird, mammal and mammal with the human,
+mouse and sperm whale and a lot of other mammals.
+And actually a group of linguists have sat down and
+painfully constructed this hierarchy for basically all the nouns and
+verbs of English.
+So it contains tens of thousands of words ordered in
+this hierarchy.
+And you can see various interesting things.
+So first of all, it's not really a tree.
+It's multiple trees.
+Right.
+So the artefact hierarchy is different from the animal hierarchy.
+And they're not connected.
+, you can have ambiguity for example here mouse this
+is the mammal.
+And this is another mouse which is the device computer
+mouse.
+And so that is a feature of the mental lexicon,
+of course, as well that there's ambiguities.
+What kind of more than one meaning you can have
+cross classification here.
+The whale here is both a fish and a mammal.
+So it's it's actually a graph rather than tree, the
+structure that's underlying.
+And a lot of the cognitive literature assumes that the
+mental lexicon is organised into something that.
+Right.
+Either a graph or a tree or a hierarchy.
+It's not just a list.
+And in particular, words that are similar in meaning are
+close together.
+So here are all the all the mammals are close
+together.
+Then all the fish are close together.
+Here are the artefacts.
+They sit in a similar part of the hierarchy and
+so on.
+And this is actually a very important observation because it
+influences, for example, how we access the lexicon, right?
+If we access car, then we can access aircraft as
+well.
+Because they're both vehicles, they're both artefacts and so on.
+They're semantically similar.
+And we'll come back to that.
+We'll come back to that.
+When we talk about semantic similarity in, I think it's
+week four.
+And we'll come back to that in the second part
+of the course, where we'll actually see an example of
+how the mental lexicon maps onto the organisation of the
+cortex.
+Right?
+The the neural structure of the brain turns out to
+be mapped in a similar way, where words that have
+a similar meaning are close together also in terms of
+which neurones they're stored in, in the brain.
+So the the way things are organised matters.
+This is just an example of how this can be
+conceptualised.
+There's other interesting things about the mental lexicon if we
+think now, not about the structure.
+So this is about the structure of the mental lexicon,
+how it's organised, which was a close together, which was
+related and so on.
+But now how do we use the mental lexicon?
+How do we use it to recognise words, to produce
+words, to put them together into sentences and so on.
+So first of all, we need to learn these words,
+right?
+So even if we're Chomsky and we believe that language
+is innate in some form, nobody would claim that the
+lexicon is innate, right?
+You grew up speaking English or Mandarin, sometimes both.
+But it's clear that the lexicon is different and it's
+not something that would that would be innate.
+Otherwise, why would you?
+You wouldn't learn it during, you know, you'd spend the
+first ten, 15 years of, of your life learning the
+lexicon and the other structures of the language.
+And this is, of course, something you can quantify And
+estimates are that you learn about 40,000 words between birth
+and adulthood.
+And, , so that's a lot of stuff.
+And interestingly, this doesn't happen all at once or in
+a it also doesn't happen all at the same speed,
+but initially.
+So for the first 12 months, babies don't speak right.
+They might understand to some extent, but they're not going
+to speak.
+So they start speaking between 12 and 18 months, and
+then once they reach a milestone of about two years,
+then they suddenly start learning lots and lots and lots
+of words very quickly.
+Okay.
+This is sometimes called the vocabulary explosion or the vocabulary
+growth spurt.
+And that's something we'll come back to next week.
+, and after that, language acquisition slows down, or at
+least word acquisition slows down.
+While these growth spurt happens, though, often a single exposure
+to a word is enough to learn it.
+So somehow we have a very efficient mechanism for learning
+words, at least at this particular age, and we end
+up learning lots of words.
+40,000.
+That's what the estimate is here.
+Yeah.
+This is what I've just said, this vocabulary explosion that
+happens during the second year after birth, roughly between, let's
+say, 18 and 30 months, something that.
+Then if we think about how we use words, right,
+we we hear a word.
+If someone speaks to us or several words or we
+read a word on the page, then we need to
+access it in the mental lexicon.
+Otherwise we don't know the meaning.
+We don't know what part of speech we're dealing with.
+We don't know how to fit this in in the
+rest of the sentence and so on.
+So we need to access the mental lexicon somehow.
+And here the estimate is that this happens really quickly.
+It takes about 200 milliseconds.
+So this is, you know, a fifth of a second.
+So it's a really fast process.
+And then the estimate is if you, , if you
+retrieve, if you read or hear a word and then
+retrieve that meaning, and then also you're asked to name
+it.
+This is a common task that psycho linguists use.
+They show you a word and they ask you to
+name it, or they show you a picture and name
+the and ask you to name the object.
+And so you take about a quarter of a second
+to name the object, and then a quarter, another quarter
+second to, , to do the motor actions that are
+required.
+Right.
+Because speaking of course, means that you need to send
+a motor signal to your tongue, you need to modulate
+your breathing and so on.
+There's a lot of other stuff going on when you
+want to speak.
+So.
+And cognitive scientists are, of course, interested in studying all
+these different phases.
+Right.
+Recognising the the words, let's say there's a picture of
+a rose Then retrieving the word rose from from the
+mental lexicon.
+And then, if you're supposed to speak it.
+, programming your articulatory system to produce the sound rose.
+Okay, so this is all things that people have tried
+to measure.
+But quickly, back to to word learning.
+So this is a graph that was taken from a
+standard data set where you have the productive vocabulary on
+on the y axis.
+So how many words can the child produce.
+And then you have the age here in months on
+on the x axis.
+And you have different quantiles.
+Let's look at the green line which is the quantile
+the fifth quantile, the 50th quantile anyway where that's basically
+half the children.
+So at the age of 16 months, which is a
+year and a year and three months, they are only
+able to produce, I don't know, 5 or 10 words
+or something that.
+But then things accelerate pretty quickly and then by the
+time they're two years old here, they already produce just
+over 300 words.
+And then by, , by the time they're two and
+a half, they reached just under 600 words.
+And some some kids here in the upper quantiles, they're
+even beyond 600.
+So, , the dots, by the way, are individual, individual
+measurements, individual children at particular ages.
+So what we can see is that this is a
+process that basically if you look at the blue curve
+or here, the green curve accelerates really, really quickly.
+And this is why we end up with the 40,000
+words that we we learn ultimately.
+And later in the course we'll talk about the mechanisms
+that underlie this.
+How is it possible to learn so quickly?
+It's a tremendous feat.
+Children in this age, they you know, they also learn
+other stuff.
+For example, they learn how to how to walk.
+At about 12 months, they learn social interaction.
+They learn things gaze following.
+How do all of these things interact, , to produce
+this vocabulary, , vocabulary explosion.
+So this is something we'll come back to.
+Okay.
+So but words are of course, not everything.
+We don't talk in isolated words.
+I mean, obviously we can have utterances stop or
+no that are just a single word, but most utterances
+are not that.
+They're long and complicated and contain multiple phrases that are
+nested with each other and so on.
+So most speech is is not isolated words.
+So we can combine them into phrases.
+So a phrase would be something the blue dog.
+Or, , learning to fly.
+, so combinations of words that belong together.
+And then we combine those phrases into sentences.
+Right.
+A sentence normally has at least a noun phrase and
+a verb phrase.
+So something Peter and Mary, where Peter is a
+noun phrase and Mary would be a verb phrase.
+And the question is how do these combinations work?
+And in particular, then how do we compute the meaning
+of a sentence based on the words and their combination,
+the way they are arranged?
+And if we think about this for a moment.
+So here are three different sentences.
+The boy saw the girl with a telescope.
+The girl saw the telescope with the boy.
+The boy with the telescope saw the girl.
+These all contain the same words, right?
+They are arranged in a different order.
+Do they mean the same thing or do they mean
+different things?
+What is it?
+They all mean different things.
+Right.
+So here the boy sees the girl.
+Here the girl sees the telescope.
+And here the telescope is somehow associated with the girl.
+All with the seeing.
+And here the boy is associated with the telescope.
+And here the telescope is associated with the boy, and
+so on.
+So they're all different in terms of the meaning.
+And we can create these differences just by shuffling the
+words.
+Right.
+We keep the words the same.
+We just change the order and we get a different
+meaning.
+So that means that we can combine words into phrases
+and phrases into sentences.
+And how we do that really matters for the message
+that we're trying to convey.
+So let's try to understand that a little bit more.
+So this set of rules that are used to.
+Combine words and and construct sentences is sometimes called a
+grammar.
+And here we'll briefly introduce it by a particular kind
+of formalism.
+For a modelling grammar it's called the context free grammar.
+And you can think of the context free grammar as
+a set of rules that are written as little trees.
+So you can have trees this with which indicates
+that rows is a noun.
+So you have the part of speech here, and then
+you have the lexical item here a is a determiner.
+Determiner is a type of article, is is a is
+a verb.
+And so you have these very simple grammar rules.
+And you can think of them as trees.
+Well trees with only one branch, right.
+In this case.
+But we can have more complicated trees this.
+This is a noun phrase and P stands for noun
+phrase.
+And the noun phrase consists of a determiner and a
+noun.
+So determiner is something a or the a noun
+would be something rose or dog.
+A verb phrase contains a verb and a noun phrase.
+Note that this is the same noun phrase as here,
+right?
+So you can have, , phrases constructed out of phrases,
+or you can have a sentence which consists of a
+noun phrase on the verb phrase.
+And again, these combination rules here are written as little
+trees.
+And now we already have a grammar.
+And we can actually construct a lot of sentences already
+with this, , six rule grammar.
+And how do we do this?
+Well, we use a process called parsing.
+Parsing is basically technically it's taking a sentence and applying
+a grammar to construct a representation for the sentence.
+So let's take this really simple sentence A rose is
+a rose.
+We only have one noun, right?
+So rose occurs twice.
+Then we start with these rules here.
+These are sometimes called lexical rules, right.
+They have the lexical item and then the part of
+speech.
+So A is a terminal rose is a noun, is
+is a verb, the other a is a determiner again,
+and then the next rose is also noun.
+So we start basically bottom up, sometimes called bottom up
+parsing, and assign a rule to each of the lexical
+items, which tells us which part of speech we're using.
+And then we can use these rules here.
+The the rules that don't have lexical items in them,
+the phrasal rules and construct these phrases.
+So this becomes a noun phrase determiner noun combined to
+a noun phrase.
+Same here.
+It's a noun phrase.
+And then we can use this rule here and combine
+the verb and the noun phrase into a verb phrase.
+And finally, this use.
+This rule here can combine the determiner so the noun
+phrase and the verb phrase into a sentence.
+Okay, so now we have a complete tree for a
+sentence.
+And in order to we know that we're finished because
+we have one tree that spans the whole input, all
+the words in the sentence, and it ends in S,
+it generates a sentence.
+Okay.
+And now you can imagine that this works for a
+simple sentence a rose is a rose.
+But for more complicated sentence you need a lot more
+rules.
+You need more lexical items, you need more ways to
+combine them, and so on.
+Okay, but in principle, this is a very general and
+very powerful mechanism that you can use to construct a
+sentence sentence structures.
+Okay.
+Let's actually look at this a little bit on Wall
+Club.
+So if you haven't scanned the barcode now's the time.
+Give you a few more seconds.
+So let's think a little bit about the the ideas
+we've just seen.
+Oh.
+Okay.
+So something I haven't talked about is ambiguity.
+So ambiguity means that a word can have more than
+one meaning.
+All right.
+So we saw for example, a mouse could be a
+computer device or a mammal.
+But sentences can also be ambiguous.
+A single sentence can have more than one meaning.
+And here are some examples.
+And I want you to look at these examples.
+They're all ambiguous and think about the words in this
+in this the sentence in each of the sentences and
+tell me whether there's an ambiguous word in the sentence,
+and that's what's causing the whole sentence to be ambiguous.
+So you're supposed to pick the ones that contain ambiguous
+words.
+As opposed to.
+Them.
+So the sentences are.
+I saw her duck.
+I wrote a black horse in red pyjamas.
+I saw the boy sitting on a bench with glasses.
+She's looking for a match.
+Parking.
+Fine.
+Okay.
+How about that one?
+The second.
+Week.
+I thought.
+Okay, let's discuss the.
+First of all.
+Let's see the results.
+Okay.
+.
+Majority thinks that everything about sentence two is basically caused
+by ambiguous lexical items.
+Correct answer is one, four, and five.
+Let's discuss each of them.
+So I saw her duck.
+, what's the ambiguous word here?
+Which word has two lexical entries here?
+What do you think?
+It's duck.
+Right, because duck can be the animal, or it can
+be the, , this motion of going down.
+So clearly this is a duck that belongs to someone
+or this is someone who's ducking.
+, second one was I wrote a black horse in
+the red pyjamas.
+So there isn't anything ambiguous here.
+The words are not ambiguous, but it's the in the
+red pyjamas that's ambiguous, right?
+This could be referring to the horse wearing the red
+pyjamas, or could refer to the speaker to the eye
+Similar situation here.
+I saw the boy sitting on the bench with glasses
+so the glasses could refer to the bench, or they
+could refer to the boy.
+Obviously not very plausible with the bench.
+So one reading is possible, but it's this preferred question.
+Ambiguous because you could be holding it could be
+wearing it could be next to it.
+, yeah.
+That's true.
+So the question was that width could be ambiguous.
+.
+Yeah.
+I guess that's another type of ambiguity here.
+The truth is that most English words are ambiguous.
+So it's it's actually hard to find examples where there's
+really no ambiguity going on.
+So with could be , yeah.
+Referring to different manners of being close to someone or
+something.
+That's a good point.
+She's looking for a match.
+What is the ambiguity here?
+So it's kind of about the the worst part.
+Oh yeah.
+Please.
+I think it's maybe ambiguous in its meaning, but you
+can't confuse it with another word.
+There's no other word for it.
+With that has two definitions, but it only has
+one situation leaves.
+Kind of the meaning is different, but it's not
+used as completely different things.
+what's the verb in the knowledge?
+That is a good point.
+So even if we assume with this, ambiguity is ambiguous,
+the ambiguity is different.
+Duck is, as you said, it's ambiguous between the noun
+and the verb.
+Here the ambiguity is in match, but match is.
+This is the with type of ambiguity.
+Right.
+Match could be, I don't know, playing a match or
+someone who matches with you.
+They're both nouns.
+So we don't have the part of speech ambiguity.
+It's a semantic ambiguity.
+And here.
+Parking.
+Fine.
+What's going on here?
+What's the ambiguous thing?
+So it's a bit more complicated here.
+I mean, obviously, this could be a traffic warden and
+tells you parking.
+Fine.
+So they're giving you a fine and then parking fine
+is a compound noun.
+Or it could be your mate helping you into the
+into the parking spot.
+And they say parking.
+Fine, right?
+So they're telling you that you parked really well, and
+then fine is a separate word.
+It's an adverb or something that.
+So here it depends really on the discourse context and
+how you say it, what kind of meaning you get.
+So yeah, I mean I'll skip this because we have
+basically discussed this.
+So here these are the same sentences again.
+And now I'm asking about which ambiguity is caused by,
+, by the, the rules rather than than the words
+and.
+Okay.
+Oh.
+Sorry.
+Yeah.
+Okay.
+Okay.
+Sorry.
+I was too fast here.
+.
+.
+So here it's these two ambiguities.
+The remaining ones are so-called syntactic ambiguities.
+Right.
+Where different rules are used to.
+In one case, , the the prepositional phrase in red
+pyjamas would be attached to the horse.
+In the other case, it would be attached to eye
+to the subject.
+And here it's a similar ambiguity.
+So here we are assuming the same words, the same
+lexical entries, but they are combined in different ways.
+So we assume we're using different rules.
+So the first case.
+This case here is called lexical ambiguity.
+And the second case here is called syntactic ambiguity.
+So two forms of creating more than one meaning.
+Okay I have another quick one.
+So let's try to connect things a little bit.
+Yesterday I talked about cognitive modelling.
+And we saw this taxonomy by a guest and Martin.
+And now let's think about our grammar rules.
+Where do they fall in this taxonomy.
+Are they part of a framework.
+Are they part of a theory.
+Would there be a specification implementation hypothesis data.
+What is the.
+If I take a grammar rule PNP goes to
+determine a noun.
+Where does this fall in in the taxonomy that we
+saw yesterday.
+So take a few moments to think about this and
+vote.
+Thanks for.
+Joining us.
+Thank you.
+So much for joining us.
+Thank you so much for being with us.
+We have to make.
+Sure that.
+There.
+Is nothing.
+Against this.
+I know.
+Okay, a few more votes, maybe.
+Okay.
+So about half of you think it's a specification.
+, let's look through the the answers in, , bit
+by bit.
+So is it a framework?
+Mm.
+.
+Could be.
+I mean, it could be part of a wider framework
+because this idea that cognition is simple manipulation.
+Right?
+That you take bits of maths or bits of notation
+and you shuffle symbols around.
+That is actually a very old idea in cognitive science
+going back to the 50s and 60s.
+And obviously this is what's going on here.
+You take a symbol N and VP and you
+combine and manipulate these symbols.
+So overall this is probably part of this wider framework
+of cognition as symbols.
+However, here I've asked about an individual rule and that
+on its own doesn't consider consists constitute a framework or
+a theory as such, right?
+Even a grammar with lots of rules would not be
+a theory.
+As such, you would need to link it to behaviour
+in some way.
+You would, for example, need to say I don't know.
+Long rules are harder to process and take more time,
+or infrequent words are more difficult to acquire and you
+learn them later in life and so on.
+So they would need to be some connection to cognition.
+It cannot just be a list of lexical items and
+and words specification.
+Yeah.
+So that's pretty close I think, because it does specify
+pretty precisely what you want to do.
+Right.
+In this case, constructing a noun phrase by taking a
+determinant a noun and combining them.
+So it's a bit writing it down as a
+formula or writing it down verbally, but in a in
+a very precise way.
+Implementation maybe could be an implementation.
+You could put this onto a computer or a computer,
+obviously parts programming languages all the time.
+So they're actually good at.
+And programming languages are specified by grammars similar to those.
+So they're very good at taking a grammar and taking
+some input and building up a syntax tree.
+So it could be the basis of an implementation.
+But as such it isn't an implementation yet.
+It's not really hypothesis or data.
+Right.
+Data would be something that I need to get from
+observing participants.
+Okay.
+So specification was the correct answer.
+And.
+okay.
+So this.
+Yes I'll come back to that.
+Okay.
+, a little bit of notation before we move on.
+And this is something that will become useful for the
+tutorial next week.
+, so I've, I've written this as this little tree.
+Right.
+So a tree with just one branch or a larger,
+bigger tree with two branches.
+And these are often written as rules this n
+goes to rows where n is the the parent node
+and rows the child node or s goes to NP,
+where's is the parent node, and NP and V are
+the children okay.
+So this is notionally equivalent if you want to write
+a tree in a compact way.
+So this is the whole tree for the sentence that
+we've seen.
+You sometimes see this in terms of this labelled
+bracket notation.
+So you can use the arrows only for trees of
+depth one right where there's just one parent and one
+or multiple children, but there aren't any grandchildren or grandparents.
+So you would write this as a label, as a
+sequence of labelled brackets.
+So here this bracket means that this is the sentence
+starting this bracket means it's the noun phrase starting the
+determiner.
+Then closing bracket denotes the end of the phrase, end
+of the determiner, end of the noun, and here end
+of the noun phrase, and so on.
+So this is a bit harder to read, but more
+compact.
+And so syntactic means love this, they write.
+Their structures this here will mostly stick to the
+tree structure, which is easier to read.
+But as I said, this is something that will be
+handy for the tutorial next week.
+Okay, so let's think a little bit about what we
+can do with those rules.
+We've so far seen a really simple grammar right?
+We have seen this grammar which only has six rules.
+But it turns out with a large enough lexicon, we
+can actually generate tons of sentences even with a simple
+grammar this.
+So note that the rules are productive.
+They're abstract.
+They're defined over types of words, kinds of words rather
+than actual words.
+Write these rules here.
+The grammar rules, s goes to noun phrase.
+Verb phrase is, , agnostic about what kind of noun
+or what kind of verb is in here.
+Right?
+So it abstracts away from that.
+So and that means if I have if I learn
+new words, I can stick them into the same rules
+and generate more sentences.
+Right.
+So we combine these these symbols in an abstract way.
+And in fact there is a lot of combinations that
+I can get, , just by sticking in different verbs
+and nouns into the same set of rules.
+We can calculate this fairly easily.
+So let's assume we have four determiners.
+, obviously there's more, but it's a small set in
+English, a set of determiners.
+Whereas, of course, most languages have a ton of nouns
+and a ton of verbs.
+So let's assume we have 10,000 nouns and 4000 verbs.
+And then our rule of PNP goes to determine a
+noun would allow 40,000 noun phrases right for different determiners
+and 10,000 nouns.
+So we get 40,000 NPS.
+Then our verb phrase rules , VP goes to verb
+noun phrase.
+We have our 40,000.
+Or.
+40,000 nouns and our 4000 verbs.
+So that's already 160 million verb phrases.
+And if we stick them together in a sentence, right,
+160 million times 40,000, we get 6.4 trillion sentences.
+Right?
+And this is just by assuming those three rules and
+obviously lots of, , a large lexicon, but not too
+large.
+Remember we said that once you're 18, you've acquired about
+40,000 words.
+Here we've only assumed 14, 14,004.
+So this would just be a subset.
+So in reality, of course, also the grammar is much
+more complicated and doesn't contain only three rules.
+It will contain hundreds or maybe thousands of rules.
+So we can, , generate a really large number of
+sentences, even with a simple grammar.
+So that is why this is a nice modelling tool,
+because it accounts for the productivity, for the fact that
+we have this combinatorial power.
+, we can easily utter a sentence that nobody has
+uttered before.
+, we can take an existing sentence and add an
+adjective and create a new sentence that way and so
+on.
+So language is really very, very productive.
+So .
+There is another trick.
+So I've hopefully convinced you that we can generate lots
+and lots of sentences, even from a simple grammar.
+But can we generate infinitely many sentences?
+Or do people think.
+That would be even cooler, right?
+If there wasn't an actual limit, and then we would
+no longer be able to enumerate all the all the
+possible sentences.
+Do people think that's true?
+Infinitely many sentences.
+It's not with those rules, right?
+We have actually calculated the 6.4 trillion.
+And so that's not that's large but not infinite.
+However, if we add another type of rule, a so-called
+recursive rule.
+So if you've if you if you've done Haskell last
+semester, then you will have encountered recursion.
+So the claim here is that human language also contains
+recursion and a recursive rule.
+If we stick with this notation or context free grammar,
+notation would be a rule that has that allows
+the same rule to reoccur when it's applied.
+So this here would be an example of a of
+a recursive rule.
+Can anyone see why, assuming we have the same sentence
+rule that we had before?
+Why does it lead to recursion?
+Yeah.
+You have in the sense of a noun phrases verb
+phrase.
+And since you define the phrase, I work closely with
+work and that person has to go back to the
+verb place.
+And you have to not just keep going, keep up
+the sentence.
+Yeah, exactly.
+So you can turn the verb phrase into a sentence
+and the sentence into a verb phrase using this rule
+here.
+Sorry, no sentence rule here.
+These two rules together can, , alternate forever.
+And so you can make a.
+The sentence itself is not infinitely long, but you can
+make infinitely many sentences.
+And let's let's look at this in this example here.
+So we start here with the sentence rule S goes
+to NP.
+Then we apply this rule up here verb phrase goes
+to verb noun phrase and sentence.
+So this will see an example.
+This would be a subordinate sentence something I told
+Peter that I hated him.
+Something that.
+This would be the next sentence here.
+And then of course this sentence, by virtue of S
+goes to NP, can generate another verb phrase.
+And this verb phrase can then apply our rule up
+here again.
+Verb phrase goes to verb, noun phrase and sentence.
+And then this again.
+The sentence goes to noun phrase, verb phrase, and then
+this verb phrase again constitutes another sentence, and so on.
+At some point I need to stop speaking, right?
+But I can make the sentence as long as I
+would .
+And so this is called recursion.
+We can think of cases where .
+In.
+Simpler cases of recursion.
+For example, if we have a rule this a
+goes to a and b, then this would already be
+recursive, right?
+Because A goes to itself, and I don't even need
+another rule to.
+, to.
+Generate an infinitely long sequence.
+Right?
+So this case is a bit less frequent in language.
+In language you mostly have these cases, this case where
+there's two rules that alternate and, , form recursion that
+way.
+And how plausible is this?
+So let's look at an example.
+Does this actually occur.
+And this is , , yeah.
+So it's a rule that contains an entity that contains
+an example of itself.
+This is invertible.
+If you want to verbalise this this is what's going
+on.
+So this is a , a sentence that I've taken
+from the book by Steven Pinker.
+Words and rules.
+That is actually part of this is the reading for
+next week.
+And this book is quite old and the example is
+quite old.
+Nobody here remembers Bill Clinton, but he was a US
+president at some point, involved in lots of scandals.
+And here's a sentence about that.
+I think I'll tell you that I just read a
+news story that recounts that.
+Steven Brill reported that the press uncritically believed These kind
+of stars announcement that Linda Tripp testified to him, that
+Monica Lewinsky told Tripp that Bill Clinton told Vernon Jordan
+to advise Lewinsky not to testify to Starr, that she
+had sexual relationship with Clinton.
+Okay, so this is exactly so this is not a
+very elegant sentence, but it's definitely a possible sentence of
+English.
+And it has exactly the structure, right.
+We have a sentence that consists of a noun phrase
+and a verb phrase.
+Then the verb phrase contains a subordinate clause.
+So here, for example, I think I'll tell you that.
+And this is our subordinate clause.
+The story that this is a subordinate clause.
+Yeah.
+This is a bit more complicated because it's actually a
+noun phrase, but it's the same principle reported that.
+And then there's another sentence subordinate and so on.
+And if you count it there's actually 12 sentences.
+And actually this is sometimes attributed to Chomsky to having
+realised that there's this.
+Way of generating infinitely many sentences through recursion.
+But the principle is actually older and has been realised
+by things by people Galileo or Descartes.
+Humboldt.
+As I said, the sentences themselves are not infinitely long,
+but I can generate infinitely many sentences because I can
+always apply the rule one more time and make a
+longer sentence.
+Okay, and this is a very interesting fact that obviously
+is cognitively important.
+So it's something we'll come back to okay.
+Another short quiz.
+Okay.
+So.
+Let's actually skip this because I'm a bit short.
+In short, on time.
+Sorry.
+False alarm.
+, so let's think about this in terms of what
+it means from a cognitive point of view.
+Right.
+So we seem to have this unlimited expressive power where
+we can generate an unlimited number of sentences, and we
+can express things that nobody has said before and think,
+hopefully also express thoughts that nobody has thought before.
+And , so it's the words, but also the combinations
+and the words are in the lexicon.
+The combinations are in these grammar rules.
+And how does this, , how does this work out
+in cognitive terms?
+So you could argue that the words they live in
+memory and the rules are processes are forms of computation.
+Okay.
+If you remember in the first lecture we talked about
+mental representations and mental processes.
+So in this very simple story with just two components,
+you could say the words.
+They're the representations they live in, in a memory.
+They are stored.
+And the rules are the processes.
+They're sort of little algorithms, little computational procedures okay.
+And now of course we need to find out is
+this actually true.
+Are there these two mechanisms.
+Or maybe there's just a single mechanism that can do
+both things.
+And just on the surface it looks there's there's
+words and rules.
+And this is again something that we will return back
+to.
+Another interesting thing is how does this relate to the
+to the rest of the language system.
+Right.
+So we talked about the lexicon where the words live.
+We talked about morphology, which is , we didn't really
+talk about morphology, but morphology is also rules.
+And we talked about syntax which are particular rules.
+But of course these in itself are not very useful.
+They need to interface with our mouths and ears, right?
+So that we understand and generate language.
+And they need to interface with the rest of the
+cognitive systems system, where we understand where we have desires
+and beliefs and we express ideas and so on.
+So they need to interface with the semantics as well.
+So at the moment we've only talked about the middle,
+middle part here.
+And we'll come back to morphology actually in the next
+in the next lecture.
+Before we go here is one important distinction that I
+would quickly to get across.
+So , and it's sort of implicit in, in this
+idea here that, you know, linguists say we'll talk about
+words and rules where psychologists or cognitive scientists would think
+about the memory and the computation.
+And how does this actually work, , when we need
+to generate sentences or understand sentences.
+And this corresponds to the distinction between words as morphological
+objects, so as things that are composed out of different
+parts and words as the content of memory, a stretch
+of sounds that is memorised and would not be generated
+by a rule.
+And Pinker, as I said, reading for next week, calls
+this a list theme, right?
+It's basically, if you think of the lexicon in very
+simple terms as a list, then everything that is listed
+that is memorised would be a word.
+And sometimes the memorised chunks are smaller than words in
+the linguistic sense, sometimes are larger.
+So for example, if we think of suffixes or prefixes
+able or un or co, then these are probably
+, they need to be stored somewhere.
+So there would be list items in pinker sense, even
+though they're not words.
+Right?
+A linguist will tell you these are morphemes.
+They are not words, they're just parts of words.
+But we need to memorise them separately.
+Otherwise we couldn't use them in rules or things
+idioms.
+Piece of cake.
+Once in a blue moon.
+The last straw.
+These are things that don't mean anything literally, right?
+So a piece of cake means something is easy.
+It's not literally a piece of cake.
+You can't eat it.
+So presumably I need to store this as a string.
+Right?
+To remember the meaning of a piece of cake.
+Or last straw.
+And again, linguists would say, well, these are individual words.
+They're not they're not stored as a string.
+But a psychologist probably would add it to the list
+team and would say, this is stored as a string.
+Okay.
+So important that the words that we recognise linguistically, they're
+sometimes bigger or smaller than the words that we recognise
+in psychology.
+Okay, I'm out of time.
+This is just a summary of today's lecture.
+Thank you.
+Thank you.

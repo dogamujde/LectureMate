@@ -1,0 +1,4681 @@
+WEBVTT
+
+00:00:09.840 --> 00:00:11.120
+<v Speaker 0>Okay, let's get started.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:11.160 --> 00:00:12.560
+<v Speaker 0>Welcome to lecture nine.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:13.120 --> 00:00:15.560
+<v Speaker 0>Uh, we're going to talk about Bayesian modelling today.
+
+NOTE CONF {"raw":[48,100,100,100,100,100,100,100,100]}
+
+00:00:17.400 --> 00:00:19.960
+<v Speaker 0>So far in the course we've introduced a number of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:20.600 --> 00:00:25.680
+<v Speaker 0>approaches for building computational models of cognitive processes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:00:25.760 --> 00:00:30.320
+<v Speaker 0>Initially we saw rule based models, grammar based models.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:00:30.320 --> 00:00:34.840
+<v Speaker 0>For example, the, uh, the model that generates past tense
+
+NOTE CONF {"raw":[100,100,98,56,100,100,100,100,100,100]}
+
+00:00:34.840 --> 00:00:37.800
+<v Speaker 0>forms based on a lexicon and a set of simple
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:37.800 --> 00:00:38.240
+<v Speaker 0>rules.
+
+NOTE CONF {"raw":[100]}
+
+00:00:39.480 --> 00:00:42.760
+<v Speaker 0>Then later on, we looked at neural network models, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:42.760 --> 00:00:45.160
+<v Speaker 0>are in some sense on the other extreme.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:00:45.160 --> 00:00:50.720
+<v Speaker 0>They generate an output just by generalising from input patterns.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:51.120 --> 00:00:55.840
+<v Speaker 0>So they combine a powerful learning algorithm, very general learning
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:55.840 --> 00:00:58.560
+<v Speaker 0>algorithm with a lot of data essentially.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98]}
+
+00:00:59.450 --> 00:00:59.930
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:00:59.970 --> 00:01:02.890
+<v Speaker 0>Then last time we briefly looked at the role of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:02.890 --> 00:01:05.050
+<v Speaker 0>probability in learning.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:05.610 --> 00:01:08.970
+<v Speaker 0>And today we're going to generalise this and look at
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:01:08.970 --> 00:01:14.210
+<v Speaker 0>a framework that essentially combines symbolic aspects and sub symbolic
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,88,100]}
+
+00:01:14.210 --> 00:01:16.810
+<v Speaker 0>aspects, combines rules and probabilities.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:17.610 --> 00:01:20.450
+<v Speaker 0>And in particular we're going to look at a paradigm
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:20.450 --> 00:01:23.890
+<v Speaker 0>called Bayesian modelling, which been which has been popular over
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100,100,100,100]}
+
+00:01:23.890 --> 00:01:26.850
+<v Speaker 0>the last 10 or 15 years in cognitive modelling.
+
+NOTE CONF {"raw":[100,100,87,87,87,100,100,100,94]}
+
+00:01:28.850 --> 00:01:33.650
+<v Speaker 0>Today I'll introduce the foundations and I'll try to, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,91]}
+
+00:01:33.650 --> 00:01:35.810
+<v Speaker 0>to give you an intuition of what's going on in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:35.810 --> 00:01:36.570
+<v Speaker 0>Bayesian modelling.
+
+NOTE CONF {"raw":[100,91]}
+
+00:01:37.010 --> 00:01:39.650
+<v Speaker 0>Then in the next lecture on Thursday, we're going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:39.650 --> 00:01:42.050
+<v Speaker 0>look at one particular model in quite a lot of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:42.050 --> 00:01:42.570
+<v Speaker 0>detail.
+
+NOTE CONF {"raw":[100]}
+
+00:01:43.490 --> 00:01:48.690
+<v Speaker 0>And then we will return to probabilistic modelling also next
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,90,100,100]}
+
+00:01:48.690 --> 00:01:51.810
+<v Speaker 0>week when we look at other domains than language, when
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,69,100,100]}
+
+00:01:51.810 --> 00:01:54.890
+<v Speaker 0>we talk about decision making and biases in decision making
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,58,100,100]}
+
+00:01:54.890 --> 00:01:55.450
+<v Speaker 0>and so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:56.250 --> 00:01:56.490
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:01:56.530 --> 00:02:00.550
+<v Speaker 0>So if you haven't already, please, take a moment to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:00.550 --> 00:02:04.710
+<v Speaker 0>scan the QR code, which we'll need later on in
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100,100]}
+
+00:02:04.710 --> 00:02:05.310
+<v Speaker 0>the course.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:07.870 --> 00:02:10.869
+<v Speaker 0>So just give you a few seconds to do that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:22.790 --> 00:02:23.110
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[52]}
+
+00:02:25.110 --> 00:02:25.390
+<v Speaker 1>Wait.
+
+NOTE CONF {"raw":[72]}
+
+00:02:25.390 --> 00:02:25.910
+<v Speaker 1>Now.
+
+NOTE CONF {"raw":[82]}
+
+00:02:28.430 --> 00:02:29.390
+<v Speaker 0>Okay, so don't worry.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:29.390 --> 00:02:30.710
+<v Speaker 0>The QR code will be back.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:32.310 --> 00:02:38.670
+<v Speaker 0>And all right, so we'll introduce some fundamental concepts to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:38.670 --> 00:02:41.710
+<v Speaker 0>do with Bayesian modelling called posteriors and priors.
+
+NOTE CONF {"raw":[100,100,100,76,100,100,100,100]}
+
+00:02:42.510 --> 00:02:44.510
+<v Speaker 0>We'll introduce Bayes rule, which is sort of the main
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:02:44.510 --> 00:02:45.750
+<v Speaker 0>formula that we use.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:45.750 --> 00:02:48.630
+<v Speaker 0>And you might be familiar with that from probability.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:02:48.990 --> 00:02:51.150
+<v Speaker 0>If you've done some probability and then we'll look at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:51.150 --> 00:02:51.790
+<v Speaker 0>two examples.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:51.790 --> 00:02:52.990
+<v Speaker 0>These are not cognitive models.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:52.990 --> 00:02:57.070
+<v Speaker 0>They're just conceptual examples to do with reference resolution and
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100,100,100,100]}
+
+00:02:57.560 --> 00:02:58.760
+<v Speaker 0>simple decision making.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:59.120 --> 00:03:02.280
+<v Speaker 0>And then we'll introduce the concept of Bayesian update, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:02.280 --> 00:03:04.640
+<v Speaker 0>is what you do when your information changes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:03:05.360 --> 00:03:05.880
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:03:06.040 --> 00:03:12.520
+<v Speaker 0>Just to quickly recap, um, we have seen, uh, various
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:03:12.520 --> 00:03:17.960
+<v Speaker 0>ways in which during acquisition, in particular language acquisition, children
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:17.960 --> 00:03:20.880
+<v Speaker 0>are able to infer information from their environment.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,56,100]}
+
+00:03:21.160 --> 00:03:23.640
+<v Speaker 0>So here, for example, we have a speaker who says
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,91]}
+
+00:03:23.640 --> 00:03:24.440
+<v Speaker 0>three koalas.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:24.480 --> 00:03:28.840
+<v Speaker 0>And maybe there's also pictures or stuffed toys of koalas.
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100,100,100,100]}
+
+00:03:28.960 --> 00:03:32.720
+<v Speaker 0>The child initially doesn't understand, but then hopefully is able
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,88,100]}
+
+00:03:32.720 --> 00:03:35.600
+<v Speaker 0>to map this onto some sort of counting routine, say
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:03:36.640 --> 00:03:37.960
+<v Speaker 0>when they're learning to count.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:38.080 --> 00:03:40.560
+<v Speaker 0>And we'll come back to that in the next lecture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:41.040 --> 00:03:44.840
+<v Speaker 0>So in general, they observe an input and infer the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:44.840 --> 00:03:46.560
+<v Speaker 0>underlying cognitive technology.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:46.600 --> 00:03:51.600
+<v Speaker 0>Be it language, be it counting, be it certain other
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:03:51.600 --> 00:03:53.160
+<v Speaker 0>visual concepts, and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:53.160 --> 00:03:56.240
+<v Speaker 0>We'll talk about concepts in general next week as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:56.860 --> 00:04:00.180
+<v Speaker 0>So in this case, I listen to speech and infer
+
+NOTE CONF {"raw":[100,100,100,100,98,86,100,100,100,100]}
+
+00:04:00.180 --> 00:04:01.300
+<v Speaker 0>the underlying words.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:02.020 --> 00:04:04.060
+<v Speaker 0>And more generally, you can think of this as an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:04.060 --> 00:04:04.820
+<v Speaker 0>experiment.
+
+NOTE CONF {"raw":[100]}
+
+00:04:04.820 --> 00:04:07.460
+<v Speaker 0>You start with a set of beliefs and then you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:07.460 --> 00:04:10.260
+<v Speaker 0>observe some evidence, some data, and use this to update
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:10.260 --> 00:04:10.980
+<v Speaker 0>your beliefs.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:11.100 --> 00:04:14.780
+<v Speaker 0>And this sort of constant process of updating is how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:14.780 --> 00:04:15.940
+<v Speaker 0>we can model learning.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:16.500 --> 00:04:19.060
+<v Speaker 0>Last time we've already looked at a particular type of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:19.060 --> 00:04:19.739
+<v Speaker 0>probabilities.
+
+NOTE CONF {"raw":[100]}
+
+00:04:19.739 --> 00:04:24.820
+<v Speaker 0>Transitional probabilities, which is a transitional probability, is the probability
+
+NOTE CONF {"raw":[100,100,100,100,100,76,100,100,99,100]}
+
+00:04:24.820 --> 00:04:28.060
+<v Speaker 0>of a word given the previous word, or in general,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:28.060 --> 00:04:31.740
+<v Speaker 0>is the probability of an event y conditioned on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:31.740 --> 00:04:35.260
+<v Speaker 0>existence or occurrence of another event x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:36.060 --> 00:04:40.380
+<v Speaker 0>And today we will generalise this and look at what's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,91]}
+
+00:04:40.380 --> 00:04:41.900
+<v Speaker 0>called Bayesian belief updates.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:43.980 --> 00:04:46.980
+<v Speaker 0>Okay, so we'll start with a very simple experiment.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:04:48.700 --> 00:04:50.140
+<v Speaker 0>Here's a mysterious box.
+
+NOTE CONF {"raw":[92,100,100,100]}
+
+00:04:50.660 --> 00:04:53.420
+<v Speaker 0>And the idea is for you to guess what's in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:53.420 --> 00:04:54.020
+<v Speaker 0>the box.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:54.020 --> 00:04:56.830
+<v Speaker 0>And you can do this on on wall club here.
+
+NOTE CONF {"raw":[100,100,100,100,100,98,98,100,95,100]}
+
+00:05:01.470 --> 00:05:05.430
+<v Speaker 0>So, uh, you also given the dimensions of the box.
+
+NOTE CONF {"raw":[100,69,100,100,100,100,100,100,100,100]}
+
+00:05:05.670 --> 00:05:09.110
+<v Speaker 0>Uh, 15 by 22 by eight centimetres.
+
+NOTE CONF {"raw":[87,100,100,100,100,90,90]}
+
+00:05:09.350 --> 00:05:13.470
+<v Speaker 0>Here's another picture if you want to see the box
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:13.470 --> 00:05:13.910
+<v Speaker 0>again.
+
+NOTE CONF {"raw":[100]}
+
+00:05:14.950 --> 00:05:15.550
+<v Speaker 0>And.
+
+NOTE CONF {"raw":[100]}
+
+00:05:15.990 --> 00:05:16.470
+<v Speaker 0>Oops.
+
+NOTE CONF {"raw":[95]}
+
+00:05:17.390 --> 00:05:18.230
+<v Speaker 0>So sorry.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:19.830 --> 00:05:20.310
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[97]}
+
+00:05:20.310 --> 00:05:20.630
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[98]}
+
+00:05:20.670 --> 00:05:21.550
+<v Speaker 0>Please just vote.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:21.590 --> 00:05:22.910
+<v Speaker 0>What do you think is in the box?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:36.990 --> 00:05:39.270
+<v Speaker 1>I think that's.
+
+NOTE CONF {"raw":[42,31,17]}
+
+00:05:42.670 --> 00:05:42.790
+<v Speaker 1>What?
+
+NOTE CONF {"raw":[52]}
+
+00:05:42.790 --> 00:05:42.990
+<v Speaker 1>This.
+
+NOTE CONF {"raw":[32]}
+
+00:05:47.790 --> 00:05:47.990
+<v Speaker 1>Is.
+
+NOTE CONF {"raw":[60]}
+
+00:05:50.310 --> 00:05:50.710
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[79]}
+
+00:05:52.230 --> 00:05:52.590
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[91]}
+
+00:05:52.990 --> 00:05:53.270
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[56]}
+
+00:05:54.770 --> 00:05:54.970
+<v Speaker 1>So.
+
+NOTE CONF {"raw":[38]}
+
+00:05:57.770 --> 00:05:58.530
+<v Speaker 1>I was like.
+
+NOTE CONF {"raw":[99,96,96]}
+
+00:05:59.690 --> 00:06:02.530
+<v Speaker 0>Okay, give you another 30s.
+
+NOTE CONF {"raw":[85,100,100,100,100]}
+
+00:06:10.610 --> 00:06:11.690
+<v Speaker 0>Okay, let's have a look.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:14.690 --> 00:06:15.090
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:06:15.130 --> 00:06:18.970
+<v Speaker 0>So you can see, well, it's pretty evenly distributed.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:20.970 --> 00:06:23.130
+<v Speaker 0>Some people think it's a book maybe candy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:23.530 --> 00:06:24.890
+<v Speaker 0>Hope abstract noun.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:24.890 --> 00:06:26.810
+<v Speaker 0>I'm not quite sure why this is here.
+
+NOTE CONF {"raw":[67,100,100,100,100,100,100,100]}
+
+00:06:27.210 --> 00:06:28.050
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[94]}
+
+00:06:28.090 --> 00:06:31.130
+<v Speaker 0>Schrodinger's cat is also an abstract concept.
+
+NOTE CONF {"raw":[85,100,89,100,100,100,100]}
+
+00:06:31.170 --> 00:06:35.850
+<v Speaker 0>Smaller box seems to be popular, but in the absence
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:06:35.850 --> 00:06:39.090
+<v Speaker 0>of any more information other than the size and maybe
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:39.130 --> 00:06:42.010
+<v Speaker 0>what the box looks like, it's really hard to guess.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:42.450 --> 00:06:48.690
+<v Speaker 0>So this, uh, state of absence of information, or sometimes
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:06:48.690 --> 00:06:49.970
+<v Speaker 0>you have some information.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:49.970 --> 00:06:52.450
+<v Speaker 0>You know that, for example, something really big cannot be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:06:52.450 --> 00:06:53.050
+<v Speaker 0>in the box.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:53.420 --> 00:06:54.700
+<v Speaker 0>This is called a prior.
+
+NOTE CONF {"raw":[100,100,100,86,100]}
+
+00:06:54.860 --> 00:06:58.140
+<v Speaker 0>So in the absence of data or evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:58.420 --> 00:06:59.700
+<v Speaker 0>What can you assume?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:59.900 --> 00:07:01.740
+<v Speaker 0>This is called a prior.
+
+NOTE CONF {"raw":[100,100,100,97,100]}
+
+00:07:02.300 --> 00:07:05.380
+<v Speaker 0>And now let's assume that you actually get some more
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:07:05.380 --> 00:07:06.140
+<v Speaker 0>information.
+
+NOTE CONF {"raw":[100]}
+
+00:07:07.580 --> 00:07:08.140
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:07:11.060 --> 00:07:14.260
+<v Speaker 0>We can draw this as a distribution right where you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:14.260 --> 00:07:16.900
+<v Speaker 0>have your hypotheses book can be carried and so on.
+
+NOTE CONF {"raw":[100,100,93,100,68,68,68,100,100,100]}
+
+00:07:16.900 --> 00:07:20.020
+<v Speaker 0>And the x axis and the probability which we'll call
+
+NOTE CONF {"raw":[71,100,100,100,100,100,100,100,100,100]}
+
+00:07:20.020 --> 00:07:22.740
+<v Speaker 0>prior probability on the y axis.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:24.460 --> 00:07:28.820
+<v Speaker 0>And now let's say we want to get some more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:29.260 --> 00:07:31.460
+<v Speaker 0>evidence some more information about the box.
+
+NOTE CONF {"raw":[100,87,100,100,100,97,100]}
+
+00:07:31.780 --> 00:07:36.340
+<v Speaker 0>So for example we shake it and there's a does
+
+NOTE CONF {"raw":[100,100,100,100,99,100,100,100,100,100]}
+
+00:07:36.340 --> 00:07:37.300
+<v Speaker 0>this even work here.
+
+NOTE CONF {"raw":[98,100,100,100]}
+
+00:07:38.020 --> 00:07:39.420
+<v Speaker 0>There's a little video here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:40.940 --> 00:07:41.420
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:42.900 --> 00:07:46.060
+<v Speaker 0>So this is actually my colleague Frank Mollica.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:46.860 --> 00:07:47.820
+<v Speaker 2>Shaking the box.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:52.920 --> 00:07:53.400
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:53.520 --> 00:07:54.280
+<v Speaker 0>That's enough.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:55.640 --> 00:07:56.320
+<v Speaker 0>And.
+
+NOTE CONF {"raw":[100]}
+
+00:07:58.400 --> 00:07:59.800
+<v Speaker 0>Now you get a vote again.
+
+NOTE CONF {"raw":[100,99,100,88,100,100]}
+
+00:08:00.480 --> 00:08:07.400
+<v Speaker 0>Okay, so we have this new evidence obtained by providing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:07.720 --> 00:08:09.160
+<v Speaker 0>by doing a small experiment.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:09.160 --> 00:08:10.040
+<v Speaker 0>Checking the box.
+
+NOTE CONF {"raw":[95,100,100]}
+
+00:08:10.960 --> 00:08:13.240
+<v Speaker 0>What do you think is in the box now?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:13.320 --> 00:08:14.960
+<v Speaker 0>So please vote again.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:17.720 --> 00:08:18.120
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[78]}
+
+00:08:20.040 --> 00:08:20.360
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[94]}
+
+00:08:22.480 --> 00:08:22.720
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[42]}
+
+00:08:31.200 --> 00:08:31.480
+<v Speaker 1>So.
+
+NOTE CONF {"raw":[48]}
+
+00:08:37.159 --> 00:08:37.520
+<v Speaker 1>I think.
+
+NOTE CONF {"raw":[36,32]}
+
+00:08:40.039 --> 00:08:40.479
+<v Speaker 1>It's okay.
+
+NOTE CONF {"raw":[27,72]}
+
+00:08:46.080 --> 00:08:47.240
+<v Speaker 0>Okay, let's have a look.
+
+NOTE CONF {"raw":[98,100,100,100,100]}
+
+00:08:48.920 --> 00:08:49.320
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:49.360 --> 00:08:55.370
+<v Speaker 0>So Candy is now suddenly very, very plausible things like
+
+NOTE CONF {"raw":[100,95,100,100,100,94,100,100,100,100]}
+
+00:08:55.410 --> 00:08:58.010
+<v Speaker 0>a scarf maybe wouldn't make that sort of noise.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:58.050 --> 00:09:01.970
+<v Speaker 0>A book maybe would make a slightly different noise, a
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:09:01.970 --> 00:09:04.650
+<v Speaker 0>smaller box maybe would make a similar noise, depending on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:04.650 --> 00:09:05.210
+<v Speaker 0>its size.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:05.810 --> 00:09:08.450
+<v Speaker 0>And nothing definitely can be ruled out, right, because of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,100,100]}
+
+00:09:08.450 --> 00:09:09.730
+<v Speaker 0>the noise and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:10.010 --> 00:09:13.250
+<v Speaker 0>So the probability distribution, if you look at this as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:13.250 --> 00:09:16.890
+<v Speaker 0>a probability distribution, has changed quite dramatically based on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:16.890 --> 00:09:17.490
+<v Speaker 0>evidence.
+
+NOTE CONF {"raw":[100]}
+
+00:09:17.730 --> 00:09:21.650
+<v Speaker 0>And this is this new distribution is called the posterior
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:21.650 --> 00:09:22.530
+<v Speaker 0>distribution.
+
+NOTE CONF {"raw":[100]}
+
+00:09:23.050 --> 00:09:24.330
+<v Speaker 0>And we can compare.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:24.490 --> 00:09:27.850
+<v Speaker 0>Let's see if this actually works okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:29.010 --> 00:09:30.450
+<v Speaker 0>Not use this feature before okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:30.490 --> 00:09:34.610
+<v Speaker 0>So you can see how your distribution has changed from
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:34.610 --> 00:09:41.490
+<v Speaker 0>initially relatively evenly distributed across the different options to 68%
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100,100]}
+
+00:09:41.490 --> 00:09:43.890
+<v Speaker 0>candy okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:43.930 --> 00:09:47.570
+<v Speaker 0>So let's try to formulate this slightly more mathematically.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:09:48.090 --> 00:09:50.580
+<v Speaker 0>So what we've seen is we now have a new
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:51.060 --> 00:09:53.580
+<v Speaker 0>distribution called the posterior distribution.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:53.820 --> 00:09:55.820
+<v Speaker 0>This is this is not your distribution.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:55.820 --> 00:09:57.020
+<v Speaker 0>It's just one I made up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:57.700 --> 00:10:02.140
+<v Speaker 0>And the important thing is that the prior distribution green
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:02.820 --> 00:10:03.420
+<v Speaker 0>changes.
+
+NOTE CONF {"raw":[100]}
+
+00:10:03.420 --> 00:10:06.020
+<v Speaker 0>Once you have the evidence and you get the posterior
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:06.020 --> 00:10:07.220
+<v Speaker 0>distribution in red.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:07.700 --> 00:10:08.100
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:10:08.140 --> 00:10:13.100
+<v Speaker 0>The the set of hypotheses that called hypothesis, so-called hypothesis
+
+NOTE CONF {"raw":[100,100,100,100,100,60,98,92,100,100]}
+
+00:10:13.100 --> 00:10:14.820
+<v Speaker 0>space remains the same.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:15.060 --> 00:10:18.100
+<v Speaker 0>But the probability is assigned to these hypotheses, i.e. the
+
+NOTE CONF {"raw":[100,100,99,99,100,100,100,100,60,100]}
+
+00:10:18.100 --> 00:10:20.180
+<v Speaker 0>distribution changes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:21.540 --> 00:10:25.020
+<v Speaker 0>And mathematically we can express this in a simple formula
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:25.340 --> 00:10:27.780
+<v Speaker 0>called Bayes rule or Bayes theorem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:28.820 --> 00:10:33.620
+<v Speaker 0>Um, if we have the probability of a hypothesis h
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100,100,100,100]}
+
+00:10:33.900 --> 00:10:37.140
+<v Speaker 0>given some data D and data is any kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:37.140 --> 00:10:40.340
+<v Speaker 0>information you can get regarding your hypotheses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,55]}
+
+00:10:40.340 --> 00:10:43.100
+<v Speaker 0>So in this case, we shook the the box and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:43.500 --> 00:10:44.980
+<v Speaker 0>we heard a certain noise.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:45.100 --> 00:10:46.460
+<v Speaker 0>So that would be our data.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:46.660 --> 00:10:48.680
+<v Speaker 0>So the probability of the hypothesis Hypotheses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96]}
+
+00:10:48.960 --> 00:10:50.480
+<v Speaker 0>Say book or candy?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:50.840 --> 00:10:54.360
+<v Speaker 0>Given your data, that's p of h given d, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:54.360 --> 00:10:56.680
+<v Speaker 0>this can be computed as the probability of the data
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:56.720 --> 00:11:01.960
+<v Speaker 0>given the hypothesis times the overall probability of the hypothesis.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:02.240 --> 00:11:05.040
+<v Speaker 0>This is called the prior probability, and this is called
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:05.040 --> 00:11:09.120
+<v Speaker 0>the likelihood divided by the probability of d the probability
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:11:09.120 --> 00:11:09.760
+<v Speaker 0>of data.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:10.920 --> 00:11:11.280
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[97]}
+
+00:11:11.320 --> 00:11:16.000
+<v Speaker 0>So this term here p of h given d is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:16.000 --> 00:11:17.160
+<v Speaker 0>called the posterior.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:17.520 --> 00:11:19.880
+<v Speaker 0>So what do you believe about the hypothesis once you've
+
+NOTE CONF {"raw":[100,100,80,100,100,100,100,100,100,100]}
+
+00:11:19.880 --> 00:11:20.640
+<v Speaker 0>seen the data.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:20.960 --> 00:11:24.720
+<v Speaker 0>This inverse term p of d given h.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:24.920 --> 00:11:28.800
+<v Speaker 0>So that's the probability that if your hypothesis is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:28.800 --> 00:11:30.320
+<v Speaker 0>So there's really candy in the box.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:30.400 --> 00:11:32.120
+<v Speaker 0>It has generated this noise.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:32.120 --> 00:11:35.960
+<v Speaker 0>In this case it's probably fairly highly highly probable that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:36.400 --> 00:11:38.320
+<v Speaker 0>it has generated this clicking noise.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:39.120 --> 00:11:41.000
+<v Speaker 0>If there's candy in the box but if the box
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:41.000 --> 00:11:43.960
+<v Speaker 0>is empty then the probability that it's generating this noise
+
+NOTE CONF {"raw":[100,100,100,100,100,83,74,100,100,100]}
+
+00:11:44.000 --> 00:11:45.200
+<v Speaker 0>is zero, right?
+
+NOTE CONF {"raw":[100,100,89]}
+
+00:11:45.240 --> 00:11:48.810
+<v Speaker 0>So this is the probability of the data given the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:48.810 --> 00:11:51.690
+<v Speaker 0>hypothesis, also known as likelihood.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:52.210 --> 00:11:55.970
+<v Speaker 0>And this is the probability of the hypothesis a priori
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:56.010 --> 00:11:57.610
+<v Speaker 0>without any information.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:57.730 --> 00:12:00.570
+<v Speaker 0>This is called the prior probability or prior beliefs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:12:00.850 --> 00:12:02.970
+<v Speaker 0>And this was your initial distribution, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,82]}
+
+00:12:03.010 --> 00:12:07.610
+<v Speaker 0>When I didn't tell you much about, uh, about the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,76,100,100]}
+
+00:12:07.610 --> 00:12:12.170
+<v Speaker 0>hypothesis, then you could essentially guess that certain things are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:12.290 --> 00:12:15.570
+<v Speaker 0>a priori without any evidence that plausible or implausible.
+
+NOTE CONF {"raw":[100,100,100,100,100,83,100,100,100]}
+
+00:12:15.890 --> 00:12:20.650
+<v Speaker 0>But other than that, you didn't have enough information, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:20.650 --> 00:12:23.290
+<v Speaker 0>then the probability of D, the probability of the data
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:23.290 --> 00:12:27.210
+<v Speaker 0>or the evidence, uh, this is how likely it is
+
+NOTE CONF {"raw":[100,100,100,47,100,100,100,100,100,100]}
+
+00:12:27.210 --> 00:12:30.930
+<v Speaker 0>to hear this noise independent of the hypothesis P of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:30.930 --> 00:12:35.650
+<v Speaker 0>D is actually not so important because it's constant, right?
+
+NOTE CONF {"raw":[68,100,100,100,100,100,100,100,100,100]}
+
+00:12:35.690 --> 00:12:37.770
+<v Speaker 0>It's not dependent on the hypothesis.
+
+NOTE CONF {"raw":[100,100,98,100,100,100]}
+
+00:12:38.090 --> 00:12:41.530
+<v Speaker 0>So the important terms here are the likelihood and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:41.530 --> 00:12:42.010
+<v Speaker 0>prior.
+
+NOTE CONF {"raw":[100]}
+
+00:12:42.650 --> 00:12:42.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:42.970 --> 00:12:44.650
+<v Speaker 0>So this is all pretty abstract.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:44.650 --> 00:12:46.490
+<v Speaker 0>And what is this actually good for.
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100]}
+
+00:12:46.870 --> 00:12:51.150
+<v Speaker 0>Let's do a small calculation to.
+
+NOTE CONF {"raw":[93,100,100,100,100,100]}
+
+00:12:51.870 --> 00:12:53.830
+<v Speaker 0>Oh, sorry, I forgot one other bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:54.430 --> 00:12:56.270
+<v Speaker 0>So the P of D.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:56.310 --> 00:12:59.470
+<v Speaker 0>If you want to compute this, you can actually break
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:59.470 --> 00:13:00.390
+<v Speaker 0>it down as follows.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:00.390 --> 00:13:03.510
+<v Speaker 0>You can break it down by summing over all possible
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:03.510 --> 00:13:07.350
+<v Speaker 0>hypotheses and taking the likelihoods and the price of those
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:07.350 --> 00:13:10.750
+<v Speaker 0>hypotheses, and computing the posteriors.
+
+NOTE CONF {"raw":[100,100,100,95,100]}
+
+00:13:10.750 --> 00:13:13.510
+<v Speaker 0>And then if you add them up across all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:13.510 --> 00:13:14.310
+<v Speaker 0>hypotheses.
+
+NOTE CONF {"raw":[100]}
+
+00:13:14.590 --> 00:13:16.950
+<v Speaker 0>So in this case it would be can be a
+
+NOTE CONF {"raw":[100,100,100,100,100,82,100,100,100,100]}
+
+00:13:16.950 --> 00:13:19.110
+<v Speaker 0>smaller box, nothing, and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:19.470 --> 00:13:20.750
+<v Speaker 0>Then you get P of D.
+
+NOTE CONF {"raw":[100,100,100,100,100,98]}
+
+00:13:21.550 --> 00:13:24.910
+<v Speaker 0>However what people sometimes do is they just ignore p
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:24.910 --> 00:13:28.670
+<v Speaker 0>of T and then this becomes a proportional to rather
+
+NOTE CONF {"raw":[100,60,100,100,100,100,100,100,100,100]}
+
+00:13:28.670 --> 00:13:32.310
+<v Speaker 0>than equal to, because often we only care about the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:32.310 --> 00:13:33.710
+<v Speaker 0>most likely hypothesis.
+
+NOTE CONF {"raw":[100,100,98]}
+
+00:13:33.990 --> 00:13:37.230
+<v Speaker 0>We don't care about the probability of that hypothesis.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:37.590 --> 00:13:39.950
+<v Speaker 0>And then of course, dividing by a constant p of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:39.950 --> 00:13:42.830
+<v Speaker 0>t is the same for all hypotheses doesn't make a
+
+NOTE CONF {"raw":[76,100,100,100,100,100,100,100,100,100]}
+
+00:13:42.830 --> 00:13:43.350
+<v Speaker 0>difference.
+
+NOTE CONF {"raw":[100]}
+
+00:13:43.350 --> 00:13:43.870
+<v Speaker 0>We'll see.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:43.910 --> 00:13:45.190
+<v Speaker 0>We'll see an example of that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:47.280 --> 00:13:48.080
+<v Speaker 0>Next time.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:48.800 --> 00:13:49.200
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:49.240 --> 00:13:50.880
+<v Speaker 0>So now we have everything we need.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:51.240 --> 00:13:52.000
+<v Speaker 0>Bayes rule.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:52.800 --> 00:13:56.320
+<v Speaker 0>And then this simple formula, which allows us to compute
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:56.320 --> 00:13:57.600
+<v Speaker 0>the probability of the data.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:58.000 --> 00:13:59.840
+<v Speaker 0>This is also called marginalisation.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:00.480 --> 00:14:01.360
+<v Speaker 0>This process.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:01.880 --> 00:14:05.520
+<v Speaker 0>And this can be a problem if the hypothesis space
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:05.520 --> 00:14:06.280
+<v Speaker 0>is really big.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:06.800 --> 00:14:09.200
+<v Speaker 0>You can have an infinite hypothesis space for example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:09.200 --> 00:14:12.440
+<v Speaker 0>Then we have a problem with computing p of d.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,65]}
+
+00:14:13.880 --> 00:14:16.680
+<v Speaker 0>But in this case it's in the example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:16.680 --> 00:14:17.840
+<v Speaker 0>We'll see it straightforward.
+
+NOTE CONF {"raw":[100,100,72,97]}
+
+00:14:18.240 --> 00:14:18.520
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:18.560 --> 00:14:19.720
+<v Speaker 0>Let's look at this example.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:19.720 --> 00:14:20.880
+<v Speaker 0>Reference resolution.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:22.800 --> 00:14:27.720
+<v Speaker 0>Reference is when people refer to something with language right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,94]}
+
+00:14:27.760 --> 00:14:29.920
+<v Speaker 0>So if I say the dog then I can point
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:29.920 --> 00:14:30.400
+<v Speaker 0>to a dog.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:30.400 --> 00:14:34.200
+<v Speaker 0>I can refer to a particular dog or with a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:34.200 --> 00:14:34.760
+<v Speaker 0>pronoun.
+
+NOTE CONF {"raw":[100]}
+
+00:14:34.760 --> 00:14:36.240
+<v Speaker 0>Pronouns also have reference.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:36.240 --> 00:14:39.120
+<v Speaker 0>If I say he or she, then I refer to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:39.160 --> 00:14:41.160
+<v Speaker 0>a person I've talked about earlier.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:41.960 --> 00:14:43.680
+<v Speaker 0>So this process is called reference.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:43.680 --> 00:14:48.140
+<v Speaker 0>And here we have a toy example where we will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:48.140 --> 00:14:51.100
+<v Speaker 0>see that the kind of inference that we can make
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:51.100 --> 00:14:55.940
+<v Speaker 0>using Bayes rule allows us to formalise this problem of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:56.300 --> 00:14:58.100
+<v Speaker 0>reference resolution.
+
+NOTE CONF {"raw":[98,100]}
+
+00:14:58.380 --> 00:14:59.940
+<v Speaker 0>Okay, let's assume we have a game.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100]}
+
+00:15:01.300 --> 00:15:04.740
+<v Speaker 0>You have these three smileys here, and you are allowed
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,90,90]}
+
+00:15:04.740 --> 00:15:06.900
+<v Speaker 0>to choose a single word to refer to one of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:06.900 --> 00:15:08.700
+<v Speaker 0>the smileys, let's say the middle one.
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100]}
+
+00:15:09.180 --> 00:15:11.340
+<v Speaker 0>So how would you how would you do this?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:11.380 --> 00:15:15.700
+<v Speaker 0>How would you pick out a particular smiley so that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:16.380 --> 00:15:17.060
+<v Speaker 0>the hearer.
+
+NOTE CONF {"raw":[100,95]}
+
+00:15:17.300 --> 00:15:17.580
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:15:17.580 --> 00:15:23.340
+<v Speaker 0>You're talking to someone, you say for example, glasses so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:23.340 --> 00:15:27.220
+<v Speaker 0>that the hero can pick out a particular smiley easily.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:27.980 --> 00:15:28.340
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[99]}
+
+00:15:28.380 --> 00:15:29.420
+<v Speaker 0>Unambiguously.
+
+NOTE CONF {"raw":[100]}
+
+00:15:31.300 --> 00:15:32.420
+<v Speaker 0>So that is the game.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:32.420 --> 00:15:36.620
+<v Speaker 0>And obviously in in reality you won't have smileys.
+
+NOTE CONF {"raw":[100,100,76,100,100,100,98,100,100]}
+
+00:15:36.620 --> 00:15:38.820
+<v Speaker 0>You will have more complicated objects, you will have lots
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:15:38.820 --> 00:15:41.180
+<v Speaker 0>of different objects, but still you have the problem of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:41.180 --> 00:15:43.990
+<v Speaker 0>referring to the objects, right?
+
+NOTE CONF {"raw":[100,100,100,100,91]}
+
+00:15:44.270 --> 00:15:46.550
+<v Speaker 0>If I refer to this telephone, it's easy, I say.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:46.590 --> 00:15:47.070
+<v Speaker 0>Telephone.
+
+NOTE CONF {"raw":[100]}
+
+00:15:47.070 --> 00:15:47.870
+<v Speaker 0>There's only one.
+
+NOTE CONF {"raw":[99,100,100]}
+
+00:15:48.070 --> 00:15:50.030
+<v Speaker 0>If I want to refer to a student in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:50.030 --> 00:15:50.390
+<v Speaker 0>room.
+
+NOTE CONF {"raw":[100]}
+
+00:15:50.710 --> 00:15:52.830
+<v Speaker 0>There's a lot of students in the room, so I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:52.830 --> 00:15:54.950
+<v Speaker 0>need to be much more specific with my reference.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:55.230 --> 00:15:56.950
+<v Speaker 0>Okay, so that's what's going on here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:59.670 --> 00:16:02.470
+<v Speaker 0>Okay, so and if we think about this in Bayesian
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:02.510 --> 00:16:08.150
+<v Speaker 0>terms a priori, if I say a word, then the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:08.150 --> 00:16:10.630
+<v Speaker 0>listener can assume that all the smileys, all the three
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:16:10.630 --> 00:16:12.830
+<v Speaker 0>smileys are equally likely, right?
+
+NOTE CONF {"raw":[100,100,100,100,94]}
+
+00:16:12.870 --> 00:16:15.630
+<v Speaker 0>There's no reason to assume that I'm more likely to
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:16:15.630 --> 00:16:17.510
+<v Speaker 0>refer to the middle one, as opposed to the left
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:17.510 --> 00:16:18.310
+<v Speaker 0>or the right one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:18.590 --> 00:16:24.750
+<v Speaker 0>So we have a prior that makes everything equally likely.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:25.190 --> 00:16:29.870
+<v Speaker 0>However, once I say my word, I've provided evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:30.230 --> 00:16:32.190
+<v Speaker 0>So we treat this word as evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:32.190 --> 00:16:34.150
+<v Speaker 0>Just like when we shook the box.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:34.150 --> 00:16:38.070
+<v Speaker 0>We took this as evidence regarding the information of what's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:38.070 --> 00:16:38.750
+<v Speaker 0>in the box.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:40.750 --> 00:16:41.150
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[70]}
+
+00:16:41.190 --> 00:16:45.410
+<v Speaker 0>So if you draw these bar charts again, then here
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100,100,100,100]}
+
+00:16:45.410 --> 00:16:46.530
+<v Speaker 0>is what's going on.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:47.010 --> 00:16:49.490
+<v Speaker 0>So let's assume the words that you can utter is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:49.490 --> 00:16:52.250
+<v Speaker 0>glasses smiling or hat.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:53.170 --> 00:16:53.490
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:53.530 --> 00:16:56.730
+<v Speaker 0>So if you you start with the same prior in
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:16:56.730 --> 00:17:02.050
+<v Speaker 0>each case left centre right smiley all equally likely.
+
+NOTE CONF {"raw":[100,100,100,92,100,100,100,100,100]}
+
+00:17:02.050 --> 00:17:03.930
+<v Speaker 0>So a probability of a third.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:04.890 --> 00:17:06.850
+<v Speaker 0>And now you have your evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:06.850 --> 00:17:08.130
+<v Speaker 0>Let's say you say glasses.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:09.050 --> 00:17:11.050
+<v Speaker 0>This smiley doesn't have any glasses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:11.170 --> 00:17:15.010
+<v Speaker 0>So the posterior probability of that is going to be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:15.010 --> 00:17:15.449
+<v Speaker 0>zero.
+
+NOTE CONF {"raw":[100]}
+
+00:17:15.610 --> 00:17:15.850
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[95]}
+
+00:17:15.890 --> 00:17:19.970
+<v Speaker 0>Because the likelihood that I say glasses, given that the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:19.970 --> 00:17:22.890
+<v Speaker 0>smiley is doesn't wear any glasses is zero.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100]}
+
+00:17:23.410 --> 00:17:27.610
+<v Speaker 0>And these two are equally likely because both smileys wear
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:17:27.650 --> 00:17:28.050
+<v Speaker 0>glasses.
+
+NOTE CONF {"raw":[100]}
+
+00:17:28.050 --> 00:17:29.890
+<v Speaker 0>So that's the probability of 0.5.
+
+NOTE CONF {"raw":[100,100,100,100,100,96]}
+
+00:17:31.850 --> 00:17:34.650
+<v Speaker 0>Intuitively, if I say smiling well all the smileys are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:34.650 --> 00:17:37.170
+<v Speaker 0>smiling, so that is not very informative.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:37.210 --> 00:17:39.330
+<v Speaker 0>My probability distribution remains the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:39.730 --> 00:17:41.540
+<v Speaker 0>All three of them are equally likely.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:41.540 --> 00:17:44.380
+<v Speaker 0>If I say hat right, only the right one wears
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:44.380 --> 00:17:47.980
+<v Speaker 0>a hat, so the left one and the centre one,
+
+NOTE CONF {"raw":[63,100,100,100,100,100,100,100,82,100]}
+
+00:17:48.820 --> 00:17:51.500
+<v Speaker 0>the probability becomes zero because this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:53.780 --> 00:18:00.260
+<v Speaker 0>The the data hat is impossible given the hypothesis left
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:00.260 --> 00:18:00.860
+<v Speaker 0>or centre.
+
+NOTE CONF {"raw":[100,89]}
+
+00:18:01.180 --> 00:18:04.620
+<v Speaker 0>But the right smile is the only one with the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,72]}
+
+00:18:04.620 --> 00:18:06.460
+<v Speaker 0>hat, so the probability becomes one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:06.900 --> 00:18:08.780
+<v Speaker 0>So this is the intuition that's going on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:08.780 --> 00:18:10.980
+<v Speaker 0>And it's a similar intuition to the one with a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,70]}
+
+00:18:10.980 --> 00:18:11.300
+<v Speaker 0>box.
+
+NOTE CONF {"raw":[100]}
+
+00:18:11.340 --> 00:18:11.540
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:18:11.580 --> 00:18:15.460
+<v Speaker 0>We start with a probability distribution that is there in
+
+NOTE CONF {"raw":[100,100,100,49,100,100,100,100,100,100]}
+
+00:18:15.460 --> 00:18:16.820
+<v Speaker 0>the absence of any evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:16.820 --> 00:18:19.220
+<v Speaker 0>And here we just assume everything is equally likely.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:20.900 --> 00:18:24.780
+<v Speaker 0>Then we get some data, some information, some evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:25.140 --> 00:18:26.940
+<v Speaker 0>This is just a single word you're saying.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,63,100]}
+
+00:18:26.940 --> 00:18:28.820
+<v Speaker 0>Glasses smiling or hat.
+
+NOTE CONF {"raw":[100,100,100,94]}
+
+00:18:29.300 --> 00:18:31.820
+<v Speaker 0>And based on that, we can now figure out which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:31.820 --> 00:18:33.500
+<v Speaker 0>of the smileys is being referred to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:34.580 --> 00:18:35.060
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:35.180 --> 00:18:37.500
+<v Speaker 0>So we go from prior to posterior.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:38.020 --> 00:18:39.980
+<v Speaker 0>And how do we go from prior to posterior.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:40.110 --> 00:18:41.950
+<v Speaker 0>Well, we have our little formula here, right?
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,87]}
+
+00:18:41.990 --> 00:18:44.710
+<v Speaker 0>We have Bayes rule, and we can use this to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:44.750 --> 00:18:45.350
+<v Speaker 0>work it out.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:45.390 --> 00:18:49.350
+<v Speaker 0>And we'll do this now numerically just to to make
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:49.390 --> 00:18:50.750
+<v Speaker 0>sure that it actually works.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:51.950 --> 00:18:52.270
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[79]}
+
+00:18:52.310 --> 00:18:58.030
+<v Speaker 0>Let's look at one example where the, the word that's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:58.030 --> 00:18:59.310
+<v Speaker 0>being spoken is classes.
+
+NOTE CONF {"raw":[100,100,100,88]}
+
+00:18:59.590 --> 00:18:59.790
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:18:59.830 --> 00:19:02.510
+<v Speaker 0>So we go from this prior distribution to this posterior
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:02.510 --> 00:19:03.350
+<v Speaker 0>distribution.
+
+NOTE CONF {"raw":[100]}
+
+00:19:04.790 --> 00:19:09.430
+<v Speaker 0>Bayes rule which I've written here just slightly differently because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:09.470 --> 00:19:13.270
+<v Speaker 0>h and d I use this to indicate individual hypotheses
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:13.270 --> 00:19:16.550
+<v Speaker 0>rather than sets of hypotheses, but the logic is exactly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:16.550 --> 00:19:17.070
+<v Speaker 0>the same.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:17.150 --> 00:19:19.310
+<v Speaker 0>So we have the probability of a hypothesis.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:19.710 --> 00:19:21.270
+<v Speaker 0>And these are our hypotheses.
+
+NOTE CONF {"raw":[100,100,100,100,58]}
+
+00:19:21.310 --> 00:19:23.310
+<v Speaker 0>Left centre or right right.
+
+NOTE CONF {"raw":[100,100,100,100,81]}
+
+00:19:23.350 --> 00:19:26.590
+<v Speaker 0>Remember I've called this the hypothesis space the set of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:26.590 --> 00:19:30.590
+<v Speaker 0>all possible hypotheses given the data.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:30.590 --> 00:19:33.190
+<v Speaker 0>And the data is that we hear the word glasses
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:33.550 --> 00:19:33.870
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[76]}
+
+00:19:33.910 --> 00:19:36.470
+<v Speaker 0>So we start with the probability of the data given
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:36.470 --> 00:19:43.250
+<v Speaker 0>the hypothesis our likelihood Times the prior probability times the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:43.370 --> 00:19:46.090
+<v Speaker 0>probability of the data which I've written here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:47.050 --> 00:19:53.250
+<v Speaker 0>Using this marginalisation formula that we've been given here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:55.730 --> 00:19:56.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:56.170 --> 00:20:00.570
+<v Speaker 0>And now let's put in the numbers to see if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:00.570 --> 00:20:00.930
+<v Speaker 0>it works.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:00.930 --> 00:20:03.650
+<v Speaker 0>So H is our hypothesis which smiley I'm choosing.
+
+NOTE CONF {"raw":[100,100,100,90,100,100,100,100,100]}
+
+00:20:03.930 --> 00:20:05.050
+<v Speaker 0>These are our data.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:05.050 --> 00:20:06.890
+<v Speaker 0>Which word I'm uttering or hearing.
+
+NOTE CONF {"raw":[100,97,100,100,100,100]}
+
+00:20:09.210 --> 00:20:09.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:09.690 --> 00:20:12.010
+<v Speaker 0>So the probability of the data given the.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:12.530 --> 00:20:12.770
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:12.810 --> 00:20:13.090
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:20:13.090 --> 00:20:14.370
+<v Speaker 0>Let's look at the left smiley.
+
+NOTE CONF {"raw":[100,100,100,100,100,97]}
+
+00:20:14.410 --> 00:20:16.130
+<v Speaker 0>So hypothesis is left.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:16.490 --> 00:20:17.690
+<v Speaker 0>So this smiley here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:19.290 --> 00:20:21.290
+<v Speaker 0>And now we need to look at the probability of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:21.290 --> 00:20:22.730
+<v Speaker 0>the data given the hypothesis.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:23.730 --> 00:20:27.250
+<v Speaker 0>The probability that I will say glasses given this smiley
+
+NOTE CONF {"raw":[100,100,100,100,100,100,69,100,100,100]}
+
+00:20:27.250 --> 00:20:27.810
+<v Speaker 0>is zero.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:27.930 --> 00:20:28.130
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[87]}
+
+00:20:28.130 --> 00:20:30.170
+<v Speaker 0>Because this smiley doesn't wear glasses.
+
+NOTE CONF {"raw":[100,79,100,100,100,100]}
+
+00:20:30.570 --> 00:20:32.130
+<v Speaker 0>So that probability is zero.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:32.890 --> 00:20:36.090
+<v Speaker 0>The prior of our hypothesis is just one over three.
+
+NOTE CONF {"raw":[100,100,100,84,100,100,100,100,100,100]}
+
+00:20:36.090 --> 00:20:37.490
+<v Speaker 0>Because we have three hypotheses.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:37.490 --> 00:20:39.060
+<v Speaker 0>We're assuming they're equally likely.
+
+NOTE CONF {"raw":[91,100,98,100,100]}
+
+00:20:39.300 --> 00:20:42.460
+<v Speaker 0>So this is zero times a third.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:42.780 --> 00:20:46.900
+<v Speaker 0>And so we don't really care about the denominator here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:46.900 --> 00:20:49.820
+<v Speaker 0>because it's you know, zero by a number.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:49.820 --> 00:20:50.540
+<v Speaker 0>It's still zero.
+
+NOTE CONF {"raw":[38,100,100]}
+
+00:20:51.020 --> 00:20:51.300
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:51.340 --> 00:20:53.780
+<v Speaker 0>So that's the probability zero for the left smiley.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,94]}
+
+00:20:54.980 --> 00:20:56.620
+<v Speaker 0>Let's look at the centre smiley here.
+
+NOTE CONF {"raw":[100,100,100,100,84,100,100]}
+
+00:20:56.740 --> 00:20:59.100
+<v Speaker 0>This one here up there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:59.580 --> 00:21:01.500
+<v Speaker 0>So this smiley does wear glasses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:01.820 --> 00:21:06.620
+<v Speaker 0>So the probability that we hear the word glasses given
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,88,100]}
+
+00:21:06.620 --> 00:21:09.140
+<v Speaker 0>the hypothesis the centre smiley is one.
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100]}
+
+00:21:09.460 --> 00:21:09.740
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[96]}
+
+00:21:09.780 --> 00:21:14.420
+<v Speaker 0>Assuming if there's glasses then this the probability of saying
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:14.420 --> 00:21:15.380
+<v Speaker 0>glasses is one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:15.820 --> 00:21:19.300
+<v Speaker 0>And then the prior probability is still a third.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:21:19.860 --> 00:21:22.660
+<v Speaker 0>And here we're summing up the other probabilities.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,92]}
+
+00:21:22.660 --> 00:21:24.980
+<v Speaker 0>So zero times a third, one times a third.
+
+NOTE CONF {"raw":[100,100,100,79,100,100,100,100,100]}
+
+00:21:25.300 --> 00:21:29.380
+<v Speaker 0>And also for the right smiley one times a third
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100,100,84,100]}
+
+00:21:29.420 --> 00:21:29.580
+<v Speaker 0>right.
+
+NOTE CONF {"raw":[89]}
+
+00:21:29.620 --> 00:21:33.220
+<v Speaker 0>These are these are the three hypotheses left centre and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,78,100,100,100]}
+
+00:21:33.220 --> 00:21:33.580
+<v Speaker 0>right.
+
+NOTE CONF {"raw":[100]}
+
+00:21:35.060 --> 00:21:37.880
+<v Speaker 0>So this is Says one third over.
+
+NOTE CONF {"raw":[100,100,100,91,100,100,91]}
+
+00:21:37.920 --> 00:21:39.440
+<v Speaker 0>Two thirds is one half.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:40.240 --> 00:21:43.760
+<v Speaker 0>Okay, so the probability after here in the word glass
+
+NOTE CONF {"raw":[99,100,100,100,100,50,51,100,100,92]}
+
+00:21:43.760 --> 00:21:47.240
+<v Speaker 0>is for the centre smiley is one half.
+
+NOTE CONF {"raw":[92,100,100,75,100,100,100,100]}
+
+00:21:48.400 --> 00:21:51.840
+<v Speaker 0>And for the right smile is exactly the same computation.
+
+NOTE CONF {"raw":[100,100,100,100,80,100,100,100,100,100]}
+
+00:21:51.840 --> 00:21:52.880
+<v Speaker 0>It's also one half.
+
+NOTE CONF {"raw":[100,100,81,81]}
+
+00:21:53.520 --> 00:21:58.760
+<v Speaker 0>So this is confirming our intuition that initially before hearing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:58.760 --> 00:22:01.600
+<v Speaker 0>any evidence, we don't know which of these smileys is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,69,68,100]}
+
+00:22:01.600 --> 00:22:02.920
+<v Speaker 0>more likely than any other.
+
+NOTE CONF {"raw":[100,100,100,100,61]}
+
+00:22:02.920 --> 00:22:04.360
+<v Speaker 0>So they're all equally likely.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:04.680 --> 00:22:08.280
+<v Speaker 0>Once we know that they're wearing glasses, only the centre
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:22:08.280 --> 00:22:11.640
+<v Speaker 0>and the right one are left over.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:12.240 --> 00:22:15.320
+<v Speaker 0>And these are in turn equally likely because we don't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:15.320 --> 00:22:16.680
+<v Speaker 0>have any more information.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:17.040 --> 00:22:19.600
+<v Speaker 0>So they're both 0.5.
+
+NOTE CONF {"raw":[100,98,100,93]}
+
+00:22:20.160 --> 00:22:22.480
+<v Speaker 0>The posterior probability is 0.5.
+
+NOTE CONF {"raw":[100,100,62,100,100]}
+
+00:22:22.920 --> 00:22:28.400
+<v Speaker 0>If we then heard another utterance say hat, then we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:28.400 --> 00:22:31.520
+<v Speaker 0>could in turn eliminate this possibility.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:22:31.520 --> 00:22:34.400
+<v Speaker 0>And the probability here on the right would go up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:34.400 --> 00:22:34.920
+<v Speaker 0>to one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:35.770 --> 00:22:40.410
+<v Speaker 0>Okay, so we can update our probabilities as more information
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:40.410 --> 00:22:41.370
+<v Speaker 0>becomes available.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:41.490 --> 00:22:44.290
+<v Speaker 0>This is called Bayesian update and we'll see that in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:44.290 --> 00:22:44.930
+<v Speaker 0>a moment.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:45.410 --> 00:22:47.410
+<v Speaker 0>But first there's another quiz.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:57.290 --> 00:22:57.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[66]}
+
+00:22:57.690 --> 00:23:01.330
+<v Speaker 0>So this is sort of very quick check that you've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:01.330 --> 00:23:02.330
+<v Speaker 0>been paying attention.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:02.650 --> 00:23:05.130
+<v Speaker 0>We've introduced all these terminologies.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:05.650 --> 00:23:08.650
+<v Speaker 0>Uh, posterior beliefs likelihood, prior belief evidence.
+
+NOTE CONF {"raw":[55,100,100,100,100,100,100]}
+
+00:23:09.410 --> 00:23:13.330
+<v Speaker 0>Can you match it with the with the right mathematical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:13.730 --> 00:23:14.490
+<v Speaker 0>expression?
+
+NOTE CONF {"raw":[100]}
+
+00:23:20.290 --> 00:23:20.770
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[61]}
+
+00:23:22.490 --> 00:23:24.370
+<v Speaker 0>So H is our hypothesis.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:24.410 --> 00:23:26.810
+<v Speaker 0>D is our data our evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:35.830 --> 00:23:36.590
+<v Speaker 1>Oh, my.
+
+NOTE CONF {"raw":[97,93]}
+
+00:24:08.470 --> 00:24:09.190
+<v Speaker 1>Gosh.
+
+NOTE CONF {"raw":[93]}
+
+00:24:22.790 --> 00:24:23.350
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:23.390 --> 00:24:24.550
+<v Speaker 0>20s.
+
+NOTE CONF {"raw":[100]}
+
+00:24:26.270 --> 00:24:28.230
+<v Speaker 0>Only half the class is voted so far.
+
+NOTE CONF {"raw":[100,100,91,72,46,100,100,100]}
+
+00:24:45.000 --> 00:24:45.360
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:45.400 --> 00:24:46.120
+<v Speaker 0>Let's have a look.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:51.240 --> 00:24:51.720
+<v Speaker 0>Mm.
+
+NOTE CONF {"raw":[45]}
+
+00:24:52.320 --> 00:24:52.840
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:53.640 --> 00:24:54.560
+<v Speaker 0>So evidence.
+
+NOTE CONF {"raw":[99,99]}
+
+00:24:54.600 --> 00:24:56.240
+<v Speaker 0>P of d and probability of the data.
+
+NOTE CONF {"raw":[99,100,99,40,100,100,100,100]}
+
+00:24:56.280 --> 00:24:58.800
+<v Speaker 0>Prior beliefs p of H is also correct.
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100]}
+
+00:24:58.800 --> 00:24:59.560
+<v Speaker 0>Posterior.
+
+NOTE CONF {"raw":[100]}
+
+00:25:00.040 --> 00:25:01.080
+<v Speaker 0>And then you have to.
+
+NOTE CONF {"raw":[100,52,100,100,100]}
+
+00:25:01.840 --> 00:25:02.120
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[96]}
+
+00:25:02.160 --> 00:25:04.840
+<v Speaker 0>Probability of hypothesis given the data and probability of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,80]}
+
+00:25:04.840 --> 00:25:06.120
+<v Speaker 0>data given a hypothesis.
+
+NOTE CONF {"raw":[100,100,83,100]}
+
+00:25:06.280 --> 00:25:11.760
+<v Speaker 0>So the inverse probability is the likelihood and I'll just.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,82,97]}
+
+00:25:14.320 --> 00:25:14.800
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:15.040 --> 00:25:17.560
+<v Speaker 0>Most of you have figured it out.
+
+NOTE CONF {"raw":[100,100,100,100,100,63,100]}
+
+00:25:20.520 --> 00:25:21.000
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:21.040 --> 00:25:23.040
+<v Speaker 0>So here's a slightly more difficult question.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:24.800 --> 00:25:27.240
+<v Speaker 0>What if you don't have any prior information.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:27.760 --> 00:25:30.640
+<v Speaker 0>And actually we've seen we've seen a case like that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:31.640 --> 00:25:32.860
+<v Speaker 0>in the reference example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:32.860 --> 00:25:33.700
+<v Speaker 0>If you don't know.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:33.820 --> 00:25:36.380
+<v Speaker 0>You know what your hypothesis space is, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:36.420 --> 00:25:40.140
+<v Speaker 0>So your set of possible outcomes, possible hypotheses.
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100]}
+
+00:25:40.900 --> 00:25:45.860
+<v Speaker 0>But you have no information about, uh, about these hypotheses
+
+NOTE CONF {"raw":[100,100,100,100,100,100,63,100,100,100]}
+
+00:25:45.860 --> 00:25:46.860
+<v Speaker 0>and how likely they are.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:48.500 --> 00:25:53.260
+<v Speaker 0>So what happens then is the probability of h zero
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:53.420 --> 00:25:54.580
+<v Speaker 0>for all hypotheses.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:55.220 --> 00:25:59.460
+<v Speaker 0>Is the probability the same for all hypotheses?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:00.220 --> 00:26:03.020
+<v Speaker 0>Or you are in the unfortunate position that you can't
+
+NOTE CONF {"raw":[100,80,80,100,100,100,100,100,100,100]}
+
+00:26:03.020 --> 00:26:03.900
+<v Speaker 0>use Bayes rule.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:34.510 --> 00:26:35.990
+<v Speaker 0>Okay, let's have.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:35.990 --> 00:26:36.350
+<v Speaker 1>A look.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:40.030 --> 00:26:40.590
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:40.590 --> 00:26:41.950
+<v Speaker 0>Yeah, that's the correct answer.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:41.950 --> 00:26:45.630
+<v Speaker 0>So the probability is the same for all hypotheses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:26:47.230 --> 00:26:50.230
+<v Speaker 0>This is sometimes called a uniform prior right.
+
+NOTE CONF {"raw":[100,100,100,100,67,100,100,94]}
+
+00:26:50.270 --> 00:26:53.870
+<v Speaker 0>Because it's a uniform probability distribution that assigns the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:53.870 --> 00:26:55.310
+<v Speaker 0>probability to everything.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:55.790 --> 00:26:59.350
+<v Speaker 0>If the probability was zero that would be unfortunate because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:59.350 --> 00:27:01.190
+<v Speaker 0>then our posterior would be zero as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:01.230 --> 00:27:02.710
+<v Speaker 0>Then we couldn't really do anything.
+
+NOTE CONF {"raw":[72,100,100,100,100,100]}
+
+00:27:04.550 --> 00:27:07.350
+<v Speaker 0>But we've already seen a uniform prior.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:07.990 --> 00:27:13.670
+<v Speaker 0>So in the in the smiling example right.
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,98]}
+
+00:27:13.710 --> 00:27:15.790
+<v Speaker 0>So here three outcomes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:15.790 --> 00:27:18.870
+<v Speaker 0>Each of them is a third in terms of probability.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:27:18.870 --> 00:27:20.550
+<v Speaker 0>So that would be a uniform prior.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:21.190 --> 00:27:26.510
+<v Speaker 0>Whereas in our in our box example the prior was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:26.510 --> 00:27:27.830
+<v Speaker 0>not uniform.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:28.070 --> 00:27:30.370
+<v Speaker 0>I mean there wasn't a lot of variation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:30.690 --> 00:27:33.730
+<v Speaker 0>But here, for example, we have a lower prior probability.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:36.170 --> 00:27:38.530
+<v Speaker 0>So we don't have to have a uniform prior.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:27:38.530 --> 00:27:39.810
+<v Speaker 0>And actually in general.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:42.250 --> 00:27:44.050
+<v Speaker 0>In some sense there is no point in using a
+
+NOTE CONF {"raw":[100,100,100,97,97,100,100,100,100,100]}
+
+00:27:44.050 --> 00:27:45.530
+<v Speaker 0>prior if it's uniform, right.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:45.570 --> 00:27:47.370
+<v Speaker 0>Because it doesn't add any information.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:48.690 --> 00:27:51.650
+<v Speaker 0>And we will look at more interesting priors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:54.130 --> 00:27:56.730
+<v Speaker 0>Well, actually in the next example, but also in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:56.730 --> 00:27:58.210
+<v Speaker 0>next lecture on Thursday.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:59.210 --> 00:27:59.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:59.810 --> 00:28:05.370
+<v Speaker 0>So the rest of the lecture is really a complicated
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:06.610 --> 00:28:07.370
+<v Speaker 0>example.
+
+NOTE CONF {"raw":[100]}
+
+00:28:07.450 --> 00:28:09.810
+<v Speaker 0>Another example of an application of Bayes rule.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:10.410 --> 00:28:12.090
+<v Speaker 0>Before we get there.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:12.130 --> 00:28:13.410
+<v Speaker 0>Are there any questions.
+
+NOTE CONF {"raw":[83,83,100,100]}
+
+00:28:13.450 --> 00:28:15.690
+<v Speaker 0>Now it's a good point to ask any questions.
+
+NOTE CONF {"raw":[94,55,100,100,100,100,100,100,100]}
+
+00:28:19.330 --> 00:28:19.610
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[66]}
+
+00:28:19.610 --> 00:28:20.450
+<v Speaker 0>Everything clear?
+
+NOTE CONF {"raw":[95,100]}
+
+00:28:20.970 --> 00:28:21.930
+<v Speaker 0>Everything unclear.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:23.690 --> 00:28:24.050
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:24.050 --> 00:28:24.610
+<v Speaker 0>Let's see.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:26.370 --> 00:28:26.890
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:26.890 --> 00:28:28.450
+<v Speaker 0>So this is an example.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:28.490 --> 00:28:29.620
+<v Speaker 0>Nothing to do with linguistics.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:29.620 --> 00:28:33.180
+<v Speaker 0>This time is a decision making example, and we'll talk
+
+NOTE CONF {"raw":[100,100,100,54,100,100,100,100,100,100]}
+
+00:28:33.180 --> 00:28:37.380
+<v Speaker 0>more about decision making and more formally also about biases
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:37.380 --> 00:28:38.820
+<v Speaker 0>in decision making next week.
+
+NOTE CONF {"raw":[95,100,100,100,100]}
+
+00:28:39.340 --> 00:28:41.660
+<v Speaker 0>But here's a small example to start with.
+
+NOTE CONF {"raw":[100,91,100,100,100,100,100,100]}
+
+00:28:41.900 --> 00:28:44.740
+<v Speaker 0>So this is a holiday kind of scenario.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:44.780 --> 00:28:47.820
+<v Speaker 0>Peter and John are on vacation in a country where
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:47.820 --> 00:28:49.300
+<v Speaker 0>they don't speak the local language.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:50.700 --> 00:28:54.540
+<v Speaker 0>The city that visiting has awesome hot springs with monkeys,
+
+NOTE CONF {"raw":[100,100,100,100,100,99,100,100,100,100]}
+
+00:28:55.580 --> 00:28:57.100
+<v Speaker 0>and they want to go to the hot springs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98]}
+
+00:28:57.100 --> 00:28:58.940
+<v Speaker 0>So this, I don't know, could be Japan.
+
+NOTE CONF {"raw":[100,77,100,100,100,100,100,100]}
+
+00:28:59.940 --> 00:29:03.180
+<v Speaker 0>Unfortunately, the hot springs do not allow clothing, so they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,68]}
+
+00:29:03.180 --> 00:29:04.700
+<v Speaker 0>have to bathe naked.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:04.780 --> 00:29:07.260
+<v Speaker 0>And Peter is really shy about bathing with women.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:07.860 --> 00:29:09.500
+<v Speaker 0>Unfortunately, no.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:09.500 --> 00:29:09.700
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[93]}
+
+00:29:09.740 --> 00:29:12.300
+<v Speaker 0>Fortunately, the hot springs have one day a week for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:12.300 --> 00:29:14.820
+<v Speaker 0>men only and another one for women only.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:15.660 --> 00:29:16.060
+<v Speaker 0>And?
+
+NOTE CONF {"raw":[100]}
+
+00:29:16.060 --> 00:29:17.300
+<v Speaker 0>But the place is low tech.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:17.340 --> 00:29:18.380
+<v Speaker 0>There's no signage.
+
+NOTE CONF {"raw":[71,100,100]}
+
+00:29:19.380 --> 00:29:23.340
+<v Speaker 0>You cannot find out easily which day is for men
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:29:23.340 --> 00:29:23.820
+<v Speaker 0>only.
+
+NOTE CONF {"raw":[100]}
+
+00:29:24.340 --> 00:29:28.510
+<v Speaker 0>So Peter has an idea to solve this problem Every
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:28.550 --> 00:29:33.030
+<v Speaker 0>day they'll go to the spring and see which people
+
+NOTE CONF {"raw":[100,77,100,100,100,100,100,100,100,100]}
+
+00:29:33.030 --> 00:29:33.910
+<v Speaker 0>are coming out.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:34.430 --> 00:29:37.430
+<v Speaker 0>And then based on that, they will try to infer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:37.790 --> 00:29:42.390
+<v Speaker 0>whether it's men only, women only, or mixed day.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99]}
+
+00:29:43.270 --> 00:29:46.510
+<v Speaker 0>And obviously this is an inference problem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:46.710 --> 00:29:49.110
+<v Speaker 0>And it's a problem where you use data, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96]}
+
+00:29:49.110 --> 00:29:50.430
+<v Speaker 0>You have an observation.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:50.790 --> 00:29:53.350
+<v Speaker 0>You can see who's coming out of the bathhouse.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:53.910 --> 00:29:58.390
+<v Speaker 0>And so Bayes rule is basically a great way of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:59.470 --> 00:30:00.630
+<v Speaker 0>making this inference.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:01.550 --> 00:30:02.030
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:02.350 --> 00:30:05.110
+<v Speaker 0>And in order to try to apply Bayes rule, the
+
+NOTE CONF {"raw":[100,100,100,100,61,100,100,100,100,100]}
+
+00:30:05.110 --> 00:30:06.790
+<v Speaker 0>first thing you need to do is think about your
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:06.790 --> 00:30:07.790
+<v Speaker 0>hypothesis space.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:08.390 --> 00:30:12.470
+<v Speaker 0>Hypothesis space is the set of possible outcomes that you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:12.470 --> 00:30:13.910
+<v Speaker 0>want to draw inference over.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:14.030 --> 00:30:15.750
+<v Speaker 0>So here it's fairly straightforward right.
+
+NOTE CONF {"raw":[100,100,100,100,100,98]}
+
+00:30:15.790 --> 00:30:17.670
+<v Speaker 0>There's only three possible states.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:18.030 --> 00:30:20.470
+<v Speaker 0>One is it's a women only day.
+
+NOTE CONF {"raw":[100,100,100,100,89,100,95]}
+
+00:30:20.470 --> 00:30:22.590
+<v Speaker 0>The other one is no restriction.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:22.590 --> 00:30:24.510
+<v Speaker 0>And the third one is a men only day.
+
+NOTE CONF {"raw":[100,100,100,100,100,99,76,100,100]}
+
+00:30:25.230 --> 00:30:31.210
+<v Speaker 0>And basically Based on these set of hypotheses and some
+
+NOTE CONF {"raw":[100,100,100,100,50,100,100,100,100,100]}
+
+00:30:32.850 --> 00:30:36.890
+<v Speaker 0>clever assumptions about the prior and some data that we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:30:36.890 --> 00:30:37.490
+<v Speaker 0>observing.
+
+NOTE CONF {"raw":[99]}
+
+00:30:37.690 --> 00:30:40.250
+<v Speaker 0>We want to figure out which day it is with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:40.250 --> 00:30:41.490
+<v Speaker 0>a certain probability.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:41.610 --> 00:30:41.850
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:30:41.890 --> 00:30:44.330
+<v Speaker 0>That's what Bayes rule allows us to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:46.810 --> 00:30:49.770
+<v Speaker 0>So let's first think about the prior.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:50.330 --> 00:30:51.690
+<v Speaker 0>How can we work out the prior.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:51.810 --> 00:30:54.290
+<v Speaker 0>Well there's one day per week.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:54.290 --> 00:30:55.770
+<v Speaker 0>Women only one day per week.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:55.770 --> 00:30:58.610
+<v Speaker 0>Men only seven days in the week, of course.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:30:58.890 --> 00:31:02.010
+<v Speaker 0>So that means our prior should be something like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:02.410 --> 00:31:03.250
+<v Speaker 0>Women only.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:03.250 --> 00:31:06.530
+<v Speaker 0>It's one over seven men only the same one over
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:31:06.530 --> 00:31:09.730
+<v Speaker 0>seven and no restrictions five over seven the other five
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:09.730 --> 00:31:10.130
+<v Speaker 0>days.
+
+NOTE CONF {"raw":[100]}
+
+00:31:10.730 --> 00:31:13.010
+<v Speaker 0>Okay, so we don't have a uniform prior.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:13.250 --> 00:31:16.570
+<v Speaker 0>We have a prior that gives us some information, namely
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:16.570 --> 00:31:20.290
+<v Speaker 0>that it's a lot more likely to have an unrestricted
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:20.290 --> 00:31:24.290
+<v Speaker 0>day than women only or men only day.
+
+NOTE CONF {"raw":[100,31,100,100,100,100,100,100]}
+
+00:31:25.420 --> 00:31:25.700
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:25.740 --> 00:31:29.220
+<v Speaker 0>So that's already useful for drawing this inference, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97]}
+
+00:31:29.260 --> 00:31:31.900
+<v Speaker 0>In the absence of any information, we have to assume
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:32.060 --> 00:31:34.580
+<v Speaker 0>it's most likely that this day has no restrictions.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100]}
+
+00:31:37.780 --> 00:31:41.580
+<v Speaker 0>Let's assume, you know, the two guys go to the
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:31:41.580 --> 00:31:46.180
+<v Speaker 0>spa and watch who's coming out and they see a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:46.180 --> 00:31:47.140
+<v Speaker 0>man coming out.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:48.060 --> 00:31:48.420
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[74,100]}
+
+00:31:48.460 --> 00:31:55.020
+<v Speaker 0>So now we can, uh, compute the posterior probability using
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:31:55.020 --> 00:31:55.580
+<v Speaker 0>Bayes rule.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:56.060 --> 00:31:58.060
+<v Speaker 0>And for that we have our prior.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,79]}
+
+00:31:58.100 --> 00:31:59.500
+<v Speaker 0>Prior is the same as before.
+
+NOTE CONF {"raw":[100,79,100,100,100,100]}
+
+00:32:00.420 --> 00:32:02.980
+<v Speaker 0>And we have a likelihood term.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:03.340 --> 00:32:06.340
+<v Speaker 0>So if it's a woman or women only day then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:06.340 --> 00:32:08.500
+<v Speaker 0>the probability of seeing a man is zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:08.980 --> 00:32:09.180
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[90]}
+
+00:32:09.220 --> 00:32:10.660
+<v Speaker 0>So we know the likelihood there.
+
+NOTE CONF {"raw":[100,100,100,100,100,87]}
+
+00:32:11.540 --> 00:32:14.900
+<v Speaker 0>If it's a day that has no restriction, then the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:14.900 --> 00:32:17.340
+<v Speaker 0>likelihood of seeing a man or a woman, let's assume
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100,100,100]}
+
+00:32:17.340 --> 00:32:20.020
+<v Speaker 0>is the same, same number of men and women go,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:20.740 --> 00:32:23.420
+<v Speaker 0>if it's a man only day, then the likelihood of
+
+NOTE CONF {"raw":[100,100,100,86,100,100,100,100,100,100]}
+
+00:32:23.420 --> 00:32:25.080
+<v Speaker 0>seeing a man is one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:26.120 --> 00:32:26.400
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:26.440 --> 00:32:29.520
+<v Speaker 0>Because that's the only possible outcome.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:30.360 --> 00:32:30.680
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[74]}
+
+00:32:30.720 --> 00:32:32.960
+<v Speaker 0>So now we have prior likelihood.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:32.960 --> 00:32:35.040
+<v Speaker 0>So we can plug this into Bayes rule.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:36.880 --> 00:32:38.280
+<v Speaker 0>Uh oh.
+
+NOTE CONF {"raw":[89,100]}
+
+00:32:38.320 --> 00:32:40.240
+<v Speaker 0>Sorry, I confused myself.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:41.760 --> 00:32:42.120
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:32:42.160 --> 00:32:42.400
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:42.440 --> 00:32:42.720
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:32:42.720 --> 00:32:44.440
+<v Speaker 0>I'm looking at the two outcomes here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:44.960 --> 00:32:47.840
+<v Speaker 0>Uh, the likelihood of seeing a man and the likelihood
+
+NOTE CONF {"raw":[50,100,100,100,100,100,100,100,100,100]}
+
+00:32:47.840 --> 00:32:50.800
+<v Speaker 0>seeing a woman, given the hypothesis.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:51.040 --> 00:32:52.200
+<v Speaker 0>One, 2 or 3.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:52.920 --> 00:32:56.000
+<v Speaker 0>So, um, the.
+
+NOTE CONF {"raw":[100,78,100]}
+
+00:32:56.040 --> 00:32:58.040
+<v Speaker 0>If it's no restriction, the likelihood of each of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:58.040 --> 00:32:59.520
+<v Speaker 0>outcomes is one half.
+
+NOTE CONF {"raw":[100,100,83,83]}
+
+00:33:00.280 --> 00:33:02.520
+<v Speaker 0>If it's women only, then likelihood of men is zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,68,100,100]}
+
+00:33:02.640 --> 00:33:04.200
+<v Speaker 0>And likelihood of woman is one.
+
+NOTE CONF {"raw":[100,100,64,100,100,100]}
+
+00:33:04.200 --> 00:33:05.880
+<v Speaker 0>And for men, it's the other way around.
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,89]}
+
+00:33:06.880 --> 00:33:09.560
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:09.960 --> 00:33:15.880
+<v Speaker 0>So now based on this, we can produce our, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:15.920 --> 00:33:17.440
+<v Speaker 0>we can compute our prior.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:18.000 --> 00:33:20.960
+<v Speaker 0>So just to remind you, the probability of a hypothesis
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:20.960 --> 00:33:23.610
+<v Speaker 0>given the data, where the data is our observation, Who's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,66,100,100]}
+
+00:33:23.610 --> 00:33:27.610
+<v Speaker 0>coming out of the the spa is the probability of
+
+NOTE CONF {"raw":[100,100,100,63,100,95,100,100,100,100]}
+
+00:33:27.610 --> 00:33:29.890
+<v Speaker 0>the data given the hypothesis times the probability of the
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,100]}
+
+00:33:29.890 --> 00:33:32.850
+<v Speaker 0>hypothesis divided by the probability of the data.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:33.210 --> 00:33:38.170
+<v Speaker 0>So let's compute this product up here first likelihood times
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:38.170 --> 00:33:38.690
+<v Speaker 0>prior.
+
+NOTE CONF {"raw":[100]}
+
+00:33:38.850 --> 00:33:42.490
+<v Speaker 0>This is sometimes called the posterior score because it's not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:42.490 --> 00:33:43.970
+<v Speaker 0>a probability yet right.
+
+NOTE CONF {"raw":[100,100,100,92]}
+
+00:33:44.010 --> 00:33:46.010
+<v Speaker 0>To make it a probability we need to divide by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:46.050 --> 00:33:46.610
+<v Speaker 0>p of d.
+
+NOTE CONF {"raw":[100,100,63]}
+
+00:33:48.410 --> 00:33:51.050
+<v Speaker 0>So this is simply the product of the prior and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:51.050 --> 00:33:51.610
+<v Speaker 0>the likelihood.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:51.610 --> 00:33:54.970
+<v Speaker 0>So in the first case zero times one seventh is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:54.970 --> 00:33:58.490
+<v Speaker 0>zero one half times 5/7 right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:58.490 --> 00:34:04.170
+<v Speaker 0>So there's no restriction is five over 14 and one
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:34:04.170 --> 00:34:06.650
+<v Speaker 0>seventh times one likelihood is one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:07.330 --> 00:34:10.290
+<v Speaker 0>If it's a man only day is one over seven
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:12.210 --> 00:34:12.690
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:12.810 --> 00:34:13.250
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:34:17.010 --> 00:34:19.929
+<v Speaker 0>Now we need to turn this into a probability.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:20.929 --> 00:34:24.350
+<v Speaker 0>And for that we need to compute the probability of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:24.470 --> 00:34:27.669
+<v Speaker 0>the evidence here p of d in the denominator of
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100,100]}
+
+00:34:27.669 --> 00:34:28.310
+<v Speaker 0>Bayes rule.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:28.870 --> 00:34:32.389
+<v Speaker 0>So and here we take all the possible outcomes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:32.429 --> 00:34:33.270
+<v Speaker 0>H right.
+
+NOTE CONF {"raw":[100,94]}
+
+00:34:33.310 --> 00:34:38.149
+<v Speaker 0>H1 h2 h3 times the probability of the of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,63,100,100]}
+
+00:34:38.149 --> 00:34:39.990
+<v Speaker 0>h and then the likelihood of the h.
+
+NOTE CONF {"raw":[66,100,100,100,100,100,100,100]}
+
+00:34:40.950 --> 00:34:42.190
+<v Speaker 0>So this would be.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:42.510 --> 00:34:44.070
+<v Speaker 0>This here is obviously zero.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:46.030 --> 00:34:48.950
+<v Speaker 0>This is five over 14.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:49.149 --> 00:34:50.510
+<v Speaker 0>This is one over seven.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:50.870 --> 00:34:54.110
+<v Speaker 0>This is seven over 14 equals one half.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:54.110 --> 00:34:55.870
+<v Speaker 0>So that's the probability of the data.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:56.070 --> 00:34:59.070
+<v Speaker 0>So we can plug this in here into Bayes rule.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:01.070 --> 00:35:03.470
+<v Speaker 0>And now we get our posterior right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:03.710 --> 00:35:05.430
+<v Speaker 0>It's the women only day.
+
+NOTE CONF {"raw":[100,51,100,100,78]}
+
+00:35:05.430 --> 00:35:06.830
+<v Speaker 0>The posterior is still zero.
+
+NOTE CONF {"raw":[38,100,100,100,100]}
+
+00:35:07.590 --> 00:35:11.710
+<v Speaker 0>No restriction is five over seven and men only is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:11.710 --> 00:35:12.590
+<v Speaker 0>two over seven.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:12.590 --> 00:35:14.790
+<v Speaker 0>Note that these are now probabilities right?
+
+NOTE CONF {"raw":[100,100,100,100,81,100,100]}
+
+00:35:14.830 --> 00:35:17.630
+<v Speaker 0>They sum to one, whereas the posterior score is not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:17.630 --> 00:35:18.470
+<v Speaker 0>a probability.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:19.390 --> 00:35:22.520
+<v Speaker 0>Okay, so two over seven I don't know.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:22.560 --> 00:35:23.400
+<v Speaker 0>Should they go in?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:24.240 --> 00:35:26.080
+<v Speaker 0>That's about 28%.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:26.560 --> 00:35:28.520
+<v Speaker 0>So it's not a very high probability.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:28.520 --> 00:35:30.600
+<v Speaker 0>They're not very certain that this is a man only
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,57,74,100]}
+
+00:35:30.600 --> 00:35:30.920
+<v Speaker 0>day.
+
+NOTE CONF {"raw":[100]}
+
+00:35:31.560 --> 00:35:33.880
+<v Speaker 0>This is basically what this tells you.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:33.920 --> 00:35:37.600
+<v Speaker 0>It's 70% or 72% probability that it is a mixed
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:37.600 --> 00:35:37.880
+<v Speaker 0>day.
+
+NOTE CONF {"raw":[100]}
+
+00:35:39.040 --> 00:35:39.640
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:40.040 --> 00:35:42.520
+<v Speaker 0>So what to do in this case?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:43.160 --> 00:35:46.040
+<v Speaker 0>Well, now we can do what's called a Bayesian update.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,87,100,100]}
+
+00:35:46.440 --> 00:35:49.680
+<v Speaker 0>So a single observation isn't a lot of data isn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:49.680 --> 00:35:50.840
+<v Speaker 0>a lot of information.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:51.280 --> 00:35:55.040
+<v Speaker 0>And so how about waiting for a bit longer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:55.080 --> 00:35:56.560
+<v Speaker 0>See if more people come out.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:57.120 --> 00:36:02.880
+<v Speaker 0>And then hopefully you can make a more certain inference
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:36:03.520 --> 00:36:04.920
+<v Speaker 0>about what day it is.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:06.720 --> 00:36:07.200
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:07.240 --> 00:36:11.880
+<v Speaker 0>So they wait another five minutes, five more men come
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:11.880 --> 00:36:12.240
+<v Speaker 0>out.
+
+NOTE CONF {"raw":[100]}
+
+00:36:13.160 --> 00:36:16.320
+<v Speaker 0>Peter wants to be 90% sure that it's men only
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,92,100]}
+
+00:36:16.480 --> 00:36:18.680
+<v Speaker 0>before they venture into the spa.
+
+NOTE CONF {"raw":[100,100,100,100,93,93]}
+
+00:36:19.080 --> 00:36:20.340
+<v Speaker 0>So should they go in?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:20.460 --> 00:36:21.980
+<v Speaker 0>Or should they wait longer?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:22.020 --> 00:36:23.500
+<v Speaker 0>Is this 90%?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:24.740 --> 00:36:27.060
+<v Speaker 0>Have they already achieved the 90% or not?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:27.540 --> 00:36:28.140
+<v Speaker 0>Let's see.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:28.940 --> 00:36:29.300
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:29.340 --> 00:36:32.940
+<v Speaker 0>So the same game prior probability remains the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:36:33.020 --> 00:36:35.300
+<v Speaker 0>One over seven five over seven one over seven.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:36:35.580 --> 00:36:38.220
+<v Speaker 0>The likelihood of seeing five men and it's a women
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,97,98]}
+
+00:36:38.220 --> 00:36:40.140
+<v Speaker 0>only day is of course zero still.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:40.780 --> 00:36:48.580
+<v Speaker 0>And the likelihood of seeing a man in a unrestricted
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:48.580 --> 00:36:49.380
+<v Speaker 0>day is a half.
+
+NOTE CONF {"raw":[100,100,52,100]}
+
+00:36:49.980 --> 00:36:51.940
+<v Speaker 0>And in men only day is one.
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100]}
+
+00:36:52.580 --> 00:36:57.260
+<v Speaker 0>And so now, of course, we have six pieces of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:57.260 --> 00:36:58.780
+<v Speaker 0>evidence in total, right.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:58.820 --> 00:37:01.180
+<v Speaker 0>Previous observation and the five new observation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:37:01.380 --> 00:37:06.780
+<v Speaker 0>So to get the probability, we need to now multiply
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:06.780 --> 00:37:09.460
+<v Speaker 0>this likelihood by itself six times.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:09.460 --> 00:37:11.820
+<v Speaker 0>So in the case of zero that's zero to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,87,100,100,100]}
+
+00:37:11.820 --> 00:37:14.660
+<v Speaker 0>power of six times the seven is still zero.
+
+NOTE CONF {"raw":[100,100,100,100,96,50,100,100,100]}
+
+00:37:15.700 --> 00:37:20.030
+<v Speaker 0>But here for the no restriction it's one half to
+
+NOTE CONF {"raw":[100,100,100,100,90,100,100,100,100,100]}
+
+00:37:20.030 --> 00:37:23.830
+<v Speaker 0>the power of six times the prior five over seven.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:24.310 --> 00:37:26.630
+<v Speaker 0>That's five over 484.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:27.950 --> 00:37:34.710
+<v Speaker 0>And then for the posterior for men only day, the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:34.910 --> 00:37:35.990
+<v Speaker 0>likelihood was one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:36.350 --> 00:37:39.030
+<v Speaker 0>So that's to the power of six is still one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:39.470 --> 00:37:42.510
+<v Speaker 0>times one over seven is one over seven.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:43.270 --> 00:37:43.550
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:43.590 --> 00:37:45.110
+<v Speaker 0>So these are the posterior scores.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:45.110 --> 00:37:46.990
+<v Speaker 0>These are not probabilities yet.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:47.030 --> 00:37:50.350
+<v Speaker 0>We need to normalise them by the probability of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:50.350 --> 00:37:50.790
+<v Speaker 0>data.
+
+NOTE CONF {"raw":[100]}
+
+00:37:50.910 --> 00:37:52.830
+<v Speaker 0>So for that we add this and this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:53.190 --> 00:37:57.270
+<v Speaker 0>And this is 69 over 480 448.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:00.270 --> 00:38:05.030
+<v Speaker 0>And we can now compute the posterior by taking our
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:05.030 --> 00:38:07.110
+<v Speaker 0>posterior score and dividing it by this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:07.470 --> 00:38:12.910
+<v Speaker 0>And so the probability of H2 given the data is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:12.910 --> 00:38:14.830
+<v Speaker 0>now 0.072.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:15.070 --> 00:38:19.000
+<v Speaker 0>And the probability of h3 only given the data is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:19.000 --> 00:38:20.400
+<v Speaker 0>0.9 to 8.
+
+NOTE CONF {"raw":[92,92,92]}
+
+00:38:20.800 --> 00:38:24.680
+<v Speaker 0>So around 90% sure that this is a man only
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,42,66,100]}
+
+00:38:24.680 --> 00:38:24.960
+<v Speaker 0>day.
+
+NOTE CONF {"raw":[100]}
+
+00:38:25.440 --> 00:38:26.560
+<v Speaker 0>It could still be a fluke.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:26.560 --> 00:38:28.880
+<v Speaker 0>It's a mixed day and six men came came out,
+
+NOTE CONF {"raw":[95,100,100,100,100,100,98,79,100,100]}
+
+00:38:28.880 --> 00:38:30.720
+<v Speaker 0>maybe a group or something like that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:31.120 --> 00:38:36.680
+<v Speaker 0>But if our criterion is that we want to be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:36.680 --> 00:38:43.240
+<v Speaker 0>90% sure, then these six observations are sufficient to draw
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:43.240 --> 00:38:48.240
+<v Speaker 0>the inference that it's H3 with 9,093% probability.
+
+NOTE CONF {"raw":[100,100,100,50,100,100,100,100]}
+
+00:38:48.240 --> 00:38:49.120
+<v Speaker 0>Approximately.
+
+NOTE CONF {"raw":[100]}
+
+00:38:52.960 --> 00:38:53.480
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:54.000 --> 00:38:55.400
+<v Speaker 0>Uh oh.
+
+NOTE CONF {"raw":[67,78]}
+
+00:38:55.680 --> 00:38:56.600
+<v Speaker 0>I'm running early.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:56.640 --> 00:38:58.160
+<v Speaker 0>Any any questions?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:04.880 --> 00:39:05.400
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:39:05.520 --> 00:39:08.200
+<v Speaker 0>So why is this called Bayesian update?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:08.680 --> 00:39:08.920
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:39:08.960 --> 00:39:10.000
+<v Speaker 0>So we started.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:11.760 --> 00:39:15.960
+<v Speaker 0>We started with a certain posterior here based on a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:15.960 --> 00:39:17.620
+<v Speaker 0>single observation.
+
+NOTE CONF {"raw":[100,99]}
+
+00:39:19.100 --> 00:39:20.580
+<v Speaker 0>This is not really an update yet.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:20.620 --> 00:39:23.740
+<v Speaker 0>This is just a fixed set of data, and I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:23.740 --> 00:39:26.820
+<v Speaker 0>want to work out what the probability of my hypothesis
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,87]}
+
+00:39:26.860 --> 00:39:27.140
+<v Speaker 0>is.
+
+NOTE CONF {"raw":[100]}
+
+00:39:27.820 --> 00:39:28.580
+<v Speaker 0>And then.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:29.180 --> 00:39:33.660
+<v Speaker 0>However, in a lot of situations additional data becomes available.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:33.860 --> 00:39:37.540
+<v Speaker 0>So for example you're talking to someone and you keep
+
+NOTE CONF {"raw":[100,100,100,65,100,100,100,100,100,100]}
+
+00:39:37.580 --> 00:39:37.940
+<v Speaker 0>talking.
+
+NOTE CONF {"raw":[100]}
+
+00:39:37.940 --> 00:39:39.580
+<v Speaker 0>So you get more and more information.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:39.580 --> 00:39:41.540
+<v Speaker 0>So you accumulate this information.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:41.820 --> 00:39:46.060
+<v Speaker 0>And let's assume you want to figure out whether that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:46.060 --> 00:39:47.380
+<v Speaker 0>person is friendly or not.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:47.500 --> 00:39:51.380
+<v Speaker 0>The more information you have, the more reliable your inference
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:51.380 --> 00:39:51.860
+<v Speaker 0>will be.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:52.220 --> 00:39:55.860
+<v Speaker 0>So you start out with, let's say 50 over 50
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,60,100]}
+
+00:39:55.860 --> 00:39:57.620
+<v Speaker 0>chance that someone is friendly or not.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:57.900 --> 00:40:00.940
+<v Speaker 0>But then the more they say, the more certain you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:00.940 --> 00:40:01.140
+<v Speaker 0>are.
+
+NOTE CONF {"raw":[100]}
+
+00:40:01.180 --> 00:40:02.900
+<v Speaker 0>One way or the other, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,94]}
+
+00:40:02.940 --> 00:40:08.060
+<v Speaker 0>So you update your beliefs continuously as more information becomes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:08.060 --> 00:40:08.700
+<v Speaker 0>available.
+
+NOTE CONF {"raw":[100]}
+
+00:40:09.060 --> 00:40:12.420
+<v Speaker 0>Or for example, you are casting a die and you
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,95,100,100]}
+
+00:40:12.420 --> 00:40:16.150
+<v Speaker 0>want to find out whether the die is, uh, Is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,54,100]}
+
+00:40:16.670 --> 00:40:18.350
+<v Speaker 0>fair or not, right?
+
+NOTE CONF {"raw":[100,100,100,96]}
+
+00:40:18.390 --> 00:40:20.750
+<v Speaker 0>From a single throw of the die.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,58]}
+
+00:40:20.790 --> 00:40:21.830
+<v Speaker 0>You.
+
+NOTE CONF {"raw":[82]}
+
+00:40:21.870 --> 00:40:23.070
+<v Speaker 0>You cannot tell.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:23.670 --> 00:40:28.030
+<v Speaker 0>But you probably have to assume that it's fair.
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100,100]}
+
+00:40:28.030 --> 00:40:29.950
+<v Speaker 0>So your prior would be one over six.
+
+NOTE CONF {"raw":[100,100,100,99,100,100,100,100]}
+
+00:40:30.270 --> 00:40:33.550
+<v Speaker 0>But you keep rolling the die and so you acquire
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:40:33.550 --> 00:40:37.070
+<v Speaker 0>more and more information, and ultimately you are able to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,65,65,100,100]}
+
+00:40:37.270 --> 00:40:40.830
+<v Speaker 0>draw the inference whether the die is fair or not.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:41.070 --> 00:40:44.030
+<v Speaker 0>So this is another example of Bayesian update.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:45.030 --> 00:40:46.510
+<v Speaker 0>So in here what's going on.
+
+NOTE CONF {"raw":[100,99,100,100,100,100]}
+
+00:40:46.830 --> 00:40:49.910
+<v Speaker 0>We could in principle whenever someone comes out of this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,92]}
+
+00:40:49.910 --> 00:40:52.550
+<v Speaker 0>bar we can recompute our our posterior.
+
+NOTE CONF {"raw":[92,100,100,100,57,100,100]}
+
+00:40:53.270 --> 00:40:53.590
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[82,99]}
+
+00:40:53.630 --> 00:40:56.350
+<v Speaker 0>So we take the previous posterior we add another bit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:56.350 --> 00:40:57.310
+<v Speaker 0>of information.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:57.470 --> 00:41:01.630
+<v Speaker 0>So as you can see here it's just a product
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:01.630 --> 00:41:05.950
+<v Speaker 0>that becomes longer and longer the more observations we have.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:05.950 --> 00:41:08.310
+<v Speaker 0>And the likelihood is the same in each case.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:41:08.430 --> 00:41:12.790
+<v Speaker 0>It's also imaginable that the likelihood can change from one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:13.190 --> 00:41:14.470
+<v Speaker 0>observation to the next.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:14.610 --> 00:41:16.610
+<v Speaker 0>But here we're just assuming the likelihoods are all the
+
+NOTE CONF {"raw":[100,100,75,100,100,100,100,100,100,100]}
+
+00:41:16.610 --> 00:41:16.970
+<v Speaker 0>same.
+
+NOTE CONF {"raw":[100]}
+
+00:41:17.610 --> 00:41:17.890
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[95]}
+
+00:41:17.930 --> 00:41:21.890
+<v Speaker 0>And this process of updating your beliefs as more and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:21.890 --> 00:41:25.330
+<v Speaker 0>more information becomes available is called Bayesian update.
+
+NOTE CONF {"raw":[100,100,100,100,80,100,100,100]}
+
+00:41:25.730 --> 00:41:30.250
+<v Speaker 0>And it allows you to model this process that we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,86]}
+
+00:41:30.250 --> 00:41:33.770
+<v Speaker 0>become more and more certain about a certain decision or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:33.770 --> 00:41:35.050
+<v Speaker 0>about a certain inference.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:35.330 --> 00:41:37.170
+<v Speaker 0>The more information is available.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:40.730 --> 00:41:41.250
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:41.290 --> 00:41:44.730
+<v Speaker 0>So to summarise, we've seen Bayes rule as a way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:44.730 --> 00:41:48.370
+<v Speaker 0>of calculating the probability of a hypothesis given some evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:49.530 --> 00:41:52.650
+<v Speaker 0>For that we need first of all a hypothesis space,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:52.770 --> 00:41:56.130
+<v Speaker 0>which is the set of possible hypotheses that we can
+
+NOTE CONF {"raw":[100,100,58,100,100,100,100,100,100,100]}
+
+00:41:56.410 --> 00:41:58.530
+<v Speaker 0>consider in this case.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:59.090 --> 00:42:01.530
+<v Speaker 0>In the first example, there were three different smileys.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:42:01.770 --> 00:42:05.210
+<v Speaker 0>In the second example, there were the the different days,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:05.290 --> 00:42:06.250
+<v Speaker 0>three different days.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:06.530 --> 00:42:10.250
+<v Speaker 0>But the hypothesis space often can be quite large, sometimes
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,100]}
+
+00:42:10.250 --> 00:42:14.220
+<v Speaker 0>can even be infinite, makes the computation more complicated.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:42:14.220 --> 00:42:17.420
+<v Speaker 0>So we'll see more complicated examples like that later on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:17.420 --> 00:42:18.100
+<v Speaker 0>in the course.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:18.980 --> 00:42:22.860
+<v Speaker 0>And then in Bayes rule you compute the posterior, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:22.860 --> 00:42:26.300
+<v Speaker 0>is the probability of the hypothesis given the data based
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:26.300 --> 00:42:29.420
+<v Speaker 0>on the likelihood which is the inverse, the probability of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:29.420 --> 00:42:30.900
+<v Speaker 0>the data given the hypothesis.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:31.260 --> 00:42:31.500
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[86]}
+
+00:42:31.540 --> 00:42:33.380
+<v Speaker 0>Let's assume your hypothesis is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:33.420 --> 00:42:36.020
+<v Speaker 0>How likely are you to observe this kind of data
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:37.220 --> 00:42:40.340
+<v Speaker 0>and the prior, which is the probability of the hypothesis
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:40.340 --> 00:42:43.740
+<v Speaker 0>being true a priori in the absence of any evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:45.020 --> 00:42:48.340
+<v Speaker 0>This computation of the priors, sometimes also called Bayesian inversion,
+
+NOTE CONF {"raw":[100,100,100,100,89,100,100,100,100,100]}
+
+00:42:48.340 --> 00:42:51.500
+<v Speaker 0>because, as you can see, you invert the direction of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:51.500 --> 00:42:56.220
+<v Speaker 0>the conditional from hypothesis, from data given hypothesis to hypothesis
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:56.220 --> 00:42:56.980
+<v Speaker 0>given data.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:57.460 --> 00:43:01.900
+<v Speaker 0>Then you have the evidence which is here in the.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:04.380 --> 00:43:08.380
+<v Speaker 0>In the denominator and basically makes this product up here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,52,52]}
+
+00:43:08.380 --> 00:43:09.180
+<v Speaker 0>Probability.
+
+NOTE CONF {"raw":[92]}
+
+00:43:09.340 --> 00:43:13.120
+<v Speaker 0>If you don't care about this then you can, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,72]}
+
+00:43:13.120 --> 00:43:15.720
+<v Speaker 0>you can get rid of the P of D, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,100,93,98]}
+
+00:43:15.760 --> 00:43:17.560
+<v Speaker 0>If you just want to know what's the most likely
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:17.600 --> 00:43:21.280
+<v Speaker 0>hypothesis, then you don't need the denominator, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96]}
+
+00:43:21.320 --> 00:43:25.480
+<v Speaker 0>Because dividing by a constant will not change the order
+
+NOTE CONF {"raw":[76,100,100,100,100,100,100,100,100,100]}
+
+00:43:25.960 --> 00:43:27.760
+<v Speaker 0>of the hypotheses.
+
+NOTE CONF {"raw":[100,100,56]}
+
+00:43:28.040 --> 00:43:30.760
+<v Speaker 0>But here, for example, we wanted to be sure that,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:31.000 --> 00:43:39.000
+<v Speaker 0>uh, there's 90% probability, uh, offers off a given hypothesis.
+
+NOTE CONF {"raw":[86,100,100,100,98,100,100,100,100,100]}
+
+00:43:39.160 --> 00:43:39.360
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[97]}
+
+00:43:39.400 --> 00:43:42.120
+<v Speaker 0>So there we need to divide by the p of
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:43:42.120 --> 00:43:44.480
+<v Speaker 0>t, otherwise we won't get a probability.
+
+NOTE CONF {"raw":[75,100,100,100,100,100,100]}
+
+00:43:44.480 --> 00:43:46.360
+<v Speaker 0>So that's the probability of the evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:47.720 --> 00:43:51.320
+<v Speaker 0>So in the intuition is the prior encodes the information
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:51.320 --> 00:43:53.960
+<v Speaker 0>we have without any observations without any evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:54.280 --> 00:43:58.280
+<v Speaker 0>The likelihood encodes the information that we get from an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:58.280 --> 00:43:59.120
+<v Speaker 0>observation.
+
+NOTE CONF {"raw":[100]}
+
+00:43:59.600 --> 00:44:02.640
+<v Speaker 0>If we assume the hypothesis is true and then the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:02.640 --> 00:44:06.480
+<v Speaker 0>posterior is is a way of combining the two okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:06.680 --> 00:44:09.680
+<v Speaker 0>And that is a very powerful concept that we can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:09.680 --> 00:44:13.410
+<v Speaker 0>assume that there are some knowledge that we know before
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:13.410 --> 00:44:15.090
+<v Speaker 0>any data could be innate, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:15.130 --> 00:44:16.370
+<v Speaker 0>Depending on what we're modelling.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:16.730 --> 00:44:20.330
+<v Speaker 0>And then there's a knowledge that we get from observations.
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,98]}
+
+00:44:20.770 --> 00:44:25.570
+<v Speaker 0>You know like the the this is partially rationalist, partially
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:25.570 --> 00:44:26.490
+<v Speaker 0>empiricist.
+
+NOTE CONF {"raw":[100]}
+
+00:44:27.410 --> 00:44:30.850
+<v Speaker 0>Um, in in a neural network model, you would assume
+
+NOTE CONF {"raw":[87,99,100,100,100,100,100,100,100,100]}
+
+00:44:30.850 --> 00:44:31.650
+<v Speaker 0>nothing is innate.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:31.650 --> 00:44:33.810
+<v Speaker 0>You would only work with the likelihood.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:34.010 --> 00:44:36.330
+<v Speaker 0>If you have a sort of rule based approach, then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:36.330 --> 00:44:37.650
+<v Speaker 0>everything would be in the priors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:37.650 --> 00:44:40.890
+<v Speaker 0>Everything would be given to you without evidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:44:43.410 --> 00:44:43.890
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[96]}
+
+00:44:43.930 --> 00:44:46.450
+<v Speaker 0>And the posterior is the result of combining the two
+
+NOTE CONF {"raw":[100,100,98,98,100,100,100,100,100,100]}
+
+00:44:46.890 --> 00:44:49.650
+<v Speaker 0>and recomputing the posterior.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:50.090 --> 00:44:53.370
+<v Speaker 0>If we get more evidence, this is called Bayesian update
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:53.370 --> 00:44:57.770
+<v Speaker 0>because oftentimes in a cognitive task, the situation is dynamic
+
+NOTE CONF {"raw":[100,58,100,100,100,95,100,100,100,100]}
+
+00:44:58.090 --> 00:45:01.690
+<v Speaker 0>changes, more evidence becomes available.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:02.010 --> 00:45:05.010
+<v Speaker 0>And we need to change our hypotheses and we can
+
+NOTE CONF {"raw":[97,100,100,100,100,100,57,100,100,100]}
+
+00:45:05.010 --> 00:45:05.570
+<v Speaker 0>use this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:08.890 --> 00:45:12.190
+<v Speaker 0>In general, Bayes rule is a way of analysing, learning
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,86,100]}
+
+00:45:12.190 --> 00:45:12.910
+<v Speaker 0>and inference.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:13.710 --> 00:45:16.590
+<v Speaker 0>We'll apply it to word learning in the next lecture,
+
+NOTE CONF {"raw":[96,100,100,100,98,100,100,100,100,100]}
+
+00:45:16.870 --> 00:45:21.150
+<v Speaker 0>and then next week we will talk about decisions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:21.150 --> 00:45:25.670
+<v Speaker 0>These are decisions about possible outcomes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:25.670 --> 00:45:29.110
+<v Speaker 0>Which which outcome is more favourable.
+
+NOTE CONF {"raw":[100,100,100,100,100,86]}
+
+00:45:29.110 --> 00:45:30.870
+<v Speaker 0>Which outcome is preferred.
+
+NOTE CONF {"raw":[100,100,100,98]}
+
+00:45:31.150 --> 00:45:33.750
+<v Speaker 0>And we want to model people's decision behaviour.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96]}
+
+00:45:33.830 --> 00:45:37.150
+<v Speaker 0>And Bayes rule can be used for that as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:38.030 --> 00:45:38.470
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:45:38.510 --> 00:45:39.710
+<v Speaker 0>That's all we.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:45:39.750 --> 00:45:41.510
+<v Speaker 0>Well we're a bit early.
+
+NOTE CONF {"raw":[100,100,85,100,100]}
+
+00:45:42.150 --> 00:45:42.990
+<v Speaker 0>Thank you very much.
+
+NOTE CONF {"raw":[100,100,100,100]}

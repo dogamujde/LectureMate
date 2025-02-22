@@ -1,0 +1,1074 @@
+I didn't.
+Make it.
+Okay, I'll give you another minute to scan the code.
+Thank you.
+So.
+Much.
+Thank you.
+Okay, let's get started.
+Okay.
+Today's lecture is about word learning again.
+And we talked about while learning a little bit when
+we talked about what segmentation where the problem was that
+during language acquisition the child is exposed to a speech
+stream, and then in the speech stream, there isn't any
+obvious boundaries and they need to find out what the
+meaningful units are, what the word boundaries are.
+This is called speech segmentation or word segmentation.
+Let's assume the kid is able to do this.
+Then there's still the the problem of reference.
+So how would you connect the the words that you've
+learned to objects in the world.
+How do you map the two.
+And we'll talk about that today.
+, we'll first talk about in general terms what kind
+of results people have obtained when they've studied children.
+And then we'll talk about a particular model of, ,
+specific subdomain of number learning.
+And that will be in quite a lot of detail.
+This will be a Bayesian model.
+If you remember the lecture from Tuesday, we talked about
+Bayesian modelling, and we looked at all sorts of funny
+examples to do with smileys and spars and people trying
+to decide when to visit the spar and so on.
+So this will be an actual cognitive example that applies
+the same modelling technique.
+Okay.
+, so as I said, we talked about transition probabilities.
+We talked about things minimum description length as a
+way of building a lexicon.
+And now we're going to put this together with more
+facts about word learning, and in particular with the idea
+of applying Bayesian modelling.
+, there would be an extended example using number words.
+Okay.
+So what is the problem to start with?
+Well, , so far we've just talked about words as
+sequences of sounds or phonemes, and maybe we've talked about
+them in the context of how do you construct a
+sentence or how do you construct the past tense of
+a word?
+But we haven't really talked about the meaning.
+So today's lecture and tomorrow's lecture is all about the
+meaning of the words.
+Once you've figured out what the word boundaries are, for
+example.
+And the problem we're facing is that you have objects
+in the world, let's say spoons, and you have the
+word spoon.
+And how do you do this mapping.
+Right.
+So how do you know that spoon is essentially a
+function that picks out, let's say, from the set of
+cutlery, the the objects that are spoon shaped and can
+be used as spoons have a certain size, certain weight,
+certain function and so on.
+So there's a cluster of things that characterise an object.
+And children obviously are able to do this mapping fairly
+early on.
+They actually start learning concrete nouns such as spoon.
+These are the first the first words they learn and
+but the world is hugely ambiguous.
+So how do we pull off this mapping?
+And there's a famous example in the philosophy literature by
+Quine, who was a philosopher of language, and he has
+the example.
+It's called the guy example.
+It Goes as follows.
+So let's assume you meet someone whose language you don't
+speak, and you're trying to understand what they're saying.
+They utter a word and that comes with a pointing
+action.
+They point at a rabbit, so maybe they mean a
+guy's a word for rabbit.
+But if you think about it, it's actually highly ambiguous.
+It could mean a lot of things.
+It could mean a rabbit, could mean this is our
+dinner, right?
+Let's catch the rabbit.
+.
+Be quiet.
+Not to, , to disturb the rabbit.
+Could be a longer utterance.
+What a cute furry thing.
+Could refer to rabbit parts as.
+Now the ears, the tail, and so on.
+Or maybe they're afraid of rabbits, and they want you
+to get rid of it.
+Get it out, grab a guy or don't move.
+It could be something that's actually an instruction to you.
+It's not referring directly to the rabbit, or it could
+be referring to rabbit parts the ears and maybe
+a property.
+Maybe a guy means long ears in that language.
+This is essentially the problem the child finds himself or
+herself in.
+They have an adult.
+They have an environment.
+There's lots of toys.
+There's lots of objects.
+There's stuff going on and they hear utterances.
+Initially, they don't know the meaning of any of the
+utterances.
+They don't know any words.
+How do they map, for example, objects onto nouns?
+Or later on, how do they map verbs into actions,
+adjectives onto properties, and so on.
+And as we've seen most languages, you know, they have
+a lot of words.
+They have tens of thousands, hundreds or thousands of words.
+And the child doesn't even know which ones are important.
+Maybe they can figure out repetition, words that are repeated
+a lot.
+But still the ambiguity remains in most cases.
+And even if you've decided, okay, this word has to
+do with this object, Does it refer to the properties
+of this object, the size of the object, the colour?
+It could be lots of things, right?
+So this is called the mapping problem.
+So we have two problems.
+The first one.
+Is the generalisation problem.
+So how do you generalise from seeing a few objects
+and hearing a few words that all these utterances which
+sound similar spoon are actually the same word.
+And all these objects which have certain similarity as well
+are the object that is referred to spoon.
+Right?
+So it's a generalisation problem.
+And then there's the mapping problem.
+How do you map the words that you've heard onto
+reference for example objects.
+Okay.
+So people have obviously worried about this.
+And , Quinn's , conclusion was basically it's impossible.
+And that might be true philosophically, but psychologists and cognitive
+scientists, they have thought about this problem a bit more
+and basically come up with a set of strategies or
+heuristics that the child could possibly employ to solve the
+problem.
+First, the quote here, and this is slightly more general.
+So for any set of data, there will be an
+infinite number of logically possible hypotheses consistent with it.
+The data are never sufficient logically to eliminate all competing
+hypotheses, and that is an important observation that just looking
+at the data on its own is not going to
+be enough to.
+To to eliminate hypotheses or to, to confirm hypotheses.
+Right.
+So here what we're talking about these different quinine utterances
+here.
+They're essentially hypotheses about what is a possible a possible
+meaning for the utterance.
+And maybe if we could be sure that it's a
+noun, then we could already get rid of quite a
+lot of these utterances.
+Or if we're sure it refers to a whole object
+rather than to rabbit parts, then we could already get
+rid of quite a few of these hypotheses.
+Okay, so this is what Markman is saying here.
+We need to make additional assumptions.
+And then of course, the next question cognitive scientists will
+immediately ask where do these assumptions come from?
+Maybe they are innate.
+Maybe you can learn these assumptions as well.
+And there's evidence for both aspects.
+But let's look at these assumptions first.
+So there's two in particular that are important.
+The whole object bias and the mutual exclusivity assumption.
+So these are biases heuristics.
+They're basically built in strategies that help with word learning.
+And let's look at these in a bit more detail.
+And in particular let's think about why would this help
+with word learning?
+Okay.
+So the first one is relatively straightforward.
+So if you have a an object shoe here and
+let's say someone is pointing to that shoe or giving
+you that shoe, it's somehow salient in the environment, right?
+Because if I look at this room, there's lots of
+objects.
+But let's assume we pick out an object and then
+there's an utterance.
+And this bias says, well, objects mostly refer sorry.
+Words mostly refer to whole objects, not to object parts.
+Okay.
+So we hear a new word.
+Then the assumption would be this would refer to to
+the shoe, not to, I don't know the back part
+of the shoe or the, the sole of the shoe
+or the shoe laces and so on.
+So that's one bias.
+And the other bias is mutual exclusivity.
+So sorry for the slightly blurry picture here.
+So the assumption is essentially that every object has only
+one name, so there's no ambiguity.
+So and that helps you because if you see a
+new object and a new name, then it's very natural
+to assume you map them onto each other.
+And this is actually from an experiment, right?
+In this experiment, the child sees a cow.
+And here's a word cow a block.
+And here's the word block.
+And this novel object looks a bit a mop.
+And here's the word yuck.
+All right.
+So the natural assumption here is that's the claim that
+yolk is not another word for cow or a synonym
+for block, but it refers to this novel object.
+Right.
+So you have a new name, and because you assume
+mutual exclusivity, you assume that this new name refers to
+the new object.
+So there's obviously something going on here, right?
+So I said that York is not another name for
+cow in general.
+Can can objects have multiple names?
+Of course they can.
+Right.
+So we have synonyms all the time.
+We can say dog, doggy, mutt.
+We can come up with things that mean the same
+or similar things.
+So of course synonyms.
+But the assumption here is that initially you don't assume
+a new word is a synonym for a new word
+is something that is referring to something new.
+Okay.
+So this is in the limit a false assumption because
+we do have synonyms.
+But initially in language acquisition the child assumes I'm not
+learning a lot of synonyms for dog.
+I'm learning a lot of words for lots of different
+animals for example.
+Okay.
+So it's a heuristic.
+It's sometimes correct or most of the time correct.
+But there's it's not a 100%.
+Okay.
+So that's the assumption of mutual exclusivity.
+And if you have these two things.
+Whole object bias right.
+So we don't talk about rabbit parts.
+We don't talk about colours and properties.
+We just talk about objects to start with.
+And we assume that objects don't have multiple names.
+Then we can do the following.
+We can use something called fast mapping.
+And you might remember when we talked about how children
+develop their vocabulary.
+There's a period in the second year of life where
+vocabulary grows very quickly, sometimes called the vocabulary explosion or
+the vocabulary growth spurt, where children seem to learn 1020
+words, words a day and things happen, happen, happen really
+quickly.
+And so this fast mapping process is a way of
+explaining this growth spurt.
+Right?
+Because then if you're able to immediately infer The reference
+by just having a single exposure, seeing the object once
+here and the the world ones.
+Then obviously you can learn really, really quickly, right?
+If you let's assume you use some sort of slow
+statistical learning scheme where you have to see the object
+and the word together lots and lots of times, and
+the more you hear it, the more likely you are
+to do the mapping.
+And ultimately, let's say a threshold is reached and then
+you think the mapping works.
+This is not what we're doing here.
+We're assuming a single example is enough, right?
+That's why it's called fast mapping.
+And of course that helps.
+That is helped by the heuristics we've seen.
+Right.
+So we have the new object.
+We know the new word will be about the objects
+will not be about properties or parts of the object.
+And the new word will will refer to it.
+So these two heuristics mutual exclusivity and the whole object.
+Bias helps us with this fast mapping.
+And maybe this explains this growth spurt.
+And there's an interesting aside.
+So if you are interested in machine learning, , machine
+learners, they're very keen on this assumption as well.
+They call it something different.
+They call it one shot learning.
+But it's essentially the same idea that from a single
+training example, you can generalise and you suddenly know what
+the correct classes say, right?
+So the machine learning people would see this as a
+classification problem.
+You have an object and you assign it a class
+which we we are calling a noun or a word,
+but they would call it a class label.
+And essentially the same problem.
+And it's called one shot learning.
+Sometimes you short if you need multiple a small number
+of examples but more than one okay.
+And then of course people ask.
+That's a nice assumption.
+But does it actually work?
+And here's an experiment that basically says yes and no.
+Okay.
+So this is the same setup.
+The question.
+There's two questions we're interested in.
+So first of all do these fast mappings.
+So let's assume we can observe them.
+But do they actually last right.
+The child might be able to repeat the word back
+to you immediately.
+And maybe a few hours later they have gotten it.
+So how good is the quality of these fast mappings.
+And do they also generalise?
+Remember the generalisation problem was that we have multiple objects
+that all belong to the same category, let's say spoon
+or rabbit.
+But they all look slightly different.
+And can we once we've learned the word spoon or
+rabbit, can we then generalise this to other similar objects?
+That's the generalisation problem.
+So we'll look at that.
+Okay.
+So the experiment was as follows as follows.
+So we have our children And we give them trial
+trials this where we have two known objects
+glasses and dog, and a made up object is called.
+And it looks weird.
+So it's sort of a, , pyramid kind of shape.
+Anyway, that's the team.
+Okay.
+And here's another example.
+We have a car, we have a block, and we
+have the yolk, which is this slightly mop shaped object
+that we saw earlier.
+Here we have a duck and a cow.
+Oh that's a that's a distractor trial.
+Okay.
+Because this is not actually a cow.
+Interesting.
+And then we have, , this object called fold.
+Okay.
+So that would be our novel object.
+And the assumption would be the children.
+So you present these three objects and the three words,
+and then you ask them what's the time?
+And they should point to this.
+What's the yolk?
+They should point to this.
+And what's the fold?
+I should point to this.
+Okay, so that's the one shot learning or the fast
+mapping, right?
+If children are immediately able to say, okay, this one
+has to be the gym, but can they remember this?
+So we give them what's called retention trials.
+So we give them a yoke a gym and whatever
+this object is called.
+And now we ask them, let's say half an hour
+later, an hour later, can you name this object.
+So are they still able to reply with yoke and
+gym and so on.
+That would be the retention trials.
+And then the extension trials is you give them a
+slightly different object of the same category.
+So this is a fold but slightly different shape.
+This is a gym but different colour and so on.
+Can they apply these new words to the the objects
+of the same category?
+But they're not the same objects.
+They're slightly different.
+Okay.
+So let's look at this.
+So here is just a reference selection.
+So here this is the accuracy here on the y
+axis.
+And this is for familiar names cow.
+And this is for unfamiliar names Chim.
+And this is chance here the line is chance.
+Right.
+If you just guess, you get it right a third
+of the time.
+So we're clearly above chance at around 70%.
+And it doesn't matter whether it's familiar name or novel
+name.
+So this is here.
+Oops on.
+Sorry I managed to go the wrong way.
+This is here on the left hand side.
+Right.
+So glass 80% correct.
+Dog 80% correct, 80% correct.
+So it doesn't really matter that this is a novel
+word.
+So great.
+That's fast mapping.
+Sort of.
+But can they actually remember it.
+So let's look at the retention trial.
+Now we show them the object a half an hour
+later and ask what's the name.
+And they perform here at chance level at around 30%.
+So I've forgotten the name, right?
+So fast mapping, but also fast forgetting.
+Unfortunately.
+And this is the extension trial where we give them
+different team and they're not able to to generalise.
+So this is without forgetting in between give them immediately
+a different team.
+But they cannot apply the new word to the new
+but slightly different object.
+Okay.
+So fast mapping doesn't really seem to be the answer,
+at least not the whole story.
+And so people have wondered what else is going on.
+And various theories have been advanced.
+So one of them is context is called context based
+inference.
+Context based learning.
+The idea is forget the fast mapping.
+You just collect lots of statistics across a lot of
+contexts.
+So we're no longer assuming that a single exposure is
+enough.
+We are collecting statistics of the sort where.
+Team occurs in the context of this word.
+Then there's lots of other stuff in between and we
+say another team and so on.
+So we collect statistics over time.
+And this way we're able to ultimately infer what the
+meaning of the word is.
+So we're no longer fast.
+The problem is of course.
+Then how do you explain the growth spurt.
+Right.
+How to how do you explain that?
+They learn the words very quickly, but a single exposure
+doesn't seem to be enough.
+Or maybe we just need more heuristics.
+So there is evidence that there's other biases that help
+children in addition to the exclusivity bias and the the
+whole word bias.
+And here we look at two the taxonomic taxonomic bias
+where children, when they hear a new word, they assume
+it's Related in a taxonomy, in a hierarchy to other
+words that they already know, and the basic level of
+bias, which is a bias for basic level categories.
+And I will only talk about this very quickly because
+we'll actually come back to that next week when we
+talk about categories in more detail.
+So but taxonomic bias.
+So and this is something that seems to be specific
+for words.
+So here again a child is in this case seeing
+a picture.
+Right.
+I'm going to show you something.
+And can you show me another one.
+And the preference here is not for pig but for
+milk.
+Because milk is obviously not a cow.
+It's not another cow, but it's related to the cow
+because it's associated with it.
+Right?
+Milk and cow go together.
+, so, , the preference here Is for the thematically
+related object compared to the taxonomically related.
+Pig is the same type of thing.
+It's also a farm animal, so it's taxonomically related.
+And this is if we just say, I'll show you
+something.
+But what if we introduce a novel word.
+Right.
+So I'm going to show you a Dax.
+Dax is a new word.
+And then can you show me another Dax?
+Do the children assume that the cow is a Dax?
+And then Dax means something farm animal?
+Or do they assume Dax is a word for milk?
+And Dax means something cow related stuff?
+Okay, and here the preference is the other way around.
+All right, so they now don't think milk is the
+correct reference but pig is the correct reference.
+Right.
+So the two are taxonomically related if you think of
+a hierarchy.
+I don't know if you remember the word hierarchy from
+lecture three.
+I think it was.
+, there you would have, , you know, you would
+have living thing, animal farm animals versus wild animals.
+And then within the wild animals you would have cow
+and and pig and so on.
+You would have a hierarchy of different categories.
+And so cow and pig are related in that way
+because they're both animals.
+They both live on a farm.
+They produce things that humans consume and so on.
+But milk would not be related to cow in the
+same way, right?
+It would just be associated with a with a cow.
+So that seems to be a bias.
+And note that if we don't present a new word,
+if we don't say Dax, then we don't get that
+bias.
+So it seems to be a word learning bias rather
+than a general bias that happens all over the place.
+Okay.
+And I think, hold on, this is now all clap
+time.
+, I think I will skip the basic level bias
+in the interest of time.
+So the basic level bias is another bias that basically
+says if you have simple categories dog and more
+fine grained categories Dalmatian and super ordinate, more coarse
+grained categories animal, then you go for dog, right?
+If this is a new object, then you would say
+dog.
+You wouldn't say Dalmatian or animal.
+Okay.
+So that's another bias that has been postulated that also
+requires a hierarchy.
+It's also a form of taxonomic bias.
+Okay.
+But let's do a quick.
+walk up and there's only nine people signed up so
+far, so I'm hoping there's no technical issues or anything
+that.
+So.
+You.
+Know.
+How people are having problems.
+There's more than 20 in the room.
+Okay, I'll leave this up and I'll start the questions.
+Okay, so this is a simple sort of sanity check.
+We've talked about the mapping problem and the generalisation problem.
+And here is some examples of things that the children
+need to learn.
+And you're supposed to figure out if it's an example
+for the mapping problem or for the generalisation problem.
+So for example, learn that Dax is the name of
+a new object in front of you.
+Learn that cat refers to can refer to all domestic
+felines, right?
+Not just the cat that you happen to have at
+home.
+, learning that furry refers to a property rather than
+to an object.
+Because, you know, children have the whole object bias, but
+ultimately they need to learn properties as well.
+Learning that Fido is a name for the family pet,
+rather than for dog in general, or for a pet
+in general.
+So which kind of problem are we dealing with?
+With mapping or generalisation?
+I.
+Don't.
+Know.
+Okay.
+Let's have a look.
+At this one.
+Okay.
+So learning that can refer to all domestic felines, most
+of you think is generalisation.
+That's correct.
+Learning that Dax is the name of a new object
+in front of you, that's a mapping problem.
+Also correct.
+Learning that Fido is only the name of the family
+pet rather than dogs in general.
+Also mapping.
+That's correct.
+And learning that furry refers to a property, not an
+object.
+Yeah, that's a bit ambiguous, right?
+But it's probably a generalisation problem.
+Do you need to first generalise the object name and
+then.
+Let's say you've learned the object names.
+Then you can generalise that something furry must be
+referring to a property.
+Well it's a slightly more complicated one.
+Okay I have another one.
+Oh sorry I'm showing you this.
+Just showing you the answers.
+Okay, so this is a bunch of, biases.
+And I've not given you all the possible biases.
+There's actually more.
+That people have stipulated in the literature.
+But which one do you think are possibly learning biases?
+So the shape bias, , apply words to objects based
+on their shape rather than colour, material, size and so
+on.
+So if two things have a similar shape, then you
+assume they're the same object.
+Mutual exclusivity.
+Assume that every object has only one name, so there's
+no synonyms.
+Length bias.
+Assume that longer names refer to less common objects.
+Whole object bias.
+Assume that words refer to whole objects, not to parts
+or properties, and novel object bias.
+Assume that new words refer to new objects.
+Which ones do you think are actual biases?
+Special.
+Okay.
+Okay.
+Let's have a look.
+Okay.
+So shape eyes.
+That's actually a real thing.
+So only 46% of you thought it was an actual
+bias.
+But note that it's a bias.
+Not about learning shapes.
+It's a bias about learning objects.
+Right.
+So the idea is that objects that have similar shapes,
+you assume that the same word is used to to
+refer to them.
+And that makes sense, right?
+If you look at, I don't know, chair, all chairs
+have a similar function.
+So they also have a similar shape.
+So potentially that's a useful bias.
+Mutual exclusivity.
+We've seen that assume that a new name refers to
+a new object rather than being a synonym for an
+object already.
+Length bias.
+Yeah, that's completely made up.
+It's not entirely implausible, because we know that long words
+are normally low frequency.
+I don't know, something serendipitous is a low frequency
+word, whereas cool is a short frequency is a high
+frequency word.
+So and that correlates with how how common they are,
+right.
+So length and frequency seem to seem to correlate, but
+it's not an actual learning bias.
+At least people haven't claimed that whole object bias we
+have.
+We've said if you find a new word.
+Assume it refers to the rabbit, not to the rabbit
+parts and novel object bias.
+This is sort of a strange way of formulating mutual
+exclusivity.
+It's not actually a bias as such in the literature.
+Okay.
+Moving on.
+So now we've seen all these fancy biases and we've
+seen lots of examples.
+We've seen a little bit of experimental data to do
+with how children pick up new words, mostly nouns.
+And that's because almost all the literature deals with concrete
+nouns, which children learn first.
+But and they're also easier to study.
+I think that's that's another reason.
+But now obviously in this course we're interested in modelling
+and in building computational accounts of cognitive behaviour.
+So let's look at that.
+And last time we looked at Bayesian modelling right.
+Bayesian modelling was a way of combining a prior, combining
+knowledge that is there without any data, without evidence, with
+data and evidence.
+So you have two probabilistic terms which we call the
+prior probability, which tells you what hypothesis is is plausible
+and what hypothesis is not plausible, and the likelihood, which
+is the probability of seeing certain evidence, certain data, given
+that a hypothesis is true or not.
+So now the question is why is this a good
+approach for word learning?
+What do you think?
+What could we naturally model using Bayesian Bayesian inference that
+we've just talked about in detail?
+Any idea?
+Should have done a walk up for this to say
+okay.
+So if I say Day prior instead of bias.
+Does that maybe ring a bell?
+So we've talked about all these biases, all these heuristics
+that kids have.
+Right.
+And that is really nothing other than a prior, right.
+It's the probability that whole objects are referred to is
+higher than the probability that rabbit parts are referred to.
+The probability of hearing a synonym is low compared to
+the probability of hearing a new word, right?
+So if I know these things without any evidence a
+priori, then these biases actually give me a prior right.
+They give me certain if my hypothesis space is vast,
+right?
+Contains all the all the adjectives and all the properties,
+all the objects and all the nouns, all the verbs
+and the actions.
+All the stuff is in my hypothesis space.
+But my prior tells me that a priori, without any
+evidence, without hearing any words or seeing any objects.
+Certain things are more likely than others, right?
+So these biases, they really their way of stipulating a
+prior.
+And then of course, I can't rely on the prior
+on its own.
+I also need to observe what people say, right.
+What they're pointing to, what they're referring to when they
+when they utter a certain noun or certain verb, and
+so on.
+And this is my likelihood, right?
+The probability of hearing a certain word, given that I
+don't know a dog is being referred to.
+So these two sources of evidence can be combined in
+an elegant way using a Bayesian framework.
+That's why it's attractive here.
+And in other cases too, where I'm assuming that certain
+things are given maybe innate, , I don't know, mutual
+exclusivity or the whole word bias.
+And certain things are derived from data such as what
+words people actually say in the context of of certain
+objects.
+Okay.
+And this is often the situation we find ourselves in,
+in, in when we're solving a cognitive problem.
+Okay.
+So more formally this is called Bayesian hypothesis testing.
+So the hypotheses here are certain mappings of words to
+objects.
+Or as we'll see of number concepts to number
+words.
+Right.
+We're looking at a very specific case here to do
+with number.
+So we are interested in the learning of number words.
+And if you remember last time when we build a
+Bayesian model there are certain things we need to consider.
+So first of all input output.
+So what is the what information does the model have
+access to.
+So for example here we assume that number words occur
+with a certain frequency.
+It turns out one is the most frequent number word
+for example.
+And the output.
+What sort of responses are allowed here?
+This is a counting in the context of a counting
+task.
+So that's the sort of output we're looking for.
+Correct counting of objects.
+Then what's the hypothesis space.
+Right.
+So the hypothesis space is the different mappings between numbers
+and concepts or between objects and nouns.
+These and which mappings are possible.
+So we need to think about that.
+That's our hypothesis space.
+And then our inductive bias or our learning bias that
+will give us our prior.
+So what can the model do even if there's no
+data.
+What does it know a priori before data is available.
+And then the environment what kind of data is available.
+Right.
+How do we compute our likelihood essentially.
+So we need to think about all these things.
+And I'll now take you step by step through the
+assumptions of this particular model of word learning, which is
+I'll just give you the reference here.
+This is the et al paper that is also a
+reading for this week.
+This is just a recommended reading because it's a pretty
+long and complicated paper.
+But have a look if, if if you feel feel
+it.
+Okay.
+So what is the task.
+And I've mentioned this very early I think in lecture
+1 or 2 briefly.
+It's to do with counting.
+When children learn to count.
+They do this at the same time when they learn
+language sort of one year or two years of age,
+they initially learn the number line.
+So they learn how to say one, two, three, four,
+five, six, seven.
+They learn the sequence, and only later on they learn
+actually to map this onto number concepts.
+So a child initially will tell you, oh, I can
+count until 20 and they can recite the numbers from
+1 to 20, but then you give him or her
+a bunch of cookies.
+And you say, well, please give me five cookies, and
+they give you four or 7 or 3.
+Right.
+Even though they know the number five.
+Okay.
+So they haven't mapped the number concepts onto the words
+for numbers yet.
+They've learned the number line but not the mapping of
+concepts.
+And again this is something psychologists have studied in some
+detail.
+So the task is called the given task.
+And it's essentially exactly what I, what I told you.
+So I asked the child give me one cookie, give
+me two cookies, give me three cookies.
+And at some point they will no longer be able
+to do the mapping.
+And they will just give me a random number of
+cookies.
+So maybe they they have learned 1 or 2.
+So they can give you 1 or 2 cookies correctly.
+But then I ask 5 or 7 and they just
+give me lots of cookies.
+Right?
+They think that five and seven just mean many.
+Okay.
+And.
+So three cookies might be okay, but then four cookies
+no longer.
+Okay.
+Right.
+Because the number concept hasn't been mapped onto the correct
+number word yet.
+And four is just either you get a random response
+or the child thinks it means many or something
+that.
+And here's a fun graph that looks at this across
+lots of languages Japanese, Mandarin, Arabic, Slovenian, and so on
+and so on.
+And the different concept levels.
+So non means doesn't know any numbers.
+One means knows one and everything else just means many
+two, three, four.
+And typically once children reach 4 or 5, they are
+then able to generalise and they can give you arbitrary
+numbers of cookies.
+They're able to map the number line onto the number
+concepts.
+And this is called the cardinal principle here.
+So this is in purple.
+And you see in terms of H here's the H
+in terms of months this is around 40 months.
+And so they gradually move up to about 3 or
+4.
+And then at the age of let's say 15 months,
+something that, , they're able to map, , to,
+to acquire the cardinal principle.
+So suddenly they know all the numbers correctly.
+Okay.
+And this the exact timing differs a little bit from
+language to language, but the overall pattern is the same
+even in languages this is Tsimane, which is an
+Amazonian language that doesn't have number words in the same
+way as as other languages do.
+But this, this task, the the speakers are still able
+to do, though they take much longer to pick up
+the number concepts.
+As you can see here.
+Okay.
+But we're not going to talk about the different languages.
+We're going to talk about how to model this in
+one language.
+So going back to our little recipe here.
+So input output we said we have number names and
+number concepts number words and number concepts.
+And we map them onto each other.
+But we need a hypothesis space as well.
+So what would be a possible hypothesis space.
+So intuitively it's possible mappings right.
+We need to choose between all possible mappings.
+And these authors here they have done something I don't
+want to say idiosyncratic but they have written these hypotheses
+as little Lisp programs.
+So if you've taken enough one A then functional programming
+is familiar to you.
+And so maybe this is you know, this is of
+course lambdas and functions written with lambdas.
+But it doesn't really matter.
+You just think of it in terms of a bit
+of code that implements the particular, , the particular mapping
+that you're interested in.
+So let's say we look at this bit of code
+which corresponds to the yellow dot here.
+Right.
+One note.
+So these are the children that know the number one.
+So they can give you one cookie but two or
+3 or 4 cookies and so on will not work.
+So we have this function which takes a set as
+an input s.
+And if the set is a singleton then the output
+one everything else is undefined.
+So you either say I don't know or you just
+pick a random number of cookies.
+Same for two nodes.
+If it's a singleton, the output one.
+If it's a double or a set of two, you
+output two, then undefined, three nor and so on.
+You get the picture and it becomes more interesting if
+you look at the cardinality cardinality principle, right.
+So what happens here at the age of, let's say,
+50 months, where you move from being able to count
+to 3 or 4 to being able to count arbitrary
+numbers of cookies.
+And we have this program again takes a set S
+checks if it's a singleton, outputs a one, and if
+not, then we take the set difference.
+We select one, so that removes one member from the
+set.
+Take the difference with this one member.
+And then L means we apply this function to itself.
+So at the same time we output the next word
+on the number line.
+So if the previous word was one then we now
+output two and so on.
+So this is recursion right.
+So it's a function calling itself.
+So this l here is the call to this function.
+Here to this lambda expression.
+So the claim in this particular paper is that children
+actually learn counting by initially figuring out a few examples,
+but then they acquire the concept of recursion.
+And of course the recursion is very useful because it
+tells you, well, I can count to three.
+If I get an extra cookie, then I can count
+to four.
+Then I call the same procedure again, I can count
+to five, and so on.
+So where have we seen recursion before in this course?
+And why would people think that this is even cognitively
+plausible in any way?
+Do you remember the grammars in, I think week end
+of week one.
+Beginning of week two.
+Right.
+That was the idea of recursion in grammar that we
+can have recursive grammar rules.
+We can make our sentences longer and longer and longer.
+And here we're just making our set of concepts bigger
+and bigger and bigger through recursion by calling the same
+process, and this is by no means an uncontroversial assumption,
+but these authors assume that we have this concept of
+recursion because we use it for language for grammars, for
+example.
+Then we can.
+This concept is available in other domains as well.
+So here it's used for counting right.
+We have our counting procedure.
+And somehow the child figures out that this is a
+recursive thing.
+And so if they can count until, I don't know,
+1217, then they can easily figure out one 1218 as
+well.
+Right.
+By this principle of recursion, that's the idea.
+And okay, so they they throw in a lot of
+other hypotheses as well which are less plausible.
+Just to illustrate that there's this big hypothesis space, and
+we somehow need to narrow it down to be able
+to, , to, , to figure ultimately out that we
+need this, , cardinal principle function here.
+So how do they implement this mathematically?
+Okay, so we promised that we're going to use Bayes
+rule, right?
+If you remember Bayes rule, this is the probability of
+a hypothesis given the data.
+And they write this as the probability of the hypothesis
+where the hypothesis are these functions, , given the word
+and the set.
+So a word is something three and a set
+is here, , a collection of three objects.
+I've just written dots here.
+So what's the probability of a given hypothesis?
+So for example, this program here, given that we've seen
+a certain word, heard a certain word, and, , sorry,
+produce a certain word and seen a certain set.
+And then Bayes rule tells us this is the same
+as the likelihood p of w given and h the
+set in the hypothesis and the prior p of h.
+Okay, note that I've used this symbol here, which means
+proportional to.
+Because I've gotten rid of the probability of the data,
+right?
+Bayes rule had a denominator here p of d, which
+we're not very interested in.
+So if we remove this it's a constant.
+So it's still proportional.
+It's not equal anymore.
+Okay.
+So the input is word and z pairs.
+So for example three and three dots or three cookies.
+And the output is one of these programs right.
+One node two node three node cardinal principle and so
+on.
+And how do we compute the likelihood.
+So let's assume if I apply my hypothesis my program
+to a certain set and I get a word w,
+then with a certain probability I actually say that word.
+So we assume that this happens with a certain probability.
+It doesn't necessarily happen all the time because we assume
+there's some noise the children make.
+Make mistakes, get distracted, and so on.
+So with the probability of alpha, which is close to
+one, let's assume 0.9.
+We then say the word w.
+However, even a child who's in one of the other
+states, right, let's say the child is here is a
+two node and it's given five cookies.
+Maybe they just guess.
+So it could be that they by chance guess the
+correct number word.
+And that's what we're saying here.
+So one minus alpha.
+So in the case where we're not uttering the correct
+word we're just guessing that's the probability of one minus
+alpha.
+We could guess correctly by chance.
+So we add that as well.
+And then we divide by one over n where n
+is the the number sequence that we have available at
+the moment.
+So the child knows the number sequence from 1 to
+20, say, or 1 to 100.
+Right.
+This is when they tell you I can count to
+100.
+Then they mean they know the number sequence.
+They don't know the concepts yet.
+And this is the end here.
+And then let's also assume that they sometimes just say
+I don't know.
+And this is undefined here in our programs.
+Right.
+They return undefined if it's not part of the normal
+level yet.
+Okay.
+So this kind of principle is sometimes called a size
+principle because it depends on the size of the set.
+Right.
+So the n here depends on the size of the
+set.
+And.
+If you look back to one of these biases here
+the basic level bias.
+This has also been modelled using the size principle.
+And this is I have not talked about that, but
+this is something that crops up all over the place.
+You somehow want to map a set a set
+of objects, in our case, onto another set.
+A set of numbers.
+And if you keep your set as small as possible,
+then that's a good heuristic.
+And this is incorporated in the size principle here.
+I'm out of time.
+So I will skip the quiz and we'll talk about
+the prior next time.
+Remember we have a likelihood in the prior.
+So the likelihood here is this thing influenced by the
+size principle.
+And the prior is basically something that tells you about
+the complexity of the program.
+For example, whether you use recursion or not.
+And we'll talk about that next time.
+Thank you.
