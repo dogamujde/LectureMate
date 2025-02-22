@@ -1,0 +1,819 @@
+All right.
+Good afternoon.
+So yesterday I talked about this useful property of circuits
+that they can use the same output more than once.
+And we can think of doing the same thing with
+formulae.
+So yesterday we ended up with a circuit looking
+this.
+And we gave additional variable names to the outputs of
+all the gates, wrote it down that and got
+an equal satisfiable formula.
+So if we can make the original circuit output true
+by putting appropriate values for A, B and c, then
+we can make this bunch of formulae all true together
+by choosing appropriate values.
+And we discussed a bit at the end that all
+these variables that we've introduced are not really giving any
+new information because they're all precisely defined in terms of
+the original variables, but they allow us to reduce the
+complexity of the formulae we're looking at, and that will
+be made precise in a moment.
+I asked you yesterday to go through these slides and
+come back with any questions or clarifications that you wanted
+before we finish off with the actual formula work.
+Are there any questions?
+Okay, so the point of the circuits is actually to
+do the logic.
+So the setting transformation does with formulae what we've just
+done with gates and the idea is, if you think
+of every bracket in a formula as being a gate.
+When I drew gates, they were binary gates and or
+nor.
+We can do exactly the same thing with formulae.
+When you draw out, write out a formula with all
+its brackets.
+Then every bracket corresponds to a logic gate.
+So if we look at a formula, we can simply
+give a label to every bracket inside it and define
+a new variable.
+It says see live demo here.
+So this is where we hope that things still work
+after yesterday.
+So here's a formula.
+It's not quite the same formula as on the previous
+slide.
+It's got a few other operators on it.
+This is as big as I can get.
+Can you read it at the back.
+Yep.
+, so this formula says it's the negation of a
+implies b and c or not a no, c or
+not a, of course, is also known as a implies
+c, so I'm just ringing the changes by using different
+boolean operators to make it look a little bit more
+complicated than it is.
+If I look at this as a formula, it's only
+got one outside operator the and which combines these two.
+So if we take the circuit idea, what we will
+end up doing is giving a name to the formula
+A implies B and a name to the formula C
+or not A, and then define those new names to
+be equivalent by directionally equivalent to the original formula.
+And with a bit of luck.
+I get those formulae.
+, I'm doing this automatically, of course, which means I
+have to make choices for variable names.
+And since I use all sorts of letters as variable
+names, I decided that the right thing to do here
+is to use the letter C, which is the first
+letter of setting as my root variable, and then the
+other variables are called say 00001, according to which way
+I'm going in the tree.
+It makes it nice and easy to program the creation
+of variable names, as well as Honoré honouring the inventor.
+So if I apply the transformation to this formula, what
+do I get?
+I get this thing, say, which is the whole formula,
+and then I get the whole formula is equivalent to
+not of this bracket, whole bracket, which is say zero.
+And then what is say zero?
+Well, say zero is the end of the two things
+either side of it, so that say zero zero and
+say zero one.
+What?
+Say zero zero.
+Well, it's defined b a implies b and likewise say
+zero one is in defined b c or not a.
+So that's given me a bunch of 4 million.
+If I make all these true at once, then I've
+made the original formula true and found a satisfying assignment
+for A, B, and C that makes phi true.
+And coincidentally, I've also got values for the other formulae,
+but they're determined anyway.
+Now yesterday I said, why is this a win?
+We talked a bit about yesterday.
+What happens if you take an arbitrary formula and try
+to convert it to DNF to CNF using Boolean algebra?
+And if you remember yesterday, the procedure for converting stuff
+to boot to CNF with Boolean algebra was get rid
+of the implication and by implication, push negation inward.
+Distribute until you push all the ORS inside all the
+ands.
+And that could be a big lose, because if you
+have a big bunch of all of ands inside a
+bunch of ores, you do a lot of distribution and
+the formula blows up in size.
+When we do this transformation, what we've done is produce
+a bunch of formulae, all of which are short.
+So because I give a new label to every bracket
+in the formula, there are never more than two variables
+on the right hand side of this by implication.
+So every formula I produce as the output of sesshin
+is a free variable formula, which means that if I
+convert it to CNF, it can't blow up very much.
+, so now what we have is a bunch of
+formulae Which are satisfiable with our original thing.
+And if we make them all true, so we make
+the end of them true, then we've made the original
+thing true.
+So now what we do is say, well, I want
+to take the end of all these things.
+So for each one of these formulae, then I'm going
+to convert it to CNF and then just end them
+all together.
+So my the output of certain looks .
+A bunch of formulae with bi implications.
+And I'm just going to convert each one of them
+to CNF.
+Which means it looks that and and of AWS.
+And if I take an and of a bunch of
+CNF formulae, then I still have a CNCF formally.
+And because all these formally on the right hand side
+are very short, that means I end up with a
+CNCF formula, all of whose clauses are small.
+And that's good because that means GPL probably runs quite
+quickly.
+I say probably because there's no guarantee.
+, so I said that what we do is convert
+all these formula to CNF.
+Well, if I do that, what happens?
+I get a formula that looks that.
+So you'll see that the original outermost formula stays the
+same.
+And then there's a bunch of formulae which have been
+converted in various ways.
+This is slightly tedious to do manually, and it's looking
+quite long, right?
+It's looking a good deal longer than the original formula,
+but it's not too bad.
+Does this look it's a win?
+Somebody thinks it does look a win.
+It's not very obviously a win at this stage, is
+it?
+Because is this formula easier to solve than just converting
+this to CNF directly?
+, I mean, if I convert.
+The original thing to CNF directly, it looks that.
+So this this is doing CNF by the procedure with
+Boolean algebra.
+So I'm taking my original Phi which has just gone
+off the screen hasn't it.
+So I'm taking my original file and just pushing negation
+in and distributing appropriately.
+I get four clause formula.
+When I did the session transformation.
+I've got this rather longer formulae formula which does not
+look as if it's a win.
+However, sometimes it's quite a large win.
+So to demonstrate that, I'll show you a different formula.
+.
+This formula is not all that long, but it's got,
+what, 12 variables in it.
+Assuming I've used the alphabet correctly and it has a
+structure which might look a bit worrying.
+So I've got lots of ands on the inside, so
+I've got ants on the inside and lots of ors
+joining them together.
+So how long do you think this formula is going
+to get?
+If I convert it to CNF just by the kind
+of manipulation that we did yesterday?
+If anybody advances, I don't know.
+I mean, let's just do it right.
+, let's see if I can scroll back and find
+the beginning.
+So three screens full.
+, which is perhaps a little bit surprising, but it's
+a demonstration of how this.
+Short formula.
+By the time you've pushed all the ands, all the
+ORS inside all the ands and distribute it over them,
+you get three screens fulls of clauses.
+On the other hand, if I do set in to
+it.
+Then that, of course, just introduces a bunch of new
+variables, and I get something more or less the same
+length as I started with.
+And then if I apply, if I convert all these
+clauses individually to normal form, none of them are long,
+so nothing is going to blow up.
+So I get one screen for PSI one and a
+half screen fulls of shorter formulae.
+These are small examples.
+Now imagine the difference when there were 10,000 variables in
+the clauses in the formula.
+The difference is between completely impossible and maybe possible.
+If you go on to do some of our later
+courses, you will find how this technique is useful for
+proving interesting complexity theoretic results, but we're not going to
+talk about that here.
+So what I've just done is show you that with
+particularly nasty formula formulae, when you convert it to CNF
+by doing straightforward manipulation, the formula blows up exponentially in
+the true sense of the word, while the section transformation
+of it is only growing up linearly as the formula
+gets bigger.
+, which is much of the time very good.
+I have to say that it still doesn't solve all
+the problems.
+What have I done?
+Settings.
+Transformation is a linear order n conversion of a formula
+to an satisfiable CNF formula, which is a great deal
+better than converting your formula to an exponentially bigger formula.
+But it doesn't guarantee that you can find a satisfying
+assignment quickly, because finding a satisfying assignment is still an
+exponentially difficult problem anyway.
+But it does at least remove one source of exponential
+blow up.
+, why have I been talking about formula in CNF?
+How long does it take to check satisfiability of a
+DNF formula?
+Would that be easier?
+DNF formula looks that.
+If I'm looking for assignments of the variable that make
+it true.
+What would it be enough to do?
+Find one clause.
+So on the face of it, it looks as if
+it's a bit dumb to be looking at CNF.
+Why am I looking at CNF?
+If I have a formula in DNF, then I can
+just go through the clauses one at a time, and
+then each clause looks A and B and not
+D, and it's easy to see how to make that
+true.
+You just have to make all of them true.
+Okay, so in this case I would have to make
+a true, b true and d false.
+So if you give me a formula in DNF, what's
+the complexity of finding a satisfying assignment.
+Linnea just go through it one clause at a time.
+If you can make any clause true, the whole thing
+is true.
+So you're done.
+So is it the case that I've wasted your time
+for an hour and a half by telling you something
+useless?
+Probably not, because we wouldn't do that.
+So why is it not a solution to say, well,
+put all your formula in DNF if you want to
+find a satisfying assignment.
+Yeah.
+It's not satisfiable.
+That does not exist, right?
+I mean, if the formula is not satisfiable, then you
+will find that you can't satisfy any clause because there's
+a contradiction in every subclause in some subclause of every
+clause.
+.
+So I said, just put everything into DNF, as if
+that's easy.
+Is it easy to put any formula into DNF?
+No.
+There's the magic word, which comes up very frequently to
+explain why that's an obvious statement.
+DNF and CNF are completely symmetrical.
+That's the lovely thing about logic and an or completely
+symmetrical.
+If it is hard to put a formula into CNF
+because it might blow up exponentially, then it's also hard
+to put a formula into DNF because it might blow
+up exponentially.
+And the key difference is that with CNF, we have
+this setting transformation, which can reduce the chance of hitting
+a formula that is going to blow up.
+And there's no equivalent of this for DNF and advanced
+exercises.
+Go and look into that and see if you can
+work out why.
+.
+So this is as much as we're going to do
+about the hard problem of finding satisfying assignments.
+Let me emphasise that finding satisfying assignments to a formula
+is a very, very practically important problem, because any other
+propositional logic problem and many, many other kinds of problems
+can be turned into finding a satisfying assignment.
+So I mentioned timetabling, but there are countless others, and
+there is a big industry in trying to do it
+faster.
+So I've told you that we know.
+No.
+Well, I've told you that we don't know whether we
+can't do it.
+We believe we can't do it efficiently.
+In the general case, we don't know because that's P
+equals NP.
+But there's an enormous industry in trying to find algorithms
+that are slightly faster.
+In particular cases where the problem has a nice property
+and there are competitions every year, and people try to
+do slightly better than everybody else according to various benchmarks.
+Not something that has ever interested me, but some people
+doing that and the big companies.
+So the Facebook's and the Microsofts and the whatever your
+favourite tech giant of the year is actually put quite
+a lot of money into solving sat fast because they
+use it all the time.
+Okay, any questions about what we've done?
+Probably takes a little while to sink in, and you
+might need to think about why it was useful to
+do, but a lot of the time it makes finding
+satisfying assignment doable when otherwise it wouldn't be.
+Okay, I have half an hour.
+I now want to switch to a case where finding
+a satisfying assignment is maybe not so hard.
+So let's think about slightly simpler formulae.
+If you've got a formula in CNF, then it's an
+and of ORS.
+Suppose we say let's only stick to nice small formulae.
+So over here on the CNF, I was CNF.
+I had two variables on each side.
+So I actually have three variables in each clause.
+But suppose I was actually really restrictive and said I'm
+going to write down formulae that are in CNF.
+So the end of bunch of ORS.
+But every clause is an order of only two variables,
+not three.
+Do you think it might be easier to find a
+satisfying assignment for such things?
+Yes.
+I wouldn't be asking otherwise, would I?
+Because otherwise it wouldn't be very interesting.
+, it's actually much easier.
+So if you think about it a bit.
+Well, maybe quite a lot.
+You will see eventually that you can find a satisfying
+assignment in linear time.
+It's really about looking for contradictions.
+We're not going to go into , direct direct algorithm
+for, for that.
+But what we're going to do is think of this
+as a gateway into another problem, which is sometimes important,
+which is not so much.
+Is there a satisfying assignment as how many satisfying assignments
+are there, for example, timetabling problem, how many different timetables
+are there?
+Not something you want to know, but in other cases,
+you might want to know how many solutions there are.
+And I'm going to be quite honest with you here.
+The topic of the next half hour is something that
+is here primarily because Mike Foreman partly invented it and
+really likes it, and he gave a nice party on
+Wednesday, so I'm feeling nice towards him.
+So I shall continue to tell you about our accounting
+rule.
+It's quite cute.
+So it's a nice little mathematical exercise.
+, but when do formulae this arise?
+If you have a formula that has two variables, then
+it's maybe not terribly complicated, but it's the kind of
+thing that happens a lot when you're writing rules about
+things.
+, how many of you had difficulty choosing your outside
+courses?
+How many of you had difficulty working out whether you
+are allowed to take an outside course, right?
+, the DRP is quite interesting because it has prerequisites
+and co requisite constraints that are actually expressed in disguised
+propositional logic.
+, and here is a non Edinburgh version of this.
+At this point I've forgotten what some of these words
+mean but never mind.
+so a formula that might be a description
+of a timetable in an institution, which I'm sure you
+can guess where it says you can't take astrology and
+pyromancer at the same time.
+And if you take Bella mansi, you must take Cairo
+Mansi, and you must take either astrology or Bella mansi.
+And if you take Cairo Mansi, you must take dream
+interpretation and so on.
+, you might think that our course prerequisites and co
+requisites are not as absurd as this, but sometimes they
+can be because when different schools are dreaming up different
+restrictions, they would to put on people, you get
+some quite complex messes.
+, those of you who are fanatical about these things
+will now be on your phones.
+Just out of idle curiosity, is there anybody who already
+knew what all these things mean?
+Last year there was.
+Which was deeply worrying.
+Okay.
+, I think Bella mansi is shooting arrows and seeing
+how far they go, but I may be confused.
+, so if that's a bunch of rules about what
+courses you can take, how can you find out which
+courses you can take?
+You're looking for a satisfying assignment.
+Now, a nice thing about two variable clauses is that
+we can turn things into implications.
+What I've got here is a bunch of.
+What's this?
+This is a forbidden, correct forbidden combination.
+This is a prerequisite.
+This is a forced choice.
+You must take one of something and so on.
+But remember that implies is defined in terms of or
+and not.
+And similarly we can define and and or in terms
+of not and implies.
+So I can rewrite all these clauses so that they
+have implications in them.
+Now why would I do that.
+That doesn't seem a useful thing to do.
+But you'll see that it has a benefit, at least
+for this piece of mathematical fun.
+You should check that I have converted this formula correctly
+into a bunch of implications, just to check A or
+B Well, A or B is .
+The same as A, not a implies B, because not
+A implies B is the same as B or not.
+Not a, which is the same as b or a.
+If you remember back to your Venn diagrams, then there's
+some symmetry here which we could exploit, but we don't
+need to talk about that today.
+What's the point?
+Why is implication a nice operator?
+Implication is a nice operator because it's transitive.
+If I know that b entails.
+So b implies c and c implies d, then I
+know that b implies d.
+This is something that we've seen since week one, right?
+In different variations.
+If these were sequence this would be the Barbara rule.
+But now we're working at the level of proposition And
+there it's called modus ponens if you're a traditional logician.
+But it just says the obvious thing is true.
+, no, because implication is transitive.
+I can now start drawing diagrams of the various variables
+in the whole formula, with implication lines between them.
+So if I look at this formula, I know that
+b implies c because it says so there.
+And I know that c implies d because it says
+so there.
+And I know that d implies not b because it
+says so there.
+And I know that false implies anything, and I know
+that anything implies true because that's just the way things
+behave.
+What does this tell me?
+If I've got this chain of things, what do I
+learn About the the variables, or rather the literals mentioned
+in it.
+For example, if C is true, what do I know
+about the other variables in the chain?
+D must be true because c implies d.
+And because d implies not b and c implies d
+implies not b.
+I know that if something is true, then everything to
+the right of it has to be true.
+So setting one variable true automatically sets a whole bunch
+of it.
+Sorry, your your way around a whole bunch of variables
+to the right, true and symmetrically.
+Everything to the left of a false variable must be
+false.
+So if I make this variable true, then everything over
+there.
+Sorry.
+I make this variable false.
+Everything over there must be false.
+.
+So I know something about the relationship.
+But what I know is that if I look at
+this chain somewhere, it switches from things being false to
+things being true.
+There's one point where there's a switch, because everything to
+the left of that point is false, and everything to
+the right of that point is true.
+So that's made the whole problem of finding an assignment
+much simpler.
+I also know something because I've got a B here
+and not be here.
+What do I know about B from its position in
+the graph?
+It must be zero.
+It must be zero.
+If b implies not b, that means not.
+B has to be truer than be.
+So not be.
+Has to be true and B has to be false.
+So the chain of implication there has told me quite
+a bit about the variables just by looking at a
+simple graph.
+And of course I also know that if c is
+true, d is true.
+.
+What should I do with the things I haven't mentioned
+yet?
+Well, we're going to think about those in a moment.
+But if I've got this partial graph and I'm looking
+for a satisfying assignment, then I know that there aren't
+so many of them.
+If I look at this chain, I know that it
+has to switch from being false to true somewhere.
+Maybe it switches there.
+No, I can't have that because I know B has
+to be false.
+Okay, so maybe it switches there.
+So I have a satisfying assignment that goes false true
+true true.
+Or I could have one that goes false false true
+true.
+Or perhaps I could have one that goes false false
+false true.
+So the lesson here is that I can find and
+even count satisfying assignments by looking at this graph and
+trying to cut it in half.
+So find choosing some point where I can draw a
+boundary between everything that is false, that goes to the
+left, and everything that is true to go to the
+right.
+So that does two things.
+It gives me a satisfying assignment, and it even lets
+me count how many satisfying assignments there are, which is
+occasionally useful.
+Okay, so that's the simple case.
+Any questions on what we're doing there?
+I'll go on to a slightly more complicated case.
+So what this is about is a general generalisable rule.
+If I give you a formula, you can turn it
+into a bunch of.
+If I give you a formula where every clause has
+just two variables in it, you can turn all those
+clauses into implications.
+Then you can draw this diagram.
+And then just by using your human intuition, you can
+draw lines through the diagram and chop it into two
+halves a true half and a false half.
+So this is something that might cause the arrow rule.
+If we draw out the full graph of implications, and
+then we try to cut the graph in half.
+Such that everything below the line is false and everything
+above the line is true.
+We will get a satisfying assignment for the formula.
+There are, of course, a few catches that we have
+to think about.
+So let's look at an example.
+Here's a little formula.
+Not R or q and not r or s.
+If I turn that into implications it says r implies
+q and r implies s.
+What does the graph look ?
+Well we've got two disconnected things here.
+So this tells us that our implies Q and this
+tells us that our implies S.
+But nothing in the formula connects q and S in
+any way.
+So we don't know anything about the relation between q
+and s.
+So there are no lines between them.
+And always zero implies everything, and everything implies one or
+true.
+So what we're looking for is ways to cut the
+graph in half such that one is above it and
+zero is below it, and then everything that lies above
+the cut is true, and everything that lies below the
+cut is false.
+, how many ways are there to do that in
+this graph?
+Do I see 5.5?
+Let's hope that that's right, because right now I can't
+count.
+Anybody want to go for another number just in case?
+Let's see what we get.
+So we can cut across the top, making everything fall
+so that works.
+We can cut down there making these two things false.
+We can cut down there making these two things false.
+That's three we can cut.
+They're making just are false.
+And there's the fifth.
+So we could make everything true.
+And all of those are satisfying assignments because of the
+way the implication graph is drawn.
+So this is a kind of graphical intuitive way not
+only to find assignments, but to count how many there
+are.
+There are, should you wish to know that.
+So I think it looks a bit more impressive with
+a more dramatic example.
+So let's have a more complex formula.
+, this one has one, two, three, four, five clauses.
+And if I draw it out again we get a
+implies b.
+B implies c, c implies d.
+So I've got a chain going up there.
+And then I've got a to e and e to
+D.
+So I've got a chain going there.
+These two chains come together at D.
+So it's going to unify at the top.
+And now again the question is how many cuts are
+there again without cheating.
+How many do we get.
+Somebody said eight.
+I'm not going to count because why should I count
+when I've got the answer in a few slides?
+Anybody go for anything other than eight?
+So that one.
+That one.
+That one.
+That one.
+That one.
+That one.
+That one.
+That one.
+And that one.
+So that's one cut that goes above de and then
+cuts across the Pentagon.
+You can imagine that you can actually compute these by
+looking at this shape.
+I know that this has three things three steps on
+this side and two on this side.
+So they're going to be six ways to cut that.
+And then there's the one that cuts below that.
+if you think this is too simple then the
+textbook has an even more complicated example.
+But I don't particularly wish to do a more complicated
+example of this kind of counting.
+So you get the idea here.
+If I gave you a random bunch of formulae, you
+could draw it out and you could count this, you
+might get it wrong because it's humans counting.
+But the idea should work.
+But there are a bunch of things that I haven't
+talked about.
+So back on the very first example, there was an
+A and A, not A in it.
+And I haven't talked about that.
+I've given you easy cases where everything is positive.
+There aren't any nots here.
+So if I go back to the first formula.
+I've got a formula that originally had a, not a.
+And by the time I'd converted everything into implications, then
+the nots disappeared.
+But I ended up with not B's instead.
+So now I have a implies B and a implies
+not B.
+, what does that tell us?
+Fe implies B and A implies not be a must
+be false because at least one of B and not
+be as false.
+And if A implies false, then it must be false.
+How can we turn that into a kind of graphical
+rule?
+So if I draw the implication chain in the way
+that I did on the previous slide, it looks as
+if we have all these cuts, but I can't have
+a cut that gives B and not be the same
+value.
+So if I cut across here, this cut here, that's
+not going to work because that would make both B
+and not be false.
+And if I cut below here that would make both
+B and not be true.
+And that doesn't work either.
+So I have to be careful about what my idea
+of a valid cut is.
+So on the previous slide, I said that valid cuts
+have to separate zero and one, but they also have
+to separate any two complementary literals.
+So the only cuts that survive this filter are that
+one because that separates B and not be that one
+which separates B and not b, and that one which
+separates b and not b.
+And so that gives us three cuts, three different satisfying
+assignments.
+, and that works in general for dealing with complementary
+literals as long as things aren't too complicated.
+I mentioned that we have some symmetry here.
+If you remember back to your Venn diagrams a or
+not be sorry, A implies not B is the same
+as B implies, not a.
+So sometimes we can actually get rid of some of
+the complimentary literals and make life easier.
+But not always.
+That's just a sideline.
+, can things get more complicated?
+I mean, I've drawn graphs which are nicely going up,
+right?
+Which is how you would a graph to go
+up.
+But is there any reason you can't have a graph
+with a loop in it?
+So there's a formula A implies b, b implies c,
+c implies not A, not a implies d, d implies
+a.
+If I try to draw that.
+Then I have a graph with implication loops in it.
+What can I say about loops in a graph.
+So I've got a implies b implies c implies not
+a implies d implies a.
+Yeah.
+That tells me a lot about these things because they
+must all have the same value.
+Because if I had a true anywhere in it, the
+cycle would mean that the true has to propagate all
+the way through.
+If there's a false, then it's okay, because false implies
+false.
+So as soon as I have a cycle, I can
+just say all these things have the same value.
+And that restricts still further the range of things that
+I can count of as valid ways to cut the
+diagram in half.
+If I take a cut, it must not cut any
+cycle in half.
+, now, in this particular cycle, I've got a knot.
+So what does that mean?
+I mean.
+I have to make a and not a the same.
+You can't make a and not a the same.
+So if you see a cycle which has two complementary
+things in it, you know that there is no satisfying
+assignment for this formula.
+So that's the first time in this technique that we've
+found a proof that the formula is not satisfiable, which
+is a useful thing to know.
+So as I said this stuff is not important.
+So please don't stress about it.
+You don't need to remember it beyond doing the exercises
+about it.
+But it is quite fun.
+And if you do a bit of googling around, you'll
+find some slightly related stuff.
+There are algorithms that do a similar thing, and there's
+some other stuff, so the book has more about it.
+I'm choosing not to tell you more of the stuff
+in the book, because after all, this is not all
+that useful.
+It's just a bit of fun.
+But sometimes you can get rid of cycles.
+And let me summarise what we've done and say a
+little bit about the point of tue-sat and introduce one
+final piece of complexity.
+So what I've said is that if you take a
+clause that is in tue-sat form, so every clause has
+just two literals in it, we can turn all the
+clauses into implications.
+We can draw a nice graph, we can define a
+notion of valid cut, and that lets us both find
+and count satisfying assignments.
+Valid cuts had separate zero and one.
+They had two separate complementary literals.
+And that and they had not to cut a cycle.
+, what are the applications of counting two satisfying assignments?
+So there's some theoretical stuff which I don't know much
+about, but there are applications in statistical physics and allegedly
+in artificial intelligence, although I haven't yet found those.
+And if you're doing CSS and physics a few.
+So at some point you may choose to do statistical
+physics.
+I don't know whether you have to do you have
+to do statistical physics?
+No.
+Are you going to maybe.
+, statistical physics is quite a strange subject because it
+applies some quite heavy maths to physics.
+But there's a difference in the way physicists do maths
+than the way mathematicians do maths.
+And sometimes this causes some friction.
+.
+There's one complication that I haven't mentioned about.
+And if any of you feel inclined to play around
+with this, then you will have to go and look
+at the book.
+I have only given you graphs that I can draw
+on a flat piece of paper without crossing planar graphs.
+, there are graphs which you cannot draw on a
+flat piece of paper.
+How would you deal with it?
+Well, there are ways, but the book will let you
+deal with that.
+And I think this is quite enough about the arrow
+rule.
+It is rather cute.
+It's a bit of fun.
+There is one little exercise on the tutorial for you
+to do some arrow counting, but it should not be
+too challenging.
+So what happens next?
+Well, we've been moving slowly from looking just at logic
+to doing computational things with logic.
+And the next step is to do some computational things
+without thinking about logic.
+Although a true logician will say that everything is logic.
+So I may be doing computation in the next couple
+of weeks, but it's just logic in disguise.
+But we'll look at it as computation and I give
+you two minutes back.
+Any final questions?
+Piazza is there.
+, hopefully the tutorial will be relatively painless.
+Next one after this will be slightly less painless, I'm
+afraid.
+But I have to make you work.
+Sometimes.

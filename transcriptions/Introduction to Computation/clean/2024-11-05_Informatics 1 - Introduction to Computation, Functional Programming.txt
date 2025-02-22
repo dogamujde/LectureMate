@@ -1,0 +1,1116 @@
+, you can try.
+I mean, I think it's.
+Yeah, it should be.
+Okay.
+, it's to do with the way that the, ,
+examples are displayed.
+I mean, I think things should be fine.
+Okay, , let me start.
+, so today's today's music is, , is a is
+a song called program in C, and, , so C
+if you don't know, it is a, or if you've
+never heard of it, it's a programming language.
+It's kind of the opposite of Haskell in the sense
+of being extremely low level.
+It's as low level as you can get without, ,
+you know, it's actually pretty much at the hardware level.
+Okay.
+So, , that's kind of the alternative.
+, if you don't want, , Haskell.
+Listen to me.
+All languages, it's a mess.
+Programming in C is better than anything they got over
+there.
+The syntax is so much sweeter.
+Where objects and subtypes play.
+But feels inheritance will only get in the way.
+Admires this simple landscape efficiently dangerous.
+No templates or fancy pitfalls Java and C plus
+plus programming C programming C pointers.
+Assembly.
+Manage your memory with Malik and three.
+Don't sync your app with runtime bloat.
+Software and C will stay afloat.
+Do what you want very close to the hardware program
+in C.
+Okay, that's.
+You may not have noticed, but it's the last thing.
+So, , it it ended abruptly with a segmentation fault.
+This is a this is an error you get when
+you program in C and you make a mistake with
+pointer arithmetic and that you try to, , you try
+to address into areas of the memory you're not allowed
+to use and you get segmentation fault standard crash and
+see.
+So that song crashed with a segmentation fault.
+.
+, yeah.
+Okay.
+But, , what I want to talk about today is
+search and trees.
+, and this is not a lecture about Haskell and
+new features and so forth.
+It's about I'm using Haskell as a vehicle to talk
+about, , , the problem of tree search, which is
+a kind of a basic thing in, in computer science
+and also in artificial intelligence.
+So searching through, , tree, , and my trees are
+going to represent search spaces, so you can think of
+them as something the search space of a chess
+game or something that.
+, where, , where you've got, , branching, representing the
+different moves you have from a particular position in chess,
+let's say, or some other game.
+Okay.
+So we're going to be we're going to be looking
+at trees and they're going to be binary trees, but
+they're not going to be the binary trees.
+I mean, they're going to look the representation will be
+, again using nodes and empty trees and so forth
+as you're familiar with.
+But these trees are not going to obey the invariant
+that I, that I talked about before about the, the,
+the labels being ordered, , according to, you know, ,
+yeah.
+You know, we always had node, node label and then
+everything on the, , on the left.
+Sorry.
+On the right.
+Wait a minute.
+From your point of view, , everything on the left
+being smaller than the node level and everything on the
+right being larger than node label.
+So forget that it's going to be, , labelled binary
+trees with integer labels.
+But, , forget about that invariant.
+I'm just using this to represent, using this represent
+search spaces.
+, so arbitrary labelled binary trees.
+And here's an example.
+Okay.
+So this, this , declaration you've seen before.
+Okay.
+This is, this is, , how you represent binary trees
+in Haskell and, , you know, with, , two kinds,
+two constructors, nil for the empty tree and node for
+a tree that has a label, , and two subtrees.
+Okay.
+And, , here is an example of such a tree.
+And in this, in this some in this form here,
+this is how you'd write it in Haskell.
+, it's kind of hard to read.
+Here is the here is a picture of, of of
+what I've, , defined here.
+Okay.
+So it's a node, , which has a label one.
+There it is.
+And then two subtrees.
+The left one.
+, two at the top, four and five underneath.
+And the other one with , three at the top
+and left subtree.
+Six.
+Eight.
+Nine.
+That's here.
+And right subtree has just a seven.
+Okay.
+So I'm going to be using these trees, as I
+said to represent a search space.
+And , so think of the problem of , finding
+a good move in a chess game or in a
+go game or, , imagine that you want to find,
+, flight connections from here to somewhere far away, ,
+where there's no direct flight.
+And so you need to find, , a sequence of
+flights that will get you there.
+Okay, so the the the nodes in the in the
+tree Represent positions in chess or position in go or
+airports in the, in this sort of aeroplane network search
+space.
+Okay.
+, and the the, the game you're playing is getting
+from the root.
+So this, this this, this thing at the top of
+the tree.
+Remember, trees in computer science grow downwards instead of upwards.
+Okay.
+So getting from the root via some sequence of of
+of moves or branches to a node.
+That's one that you're looking for.
+Okay.
+So the problem is searching for a node that has
+some property.
+Okay.
+And I've simplified the problem as much as I can.
+We've got binary trees.
+meaning that from every node there's only two possible
+moves.
+Okay.
+That's an airport that only has two possible flights
+or a chess game that only has two possible moves
+from each position.
+Of course, that's not the way it is, but it
+keeps things simple to just consider that case, okay?
+And at the at the at the labels, instead of
+having complicated things names of airports or chess positions,
+I'm just using integers because that's going to be good
+enough for the examples I'm going to do.
+Okay, but you could imagine these trees being, you know,
+more than binary and , and with more information at
+the nodes.
+Okay.
+So you've got the sort of situation that I'm, that
+I'm talking about here, right.
+Okay.
+And we're, and we're looking, we're looking for a node
+that has a particular property.
+And so this is a, this is a, this is
+a tree, an example of a tree.
+And we can also have infinite trees.
+And here is an example of an infinite tree.
+You can define it this in Haskell.
+And the, the numbers in this tree.
+I've defined them this way, because that happens to be
+useful for examples that I'm going to be showing you
+later.
+Okay.
+But of course you can define trees with other numbers
+in them okay.
+The code here is not particularly interesting.
+So I'm going to be kind of skipping through it
+pretty quickly.
+Okay.
+But here is the picture that you'd get from from
+this definition okay.
+So it's a it's a binary tree with numbers at
+the nodes.
+And if you go down if you go down here
+you get negative numbers.
+If you go down here you get positive numbers.
+And there's mixtures in between here okay.
+Right.
+So finite trees and infinite trees.
+Okay.
+So I have a tree and I want to find
+a node that satisfies a given property okay.
+And the property I'm going to express as a as
+a predicate.
+So it's a function from node labels to boolean okay.
+If a if I find a node label that satisfies
+the property.
+It means that, , that applying that predicate to the
+node label gives me true, otherwise it gives me false.
+So this is the problem I've got I've got a
+tree and I've got a property.
+And I want to find a node, label a node,
+a node that satisfies that, that property.
+So .
+Here is an example of doing a search.
+this is called breadth first search.
+I'll explain why, but let's look at the type.
+Okay.
+, okay.
+Well it requires equality because I happen to be using
+equality here.
+I could have written it without equality, but then it
+would be a bit longer.
+So, , the important part of the type is, is
+this bit.
+Okay, I supply a predicate.
+So this is the thing which is, , , telling
+what is I'm looking for.
+Okay.
+The property that I'm looking for, , the second argument
+is the tree that I'm looking forward in.
+And then the result.
+Remember this type?
+Maybe.
+Okay.
+This was the the type.
+It's a it's a algebraic data type built into Haskell
+used to represent, , , values that may or may
+not be present.
+Okay.
+I used it for, , optional arguments of functions and
+optional results of functions or.
+Yeah.
+Okay.
+And so the idea is that, , this, this search,
+it might be that there is no label that, that,
+that has that property, okay.
+In which case we can't return one.
+And so we return the result.
+, nothing.
+Here's the, here's the, the the result if you get
+if you if you search fails.
+Okay.
+, if you find one then you return it.
+But you have to wrap it up with a constructor
+called just.
+Okay.
+So here is, , kind of returning a successful, ,
+result of a successful search.
+Okay, so, , just in case you've forgotten, that's what
+this type here is for.
+For optional in this case, optional results.
+Okay.
+Results that may or may not.
+You may or may not have a result.
+Okay.
+.
+Okay, so this is code which, , which does a
+search.
+, it looks at a node.
+Okay.
+If, if there's nothing in the tree, , then, ,
+then I return nothing because there is nothing that I
+can return.
+Okay.
+And if I've got a node, I look to see
+whether that property that I'm looking for is, , satisfied
+for this node.
+If it is, then I return it as the answer.
+Otherwise I looked in the left subtree.
+If it's not, if I don't find anything there.
+This is the failure of the of the search.
+Then I look in the right subtree.
+, if, however, the result of looking in the left
+subtree gives me a result, then I return it.
+Okay, so, , , that's this is just a repetition
+of of this.
+Okay.
+, so the code is not that important here.
+, what's important is, , the search, the kind of
+search that I'm doing.
+This is called depth.
+First search and let me draw some pictures.
+It's called depth first search, because the order in which
+it looks through the tree to find, , to find.
+, a label, , that it's that is looking for.
+So let me go back to my tree.
+And draw a picture.
+Okay, so you you you may or may not remember
+my tree, but it looked this.
+.
+You see that in the back, I hope.
+.
+By the way, I just.
+I'll just go back to the definition of that tree.
+That was this one.
+Okay.
+.
+Actually, , if I look at a node this
+one, I'm drawing it this, but really, it looks
+this.
+Okay, all of these, all of these kind of end
+Nodes.
+Really?
+I should draw in the empty, , the empty nodes
+underneath them.
+, okay.
+They don't, but they don't play any role in what
+I'm going to say.
+Okay.
+So.
+Depth first search.
+What this means, what depth first search means is that
+when we're looking for, , , a node satisfying a
+property, we're starting at the top.
+Okay.
+So we're looking at that node.
+Does it satisfy the property?
+, so if the answer is no, then with depth
+first search we always go down and to the left
+to to, to to look for the next thing
+that we're going to be examining.
+Okay.
+So we go this way.
+, and then we look at that one.
+And then if that one doesn't satisfy the property, then
+we go down into the left.
+Okay.
+And so forth.
+Right.
+So here we've come to the end.
+We can't go down into the left anymore.
+So depth first search.
+When we're in that situation we we backtrack and go
+to the right.
+Okay.
+Look at this one next.
+If that doesn't satisfy the property then we backtrack.
+In this case we have to backtrack two levels and
+go to the right and look at that one.
+Okay.
+And if that doesn't satisfy the property we go down
+into the left down into the left and so forth.
+Okay.
+So the general rule is we're going down to the
+left unless it's not possible to do anything else.
+You've got a question.
+That's the order of the cards.
+Does the order.
+Okay, I'll just repeat that rather than, , , throwing
+you the cube.
+The order of the guards.
+, does it affect that?
+Well, this is the test to see whether the place
+I'm at is the is the right place.
+The, , the fact that I'm doing depth first search
+or I'm, I'm pointing at the screen here, you can't
+see that the fact that I'm doing, , depth.
+First search p of t one here, it's the t
+the fact that it's t one that is, is saying
+down into the left.
+Okay.
+Because t one is the left subtree.
+And we're looking at we're going to be looking at
+the top node of the left subtree.
+And the backtracking part is is is here okay.
+If I, if I have if I go down into
+the left and I don't find a solution, then I
+go, , then I look, only then do I look
+on the right.
+Okay.
+And so that's, that's effectively the backtracking happening there.
+I'm going to show you a different version of this
+in a minute, which might possibly be clearer.
+I'm not sure.
+Okay.
+But the point of depth research is, is the order
+in which it visits the nodes.
+Okay.
+So, .
+, so suppose that I'm looking for, , here's here's
+some pictures.
+Suppose that I'm looking for something that's greater than four.
+Okay.
+, going back to my diagram, it's shown here as
+well on the screen up there.
+But going back to my diagram, looking for something that's
+greater than four okay.
+One is is one greater than four.
+No.
+Go down here is two greater than four.
+No.
+Go down here is four greater than four.
+No it's equal to four okay I okay then I
+would actually go down here but there's nothing there okay.
+, which is what, which is what causes the failure.
+Okay.
+And then I go up here.
+Is five greater than four.
+Actually, first I would go there.
+Sorry.
+Those didn't produce any interesting results, which is why I
+sort of admit them in the previous picture.
+Okay.
+After.
+After here.
+, so is five greater than four?
+Yes it is.
+That's the answer.
+Okay.
+, if I was looking for something that was equal
+to six, then I would go here and there and
+there and there and then find it here.
+All right.
+So, .
+So that's depth.
+First search, , and you can express it in a
+different way.
+So the, the what I was doing here, I previously
+spoken about traversals and how you can traverse a tree,
+meaning you're visiting all the nodes in the tree.
+And there are different kinds of traversals.
+And what distinguishes them is the order in which you
+visit the nodes.
+So this is a depth first traversal that I'm doing
+okay.
+Okay.
+This order and so forth.
+And I can actually express this depth first search in
+terms of a depth first traversal.
+So that's the code that I have at the bottom
+here.
+Okay.
+So it's exactly the same result.
+But I'm doing it this way because the other searches
+I'm going to be showing you, I'll express them.
+I mean the key is going to be the traversal
+and the order in which the traversal does its work.
+And the and the actual search algorithm is then the
+only difference is going to be, , what kind of
+traversal it uses.
+So this is using a depth first traversal okay.
+And depth first traversal.
+It says, , you know, , at every node I
+look at the node label and then I look at
+the left subtree And then I look at the right
+subtree.
+And of course looking at the left subtree means I'm
+looking at everything in the left subtree starting from the
+node at the top of the left subtree, and then
+its left sub subtree, and then its right sub subtree,
+and so forth.
+Okay, so this this gives me the I think I
+have a.
+Yeah.
+The traversal there traversal of this tree gives me the
+nodes in the order of 124536897.
+Which is what you get if you, if you work
+this all out okay.
+And then, and then doing the and then doing the
+search.
+This is the depth first search in terms of this
+traversal.
+So what it does it's it's very simple.
+It it has a comprehension here which Which takes the
+depth first traversal for every x drawn from that from
+that list.
+It checks to see whether P holds or not.
+Okay, so that's a guard.
+So you get you get a list of all of
+the of all of the, , nodes that satisfy the
+predicate.
+, with just wrapped around them because the result is
+maybe is maybe a here.
+Okay.
+And the result is the first one of those.
+Except if this is if this list is empty, then
+the result is nothing.
+Meaning you didn't find anything.
+Okay, I'm going kind of quickly through the code because
+the code is not the main point.
+All right.
+, and so you get the same result.
+, you get the same result.
+And, , because of lazy evaluation, , it means you
+actually don't have to compute this entire list here in
+order to.
+In order to get the head you, you compute long
+enough until you have at least one element, and then
+and then you produce the head and you're finished.
+, you might have to produce you might have to
+compute the whole list if the list is.
+Wait a minute.
+.
+If that list is empty, you have to compute the
+whole thing to find out that it's empty.
+And then the result is nothing.
+So that corresponds to doing the entire going through the
+entire tree.
+Okay, so, , I have this, , I've got a
+multimedia presentation today with, , laptop and, .
+Drawing things and, , slides.
+So let me see.
+I've got this all of the code for this lecture
+and all the code for all the other lectures you
+can you can download.
+And I want to show you this, , running.
+, , so let me just, , load it in.
+Okay.
+So I can do, , that tree that I, that
+I, that I showed you, it's called.
+Whoops.
+Ah.
+Okay.
+The tree is called T1.
+, I haven't defined it with a show.
+With a show, , deriving show.
+So it's not going to print it out for me,
+but never mind.
+That's what it is.
+Okay.
+And so I can do depth first.
+, looking for greater than for in T1.
+And it'll give me the result just five and I
+can do , depth first Prime.
+This was the alternative, , way of writing this using,
+, traversal.
+And it will give me the same result.
+Okay.
+Very exciting.
+Right.
+, And I could do this even on an infinite
+tree.
+Okay.
+Looking for something?
+And now I'm going to look for something that's less
+than, , minus two in the infinite tree infos.
+This infinite tree that I showed you.
+Okay.
+And it finds, , minus three.
+Okay.
+, looking at my inventory, , minus three was was
+right here.
+Okay.
+In depth.
+First search finds it very quickly going down here.
+Okay.
+So that's depth first search.
+.
+Okay.
+, breadth first search.
+So depth depth is about is about this direction getting
+things deeper.
+Okay.
+Things going deep.
+The search goes deep.
+It goes down into the left.
+Okay.
+Breadth first search is, , going across okay.
+The order that this these nodes are visited in in
+breadth first search is , is different.
+Let me draw my tree again.
+I'll leave out the nils to keep it a little
+bit tidier.
+Oh, sorry.
+I need three screens.
+.
+Okay, there's my tree again.
+I'll leave out the nils.
+, breadth first search proceeds.
+Losing my voice proceeds from the top in layers.
+Not not, , down into the left, but in layers.
+Okay.
+Top layer one node.
+Next layer these two nodes.
+Next layer.
+Okay.
+Okay.
+You see the difference obviously right.
+That's in layers.
+Okay.
+So this is an alternative breadth first traversal.
+so this was depth first traversal that you've seen
+already.
+Breadth first traversal.
+here's a little program that computes that computes what
+I just showed you there okay.
+and so this is just a different order of
+visiting the nodes.
+So this one, if we do the depth first traversal
+the order would be 12453679.
+Sorry 36897.
+Here it would be 123456789.
+Okay, so, , a breadth first search is exactly the
+same program that I had a minute ago.
+, for depth first search, except that instead of using,
+, depth first traverse, I use breadth first traverse.
+Okay.
+So it just uses a different order of visiting the
+the nodes.
+.
+Okay.
+And, , here's a slide showing it in action.
+I'm going to skip that.
+, and I'll skip this.
+, I'll just show you it running.
+So just a second.
+Oh, dear.
+How do I get this thing to, .
+Okay.
+.
+Okay.
+Here's depth.
+First search.
+I, , no, I wanted breadth first search.
+Ah.
+Well, let me let me not do well, okay.
+Let me let me do it.
+Just because you're you're obviously, .
+Breadth.
+Breadth.
+Why is this not.
+Oh, it's capital B.
+You're obviously wanting to see if this works or not.
+Okay.
+So so breadth first, , breadth first of of, ,
+you know, looking for something that's greater than for in
+T1.
+Okay.
+Again, we get the same answer, you know, no surprise
+there.
+Right.
+because we're going we're looking for something greater than for.
+So we go here, here, here, and we find it.
+We find it right there.
+Okay, okay.
+So we got the same answer.
+But that need not always be the case okay.
+So suppose that we're looking for, .
+Sorry.
+Oh you can't see.
+Ah.
+Thanks for everybody telling me that they can't see because
+I.
+Yeah.
+, so let's see, .
+What's an example?
+.
+Okay.
+So I mean, I'll just I'll just show it in
+pictures.
+Suppose that I'm looking for something that's, .
+Not equal to one, 2 or 4.
+Okay.
+Any other one would be okay.
+Right.
+So, , so this would find five.
+Okay.
+It's the first one it visits that's not equal to
+one, 2 or 4.
+And this one would find three okay.
+So they would both find a solution but they would
+be different solutions okay great.
+Okay.
+What's the difference okay.
+They both find solutions.
+They might find different solutions.
+.
+Okay , the the difference is in the infinite case.
+Okay.
+For for infinite trees.
+, , so let me go back to my depth
+first solution.
+Okay.
+Depth first search can sometimes run forever when you, .
+.
+Wait a minute.
+Right.
+If you look at this infinite tree here.
+Okay.
+And you go with depth first search looking for a
+node that's greater than zero.
+Okay.
+What happens?
+We start at the we start at the, at the
+top and we go down into the left.
+So is zero.
+Is zero greater than zero.
+No it isn't okay.
+Is is minus one greater than zero?
+No it isn't.
+Is minus two greater than zero?
+No it isn't.
+Is minus three greater than zero?
+No it isn't.
+Okay, we keep going.
+We'll never find anything that's greater than zero.
+And this is an infinite tree.
+So you'll go forever.
+Okay.
+And, , I could show it you running, but it
+would just not terminate.
+Okay.
+And there's my two different implementations.
+, fail in different ways.
+The first one, as it happens, it it fills up
+the memory, and then you get this, , Stack Overflow
+thing.
+And the second one, Haskell cleverly realises that it can
+do a version.
+, it compile can compile this in such a way
+that it doesn't produce lots of stuff that consumes the
+memory.
+And so it just runs forever without having a stack
+overflow.
+In both cases, you never find anything that's greater than
+zero because you're going down and down and down this
+left branch forever Okay.
+However.
+Breadth first search.
+Sorry.
+Yeah.
+Breadth first search visits just three nodes.
+This one.
+So it's going in layers.
+Oops.
+.
+So that one, that one.
+And then this one.
+And it returns.
+It returns that one okay.
+So it's going in layers.
+So here and then across and then across here and
+then across here.
+But it finds it already in this in this second
+layer.
+Okay.
+So instead of running forever it finds it almost immediately.
+Okay.
+And that's because , the solution is in the right
+subtree.
+And so this strategy of going always to the left
+is in this case the wrong one.
+Okay.
+.
+And .
+Yeah, it's hard to.
+Oh.
+.
+Okay.
+And it's all because the order in which the the
+nodes are being visited are is wrong.
+Okay.
+The, .
+So, so what this says is that sometimes depth first
+search is better and sometimes breadth first search is better
+in general.
+, and they really differ a lot for infinite trees.
+Okay.
+So in general depth first search doesn't always terminate.
+Even if, even if you even if there is a
+node in the tree that satisfies the property you're looking
+for depth.
+Breadth first search will always find it if it's there.
+, but it might take longer.
+Okay.
+I mean, if the thing you're looking for is, is,
+you know, level 20 down this left hand branch here,
+, depth.
+First search will find it in 20 steps, whereas breadth
+first search will have to visit every single one of
+these layers.
+It's about two to the 20th nodes that it'll have
+to visit before it finds this thing.
+That's that's way down, way down the left hand branch.
+Okay.
+So, , and then the question is, can we do
+better?
+And the answer is yes sometimes.
+Okay.
+And, , , this is, , this is an area
+called heuristic search.
+And this is where it gets into sort of AI.
+, so heuristic, , search is about, , , using
+information.
+Well, in this case, it's about using information about the
+problem to, , to cleverly pick the way to go
+next, rather than blindly always going down to the left
+or always going in layers.
+So, , instead of that, , you imagine, well,
+let's start with with a sort of analogy.
+So if this was a chess, if this was a
+chess, , search space where the branches are moves and
+you're looking for a good move.
+So how would you decide which is a good move?
+, you you don't kind of blindly search for it.
+You look at the positions that you're that you're reaching,
+whether there are good positions or not.
+You want to make moves that put you in a
+good position.
+Or if you're looking for a flight from here to
+Singapore, let's say, , , it would make sense to
+look for flights that go in the direction of Singapore.
+You know, if there's no direct flight to Singapore, at
+least it would be better to go from from Edinburgh
+to Dubai or or, , you know, some place east
+of here and not to New York, for example.
+Okay.
+Well, I mean, you can get to Singapore going that
+way as well, but, , , you know, anyway, it
+makes sense to go in the direction of the thing
+that you're, that you're trying to get to.
+Okay.
+And so and so it isn't just a matter of
+looking blindly, you know, left subtree or blindly layers, but
+looking at the, the values at those nodes and using
+that information to decide what to do next.
+So this is , something called best first search.
+At least that's what I'm going to call it.
+And , the idea is to decide the order of
+nodes to visit using an evaluation function.
+So this evaluation function, which looks at the values in
+the tree and picks the right node or picks, decides
+which node to to visit based on what this evaluation
+function gives you.
+Okay, this code is a little bit complicated, but the
+important thing here is the , is the type I
+guess.
+Okay.
+So best first search.
+It's going to take a predicate, which is , the
+, you know, it's the thing that we've had all
+along.
+This is, this is the, , it tells you whether
+you've you found something that you're looking for.
+Okay.
+But in addition, we have this thing here.
+This is the evaluation function.
+And so this is going to take , it's going
+to take the, the the potential places to go okay.
+Which are in this case going to be, , the
+immediate subtrees of the place you are and it's going
+to deliver, , an integer result.
+Okay.
+Think of this as the, the quality or the value
+of, of that subtree.
+And I'm allowing it not just to look at the
+node but to look at the whole subtree.
+It might be if it was a chess position,
+you might want to look at the potential places you
+could reach after 1 or 2 moves from that test
+position.
+Okay, so a little bit more general than just looking
+at the at the label okay.
+So otherwise it's the same as before.
+You take a you take the, you know, the predicate,
+, this is what you're looking for.
+You've got the evaluation function.
+You have the tree that you're looking in, and then
+it will give you a result or maybe not give
+you a result depending on whether it's there or not.
+Okay.
+So that's the idea.
+And I won't go through this code because it's kind
+of complicated.
+And there's also I think there's another page of code.
+Yeah.
+Another page of code which implements something called priority queues.
+But let me tell you what's going on here.
+Okay.
+So I haven't talked much about different data structures, but
+two data structures that you may have heard of are
+stack and queue.
+Okay.
+A stack is the analogy is always used, if
+you're in a cafeteria and you have a bunch of
+plates and you take the sort of top one off
+the stack.
+, so that's a stack of plates you put.
+If you want to put more plates into the stack,
+you put them on the top and it sort of
+sinks down.
+Everyone you put on the top is is causing it
+sink down and when you take one off, it's the
+last one that was put on.
+Okay.
+So that's called , last in first out.
+Okay.
+And then there's a Q, which is , , at
+the, at the supermarket for the checkout or something
+that.
+You get in the back.
+This is if you're actually using, well, supermarkets with queues.
+Okay.
+So , you get in the last place and the,
+the person who is next served is at the front
+and that's called , , first in, first out.
+Okay.
+, this is using something called a priority queue, which
+is a variant on a queue, which is where the
+things in the queue have values and it isn't it
+isn't first in, first out or last in first out.
+It's it's, , it's, , best is the first out.
+Okay, so the things in the queue have values, and
+the queue is arranged such that the things with the
+best value are in the front.
+And those are the ones that go out first, even
+if the best ones are the ones that came in
+last.
+Okay, so I'm not going to go through this code,
+but there's code here for implementing a priority queue.
+, and and this is code for best first search
+that uses that priority queue.
+, here's PQ standing for priority queue.
+And there's functions that insert things into priority queues
+and so forth.
+Okay.
+So you can look at this code, , in your
+copious free time, , if you, if you wish.
+But that's what it's doing.
+, the code for priorities queues is , it's, it's
+kind of , , , ordered trees from the earlier
+lecture, but we're maintaining items in descending order according to
+the result of the evaluation function.
+, and getting stuff out of the tree uses these
+functions top and pop.
+Okay.
+So, .
+Right.
+So, for example, , I could show you these things
+running, but I think in the interest of time, I'll
+just talk through these, okay?
+This is what I would get if I would run
+them on my computer, on my laptop.
+Okay.
+So, , this this, , infinite tree.
+I mean, the interesting thing is to look at infinite
+trees, because these, these these tree that I have is
+too small to be very interesting.
+So this was the infinite tree that I had.
+Okay.
+So just remember this tree.
+Okay.
+, negative stuff down to the left.
+Positive stuff down to the right.
+Okay.
+And let's suppose that my evaluation function, just to keep
+things really simple All it does is return the node
+label.
+Okay, this is really, really simple.
+, and for the nil tree it returns zero.
+Okay.
+So , so using that using that evaluation function.
+, well first of all breadth first search will find
+will find , if I'm looking for something that's greater
+than 19 it'll find it.
+Okay.
+Remember my my tree negative stuff down to the to
+the left.
+Positive stuff down to the right.
+It'll eventually find something that's greater than 19.
+It's a label with 20.
+And it will.
+It'll find it by going layer by layer.
+And it'll find it in the 21st layer.
+Okay.
+, and in order to get there.
+Okay, if I run this on my laptop, it takes
+about 10s and it had to look at 2 million
+nodes to find it.
+Okay.
+Because starting at the top, it's down here.
+Okay.
+Starting at the top it's going layer by layer by
+layer by layer.
+Each one is twice as long as the one before,
+and eventually it finds it down here layer 21 okay.
+But it finds it okay.
+Best first search if if the evaluation function is the
+value of the of the value of the node, it'll
+find it in a 0.02 seconds.
+And it only has to look at 21 nodes to
+find it.
+So let me just go back and look at this
+tree quickly.
+, okay.
+It'll start here and it'll decide what what am I
+going to do now?
+I've got a node with a one and a node
+with a minus one.
+And so if my strategy is to take the one
+with the evaluation function giving the largest value and the
+value of the evaluation function is just the node, It's
+going to go this way because one is greater than
+minus one.
+Okay.
+And then at this point it's going to look at
+these two branches.
+And it's going to decide to go again to the
+right because two is greater than zero and so forth
+and so on.
+It's going to go down this branch.
+Keep going until it gets to the label 20 which
+is on level 21.
+, wait a minute.
+Okay.
+So it'll find it and much more quickly okay.
+Because it's doing this best, best first search.
+.
+Now, if I was looking for something that's greater than
+100, and if I use breadth first search, it will
+have to look through 100 layers, which it will find.
+, I don't know how long it would take on
+my laptop, but it has to look at this many
+nodes to get there.
+That's a lot.
+Okay, probably, , probably.
+It would take too long to wait for it, I
+don't know.
+, okay.
+Because it's basically two to the 100th or two to
+the two to the, , actually two to the 102
+minus one I've got written down here.
+Okay.
+Because top layer is layer zero and so forth.
+Okay.
+It's the 21st layer where the first one is zero.
+Okay.
+So that will take an awful long time.
+It'll find it because breadth first search will always terminate
+if the thing is there.
+Okay.
+But best first search just has to do , it'll
+go right down the, , down this branch and find
+it very quickly looking at 101 nodes to get there,
+okay.
+In almost no time.
+Okay.
+So I mean, this was a very, very, , ,
+kind of superficial look at this idea of heuristic search.
+The thing about heuristic search is that the heuristics don't
+always work okay.
+The performance depends critically on the quality of the evaluation
+function.
+And my evaluation function here was was the simplest possible
+thing.
+Okay.
+, and it also depends on the structure of the
+search space and how the evaluation function relates to the
+search space.
+And this diagram sort of shows you what can happen.
+, ignore these, these equations.
+, the important thing was these with these pictures.
+Okay.
+So you can think of, , of best first search
+as, , as, as climbing a hill and you're going,
+you're always going up.
+So if you're at a point, if you're at a
+point in this space and you want to decide where
+to go next, and your objective is to get to
+the top of the hill, a good heuristic is to
+go is to go the steepest in the steepest direction.
+You can upwards.
+Okay.
+And then you eventually get up to the top.
+Okay.
+And that that works.
+If the search space looks this, no matter where
+you are in this space, if you always follow the
+heuristic of going the steepest direction upwards, you'll get to
+the top.
+Okay.
+But if the search space looks this, this bottom
+picture.
+Okay, when you have a when you have a local
+maximum which is not a global maximum.
+So if you start off over here and you follow
+the heuristic of going always in the steepest upward direction,
+you'll get to this.
+You'll get to the top here.
+Okay.
+But if you start over here and you follow that
+heuristic, you'll end up at this at this point here,
+which is the top of a hill, but it's the
+top of the smaller hill, okay.
+And you would never you would never think to go
+down and then up again.
+Okay.
+If your heuristic is simply always go upwards as deeply
+as possible.
+Okay, so I say, , how well this works
+is it's affected by the, the evaluation function and the
+shape of the search space.
+And in general, , you don't know the shape of
+the search space.
+, you can maybe guess and you can also see
+local bits of it when you're doing a search, but
+you can't see the whole thing at once.
+Okay.
+, right.
+And so that was a kind of lightning, , introduction
+to, , searching in trees.
+, if you go on in informatics and you do,
+, courses in AI and so forth, there's a lot
+more to say about search than what I've said here,
+but it's a a first glimpse.
+Okay.
+So thanks for your attention.
+And I'll see you on Tuesday, Monday, Monday.
+Yeah.
+All right.
+Did you get your thing to work?

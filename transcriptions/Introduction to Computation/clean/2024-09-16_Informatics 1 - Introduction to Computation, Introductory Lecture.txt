@@ -1,0 +1,1081 @@
+Please come in and sit down.
+There are seats in the front.
+I think there's a little bit more than 450.
+Of course.
+Yeah.
+Yeah.
+.
+So, I mean, there's some.
+Yeah.
+They were never.
+It was never full.
+But I don't know how many are still to file
+in here.
+Right.
+Please, everybody come in and sit down so I can
+get started.
+If there are people near you looking for seats.
+, go in to the middle to make space.
+Okay.
+Almost everybody is sitting now.
+Okay So we can begin.
+Ah!
+I can't see my controls.
+I'd to start my, .
+Thank you.
+I'd to start my lectures with some music that
+was also sprach Zarathustra by Richard Strauss.
+, yeah.
+Welcome.
+, welcome to Informatics one.
+A introduction to Computation, known as Inf1 A for short.
+So I know that many of you are starting university
+today, and this will be your first lecture from the
+School of Informatics.
+I hope it will be a worthy start to the
+next four years of your studies.
+This lecture is going to be an introduction to the
+course I'm going to be covering.
+, who will be teaching you, what will be teaching
+and why, , when and where the course takes place
+and how we'll teach you.
+And there'll be time for questions at the end.
+Okay.
+So let's get started.
+So who who will be teaching you?
+So first of all, there's me.
+, so my name is Don Santella.
+Call me Don.
+, I'm lecturing on functional programming, as it says.
+Yeah, it does say there.
+Okay.
+, , and I'm also the overall course organiser, so
+you'll be getting certain emails from me about the course
+as a whole.
+, the other lecture on the course is Julian Bradfield
+here he is a little bit pixilated and over there
+in real life.
+So, , so Julian is going to be lecturing on
+computation and logic.
+Those are the two strands of the course functional programming
+and computation and Logic.
+, so Julie and I are both members of teaching
+staff in the School of Informatics.
+, so you'll see Julian lecturing starting on Thursday.
+, some other people associated with the course.
+This is our teaching assistant, Alice Graham.
+She's working mostly behind the scenes on things the
+tutorial exercises.
+, she's a student you, I think, , fourth
+year.
+, this is James Garforth.
+, you won't see him.
+I don't think, unless you're a, , a student representative.
+, he's the informatics one course organiser, which means, ,
+this course, the the the, , object oriented programming course,
+and the second semester that most of you will be
+taking, , cognitive science that some of you will be
+taking.
+So he's responsible for making sure that these all run
+smoothly.
+, so he does things run the staff student
+liaison committee meetings.
+And this is Kendall Reed.
+So Kendall, , works in the ETO and handles administration
+of the course.
+, so what is the ETO?
+It's the informatics teaching organisation.
+This is a very important, , thing to know about.
+So the informatics teaching Organisation, , is located in Appleton
+Tower and the, the main , sort of office for
+inquiries is on level six.
+You go in there if you have some sort of
+problem, some sort of administrative problem that needs to be
+solved.
+So by administrative problem, I mean things , , why
+haven't I been signed up for a tutorial?
+Or how do I get an account, , on the
+computers or something that?
+, not questions , , , I don't know, something
+about logic or functional programming.
+Okay.
+, so they, they will help you with questions that
+are non-academic in the sense of not being about the
+content of the course.
+Okay.
+They're very helpful.
+They may not be able to answer your question, but
+they will refer you to the right place to have
+your question or your problem solved.
+Okay.
+, Kendall is on the eighth floor.
+, she is working more behind the scenes on things
+, , yeah, tutorial assignments and things that.
+Okay.
+Anyway.
+Remember.
+Informatics teaching organisation ETO for short.
+They can solve most of your problems.
+, Julie and I, Julian and I can solve very
+few of these sorts of problems.
+So if you email us, , what will happen is
+that there will be a delay before we tell you
+to go to the Ito.
+All right.
+If it's this sort of problem, , so it's better
+to actually just go there and get your problem sorted
+out that way.
+All right.
+So those are the people associated with the course.
+So what are we teaching you in this course?
+There's two things.
+Two strands, , that are separate but interwoven.
+So I'm going to be teaching you functional programming using
+a language called Haskell, which is different from other functions
+from other programming languages that you might have encountered before.
+Has anybody used Haskell here?
+I see a couple of hands.
+okay, but not very many.
+All right.
+So many of you will have done programming before.
+, not all of you.
+So don't worry if you haven't, okay?
+Some of you might have an an awful lot of
+experience with programming.
+So Haskell is different from what you will have seen
+if you've done programming before.
+So Haskell is on functional programming in general.
+Is computing based on calculation using data structures without states?
+I'll explain what I mean by states in the next
+lecture.
+, and so this part of the course is Introduction
+to programming , also known as coding and algorithmic thinking.
+, so the lectures will be mainly on Monday and
+Tuesdays and they'll start, start tomorrow.
+The, the actual content of that strand of the course,
+the second strand is logic and computation.
+So this covers two very important topics in computer science.
+Symbolic logic, which is describing and reasoning about information where
+everything is either true or false.
+There's nothing in the middle.
+Okay.
+, or at least the kind of symbolic logic you're
+going to be learning about is, , is a is
+a logic where everything is either true or false.
+And the other part of this is finite automata.
+This is computing based on, , it's a model of
+computation based on moving between states and response to input.
+It's very different style of computation from functional programming, and
+it's partly presented to show you that there's more than
+one, , alternative.
+So the first lecture on this is going to be
+on Thursday by Julian, , who will be starting off
+with, I guess, the symbolic logic part.
+Okay.
+Why do we choose to teach you these topics?
+Okay.
+, we want to give you a good basis for
+your future studies and informatics.
+Whatever you end up doing here, , in your studies,
+whether it's, you know, AI or theoretical computer science or,
+I don't know, robotics or machine learning or whatever.
+Okay.
+, so we believe we, the School of Informatics, believes
+that this gives you a solid basis for the study
+of all these other topics.
+And, , there's interesting connections between these two strands of
+the course, the functional programming on one hand and the
+computational logic on the other hand.
+So that's that's cool.
+We can exploit that.
+And these things have practical applications that we can refer
+to.
+You won't be doing the practical applications in these course,
+but we can at least talk about them as kind
+of motivation for why for why you're learning these things.
+, , these, , this material is accessible to all
+students regardless of your previous background.
+So there are no prerequisites for this course, except that
+we expect you to have a general background in mathematics,
+not because we need you to know specific things as
+much as we need you to be proficient in, you
+know, manipulating formulas and things that without making mistakes.
+Okay.
+So in particular, the reason we choose to teach you
+Haskell rather than something else is that almost none of
+you will have seen it before, which means that the
+students who have done a lot of programming before will
+be on the same sort of footing as students who
+have done no programming at all.
+Okay, it will be different from the programming you might
+have done before.
+And it's also, , something whereas you've done no programming.
+It's a relatively easy kind of entry point to this
+world.
+Okay.
+And finally, it demonstrates the intellectual depth of informatics.
+So this is not just technical skills.
+What you're learning at university here in informatics.
+So for instance I'm not teaching you how to write.
+Well, I'll teach you how to write Haskell programs.
+But I'm not just teaching you how to write tactical
+programs.
+I'm trying to teach you how to think about programming.
+Okay.
+Using Haskell as a vehicle for that.
+So this is the beginning of, , of an interesting
+journey, , through through informatics.
+So.
+So when are we teaching you and where where are
+the various events in the course taking place?
+Okay, so, , let me switch.
+Okay.
+If you go to the timetable for this course, you
+get this.
+This is in path that I think you might have
+had an opportunity to visit.
+Anyway, there are various representations of this timetable that you
+can access.
+So you get this kind of confusing list of of
+days and times and boxes with things in them.
+Okay.
+, it's a little confusing.
+, you know, you see things , , there's a
+lecture here.
+, yeah.
+I don't know if you can see my cursor.
+There's a lecture at the top at 1400.
+That's the one you're in right now.
+Okay, so you can see all the things in this
+in this course.
+And there's optional things tutorials.
+Okay.
+Let me try to explain this.
+, in, in text.
+Okay.
+So first of all, there's the lectures and lectures Monday,
+Tuesday, Thursday and Friday, all at 210, , running until
+3:00.
+They're all here.
+, congratulations.
+You've successfully found the first lecture.
+Well done.
+, this is the Oak Lecture Theatre.
+, okay.
+All lectures are here.
+and , functional programming on Monday and Tuesday and
+computation and logic on Thursday and Friday.
+Except next week we're having A11 switch because I need
+to travel.
+All right.
+So all the lectures are recorded and also live streamed.
+So if you, , don't feel coming here, you
+can watch the, the, the lecture in real time on
+the live stream or you can watch it afterwards.
+It might be that you'll want to watch it afterwards
+to pick up something that you missed during the during
+the lecture as well.
+That's also possible.
+So these these recordings you can access and , try
+to remind yourself of things.
+So , the as you know already, , this is
+the this is a map of the King's Buildings campus,
+this sort of mainly science.
+, most of the science departments of the university are
+here.
+Informatics isn't.
+Anyway, we're in the nucleus building, which is this thing
+with the green cross on it.
+Okay.
+, okay, so there's the lectures.
+, another thing is that there's tutorials.
+, so each of you will be assigned to a
+tutorial group and you will do, , tutorial exercises every
+week starting next week.
+That is, there will be tutorial exercises to be submitted
+every week starting next week.
+And can start on them already now.
+Okay.
+So in general the tutorial exercises, there will be separate
+exercises for the functional programming part of the course and
+the computation and logic part of the course.
+So two sets of exercises each week.
+They will be issued normally noon on Tuesday, but the
+first set is already available now.
+and they're due in a week later.
+Okay.
+So your first deadline for tutorial exercises in Tuesday is
+Tuesday next week at noon.
+Okay, so these are a set of exercises that will
+take you some time to do these exercises.
+The first one is easier than some of the following
+ones recommended to to do that to pick up points
+almost for free.
+You will be meeting starting in the second week of
+the semester in small groups.
+90 minute tutorials on Thursday or Friday.
+Okay, the you haven't yet been assigned to a tutorial
+group.
+, you will hear when that has been done, I
+think.
+.
+Okay.
+And the the point of the tutorial groups is to
+discuss the exercises that you will have submitted a few
+days before.
+They will have been marked by the time you have
+your tutorial, , group meeting and you'll discuss them with
+your tutor.
+You're in a group of about between 10 and 12
+students, so you'll be assigned to a tutorial group.
+And if it doesn't suit you because of your timetable
+or something else, you can, , you can switch, ,
+there's a form to do that with.
+, there's a question on Piazza about this piazza is
+the is the forum, , question and answer forum for
+this for this course.
+So look there it points you to exactly what you
+need to do to switch tutorial groups.
+, don't email me.
+I can't do anything about it.
+Don't email Julian.
+He also can't do anything about it.
+Don't email Kendall.
+She also can't do anything about it.
+Okay, , there's some central office that does all these
+things.
+Okay, I, , right, here's tutorial.
+, the tutorials are all over the place.
+, , this is actually last year's maps.
+, I don't remember if they're in the same place
+or not.
+Anyway, some of them in King's Buildings, some of them
+in the central part of the university.
+Different buildings.
+, right.
+The third component or the third kind of event are
+drop in labs.
+So these are every day of the week, , with
+one, one lab in King's Buildings on Monday and all
+the other labs in Appleton Tower in the central part
+of the university.
+, Monday through Friday.
+Okay, so these labs, first of all, important is, ,
+you'll see them in your timetable.
+You'll see that there's there's one every day and two
+on Monday.
+You'll wonder, oh, do I need to go to all
+these labs?
+, the answer is no.
+, you can go to any of them, or none
+of them, or several of them.
+You can come at the beginning, you can come in
+the middle.
+What these are are opportunities to get help in person
+from, , from people who are, you know, assigned to
+help you out with, with things in this course.
+Okay.
+So demonstrators, so, , rooms, , where you can bring
+your laptop, , in the Appleton Tower, you can use
+the computers that are actually there already.
+, and you can work on your, on your, on
+your tutorial exercises and ask for help if you need
+it.
+So, , as I said, optional, , use them if
+you need them.
+The demonstrators are happy to help you.
+, okay.
+And where are they?
+, so the one in King's buildings, as in this
+building.
+Can you see my cursor?
+Yes.
+You can.
+Okay.
+This building with the Green Cross merchants and House.
+That's where they are in King's Buildings.
+That's today, immediately after this lecture.
+Okay.
+You walk from somewhere over here to there.
+Okay.
+Near the bus stops.
+If you if you're using the bus to get into
+the central part of the university and the the central
+area, Appleton Tower is this building with the green cross
+here, , near George Square.
+Okay.
+George Square, if you haven't seen it.
+It's a little park, , with trees and grass and
+stuff here.
+Okay.
+Meadows, is is this area here?
+I don't know if you've had a chance to get
+oriented.
+.
+Okay, so everything about the course will be published on
+the courses Learn page and the courses web pages.
+, so things , , organisational information, all of the
+slides, all of the reading, all of the exercises, the
+solutions to the exercises.
+Once the.
+You know, once they've passed and you want to see
+whether you got the right answers.
+, there will be a programming competition towards the end
+of the course.
+I'll tell you about that when the time comes.
+And other resources.
+, okay.
+Let me just show you this.
+You've probably found it already.
+Okay.
+This is the Courses Learn page.
+Do you know how to get to this?
+Anybody know how to get to it?
+Lots of hands.
+Anybody not know how to get to it?
+A couple of hands.
+Okay.
+, let me show you how to get to it.
+Learn.
+, University.
+Oops.
+Spell it correctly.
+Of Edinburgh.
+Click on learn.
+, there's probably better ways of doing this.
+Anyway, you get to a page that looks that
+with various options.
+Your options will be different from mine.
+And you click on , this course Introduction to Computation.
+, 202 4 to 2 025 okay.
+So there's stuff here a link to the to
+the teaching materials lecture, the lecture slides and things, ,
+and so forth.
+Okay.
+, the, .
+Why is week one not available?
+I don't know why, but there should be, , there
+should be a page for the stuff from week one,
+including things the practical exercises.
+I thought I thought it was there, but, , it
+seems not to be yet.
+Okay.
+I'll make sure it is.
+, anyway, there's stuff there.
+Okay, so how many people have managed to find the
+this this page?
+Okay, lots.
+Okay.
+I hope you had a chance to, , to look
+through it a bit.
+, have you tried how many people have tried to
+install Haskell and have been successful?
+Okay, quite a lot, but not everybody.
+How many have tried and been unsuccessful?
+A few.
+Okay, , you might want to go to the to
+the labs either immediately after this lecture or in an
+hour after this lecture in Appleton Tower.
+Okay.
+, and for those who haven't tried yet, , give
+it a try.
+It's part of the first practical Physical exercise.
+How many people have started on the reading?
+Okay.
+Not many.
+All right, well, it's the beginning of the week, and
+I only told you about it yesterday.
+Late.
+Anybody finished?
+I did.
+Okay.
+There's reading every week.
+There's lectures every week.
+There's tutorials every week.
+And there's a quizzes every week.
+I'll come to that.
+Okay.
+Lots of work in this course.
+But it's fun and it's interesting.
+And you learn by doing the work.
+So let me find my.
+There we go.
+Okay.
+So how are we going to teach you?
+Okay, well, first of all, there is a textbook for
+this course.
+It looks that.
+Okay.
+, it is a this this this textbook was written
+for this course.
+, it's an absolutely magnificent book, , with chock full
+of everything you need to know with a little bit
+of humour.
+Okay, I know that it's great because I wrote it.
+, so, , it's, , you know, you might want
+to get copies for your friends and relatives for Christmas
+and things that.
+, anyway, you can get, , you need a copy
+of this book.
+Okay.
+You can get it for free electronically by going through
+the library.
+And it's accessible by learn clicking on library resources and
+etc., etc. you can get a PDF copy of the
+book and that's free.
+, if you want a physical copy this.
+And of course you do want a physical copy because,
+, you'll you'll want to, , you know, get multiple
+copies for your relatives.
+As I said, , you can you can get them,
+, from three places that I know of, at least
+three places right now.
+Springer, which is the the publisher, you can see their
+their name down here.
+, they have a very good special offer of 40%
+off.
+And so the book is, , list price is £29.99.
+And right now it's 1799 until, , 26th of, of
+September.
+Okay.
+, so that's, , that's a very good price.
+Blackwell's has a 15% discount until early October, so if
+you want to get it today, you can go over
+to Blackwell's and, , pay.
+Pay that much?
+, or Amazon?
+I looked it up, and right now it's, , it's
+29, 97.
+Okay.
+, anyway, you need to copy this book and electronics
+perfectly.
+Okay.
+If you can read online.
+I personally paper so I can write stuff in
+the margins and so forth.
+Okay.
+So there will be a signed reading every week, which
+will be pieces of this book.
+There are exercises at the end of the chapters that
+you can try if you .
+, but the exercises for the course will be different.
+So assessment.
+There is no exam for this course.
+I've opened week one if you want to go back
+to it.
+Enough.
+What's that?
+I've opened week.
+One.
+Are you open?
+Okay.
+Right.
+Sorry.
+Oh, that was quick.
+.
+This refers to the learn page.
+Right.
+Okay.
+Week one.
+So in week one, there's, , the, , the tutorial
+for functional programming, the tutorial for computation and logic, and,
+, the quiz for, for computation and logic is not
+yet available, but it will be, , towards the end
+of the week.
+Okay.
+Thanks.
+Thanks, Julian.
+.
+Right.
+So there's a lot of assessment, but no exam.
+There's 41 items of assessment altogether.
+Okay, that's four per week starting in, , over ten
+weeks, plus one.
+Okay, so, , lots of work.
+We give you a lot of work because we find
+this is the way that you're actually going to learn
+stuff.
+Okay.
+, so, first of all, there are two quizzes each
+week one on functional programming, one on computation and logic.
+, these quizzes are, , they should take you about
+ten minutes.
+They're easy.
+The idea is to motivate you to go to the
+lectures and do the reading.
+, and the questions on the quiz are things that
+you should be able to answer very easily if you've
+done those things.
+Okay, so not hard problem solving, but just, , you
+know, things that you should you should immediately know if
+you've been paying attention.
+Okay.
+So, , starting in week two, you've got the, the
+functional programming quizzes.
+They're due on Wednesday at noon.
+, starting this week, you've got the computation and logic
+quizzes.
+They are due on, , at 4:00 in the afternoon
+on Saturday.
+, okay.
+Why is this okay?
+So, , , the FP quiz comes after the FP
+lectures.
+The CL quiz comes after the CL lectures.
+Okay.
+, , if you don't want to work on Saturday,
+you can submit it before that.
+Okay.
+The last the second HCL lectures ends at 3:00 on
+on Wednesday.
+Okay.
+So we're giving you we're giving you, , 25 hours.
+, in case you wish to use it.
+But you don't have to wait until Saturday.
+Okay.
+So there's the quizzes every week.
+There are tutorial exercises every week.
+They're due at 12:00 on Tuesday starting in week two.
+And you'll have a tutorial meeting on Thursday or Friday
+every week, starting in week two to discuss the tutorial
+exercises.
+Okay, so that's that's ten weeks times for items.
+That's 40 items.
+And then there is a programming project towards the end
+of the course.
+.
+Okay, so, .
+Here is how.
+Here is how, , the the points in this of
+all, you know, all the points add up to make
+100%.
+Okay, so, , each of the quizzes is worth one
+point.
+You can get fractional points.
+, each of the tutorials is worth four points graded
+from 0 to 4, zero, one, two, three, four.
+No, no fractions.
+And for these for these items for each of these
+items, , we take the best eight out of ten.
+Okay.
+So you do you know, you do ten tutorials in
+FP and you get different marks and we throw away
+the lowest two.
+All right.
+And, , so this, .
+Well, this is partly to take account of the fact
+that people have bad weeks and get, you know, get
+sick and so forth.
+, and it also allows us to, , this is
+this is kind of the flexibility which allows us to
+say no extensions, , no opportunities to resubmit, etc. if
+you miss one of these tough next week.
+Don't do it.
+Don't don't miss it okay.
+So you've lost.
+You've lost one of your one of your ten.
+But you get you have , nine others.
+Okay.
+You understand that?
+Okay.
+So, , since we throw away your two worst grades,
+if you, if you fail to submit one because you
+know, your laptop crashed or something that, , then,
+, you still have nine other opportunities.
+Okay.
+And the programming project is worth 20 points.
+So this is a substantial, substantial thing.
+Okay.
+So this is all the all the stuff in the
+course.
+, do you have any questions?
+Anybody?
+There's a question.
+I saw your hand first.
+You in the grey.
+So for the functional programming and the computational logic puzzles
+will have about 25 hours.
+To so much more.
+So you asked about functional programming and computation and logic.
+We're talking about the quizzes.
+Yeah.
+So, , 24 hours for the functional programming quiz.
+20.
+Sorry.
+28 hours for thee.
+When are you coming from?
+When it's.
+When it's issued.
+Issued at noon, 28 hours.
+It takes ten minutes.
+Okay.
+So don't don't expect to spend 24 hours.
+In fact, you only get half an hour when you
+start it.
+A timer starts.
+Okay.
+I saw you next.
+Yeah.
+I'll tell you more about the programming project.
+That's a little difficult because we haven't yet decided on
+what it's going to be.
+Exactly what I can tell you is there's going to
+be, , programming in Haskell, and it's going to be
+on a topic which involves computation and logic.
+Okay.
+, more will come.
+Yeah.
+How do you get the solutions?
+For what?
+How do we get the textbook?
+.
+How do you get the answers?
+Yeah, the textbook exercises doesn't have answers.
+Okay.
+Your tutors have access to the solutions.
+So I suggest if you want to do the exercises
+in the textbook, you try them out, and then you
+ask the tutor if what your answer is is correct
+or not.
+Okay, I'm not going to publish the answers.
+And they shouldn't be anywhere on the internet as far
+as I know.
+Okay, some more questions.
+What kind of finite state autonoma or autonoma in general
+are going to be covered in the computational logic portion?
+Of course.
+Okay.
+Julian, would you to answer that?
+The question was, what kind of finite state automata are
+going to be covered in the in that part of
+the course?
+Just ordinary plain finite state automata.
+Okay, okay.
+Simplest simplest kind.
+Is there going to be any regex covered?
+, yes.
+We will talk about Regexes and I have an optional
+lecture at the end about super Regexes.
+Okay, that was about regular expressions, which has to do
+with finite state automata.
+You've done some either some advanced reading or you've done
+this sort of thing before.
+Okay.
+, any other questions?
+These were all people.
+Oh, there's one back there.
+I'm sorry.
+Is the programming project group project or individual?
+It will be individual project?
+Yeah.
+I sorry, I'm.
+Not usually on our slides all nighters, though, because I've
+just completely forgotten them all.
+Yeah, all of these slides are online.
+Okay, so all of the times and stuff are all
+are all accessible online and and the lecture is recorded.
+, did you have another question?
+How did the tutorials get graded?
+Was that what you asked?
+, your tutor will grade the tutorials, so, .
+, there is, For the programming exercises, there's a,
+, automatic testing, which is a first step in the
+grading.
+So when you submit it, it will be automatically tested
+and you get access to the test results, I think.
+, partial access to the.
+You get partial access to the test results.
+Okay.
+, your tutor uses that as a as a first
+step in doing the grading.
+Okay.
+Anybody?
+Oh, sorry.
+Was there.
+Here.
+, just in case I missed any assignments.
+, I just have to finish all of these, right?
+, for the week.
+So you're asking about the assignments for this?
+Yeah.
+So you're showing me the week one?
+, the week one.
+The contents of the week one folder.
+So in there is the two tutorial exercises.
+Those are due in in the second week on Tuesday.
+And the, the quiz is due on Saturday this week,
+but it hasn't been published yet.
+Okay.
+All right.
+Any other hands I didn't see?
+, there's one more.
+Yeah.
+, you know, or book access?
+Or is it.
+Just our.
+Quizzes?
+Quizzes?
+The quizzes are multiple choice, and, , you can you
+can look at the book.
+Okay.
+All right.
+There'll be more opportunities to answer, to ask questions later.
+I'm glad you're, .
+I mean, a room with this many students.
+It's, .
+It's it's hard to to raise your hand and ask
+questions, so.
+Well done.
+, please ask questions that are important so you can
+ask during lectures.
+, you can ask other students.
+You can ask demonstrators during the labs.
+You can ask your tutor during the tutorials.
+And important is the Piazza online forum.
+, where am I?
+Okay.
+So going back to the course learn page.
+Piazza.
+Okay.
+Click on that.
+You can ask questions and you can answer questions.
+So, , there were already some questions that I've actually
+was asked by email.
+And I referred and I put them on Piazza to,
+, so that everybody got the answers.
+Okay.
+So somebody asked me about, , drop in labs and
+what they're for, and so I answered it.
+Okay.
+So you can ask questions here.
+And the good thing about answering questions in Piazza is
+sorry about asking questions to Piazza is that everybody can
+see the answer.
+And so I don't have to answer the same question
+450 times, which is good for me, and it's good
+for you, because if I had to do that, I
+wouldn't have time to give you lectures.
+Okay.
+And it's, .
+Yeah.
+So.
+Who has visited Piazza, by the way, already?
+Okay, good.
+Good, good.
+None of you have asked questions there, but please do
+so if you have any.
+And and answer questions.
+If you see a question that you know the answer
+to.
+Okay.
+There will be a prize at the end of the
+course for the student who has made the best contributions
+to Piazza during the course.
+Okay, so in this course I've said there's a lot
+of work.
+Okay.
+.
+Don't fall behind.
+Okay.
+The work is all doable.
+Okay.
+Some of it's more challenging than others.
+Okay.
+, it's designed to to be at the right level
+for where you are.
+Okay.
+But there's there's a substantial amount of it.
+You have to spend some time on it.
+Don't expect to be able to do a tutorial exercise.
+If you start at half an hour before the deadline.
+Okay, you might need to spend a couple of hours
+easily.
+A couple of hours you might get stuck.
+You might need to ask somebody a question to to
+to to make more progress.
+Okay.
+So you must listen.
+Listen to the lectures every week before the tutorial you
+must do the assigned reading each week before the tutorial.
+It is a lot of stuff here about you must
+do these things.
+Okay.
+Top priority is tutorial exercises okay.
+Because these are these are the main way of learning
+okay.
+If you don't do the exercises you won't learn.
+Okay.
+, , I to say programming is not a
+spectator sport, and neither is computation and logic.
+Okay?
+You have to learn by doing it.
+You don't learn it by reading about it or by
+watching somebody else do it.
+You do it yourself, okay?
+And that's what the tutorial exercises are about.
+, you will fail the course if you don't do
+the work.
+I mean, that's kind of obvious because you won't submit
+stuff and you won't get points.
+Okay, so who plans who here plans to do no
+work and fail the course?
+Anybody?
+.
+There's one.
+Okay.
+, okay.
+But there's the rest of you don't.
+I hope that was a joke.
+Okay, so keep up.
+Keep up with the work.
+Now, here is just, , something about the way that
+Marx works at the university.
+All right.
+This might be different from what you're used to from
+school.
+If you've got percentage marks in school.
+Okay, so, , at this university, a mark of 100%
+is rare.
+Very rare.
+It's possible to get a mark in this course of
+100%, because it's possible to get everything right.
+Okay.
+But it's not a normal mark.
+It's an exceptional mark.
+, a normal excellent mark is about 70 or 75.
+Okay.
+And this this curve here is, is, , designed to
+explain that.
+Okay.
+So we expect about 70% of students to be in
+between 40 and 60 points.
+, percent.
+That is okay.
+We don't mark we don't mark to a curve if
+you know what that means.
+But this is the expectation in this university of how
+the marks will be distributed.
+Okay.
+So what we do in this course is the, ,
+the tutorial exercises we have, , three out of four.
+The points are for so-called compulsory.
+Exercises.
+So we expect you to do these exercises.
+And if you if you try hard, you can get
+three points out of the four points.
+Okay.
+And the fourth point is for optional exercise.
+That's, , that's harder okay.
+Sometimes much harder.
+Okay.
+And that's so, , that's for people who aim to
+be on the right hand side of this, , of
+this curve.
+Okay.
+, so optional exercises are optional in that sense.
+They're forgetting the extra point.
+So all all of the, all of the tutorial exercises
+has optional optional part.
+There's even some optional exercises in some of the tutorials
+just for fun.
+Okay.
+, what time is it?
+Right.
+So in this course you may collaborate.
+So you can work together.
+This is very unusual in this university.
+Okay.
+To be able to work together on work that you
+submit for credit.
+Okay.
+So you can work together, but you're responsible for knowing
+the materials.
+So when you go to your, your tutorial and your
+tutor asks you why did you why did you submit
+this program?
+If you've copied the program from your friend and submitted
+it, and you're not able to explain what you submitted,
+you won't get any credit.
+Okay.
+So your tutor will see.
+You don't understand what it is you submitted and you'll
+get zero for that.
+Okay, so you can work together, but you have to
+understand what it is that you're submitting.
+Okay.
+It's okay to ask your friends for help.
+Okay.
+It's.
+It's okay to solve problems together with your friends, but
+you must understand what it is that you're submitting.
+Okay.
+, in other courses, this is not allowed.
+Okay, so there's some stuff here about the school academic
+misconduct officer and so forth.
+This applies to other courses in the university.
+, this is about things plagiarism and other forms
+of, , of cheating.
+Okay.
+In this course, we actually encourage you to, to to
+collaborate.
+It's a good way to learn.
+Okay.
+And in the end, what you want to do is
+learn stuff.
+Okay.
+You're here to learn stuff.
+Okay.
+, the first year, , your mark that you get
+in first and second year courses, they don't contribute to
+the kind of degree that you get at the end,
+at the end of your fourth year, of your four
+years, you get a first class degree, or an upper
+second, or a lower second or third class degree.
+The mark in this course doesn't matter.
+For that, you have to pass the course to advance
+to the second year.
+Okay, so your mark has no effect on that ultimate
+prize okay.
+But what you learn has a big effect okay.
+You need to learn this stuff to be able to
+build on it.
+In second year, third year and so forth okay.
+So it's worth doing.
+It's worth taking seriously.
+, and I'll just say, , one final thing.
+, , so yeah, do the work, ask questions.
+When you get stuck, try again.
+Don't fall behind.
+And, , special message to those of you who've done
+lots of programming before.
+, you may think that the programming of this course
+is going to be a breeze because you've done so
+much of it.
+, that might end up being the case, but you
+might be surprised.
+It's, , sometimes difficult to learn to think differently.
+And you're going to have to learn to think differently,
+to program in Haskell from what you will have been
+doing in whatever, you know, Python, , Java or whatever
+it is you've been doing before.
+Okay.
+, that's it for today.
+I'll see you tomorrow at 2 to 10.
+Thank you.
+Unless you want pop ahead again.
+Yeah.
+Hi, Tom.
+Good to see you.
+Yeah.
+How are you doing?
+Yeah.
+Good.
+When it's over the first time.
+Always.
+Even after all these years.
+He's got a little free flight now.
+Yeah.
+Yeah.
+450 students.
+And there's one.
+More thing about that.

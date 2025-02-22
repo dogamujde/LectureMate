@@ -1,0 +1,1042 @@
+Okay, it's 210, so let's get started.
+My name is Phil Wadler.
+I actually created this version of infant a many years
+ago, but Don has been teaching it recently.
+But I've, .
+I requested to teach a few lectures to you, and
+Don graciously agreed to.
+I'll be giving you lectures today, tomorrow, and a week
+from today.
+Next Monday.
+And just to check tomorrow's lectures in the same room
+as this one.
+That is so amazing.
+Back when I created this class, timetabling treated it as
+horribly.
+And we met at a different day, every a different
+time, every day of the week, and a different room
+every day of the week.
+So this is great.
+I'm so pleased.
+So to get started, as usual, are there any questions?
+So has Don taught you guys how important it is
+to ask questions?
+Yes.
+Yes, yes.
+Good.
+Do you want to demonstrate that by asking one?
+Right.
+I'll tell you my story about asking questions.
+I don't know what story Don uses, but I used
+to be a postgraduate at Oxford University, and while I
+was there, they interviewed for a lectureship position.
+I was too junior to even be considered.
+, but they did something unusual, so it's quite usual.
+You have all your candidates in.
+Each candidate gives a talk.
+What was unusual is they had them all in on
+the same day, and the candidates sat in on the
+talks by the other candidates.
+This is very unusual.
+So there was one person who, .
+Asked to talk at every single lecture, and that turned
+out to be Richard Byrd.
+And then he turned out to get the lectureship position,
+and he and I became colleagues.
+And in fact, we wrote a textbook on Haskell that's
+sort of the predecessor to the textbook for this course.
+So how many people here have been through the Scottish
+education system?
+I have not, as you can tell by my accent,
+a fair number of you.
+So the impression I sometimes get of the Scottish education
+system is that they teach you not to ask questions.
+They teach you that if you ask a question, I
+see people nodding there.
+They teach you that if you ask a question that
+you're saying that you don't know and therefore you're admitting
+to ignorance, and so asking a question is a bad
+idea.
+Has anybody in the Scottish education system or elsewhere ever
+received a message of that kind?
+Several of you are nodding your heads or Raising your
+hands.
+So the reason I tell this story about Richard Byrd
+is to make the point.
+It's the exact opposite.
+If you ask a question, you show that you are
+involved, that you are interested.
+And guess what?
+There is no single person in the whole world who
+knows everything.
+So if you are asking a question, it is not
+you're showing that you're ignorant.
+On the other hand, I don't know about you, but
+sometimes I feel a bit nervous about asking a question.
+I feel a little bit everybody else in the
+audience must know the answer to this.
+I'm the only one who doesn't.
+So fortunately, I'm an old fart now, and so I
+trust myself a little bit more, and I'm more likely
+to just go off and ask questions.
+But when I was closer to your age and I
+was nervous, , if I wasn't sure if it was
+safe to ask a question, what I would do is
+I would turn to the person next to me.
+I'd whisper in their ear.
+I'd say, the lecture is talking about monads.
+I've never heard of monads.
+Should I know what a monad is?
+And then either the guy will say, yes, of course,
+everybody knows what monads are, but this is very rare.
+What would happen?
+Way more often.
+It's the guy who goes, no, I don't know what
+monads are either.
+And then I would know it was safe to ask
+a question.
+So if you have a question, please ask, because that's
+the way learning happens, right?
+Learning happens when you get stuck, when there's something you
+don't know, and then you have to get yourself unstuck.
+And there are many ways of doing that.
+But one of them's by asking a question and I
+see a hand raised.
+What does IO stand enjoy.
+What does IO stand for?
+IO stands for input output and we'll get.
+We'll say more about that in a minute.
+But I was actually a fairly standard term in computing.
+But and now you know it.
+, oh, and this is another reason why it's very
+important to ask questions, because my job is to communicate
+with you.
+, but you have a problem.
+Your problem is I know too much.
+, so I might think that something is completely obvious
+where it's not obvious to you.
+And in fact, the word io is an example of
+that.
+I'm just so used to it, I forget that there
+are people who don't know what this means yet.
+So by all means, if I say something you don't
+understand.
+Please ask, and I can't.
+I can sort of see the people over there if
+I if I lean over.
+You guys want them all moved somewhere else.
+There's plenty of other room in the room.
+I to see people's faces.
+You're all clustered in the corner where I can't see
+you.
+Is this deliberate?
+This is what we said.
+It's just what you said.
+Can I get you to sit somewhere else today?
+Because I'm going to sit down for this.
+Well, just move a bit, all of you.
+That's cool.
+Thank you.
+All right, so I should explain why I'm sitting.
+I had my, .
+Right hip replaced at the beginning of term so I
+can walk much better now.
+I occasionally forget my stick, but I'm still walking with
+a stick, so that's why I am going to sit
+down during the class.
+But it's also very important that you know about the
+stick, because you know that I am armed, so be
+polite to me.
+Okay.
+Thank you for moving.
+That's great.
+Now I can see everybody.
+, before we get started, are there any other questions?
+Okay.
+So I'm going to talk a little bit about one
+of the features of Haskell monads.
+It's actually right.
+How many people are familiar with the Haskell logo?
+Yeah.
+You've all seen the Haskell logo.
+So what are the two elements in the Haskell logo?
+So this big thing in the centre, you all know
+what that is by now a lambda, right.
+Which stands for making a function.
+And what's the other thing there.
+Can you see that?
+There's something else there.
+There's a greater than greater than equal sign.
+Right.
+So the second grader then.
+Right.
+This is part of the lambda and part of a
+greater than.
+So it's a greater than greater than equal.
+and does anybody know why that's there.
+You will by the end of today.
+It's a symbol of a monad, right.
+It's a it's one of the symbols used with monads.
+That's right.
+So I'm going to start with some philosophy.
+I'm going to tell you about the Mind-Body problem.
+So I'm back in the, well, back through history.
+But the particular time we're going to talk about is
+the Middle Ages.
+, there was a concern, right?
+Because you have thoughts and your body does stuff.
+And they were wondering what is the connection between these
+two?
+And they'd begun to work out that maybe the brain
+has something to do with thoughts.
+And then the body does stuff.
+So they thought there had to be a connection between
+I'm saying mind.
+But actually back then they were worried about the soul.
+There has to be a connection between the soul and
+the body.
+And so how many people have heard of Descartes, the
+guy who says, I think, therefore I am?
+So he was a philosopher in the middle Ages.
+He also came up with Cartesian coordinates, which are very
+important to us.
+Now I'm just giving x, y coordinates for things, right?
+It seems completely obvious, but somebody had to invent it.
+And that was Descartes.
+And so there's a picture of Descartes, and there's a
+picture illustrating the mind body problem.
+And he figured he knew the answer.
+The answer is that the soul connects to the body
+through the pineal gland.
+And why did he think it was the pineal gland?
+Well, because you don't see double.
+Of course you do if you get drunk.
+But he said, well, you don't see double and everything
+else is duplicated, but there's only one pineal gland, so
+that must be the place where it connects.
+So we're still very interested in things minds and
+bodies and how they relate to each other.
+We no longer believe that the pineal gland is the
+connection point.
+But he thought there was just that, this one connection
+point.
+So we will come back to that.
+Okay.
+So you all know Haskell by now?
+Yep.
+Okay, good.
+, so that's great.
+But many of you have learned other programming languages and
+other programming languages.
+You can give commands print.
+And then the program will do something.
+Whereas in Haskell all we do is we compute values.
+So now I'm going to give you a way of
+talking about doing things.
+And we're going to fit that in to the way
+Haskell looks at the world.
+And the way Haskell looks at the world is everything
+is a value.
+So we're going to have a value that means do
+something.
+And those are going to be called well we're going
+to start with commands.
+And then we will generalised to so command does something
+but often right.
+We're still interested in values.
+So we're also going to have a notion of a
+command that also returns a value.
+But let's just start with commands.
+So here's a command put char.
+So that takes a character and returns a command.
+And commands are gonna have the funny name io.
+So this is io applied to the unit type.
+And io and I wouldn't bother to explain this because
+I would forget.
+But IO stands for input output.
+And here's an example of output.
+If you say put char, then that's the command that,
+if it is ever performed, will print an exclamation mark.
+And we also have a way to combine two commands.
+So this is written greater than greater than.
+And this takes a command whoops and a command.
+And it returns a command so.
+Put char of question mark followed by put char of
+exclamation mark is the command that, if it is ever
+performed, prints a question mark followed by an x and
+exclamation mark, also sometimes pronounced pling.
+And then we've got the command done, which is again
+a command.
+It's an IO that returns the unit type, and the
+term done denotes the command that, if it is ever
+performed, does nothing.
+And notice that this is different from doing nothing right.
+If you think about thinking about doing nothing and doing
+nothing.
+Those are not quite the same thing, are they?
+Okay, so this is the command that if you did,
+it would do nothing.
+So now we can write a command to print a
+string.
+So string is just a list of characters.
+So we're going to call this put string.
+And it takes a string and it returns a command
+again.
+So put string of the empty list.
+How would you print the empty list?
+By doing nothing.
+So we return.
+Done.
+If we have a string whose name of a list
+whose head is X and whose tail is xz, then
+we can put char of x followed by putting string
+of x's.
+So now if we say put string.
+Question mark.
+Exclamation mark.
+That would be equivalent to put char question mark, put
+char exclamation mark and then done.
+And both of these are the command that if it
+is ever performed, prints a question mark followed by an
+exclamation mark.
+Any questions?
+Yes.
+Why do you keep saying if it is ever performed?
+Because it doesn't do it.
+It just stands for something that you can do.
+But we don't do it.
+Okay.
+And more compactly.
+Right.
+We could define put string as follows.
+Right.
+It would just be folder with the two greater than
+signs and done.
+So this is what you do with the empty list.
+This is how you combine.
+And A had an a tail of a list.
+And then we would compose that with mapping put char.
+So you're given a list of characters.
+You replace each character by the command that if it
+was ever done, would print that character.
+And then you combine those all into one big character.
+That should be clear enough.
+Is that familiar to people?
+By now.
+Okay.
+And right then the this operator has some properties, right?
+It's, , a right identity.
+It's a left identity and it's associative.
+So it doesn't matter where you put the parentheses.
+And again, these should be familiar.
+I see at least one person nodding their head.
+Two people.
+Three people.
+Very good.
+I see one person wearing 3D goggles.
+Does that mean you're watching a movie in the
+meta ads?
+No.
+Okay, so by now, right, somebody already asked us, wait
+a minute, what does this mean?
+If it's ever performed, how do I actually do something?
+So the way we're going to do things is by
+saying, I've got a special command called main, and whatever
+a main must be defined to be a command, An
+IO of unit and whatever main says to do, we
+do.
+So here it says, okay, run the command.
+Confused.
+Confused.
+It's just this module that defines , put string of
+that and let's just try this.
+This should run.
+So.
+So this is defined just this way.
+So I don't need to define put string in this
+program because that's part of the standard prelude.
+The same thing that defines plus and so on also
+defines put string.
+So that's the program.
+And now if I do.
+GHC confused Right now.
+If I say Maine did I it did it look
+right here.
+Didn't even print the new line.
+Just did the two things it said to do.
+Printed a question mark and an exclamation mark.
+And that's it.
+Okay.
+And we can also just.
+You say run GHC, it finds Maine and does whatever
+it says.
+So there it does.
+It prints question mark, exclamation mark.
+Okay.
+Any questions about that?
+So now you understand why I was telling you about
+the pineal gland.
+Maine is the pineal gland of Haskell.
+Everything goes through there.
+If you want a program that does anything, it has
+to work via Maine.
+Okay.
+So main is the link from Haskell's mind to Haskell's
+body.
+It is the analogue of the pineal gland.
+Of course, that was very messy because we didn't really,
+you know, generally you want a new line after the
+string.
+So it's another command put string line which is just
+put string followed by printing a new line.
+And if we did there's another program here called Confused
+Line.
+Oh.
+Oh what.
+It's right there.
+Oh I see, I have to put the dot hs
+, right.
+So that's just the same.
+But put string line.
+And so now if I do.
+It actually prints it out neatly without this, , prompt
+immediately afterwards.
+Okay.
+Any questions about that?
+So it might seem this is too restricted, right?
+There's only one place where we can do things, but
+we will see that we can build up very large
+commands, even interactive commands.
+And so, in fact, anything that we want to do,
+anything that seems reasonable, we will be able to program.
+Yes.
+Another question.
+What's the difference between confused and confused?
+, one prints a new line afterwards.
+Right.
+So here it was.
+, not put string, but put string ln which it
+means put a string with a new line.
+Okay.
+So.
+One thing that we've learned throughout the course, right, is
+Equation's reasoning, right?
+Haskell programs are basically equations, and it's always safe to
+replace the left hand side of an equation by the
+right hand side.
+.
+So right in Haskell you can write one plus two
+times one plus two.
+Or you could write let x equal one plus two
+in x times x.
+And those both mean the same thing.
+Right.
+We can just take every occurrence of x and replace
+it by one plus two.
+And this would reduce to that.
+And this reduces to nine.
+Now who's ever learned a programming language other than Haskell.
+Okay.
+And was that one a functional language or object oriented
+or imperative.
+Let's see how many people learned another functional language.
+Ooh.
+Which one?
+You with your hand up in the back.
+Which language you do learn?
+I don't want to answer.
+You don't want to answer?
+Okay.
+.
+And who learned an object oriented language?
+Right.
+Quite a few of you.
+So in an object oriented language.
+Right.
+You can just give a command and it will do
+it.
+So if you say print ha, print ha, it will
+print.
+Ha ha.
+On the other hand, in a language that with
+side effects, if you say let x equal print ha
+in x followed by x, what's going to do is
+it's going to execute this to figure out what value
+to assign to x.
+And when it executes this, it will print ha.
+And then it'll bind x to some value, maybe it's
+unit, and then it will just return unit and return
+unit again.
+So it just prints.
+Ha.
+It doesn't print.
+Ha ha.
+So you'd think you were optimising your program by doing
+this.
+But in fact when you do it, the laugh is
+on you.
+On the other hand, you could turned it into a
+function say let f of unit be print.
+Ha!
+And now, right, it's waiting for the argument before it
+does anything.
+And so now if you say f of unit followed
+by f of unit, it will go ha ha again.
+So you need to learn this trick of always delaying
+any actions to the exact point where you want them.
+Okay.
+And people have learned that trick.
+Some of you, the ones using languages with side effects.
+Yes.
+No.
+Maybe not familiar.
+Yeah.
+What are languages with side effects?
+Pretty much every language in the world other than Haskell.
+So write in Haskell, right?
+Obviously, you can do exceptional reasoning this, but we
+can also do that just as well with commands.
+So if I say put string ha followed by put
+string ha or I've got the term let em be
+put string ha in em, followed by em.
+These are both entirely equivalent.
+So you don't have this problem that you need to
+worry about where the side effects occur.
+We only have values that behave just any other
+value, and there's only one point at which you can
+turn that value into an action which is main the
+pineal gland.
+So other than that, it's just a value.
+And it's a value that denotes a command that if
+it is ever performed, will do this thing.
+Okay.
+Is that subtle little distinction clear to people now anybody
+want to ask a question about that.
+Okay.
+So the next question you might have is well all
+right that's fine.
+But what if I actually want to do something interactive.
+So now I'm getting inputs.
+The AI part of IO and I'm printing outputs.
+So so far we've just learned how to do output.
+What about mixing inputs and outputs.
+So now I'm going to have a command that says
+read a character that's going to be called get char
+and that's going to return a character.
+So now instead of just having things that do stuff.
+We have things that do stuff and return a value.
+So I o of unit is the type of commands
+that yield no value.
+Right.
+Because unit is the trivial type that contains just one
+value, which we also write as an open and closed
+parenthesis.
+So now we're going to write io char for you
+guys.
+Pronounce it char or care.
+I never know.
+We'll take a vote.
+How many people say char.
+How many people say care.
+Oh good I had the majority.
+All right char, , so here's the command to read
+a character.
+Get char whose type is I o of char.
+So if, let's say the input say I've typed at
+the terminal a, b, c and I execute get char
+that's going to return the value a, and now it's
+no longer as if I've typed a, b, c, it's
+read the a.
+So now the remaining input is just b and C
+because the A has been read.
+And so if I do get char again the next
+thing I'll get will be b.
+So in general we can write IOA for a command
+that returns a value of type A.
+And there's one very important command return which takes an
+A and returns an I o of a.
+And so this is the command that does nothing but
+returns the given value.
+So for instance return empty list.
+has type I o of string and it
+returns the empty string.
+, and if the input was bcc right, it would
+return the value empty and the input is not changed.
+Right.
+It does nothing.
+So the input is still BCC.
+And we can combine commands with values.
+So we've got this.
+Operator.
+, so the other one greater than greater than sometimes
+pronounced seek for sequence, do one thing and then another
+thing.
+, this one is greater than greater than equal.
+And it's pronounced bind.
+So greater than greater than equal takes.
+This is a weird type.
+It takes an I o of a and a function
+from a to I o of b, and it returns
+an I o of b.
+Right.
+So you have you have to wake up now because
+I just said something weird, right.
+This ah people does this.
+Look you're all used to functions as arguments okay.
+But this should look at least a little bit weird.
+So what does this do?
+, so if I say get char bind lambda x
+goes to put char of two upper of x.
+Then when the input is a b c get char
+returns an a, it binds it to x.
+So in other words you take this function and you
+return it to whatever value was returned by this.
+So x will get bound to the a returned by
+this.
+And now I compute two upper of x.
+So that will be an uppercase A.
+And I write that out to the screen.
+I'm doing something interactive.
+I type in a character and it echoes it in
+uppercase.
+And that's why this operator is called bind, because you
+get a you do stuff and you get a value,
+and you bind this function to the value you got,
+and then you do some more stuff.
+And then what stuff does the whole thing do?
+It does Whatever this did and whatever this did, once
+you gave it to the value returned by this one.
+So we must do this one first to get the
+value out, and then we do this one.
+So to do this and then do that, that's what
+bind is.
+So it's just sequencing of operations.
+And it seems a bit weird.
+But if you think about for a bit you realise
+this must, you know, this is the way you would
+do two operations, right?
+Because you do the first operation and then we'll do
+the second operation.
+Now this one seems to have thrown away this a
+right.
+, it's only returning whatever the second one does.
+But I can have this return, whatever I want.
+So maybe this B has an A in it.
+So we'll see an example of that in just a
+moment.
+So in fact the output of this one can appear
+in the output here.
+It depends on what this function does.
+Okay.
+So let's just go over that in a little bit
+more detail.
+So bind again takes an I o of a and
+a to I o of being returns an iob.
+So let m be the first argument and k be
+the second argument.
+It's called k by the way, because it's short for
+continuation.
+A continuation is just, , a name in programming theory
+for whatever you do after the first thing.
+And that takes whatever the value of the first thing
+was as an argument.
+So the continuation says, okay, I've computed this much.
+You do the next bit.
+So m bind k we'll have type I o of
+b right.
+And if it has ever before performed it behaves as
+follows.
+It first performs command m which will yield a value
+x of type A and then perform the command k
+of x, yielding a value y of type B, right.
+So k has type a to I o b, x
+has type a, so k of x has type iob.
+So it returns a value y of type b.
+And then finally we will yield the value y.
+So we're going to do this thing followed by this
+thing.
+So we combine two different things.
+So it's very similar to the sequence operator.
+But now it's sequencing where we're threading a value through.
+And this is probably the most complicated design pattern that
+you will bump into in Haskell.
+Okay.
+So it's not that complicated, but it should be just
+complicated enough that you wake up and go, wait, what
+is that?
+So if I have, I explained it clearly enough or
+are there some questions about that?
+Yeah.
+So.
+So so I wouldn't .
+So a function would be this.
+Right.
+And a function takes an argument and produces a result.
+, in this case we've got commands which might either
+take input or produce output.
+Right.
+It can do anything.
+It can read a character, can write a character, it
+can read and then write a character.
+It can do anything.
+And this one similarly.
+But when it does stuff, one of the things that
+we'll do is just it says, oh, and I'm returning
+this value.
+It's not clear enough now.
+Okay.
+Good question.
+Anybody else with a question?
+Okay, so now we can do something interactive.
+So get line is going to return a string.
+And what is going to do is get a character
+bind it to x.
+If x is new line then it stopped.
+So we're going to just read one line.
+So as soon as we read a new line we
+stop.
+, otherwise we're going to recursively call that line, bind
+that to XS and then return ex cons axes.
+So here is an example.
+In this bind right.
+We bind x to the first thing and then we
+do another bind.
+We bind x is the next thing.
+And then we do a return right which does nothing.
+But it returns these two things combined.
+So we can put these parts together to say okay,
+first read a character.
+, Stop.
+If it's a new line and otherwise, read the rest
+of the line.
+So get line is recursively defined in terms of that
+line.
+So now if the input was ABC new line def
+right.
+This will return the string ABC and it will have
+read the new line.
+So the remaining input is def clear enough.
+And notice that right return and bind.
+Just generalise done and sequence.
+So done is just return a the value of the
+unit type and sequence.
+Right.
+We've got two things that just return values of the
+unit type.
+So we return a value of the unit type.
+And so we do m that will return a value
+of the unit type.
+So we can bind the argument of this lambda to
+the value of the unit type.
+And then go off and do n which will return
+value of the unit type.
+Yes.
+The unit type is just the type written open parenthesis.
+Close parentheses.
+It has as one value the empty tuple.
+Open parenthesis.
+Close parentheses.
+I'm sorry.
+Just speak up a bit.
+If you ask what the type of that is, it's
+written the same way.
+Okay.
+Good question.
+Anything else?
+Okay.
+So now now that we've got get line.
+And now that we've got put string line, we can
+do a little interactive program which I'll call echo So
+echo says read a line behind that to line if
+the line is the empty string.
+So if we have a line with nothing in it,
+we stop.
+, otherwise do put string line of map of two
+up of line and then do echo again.
+So this is very similar pattern to what we just
+saw with , get line itself.
+Right.
+So that would keep reading characters until you see a
+new line.
+This is keep reading lines until you see an empty
+line.
+Clear enough.
+So let's try this one.
+Okay.
+So main is bound to all that.
+Hmm.
+Aha!
+Oh, should I make this larger?
+Would that make it easier to read?
+Okay, so I've typed in this as a test and
+it's echoed it in uppercase.
+oh.
+I can't do back spaces.
+All right.
+And now, if I type in, just return here.
+What's going to happen?
+It will stop.
+And it did.
+Okay.
+And just to prove that's really interactive.
+Somebody tell me what to type.
+Rice are delicious.
+Sorry.
+French fries are delicious.
+French fries are delicious.
+Huh?
+oh, I misspelled it.
+Well, that's no good.
+Oh, no, I can't type.
+Ah.
+Last time.
+I will give up if I can't do it right
+this time.
+Yay!
+Ha ha ha!
+Okay.
+Very good.
+So there you see something very similar running.
+Okay.
+So now we've got a convenient abbreviation for this called
+do notation.
+So before I wrote bind and then x and so
+on.
+The way our mind works right.
+It's much easier to read things the way we do
+it in.
+Let's first you give the short name for the thing,
+and then you give the long expression that evaluates to
+the thing.
+So here we've got longer value expression that evaluates to
+the thing and then short name for the thing.
+So a better way to do this, just as a
+matter of engineering, is to say X gets bound to
+get char.
+And then as before, if X is new line then
+return empty.
+Otherwise, recursively we have a do with two things in
+it.
+Bind x to get line and then return x context.
+So this is just another way of saying this.
+And this is called do notation okay.
+Now very important.
+So do notation is built into Haskell.
+So this is .
+This is great.
+.
+Right.
+This is very convenient notation to use.
+But it's defined in terms of this which is just
+using lambda binding.
+So here's the important thing.
+So .
+Back in 1987, we'd started the Haskell Committee, and I
+was a young lecturer at Glasgow University on the other
+side of the country.
+, Eugenio Maggi was a PhD student here, and he
+had come up with this idea of using monads as
+a way.
+Monad is the name for this thing, by the way.
+, something with a return and a bind is called
+a monad.
+, he had come up with.
+He'd come up with, , monads as a way of
+structuring the semantics of programming languages.
+And so I came over and talked with him, and
+he sort of explained to me what was going on.
+, and then I went back and I said, oh,
+this would be a good way of structuring Haskell programs.
+And the point was, right.
+We had a preliminary Haskell implementation.
+Then I didn't need to wait for Will Partain, who
+was in charge of the Haskell implementation, to implement do.
+I could just define something with an operator I did
+not use.
+Greater than greater than equal.
+I don't remember what I used.
+Greater than greater than equal was proposed by Andy Gordon,
+who also happens to be a graduate of the University
+of Edinburgh.
+, and he was an undergraduate here.
+He was a graduate student at Cambridge, which he was
+where he was at the time when he proposed using
+this symbol.
+, right.
+But you can define any operator you want in Haskell.
+And the point is, if you need something that does
+some binding, you can use lambdas to do it.
+Okay.
+So I'm teaching you about this neat programming language feature
+that I implemented.
+But the key point is you can do the same.
+Right.
+If you need something that binds new stuff.
+You can use lambdas to do it.
+So Haskell is sort of a programming language that lets
+you define your own programming language within Haskell.
+So monads have now been used so much that they're
+kind of built in.
+And we've got this convenient do notation.
+But the point is all the important stuff is up
+here.
+And you can do that yourself.
+So if you want to invent your own, , language
+features, you can do it.
+And that's one of the things that makes Haskell so
+powerful.
+And then here's echo rewritten and do notation.
+Right.
+So you just say do and a curly brace and
+then variable name arrow.
+And then something of a type I o of
+blah.
+And again do curly braces, something of type I o
+of blah.
+And this is very important because the most popular language
+at the time with C and in C you use
+curly braces and semicolons for commands.
+So this made Haskell look a little bit C.
+Right.
+So the general meaning is that whenever you write x
+drawn from E semicolon and then some stuff that becomes
+e bind lambda x arrow and then the same stuff,
+if you just write e that becomes E sequence
+and then some stuff and notice that E sequence.
+And then some stuff could also be written as
+e bind backslash unit and then some stuff.
+So right.
+If we had do x one from e1, x2 from
+E to E3 and so on, that becomes e1, bind
+x1, e2, bind to x2, and so on.
+So do is just an abbreviation for stuff we've already
+got.
+So I've been using this word monad.
+, the word monad comes from category theory.
+That's what inspired, , Eugenio Homology when he first did
+his semantics.
+There's this construct that had been sitting around in category
+theory since the 1950s called a monad.
+, and it was actually all this that convinced me
+it was worth learning.
+Category theory and category theory since then has inspired other
+useful ideas for programming languages.
+So, , I'll just write N, followed by x gets
+V to stand for term n with the variable x
+replaced by the value v.
+So if I've got x times x with x replaced
+by three, that becomes three times three.
+And I think you've all learned the beta law by
+now, which is that lambda x n applied to v
+becomes n with x gets v.
+So for instance lambda x x times x applied to
+three is the same as x times x with x
+replaced by three, which is the same as three times
+three.
+That should be familiar to you.
+And how many people have bumped into the name monoid?
+Monoid is standard in algebra, so a few of you
+have bumped into it before, but it's a very standard
+term in algebra.
+It's how many people run into the term group in
+algebra, right?
+A few more of you.
+So a monoid is a group, but it has
+a bit less structure.
+A group has an operator, a unit and an inverse,
+and a monoid just has an operator and a unit.
+No inverse.
+So it just says, you've got an operator, which I'll
+write here is O plus and it value you.
+And you must be the unit for O plus.
+And O plus must be associative.
+So you O plus x is x x, o
+plus u is x and x plus y plus z
+is the same as x plus y plus z parentheses
+each way.
+Right.
+And we bump into monoids all the time.
+Right.
+Monoids are pretty much what we use in a fold.
+, so plus and zero times and one or in
+false and in true, , concatenate and the empty list.
+And we've already seen write sequence and done these are
+all examples of monoids.
+So as we saw right a monad is almost the
+same.
+, sorry we haven't seen that yet.
+Right.
+We saw this with sequencing.
+So a monads almost the same.
+So the thing that becomes done that becomes return V,
+so we return V followed by lambda xm becomes
+lambda xm applied to v or m with x replaced
+by v, and then m followed by lambda x return
+x where we can even just say m bind return
+is the same as m, right?
+So what does this say?
+It says do m get the value it returns, bind
+that to x and then do nothing else and return
+that value.
+So obviously that's the same as just doing m.
+And finally here are two different things where only the
+parentheses change and they mean the same thing.
+So it says do m bind the result to x,
+do n bind the result to y, and then do
+oh.
+And this is do m bind the result to x,
+do n bind the result to y and then do
+oh.
+So it just says both ways of grouping it have
+the same effect.
+They do what M does, they bind the result to
+X, they do what n does, they bind the result
+to y, and then they do.
+Oh.
+Okay.
+So it doesn't matter where you put the parentheses.
+And that is a monad.
+So I have a, a colleague that says, you know,
+there's only one thing we did wrong with monads.
+We shouldn't have called the monads.
+This is Simon Peyton Jones.
+It's time.
+Peyton Jones is the main editor of the Haskell Report.
+He's still the main maintainer of GHC of the version
+of Haskell that you use.
+It's called GHC because he and John Hughes and I
+were all professors at Glasgow University at the time that
+this was done, so it's still the GHC Glasgow Haskell
+Compiler.
+Sometimes people say Glorious Haskell compiler, but it's really Glasgow.
+I hate to say that to people in Edinburgh, but
+it's really Glasgow.
+So anyhow, Simon says, you know, there's only one thing
+wrong with monads.
+It's a very simple idea.
+You just have two operators.
+They satisfy these three simple laws, but we shouldn't have
+called it monad.
+Everybody gets scared by monad.
+We should have called it warm fuzzy thing.
+So I will stop there and can tell you more
+about monads tomorrow.
+Thank you very much.
+You got clap every time.
+Sorry.
+You got a clap every time.
+You're doing something right.
+Life.
+There are memories that will never leave us.
+Oh, come on, come on, come on, come on.
+I'll make you feel you on my own.
+And make.
+Yeah.
+I do not give you everything that a woman possibly
+can.
+Honey, you know I did.
+And each time I tell myself that I don't think
+I've had enough.
+Come on.
+I want to show you, baby, that a woman can
+be tough.

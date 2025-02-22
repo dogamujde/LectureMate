@@ -1,0 +1,1083 @@
+It might seem crazy what I'm about to say.
+So sure she's here.
+You can take a break.
+From a hot air balloon.
+I could go to space.
+With the air.
+I don't care, baby.
+By the way.
+Huh?
+Because I'm happy.
+Clap along if you feel a room without a
+roof.
+Because I'm happy.
+Clap along if you feel happiness is the truth.
+Because I'm happy.
+Clap along if you know what happiness is to you.
+Because I'm happy.
+Clap along if you feel that's what you want
+to do.
+Here come bad back.
+Who's talking?
+Listen, man.
+Yeah, well, give me all you got.
+No holding back.
+Yeah, well, I should probably warn you.
+I'll be just fine.
+Yeah, no offence to you.
+Don't waste your time.
+Here's why.
+Because I'm happy.
+Clap along if you feel a room without a
+roof.
+Because I'm happy.
+Clap along if you feel happiness is the truth.
+Because I'm happy.
+Clap along if you know what happiness is to you.
+Because I'm happy.
+Clap along if you feel that's what you want
+to do.
+Bring me down.
+It's working.
+Oh, there it goes.
+Okay, I forgot my microphone.
+, yeah.
+, I just realised this is ten years old.
+, so much for my up to date, , music.
+Okay, so today, , expression trees as an algebraic data
+type.
+You had the first half of this on Tuesday.
+, and I showed you, , this was about representing
+syntax of languages, , using Haskell algebraic data types.
+And I showed you, , first example was arithmetic expressions
+with , with , , integers, addition and multiplication.
+, so we went through that how to represent them
+with three cases.
+, how to evaluate them.
+, with a function with , you know, usual, usual
+pattern matching function definition with three cases.
+, there were variations for infix expression, infix constructors
+and symbolic constructors.
+Anyway, so that was my first example.
+And then I moved on to propositions which is logical
+propositions with propositional variables which are strings, false
+true negation, disjunction and conjunction.
+Okay.
+So similar to the arithmetic expressions, except more complicated because
+there are six cases, , , and there were variables
+in there, not just constants.
+True and false.
+And so we had examples , this is the
+, , the prop, , you know, variable a conjunction
+negation of the variable a okay.
+Written.
+.
+Well.
+Written that.
+, in normal logical notation.
+Okay.
+So you remember that, right?
+Okay.
+, now, , I stopped at that point, and now
+I want to talk about evaluation.
+Okay.
+How do we evaluate a proposition that?
+, okay.
+Well, here's six lines of, , well, six lines plus,
+, type signature, , for an evaluation function.
+Okay.
+And the evaluation function takes a proposition and turns it
+into a boolean.
+But we can't do that for a proposition with variables
+in it without having more information.
+Okay.
+So if I, if I ask you , what is
+that?
+What is the value of this expression.
+Well, for this case you can actually say it's false.
+Right.
+Because , whether A is true or whether A is
+false, you'll still get false out of this.
+But, , you know, , taking a, , taking something
+more complicated.
+.
+Let's know, taking something more complicated.
+Okay.
+So whether or not this is true or false depends
+on the value of a.
+Okay, , this will always be false.
+But then whether A is true or false determines the
+value of that.
+Okay.
+So in order to in order to evaluate a proposition,
+I need to know what the values of the variables
+are.
+And so this evaluation function, requires an extra parameter.
+Okay.
+It's the valuation.
+What's the valuation?
+It's a function taking variable names to their values.
+Okay I define it to be that.
+All right.
+And then the the the cases here there's one case
+for every constructor okay.
+Just reminding you six constructors variables false true negation conjunction
+sorry disjunction conjunction.
+So one for each case I'll start with the second
+case okay.
+And remember that on the left hand side where these
+are the constructors for propositions.
+Okay.
+So this is syntax.
+This is building up expressions you know that I
+might have written this , in logic, okay.
+They're expressed using these constructors.
+So slightly different notation.
+But anyway, taking syntax and coming up with the value
+of that given a , an interpretation of the variables.
+Okay.
+And so what you get on the right hand side
+is boolean expressions okay.
+Things false value of of f is false value
+of t is true value of negation of p.
+You evaluate p and you negate it.
+Okay.
+And evaluating p or q and p and
+q you evaluate P, you evaluate Q, and then you
+do the appropriate, , thing in Haskell, , you know,
+, disjunction or conjunction with those two values.
+Okay.
+So, , I made the remark when I was talking
+about evaluating arithmetic expressions that this definition is so is
+so, , kind of simple.
+And it's hard to see that it's actually doing anything.
+Okay.
+, you know, , but it is doing something.
+Okay.
+The stuff on the left hand side is proposition.
+The stuff on the right hand side is, is Boolean
+value.
+And it's basically mapping the syntactic, , , syntactic constructs
+over here.
+, the, , to, to they're, they're meaning in,
+in whoops.
+They're meaning in in the booleans.
+Okay.
+The truth values.
+Okay.
+, this first case here, okay.
+That that's the one where we're using the , the
+valuation, the only one we're using, the valuation, the other
+cases, we're just passing the valuation on to be able
+to evaluate the subexpressions.
+Okay.
+But in this first case, , if we've got a
+variable called x, then to get the value we simply
+look it up in the valuation.
+Okay.
+Valuation is the is the first parameter here.
+Okay.
+So we just look it up.
+Have you got that.
+Sort of questions.
+Here's an example.
+.
+Oh, no, I'll do I'll do it on the on
+the paper.
+Okay, so, , this is a lot truth tables.
+Okay.
+So, .
+The value of a can be, , false or.
+I mean, this is a truth table for this, for
+this expression, the expression being, , a and not a.
+Okay.
+So I don't know how much Julian went through on
+this or whether he sort of, , assumed that you
+knew how to do it.
+Anyway, it's in the book.
+Okay, to evaluate this expression a and not a.
+Okay.
+You, , I mean, for all the possible values of
+a, , , you can write the possible values of
+a in this column, and then the kind of subexpressions.
+You break it down into subexpressions and quickly, I'll just
+write down the value of the negation of a, and
+then the value of the conjunction of those two things
+is written down here as the result.
+Okay.
+So this is familiar right.
+Truth tables.
+Yeah.
+No I think I think it should be , okay.
+And , so given.
+An evaluation of variables is picking out a row here.
+Okay.
+In this case it's one variable.
+So it's either true or false.
+Okay.
+And the the value produced using eval prop is giving
+you, you know, the corresponding value in the in
+the final column.
+Okay.
+So if if the valuation says that a is true,
+then the value of the expression is going to be
+false.
+And the kind of writing it down in columns
+this is kind of , , the I mean, the
+evaluation of this proceeds by breaking the, , the expression
+down into subexpressions and, and recursively.
+, so if it was a bigger expression, then there
+would be more, more columns here.
+Anyway, , this is just to show you kind of
+informally what's happening here.
+, so in my example, I'd write it not .
+You know, not using normal logical notation, but using this
+notation here that I've just defined.
+Okay.
+So we've got a variable, a , conjunction negation of
+that variable, eh?
+Okay.
+, I said evaluation is a is a function from,
+, from variable names to, , boolean values.
+So here is an example of one okay.
+It has four variables in it.
+Just in order to make sure I have enough okay.
+And so I'm saying a is true B is false
+C is false and D is true.
+And then applying you know, let me just well
+I didn't I didn't go through it.
+But there's a function I also had on my slides
+for, for turning a proposition into a string, which would
+give that result.
+But evaluating the proposition with that evaluation would produce the
+result false.
+Okay.
+And it's exactly I said, the second row of
+this truth table is what's happening there.
+Okay.
+And the way it works is step by step explained
+right up there.
+Let me just.
+It's it's step by step here.
+And, , for example.
+, okay.
+, evaluation with that, with that, with that evaluation of
+that whole expression.
+Okay.
+It breaks it down into pieces.
+And then, for example, one of the things that it's
+doing is , is, , looking at, , wait a
+minute, this is what I wanted to say.
+So, , evaluating that involves, for example, evaluating, , the
+variable a, which according to the first case, , is
+a matter of, , applying the evaluation to a that's
+this first case here.
+Okay.
+And, , on my previous slide, the value of a
+the valuation applied to A gives true.
+So the result of that is is true.
+Okay.
+And then the other bits get evaluated.
+In the end you end up with false.
+All right.
+I hope that's.
+Clear enough.
+.
+Looking at another example is more complicated.
+Okay.
+This one, this one, .
+This one was kind of boring because it, .
+The result was false.
+No matter what the variable a what, no matter what
+the value of A was.
+Okay, let's take a little bit more complicated one.
+So , let's take one with two variables.
+So .
+I'm going to write it in, in normal, , logical
+notation here to make it easier to read.
+Okay.
+, okay.
+This is this is this P1 here.
+So, , A and B or not a and not
+be okay.
+Here it is written using normal logical notation.
+Okay.
+If I want to, , evaluate that, , it's handy
+to, , break it down into subexpressions.
+Let me do that.
+Okay.
+That would be a truth table.
+And, , possible values here are, .
+Are those four.
+Right.
+Two variables for four possible valuations.
+And then I can I can work out the values
+for these.
+, , so, , you know, t t I'll do
+it quickly.
+.
+, k a and b, that's false.
+False.
+False.
+True.
+This is, .
+True.
+False.
+False.
+False.
+And this is true.
+False.
+False.
+True.
+Okay.
+You could.
+Okay.
+So, , so here's a case where the value depends
+on the values of the variables.
+Okay.
+And so if I take for example, , the valuation
+where a is true and b is true.
+So that was the last line here.
+The result should be true.
+And that's that's what I get.
+Okay.
+So now you know, how do you evaluate a proposition
+, when it's represented in Haskell this.
+Okay.
+, , do you remember what it's, , I mean,
+so this is is this a tautology?
+No, it's not a tautology, because because the, , there's
+there's both truth and, , true and false in this
+column.
+Okay.
+But it's satisfiable.
+Okay.
+There's at least one t here.
+My previous example.
+This was not a tautology.
+Obviously.
+It's also not satisfiable okay.
+It's called a contradiction.
+Okay.
+So given a formula, , propositional formula.
+that one or this one, , you
+might be interested in, in working out.
+Is it a is it a tautology.
+Is it satisfiable?
+, okay.
+And, , you know, now that I've given you code
+for evaluating, , propositions, given certain valuations, you could imagine,
+computing the right hand column in this table and
+then looking at it and deciding whether or not that's
+a tautology or whether it's satisfiable.
+Okay.
+So I'm going to quickly, , go through some code
+for doing that.
+.
+Being careful not to run out of time.
+Okay.
+, if I want to do that.
+So suppose I want to work out whether whether or
+not a given proposition is satisfiable.
+Meaning I need to compute this column and then look
+to see if there's a the value true in it
+somewhere.
+Okay.
+So that's what we're going to do now.
+So the first step is to we need to
+work out whether it's what the value is for each
+of the values of the variables.
+So the first thing we need to do is to
+know what all the variables are in the proposition.
+Okay.
+We don't know , ahead of time.
+, so , this particular example that I just had
+there had two variables.
+Okay.
+My first example had one variable.
+The second example had two variables.
+And so this is a little program that goes through
+all of these six cases and computes the variables in
+that proposition.
+Whatever, whatever it was.
+Okay.
+So, , very quickly, , , okay.
+If you've got a variable, then the variables in that
+proposition are obviously that one variable.
+Okay.
+So the list.
+Sorry, sorry, I should have started by telling you, ,
+I've got a a type definition.
+Names is a list of name.
+Okay.
+So this function names takes a proposition and gives you
+a list of names okay.
+And so if the variable if there's a variable x
+then the list of names there is the list containing
+just x.
+Right.
+That's.
+oops.
+That's the first case okay.
+False and true have no variables in them.
+So we've got the empty list there.
+, if we've got a negated proposition, it's the same
+list of names as you have in the proposition without
+the negation And then finally the two cases, , disjunction
+and conjunction.
+You compute the names and p.
+And the names and q.
+And you, , append them.
+So you take these two lists, append them, and then
+, this is a function in Haskell nub which ,
+it's built in, it's well, it's in the library data
+dot list.
+It , it takes a list and removes duplicates, okay.
+Because, , we, we only want one, one copy of
+each of the names of the variables.
+Okay.
+So, , so that's what that does.
+It just removes the duplicates.
+And so for example names of P1, you get
+a and B okay.
+P1 was this was this thing.
+Okay.
+And it's why is it a B?
+It's because the first, you know, a list of variables.
+There is a list of variables.
+Here is B the list of variables for this whole
+subexpression is a and b.
+Okay.
+Oops.
+Now the list of variables for the second subexpression is
+also a and b.
+Okay, the list of variables for the whole expressions you've
+got a and b, sorry a and b, and you've
+got a and b.
+You take the the append of those two, you get
+a, b, ab and then nub.
+Nub removes duplicates and you just end up with
+A and B.
+Okay.
+Which is why the answer is is that okay.
+So.
+That's how I get the list of variables in a
+in a in a proposition.
+Now.
+, once I've got the list of variables in a
+proposition, I want to have the list of possible valuations
+over, , over that list of variables.
+Okay.
+So going back to my example here with the truth
+table given this expression here.
+I've worked out how many columns I need, you know,
+and the names of the variables A and B.
+And what I want to now compute is all of
+the possible valuations.
+Okay.
+, if there are two variables there's going to be
+two.
+There's going to be four evaluations.
+How many variables?
+How many valuations are there if there are n variables.
+Two to the n.
+Yeah.
+Thanks.
+Okay.
+So if n equals two that's four.
+, what if there's zero variables.
+There's one.
+Yeah okay.
+There's one variable.
+There's one valuation for zero variables.
+What is it.
+Okay.
+, you know, , it's a function.
+It's the function.
+It has type name arrow bool.
+Okay.
+But what that what is that.
+What is that one function in the case where there's
+no variables.
+Okay.
+It's a function which takes a variable name and says
+that it's undefined because there aren't any variables.
+And so and so any variable you give it, it's
+going to say no, I don't know the variable value
+of that variable.
+Okay.
+This is what this is.
+This is what I've got here.
+The empty valuation.
+Okay.
+, I apply it I apply it to a, to
+a, .
+Actually, I could have written that differently.
+Anyway, , I apply it to a variable name, and
+it just tells me.
+No, I don't know.
+Okay.
+But more interestingly is if there are variables.
+, so this is a little, , a little program,
+, called Valens.
+It's a list of valuations over, , a list of
+names.
+Okay.
+You give it, you give it a list of names
+and it gives you a list of valuations.
+Okay.
+And those are all the possible valuations for that list
+of names.
+So if I'd given it the list a B it
+would give me a list of four functions corresponding to
+these four rows.
+Okay.
+First function might say, , a, , the value of
+a is f, the value of b is f.
+Second one might say value of a is f and
+the value of b is is is, is is t
+okay and so forth.
+All right.
+And so this this computes that for any list
+of variable names okay.
+This code is a little bit tricky to understand okay.
+There's been some questions on Piazza people reading ahead about
+this function definition okay.
+So let me just briefly explain this.
+I don't have a lot of time.
+, , the idea of this.
+Let's look at this one down here first.
+Okay.
+Okay.
+First case is if we've got no variables, then as
+as we've just discussed, there's only one valuation.
+It's the empty valuation.
+This is the one where none of the variables are
+defined.
+Okay.
+But in the case we have at least one variable
+x.
+Okay.
+, then we compute okay.
+We've got at least one variable and then some more
+variable x is possibly zero of them okay.
+We compute the all the possible valuations for x is
+this is the recursive call.
+And then for each one of those valuations we consider
+the extension of it by adding that the value of
+x is true.
+And the case where adding the value the value
+of x is false.
+Okay.
+So we're looking at , this is using this other
+function which I'll come to in a second.
+We, we take the extension of that valuation by the
+association of the name X to values?
+, true and false.
+Okay.
+Two choices.
+So for each, for each valuation of X and for
+each choice of B.
+We get a valuation produced by this function call here
+okay.
+And informally this is extending the valuation even by
+the association where x gets the value b.
+Okay.
+And that's what this function does okay.
+You give it a valuation, you give it a name,
+you give it a value for that name.
+And it computes a valuation, which is the extension of
+that evaluation by that association.
+Okay.
+.
+And there were some questions about this code.
+Let me write an alternative way of I mean, this
+is, this is this is defining what that does.
+Okay.
+, you might understand it better if I would write
+it differently.
+.
+Okay.
+Given a valuation, a variable and a, , and a
+value for that variable I need.
+So this is a this is a name.
+This is a.
+Sorry.
+No, this is not a name.
+This is a valuation.
+This is a name.
+And this is a bull.
+Okay.
+And given those three things I need to compute.
+Evaluation.
+Okay.
+The thing on this side is a is evaluation.
+What's evaluation?
+It's a function from name to bool.
+Okay.
+So I'll write this as a lambda expression.
+Okay.
+This is a evaluation.
+So given a name why.
+Then I check to see is is x equal
+to y or not.
+If so the answer is b.
+Otherwise the answer is is , whatever it was
+for the evaluation that I, that I started with here,
+, applied to Y.
+Okay.
+So that's a.
+That's a boolean.
+Okay.
+So this has the type name arrow bool which is
+what valuation is.
+Okay.
+That's kind of fast, but I hope it's at least
+gives you enough of a feeling for this to be
+able to look at it and understand it.
+, if you haven't understand it already, to understand it,
+looking at home, , it's the same.
+It's actually the same definition.
+Is that all I've done is to is to take,
+, this part of it and make it into a
+lambda expression.
+Okay.
+Okay.
+And what I get out of this is, you know,
+for example, , for the value for the, , for
+the variable names A and B, I get a list
+of four, , functions out of it.
+You can't print out functions in in Haskell.
+So this is kind of informal, , notation for what
+you get.
+Okay.
+You get a function which takes a to false and
+b to false.
+Another function which takes a to false and b to
+true and so forth.
+All four of these cases okay.
+Each of these functions of course they start off with
+the empty valuation.
+And so each one of these, each one of these
+functions also takes any other variable name to , to
+an error message.
+Okay.
+Okay.
+I'll just point out here that this base case is
+important.
+, if we would I mean, the the thing that
+you might be tempted to write here.
+Is, , is evaluations over the empty list of names
+is the empty list of valuations.
+Okay, that would be wrong.
+First of all, because two to the zero is one,
+we know we must have one valuation.
+And the other reason is that if that was the
+empty list, then, , the result of this for every
+list of, of variable names would be the empty list,
+because you're always doing a, , you're generating values from
+the recursive call of this function applied to the smaller
+list of variables.
+And it would always be empty, okay.
+Would always be empty, would you never you'd never get
+anywhere.
+So you need you need this to be here
+that.
+Okay.
+Stunned silence.
+All right.
+Yep.
+How does the partial application of extend work?
+.
+Okay.
+.
+Are you referring to the piazza?
+Because it takes in.
+Ah.
+You mean here?
+Okay.
+Right?
+Yeah.
+Extend.
+Yeah.
+So.
+Okay.
+Extend.
+.
+I would to get all my colours away, but
+it's, .
+.
+Anyway.
+Extend.
+Oops.
+It's just.
+What's going on here?
+Yeah, that's that's where I was.
+Okay.
+Right.
+Extend.
+, it takes, , three, three, three values and gives
+you a value.
+Okay.
+, so evaluation a name and a boolean, and it
+gives you and it gives you a valuation.
+Okay.
+So you were you were talking about partial application.
+You mean, , that I mean, looking at the definition,
+it looks I'm giving it four values and getting
+a boolean.
+Okay.
+But that's because the part that's highlighted is, is actually
+corresponding to this to this type.
+Okay.
+So this is a function from this is the part
+that's tricky about this definition.
+This is the function.
+This is a function from a name to a
+boolean.
+And the way that I've written it, and Haskell allows
+me to do this is to , is to take
+it's, it's exactly this definition here.
+Okay.
+Where I've taken the Y and put it on the
+left hand side of the equal sign in order to
+avoid writing the lambda out explicitly.
+Okay.
+So I hope that answers the question.
+, you can talk about partial application if you're talking
+about , this definition.
+, but the thing that you're defining here is evaluation.
+Any other questions?
+Right.
+Your tutorial next week is actually going to be working
+with this stuff and, , extending it a bit.
+Okay.
+, given given these definitions.
+Okay.
+And going back to this, I was saying we're going
+to work out whether or not, , a proposition is
+satisfiable by computing the list of , of values for
+each of the valuations of the variables and checking to
+see if there's at least one T in here.
+Okay.
+And that's what this code does.
+Okay.
+This is one line.
+One line definition of what it means for a proposition
+to be satisfiable based on the definitions that I've just
+given you.
+Okay.
+So we compute all of the value we, you know,
+given a proposition P, we compute the valuations, all the
+possible valuations over all the names of variables that are
+in P.
+And then for each one of those we evaluate p.
+Okay.
+And this gives us a list of all of the
+values of p for all of the valuations.
+So that's exactly this list here that's written in the
+last column here okay.
+And P is satisfiable if at least one of those
+is true.
+And so we take the disjunction.
+And that's the answer right.
+Okay.
+When is the proposition satisfiable.
+It's when there's at least one valuation that makes it
+true okay.
+And the code that we've written up until now is
+enough to give us, , that we can write this
+definition that.
+Okay.
+And this is, this is kind of interesting.
+Okay.
+Because, , we've I mean, I've written the definition of
+the of propositions that was six lines, the names of
+the functions.
+I'm sorry, the the evaluation of propositions.
+That was another six lines.
+The, the list of names of, , , the list
+of variable names in a, in a proposition that was
+in the sixth line.
+So that's 18 lines so far.
+The, , the, , code for producing all the possible
+evaluations over a list of variables.
+That was another four.
+So lines.
+22 lines.
+, I might have left out some.
+And then in this line here is another one line.
+Okay.
+So anyway, it's about 30 lines of code, let's say
+ish.
+Okay.
+So that's about a page of code.
+Page of code to define the syntax of propositions, evaluating
+propositions and working out whether a proposition is satisfiable or
+not.
+Okay.
+So that's a quite compact, , , program for doing
+this, this, , implementing logic and , computing whether or
+not a proposition is satisfiable or not.
+Okay.
+So that's, , that's kind of nice that you can
+do that in Haskell.
+, here's just an here's just my example.
+P1 basically, , , doing what's in this truth table,
+this kind of thing, which is now a mess.
+Okay.
+So here's the valuations.
+, so here's the, the names of, of this proposition.
+Here's the valuations over the list of names.
+Here is the, , list of values for each one
+of those Evaluations, you know.
+True.
+False.
+False.
+True.
+And here is the disjunction.
+Okay.
+Any questions about that?
+I have something I want to talk about in the
+last ten minutes, which is which is different.
+Okay.
+Okay.
+No questions okay.
+I'm going to talk about , , two.
+, this is, this is not to do with expression
+trees.
+, but it's two, , , algebraic data types that
+you might find useful.
+Okay.
+, and, , the first one is a data type
+that's useful for a situation where you have optional data.
+Okay.
+And it's called the maybe type.
+So you can use this for, , for example, a
+function that takes an optional argument, or a function which
+delivers an optional result.
+And I'll just show you this.
+First of all, I'll show you the type, and then
+I'll show you one example of each of those things.
+Okay.
+So this type the type of optional values.
+Okay.
+So if you if you've got an optional value of
+type A, the type we use for that and
+this is built in in Haskell is maybe a okay.
+So it's, it's maybe there and it's maybe not there.
+Okay.
+It's optional.
+So if it's not there then the value is nothing.
+That's a constructor.
+Okay.
+So it's a value.
+It's a it's a non-existent value of type A.
+Let's let's say okay.
+It's a type.
+It's a value of type maybe a so it's
+a, it's a value that's not there.
+Okay.
+Suppose that you do have a value of type A.
+, then you wrap it up in a constructor, you
+always need a constructor and you use constructor just so.
+It's just a so so , an optional integer
+would be maybe int, and the values would be nothing
+or , or all of the possible, you know, just
+three.
+Just seven okay.
+So a value that's present for this optional type is
+just of a of a value.
+And a value that's absent is nothing.
+There is no value.
+You got that.
+And so for example here's a here's an example of
+an optional argument okay.
+So let's suppose that we want to exponentiate we
+take you know m to the N and we're lazy.
+And so if M is two where we can't be
+bothered to say that m is two, we just say,
+well the default value of m is two.
+So if I don't give you a value, then assume
+it's two.
+Okay.
+That's what I mean by default value.
+Okay.
+So this function power instead of being int arrow int
+arrow int the first argument is a maybe in.
+So it's an optional value of type int.
+And there's two cases.
+If I don't supply a value then the value is
+nothing.
+Okay.
+Then I take two to the end.
+That's the second.
+The second argument is n okay I take two to
+the n two is the default.
+But if I supply a value I do here
+okay.
+If it's just m whatever m is, then I take
+m to the n okay.
+So default value of two.
+If I supply a value I use that value okay.
+It's the one that I've supplied here.
+All right.
+And then optional Actual results.
+, if I, if I, , you know, you know
+that if you divide by zero, you get an error,
+right?
+So that's kind of inconvenient.
+, if I, if I try to do division
+this and m is zero, then it will give me
+an error.
+So this is a a version of division integer division
+which doesn't give an error.
+What it gives is a is an optional result.
+So in case in case the numbers are are not
+in case that the denominator or the divisor is
+is zero, it won't give you an error.
+It will give you, , an optional result, which is
+, no, no value.
+Okay.
+So dividing n by zero with this function I define
+it to give me the value.
+Nothing.
+Okay.
+This would be the case that would normally give you
+an error.
+And , if, if, if you've got a non-zero second
+argument here.
+Okay.
+Then you, , you do the normal division and you
+have to wrap it up in a constructor this
+to get a value that matches the, , the type
+that you've defined here.
+Okay.
+So these are the two values that you can get
+out of this either no value if you try to
+divide by zero or a value wrapped up of the
+of the division.
+Okay.
+.
+Now using an optional result requires a little bit of,
+, a little bit of, , unwrapping.
+Okay.
+So here's the function that I just defined for dividing,
+, which, , which produces a maybe int as a
+result.
+Okay.
+So look at that type.
+Right.
+So it's producing not an integer result but a but
+a maybe int as a result.
+And now suppose I want to write a function which
+uses that to do something.
+Okay.
+, so this requires a little bit of, , unwrapping.
+Okay.
+Suppose that I want to write a function which for
+every reason it takes the result of dividing n by
+m and adds three to it.
+Okay.
+And suppose I just decide that for the case where
+m is zero, I should produce the result three.
+Because there's nothing else.
+I mean, I don't have anything.
+, yeah.
+Any better idea?
+Okay, so this is a wrong way to do this.
+Okay.
+This will give you a typeerror because divide divide n
+m.
+This has type maybe int and maybe int plus int
+is a type error.
+Okay.
+So that's the wrong way to do it.
+The right way to do it is down here Okay.
+Divide n of m has type maybe int.
+And so there are two cases.
+It's either nothing and then the result is three or
+it's a result wrapped up with this constructor.
+Just and then the result is R plus three.
+So I've unwrapped the value and added three to it.
+this syntax by the way I think this is
+the first time that you've seen this.
+It's just a yeah case.
+Case analysis.
+.
+Okay.
+So that's optional values and results may be type.
+And I have just enough time to show you, ,
+disjoint union of two types.
+So remember that the, , that a list always has
+types of the same value in it.
+Okay.
+Sorry.
+The values of the same type.
+You get a list of integers, a list of booleans,
+a list of functions from into booleans, whatever.
+It's always the same type.
+So here is a way to get a list of
+values of different types.
+Okay, but I'm not lying by saying that the list
+always has to have the values of the same type,
+it's that the type has to be the type of
+values which are either one type or the other type.
+Okay, so this is a type of values which is
+either a or b okay.
+It's called either a b again built into Haskell.
+Okay.
+So you've either got it's a this is kind of
+union or in fact disjoint union.
+, so here's a just looking down at this
+example.
+I think I'm going to run out of time here
+probably.
+, here is a list of values where some of
+them are numbers and some of them are strings.
+Okay.
+But They're not.
+They're not numbers or strings on their own.
+They're numbers or strings wrapped up with constructors which say,
+if I'm talking about kind of the left component of
+this union or the right component of this union.
+Okay.
+So either in string, so all of the integers are
+going to be tagged to say that there are, you
+know, the left component of this.
+So left a left one left to left 17.
+And all of the strings are tagged as being from
+the right, union components.
+So.
+Right.
+Hello.
+And right.
+Empty empty string or no, , space and right world.
+And so , okay, so you can build strings ,
+you can build, , list this and you can
+write functions which, for example, add together all the integers
+in, in such a list or , take.
+Yeah, that's, that's that function.
+And here's a function that concatenates all the strings in
+such a list.
+Okay.
+And I'm out of time.
+I will just say for those who are interested, there's
+some code at the end of this lecture that you
+can look at and play with if you want.
+And it's a, it's, it's, it's an interpreter for Haskell
+written in, , this much code.
+Okay.
+So this is a representation of Haskell syntax, very simple
+subset of Haskell.
+, and , a definition of evaluation of such programs.
+Okay.
+So that's how much space it writes takes to implement
+Haskell.
+If you, , if you do it in Haskell.
+Thank you.
+Sorry, that was a bit fast.
+Hi.
+, I was reading for, , the, , with the
+trees for next week.
+The.

@@ -1,0 +1,834 @@
+The biggest and coolest hackathon in Scotland.
+, you know, you get to see behind the scenes
+in the Tech society of the University of Edinburgh.
+, and you know, that propels you forward.
+You can later become and run for president me.
+, you can join other committee roles.
+You can find research positions, network with, , lecturers, academics.
+So joining the committee propels your university career, just
+on a rocket ship.
+I really, really recommend it.
+So if you want to join our committee, all you
+have to do is give a one minute speech and
+optionally write a manifesto for 200 words.
+Scan that QR code that's going to go to the
+page for our AGM for our election.
+, yeah.
+That's it.
+Come along on October 23rd Informatics forum at 6 p.m..
+I hope to see you there.
+Thank you.
+Okay.
+Good afternoon everyone.
+, firstly, I have a small admin announcement.
+If you're in my tutorial group this afternoon.
+Could you come and see me here after the lecture?
+If you're here and if you're online, please read your
+email.
+, so we have I spent some time talking about
+2500 year old logic.
+We're now going to talk about modern logic and the
+form of modern logic that we're going to talk about
+was developed early 20th century building on work from the
+19th century.
+So a couple of the characters involved from the earlier
+side of this.
+This is George Boole, as in Boolean algebra.
+So you all know Boolean algebra by now.
+And this is Charles Pierce, who is an American who
+was an American logician and one of the great figures
+in logic and semiotics from the 19th century and early
+20th century.
+I have an acquaintance who is a fanatical about purse,
+so my Facebook feed is full of stuff about purse
+every day.
+And has been for three years.
+So I want to start by summarising what we've done
+so far, and at this point, please ask any clarifying
+questions from what we've done in the previous three weeks.
+So we introduced propositional logic with true and false propositions.
+And we introduced the Boolean connectives and which I called
+and or not and implies or if then we then
+mentioned predicate logic where we talk about objects in a
+universe.
+So we have a universe big X and we talk
+about some object little X inside the universe.
+And a predicate applies to an object.
+So this gives us a boolean true or false value.
+If a is true of object x And I introduced
+mainly for the purpose of saying we weren't going to
+talk about them yet.
+The universal and existential quantifiers, which is what we use
+in modern logic.
+And instead of talking about those, we introduced a modern
+version of Aristotle's categorical propositions.
+So we have sequence of the form.
+Some predicate entails some other predicate.
+And these are statements about all the objects in a
+universe.
+So there's an implicit universal quantification for every x in
+the universe.
+A of x implies b of x.
+And as I said, that gives us Aristotle's four categorical
+propositions.
+Every a is b, no a is B, some a
+is B, some a is not b.
+And we went through that and you did lots of
+exercises with Venn diagrams, and you did a little bit
+of work on proving stuff in the tutorial exercise that
+you've just submitted.
+And to do that, we used rules that let us
+derive new sequence from old ones.
+We started with our fundamental syllogism, Barbara, which we take
+to be self-evidently true.
+We had double negation.
+We had contra position in a sequence.
+And remember contra position is negate and flip.
+And we had contra position in a rule where we
+could take one of the premises and negate and flip
+it with the conclusion.
+And that gave us basically a view in modern logical
+notation of Aristotle's syllogisms.
+And moreover, we did them slightly better than Aristotle, because
+we understand them better than he did, although his understanding
+was remarkable for the time.
+So are there any questions or comments at all hanging
+over from the last couple of weeks of what we've
+been doing before we go on?
+Now, if you've all done the tutorials, so hopefully everything
+is reasonably happy.
+So what I want to do now is take the
+notion of sequent and enrich it a bit.
+So we've dealt with sequence that were specifically designed to
+deal with Aristotle's things.
+Now we're going to think about what else we could
+say using the sequent notation.
+So I've introduced not and and or as operations on
+two propositional things.
+They take two two values and give you back a
+truth value.
+There's a natural thing you can do, which is to
+say that if I have a predicate, then I can
+do a boolean operation on a predicate.
+For example, you've just done things that talk about blue
+amber squares.
+So I can think about the single predicate is blue
+and is amber, which is a kind of obvious compound
+predicate which I can apply to any object.
+And it's true if the thing is amber and if
+it's blue.
+So notionally speaking, this looks many things, useful things.
+In mathematics it looks a bit of notational trickery.
+This thing here, these are two predicates A and b.
+And this is the conjunction the predicate a and b.
+How do I define the meaning of that?
+Well, I simply say that the meaning of a and
+b applied to x is a apply to x and
+be applied to x.
+So completely unsurprising, which is how all good mathematical definitions
+should be.
+And I can do the same with or A or
+B is a single compound predicate, is square, or is
+a disc.
+And if I apply that to an object x, I
+get the or of a of x, p of x
+is square of x, or is disc of x.
+Mathematicians call this operation lifting.
+So this is the lifted not operator.
+This is the lifted.
+And operator and this is the lifted all operator.
+, why do they call it lifting.
+It's some kind of idea that true and false are
+the ground values.
+They're the ground floor of the mathematical building where constructing
+the next level up is predicates.
+And so we lift our operations to work on the
+next level up.
+And you can keep lifting further if you wish.
+Any questions about that idea?
+Is it a natural idea?
+It's what we do in English anyway.
+So.
+Okay, we will see what we do with these in
+a moment.
+Because now I want to think a little bit about
+what have we got in a sequence.
+The sequence we've introduced have a predicate on the left
+and a predicate on the right.
+Now when we were doing manipulations, we assume that these
+things were all what we called atomic predicates, except that
+we also allowed negated predicates.
+So remember we argued that the thing about furry snakes
+was just an instance of Barbara because it had a
+not furry in it instead of a furry, and that
+still fits into the scheme of Barbara.
+So if we can put not of a predicate to
+the left or right of a sequent, then we can
+put the end of a predicate to the left or
+right of a sequent, or the all of the predicate.
+So, for example, here is a piece of reasoning.
+It's written in a logistic form.
+It's not one of Aristotle's syllogisms because I've got an
+and here so we can read this.
+Every line is big, for example, and every line is
+fierce.
+From that we can conclude that every line is big
+and fierce.
+And for those of you who liked the Venn diagram
+stuff, there's a kind of Venn diagram summary of the
+syllogism.
+So I take it that you agree with this piece
+of reasoning.
+Anybody have any worries about this piece of reasoning?
+Does it really?
+I've written this double line here.
+Do you remember what the double line means?
+Yeah.
+Anybody not remember what the double line means?
+Okay.
+Means the rule goes both ways.
+So if you give me these two, then I can
+conclude the conclusion.
+Conversely, if you give me the conclusion, I can derive
+the premises.
+So does that work.
+We should actually check it work.
+So I've written it down.
+So you should check everything I write down because I
+might make a mistake.
+If I know that every line is big and fierce,
+then I certainly I know that every line is big,
+and I know that every line is fierce.
+So the rule works both ways round.
+Okay, so are you happy for us to continue working
+with reasoning with a slightly richer notion of predicate on
+the right.
+You were basically doing this in the tutorial anyway, so
+one of those nice instances where we designed the tutorial
+to feed into the next week.
+, what I've done here is use a conjunct predicate,
+an and predicate on the right of a sequent.
+I could also think about enriching sequence on the left.
+So here's another rule.
+This one is supposed to say something every lion
+is fierce, every tiger is fierce.
+Everything that is either a lion or a tiger is
+fierce.
+Is that a valid piece of reasoning?
+Yes, yes.
+Thumbs up.
+Lots of thumbs up.
+Anybody worried about it?
+I think it was as a piece of English.
+It's quite natural.
+Does it work both ways?
+Well, if I know that everything that is either a
+lion or a tiger is fierce, then I know that
+tigers are fierce.
+And I know that lions are fierce.
+And so it does work both ways.
+Again.
+, you might be wondering, can I say something?
+About what?
+Lion and tiger.
+This is where logic differs from English.
+So in English, if I said all lions and tigers
+are fierce, you would know what I meant, right?
+What would I mean?
+So forget the logic.
+Just in normal English I say all lions and tigers
+are fierce lions.
+Tigers.
+Right?
+So that's one way of putting it.
+Is there another way I could put it?
+I'm trying not to say it without logic.
+Does it not just say this everything that is a
+lion or is a tiger.
+So there's one of those cases where and and or
+in English and Logic are getting a bit mixed up.
+, what is can we talk about the compound predicate?
+Lion and tiger.
+What's the meaning of the compound predicate?
+Lion and tiger.
+Has to be a lion and a tiger.
+So arguably the things on the slide in the right
+satisfy that predicate.
+Who knows what a liger is?
+Who can now guess what a liger is?
+Okay, there are ligers and Teigen's.
+So Elijah is the offspring of a male lion and
+a female tiger.
+A tigress and a Teigen is the other way around.
+, they're not very happy beasts, but curiously, Teigen's are
+bigger than either lions or tigers.
+So what have I done with this slide and the
+previous slide?
+I've introduced some rules that let us do things with
+Boolean combinators on predicates.
+So this one we had from before.
+This is contra position.
+This is a rule for manipulating negation.
+If I know that A entails b, I know that
+not B entails not a.
+What I've introduced just now are rules for dealing with
+or and and in some places.
+So A entails C and B entails.
+C means that either A or B is sufficient to
+give you C and vice versa.
+If I know C gives you a and c gives
+you b, I know that c gives you a and
+b.
+So notice here that these rules I've introduced, I've got
+all on the left and and on the right.
+Do you think that's a coincidence that I've started this
+way.
+I mean obviously not.
+Anybody remember any magic word that I've mentioned a few
+times that might be coming into play here?
+Magic word stuff here.
+Not contra position?
+No.
+No.
+So it's a word that describes the way in which
+knot or land interact.
+It's going to come up again, so I'll repeat it.
+Duality.
+So I haven't explained precisely what duality means, but we've
+seen a couple of examples of it and we're going
+to see many more.
+So it's not a coincidence that these sequence work with
+all on the left and and on the right.
+Because in a sequence, the left hand side is a
+kind of positive thing.
+These are the things we know.
+And the right hand side.
+Well no actually.
+Sorry.
+Wrong way round.
+Right hand side is a positive thing.
+And the left hand side is the left hand side
+of a conditional basically, which is a sort of negative
+place.
+And we'll see much more about that in a bit
+later.
+This raises the question Of.
+Can I do anything with and and or on the
+left or right?
+So can I write a sequence that has an and
+on the left.
+And can I write a sequent that has an all
+on the right?
+In order to think about that, I'm going to introduce
+some notation that you've already seen in Haskell, but we
+haven't seen it in logic.
+So just before I go on, any questions about the
+slide so far, the rules that I've been talking about.
+Quite repetitive slides.
+So hopefully not.
+So you did this in the tutorial.
+If you did the optional part, if you didn't do
+the optional part, then it's time to start thinking about
+what it meant.
+If I write down something this a comma b
+comma c entails d.
+What do you think a natural thing for that to
+mean is.
+, it's always the somebody at the back must have
+an idea.
+Okay, so that's an interesting one.
+So it's just in there is that it means that
+A gives d, b gives d and c gives d
+each individually.
+And the alternative.
+Yeah.
+So another idea is that what I really mean here
+is if you give me all of A, B and
+C then I can get D.
+Now this is notation.
+So we could define it in whatever way we want.
+But in fact what we're actually doing here is interpreting
+comma as And so one way that this could make
+sense, and the way that turns out to make it
+make quite good sense is to say from the assumptions
+A, B and C, I can get D when we
+do a mathematical proof or a logical piece of reasoning.
+Usually we start with a bunch of assumptions.
+If you're writing down a formal theorem, then these are
+the preconditions of the theorem.
+If you're doing a piece of informal reasoning, then sometimes
+you have to find out what the assumptions are as
+you go along.
+But when you finish, you've got some things that you
+had to assume in order to get your result.
+So it's kind of reasonable to say that the basic
+form of reasoning is give me a bunch of assumptions
+on the left and give me what I can prove
+from it on the right.
+, have you seen this comma used as an and
+anywhere else?
+People are whispering the answer.
+Somebody shout the answer.
+So I should have bought water, shouldn't I?
+Haskell list comprehension.
+We have in Haskell the set of X drawn from
+things.
+Comma X is blue, x is amber.
+So that's an example of comma being used for.
+And that's what we're going to do here.
+what can we do with that.
+Does this let us do anything useful.
+Why would we write a comma b, comma c instead
+of writing a and b and c?
+Well, if we think about what we could try to
+do, what we would to do is produce rules
+that let us reason about statements that.
+And if you try to do that, you'll find that
+it doesn't work as nicely as it did when we
+had and on the right of the sequent.
+So here are two rules.
+Which of them is true and which of them is
+false?
+If A and B gives me D, then sorry.
+If a comma B gives me d, then a and
+b gives me d.
+That's true by definition, because I've said that I mean
+and by comma.
+But this thing that you might think should be true.
+Is a one way rule, not a two way rule.
+So think about what this says A gives me D
+and B gives me d.
+From that I conclude that a and b gives me
+d.
+Is that right?
+So that's.
+Yeah.
+Anybody worried about that?
+Does it work backwards?
+It feels gladiatorial combat.
+Why doesn't it.
+So somebody who hasn't already said that it doesn't.
+Why does the backwards rule not work?
+Because it can be in a, .
+Yeah, this.
+So the conclusion here says that if I know both
+A and B, then I can get D, but it
+may well be that I actually need both A and
+B, and neither of them is enough by themselves.
+So running this rule backwards would say that if I
+knew that given A and B together, I can get
+D, then I can separately get that A gives me
+D and B gives me D, and that's simply not
+true.
+So your exercise is to come up with a little
+example for that one.
+Using any of our favourite universes or topics to demonstrate
+that it doesn't make sense.
+, nonetheless, these rules are both useful in their ways.
+But what's the point of taking an and and splitting
+it into commas?
+What I'm trying to do here is work towards a
+system where I can take a big, complicated formula, a
+big, complicated sequence on the bottom with a predicate on
+the left with lots of ands and ors and nots,
+and a predicate on the right with lots of ands
+and ors and nots.
+And then we want to break it down so that
+we can do a reasoned argument showing that it's true
+from simple assumptions.
+.
+It's a little bit complex when we actually do a
+proof, which will be tomorrow with a bit of luck.
+Not today.
+You'll see that it can be a bit of a
+mess to write down, which is why it's good to
+have computers doing it.
+But even setting up the notation for it takes a
+little more work than we have been doing.
+Okay.
+So are you all currently more or less happy with
+the idea that I can say I have a bunch
+of assumptions, and they give me a conclusion as a
+sequence.
+I.
+Assume so.
+What does that mean?
+What does it mean to say from.
+No assumptions at all.
+I can get d anything, anything entails d.
+Yep.
+So if nothing entails D, then certainly anything else entails
+D.
+, is there a shorter way of saying what that
+says about D?
+D is just true.
+We don't need any assumptions.
+It's a fact of life.
+How can we argue that formally?
+Well, let's just expand the notation.
+What do I mean.
+So by blank entails D I mean the empty set
+of assumptions entails d.
+Now when I write a bunch of assumptions on the
+left, on the left, we just agreed that what I
+meant was the end of the set of assumptions.
+And now we come back to something I think we
+discussed in the first lecture, or maybe the second lecture.
+What is the end of the empty set of assumptions?
+It's true.
+Why is it true?
+Because when you take two propositions and add them together,
+you're making the set of true things smaller.
+So each time I put another and in, I reduce
+the number of things that are true.
+So when I have nothing at all in my bunch
+of ands, I'd better start with everything that is true.
+So again, this is one of these things that you
+need to be remembering.
+The end of the empty set is true.
+So this comes down to saying true entails d.
+In other words, d is simply true by itself.
+So that's what that means.
+So this looks we're just playing games with the
+notation, but we're not really playing games because we're.
+Deducing stuff that has to follow if we interpret the
+notation in the way that we've defined it so far.
+This is also a common feature in logic and mathematics.
+You define a notation in a way that makes sense
+in the case you were thinking of, and then that
+forces you to interpret in interpret it in some rather
+specialist cases that perhaps you weren't thinking of.
+We certainly weren't thinking about empty sets of n of
+premises when we define the notation, or at least I
+wasn't.
+, so that's an argument that it makes sense to
+write sets of things on the left of a sequent.
+, if I can write sets on the left of
+a sequence, then surely I can write sets on the
+right of a sequent.
+But I have to say what I mean by it.
+Bearing in mind the magic word, what do you think
+I might.
+Sensibly mean by comma on the right of a sequent?
+Or how many people were going to shout out or
+if they'd had a bit more time?
+Okay, so again, by the end of the course, hopefully
+you will have a deep understanding of duality.
+But in the meantime remember that.
+And on the left behaves all on the right.
+And this is a fact of the way we're defining
+things.
+So if I write a entails d comma e, then
+I claim that it should mean a entails either d
+e, but I don't actually have a choice about it
+because I have rules that let me derive that.
+So here's a trick that shows you that I don't
+have a choice.
+It has to mean, or I can do control position
+on this.
+So if I want this to behave sensibly, this is
+a single proposition.
+So these are propositions.
+So I want to be able to take them to
+the left and swap them with their a move each
+proposition to the left negate it.
+Move that proposition to the right negate it.
+So if this means something, it should mean the same
+as this.
+This means the same as that because that's how we've
+just defined comma on the left.
+That means not of the or because duality again.
+This is the end of the not.
+And this is the not of the ORS.
+So many of you use that in your tutorial exercise
+where you are writing down a piece of hassle code.
+For some, something is something you wrote.
+It was something of the form.
+And you were.
+Something that looked that.
+.
+How many of you remember writing something that?
+I know I saw least five examples out of six
+in my tutorials, so I think it must be many
+more of you.
+, curiously, you didn't have to do that.
+That was a slightly tricky question, because.
+I asked you to.
+Define this thing in terms of Haskell and and or
+so that you would write all A or B as
+an and of a list.
+And then I asked you to define that.
+, you could just have negated the answer of that
+because this is just the negation of that.
+But a lot of people, which is indeed what I
+really hoped you would do, decided to write it out
+using AWS and not if you did the other thing
+then well done.
+Think about that too.
+So this law here is an example of something that
+you may know from propositional logic.
+Who has seen De Morgan's laws in propositional logic.
+Right.
+So about 20%.
+We will see them again at great length.
+So that was a piece of valid propositional reasoning.
+And then I can flip that over to the other
+side and flip the over to this side using contra
+position.
+And so actually I have no choice but to say
+a entails d comma E is supposed to mean a
+entails d or e.
+Which is a slightly odd thing to say, because normally
+when we do reasoning, we have a kind of single
+proposition that we want to conclude at the end, at
+least if we're trying to do simple reasoning.
+But if you think about the kind of reasoning you
+do in mathematics, quite often, you will end up proving
+that either something is true of your number or something
+else is true of a number.
+Or if you are doing legal reasoning or tax reasoning,
+which as I've said, is a very interesting domain for
+logic, you often end up saying, either I can get
+this tax perk or I can get this tax perk,
+or possibly both, but maybe not.
+, so any questions about this?
+Do you believe my argument so far that I have
+no choice about what it means?
+It's always good if you have no choice because it
+means you're doing things right.
+, so now we have a rule that lets us
+look at and and on the left or on or
+on the right and break it apart into separate propositions,
+which we write down as commas.
+Now, again, we have the question what does it mean
+to write that?
+So if I write from D, I get.
+No propositions.
+There's only one thing it can mean.
+What's the only thing it can mean?
+D is false.
+So if I had it the other way one nothing
+entails d, it meant d is true.
+If I flip it to the other side.
+The magic word duality.
+What's the dual of true?
+It's false.
+And again I can do the same piece of reasoning.
+D entails nothing, means D entails nothing.
+The empty set, which means d entails the or of
+the empty set.
+What's the or of the empty set?
+Again, when I all things together, I make more things
+true.
+So when I start with no propositions, the all of
+no propositions is false.
+Nothing is true.
+, so I've already said that you are seeing a
+pattern between the left and right of an of entails,
+and you're going to see quite a lot more of
+it over the next couple of weeks.
+Okay, so I've defined quite a lot of notation and
+quite a lot of ideas.
+Is that question here.
+Why do we.
+Have.
+, because just on the previous slide, I argue that
+comma on the right of a sequence has to mean
+or in the same way that on the left.
+So I said it meant and on the left.
+On the right it has to mean or because contra
+position lets me flip things from back to side.
+And when I flip around to the other side, it
+becomes an Or.
+And so if I think about so my definition of
+what it means for D to entail a set of
+assumptions is that V entails the all of all the
+assumptions on the right and the or of no assumptions
+at all is false.
+Okay.
+Other questions requests for further clarification.
+Okay.
+So this was introducing notation and a meaning for notation
+and some definitions.
+We are now entering the 20th century.
+Finally I've talked about sequence bunches of things on the
+left and bunches of things on the right.
+So I can think about writing some kind of super
+general sequence where I just have a set of formulas
+on the left, which I write as a list because
+it's easier to write things down as a list, but
+it's really a set.
+And when you do it in Haskell, you're going to
+be using lists because it's convenient.
+But really, they're standing for sets and we have a
+bunch on the right.
+How many of you know your Greek alphabet off by
+heart?
+Right.
+That's a lot of you who have a lot of
+learning to do, because mathematicians are addicted to Greek letters,
+and your life will be much easier if you just
+learn them all.
+And things could be very much worse.
+There are many other much richer alphabets that we could
+use.
+, there is one Russian letter that is used in
+mathematics reasonably frequently, but only one.
+So this is gamma and this is delta.
+, I think some of you are engineers.
+You'll probably see Gammas and Deltas kicking around the engineering
+maths as well.
+There's a notational convention that mathematicians and logicians in particular
+tend to use, so we tend to use uppercase Greek
+letters to talk about sets of things and lowercase Greek
+letters to talk about individual things.
+So for those of you who haven't come across, this
+is gamma.
+This is delta.
+And the lowercase forms are.
+That.
+So here.
+And this is the this is early in the Greek
+alphabet.
+So we usually use things early in the beat in
+the alphabet for sets of formulas.
+So this is an example of how we would write
+one of our modern sequence.
+Updated sequence.
+We have a bunch of conclusions on the left, and
+that means that we assume the end of all of
+them.
+And from that, we can conclude some of the things
+on the right, so, so slightly unnatural.
+It took a little while to generalise to having sets
+of things on the right, but it makes things work
+because it makes things completely symmetrical.
+There is a version of this logic where you restrict
+yourself to only allowing one thing on the right, but
+it's nothing as clean.
+So this is the kind of sequence that was invented
+by Gerhard Jensen.
+.
+I don't know, what do you think he looks ?
+.
+Very, very clever guy.
+responsible for much of the foundations of logic and proof
+theory in the 20th century.
+But he had some personal defects as we would see
+them.
+Date of death 1945.
+Any guesses about what might have happened in 1945?
+, well, he, .
+He didn't.
+He was in the Russian zone of Germany, and Jensen
+was actually a reasonably enthusiastic Nazi.
+And being a prisoner of war in a Russian prison
+camp at the end of the Second World War was
+not a good place for enthusiastic Nazis, so he did
+not survive very long.
+, which just goes to show that logicians are not
+necessarily nice people, but maybe you know that.
+Anyway, so what does this mean?
+What does the secret mean?
+As I said.
+If everything in gamma holds, then something in Delta holds.
+Am I going to continue or am I going to
+stop now?
+I'll continue for a little bit.
+.
+I want to think a little bit more about what
+this comma means, as we might use it in everyday
+logical reasoning.
+Because on the face of it, then why do we
+want to know that something in Delta holds?
+Generally, you want to know that something specific holds.
+One way to split it apart is to say, well,
+what are we saying?
+We're saying if we know the end of the things
+on the left, then we can conclude the all of
+the things on the right and the common notation lets
+us split these things into different parts that might be
+of interest to us.
+So often the way to think about it is not
+to think of g a as being simply g and
+A, and not to think of some big set gamma
+and gamma comma A being all the things in gamma
+together with a.
+But to think about gamma as the set of assumptions
+that you're currently working with.
+And A is one of the things that you're actually
+working on at the moment.
+So typically a step in a proof says I've got
+a bunch of assumptions, gamma that I've been working with
+all the way along.
+And they're not changing as I do the proof.
+And then I've got some assumption A that I'm actually
+working with in order to try to get my conclusion
+be?
+What does this mean?
+Kind of.
+It means I'm restricting the reasoning about A and B
+to a part of the universe that behaves nicely.
+So one way to read this sequence is to say
+in the bit of the universe where gamma holds.
+So the nice green part of this universe, for example,
+then I know that a comma B is true.
+So it lets me write kind of a more general
+Venn diagram kind of universe.
+Split the universe into the good part gamma and the
+good part where gamma doesn't hold.
+And then I'm doing my A entails B reasoning only
+inside the green bit of the universe.
+Why do we want to do this?
+Because in any normal form of reasoning or in any
+yes, any normal form of reasoning, especially in mathematical or
+logical reasoning.
+Then usually there's an enormous amount of material that is,
+strictly speaking, part of your assumptions, but you don't want
+to be thinking about it as your assumptions.
+, so for example.
+Let's take my favourite example of tax law.
+There are tens of thousands of pages of tax legislation.
+They're all part of the assumptions you have when you're
+trying to work out how much tax you pay.
+But in most cases, they're part of the background, and
+you don't need those specific things at the front of
+your mind, although maybe you might need one of them.
+When you dig into the details to deal with the
+tax perk you're actually trying to get.
+Sorry about that.
+That's because I'm not plugged in.
+.
+This is why I hate outlook.
+Because it puts things in my calendar without my consent
+and then flashes them up at me.
+, that's why I hate Microsoft in general.
+But, , so a typical piece of reasoning has a
+bunch of assumptions that are carried throughout the proof, more
+or less unchanged together with the bits you're actually working
+on.
+And I think we will make that as a statement
+for the end of today.
+And then when we start tomorrow, we'll see an example
+of manipulating under assumptions.
+And then we'll go on to see more about the
+sequent calculus.
+And if I'm lucky, we might even get to finishing
+the proof.
+So just to warn you, it quite often happens that
+this lecture tends to run over into the next week.
+How many of you are feeling that all this is
+going quite fast?
+How many of you feeling?
+It's really going a bit too fast.
+Okay, who feels it's going too slowly?
+Okay, well, many of you will be relatively relieved to
+know we're going to slowly wind down for a bit.
+So this week is continuing at the pace.
+Then week five will relax a bit.
+Week six will relax a bit because we need some
+revision time and we need some examples classes.
+And we all need a break in week six right?
+See you tomorrow.
+And anybody from my tutorial group, please come and have
+a word with me now.

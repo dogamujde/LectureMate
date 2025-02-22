@@ -1,0 +1,1130 @@
+Right.
+Oops.
+So that was the theme from Crash Bandicoot three.
+, maybe some of you played that in your youth.
+.
+On PlayStation.
+Okay.
+Today I am going to talk about, , higher order
+functions today and tomorrow.
+Higher order functions.
+So starting off with functions map, filter and fold,
+which are three higher order functions built into Haskell.
+So higher order functions I'll tell you what those are
+in a second.
+, , we're going through rapidly through the, the, the
+main things in Haskell that I want to teach you
+in this course.
+So we've done lists and list comprehensions.
+We've done recursion.
+Now higher order functions this week, next week I'll, ,
+progress to, , Algebraic data types and expression trees.
+And those are kind of the kernel things that I
+want to teach.
+I'm going to be going on beyond that and talking
+about other things, , you know, various themes and, you
+know, ways of doing things in Haskell.
+But, , these are kind of the main things that
+are going to be, , coming up that you should
+get under your belt.
+Okay.
+So map builder and map filter and fold.
+So higher order functions.
+The introduction I'm going to be showing you a bunch
+of functions.
+And then extracting patterns from these functions.
+And one of the things you can do with higher
+order functions is to , express patterns of computation in,
+in single functions and then instantiate these, these patterns of
+computation, , to get various functions, which are the ones
+you actually want.
+Okay.
+I'll explain that via examples.
+Okay.
+So I'm going to start with , map, which is
+, the name of a higher order function in Haskell
+that I'll come to in a second.
+And I'll start by showing you a bunch of similar
+programs that you've seen before, or maybe not seen before,
+but they're ones you've seen before.
+So the first one is this function squares, which squares
+all of the integers in the list.
+And you've seen two ways of writing it.
+, one is using list comprehension this.
+And the other one is using recursion this okay.
+Very simple programs.
+, so , so those compute the same function.
+And for example applying squares to this list of numbers,
+you get that result.
+All right.
+So squaring all the numbers in a list here
+is a function that you haven't seen called ords.
+It , it takes a list of characters and produces
+a list of character codes.
+Now, what's a character code?
+.
+Okay, just a second.
+So, , every, .
+So we've got this type characters, we've got this type
+integers.
+And, , you can convert from characters to integers using
+a function called ord.
+And what is it?
+What it does is it takes, , a character ,
+say, a, and it gives you the, , the underlying,
+, , sort of numerical code for that, for that,
+, for that character, whatever it is.
+Okay.
+You don't have to know what these codes are.
+, they're just it just happens that there are numerical
+codes for each character, not just, you know, the the
+normal characters that used to A through Z, you know,
+one through, well, zero through nine and so forth, all
+the, all the punctuation.
+But there's something called Unicode, which is you can express,
+, all the characters in human language, including, , you
+know, Chinese characters and Arabic characters and so forth.
+Okay.
+So, , , so there's an awful lot of, ,
+character codes, , and an awful lot of characters.
+So this is a way of converting and the way
+that these, , the way that these happen to be
+arranged, the only thing that's really interesting about them is
+that, , , if you've got, you know, you've got
+letters A through Z, you know, A is less than
+B, is less than C is less than D, and
+so forth.
+The character code for A is less than the character
+code for B and so forth.
+Okay.
+So the the character codes kind of mirror the order
+of the, of the letters in the alphabet and the,
+and the digits, , and so forth.
+Okay.
+That's the only thing you really that really matters.
+Okay, so anyway, there's this function.
+It happens to be used in this example, which is
+the only reason I'm really telling you about it.
+, , and there happens to be another function that
+goes the other direction called chr.
+So given a character code, you can get a character.
+Okay.
+So this happens to be this is used in this
+example.
+Let me switch back both screens to that example.
+So , given a list of characters or a string
+this, you can compute the list of all the
+character codes of the characters in that string in order.
+Okay.
+So , as I said, A is 90 converts to
+97, , and so forth.
+Okay.
+So this is done with this list comprehension by applying
+the function ord to everything in the list.
+And you can do it using recursion okay.
+Or it's applied to the empty list as the empty
+list.
+Or it's to apply to a list with at least
+one element in it gives you all of that element,
+and then the odds of the rest of the list.
+Okay, so you've seen you know, it's very similar to
+, to, to to , to square.
+And in fact, if I kind of rapidly sort of
+go back and forth between these two definitions, okay, it's
+kind of hard to read that when I'm doing it.
+But the difference between these two definitions, sorry, is, ,
+you know, they've both got a base case of the
+empty of the empty list is equal to the empty
+list.
+And in the case of the non-empty list, , sorry,
+I keep messing up.
+, in case of the non-empty list, the function that's
+there's a function applied and it's, you know, ah, I
+keep going the wrong way.
+So it's ordered in this case.
+And it's, and it's, you know, x times x in
+this case okay.
+In the recursive in the recursive case also x times
+x or ord okay.
+So generalising we've got A function that, , you know,
+in the empty in the case of the empty list,
+it produces the empty list as a result.
+And then in the case of the non-empty list, it
+applies a function.
+In my first example, squaring in the second example ord
+to all to each of the elements okay, before going
+on to the next one.
+And so this is a function that's built in and
+it's called map built into Haskell.
+It's in the Haskell prelude okay.
+Called map and I this is a higher order
+function.
+The reason I call it a higher order function is
+because it has .
+It has a function as argument.
+Okay.
+You're not just so far we've been applying functions to
+integers and characters and strings and lists and and things
+that.
+Okay.
+This function map takes a function as an argument.
+So a function from A to B Okay.
+.
+Which means that the type of of map, looking at
+the whole type it has, I'm calling this a sort
+of nested.
+It's got nested arrows.
+So you haven't just got the arrows between the arguments.
+First argument, second argument, result.
+You know, not just these two arrows, but you've got
+an arrow inside the type of one of the arguments.
+This is why it's called a higher order function.
+You can look at the previous functions we've been going
+going through.
+And these are these all these all have just ,
+you know, arrows between , , arguments and results, sometimes
+more than one argument.
+But, , okay, here's a, here's an argument that itself
+has a, has a function is a function with an
+arrow in it.
+Okay.
+So functional programming is what I'm telling you is what
+I'm teaching you here.
+And and one of the aspects of functional programming is
+that functions are the kind of main thing that we're
+that are of interest.
+And another reason why it's called functional programming is it
+functions are used as data or can be used as
+data, which is what's going on here.
+Okay.
+So function a function is used as a normal value
+just integers and strings and so forth.
+And you can pass them around as, as arguments of
+functions, also as results of functions as you'll see later.
+Okay.
+, and not just simple functions a from A
+to B, but more complex functions.
+And this gives you surprising power, it turns out.
+So, , , this is a definition of map.
+You can write it in two ways.
+, this is a function written using list comprehension.
+And this is a function definition written using recursion and
+the function.
+Okay.
+So , map takes two arguments.
+First the function that it's going to apply to every
+element in the list and then the the list that
+you're wanting to apply that function to all the elements
+of.
+Okay.
+And then it proceeds, as you'd expect, applying the function
+here, , to each element in the list.
+Or for the recursive definition, , applying the function first
+to the first thing in the list and then applying
+it, , recursively to everything else in the list.
+Okay.
+, in the case of, , no, I just I
+won't say what I was going to say.
+, , so I can now use this to define
+squares in a new way.
+I mean, the point was that this is basically the
+same definition as these previous two, accept generalised.
+Okay.
+So we've we've extracted the pattern and written it down
+in general where the thing that's generalised is the function
+that we're applying.
+And so I can use this now to, to write
+a new definition of squares, exactly the same result as
+the previous ones.
+, so , and I define it using map.
+Okay.
+There's map being applied and I apply it to a
+function and to the list that I want to get
+the squares of.
+And the function I define here as a helper function.
+Okay.
+square of x is x times x.
+And so to get the squares of x is I
+apply map to this function square and the list that
+I want to get the squares of okay.
+And that gives exactly the same result as these other
+two definitions.
+Is that is that clear?
+I think it's pretty easy to see.
+But if there's a question.
+Yeah.
+I'll just square it.
+Maybe I'll let you have this.
+Okay.
+Yeah.
+If you took out the map and just put squares
+axis instead and then we're square x equals x times
+x, would it still work?
+Okay, , if I understand what you, what you just
+said you want to apply square to X is okay.
+It has the wrong type is the problem.
+, so square has type into arrow int.
+And so if you apply it to a list of
+integers it will have the wrong type.
+Okay.
+Other questions.
+No.
+Okay.
+so that's my first example.
+This is a commonly used, , higher order function.
+, , you know, just showing how it works.
+Applied, applied to this, , to this square, , function
+for squaring numbers.
+We, , you know, we could take this definition of
+it, expand it, and we can see that it's doing
+what we wanted to do.
+Okay.
+The main point here, if you would compare this with
+the with the computation sequence for the squares function, the
+only difference is that we're, , that we're, , you
+know, taking the function f here, which is, , which
+is instantiated with this function square here.
+And instead of , and that's what's showing up in,
+in each of the, , you know, as a result
+of the application.
+, yeah.
+You know, it's applied to each of these, each of
+these values.
+So, , I'll just flash this up on the screen.
+This is the recursive definition.
+.
+, the computation sequence.
+Okay.
+And ord or it is the same sort of idea
+ords.
+You get that ords function here by .
+Instantiating or applying map to the Ord function where Ord
+is this function here?
+That's, , that I explained.
+It's being used to, , convert a character to its
+character code.
+Okay.
+, in this case, in this case, the function ord
+is is already defined.
+So I don't have to define it myself using where
+okay.
+So this is this is the only big difference here
+between this definition okay.
+Applying the map to the existing function ord.
+Whereas here we had to define it using a helper
+function.
+And these functions, by the way, these can be complex
+functions.
+These these are these happen to be my examples happen
+to be very simple little functions.
+They can be complicated functions as complicated as you want
+them to be.
+doing lots of computation.
+Okay.
+Let me carry on to the next example.
+This is called filter.
+And this is another common pattern of computation and another
+function that's built into Haskell.
+, it's the idea of, , extracting, , things from
+a list that satisfy a predicate.
+So here we've got, , a function you've seen already
+called odds.
+It takes the odd numbers of a list.
+So you've seen this, both the, , definition using ,
+list comprehension and the definition using recursion.
+Okay.
+So , and it's done using a guard.
+So for each x drawn from XZ.
+If it's odd, then we include it in the result.
+Okay.
+And here was the definition using recursion where the
+guard is used in a case analysis.
+, in the, you know, in the second in the
+second equation here.
+All right.
+You remember that.
+So that's all the odd numbers of a list using
+a guard to , to, to , , pick out
+the ones that are odd and odd is a built
+in function.
+, here is a function which takes, , a list
+of, , characters, and it returns the ones that are
+digits.
+Those are the numerical digits.
+And so, for example, if you apply it to this
+string, , a to C three, it gives you two
+and three because a and C are not digits.
+Okay.
+And this uses, , again, it's a list comprehension definition
+here.
+And it's using is digit, which is a built in
+function in the library that I think you already saw
+in your tutorial exercise.
+.
+It's using that to , to, to pick out the
+ones that are digits.
+Okay.
+So we return x drawn from xz such that is
+digit of x is true.
+And we return the list of those.
+So it's it's removing the ones that are not digits.
+Okay.
+So two examples here.
+And I could show you another ten.
+But by now you're bored and you're thinking please can
+we just finally have a higher order function that expresses
+this, , pattern of computation?
+Okay.
+And the answer is yes you can.
+It's called filter.
+Okay.
+So it's it's a generalisation.
+Going back to these two examples.
+What's changing here is the highlighted thing.
+Basically it's a it's a pattern of computation where you're
+going through a list and and filtering out the the
+values that satisfy a predicate, a predicate a predicate is
+a function from a type to booleans.
+Okay.
+You've seen this in , computation and logic.
+This this terminology.
+Okay.
+So we supply , an arbitrary predicate called p here
+of type a arrow bool okay.
+A can be any type.
+It's the type.
+It's the type of the things in the list that
+we want to filter okay.
+And we use that predicate in the guard here.
+Okay.
+So we're looking for all the things x drawn from
+XZ such that p of x is produces true.
+Okay.
+So the guard the sorry the predicate could be ,
+well the predicate could be odd.
+this as we had in our example.
+Or it could be , is digit as we had
+in the other example.
+Okay.
+That was a little bit fast.
+Let me just back up.
+Okay.
+The definition of filter.
+Again higher order function.
+Because we've got a a function as the first argument
+here.
+It's got an arrow in its type filter is defined.
+here are two ways of defining filter using
+list comprehension and recursion.
+And, , it's exactly the same program as you've seen
+here, except that we've generalised by, , , generalising odd
+and is digit to , this predicate P.
+Okay.
+Is that clear?
+, and so this is this is odds defined, ,
+three ways recursive list comprehension recursion and , using filter
+this higher order function filter.
+Okay.
+And likewise digits defined three ways list comprehension recursion
+and using the higher order function filter.
+And as I said this predicate can be as complicated
+as you want.
+, only important thing is it has to produce bool
+as a result.
+Okay, so, , you could, , filter, , the, ,
+you know, the prime numbers from a list or, ,
+anything you want.
+Yeah, whatever.
+Okay, so those are two examples so far of, ,
+higher order functions that are built into Haskell, commonly used
+higher order functions.
+You can use them in your programs to make them
+often simpler.
+Okay.
+, you know, because this pattern arises so often and
+instantiate is just a matter of, of of invoking these
+functions map or filter and, , and coming up with
+the, with the, with the predicate or the function that
+you want to apply them to.
+Yep.
+Why?
+Why is sorry.
+Why does it rather than integer it returns a list
+of characters.
+You mean the digits function Yeah.
+Digits takes a list of characters to list of characters,
+because it takes a list of characters.
+And it and it removes all the ones that are
+not digits and produces a list of characters, which is
+the ones remaining.
+Okay.
+Or that is to say, it picks out the ones
+that are digits.
+The digits are our characters.
+Okay.
+The character, you know, one or 2 or 3 or
+whatever.
+It's a character.
+It's not the number.
+Okay, that's that's the thing.
+All right?
+There's no automatic conversion between between, , digits, which are
+characters and numbers for adding in things.
+Okay.
+, of course you can convert.
+, there's a function called, , I forget, which does
+it?
+I think you used it in your tutorial exercise, I
+don't remember.
+, anyway, there's a way to convert from strings to
+to to numbers.
+Okay.
+And it it only works if the string has digits,
+only digits in it.
+Okay.
+, okay.
+Other questions?
+I want to now go to the next example.
+And it's the last example I want to show you.
+It's a bit trickier to understand.
+It's more complicated okay.
+It's called fold.
+And here I'm going to show you a bunch of
+functions again that display this pattern of computation.
+So the first one is some, , some you've seen
+before.
+It adds together, , a list of numbers.
+These ones happen to be in order.
+They don't have to be in order.
+, so the sum of these, this list of numbers
+is ten.
+Okay.
+And what it does is it starts it's a it's
+a recursive definition here.
+You can't define it using list comprehension because the result
+is not a list.
+, so it it takes a list of numbers.
+If there are no numbers in the list, result is
+zero.
+If there's at least one number in the list, it
+adds that number to the sum of the rest of
+the numbers.
+Okay, you've seen this definition already.
+And you remember why this is a zero here.
+Instead of seven or some other number.
+Identity.
+Right.
+It's the it's the identity of the.
+Of the of the operation plus.
+Okay.
+And that's the reason why it's kind of the right
+answer.
+, you know, it's perfectly possible to define a function
+somewhere where it isn't zero, where, you know, it
+would automatically add 17 to the sum of a list,
+but that would probably not be what you want.
+Okay, but it would work.
+Okay.
+Product is similar.
+Instead of adding together the numbers in a list, we
+multiply the numbers in a list.
+And so the operation we use to put together the
+each number with the with the recursive call to the
+product of the rest of the list is the multiplication
+operation multiplication function.
+Remember these these things here used , you know, to
+multiply or to add.
+These are also functions, of course.
+, the only thing that's special about them is that
+they're written using, , written using kind of, , symbols
+rather than, , spelled out, , alphabetically.
+Okay.
+Another another thing that's special about them is that they
+happen to be built into the computer operations.
+, so, , you know, so they're they're already there.
+But, , anyway, , so again, the, , the, the,
+the value here that we start with in case the
+list is is empty is again the the identity element
+for multiplication.
+Okay.
+Product of the empty list is one okay.
+Which seems a bit odd when you start, but otherwise,
+, well, first of all, , because it's the identity
+element and that means that, you know, if it was
+zero, which, which would be the other obvious thing to
+write here, then the product of any list would be
+zero, because it would be zero times all the things
+in the list.
+Okay.
+, three more examples.
+This because this one's a little bit more complicated.
+I want to show you five examples instead of two.
+So this is a function and it's built into Haskell
+is called concat which is short for concatenate.
+Concatenate is a word you may not have come across,
+but it's a kind of computer science jargon word meaning,
+, Putting together a bunch of a bunch of strings
+or sequences or something that, end to end.
+Okay, so example being here we've got concat applied
+to a list of strings and it just joins together
+all the strings in this list, one after the other
+concat and eight okay.
+To get that result.
+Okay.
+So this is showing what it does.
+Here's another example on lists of numbers.
+Okay.
+Works for any kind of lists that is to say
+lists of lists.
+And here's the type.
+Okay.
+It takes a a list of lists.
+And it gives you a list of the same kind
+of elements as were in each of the lists in
+the list of lists.
+Okay.
+If you understand what I mean.
+So so you've got a list of strings here.
+And it gives you a string or a list of
+lists of numbers.
+And it gives you a list of numbers.
+Okay.
+Clear.
+So this is built in in Haskell happens to be
+built in because it's so useful.
+And it, , what it does is, , again, in
+the case of the empty list.
+Well, not again, in the case of the empty list,
+it gives you the empty list as a result.
+Okay.
+Because there's nothing to join together.
+So the result has to be a list.
+And so it's the empty list.
+And, , the function that's used to, to combine the
+first element in the list with the recursive call of
+concatenating everything else in the list is this function called
+append that I introduced some lectures ago okay.
+Plus plus it means you know if you if
+you apply it to con and cat it would give
+you concat just joining two strings end to end.
+And so this is kind of the generalisation.
+Concat is kind of the generalisation of append to a
+to a list of lists.
+Okay, again.
+You know why is.
+Why is the the result in the case of, ,
+the empty list?
+Why is it the empty list?
+You know, it's because the empty list is the identity
+element for append.
+Empty list.
+Append.
+Anything is whatever the anything is.
+Okay, so this is what you have to start off
+with.
+Oops.
+This is what you have to start off with to
+make this recursive definition work.
+, okay.
+Is that clear?
+I'll just mention here the, , I said already that
+it's common when you've got a list that you use
+a variable name, it's not required, but it's common to
+use a variable name with an s at the end.
+Plural.
+And you pronounce it x is okay.
+You've got a list of x's.
+So the things in the list you call X and
+, and the and the and the whole list is,
+is, is a list of X's.
+Okay.
+When you've got a list of lists here okay.
+This is a list of lists then , you kind
+of do that again.
+And so it's a it's got two S's at the
+end and it's pronounced it's pronounced x's.
+Okay.
+So , this is, this is only a little, ,
+helpful, , convention to make it easy to see in
+your program what the lists are and what the lists
+of lists are and so forth.
+And of course, you could use more X's if more
+S's, if you've got lists of lists of lists.
+Okay.
+So three examples so far.
+Here's another two.
+Quickly the and applied to a list of booleans.
+You've seen this already.
+You've used it in your computation and logic tutorial.
+So and applied to a list of truth values produces
+true only if all the truth values are true.
+And it's defined this.
+And here's the, , you know, takes a list of
+bull to a bull.
+, here's the, , conjunction being applied to combine the
+results and the, , the the starting value is true
+because true is the identity for conjunction and or, ,
+you know, similarly disjunction and identity.
+False.
+Okay.
+So you're familiar with these functions.
+I don't know if you saw the definitions, but anyway,
+there they are.
+Okay.
+So.
+We've got a pattern.
+Okay.
+You've seen five examples.
+, the pattern I've highlighted the things that are changing
+in the pattern.
+There's the there's the result that you, , produce in
+the case where the list.
+Okay.
+Well, first of all, you're taking a list of things
+and producing a result.
+Okay.
+In the case the list is empty, you produce a
+value, but the value produce is different in each of
+these cases.
+Zero one empty list.
+True false okay.
+And and you're combining you're doing a recursive call combining
+the first thing in the list with the recursive call
+of everything else.
+Okay.
+And the operation that you're using here is different in
+each case.
+You know, plus times append conjunction disjunction.
+Okay.
+So , abstracting this up, an extract by abstracting this
+to a pattern of computation, you know, you're going to
+have to supply two things because there are two things
+that keep changing.
+Okay.
+There's the there's the sort of starting value and there's
+the operation you're using for combining things.
+And so , this pattern is called fold and
+, it's, , it's built into Haskell and the function
+is a little bit more the definition is a little
+bit more complicated, but anyway, it's a higher order function.
+And here is the, , the functional, , the function
+being used as a, as a first argument here.
+Okay.
+But it's got, as I said, it takes two arguments
+in order to, you know, if you want to instantiate
+it, you need to give it two arguments.
+You need to give the function and you need to
+give it the starting value.
+And so the function.
+Is called f.
+Here the starting value is called v okay.
+In case the list okay.
+The result here is you know, you give it a
+list and it gives you a result of the same
+type as the things in the list.
+Okay.
+, if the list is empty the result is V
+okay.
+The starting value.
+This is the second parameter here.
+It's that same v okay.
+If the list is not empty then you apply f.
+It's a it's an argument.
+It's a list with two arguments.
+You apply f to that element x and to the
+recursive call of applying fold to f and v.
+Okay.
+And the rest of the list okay.
+So we've got a pattern.
+We instantiate it by supplying a binary function f and
+a value.
+Usually the value, as I've shown in these examples is
+the identity value for the function.
+Okay.
+Identity meaning you know v applying f to v and
+whatever it is gives the same result as v, which
+is the same as applying f to v and
+that entity value.
+Its left and right identity is the name of that
+in mathematics.
+Okay, so this is a little bit more complicated.
+So I'm going to spend a little bit more time
+explaining this.
+, and one , one thing that might help because
+the functions that I'm using here are always infix functions.
+If you look at them.
+Okay, it might help to write this using infix function.
+So I'm taking exactly this definition.
+And I'm just changing it by writing the the the
+right hand side of this second equation with f as
+an infix function.
+Okay.
+I can make any, any kind of, , you know,
+function written using letters into infix by putting these
+backticks around around the name.
+Right?
+So that's what I've done here.
+It's the same function.
+I'm just using it as an infix, meaning that I
+put the arguments, you know, to the left and to
+the right.
+Okay.
+But that's exactly the same expression as I had a
+second ago where F was, you know, use f, and
+then you give the first argument, you give the second
+argument.
+Okay.
+So it's just a notational thing okay.
+But it helps to explain what I'm doing here.
+And let me show you.
+How that works.
+Okay.
+Using my using my example.
+So some if I apply some to A1 up to
+an.
+Okay.
+What's that.
+It's A1 Plus.
+Dot dot dot up to a n plus zero.
+Okay.
+The zero is the is what I you know I
+go with recursion down this list and then eventually I
+get to the end.
+And that's where the zero comes from.
+And then I'm adding these.
+I'm adding these up okay.
+Product.
+Is similar but it uses multiplication.
+concat.
+Is similar but it's using append.
+Do you see that in the back?
+I hope so.
+.
+.
+And.
+And or.
+Okay.
+Five examples.
+So, I mean, the the pattern is obvious when I
+write them down this.
+, so this is, this is not the definition.
+This is what the definition gives you as a, ,
+you know, for, for a list of length n, okay.
+So , fold apply to F and v and a
+list.
+Okay.
+It's it's.
+It's exactly the same.
+.
+With each one of these operations replaced by f.
+Okay.
+I don't know if that's helpful, but it's helpful for
+me anyway.
+, I think it makes it pretty clear.
+, there's another there's another diagram I want to show
+you in a minute.
+, okay.
+So I can use going back to my, , my
+code here.
+Okay.
+So I can use fold to define all of these
+five functions in one in kind of one line.
+So, , so some.
+Okay, here's a previous definition.
+Here's what it does.
+And you can define it.
+Some of X's is just fold plus zero x
+is okay.
+There's a slight whoops a slight , thing you
+need to remember here, which is that if you want
+to use I don't know if this is actually come
+up, it says recall that.
+I don't know if I've actually said this.
+Okay.
+But a, , , a function which is written using
+a symbol plus or times or whatever.
+Okay.
+So normally you write that function, , infix meaning you
+provide the arguments left and right.
+Okay.
+, if you would just write the function a plus
+here without the parentheses, then Haskell would think you're trying
+to add fold or fold to zero.
+Okay.
+And it would will give you a give you an
+error.
+Okay.
+You need to tell Haskell what I mean.
+Here is the function, not the function applied to two
+arguments.
+Okay.
+Just a function.
+Okay.
+To get to get the function, you put parentheses around
+it okay.
+Just to Haskell notation you put parentheses around a symbol
+to make it to change it from being infix to
+to normal which is called prefix.
+Okay.
+So here's here's what I mean by you know here's
+infix.
+Here's what I just called prefix okay.
+Infix function goes in between the arguments prefix.
+The the function goes before the argument.
+So that's, that's why that's, that's why these parentheses are
+there.
+Okay.
+So anyway sum is fold applied to plus and
+zero.
+and for all the other definitions I can do
+exactly the same kind of thing.
+So for product it's multiplication and one for concat, it's
+append and empty list and so forth.
+Okay.
+So this is , all of these, , examples, all
+of these five examples written using fold.
+And , here's a computation sequence which I'm not going
+to go through, but it's the same actually.
+Sorry, this was the same one you've seen before.
+, for some step by step.
+Okay.
+Using the recursive definition.
+And if I write it using fold, then , then
+, it's a little bit longer just because I have
+to expand what fold means.
+, but basically I'm doing the same thing.
+Thing one plus.
+Okay, if I'm applying to one and two here, then
+in fact, this this last this next to last line
+here is, , exactly what I wrote on the piece
+of paper a second ago.
+Okay, first line up there for the case where we've
+got A1 and A2.
+So we're n equals two.
+So are there any questions.
+There is a particular question that I'm hoping somebody will
+ask.
+Yeah.
+It's the function also called.
+Are you just said it I think.
+Yeah I mean there is also a function called L
+and I mean , I think it works just ,
+, it takes, , the first argument and then adds
+the list to it.
+But is there a difference?
+, can they be different?
+I'll explain that.
+Yeah.
+So the question was about, , fold l okay.
+So what I was expecting is a question and it's
+kind of it's exactly what you just said, expressed in
+a different way, is why am I talking about a
+function called fold?
+But writing a function which is written fold r.
+And you asked, what about fold L?
+Okay, there is it turns out there's, there's two functions.
+There's fold r and fold L.
+And what fold are means is to fold a bracketing
+to the to the right.
+Okay.
+, bracketing to the right means.
+Means that the way this works.
+Is that and so forth.
+Okay.
+That's what I mean by bracketing to the right.
+This is what fold.
+This is what fold are does I'm going to stop
+talking about fold and probably talk about fold.
+Ah Okay.
+, so there's another.
+There's another one which has the same type, but it
+has a different definition which results in, , I'll just
+write it.
+.
+Sorry, f.
+I'm not sure that that's very clear, because my horrible
+handwriting.
+But it's it's doing the same computation, you know, using
+using f everywhere.
+I should maybe first, , put the Put Francis in
+here.
+Okay.
+It's it's it's using f to combine all these things
+with V at the beginning, and the bracketing goes to
+the left.
+Okay.
+If if f is associative.
+And commutative then these are the same.
+They give the same result okay.
+if not then they can give different results.
+Let me show you a different diagram that might help.
+Okay a list.
+I said a list is always constructed.
+Using cons and the empty list.
+.
+So, .
+Sorry.
+, that's a cons.
+Okay, so the list, the list a1 cons, a2 cons,
+etc..
+Up to a n cons nil can be written
+this.
+This is.
+This is called a tree.
+I don't know if you've encountered trees in Julien's lectures
+yet.
+Have you know.
+Okay, trees in computer science are written upside down.
+Okay, so trees in in in nature grow upwards, trees
+in computer science grow downwards.
+Okay.
+And you can use trees to represent expressions.
+So we're combining A1 with with.
+with cons with the result of all this which
+is A2 combined with cons with all this.
+Okay.
+Anyway, I hope you can understand this.
+This is only an informal explanation.
+And so fold our of f of v.
+It basically takes that picture.
+And replaces all of the cons with FS.
+And the empty list with a V is what's going
+on here.
+Okay.
+And the picture for fold L is different.
+It's in the book.
+Try to figure out yourself well.
+Try to write the definition yourself and and then try
+to figure out what the picture would be.
+Okay.
+My time is almost up.
+I'll just show you the last thing.
+This is just showing how you can combine these functions.
+And so remember my example, the sum of the squares
+of the odd numbers in the list.
+, you can combine, you know, you can write one
+one line definition with a helper function, the sum of
+the square of the of the odd numbers in the
+list there.
+Thank you.
+, more.
+Yeah.
+More higher order functions tomorrow.
+I just want to ask that.
+What's the for our use for the mean what's
+what's what.
+Fold are what is it?
+It means fold.
+, to the right.
+what's the purpose of using this?
+When when when do we use when do we use
+it?
+Oh, .
+Well, defining things, which, , Combine items in the list
+together.
+I mean, you've seen examples, some in product and so
+forth.
+This kind of thing happens all the time.
+an example would be more complicated with example would
+be if you want to sort the elements in a
+list into into ascending order, you know, you've got a
+list of numbers, you want to put them.
+You want to produce a list which is in all
+of them in order.
+Okay.
+, this is , fold applied to a function called
+insert starting with the empty list.
+So you insert the elements one at a time into
+an empty list.
+It grows and it always keeps the resulting elements in
+order.
+That's an example.
+Okay.
+Lots of times you're putting together stuff in a list
+using some sort of operation and building up a result
+that.
+Okay, that's an example.
+You'll see them coming up.
+Yep.
+Sorry.
+Did you have one more?
+Because I assume that for L is more useful than
+for R or.
+Actually fold R I would say is more often used
+because they're equivalent and it's kind of more intuitive how
+it works.
+Okay.
+But , they're usually equivalent.
+Yeah.
+Mentioned something about partial computation and it's that you don't
+have to put all of the.
+Yeah.
+Partial partial evaluation.
+I'll come to that.
+It'll be in the next lecture okay.
+Yeah.
+Okay.
+I just wanted to ask.
+Is there no way to raise the volume?
+The volume?
+Yeah, I would to I'm going to ask about
+that because, for example, the music is almost inaudible.
+That's what I meant.
+Yeah.
+It should be blasting everywhere especially.
+Yeah.
+Okay.
+I'll just log myself out.
+Give me a second.
+Yeah.
+.
+All right.
+Hi.
+I'm not really sure that the purpose of the code
+are for the specific application.
+Yeah.
+So I showed little examples of, , you know, these
+five examples.
+Okay.
+This this happens more frequently than just these five examples.
+Okay.
+So whenever you're, you know, working on a list of
+items and you want to combine, you want to build
+up a result one at a time from from the
+elements in the list.
+, it happens all the time.
+The result is actually the same.
+But how?
+Sorry.
+What's the question then?
+Fold is fold L in pulled out.
+Yeah, yeah.
+Well, I said, building up a result in stages
+from the elements in a list using always the same
+operation.
+The same result Y.
+No, no, it's not the same.
+What do you mean, the same result?
+after the calculations, they both have got the same
+result.
+You mean fold L and fold are.
+Yes.
+Okay.
+So usually it doesn't matter which one you use.
+Is that the.
+Is that the question?
+Yeah.
+Usually it doesn't matter.
+You can you can use either one.
+It's most people use fold.
+Ah.
+Because it's more intuitively , actually, I'm just.
+I realise I'm just, , broadcasting here.
+Yeah.
+Okay.
+Yeah.
+Okay.
+Hi.
+I'm fine.
+I am.
+Is this such thing as.
