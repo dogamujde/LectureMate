@@ -1,0 +1,1109 @@
+Hip hip hip hip.
+Hooray!
+Right.
+Hello?
+Good afternoon.
+, I've been asked to show this to you before
+my lecture today.
+There's an event, , careers event at the beginning of
+October.
+, , you might think in first year this is
+a little early for you, but anyway, there's there's, ,
+employers coming to look for you when you're, when you're
+graduated.
+And also during the summers in between now and graduation.
+So there's, , this is taking place in MacEwan Hall,
+, which is not mentioned on the, on this thing
+here.
+And it's also not mentioned if you click through to
+the thing on the QR code.
+But I have just discovered that that's where it is.
+So, , this thing is taking place and, , there
+are recruiters coming to see you and , , they
+are recruiting for internships as well as for jobs and
+some informatics.
+When students do internships in the summer, so might be
+worth going along.
+Having a look.
+Okay, so, , QR code there.
+Okay.
+If you want to or just or just type in
+Discovered Careers Edinburgh and you'll get to the web page.
+Okay.
+So that's that.
+, the lecture today is about recursion.
+More about recursion.
+On Friday I explained recursion on lists, recursion and defining
+functions by recursion with pattern matching is one of the
+one of the main things you're going to be doing
+in this course.
+So this is something you really need to understand get
+used to.
+And so this lecture I'm going to be showing you
+some more examples of recursion that goes beyond the thing
+that I showed you in the last lecture.
+So different patterns of recursion.
+So you get used to to doing this and seeing
+it done you know different different ways.
+Okay.
+The, , and I will be also showing you a
+couple of functional programming techniques you use to solve certain
+kinds of problems that arise a lot.
+, and I'm going to start here with examples that
+have to do with, , , recursion on integers, ,
+because you can do recursion on different sorts of data.
+So lists I showed you last time, this time it's
+going to be integers or in fact natural numbers.
+So natural numbers are integers from zero on up.
+All right.
+and here's an example.
+, this is a function that, , underlies a Haskell
+notation.
+, this sort of Haskell notation where you have a
+list, square brackets, and then you have a, a lower
+bound dot dot upper bound.
+So for example, 1.. 3 or 1 ..1 hundred or
+whatever.
+It gives you the list of all the numbers from
+the lower bound up to the upper bound.
+, you know, in order one, two, three or whatever
+it is.
+Okay.
+So that's this notation.
+I've mentioned that before.
+, , it is, in fact, a call to a
+function that's built into Haskell called enum from two with
+the lower bound and the upper bound.
+Okay.
+So so this happens to be built in, , and
+I tell you this because I can show you the
+code for it.
+And this uses recursion.
+Okay.
+So this is on numbers not on lists.
+And so the, the type, takes two integers and
+gives you a list of integers.
+And , so if you take the integers m and
+n there are two cases.
+case one the base case is where m is
+greater than n, so you're counting from M up to
+N.
+If you've already gotten past N, then you're finished, right?
+So in that case, you've got an empty list of
+numbers.
+Okay.
+Is that clear?
+, in the second case, you haven't yet gone past
+N, so that is to say, M is not greater
+than N.
+It's less than or equal to n.
+You could also have written otherwise here.
+And in that case you have work to do.
+You you take the, the lower bound m and then
+the result is m cons.
+, the recursive call and the recursive call is the
+numbers from m plus one up to n.
+Okay.
+So , you're starting from m going up to n.
+So the first element is m and then you go
+from m plus one up to n okay.
+That's the that's the the function.
+So it's counting up from M to n clear.
+And so I'll just show you this.
+, this sort of computation sequence looks this.
+So here's the code again up here.
+So, you know, if I want to apply it to
+one and three, which was my example from the previous
+slide.
+So , the num one in from two one,
+three one is the lower bound, three is the upper
+bound.
+So one is m, three is n.
+Okay.
+So which of these cases applies.
+It's the second one because one is less than or
+equal to three.
+And so the result is one.
+Cons.
+The recursive call on this function from 2 to 3
+okay.
+That's what we see here.
+Number one enum from 213 is equal to one.
+The lower bound cons the recursive call with arguments two
+and three okay.
+recursive call gives you two cons a num from
+two, three and three, again using the second case, and
+then and then, , carrying on I'm going to go
+through this a little bit more quickly because you should
+be getting used to this kind of thing the last.
+Okay.
+So, so in num from 3 to 3 and three.
+, so the result of that is going to be
+the list containing just three.
+And so we do three cons.
+This other recursive call where we're actually counted past the
+upper bound okay.
+We've added one to the lower bound.
+And so it's now num from 4 to 3.
+And that's the first case we get the empty list.
+So we we count from the the lower bound up
+to the upper bound, and then one passed, and then
+we stop with the empty list and we get this
+result here.
+Oops.
+, oops.
+Wait a minute.
+Where am I?
+Yeah.
+There we are.
+Okay, that's the result.
+Okay.
+Exciting.
+Yes.
+.
+Maybe not.
+Okay, so, , but there's some small problem here.
+This works.
+You can you can run this function.
+I mean, that's the code that's in Haskell, built in.
+You can type it in yourself.
+Make sure that you believe that it works.
+Okay.
+But last time I made the point when I explained
+recursive definitions.
+The reason they work is that on each recursive okay,
+the recursive definition, you're defining something in terms of itself.
+And I said that works because you're defining, , you
+know, complicated lists in terms of simpler lists, or you're
+defining a function for big lists in terms of that
+function, apply to small lists, and then eventually the list
+gets smaller and smaller and smaller until they're empty.
+Right.
+So what's going on here?
+This I've just done something that I said was the
+wrong way around okay.
+I'm defining enum from m n in terms of enum
+from m plus one and n right.
+So m plus one is bigger than m.
+So what's going on here?
+Okay.
+the answer is there is something getting smaller.
+And what's getting smaller is the difference between n and
+m okay.
+So the list isn't there is no list here okay.
+The number is not getting smaller.
+The difference between the two limits is getting smaller.
+So we start off with with you know, the limit,
+the lower limit, the upper limit.
+And we progressively increase the upper the lower limit until
+it gets up to the upper limit and then passes
+it.
+And then we stop.
+Okay.
+So what's decreasing is the space between my hands.
+Okay.
+And eventually we're finished.
+Okay.
+So it has to be something.
+There always has to be something getting smaller.
+And that's what gives rise to a non that gives
+what gives rise to a well-founded recursion terminology.
+otherwise the recursion doesn't terminate okay.
+Is that clear.
+Any questions about that?
+I don't see any hands okay.
+, here's another example, , that I don't think I
+want to go into.
+Really.
+I'll just say this is factorial.
+, factorial is usually written, , a number with an
+exclamation mark after it.
+And it's the product of all the numbers from one
+up to that number.
+Okay.
+So you could define it.
+You could define it this factorial of n is
+the product of the numbers from one to n.
+Okay, here is a recursive definition of the same thing.
+I don't think I want to go into this in
+detail, except to point out that the pattern of this
+definition.
+I'll point out a couple of things about this stuff.
+A definition if you look at this second part of
+the definition fact, the pattern that we have here, fact
+m n and then you know, the case where m
+is greater than n producing a result, and the case
+where m is less than or equal to n with
+a recursive call.
+If you just for a second hold that in your,
+in your, in your mind, okay.
+And look back at this previous definition.
+This has exactly the same form.
+And what's different is what comes after the equal signs
+on both in both cases.
+Okay.
+And I just mentioned that because Later on, I'm going
+to come back to this example, and I'm going to
+show you how to capture the I'm going to call
+this a pattern of computation, okay.
+And I'm going to show you how to capture common
+patterns of, of common patterns of computation in Haskell as,
+as kind of things that you can write, you can
+write the pattern of computation, you can use the pattern
+of computation, you can apply it to different cases.
+Okay.
+So I don't think I want to go into this
+particular one because actually this is the this is the
+obvious way to write factorial.
+And it's a bit perverted to write it this.
+Okay, you can do it if you want.
+, the other things I want to show you with
+this example is, , this is an example of a
+function defined in terms of another function.
+We we would often call this this thing down here
+a helper function.
+So it's a function that I define only in order
+to use it in the definition of another function okay.
+Auxiliary function, helper function or something.
+And you can do that in Haskell.
+I mean, you can write them separately and just use
+the second one in the first one or the other
+way around, whichever it is.
+Haskell, it doesn't matter what you order.
+You write the definitions.
+If you want to make it, if you want to
+make it explicit that this thing here is a helper
+function in the definition of this thing, here you can
+use this syntax with where.
+Okay.
+So you know definition you're really interested in where.
+Definition of helper function.
+Okay.
+And there's another way to do this I mean it's
+almost the same.
+It's just the other way around.
+You can say instead of saying definition where other definition
+you can say let helper function definition in definition of
+the thing you really want.
+Okay.
+And I mentioned this partly because at the end of
+the last lecture, somebody asked me about this and I
+gave the wrong answer.
+I said.
+It's called local definition in other definitions.
+So whoever that is, if they're there, I should have
+said let.
+I said local was a mistake because that's a different
+language that I also have taught in the past where
+it's called local.
+Never mind.
+, so you're going to be writing definitions with helper
+functions in this course from time to time.
+So, , you know, this is a this is a
+way to do it.
+Okay.
+Clear.
+And the only reason, the only reason to sort of
+not just write these things one after the other is
+if you want to, , make it explicit that this
+is, that this is a kind of definition only for
+the purpose of writing this other definition.
+See, it's used here.
+Okay.
+The idea being that it won't be used anywhere else
+in your program.
+Okay.
+It's just temporary.
+Okay.
+This is partly to avoid, having lots and lots
+of definitions that are that are only useful in particular
+contexts.
+So I'm going to skip this, but it's on the
+slide if you want to go back and look at
+it after the lecture.
+Okay.
+I want to talk now about, , something that's special
+in Haskell, , which is, , the ability to, ,
+compute with infinite data structures and, , for example, infinite
+lists.
+Okay.
+So this is a notation in Haskell.
+This is I had a minute ago, except instead
+of, , you know, from one up to 100 or
+something.
+I say I want the list of numbers from zero.
+Dot dot.
+No, no upper limit.
+So the numbers, the numbers from zero up to, you
+know, forever.
+Okay.
+You can do that in Haskell.
+That's a bit unusual.
+and I'll explain a little bit about how that works.
+It's a mechanism called lazy evaluation.
+So this is something that's quite unusual.
+, well, first of all, it's, , it's something that's,
+, available in some functional programming languages, but not all.
+So it's a little bit special to Haskell, and it's
+kind of cool.
+I mean, first of all, the idea that you can
+compute with infinite data structures is kind of is kind
+of odd, okay.
+Because there's, you know, your computer might have, you know,
+megabytes or gigabytes of, of storage, but it doesn't have
+infinite amounts of storage.
+So where do you put all the, the values and
+these data structures?
+Okay.
+.
+So I'll come to that.
+, for now, let me just, , talk about this
+function.
+So, so this, this, , this notation, 0...
+This is an invocation of a function called enum from.
+It's not enum from two, it's just enum from, and
+you give it the lower limit and it goes and
+computes this infinite list.
+Okay.
+So and here is the code.
+Okay enum from M.
+So it's a function from into a list of int
+enum from m m.
+It's m cons enum from m plus one okay.
+So you take the lower limit and you stick it
+on the front of a list starting from M plus
+one up forever.
+Okay.
+Clear.
+It's simpler than the previous definition, because you don't have
+to bother checking that the lower limit is less than
+or equal to the upper limit.
+Okay, so here is an example of a non one.
+Every other non well-founded recursive definition okay.
+There's nothing getting smaller.
+the arguments getting bigger.
+And so, in fact, this will run forever.
+So let me show you it.
+Running forever.
+, just a second.
+Okay, so this, , this will run forever.
+Let me stop it.
+, because I don't have forever.
+.
+, so it's got up to 6800 and something.
+Let me just show you that it started at zero
+if I can.
+If it's still.
+Yeah.
+So it started with zero, one, two, three, etc..
+Right.
+And it'll just go forever as long as I want
+it to go.
+All right.
+, so that's interesting.
+I mean, this is very useful if what you want
+is your your screen to fill up with numbers that
+keep getting larger.
+, , okay.
+It's also useful for other things, , since that's not
+very exciting or interesting, but it does that.
+Okay.
+, , so one of the things about this, you
+might think, you know, what's the use of, , of
+going on forever with computations this?
+What's the use of the infinite data structure?
+So first of all, to convince you that that this
+actually, , is useful for computation, I will say that,
+, the mechanism.
+So mechanism of lazy computation is, , the idea that
+you, you operate on an infinite data structures by only
+doing enough computation to get the answer you're interested in.
+Okay.
+So for example, suppose that I'm only interested in what
+the head is of this list.
+Okay.
+I don't.
+I don't have to compute the whole list.
+I only have to compute the first bit to get.
+The answer is zero.
+Okay, that's lazy evaluation in operation.
+Okay.
+And it's not a special thing about the first element
+of an infinite list.
+It'll also work on you know it'll work.
+However, however far I need to go on this list
+to to get the answer that I'm interested in.
+Okay, here's, , the, , it's the seventh element we
+start.
+You know, zero is the first one, six is the
+seventh one.
+Whatever amount of computation I need to get, I need
+to do to get the answer, it will do that
+and no more.
+Okay.
+That's lazy evaluation.
+It's a, you know, , it's for it's for people
+who don't getting out of bed in the morning.
+They, , they avoid, , doing work until it's absolutely
+necessary.
+So you do here work?
+, just the amount required to get the answer.
+And so that's some.
+That's a nice thing.
+You operate on infinite data structures.
+You never need all the values to get your answer.
+You only need enough to compute the result you're interested
+in.
+, and I'll show you a cool program that does
+something , with that.
+So here is a program to compute the infinite list.
+Yeah, that's on the screen.
+Yeah.
+, the infinite list of prime numbers.
+All right.
+And it's just two lines plus, , place plus type
+signature.
+So here's the program, , called primes.
+It gives you the infinite list of prime numbers and
+it uses a function called is primes is prime, which
+takes a number and tells you if it's prime or
+not.
+Okay.
+So let's look at this.
+This is one this this one doesn't use, , lazy
+evaluation.
+But let's look at it anyway.
+It's, , it's saying a number is prime if it
+has, if you look at all of the numbers between
+two and n minus one, none of those are divisors
+of n.
+Okay.
+So it's , it's written as a as a list
+comprehension.
+It's computing , for, for x drawn from the list
+from two up to n minus one.
+It's, it's looking to see whether n mod x is
+equal to zero.
+So mod you haven't seen before I don't think ,
+it means it's, it means modulo or other.
+Another term is remainder.
+So n divided by the remainder of n divided by
+x is what's being computed here.
+You know, the remainder 1010 mod three is ten
+divided by three.
+What's the remainder?
+It's one.
+Okay, nine divided by three.
+Remainder zero.
+Ten divided by three.
+Remainder one.
+Are you familiar with this?
+Remainder okay.
+, in mathematics called modular arithmetic.
+And that's the name here okay.
+So we're looking for x's all of the values x
+between two and n minus one such that dividing dividing
+n the number I'm interested in here by x
+is equal to zero.
+That means that x divides n okay.
+You know, two divides 56 , etc. you know.
+Right.
+Okay.
+So we compute this list.
+There it is using list comprehension.
+And the number is is prime.
+If that list is empty right.
+If there are no divisors of n okay.
+Is that clear?
+That's the most complicated part of this definition, is the
+definition of what it means to something to be prime.
+, pretty, pretty concise definition that you can write in
+Haskell and then the list of prime numbers.
+Okay.
+You take all of the numbers from n from two
+on up, and you, , and you check to see
+if they're prime or not.
+Each one of them.
+Okay.
+And the result is the list of those that are
+prime.
+Okay.
+You couldn't be simpler than that.
+Okay.
+Prime numbers are all the numbers from two on up
+which are prime.
+So let's see if this works.
+Okay.
+.
+So I can type primes.
+And I'm going to get this list, okay.
+And it's going to keep on going.
+Well yeah it won't let me.
+It won't look it won't let me look at
+the first one because it's busy doing the other ones.
+, okay.
+This is going to go on forever.
+And all these numbers are prime.
+Actually, I should have started.
+I should have started by convincing you that Isprime is
+actually correct.
+Who has a favourite large prime number?
+Anybody shout it out.
+Six.
+Five.
+5355535.
+No 5537.
+That's not prime.
+.
+Let's try, , let's try that.
+That's also not prime.
+, okay.
+, nope.
+We're not getting, .
+This is surely prime.
+, yes.
+Okay.
+So that's prime, for example.
+Okay.
+Because because if we take, , the numbers, , well
+I won't I won't type it out, but, , it's
+checking all of the, all of the numbers from one
+up to five, five, three, zero from two up to
+there and checking to see whether they divide that number
+or not evenly.
+Okay.
+So I'm going to start so that that's used to
+compute this infinite list of prime numbers.
+And it'll go on.
+It'll keep on going forever until I stop it.
+So I'll let that compute and go back to my
+lecture.
+, and we can see how far it got.
+When I'm done.
+So this is, , this is, , this is the
+computation sequence for this, , in, , from, , a
+Our function, which is computing the numbers from zero up
+on forever.
+Okay.
+You can see that.
+That's what it does.
+Okay.
+I'll say, by the way, more about lazy evaluation a
+bit later in the course when you have more under
+your belt to understand what's going on.
+, for now, it's just a kind of curiosity.
+.
+Let me carry on to talk about, , a couple
+of functions or actually one, one function.
+ZIP.
+, that is another built in function in Haskell.
+And, , it's, , the definition demonstrates another, , ,
+it's another pattern of recursion.
+Okay.
+So let me explain.
+ZIP.
+So zip look at the type up here okay.
+It it takes It takes two lists and produces a
+list of pairs, and the two lists it takes can
+have different types of elements in them and the pairs
+that it produced.
+The list of pairs of produce has.
+This has an element from the first list, together with
+an element from the second list.
+Okay, and here's how to think of it.
+, think of a zipper on your jacket or something
+that.
+Okay, so zipper has two sets of teeth.
+, here's the here's one of the set of teeth.
+Here's one of the the teeth, the rows of teeth.
+Here's the other row of teeth.
+So a zipper, you, , you zip it up and
+it and it interweaves the teeth.
+Okay, so that your jacket's closed.
+Okay, so that's zipping.
+Okay, this is almost that.
+It's not quite that.
+, what you do here is you've got two lists
+of teeth, and, , and you don't interleave them, you
+put them next to each other Okay, so the first
+thing in the list is the bottom, , the bottom
+pair of elements.
+The second thing in the list is the, , the
+pair of elements after that and so forth.
+Okay.
+So you've got a bunch of pair of elements.
+It's all the ones from the bottom up to the
+top of the zipper.
+Or, , the lists here are actually going, you know,
+, wait a minute.
+They're going from, , from this end to that end.
+Okay.
+So, , starting with these two and those two and
+so forth.
+Okay.
+My my visual aids here, , explain everything.
+Okay.
+So it's a zipper but not interleaving.
+And here's a definition.
+So this is, this is built in in Haskell.
+So you don't have to write it out yourself.
+But this is what it is okay.
+And this is interesting interestingly new because it uses simultaneous
+recursion on both arguments.
+So the two arguments are lists and it's simultaneously,
+doing recursion on both lists.
+So, , the recursive case.
+This last one.
+, you need a, you need two lists, which are,
+, have at least one element in them each.
+And the recursive call is to, , the same function
+where you've removed the first element of each of these
+lists.
+Okay.
+So you know zip.
+So we've got a list of , yeah, a list
+of XS and a list of y's.
+So it's x cons x and y cons ys.
+And the result is we take the pair x y.
+So that's the first, you know pair of teeth in
+the list.
+And cons zipping all the rest of the teeth in
+the list.
+Okay.
+So it's, , it's removed one element from each of
+these two lists that are in the that are in
+the argument here.
+Okay.
+So that's the recursive case.
+, we need two base cases.
+Two base cases, not one, but two.
+We need two because we've got two arguments and we
+don't know which one's going to be empty first.
+So we need to to check both of them.
+Okay.
+So the way that this function works is if you've
+got two lists, they don't have to be the same
+length.
+If one of them is shorter than the other one,
+then you throw away the extra amount of elements in
+the list that's longer.
+Okay.
+So if, , if you apply zip to an empty
+list and y is this is a case where the
+the second list is, perhaps it could also be empty,
+but it could be anything.
+So, , if you apply zip to a list, ,
+an empty list and then some other list, the result
+is the empty list of pairs.
+Okay.
+Because you don't have anything to put in it.
+You don't have any first elements to put in the
+pairs.
+And likewise, if you apply it to, , any list
+and the empty list, it will likewise produce the empty
+list because you haven't gotten any second elements to put
+into these pairs.
+Okay.
+So it's truncating the longer list.
+And there's two base cases because you're doing simultaneous recursion.
+All right.
+And , I explained I think that Haskell takes these
+things in order.
+You know, if you give it to lists, it'll it'll
+check each of these cases one after the other.
+Okay.
+So if you give it, for example, two empty lists,
+it'll match the first case.
+And the answer will be the empty list.
+It happens to also match the second case, but that
+doesn't matter because we don't get to the second case.
+We just, you know, two empty lists.
+It's the first case, but a non-empty list and an
+empty list.
+It'll also produce the empty list as the result.
+All right.
+.
+All right.
+, so I said that, , if you've got two
+lists of different lengths, it'll, it'll truncate the longer lists.
+So that was this definition.
+You could have written a definition that is , is
+, is strict and, and I wrote here uptight.
+So it requires the list to be the same length.
+And if they aren't the same length, it will, ,
+it will complain.
+Okay.
+And this is, this is this is this definition.
+I'm calling this a zip.
+Harsh.
+So the the the the recursive cases exactly the same.
+Okay, but the base case is only one base case,
+and it's insisting that they're both going to be, ,
+becoming empty at the same time.
+Okay, so there is no case for zip harsh applied
+to the empty list and a non-empty list.
+So you can write that if you want and it
+gives different results.
+So , just as an example, here's, you know, here's
+zip applied to the list, , 012.
+And the list, , the list of characters ABC, you
+get, you know, zero one 1 or 0 A, one
+B and two C.
+So this is in each case an element from the
+first list 012 and an element from the second list
+a b c.
+All right.
+, zip harsh would do the same thing because they're
+both the same length.
+But let's try it for lists of different lengths.
+So here's zero, one, two and a, b, c, d,
+e, so d and e are superfluous.
+It will produce this list list of pairs
+zero A, one, b and two.
+See if you try zip.
+Harsh.
+It will read.
+It will raise this exception which is saying I don't
+have a case to handle the values you've given me.
+Okay?
+Because at this point, at this point it will apply.
+This is the computation with the recursive call.
+Just at the point when this exception is raised where
+the arguments are empty list and a list containing d
+okay for which there is no case.
+Okay, this is two empty list.
+This is.
+This is two lists with at least one element.
+Okay.
+Interestingly it generates the exception after doing this amount of
+computation.
+This is actually lazy evaluation happening okay.
+Because it does.
+It does the printing the printing , does the evaluation
+and then prints the result.
+And when it's, when it's printing a list, it prints
+the, the things one at a time, doing just enough
+computation to get the next element.
+And at this point, so it prints the first three
+things and then it realises at this point there is
+no fourth thing.
+, there's an exception.
+Okay.
+And here's the thing.
+Here's just showing that it would do it the same
+way if it was the first.
+The first list was , was on , longer.
+Okay.
+So this is zip.
+, so zip is used, .
+For various things.
+Okay.
+Here are a couple of examples of how you might
+use zip.
+, , if we zip, , the list of numbers
+starting from zero going on forever with a string.
+The result is a list of pairs Only as long
+as the string.
+And it's kind of the, the, the characters in the
+string.
+So in this case Ward together with the positions that
+they are in the string zero, one, two, three.
+Okay.
+So, , you know, zero w because w is in
+position zero, we start counting from zero in computer science
+often.
+Okay.
+One paired with paired with O because O is in
+position one, two paired with R and three paired with
+D.
+And whatever the string is it would be the same.
+Right?
+So position of character followed by the character.
+, this is the way that that zip deals with
+lists of different lengths is convenient here because this
+list, this first list is always going to be longer
+than the second list, okay.
+And it just stops when it when it's used up
+enough numbers.
+Okay.
+You don't have to you don't have to compute.
+In this case it would be length of second argument
+minus one is the is the is the upper bound
+there?
+You don't have to bother computing that because lazy evaluation
+figures it out for you.
+Okay.
+you got that.
+So that might be useful.
+Suppose you want to search for a character in a
+list, and you want to know which position the first
+occurrence is in.
+So you could do a zip this.
+And then look for the occurrence of the character and
+return the position that is paired with, let's say, okay,
+, let's look at the second example.
+So here's a list.
+, it takes it's a function, it takes a list
+and it produces a list of pairs.
+, so whatever the, the the type is there, it
+produces pairs of that type.
+And what it does is it zips the argument together
+with the tail of the argument.
+And so, for example, , , if you give it
+the string word, so what it gives you is, is
+is pairs of adjacent characters w o r r d
+okay.
+And however long the list of characters is, or whatever
+the list is, it'll always produce the list of all
+of the adjacent pairs.
+Okay, , so why might that be useful?
+, if you've got something you want to do with
+successive elements of a list, this is a way to
+produce the pairs of successive elements of the list.
+Okay.
+Whatever is you want to do with them.
+Okay.
+An example is, , counting the number of doubled letters
+in a string.
+.
+Just a second.
+Okay, here's.
+Wait a minute.
+, laptop.
+So here's the, , the list of prime numbers.
+I've got up to 100,000.
+I'm going to stop it now.
+, you can see, by the way, it's going a
+little bit more slowly.
+And the reason it's going more slowly is that every
+prime number, it has to check all the numbers from
+to up to that number minus one, to see if
+they divide that number.
+Okay.
+So let me do a little bit of live coding.
+.
+I just said you might want to produce a, .
+A function that counts the number of number of doubled
+letters in a, in a, .
+In a string.
+Okay, so let's do that.
+Okay.
+.
+Okay, so first of all, , what I want is
+a function called num doubles.
+.
+Just looking at my notes.
+I could do it using zip.
+I'm going to do it without using zip.
+, okay, but but just to show you, , ,
+okay.
+An example is.
+Well, let me just let me just code.
+Okay.
+, I'm going to I'm going to apply this.
+When I'm done, I'm going to apply it to my
+surname, , Sanela, which happens to have two double letters
+in it.
+Okay.
+, so let's see, how will this work?
+, so num doubles.
+So we want a function that takes a string and
+produces an integer.
+So I'm doing this in order to show you how
+to write recursive functions.
+Okay.
+, so a typical pattern of a recursive function would
+be, , on, on a, on a list.
+Okay.
+String is a list of characters.
+.
+I just realised I'm doing this the wrong way.
+.
+Okay, let me do it the right way.
+I am.
+I am indeed going to use, , the zip trick
+that I mentioned.
+Okay, so you give it a string and it's going
+to count, , count the number of doubles in zip
+apply to S and tail of S.
+So as I said a minute ago.
+This is a handy trick for, , for producing pairs
+of adjacent letters.
+Okay, so I get a list of pairs of adjacent
+letters here.
+.
+Okay, so that's what.
+That's what this does.
+Okay.
+ZIP s tail of S computes the number of, ,
+it computes the list of, , of pairs of adjacent
+letters.
+Okay.
+And what I want to do now is I want
+to count, , the ones in that list that are
+doubled.
+So I give it a list.
+Sorry that I was a little confused there.
+, I gave it a list of, , of pairs
+of characters.
+And I produce an integer.
+Okay.
+The number of times that I've got doubled characters.
+So as I was, I was beginning to say.
+And then got got messed up.
+, typical example of a of a.
+Yeah.
+Typical, , pattern of a recursive definition would be ,
+on lists would be this.
+This is a, this is a definition on a list
+of, , lists of pairs.
+.
+.
+Yeah.
+.
+Okay.
+So, , so typically you'd have two cases.
+The first is the empty list.
+The second is the non-empty list.
+And this is a this is a list of of
+pairs of characters.
+And so the first thing in the list is going
+to be a pair.
+I'll say a comma b.
+And here's the rest of the list.
+ABS.
+So abs.
+Okay.
+And there's going to be a recursive call probably of
+this form.
+Okay.
+So this is not always the case but it's a
+common a common pattern.
+Okay.
+And now writing the definition is a matter of filling
+in the blanks here.
+Okay.
+So Are.
+Anybody know how many doubled characters there is?
+There are in the empty list of doubled.
+Of of of of pairs of characters.
+Yeah.
+Anybody?
+Zero.
+Hooray!
+Yes!
+Very good.
+, there's there's none because there aren't any pairs.
+Okay, what about the case where we've got at least
+one.
+We've got, we've got a pair, A comma B how
+many doubled characters are there in that list?
+Okay.
+One , you know, one is, , , I mean,
+there could be one.
+There could be one, there could be zero.
+All right.
+It depends.
+It depends on A and B, right.
+Okay.
+So we need a case analysis.
+We're going to have two cases whether A is
+equal to B or not.
+Okay.
+If A is equal to B, then we produce something,
+and if A is not equal to B then we
+produce something maybe different.
+Okay.
+Okay.
+And here we've got the the recursive call.
+Perhaps in both perhaps in both cases perhaps not.
+Okay.
+But we'll put it there for now.
+Okay.
+, a way to if you, if you sort of
+looking at this and you're getting stuck.
+Okay.
+, one thing to do is to look at examples.
+I'm just going to type them down here to, .
+Whoops.
+, , to record to record some examples.
+So suppose it's , , , I don't know, a
+and , a.
+Cons, let's say the empty list.
+Okay.
+So that's a case where A is equal to B.
+That is to say the I should maybe should use
+different very different names here.
+f and f okay.
+That's the case where we've got a list this.
+Characters A and B are F and f.
+They're the same.
+And so we're in the first case here.
+What do we want to produce okay.
+Well we want to produce something , building on
+top of the result of count doubles applied to to
+what's after that pair.
+Okay, that's the empty list.
+So this is this is something, , we do something
+to zero to give the the right answer here.
+The right answer is one.
+Right.
+So it's it's one.
+Sorry.
+So the answer is one plus.
+, sorry, I'm not doing this very well.
+, doubles of the empty list, right?
+So just.
+I'm just writing down some examples.
+So, .
+What if what if the things were not the same?
+Okay, then it wouldn't be one.
+Plus, the recursive call would be zero plus the recursive
+call.
+Or that is to say just that.
+Okay.
+Now this is of course not a general case.
+This is the case where the second, , where where
+you've only got one thing in the list and then
+you've got nothing.
+Okay.
+But, , you could at this point say, well, maybe
+the answer here is that it's one plus, , one
+plus that.
+Okay.
+, in this case, this is the right answer.
+All right.
+, so we've kind of generalised from this.
+You could write down if it's more complicated example, you
+might want to write down more than one example.
+, but by by taking those, by taking a couple
+of examples, you can kind of generalise and see what
+the result is.
+So what is it you need to do with the
+number of doubles in a list to make it, ,
+give the right answer for this, for this, , for
+these cases.
+Okay.
+Now let's just quickly show you that this actually gives
+you the right answer.
+And then we're finished for today.
+.
+So count.
+This.
+The answer should be two.
+, the answer is, , that I've, .
+Oh, it's.
+Yeah, because I've got the wrong function.
+, let me try again.
+The function is called num doubles.
+The answer is to yeah, okay, so I did this
+correctly despite making a mess of it.
+Okay.
+Thanks.
+, that's it for today.
+So see you tomorrow.
+I should say sorry about the mess with learn and
+stuff.
+Not our fault.
+The university.
+The whole university was screwed up.

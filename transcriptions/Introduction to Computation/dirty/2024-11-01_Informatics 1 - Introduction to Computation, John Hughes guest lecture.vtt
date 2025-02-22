@@ -1,0 +1,5306 @@
+WEBVTT
+
+00:00:08.100 --> 00:00:08.550
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:00:12.120 --> 00:00:12.420
+<v Speaker 0>Ready?
+
+NOTE CONF {"raw":[100]}
+
+00:00:12.930 --> 00:00:13.200
+<v Speaker 0>Yep.
+
+NOTE CONF {"raw":[49]}
+
+00:00:13.860 --> 00:00:16.410
+<v Speaker 0>Okay, let me just, uh.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:00:22.650 --> 00:00:23.160
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:00:23.160 --> 00:00:24.180
+<v Speaker 0>Good afternoon.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:24.360 --> 00:00:24.690
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[100]}
+
+00:00:24.690 --> 00:00:25.650
+<v Speaker 0>Settle down.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:25.800 --> 00:00:26.820
+<v Speaker 0>Um, yeah.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:26.820 --> 00:00:31.050
+<v Speaker 0>So today we have a guest lecture from John Hughes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:31.770 --> 00:00:35.580
+<v Speaker 0>Uh, John, uh, did his PhD in Oxford and then
+
+NOTE CONF {"raw":[100,100,61,100,100,100,100,100,100,100]}
+
+00:00:35.580 --> 00:00:39.060
+<v Speaker 0>spent some time as a professor at Glasgow University, uh,
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,87]}
+
+00:00:39.060 --> 00:00:42.900
+<v Speaker 0>before moving to Chalmers University in, in Sweden, where he's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:42.900 --> 00:00:45.360
+<v Speaker 0>been, uh, for many years now.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:00:45.480 --> 00:00:48.300
+<v Speaker 0>So John is one of the designers of Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:00:49.080 --> 00:00:51.600
+<v Speaker 0>Uh, so you can complain to him about all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:51.600 --> 00:00:55.230
+<v Speaker 0>things that you've been made to learn this semester and,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:55.230 --> 00:00:59.280
+<v Speaker 0>um, and co, uh, co-inventor of QuickCheck, and he has
+
+NOTE CONF {"raw":[91,100,100,100,100,100,100,100,100,100]}
+
+00:00:59.280 --> 00:01:03.630
+<v Speaker 0>a company that he uses that, that that uses QuickCheck
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,86]}
+
+00:01:03.630 --> 00:01:06.090
+<v Speaker 0>to help people in industry find bugs in their code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:06.120 --> 00:01:09.300
+<v Speaker 0>And so John will be telling us about some experiences
+
+NOTE CONF {"raw":[100,100,86,100,100,100,100,100,100,100]}
+
+00:01:09.300 --> 00:01:10.230
+<v Speaker 0>with that, I guess.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:10.230 --> 00:01:10.590
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[86]}
+
+00:01:10.620 --> 00:01:11.220
+<v Speaker 0>Thanks, John.
+
+NOTE CONF {"raw":[100,99]}
+
+00:01:11.250 --> 00:01:11.670
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:01:11.670 --> 00:01:12.150
+<v Speaker 0>Go ahead.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:12.450 --> 00:01:12.900
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:01:12.900 --> 00:01:13.560
+<v Speaker 1>Can you hear me?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:14.880 --> 00:01:15.330
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[98]}
+
+00:01:15.360 --> 00:01:15.930
+<v Speaker 1>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:01:16.320 --> 00:01:20.340
+<v Speaker 1>So indeed, I am a professor at Chalmers, as you
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,36,100,100]}
+
+00:01:20.340 --> 00:01:23.370
+<v Speaker 1>can see, and co-founder of cubic.
+
+NOTE CONF {"raw":[100,100,100,93,100,36]}
+
+00:01:23.700 --> 00:01:26.160
+<v Speaker 1>So I'm going to talk about testing today.
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100]}
+
+00:01:26.160 --> 00:01:30.150
+<v Speaker 1>And I often give this talk to audiences of software
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:30.150 --> 00:01:31.290
+<v Speaker 1>developers for industry.
+
+NOTE CONF {"raw":[100,48,100]}
+
+00:01:31.590 --> 00:01:35.190
+<v Speaker 1>So I'd like to start out by asking them a
+
+NOTE CONF {"raw":[100,81,100,100,100,100,100,100,100,100]}
+
+00:01:35.190 --> 00:01:35.820
+<v Speaker 1>question.
+
+NOTE CONF {"raw":[100]}
+
+00:01:36.420 --> 00:01:39.390
+<v Speaker 1>So I'm going to ask you a question to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:01:39.390 --> 00:01:44.700
+<v Speaker 1>same one who really, really loves testing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:49.080 --> 00:01:49.920
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:01:49.920 --> 00:01:50.910
+<v Speaker 1>1 or 2.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:51.990 --> 00:01:55.530
+<v Speaker 1>You know, I get a similarly enthusiastic response from industrial
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,100]}
+
+00:01:55.530 --> 00:01:56.640
+<v Speaker 1>software developers.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:56.760 --> 00:01:59.470
+<v Speaker 1>There may be a few people who love it But
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:01:59.470 --> 00:02:02.650
+<v Speaker 1>actually there are very, very few people go to work
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:02.650 --> 00:02:06.280
+<v Speaker 1>in the morning thinking, great, today I get to write
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:06.280 --> 00:02:07.420
+<v Speaker 1>100 tests.
+
+NOTE CONF {"raw":[96,100]}
+
+00:02:07.930 --> 00:02:09.399
+<v Speaker 1>It's more testing.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:09.399 --> 00:02:12.190
+<v Speaker 1>It's something that people do because you have to.
+
+NOTE CONF {"raw":[41,100,100,100,100,100,100,100,100]}
+
+00:02:12.340 --> 00:02:14.350
+<v Speaker 1>Otherwise your software won't work.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:15.610 --> 00:02:21.040
+<v Speaker 1>So testing, it's something that many people regard as rather
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:21.040 --> 00:02:21.760
+<v Speaker 1>hard.
+
+NOTE CONF {"raw":[100]}
+
+00:02:22.000 --> 00:02:24.400
+<v Speaker 1>And I just want to consider a little why that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:24.400 --> 00:02:24.970
+<v Speaker 1>is.
+
+NOTE CONF {"raw":[100]}
+
+00:02:25.630 --> 00:02:29.500
+<v Speaker 1>Okay, so suppose you're testing some software which has, let's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:29.500 --> 00:02:33.280
+<v Speaker 1>say n different features for some number n.
+
+NOTE CONF {"raw":[100,76,100,100,100,100,100,100]}
+
+00:02:33.820 --> 00:02:37.960
+<v Speaker 1>Generally speaking you'll need to write several tests for each
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100,100,100,100]}
+
+00:02:37.960 --> 00:02:38.320
+<v Speaker 1>feature.
+
+NOTE CONF {"raw":[100]}
+
+00:02:38.320 --> 00:02:40.420
+<v Speaker 1>So let's suppose you write 3 or 4 tests per
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:40.420 --> 00:02:40.960
+<v Speaker 1>feature.
+
+NOTE CONF {"raw":[100]}
+
+00:02:42.610 --> 00:02:44.020
+<v Speaker 1>That's okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:44.230 --> 00:02:48.430
+<v Speaker 1>That's a linear amount of work order n.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,82,86]}
+
+00:02:48.430 --> 00:02:51.250
+<v Speaker 1>That means the amount of work is proportional to n.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:53.350 --> 00:02:58.060
+<v Speaker 1>But everybody who's developed more complex software knows that if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:58.060 --> 00:03:00.970
+<v Speaker 1>you test one feature at a time, there will be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:00.970 --> 00:03:02.080
+<v Speaker 1>bugs that you miss.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:02.800 --> 00:03:06.850
+<v Speaker 1>Many bugs only appear when you use two features in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:06.850 --> 00:03:07.690
+<v Speaker 1>combination.
+
+NOTE CONF {"raw":[100]}
+
+00:03:08.530 --> 00:03:10.840
+<v Speaker 1>So how many pairs of features are there?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:03:12.010 --> 00:03:16.480
+<v Speaker 1>Well, obviously roughly n squared.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:17.350 --> 00:03:21.010
+<v Speaker 1>So that's a quadratic number of test cases that you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:21.010 --> 00:03:22.660
+<v Speaker 1>have to write if you want to test thoroughly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:23.230 --> 00:03:29.500
+<v Speaker 1>And you know, even testing every pair of features will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:29.500 --> 00:03:31.030
+<v Speaker 1>not find all of your bugs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:31.390 --> 00:03:34.300
+<v Speaker 1>Some of them may only appear when you test when
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:34.300 --> 00:03:36.040
+<v Speaker 1>you use three features together.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:36.790 --> 00:03:39.910
+<v Speaker 1>Okay, so now we're talking about a cubic amount of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,56,100,100]}
+
+00:03:39.910 --> 00:03:40.540
+<v Speaker 1>work.
+
+NOTE CONF {"raw":[100]}
+
+00:03:40.990 --> 00:03:42.700
+<v Speaker 1>This does not sound good.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:44.260 --> 00:03:50.440
+<v Speaker 1>And some bugs are caused by what are called race
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,94]}
+
+00:03:50.440 --> 00:03:51.160
+<v Speaker 1>conditions.
+
+NOTE CONF {"raw":[100]}
+
+00:03:51.160 --> 00:03:53.590
+<v Speaker 1>That is when the software is doing several things at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:53.590 --> 00:03:54.460
+<v Speaker 1>the same time.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:54.460 --> 00:03:57.050
+<v Speaker 1>And just depending on what happens to be done first.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:57.080 --> 00:03:58.760
+<v Speaker 1>What happens to be done second?
+
+NOTE CONF {"raw":[100,100,100,92,57,100]}
+
+00:03:58.760 --> 00:04:01.400
+<v Speaker 1>You can get errors that appear and maybe they will
+
+NOTE CONF {"raw":[99,98,100,100,68,100,100,100,100,100]}
+
+00:04:01.400 --> 00:04:03.500
+<v Speaker 1>appear once in a million runs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:04.400 --> 00:04:06.230
+<v Speaker 1>So you know your software fails.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:06.740 --> 00:04:08.540
+<v Speaker 1>You wonder why you run it again.
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100]}
+
+00:04:08.810 --> 00:04:09.560
+<v Speaker 1>It works fine.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:10.520 --> 00:04:12.650
+<v Speaker 1>That is hair.
+
+NOTE CONF {"raw":[100,100,76]}
+
+00:04:12.650 --> 00:04:13.850
+<v Speaker 1>Terribly difficult.
+
+NOTE CONF {"raw":[75,100]}
+
+00:04:13.970 --> 00:04:15.890
+<v Speaker 1>I'm very, very difficult to test for.
+
+NOTE CONF {"raw":[84,100,100,100,100,100,100]}
+
+00:04:17.359 --> 00:04:21.230
+<v Speaker 1>So this is, you know, in brief, why people find
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:21.230 --> 00:04:22.160
+<v Speaker 1>testing hard.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:22.340 --> 00:04:23.570
+<v Speaker 1>So what's the answer?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:25.250 --> 00:04:26.540
+<v Speaker 1>Don't write tests.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:29.150 --> 00:04:30.020
+<v Speaker 1>Generate them.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:30.830 --> 00:04:33.140
+<v Speaker 1>That's what you've been doing with QuickCheck so far.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:04:33.290 --> 00:04:36.860
+<v Speaker 1>And that is the approach that I advocate.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:37.940 --> 00:04:39.050
+<v Speaker 1>So how does QuickCheck work?
+
+NOTE CONF {"raw":[95,100,100,100,100]}
+
+00:04:39.140 --> 00:04:41.210
+<v Speaker 1>Well, you have an API under test.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100]}
+
+00:04:41.960 --> 00:04:45.710
+<v Speaker 1>Um, I'm going to talk now about testing software with
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:04:45.710 --> 00:04:46.820
+<v Speaker 1>internal state.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:46.970 --> 00:04:50.030
+<v Speaker 1>Usually the test cases that we generate for those are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:50.030 --> 00:04:53.330
+<v Speaker 1>sequences of operations, random sequences of operations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:53.780 --> 00:04:57.770
+<v Speaker 1>So we just keep generating those until the test fails
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:58.280 --> 00:04:59.480
+<v Speaker 1>and when it does.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:00.230 --> 00:05:03.350
+<v Speaker 1>Um, I hope you've noticed shrinking happening in your own
+
+NOTE CONF {"raw":[100,100,100,84,100,100,100,100,100,100]}
+
+00:05:03.350 --> 00:05:04.280
+<v Speaker 1>use of QuickCheck.
+
+NOTE CONF {"raw":[100,100,98]}
+
+00:05:04.700 --> 00:05:09.290
+<v Speaker 1>Usually when a test fails of this sort, then most
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:09.290 --> 00:05:11.090
+<v Speaker 1>of the operations are irrelevant.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:11.360 --> 00:05:14.630
+<v Speaker 1>They're just there because the thing was generated randomly.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100]}
+
+00:05:15.710 --> 00:05:18.890
+<v Speaker 1>Normally, there are just a few key operations that are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:18.890 --> 00:05:20.360
+<v Speaker 1>enough to provoke the failure.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:20.930 --> 00:05:24.980
+<v Speaker 1>So this is where shrinking can kick in and generate
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:25.190 --> 00:05:27.830
+<v Speaker 1>a very small test case that also fails.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:28.010 --> 00:05:32.570
+<v Speaker 1>And debugging those tests where everything that happens is relevant
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:32.570 --> 00:05:33.440
+<v Speaker 1>to the failure.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:33.470 --> 00:05:35.120
+<v Speaker 1>That is very, very easy.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:36.650 --> 00:05:39.740
+<v Speaker 1>Much easier than debugging a large test with a lot
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:39.740 --> 00:05:40.730
+<v Speaker 1>of random junk.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:41.870 --> 00:05:44.570
+<v Speaker 1>So I like to run a demo at this point,
+
+NOTE CONF {"raw":[100,82,100,100,100,100,100,100,100,100]}
+
+00:05:44.810 --> 00:05:48.080
+<v Speaker 1>and I'm going to run a demo of a circular
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:48.080 --> 00:05:48.410
+<v Speaker 1>buffer.
+
+NOTE CONF {"raw":[100]}
+
+00:05:48.410 --> 00:05:52.070
+<v Speaker 1>I don't know whether you know what that is, but,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:52.070 --> 00:05:56.790
+<v Speaker 1>um, I'll show you a little example so that hopefully
+
+NOTE CONF {"raw":[97,100,100,100,97,100,63,97,98,100]}
+
+00:05:56.790 --> 00:06:00.360
+<v Speaker 1>it will become clear if I can figure out how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:00.360 --> 00:06:00.780
+<v Speaker 1>to.
+
+NOTE CONF {"raw":[100]}
+
+00:06:04.740 --> 00:06:05.490
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:06:10.770 --> 00:06:11.310
+<v Speaker 1>Good.
+
+NOTE CONF {"raw":[98]}
+
+00:06:12.270 --> 00:06:19.080
+<v Speaker 1>So I've got, um, a few functions that implement a
+
+NOTE CONF {"raw":[100,100,100,76,100,100,100,100,100,100]}
+
+00:06:19.080 --> 00:06:19.680
+<v Speaker 1>queue.
+
+NOTE CONF {"raw":[48]}
+
+00:06:19.710 --> 00:06:23.100
+<v Speaker 1>So what do I mean by a queue?
+
+NOTE CONF {"raw":[70,100,100,100,100,100,100,100]}
+
+00:06:23.100 --> 00:06:25.470
+<v Speaker 1>I mean something that you can put numbers into.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:25.500 --> 00:06:28.470
+<v Speaker 1>In this case, let's make a queue with space for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:28.470 --> 00:06:29.490
+<v Speaker 1>five elements.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:31.530 --> 00:06:35.220
+<v Speaker 1>And now I'm going to put a one into it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:39.630 --> 00:06:41.580
+<v Speaker 1>So this is airline code I'm writing.
+
+NOTE CONF {"raw":[100,100,100,92,100,100,100]}
+
+00:06:41.610 --> 00:06:43.920
+<v Speaker 1>Erlang is very similar to Haskell actually.
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100]}
+
+00:06:44.610 --> 00:06:46.200
+<v Speaker 1>Um it's a different programming language.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:46.200 --> 00:06:48.450
+<v Speaker 1>But if you know Haskell then it's very easy to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:48.450 --> 00:06:48.960
+<v Speaker 1>learn.
+
+NOTE CONF {"raw":[100]}
+
+00:06:53.550 --> 00:06:54.150
+<v Speaker 1>So there we are.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:54.150 --> 00:06:57.210
+<v Speaker 1>I've put one and two into the queue.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,93]}
+
+00:06:57.210 --> 00:07:00.270
+<v Speaker 1>So you can imagine a queue of people or with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:00.270 --> 00:07:01.830
+<v Speaker 1>person number one and person number two in it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:07:01.980 --> 00:07:04.710
+<v Speaker 1>Now I can ask how many values are in the
+
+NOTE CONF {"raw":[100,67,100,100,100,100,100,100,100,100]}
+
+00:07:04.710 --> 00:07:05.220
+<v Speaker 1>queue.
+
+NOTE CONF {"raw":[100]}
+
+00:07:07.200 --> 00:07:08.100
+<v Speaker 1>What should the answer be?
+
+NOTE CONF {"raw":[100,98,100,100,100]}
+
+00:07:09.690 --> 00:07:11.790
+<v Speaker 1>Two of course.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:12.450 --> 00:07:17.070
+<v Speaker 1>And then I can take values out of the queue.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:19.350 --> 00:07:20.040
+<v Speaker 1>There's one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:20.040 --> 00:07:21.480
+<v Speaker 1>What will I get if I call this again?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,66,96]}
+
+00:07:23.250 --> 00:07:23.940
+<v Speaker 1>There it is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:23.970 --> 00:07:25.470
+<v Speaker 1>What will I get if I call it again?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:07:31.740 --> 00:07:32.700
+<v Speaker 1>Three zeros.
+
+NOTE CONF {"raw":[97,81]}
+
+00:07:33.030 --> 00:07:34.080
+<v Speaker 1>There's the one again.
+
+NOTE CONF {"raw":[100,92,100,100]}
+
+00:07:34.410 --> 00:07:35.400
+<v Speaker 1>There's the two again.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:35.550 --> 00:07:37.470
+<v Speaker 1>Remember I called it a circular buffer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:38.340 --> 00:07:41.730
+<v Speaker 1>That's because we go around in a circle.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:42.000 --> 00:07:45.060
+<v Speaker 1>So now we'll get zeros again.
+
+NOTE CONF {"raw":[100,100,100,100,99,99]}
+
+00:07:46.530 --> 00:07:47.070
+<v Speaker 1>Whoops.
+
+NOTE CONF {"raw":[68]}
+
+00:07:49.050 --> 00:07:51.270
+<v Speaker 1>And then the one and two again.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:51.730 --> 00:07:52.510
+<v Speaker 1>And so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:53.380 --> 00:07:55.750
+<v Speaker 1>So you can see that the code works is actually
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100,100]}
+
+00:07:55.750 --> 00:07:56.920
+<v Speaker 1>implemented in C.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:07:56.920 --> 00:07:58.960
+<v Speaker 1>Who's heard of the C programming language.
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100]}
+
+00:07:59.920 --> 00:08:01.270
+<v Speaker 1>Almost everybody okay.
+
+NOTE CONF {"raw":[92,100,100]}
+
+00:08:01.300 --> 00:08:04.060
+<v Speaker 1>So it's quite small and simple.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:04.750 --> 00:08:06.580
+<v Speaker 1>Um, and it obviously works.
+
+NOTE CONF {"raw":[79,100,100,100,100]}
+
+00:08:07.630 --> 00:08:09.940
+<v Speaker 1>Let's test it with QuickCheck.
+
+NOTE CONF {"raw":[100,100,100,100,77]}
+
+00:08:10.360 --> 00:08:13.900
+<v Speaker 1>Now, you have presumably seen QuickCheck.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:13.900 --> 00:08:19.900
+<v Speaker 1>Um, for the case of testing pure functions only.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:21.400 --> 00:08:22.600
+<v Speaker 1>Oh dear me.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:08:22.630 --> 00:08:23.320
+<v Speaker 1>Why can't I?
+
+NOTE CONF {"raw":[100,51,100]}
+
+00:08:25.060 --> 00:08:28.900
+<v Speaker 1>Okay, this seems to have.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:31.330 --> 00:08:32.169
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:46.870 --> 00:08:47.770
+<v Speaker 1>Please come back.
+
+NOTE CONF {"raw":[77,100,100]}
+
+00:08:50.110 --> 00:08:50.740
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:50.740 --> 00:08:51.430
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:08:51.430 --> 00:08:53.110
+<v Speaker 1>So how do we how do we test these things
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:53.110 --> 00:08:57.010
+<v Speaker 1>with sequences of operations where we generate a sequence of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:57.010 --> 00:08:57.670
+<v Speaker 1>API calls?
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:57.670 --> 00:08:58.840
+<v Speaker 1>It's just a list.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:59.050 --> 00:09:00.610
+<v Speaker 1>I'm sure you've been using lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:01.150 --> 00:09:05.350
+<v Speaker 1>Um, we make a simple model state.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:05.350 --> 00:09:07.810
+<v Speaker 1>So in the case of a queue, we model the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:09:07.810 --> 00:09:09.610
+<v Speaker 1>contents just by the list of numbers that should be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:09.610 --> 00:09:09.970
+<v Speaker 1>in it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:10.270 --> 00:09:13.540
+<v Speaker 1>And then we write post conditions for each operation to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,58]}
+
+00:09:13.540 --> 00:09:15.010
+<v Speaker 1>check that the result is right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:15.550 --> 00:09:19.210
+<v Speaker 1>So all of this stuff is written in Erlang apart
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:19.210 --> 00:09:20.980
+<v Speaker 1>from the code itself.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:20.980 --> 00:09:23.830
+<v Speaker 1>So we use Erlang for testing code in all kinds
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,56,100,100]}
+
+00:09:23.830 --> 00:09:24.820
+<v Speaker 1>of programming languages.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:24.820 --> 00:09:27.700
+<v Speaker 1>See for example as an example.
+
+NOTE CONF {"raw":[96,100,100,89,100,100]}
+
+00:09:28.090 --> 00:09:30.430
+<v Speaker 1>Um, here's a test case that we might use for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:30.430 --> 00:09:32.740
+<v Speaker 1>queues where we put three numbers in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:32.740 --> 00:09:35.920
+<v Speaker 1>We get two numbers out and we can model the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:35.920 --> 00:09:38.230
+<v Speaker 1>state just by a list.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:38.230 --> 00:09:40.150
+<v Speaker 1>It's very slightly more complicated than that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:40.150 --> 00:09:42.250
+<v Speaker 1>But the principle is here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:42.250 --> 00:09:45.610
+<v Speaker 1>And then we write post conditions that just check that,
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:09:46.210 --> 00:09:50.060
+<v Speaker 1>um, you can see every call to get returns.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:09:50.060 --> 00:09:52.160
+<v Speaker 1>The first element that was in the queue when we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:52.160 --> 00:09:52.670
+<v Speaker 1>call it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:54.920 --> 00:09:57.350
+<v Speaker 1>Okay, we won't bother with the code fragments.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:57.620 --> 00:09:59.360
+<v Speaker 1>Let's just run some tests.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:01.130 --> 00:10:01.820
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:01.820 --> 00:10:02.960
+<v Speaker 1>Can we see this?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:02.990 --> 00:10:03.620
+<v Speaker 1>Nope.
+
+NOTE CONF {"raw":[81]}
+
+00:10:06.620 --> 00:10:07.790
+<v Speaker 1>Why can we see nothing?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:13.370 --> 00:10:14.090
+<v Speaker 1>Now we can see it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:14.090 --> 00:10:14.510
+<v Speaker 1>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:10:15.440 --> 00:10:17.090
+<v Speaker 1>Okay, so.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:19.100 --> 00:10:23.930
+<v Speaker 1>Let me compile my airline code, which is my specification.
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,100,100,100]}
+
+00:10:23.930 --> 00:10:27.380
+<v Speaker 1>And then I'll just use the Erlang version of QuickCheck.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:32.450 --> 00:10:33.410
+<v Speaker 1>To test the code.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:35.810 --> 00:10:37.040
+<v Speaker 1>Dawn, look.
+
+NOTE CONF {"raw":[54,100]}
+
+00:10:37.040 --> 00:10:38.150
+<v Speaker 1>So what happened?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:38.450 --> 00:10:42.890
+<v Speaker 1>What happened here was, first of all, we generated a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:42.890 --> 00:10:44.000
+<v Speaker 1>long random test.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:44.030 --> 00:10:44.870
+<v Speaker 1>Here it is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:45.980 --> 00:10:47.750
+<v Speaker 1>It's got 32 steps.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:48.410 --> 00:10:49.040
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:49.280 --> 00:10:50.450
+<v Speaker 1>This test failed.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:50.480 --> 00:10:52.730
+<v Speaker 1>Would you like to debug a test case with 32
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:52.730 --> 00:10:53.300
+<v Speaker 1>steps?
+
+NOTE CONF {"raw":[100]}
+
+00:10:54.590 --> 00:10:55.580
+<v Speaker 1>No.
+
+NOTE CONF {"raw":[100]}
+
+00:10:56.450 --> 00:10:59.240
+<v Speaker 1>But then you've seen shrinking happening.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:59.570 --> 00:11:00.260
+<v Speaker 1>Here it is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:00.290 --> 00:11:01.040
+<v Speaker 1>It's happened here.
+
+NOTE CONF {"raw":[45,100,100]}
+
+00:11:01.040 --> 00:11:04.670
+<v Speaker 1>And we end up with this test case with three
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:04.670 --> 00:11:05.390
+<v Speaker 1>steps.
+
+NOTE CONF {"raw":[100]}
+
+00:11:06.980 --> 00:11:08.630
+<v Speaker 1>And what is happening?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:11:09.830 --> 00:11:10.520
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:11.840 --> 00:11:12.770
+<v Speaker 1>Look at this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:12.770 --> 00:11:15.860
+<v Speaker 1>This part of the screen shows us what happened.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:15.860 --> 00:11:18.620
+<v Speaker 1>So we created a queue of size one.
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,100]}
+
+00:11:18.950 --> 00:11:21.950
+<v Speaker 1>We put one value into it, and then we asked
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,71]}
+
+00:11:21.950 --> 00:11:22.550
+<v Speaker 1>the size.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:22.550 --> 00:11:24.260
+<v Speaker 1>How many elements are in the queue now?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:26.390 --> 00:11:27.140
+<v Speaker 1>One.
+
+NOTE CONF {"raw":[100]}
+
+00:11:27.380 --> 00:11:28.700
+<v Speaker 1>What does size return?
+
+NOTE CONF {"raw":[100,31,100,100]}
+
+00:11:29.360 --> 00:11:30.170
+<v Speaker 1>Zero.
+
+NOTE CONF {"raw":[100]}
+
+00:11:31.220 --> 00:11:32.630
+<v Speaker 1>Zero is not equal to one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:33.440 --> 00:11:34.970
+<v Speaker 1>And so the test fails.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:36.020 --> 00:11:36.440
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:36.440 --> 00:11:37.610
+<v Speaker 1>So why did this happen?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:38.000 --> 00:11:40.970
+<v Speaker 1>Well let's have a look at the code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:41.570 --> 00:11:46.010
+<v Speaker 1>So here is the code for put.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:46.130 --> 00:11:48.090
+<v Speaker 1>So as I said, this is in the C programming
+
+NOTE CONF {"raw":[100,100,100,58,100,100,100,100,100,100]}
+
+00:11:48.090 --> 00:11:50.670
+<v Speaker 1>language, which I realise you're not familiar with.
+
+NOTE CONF {"raw":[85,100,100,91,97,100,100,100]}
+
+00:11:51.660 --> 00:11:56.040
+<v Speaker 1>But, um, uh, what's happening here is that we are
+
+NOTE CONF {"raw":[100,80,69,100,100,100,100,100,100,100]}
+
+00:11:56.040 --> 00:12:00.390
+<v Speaker 1>taking the value n, and we are writing it into
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:00.390 --> 00:12:04.890
+<v Speaker 1>a buffer at a position determined by Q arrow imp,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:04.890 --> 00:12:05.970
+<v Speaker 1>the input pointer.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:05.970 --> 00:12:13.020
+<v Speaker 1>And then we're incrementing the input pointer modulo the size
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:12:13.020 --> 00:12:13.650
+<v Speaker 1>of the q.
+
+NOTE CONF {"raw":[100,100,81]}
+
+00:12:14.340 --> 00:12:17.190
+<v Speaker 1>What is the size of the q one.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100]}
+
+00:12:18.090 --> 00:12:21.270
+<v Speaker 1>So we're changing the input point from 0 to 0
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100,100]}
+
+00:12:21.270 --> 00:12:21.750
+<v Speaker 1>plus one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:21.750 --> 00:12:23.940
+<v Speaker 1>That's one modulo one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:24.540 --> 00:12:28.230
+<v Speaker 1>What's one modulo one zero.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:29.340 --> 00:12:30.030
+<v Speaker 1>Ah.
+
+NOTE CONF {"raw":[95]}
+
+00:12:31.260 --> 00:12:34.740
+<v Speaker 1>So I bet looking at that code it looks right,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:35.130 --> 00:12:36.150
+<v Speaker 1>but it's not.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:36.870 --> 00:12:39.030
+<v Speaker 1>So the problem here is that when you put a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:39.030 --> 00:12:41.820
+<v Speaker 1>value into the buffer, the input pointer wraps around back
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:41.820 --> 00:12:43.530
+<v Speaker 1>to the beginning immediately.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:43.530 --> 00:12:45.780
+<v Speaker 1>So the q that is full.
+
+NOTE CONF {"raw":[100,100,67,100,100,100]}
+
+00:12:45.960 --> 00:12:48.030
+<v Speaker 1>Looks exactly like a queue that is empty.
+
+NOTE CONF {"raw":[100,100,100,100,82,100,100,100]}
+
+00:12:49.800 --> 00:12:53.670
+<v Speaker 1>And so the size function gets confused and returns zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:12:54.270 --> 00:12:55.260
+<v Speaker 1>So that's not right.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:55.260 --> 00:12:57.030
+<v Speaker 1>So how can we fix this?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:58.770 --> 00:13:01.350
+<v Speaker 1>Um, it turns out that this is a well known
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,89,89]}
+
+00:13:01.350 --> 00:13:03.660
+<v Speaker 1>problem, and there is a well known way of fixing
+
+NOTE CONF {"raw":[100,100,100,100,100,74,74,100,100,100]}
+
+00:13:03.660 --> 00:13:03.900
+<v Speaker 1>it.
+
+NOTE CONF {"raw":[100]}
+
+00:13:03.990 --> 00:13:08.250
+<v Speaker 1>So this is the code that creates a new queue.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,58]}
+
+00:13:08.370 --> 00:13:12.300
+<v Speaker 1>And if you think about it, you'll see that this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:12.300 --> 00:13:15.000
+<v Speaker 1>problem of the input pointer wrapping around when the thing
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100,100,100,100]}
+
+00:13:15.000 --> 00:13:17.580
+<v Speaker 1>is full that's going to hit every size of queue,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,94]}
+
+00:13:17.580 --> 00:13:21.990
+<v Speaker 1>not just queues of size one, and it's going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:21.990 --> 00:13:24.210
+<v Speaker 1>hit us when the queue becomes full.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:24.690 --> 00:13:25.800
+<v Speaker 1>It's going to look empty.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:27.090 --> 00:13:28.320
+<v Speaker 1>So here's the trick.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:28.920 --> 00:13:31.530
+<v Speaker 1>Well, I'm asked to create a queue of size n.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:31.650 --> 00:13:34.530
+<v Speaker 1>I will actually create one of size n plus one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:35.760 --> 00:13:37.200
+<v Speaker 1>Don't tell anybody.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:38.190 --> 00:13:42.750
+<v Speaker 1>Now this means that if anybody sees my bug, they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:42.750 --> 00:13:46.090
+<v Speaker 1>must first have put N plus one items into a
+
+NOTE CONF {"raw":[100,100,100,100,88,100,100,100,100,100]}
+
+00:13:46.090 --> 00:13:48.880
+<v Speaker 1>queue of size n, and what does that mean?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:50.320 --> 00:13:51.910
+<v Speaker 1>That means it's their fault.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:52.690 --> 00:13:54.580
+<v Speaker 1>And I escaped blame.
+
+NOTE CONF {"raw":[100,100,57,100]}
+
+00:13:54.820 --> 00:13:58.210
+<v Speaker 1>And this is the goal of all good software engineering.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:00.550 --> 00:14:04.960
+<v Speaker 1>Okay, so I've made that change.
+
+NOTE CONF {"raw":[100,100,87,100,100,100]}
+
+00:14:05.200 --> 00:14:07.360
+<v Speaker 1>Now I'm going to recompile the C code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:08.740 --> 00:14:10.750
+<v Speaker 1>Um, which I do like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:13.360 --> 00:14:15.490
+<v Speaker 1>And now I just want to rerun that test.
+
+NOTE CONF {"raw":[99,87,100,100,100,100,100,100,100]}
+
+00:14:16.270 --> 00:14:20.170
+<v Speaker 1>And I can do that with this version of QuickCheck
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,83]}
+
+00:14:20.170 --> 00:14:22.660
+<v Speaker 1>just by saying aeccae check.
+
+NOTE CONF {"raw":[100,100,100,21,100]}
+
+00:14:22.660 --> 00:14:25.420
+<v Speaker 1>So this is a special function that reruns the last
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:25.420 --> 00:14:26.470
+<v Speaker 1>failed test.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:27.520 --> 00:14:28.330
+<v Speaker 1>What do you know?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:28.330 --> 00:14:29.380
+<v Speaker 1>It passes now.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:29.770 --> 00:14:30.820
+<v Speaker 1>That's great.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:31.150 --> 00:14:33.190
+<v Speaker 1>So that seems to work.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:33.940 --> 00:14:36.100
+<v Speaker 1>Let's just run a few more random tests to be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:36.100 --> 00:14:36.640
+<v Speaker 1>sure.
+
+NOTE CONF {"raw":[100]}
+
+00:14:38.710 --> 00:14:41.860
+<v Speaker 1>Darn, it still doesn't work.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:43.870 --> 00:14:45.160
+<v Speaker 1>Look at what happened here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:45.820 --> 00:14:47.830
+<v Speaker 1>We made a queue of size one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:48.070 --> 00:14:49.810
+<v Speaker 1>That's really two.
+
+NOTE CONF {"raw":[80,100,97]}
+
+00:14:51.040 --> 00:14:53.650
+<v Speaker 1>We put two items in.
+
+NOTE CONF {"raw":[100,100,100,100,85]}
+
+00:14:54.040 --> 00:14:56.860
+<v Speaker 1>So that input pointer will have wrapped around back to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:56.860 --> 00:14:57.430
+<v Speaker 1>zero.
+
+NOTE CONF {"raw":[100]}
+
+00:14:57.910 --> 00:14:59.800
+<v Speaker 1>We took one item out.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:00.070 --> 00:15:00.400
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:00.400 --> 00:15:01.510
+<v Speaker 1>We put two things in.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:01.540 --> 00:15:02.890
+<v Speaker 1>We took one thing out.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:03.820 --> 00:15:05.080
+<v Speaker 1>How many things are in the queue?
+
+NOTE CONF {"raw":[100,100,100,91,100,100,100]}
+
+00:15:06.160 --> 00:15:06.880
+<v Speaker 1>One.
+
+NOTE CONF {"raw":[100]}
+
+00:15:06.970 --> 00:15:08.440
+<v Speaker 1>What does size return?
+
+NOTE CONF {"raw":[100,93,100,100]}
+
+00:15:10.000 --> 00:15:11.080
+<v Speaker 1>Minus one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:12.460 --> 00:15:13.630
+<v Speaker 1>That can't be right.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:14.680 --> 00:15:20.470
+<v Speaker 1>Let's look at the code for the size function which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:20.470 --> 00:15:21.310
+<v Speaker 1>is down here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:21.310 --> 00:15:26.560
+<v Speaker 1>So it's just taking the difference between this input pointer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:27.070 --> 00:15:30.760
+<v Speaker 1>which is zero and this output pointer which is one.
+
+NOTE CONF {"raw":[100,100,100,100,86,100,100,100,100,100]}
+
+00:15:30.940 --> 00:15:31.270
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:31.270 --> 00:15:32.380
+<v Speaker 1>So that's zero minus one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:32.380 --> 00:15:37.810
+<v Speaker 1>That's minus one modulo the size which is two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:37.990 --> 00:15:40.510
+<v Speaker 1>What is minus one modulo two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:42.980 --> 00:15:44.060
+<v Speaker 1>It's plus one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:44.210 --> 00:15:45.800
+<v Speaker 1>I have a mathematics degree.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:46.010 --> 00:15:47.090
+<v Speaker 1>I know that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:50.360 --> 00:15:52.940
+<v Speaker 1>But is this the modulo operator?
+
+NOTE CONF {"raw":[100,51,100,100,100,100]}
+
+00:15:54.110 --> 00:15:58.850
+<v Speaker 1>No, it's the C remainder operator, which, if this argument
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:58.850 --> 00:16:03.020
+<v Speaker 1>is negative, gives a negative result.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:03.020 --> 00:16:05.030
+<v Speaker 1>And obviously the size of the queue should never be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76,100,100,100]}
+
+00:16:05.030 --> 00:16:05.720
+<v Speaker 1>negative.
+
+NOTE CONF {"raw":[100]}
+
+00:16:06.140 --> 00:16:08.690
+<v Speaker 1>So what I have to do is to make sure
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:08.690 --> 00:16:11.780
+<v Speaker 1>that this expression is never negative.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:12.680 --> 00:16:13.820
+<v Speaker 1>How can I achieve that?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:17.030 --> 00:16:17.660
+<v Speaker 1>There we are.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:18.650 --> 00:16:19.880
+<v Speaker 1>Let's take the absolute value.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:23.030 --> 00:16:23.600
+<v Speaker 1>Whoops.
+
+NOTE CONF {"raw":[100]}
+
+00:16:25.070 --> 00:16:25.790
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:25.790 --> 00:16:29.270
+<v Speaker 1>And now if I recompile the C code again.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100]}
+
+00:16:32.630 --> 00:16:36.650
+<v Speaker 1>And rerun that last test it passes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:37.460 --> 00:16:40.520
+<v Speaker 1>So actually now we're in a situation which is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:41.570 --> 00:16:44.270
+<v Speaker 1>rather like a situation that arises a lot in industry.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,99]}
+
+00:16:44.630 --> 00:16:45.800
+<v Speaker 1>We found a bug.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:45.950 --> 00:16:47.720
+<v Speaker 1>We created a test case.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:47.750 --> 00:16:48.620
+<v Speaker 1>We've just run it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:48.650 --> 00:16:51.770
+<v Speaker 1>That provokes the bug and we fix the code.
+
+NOTE CONF {"raw":[77,100,100,100,100,100,92,100,100]}
+
+00:16:51.770 --> 00:16:56.240
+<v Speaker 1>And now that test passes, all our tests are green.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:56.480 --> 00:16:57.380
+<v Speaker 1>So we're done.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:57.380 --> 00:16:57.950
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[100]}
+
+00:16:59.900 --> 00:17:03.650
+<v Speaker 1>Shall I run some more random tests just to see?
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100,100,100]}
+
+00:17:04.610 --> 00:17:05.060
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[84]}
+
+00:17:05.660 --> 00:17:06.530
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[85]}
+
+00:17:09.199 --> 00:17:09.770
+<v Speaker 1>Darn.
+
+NOTE CONF {"raw":[61]}
+
+00:17:09.770 --> 00:17:10.790
+<v Speaker 1>Not done.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:11.600 --> 00:17:12.470
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:12.620 --> 00:17:13.939
+<v Speaker 1>What happened here?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:16.520 --> 00:17:19.490
+<v Speaker 1>We started off by creating a queue of size two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:19.520 --> 00:17:20.930
+<v Speaker 1>That's really three.
+
+NOTE CONF {"raw":[100,100,52]}
+
+00:17:21.680 --> 00:17:23.120
+<v Speaker 1>This is progress.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:23.810 --> 00:17:25.520
+<v Speaker 1>This is a shrunk example.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:25.670 --> 00:17:28.940
+<v Speaker 1>We create a queue of size two because queues of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:28.940 --> 00:17:30.620
+<v Speaker 1>size one work now.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:31.520 --> 00:17:32.360
+<v Speaker 1>Great.
+
+NOTE CONF {"raw":[100]}
+
+00:17:32.600 --> 00:17:33.920
+<v Speaker 1>And then what happened?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:33.950 --> 00:17:35.720
+<v Speaker 1>We put three things in.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:35.720 --> 00:17:37.790
+<v Speaker 1>So we made that input pointer wrap around.
+
+NOTE CONF {"raw":[100,100,100,100,100,71,98,100]}
+
+00:17:37.820 --> 00:17:39.080
+<v Speaker 1>We took one thing out.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:39.240 --> 00:17:40.560
+<v Speaker 1>How many things are in the queue?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94]}
+
+00:17:42.150 --> 00:17:42.840
+<v Speaker 1>Two.
+
+NOTE CONF {"raw":[100]}
+
+00:17:42.870 --> 00:17:43.680
+<v Speaker 1>What are the size?
+
+NOTE CONF {"raw":[100,95,100,100]}
+
+00:17:43.680 --> 00:17:43.980
+<v Speaker 1>Function?
+
+NOTE CONF {"raw":[95]}
+
+00:17:43.980 --> 00:17:44.460
+<v Speaker 1>Return?
+
+NOTE CONF {"raw":[80]}
+
+00:17:44.880 --> 00:17:45.510
+<v Speaker 1>One.
+
+NOTE CONF {"raw":[100]}
+
+00:17:46.140 --> 00:17:46.860
+<v Speaker 1>Why?
+
+NOTE CONF {"raw":[100]}
+
+00:17:46.890 --> 00:17:53.040
+<v Speaker 1>Because now that C code is computing minus one modulo
+
+NOTE CONF {"raw":[100,100,100,52,100,100,100,100,100,100]}
+
+00:17:53.040 --> 00:17:53.520
+<v Speaker 1>three.
+
+NOTE CONF {"raw":[100]}
+
+00:17:54.120 --> 00:17:55.830
+<v Speaker 1>That is two mathematically.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:56.250 --> 00:17:59.370
+<v Speaker 1>But the absolute value just converts to minus one into
+
+NOTE CONF {"raw":[100,100,100,100,100,100,56,100,100,100]}
+
+00:17:59.370 --> 00:18:00.120
+<v Speaker 1>a plus one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:00.270 --> 00:18:02.820
+<v Speaker 1>So this was the wrong thing to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:03.720 --> 00:18:06.060
+<v Speaker 1>We made a patch that actually just made the problem
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:06.060 --> 00:18:09.510
+<v Speaker 1>worse by disguising the bug in the simplest case that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:09.510 --> 00:18:10.620
+<v Speaker 1>could provoke it before.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:10.920 --> 00:18:12.900
+<v Speaker 1>Now, the right way to fix this is to make
+
+NOTE CONF {"raw":[54,100,100,100,100,100,100,100,100,100]}
+
+00:18:12.900 --> 00:18:16.770
+<v Speaker 1>sure this expression is positive without changing its value modulo
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:16.770 --> 00:18:20.430
+<v Speaker 1>size, and that we can do by just adding on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:22.680 --> 00:18:23.490
+<v Speaker 1>The size again.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:23.520 --> 00:18:27.000
+<v Speaker 1>Okay, so now this is always going to be positive.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:27.540 --> 00:18:30.840
+<v Speaker 1>And it should should be returning the correct result.
+
+NOTE CONF {"raw":[100,100,100,100,100,83,100,100,100]}
+
+00:18:31.110 --> 00:18:35.340
+<v Speaker 1>So let's recompile the C code.
+
+NOTE CONF {"raw":[100,100,100,98,94,100]}
+
+00:18:38.190 --> 00:18:39.450
+<v Speaker 1>Rerun that last test?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:39.450 --> 00:18:40.560
+<v Speaker 1>Yes, we fixed that.
+
+NOTE CONF {"raw":[100,100,99,100]}
+
+00:18:42.810 --> 00:18:44.370
+<v Speaker 1>Run some random tests.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:44.580 --> 00:18:46.680
+<v Speaker 1>Ooh, 100 tests passed.
+
+NOTE CONF {"raw":[70,100,83,100]}
+
+00:18:46.680 --> 00:18:47.190
+<v Speaker 1>Now.
+
+NOTE CONF {"raw":[100]}
+
+00:18:48.330 --> 00:18:49.710
+<v Speaker 1>Are we satisfied?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:51.660 --> 00:18:52.530
+<v Speaker 1>Let's.
+
+NOTE CONF {"raw":[98]}
+
+00:18:53.280 --> 00:18:57.420
+<v Speaker 1>Okay, so at this point, I would normally run tests
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:57.420 --> 00:18:59.520
+<v Speaker 1>for maybe ten minutes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:00.210 --> 00:19:02.310
+<v Speaker 1>Um, let's just run them for 10s.
+
+NOTE CONF {"raw":[100,100,100,100,55,100,100]}
+
+00:19:02.580 --> 00:19:02.850
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:02.850 --> 00:19:05.460
+<v Speaker 1>So now each dot is 100 tests.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100]}
+
+00:19:05.940 --> 00:19:07.050
+<v Speaker 1>Um, whoops.
+
+NOTE CONF {"raw":[100,93]}
+
+00:19:11.340 --> 00:19:12.120
+<v Speaker 1>There we are.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:12.330 --> 00:19:14.370
+<v Speaker 1>4700 tests.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:14.370 --> 00:19:17.130
+<v Speaker 1>Say it works now.
+
+NOTE CONF {"raw":[90,100,100,100]}
+
+00:19:17.130 --> 00:19:17.880
+<v Speaker 1>I'm happy.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:18.300 --> 00:19:20.010
+<v Speaker 1>My code is perfect.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:20.370 --> 00:19:22.260
+<v Speaker 1>Actually, as far as I know, it does work now.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:24.420 --> 00:19:30.540
+<v Speaker 1>Okay, so let us go back to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:34.500 --> 00:19:35.520
+<v Speaker 1>My story.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:37.060 --> 00:19:39.100
+<v Speaker 1>Okay, so what I wanted to show you with that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:39.100 --> 00:19:43.990
+<v Speaker 1>was, um, an example where we write one property.
+
+NOTE CONF {"raw":[98,52,100,100,100,100,100,100,100]}
+
+00:19:44.110 --> 00:19:47.830
+<v Speaker 1>So we wrote one property that said the C code
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:19:47.830 --> 00:19:51.100
+<v Speaker 1>behaves in a way that that matches the state machine
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,100,100,100]}
+
+00:19:51.100 --> 00:19:53.860
+<v Speaker 1>model, and that property can be used to find many
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:53.860 --> 00:19:54.790
+<v Speaker 1>different bugs.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:55.630 --> 00:19:58.120
+<v Speaker 1>And I hope what I showed you when we looked
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,70,100,100]}
+
+00:19:58.120 --> 00:20:00.730
+<v Speaker 1>in each case at a minimal failing example, I hope
+
+NOTE CONF {"raw":[100,100,100,81,96,100,100,100,100,100]}
+
+00:20:00.730 --> 00:20:04.210
+<v Speaker 1>you'll agree with me that seeing those minimal failing tests
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:04.210 --> 00:20:06.490
+<v Speaker 1>makes diagnosing the problems very easy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:08.380 --> 00:20:12.460
+<v Speaker 1>So we think of shrinking as like extracting the signal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:12.460 --> 00:20:14.950
+<v Speaker 1>from the noise of random tests.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:15.610 --> 00:20:18.730
+<v Speaker 1>Random tests contain a lot of noise.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:19.000 --> 00:20:20.590
+<v Speaker 1>That is their purpose.
+
+NOTE CONF {"raw":[100,100,97,100]}
+
+00:20:20.710 --> 00:20:24.640
+<v Speaker 1>That's why they're good at provoking faults, at provoking problems
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,91,100,100]}
+
+00:20:24.640 --> 00:20:26.200
+<v Speaker 1>you wouldn't think of testing for.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:26.920 --> 00:20:28.840
+<v Speaker 1>But it's useless for debugging.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:29.560 --> 00:20:32.860
+<v Speaker 1>But when we shrink a failed random test and we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:32.860 --> 00:20:36.970
+<v Speaker 1>get a signal, then we get a minimal test that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:36.970 --> 00:20:40.120
+<v Speaker 1>is easy to debug and that makes problems easy to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:40.120 --> 00:20:40.690
+<v Speaker 1>find.
+
+NOTE CONF {"raw":[100]}
+
+00:20:42.250 --> 00:20:42.880
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:43.570 --> 00:20:46.750
+<v Speaker 1>Um, the C code in this case was only a
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:20:46.750 --> 00:20:47.590
+<v Speaker 1>few lines.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:48.430 --> 00:20:49.570
+<v Speaker 1>Can we do this for real?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:49.960 --> 00:20:53.470
+<v Speaker 1>Well, let me tell you about one of the larger
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:53.470 --> 00:20:54.940
+<v Speaker 1>projects we've done at the company.
+
+NOTE CONF {"raw":[100,100,100,56,97,100]}
+
+00:20:55.420 --> 00:20:59.530
+<v Speaker 1>Uh, we tested the outer SAR basic software for Volvo
+
+NOTE CONF {"raw":[92,100,100,100,100,36,100,100,100,100]}
+
+00:20:59.530 --> 00:21:00.190
+<v Speaker 1>cars.
+
+NOTE CONF {"raw":[100]}
+
+00:21:01.420 --> 00:21:03.040
+<v Speaker 1>So what is outer SA?
+
+NOTE CONF {"raw":[100,100,99,100,100]}
+
+00:21:03.340 --> 00:21:07.000
+<v Speaker 1>Outer SA is a standard for the software and vehicles.
+
+NOTE CONF {"raw":[98,76,100,100,100,100,100,100,82,100]}
+
+00:21:07.360 --> 00:21:10.600
+<v Speaker 1>And the idea is that if the people who make
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:10.600 --> 00:21:14.500
+<v Speaker 1>components and subsystems for vehicles follow the standard, then when
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:14.500 --> 00:21:18.040
+<v Speaker 1>you plug them together, they'll just work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:19.000 --> 00:21:24.190
+<v Speaker 1>And in this diagram you can see the basic software.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:24.550 --> 00:21:28.270
+<v Speaker 1>Um, so this is software that is supposed to run
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76,100,100,100]}
+
+00:21:28.270 --> 00:21:30.310
+<v Speaker 1>on every processor in a car.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:30.310 --> 00:21:33.490
+<v Speaker 1>And there can be 100 of them nowadays.
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,92]}
+
+00:21:33.940 --> 00:21:38.570
+<v Speaker 1>Um, So if you look at the diagram you recognise
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,64]}
+
+00:21:38.570 --> 00:21:40.430
+<v Speaker 1>on the right hand side you can see the Ethernet
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:40.430 --> 00:21:40.880
+<v Speaker 1>there.
+
+NOTE CONF {"raw":[100]}
+
+00:21:41.180 --> 00:21:42.920
+<v Speaker 1>That is a network.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:42.920 --> 00:21:46.970
+<v Speaker 1>These four vertical columns are protocol stacks.
+
+NOTE CONF {"raw":[100,100,100,100,84,100,100]}
+
+00:21:47.000 --> 00:21:49.400
+<v Speaker 1>The Can bus is one that's very heavily used in
+
+NOTE CONF {"raw":[100,89,89,99,100,68,100,100,100,100]}
+
+00:21:49.400 --> 00:21:49.970
+<v Speaker 1>cars.
+
+NOTE CONF {"raw":[100]}
+
+00:21:49.970 --> 00:21:54.350
+<v Speaker 1>And every coloured box is a module that is described
+
+NOTE CONF {"raw":[100,100,93,100,100,100,100,100,100,100]}
+
+00:21:54.350 --> 00:21:56.450
+<v Speaker 1>by the standard that is supposed to exist.
+
+NOTE CONF {"raw":[100,100,100,45,87,100,100,100]}
+
+00:21:56.840 --> 00:22:01.670
+<v Speaker 1>And these coloured boxes, they're all described by a PDF
+
+NOTE CONF {"raw":[100,100,75,100,87,100,100,100,95,100]}
+
+00:22:01.670 --> 00:22:03.200
+<v Speaker 1>of 1 or 200 pages.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:05.330 --> 00:22:07.730
+<v Speaker 1>So what's the point of this standard?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:08.180 --> 00:22:11.810
+<v Speaker 1>Well, the theory is that car manufacturers should be able
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:22:11.810 --> 00:22:15.050
+<v Speaker 1>to buy code from different providers and just have them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:15.050 --> 00:22:15.620
+<v Speaker 1>work.
+
+NOTE CONF {"raw":[100]}
+
+00:22:17.120 --> 00:22:18.620
+<v Speaker 1>What happens in practice?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:20.240 --> 00:22:23.750
+<v Speaker 1>If you buy all your code from the same provider,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:24.230 --> 00:22:26.120
+<v Speaker 1>it probably will work seamlessly.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:26.840 --> 00:22:29.000
+<v Speaker 1>But if you want to play them off against each
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:29.000 --> 00:22:31.160
+<v Speaker 1>other and get the parts you know at the lowest
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:31.160 --> 00:22:34.520
+<v Speaker 1>price, which Volvo Cars wants to do.
+
+NOTE CONF {"raw":[100,100,100,100,74,100,100]}
+
+00:22:34.970 --> 00:22:38.990
+<v Speaker 1>Well, it turns out that's often not the case.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:38.990 --> 00:22:41.660
+<v Speaker 1>Or what really happens is when you first put a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:41.660 --> 00:22:45.020
+<v Speaker 1>car together, you can't even boot it, let alone drive
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:45.020 --> 00:22:45.440
+<v Speaker 1>it.
+
+NOTE CONF {"raw":[100]}
+
+00:22:47.750 --> 00:22:52.130
+<v Speaker 1>So they hired us to develop QuickCheck tests for the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,81,100,100,100]}
+
+00:22:52.130 --> 00:22:56.090
+<v Speaker 1>vendor's software, the vendor's implementations for basic software to make
+
+NOTE CONF {"raw":[90,100,100,43,100,51,100,100,100,100]}
+
+00:22:56.090 --> 00:22:57.860
+<v Speaker 1>sure they really were following the standard.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:59.030 --> 00:23:02.750
+<v Speaker 1>Um, here's one bug that we found.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:02.750 --> 00:23:06.890
+<v Speaker 1>This was a bug in a canvas stack and on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:06.890 --> 00:23:07.790
+<v Speaker 1>the canvas.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:07.970 --> 00:23:11.330
+<v Speaker 1>Every message has a message identifier, which is also its
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:11.330 --> 00:23:12.170
+<v Speaker 1>priority.
+
+NOTE CONF {"raw":[100]}
+
+00:23:12.650 --> 00:23:15.440
+<v Speaker 1>The smaller the number, the higher the priority.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:23:16.040 --> 00:23:19.400
+<v Speaker 1>So in this test case, what's happening is we're first
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:19.400 --> 00:23:22.190
+<v Speaker 1>of all sending a message with priority one that gets
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100,100,100,100]}
+
+00:23:22.190 --> 00:23:23.120
+<v Speaker 1>sent straight away.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:23.600 --> 00:23:27.020
+<v Speaker 1>And then we call functions to send messages with with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,68,100]}
+
+00:23:27.020 --> 00:23:28.400
+<v Speaker 1>priority two and three.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:23:29.240 --> 00:23:30.530
+<v Speaker 1>But the bus is busy.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:31.250 --> 00:23:33.450
+<v Speaker 1>So those messages cannot be sent yet.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:33.570 --> 00:23:37.050
+<v Speaker 1>So they get queued up in the protocol stack.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:38.070 --> 00:23:41.040
+<v Speaker 1>And then the last step in the test case is
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:23:41.040 --> 00:23:43.680
+<v Speaker 1>a function that is usually called by the software.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:43.680 --> 00:23:45.810
+<v Speaker 1>You know, the hardware bus driver software.
+
+NOTE CONF {"raw":[78,78,100,100,100,100,100]}
+
+00:23:46.200 --> 00:23:52.170
+<v Speaker 1>So it says confirming transmission of message number one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:52.650 --> 00:23:56.040
+<v Speaker 1>So now the stack should select the next message to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:56.040 --> 00:23:57.030
+<v Speaker 1>send on the bus.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:23:57.630 --> 00:23:59.400
+<v Speaker 1>Which message should it send?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:59.970 --> 00:24:01.470
+<v Speaker 1>The one with priority two.
+
+NOTE CONF {"raw":[100,100,100,100,58]}
+
+00:24:02.040 --> 00:24:03.600
+<v Speaker 1>Which message did it send?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:04.290 --> 00:24:05.640
+<v Speaker 1>The one with priority three.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:08.340 --> 00:24:09.210
+<v Speaker 1>How so?
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:10.110 --> 00:24:12.420
+<v Speaker 1>Well, we had the source code in this case.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:12.780 --> 00:24:16.020
+<v Speaker 1>So to explain why this happened, I have to explain
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:16.020 --> 00:24:18.600
+<v Speaker 1>that the Can bus standard is quite old.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:24:18.810 --> 00:24:23.340
+<v Speaker 1>And when it was first defined then 11 bits were
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:23.340 --> 00:24:25.740
+<v Speaker 1>set aside for these can IDs.
+
+NOTE CONF {"raw":[100,100,100,100,52,99]}
+
+00:24:26.850 --> 00:24:30.090
+<v Speaker 1>But that means you could only have 200 different kinds
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:24:30.090 --> 00:24:32.280
+<v Speaker 1>of message in the whole car.
+
+NOTE CONF {"raw":[100,61,100,100,100,100]}
+
+00:24:33.540 --> 00:24:36.120
+<v Speaker 1>It's just not enough for a modern vehicle.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:24:36.660 --> 00:24:39.510
+<v Speaker 1>So there's a new version of the standard that permits
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:39.510 --> 00:24:42.150
+<v Speaker 1>extended canids of 29 bits.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:42.270 --> 00:24:44.280
+<v Speaker 1>You get to get a lot more message types in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:44.280 --> 00:24:48.180
+<v Speaker 1>there, but it all has to be backwards compatible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:48.180 --> 00:24:50.400
+<v Speaker 1>So you can still use a standard canid if you
+
+NOTE CONF {"raw":[100,100,100,100,100,52,100,85,100,100]}
+
+00:24:50.400 --> 00:24:50.940
+<v Speaker 1>like.
+
+NOTE CONF {"raw":[100]}
+
+00:24:51.240 --> 00:24:54.060
+<v Speaker 1>And this particular protocol stack supported both.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:54.540 --> 00:24:58.200
+<v Speaker 1>And it stored the ID in an unsigned 32 bit
+
+NOTE CONF {"raw":[100,87,99,100,81,100,100,100,100,100]}
+
+00:24:58.200 --> 00:24:58.620
+<v Speaker 1>integer.
+
+NOTE CONF {"raw":[100]}
+
+00:24:59.370 --> 00:25:03.330
+<v Speaker 1>But it needs to remember whether it's a standard or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:03.330 --> 00:25:06.630
+<v Speaker 1>an extended canid, because it has to generate packets within
+
+NOTE CONF {"raw":[100,100,72,100,100,100,100,100,100,64]}
+
+00:25:06.630 --> 00:25:09.150
+<v Speaker 1>a different format depending on which.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:09.270 --> 00:25:12.390
+<v Speaker 1>So they use the top bit of this 32 bit
+
+NOTE CONF {"raw":[100,100,43,100,100,100,100,100,100,100]}
+
+00:25:12.390 --> 00:25:16.200
+<v Speaker 1>identifier integer to record whether it was an extended or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:16.200 --> 00:25:17.280
+<v Speaker 1>a standard canid.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:18.750 --> 00:25:20.550
+<v Speaker 1>Of course, no reason you shouldn't do that.
+
+NOTE CONF {"raw":[100,100,86,100,100,100,100,100]}
+
+00:25:21.630 --> 00:25:23.820
+<v Speaker 1>Here's what I didn't tell you about that example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:24.210 --> 00:25:27.570
+<v Speaker 1>The message with priority two had an extended canid.
+
+NOTE CONF {"raw":[100,100,100,100,100,94,94,100,100]}
+
+00:25:28.410 --> 00:25:29.640
+<v Speaker 1>And guess what?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:29.680 --> 00:25:32.320
+<v Speaker 1>When comparing the priorities of messages.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:32.650 --> 00:25:35.470
+<v Speaker 1>If you're going to do this, it's important to mask
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:35.470 --> 00:25:39.100
+<v Speaker 1>off that top bit because it really makes no difference
+
+NOTE CONF {"raw":[100,100,97,97,100,100,100,100,100,100]}
+
+00:25:39.100 --> 00:25:40.120
+<v Speaker 1>to the priority.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:40.120 --> 00:25:42.760
+<v Speaker 1>What kind of ID and message has.
+
+NOTE CONF {"raw":[100,100,100,100,98,80,77]}
+
+00:25:43.120 --> 00:25:45.460
+<v Speaker 1>And the developers had forgotten to do this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:45.550 --> 00:25:49.360
+<v Speaker 1>So that message with priority two that was treated as
+
+NOTE CONF {"raw":[100,100,100,100,100,61,100,100,100,100]}
+
+00:25:49.360 --> 00:25:52.900
+<v Speaker 1>a message with priority two to the 31 plus two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:53.410 --> 00:25:55.270
+<v Speaker 1>No wonder it was sent last.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:57.370 --> 00:26:00.010
+<v Speaker 1>So I really like this example.
+
+NOTE CONF {"raw":[100,100,100,84,100,100]}
+
+00:26:00.490 --> 00:26:03.040
+<v Speaker 1>Um, it shows the power of shrinking.
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100]}
+
+00:26:03.670 --> 00:26:06.190
+<v Speaker 1>So, you know, a much more complicated test was generated
+
+NOTE CONF {"raw":[95,85,85,100,100,100,100,100,100,88]}
+
+00:26:06.190 --> 00:26:09.010
+<v Speaker 1>to begin with that shrank down to these four steps.
+
+NOTE CONF {"raw":[100,100,100,100,86,100,100,100,100,100]}
+
+00:26:09.850 --> 00:26:13.810
+<v Speaker 1>It shows that this message, this method, can find bugs
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:13.810 --> 00:26:16.060
+<v Speaker 1>like forgetting to mask off a bit in a low
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:26:16.060 --> 00:26:19.870
+<v Speaker 1>level C program, and it can generate a small test
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:26:19.870 --> 00:26:22.750
+<v Speaker 1>case that provokes the bug and makes it easy to
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,95,100]}
+
+00:26:22.750 --> 00:26:23.380
+<v Speaker 1>find.
+
+NOTE CONF {"raw":[100]}
+
+00:26:24.940 --> 00:26:27.250
+<v Speaker 1>I also like it because it's important.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:27.760 --> 00:26:30.670
+<v Speaker 1>Everything in the car talks on the canvas, and those
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:26:30.670 --> 00:26:32.860
+<v Speaker 1>priorities are there for a good reason.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:33.910 --> 00:26:34.780
+<v Speaker 1>Here's a tip.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:35.710 --> 00:26:40.630
+<v Speaker 1>Next time you're doing emergency braking, don't adjust the volume
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:40.630 --> 00:26:41.440
+<v Speaker 1>on the radio.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:43.240 --> 00:26:46.360
+<v Speaker 1>The volume messages might take priority over the braking one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:46.360 --> 00:26:47.860
+<v Speaker 1>if they got the priorities wrong.
+
+NOTE CONF {"raw":[100,99,100,100,100,100]}
+
+00:26:49.240 --> 00:26:51.850
+<v Speaker 1>So you know it's a matter of life or death.
+
+NOTE CONF {"raw":[100,100,100,99,100,100,100,100,100,100]}
+
+00:26:51.880 --> 00:26:57.580
+<v Speaker 1>Perhaps we read 3000 pages of PDFs to write this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:57.580 --> 00:26:58.060
+<v Speaker 1>code.
+
+NOTE CONF {"raw":[100]}
+
+00:26:58.360 --> 00:27:02.050
+<v Speaker 1>That turned into about 20,000 lines of QuickCheck code.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,97,100]}
+
+00:27:02.290 --> 00:27:05.650
+<v Speaker 1>We tested a million lines of C code from six
+
+NOTE CONF {"raw":[100,100,100,100,100,100,70,100,100,100]}
+
+00:27:05.650 --> 00:27:10.120
+<v Speaker 1>different suppliers, and we found more than 200 problems.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:27:10.570 --> 00:27:13.870
+<v Speaker 1>More than 100 of them were problems in the standard
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:13.870 --> 00:27:14.680
+<v Speaker 1>itself.
+
+NOTE CONF {"raw":[100]}
+
+00:27:15.370 --> 00:27:18.460
+<v Speaker 1>So, I mean, don't be impressed by something just because
+
+NOTE CONF {"raw":[100,94,94,100,100,100,100,100,100,100]}
+
+00:27:18.460 --> 00:27:19.750
+<v Speaker 1>it's called a standard.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:19.810 --> 00:27:22.630
+<v Speaker 1>If it's a long document that has not been tested,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:22.630 --> 00:27:28.340
+<v Speaker 1>it's likely to contain mistakes and Our code was ten
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:28.340 --> 00:27:32.450
+<v Speaker 1>times shorter than comparable test code when we found anything
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:32.450 --> 00:27:33.320
+<v Speaker 1>similar at all.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:34.520 --> 00:27:39.890
+<v Speaker 1>So I showed you a demo using very small programs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:39.890 --> 00:27:44.180
+<v Speaker 1>You might have wondered, does this method scale to large?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:44.180 --> 00:27:45.680
+<v Speaker 1>You know, large amounts of code?
+
+NOTE CONF {"raw":[92,92,100,100,100,100]}
+
+00:27:47.120 --> 00:27:48.080
+<v Speaker 1>Yes it does.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:51.080 --> 00:27:54.560
+<v Speaker 1>The last story I want to tell you is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:54.560 --> 00:27:59.150
+<v Speaker 1>story about some industrial Erlang code, which starts with a
+
+NOTE CONF {"raw":[100,100,100,100,84,100,100,100,100,91]}
+
+00:27:59.150 --> 00:28:02.450
+<v Speaker 1>message to the Erlang mailing list back in 2007.
+
+NOTE CONF {"raw":[100,100,100,84,100,100,100,100,100]}
+
+00:28:03.320 --> 00:28:06.380
+<v Speaker 1>We know there's a lurking bug somewhere in the debt's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:28:06.380 --> 00:28:07.070
+<v Speaker 1>code.
+
+NOTE CONF {"raw":[100]}
+
+00:28:07.430 --> 00:28:11.210
+<v Speaker 1>We've got bad objects and premature end of file every
+
+NOTE CONF {"raw":[100,100,100,69,100,100,100,100,100,100]}
+
+00:28:11.210 --> 00:28:11.810
+<v Speaker 1>other month.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:11.810 --> 00:28:14.630
+<v Speaker 1>For the last year, we've not been able to track
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:28:14.630 --> 00:28:17.630
+<v Speaker 1>the bug down because the file is repaired automatically next
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:17.630 --> 00:28:18.470
+<v Speaker 1>time it's opened.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:19.790 --> 00:28:25.430
+<v Speaker 1>Okay, so I'm sure you can feel too bad Turnquist
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,69,69,44]}
+
+00:28:25.550 --> 00:28:28.850
+<v Speaker 1>Distress, but we can all feel sorry for him.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:28.970 --> 00:28:32.030
+<v Speaker 1>But you don't know the context of this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:32.060 --> 00:28:34.520
+<v Speaker 1>Oh, maybe you are aware of Klarna nowadays.
+
+NOTE CONF {"raw":[76,100,100,100,100,100,100,100]}
+
+00:28:35.000 --> 00:28:35.360
+<v Speaker 1>Klarna.
+
+NOTE CONF {"raw":[96]}
+
+00:28:35.390 --> 00:28:36.680
+<v Speaker 1>Well known in Scotland too.
+
+NOTE CONF {"raw":[100,100,100,100,94]}
+
+00:28:38.030 --> 00:28:42.290
+<v Speaker 1>So back at this time it was a relatively small
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100,100]}
+
+00:28:42.290 --> 00:28:43.790
+<v Speaker 1>Start-Up company in Sweden.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:46.010 --> 00:28:49.160
+<v Speaker 1>And they provided invoicing services for web shops.
+
+NOTE CONF {"raw":[60,100,100,100,100,100,100,97]}
+
+00:28:49.640 --> 00:28:52.490
+<v Speaker 1>They needed a database to do that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:52.490 --> 00:28:55.010
+<v Speaker 1>And they used the one that came together with Erlang.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:55.430 --> 00:29:02.030
+<v Speaker 1>That's a distributed database that provides database transactions, distribution, replication
+
+NOTE CONF {"raw":[100,100,100,100,57,100,100,100,100,100]}
+
+00:29:02.030 --> 00:29:06.440
+<v Speaker 1>of data, backups, lots of lots of good stuff, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:06.440 --> 00:29:09.410
+<v Speaker 1>it needs a back end to actually store the data
+
+NOTE CONF {"raw":[100,100,100,84,84,100,100,100,100,100]}
+
+00:29:09.410 --> 00:29:10.370
+<v Speaker 1>in files.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:10.580 --> 00:29:12.890
+<v Speaker 1>And that back end is called debts.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94]}
+
+00:29:13.010 --> 00:29:14.750
+<v Speaker 1>It stores tuples.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:14.750 --> 00:29:17.030
+<v Speaker 1>You've studied tuples and Haskell stores the same kind of
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:29:17.030 --> 00:29:19.340
+<v Speaker 1>thing in Erlang in files.
+
+NOTE CONF {"raw":[100,100,100,88,100]}
+
+00:29:19.850 --> 00:29:21.710
+<v Speaker 1>So that's based on top of the file system.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:21.860 --> 00:29:26.270
+<v Speaker 1>And Dex was the component that was crashing every couple
+
+NOTE CONF {"raw":[100,74,100,100,100,100,100,100,100,100]}
+
+00:29:26.270 --> 00:29:26.900
+<v Speaker 1>of months.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:27.560 --> 00:29:31.850
+<v Speaker 1>And when something fails as rarely as that, it's often
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:31.850 --> 00:29:33.380
+<v Speaker 1>because of a race condition.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:34.610 --> 00:29:38.030
+<v Speaker 1>So these tend to lead to programs that work most
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:29:38.030 --> 00:29:38.660
+<v Speaker 1>of the time.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:38.660 --> 00:29:41.270
+<v Speaker 1>But every now and then they fail and they can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:41.270 --> 00:29:42.650
+<v Speaker 1>fail catastrophically.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:42.920 --> 00:29:45.110
+<v Speaker 1>At the time, I was interested in testing for race
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:45.110 --> 00:29:47.510
+<v Speaker 1>conditions, so let me explain how I did it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:49.040 --> 00:29:51.710
+<v Speaker 1>First of all, let's go from the sublime to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:51.710 --> 00:29:52.550
+<v Speaker 1>ridiculous.
+
+NOTE CONF {"raw":[100]}
+
+00:29:52.580 --> 00:29:54.500
+<v Speaker 1>Imagine testing something very simple.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:54.560 --> 00:29:55.610
+<v Speaker 1>Do you recognise this?
+
+NOTE CONF {"raw":[100,100,95,100]}
+
+00:29:56.390 --> 00:29:57.950
+<v Speaker 1>Maybe they don't exist anymore.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:57.980 --> 00:30:00.380
+<v Speaker 1>I don't think they exist anymore in Sweden, but it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:00.380 --> 00:30:03.110
+<v Speaker 1>used to be something that every bakery or deli counter
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:03.110 --> 00:30:03.920
+<v Speaker 1>would have.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:03.950 --> 00:30:05.480
+<v Speaker 1>And people would come along.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:05.510 --> 00:30:08.210
+<v Speaker 1>They would take a ticket from this ticket dispenser, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:08.210 --> 00:30:11.720
+<v Speaker 1>then the person behind the counter would call out the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:11.720 --> 00:30:14.000
+<v Speaker 1>next number and that person would go for service.
+
+NOTE CONF {"raw":[100,100,100,100,100,68,100,100,100]}
+
+00:30:14.840 --> 00:30:17.660
+<v Speaker 1>So suppose we were going to try and implement a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:17.660 --> 00:30:19.310
+<v Speaker 1>ticket dispenser in Erlang.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:20.060 --> 00:30:23.030
+<v Speaker 1>Well, we would have to define a take ticket operation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,66,100,100]}
+
+00:30:23.670 --> 00:30:25.380
+<v Speaker 1>And is that all you need?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:25.920 --> 00:30:27.750
+<v Speaker 1>Well, every now and then the roll of tickets runs
+
+NOTE CONF {"raw":[65,100,100,100,100,100,92,100,100,100]}
+
+00:30:27.750 --> 00:30:28.170
+<v Speaker 1>out, right?
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:28.170 --> 00:30:30.120
+<v Speaker 1>And somebody comes along and puts in a new role.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:30.510 --> 00:30:33.090
+<v Speaker 1>So that's like resetting the ticket dispenser.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:33.090 --> 00:30:34.560
+<v Speaker 1>It'll go back to ticket number one.
+
+NOTE CONF {"raw":[74,100,100,82,100,100,100]}
+
+00:30:34.980 --> 00:30:37.530
+<v Speaker 1>So let's suppose that we just want to implement those
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:37.530 --> 00:30:38.730
+<v Speaker 1>two operations.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:39.570 --> 00:30:41.820
+<v Speaker 1>Here is a unit test.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:41.820 --> 00:30:43.890
+<v Speaker 1>So this is a kind of test that people write
+
+NOTE CONF {"raw":[100,100,100,91,100,100,100,100,100,78]}
+
+00:30:43.890 --> 00:30:46.830
+<v Speaker 1>in the industry for all kinds of software that just
+
+NOTE CONF {"raw":[68,75,100,100,100,100,100,100,100,100]}
+
+00:30:47.310 --> 00:30:50.430
+<v Speaker 1>performs a number of calls and checks that the answers
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:50.430 --> 00:30:51.600
+<v Speaker 1>are as they should be.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:51.930 --> 00:30:54.630
+<v Speaker 1>So what I've written here is a piece of Erlang
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,58]}
+
+00:30:54.630 --> 00:30:57.030
+<v Speaker 1>code that calls a reset.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:57.030 --> 00:30:58.170
+<v Speaker 1>It takes three tickets.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:58.170 --> 00:31:00.960
+<v Speaker 1>It does a reset, it takes another ticket, and it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:00.960 --> 00:31:04.680
+<v Speaker 1>pattern matches the result of each call against a pattern.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:31:04.680 --> 00:31:06.360
+<v Speaker 1>You've learned about patterns in Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,93,100]}
+
+00:31:06.360 --> 00:31:09.930
+<v Speaker 1>They used a little differently in Erlang, but this just
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:31:09.930 --> 00:31:13.230
+<v Speaker 1>matches and thus checks that you know the calls to
+
+NOTE CONF {"raw":[100,100,100,100,100,98,98,100,100,82]}
+
+00:31:13.230 --> 00:31:16.050
+<v Speaker 1>take ticket return one, two, three and one and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:16.050 --> 00:31:19.140
+<v Speaker 1>two calls to reset return a constant called okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:31:21.540 --> 00:31:24.120
+<v Speaker 1>So how can we model that?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:25.050 --> 00:31:26.670
+<v Speaker 1>Well, it's very easy.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:26.670 --> 00:31:29.550
+<v Speaker 1>We'll generate sequences of reset and take operations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:29.760 --> 00:31:32.160
+<v Speaker 1>We can model the state of the dispenser just by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:32.160 --> 00:31:35.280
+<v Speaker 1>the number of the next ticket, or maybe the number
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:35.280 --> 00:31:36.120
+<v Speaker 1>of the previous ticket.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:36.780 --> 00:31:40.290
+<v Speaker 1>And then we can just check the results against the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:40.290 --> 00:31:42.030
+<v Speaker 1>model and make sure that they agree.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:43.200 --> 00:31:44.940
+<v Speaker 1>So that's all very well.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:44.970 --> 00:31:45.510
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:31:45.510 --> 00:31:48.060
+<v Speaker 1>If those operations are performed in sequence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:48.210 --> 00:31:50.730
+<v Speaker 1>But what if some of them are performed in parallel?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:50.940 --> 00:31:52.740
+<v Speaker 1>So what if two customers come along?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:52.980 --> 00:31:55.770
+<v Speaker 1>So first of all, somebody resets the ticket dispenser and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:55.770 --> 00:31:58.230
+<v Speaker 1>then two customers come along and one of them takes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:58.230 --> 00:31:59.100
+<v Speaker 1>two tickets.
+
+NOTE CONF {"raw":[100,100]}
+
+00:32:00.420 --> 00:32:02.460
+<v Speaker 1>For some reason, I mean, why not?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:02.880 --> 00:32:05.730
+<v Speaker 1>And the other one takes one ticket, but they're both
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:05.730 --> 00:32:07.200
+<v Speaker 1>trying to do it at the same time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:07.710 --> 00:32:12.360
+<v Speaker 1>Right now, the whole purpose of a ticket dispenser is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:12.360 --> 00:32:15.810
+<v Speaker 1>to regulate the flow of many customers so that two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,71,100]}
+
+00:32:15.810 --> 00:32:17.940
+<v Speaker 1>customers should try and use it at the same time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:18.390 --> 00:32:19.950
+<v Speaker 1>It's not a strange situation.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:20.190 --> 00:32:23.800
+<v Speaker 1>But now what are what are the expected results here?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:24.790 --> 00:32:27.850
+<v Speaker 1>Well, we might get okay from the reset.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:27.850 --> 00:32:30.580
+<v Speaker 1>And then the left customer might get tickets one and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:30.580 --> 00:32:31.960
+<v Speaker 1>two and the right one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:31.960 --> 00:32:32.770
+<v Speaker 1>Ticket three.
+
+NOTE CONF {"raw":[100,100]}
+
+00:32:32.980 --> 00:32:34.720
+<v Speaker 1>But that's not the only thing that can happen, is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:34.720 --> 00:32:35.140
+<v Speaker 1>it?
+
+NOTE CONF {"raw":[100]}
+
+00:32:36.460 --> 00:32:38.740
+<v Speaker 1>It might be that the customer on the right gets
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:38.740 --> 00:32:41.770
+<v Speaker 1>ticket number two, and the first one gets tickets one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:32:41.770 --> 00:32:42.400
+<v Speaker 1>and three.
+
+NOTE CONF {"raw":[98,100]}
+
+00:32:42.400 --> 00:32:44.890
+<v Speaker 1>In that case, the customer on the right kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:32:44.890 --> 00:32:46.270
+<v Speaker 1>leapt in in between.
+
+NOTE CONF {"raw":[57,100,100,100]}
+
+00:32:46.270 --> 00:32:48.490
+<v Speaker 1>It's a bit rude, but it's not wrong.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:50.530 --> 00:32:55.120
+<v Speaker 1>But this should never happen where both customers get ticket
+
+NOTE CONF {"raw":[100,100,100,100,100,78,100,100,100,100]}
+
+00:32:55.120 --> 00:32:55.750
+<v Speaker 1>number one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:32:58.000 --> 00:33:01.840
+<v Speaker 1>So when we test this code, we want to run
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:01.840 --> 00:33:06.760
+<v Speaker 1>parallel programs and we want to accept the first two
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:33:06.760 --> 00:33:09.430
+<v Speaker 1>outcomes but not the third one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:10.300 --> 00:33:13.540
+<v Speaker 1>So this is a bit awkward to write tests for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:13.540 --> 00:33:15.820
+<v Speaker 1>because there are three possible correct outcomes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:33:15.970 --> 00:33:19.180
+<v Speaker 1>And this is only a small example, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:19.180 --> 00:33:21.520
+<v Speaker 1>Here's a larger parallel test.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:22.150 --> 00:33:25.090
+<v Speaker 1>How many correct outcomes are there of this test?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:33:26.680 --> 00:33:28.030
+<v Speaker 1>It turns out there are 30.
+
+NOTE CONF {"raw":[100,100,100,100,100,84]}
+
+00:33:28.570 --> 00:33:31.990
+<v Speaker 1>And that means that the conventional approach to testing, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:31.990 --> 00:33:35.140
+<v Speaker 1>is to write down what results you expect.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:35.860 --> 00:33:39.100
+<v Speaker 1>It just doesn't scale to running this kind of test.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:39.130 --> 00:33:41.680
+<v Speaker 1>You can't do it with a conventional approach.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:43.180 --> 00:33:44.710
+<v Speaker 1>Can we do it with QuickCheck?
+
+NOTE CONF {"raw":[100,100,100,100,100,97]}
+
+00:33:44.740 --> 00:33:47.560
+<v Speaker 1>Well, the question is, can we write code that will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:47.560 --> 00:33:51.310
+<v Speaker 1>recognise a correct collection of outputs?
+
+NOTE CONF {"raw":[62,100,100,100,100,100]}
+
+00:33:52.300 --> 00:33:54.880
+<v Speaker 1>And the way that we do that is just to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:54.880 --> 00:33:59.530
+<v Speaker 1>search through all possible ways of ordering those calls.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:33:59.950 --> 00:34:04.360
+<v Speaker 1>So here in red we have an observed output.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:04.720 --> 00:34:08.020
+<v Speaker 1>And here we have a hypothesised sequence in which we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:08.020 --> 00:34:12.399
+<v Speaker 1>might have done those calls which explains the output that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:12.399 --> 00:34:13.030
+<v Speaker 1>we see.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:13.270 --> 00:34:13.510
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[68]}
+
+00:34:13.510 --> 00:34:17.139
+<v Speaker 1>And we explain it by looking at what the model
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:17.139 --> 00:34:18.520
+<v Speaker 1>that we have says.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:19.250 --> 00:34:20.000
+<v Speaker 1>And.
+
+NOTE CONF {"raw":[100]}
+
+00:34:22.639 --> 00:34:25.700
+<v Speaker 1>So by doing that, we might have to search through
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,55]}
+
+00:34:25.700 --> 00:34:27.980
+<v Speaker 1>a large number of possible orders.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:27.980 --> 00:34:30.200
+<v Speaker 1>But if we can find an order that explains what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:30.200 --> 00:34:33.710
+<v Speaker 1>we see, we say, yes, the test passed.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:34.310 --> 00:34:36.860
+<v Speaker 1>If we can't, it must have failed.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:39.710 --> 00:34:43.399
+<v Speaker 1>So when I run tests, I have an implementation of
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:34:43.399 --> 00:34:43.820
+<v Speaker 1>this stuff.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:43.820 --> 00:34:47.690
+<v Speaker 1>I'm not going to demo it now, but when I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:47.690 --> 00:34:48.980
+<v Speaker 1>run tests, they fail.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:49.250 --> 00:34:52.040
+<v Speaker 1>And QuickCheck produces a little example like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:52.070 --> 00:34:53.870
+<v Speaker 1>It says if we run two calls to take a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,75,100,100,52]}
+
+00:34:53.870 --> 00:34:57.590
+<v Speaker 1>ticket in parallel, they can both return ticket number one.
+
+NOTE CONF {"raw":[94,90,100,100,100,100,100,100,100,100]}
+
+00:34:57.590 --> 00:35:02.420
+<v Speaker 1>And there's no possible interleaving of these two calls that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:02.420 --> 00:35:04.280
+<v Speaker 1>can explain this result.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:05.090 --> 00:35:09.140
+<v Speaker 1>Um, this was the implementation I wrote for Take Ticket.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,96,100]}
+
+00:35:09.260 --> 00:35:09.890
+<v Speaker 1>It's an Erlang.
+
+NOTE CONF {"raw":[100,100,93]}
+
+00:35:09.890 --> 00:35:13.040
+<v Speaker 1>It reads from a global variable the value n, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,57,100,100,100]}
+
+00:35:13.040 --> 00:35:15.020
+<v Speaker 1>then it writes n plus one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:15.350 --> 00:35:19.160
+<v Speaker 1>And when you do that twice in parallel, it's possible
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:19.160 --> 00:35:21.890
+<v Speaker 1>that both customers will do the read.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:22.220 --> 00:35:23.660
+<v Speaker 1>Both of them will compute.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:23.660 --> 00:35:24.500
+<v Speaker 1>They get the same value.
+
+NOTE CONF {"raw":[99,100,73,100,100]}
+
+00:35:24.500 --> 00:35:27.980
+<v Speaker 1>Of course, they'll both compute the same ticket to return,
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:35:27.980 --> 00:35:30.920
+<v Speaker 1>and then they'll both write one back into the global
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:30.920 --> 00:35:31.610
+<v Speaker 1>variable.
+
+NOTE CONF {"raw":[100]}
+
+00:35:32.300 --> 00:35:34.100
+<v Speaker 1>Um, it's a classic race condition.
+
+NOTE CONF {"raw":[85,100,100,100,98,100]}
+
+00:35:34.370 --> 00:35:39.620
+<v Speaker 1>And the point is not that this is a very
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:39.620 --> 00:35:40.760
+<v Speaker 1>tricky race condition.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:40.760 --> 00:35:44.090
+<v Speaker 1>It's a very classic one, very well known one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:44.120 --> 00:35:46.250
+<v Speaker 1>The point is that we can find it very easily.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:47.030 --> 00:35:51.260
+<v Speaker 1>So let's talk about debts, debt, stores, data.
+
+NOTE CONF {"raw":[100,100,100,100,88,72,100,100]}
+
+00:35:52.130 --> 00:35:53.720
+<v Speaker 1>Uh, it stores tuples in a file.
+
+NOTE CONF {"raw":[79,100,100,100,95,80,100]}
+
+00:35:53.720 --> 00:35:54.950
+<v Speaker 1>It stores many tuples.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:55.490 --> 00:35:57.830
+<v Speaker 1>Um, the tuples have curly brackets around them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:57.830 --> 00:36:02.510
+<v Speaker 1>In Erlang, unlike Haskell, which has round brackets, the first
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:02.510 --> 00:36:04.400
+<v Speaker 1>element of the tuple is the key.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:04.850 --> 00:36:08.000
+<v Speaker 1>And there are a bunch of operations that one can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,78]}
+
+00:36:08.000 --> 00:36:08.600
+<v Speaker 1>perform.
+
+NOTE CONF {"raw":[100]}
+
+00:36:08.600 --> 00:36:12.650
+<v Speaker 1>One can insert a list of tuples into a table.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:12.650 --> 00:36:14.990
+<v Speaker 1>One can delete a key from a table, which will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,81,100]}
+
+00:36:14.990 --> 00:36:16.800
+<v Speaker 1>delete all the tuples that have that key.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:17.490 --> 00:36:19.860
+<v Speaker 1>Um, insert new is like insert.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:20.040 --> 00:36:23.760
+<v Speaker 1>Except that if any of the keys is already in
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:36:23.760 --> 00:36:25.530
+<v Speaker 1>the table, then it's a no op.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,96]}
+
+00:36:25.530 --> 00:36:27.300
+<v Speaker 1>And there are other operations.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:27.300 --> 00:36:31.230
+<v Speaker 1>Basically, if you've used a tuple store ever, there is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:31.230 --> 00:36:32.160
+<v Speaker 1>nothing surprising.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:33.780 --> 00:36:36.270
+<v Speaker 1>There's just a bunch of operations and they are really
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:36.270 --> 00:36:38.430
+<v Speaker 1>easy to model, right?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:38.430 --> 00:36:40.320
+<v Speaker 1>To model them and to predict how the code should
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:40.320 --> 00:36:40.980
+<v Speaker 1>behave.
+
+NOTE CONF {"raw":[100]}
+
+00:36:41.010 --> 00:36:43.740
+<v Speaker 1>We just use a list of tuples to keep track
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:43.740 --> 00:36:45.240
+<v Speaker 1>of what should be in the file.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:46.500 --> 00:36:49.080
+<v Speaker 1>So in this case, I wrote a quick check specification
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,94,94,100]}
+
+00:36:49.080 --> 00:36:51.870
+<v Speaker 1>that was less than 100 lines of code of the
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100,100,100,100]}
+
+00:36:51.870 --> 00:36:54.930
+<v Speaker 1>core of the the database.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:55.170 --> 00:36:58.200
+<v Speaker 1>And that's pretty good because the actual code itself was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:58.200 --> 00:37:01.740
+<v Speaker 1>more than 6000 lines spread across four different modules.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:01.860 --> 00:37:06.480
+<v Speaker 1>It was supporting hash tables on the disk, multiple versions
+
+NOTE CONF {"raw":[79,79,100,100,100,100,100,100,100,100]}
+
+00:37:06.480 --> 00:37:08.130
+<v Speaker 1>of the format, you name it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:08.130 --> 00:37:10.950
+<v Speaker 1>There are reasons why there was so much code, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:10.950 --> 00:37:14.280
+<v Speaker 1>the core of its behaviour was quite simple, and I
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100,100,100,100]}
+
+00:37:14.280 --> 00:37:16.440
+<v Speaker 1>started running parallel tests.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:18.360 --> 00:37:19.470
+<v Speaker 1>They failed immediately.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:20.130 --> 00:37:20.940
+<v Speaker 1>Look at this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:21.390 --> 00:37:22.470
+<v Speaker 1>So what's happening here?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:22.500 --> 00:37:25.080
+<v Speaker 1>First of all, we have a prefix, which we do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:25.080 --> 00:37:25.740
+<v Speaker 1>first.
+
+NOTE CONF {"raw":[100]}
+
+00:37:26.340 --> 00:37:29.100
+<v Speaker 1>So we open the file and that creates a table.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:30.030 --> 00:37:33.390
+<v Speaker 1>And then in parallel we insert an empty list of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:33.390 --> 00:37:34.350
+<v Speaker 1>tuples into the table.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:34.350 --> 00:37:36.750
+<v Speaker 1>That's a no op that returned okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:37:37.020 --> 00:37:39.600
+<v Speaker 1>And then we use insert new to insert an empty
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:39.840 --> 00:37:44.010
+<v Speaker 1>list of tuples into the table that also returns okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:37:44.400 --> 00:37:47.070
+<v Speaker 1>Now QuickCheck says there's no possible interleaving of these two.
+
+NOTE CONF {"raw":[65,100,100,89,100,100,100,100,100,100]}
+
+00:37:47.730 --> 00:37:48.780
+<v Speaker 1>But they were both okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:48.780 --> 00:37:49.290
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:37:49.890 --> 00:37:50.970
+<v Speaker 1>So what's the problem?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:52.710 --> 00:37:53.730
+<v Speaker 1>Here's a tip.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:54.420 --> 00:37:56.250
+<v Speaker 1>Sometimes there's no alternative.
+
+NOTE CONF {"raw":[100,98,100,100]}
+
+00:37:56.550 --> 00:37:58.680
+<v Speaker 1>You just have to read the documentation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:00.360 --> 00:38:02.220
+<v Speaker 1>Here's what it says about insert new.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:03.690 --> 00:38:05.100
+<v Speaker 1>Look at the result type.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:05.700 --> 00:38:07.080
+<v Speaker 1>It's supposed to be a boolean.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:07.260 --> 00:38:09.150
+<v Speaker 1>You studied buildings in Haskell, right?
+
+NOTE CONF {"raw":[95,100,97,100,100,100]}
+
+00:38:09.810 --> 00:38:11.280
+<v Speaker 1>They're either true or false.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:11.670 --> 00:38:12.600
+<v Speaker 1>Same in Erlang.
+
+NOTE CONF {"raw":[58,99,100]}
+
+00:38:12.750 --> 00:38:14.280
+<v Speaker 1>They're either true or false.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:14.470 --> 00:38:18.190
+<v Speaker 1>And I had previously run tens of thousands of sequential
+
+NOTE CONF {"raw":[100,100,86,100,100,100,100,100,100,100]}
+
+00:38:18.190 --> 00:38:21.460
+<v Speaker 1>tests of this code and insert new had returned.
+
+NOTE CONF {"raw":[100,80,100,100,100,100,100,100,100]}
+
+00:38:21.460 --> 00:38:22.930
+<v Speaker 1>True or false every time.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:23.530 --> 00:38:26.590
+<v Speaker 1>Now I suddenly run a parallel test and it returns.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:26.590 --> 00:38:27.100
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[97]}
+
+00:38:28.510 --> 00:38:29.770
+<v Speaker 1>Something's wrong.
+
+NOTE CONF {"raw":[93,100]}
+
+00:38:31.390 --> 00:38:32.890
+<v Speaker 1>Well, I went on.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:32.890 --> 00:38:36.850
+<v Speaker 1>I ran some more tests and got another one.
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100]}
+
+00:38:36.880 --> 00:38:37.690
+<v Speaker 1>Here it is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:38.470 --> 00:38:40.930
+<v Speaker 1>So here, first we open the file and then we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:40.930 --> 00:38:42.160
+<v Speaker 1>do two things in parallel.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:42.160 --> 00:38:45.250
+<v Speaker 1>We insert the tuple zero zero into the table, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:45.250 --> 00:38:48.100
+<v Speaker 1>we use insert new to try and insert zero zero
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:48.100 --> 00:38:48.940
+<v Speaker 1>into the table.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:48.940 --> 00:38:50.440
+<v Speaker 1>And that timed out.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:51.160 --> 00:38:53.590
+<v Speaker 1>And at the time I was doing this I had
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,85,85]}
+
+00:38:53.590 --> 00:38:55.660
+<v Speaker 1>only recently written the test code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:55.660 --> 00:38:58.270
+<v Speaker 1>So I wondered, oh, is my code buggy or is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:58.270 --> 00:38:59.080
+<v Speaker 1>the bug in Dats?
+
+NOTE CONF {"raw":[100,100,100,90]}
+
+00:38:59.080 --> 00:39:02.680
+<v Speaker 1>How will I know that I noticed this message.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:07.030 --> 00:39:09.850
+<v Speaker 1>It looks as though the bug was in debt and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,71,100]}
+
+00:39:09.850 --> 00:39:10.750
+<v Speaker 1>sure enough it was.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:12.040 --> 00:39:15.370
+<v Speaker 1>So at this point I decided insert new just doesn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:15.370 --> 00:39:15.910
+<v Speaker 1>work.
+
+NOTE CONF {"raw":[100]}
+
+00:39:16.060 --> 00:39:18.880
+<v Speaker 1>Let's leave it out of our generated tests.
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100]}
+
+00:39:18.880 --> 00:39:20.920
+<v Speaker 1>And I started generating tests so the rest of the
+
+NOTE CONF {"raw":[80,100,100,100,98,99,100,100,100,100]}
+
+00:39:20.920 --> 00:39:21.490
+<v Speaker 1>code.
+
+NOTE CONF {"raw":[100]}
+
+00:39:22.390 --> 00:39:23.740
+<v Speaker 1>Here's the third bug I found.
+
+NOTE CONF {"raw":[92,100,100,100,94,100]}
+
+00:39:24.010 --> 00:39:27.010
+<v Speaker 1>If you open a file first and then you do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:27.010 --> 00:39:30.520
+<v Speaker 1>two things in parallel, you reopen the file and in
+
+NOTE CONF {"raw":[100,100,100,100,100,93,100,100,100,58]}
+
+00:39:30.520 --> 00:39:33.970
+<v Speaker 1>the other hand and the other process, you insert zero
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:33.970 --> 00:39:35.170
+<v Speaker 1>zero into the table.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:35.200 --> 00:39:35.440
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[83]}
+
+00:39:35.440 --> 00:39:36.400
+<v Speaker 1>And that works.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:37.510 --> 00:39:40.510
+<v Speaker 1>Then you ask for the entire contents of the table.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:40.510 --> 00:39:41.560
+<v Speaker 1>What should be in there?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:43.090 --> 00:39:44.530
+<v Speaker 1>I just put in zero zero.
+
+NOTE CONF {"raw":[68,100,100,100,100,100]}
+
+00:39:44.530 --> 00:39:44.980
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:39:45.670 --> 00:39:47.170
+<v Speaker 1>So I should get zero zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:47.170 --> 00:39:48.310
+<v Speaker 1>What did I get back?
+
+NOTE CONF {"raw":[100,98,100,100,100]}
+
+00:39:48.850 --> 00:39:49.750
+<v Speaker 1>The empty list.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:49.930 --> 00:39:50.860
+<v Speaker 1>Nothing.
+
+NOTE CONF {"raw":[100]}
+
+00:39:50.860 --> 00:39:52.390
+<v Speaker 1>No possible interleaving.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:53.920 --> 00:39:56.860
+<v Speaker 1>Okay, so you might think this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:56.860 --> 00:40:00.610
+<v Speaker 1>This test looks a little suspicious because I'm re-opening the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,52,100]}
+
+00:40:00.610 --> 00:40:02.560
+<v Speaker 1>file in a parallel process.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:02.770 --> 00:40:06.760
+<v Speaker 1>I should explain Erlang is a parallel programming language, is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:06.760 --> 00:40:08.710
+<v Speaker 1>designed for highly concurrent systems.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:08.710 --> 00:40:11.200
+<v Speaker 1>We expect there might be thousands of processes using the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,76,100,98]}
+
+00:40:11.200 --> 00:40:14.090
+<v Speaker 1>database at the same time, all of them will need
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:14.090 --> 00:40:17.180
+<v Speaker 1>to make sure it's open, so it's perfectly okay to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:17.180 --> 00:40:20.750
+<v Speaker 1>call open file in a parallel process while the file
+
+NOTE CONF {"raw":[100,100,100,100,34,100,100,100,100,100]}
+
+00:40:20.750 --> 00:40:21.590
+<v Speaker 1>is already open.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:21.980 --> 00:40:24.380
+<v Speaker 1>It should work, but it doesn't.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:26.090 --> 00:40:29.180
+<v Speaker 1>So I found these bugs and I was very pleased
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:29.180 --> 00:40:29.690
+<v Speaker 1>with myself.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:29.690 --> 00:40:32.720
+<v Speaker 1>I sent them off to Ericsson, where there was a
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:40:32.720 --> 00:40:35.060
+<v Speaker 1>man who was working on the code and maintaining it,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,82,100,100]}
+
+00:40:35.300 --> 00:40:37.640
+<v Speaker 1>and he said, thank you very much, John.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:38.810 --> 00:40:42.710
+<v Speaker 1>But they're not the bugs that were behind the message
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:40:42.710 --> 00:40:45.800
+<v Speaker 1>to the mailing list because the symptoms are different.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:45.800 --> 00:40:47.900
+<v Speaker 1>So I said, oh, that's pretty.
+
+NOTE CONF {"raw":[100,100,87,100,100,80]}
+
+00:40:48.410 --> 00:40:49.850
+<v Speaker 1>What are the symptoms?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:50.060 --> 00:40:53.270
+<v Speaker 1>And he said, well, the problem is that the file
+
+NOTE CONF {"raw":[62,99,100,100,100,100,100,100,100,100]}
+
+00:40:53.270 --> 00:40:54.350
+<v Speaker 1>is being corrupted.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:55.640 --> 00:40:58.670
+<v Speaker 1>So I asked him, how can I find out whether
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:58.670 --> 00:40:59.810
+<v Speaker 1>the file is corrupt?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:00.080 --> 00:41:03.050
+<v Speaker 1>And he sent me one line of code that could
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:03.050 --> 00:41:05.300
+<v Speaker 1>check to see whether the file was corrupt.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:05.300 --> 00:41:08.660
+<v Speaker 1>So I took my tests, and I just added that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:08.660 --> 00:41:11.720
+<v Speaker 1>line to the test so that the test said, well,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:11.720 --> 00:41:13.130
+<v Speaker 1>we run a parallel test.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:13.160 --> 00:41:16.010
+<v Speaker 1>The results should be explainable the way that we talked
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:16.010 --> 00:41:18.920
+<v Speaker 1>about, and the file should not be corrupt.
+
+NOTE CONF {"raw":[100,100,100,64,100,100,100,100]}
+
+00:41:19.520 --> 00:41:21.200
+<v Speaker 1>I started running tests.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:22.130 --> 00:41:26.210
+<v Speaker 1>Ten minutes later, I found this bug.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:26.780 --> 00:41:27.560
+<v Speaker 1>Look at this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:27.590 --> 00:41:28.490
+<v Speaker 1>What's it doing?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:28.520 --> 00:41:32.420
+<v Speaker 1>It's opening the file, closing it, opening it again, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:32.420 --> 00:41:34.250
+<v Speaker 1>then doing three things in parallel.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:34.430 --> 00:41:36.050
+<v Speaker 1>It's inserting.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:37.730 --> 00:41:38.600
+<v Speaker 1>Uh oh.
+
+NOTE CONF {"raw":[98,97]}
+
+00:41:38.600 --> 00:41:38.810
+<v Speaker 1>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:41:38.810 --> 00:41:40.430
+<v Speaker 1>It's looking up the key zero in the table.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,56,100,100]}
+
+00:41:40.430 --> 00:41:41.120
+<v Speaker 1>It finds nothing.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:41.120 --> 00:41:41.750
+<v Speaker 1>That's okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:42.410 --> 00:41:44.930
+<v Speaker 1>And then it's making two calls to insert to insert
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:44.930 --> 00:41:47.000
+<v Speaker 1>a tuple zero zero into the table.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:47.990 --> 00:41:51.590
+<v Speaker 1>And both those calls succeeded and the overall result was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:51.590 --> 00:41:54.890
+<v Speaker 1>okay in that all the all the return values are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:54.890 --> 00:41:56.930
+<v Speaker 1>consistent with the model.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:56.930 --> 00:42:00.440
+<v Speaker 1>But when I checked for corruption what did I get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:00.440 --> 00:42:01.970
+<v Speaker 1>but premature end of the file.
+
+NOTE CONF {"raw":[100,100,100,100,52,100]}
+
+00:42:03.530 --> 00:42:06.710
+<v Speaker 1>So this corrupted the database.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:06.740 --> 00:42:07.400
+<v Speaker 1>Now what?
+
+NOTE CONF {"raw":[100,73]}
+
+00:42:07.400 --> 00:42:08.780
+<v Speaker 1>I love this example as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:08.780 --> 00:42:11.280
+<v Speaker 1>This was produced by shrinking a larger example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:11.550 --> 00:42:14.430
+<v Speaker 1>When I looked at it, I thought, open, close, open.
+
+NOTE CONF {"raw":[100,100,100,100,94,100,100,100,100,100]}
+
+00:42:14.580 --> 00:42:17.550
+<v Speaker 1>Come on, that can't possibly be necessary.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:18.840 --> 00:42:22.410
+<v Speaker 1>So I manually simplified the test to just do an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:22.410 --> 00:42:26.970
+<v Speaker 1>open there, and I ran that simplified test tens of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:26.970 --> 00:42:28.110
+<v Speaker 1>thousands of times.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:28.230 --> 00:42:29.250
+<v Speaker 1>And guess what?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:30.000 --> 00:42:32.400
+<v Speaker 1>It passed every single time.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:33.060 --> 00:42:35.910
+<v Speaker 1>Open close open is necessary.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:36.840 --> 00:42:37.680
+<v Speaker 1>Why?
+
+NOTE CONF {"raw":[100]}
+
+00:42:38.490 --> 00:42:41.610
+<v Speaker 1>Because when we start the test, the file does not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:41.610 --> 00:42:42.270
+<v Speaker 1>exist.
+
+NOTE CONF {"raw":[100]}
+
+00:42:42.390 --> 00:42:45.960
+<v Speaker 1>That first open creates the file, then we close it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:45.960 --> 00:42:49.110
+<v Speaker 1>Then we open an existing file that leads to a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:49.110 --> 00:42:51.150
+<v Speaker 1>very slightly different state.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:51.150 --> 00:42:55.290
+<v Speaker 1>And that's slightly different state is essential to making this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:55.290 --> 00:42:56.010
+<v Speaker 1>bug possible.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:57.450 --> 00:43:00.270
+<v Speaker 1>So I thought, okay, that's great, I turned it off.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,78,100,100]}
+
+00:43:00.270 --> 00:43:01.320
+<v Speaker 1>I got the code fixed.
+
+NOTE CONF {"raw":[88,100,100,100,100]}
+
+00:43:01.620 --> 00:43:04.320
+<v Speaker 1>I was giving a talk at a developer conference shortly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:04.320 --> 00:43:07.170
+<v Speaker 1>afterwards, and what I was going to talk about, it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:43:07.170 --> 00:43:09.000
+<v Speaker 1>was nowhere near as much fun as this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:09.420 --> 00:43:10.980
+<v Speaker 1>So I thought, I know.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:11.100 --> 00:43:15.450
+<v Speaker 1>I'll just make these slides and I'll spend half the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:43:15.450 --> 00:43:17.160
+<v Speaker 1>talk on the original topic, and then I'll talk about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:17.160 --> 00:43:17.760
+<v Speaker 1>this stuff.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:19.200 --> 00:43:20.160
+<v Speaker 1>So I did that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:20.160 --> 00:43:22.950
+<v Speaker 1>But of course I hadn't kept the QuickCheck output, so
+
+NOTE CONF {"raw":[100,100,100,100,87,100,100,67,100,100]}
+
+00:43:22.950 --> 00:43:24.570
+<v Speaker 1>I had to rerun the tests.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:25.140 --> 00:43:27.450
+<v Speaker 1>And remember I said this one took ten minutes to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:27.450 --> 00:43:31.230
+<v Speaker 1>find as I was running the test to find this,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:43:31.470 --> 00:43:32.790
+<v Speaker 1>what did I find?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:33.720 --> 00:43:34.680
+<v Speaker 1>But this one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:35.760 --> 00:43:37.320
+<v Speaker 1>Okay, so what are we doing?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:37.350 --> 00:43:40.380
+<v Speaker 1>We open a file, we put a tuple into it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:40.380 --> 00:43:42.900
+<v Speaker 1>with a key one, and then we do two things
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:42.900 --> 00:43:43.680
+<v Speaker 1>in parallel.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:43.710 --> 00:43:45.540
+<v Speaker 1>One of them is re-opening the file.
+
+NOTE CONF {"raw":[100,100,100,100,54,100,100]}
+
+00:43:45.540 --> 00:43:47.460
+<v Speaker 1>Remember we know that's a little dangerous.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:47.940 --> 00:43:50.310
+<v Speaker 1>And the other one is looking up zero which is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100,100]}
+
+00:43:50.310 --> 00:43:52.770
+<v Speaker 1>not there, and deleting the one which is there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:53.340 --> 00:43:56.370
+<v Speaker 1>Everything all the results were okay, but when I checked
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:56.370 --> 00:43:57.180
+<v Speaker 1>for corruption.
+
+NOTE CONF {"raw":[90,100]}
+
+00:43:58.260 --> 00:43:59.280
+<v Speaker 1>Bad object.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:02.730 --> 00:44:03.870
+<v Speaker 1>Here's the message again.
+
+NOTE CONF {"raw":[98,100,100,100]}
+
+00:44:03.960 --> 00:44:06.810
+<v Speaker 1>We know there's a lurking bug somewhere in the code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:06.810 --> 00:44:09.670
+<v Speaker 1>We've got bad objects and premature end of file.
+
+NOTE CONF {"raw":[100,100,100,87,100,100,73,48,98]}
+
+00:44:09.700 --> 00:44:10.630
+<v Speaker 1>Every other month.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:10.630 --> 00:44:15.280
+<v Speaker 1>Last year, by the time I did this work, those
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:15.280 --> 00:44:18.130
+<v Speaker 1>bugs were actually kicking in once a week.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:44:18.220 --> 00:44:20.950
+<v Speaker 1>And they were bringing down the main server at Klarna,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:21.280 --> 00:44:23.290
+<v Speaker 1>and it took several hours to bring it back up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:23.290 --> 00:44:25.090
+<v Speaker 1>again every week.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:27.370 --> 00:44:30.700
+<v Speaker 1>But in this case, when I reported these bugs, along
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:30.700 --> 00:44:33.070
+<v Speaker 1>with these simple cases that provoke them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:33.580 --> 00:44:35.470
+<v Speaker 1>The guy working with the code was able to fix
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:35.470 --> 00:44:38.470
+<v Speaker 1>them each time within a day.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:40.390 --> 00:44:42.970
+<v Speaker 1>Before I did this work, of course, I was not
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:44:42.970 --> 00:44:46.180
+<v Speaker 1>the first person to look for this bug, and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:46.180 --> 00:44:50.260
+<v Speaker 1>best hypothesis that people had was, well, it seems to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:50.260 --> 00:44:53.050
+<v Speaker 1>happen when the file gets to around one gigabyte.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:53.290 --> 00:44:55.780
+<v Speaker 1>Maybe it's something to do with rehashing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:56.680 --> 00:44:59.080
+<v Speaker 1>I know the guy working with the code had spent
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:59.080 --> 00:45:01.330
+<v Speaker 1>more than six weeks at Klarna trying to track the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:01.330 --> 00:45:02.020
+<v Speaker 1>bug down.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:04.000 --> 00:45:07.510
+<v Speaker 1>Now we know that to provoke the bugs, you need
+
+NOTE CONF {"raw":[100,100,100,91,91,96,100,100,100,100]}
+
+00:45:07.510 --> 00:45:09.430
+<v Speaker 1>a database with at most one record.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:10.180 --> 00:45:13.090
+<v Speaker 1>Each bug can be provoked with only 5 or 6
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:13.090 --> 00:45:13.750
+<v Speaker 1>calls.
+
+NOTE CONF {"raw":[100]}
+
+00:45:13.990 --> 00:45:17.380
+<v Speaker 1>And given those simple examples, it took less than a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:17.380 --> 00:45:21.220
+<v Speaker 1>day to fix and find to find and fix each
+
+NOTE CONF {"raw":[100,100,100,100,48,100,100,100,100,100]}
+
+00:45:21.220 --> 00:45:21.700
+<v Speaker 1>bug.
+
+NOTE CONF {"raw":[100]}
+
+00:45:22.390 --> 00:45:25.960
+<v Speaker 1>And that just shows the incredible power of shrinking.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:25.960 --> 00:45:28.750
+<v Speaker 1>And it shows how hopeless it is to look for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:28.750 --> 00:45:34.150
+<v Speaker 1>bugs like race conditions in errors that happen in production,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:34.150 --> 00:45:37.120
+<v Speaker 1>where not only the 5 or 6 relevant things have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:37.120 --> 00:45:40.150
+<v Speaker 1>happened, but millions of irrelevant things as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:40.150 --> 00:45:43.180
+<v Speaker 1>So tracking down the reason for a bug in that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:43.180 --> 00:45:44.830
+<v Speaker 1>situation is virtually impossible.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:47.170 --> 00:45:48.460
+<v Speaker 1>Property based testing.
+
+NOTE CONF {"raw":[93,100,100]}
+
+00:45:49.150 --> 00:45:51.910
+<v Speaker 1>It finds more bugs with less effort.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:53.740 --> 00:45:55.000
+<v Speaker 1>Don't write tests.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:55.300 --> 00:45:56.230
+<v Speaker 1>Generate them.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:57.850 --> 00:45:58.900
+<v Speaker 1>And that's what I've got for you.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:10.880 --> 00:46:11.930
+<v Speaker 0>Ask questions.
+
+NOTE CONF {"raw":[49,100]}
+
+00:46:12.290 --> 00:46:12.830
+<v Speaker 2>Not done.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:14.750 --> 00:46:15.500
+<v Speaker 2>Ask for questions.
+
+NOTE CONF {"raw":[89,77,100]}
+
+00:46:15.500 --> 00:46:15.860
+<v Speaker 1>Oh, yes.
+
+NOTE CONF {"raw":[97,100]}
+
+00:46:15.860 --> 00:46:16.490
+<v Speaker 1>Questions.
+
+NOTE CONF {"raw":[100]}
+
+00:46:17.930 --> 00:46:18.470
+<v Speaker 2>Questions.
+
+NOTE CONF {"raw":[100]}
+
+00:46:19.940 --> 00:46:20.540
+<v Speaker 2>There's one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:29.360 --> 00:46:29.570
+<v Speaker 2>Oh.
+
+NOTE CONF {"raw":[92]}
+
+00:46:47.180 --> 00:46:47.450
+<v Speaker 2>Oh.
+
+NOTE CONF {"raw":[54]}
+
+00:46:50.270 --> 00:46:51.020
+<v Speaker 0>Oh, well.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:51.290 --> 00:46:51.590
+<v Speaker 2>Uh.
+
+NOTE CONF {"raw":[100]}
+
+00:46:52.280 --> 00:46:53.210
+<v Speaker 1>Just shout.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:53.660 --> 00:46:53.900
+<v Speaker 2>Yeah.
+
+NOTE CONF {"raw":[97]}
+
+00:46:54.410 --> 00:46:57.920
+<v Speaker 3>So this should be always guaranteed to generate the minimum
+
+NOTE CONF {"raw":[99,23,42,43,96,92,77,77,90,39]}
+
+00:46:57.920 --> 00:46:58.490
+<v Speaker 3>test case.
+
+NOTE CONF {"raw":[94,99]}
+
+00:46:59.630 --> 00:47:02.540
+<v Speaker 1>Um, in a certain sense.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:02.990 --> 00:47:07.760
+<v Speaker 1>So shrinking stops when all the ways in which we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:07.760 --> 00:47:10.190
+<v Speaker 1>can make the test case smaller lead it to a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:10.190 --> 00:47:11.570
+<v Speaker 1>test that also passes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:11.570 --> 00:47:15.050
+<v Speaker 1>So it's a local minimum in that sense.
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100]}
+
+00:47:15.500 --> 00:47:18.800
+<v Speaker 1>But what that means, it depends very much on which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:18.800 --> 00:47:20.750
+<v Speaker 1>smaller candidate tests we try.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:20.780 --> 00:47:24.590
+<v Speaker 1>And that is something that is partially provided by the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:24.590 --> 00:47:26.870
+<v Speaker 1>library and partially configurable.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:27.080 --> 00:47:30.500
+<v Speaker 1>So basically the idea is when you're using the tool,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:30.620 --> 00:47:33.380
+<v Speaker 1>then if you can think of a way of simplifying
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:33.380 --> 00:47:36.440
+<v Speaker 1>a test that would make it easier to debug, you
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:47:36.440 --> 00:47:38.720
+<v Speaker 1>can program that as a shrinking strategy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:38.720 --> 00:47:42.200
+<v Speaker 1>And then it will be applied every time there is
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,100]}
+
+00:47:42.200 --> 00:47:45.650
+<v Speaker 1>a test that could potentially be simplified that way that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:45.650 --> 00:47:46.340
+<v Speaker 1>has failed.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:46.340 --> 00:47:49.880
+<v Speaker 1>So, you know, you can gradually, over time, build up
+
+NOTE CONF {"raw":[98,56,56,100,100,100,100,100,100,100]}
+
+00:47:49.880 --> 00:47:51.290
+<v Speaker 1>the power of your shrinking.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:51.680 --> 00:47:56.180
+<v Speaker 1>And it's worth spending time working on that, because it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:56.180 --> 00:47:58.910
+<v Speaker 1>makes every bug reported to you in the future simpler
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:47:58.910 --> 00:47:59.780
+<v Speaker 1>to diagnose.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:06.060 --> 00:48:06.570
+<v Speaker 1>What else?
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:12.960 --> 00:48:13.920
+<v Speaker 0>Any other questions?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:13.950 --> 00:48:15.240
+<v Speaker 0>No, I have a question.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:16.140 --> 00:48:16.320
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[97]}
+
+00:48:16.320 --> 00:48:18.780
+<v Speaker 0>I mean, do you do you get an estimate of
+
+NOTE CONF {"raw":[100,100,99,96,100,100,100,100,100,100]}
+
+00:48:18.780 --> 00:48:19.950
+<v Speaker 0>how much money?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:19.980 --> 00:48:24.540
+<v Speaker 0>Uh, you've saved a company like Klarna when they find
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:24.540 --> 00:48:25.650
+<v Speaker 0>a bug like this?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:28.170 --> 00:48:31.740
+<v Speaker 1>You can try asking a company like Klarna how much
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:48:31.740 --> 00:48:33.660
+<v Speaker 1>the particular bug would have cost them.
+
+NOTE CONF {"raw":[50,100,100,100,100,100,100]}
+
+00:48:34.200 --> 00:48:35.760
+<v Speaker 1>But don't expect an answer.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:36.630 --> 00:48:38.970
+<v Speaker 1>Okay, that's commercially sensitive information.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:38.970 --> 00:48:39.450
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[96]}
+
+00:48:39.480 --> 00:48:42.240
+<v Speaker 0>I mean, you know that it's six, six man weeks.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:42.240 --> 00:48:44.550
+<v Speaker 1>Was it that was spent looking for the bug?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,92]}
+
+00:48:44.550 --> 00:48:44.790
+<v Speaker 1>Yeah, I.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:44.790 --> 00:48:47.100
+<v Speaker 0>Mean, that's that's already a bit of money.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:47.100 --> 00:48:48.330
+<v Speaker 1>Yeah, that's already quite a lot of money.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:48.330 --> 00:48:48.600
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:48:48.630 --> 00:48:49.170
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:50.040 --> 00:48:50.910
+<v Speaker 4>Anybody else?
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:52.800 --> 00:48:53.430
+<v Speaker 4>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:53.430 --> 00:48:54.390
+<v Speaker 4>Well, uh.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:55.320 --> 00:48:55.650
+<v Speaker 4>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:55.650 --> 00:48:56.430
+<v Speaker 4>Well let's thank.
+
+NOTE CONF {"raw":[95,100,100]}
+
+00:48:56.430 --> 00:48:57.480
+<v Speaker 0>John again then.
+
+NOTE CONF {"raw":[92,100,100]}
+
+00:48:57.480 --> 00:48:57.990
+<v Speaker 0>Thank you.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:58.410 --> 00:48:58.680
+<v Unknown>Okay.
+
+NOTE CONF {"raw":[58]}
+
+00:48:59.070 --> 00:48:59.400
+<v Unknown>Thank you.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:12.120 --> 00:49:13.200
+<v Speaker 2>That's all stuff they.
+
+NOTE CONF {"raw":[96,96,77,75]}
+
+00:49:14.160 --> 00:49:14.730
+<v Unknown>Got from your.
+
+NOTE CONF {"raw":[73,100,54]}

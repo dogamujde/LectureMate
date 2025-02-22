@@ -1,0 +1,914 @@
+All right.
+Good afternoon.
+So it's time to start doing a bit of computation.
+We call this section Computation and logic.
+But we've been giving you logic for eight weeks.
+So it's about time we did some computation.
+And what we're going to talk about for the next
+couple of weeks is the simplest model of computation that
+we can still do useful things with.
+Who is today's photo?
+This is Stephen Carlini.
+Very remarkable man.
+Not actually a computer scientist.
+He is responsible for quite a number of fundamental early
+computer science results, including some of the work that we're
+talking about in these two weeks.
+But mostly he's known for his work in set theory.
+Now, you may remember there were another couple of set
+theorists occurring earlier when we were talking about dplyr.
+So there's some strange connection between very difficult set theory
+and quite simple computer science.
+So what am I talking about?
+What is computation?
+You have ideas about what computation is.
+You possibly have not very well formed ideas because it's
+been part of your life ever since you were in
+a position to think about what anything was.
+And I want therefore to think about things that are
+very simple, fairly physical level.
+Try to imagine what the simplest notion of doing something
+that is computing could be.
+And we reckon that the easiest thing you can do
+with computing is build a machine that just moves between
+different states.
+So, as usual, stuff in purple is a technical term
+which is going to be defined and you will need
+to have in your heads for the rest of it.
+I should warn you that this section of the course
+starts with some nice pictures and some fairly easy concepts,
+and then we talk about doing a few proofs with
+the stuff, and the notation looks a bit heavy, but
+the notation looks much worse than it actually is, so
+it's just a matter of keeping track of it.
+So I want to build a machine.
+It does stuff by moving between different states which represent
+different stages of the computation.
+And I'm going to assume that there are finitely many
+states.
+Any of you have an issue with that as an
+assumption?
+I mean, one can argue about it.
+We will argue about it later.
+But for the moment, let's just say we're trying to
+keep things simple.
+So we want a nice finite number of states that
+we can even see.
+Then what kind of computation is this going to do?
+There were a bunch of choices I want to make
+here.
+I'm going to be thinking about machines which read some
+input now because we're trying to do this formally.
+Then I'm going to define the input to be a
+symbol.
+That might be a letter, it might be a number,
+it might be a shape.
+Who cares?
+But it's a symbol which comes from a particular alphabet,
+which might be the alphabet or might be 0 to
+9, or it might be shapes or whatever.
+So the machine is reading input that comes from the
+outside world.
+That can represent lots of things.
+So it could represent input coming in from sensors, it
+could represent people pressing buttons.
+It could even represent video.
+Who knows?
+And then the question is what is the machine going
+to do with the input?
+Here there are a couple of fundamental distinctions.
+One type of machine is concerned with classifying inputs as
+good or bad.
+So this is where we're trying to recognise whether, ,
+for example, a particular English sentence is a good English
+sentence or not.
+Other kinds of machines are concerned with taking some input
+and producing some output.
+So an example.
+There would be a translation machine which takes English and
+puts out French.
+, the differences between them are not all that important.
+But for the theory we're going to do at this
+stage, we're going to be thinking about machines which read
+input and then give you just a yes or no
+answer.
+It's good input or it's bad input, rather than thinking
+about machines that also produce output.
+You'll do those in later courses.
+And the other thing that we're going to assume is
+that we know how to reboot the machine, or how
+to boot the machine.
+, if you've ever wondered about how computers know how
+to start and you don't know, maybe find out, it's
+actually a lot more interesting than it sounds.
+So these are principles of simple computation.
+We just move around between states.
+You could think of these as lines of a program
+if you wanted, or a finite number of states.
+Is it me or are the lights dimming.
+It's going to be one of those days.
+, which state we move to is determined by some
+stuff that the machine reads from the.
+Input from the environment.
+Can I be bothered to reset them?
+Is it clear enough with these front lights on, or
+shall I go back and try to return it to
+my usual state?
+Anybody care?
+Nobody cares or nobody cares enough.
+.
+Some states are good, some states are bad, and we
+read an input.
+We end up in a state.
+It's either a good state or a bad state, and
+we know how to start.
+So these things are if you make them a little
+bit more formal by turning all this stuff into some
+symbols, these are entities known by various names.
+So one common name is a finite automata.
+One of these is a finite automaton.
+Another common name is finite state machines.
+I am going to find it impossible to be consistent
+about which one I use.
+So whichever one I say, I mean the same thing.
+, any questions about the definitions or any questions about
+whether any of these assumptions seem unnaturally restrictive, even for
+something simple.
+, why do I introduce these things?
+Well, they actually have an awful lot of applications because
+a lot of the automation that goes on in our
+current world, which is a lot more than in the
+world when I was young, can still be viewed as
+some kind of finite state diagram of things transitioning between
+states.
+So it happens in particular with things simple systems,
+washing machines, and modern washing.
+Washing machines try to be quite fancy.
+You are probably too young to have seen a washing
+machine that claim to have fuzzy logic in it, but
+sometime back in the 70s or 80s when computerisation was
+first hitting white goods.
+There were companies that tried to say, we do fuzzy
+logic in our washing machines.
+They don't say that anymore, but modern washing machines now
+do a lot of sensing of the weight of the
+load and the dryness of the load on the drying
+cycle and so on.
+Central heating is another very simple finite state thing your
+central heating controller.
+Those of you who have one only has a few
+states, and it cycles between them according to inputs from
+the clock, the thermostat, and so on.
+Traffic lights.
+Classic example.
+Traffic lights are more complicated than they used to be
+because they now sense the presence of traffic, but even
+that is a simple finite state thing.
+There's either a car waiting in front of the radar
+or there isn't, but also many of the things we
+need to do in order to write programs and run
+your Haskell School programs can be done with finite state
+machines.
+Not all of them.
+It depends on which part you're doing, but a fair
+amount of programming language implementation uses finite automaton.
+CPU controllers.
+So what goes on in a computer?
+Computer has a central processing unit which does most of
+the main work.
+That itself is divided into many parts, and there's a
+core controller whose name I.
+Now I forget because it's a long time since I
+taught this stuff, which essentially directs the behaviour of all
+the other parts of the CPU, such as the arithmetic
+unit control unit.
+I think that's the term we used.
+So there are lots of bits inside a computer that
+are in fact modelled as finite state machines.
+Natural language processing is another.
+We do a lot of natural language processing these days.
+Parts of that are finite automata, manageable.
+Which kind of raises the question.
+Lots of you have laptops sitting in front of you.
+Are they finite automata?
+Anybody think their laptop is not a finite automaton?
+Turing machine more powerful than autonomous?
+Yes.
+, okay.
+Nobody thinks their laptop isn't a finite automaton who thinks
+their laptop is a finite automaton.
+Good.
+How many of you think it's useful to think of
+your laptop as a finite automaton?
+Okay, most of the time it's not very useful, because
+why is it finite?
+Because you've only got however much memory you've got in
+it.
+I don't know how much memory you have in modern
+laptops.
+, I suppose the gamers have 64 gig and the
+normal people have 16 gig.
+Is that about right?
+Yeah, well, that's a finite amount of memory and there's
+a finite amount of disk space.
+So there's a finite amount of everything.
+So ultimately all computers are finite automata.
+But it's not very useful to think of your laptop
+as a finite automaton because you can't program it
+one.
+You would go mad if you tried to understand a
+laptop as something with how many states are two to
+the power of two to the 64 gig, whatever.
+So in principle, everything is a finite automaton, at least
+assuming the universe is finite.
+But in practice, it's not useful to think of real
+computers as finite automata.
+So we use them to do fundamental, basic things.
+So how am I going to think about them?
+We pictures because we can understand pictures.
+And actually the pictures Jazz are mostly quite a good
+way of thinking about much of the stuff we're going
+to do.
+We will ask you to do some of the formal
+stuff because somebody has to do it.
+But I work with pictures quite a lot when I
+do this stuff.
+I mean, I don't do financial automata stuff, but I
+do related things.
+So it's helpful to have a standard notion of what
+a picture of an automaton looks .
+And a very simple one looks this.
+What have I got in it?
+I've got some circles and those are representing the different
+states.
+So the machine is going to move between these states.
+And every state has a name.
+So this state is named zero and this state is
+named one.
+Names can be anything.
+They're just literally names.
+So in this particular automaton there are two states and
+the set of states which we will talk about from
+time to time is zero.
+And one.
+I've drawn arrows between them.
+These are the things that describe how the machine actually
+computes.
+How does it respond to input coming in from the
+outside world?
+So the arrow shows you what happens when a particular
+input comes in.
+This machine understands the inputs A and B.
+So we usually use letters although.
+So you can think of that as sensor inputs buttons
+whatever.
+And the way we read the arrow is for example,
+that if you are in this state zero and the
+outside world gives you the letter A, then you move
+to state one.
+If you're in state zero and the outside world gives
+you the letter B, then you move to where you
+are.
+And there's a subtle distinction between moving to the same
+place and doing nothing.
+The reason we say we move to the same places
+because we consume the input.
+We get the input and use it up.
+, what's the other thing I haven't mentioned?
+The little short arrow at the beginning says, what is
+the state that the machine starts in at the beginning
+of computation?
+That's where we are when we switch the thing on.
+, what does this machine do?
+So finite automata are generally designed to recognise that is,
+say yes to certain input strings that you want to
+select as being good input strings.
+So can you stare at this diagram and not look
+at the next line on the slide and decide what
+it does?
+So what does it do?
+Well, it reads B's.
+It will happily read B's forever.
+If you get an A.
+Then it will happily read BS forever and it will
+happily read A's forever.
+, so.
+It wants to read an A, and then it reads
+A's and B's, but I haven't yet told you whether
+it's going to think things are good or bad.
+It's just work through the behaviour.
+We will use these diagrams a lot to understand more
+complex constructions.
+So again this is notation graphical notation.
+If I take this machine which is starting off in
+the initial state.
+So I use green to mark the current state of
+the machine.
+What happens if I feed it the input a b.
+So from the outside world we're getting an A followed
+by a b.
+Well the first thing we see is an A.
+So we move to the right.
+Getting there.
+State changes to one, then a b fires.
+I say fires, so this word is actually something I'm
+used to using from a slightly different model of commutation.
+People will talk about transitions firing.
+They will talk about transitions happening.
+, choose your favourite verb.
+, I use fire because I think if the input
+is triggering the thing to happen.
+, so what happens?
+Be fires.
+And we stay back to where we are, and the
+state remains as it is.
+And then after that, if we were to keep feeding
+it more A's and B's, it would just stay where
+it is.
+But so far this is just reading input.
+And it's not telling you whether the input is good
+or bad.
+So let's look at a slightly more complex automaton, which
+has an idea of whether particular inputs are good or
+bad.
+Before I go on, any questions about the very basic
+notation.
+Is that all clear?
+This one is a little bit more complex.
+This has some things that are accepting states.
+So I've written some states with double circles instead of
+single circles.
+These are the good states.
+If at the end of the input we end up
+in a state where the double circle, then that's a
+good input.
+Otherwise it's a bad input.
+, so this is now slightly more complex.
+Again, can you stare at it and see instantly what
+it's fine to do?
+Even with free states, it takes a bit of thought.
+.
+What does it do on various inputs?
+So here's an input.
+Baa baa baa.
+And what happens?
+We see the B.
+We see the A, we see the B we see
+the A, we see the A takes us back to
+the beginning again.
+So notice that many some inputs might take us back
+to the beginning B again, again.
+So we end up in this accepting state which is
+good.
+And we say that if the automaton reads a particular
+input and ends up in an accepting state, a double
+circle state, we say it has accepted that string.
+Otherwise we say that it rejects the string.
+So you should check for yourself that if you feed
+it the string bar, it rejects it.
+You should in fact verify that for yourself right now.
+Do you all agree with that?
+Yeah.
+Good.
+I always get worried at this stage because it's amazing
+how long some mistakes survive in slides.
+How can we describe the strings that it accepts.
+So looking at it, can you describe what makes a
+string a good string for this automaton?
+I can see things so multiple.
+You mean the number of.
+Right.
+So that answer was if the number of A's is
+1 or 2 mod three.
+That's why these are rather suggestive.
+Names for states were chosen.
+This is actually understood as zero mod three, one mod
+three and two more three.
+And it doesn't care about B's at all.
+Because if you look at what happens to the B's,
+then it just reads them in any state and does
+nothing with them.
+That requires some intelligence.
+So realising that this automaton is counting mod three is
+a non-trivial thing.
+It's not obvious how to extract that immediately.
+What happens if you try to do it?
+The kind of less intelligent way, which is the way
+I tend to look at things.
+You end up trying to say things , oh, well,
+it reads any number of A's and then it reads
+an A and any number of B's, and then optionally
+it can read another A and any number of B's.
+And then it can read two A's followed by everything
+all over again.
+And that's very confusing.
+, it's much less clear than saying this thing counts
+the number of A's modulo three.
+But this kind of description does have the advantage that
+it can be done by computers without using human intelligence.
+So we are actually going to end up building this
+kind of description of automata in obviously in a more
+formal and symbolic way, but essentially that.
+And so that's what I'm going to do next week
+or next week.
+Yes.
+Next week.
+, the rate I'm going possibly this week.
+.
+Any questions so far?
+So I've introduced an automaton with states transitions between the
+states.
+It leads input.
+Some states are good.
+If an input is ends up in a good state,
+then the input is accepted.
+So this is all definitional stuff.
+Okay.
+So far , drawing pictures takes up a lot of
+space.
+And automata tend to get big and complicated.
+So it is very helpful to have some ways to
+save space when writing down automata.
+So whilst we're still working on notation, I'm going to
+introduce some more pictorial notation.
+I've done that bit.
+Here are some conventions that will let us save some
+space.
+This is an obvious one, right?
+If I write b, comma, c or on an arrow.
+What I really mean is that there's a b arrow
+and a crow.
+I just don't have to write the same arrow twice.
+So here, for example, we see a state which where
+the business part of it is reading a C and
+going into a good state, and the rest of it
+is reading A or B, the other letters and going
+into this state.
+In this state, it doesn't really care what the input
+is.
+It reads A, B, or C and just stays where
+it is.
+If you look at the state, you'll see that it
+has no arrows going out of it except the one
+that comes straight back into it.
+So once you're here, you are stuck.
+And for obvious reasons, we call that a black hole
+state.
+It is a place where the machine is stuck forever.
+And typically machines have a lot of black hole states
+because whenever anything goes badly wrong, you typically want the
+machine basically to deadlock and stop giving.
+And it's never going to give a useful answer, but
+it may or may not want to consume input.
+So we will adopt a convention called the Black Hole
+Convention, which hopefully doesn't confuse any physicists.
+And that says if we don't bother to write down
+a transition letter at all, then we'll assume that it's
+implicitly leading to some black hole state.
+So if I have a state here and it doesn't
+have say there's a letter D, I haven't written a
+letter D implicitly, D goes to a black hole state.
+And that state is always bad.
+So black hole states are bad.
+They're rejecting states.
+So the result of adopting these conventions is that this
+slightly messy thing can be more concisely written just
+that, because everything else, all these other inputs, lead straight
+into the black hole state where we stay so we
+can just pretend they don't exist.
+It is quite important to note that this is a
+convention.
+This is not the real automaton we're looking at.
+This is a convention saying the real automaton looks
+this, plus the black hole state.
+So this is an automaton.
+Get stuck there.
+If there were no black hole state and you fed
+this thing a B, what would it do?
+It would get stuck there.
+Because we are saying implicitly, there's a convention.
+This thing will actually keep on reading for input forever.
+Permanently stuck in the black hole state.
+And at some later stages, it becomes useful to distinguish
+between things that keep reading input, but are always in
+a bad state and things that actually get stuck.
+But for the moment, we're going to assume that things
+always read input and it goes into a bad state.
+Okay, so that is a lot of notation, although it's
+mostly graphical notation and a couple of conventions which you
+are going to have to keep in mind and experience
+shows that some of you will forget this convention in
+the course of the tutorial you're about to do.
+So.
+This is a reminder that it exists.
+Any questions on these hopefully straightforward but detailed notations.
+Okay, so now I'm going to mention something about the
+automata I've been drawing that I haven't mentioned so far.
+Do you think this is a sensible automaton?
+No.
+No.
+Anybody think it is?
+I mean, what would it mean?
+It's a hard to see what it means.
+I've said in state zero, I read an A and
+go to one, which is a good state.
+And I've also said I read an A and go
+to two, which is a bad state, which doesn't make
+much sense.
+, there are many things in computer science that are
+useful, even though they don't make sense.
+So next week we will see that such things can
+be useful.
+But for the moment, we're going to take a basic
+and sensible view and say that things this do
+not make sense.
+So this is the the characteristic of automata that I
+haven't yet mentioned.
+There's only one start state that sounds a good
+thing, because when you switch the thing on, you should
+know where it is.
+And if you're in a particular state, then there's exactly
+one transition from the state for every input letter.
+If you have the black hole convention, you might not
+write some of them down, but there is exactly one
+transition.
+If you're in a state and a comes in, then
+you know where you go.
+These automata are called deterministic automata.
+They're called deterministic because what they do, the next move
+is completely determined by the input that comes from the
+outside world.
+As I said next week we will see that there
+are uses for things that look this.
+There's no physical meaning for this, but that doesn't stop
+us using it.
+But for the moment we're thinking about trying to do
+actual computation.
+So we're going to assume that this is a property
+of the kind of automaton that we're going to deal
+with.
+So formally deterministic finite automata.
+I will probably say DFA because it's shorter.
+So you need to remember that that's what a DFA
+is.
+Okay.
+So we've done this in pictures.
+Mathematicians many mathematicians think in pictures but they don't tend
+to write papers in pictures.
+So we're going to introduce some symbolic notation that will
+allow you to write down properties of finite automata and
+prove things about finite automata.
+We won't be expecting you to do much in the
+way of proof, but we will show you some proofs
+in the book and a little bit of proof here.
+, you are beginning to come across the notion of
+defining mathematical objects by writing down definitions.
+So I think most of you haven't seen very much
+of that in school.
+I put a question into the CWL tutorial last week.
+That was a quite severe introduction to defining mathematical objects
+just by writing down the definition, and I reckon that
+most of you decided you had better things to do
+with your time, at least if my group was representative.
+But this is actually what all mathematics and theory is
+about.
+You think of an object, you, and then you write
+down a definition that tells you what that object is,
+and then you try to prove things about it.
+And hopefully those things you prove about it can then
+be used to do constructive things with it later.
+So here is a definition of dfas in a traditional
+mathematical style.
+And this is something that you only need to get
+used to, at least for a bit later on as
+well.
+You cannot entirely escape this stuff in the course of
+a computer science degree, although you can try quite hard.
+So what is an automaton?
+Well, it's a set of states.
+I said that the set of states was finite.
+, I want a name for the set of states.
+There's a lot of tradition built into this.
+It's traditional to use Q capital Q for the set
+of states.
+I can't remember why.
+It's either a Latin word or a German word, but
+I forget which.
+, we have some input symbols, letters, numbers, buttons, whatever.
+And again, it's traditional for reasons that I've also forgotten
+to use the Greek letter sigma for the input alphabet.
+I told you about seven weeks ago that you really
+needed to learn your Greek alphabets, so this is a
+reminder.
+We don't have to use Greek letters, but the weight
+of decades of history is too much to throw off.
+, there's a transition function.
+What's a transition function?
+Transition function is an arrow.
+Think about what an arrow is.
+There are several ways you could think about what an
+arrow is.
+One way you might think about an arrow mathematically is
+that it's a ternary relation.
+So you might say an arrow has a source state
+a label and a target state.
+So therefore it is a triple of source label and
+target.
+We're not going to do that yet because we're working
+in a nice deterministic world.
+We know that if we have a particular source state
+and a particular label, then there's only one target state.
+So it's more helpful to think of this transition as
+being a function that tells you where to go next.
+So this is the function that says If I'm in
+state one and I get a.
+Then I move to state one.
+Let's make this deterministic again.
+So the transition function takes the current state and the
+input letter and tells you where to go to next.
+It's traditional to call it delta lowercase delta.
+the reason for that is because in you're all
+doing calculus right, or you're all about to do calculus,
+I forget which you've all done calculus, and you're going
+to do more of it whether you it or
+not.
+Most of you don't.
+I don't.
+.
+In calculus, delta is used to represent changes.
+So the transition function tells you how the machine changes
+when it sees an input.
+And that's why we call it delta.
+There is some initial state.
+This is the boot up state.
+And by fairly standard convention we'll use called q0 the
+state the thing starts in.
+And then there's another annoying notational piece of history.
+Here we need to say which states are the good
+states, the accepting states.
+You might think that the obvious thing would be to
+call that a for accepting, but historically these things were
+actually called final states because they're where the machine ends
+up in a good state.
+And so again, there's a tradition that says the set
+of accepting states is called F.
+Of course, it doesn't matter in the slightest what symbols
+you use, as long as you're consistent about it, but
+you'll find it easier to follow the proofs and arguments
+if you use the same symbols as everybody else.
+And more importantly, we will find it easier to follow
+your arguments if you use the same symbols as anybody
+else.
+Okay, so pure notation.
+No intellectual content at all in this.
+Apart from this bit about transition functions being functions.
+Any questions about that.
+Okay.
+Why am I introducing notation I'm introducing notation.
+Because finite automata are too big and messy to write
+down.
+And anyway, we have been trying to teach you to
+program by composing small bits of things together, writing small
+functions, and composing them functions called other functions.
+If I ask you to write down a finite automaton
+to parse English, are you going to write down the
+umpteen gazillion state automaton by some form of magical thinking?
+You're not.
+You're going to have some theory of what makes an
+English sentence good, which is not an easy question, by
+the way.
+And you're going to try to build up a recogniser
+for it out of smaller components that you understand more.
+, I mean, English is probably not recognisable by a
+finite state automaton, except insofar as there's a practical limit
+on how long an English sentence can be.
+, is there a limit on how long an English
+sentence can be?
+This is a digression or what are any other or
+most other languages?
+You all speak a lot of languages, but they all
+have one thing in common, which is probably you don't
+think there's a hard limit on the length of a
+sentence?
+Yeah.
+Sorry.
+In a lifetime.
+Okay, so that's an interesting point.
+, you have to have be able to fit a
+sentence into a lifetime.
+Well, that's only if you require that one person has
+to say the sentence.
+There is a piece of music somewhere in London which
+is designed to run for a thousand years.
+No one person is going to listen to it, but
+still.
+Music.
+, do you think in principle there's a limit on
+the length of a sentence?
+On the end?
+I mean, you can do boring stuff, just going
+and so and so and so and so, but you
+can do other things as well.
+So those of you who are brought up English speaking,
+you know, the house that Jack built.
+Okay.
+, I now can't remember it, but it goes, ,
+this is the.
+This is the dog that chased the cat, that caught
+the mouse, that ate the cheese, that blah, blah, blah.
+So you can extend that more or less indefinitely.
+And it's a slightly interesting question as to whether natural
+language does have a limit on the size of sentences.
+So some people would say, well, if you can't speak
+it in an hour or two, then it's not a
+realistic sentence.
+, you set a lifetime.
+That's a bit more.
+And some people would say that, well, that's just that's
+just a practical consideration.
+We can make sentences as long as you .
+And even more digressive, there are a few, frankly, batshit
+crazy people who say that natural language has infinitely long
+sentences.
+And not just infinitely long, but trans, finitely humongous, infinitely
+long sentences.
+And if anybody wishes to know, I have a paper
+about how crazy that is.
+, that was a digression, because I'm trying not to
+spend the entire lecture on tedious notation.
+But this is the point, is that you want to
+build reasonable sized automata that do useful things out of
+reasonable sized automata, in the sense that you can understand
+them because you can't understand a large automaton.
+So we need a way of combining two automata to
+build something that does something useful as a function of
+the two bits, and that means we need notation.
+That's the only reason.
+Well, the only reason in this course that I'm introducing
+the notation.
+If you're thinking about a small automaton Then the easiest
+way to think about it is the way that was
+suggested for doing that little one that counts the number
+of A's modulo three.
+What are the states of an automaton?
+That's where the memory of an automaton lives.
+So your laptop has individual memory registers that store numbers
+in them.
+Finite automata are too dumb for that, but you can
+use the states to store simple counters, how many
+A's you've seen so much of the time.
+It's helpful to think about the states and then think
+about the transitions, and this will let you build little
+automata.
+So here's a question.
+The input alphabet is zero and one or odd and
+even so zero and one.
+Can you build that is can you draw a DFA
+that accepts the strings, which have an even number of
+zeros and an odd number of ones.
+Never mind why we want to do that for the
+moment, but can you just draw the automaton that does
+that?
+I'll let you think about that for a little bit,
+but not too long.
+Okay.
+By not too long, I mean, could anybody see it
+immediately?
+Has anybody instantly produced a drawing or a drawing in
+their head?
+Not totally straightforward, is it?
+Even though it's a very simple thing to ask.
+So the way we can think about it in terms
+of states is what information are we trying to track?
+If we're trying to track whether there are an even
+number of zeros and an odd number of ones, then
+we need to keep track of whether the number of
+zeros and the number of ones is even or odd.
+Okay.
+So actually we only need to keep two bits of
+information.
+Have we seen an even or odd number of zeros?
+And have we seen an even or odd number of
+ones?
+How much automaton do we need to track?
+Two bits.
+Well, in order to track one bit, we need two
+states, because we have to have a state where the
+bit is zero and a state where the bit is
+one.
+So we ought to be able to write down the
+automaton with just four states For one bit.
+We need two states.
+For two bits we need four states for three bits,
+we need eight states.
+Remember this goes back to the very beginning about encodings.
+So we ought to be able to do this with
+a set of states that looks this.
+These are just labels I'm calling them these to make
+them give them an obvious meaning.
+, a number of zeros is even the number of
+ones is even, the number of zeros is even, the
+number of ones is odd.
+The number of zeros is odd.
+The number of ones is even.
+The number of zeros is odd.
+The number of ones is odd.
+, so those states should be enough.
+What's the initial state?
+Well, at the beginning we have read nothing.
+So we've read zero ones and zero zeros, which is
+even bigger so, we start off in the state.
+Even zero.
+Even one.
+What's the accepting state accepting set?
+Well, we're looking for states where there are an even
+number of zeros and an odd number of ones, by
+definition, by what we intend to do.
+That is that state.
+So if we just draw out the states, we can
+draw them in a nice little square that.
+Start there.
+We want to end up there.
+And these are bad states where we've seen the wrong
+number of things.
+Now all we have to do is draw the arrows
+between them to do the right thing.
+How does that work?
+Well, it works this.
+Of course, if you see a one, then you need
+to flip the one bit from even to odd.
+Even to odd.
+Or vice versa.
+If you see a zero, then you need to flip
+the zero bit from even to odd or odd to
+even.
+So that's a nice, simple diagram that we can draw
+just by thinking about the states of the automaton.
+, if we really want to write this out in
+very formal stuff, then this is the set of states,
+the q0, the initial state set of final states.
+And this is the transition function written out as a
+table, which is one way to write about it.
+, that wasn't too bad because this was a very
+simple thing.
+But if you try to do this for anything marginally
+more complicated than an even number of zeros and an
+odd number of ones, you will find that it is
+really quite hard.
+And if even if you try to do this one
+just by thinking, not thinking about states, but by thinking
+about who I have an even number of zeros I
+need to read.
+, do I need to read a zero followed by
+a one, followed by some more ones?
+Do you what you get into a mess?
+And if you look at some of the stuff done
+in the book, it will show you how painful it
+is.
+So thinking about states is quite a good way to
+build very simple automata.
+And that's actually how most of the small things that
+one uses in programming language parsing or compilation written at
+the most basic level.
+Is there anything that strikes you about this automaton?
+Is it just four states with some arrows between it
+or.
+Does it look as if it might have some kind
+of structure that we could have used?
+Okay.
+Take that away to think about.
+We will come back to it next week, I think,
+or possibly tomorrow depending on how things go.
+But for the moment, what I've done is just give
+you a way of thinking about building small automata where
+you can see what the information being manipulated is, and
+you can see how to encode that in terms of
+states.
+Here I is using states as bits.
+I could use states as counters 012 as we did
+with the previous example.
+And you could do lots of other things to go
+any further.
+Then there's going to be more notation.
+And I think we probably had enough notation.
+And besides it's one minute two.
+So any closing questions on the swathe of notation that
+we've had today?
+Okay.
+So do go and think about this diagram.
+It's a sort of pretty square.
+It has a bit of structure.
+See if you can think about how you might exploit
+that structure.
+And also have a look at the book section on
+this.
+I don't know whether you're reliably doing the reading we
+recommend.
+I actually try to design things so that you don't
+really have to do the reading, but it's probably useful.
+In this case, it might be instructive.
+Okay, so tomorrow we will introduce a little bit more
+notation.
+And then we will get on to building bigger automata
+out of smaller automata, which is basically programming.
+Okay.

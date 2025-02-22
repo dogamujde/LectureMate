@@ -1,0 +1,998 @@
+Oh.
+Hey oh hey hey hey hey hey.
+You don't keep up.
+No.
+He's on the road in the red.
+Zone?
+Yes.
+Right.
+That was the anchor of the Anvil Chorus from IL
+trovatore.
+For those of you who are interested in opera, .
+, before I start, I just want to give an
+advert for this, , thing tomorrow.
+This is an event.
+, I happened to be the exchange coordinator for Informatics,
+as well as being your lecturer here.
+And, , and so this is an event that I
+do every year to inform students about opportunities for exchanges
+abroad.
+So you can go on an exchange in your third
+year to a university somewhere else in the world, ,
+instead of doing your third year here.
+So if you want to know about that, , what's
+possible, it would be in your third year.
+So not, you know, you're in your first year now,
+so you've got time to think about it, but, ,
+it's the event is open to you if you want
+to go.
+And it's in, , in George Square in the psychology
+building.
+There's the location.
+All right.
+And if you don't feel dragging yourself up to,
+, George Square.
+, it's going to be recorded and, , the, the
+recording is actually going to be, , one of the
+recordings for this course.
+, just because it's a place that I could put
+it when I set up the recording.
+So if you want, you can watch it on live
+stream, , or afterwards you can watch the recording.
+, but it'll be live streamed onto the Informatics one
+kind of, , you know, lecture.
+, yeah, the recordings list.
+You know, where they are.
+Okay.
+So, , come along if you're interested.
+, there'll be a talk from me and then, ,
+from some former and current exchange students.
+Okay.
+But what I want to talk about today is expression
+trees as algebraic data types.
+, this lecture will probably take, , two lectures worth
+of time.
+So it will continue on Monday.
+Okay, so I told you about algebraic data types last
+time.
+, and how you can, , in Haskell, , define
+types for things booleans, , you know, lists.
+, so those are some types that you've seen already,
+and, , and, , today I'm going to talk to
+you about using the same idea to define syntax of,
+, of languages when I use the word syntax, do
+you know what I'm talking about?
+Anybody.
+Does anybody know what I mean by syntax?
+Okay.
+, does anybody not know what I mean by syntax?
+I don't see any hands.
+But you might be shy.
+Okay.
+So, , you know, syntax is there's this distinction
+between in a language, you've got the, the text of
+the language.
+And that's so, you know, the grammar, the, the
+words, the level of , of, of, , of what
+you say.
+And then there's the level of meaning.
+So syntax is this kind of, I sort of say
+up here is syntax and down here is meaning it's
+kind of , , you know, there's the, there's the
+text and the grammar and so forth.
+And then there's the what it means level down here.
+And there's a relationship obviously between these two levels.
+Okay.
+So , kind of interpretation of the of the text
+goes into the meaning.
+Okay.
+, of course going the other direction, if you have
+some idea and you want to express it, you, you
+turn it into language.
+Okay.
+So in computer languages you've got the same sort of
+thing, except that.
+So bye bye bye syntax.
+We're talking about things Haskell text with the rules
+of Haskell for putting together programs.
+Okay.
+The, , you know what?
+What you're allowed to use is variable names and how
+you're allowed to build things list comprehensions out of
+the components.
+So that syntax and then the meaning or the semantics
+is, is what you get when you evaluate those,
+those things.
+Okay.
+So , so what I'm going to be talking about
+with in this lecture is about representing the syntax of,
+of, of languages and, and something about the interpretation of
+syntax, , in terms of meanings.
+Okay.
+And this is something that Haskell is really good at
+representing.
+Okay.
+It's very, , straightforward and simple to, to represent the,
+the syntax of languages and to write Programs that do
+things on the syntax of languages.
+And I'm going to be showing you a couple of
+examples.
+By the way, another example of syntax and meaning or
+semantics is you've been learning in computation and logic.
+There's this kind of logical language, propositional logic.
+And you've got propositional variables and you've got some connectives
+conjunctive and conjunction, disjunction and negation.
+And the semantics is given by things truth tables.
+So, you know, if you have, , true and false,
+, that expression true and false, it's interpreted as
+by evaluating it according to the truth tables to get
+the result.
+False.
+Okay.
+, hope that's hope.
+Hope that's helpful.
+Anyway, .
+I'm going to start with an example of arithmetic expressions.
+And they're going to be very simple arithmetic expressions.
+, That only involve numbers, addition and multiplication.
+And that's not because division and subtraction are harder.
+But just three three cases is simpler to explain than
+five cases.
+It's the only reason.
+, okay.
+So we're going to represent simple arithmetic expressions.
+So things two plus 7 or 3 times four
+plus eight that sort of thing.
+Really simple.
+Okay.
+, and I'm going to do do this using an
+algebraic data type called exp for expression.
+Okay.
+And , and it's defined , there are three alternatives.
+So the three alternatives, three constructors separated by vertical bars.
+And the three constructors are here.
+So lit add and mole Okay.
+Add stands for additions.
+Mole stands for multiplication.
+Litt stands for literal.
+So this is a kind of computer science jargon.
+, literal.
+It's , when you've got in a programming language, something
+a, a number or a string, it's, it's a,
+it's a kind of thing in your program that doesn't
+have to be interpreted it already.
+The meaning is what it says.
+Okay.
+So a string, you don't have to interpret a string
+in order to in order to have a value.
+It's already a value.
+Okay.
+That's called a literal.
+, okay.
+In this case our literals are our numbers.
+Okay.
+So we're going to be able to write, , one
+of the kinds of expressions is a literal which is
+a which is an integer.
+So five another one is going to be add
+apply to two expressions okay.
+This is recursive okay.
+If you have two expressions the literal three and
+the literal seven.
+You can you can apply ad to get the, the,
+the the expression ad literal three and literal seven.
+and mul from multiplication similarly takes two expressions as
+a result as arguments.
+Okay.
+.
+And here are some examples down here.
+Okay.
+E0 ad applied to to , to Subexpressions first
+one is is lit apply to two.
+So that's the number two as a literal.
+And the second is a more complicated one.
+That's multiplication applied to literal three and literal three.
+Okay.
+So those are combined using ad.
+And the second E1.
+Here we've got multiplication or mul applied to two expressions.
+That one, I mean, the parentheses are telling me that
+the end of this expression is here and and that
+one.
+Okay.
+So I'm calling these things expression trees.
+, I mean, I don't know if that's clear so
+far.
+Let me try to explain some more.
+I'm calling these things expression trees.
+Why is why is that?
+.
+Okay.
+I don't see any trees here.
+Okay.
+, it's because this is a kind of a representation
+in text of something that's naturally drawn as a as
+a tree.
+And I'll.
+I'll show you what I mean with e zero and
+E1 zero.
+Okay so E0 I'll draw it and then I'll explain
+it.
+So it's ad applied to lit which is applied to
+two.
+And the other argument is mul applied to lit applied
+to three and lit applied to three.
+Again okay.
+And e1 is mul applied to ad.
+.
+It's this.
+Okay.
+, I mentioned trees once before in these lectures.
+I think it was when I was talking about, .
+explaining fold.
+Okay, so trees and computer science, trees in linguistics,
+, grow, , upside down.
+Okay.
+, you know, trees in, in the forest look
+that.
+Okay.
+The root is down here, and the branches are up
+there.
+Okay.
+In computer science and linguistics.
+, so this is an taken from linguistics.
+The root is at the top.
+And and and and the branches grow downwards.
+And you call the things at the bottom leaves.
+Okay.
+So you'll, you'll I'll be talking about trees more in
+these lectures.
+so now this but but so what's going on
+here.
+So this here represents E zero okay.
+So it's, it's it's there's E zero okay.
+So it's add.
+Ah.
+It's add apply to two subexpressions litt of two and
+mul apply to two subexpressions that.
+Do you see the structure here?
+I hope.
+Okay.
+And representing as a tree you see this.
+You can see the structure.
+So it's this, you know, the main thing is add.
+And then there are two subexpressions.
+And in the second subexpression the main thing is mul.
+And then there are two subexpressions.
+And you can see from the shape of this tree,
+although that it involves both of them involve add and
+mul, add and mul.
+Both of them involve lit two and three and and
+twice lit three.
+There's lit two, twice lit three.
+They have different structures okay.
+Which is you know, here you're adding together the result
+of, , you know, uniting together two and the result
+of multiplying three by three.
+And here you're multiplying the result of adding two and
+three and, , and the number three.
+Okay.
+So, , the structure makes these things represent completely different,
+different expressions, even though the components are the same.
+Okay.
+And that's why it's nice to look at them
+that.
+Okay.
+Of course.
+These trees, these are just my way of drawing this
+for conceptual purposes in the computer.
+It's, , you know, lit add expressions and so forth.
+, and the parentheses are used to give a kind
+of textual representation of this.
+Okay.
+Is that kind of clear, I hope.
+, right.
+What else do I want to say?
+Okay.
+Two expressions with different structure.
+, I should also just say here I said in
+my other examples that I would be writing some magic
+words at the end deriving.
+In the other examples, it was deriving EQ and show.
+Okay, I'm using different magic words here because I'm going
+to not use the built in show function, but I'm
+going to define one myself because it gives me a
+nicer, a nicer way of printing out these things.
+Okay.
+And then I could finally say, I mean, there's another
+way of representing these things, of course.
+, you know, , well, we'll see it in a
+second, actually.
+.
+, okay.
+Here is how you could represent that in normal kind
+of mathematical, , notation.
+Okay.
+And this one would be, .
+Two plus three times three.
+Okay.
+Whether the parentheses around it or not doesn't matter.
+This is the way that they happen to be printed
+out by my show function which I just skipped over.
+Okay.
+So you could you could manipulate expressions as strings.
+Okay.
+We possible to represent them as strings and to manipulate
+them as strings and do all the things that I'm
+going to do as strings.
+But it's a lot more work because when they're in
+this form, you have to kind of figure out by
+looking, you know, where the parentheses and where the matching
+parentheses and so forth.
+You have to figure out where subexpressions begin and end
+and so forth.
+When they're in, when they're in this form.
+Wait a minute.
+Why is this not letting me go backwards?
+Hmm.
+Interesting.
+, when they're in the form this, with these,
+with this data type, this outbreak data type.
+It's easy to to.
+To take them apart and put them together and
+do things with the components okay.
+That's the reason.
+So that's representing arithmetic expressions as an algebraic data type.
+And now once I have this representation I can write
+functions that do things with them.
+Okay.
+For example this first this first function evaluates them okay.
+So evaluating something , you know, , two plus
+three times three.
+You know, it's a simple computation.
+The answer is 11.
+Okay.
+, here's the code for doing that.
+And then the other one that I have here is
+just for, , , turning them into strings in a
+form I showed you a second ago.
+, you know, this.
+And that's what I'm going to use for my show
+function.
+, okay, so let me look at this.
+At this.
+The code for this expression evaluation thing okay.
+So this is a function which takes syntax.
+This is exactly what I was talking before about syntax
+turning into meaning okay.
+Interpretation of the syntax.
+In this case the syntax is arithmetic expressions with numbers
+in them and turning them into meaning or interpreting them
+is is doing the actual computation okay.
+And there are three cases.
+So I you know, because I've defined this as an
+algebraic data type, I can write pattern matching.
+, , you know case.
+Yeah.
+Pattern matching.
+Definition of functions by cases.
+There are three cases because there are three, , three
+constructors.
+And so a case for each constructor.
+And , this code is so I mean, to me,
+I don't know what it looks to you.
+To me, this code is so simple that it's almost
+hard to see what it's doing.
+Okay.
+.
+A tip is that the left hand side.
+Okay.
+This is a function from expressions to integers.
+So this is the level of syntax.
+And this is the level of meaning or semantics okay.
+So everything on the left hand side here is syntax.
+So these are things from this world of expressions.
+And everything on the right hand side is is in
+the world of meanings or semantics in this case integers.
+Okay.
+So everything over here is going to be calculations on
+integers.
+All right.
+So simplest case actually.
+Well simplest case is if you've got a literal integer
+then the evaluation of that is simply that integer.
+Whatever it is okay.
+The the the evaluating lit of three.
+The answer is three.
+Okay.
+Not actually doing anything except , taking off the constructor.
+Lit.
+Okay.
+The more interesting cases are , add and mul and
+they are the same except for the constructor add here,
+mul here, and on the right hand side plus and
+times okay.
+Plus for add obviously.
+Right.
+And so in order to evaluate the expression which
+is you know, add e to F, you evaluate e.
+That's a recursive call to the eval exp function.
+Okay.
+And you evaluate f another recursive call.
+And then you add those together.
+So this gives you this gives you an integer.
+This gives you an integer.
+So you got two integers.
+You add them together.
+And that's the answer.
+Okay, let's just look at that.
+On, .
+Over here.
+Okay.
+If I want to add if I want to evaluate
+this, this, , this is remember, this is a representation
+of what I had before it was called E1.
+Okay.
+Sorry.
+E0.
+Okay.
+Just drawn as a tree.
+If I want to evaluate add lit two and mul
+lit three and lit three, what it tells me is
+apply eval exp to this thing.
+Okay.
+The answer is going to be two and apply eval
+to this thing.
+The result is going to be what anybody listening.
+Six Mo.
+Three times.
+Three.
+Anybody?
+Nine.
+Very good.
+Yes.
+Okay.
+Two plus nine is 11.
+Right.
+So the answer is going to be 11 okay.
+Evaluate.
+Evaluate the left hand subtree to get two.
+Evaluate the right hand subtree to get nine.
+Add them together to get 11 okay.
+And then the same thing the same thing here except
+we're multiplying okay.
+So we we evaluate the left hand.
+subexpression.
+We evaluate the right hand Subexpression.
+And we multiply them to get the results.
+So this would apply to the second example up here
+okay.
+We want to evaluate this, this value here this
+this expression tree okay.
+Again this is E1 which you can write using these
+constructors.
+So mul applied to to this and this.
+Okay.
+So we evaluate this add of of of lit two
+and lit three is.
+Anybody.
+Five.
+Yes and five multiplied by the result of evaluating this
+is three five times three is 15 okay.
+And you know so I explained that just looking at
+the top, at the top, , thing the so-called root
+of this tree.
+But you know, the way that I get.
+The result of evaluating this is again, it's this it's
+the third case here.
+Multiply to three.
+And and, you know, multiplied to the result of evaluating
+this and the result of validating that is nine.
+That's how I got the nine okay.
+So .
+Does that make sense.
+And I mean, this one is so it's so, ,
+it does so, so little that, , you know, just
+it just it looks at the, the, the literal and
+the, the result is n so, you know, the, the
+result of evaluating this is two because that's the number
+that's in that's just packaged up as a, as a
+literal as syntax.
+Okay.
+okay.
+So the answer to the E zero was evaluated to
+11 and the other one evaluated to 15.
+And in fact that's what it does if I type
+this into Haskell and evaluate those two expressions okay.
+Oh by the way.
+So I said okay, I didn't I didn't go over
+the code, but , here is code that, you know,
+turns, , Expressions into strings in a form this.
+If I use the default show function, which I would
+get if I if I typed here instead of deriving
+EQ.
+So this only gives me equality.
+If I said deriving show EQ, then I would get
+a show function as well for converting these things into
+strings, and what they would look would be exactly.
+.
+what?
+What you had here, minus the highlighting.
+Okay.
+You know, would be just using the constructors to display
+the values, which is not quite as readable as, ,
+as something that.
+Okay.
+Okay.
+Let's see, what else do I have here?
+, is that is that so far making sense?
+Yeah.
+The function evil.
+Evil X is recalling , in definition of Adam.
+Yeah.
+, so when evil acts is recalled, it's not mentioning.
+Well, you can't see it now.
+It's not on the screen.
+It's not mentioning the lead.
+So lead is not that significant.
+It's not mentioning.
+What?
+So when it's recalling evil x e in the definition
+of ad, it's not mentioning lead.
+So lead is not that significant or how does it
+work.
+Okay.
+So lit lit I mean in the case that's about
+lit that says everything you say about lit okay.
+The case about AD doesn't have to say anything about
+it.
+about lit.
+Right.
+Okay.
+Because because when it evaluates E, whatever E is, it
+will give you a value which is an integer.
+So leave an x and it's the same there equivalent.
+To lit.
+And x, and is there equivalent to each other.
+Okay.
+Eval eval x of lit n is the same as
+n.
+the equation says.
+Does that make sense?
+Maybe not.
+Okay.
+The thing on the left.
+The thing on the left is an expression.
+Yeah.
+Okay.
+One of the cases of an expression is lit of
+int.
+Okay.
+The int in this case is is n whatever n
+is okay.
+The thing on the right is an integer.
+Okay.
+So n is an integer.
+So that's okay.
+It's kind of it's kind of confusing because it's it's
+doing almost nothing.
+It's just unpacking the number that's inside the, the literature
+literal.
+Okay.
+, right.
+Okay.
+Anybody else?
+Anybody else want a chance to talk into the big
+red cube?
+No.
+Okay.
+, so here's a variation.
+Wait a minute.
+Yeah, here's a variation on this.
+, it's just a notational thing, and I'm only showing
+you this to, , you know, it's one of the
+things you can do in Haskell, , is to, ,
+is to make is to make, , constructors and function
+names into into.
+I'm calling you know, the terminology is infix.
+Okay.
+You've seen this already with, , with other functions that
+I've introduced.
+Right.
+So, , you can make the constructors here infix I
+mean that these two constructors add in mul you can
+make them infix by simply putting back quotes around them.
+Okay.
+And , the only reason that this is kind of
+a nice thing to do is that is that writing,
+writing these expressions this makes them look a little
+bit more normal arithmetic expressions.
+Okay, because you're used to writing plus between the the
+things that you're adding together.
+Okay.
+But , you know, so I'm just I'm just pointing
+out you can do that if you want.
+Makes things a little clearer.
+Okay.
+And then, you know, you can you can use that
+to, , to write exactly these same function definitions.
+And the difference is only, , here.
+And here.
+Okay.
+The constructors.
+Well, also of course, here's the definition of that, of
+that, , data type, same data type.
+It's just that we're defining it to have I mean,
+we're just writing the, the, the constructors in infix form.
+Okay.
+And so this is just saying that, , I mean
+it's actually it's actually completely equivalent to what I wrote
+before.
+It's just, , written in a different way.
+Okay.
+I'm not going to belabour this point.
+I think it's, , possibly just confusing.
+, anyway, okay.
+, let me see what else.
+, yeah, I'll say another another variation on this.
+If you want, you could use symbolic constructors instead of
+the, you know, I'm using up here, add and mul.
+I could just as well use symbolic constructors
+these two here.
+Okay.
+.
+Now.
+, the reason for doing this would be the same
+as as what I had a second ago when I
+was writing.
+, you know, , , constructors, you know, add in
+back quotes to, to make it look a little bit
+more , normal arithmetic notation.
+Okay.
+But now I'm using symbols plus and times.
+Okay.
+Why do I write colon plus colon instead of just
+plus.
+Okay.
+Well, , in Haskell constructors that are, that are symbols,
+you know, just , , okay.
+In Haskell, all types begin with capital letters.
+All functions begin with small letters.
+, okay.
+All constructors begin with capital letters, okay?
+And if the constructor is symbolic, then all symbolic constructors
+begin with a colon.
+Okay.
+Why a colon?
+Okay.
+Because cons is a colon.
+It's just in order to get that to fit into
+this this requirement okay.
+So in in in Haskell, all constructors that are symbolic
+this one begin with a colon.
+Cons is a constructor is a colon.
+And I've written it with a colon at the end
+just to make it look a little bit prettier.
+Okay.
+, it doesn't have to be that way.
+Okay.
+, so I could have written exactly the same, ,
+the same definition.
+this.
+, and, , write all the code, you know, so,
+so now my my expressions e0 and E let me
+go back to this.
+My expressions e zero and e1, , could be written
+using these, , symbolic constructors instead, which looks an awful
+lot , , what I get from the show
+function.
+Okay, here's here's E0 and E1.
+Written using these symbolic constructors.
+And here's what you get by by, , , using
+the show function that I defined on the previous slide
+that I didn't show you in detail how it worked,
+but it just replaces, you know, it just it just
+goes through and and turns these into strings.
+Okay.
+Maybe it is actually worth looking at that just briefly,
+the form of this is very similar to the form
+of this, of this, of this eval function.
+Okay.
+Again, three cases, one for each constructor.
+And the only difference is that on the right hand
+side here we had integers and we were doing multiplication
+and addition okay.
+That's the meaning.
+That's what evaluation gives.
+Whereas turning things into string strings we have over here
+manipulations on strings okay.
+So to get a string for the integer n
+the function show this is a function in Haskell that
+you can use apply to any value to get a
+string.
+Actually not every value but many values okay.
+So this will give you a string representing this integer.
+And then , you know, to put together the string
+for E and the string for F with a plus
+in the middle, we can use append.
+Okay, this is a string.
+This is a string.
+This plus thing in the middle here is a string.
+Oops.
+And append.
+Append here and here is used for putting these strings
+together.
+All right.
+If this is all a little bit bewildering, bewildering for
+you all, let me just suggest you look.
+You concentrate on this first on this first version.
+The others are just slightly prettier versions of the same
+thing.
+But the first one is the one that, , that
+has all of the content in it.
+Okay, so Let me see.
+Right.
+So are there any questions about that?
+I want to move on to another example.
+Yeah.
+Let me throw you the.
+Hoops.
+Nice shot.
+, is the second column necessary?
+The second column.
+I think you said that the second column.
+When you o.
+The second column.
+Yeah.
+Second column.
+You mean here?
+No.
+Completely unnecessary.
+I put it in just to make it prettier.
+Because plus is a kind of, you know, it's a.
+Well, so you could just put one column in a
+plus.
+Yes.
+You could.
+I mean, yeah.
+Okay.
+Any other.
+Questions?
+The first column is necessary just because it says this
+thing is a constructor.
+Anybody else I'm going to move on to another example
+now.
+Okay.
+My other example is propositions.
+So this is logic.
+.
+And this is connecting together computation and logic part of
+the course and functional programming part of the course.
+Again okay.
+So I can represent propositions in Haskell.
+and here is a data type algebraic data type
+for propositions that have false true negation
+disjunction and conjunction.
+Okay.
+So these are the propositions you've been dealing with and,
+and variables, , having strings as names.
+Okay.
+So this is the full the part of process.
+Okay.
+Propositional logic has more stuff in it a little bit
+more.
+You'll learn about implication in case Julian hasn't talked about
+it yet.
+Don't know.
+, anyway, this is this is propositional logic without implication
+in it.
+, but it doesn't matter.
+Anyway, we've got we've got here now six cases.
+Okay.
+And so you can represent the stuff that you've been
+doing in your, in your, in your logic exercises.
+All right.
+, so we've got variables.
+So six cases, six constructors.
+Okay.
+, the first four constructors are , , you know,
+alphabetic, you know, var feet and nought.
+And the, these two I've chosen to do as symbolic
+constructors.
+Okay.
+So colon , two vertical bars colon and colon.
+, two Ampersands.
+Colon okay.
+This is disjunction.
+This is conjunction.
+All right.
+So , going through these six cases.
+We've got , the first one is, is, , you
+know, we've got three cases that are, that are recursive
+in three cases that are non recursive.
+So the simplest ones are these here.
+Okay.
+So the the case of a of a propositional variable,
+it's the constructor of var to say this is a
+variable.
+And then the name of the variable which I've defined
+here to be a string.
+Okay.
+I'm using strings as names okay.
+So this is just propositional variables.
+This is this is what I'm going to use
+to represent false.
+And this is what I'm going to use to represent
+true.
+Why do I not use false false and true Okay.
+Reason is that, , Haskell would complain that I'm using
+the same thing for two, , having two types.
+It would get confused.
+Okay, so f and T, that's the only reason.
+Okay.
+, the last three cases here are the recursive one.
+So, , you know, not apply to a proposition.
+Gives me a proposition prop here is proposition okay a
+prop and this, this, , disjunction forming thing here.
+Okay.
+And another prop that gives me a proposition.
+So this is the disjunction of two propositions.
+And this is the conjunction of two propositions prop.
+And then this this symbol this this constructor here
+and then prop okay.
+So six cases.
+So this is more complicated example than what I had
+a minute ago.
+So a proposition is one of six things.
+There are the six cases.
+And I can form propositions this one down here.
+Let me draw that as a tree.
+Okay.
+So it's this some conjunction thing applied to two propositions.
+This is this is this is P0 okay.
+From my from from up there okay.
+So what's the first thing.
+The first thing is constructor var applied to the
+name a.
+So this is a string.
+Okay.
+And what's the second thing.
+It's the constructor not applied to var.
+of A.
+Okay.
+Not very exciting.
+, okay.
+This is representing, , what I what what Julian would
+write as, , a and not a.
+Okay.
+Okay.
+And this and this form, which is just drawing P0
+out in the form of a tree.
+Okay.
+This is showing the structure of this, of this thing,
+showing the structure of this expression a and and then
+a subexpression not a.
+Okay.
+, one thing to point out here is that in
+these, , algebraic data types, you always need.
+Wait a minute trying to see what time it is.
+Okay.
+You always need constructors for every case.
+Okay.
+Six cases, six constructors.
+Okay.
+A natural question is couldn't I just leave this one
+out?
+Because somehow it's Haskell should sort of figure it out.
+If I use a string here, , as a prop,
+that.
+That's what I mean.
+Okay, the answer is no.
+You can't leave it out.
+, so, , , okay, so that's that's the way
+Haskell is defined.
+You can't leave it out.
+Okay.
+Another, another, , another part of the answer is, you
+know, why can't you leave it out?
+Why is Haskell defined that way?
+And the reason Haskell's defined that way is that, ,
+type checking, this whole type checking thing in Haskell, the
+fact that it can figure out what the types are
+in your program and it can even figure them out
+if you don't tell them what the you know, if
+you write a function without telling you what type it
+is, it'll figure out what type it is.
+All of that works.
+It's on the borderline of being possible, and this
+is one of the things that you need to have
+to make that be possible is that there's always constructors,
+, whenever you're using a, , algebraic data type.
+Okay.
+I could maybe mention at this point, I said last
+time that algebraic data types is one of the things
+that was invented in Edinburgh that contributed to functional programming.
+Another thing that contributed to functional programming invented here was
+type checking for, , for this this style of language.
+, another, , former professor here, Robin Milner, who won
+the Turing Award for this work and other work.
+, related to that?
+Okay.
+, I'm coming to the end of my time, which
+I keep looking at my watch to decide where I'm
+going to stop.
+Okay, so these are propositions, and I can write a
+function to turn a proposition into into a string.
+Okay.
+So it takes a prop and it gives you a
+string.
+There are six cases because there are six, , kinds
+of proposition, one for each, one for each, , constructor.
+And on the right hand side I have a string.
+So, you know, the, the, the, the case of our
+x x is a string.
+And so, , turning that into a string is just
+the, the value x.
+f and trees.
+And these other cases, you have to turn , the
+subexpressions into strings, here for example.
+Okay.
+Turn P into a string.
+We want.
+We want to turn this into a string.
+Right.
+So we turn P into a string.
+We turn Q into a string.
+And we join together them together using append with a,
+you know, double vertical bar in the middle.
+Okay.
+, you know.
+Note.
+It's important with these things to see the, the, ,
+the form of the function follows the form of the,
+of the type definition.
+This we saw this already with list.
+, with definition of functions on lists using recursion and
+pattern matching.
+, definitions.
+Okay, we've got six cases here.
+, the type definition is recursive in three places.
+I mean three, three of the six cases and the
+function definition on that type, we've got six cases, one
+for each constructor.
+And it's recursive exactly in the places where the type
+definition is recursive.
+Okay.
+So here P is a prop.
+And so we need to use recursion to turn it
+into a string.
+You know p and q here are props.
+And so we use recursion here and there okay.
+So the the pattern of the function follows the the
+pattern of the type definition.
+And evaluation is similar I think I'm going to
+I think this is a place where I'm going to
+ask for questions and pick this up at this point
+in the next lecture, because it's a little bit requires
+a little bit of explanation, but before it.
+Don't don't just leave.
+All right.
+Are there any questions at this point?
+Because this stuff I know, it's, , I know it's
+a little hard.
+Or at least students in the past have found it
+hard.
+And so I want to give you a chance to
+ask questions if there are any, , anybody.
+You all you're all comfortable with this.
+You're going to be writing data type algebraic data type
+definitions starting tomorrow.
+Okay?
+I mean, if there are no questions, then, , thanks
+for your attention.
+And I'll pick this up on Monday at this point.
+Okay.
+Here's.
+I wanted to ask some quick question about the curse.
+, yeah.
+According to the academic calendar of the.

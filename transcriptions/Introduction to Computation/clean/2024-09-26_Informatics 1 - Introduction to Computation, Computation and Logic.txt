@@ -1,0 +1,911 @@
+All right.
+Good afternoon everyone.
+So last time we talked about categorical statements.
+And I ended up trying to convince you that it's
+very easy to program categorical statements in Haskell using things
+that you've already learned.
+You didn't seem terribly convinced by the end of the
+lecture.
+So I asked you to go away.
+Refresh the Haskell you've just learned.
+Look at this slide again and come back.
+Now, if you still wished to talk about it further.
+So who has successfully improved their understanding of what I
+was trying to say here?
+Who has unsuccessfully tried to improve.
+What are the rest of you expecting me to do?
+Go over it all again, right.
+, that's not an efficient way to proceed.
+So let me get on my high horse and remind
+you that the key thing about university is that you
+do the work.
+We provide you the stuff with which to do the
+work.
+And as I also said early on, this course keeps
+a fairly steady pace up to about week six, where
+we take a little bit of a break.
+So it's really important to keep up.
+Of course I plan for this, so we're going to
+go over it again anyway.
+But for those of you who aren't really sure what's
+going on, you're going to need to speak up and
+talk about it.
+I mean, ideally you can also do that in the
+tutorial, but we can take maybe five minutes to go
+through this again.
+So you've all seen list comprehension.
+And you haven't seen list comprehension again since Tuesday, unless
+you were one of those people who are going ahead
+and doing tutorial two in advance.
+But in that case, you probably understand this anyway.
+So.
+Who has completely for all?
+Let me rephrase that.
+Who confidently understands this basic Haskell list comprehension?
+The simple one with just the X there.
+More, more.
+Any more?
+Okay, so about one 12:45 third.
+The way I think of it is because I'm a
+mathematician.
+So I think of this as Haskell's way of writing
+the sets that I'm used to writing from school set
+theory.
+But not all school set theory is the same.
+So let's think about it from a programming point of
+view.
+This notation is chosen to look set theory.
+But Haskell is a program programming language.
+So what's it really doing?
+The construction means here's a set of variable x.
+And remember.
+Does everybody remember what the sign means?
+Yes.
+Anybody not remember what this sign means.
+Because if you don't you're stuck here okay.
+So element of same as element.
+So look at all the x that are elements of
+list sorry elements of things.
+So this is just taking the list of things and
+processing them one at a time.
+so in this case.
+What did I start with?
+.
+Ah.
+How many have I got?
+Oh, Stu w x y z.
+Okay, so this is things.
+That's what we have here.
+And the list comprehension.
+Comprehension is saying look at every x.
+That is an element of things.
+So take these things one at a time.
+And this comma here is really just another way of
+writing.
+And we'll see later in the course other situations in
+which we do that.
+So in some ways you might think this is a
+bit perverse.
+Why not.
+Right.
+And But the way you should think about it is
+here's the list of things we're considering.
+And having got a list of things to think about,
+which is that lot.
+We're going to filter them out according to whether they
+satisfy this property or not.
+So here's the list and here's the property or the
+predicate in our language.
+And the predicate says x is a triangle and x
+is small.
+So we're going to go through.
+Skip back a couple of slides because I had helpful
+diagrams.
+We're going to go through all the things all the
+every x in things little X and things and say
+is it a triangle and small.
+And if we do that we find that R isn't.
+Y is are not a small triangle because it's a
+circle.
+S is a small triangle.
+Hopefully T isn't.
+U isn't, V is.
+So then what we've got is a list that has
+been filtered.
+So filtered is a word that is often used to
+describe this process.
+You have a view of a whole list of things,
+and you want to filter out the ones that you're
+interested in.
+So in this case we're interested in small triangles.
+So starting from the list things this list comprehension gives
+us back the small triangular things which are in this
+case s v and x.
+Does that help with that bit.
+Somebody says yes.
+Anybody say no because I'm not quite sure what more
+to say other than go and program it.
+We'll see many more of these.
+And of course you will be doing lots of examples.
+So this is the basic list comprehension.
+Give me a list which comes from a big list
+and is filtered out to be just the things I'm
+interested in.
+The next thing I did you may not have seen
+yet in the Haskell side of the course, but all
+it's doing is saying, well, instead of giving me the
+things that I want, give me the things that I
+want and apply this predicate to them.
+So if I take x and apply is rid of
+x, I get true or false according as red is
+x.
+So in this case I've got my filtered list s,
+v and x, and I'm just returning the value of
+whether they are red or not.
+And in this particular case.
+V is red and the others are false.
+So that gives me back a list of Haskell truth
+values.
+False.
+True.
+False.
+So that's is red of S, is red of V,
+and is red of x.
+So now I've got a list filtered and I've applied
+a function a predicate in this case to it to
+give me a set of truth values telling me whether
+each of the things I'm interested in is red or
+not.
+And the final step is a bit of Haskell magic.
+So I asked you this last time, but I forget.
+Have you already seen the list and function in the
+FP?
+Somebody thinks you have, but many people probably don't remember.
+So.
+If I apply and to.
+A list.
+That's exactly the same as just ending all the lists,
+all the elements together.
+So just taking a list of truth values, of course,
+because this is a Boolean function.
+So it works on truth values.
+So it's essentially a many place and instead of a
+two place and which is very convenient.
+, since we've got the board handy.
+What is the value of that Haskell expression and of
+the empty list?
+So I've heard both answers.
+So let's think about it for about another 10s.
+And let's take a vote.
+So who thinks it's false?
+Okay.
+Who thinks it's true?
+Majority and quite a large number of people, as usual,
+who are undecided.
+I really wish I had an electroshock mechanism.
+.
+So the answer is true.
+And we will see that coming up again in logic.
+, I talked did I talk about vacuous for one
+of you emailed me before the course or earlier in
+the course and asked about and of nothing of the
+empty set?
+.
+It's something that took a long while for logic to
+decide that the and of no things should be true.
+But let me give you a bit of intuition now,
+and we'll come back to it later in the course.
+If you think about what and is doing set, theoretically
+it's an intersection.
+So if I have the and of two properties.
+Then and is their intersection then if I add a
+third one.
+I need to rub out some stuff because only the
+bit in the middle is true.
+And every time I put another thing in the and
+fewer and fewer things are true.
+So if I in order for that to make sense,
+when I had no predators in the hand, everything must
+have been true.
+And for those of you who are getting on well
+with Haskell and recursion, write out the definition.
+Implement the and the list and function in terms of
+the binary and function and standard list definitions and see
+what you do, what what you get there.
+But we're only not thinking about that right now.
+We will think about this later on.
+So we have and just as an operator, which takes
+a list of truth values and collapses them together by
+applying and between all of them.
+So what's this statement now saying?
+It's saying that's is red and V is red and
+X is red, which is false because S is not
+red.
+And in fact, that's enough because it's a list of
+ands.
+As soon as you see a false value, you know
+that it's going to be false.
+But what we've done here is take this quantifier first
+order looking thing every, which is a nasty, complicated thing
+and turned it into a many place.
+And and we'll be doing that all the time because
+they're fundamentally the same and corresponds to every for all
+in the same way that or corresponds to there exists
+or some.
+Okay.
+Does that help a little bit for some of you?
+Some.
+Probably the best I can hope.
+Well, the rest of you.
+So you're going to do the tutorial so you will
+be forced to think about it.
+Use Piazza as and when you have doubts or questions.
+As always.
+And because time is finite, I will go on to
+what is really the main topic.
+So this is by way of an example, because we're
+going to use this Haskell example in order to check
+our understanding of logic and to show how logic can
+be programmed.
+So Haskell is a 1980s, if I remember rightly, programming
+language.
+Now we're back in 2300 BC, and this is a
+translation of the slightly unhelpful definition, or rather, it's a
+slightly unhelpful translation of a definition from Aristotle of what
+a syllogism is.
+A syllogism is discourse.
+In the original word there was logos, this word for
+reasoning, discourse, any thing to do with words.
+A syllogism is discourse in which certain things being stated.
+So you make some assumptions and state them something other
+than what is stated.
+So you try to show something new follows of necessity
+from those things.
+This is a very 19th century translation.
+I think we might translate it differently today.
+So here is the classic example, slightly adapted for modern
+sensibilities.
+So the standard example of a syllogism goes this.
+All Greeks are human.
+I think I know some cats who might disagree with
+that, but never mind.
+So for our purposes, all Greeks are human.
+All humans are mortal.
+Which is true despite Elon Musk and Co's best efforts
+so far.
+From that, it follows that all Greeks are mortal.
+Do you all accept that as a valid piece of
+reasoning?
+Does anybody have any doubts about it as a valid
+piece of reasoning.
+Is to say.
+Otherwise, all payments increase.
+Ah, yes.
+So not all humans are Greeks.
+But of course it's not saying all humans are Greek,
+so it's not making a statement about humans.
+So the fact that all X or y is completely
+different from all y or x is important.
+, this does of course assume.
+Well, no, it doesn't assume anything.
+For this to make sense to us, we assume that
+Greeks, human and mortal, have their usual meanings.
+But could you put any set of adjectives or nouns
+in the appropriate places for Greeks, human and mortal?
+And this would still make sense.
+Okay, so all footballs are bars, all bars of foobar,
+therefore all verbals are foobar.
+Valid reasoning.
+Although It is intentionally nonsensical.
+So that's what logic is about producing rules of reasoning
+that are valid in all universes, whatever the actual meanings
+of these things are.
+, just as an aside, I said this was a
+slight variation of the classic example of the English version
+of the classic example.
+Any guesses on what the standard wording of this was?
+Up to about 1970.
+So yep, all Greeks are men.
+All men are immortal.
+Therefore, all Greeks immortal.
+And if you want, that wasn't just standard sexism of
+Europeans.
+Go back and read about the position of women in
+ancient Greek society.
+, they were not actually fully human in the perception
+of the time.
+But I don't think Aristotle actually said that.
+I think he used a word which just meant human,
+but it then got translated.
+There are many, many, many ways to write a syllogism.
+So this is one way of writing it as a
+piece of set theory.
+And this goes back to what you were saying just
+now about Greeks and humans and the other way round.
+So here I'm writing this as a piece of set
+theoretic notation.
+You should be able to read this fluently by now,
+because we asked you to revise set theory or learn
+it if you didn't get it at school.
+So if you don't read this fluently, try to get
+to a point where you do it says the set
+of x such that x is our Greek is a
+subset of the set of x such that x is
+a human.
+In other words, all Greeks are human.
+And then the rest of it is just the same.
+So the reasoning is the same.
+All I've done is change the language I'm using to
+describe the categorical statements.
+Modern logic, or at least in modern logic, as we're
+going to write it in this course, we tend to
+write it this.
+So here we've missed out the x.
+We've taken the x out of the equation.
+And instead of using nouns Greeks, we're just using
+predicates everywhere.
+So out here there is some kind of implicit well
+actually out here for all x x is Greek, implies
+x is human and x is human, implies x is
+mortal and x is Greek implies X is mortal.
+So the sand, the modern logical notation has this horizontal
+line.
+And what's above the line is the stuff we're assuming.
+And what's below the line is the stuff we're claiming
+to be true as a consequence or in traditional language
+premises and conclusion or consequence.
+So this this statement here, this symbol here is pronounced
+in various ways, I may sometimes say implies I may
+sometimes say entails.
+, both of them are slightly awkward because it's being
+used in a sense subtly different from either of the
+other senses of the word.
+But think of this as being a statement that if
+the predicate Greek implies the predicate human in the sense
+that for any x Greek of x implies human of
+x, and that's what this means.
+Does it matter what language you write it in?
+Well, not really, because it all means the same.
+But the advantage of a formal notation is that there
+is no room for arguing about what the English means.
+And we'll see later on.
+Well, actually, even in this example, there is some room
+for arguing about what the English means, but we will
+come to that a bit later.
+, so a few minutes ago I said, does it
+matter what symbols we use?
+If this is a valid piece of reasoning for Greek,
+human and mortal, then it's a valid piece of reasoning
+for verbal bangers and foobar or whatever I said.
+So we can write it symbolically saying if A entails
+B and b entails C, then A entails C, whatever
+actual values predicates we plug in for A, B, and
+C.
+So we've introduced a bunch of new notation.
+Any questions about this notation and what it means?
+Anybody unclear about the meaning of the basic syllogism?
+Sorry the hypothetical.
+Is it the same as a hypothetical syllogism?
+I don't know, because I don't know what a hypothetical
+syllogism is.
+It sounds a piece of philosophy.
+.
+It's so if you ask me.
+P implies q, q implies f, p implies f s
+or whatever.
+Yes.
+So that's the same.
+, so the reason I'm being slightly cautious is because
+there is an x implicit in here.
+Whereas if you say p implies q and q implies
+r.
+Therefore p implies r.
+That's a statement of propositional logic as well.
+So are we talking about propositions or are we talking
+about predicates.
+So if you do propositional logic.
+Then this is a valid rule of propositional logic.
+And we're doing exactly the same thing.
+But we're lifting it up to talk about predicates which
+apply to objects and not just about simple propositions.
+Yeah.
+It's a very good question.
+, can you have more than one predicate on the
+right side here, you mean.
+Yes.
+We will come to that.
+Do you want to hazard a guess as to what
+it might mean now?
+Yes.
+So we will see a bit later that we can
+put multiple predicates on the left and multiple predicates on
+the right.
+But for the moment, we're going to stick to the
+classic Greek full form, Aristotle's form, where we just have
+one on the left and one on the right.
+Okay, now I think we agreed when I first brought
+the syllogism up, that this is a piece of valid
+reasoning.
+Whatever A, B, and C are.
+I don't think there's any logic you would want to
+work with, in which case in which this is not
+a good piece of reasoning because it would be a
+very strange world.
+Okay, so that's the syllogism.
+Syllogisms are what we're going to be working with for
+the next couple of weeks.
+And the first thing I'm going to do with them
+is do a slight diversion into some pictures again, and
+discuss a way of checking a syllogism, or indeed another
+logical statement to work out whether it's sound or not.
+And this is actually a reasonably sophisticated piece of graphical
+reasoning that we're going to introduce.
+So let's hope it works.
+So remember what I did last time I said that
+if we're trying to determine whether every red triangle is
+small in a particular universe, the universe of things,
+then we did something , look at the red region,
+look at the triangular region, and see if there was
+anything that was outside the small region.
+So we were looking for a counterexample.
+That was something we did with one particular universe.
+I suggested that maybe that's how we think about it
+when we do it.
+How can we make it more abstract?
+Well, what is a Venn diagram?
+I suppose the first question is, does everybody remember exactly
+what a Venn diagram is?
+Who can remember the difference between a Venn diagram and
+an Euler diagram?
+Well, that's fair enough, because I didn't know the difference
+until I started teaching this course, and I'm not sure
+I ever had known it.
+You will see Euler diagrams used sometime.
+The main difference is that they don't include the whole
+universe.
+So this is the whole universe.
+Here we have the three properties within the universe the
+A things, the B things and the C things.
+And that gives us eight possible regions as we were
+talking in the first lecture about coding stuff.
+And so we can naturally give a binary code to
+each of the regions of the diagram.
+So this stuff is the outside and it's 000 because
+it's where A is false, B is false, and C
+is false.
+This region here is 011 because it's where A is
+false, B is true and c is true and so
+on.
+So we have a nice simple binary notation to describe
+the eight regions of a Venn diagram.
+And we can think about programming that up.
+And I don't think I'm going to make you programming
+it up.
+But it's quite fun to do.
+So having got a way to talk about all the
+possible combinations of three Predicates or three properties.
+Rather, predicates say, then we can use a Venn diagram
+to do reasoning about the relationship between them.
+And it works because the Venn diagram covers every possible
+way that the properties can combine in truth, true and
+false.
+I'm going to introduce a bunch of notational conventions.
+These are not universal notational conventions.
+You might see different ones elsewhere, but hopefully in this
+course we will be fairly consistent.
+So when I draw a diagram this, I'm going
+to use light grey shading this to indicate graphically
+that this region here has nothing in it.
+What is this region?
+It's where A is false and B is true and
+C is true.
+So this is the assertion that there are no objects
+in this region.
+Okay.
+With that.
+As a notation.
+Hopefully it's intuitive.
+That says you can't go there.
+Sometimes I want to say that there is something in
+one of these regions.
+And the notation there is a slightly trickier.
+I'm just going to choose a random letter x
+and write it in there.
+And what I mean by doing that in this form
+of reasoning is to say that there is something in
+this region here, which is where A is true and
+B is true, and C is false.
+Okay.
+So that's Venn diagrams and two pieces of notation for
+talking about whether there is something in a region.
+And if you're reading textbooks you will see people use
+the word inhabited to say is a region inhabited or
+not?
+It's not okay as a piece of notation.
+Any questions?
+We'll see.
+There is a question you might ask, but we'll probably
+come to it.
+Why am I doing this?
+Well, I'm doing this because I want to introduce Venn
+diagrams as a way to look at something which somebody
+claims to be a syllogism and work out whether it
+is or not.
+There are many other ways of doing that.
+We will see two others at least.
+So here's my categorical statement.
+This says A entails B, or in other words, every
+A is B.
+Here's a large number of other ways of saying it.
+But this is every a is B a entail speed?
+So if we look at the Venn diagram for A
+and B it's got these four regions.
+And what are we saying when we say A entails
+B.
+We're saying that region has nothing in it.
+So this is the region where A is true and
+B is false.
+That's exactly what is ruled out by the statement that
+every A is B.
+So if every Greek is human, this region is the
+region of non-human Greeks.
+So what do you think?
+It's reasonable to say that this Venn diagram captures exactly
+the meaning of this statement.
+And.
+Distinct shortage of nods.
+Are you willing to believe me for the moment until
+you've had a chance for it to sink in?
+So let me remind you of the general idea of
+lectures.
+It's not necessarily the case that you're going to understand
+everything in the first time.
+But when you go back through it, which you do,
+don't you?
+And incidentally, one of the ways I screwed up badly,
+as I told you, was by not going through lectures
+afterwards.
+So do make a habit of it.
+, so if this is an interpretation of the categorical
+statement, every A is B, then maybe we can interpret
+syllogisms by plugging together diagrams.
+So here's an attempt to look at the classic syllogism
+and represent it as some diagrams.
+Every a is B.
+Every b is C, every A is C.
+Here are the three diagrams.
+The three individual diagrams.
+Every a is B, every b is C for C.
+How do I plug Venn diagrams together?
+, if I were slightly better at doing fancy slides,
+this would be animated, but there are limits to my
+patience.
+So it isn't animated makes life easier if we rotate
+the diagrams a bit so that we can bring them
+together.
+So I'm going to rotate that diagram and rotate that
+diagram.
+What happens if I merge these two.
+So B is shared between the two diagrams.
+And a and C are separate.
+So I can represent them as a merged diagram
+that.
+Why are the shadings of this region as they are.
+So if I look at this region here, why is
+there nothing in it?
+Does it corresponds to there?
+All right.
+So it's ruled out by that bit which we can't
+see over there.
+On the other hand, this one has nothing ruling it
+out.
+So.
+This is a way of combining a diagram for two
+propositions into a diagram that expresses both of them at
+the same time.
+How do we extract the bottom one?
+So the logic we're trying to prove is that A
+entails c every a is C.
+Sorry, every Greek is mortal.
+So what we do is we take the B and
+we pull it out.
+So if B disappears what happens?
+Well you might think that this happens.
+So I've just removed B from the diagram.
+But what I'm left with now is this region which
+is half empty and half not necessarily empty.
+If I have a region, half of which is empty
+and half of which is not necessarily empty, what can
+I say about the whole region?
+So we are not necessarily empty.
+So this is actually the same as that.
+, the way I sometimes to think about this
+is that this is all about white paint.
+When I pull the B away, the white paint spills
+out and covers the rest of the region because white
+paint is good stuff.
+Using lots of stereotypes about colours and it spreads.
+It means there might be something here.
+And so if you remove a barrier between a white
+bit and a grey bit, the white flows out into
+the grey bit.
+Being a nice solid covering paint.
+And this process, each step of it made sense.
+So I conclude from that that if A entails B
+and b entails C, I plug them together.
+Takeaway b I get this diagram.
+And this is the diagram for A entails C.
+So my graphical reasoning technique has produced the same answer
+as the statement of the syllogism there.
+And therefore I conclude that this syllogism is sound in
+any universe.
+You will be doing a bit of practice of this.
+It's interesting.
+Why is it interesting?
+Partly because reasoning with diagrams is something that all mathematicians
+do, but is not something that all mathematicians write down
+in the published paper.
+Because when you draw stuff, you're not being precise most
+of the time.
+And it's interesting to think about whether it's possible to
+reason with diagrams in a way that is precise.
+And what we're doing here can be turned into something
+that is precise.
+And for those of you who that kind of
+thing.
+Go away and think about making this more precise.
+For example, by programming it, implement Venn diagrams.
+Think of a way of doing it.
+But for the rest of you, this is a way
+of saying, if I have a syllogism, is it sound
+or not?
+And we'll see examples of variations on syllogisms that are
+not sound.
+So I'll come back to that when I've got some
+more examples.
+But now I want to introduce you to a very
+important word, a very important name.
+This syllogism here is the one we've been talking about
+so far.
+The only example you've seen so far has a name,
+and its name is Barbara.
+I'm not going to explain why it's called Barbara until
+later.
+If you have a burning desire to find out right
+now.
+Well, preferably not right now, preferably after the lecture.
+If you really want to know why it's called Barbara?
+Go and look in Wikipedia.
+But be prepared for a substantial time of confusion, because
+ancient logic was much harder to deal with than modern
+logic.
+But I will explain this in week six, I think,
+for anybody who wants to.
+And because this is, in a sense, the fundamental syllogism,
+it's quite useful to have a name for it.
+So I'm going to call it Barbara all over the
+time.
+, and it has the form that if the premises
+of the things above the line are valid, then the
+conclusion below the line is valid.
+So this is the simplest form of syllogism.
+It's all A or b, all B, A, C or
+ASC.
+What other statements can we make?
+Instead of saying all A or B, we can say
+no a is B .
+Thank you for plausible.
+No.
+No reptile has fur.
+Okay.
+Which is currently true.
+, this is also a statement that is asserting a
+universally true statement in the universe.
+So in the universe we live in, reptiles do not
+have fur.
+So if you give me a reptile, I can tell
+you it doesn't have fur without looking at it.
+But from our point of view, this is really the
+same as saying every A is not B, every reptile
+does not have fur and is not furry.
+So from a modern point of view it doesn't look
+very different.
+But from Aristotle's point of view, it did look different
+because he didn't have the modern, refined understanding of how
+negation works, and he understood perfectly well how it worked.
+But he didn't look at it in quite the same
+way as we do.
+So here's an example.
+Oh, look, it's an example of a syllogism involving reptiles,
+snakes and fur.
+All snakes are reptiles and tails are no reptile has
+fur.
+Ah entails not f no.
+Therefore no snake has fur S entails not f.
+Is this just an instance of Barbara that we've been
+discussing?
+Lots of nods.
+Anybody disagree?
+Anybody think of a way that they could disagree if
+they were feeling being awkward?
+Okay, well, Let's.
+Should be able to think of a way to try
+to argue against it.
+, it works for us.
+Because for us, not F is a predicate.
+So being not furry is just as good a predicate
+as being furry is.
+And where Aristotle differed is that he didn't have a
+way of building new predicates out of old ones.
+So he didn't have the idea that there was a
+predicate, not furry.
+He didn't have the idea that there was a single
+predicate Greek and mortal, and that made everything much more
+complicated.
+So for us, it is an instance of Barbara, because
+a negated predicate is also a predicate.
+And there was actually another reason why Aristotle didn't quite
+understand negation in the sense that we do, and we
+will come on to that later as an optional exercise.
+So if you were learning logic 600 years ago instead
+of now, this would not have been called Barbara.
+It would have been called, depending on which country in
+Europe you were in, sell or rent or rent.
+.
+We'll actually chill out and chill out and and cellar
+and.
+, but for us, it looks the standard proposition.
+So what do universal statements look in Venn diagrams?
+Here's the one we've already seen.
+Every A is B and no A is B, so
+no A is B says the middle is empty.
+There is nothing that is both A and B here
+I've got a entails B here I've got a entails,
+not B.
+There are two other things I could do.
+I could write not A entails B and I could
+write Not A entails, not B.
+So if I draw the Venn diagrams for those statements,
+I get that.
+Right.
+So not A entails B that says that if if
+I'm outside A, then I must be in B, so
+that means there is no completely outside region.
+Nothing is in there.
+And this says if A is not true, if I'm
+outside A, then B must not be true.
+So that region is empty.
+, just looking at these diagrams, what do you notice
+about them?
+That's haven't had anything from the back recently.
+Somebody from the back noticed something.
+Yeah.
+They are mirror images.
+There's a lot of symmetry here.
+So these two are mirror images of each other.
+And these two aren't mirror images.
+But there's something going on.
+This is a blanking out the middle and this is
+blanking out the outside.
+So if we look at these two these are the
+exact mirror images.
+So A entails B is the mirror image of not
+A entails not B.
+If I now swapped b and A here.
+So suppose I wrote not B entails not a, what
+diagram would I get.
+The first one.
+So this tells us that not B entails sorry, not
+a entails.
+Not B is the same thing as B entails A.
+This is a very, very useful piece of reasoning, and
+it's one that the lawyer I've been moaning about did
+not understand.
+, so this said, if all non Greeks are non-human,
+then all humans are Greek, which is would be surprising.
+If you've done proofs in mathematics.
+So some of you have done proof in mathematics at
+schools.
+Some of you have not really done proofs in the
+modern sense, but you are doing them because you're going
+to get proofs throughout first and second year maths.
+Then it's often useful to take a statement of I
+know a I'm trying to prove be.
+I try instead to say, if not be holds, then
+let me show that not A holds.
+So that's called proof by contra position.
+You try to prove the opposite direction, but you have
+to negate things.
+So we will see this happening again and again and
+again in many cases.
+The other thing we can see is that these two
+diagrams are mirror images of themselves.
+So this is symmetrical.
+It's its own mirror image.
+And so is this.
+So that tells us that if we swap A and
+B it's still the same.
+So A entails not B is the same as b
+entails, not A.
+They are again contra positives.
+Likewise down here not A entails B is the same
+as not B entails A, so you will be getting
+used to flipping these back and forward time and again.
+And we'll talk a little bit more about the theory
+of it next week.
+, I'm going to.
+Keep going for a little bit.
+So what's going on here.
+What's going on here is that we're using negation.
+And we're also flipping things from one side of and
+tail sign to another.
+So negation and composition are intimately linked.
+And this is one of the things that Aristotle didn't
+completely get.
+Fortunately, we have a nice idea of negation that works
+well.
+So in modern logic and in several modern languages, then
+we have the law of double negation.
+We discussed that in the first lecture.
+In logic, if I say not, not a, then that's
+the same as a if not, not Greek is the
+same as Greek.
+And I asked you to think about that so you
+can discuss it in tutorials if you did think about
+it.
+So the law of composition, which describes what I was
+doing in those diagrams, says that if A entails B
+is true, then not B entails not A is true
+and the other way round.
+So this is an if f does anybody not recognise
+I f?
+Okay.
+It's a very convenient abbreviation that mathematicians use all the
+time.
+We pronounce it as if and only if and it
+means and if that goes both ways.
+So if I write p if q that means if
+p then q and also if q then p.
+So that means that p and q have the same
+truth values.
+They're the same.
+So it's not this one way.
+If that was confusing people earlier on.
+.
+So well-behaved mathematicians will read it out as if and
+only if mathematicians who are getting fed up might just
+say if.
+So what we have here is a piece of reasoning
+from contribution contribution that says a if A entails B
+if and only if not B entails not A if
+and only if not, not A entails not not b.
+That's.
+And then I apply the law of double negation.
+And then that gets me to a entails b again.
+So by combining these two things I can say that
+these two statements are exactly the same.
+From this I can deduce this.
+And if I have this, I can deduce this.
+So sometimes not all that often we will write this
+double line here in order to indicate that this is
+a rule that goes both ways.
+So normally rules go downwards.
+We start with the assumption.
+And the rule tells us the conclusion.
+If we write a double line, we mean we can
+also just flip the rule upside down.
+And it still works, which is usually not the case.
+Although in most of our examples it will be.
+But in most of logic it's not necessarily the case.
+Okay, so in the last 30s let me just review
+what we have covered today.
+We've agreed or hopefully we've agreed that we know about
+double negation.
+So two knots are the same as no knots at
+all.
+We've talked about Barbara, which we agreed was valid and
+we talked about contra position.
+So next week we will work on these some more.
+So obviously we'll start by reviewing them.
+And then we'll see lots and lots more syllogisms.
+So enjoy FP tomorrow.

@@ -1,0 +1,1204 @@
+Yeah, yeah.
+Of course.
+Music comes after you.
+All right.
+.
+Hello, everyone.
+, the lecture is starting, but before the lecture is
+starting, I'm here from Comstock.
+, and I'd to announce an event we're going
+to be doing this week.
+, maybe some of you have just been to the
+Informatics fair.
+Right now.
+We're going to have a similar event.
+It's going to be the sig fair where you can
+find out more about a special interest groups.
+We have one for AI theoretical computer science, quant server
+management, personal projects, cybersecurity, cloud stuff, computer architecture, game development
+and competitive programming.
+So if any of those sound they might be
+of interest to you, this event is going to take
+place on September 21st this Saturday at 3 p.m..
+, it's from 3 to 530.
+If you show up at three, there's going to be
+a welcome talk where all the sigs introduce themselves.
+You can find out what they do, what kind of
+events you can attend and how you can get involved.
+And after that you can chat to the different committees.
+, so yeah, that's going to be that's going to
+be this Saturday.
+There's also going to be free pizza if that's a
+deal maker for any of you.
+And if this sounds interesting, join our discord.
+We will have more announcements about that there.
+And of course see you guys on Saturday.
+And now over to Don.
+Enjoy this lecture.
+Where is it.
+Oh this is going to be in the Informatics Forum.
+Thank you very much okay.
+Right.
+Yeah.
+Thank you guys.
+Thanks.
+Thanks very much.
+Thanks.
+Thanks, Martin.
+, right.
+So, , lecture time.
+All.
+Right.
+So that was a theme from Indiana Jones, as you
+probably recognised.
+, put us in the right state of mind for
+our, , first lecture on functional programming.
+So this lecture is going to be on two things.
+, so first of all, I'm going to be telling
+you what is functional programming and why you want to
+learn about it.
+That's about the first half of the lecture.
+And then the second half of the lecture.
+I'm going to be starting to actually teach you functional
+programming, starting with very simple concepts, , types and values.
+Okay.
+, let's get started.
+So, , who has heard of object oriented programming?
+Anybody?
+Okay, everybody.
+Almost.
+Or maybe everybody.
+Okay.
+Who has heard?
+, you know, so that's that's that's things Java
+C plus plus, , many programming languages.
+So who before they, , started reading about what's in
+this course, , had heard of functional programming before.
+Okay.
+A fair number of people, but less than half.
+All right.
+That's not surprising.
+Okay, so Haskell is a functional programming language.
+Why are we teaching functional programming in Haskell?
+All right, so, , does anybody know what Turing Award
+is?
+Yeah.
+And yeah.
+Can you just say, .
+I'm sorry, the.
+What did.
+You say?
+What?
+The Turing.
+Turing award, the highest award in computer science.
+Yeah.
+So it's the Nobel Prize of of computer science
+named after Alan Turing.
+I mentioned this because two of the names on this
+slide are Turing Award winners.
+So this is people you have to take seriously
+when they say things.
+Okay.
+So, , some quotations about the relationship between computation and
+language.
+, at least that's why I'm telling you about this,
+, these quotations.
+So the first one is by Edsger Dijkstra, Turing Award
+winner.
+, he was one of the first computer scientists to
+take programming seriously as a kind of scientific activity, rather
+than just trying to sort of get programs to do
+stuff by putting putting instructions in the right order and
+so forth.
+So he's looking at it as a serious intellectual activity.
+And he he wrote that computer science is no more
+about computers than astronomy is about telescopes.
+And what he means by that is that, you know,
+astronomers don't, , devote their their intellectual effort to the,
+the gadgets on their telescopes and, you know, how to
+focus them and so forth.
+They're they're interested in the stars and the planets and
+things they can see through the telescopes.
+Telescope is just a tool.
+Okay.
+And computer science is about computation, and the computer is
+a device that we use to do computation.
+But computer scientists are, you know, just well, you you
+get the analogy, I hope.
+Okay.
+So the important thing is computation and how computation works,
+the limits of computation, that sort of thing.
+Okay, so that was him.
+, the next two people here are .
+So Benjamin Lee Warf was a, was a linguist, and
+he invented something called linguistic relativity.
+, and, , Wittgenstein, a famous philosopher, had similar ideas.
+Okay, so this is about the way that language and
+the structure of language, , determines the kind of things
+you can say and the kind of things you can
+think about.
+Okay.
+And, , the standard example of this kind of thing,
+which are probably urban legends, but I'll say them anyway
+because it makes it easy to understand.
+Okay.
+So supposedly people who live in the in the Arctic
+have lots of different words for describing snow, okay?
+Because there's lots of snow.
+There's different kinds of snow.
+They need different words for talking about the different kinds
+of snow.
+, and people who live in rain forests supposedly have
+lots of words for different kinds of green, because there's
+lots of green there, right?
+They need to be able to distinguish between them.
+So, , , as I said, these are possibly not
+actually accurate examples, but they give you the idea that
+if you're if you have 27 words for talking about
+snow, you can say much more subtle things about snow
+than if you just have the word snow.
+Right.
+And similarly, you know, different colours of greens and so
+forth.
+So the, the fact that you have ways of saying
+things, , certain things means you have ways of, of,
+of thinking about those things.
+All right.
+And this is the idea, the language shapes the way
+that we think and determines what we can think about.
+Okay.
+And programming languages, , similarly, they determine the way that
+you think about computation because they're about about computation.
+And then finally, the last person on this slide happens
+to be.
+So he's the first Turing Award winner, happens to be
+the the guy who taught my first, , my first
+lectures on, on on computer science when I was a
+undergraduate student a million years ago.
+, so he was he was here and I was
+there, and, , and he taught me, , about programming
+way back then, and he said a language that doesn't
+affect the way you think about programming is not worth
+knowing.
+Okay, so my goal in teaching you functional programming is
+to get you to think at a higher level about
+programming.
+Okay.
+So, , Haskell is just a vehicle for that.
+Okay.
+So I'm going to be teaching you about Haskell, but
+I really want to teach you about about programming and
+high level thinking about programming.
+Okay.
+High level.
+.
+Yeah.
+I hope it's clear why high level is good.
+, okay.
+So what?
+What is functional programming?
+Okay, so as the as the name suggests, , functions
+are the main thing.
+Okay.
+Functional programming functions.
+, not.
+So what is not the main thing?
+So, , , not assignment of values to variables.
+Now, I say this for people who've done programming before.
+It's very common in a programming language other than a
+functional programming language.
+You would write a statement , n equals three,
+and then later on you'd have a statement that says
+n equals n plus one.
+So this means take the value of n, add one
+to it and assign it to a variable n okay.
+This is assignment of values to variables.
+So functional programming this is not important.
+In fact, it's so unimportant that it doesn't.
+It's not possible.
+There are no variables that you can assign values to.
+There are variables and they have values, but you don't
+.
+Update the value of a variable by adding one to
+what it was previously.
+It isn't.
+It isn't possible.
+There's ways to do things that are what you were
+trying to do when you wrote that.
+, but you can't write statements that.
+Okay.
+So that's interesting.
+, so functional programming, you take a bunch of simple
+but very powerful ideas in combination, taken to their logical
+extreme.
+And you get a very, a very powerful, , ,
+way of writing programs, usually very short programs in comparison
+with, , object oriented programming languages.
+Okay, really, you know, one line programs instead of instead
+of 50 line programs.
+So, , let me show you, .
+So in this week's in this week's sort of, you
+know, page with the lecture slides and so forth, I've
+put a link to, , , something on Quora.
+I don't know if, you know, Quora.
+It's a sort of place where people ask and answer
+questions.
+Okay.
+So somebody asked a question about about programming paradigms other
+than object oriented.
+, I'll tell you what a programming paradigm is in
+a minute.
+Okay.
+And this is somebody who, , , wrote an answer
+about functional programming is black magic.
+And I put this here partly because it's interesting to
+read and to get his opinion about this, , which
+which I agree with, , and the fact that he's
+saying it rather than me means it's not just it's
+not just me that thinks this.
+It's a it's a it's at least one other person
+in the world.
+Okay.
+So, , as it says here, , , Haskell will
+thoroughly blow your mind.
+Okay.
+My aim in teaching you Haskell is to is to
+blow your mind in a kind of good way.
+A way that will improve your mind.
+Okay, so.
+So it's worth reading this.
+It's fun.
+It's interesting.
+, and he talks about the reasons why it's special
+and and good and so forth.
+Okay.
+It's not very long.
+Okay.
+, that's worth having a look at.
+So where was I?
+.
+Right here.
+So what do I mean by a programming paradigm?
+Okay.
+A programming paradigm is a way of looking at programming
+and the relationship between programming and the world.
+The real world.
+Okay, the thing that you're trying to write a program
+in order to, .
+Yeah, in order to do something useful.
+Okay.
+So, , so functional programming is a paradigm object oriented
+programming is another paradigm.
+There are others.
+Okay, so it's a way of looking at programming and
+the relationship between programming and and the world.
+So in functional programming, things in the world, okay, people,
+, objects and stuff, you know, that are moving around.
+These are values, data values.
+Okay.
+You use functions to compute with with data values to
+get other values.
+This is what you do in functional programming.
+In object oriented programming.
+Things in the world are what are called objects.
+That's why it's called object oriented programming.
+And there are things called methods that you use to
+change objects.
+So you operate on the objects using methods.
+And the the reason you do that is you want
+to change something about the object.
+Okay.
+, so if an object is a car, you might
+have a method which is , speed up or something
+that, and it will change the velocity of the
+car from what it was to a larger number.
+Okay.
+, so here are some examples of, .
+Wait a minute.
+, here are some examples of functional programming languages.
+Here are some examples of object oriented programming languages.
+Some of the languages are in both categories because they
+combine features of both.
+So Scala is an example.
+, JavaScript is another example f sharp okay.
+So there's no ultimate perfect language or ultimate perfect programming
+paradigm.
+There are advantages and disadvantages to all of them.
+, and so you need to learn more than one.
+And that's why we teach you in first semester functional
+programming and second semester object oriented programming.
+, so, , so I said on the previous slide,
+, or maybe I didn't say it, but, , functional
+programming is is is less widely used than object oriented
+programming.
+Why do we bother teaching it to you while it
+is still widely used?
+Not not as popular as object oriented programming, and it's
+used to do useful things in industry.
+And here are some examples.
+Okay.
+.
+Google.
+So when you type a query in Google, you get
+an answer very fast.
+Okay.
+, , that's pretty impressive considering how big the internet
+is.
+And it's searching through gazillion pages on the internet.
+How does it do that?
+Okay.
+The way it does that is that Google has, ,
+warehouses full of computers, and they're all working in parallel,
+, solving problems.
+Okay.
+, , they index the entire internet, , , so
+that they can answer queries quickly.
+And when you give them a query, they will be
+working in parallel on that query, doing different things on
+it, maybe trying different, different things and and then deciding
+what the best answer is.
+Okay.
+And that all happens lightning fast.
+Okay.
+And the mechanism that they use is something called MapReduce.
+So this is a this is a way to break
+problems up into into smaller problems, compute the solution to
+the smaller problems, then combine those solutions into the solution
+to the main problem.
+All right.
+So this is a thing.
+And it's what they use to, to , to
+program their warehouses full of , full of computers.
+And this is directly from functional programming.
+So I will be teaching you about a function called
+map.
+And, , and I'll be teaching you about another function
+called fold, which is the Haskell, , version of what's
+called reduce here.
+And, , putting those together gives you exactly, , this
+this MapReduce idea.
+And, , so this is from functional programming from the
+1960s.
+Okay.
+, so this is not directly using Haskell and functional
+programming, but it's using the ideas.
+Okay.
+Directly using Haskell.
+, you know, there's stuff in Facebook that uses Haskell.
+There's, , stuff in Twitter that uses Scala, which is
+a functional object oriented programming language.
+, here's another example.
+There's a lot of banks that use functional programming.
+What they're doing is automated trading on the stock market.
+Okay.
+And, .
+, so this is, this is doing trading without human
+intervention.
+So the the program recognises some condition on the stock
+market and, and buys shares and sells shares sometimes, ,
+with a sort of millisecond in between, because it recognises
+that there's a temporary difference in price between different markets
+and so forth.
+Anyway, complicated?
+All right.
+But there's lots of money involved.
+It's doing this in an automated way.
+And if you if you buy if you buy high
+and sell low, you lose money.
+, what you want to do is buy low and
+sell high, okay.
+And if you make a mistake in your program and
+you do things the wrong way around, you can you
+can lose a lot of money very quickly.
+And this has actually happened.
+So there's been companies that have gone out of business
+because in a half an hour they're there.
+Automated stock market trading, , had had a bug in
+it and it and it ruptured, you know, billions of
+dollars in a half an hour before they could turn
+it off.
+, anyway, so these, these companies, among others, use functional
+programming, , to do some of their, , automated stock
+market trading.
+And the idea is that they can write programs that
+are they can write them quickly.
+They're easy to read, they're easy to understand.
+They're easy to, you know, check that they're doing what
+they should do as opposed to some, you know, hundreds
+of thousands of lines of Java or something that.
+, okay.
+There's other examples.
+I'll just mention the last one.
+It's a it's a fun example.
+So Ericsson is a is a Swedish telephone, , telecommunications
+company.
+They had a project in the 70s or 80s to,
+to build a new phone switch.
+So a phone switch is the thing which connects telephone
+calls, , together.
+All right.
+And so they had they had this project to build
+their, their next generation telephone switch.
+And they and they started programming it in C plus
+plus.
+And after a couple of years, they, , it was
+a disaster.
+They gave up , , they, they said they couldn't
+do it.
+It was just too complicated.
+Okay.
+And so, , somebody said, why don't we try functional
+programming They invented a language called Erlang, which is a
+functional programming language with some special features for this kind
+of situation.
+And and the project, they they successfully built a software
+in record time and it achieves it achieves what's called
+nine nines, , reliability.
+So this is 99.99999999% reliability.
+It means that it's only, , it's only allowed to,
+, to fail for a few seconds per century.
+Okay.
+And, , , this is, , you know, the software
+is so is so high quality that it achieves that
+partly because of parallelism.
+This is one of the things that's in Erlang that's
+not, , that you're not going to be learning about
+in this course.
+Okay.
+So these are just some places that PHP has learned
+is used in industry.
+We've got a talk on Thursday from a guy working
+from a company called grok, which does, , large language
+models.
+, and, , I'm interested to see what he's going
+to tell us about, because they use Haskell in their,
+, in the programming for their, for their large language
+models, which is interesting.
+, new thing for me anyway.
+Okay.
+, it's important to learn many languages in different paradigms
+in your computer science or informatics career.
+, and, and so we, we, we give you two
+of them in the first, in the first year, ,
+functional programming followed by object oriented programming.
+The order that you do these things is controversial, and
+we do it that way around.
+In common with some other good universities in Britain and
+around the world.
+.
+, we think it's the right choice.
+, one of the reasons why we do this is
+because it puts everybody on, on the same level when
+they start.
+Okay.
+So those of you who've done lots of programming before,
+and those of you who've done no programming before.
+And we have both both kinds of students here.
+Okay.
+, the ones who've done lots of programming before don't
+have, , they have a certain kind of advantage in
+being used to thinking about about programs and how computers
+compute.
+But they won't have experience mostly with functional programming, and
+it'll be quite new to them.
+Okay.
+So it'll be something that you have to, in a
+way, forget some of the things that you know already
+in order to understand what I'm going to be talking
+to you about.
+Okay.
+Now, this last thing here, , functional programming operates on
+data structures as a whole rather than piecemeal.
+Let me explain what I mean by that.
+Okay, so imagine you've got your you're working in in
+Java or another object oriented programming language.
+You've got a big data structure.
+Let's say you've got an array.
+Here's an array.
+It's an array of numbers.
+Okay.
+, there's a million numbers in this array.
+Okay.
+Let me see.
+Left to right.
+, I guess it's from here.
+Right.
+Okay.
+So the first number, the in array is there, the
+second number in the array is here and so forth.
+There's a million of them.
+Okay.
+Suppose that you want to multiply each of the numbers
+in this array by two.
+Or do something else with it okay.
+Each number in the array you want to do something
+with it.
+Let's say multiply by two to keep things simple okay.
+So what do you do.
+You you you take the first one, you multiply it
+by two and you put it back.
+And then you take the second one and you multiply
+it by two, and you put it back and the
+third one and so forth.
+Okay.
+One at a time.
+You write a loop, what's called a loop, which has
+an index into the array, and it says, you know,
+a sub, a sub n equals a sub n
+times two.
+Okay.
+For, for n from 1 to 1 million.
+, okay.
+And so it's going one at a time down this
+array doing this okay.
+tick tick tick tick tick.
+Tick tick tick tick.
+Tick a million times.
+Okay, a million operations.
+That's standard object oriented programming, okay.
+In functional language.
+You do it differently.
+You'd you'd you'd write a function, a very simple function,
+which is the function for multiplying a number by two.
+You take your, your array which in functional programming would
+be called a list.
+But it's the same idea.
+You've got a million values one at a time here.
+And you'd say apply this function to this array and.
+Whoosh.
+Okay.
+It just sort of all happens conceptually at once.
+You apply this function to everything in the array.
+Whoosh!
+Okay.
+That's a technical term.
+Whoosh.
+.
+Not really.
+Okay.
+So it's it's higher level.
+It's not doing a little bit at a time.
+You're not writing a loop to tell you, you know,
+that you start at the beginning and work your way
+down to the end, rather than starting at the at
+the other end and working your way back to the
+beginning.
+You don't need to, , you know, you don't need
+to write any of that code.
+You just say, apply the function to everything in this
+list, and it just happens.
+Okay, so this is what I mean.
+It's it's it's it's, , operating on data structures as
+a whole.
+Okay.
+, so there's, , this is this is allowing you
+to have higher level thinking about algorithms, and you might
+say, well, you know, that's that's cheating because of course
+inside the computer it's going to take the function and
+apply it first to the to the first thing in
+the list and then to the second thing, the list
+and so forth.
+So actually they're equivalent.
+And that's true okay.
+But you're not writing any of this detail about about
+doing the, you know, the things in a row left
+to right or right to left or whatever it is.
+It's kind of when you when you write a
+program that, you know, does arithmetic, you don't think in
+terms of the binary digits that are used to encode
+the integers, or the or the or the other numbers
+that you're using.
+You don't need to think about the algorithm for for
+adding binary numbers.
+That's in the computer.
+And it just it just happens.
+You just think about addition and numbers, okay.
+You don't think about the electrons that are used to
+encode the bits in the computer.
+Right?
+So that's low level stuff.
+You don't think about it.
+You think about numbers in addition.
+And so here you're thinking about data structures and operating
+on the whole data structure.
+Okay, that's the difference.
+That's important.
+I'll just mention before I finished my advertising, , that,
+, , functional languages have influenced lots of other languages.
+Okay.
+And I'll just mention a couple of things on this
+list here.
+So garbage collection, this is, this refers to, , ,
+automated , allocation and d allocation of storage in, in
+programming.
+Okay.
+So , in, in, in Haskell and in other functional
+programming languages, , storage is allocated.
+And when you're finished using it, it's automated automatically garbage
+collected or deallocated.
+So you don't run out of storage.
+You can reuse it.
+Okay.
+And , this is also , this is also done
+in these other languages.
+Okay.
+But , many, many, many years later.
+So garbage collection was invented in 1960 for a programming
+language called Lisp, which was the first functional programming language,
+and Java was invented in 1995.
+And it was a kind of, , , exciting innovation
+that it was using garbage collection rather than doing manual
+allocation and de allocation.
+Okay.
+, so that's some 35 years later.
+Okay.
+, c plus plus when you go to the airport
+or someplace and you see a computer screen, it's supposed
+to be telling you when your flight is leaving and
+it and it says, , , and has an error
+message, okay, that's the C plus plus program, which has
+had an error with with storage allocation usually.
+Okay, okay.
+And there's other things here that I won't go into
+in detail.
+But in each case it's it's stuff that , came
+from functional programming languages influence mainstream programming language many years
+later.
+Okay, list comprehensions, I'm going to be telling you about
+them in the next lecture.
+, now, now also in Python.
+.
+Right.
+Okay.
+Any questions so far I'm now going to get into
+the actual, , content of functional programming.
+Anybody know?
+Okay.
+Never mind.
+, so I'm going to be telling you about values
+and types.
+So these are the most important things to start with.
+Anyway, in functional programming, , it's going to be important
+for you to read the textbook.
+, partly because not because this is so hard, but
+because there's details that I'm not going to talk about
+in the lecture.
+Okay.
+Details , , the, the way that you type in,
+, Strings that have special, that have special characters in
+them.
+All that stuff I'm not going to go into in
+the lectures.
+Okay, so we compute with values in Haskell and here
+are some examples of values.
+Okay.
+You can read these yourself.
+There's things numbers and strings.
+truth values.
+You could have a value which is a date.
+Although that's not built in.
+You could have a value which is a person okay.
+These things at the end.
+These are functions.
+Square root function.
+Addition function a function that takes the length of a
+of a of a data structure.
+It gives you a number and maybe a function which
+takes a person.
+It tells you whether they're alive or not.
+Okay.
+, so these are values.
+Functions are values just numbers or values okay.
+There's no , there's no special way that you need
+to treat functions.
+Well, of course you do different things with functions than
+you do with values, but there's no way in which
+you need to treat them specially because their functions, you
+know, it isn't .
+So an example is you can build data structures that
+have numbers in them, and you can build data structures
+that have functions in them.
+And it's exactly the same.
+, you know, there's no special difficulty in having the
+functions in the data structure.
+It's the same thing.
+It's just a value, okay?
+Every value has a type.
+Okay.
+Types are very important.
+I'll tell you what types are.
+, every value has a type.
+And we use this notation value double colon type
+okay.
+So there's a vocabulary of types that are built into
+Haskell.
+And you can also build your you can also define
+your own types.
+So one of the types is integers abbreviated int.
+So integers are numbers without decimal points you know 012
+negative numbers as well okay.
+So 42 is an example.
+Strings.
+, these are, , you know, they have double quotes
+around them.
+, that's a that's a type, , false.
+This is a truth value.
+, we call it a bool.
+Bool stands for Boolean, which is named after George Boole,
+who was a one of, well, the first logician in
+the in the 1800s.
+, so truth value is true and false, okay.
+And so forth.
+, this would be a date.
+This would be a person, perhaps.
+Okay.
+, functions.
+The type is not just that.
+It's a function.
+It says what kind of function it is.
+So function types, , always have these, these this, this
+thing, this sort of hyphen greater than, which is meant
+to represent an arrow.
+Okay.
+So square root function takes a float to a float.
+A float is a is a number which might have
+a decimal point in it.
+It might be in scientific notation , 2.7,
+times ten to the 23rd or whatever it is.
+So there's a notation for writing that in Haskell.
+It's called a float or floating point number.
+, so square root takes one of those and produces
+another one of those.
+Okay.
+, the plus function , takes two takes two, two
+numbers.
+For example, it takes two integers and produces an integer.
+And the way that you write functions which take more
+than one , value, , is is this okay.
+Not int okay.
+It's int arrow int arrow int.
+And I'll explain why in a later lecture okay.
+But just for now that's the way you do it
+in Haskell usually.
+Okay.
+Length takes a string gives you an int and ,
+and so forth.
+Okay.
+So , so function names always have capital letters at
+the beginning.
+Okay.
+Sorry, not function names, type names, type names, int string,
+and so forth.
+Have capital letters at the beginning.
+Function names have lowercase letters at the beginning, except when
+they have symbolic names.
+Okay with me so far this is all very easy.
+, now what do you do with values and functions?
+, so here is , some examples that are related
+to things that are in the first tutorial exercise.
+, so the optional part of the first tutorial exercise,
+you are going to be doing things with pictures of
+chess pieces.
+Okay.
+And here is a it doesn't matter if you've never
+played chess, you just need to know that there are
+these pictures of things.
+So, , this is this is called a knight.
+It's a black knight.
+It looks a horse.
+Okay, so a knight , is a chess piece.
+And we're where.
+Where?
+We're using the name picture for the type.
+Okay?
+Because we're going to be building pictures of chess pieces,
+but also pictures of multiple chess pieces, , put together.
+Okay, so, so suppose we have a knight and it
+looks this, this black, this black picture.
+And suppose we've got a function called invert which takes
+a picture to picture.
+And it's what it does is it takes the kind
+of photographic negative.
+So it turns black to white and white to black.
+So if you apply it to this, to this, to
+this black chess piece on a white background, you get
+a white chess piece on a black, black background, okay.
+That's what the invert function does.
+This thing is called , this is the function.
+This is called , the argument or the parameter.
+I'm going to be using both of those names.
+Okay.
+, And one thing to notice here is that you
+don't need to use.
+I'm just mentioning this because in many programming languages you
+need to use parentheses to write function applications.
+You don't need to do it here.
+Okay.
+So let's see is this going to work right.
+Invert night.
+Okay.
+So function applied to argument.
+In many languages you would have to write this.
+in Haskell you can write that if you want.
+Parentheses are used for grouping okay.
+, you don't have to write the parentheses because night
+is already a group.
+You don't have to kind of put it in parentheses
+to make it a group, okay?
+You're allowed to do it.
+In fact, you're allowed to do it as many times
+as you want.
+If you wish, you can also put parentheses around invert.
+You can also put a parentheses around the whole thing.
+Okay.
+, you don't have to.
+Okay.
+Simplest way is as it's shown there.
+Okay.
+So, , the reason why we don't require parentheses partly
+is because, , you tend to write in functional programming,
+you tend to write expressions combining functions, which tend to
+get sometimes a little bit long.
+And there will be parentheses in there to group things
+so that you know which parts have to be done
+before other parts and so forth.
+And adding extra parentheses makes things more cluttered, so we
+try to avoid them when we can.
+Okay.
+Now combining functions.
+So here's an example where we're taking, , a black
+knight doing various things to it and coming out Here's
+the Black Knight.
+We're doing various things.
+We're coming out with a picture that looks this.
+Okay.
+Using some some, some functions okay.
+So there's a function called beside which takes two pictures
+and produces a picture by putting the first one, ,
+to the left of the second one.
+Okay.
+So here's beside applied to a white knight on a
+black black brown background and a black knight on a
+white background.
+You get this picture here.
+, we've seen invert already.
+And then flip V is a function for taking a
+picture and flipping it around a vertical axis.
+Okay.
+that.
+So you take a, , a left, you take a
+left facing black Knight, you do a flip V and
+you get a right facing Black Knight.
+Okay.
+And so this, this combination of functions and and the
+value knight.
+Is, , pictorially.
+You can see it here.
+Okay.
+Invert the invert the black knight, flip it around its
+vertical axis.
+Put the first one of those beside the second one.
+You get that okay.
+Is that clear.
+And here you need the parentheses because beside is applied
+to the result of applying invert tonight and the
+result of applying flip V tonight okay.
+So you need the parentheses.
+So these are not there because you need them for
+function application.
+They're there for because you need them for grouping.
+So that's combining functions together to do things more complicated
+things with objects.
+And you can is that all clear so far.
+Yeah okay.
+You can define a function which packages this up.
+, because maybe you want to, to do it to
+more things than just this picture of a black knight.
+Okay.
+And so you can define it.
+You can define a function which will do the similar
+thing to any picture, including complicated pictures.
+Okay.
+So, , so what we had a minute ago was,
+was, was this expression here beside invert night and flip
+V night.
+Okay.
+So here is a function which does the same thing
+not just to a night but to any but to
+any picture P okay, so we use a variable to
+stand for a picture.
+And then we have the thing that we had on
+the previous previous slide there.
+And we're doing it not with a knight but with
+P okay.
+We're calling this function double.
+And it's a function which takes a picture and produces
+a picture okay.
+It takes, it takes for example, this black knight.
+And it produces this more complicated picture with a black
+knight and a white knight.
+Okay.
+And inside the box it's doing, it's doing what we
+saw on the last slide.
+Okay.
+But, you know, you package this up and so you
+see it as a, as a unit which, which does
+this thing.
+, and not just to night, but to anything.
+Okay.
+So so that's our first function definition.
+Function definitions are written using an equation that function
+name on the left with a variable for the for
+the argument or the parameter okay.
+And then the function body here which says what you
+do with that thing to get the answer.
+Okay.
+This thing at the beginning is the so-called type signature.
+So this is declaring what kind of function it is.
+It's not required.
+, Haskell will figure it out for itself if you
+don't write it down.
+But it's good.
+It's good, good practice to write it down, to make
+clear what it is you're trying to do.
+Okay.
+So that's defining new function.
+, and this is just now that you've defined it.
+It's just a thing.
+You don't have to have a you don't have to
+know what's inside the box.
+You just have to know that it does what's shown
+there.
+Okay, I'm running out of time.
+.
+Nevertheless, I will show you, , so we can right
+define other functions , , let's suppose that, , we
+want a function.
+By the way, I said p, the letter p, you
+can use any, any variable you .
+It could be x or n or pick or something
+that.
+So , suppose that we want to have a function
+which, .
+Takes a picture and takes three copies of them of
+it and puts them, , puts them together left to
+right.
+Okay.
+We could call that triple.
+, we could write, , the the signature as well.
+I should do this to, .
+I said it was best practice, so I'll do it.
+Okay, so there's a there's a function which would take,
+for example, a night, give you three copies next to
+each other.
+I could have written I could have written, , this
+instead.
+Okay.
+I get the same result.
+Does anybody know what the property of beside is that,
+, that says that these are equal?
+It's a it's a it's a mathematical concept.
+, do you have your hand up?
+Not commutative, but you're close associative, right.
+It's associative.
+Yeah.
+Commutative is is is , close but different.
+So here is associativity of plus.
+Okay.
+Here is here's commutativity of plus.
+Okay.
+Beside is associative.
+you could you can use a notation in Haskell
+to make it a little bit tidier.
+It's a little bit hard to see what's going on
+here okay.
+You can write.
+And the reason is because beside is what's called a
+prefix function.
+You you write the function name and then the argument.
+Okay.
+, , you can take functions which take two
+arguments beside and you can write them differently.
+So let me just do that.
+The notation is to use what are called back quotes.
+So these are quotation marks.
+But you'll find them on your keyboard in a different
+place from the usual quotation mark.
+, they lean backwards.
+Okay.
+You can write this that.
+This is equivalent to actually the second one of those.
+Or you can write it this.
+, sorry.
+My handwriting is always sloppy.
+, or you can leave out the parentheses, because actually,
+the fact that this thing is, , associative means it
+doesn't matter which way around you do the grouping.
+Okay.
+, can you read that?
+I hope it's clear enough.
+, okay.
+, so, , so beside is associative.
+Okay.
+Two copies of of.
+P.
+Next to another copy of P is the same as
+a copy of P next to two copies of P
+okay.
+Is is beside commutative.
+No it isn't.
+Okay.
+Because, , a knight next to a bishop is not
+the same as a bishop next to a knight.
+Okay.
+, running.
+Really running out of time here.
+, so I'll just say this, , terminology.
+Type signature.
+Function name.
+Function.
+Body.
+.
+You know, function body is the thing on the right
+hand side of the equal sign.
+, , this, , this variable here is sometimes known
+as a formal parameter.
+Okay.
+Formal, , as opposed to actual the here night
+double applied to night.
+This is called an actual parameter.
+It's an actual value as opposed to a name for
+a value.
+Okay.
+Formal is not wearing a necktie.
+It's it's to do with form.
+, technical word.
+Okay.
+This thing here is called an expression.
+This is also an expression.
+, and so forth.
+The whole thing is called a function definition.
+, I wanted to get to this last slide.
+This is about defining a type yourself.
+Okay.
+And I'm including this because Julian, when he starts talking
+about, , logic and computation, one of the things that
+you're going to be doing in the first lectures is
+using Haskell to do some to encode some logic.
+Okay.
+And he's going to be using, , some of what
+I'm showing you here.
+So this is a way to define a new type
+as a name for an old type okay.
+So a pick pick trans or picture transformer is is
+a is a type of things which take pictures and
+produce pictures.
+Okay.
+So double is a pick trans okay.
+You can define a type.
+So this is called a type abbreviation.
+You can you can define type abbreviations with variables in
+them.
+so trans of a type A is a is
+a is a type which takes an a to an
+a.
+So , so double is not just a trans.
+It's not just a picture to picture.
+It's also a trans picture trends applied.
+So this is a this is a type function.
+Trans applied to the type picture okay.
+And you can find entirely new types.
+So this is the type of of weekdays.
+And you can define them.
+There's there's various ways of defining types using this data.
+word here okay.
+One way is to enumerate all the possibilities.
+So here are all the possible days of the week
+okay.
+And so Monday is a weekday.
+Thursday is a weekday because they're in this list.
+And you can do things with these compare them
+to see if they're equal okay.
+They aren't.
+So it's the answer is false okay.
+notice the difference between comparison equality comparison and equality
+definition here and here and here and so forth.
+Okay.
+, double equals for equality comparison.
+There's going to be a lot more in this course
+about, , Type definitions, but these are some very simple
+ones you're going to need for Julian's, , lectures.
+And I have two minutes.
+And this allows me to, , first of all, are
+there any questions about any of that?
+Yep.
+, wait a minute.
+Let me go back to that here.
+A yeah.
+Yeah, that would be a formal parameter and this would
+be an actual parameter.
+Okay.
+Somebody else.
+Yeah.
+, this may be a bit more of a set
+of questions, but, , are you able to essentially.
+So you had the beside beside besides the triple,
+are you able to do that.
+, have, you know, let's just say an emphasis
+for instance.
+, that would do that infinitely, I guess.
+Well, you could do that two and end number of
+minds.
+, you can have a list of a list of
+values to be able to do it with more than
+to, to be able to do an arbitrary number.
+Okay.
+There's no notation that would conveniently allow you to do
+that.
+I think is what you're asking about.
+Okay.
+Yeah.
+Sorry.
+What's that?
+, pic trans is not a type class.
+I'll tell you about type classes later, okay?
+It's a type.
+It's a type.
+Function.
+So I don't see any other hands.
+I just want to show you this thing.
+I've been asked to show you this.
+This is, , computing support in informatics.
+, so, , if you've been to the labs in
+Appleton Tower, you will see that, , there are computers
+there.
+You can use these.
+You can get you can get a password for them.
+And the reason why you might want to use these
+is because Haskell is installed and it works.
+And, .
+All of the tutorial exercises are tested, , to make
+sure that they work on those on that installation.
+, it could be that when you install Haskell on
+your own laptop or home home desktop computer that you've
+done something wrong.
+Whatever it is, it's hard to know what you might
+have done.
+If you have trouble, it might be worth going through
+the labs and using the computers there.
+They run a version of Linux called dice.
+Okay.
+And , there's a link to this.
+Sorry, there's a link to this on the, in the,
+in the course, , just the week, week one page.
+And so you can look this up yourself.
+Okay.
+If you're interested.
+Okay.
+Thank you.
+, for your patience.
+.
+I tried installing the program on my computer last night,
+I had trouble.
+Can I go to the drop in lab?
+Yes, that's the whole point.

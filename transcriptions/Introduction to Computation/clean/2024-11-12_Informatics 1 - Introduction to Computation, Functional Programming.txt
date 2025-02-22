@@ -1,0 +1,1073 @@
+Okay.
+Let's go.
+Good afternoon.
+Right.
+So, , William Tell overture by Rossini.
+.
+Okay, I said today I would start by or I
+would have, as part of my lecture.
+, opportunity for you to ask questions about the, ,
+programming project.
+So for those of you who haven't found it yet,
+this is the course learn page and you go down
+and you find programming project.
+And there's the instructions and there's two files to download.
+Okay.
+So .
+Okay.
+So I don't know how many of you have read
+this handout, but, , the basic exercise is, , you've
+got the sequin calculus.
+So this is an exercise which combines, , functional programming
+and computation and logic.
+Right.
+So it's a SQL calculus.
+You've learned this from Julian.
+And those are the rules.
+And you know how to do proofs using the rules.
+And here are two examples of doing proofs starting from
+a sequence this one here at the bottom.
+Whoops.
+Won't leave them out alone.
+Won't allow me to highlight that.
+Yes it will.
+Okay, so starting with a sequence the one at
+the bottom and then working upwards, applying the rules where
+each rule.
+Here you can see which ones have been applied.
+And some of them, some of them have one, ,
+premise.
+And so you get a sort of straight line proof.
+And some of them have two premises , or
+left here.
+, has two premises.
+That's this rule, , here, this one bottom left.
+And so the proof branches and at the end you
+get either no premises this, this proof here, no
+premises, , or you end up with, , some, ,
+premises which are so-called simple sequence, meaning that they don't
+have any connections, connectives in them.
+And so here's, here's one and here is another one.
+And you can't take these any further because there's no
+connectives to , there's no connectives to, , take apart.
+And the immediate rule doesn't apply because the things on
+the left and right are different.
+Okay, so you know this already.
+And what you're supposed to do with this exercise is
+to implement this in Haskell.
+Okay.
+And so you're given representations of, , propositions in sequence.
+And your job is to implement a function.
+That takes a sequence and gives a list of sequence.
+So that's the sequence at the bottom.
+Could you stop talking please.
+This is the sequence at the bottom.
+And this is the and this is the list of
+sequence that are the assumptions, , the basic the simple
+sequence that, , lead via that proof to that sequence.
+Okay.
+So you are supposed to compute that.
+And , here are some examples of what it should
+do.
+, so you know, for the for the first proof
+up that I showed you this one here.
+Okay.
+, the thing at the bottom that involves, , ,
+and or of an end of an or with some
+negations.
+So, , that's this sequence here.
+And when you do the proof, you get the list
+of no, , sequences, assumptions, which is, , because up
+at the top here, there are no, , assumptions required
+for this proof.
+You know, and for the other one, for the other
+example.
+Sorry.
+I show it to you again.
+I mean, those of you who've read this carefully and
+thought about it, this is all.
+You know this already.
+But for those who haven't, I just wanted to make
+sure you know what I'm talking about.
+So for this proof, you end up with, , two
+simple sequence at the top, which happened to be identical
+in this case.
+In this particular proof, There's more than one possible proof.
+And so you end up with, , you try this.
+And in my implementation, you end up with, , with
+a list, with one simple sequence.
+, but, , it would also be correct if you
+have two that are, , different representations of the same
+1 or 2 that are identical, but, but duplicated.
+Okay.
+, because we're using unordered list to represent sets anyway,
+so that's what you're supposed to do.
+And , there's some suggestions of how you might proceed,
+but you can do it differently if you wish.
+, okay.
+So that's the, , the compulsory part of the project
+is to implement this one function.
+Okay.
+So this is not broken down into, into , substeps
+it would be in a tutorial exercise.
+You just have to implement this one function.
+And that's the only thing that matters.
+Okay.
+And then in the, , in the optional part, ,
+add implication and by implication and there's the rules and
+there's an example, proof and , same function.
+But it should work with implication and by implication.
+Okay.
+And then finally, if you, , if you're bored and
+want to challenge, you can try to do the challenge
+part, which is, , trying to make the proofs as
+short as possible and counting how many steps they take.
+Okay.
+So that's the exercise or that's the project.
+And , in order to make your lives easier and
+also to make your tutors lives easier and to make
+my, my life easier, , I decided on this exercise.
+I give you, , I give you the tests that
+are going to be used for marking.
+And so.
+and you can and you can run them before you
+submit.
+Or that is to say, when you submit, they will
+run automatically and you can see what the results are.
+Okay.
+So , and they're broken up into categories.
+So if any of these tests work, any of these
+tests work, you get one point.
+If all of these tests plus the next one work,
+you get two points.
+So these are these are these represent basic single rule
+applications.
+This one is a straight line.
+proof no branching.
+, if most or all of these work as well
+then you get three points.
+These look complicated.
+, I generated them with quick check just to get
+some some things, some sequence that, you know, exercise different
+rules.
+So, , they don't prove anything very interesting.
+They're just, , they're just, .
+Examples.
+I think the first two are the two examples that
+are actually in the higher up in the handout.
+And to get four points you also have to handle
+all these.
+And these handle these have some implication and by implication
+in them okay.
+And then there's some for the challenge questions.
+The challenge part if you if you want to try
+that and I've included some proofs here with , ,
+you know 491 steps.
+, so these proofs can get to be quite large.
+So that's the exercise.
+Who has questions?
+Yeah.
+Can you get.
+More than once?
+Sorry, I don't get that.
+Can you, , can we submit it more than one?
+Well, can you submit more ones?
+Yeah, sure.
+, yeah.
+You can can submit as many times as you want,
+and you're encouraged to do that in order to test
+your program as you go.
+All right.
+So, , you know, for example.
+So I suggest that you do, , that one way
+of proceeding is to implement the rules and then implement
+your proof function that uses the implementation of the rules.
+It's kind of obvious that you're going to have to
+do that somehow.
+Okay.
+And so once you've implemented the rules , well you
+can't you can't get these tests to run until you've
+also got a proof function because that's, that's, you know,
+part of the test.
+But, , you could check that your rule implementations are
+correct.
+, there.
+Okay.
+So do that as much as you, as you wish.
+, and only the last one counts.
+Let's see.
+Sorry, it's not working.
+Is the whole project out of, , four marks?
+Yes.
+Yep.
+Yep.
+So, yeah.
+, that's the that's I mean, I didn't want to
+I didn't want to give it a finer granularity than
+that.
+Makes it harder to mark.
+, simply.
+Okay.
+So.
+Oh, you do, you haven't.
+You want this back?
+No.
+Okay.
+Right.
+Yeah.
+So, .
+Yeah.
+1 to 4 or actually 0 to 4.
+And the result will be multiplied by five to give
+you a percentage.
+Some.
+Somehow it's broken.
+I don't know, , there's a switch inside, but, ,
+can you just speak up if.
+There's something similar to the tutorial after this assessment?
+No, this.
+Okay.
+So there's no tutorial following this.
+So you just submit it and you get a mark
+and , and that's it.
+, and by the way this is an exercise which,
+.
+Hello.
+Hello.
+This works Okay.
+Maybe you had to talk louder.
+.
+Yeah, I was going to say this this this exercise,
+because it's a larger percentage of your mark.
+, the rules, the usual rules on extensions.
+And, , what's it called?
+Time adjustments for students with disabilities apply.
+Okay, so, , so some students will be able to
+submit it later than the deadline, but, you know, according
+to the rules on those things.
+So I don't know if you're familiar, familiar with those
+rules, but, , if you're not the, , the, ,
+student advisors will be able to help you.
+Okay, but you've got three weeks.
+I think it should be enough.
+It took me a day or less than a day.
+And by the way, I'll say my my solution is
+about 100 lines of code.
+Okay, but why don't you try anyway?
+It's fun.
+Hey.
+Hi.
+Yes.
+Is this, , , is this project kind of a
+tutorial ten or is there going to be also a
+tutorial ten.
+There is a tutorial ten there's a there's tutorials eight,
+nine and ten.
+Yeah.
+Oh so this is, this is in addition to that
+we've, we've reduced a little bit the, the load of
+the tutorials.
+eight nine and ten to give you a little
+bit more time.
+Okay.
+Yeah.
+So as I was saying that my, my solution, including
+the, , including the, , , what's it called?
+Challenge part is 100 lines of code.
+So it's not a huge it's not a huge thing
+that you have to write.
+Okay.
+, any other questions?
+Right.
+, you don't have to actually produce code.
+You just have to produce the list of assumptions.
+Sorry, you don't have to produce I said code.
+You don't have to produce proofs, okay?
+You just produce the assumptions, the list of assumptions that
+appear at the top of the proof.
+Okay.
+Of course, in order to do that, you have to
+do the proof.
+But there is no representation of proofs in Haskell here.
+Okay?
+There's only representations of .
+Of, , propositions in sequence.
+I mean, if you wish you could represent proofs, but
+it's not part of the exercise that you need to
+you need to do anybody else.
+Oh, okay.
+I hope it'll be interesting.
+, deadline last Friday of the of the semester.
+So I will now move on to the lecture.
+Which is, a commentary algorithms.
+And I did the first half of this already.
+, oops.
+So I'll just carry on.
+Okay.
+A few more problems I wanted to, to cover, ,
+in this lecture.
+, what time is it?
+Okay, so I've.
+Been.
+Talking about a bunch of combinatorial problems.
+Things generating all the sublists of lists, the permutations
+of a list.
+All these problems with lists.
+And, , the last one of these on lists is
+the problem of choosing , , k elements of a
+list of length.
+And I started off, , I introduced this last time
+very briefly.
+, so we know that there are two to the
+n sub lists of a list.
+If you've got a list of length n, okay.
+, and , but choosing choosing k elements from a
+list of length, and this is all of the
+sublists of length k of a list.
+Okay.
+So .
+Sub lists , of , okay.
+Of length of length.
+n so two to the n .
+.
+So this the choosing k elements.
+, it's, , there's a notation and it's written
+this.
+And you may have seen this in mathematics or in,
+you know, or somewhere else.
+, this is .
+, a notation for this calculation.
+And, , this is, this is pronounced n, choose and
+choose k and it's known as the binomial coefficient.
+And the idea is that, for example, if you take
+x plus one to the fourth.
+The answer is .
+With this.
+Okay.
+And this , the coefficients here.
+So this is one times x to the fourth, four
+times x to the third and so forth.
+And so the one here is .
+Is four choose for the four.
+Here is four.
+Choose three.
+This is for choose two.
+This is for choose one and this is for choose
+zero.
+So the coefficient of the of the k th degree.
+what are they called term.
+The case degree term of the polynomial is is calculated
+this way.
+And that works for any for any, you know, not
+just for X plus one to the fourth, but for
+other, , other products.
+Okay, so, , what's the number of these things that
+there are and here's a program to do it.
+So as I said, one program would be you, you,
+, you calculate all the sublists of, , of, of
+a list and there are two to the N of
+them.
+And then you filter the ones that are of length
+k and you're done.
+Okay.
+But, , there's an awful lot more sublists of a
+list than there are the ones of length k.
+So this is kind of the same, , the
+same, , problem with the way of doing it, as
+I've mentioned with calculating permutations, by taking all of the,
+, what was it, , the Cartesian product of a
+list with itself k times n times, and then filtering
+out the ones that don't have repetitions Petitions.
+, so, , yeah.
+So that doesn't work so well.
+It functions, but it takes a long time.
+So here is another way to do it.
+And it's, it's it's based on this.
+It's again based on this idea that I mentioned for
+, for Sublists, where you start with a list X1X2
+and so forth, and you decide, , for each one,
+, should, should it go in or out to, ,
+to produce your, your I can't see.
+Thank you.
+Problem.
+My multimedia, , presentation have to keep pushing buttons.
+, yeah.
+So for each one of these, you're deciding whether it's
+in or out.
+, and, and so this was the reason why for
+the sub list, we ended up with, , two to
+the n choices.
+, so here we've got the same sort of situation,
+except where we've got the limit of K, which makes
+it a little more complicated And so you end up
+with this with this code here okay.
+So choose K of a list.
+And the list is of length n.
+Here's the calculation of n being the length of that
+list okay.
+And you've got two base cases.
+If k is zero then there's only one way of
+of of of doing that.
+And that's the empty list.
+And if k is n there's only one way of
+doing that.
+And it's the whole list.
+And the interesting cases where k is in between those
+two extremes.
+And here you've got the, the idea of, you know,
+, to include.
+So in this case you're talking about an element X
+here somewhere and you're deciding whether it's in or out.
+Okay.
+This is the element which is which is x
+here.
+Okay.
+So you can choose to, to leave it out.
+And then you're talking about all the ways of choosing
+K from all the other elements in the list.
+Okay.
+So that's that's this part.
+Or you can choose to put it in.
+And that's the other part here okay.
+But you can only put it in if the rest
+of the of the lists that you're putting it into
+have k minus one elements.
+Okay.
+So the recursive call here.
+So the first call there was with choose k.
+So k doesn't change.
+x is of course is the tail.
+here it changes.
+You need k minus one.
+So you're you're you're taking yeah.
+Choose for a smaller number of elements okay.
+So this is a little more complicated than the sublists
+but similar idea okay.
+And you can see, you can see that it works
+here.
+, so I brought my laptop, but I forgot the
+adaptor, so I can't show you the programs running today.
+But they're there.
+They're just what it says on the slide here.
+Okay, so so for example, choosing choose three elements from
+this list of of of of five letters, you get
+these ten choices okay.
+Because why why ten.
+, because five choose three is equal to five
+factorial over three factorial times two factorial, which is .
+And let's see what's, what's.
+Yeah, it's, it's 120 divided by six times two okay.
+Okay I'm going to skip the slide.
+This is just all the properties that this thing satisfies.
+.
+And it works.
+And, , let me see.
+How much time do I have?
+A bit worried about running out of time.
+.
+I'll just.
+I'll just.
+I think I'll just breeze through this.
+This one.
+So this is now a problem.
+That's about numbers rather than lists.
+Although it involves lists as well.
+But, , I'll just say this is about, , the,
+the problem of giving a number, given a number, ,
+all of the ways, , all of the lists of
+numbers that add up to that number.
+Okay.
+So, , for example, it's called partitions.
+So the partitions of five for example.
+111111 or sorry 1111 1 or one one, one
+two, or for example, two and 3 or 5 itself
+and so forth.
+Okay.
+So the , there's a.
+I'm not going to I'm not going to go through
+this in the interest of time because I want to
+get to the end.
+, , because the last problem is the only one
+that doesn't involve, , lists of numbers and things, and
+I think it's worth getting that far.
+Okay.
+But, , so again, there's a fairly simple program that
+does this.
+All of these programs, they're, they're sort of combinations of
+comprehension and , and , recursion.
+Okay.
+Here's the recursive call.
+, that's a really powerful combination.
+, to, to use those two things together so you
+can write very short programs that do that do complicated
+things.
+Okay.
+So I'm not going to I'm not going to talk
+about this, but, , it's covered in the textbook.
+And you can you can read this, , afterwards if
+you want.
+Okay.
+Any questions so far?
+No.
+Right.
+Okay.
+So the next.
+The next one.
+This is the last one that that, , well, it
+involves lists and things.
+, or.
+Well, pretty much anyway.
+, so so this is a historical problem.
+, so, , a long time ago, you went into
+a shop and you wanted to buy something, and and
+it had a price, and you gave them some money,
+and, , and they had to give you change because
+the money you gave them might be more than the
+price.
+Nowadays.
+You give them a credit, you just tap your credit
+card and you're done.
+Okay.
+But in the days, I mean, there are still people
+who pay with cash.
+Maybe some of you.
+I don't pay any cash any more myself.
+But, , so it's not usually necessary anymore to do
+this problem.
+Okay.
+But the the problem is the problem here that that
+is handled by this algorithm is if you've got a
+sum of money that you have to give as change,
+okay, you pay, you pay £10 and you have to
+, and the thing cost, , you know, £8, ,
+97 and so you have to give £1 and three
+as change.
+And so how do you, how do you give £1
+and three and change if in your cash register you
+only have, , you know, , three £0.20 pieces and
+a bunch of ten pieces and some £5 and some
+two P's and so forth.
+Okay.
+So what are the possible choices of ways of combining
+those coins to make a certain amount of money?
+Okay.
+So that's what this is solving.
+Does anybody here carry cash anymore?
+Oh, yeah.
+Okay.
+Lots of you.
+Okay, I don't I was in a holiday on a
+holiday in Sweden a couple of years ago for two
+weeks, and I didn't have to use cash one single
+time.
+They're going to.
+They're talking about abolishing cash in Sweden.
+.
+Okay, so so we've got to we've got an amount
+of money we want to find change for.
+I've to sort of make this a little bit understandable.
+So I've used type synonyms total and coin for
+integer.
+So we've got a total amount of money that we
+want to find change for.
+And we've got a list of coins.
+So these are the coins that are in the cash
+register.
+And we want to we want to produce all
+the ways of using those coins to make exactly, ,
+that amount of money.
+Okay.
+An example is down here at the bottom here.
+So if you want to make change for £0.30 and
+what you've got is this list of coins.
+Right here.
+Okay.
+Then there are whoops three ways of doing that.
+For example two fives and two tens okay.
+and here's an algorithm for doing that.
+, so a little bit more complicated.
+.
+The first thing it does is sort the, the coins
+into, into ascending order, okay.
+Because that's required by this, by this helper function.
+Okay.
+So .
+And it has to do partly with , well, let's
+just carry on here.
+Okay.
+So, , if we want to make change for zero,
+it doesn't matter what coins we have.
+There's only one way to do that.
+And it's the empty list of coins.
+If we want to make change for any other number.
+So it's greater than zero.
+Okay.
+Then there's.
+Here's a here's a list of all the ways to
+do it.
+And it uses this function splits which I which I
+defined last time.
+So splits is given a list.
+It's all the ways of splitting it into one value
+from the list and everything else in the list.
+So, you know, , here's the list, you know, so
+item three and everything else, or item seven and everything
+else.
+Okay.
+So that's what splits give you is a list of
+all those possibilities.
+And , we need to ensure that they only occur
+once each one of these only occurs once.
+And the reason for that is to, , is to
+avoid getting, , repetitions in here.
+, exactly the same thing, , more than once.
+, corresponding to, , you know, things I make
+change for 30.
+.
+Let's see.
+Oh, this.
+Yeah.
+So this last one, if I didn't have that, then
+here I would have two copies of this.
+Okay.
+, corresponding to, , the making change with this ten
+piece and the 20 piece or this ten piece and
+the 20 piece.
+Okay.
+There's 210 pieces here in my in my cash register.
+And so it would separately, , give you those two
+ways of making changes.
+So that's why this number is in here okay.
+So we pick we pick a coin from our list
+of coins.
+It has to be less than n, or else it
+wouldn't be useful for making change for n.
+And , and then that coin is part of the
+part of the, the list of coins that we're making
+that we're using to make change.
+And then we have the remaining the remaining coins, ,
+which is , , so we have the main amount,
+which is n minus y.
+So we then need to make change for that using,
+, the remainder of the coins.
+But , only the ones that are larger than, wait
+a minute, , that are larger than y.
+Yes, that are larger than y.
+This is what the filter does.
+Okay.
+So we're we're picking we're picking small coins and then
+working up to big coins.
+Okay.
+So this is what this filter does.
+All right.
+And .
+And all the ways of doing that.
+All the, all the ways of doing that are possible
+solutions here.
+Okay.
+So, , this gives you this result, and it's interesting
+to think of what happens if there are no ways
+of of, you know, you pick a coin.
+Suppose you have, , you have, , only two peas
+in your cash register and you need to make change
+for £0.05, so it's not possible.
+Okay.
+So you take you you start here by taking a
+two peas, and then you need to make change for
+£0.03 from your list of £0.02 coins.
+And then you pick another £0.02 and then it's.
+And then you need to make change for one p
+from your list of £0.02 coins.
+And then this step fails because there's no way of
+making change for one p from the list of, ,
+£0.02 coins.
+And so and so your kind of partial attempt fails.
+And so it's not included.
+It's not.
+It's not that you have to backtrack or do something
+to have it fail.
+It just it the, , it's just that this expression
+ends up delivering an empty list, and you can't take
+any Zs from an empty list.
+Okay, there aren't any.
+Okay.
+This is this is, , a kind of a standard,
+, sort of challenge problem in computer science for, ,
+you know, , how can you express this in a
+program, a certain programming language, a certain bunch of features?
+You know, if the programming languages allows backtracking or exceptions
+or or something that.
+So this is the Haskell solution to it, which I
+think is kind of nice.
+But not but not trivial to understand.
+Okay, let me get to my last problem, which is
+a little bit more fun because it's, , it's involving
+games.
+So this is the it's the eight queens problem, which
+is a, , , it's a chess problem and it's
+a standard.
+Another one of these standard problems in computer science for
+how you how you solve this efficiently, , using various
+programming, , methods.
+Okay.
+So, , I suppose that, , I suppose that many
+of you play chess, but it doesn't matter.
+, because I'm going to explain everything you need to
+know.
+So this is about queens.
+So queens are, , here's a chess board and, ,
+here's how a black queen is represented, usually.
+Okay.
+And the queen is the most powerful, , piece in
+chess.
+, the king is the most important one, because if
+you lose the king, you've lost the game.
+But the queen is the one that has the most
+sort of freedom of movement.
+And so, , what I was showing here is diagonal
+movement.
+So a queen can move diagonally in any direction as
+far as far as it wants.
+Okay.
+So, , so, you know, this this queen here could
+move diagonally.
+Diagonally here or down there or over here or up
+there.
+Okay.
+So, , and the queen can also move horizontally and
+vertically as far as at once.
+So this queen could move all the way across this
+row or all the way along this column.
+Okay.
+And so, , so this queen, if you look at
+the number of squares that are being swept out here,
+it's, , it's, , seven horizontally, seven vertically, , seven
+on this diagonal and seven on this diagonal, plus the
+one that is occupying.
+So it's 29 spaces that a single queen is kind
+of covering if you're talking about, you know, ability to
+move from a particular position.
+And, , so that's that's a lot of squares.
+And these are, these are sort of, you know, if
+there's another if there's another piece, this is a black
+queen.
+So it's looking for white pieces to attack.
+I mean, there's no white pieces on this particular picture.
+If there's a white piece somewhere on this diagonal it
+can capture it.
+And and that's bad for the white side.
+Okay.
+So and then the and then the eight queens.
+Problem is, is it possible to put eight queens on
+a chessboard in such a way that none of them,
+, can attack any of the other ones?
+Okay.
+And if you think that each one covers 29 squares
+and there's 64 squares on the chessboard, you might think
+that this is a little bit difficult or possibly impossible,
+but it is actually possible.
+And here's a solution.
+For instance, if you look at if you look at
+this.
+Okay, none of these, none of these pieces, you know,
+let's look at this one for a change.
+None of these, , can attack any of the ones
+you know.
+So the the row is free, the column is free,
+this diagonal is free, and that diagonal is free.
+And that's the case for each one of these.
+Okay.
+So, , so there are solutions.
+, but you have to be careful how you generate
+them.
+Okay.
+, so I'm going to show you a generate and
+test algorithm.
+Okay.
+Generate and test is what I told you at the
+beginning.
+It's an algorithm where you enumerate possible solutions, and then
+you check each of the solutions to see each of
+the potential solutions to see if it's a real solution.
+Okay.
+So I'm going to show you how to do that.
+But you have to be careful here because , if
+you.
+Wait a minute.
+Okay, so how many ways are there placing eight queens
+on a on a chessboard with 64 places?
+It's that many.
+Okay.
+And, , so, you know, the number of ways of
+choosing eight places out of 64, out of a list
+of 64 places.
+These are the eight places where the where the queens
+are.
+These are 64 places in the chess board.
+So that's how many possible ways there are of putting
+the queens on the chess board.
+And this is, you know, 4.4.
+Well, I'll write down the number.
+.
+It's that many, that many choices.
+Okay.
+So if we if we enumerate all the possible ways
+of putting the queen on the chessboard.
+That's how many we've got.
+And then we have to look at each one of
+these to see whether it's, , it's going to be
+a solution.
+Okay.
+This would take a while.
+It's possible program would terminate, but it would take a
+while.
+Okay.
+So, , it helps to think a little bit before
+doing this.
+Okay.
+So let's, , let's look at this board.
+Okay.
+So one thing that's obvious is that if you've got
+any, , if you got two queens on the same
+row, then it's not going to be a solution because
+they're going to be able to attack each other.
+Okay.
+So each you know, if you look at solution here,
+each solution has one queen in each row.
+Okay.
+Just one.
+There are eight rows, eight queens, one queen in each
+row.
+Okay.
+So, .
+If we take that into account, then, , the number
+of solutions.
+Okay.
+We've got we've got eight rows and eight queens.
+So the numbers of ways of placing eight queens, one
+per row is this number, which is still 16 million.
+It's still a lot.
+, okay.
+But it's a lot smaller than that number.
+So this is, this is, , okay.
+So, , number of placements.
+Okay.
+This is, , one queen per row.
+Okay.
+, but also kind of symmetrically, there's also only one
+queen per column.
+So each of these columns has only one queen in
+it.
+Eight columns, eight queens, one queen in each column.
+So, , so what we've got here, , is in
+fact, .
+Eight factorial possibilities, which is, , only 40,000.
+, sorry, 40,000 odd.
+Okay.
+.
+Oh, sorry.
+Column.
+Okay.
+So we're going to generate these and then we're going
+to check each of them to see whether, , it,
+it, it allows a queen to attack another queen.
+If so we throw it out.
+So so here's my solution.
+.
+.
+There we go.
+My notes.
+.
+Okay, so so I said here eight factorial because it
+corresponds to the number of permutations of, , I mean,
+if we look at a solution.
+Okay, we're going to generate.
+, a list of these, these these positions are going
+to be represented as, as, as lists of length eight.
+And the and each list of length eight is
+, , it'll contain numbers from 1 to 8 okay.
+So list of length eight contents or numbers of length
+eight.
+And what the first, what the head of the list
+represent is the, the row that the, , that the
+Queen and column one occupies.
+Okay.
+And the second thing in the list is going to
+be the row that the Queen and column two occupy.
+So this this permutation will be represented by , 63724.
+Okay, so that's a permutation of the numbers one through
+eight.
+Okay.
+It's length eight because we've got eight columns.
+All the numbers are of 1 to 8 because there's
+eight rows.
+And it's the permutation of those numbers from 1 to
+8.
+Because no queen can be.
+No two queens can be in the same row.
+Okay, so so here's my eight queens program.
+Okay.
+And it's very simple.
+It generates the permutations.
+So the numbers from 1 to 8.
+And then it filters them and extract the ones that
+are okay in the sense that I'm going to explain
+okay.
+Okay means that they are actually solutions.
+Okay.
+So we know whoops.
+Because of the way that we've done this.
+Because we're talking about a permutations from 1 to 8.
+Going back to my diagram, okay.
+We know that there's not going to be any problems
+with attacks horizontally and vertically okay.
+So we only have to worry about diagonal attacks.
+So the way that the okay check works okay a
+couple of helper functions here.
+So it picks.
+So given a given a permutation from this list.
+It chooses two queens.
+Well actually first it first it computes the coordinates of
+all of these queens okay.
+Which it does with the zip here.
+So what's what's going on here.
+So I said here that the permutation is 1586 etc..
+Okay.
+It does a zip with 12345678, which means the coordinates
+you get our 1125384653 and so forth.
+Okay.
+So that's the result of this of the zip.
+Gives you the coordinates Cartesian coordinates okay.
+And then we choose two elements from this list of
+Cartesian coordinates.
+So this is the position of two queens.
+And we check to see whether, , those two queens
+can attack each other.
+And we require that for all choices of two queens
+that, , that they can't attack each other.
+Okay.
+So not attack each other is what this not check
+is.
+So check is, , chess terminology for, , attack.
+, more or less.
+Okay, so they can't attack each other.
+And that has to be case for all for all
+of the, , all of the choices of two queens.
+Okay.
+Which leads us to this last line here, , computing
+whether to, , queens check each other or not.
+And this is a, this is a clever little, ,
+calculation that's done.
+So let me draw it as a picture.
+So we've got Queen number one.
+Here.
+And we've got Queen number two.
+.
+Here.
+Okay.
+They're all they're all in this quadrant of the Cartesian
+plane.
+Okay.
+And we're interested in the slope of this line.
+If this slope is one, then they're on a diagonal
+and they attack each other.
+Okay.
+Same goes if, , the picture is different and the
+slope is minus one.
+Okay.
+Or in fact, if they're in the opposite direction on
+the opposite orientation.
+And the slope is one, but they're kind of reversed
+or you know, so so this kind of for this,
+there's kind of four possibilities of the way these are
+in relation to each other.
+And then the question is always about is the slope
+is a slope 1 or -1.
+Okay.
+So how do you compute the slope.
+Okay.
+So this distance here is y prime minus
+y.
+This distance here is x prime minus x.
+And so the slope is , well okay.
+The slope is x prime minus.
+X.
+Over y prime minus y.
+And this is equal to one if and only if
+these two numbers are equal.
+Okay, so this boils down to testing whether.
+Whoops.
+Whether .
+Oh well I did it the other way around.
+Okay.
+Instead of x prime minus y I did I did
+x minus x prime.
+But it doesn't matter.
+and y minus y prime doesn't matter because ,
+so I basically I'm testing to see whether they're equal,
+but I'm testing whether the absolute values are equal because
+that deals with, , slope of one, slope of minus
+one, and the situation where the points are oriented the
+other way around.
+Okay.
+So this covers all of these different possibilities.
+And if and only if the absolute values of these
+two differences are equal are the things I'm on a
+diagonal.
+So.
+And , yeah, I can't run it on my laptop
+because I don't have my adaptor.
+But if you run this, it's, , it's surprisingly fast.
+It takes, you know, a 10th of a second.
+And the the solution here is the one that I
+had a second ago in the picture.
+So one five, eight six, three seven, etc. , ,
+158637, etc..
+Okay.
+And , and I can also check to see how
+many of solutions there are in there.
+92 solutions.
+, and that only takes, it only takes, you know,
+a bit more than a second to generate them all.
+Okay.
+In fact, , 92 solutions, but, , there's not 92
+kind of individual solutions because there's lots of symmetries here.
+So, , if you've got if you've got a solution,
+then if you, if you rotate along the vertical axis,
+that's also a solution.
+Or if you rotate along the horizontal axis is also
+solution.
+Or if you do both of them, it's also a
+solution.
+Or if you rotate, it's also a solution.
+And so I don't know how many really completely different
+solutions there are, but , , anyway, 92 is ,
+is the number of solutions represented this way.
+And that is my last slide and I'm just on
+time.
+So thank you for your attention.
+And this is actually my last lecture of this course.
+, because next week, , Phil Wadler is talking about
+monads.
+Monads are are things that many people who learn about
+Last Haskell get very excited about.
+And you will find all sorts of tutorials on the
+internet explaining them to you.
+So.
+And Phil invented them.
+So, , you want to hear him talk about them.
+And then in the, in the week after next, ,
+no lecture on Monday unless Phil needs it to finish
+monads and Tuesday is, , prize giving for the competition.
+Plus Phil yet again, , doing a special lecture on
+combinations between logic and and functional programming.
+So, , see you then.
+, and, , make sure you come to those lectures.
+Phil is a scintillating lecturer, and especially the last one
+is a special event.
+Okay.
+So thank you.
+And, .
+Yeah.
+And I'll clap for you, too.
+Okay.

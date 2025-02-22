@@ -1,0 +1,5276 @@
+WEBVTT
+
+00:02:33.760 --> 00:02:34.510
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:02:34.510 --> 00:02:35.860
+<v Speaker 0>Good afternoon.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:36.580 --> 00:02:39.760
+<v Speaker 0>Uh, themes from James Bond, obviously.
+
+NOTE CONF {"raw":[100,99,100,100,100,100]}
+
+00:02:39.940 --> 00:02:42.670
+<v Speaker 0>Um, right.
+
+NOTE CONF {"raw":[100,99]}
+
+00:02:42.670 --> 00:02:46.390
+<v Speaker 0>Today I'm going to talk to you about, uh, type
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:02:46.390 --> 00:02:47.260
+<v Speaker 0>classes.
+
+NOTE CONF {"raw":[100]}
+
+00:02:48.730 --> 00:02:51.910
+<v Speaker 0>So, uh, this is a, you know, yet another feature
+
+NOTE CONF {"raw":[100,49,100,100,100,100,100,100,100,100]}
+
+00:02:51.910 --> 00:02:53.710
+<v Speaker 0>of Haskell, and you've seen them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:53.710 --> 00:02:58.030
+<v Speaker 0>You've seen them coming up in, in code already, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:58.030 --> 00:02:59.500
+<v Speaker 0>not explained properly.
+
+NOTE CONF {"raw":[100,99,100]}
+
+00:02:59.500 --> 00:03:04.000
+<v Speaker 0>So type classes are used to describe classes of types
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:04.000 --> 00:03:05.350
+<v Speaker 0>that have something in common.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:07.210 --> 00:03:11.440
+<v Speaker 0>Um, example uh, that you've seen already is the EC
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100,100]}
+
+00:03:11.440 --> 00:03:13.780
+<v Speaker 0>type class and the show type class.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:13.780 --> 00:03:17.500
+<v Speaker 0>And um, a couple of others might have popped up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:17.500 --> 00:03:17.860
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:03:17.860 --> 00:03:20.080
+<v Speaker 0>And this is another idea from Haskell that's been adopted
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:20.080 --> 00:03:22.000
+<v Speaker 0>by some other programming languages.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:22.000 --> 00:03:26.080
+<v Speaker 0>And it's used to deal with situations in which there
+
+NOTE CONF {"raw":[100,100,100,100,100,100,69,100,100,100]}
+
+00:03:26.080 --> 00:03:30.430
+<v Speaker 0>are certain operations, like equality, that can be used for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:30.430 --> 00:03:33.130
+<v Speaker 0>many types, but not all types.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:36.640 --> 00:03:37.240
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:03:38.590 --> 00:03:39.820
+<v Speaker 0>Everybody paying attention.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:43.900 --> 00:03:44.380
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:03:44.380 --> 00:03:51.130
+<v Speaker 0>So this is another, another, uh, thing in, um, in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:51.130 --> 00:03:55.960
+<v Speaker 0>Haskell's type system that, uh, that I'm telling you about
+
+NOTE CONF {"raw":[100,100,100,96,75,100,100,100,100,100]}
+
+00:03:55.960 --> 00:03:57.950
+<v Speaker 0>and by now you will have.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:57.980 --> 00:03:58.700
+<v Speaker 0>Whoops.
+
+NOTE CONF {"raw":[92]}
+
+00:04:02.630 --> 00:04:04.490
+<v Speaker 0>I don't know why the lights go off in this
+
+NOTE CONF {"raw":[55,100,100,100,100,100,100,100,100,100]}
+
+00:04:04.490 --> 00:04:05.750
+<v Speaker 0>room sometimes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:08.690 --> 00:04:12.530
+<v Speaker 0>Um, by now you will have heard so much about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:12.860 --> 00:04:13.910
+<v Speaker 0>types and Haskell.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:13.910 --> 00:04:16.700
+<v Speaker 0>So you will have got the idea that that they're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,91,100,100]}
+
+00:04:16.700 --> 00:04:17.269
+<v Speaker 0>important.
+
+NOTE CONF {"raw":[100]}
+
+00:04:17.269 --> 00:04:19.250
+<v Speaker 0>Okay, but there's different kinds.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:19.250 --> 00:04:21.380
+<v Speaker 0>And you may be by now.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:22.910 --> 00:04:24.170
+<v Speaker 0>Can you stop talking, please?
+
+NOTE CONF {"raw":[66,100,100,100,100]}
+
+00:04:24.470 --> 00:04:24.860
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:04:25.070 --> 00:04:28.940
+<v Speaker 0>By now, you may be a little bit bewildered by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:28.940 --> 00:04:30.620
+<v Speaker 0>all the different kinds of types and what they have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:30.620 --> 00:04:31.310
+<v Speaker 0>to do with each other.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:31.310 --> 00:04:33.590
+<v Speaker 0>So let me try to take a step back and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:33.590 --> 00:04:35.000
+<v Speaker 0>explain before I go any further.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:35.000 --> 00:04:35.570
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:04:36.290 --> 00:04:40.550
+<v Speaker 0>So we've got in Haskell and then and well we've
+
+NOTE CONF {"raw":[100,100,100,97,100,100,87,52,100,100]}
+
+00:04:40.550 --> 00:04:42.860
+<v Speaker 0>got values and expressions okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:47.210 --> 00:04:51.320
+<v Speaker 0>And these are things like zero and uh one plus
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,68,100,100]}
+
+00:04:51.680 --> 00:04:52.820
+<v Speaker 0>one times.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:52.820 --> 00:04:58.220
+<v Speaker 0>Uh uh x and, um, uh, empty list.
+
+NOTE CONF {"raw":[95,100,97,100,100,100,100,87]}
+
+00:04:58.220 --> 00:05:01.790
+<v Speaker 0>And, um, the function plus is a is a is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,87,100,100,100]}
+
+00:05:01.790 --> 00:05:02.600
+<v Speaker 0>a value.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:02.600 --> 00:05:03.170
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:03.170 --> 00:05:08.570
+<v Speaker 0>And um, expressions and values have types.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:05:11.660 --> 00:05:12.980
+<v Speaker 0>And types.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:13.640 --> 00:05:18.560
+<v Speaker 0>Um there are built in types like int and uh
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,55]}
+
+00:05:18.560 --> 00:05:23.690
+<v Speaker 0>lists like the list of booleans and um things like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:23.690 --> 00:05:27.500
+<v Speaker 0>uh ordered binary trees, you know, all sorts of types
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:27.500 --> 00:05:31.310
+<v Speaker 0>you will have, uh, you will have seen oops.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:05:31.550 --> 00:05:36.230
+<v Speaker 0>Uh, you know, there are, uh, function types and lists
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:36.230 --> 00:05:37.250
+<v Speaker 0>of functions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:39.800 --> 00:05:40.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:40.130 --> 00:05:41.030
+<v Speaker 0>And so forth.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:41.090 --> 00:05:45.770
+<v Speaker 0>Um, so these are all types and values and expressions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:45.770 --> 00:05:47.450
+<v Speaker 0>are classified by types.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:47.450 --> 00:05:52.610
+<v Speaker 0>So we write for example zero colon colon int and
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100,100,100,100]}
+
+00:05:52.610 --> 00:05:54.090
+<v Speaker 0>you know empty list Colon.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:54.090 --> 00:05:57.060
+<v Speaker 0>Colon, list of bool or list of int or list
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:57.060 --> 00:05:58.050
+<v Speaker 0>of bull arrow int.
+
+NOTE CONF {"raw":[100,94,94,94]}
+
+00:05:58.710 --> 00:06:00.570
+<v Speaker 0>Okay, and some of these are built in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:03.120 --> 00:06:07.710
+<v Speaker 0>And so built in things like int and intolerable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:09.600 --> 00:06:12.090
+<v Speaker 0>Um there are type synonyms.
+
+NOTE CONF {"raw":[100,100,100,97,100]}
+
+00:06:14.280 --> 00:06:20.370
+<v Speaker 0>So these are things like uh type um name equals
+
+NOTE CONF {"raw":[100,100,100,100,100,81,100,100,100,100]}
+
+00:06:20.370 --> 00:06:21.060
+<v Speaker 0>string.
+
+NOTE CONF {"raw":[100]}
+
+00:06:22.440 --> 00:06:26.880
+<v Speaker 0>In the um last tutorial exercise when you were doing
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:06:26.910 --> 00:06:30.810
+<v Speaker 0>um variables with uh with, with names which were strings
+
+NOTE CONF {"raw":[88,100,100,100,100,100,100,100,100,100]}
+
+00:06:30.810 --> 00:06:38.370
+<v Speaker 0>or um type uh predicate A equals a arrow bool.
+
+NOTE CONF {"raw":[100,89,100,63,100,100,100,100,100,100]}
+
+00:06:38.370 --> 00:06:41.040
+<v Speaker 0>So this was just giving a name to A to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:41.040 --> 00:06:43.980
+<v Speaker 0>a type or a type expression for some reason.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:43.980 --> 00:06:46.230
+<v Speaker 0>And then there were the algebraic data types.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:50.070 --> 00:06:52.650
+<v Speaker 0>So these were these were built in these were these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:52.650 --> 00:06:54.330
+<v Speaker 0>were synonyms for existing types.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:54.330 --> 00:06:57.900
+<v Speaker 0>And these were actually, um, defining a new type.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:57.900 --> 00:07:04.980
+<v Speaker 0>So something like tree uh equals um, empty or, or
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100,57]}
+
+00:07:04.980 --> 00:07:05.520
+<v Speaker 0>you can't read.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:05.520 --> 00:07:06.060
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:06.060 --> 00:07:06.780
+<v Speaker 0>Thank you.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:07.290 --> 00:07:08.940
+<v Speaker 0>Uh, oops.
+
+NOTE CONF {"raw":[100,52]}
+
+00:07:14.790 --> 00:07:15.120
+<v Speaker 0>Better.
+
+NOTE CONF {"raw":[100]}
+
+00:07:15.120 --> 00:07:15.720
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:16.140 --> 00:07:22.650
+<v Speaker 0>Um, node applied to, uh, tree and tree.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,70,100]}
+
+00:07:23.220 --> 00:07:23.940
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:24.420 --> 00:07:28.110
+<v Speaker 0>So algebraic data types defining a new type with constructors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:29.400 --> 00:07:29.790
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:29.790 --> 00:07:31.500
+<v Speaker 0>And what I'm going to tell you about today is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:31.500 --> 00:07:32.670
+<v Speaker 0>type classes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:36.750 --> 00:07:45.420
+<v Speaker 0>Uh, things like EQ um show ord there's going to
+
+NOTE CONF {"raw":[100,100,100,86,100,79,91,100,100,100]}
+
+00:07:45.420 --> 00:07:45.990
+<v Speaker 0>be more.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:46.440 --> 00:07:48.360
+<v Speaker 0>So these are um.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:50.370 --> 00:07:54.520
+<v Speaker 0>They're groupings of types okay.
+
+NOTE CONF {"raw":[69,100,100,100,100]}
+
+00:07:54.520 --> 00:07:55.930
+<v Speaker 0>That share characteristic.
+
+NOTE CONF {"raw":[97,100,93]}
+
+00:07:55.930 --> 00:07:57.460
+<v Speaker 0>And I will explain all that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:57.910 --> 00:08:03.370
+<v Speaker 0>So you will have seen these in places like uh
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:08:03.640 --> 00:08:06.880
+<v Speaker 0>well they used to qualify types.
+
+NOTE CONF {"raw":[100,97,100,100,100,80]}
+
+00:08:06.880 --> 00:08:09.280
+<v Speaker 0>So there are things like well I'll explain.
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100]}
+
+00:08:09.280 --> 00:08:09.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:10.000 --> 00:08:13.750
+<v Speaker 0>Um, and then and then finally I've shown you, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:13.750 --> 00:08:16.840
+<v Speaker 0>abstract data types or data abstractions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:23.830 --> 00:08:24.580
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:25.330 --> 00:08:28.180
+<v Speaker 0>And this is not a new kind of type.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:28.180 --> 00:08:31.030
+<v Speaker 0>This is a way of using Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:34.240 --> 00:08:40.599
+<v Speaker 0>To encapsulate, um, to encapsulate, uh, representations.
+
+NOTE CONF {"raw":[100,100,78,100,100,100,100]}
+
+00:08:41.080 --> 00:08:46.150
+<v Speaker 0>Sorry, I can't write uh, to, to to encapsulate representations
+
+NOTE CONF {"raw":[100,96,100,98,100,100,94,100,100,100]}
+
+00:08:46.150 --> 00:08:46.840
+<v Speaker 0>of data.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:47.140 --> 00:08:54.130
+<v Speaker 0>So, um, so I showed you four versions of sets.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:54.400 --> 00:08:57.430
+<v Speaker 0>That is to say, four representations of sets, two different
+
+NOTE CONF {"raw":[100,95,63,96,69,100,100,100,99,100]}
+
+00:08:57.430 --> 00:09:00.190
+<v Speaker 0>list representations and two different tree representations.
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100]}
+
+00:09:00.190 --> 00:09:03.250
+<v Speaker 0>And so data abstract data types or data abstractions is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:03.250 --> 00:09:06.820
+<v Speaker 0>a way of using things in Haskell actually the module
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:06.820 --> 00:09:08.800
+<v Speaker 0>system to encapsulate those.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:10.270 --> 00:09:10.990
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:10.990 --> 00:09:16.270
+<v Speaker 0>So that's the spectrum of things that have to do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:16.270 --> 00:09:17.140
+<v Speaker 0>with types.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:17.140 --> 00:09:17.830
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:18.040 --> 00:09:23.920
+<v Speaker 0>And um, I think that's all there is as far
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:23.920 --> 00:09:26.680
+<v Speaker 0>as types of concern in Haskell might be that I'm
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:26.680 --> 00:09:30.220
+<v Speaker 0>forgetting something, but if it is, if that's the case,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:30.220 --> 00:09:33.310
+<v Speaker 0>then, uh, it's not something I'm going to be talking
+
+NOTE CONF {"raw":[100,97,100,100,100,80,100,100,100,100]}
+
+00:09:33.310 --> 00:09:34.780
+<v Speaker 0>about in in future lectures.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:34.780 --> 00:09:37.450
+<v Speaker 0>It would be some advanced thing that maybe I haven't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:37.450 --> 00:09:38.770
+<v Speaker 0>learned about myself yet.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:38.770 --> 00:09:39.460
+<v Speaker 0>Don't know.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:39.670 --> 00:09:39.970
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:39.970 --> 00:09:41.260
+<v Speaker 0>So anyway, so there's that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:41.890 --> 00:09:45.580
+<v Speaker 0>Um, and so here we are with type classes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:09:48.010 --> 00:09:49.730
+<v Speaker 0>And let me show you.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:49.760 --> 00:09:51.980
+<v Speaker 0>I'll just leave that up for a second in case
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:51.980 --> 00:09:54.110
+<v Speaker 0>you're still reading it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:54.380 --> 00:09:54.740
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:09:57.200 --> 00:10:00.500
+<v Speaker 0>So here's an example, or at least an example of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:00.500 --> 00:10:01.820
+<v Speaker 0>our motivating example.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:01.820 --> 00:10:05.060
+<v Speaker 0>Okay, so you've seen this function before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:05.060 --> 00:10:09.590
+<v Speaker 0>This is the membership function for uh, for lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:09.740 --> 00:10:14.570
+<v Speaker 0>So um, uh, looking just at the stuff over here,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:14.810 --> 00:10:19.220
+<v Speaker 0>the type says we take a, we take a value
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:10:19.220 --> 00:10:21.320
+<v Speaker 0>and we take a list of that kind of values,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:21.320 --> 00:10:23.840
+<v Speaker 0>and, and we produce a boolean.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:23.840 --> 00:10:26.930
+<v Speaker 0>And the idea is that if that value is in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:26.930 --> 00:10:29.120
+<v Speaker 0>that list, then the answer is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:29.120 --> 00:10:29.690
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:10:29.690 --> 00:10:33.590
+<v Speaker 0>So membership for ordinary lists of values.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:33.770 --> 00:10:34.550
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:34.910 --> 00:10:38.960
+<v Speaker 0>Um, but as you've seen, the type of that has
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:38.960 --> 00:10:45.020
+<v Speaker 0>a sort of qualifier at the beginning it says, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:45.020 --> 00:10:46.850
+<v Speaker 0>that that's the type.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:46.850 --> 00:10:53.300
+<v Speaker 0>But I require a type of values a which has
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:53.300 --> 00:10:56.450
+<v Speaker 0>this property that it you can do equality on it
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100,100]}
+
+00:10:56.450 --> 00:10:57.050
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[95]}
+
+00:10:58.310 --> 00:11:00.200
+<v Speaker 0>So I've mentioned this before.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:00.470 --> 00:11:04.220
+<v Speaker 0>I've said it's a requirement when you use this function
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100,100,100]}
+
+00:11:04.220 --> 00:11:06.740
+<v Speaker 0>that you have a type like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:07.100 --> 00:11:09.470
+<v Speaker 0>Um I said maybe that there are some types that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:09.470 --> 00:11:11.750
+<v Speaker 0>don't satisfy that, which is why we have to give
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:11.750 --> 00:11:12.740
+<v Speaker 0>the qualification.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:12.740 --> 00:11:17.210
+<v Speaker 0>And I said that I would explain this later properly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:17.210 --> 00:11:19.550
+<v Speaker 0>So later has now arrived.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:19.790 --> 00:11:21.650
+<v Speaker 0>I'm going to explain this properly okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:21.650 --> 00:11:22.640
+<v Speaker 0>So here goes.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:25.040 --> 00:11:29.120
+<v Speaker 0>So here are three definitions of of of this function
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:29.120 --> 00:11:31.190
+<v Speaker 0>okay I like to do this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:31.190 --> 00:11:32.870
+<v Speaker 0>So there's higher order version.
+
+NOTE CONF {"raw":[100,95,100,100,100]}
+
+00:11:32.870 --> 00:11:35.420
+<v Speaker 0>There's a comprehension version the recursion version.
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100]}
+
+00:11:35.570 --> 00:11:38.210
+<v Speaker 0>All three of these ways of doing it I mean
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:38.210 --> 00:11:40.160
+<v Speaker 0>you can you can read this code I mean it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:40.160 --> 00:11:42.170
+<v Speaker 0>familiar to you by now I think how you would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:42.170 --> 00:11:45.650
+<v Speaker 0>do this using fold using a comprehension with an Or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,74,72,100]}
+
+00:11:45.650 --> 00:11:49.230
+<v Speaker 0>at the front or using a recursive definition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:49.260 --> 00:11:49.980
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:50.190 --> 00:11:58.290
+<v Speaker 0>Um, each one of these features the equality function somewhere.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:59.790 --> 00:12:00.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:02.550 --> 00:12:08.040
+<v Speaker 0>Um, you know, we, uh, here, we, uh, we map,
+
+NOTE CONF {"raw":[100,100,100,100,99,100,100,54,100,100]}
+
+00:12:08.850 --> 00:12:10.890
+<v Speaker 0>uh, we use map to go down the list to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:10.890 --> 00:12:13.530
+<v Speaker 0>check to see whether a value is equal to X
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:13.530 --> 00:12:14.220
+<v Speaker 0>or not.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:14.250 --> 00:12:17.940
+<v Speaker 0>You get a list of booleans, and then you accumulate,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:18.210 --> 00:12:21.180
+<v Speaker 0>uh, whether one of those is true or not using
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100,100,100,100]}
+
+00:12:21.330 --> 00:12:22.470
+<v Speaker 0>disjunction.
+
+NOTE CONF {"raw":[100]}
+
+00:12:22.890 --> 00:12:26.130
+<v Speaker 0>Um, here you're, you're you're doing the same thing using
+
+NOTE CONF {"raw":[100,100,62,63,100,100,100,100,100,100]}
+
+00:12:26.130 --> 00:12:26.880
+<v Speaker 0>comprehension.
+
+NOTE CONF {"raw":[100]}
+
+00:12:26.880 --> 00:12:30.090
+<v Speaker 0>You're checking to see for every element in Y whether
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:30.090 --> 00:12:34.410
+<v Speaker 0>or not sorry, every element in Y's, whether x is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,75,100,100,100]}
+
+00:12:34.410 --> 00:12:35.130
+<v Speaker 0>equal to it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:35.130 --> 00:12:37.200
+<v Speaker 0>You get a bunch of booleans you do or to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:37.200 --> 00:12:40.380
+<v Speaker 0>get the truth value whether one of those is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:40.380 --> 00:12:44.250
+<v Speaker 0>And here's recursive definition each one uses equality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:44.610 --> 00:12:45.360
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:45.690 --> 00:12:48.060
+<v Speaker 0>Um, no matter how you write this function, you have
+
+NOTE CONF {"raw":[76,100,100,100,100,100,100,100,100,100]}
+
+00:12:48.060 --> 00:12:48.870
+<v Speaker 0>to use equality.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:48.870 --> 00:12:50.370
+<v Speaker 0>There's no getting around it, okay?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:50.370 --> 00:12:53.460
+<v Speaker 0>You have to compare the value you're given with the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:12:53.460 --> 00:12:55.770
+<v Speaker 0>values and the list to find out if it's there
+
+NOTE CONF {"raw":[100,62,100,100,100,100,100,100,100,100]}
+
+00:12:55.770 --> 00:12:56.400
+<v Speaker 0>or not.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:56.400 --> 00:12:57.000
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:57.000 --> 00:13:01.410
+<v Speaker 0>And so this is why this this type definition, this,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:01.410 --> 00:13:05.490
+<v Speaker 0>this type of um, this type signature has this qualification
+
+NOTE CONF {"raw":[100,100,100,58,100,100,100,100,100,100]}
+
+00:13:05.490 --> 00:13:05.670
+<v Speaker 0>in it.
+
+NOTE CONF {"raw":[70,82]}
+
+00:13:05.670 --> 00:13:07.140
+<v Speaker 0>You have to use equality.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:07.140 --> 00:13:07.800
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:07.800 --> 00:13:12.870
+<v Speaker 0>And um, and so when we use it, uh, it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:12.870 --> 00:13:16.890
+<v Speaker 0>works if we've got a type which has equality, okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:16.890 --> 00:13:19.200
+<v Speaker 0>Which is what the, uh, type signature says.
+
+NOTE CONF {"raw":[100,100,100,100,89,100,100,100]}
+
+00:13:19.200 --> 00:13:20.760
+<v Speaker 0>So for example, integers.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:20.790 --> 00:13:21.270
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:21.630 --> 00:13:24.240
+<v Speaker 0>Checking to see whether that number one is in that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:24.240 --> 00:13:24.780
+<v Speaker 0>list.
+
+NOTE CONF {"raw":[100]}
+
+00:13:24.780 --> 00:13:26.700
+<v Speaker 0>The answer is false okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:26.700 --> 00:13:28.410
+<v Speaker 0>Equality works on integers.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:28.410 --> 00:13:31.050
+<v Speaker 0>We know that okay.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:31.050 --> 00:13:34.470
+<v Speaker 0>Same thing for for for for characters okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:34.470 --> 00:13:35.790
+<v Speaker 0>Equality works for characters.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:35.790 --> 00:13:37.200
+<v Speaker 0>So you can check to see if a character is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,98]}
+
+00:13:37.200 --> 00:13:38.280
+<v Speaker 0>in a string or not.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:38.730 --> 00:13:39.510
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:39.840 --> 00:13:44.980
+<v Speaker 0>Um, same goes for pairs consisting of integers and and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:13:44.980 --> 00:13:46.420
+<v Speaker 0>and characters like here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:46.420 --> 00:13:46.720
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:46.720 --> 00:13:48.940
+<v Speaker 0>So we can check to see whether this pair is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:48.940 --> 00:13:52.510
+<v Speaker 0>in this list of pairs okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:52.510 --> 00:13:57.280
+<v Speaker 0>And same for lists, uh, you know, lists of characters
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:57.280 --> 00:13:58.090
+<v Speaker 0>or strings.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:58.090 --> 00:13:59.830
+<v Speaker 0>So we can check to see if a string is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:59.830 --> 00:14:01.210
+<v Speaker 0>in a list of strings.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:01.690 --> 00:14:02.380
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:02.380 --> 00:14:03.160
+<v Speaker 0>But.
+
+NOTE CONF {"raw":[100]}
+
+00:14:06.580 --> 00:14:08.470
+<v Speaker 0>For functions it doesn't work.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:08.830 --> 00:14:09.310
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:09.310 --> 00:14:12.220
+<v Speaker 0>We can't check to see whether this function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:14.320 --> 00:14:17.260
+<v Speaker 0>Is in this list of functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:18.430 --> 00:14:19.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:19.180 --> 00:14:21.400
+<v Speaker 0>These are both lists of functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,74]}
+
+00:14:21.520 --> 00:14:22.870
+<v Speaker 0>So this is a list of function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:22.870 --> 00:14:23.860
+<v Speaker 0>So oops.
+
+NOTE CONF {"raw":[100,98]}
+
+00:14:24.610 --> 00:14:28.570
+<v Speaker 0>Um you know the negation function and the function that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:28.570 --> 00:14:31.330
+<v Speaker 0>negates and then and then negates the result okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:31.330 --> 00:14:34.540
+<v Speaker 0>Maybe this is a a function on integers okay.
+
+NOTE CONF {"raw":[100,100,100,74,100,100,100,100,100]}
+
+00:14:34.540 --> 00:14:37.510
+<v Speaker 0>You or you take the you know you give it
+
+NOTE CONF {"raw":[100,86,100,100,100,100,100,100,100,100]}
+
+00:14:37.510 --> 00:14:37.780
+<v Speaker 0>three.
+
+NOTE CONF {"raw":[100]}
+
+00:14:37.780 --> 00:14:38.830
+<v Speaker 0>It gives you minus three.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:38.830 --> 00:14:41.530
+<v Speaker 0>This one gives you minus minus three which is equal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:41.530 --> 00:14:47.470
+<v Speaker 0>to three Okay, so, um, it doesn't work on functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:47.470 --> 00:14:47.980
+<v Speaker 0>Okay?
+
+NOTE CONF {"raw":[100]}
+
+00:14:47.980 --> 00:14:51.400
+<v Speaker 0>Haskell refuses to test equality on functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:52.240 --> 00:14:53.800
+<v Speaker 0>Um, why is that?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:55.780 --> 00:14:59.680
+<v Speaker 0>Okay, well, the error message says I can't do equality
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:59.680 --> 00:15:03.580
+<v Speaker 0>on functions, and it suggests maybe you wanted to define
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,54,100,100]}
+
+00:15:03.580 --> 00:15:05.500
+<v Speaker 0>it yourself somehow.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:05.500 --> 00:15:05.950
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:05.950 --> 00:15:09.220
+<v Speaker 0>Why doesn't Haskell test equality on functions?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:09.220 --> 00:15:09.940
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:10.150 --> 00:15:13.480
+<v Speaker 0>Um, because it's it's.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:13.570 --> 00:15:17.290
+<v Speaker 0>Well, it's kind of impossible depending on your point of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:17.290 --> 00:15:17.560
+<v Speaker 0>view.
+
+NOTE CONF {"raw":[100]}
+
+00:15:17.560 --> 00:15:18.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:18.010 --> 00:15:19.540
+<v Speaker 0>So think of it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:19.540 --> 00:15:19.900
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:19.900 --> 00:15:20.980
+<v Speaker 0>You want to check?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:20.980 --> 00:15:24.220
+<v Speaker 0>Let's suppose this is a list of functions on integers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:24.220 --> 00:15:28.450
+<v Speaker 0>You want to check whether a function on integers is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:28.450 --> 00:15:30.490
+<v Speaker 0>in a list of functions as integers okay.
+
+NOTE CONF {"raw":[100,100,100,100,90,58,100,100]}
+
+00:15:30.490 --> 00:15:34.600
+<v Speaker 0>So checking equality you have a function on the integers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,92,100]}
+
+00:15:34.600 --> 00:15:35.830
+<v Speaker 0>You want to check to see if it's equal to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:35.830 --> 00:15:36.880
+<v Speaker 0>the first one or not.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:36.880 --> 00:15:37.450
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:37.450 --> 00:15:42.500
+<v Speaker 0>Checking that means, um, One way to do it would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:42.500 --> 00:15:45.830
+<v Speaker 0>be to check all of the values of of of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:45.830 --> 00:15:47.870
+<v Speaker 0>that function for all inputs.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:47.900 --> 00:15:48.290
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:48.290 --> 00:15:50.720
+<v Speaker 0>You check to see whether that function applied to zero
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,94,100,100]}
+
+00:15:50.720 --> 00:15:52.460
+<v Speaker 0>is equal to this other function applied to zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,64,100,100]}
+
+00:15:52.460 --> 00:15:53.840
+<v Speaker 0>And then you check if that's true.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100]}
+
+00:15:53.870 --> 00:15:55.940
+<v Speaker 0>You check to see if it's it's true for one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:55.940 --> 00:15:56.690
+<v Speaker 0>and so forth.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:56.690 --> 00:15:58.970
+<v Speaker 0>And there's an infinite number of integers actually.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:59.240 --> 00:16:01.700
+<v Speaker 0>Um int int is 64 bit integers.
+
+NOTE CONF {"raw":[84,100,100,100,100,100,78]}
+
+00:16:01.700 --> 00:16:03.950
+<v Speaker 0>So it's not infinite but it's very large.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:04.430 --> 00:16:05.150
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:05.510 --> 00:16:10.820
+<v Speaker 0>Uh, so um, so Haskell just refuses, you could, you
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:16:10.820 --> 00:16:14.510
+<v Speaker 0>could say, well, you know, let's look at this example
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:14.510 --> 00:16:14.720
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:16:14.720 --> 00:16:16.250
+<v Speaker 0>This is the entity function.
+
+NOTE CONF {"raw":[100,100,100,81,100]}
+
+00:16:16.880 --> 00:16:22.400
+<v Speaker 0>Um, and this thing here on integers, this is also
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:22.400 --> 00:16:23.690
+<v Speaker 0>the identity function.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:24.410 --> 00:16:24.950
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:24.950 --> 00:16:28.220
+<v Speaker 0>It negates and then negates again which gets you back
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:28.220 --> 00:16:30.170
+<v Speaker 0>to to x okay.
+
+NOTE CONF {"raw":[100,100,73,100]}
+
+00:16:30.170 --> 00:16:33.470
+<v Speaker 0>And so you could say, well using some fancy algebraic
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:33.470 --> 00:16:37.850
+<v Speaker 0>manipulation system that, that cleverly knows about, you know, the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:37.850 --> 00:16:41.960
+<v Speaker 0>fact that, um, negation Twice gives you the same thing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:41.960 --> 00:16:45.170
+<v Speaker 0>as not negating at all, then you could recognise that
+
+NOTE CONF {"raw":[100,100,100,91,100,100,100,100,80,100]}
+
+00:16:45.170 --> 00:16:47.630
+<v Speaker 0>that is actually equal to this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:48.740 --> 00:16:49.190
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:49.190 --> 00:16:50.330
+<v Speaker 0>And that's true.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:50.570 --> 00:16:51.170
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:51.170 --> 00:16:53.090
+<v Speaker 0>But in general that doesn't work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:53.930 --> 00:16:58.700
+<v Speaker 0>It's an undecidable problem whether to algebraic expressions over integers
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:58.700 --> 00:17:00.440
+<v Speaker 0>are the same.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:00.800 --> 00:17:01.580
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:01.580 --> 00:17:05.689
+<v Speaker 0>So anyway um, uh, you could also say, well, for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:05.689 --> 00:17:10.550
+<v Speaker 0>booleans, uh, functions on booleans are finite, you know, small
+
+NOTE CONF {"raw":[100,99,100,100,100,57,100,100,100,100]}
+
+00:17:10.550 --> 00:17:11.420
+<v Speaker 0>finite functions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:11.420 --> 00:17:13.640
+<v Speaker 0>And so you could check those anyway.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:14.180 --> 00:17:16.459
+<v Speaker 0>Uh, Haskell just says, no, I'm not going to do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:16.459 --> 00:17:16.850
+<v Speaker 0>it.
+
+NOTE CONF {"raw":[100]}
+
+00:17:16.970 --> 00:17:17.990
+<v Speaker 0>Go away.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:18.890 --> 00:17:22.939
+<v Speaker 0>Uh, if you want, you can define it yourself and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:22.939 --> 00:17:25.160
+<v Speaker 0>you can actually define it yourself if you want to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:25.160 --> 00:17:27.890
+<v Speaker 0>And I'll show you, you know, the mechanism for doing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:27.890 --> 00:17:28.459
+<v Speaker 0>that.
+
+NOTE CONF {"raw":[100]}
+
+00:17:28.550 --> 00:17:30.650
+<v Speaker 0>It says add an instance declaration.
+
+NOTE CONF {"raw":[68,100,100,100,100,100]}
+
+00:17:31.940 --> 00:17:33.200
+<v Speaker 0>Um, you can actually do that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:33.200 --> 00:17:35.000
+<v Speaker 0>You could say you could define it to say that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:35.000 --> 00:17:38.600
+<v Speaker 0>equality on on functions is always false or it's always.
+
+NOTE CONF {"raw":[100,73,100,100,100,100,100,100,100,100]}
+
+00:17:38.600 --> 00:17:39.290
+<v Speaker 1>True.
+
+NOTE CONF {"raw":[100]}
+
+00:17:39.690 --> 00:17:42.240
+<v Speaker 0>Or you could be fancy and you could say for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:42.240 --> 00:17:46.830
+<v Speaker 0>integers, provided it's the first, the values from zero up
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:17:46.830 --> 00:17:50.190
+<v Speaker 0>to ten coincide will regard functions as equal.
+
+NOTE CONF {"raw":[100,100,100,89,100,100,100,100]}
+
+00:17:50.190 --> 00:17:53.070
+<v Speaker 0>You could do that if you want, but Haskell doesn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:53.070 --> 00:17:55.380
+<v Speaker 0>have it built in, which means that you get error
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:55.380 --> 00:17:58.470
+<v Speaker 0>messages like this when you try to apply functions like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:58.470 --> 00:18:00.540
+<v Speaker 0>LM to lists of functions.
+
+NOTE CONF {"raw":[97,100,100,100,100]}
+
+00:18:02.130 --> 00:18:02.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:04.380 --> 00:18:09.240
+<v Speaker 0>So this is this was an example involving an equality
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,94,94]}
+
+00:18:09.240 --> 00:18:10.140
+<v Speaker 0>type class.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:10.290 --> 00:18:13.230
+<v Speaker 0>Here is how it works when you try to apply
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:13.230 --> 00:18:20.580
+<v Speaker 0>it here is here is um defining inequality the equality
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,89,100,100]}
+
+00:18:20.580 --> 00:18:23.250
+<v Speaker 0>type class and instances of it okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:23.250 --> 00:18:26.730
+<v Speaker 0>This is actually uh not the full definition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:26.730 --> 00:18:28.230
+<v Speaker 0>I'm going to get to the full definition in a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:28.230 --> 00:18:28.620
+<v Speaker 0>minute.
+
+NOTE CONF {"raw":[100]}
+
+00:18:28.620 --> 00:18:29.760
+<v Speaker 0>But um.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:32.070 --> 00:18:35.490
+<v Speaker 0>Uh, just put that back up on both screens.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:35.490 --> 00:18:35.850
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:18:35.850 --> 00:18:39.660
+<v Speaker 0>Um, this is a slightly simplified version, but, um.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99]}
+
+00:18:39.930 --> 00:18:40.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[80]}
+
+00:18:40.680 --> 00:18:41.460
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[100]}
+
+00:18:41.520 --> 00:18:42.210
+<v Speaker 0>Never mind.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:42.660 --> 00:18:45.750
+<v Speaker 0>So this is defining the equality type class.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:45.750 --> 00:18:47.340
+<v Speaker 0>If it wasn't built in, it is built in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:47.340 --> 00:18:49.110
+<v Speaker 0>So you don't have to do this, but this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:49.110 --> 00:18:51.030
+<v Speaker 0>how you would do it if it wasn't built in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:51.390 --> 00:18:51.840
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:51.840 --> 00:18:56.190
+<v Speaker 0>It says, um, I want a new type class and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:56.190 --> 00:18:57.630
+<v Speaker 0>it's called EC.
+
+NOTE CONF {"raw":[100,100,65]}
+
+00:18:58.830 --> 00:19:02.760
+<v Speaker 0>Uh, capital letters or initial capital letter.
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100]}
+
+00:19:02.880 --> 00:19:06.660
+<v Speaker 0>And you're saying that, uh, EC is a type class,
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100,100,100,100]}
+
+00:19:08.220 --> 00:19:15.510
+<v Speaker 0>uh, which for a given type A, um, uh, it
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:19:15.510 --> 00:19:17.910
+<v Speaker 0>requires that you've got an equality function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:17.910 --> 00:19:21.870
+<v Speaker 0>So with this name and this type and this type
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:21.870 --> 00:19:25.140
+<v Speaker 0>involves, of course, the type A.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:26.430 --> 00:19:27.000
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:27.000 --> 00:19:29.340
+<v Speaker 0>So it says, uh, for in order to have a,
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,88]}
+
+00:19:29.580 --> 00:19:32.550
+<v Speaker 0>an instance of a equality of this equality type class,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:32.550 --> 00:19:35.520
+<v Speaker 0>you need to type a and you need a inequality
+
+NOTE CONF {"raw":[100,100,65,100,100,100,100,100,100,100]}
+
+00:19:35.520 --> 00:19:36.600
+<v Speaker 0>function with that name.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:36.600 --> 00:19:39.370
+<v Speaker 0>And then you can once you've defined that, that's the
+
+NOTE CONF {"raw":[100,100,100,100,100,98,86,100,100,100]}
+
+00:19:39.370 --> 00:19:41.770
+<v Speaker 0>equality type class defined.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:41.770 --> 00:19:44.950
+<v Speaker 0>Then you can define instances of the type class.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:45.760 --> 00:19:51.280
+<v Speaker 0>For example here we define um int and char.
+
+NOTE CONF {"raw":[100,100,100,100,100,99,100,100,100]}
+
+00:19:53.620 --> 00:19:58.750
+<v Speaker 0>And uh well coming up this is a little bit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:58.750 --> 00:20:06.310
+<v Speaker 0>more complicated pairs and lists as being um instances of
+
+NOTE CONF {"raw":[100,100,83,100,100,100,100,73,100,100]}
+
+00:20:06.310 --> 00:20:07.390
+<v Speaker 0>this type class.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:20:07.390 --> 00:20:07.810
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:07.810 --> 00:20:11.680
+<v Speaker 0>So first of all, int um in order to declare
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:11.680 --> 00:20:13.840
+<v Speaker 0>something as a type is an instance of a type
+
+NOTE CONF {"raw":[100,100,100,100,76,100,100,100,100,100]}
+
+00:20:13.840 --> 00:20:17.350
+<v Speaker 0>class, you have to say what's the what's the equality
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:17.350 --> 00:20:17.710
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:17.710 --> 00:20:21.220
+<v Speaker 0>And so for int the equality is a is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:21.220 --> 00:20:25.900
+<v Speaker 0>built in function in Haskell, which is basically um, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,92,100]}
+
+00:20:25.900 --> 00:20:32.230
+<v Speaker 0>referencing um, built in, you know, in the hardware, there
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:20:32.230 --> 00:20:34.930
+<v Speaker 0>is a way of comparing integers for equality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:34.930 --> 00:20:37.030
+<v Speaker 0>And so that's just the name of that, of that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:37.030 --> 00:20:41.860
+<v Speaker 0>hardware instruction for, for comparing integers for equality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:42.940 --> 00:20:43.240
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:43.240 --> 00:20:47.110
+<v Speaker 0>So you just say instance um EC that's the type
+
+NOTE CONF {"raw":[100,100,100,100,100,100,62,100,100,100]}
+
+00:20:47.110 --> 00:20:49.870
+<v Speaker 0>class, int is the name that you is the type
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76,100,100,100]}
+
+00:20:49.870 --> 00:20:51.820
+<v Speaker 0>that you want to declare as an instance of that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:51.820 --> 00:20:52.630
+<v Speaker 0>type class.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:52.630 --> 00:20:55.960
+<v Speaker 0>And then you say what the definition of the required
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:55.960 --> 00:20:56.920
+<v Speaker 0>function is.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:57.340 --> 00:20:57.880
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:57.880 --> 00:20:59.710
+<v Speaker 0>There might be more than one function here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:59.710 --> 00:21:01.510
+<v Speaker 0>You'll see examples of that coming up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:02.830 --> 00:21:02.980
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[98]}
+
+00:21:02.980 --> 00:21:06.520
+<v Speaker 0>In this case just one uh for for char we
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:21:06.520 --> 00:21:09.940
+<v Speaker 0>can say, well, uh, two characters x and y are
+
+NOTE CONF {"raw":[100,100,100,97,99,100,100,100,100,100]}
+
+00:21:09.940 --> 00:21:14.980
+<v Speaker 0>equal if and only if, um, the character codes for
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100,100]}
+
+00:21:14.980 --> 00:21:16.600
+<v Speaker 0>those characters are equal.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:16.600 --> 00:21:16.780
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:16.780 --> 00:21:20.590
+<v Speaker 0>Remember this is function ord, which, um, uh, for every
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,77,100,100]}
+
+00:21:20.590 --> 00:21:23.800
+<v Speaker 0>character gave you a number, which was the character code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:24.250 --> 00:21:25.000
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:25.000 --> 00:21:26.830
+<v Speaker 0>And it's a 1 to 1 mapping.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:27.760 --> 00:21:31.120
+<v Speaker 0>So um, so you can compare, you can, you can
+
+NOTE CONF {"raw":[95,75,100,100,100,100,100,100,100,100]}
+
+00:21:31.120 --> 00:21:33.970
+<v Speaker 0>convert both of the characters to integers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:34.340 --> 00:21:37.820
+<v Speaker 0>And then here you're using integer equality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:38.210 --> 00:21:38.600
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:38.600 --> 00:21:40.640
+<v Speaker 0>These two these two expressions are integers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:40.640 --> 00:21:43.190
+<v Speaker 0>And that's integer equality which was the thing you just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:43.190 --> 00:21:44.450
+<v Speaker 0>defined a minute ago.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:45.230 --> 00:21:45.980
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:48.200 --> 00:21:48.620
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:48.620 --> 00:21:49.550
+<v Speaker 0>With me so far.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:50.600 --> 00:21:50.990
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[98]}
+
+00:21:51.500 --> 00:21:52.970
+<v Speaker 0>Uh, slightly more complicated.
+
+NOTE CONF {"raw":[88,100,100,100]}
+
+00:21:52.970 --> 00:21:56.000
+<v Speaker 0>Are these two last these two examples here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:56.000 --> 00:22:00.500
+<v Speaker 0>And this is declaring pairs as an instance of EC.
+
+NOTE CONF {"raw":[100,100,100,100,83,100,100,100,100,65]}
+
+00:22:01.640 --> 00:22:02.390
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:02.570 --> 00:22:06.980
+<v Speaker 0>Uh, but in order for a pair, a pair type,
+
+NOTE CONF {"raw":[56,100,100,100,100,100,100,100,100,100]}
+
+00:22:06.980 --> 00:22:11.360
+<v Speaker 0>you know, uh, first component, type A, second component, type
+
+NOTE CONF {"raw":[100,100,87,100,100,100,100,100,100,100]}
+
+00:22:11.360 --> 00:22:13.730
+<v Speaker 0>B, in order for that to be an equality type,
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:22:13.730 --> 00:22:16.400
+<v Speaker 0>you need to have equality on A and B.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:16.400 --> 00:22:18.020
+<v Speaker 0>Obviously you need to compare.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:18.020 --> 00:22:20.270
+<v Speaker 0>You want to compare the components of a pair.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:20.300 --> 00:22:22.910
+<v Speaker 0>You need to be able to compare, uh, you know,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:22.910 --> 00:22:25.160
+<v Speaker 0>if you want to compare the the pair, you need
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:25.160 --> 00:22:27.080
+<v Speaker 0>to compare the components of the pair.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:27.080 --> 00:22:30.800
+<v Speaker 0>So in order to compare whether you know UV is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:30.800 --> 00:22:34.730
+<v Speaker 0>equal to x, y or not So you as of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,81,100]}
+
+00:22:34.730 --> 00:22:38.900
+<v Speaker 0>type A, uh, v is of type B.
+
+NOTE CONF {"raw":[100,95,99,100,100,100,100,88]}
+
+00:22:39.080 --> 00:22:41.930
+<v Speaker 0>X is of type A, y is of type B.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:22:43.460 --> 00:22:45.830
+<v Speaker 0>In order to compare those two things for equality, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,80,100]}
+
+00:22:45.830 --> 00:22:49.280
+<v Speaker 0>need to compare you with x and v with y.
+
+NOTE CONF {"raw":[100,100,100,58,100,100,100,100,100,100]}
+
+00:22:49.280 --> 00:22:49.640
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:49.640 --> 00:22:53.210
+<v Speaker 0>Component wise uh, equality okay.
+
+NOTE CONF {"raw":[100,100,91,100,100]}
+
+00:22:53.210 --> 00:22:59.390
+<v Speaker 0>And this this equality here, this equality here is, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:59.990 --> 00:23:01.640
+<v Speaker 0>this is a quality on a.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:04.670 --> 00:23:05.090
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:05.090 --> 00:23:08.780
+<v Speaker 0>Because U and V are the first components of a
+
+NOTE CONF {"raw":[100,58,100,100,100,100,100,100,100,100]}
+
+00:23:08.780 --> 00:23:12.500
+<v Speaker 0>value of type you comma b and this and this
+
+NOTE CONF {"raw":[100,100,100,91,97,100,100,100,100,100]}
+
+00:23:12.500 --> 00:23:14.270
+<v Speaker 0>type and this equality here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:16.970 --> 00:23:20.960
+<v Speaker 0>Uh this is over values of type b okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:20.960 --> 00:23:24.320
+<v Speaker 0>So in order to in order to compute equality on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:24.320 --> 00:23:27.830
+<v Speaker 0>uh pairs of type A comma B, you need equality
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100,100,100,99]}
+
+00:23:27.830 --> 00:23:29.420
+<v Speaker 0>on A, you need equality on B.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:29.420 --> 00:23:32.180
+<v Speaker 0>And that's the reason why you have this kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:32.190 --> 00:23:36.120
+<v Speaker 0>conditional, uh, type instance declaration.
+
+NOTE CONF {"raw":[100,92,100,100,100]}
+
+00:23:37.290 --> 00:23:37.740
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:37.740 --> 00:23:40.560
+<v Speaker 0>It says, um, we've got a quality on Paris, provided
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,80,100]}
+
+00:23:40.560 --> 00:23:43.320
+<v Speaker 0>we have got a quality on the types forming the
+
+NOTE CONF {"raw":[100,100,95,73,95,100,100,100,100,100]}
+
+00:23:43.320 --> 00:23:47.220
+<v Speaker 0>pair and the same thing down here.
+
+NOTE CONF {"raw":[81,100,100,100,100,100,100]}
+
+00:23:47.220 --> 00:23:48.930
+<v Speaker 0>So if you you got that.
+
+NOTE CONF {"raw":[100,97,72,94,100,100]}
+
+00:23:50.100 --> 00:23:50.850
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:50.850 --> 00:23:54.240
+<v Speaker 0>So for example, you can't compute equality of pairs of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:54.240 --> 00:23:58.590
+<v Speaker 0>functions or pairs of a function and a boolean.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:59.640 --> 00:24:00.060
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:00.060 --> 00:24:03.870
+<v Speaker 0>Because you wouldn't have one of these um conditions satisfied.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:04.020 --> 00:24:08.970
+<v Speaker 0>And then um, same sort of idea with lists.
+
+NOTE CONF {"raw":[100,100,73,100,100,100,100,100,100]}
+
+00:24:08.970 --> 00:24:12.480
+<v Speaker 0>You can't, uh, get equality on listening unless you have
+
+NOTE CONF {"raw":[100,100,95,100,100,36,35,100,100,100]}
+
+00:24:12.480 --> 00:24:14.580
+<v Speaker 0>equality on the components of the list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:14.580 --> 00:24:15.060
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[100]}
+
+00:24:15.060 --> 00:24:19.320
+<v Speaker 0>So you're saying that, um, uh, list of a is
+
+NOTE CONF {"raw":[100,100,100,100,100,89,99,100,100,100]}
+
+00:24:19.320 --> 00:24:22.650
+<v Speaker 0>an instance of EC provided A is an instance of
+
+NOTE CONF {"raw":[100,100,100,63,100,100,100,100,100,100]}
+
+00:24:22.650 --> 00:24:27.330
+<v Speaker 0>EQ and here is a recursive definition of what equality
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:27.330 --> 00:24:27.870
+<v Speaker 0>does.
+
+NOTE CONF {"raw":[100]}
+
+00:24:28.200 --> 00:24:31.410
+<v Speaker 0>So, you know, you've got two lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:32.430 --> 00:24:33.390
+<v Speaker 0>Preparing for quality.
+
+NOTE CONF {"raw":[63,100,100]}
+
+00:24:33.420 --> 00:24:35.970
+<v Speaker 0>You you go down the list and compare the elements
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100,100]}
+
+00:24:35.970 --> 00:24:36.810
+<v Speaker 0>one at a time.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:38.370 --> 00:24:38.730
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:38.730 --> 00:24:41.190
+<v Speaker 0>And that's a little recursive definition which does that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:41.820 --> 00:24:45.120
+<v Speaker 0>Um, equality on the left here is the equality on
+
+NOTE CONF {"raw":[96,92,100,100,100,100,100,80,100,100]}
+
+00:24:45.120 --> 00:24:45.810
+<v Speaker 0>lists.
+
+NOTE CONF {"raw":[100]}
+
+00:24:47.250 --> 00:24:48.540
+<v Speaker 0>Equality here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:49.290 --> 00:24:51.900
+<v Speaker 0>This is equality on the components of the list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:51.900 --> 00:24:56.430
+<v Speaker 0>So this is a quality on a and equality here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,91,100,100]}
+
+00:24:57.360 --> 00:25:01.140
+<v Speaker 0>This is the recursive call to this function we're defining.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:01.140 --> 00:25:05.550
+<v Speaker 0>So this is equality on lists of a okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:11.370 --> 00:25:12.060
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:12.660 --> 00:25:15.540
+<v Speaker 0>So this is an example of defining a type class
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:15.540 --> 00:25:17.550
+<v Speaker 0>and instances of a type class.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:20.880 --> 00:25:25.260
+<v Speaker 0>Um new syntax is uh is this, uh, this this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,83,100,100]}
+
+00:25:25.260 --> 00:25:26.370
+<v Speaker 0>thing class.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:27.450 --> 00:25:32.980
+<v Speaker 0>Uh, you know, class class name type variable where and
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:25:32.980 --> 00:25:36.640
+<v Speaker 0>then and then a list of a list of function
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:36.640 --> 00:25:37.390
+<v Speaker 0>signatures.
+
+NOTE CONF {"raw":[100]}
+
+00:25:37.390 --> 00:25:39.430
+<v Speaker 0>Function type signatures okay.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:39.430 --> 00:25:45.250
+<v Speaker 0>And then instance uh type class type where and then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:45.250 --> 00:25:50.860
+<v Speaker 0>a, a list of um definitions of those functions.
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100,100,100]}
+
+00:25:50.860 --> 00:25:51.430
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:51.670 --> 00:25:54.970
+<v Speaker 0>And um, you know, you can use recursive functions and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:54.970 --> 00:25:55.750
+<v Speaker 0>so forth.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:56.230 --> 00:25:58.420
+<v Speaker 0>These can be, these can be as complicated as you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:58.420 --> 00:25:58.840
+<v Speaker 0>want.
+
+NOTE CONF {"raw":[100]}
+
+00:26:01.660 --> 00:26:02.080
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:02.080 --> 00:26:04.390
+<v Speaker 0>So that's kind of the basic idea.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:04.390 --> 00:26:06.400
+<v Speaker 0>And I'm going to skip a couple of slides.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:26:06.400 --> 00:26:08.290
+<v Speaker 0>I'll just for those of you who want to look
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:08.290 --> 00:26:11.020
+<v Speaker 0>at this kind of thing, um, this is this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:11.020 --> 00:26:15.550
+<v Speaker 0>explaining how, how type classes are, um, definable in terms
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100,100,100]}
+
+00:26:15.550 --> 00:26:18.790
+<v Speaker 0>of features that are already in Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:18.790 --> 00:26:22.660
+<v Speaker 0>So this is this is like saying it's actually just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:22.660 --> 00:26:26.530
+<v Speaker 0>a convenience, um, for something you could write yourself if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:26.530 --> 00:26:27.490
+<v Speaker 0>you wanted to.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:31.030 --> 00:26:31.870
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:32.140 --> 00:26:34.540
+<v Speaker 0>Um, this is explained in the textbook in a and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,56]}
+
+00:26:34.540 --> 00:26:36.190
+<v Speaker 0>I think a nicer way than it is in this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,52]}
+
+00:26:36.190 --> 00:26:36.520
+<v Speaker 0>slide.
+
+NOTE CONF {"raw":[100]}
+
+00:26:36.520 --> 00:26:37.660
+<v Speaker 0>But if you want, you can look.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:37.960 --> 00:26:38.320
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:38.320 --> 00:26:40.000
+<v Speaker 0>So let me do this now properly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:40.000 --> 00:26:43.600
+<v Speaker 0>This is this is now the actual, uh, definition of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,100,100]}
+
+00:26:43.600 --> 00:26:47.710
+<v Speaker 0>EC and a couple of other type classes, Ord and
+
+NOTE CONF {"raw":[46,100,100,100,100,100,100,100,49,100]}
+
+00:26:47.710 --> 00:26:48.190
+<v Speaker 0>Sho.
+
+NOTE CONF {"raw":[44]}
+
+00:26:48.190 --> 00:26:52.510
+<v Speaker 0>So we're defining EC AUD.
+
+NOTE CONF {"raw":[100,100,100,100,85]}
+
+00:26:54.670 --> 00:26:56.170
+<v Speaker 0>And show.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:58.930 --> 00:26:59.260
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:59.260 --> 00:27:02.200
+<v Speaker 0>Three three definitions here okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:02.200 --> 00:27:05.080
+<v Speaker 0>So EC I showed you a second ago but I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:05.080 --> 00:27:07.120
+<v Speaker 0>said that was not the full definitions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:07.120 --> 00:27:10.360
+<v Speaker 0>This is actually um the full definition here.
+
+NOTE CONF {"raw":[100,100,100,56,100,100,100,100]}
+
+00:27:10.780 --> 00:27:11.590
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:11.920 --> 00:27:13.750
+<v Speaker 0>Um the other one was a little bit simplified.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:27:13.750 --> 00:27:20.830
+<v Speaker 0>So actually EC the type class gives you equality and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:20.830 --> 00:27:22.450
+<v Speaker 0>also inequality okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:22.450 --> 00:27:24.340
+<v Speaker 0>This is the negated equality.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:25.390 --> 00:27:28.430
+<v Speaker 0>So there's actually two functions required there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,83]}
+
+00:27:29.600 --> 00:27:30.080
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:30.080 --> 00:27:34.400
+<v Speaker 0>However, and this is this is a typical situation with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:34.400 --> 00:27:35.540
+<v Speaker 0>type classes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:35.780 --> 00:27:38.510
+<v Speaker 0>Um, it turns out you can define one of these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:38.510 --> 00:27:40.460
+<v Speaker 0>functions in terms of the other one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:40.730 --> 00:27:41.450
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:41.450 --> 00:27:45.530
+<v Speaker 0>And so um, you know, negated equality is uh, you
+
+NOTE CONF {"raw":[100,100,75,100,100,100,100,100,57,100]}
+
+00:27:45.530 --> 00:27:49.820
+<v Speaker 0>do equality and then you apply not okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:49.820 --> 00:27:51.890
+<v Speaker 0>So this is actually part of the definition of this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:51.890 --> 00:27:52.970
+<v Speaker 0>type class.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:52.970 --> 00:27:59.300
+<v Speaker 0>That negated equality is defined by default as the negation
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:59.300 --> 00:28:02.540
+<v Speaker 0>of the normal equality okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:02.540 --> 00:28:04.010
+<v Speaker 0>This is a default.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:04.430 --> 00:28:07.880
+<v Speaker 0>That means that when you define an instance of this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:08.840 --> 00:28:12.920
+<v Speaker 0>of this um, of this class, you can, if you
+
+NOTE CONF {"raw":[100,100,83,100,100,100,100,100,100,100]}
+
+00:28:12.920 --> 00:28:17.900
+<v Speaker 0>want, define a different, uh, a different give a different
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:17.900 --> 00:28:20.240
+<v Speaker 0>definition of, of type inequality.
+
+NOTE CONF {"raw":[100,88,100,100,100]}
+
+00:28:21.020 --> 00:28:21.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:21.650 --> 00:28:23.630
+<v Speaker 0>And this is a typical this is a, this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:23.630 --> 00:28:27.290
+<v Speaker 0>a thing you can do with with type classes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:27.290 --> 00:28:30.440
+<v Speaker 0>Here you have a type class Ord where you've got
+
+NOTE CONF {"raw":[100,100,100,100,100,100,51,100,100,100]}
+
+00:28:30.440 --> 00:28:35.420
+<v Speaker 0>four things that are required in order for something to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:35.420 --> 00:28:38.780
+<v Speaker 0>be, uh, an instance of AUD.
+
+NOTE CONF {"raw":[100,100,100,100,100,93]}
+
+00:28:40.340 --> 00:28:40.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:40.790 --> 00:28:43.880
+<v Speaker 0>However, you only actually need one of them, and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:43.880 --> 00:28:48.320
+<v Speaker 0>other three are defined by default in terms of that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:48.320 --> 00:28:48.590
+<v Speaker 0>one.
+
+NOTE CONF {"raw":[100]}
+
+00:28:48.590 --> 00:28:48.830
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:48.830 --> 00:28:51.320
+<v Speaker 0>The one that you're that you really need is this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:51.320 --> 00:28:51.890
+<v Speaker 0>one.
+
+NOTE CONF {"raw":[100]}
+
+00:28:52.160 --> 00:28:57.410
+<v Speaker 0>And um, and the others are defined like this using
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:28:57.620 --> 00:28:58.040
+<v Speaker 0>um.
+
+NOTE CONF {"raw":[100]}
+
+00:29:00.380 --> 00:29:02.960
+<v Speaker 0>Using that one and equality.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:03.560 --> 00:29:04.100
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:04.100 --> 00:29:06.260
+<v Speaker 0>Here's equality being used here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:09.350 --> 00:29:10.190
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:10.190 --> 00:29:15.380
+<v Speaker 0>Because of that and because it makes sense, uh, this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:15.380 --> 00:29:22.490
+<v Speaker 0>this equality, uh, is required as a condition, um, on
+
+NOTE CONF {"raw":[100,100,58,100,100,100,100,100,100,100]}
+
+00:29:22.490 --> 00:29:24.200
+<v Speaker 0>the definition of this type class.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:24.320 --> 00:29:24.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:24.650 --> 00:29:26.360
+<v Speaker 0>It doesn't make sense to have an order relation if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:26.360 --> 00:29:28.040
+<v Speaker 0>you don't have an equality relation.
+
+NOTE CONF {"raw":[100,100,100,85,85,100]}
+
+00:29:28.040 --> 00:29:29.300
+<v Speaker 0>That's what this is saying.
+
+NOTE CONF {"raw":[78,100,100,100,100]}
+
+00:29:33.470 --> 00:29:33.950
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:33.950 --> 00:29:35.510
+<v Speaker 0>So yeah you need less than.
+
+NOTE CONF {"raw":[100,100,100,100,100,70]}
+
+00:29:35.510 --> 00:29:36.590
+<v Speaker 0>You need less than or equal to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:36.620 --> 00:29:38.330
+<v Speaker 0>You need greater than, you need greater than or equal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:38.330 --> 00:29:38.540
+<v Speaker 0>to.
+
+NOTE CONF {"raw":[100]}
+
+00:29:38.540 --> 00:29:40.340
+<v Speaker 0>But it's good enough to just give less than or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:40.340 --> 00:29:42.440
+<v Speaker 0>equal to and to define the other ones in terms
+
+NOTE CONF {"raw":[100,100,98,84,97,100,100,99,100,100]}
+
+00:29:42.440 --> 00:29:43.070
+<v Speaker 0>of that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:43.610 --> 00:29:44.360
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:44.360 --> 00:29:45.620
+<v Speaker 0>So that's equality.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:45.620 --> 00:29:46.880
+<v Speaker 0>That's Ord.
+
+NOTE CONF {"raw":[100,39]}
+
+00:29:46.880 --> 00:29:51.380
+<v Speaker 0>And then you've seen the class show, uh, coming up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:51.380 --> 00:29:54.260
+<v Speaker 0>in previous, um, you know, previous lectures.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:54.260 --> 00:29:57.110
+<v Speaker 0>This is the class of things that you can convert
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:57.110 --> 00:29:57.950
+<v Speaker 0>to strings.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:57.950 --> 00:30:01.040
+<v Speaker 0>So what you need is a function called show which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:01.040 --> 00:30:02.810
+<v Speaker 0>turns a value into a string.
+
+NOTE CONF {"raw":[98,95,100,100,100,100]}
+
+00:30:08.030 --> 00:30:08.630
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:08.630 --> 00:30:11.390
+<v Speaker 0>So, um, yeah.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:11.390 --> 00:30:13.070
+<v Speaker 0>So this is the way that you can define type
+
+NOTE CONF {"raw":[100,100,100,62,100,98,100,100,100,100]}
+
+00:30:13.070 --> 00:30:13.970
+<v Speaker 0>classes of your own.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:13.970 --> 00:30:15.290
+<v Speaker 0>These three are built in.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:15.440 --> 00:30:17.690
+<v Speaker 0>But if you wanted to you could have define them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:30:17.690 --> 00:30:20.570
+<v Speaker 0>yourself okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:20.570 --> 00:30:22.490
+<v Speaker 0>So those are defining the type classes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:22.490 --> 00:30:25.560
+<v Speaker 0>What about defining instances of these type classes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:26.010 --> 00:30:26.460
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:26.460 --> 00:30:30.120
+<v Speaker 0>So we can define booleans as being instances of all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:30.120 --> 00:30:31.560
+<v Speaker 0>three of these type classes.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:31.560 --> 00:30:33.540
+<v Speaker 0>And here's the declaration of that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:34.800 --> 00:30:35.490
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:35.490 --> 00:30:38.520
+<v Speaker 0>So you know defining something as an instance of a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:38.520 --> 00:30:42.330
+<v Speaker 0>type class, you say uh, instance uh, the type class
+
+NOTE CONF {"raw":[100,100,100,97,60,100,100,100,100,100]}
+
+00:30:42.330 --> 00:30:44.490
+<v Speaker 0>name the type name where.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:44.490 --> 00:30:47.340
+<v Speaker 0>And then you have to give definitions of the functions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:47.340 --> 00:30:48.900
+<v Speaker 0>required in this case definitions.
+
+NOTE CONF {"raw":[100,100,100,100,88]}
+
+00:30:49.320 --> 00:30:52.380
+<v Speaker 0>The functions required are equality okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:52.380 --> 00:30:55.500
+<v Speaker 0>And then negated equality is provided for free.
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100]}
+
+00:30:56.220 --> 00:31:01.920
+<v Speaker 0>So um this definition of equality for bool case by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:01.920 --> 00:31:05.670
+<v Speaker 0>case not very exciting okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:06.720 --> 00:31:10.350
+<v Speaker 0>Um, this is a definition of uh, of less than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,66,100,100,100]}
+
+00:31:10.350 --> 00:31:11.760
+<v Speaker 0>or equal to for bool.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:14.010 --> 00:31:14.760
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[82]}
+
+00:31:15.480 --> 00:31:19.080
+<v Speaker 0>Um, the definition here is a bit arbitrary.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:19.740 --> 00:31:20.190
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:20.190 --> 00:31:22.440
+<v Speaker 0>It's saying that false is less than or equal to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:22.440 --> 00:31:23.070
+<v Speaker 0>true.
+
+NOTE CONF {"raw":[100]}
+
+00:31:23.790 --> 00:31:25.470
+<v Speaker 0>Rather than the other way around.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:26.460 --> 00:31:27.600
+<v Speaker 0>It's a bit arbitrary.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:27.600 --> 00:31:28.860
+<v Speaker 0>We could have done it the other way around.
+
+NOTE CONF {"raw":[100,100,100,100,85,100,100,100,100]}
+
+00:31:28.860 --> 00:31:31.920
+<v Speaker 0>The only reason why we do it this way is,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:31.920 --> 00:31:35.460
+<v Speaker 0>um, because this case.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:37.470 --> 00:31:43.440
+<v Speaker 0>Um, means this is actually equivalent to the implication, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:44.550 --> 00:31:46.290
+<v Speaker 0>implication on booleans.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:46.830 --> 00:31:47.520
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:47.520 --> 00:31:51.900
+<v Speaker 0>It's true for all for all pairs, except for true
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:52.380 --> 00:31:54.450
+<v Speaker 0>is not less than or equal to false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:54.600 --> 00:31:54.960
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:54.960 --> 00:31:58.740
+<v Speaker 0>Just like true implies false is false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:59.730 --> 00:32:00.420
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:00.420 --> 00:32:02.130
+<v Speaker 0>So this is deliberate.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:04.650 --> 00:32:07.290
+<v Speaker 0>And I don't know whether Julian has talked about Boolean
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:07.290 --> 00:32:08.400
+<v Speaker 0>algebras or not.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:08.820 --> 00:32:10.500
+<v Speaker 0>There's a concept of Boolean algebra.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:10.560 --> 00:32:12.630
+<v Speaker 0>If he hasn't talked about it, it's just explained in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,63,41,95,100]}
+
+00:32:12.630 --> 00:32:13.200
+<v Speaker 0>the book.
+
+NOTE CONF {"raw":[100,100]}
+
+00:32:13.590 --> 00:32:16.500
+<v Speaker 0>Um, and if you want to make booleans into a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:16.500 --> 00:32:20.400
+<v Speaker 0>Boolean algebra, um, this is the way that you define,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:20.400 --> 00:32:22.990
+<v Speaker 0>um Less than or equal to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:26.230 --> 00:32:26.590
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:26.590 --> 00:32:30.610
+<v Speaker 0>Finally, uh, show you can define uh, bool is instance
+
+NOTE CONF {"raw":[100,88,100,100,100,100,87,100,63,100]}
+
+00:32:30.610 --> 00:32:32.890
+<v Speaker 0>of show using this definition.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:32.890 --> 00:32:36.940
+<v Speaker 0>And, um, I've used kind of English names of the
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100,100,100]}
+
+00:32:36.940 --> 00:32:38.500
+<v Speaker 0>Boolean values here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:38.770 --> 00:32:41.230
+<v Speaker 0>You could if you want to use a different language
+
+NOTE CONF {"raw":[100,100,100,100,100,77,100,100,100,100]}
+
+00:32:41.230 --> 00:32:42.730
+<v Speaker 0>or any string you want.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:42.730 --> 00:32:43.060
+<v Speaker 0>Really.
+
+NOTE CONF {"raw":[100]}
+
+00:32:43.060 --> 00:32:48.610
+<v Speaker 0>It's just that, um, I'm using English okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:49.030 --> 00:32:50.230
+<v Speaker 0>Any questions anybody.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:50.230 --> 00:32:52.420
+<v Speaker 0>Up to this point, this is all kind of, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:52.690 --> 00:32:54.040
+<v Speaker 0>pretty easy, I think.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:54.040 --> 00:32:55.840
+<v Speaker 0>Just new stuff, but, um.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:58.450 --> 00:32:59.140
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:00.100 --> 00:33:02.230
+<v Speaker 0>Um, pairs.
+
+NOTE CONF {"raw":[100,93]}
+
+00:33:05.860 --> 00:33:06.220
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:06.220 --> 00:33:09.940
+<v Speaker 0>You can define, um, that that, uh, we've already seen
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:33:09.940 --> 00:33:10.150
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:33:10.150 --> 00:33:13.300
+<v Speaker 0>Actually, you can define EC, uh, you can define the
+
+NOTE CONF {"raw":[100,100,100,100,80,81,100,100,100,55]}
+
+00:33:13.300 --> 00:33:16.990
+<v Speaker 0>pairs or instance of EC provided the value, the, the
+
+NOTE CONF {"raw":[100,75,94,100,100,100,100,42,100,100]}
+
+00:33:16.990 --> 00:33:20.920
+<v Speaker 0>the types involved in the pair, both of those are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:21.400 --> 00:33:22.750
+<v Speaker 0>instances of EQ.
+
+NOTE CONF {"raw":[100,100,45]}
+
+00:33:22.900 --> 00:33:25.390
+<v Speaker 0>Okay, I've shown you that definition already.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:33:25.600 --> 00:33:29.950
+<v Speaker 0>Um, here's a definition of of of of pairs being
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100,100]}
+
+00:33:29.950 --> 00:33:31.240
+<v Speaker 0>an instance of ord.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:31.240 --> 00:33:34.630
+<v Speaker 0>So Ord is this some class where we've got less
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:34.630 --> 00:33:36.970
+<v Speaker 0>than or equal to and other order relations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:36.970 --> 00:33:40.000
+<v Speaker 0>And the definition here of less than or equal to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:40.030 --> 00:33:42.220
+<v Speaker 0>is perhaps not what you'd expect.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:42.640 --> 00:33:43.390
+<v Speaker 0>Not sure.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:43.390 --> 00:33:45.490
+<v Speaker 0>I mean, if you looked at if you look at
+
+NOTE CONF {"raw":[100,100,100,100,85,100,100,100,100,100]}
+
+00:33:45.490 --> 00:33:49.450
+<v Speaker 0>the definition for equality, you could think, well, a similar
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:49.450 --> 00:33:50.230
+<v Speaker 0>sort of thing.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:50.230 --> 00:33:53.290
+<v Speaker 0>For here we would just say that x comma y
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:53.290 --> 00:33:56.380
+<v Speaker 0>is less than or equal to x prime comma y
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:56.380 --> 00:34:00.010
+<v Speaker 0>prime provided x is less than or equal to x
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:00.010 --> 00:34:02.110
+<v Speaker 0>prime and y is less than or equal to y
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:02.140 --> 00:34:02.710
+<v Speaker 0>prime.
+
+NOTE CONF {"raw":[100]}
+
+00:34:02.710 --> 00:34:05.440
+<v Speaker 0>So that's kind of element component wise.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:05.890 --> 00:34:08.530
+<v Speaker 0>Um order okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:08.530 --> 00:34:10.030
+<v Speaker 0>This is a different definition.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:11.620 --> 00:34:13.540
+<v Speaker 0>And this is the usual one for pairs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,66]}
+
+00:34:13.540 --> 00:34:15.370
+<v Speaker 0>And it's the one that's built into Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:15.370 --> 00:34:19.760
+<v Speaker 0>And the motivation for this is um, I'll show you.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:20.300 --> 00:34:23.899
+<v Speaker 0>It's because when you extend this to lists, it's the
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,55,100,100]}
+
+00:34:23.899 --> 00:34:24.889
+<v Speaker 0>one that you want.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:24.889 --> 00:34:26.720
+<v Speaker 0>Okay, but I'll just tell you what it is for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:26.720 --> 00:34:27.260
+<v Speaker 0>now, okay?
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:27.260 --> 00:34:30.649
+<v Speaker 0>We say that less than that x comma y is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:30.649 --> 00:34:33.889
+<v Speaker 0>less than or equal to x prime comma y prime.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:34.220 --> 00:34:38.149
+<v Speaker 0>If either x is less than or equal sorry x
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:38.149 --> 00:34:39.350
+<v Speaker 0>is less than y.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:40.909 --> 00:34:43.909
+<v Speaker 0>Okay, then it doesn't matter what y and y prime
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,100,100]}
+
+00:34:43.909 --> 00:34:46.340
+<v Speaker 0>are, then this one is less than or equal to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:46.340 --> 00:34:48.770
+<v Speaker 0>that one okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:48.770 --> 00:34:55.610
+<v Speaker 0>Or x and x prime are equal and y is
+
+NOTE CONF {"raw":[100,100,100,100,100,89,100,100,100,100]}
+
+00:34:55.610 --> 00:34:57.170
+<v Speaker 0>less than or equal to y prime.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:58.130 --> 00:34:58.850
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:59.870 --> 00:35:02.900
+<v Speaker 0>So um, you know, so if the first components are
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100,100,100]}
+
+00:35:02.900 --> 00:35:05.210
+<v Speaker 0>equal then we look at the second components.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:05.690 --> 00:35:09.020
+<v Speaker 0>If the first components are not equal but the first
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:09.020 --> 00:35:12.200
+<v Speaker 0>one is less than the second one less then not
+
+NOTE CONF {"raw":[85,85,100,100,100,100,100,100,61,100]}
+
+00:35:12.200 --> 00:35:13.250
+<v Speaker 0>less than or equal to.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:13.280 --> 00:35:15.200
+<v Speaker 0>Then we look at the second components.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:19.370 --> 00:35:19.640
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:19.640 --> 00:35:22.700
+<v Speaker 0>And here's a show function which just puts the the
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,73,90]}
+
+00:35:22.700 --> 00:35:25.520
+<v Speaker 0>the strings for the two components.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:26.060 --> 00:35:28.790
+<v Speaker 0>Uh, concatenates them with a comma in between in parentheses
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,77,100]}
+
+00:35:28.790 --> 00:35:29.510
+<v Speaker 0>around them.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:31.430 --> 00:35:31.760
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:31.760 --> 00:35:32.510
+<v Speaker 0>These are.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:32.780 --> 00:35:34.040
+<v Speaker 0>I'll say it again.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:34.040 --> 00:35:35.690
+<v Speaker 0>These are these are built into Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,95,48]}
+
+00:35:35.690 --> 00:35:37.580
+<v Speaker 0>So this is how you would define them if you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:37.580 --> 00:35:39.200
+<v Speaker 0>had to define them yourself.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:40.700 --> 00:35:44.210
+<v Speaker 0>And then for lists for each of these we've got
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:44.210 --> 00:35:45.980
+<v Speaker 0>a little recursive definition.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:46.280 --> 00:35:47.030
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:47.390 --> 00:35:50.030
+<v Speaker 0>Uh, I've shown you the one for lists for, for
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:35:50.030 --> 00:35:51.650
+<v Speaker 0>um, EQ already.
+
+NOTE CONF {"raw":[92,80,100]}
+
+00:35:52.580 --> 00:35:55.370
+<v Speaker 0>Uh, for I'll just say for show.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:55.700 --> 00:35:58.670
+<v Speaker 0>Um, you, you kind of put the, the elements in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:58.670 --> 00:35:59.360
+<v Speaker 0>the list.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:59.750 --> 00:36:02.600
+<v Speaker 0>Turn them all into strings, concatenate them, put commas in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:02.600 --> 00:36:05.120
+<v Speaker 0>between and put square brackets around them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:05.120 --> 00:36:07.670
+<v Speaker 0>So that's a that's the code that does that.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100]}
+
+00:36:07.850 --> 00:36:10.130
+<v Speaker 0>Okay I'm not going to look at that in detail
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:36:10.130 --> 00:36:11.540
+<v Speaker 0>I want to focus on this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:11.540 --> 00:36:17.460
+<v Speaker 0>Um, this um case for AUD here.
+
+NOTE CONF {"raw":[98,100,100,100,100,29,100]}
+
+00:36:22.260 --> 00:36:23.040
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:26.040 --> 00:36:31.740
+<v Speaker 0>So this is a little recursive definition of um of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:31.740 --> 00:36:33.810
+<v Speaker 0>less than or equal to for lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,81,100]}
+
+00:36:34.410 --> 00:36:35.940
+<v Speaker 0>And what does it give you?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:37.230 --> 00:36:38.760
+<v Speaker 0>Um uh, okay.
+
+NOTE CONF {"raw":[82,69,100]}
+
+00:36:38.760 --> 00:36:39.390
+<v Speaker 0>Well.
+
+NOTE CONF {"raw":[100]}
+
+00:36:43.140 --> 00:36:44.340
+<v Speaker 0>Let me show you some examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:44.340 --> 00:36:44.880
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:45.120 --> 00:36:49.740
+<v Speaker 0>So this gives us, uh, what's, uh, the, the, the
+
+NOTE CONF {"raw":[100,100,100,100,100,51,99,100,100,100]}
+
+00:36:49.740 --> 00:36:53.940
+<v Speaker 0>order that you have, um, in the dictionary.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:56.370 --> 00:37:00.600
+<v Speaker 0>For example, bar is less than or equal to bat.
+
+NOTE CONF {"raw":[100,100,99,100,100,100,76,100,100,100]}
+
+00:37:00.600 --> 00:37:00.840
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:00.840 --> 00:37:02.490
+<v Speaker 0>If you look for those two words in the dictionary,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:02.490 --> 00:37:04.890
+<v Speaker 0>the first one will come before the second one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:06.690 --> 00:37:10.260
+<v Speaker 0>And bat will be less than or equal to, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,64]}
+
+00:37:10.260 --> 00:37:11.160
+<v Speaker 0>battery.
+
+NOTE CONF {"raw":[100]}
+
+00:37:14.160 --> 00:37:14.880
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:14.910 --> 00:37:18.360
+<v Speaker 0>Because, uh, the first three.
+
+NOTE CONF {"raw":[100,52,100,100,100]}
+
+00:37:18.390 --> 00:37:20.070
+<v Speaker 0>The first three letters of this are the same as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,84]}
+
+00:37:20.070 --> 00:37:21.510
+<v Speaker 0>that, but this one's longer.
+
+NOTE CONF {"raw":[100,100,100,61,100]}
+
+00:37:21.900 --> 00:37:22.620
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[91]}
+
+00:37:26.400 --> 00:37:33.330
+<v Speaker 0>And of course, um, you know, um, Aardvark.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:36.150 --> 00:37:37.680
+<v Speaker 0>Is less than or equal to to that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,65,100]}
+
+00:37:37.680 --> 00:37:38.220
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:38.220 --> 00:37:40.860
+<v Speaker 0>You can already see in the first letter that it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:40.860 --> 00:37:42.300
+<v Speaker 0>going to come before that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:45.870 --> 00:37:46.200
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:37:48.840 --> 00:37:50.340
+<v Speaker 0>You know, uh.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:54.210 --> 00:37:56.160
+<v Speaker 0>Also something like, um.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:58.560 --> 00:38:00.150
+<v Speaker 0>You know, a followed by Z.
+
+NOTE CONF {"raw":[91,100,100,100,100,96]}
+
+00:38:00.150 --> 00:38:00.690
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:00.690 --> 00:38:03.540
+<v Speaker 0>So A is less than B, so it doesn't matter
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:03.540 --> 00:38:05.100
+<v Speaker 0>that Z is greater than A.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:05.490 --> 00:38:05.940
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:05.940 --> 00:38:07.110
+<v Speaker 0>Second second thing.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:07.110 --> 00:38:07.710
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:07.710 --> 00:38:10.380
+<v Speaker 0>Anyway, so this is this is the dictionary ordering.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:38:10.500 --> 00:38:15.010
+<v Speaker 0>And and this is and this is a recursive definition
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:15.010 --> 00:38:15.640
+<v Speaker 0>of that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:16.030 --> 00:38:16.720
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:17.260 --> 00:38:21.370
+<v Speaker 0>And, um, if you remember what I wrote for for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:21.370 --> 00:38:25.540
+<v Speaker 0>pears, it's the same, you know, it's the same thing,
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:38:25.540 --> 00:38:30.700
+<v Speaker 0>but generalised, you know, so B followed by, um, a
+
+NOTE CONF {"raw":[100,93,100,100,100,42,100,100,100,100]}
+
+00:38:32.290 --> 00:38:36.430
+<v Speaker 0>is less than or equal to, um, be followed by,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:36.820 --> 00:38:38.830
+<v Speaker 0>uh, you know, see.
+
+NOTE CONF {"raw":[100,100,100,60]}
+
+00:38:43.930 --> 00:38:44.470
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:44.470 --> 00:38:45.760
+<v Speaker 0>First things are the same.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:45.760 --> 00:38:51.040
+<v Speaker 0>Second one, you compare, uh, whereas, um, you know, a
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:38:51.280 --> 00:38:57.160
+<v Speaker 0>comma Z is also less than or equal to b
+
+NOTE CONF {"raw":[100,100,100,100,100,100,88,100,100,100]}
+
+00:38:57.490 --> 00:38:59.200
+<v Speaker 0>comma c.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:59.980 --> 00:39:01.990
+<v Speaker 0>Sorry, I put, I put back quotes in there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:01.990 --> 00:39:03.610
+<v Speaker 0>I mean, I mean ordinary quotes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:03.610 --> 00:39:06.370
+<v Speaker 0>Sorry, I'm getting confused with my Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:06.550 --> 00:39:08.560
+<v Speaker 0>In all of these cases, I meant this kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:08.560 --> 00:39:10.810
+<v Speaker 0>quote, normal old quotes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:10.990 --> 00:39:11.590
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:39:12.820 --> 00:39:13.930
+<v Speaker 0>Um, right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:13.930 --> 00:39:19.120
+<v Speaker 0>So dictionary ordering, also known as, uh, lexicographic ordering.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,82,100,100]}
+
+00:39:23.200 --> 00:39:27.310
+<v Speaker 0>That's the sort of computer science jargon okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93]}
+
+00:39:28.000 --> 00:39:30.340
+<v Speaker 0>Uh, comes from the word lexicon, which is a fancy
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:30.340 --> 00:39:31.660
+<v Speaker 0>word for dictionary.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:34.480 --> 00:39:34.990
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:39:34.990 --> 00:39:37.870
+<v Speaker 0>Have you got that right?
+
+NOTE CONF {"raw":[71,100,100,100,100]}
+
+00:39:39.100 --> 00:39:41.620
+<v Speaker 0>Um, so this is the code that you would write
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:41.620 --> 00:39:44.050
+<v Speaker 0>if you needed to define these things in Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:44.050 --> 00:39:45.100
+<v Speaker 0>It's built in.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:47.320 --> 00:39:50.770
+<v Speaker 0>Um, and, and there's even something nicer than that in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:50.770 --> 00:39:54.310
+<v Speaker 0>Haskell, which is that when you define I explained how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:54.310 --> 00:39:58.060
+<v Speaker 0>to define these three things as, as algebraic data types.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,95]}
+
+00:39:58.060 --> 00:40:00.550
+<v Speaker 0>And then I said there's some magic words you can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:00.550 --> 00:40:04.210
+<v Speaker 0>say when you define an algebraic data type, which, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,72]}
+
+00:40:04.210 --> 00:40:08.740
+<v Speaker 0>automatically gives you, uh, equality functions and show functions and
+
+NOTE CONF {"raw":[100,100,100,99,100,100,100,100,100,100]}
+
+00:40:08.740 --> 00:40:09.250
+<v Speaker 0>so forth.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:09.250 --> 00:40:09.550
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:09.550 --> 00:40:13.100
+<v Speaker 0>So, um, so if you do that with these three
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:13.100 --> 00:40:18.470
+<v Speaker 0>data type definitions bool, pair and list with these magic
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,100,100,100]}
+
+00:40:18.470 --> 00:40:22.820
+<v Speaker 0>magic words at the end, deriving EQ, comma or comma
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:40:22.820 --> 00:40:23.750
+<v Speaker 0>show you can.
+
+NOTE CONF {"raw":[88,100,100]}
+
+00:40:23.750 --> 00:40:26.060
+<v Speaker 0>You can also just derive one of them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:26.480 --> 00:40:29.870
+<v Speaker 0>Um, so for any algebraic data type you can do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:29.870 --> 00:40:33.680
+<v Speaker 0>this and it will automatically give you the code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:34.400 --> 00:40:36.050
+<v Speaker 0>Uh, like I've shown you.
+
+NOTE CONF {"raw":[92,100,100,100,100]}
+
+00:40:36.050 --> 00:40:36.770
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:37.580 --> 00:40:39.800
+<v Speaker 0>Haskell writes it for you automatically.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:39.950 --> 00:40:40.550
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:40.550 --> 00:40:47.330
+<v Speaker 0>Using the types, um, so, you know, uh, for example,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,66,100,100]}
+
+00:40:47.330 --> 00:40:49.370
+<v Speaker 0>just looking at the last one we looked at, we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:49.370 --> 00:40:52.970
+<v Speaker 0>looked at lists just now, it will automatically write equality
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:52.970 --> 00:40:56.030
+<v Speaker 0>function for this for for this type.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:56.060 --> 00:40:56.870
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:57.110 --> 00:40:59.540
+<v Speaker 0>Uh, it's it's a recursive type.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:59.540 --> 00:41:01.970
+<v Speaker 0>The definition of equality is recursive.
+
+NOTE CONF {"raw":[96,100,100,100,100,100]}
+
+00:41:02.300 --> 00:41:06.230
+<v Speaker 0>Um, uh, you know, to going back to the definition,
+
+NOTE CONF {"raw":[100,94,100,100,89,100,100,100,100,100]}
+
+00:41:06.530 --> 00:41:11.600
+<v Speaker 0>um, uh, if you, if you've got a, A list
+
+NOTE CONF {"raw":[100,100,100,100,100,99,100,100,100,100]}
+
+00:41:11.600 --> 00:41:12.710
+<v Speaker 0>which is empty.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:13.130 --> 00:41:14.390
+<v Speaker 0>Well, let's look at this one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:14.420 --> 00:41:17.750
+<v Speaker 0>You've got a list which is which is, um, built
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,73,100]}
+
+00:41:17.750 --> 00:41:18.980
+<v Speaker 0>using a cons.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:21.200 --> 00:41:23.150
+<v Speaker 0>Maybe I should let me let me look at the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,92]}
+
+00:41:23.150 --> 00:41:24.950
+<v Speaker 0>let me look at the equality case just to make
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:24.950 --> 00:41:26.270
+<v Speaker 0>my explanation simpler.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:26.270 --> 00:41:26.900
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[86]}
+
+00:41:27.170 --> 00:41:31.670
+<v Speaker 0>List building using a cons comparing with a nil list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:41:31.670 --> 00:41:33.920
+<v Speaker 0>Those are not going to be equal and the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:33.920 --> 00:41:36.110
+<v Speaker 0>the other way around okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:36.110 --> 00:41:39.170
+<v Speaker 0>But if they're both used built using a cons, we
+
+NOTE CONF {"raw":[100,100,100,100,84,100,100,100,100,100]}
+
+00:41:39.170 --> 00:41:42.560
+<v Speaker 0>compare the first elements and then we look recursively at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:42.560 --> 00:41:43.610
+<v Speaker 0>the rest of the list.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:43.610 --> 00:41:43.880
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:43.880 --> 00:41:45.230
+<v Speaker 0>So this is the automatic.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:45.260 --> 00:41:48.260
+<v Speaker 0>This is the the definition of EQ you get automatically
+
+NOTE CONF {"raw":[100,100,100,100,100,100,50,100,100,100]}
+
+00:41:48.260 --> 00:41:50.780
+<v Speaker 0>for this from this okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:50.780 --> 00:41:52.670
+<v Speaker 0>And the same for ord okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:52.670 --> 00:41:59.210
+<v Speaker 0>This is the definition you automatically get from that okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:59.210 --> 00:42:02.300
+<v Speaker 0>The definition of show is actually not the one giving
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:02.300 --> 00:42:02.930
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:42:02.930 --> 00:42:06.710
+<v Speaker 0>This is the one that's built in for for lists
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:06.710 --> 00:42:08.120
+<v Speaker 0>in in Haskell.
+
+NOTE CONF {"raw":[94,100,100]}
+
+00:42:08.120 --> 00:42:11.220
+<v Speaker 0>But if you were to define lists yourself and you'd
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:42:11.220 --> 00:42:12.990
+<v Speaker 0>say, I want to derive show.
+
+NOTE CONF {"raw":[100,100,100,100,96,85]}
+
+00:42:13.020 --> 00:42:16.080
+<v Speaker 0>You'd get a you'd get a conversion to strings, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:16.080 --> 00:42:18.750
+<v Speaker 0>involves the constructors, cons and nil.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:20.250 --> 00:42:20.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:21.420 --> 00:42:24.870
+<v Speaker 0>But otherwise these things would give you what you'd expect.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:24.870 --> 00:42:28.020
+<v Speaker 0>Actually for here show would also be different would be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:28.290 --> 00:42:30.570
+<v Speaker 0>um, using the constructor MC pair.
+
+NOTE CONF {"raw":[98,100,100,100,35,73]}
+
+00:42:32.820 --> 00:42:35.340
+<v Speaker 0>Okay, so Haskell writes the code for you.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:35.340 --> 00:42:36.720
+<v Speaker 0>And why is that good?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:37.980 --> 00:42:40.500
+<v Speaker 0>Okay, first of all, I should say there are about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:40.500 --> 00:42:44.190
+<v Speaker 0>seven of these type classes that you can do this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:44.190 --> 00:42:44.670
+<v Speaker 0>for.
+
+NOTE CONF {"raw":[100]}
+
+00:42:44.670 --> 00:42:48.990
+<v Speaker 0>Haskell will build will will build the code for you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:48.990 --> 00:42:49.920
+<v Speaker 0>automatically.
+
+NOTE CONF {"raw":[100]}
+
+00:42:49.980 --> 00:42:51.240
+<v Speaker 0>Um, those are three of them.
+
+NOTE CONF {"raw":[74,100,100,100,100,100]}
+
+00:42:51.450 --> 00:42:54.960
+<v Speaker 0>Um, uh, this is good because the code is boring
+
+NOTE CONF {"raw":[73,61,100,100,100,100,100,100,100,100]}
+
+00:42:55.920 --> 00:42:58.320
+<v Speaker 0>and so it's nice to not have to write it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:59.550 --> 00:43:00.300
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:00.300 --> 00:43:05.640
+<v Speaker 0>Another reason is that, um, uh, it's good to not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:05.640 --> 00:43:06.270
+<v Speaker 0>write code.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:06.270 --> 00:43:08.220
+<v Speaker 0>If you can get if you can get it written
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:08.220 --> 00:43:09.630
+<v Speaker 0>automatically for you.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:10.290 --> 00:43:14.040
+<v Speaker 0>Um, because if Haskell writes it, it'll get it right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:14.040 --> 00:43:18.480
+<v Speaker 0>And if you write it, especially if it's boring, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:18.480 --> 00:43:21.990
+<v Speaker 0>might get it wrong because you're bored.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:23.040 --> 00:43:25.500
+<v Speaker 0>Uh, writing these writing these definitions is is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100]}
+
+00:43:25.500 --> 00:43:27.090
+<v Speaker 0>There's nothing interesting going on here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:27.120 --> 00:43:30.030
+<v Speaker 0>Okay, so, um, you might make a mistake and then
+
+NOTE CONF {"raw":[100,99,63,100,100,100,100,100,100,100]}
+
+00:43:30.030 --> 00:43:32.520
+<v Speaker 0>your code would be wrong, and then you'd get bugs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:32.520 --> 00:43:32.970
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:32.970 --> 00:43:35.340
+<v Speaker 0>And so it's good that Haskell will do this for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:35.340 --> 00:43:35.850
+<v Speaker 0>you.
+
+NOTE CONF {"raw":[100]}
+
+00:43:36.120 --> 00:43:38.730
+<v Speaker 0>Um, to save you, work to save you.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:38.730 --> 00:43:39.930
+<v Speaker 0>Making mistakes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:40.260 --> 00:43:41.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:41.490 --> 00:43:44.160
+<v Speaker 0>Um, so that's that's a good thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:45.000 --> 00:43:46.710
+<v Speaker 0>Let me see how much time I have.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:48.150 --> 00:43:49.140
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:49.530 --> 00:43:50.220
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:43:54.600 --> 00:43:56.610
+<v Speaker 0>I have too much stuff in the rest of this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:56.610 --> 00:43:58.470
+<v Speaker 0>lecture to get through, but I'll just.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:58.470 --> 00:44:00.750
+<v Speaker 0>I'll just hit a couple of high points and then,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:00.750 --> 00:44:01.050
+<v Speaker 0>um.
+
+NOTE CONF {"raw":[100]}
+
+00:44:02.070 --> 00:44:04.170
+<v Speaker 0>I mean, in general, I just want to kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:04.170 --> 00:44:06.810
+<v Speaker 0>inform you about the type classes, how they work, how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:06.810 --> 00:44:08.530
+<v Speaker 0>you can define them, and the rest of the lecture
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:08.530 --> 00:44:09.910
+<v Speaker 0>is just a bunch of examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:09.910 --> 00:44:11.230
+<v Speaker 0>So, um.
+
+NOTE CONF {"raw":[100,97]}
+
+00:44:12.790 --> 00:44:15.730
+<v Speaker 0>So for example, you remember that I defined sets in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,84,100,100]}
+
+00:44:15.730 --> 00:44:17.050
+<v Speaker 0>four different ways.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:19.090 --> 00:44:21.580
+<v Speaker 0>And so I can make those an instance of EC
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,86]}
+
+00:44:21.610 --> 00:44:22.990
+<v Speaker 0>as well if I want.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:23.770 --> 00:44:24.550
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:44:24.550 --> 00:44:27.310
+<v Speaker 0>Allowing me to use equality.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:27.310 --> 00:44:32.140
+<v Speaker 0>This double equals sign to compare sets rather than using
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:44:32.140 --> 00:44:34.420
+<v Speaker 0>the function that I've defined.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:34.960 --> 00:44:36.640
+<v Speaker 0>Um, for sets.
+
+NOTE CONF {"raw":[100,93,100]}
+
+00:44:38.590 --> 00:44:38.920
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:44:38.920 --> 00:44:41.800
+<v Speaker 0>I can just say, well, um, you know, provided I've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:41.800 --> 00:44:44.530
+<v Speaker 0>got an ordered type, okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:44.530 --> 00:44:46.030
+<v Speaker 0>Because my, my representation.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:46.030 --> 00:44:48.880
+<v Speaker 0>Well, this would be required for three of the four
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:48.880 --> 00:44:50.560
+<v Speaker 0>representations of sets.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:50.740 --> 00:44:51.040
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:44:51.040 --> 00:44:54.370
+<v Speaker 0>If I've got an ordered an ordered type A, then
+
+NOTE CONF {"raw":[100,100,100,100,94,100,100,100,100,100]}
+
+00:44:54.370 --> 00:44:56.740
+<v Speaker 0>I have an equality on sets of A.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:44:56.740 --> 00:45:00.640
+<v Speaker 0>And it's and it's the equal function that I define.
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:45:01.270 --> 00:45:02.080
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:45:02.470 --> 00:45:03.760
+<v Speaker 0>And um.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:06.400 --> 00:45:07.540
+<v Speaker 0>And this is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:07.690 --> 00:45:10.240
+<v Speaker 0>This is necessary if I want the right answer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:10.240 --> 00:45:16.990
+<v Speaker 0>Because if I were to define equality using, you know,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:16.990 --> 00:45:17.770
+<v Speaker 0>deriving.
+
+NOTE CONF {"raw":[100]}
+
+00:45:17.770 --> 00:45:20.680
+<v Speaker 0>Sorry, deriving like this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:21.550 --> 00:45:23.920
+<v Speaker 0>If I were to do that for, for, for example,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:23.920 --> 00:45:28.600
+<v Speaker 0>ordered trees, then the equality I get would give me
+
+NOTE CONF {"raw":[100,100,100,100,100,52,100,100,100,100]}
+
+00:45:28.600 --> 00:45:32.020
+<v Speaker 0>the wrong answer, because we've seen that two ordered trees
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,99,100,100]}
+
+00:45:32.020 --> 00:45:35.440
+<v Speaker 0>can be equal if they have the same elements but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:35.440 --> 00:45:36.610
+<v Speaker 0>different structure.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:36.700 --> 00:45:39.850
+<v Speaker 0>Okay, uh, they have to satisfy the invariant.
+
+NOTE CONF {"raw":[100,73,100,100,100,100,100,100]}
+
+00:45:39.850 --> 00:45:42.310
+<v Speaker 0>But it could be that the that, um, you know,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,90,100,100]}
+
+00:45:42.310 --> 00:45:46.570
+<v Speaker 0>one of them is, um, uh, well different shape.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:46.570 --> 00:45:47.200
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:45:48.520 --> 00:45:51.040
+<v Speaker 0>And so this gives you the ability to give the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:51.040 --> 00:45:55.000
+<v Speaker 0>right equality for, for, for sets.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:56.590 --> 00:45:57.190
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:45:58.270 --> 00:45:59.890
+<v Speaker 0>So you can do that if you want.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:46:01.000 --> 00:46:05.030
+<v Speaker 0>I will talk about, uh, the numerical type classes.
+
+NOTE CONF {"raw":[84,84,100,100,100,100,100,100,100]}
+
+00:46:05.030 --> 00:46:09.890
+<v Speaker 0>So Haskell has a lot of different type classes for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:09.890 --> 00:46:10.700
+<v Speaker 0>numbers.
+
+NOTE CONF {"raw":[100]}
+
+00:46:11.600 --> 00:46:12.500
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:46:12.740 --> 00:46:14.450
+<v Speaker 0>Um, so first of all, it's got a lot of
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:46:14.450 --> 00:46:15.350
+<v Speaker 0>types for numbers.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:46:15.350 --> 00:46:19.250
+<v Speaker 0>You've got, you've got int which is 64 bit integers,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:19.250 --> 00:46:24.440
+<v Speaker 0>you've got integer spelled out which is infinite precision integers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:24.440 --> 00:46:27.950
+<v Speaker 0>You've got floats which is floating point numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:46:27.950 --> 00:46:31.130
+<v Speaker 0>You've got double which is double precision floating point numbers.
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:46:31.130 --> 00:46:35.270
+<v Speaker 0>There are rationals that you've seen in your, um, the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,62,100]}
+
+00:46:35.270 --> 00:46:37.670
+<v Speaker 0>tutorial involving matrices.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:46:38.000 --> 00:46:40.610
+<v Speaker 0>Um, there are complex numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:41.150 --> 00:46:46.130
+<v Speaker 0>Um, uh, there are uh, probably some that I forgot.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:46.130 --> 00:46:46.700
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:46:46.700 --> 00:46:48.920
+<v Speaker 0>So there's a lot of different kinds of numbers in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:48.920 --> 00:46:52.430
+<v Speaker 0>Haskell, and I don't I don't expect you to remember
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:52.430 --> 00:46:55.340
+<v Speaker 0>all these, all these different types of numbers because they're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:55.340 --> 00:46:56.780
+<v Speaker 0>not important for this course.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:56.780 --> 00:46:57.260
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:46:57.260 --> 00:46:58.550
+<v Speaker 0>But they're there.
+
+NOTE CONF {"raw":[100,100,95]}
+
+00:46:58.550 --> 00:47:01.820
+<v Speaker 0>And there's also a lot of different type classes involving
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:01.820 --> 00:47:04.940
+<v Speaker 0>numbers which kind of keep these different types in order
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:04.940 --> 00:47:06.080
+<v Speaker 0>in a certain way.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:06.080 --> 00:47:08.870
+<v Speaker 0>And I also don't expect you to remember all these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:08.870 --> 00:47:10.100
+<v Speaker 0>because they're not important.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:10.100 --> 00:47:10.460
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:10.460 --> 00:47:14.240
+<v Speaker 0>But you will have seen for instance, num okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,65,100]}
+
+00:47:14.240 --> 00:47:15.650
+<v Speaker 0>And I just want to tell you a little bit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:15.650 --> 00:47:17.990
+<v Speaker 0>about what's in these, these type classes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:18.260 --> 00:47:21.020
+<v Speaker 0>Um, so you would have seen num, for example, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:21.020 --> 00:47:23.120
+<v Speaker 0>at the beginning of the course, if you made a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:23.120 --> 00:47:26.960
+<v Speaker 0>mistake with some function that involved arithmetic, then you would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:26.960 --> 00:47:30.620
+<v Speaker 0>get some error message which would complain about something not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:30.620 --> 00:47:32.060
+<v Speaker 0>being an instance of num.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:32.750 --> 00:47:33.260
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:33.260 --> 00:47:35.570
+<v Speaker 0>And what it was referring to is this type class
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:35.570 --> 00:47:36.230
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:47:36.230 --> 00:47:40.070
+<v Speaker 0>So if you try to um, well, different kinds of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:40.070 --> 00:47:42.140
+<v Speaker 0>mistakes you can make with, with numbers.
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100]}
+
+00:47:42.530 --> 00:47:43.970
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:44.240 --> 00:47:46.820
+<v Speaker 0>So num is the most basic type classes and it's,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,94]}
+
+00:47:46.820 --> 00:47:50.840
+<v Speaker 0>and it's the one where you have um, uh, types
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:47:50.840 --> 00:47:57.500
+<v Speaker 0>which allow addition, subtraction and multiplication and a couple of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:57.500 --> 00:47:58.550
+<v Speaker 0>other functions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:58.970 --> 00:47:59.780
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:00.140 --> 00:48:04.770
+<v Speaker 0>And, um, you know uh, not necessarily Division.
+
+NOTE CONF {"raw":[100,100,100,100,58,100,100,100]}
+
+00:48:05.760 --> 00:48:06.210
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:06.210 --> 00:48:13.680
+<v Speaker 0>Because, um, uh, division, Division in a, in a in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:13.680 --> 00:48:19.590
+<v Speaker 0>a type like, like, um, float is written using this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:19.590 --> 00:48:26.340
+<v Speaker 0>function name and division in a, in an integer integer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:26.340 --> 00:48:28.140
+<v Speaker 0>division is written using this name.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:48:28.140 --> 00:48:31.410
+<v Speaker 0>So these are, these are sort of integral types like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:31.410 --> 00:48:35.760
+<v Speaker 0>int and these are this is for types like float
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:35.760 --> 00:48:39.540
+<v Speaker 0>with real with an actual division function in okay.
+
+NOTE CONF {"raw":[100,100,100,72,100,100,100,100,100]}
+
+00:48:39.540 --> 00:48:42.660
+<v Speaker 0>So so um, you know you've got you've got num
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100,100,100,99]}
+
+00:48:42.660 --> 00:48:49.410
+<v Speaker 0>which has at least additions subtraction, multiplication, negation a way
+
+NOTE CONF {"raw":[100,100,100,100,55,100,100,100,100,100]}
+
+00:48:49.410 --> 00:48:52.650
+<v Speaker 0>to convert things from integers to to values of that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:52.650 --> 00:48:53.280
+<v Speaker 0>type.
+
+NOTE CONF {"raw":[100]}
+
+00:48:53.610 --> 00:48:58.380
+<v Speaker 0>Um, you've got fractional which is um, which is Haskell's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:58.380 --> 00:49:04.860
+<v Speaker 0>name for things like rational numbers Um, uh, real integral,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,100,100]}
+
+00:49:04.860 --> 00:49:08.610
+<v Speaker 0>which is Haskell's name for things like integers, which are,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:08.610 --> 00:49:12.630
+<v Speaker 0>um, where you have things like division and modulo.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98]}
+
+00:49:13.410 --> 00:49:13.860
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:13.860 --> 00:49:18.030
+<v Speaker 0>So fairly complicated, uh, bunch of type classes here.
+
+NOTE CONF {"raw":[100,100,100,79,100,100,100,100,100]}
+
+00:49:18.030 --> 00:49:21.720
+<v Speaker 0>And you can and you can define, you know, how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:21.720 --> 00:49:24.780
+<v Speaker 0>num is an how float is an instance of num.
+
+NOTE CONF {"raw":[100,100,85,100,100,100,100,100,100,100]}
+
+00:49:24.780 --> 00:49:28.260
+<v Speaker 0>And these reference the kind of built in machine instructions
+
+NOTE CONF {"raw":[100,100,81,100,100,100,100,100,100,100]}
+
+00:49:28.260 --> 00:49:31.950
+<v Speaker 0>for doing, for doing um, addition of floating point numbers
+
+NOTE CONF {"raw":[100,100,100,100,100,52,52,100,100,100]}
+
+00:49:31.950 --> 00:49:32.760
+<v Speaker 0>and so forth.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:32.760 --> 00:49:34.920
+<v Speaker 0>This is all this is all built in, so you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:34.920 --> 00:49:36.300
+<v Speaker 0>don't have to worry about it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:36.780 --> 00:49:37.590
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:37.590 --> 00:49:43.260
+<v Speaker 0>But, um, well, the next thing in this lecture is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:43.260 --> 00:49:46.950
+<v Speaker 0>explaining how if you wanted to define natural numbers as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:46.950 --> 00:49:49.560
+<v Speaker 0>a, as a, as an abstract data type, which I
+
+NOTE CONF {"raw":[66,100,100,100,100,100,100,100,100,100]}
+
+00:49:49.560 --> 00:49:53.850
+<v Speaker 0>think I've shown you, um, you can also define, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:54.150 --> 00:49:56.160
+<v Speaker 0>that, um, wait a minute.
+
+NOTE CONF {"raw":[100,94,100,100,100]}
+
+00:49:57.630 --> 00:49:57.960
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:49:57.960 --> 00:50:01.300
+<v Speaker 0>You can define that as an instance of numb.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,61]}
+
+00:50:01.660 --> 00:50:04.240
+<v Speaker 0>Okay, I won't I won't tell you what the rest
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:04.240 --> 00:50:04.900
+<v Speaker 0>of this thing is.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:04.900 --> 00:50:06.580
+<v Speaker 0>There's a lot more examples here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:50:06.580 --> 00:50:08.260
+<v Speaker 0>You can look through them if you want.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:50:08.620 --> 00:50:11.680
+<v Speaker 0>Um, uh, ending up with expression trees.
+
+NOTE CONF {"raw":[96,92,100,100,100,100,97]}
+
+00:50:12.070 --> 00:50:12.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:50:13.030 --> 00:50:15.550
+<v Speaker 0>Um, okay, that's enough for this lecture, though.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:50:15.550 --> 00:50:18.730
+<v Speaker 0>And, um, I'll carry on with a different topic tomorrow.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:18.730 --> 00:50:20.200
+<v Speaker 0>So thanks for your attention.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:50:20.650 --> 00:50:20.860
+<v Unknown>Mhm.
+
+NOTE CONF {"raw":[96]}
+
+00:50:23.920 --> 00:50:24.160
+<v Unknown>Mhm.
+
+NOTE CONF {"raw":[95]}
+
+00:50:56.380 --> 00:50:56.740
+<v Unknown>Hi.
+
+NOTE CONF {"raw":[96]}
+
+00:50:58.120 --> 00:50:58.990
+<v Speaker 2>I have a.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:50:58.990 --> 00:50:59.890
+<v Speaker 3>Couple of questions.
+
+NOTE CONF {"raw":[100,73,100]}
+
+00:50:59.980 --> 00:51:02.770
+<v Speaker 3>I think this is from last week's chapter.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100]}
+
+00:51:02.860 --> 00:51:05.230
+<v Speaker 3>The dates of chapter 21.
+
+NOTE CONF {"raw":[85,48,35,100,99]}
+
+00:51:05.560 --> 00:51:12.370
+<v Speaker 3>Chapter 21, and I'm kind of confused on did we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:12.370 --> 00:51:14.710
+<v Speaker 3>go through modules and week seven.
+
+NOTE CONF {"raw":[100,99,100,100,98,98]}
+
+00:51:14.710 --> 00:51:17.560
+<v Speaker 0>But we did a little bit quickly.
+
+NOTE CONF {"raw":[41,100,100,100,100,100,100]}
+
+00:51:17.560 --> 00:51:21.010
+<v Speaker 0>I mean, I explained each one of my examples, had
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:21.010 --> 00:51:25.810
+<v Speaker 0>a module declaration with an import and with and with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:25.810 --> 00:51:28.930
+<v Speaker 0>this parenthesis list of exports.
+
+NOTE CONF {"raw":[100,67,100,100,100]}
+
+00:51:28.930 --> 00:51:31.240
+<v Speaker 0>So I did explain that it was pretty quick.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:51:31.240 --> 00:51:35.050
+<v Speaker 0>But um, you know, that was where I explained it
+
+NOTE CONF {"raw":[100,74,100,100,100,100,100,100,100,100]}
+
+00:51:35.050 --> 00:51:36.040
+<v Speaker 0>in that lecture.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:51:36.040 --> 00:51:36.340
+<v Speaker 2>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:51:37.120 --> 00:51:40.960
+<v Speaker 3>Um, basically this topic is about how you can import
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:40.960 --> 00:51:44.620
+<v Speaker 3>modules and also define functions and those modules that refer
+
+NOTE CONF {"raw":[100,100,100,93,100,100,100,100,100,98]}
+
+00:51:44.620 --> 00:51:45.520
+<v Speaker 3>to other functions.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:51:45.610 --> 00:51:45.940
+<v Speaker 3>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:51:46.360 --> 00:51:46.720
+<v Speaker 3>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:51:46.720 --> 00:51:48.970
+<v Speaker 3>And how that can also go really wrong if.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99]}
+
+00:51:49.540 --> 00:51:51.340
+<v Speaker 0>If you, if you export.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:51:51.880 --> 00:51:52.600
+<v Speaker 0>Oh hi there.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:51:52.600 --> 00:51:52.960
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:51:53.230 --> 00:51:53.680
+<v Speaker 0>Oh sorry.
+
+NOTE CONF {"raw":[100,100]}
+
+00:51:53.680 --> 00:51:55.120
+<v Speaker 0>I'm, I'm broadcasting.
+
+NOTE CONF {"raw":[48,100,100]}
+
+00:51:57.350 --> 00:51:58.040
+<v Speaker 0>How you.
+
+NOTE CONF {"raw":[99,100]}
+
+00:54:45.270 --> 00:54:46.440
+<v Unknown>I could leave you.
+
+NOTE CONF {"raw":[100,99,100,100]}
+
+00:54:46.950 --> 00:54:47.670
+<v Unknown>Say goodbye.
+
+NOTE CONF {"raw":[100,98]}
+
+00:54:47.790 --> 00:54:49.470
+<v Speaker 4>Everyone's gaining the broadband.
+
+NOTE CONF {"raw":[100,72,100,100]}
+
+00:54:49.710 --> 00:54:53.880
+<v Speaker 4>Wi-Fi seven on E makes every device work better.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:54:53.880 --> 00:54:54.810
+<v Speaker 4>Even yours.
+
+NOTE CONF {"raw":[100,100]}

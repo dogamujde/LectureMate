@@ -1,0 +1,1288 @@
+That was me.
+His last.
+Me a song last that is gonna say that was
+behind every song she sang on a date.
+Oh, you wanna see?
+She's fine.
+The bad news is.
+So.
+.
+Good afternoon.
+That was the theme from Outlander TV series.
+I thought since we're in Scotland, we should have at
+least one song involving bagpipes and kilts and things.
+So that was that, was it?
+, okay.
+Before the lecture starts, we have, , , announcements from,
+, from Casper and Kotlin cloud print.
+Yeah about that.
+Hi everyone.
+My name is Casper.
+I am your first year rep for Comstock this year.
+I'm just here to talk to you guys about Comstock
+in general.
+, I assume many of you here are in for
+accidents.
+If you're not, there's no worries.
+We want to get as many people involved with Comstock
+as possible.
+It's a great society.
+There's a lot of events going on.
+We have Hackenberg coming on, which is sort of a
+hackathon.
+We have we have ponied and we have the ball
+during other parts of the year.
+So things the Informatics ball, they're not actually organised
+by the School of Informatics, but they're organised by Comstock.
+So just in general, what I'm here to tell you
+guys about is just if you haven't already, please get
+involved with Comstock.
+There's a lot of fun events coming up.
+, first events weekly.
+If you have discord, join our discord server.
+About QR code.
+, and yeah, if any of you guys are coming
+to the Comstock Halloween party tonight, I'll see you there.
+I'll now pass on to Cochran, who will talk to
+you about Leipzig.
+Okay.
+So.
+Hello, everybody.
+, I'm coldren I'm running Leipzig this year.
+, So this is Leipzig.
+That's the QR code for joining our discord server if
+you want.
+, what are we.
+Oh.
+Thank you.
+, so we are a society that is interested in
+theoretical computer science and how we can apply theory to
+practice.
+, so really, we're just a bunch of people who
+are really curious about everything theoretical and especially programming languages.
+Now you guys are doing this course.
+, in this course, there's a lot of talk about
+Haskell.
+There's a lot of talk about types and, , functional
+programming.
+, and I remember when I was doing this course,
+I had these questions of, you know, there seems to
+be something, , very deep and interesting here, , about
+these functions, about these types, and that there is you
+can construct programming languages with all sorts of type systems.
+, and some of these well, all of these are
+interesting in their own right.
+But some of these, for instance, can be used to
+encode improve math statements.
+, or do some other cool, interesting things.
+, here is practically what we do.
+So every Monday we have a workshop on the lean
+theorem prover.
+So this is the one of the languages which allows
+you to prove math in your programming language.
+, we also have free pizza every Monday for that.
+So if that's a pretty good reason to come along.
+, we have we're also very curious about trying to
+build our own language interpreter.
+, we've called it Maker Lisp, but in fact, it's
+not a lisp.
+That's a secret.
+, it has a Lisp syntax.
+So you write it as a Lisp, but it's more
+of a of an ML language because we are planning
+to add some types to it.
+, we give academic talks.
+The first one is going to be next week on
+Thursday.
+, but more details on that on this code.
+And finally we go to the pub every Sunday where
+you can meet all sorts of people interested in types,
+programming languages and theory in general.
+, there are free nuts at the pub, but if
+you have a nut allergy, You're also welcome to come.
+It's not something that should stop you.
+, so yeah, that's a QR code for that.
+And thank you.
+Hey.
+Thanks.
+Yeah.
+It's.
+Okay.
+Thanks for that.
+.
+Of course.
+This is, , near to my heart.
+This kind of stuff.
+But, , but today I'm going to be talking about,
+, I'm going to be finishing up on data abstraction
+and, , also talking about laziness and sorting.
+So I've got a lot of stuff today.
+, and so I'm going to be going pretty fast.
+Okay.
+So, , fasten your seatbelts.
+Okay.
+So, , finishing up on data abstraction.
+So I was talking about, , data representation.
+And this is a summary of what I've done in
+the last two lectures.
+Okay.
+, so I gave you four representations, Annotations for ways
+of representing sets.
+And each of them had the same six components in
+them.
+Sets.
+Empty set insert function for turning lists into sets, a
+membership function, and an equality test.
+And.
+And there were these four representations lists, ordered lists without
+duplicates, ordered trees and balanced ordered trees.
+and and we ended up with different, , efficiencies
+for the different for the different functions.
+And this is kind of a table showing the results.
+Okay.
+, , I won't you can read this yourself.
+The only thing that some that's, , requires explanation maybe
+is that when, when we got to the ordered trees,
+, there was a difference between, , kind of average
+case time, , which is in this line here and,
+, worst case time, which is in this line down
+here, the idea there being that if the trees are
+balanced or close to balanced, then, then, then these things
+are pretty efficient.
+So with insertion whoops, why did that happen with insertion
+happening in in, in , wait a minute.
+Okay.
+I don't know why that there's no control here that
+I pushed out.
+Anyway.
+Insertion happening in logarithmic time and , and membership in
+logarithmic time.
+, but in the case where the trees are very
+unbalanced than the worst case, you end up with linear
+time for both of those, which is no better than
+ordered lists.
+Okay, but if we manage to make sure that our
+trees are always balanced, then we end up in this,
+in this nice, , situation here where insertion and membership
+are, , our logarithmic and equality is linear and turning
+a listen to a set is n log n.
+Okay.
+So , the idea here is that there's different ways
+of representing sets.
+And this is not it's not just sets.
+This is just an example.
+Okay.
+, , you can choose which one of these you
+want according to your application, , ordinary lists without, ,
+without order and so forth is the simplest.
+, but these other ones are available, and you can
+choose which one you want according to your needs.
+Now, , this is this is, , moving on to
+the topic of data abstraction.
+So the idea of data abstraction is that you have,
+, a situation this, different, different ways of implementing
+or representing some data type.
+Okay.
+In this case, sets and data abstraction is, is about
+being able to switch between different implementations of the same
+functionality, in this case different representations of sets without changing
+anything else.
+So imagine a situation where you've got some 40 million
+line program, and in this program you use sets a
+lot.
+Okay.
+And so there is a module somewhere in the program
+that implements sets one of these for okay.
+And then you've got 40 million lines of code
+built on top of that with many, many references to
+sets doing things with sets.
+Okay.
+And one day you decide.
+, there's a bottleneck in my in my code here.
+, I think I need a better I think I
+need a better implementation of sets that goes faster because
+I'm using them a lot.
+And so you want to be able to pull out
+your, your, your, , your implementation of sets and replace
+it with another one, which is faster without having to
+change anything else.
+Okay.
+Without having to look at the 40 million lines of
+code every single time that you refer to sets to
+make sure that you you're doing it correctly for the
+new version of sets.
+Okay.
+And, , there's a hope that you can do this
+because the idea of these four versions of sets is
+that they provide the same functionality.
+They have the same set, the same type, I mean,
+the same type name set, they have the same functions
+provided, you know, insert element equality and so on and
+so and so at least the names and so forth
+should be right.
+Okay.
+But it turns out it's a bit tricky to get
+this to work.
+Okay.
+And I want to show you why.
+And there's a problem.
+And then there's a solution to the problem okay.
+The problem is that if you don't do it right,
+you end up having to look at the 40 million
+lines of code and trying to sort out what's going
+on?
+Okay.
+So, , , and it has to do with the
+invariant that I, that I've mentioned.
+So remember the invariant for ordered lists.
+There was this there was this, , condition that I
+wrote down here which said the lists have to be
+in order, and I wrote it in Haskell.
+, this.
+Okay.
+This is a this is a condition which says that
+everything in the list, , is, is in ascending order,
+from from beginning to end.
+, you know, small things at the beginning, big things
+at the end, and no duplicates.
+That's what it says.
+Okay.
+And, , the code respects that invariant.
+So things , .
+Oh, I don't have the code here.
+So things insertion, you put, you put something in
+a, in a, in a list in an ordered list
+and it ends up in the right place.
+So the list is still ordered.
+Okay.
+And not only that the code doesn't work.
+If the, if the if the lists are not ordered.
+So for example, if you try to compare, , two
+lists for equality and one of them's ordered and the
+other one isn't.
+, the fact that you're taking advantage of the order,
+meaning you can use list equality to do testing for
+set equality doesn't work anymore.
+Or if you're looking for an element in a list,
+in an ordered list, and the list isn't an order,
+you might look for it.
+And then you.
+And then you don't find it in the place it's
+supposed to be.
+And then you give up.
+You say false.
+It's not there.
+But actually it might be somewhere further down because the
+list is not ordered.
+It's so.
+So it gives the wrong answer.
+Okay.
+, if the if the invariant doesn't hold, then, ,
+then you might give the wrong answer using this code
+because you're depending on this property.
+And here's an example okay.
+And this is called breaking the invariant.
+So the first the first test here, this is
+a good test.
+This is what you want to do.
+So suppose you want to suppose you have two
+lists of values here.
+And I mean, I've just taken numbers from one up
+to n and then the numbers from n down to
+one.
+So same same elements in a different order.
+Okay.
+If I take these lists and I convert them into
+sets using this function set okay I end up with
+sets represented as ordered lists.
+So we end up with an ordered list which has
+in fact it looks this first one here.
+Okay.
+So it puts the second one in the correct order.
+And then and then testing equality gives the right answer
+okay.
+The answer is true okay.
+Same elements.
+I've converted them to a set.
+This ends up in the second one being rearranged to
+be in order okay.
+So this is the way you should do it.
+Here's the way you shouldn't do it okay , I've
+done the same.
+I've got the same lists here, but I don't I
+don't call set to convert these things to to sets.
+I just go ahead and test equality.
+, on these lists.
+Okay.
+Since sets are represented as lists, you know, I have
+a, I have a line of code which says, ,
+you know, type set of a equals list of a.
+, this type checks, okay.
+Because the two things here, these are both lists and
+lists are sets.
+So they're both sets okay.
+So, , I end up here with the wrong answer
+because if I do equality testing, which is just list
+equality, , I end up with saying, no, these are
+not equal, even though they have the same elements.
+So they are equal.
+They should be equal as sets, but they're not because
+the algorithm requires the list to be in order.
+Okay.
+So that's that's kind of bad.
+, if you make a mistake that, you'll get
+the wrong answer.
+Okay?
+Even worse, even worse, because sets and lists are the
+same type.
+You can do things in your 40 million lines of
+code that take advantage of that fact.
+Okay.
+So if, for instance, it happens that the head of
+a list, , the head of a of a ordered
+list will always be the minimum element, okay.
+And it might be that you'll take advantage of that
+fact, , 349 times in your in your 40 million
+lines of code.
+Okay.
+, you take the head, you have a set, and
+you say, I want the minimum element, I'll just take
+the head.
+It'll be the minimum element.
+Okay.
+.
+And then you and then, , you know, two months
+later, you you decide to change to a version of
+set that uses balanced binary trees or something.
+Okay, so all of those, all of those uses of
+head, they were formally okay because you're taking the head
+of a list.
+So now they will fail to type check.
+Okay.
+, that's kind of a pain, but at least you
+automatically, you know, Haskell will tell you automatically all of
+the, you know, however many hundred times it is that
+you made that, that you did that and you can
+go in and fix all of those.
+But suppose that instead of, , instead of replacing your,
+your representation of from, instead of changing from ordered lists
+to, , you know, balanced binary tree, suppose you instead
+decide to change the order so that instead of being
+ascending order, it's descending order.
+So big things at the beginning, small things at the
+end.
+Okay.
+Then suddenly, , the head of the list is the
+maximum element and not the minimum element.
+Okay, so instead of instead of and it won't and
+it won't fail to type check because they're still lists
+okay.
+So instead of instead of giving you a type error,
+it'll just give you the wrong answer, okay.
+And in order to find out okay, you get bugs.
+In order to track down these bugs, you have to
+look at every, , every time you used the function
+head in your program.
+40 million lines of code.
+Okay.
+Which might be quite a lot of times.
+Right?
+You don't want to have to do that.
+You don't want to have to debug your code because
+you because you've been sloppy and, and and use things,
+, you know, basically breaking the invariant and, and getting
+unauthorised access to a representation that, , that you shouldn't,
+that you shouldn't be, you know, Misusing and say, so
+what do you do?
+What's the solution to this problem?
+Okay, but one solution is you write documentation.
+And in this documentation, you know, lots of lots of
+documents and in big bold letters it says don't apply.
+Head to sets and make sure that all arguments of
+set functions satisfy the invariant.
+Okay, big bold letters , large print.
+Okay.
+And that would fix the problem because everybody always reads
+all the documentation and does exactly what it says, right?
+Wrong.
+Okay.
+Of course not.
+, you need a different solution.
+Okay.
+Haskell, , you know, the type checker makes sure you
+don't make certain kinds of mistakes, and you can and
+you can take advantage of the type checker here to,
+, to avoid making these kinds of mistakes by by
+being a bit clever Okay.
+, we can we can use Haskell's type system, ,
+to, , to avoid the possibility of breaking the abstraction.
+, let me show you another example.
+, this is just the same thing, but for for
+for binary trees.
+Okay, I'm using the binary trees that are not the
+the balanced version.
+It doesn't matter.
+Same applies to that okay.
+So binary trees have to be in order okay.
+The the for every node everything on the left has
+to be , smaller than the node.
+And everything on the right has to be larger than
+the node for every node in the tree, which is
+what this invariant says.
+Okay.
+And our trees represented using two constructors nil and
+and node.
+Okay.
+And all of our functions maintain this invariant.
+And functions , membership test require that the
+trees have this structure, , this order.
+Otherwise they give the wrong answer again.
+Okay.
+And so here is exactly the same kind of thing
+happening with trees.
+, instead of, instead of, , , properly constructing down
+here the bad the bad example here, instead of constructing
+t using the functions that I have on trees
+insert.
+And so I just, , I just build a tree
+using node and nil just using the constructors.
+And the tree that I build here, , doesn't respect
+the invariant.
+Okay.
+So if you look at the, , I mean, what
+this tree looks , it has three at the top.
+, it has three at the top, it has one
+down here and it has two down here.
+Okay.
+And and that doesn't respect the invariant because two is
+smaller than three.
+And, , stuff over here is supposed to be larger
+than the label.
+Okay.
+So this breaks the invariant.
+The the the equality test will give the wrong answer.
+Okay.
+So that's just the same thing happening again with
+with with trees.
+Okay.
+And so what's the solution?
+, it's to add , and Haskell, this is the
+solution anyway, the, , the, , the solution is to
+add in the case of lists, that's add a hidden
+constructor.
+And what do I mean by that?
+Wait a second.
+What do I mean by that?
+Okay.
+, I've replaced so if we go back a couple
+of slides here.
+So I had type set a equals list of a
+okay for my ordered lists I replace that.
+Oops I replaced that with this algebraic data type which
+is the same, except that it uses a constructor to
+turn a list into a set.
+Okay, so there's a function called mixed set here that
+takes a it takes a list and it produces a
+set.
+So lists are not sets.
+, sets are lists packaged up with this constructor okay.
+If you don't package it up using the constructor it's
+it's it's a list.
+If you package it up it's a set.
+So these are different types.
+So that's a constructor.
+And it's hidden because in this list of things
+that I export from the from the module, it's
+not it's not there.
+Okay.
+I only export the things that are mentioned here.
+And I don't export this constructor because it's not mentioned
+there.
+Okay.
+, okay.
+I'll just.
+I'll quickly say you have to change.
+You have to change the code.
+, to, to sprinkle this constructor in all over the
+place.
+Okay.
+So, so, , well, I'll just, you know, for example,
+in insert, it appears twice here.
+This is, this is a matter of, , unpacking and
+repacking your lists into sets and so forth.
+Okay, so same code, but with some constructors sprinkled throughout.
+Okay.
+But what's the advantage of this?
+I'll just I'll be very quick because I have to
+get through this to get to the next topic.
+Okay.
+, the advantage is, , I can't break the invariant
+now after having done this.
+Okay, so remember my bad test from before where I
+took two, ordered, where I took two lists and tried
+to compare them for equality and one of them was
+not an ordered list.
+And so I shouldn't have been doing that.
+Okay.
+, what I'll get now is a type error rather
+than the wrong answer.
+Okay, the type error is okay.
+Wrong answers are bad because you don't know them in
+case unless you look at them.
+Look at your results very carefully.
+, type errors are kind of good because it tells
+you there's something wrong here.
+You better fix it.
+Okay, so it tells me here that I can't do
+this equality test because, , it's expecting type set and
+it's being given, , type list of n.
+Okay.
+It says that twice.
+Once for s and once for t.
+Okay.
+So this is a this is a this is ,
+doesn't type check okay.
+Because, , because I'm using lists here and not and
+not sets.
+Okay.
+But I'm much more clever than Haskell.
+And so, , and so I say, aha, I need
+to apply this mixed set constructor to turn these lists
+into sets.
+And that'll allow me to do this.
+Okay, so here's my same example.
+It's the same as what I had a second ago,
+except I've put mix set here and here.
+Okay.
+.
+Okay.
+Alas, Haskell is cleverer than I am.
+, it tells me.
+No, you can't do that because mixed set is, ,
+is not in scope.
+Okay.
+It's hidden.
+It's it's hidden.
+It's inside the module.
+It's only usable inside the module, not outside the module.
+This is outside the module.
+And this is this is in my 40 million lines
+of code where I'm using, , sets, you know, ,
+it's given to me and I'm using it.
+So I'm not inside the module.
+I don't have access to mixed sets.
+So again, I get an error.
+It doesn't allow me to do this.
+So this is protecting the abstraction.
+, okay.
+, this.
+Let me see much time I have.
+Okay.
+This is doing the same thing with, , with trees.
+, in this case, I don't have to add new
+constructors because they're already.
+They're nil nil in node.
+Okay, I just don't export them.
+Okay.
+And I'll just I'll just, , go to the punch
+line again.
+If I try to do the bad thing that I
+tried to do before.
+, breaking the invariant.
+I won't be able to do that because those constructors,
+they haven't been exported.
+They're not available.
+I can't build this tree.
+And Haskell catches my mistake.
+Okay, so this is this is the secret of, ,
+of abstraction.
+Okay.
+, hide the constructor.
+Okay.
+And so here's two versions.
+Okay.
+The first version, , was what I had before where
+I've, , defined, , sets as being lists without this
+hidden constructor.
+Sorry.
+Wait a minute.
+Sorry.
+This is the bottom one.
+The bottom one is if I.
+If I export the constructor, then I get mistakes.
+Okay.
+In the top one is where I'm, , I've, ,
+hidden the constructor.
+And so instead of, instead of getting wrong answers, I
+get a an error message from Haskell.
+Okay.
+, so that was for ordered lists.
+And here's the same thing for ordered trees.
+I can either hide the constructor I've done here,
+and then I get an error message when I try
+to do something I shouldn't be doing, or else I
+can export the constructor.
+This is the syntax you use for that in in
+Haskell, , exporting the constructor.
+And then I'm allowed to build this tree.
+That's, that's, that's doesn't satisfy the invariant.
+And I get wrong answers.
+Okay.
+So that's, , that's the secret of abstraction.
+, and I'll just, , go to the picture that's
+supposed to, , remind you of this, , of this.
+Okay.
+, so this is the situation where you were
+a small child and you had a, a sibling, ,
+and, , and you had some toy that was very
+special.
+And it was your toy, and only you were allowed
+to play with this toy.
+Okay.
+So your your brother or sister couldn't, couldn't, , couldn't
+play with this toy, okay?
+Because it was yours.
+Right.
+So that's the that's the constructors in the
+data abstraction.
+So you keep them to yourself.
+They're only for use inside the private world of your
+of your data abstraction inside this module that's representing that,
+that implements the representation of the data type.
+And outside they're not available because it's mine.
+Okay.
+here.
+And so what this that's what this allows you to
+do is create data abstractions in modules.
+, you know, some of them are more efficient than
+others.
+And you can just rip out ones that that aren't
+performing the way you want them to and put in
+others that are better and provided the behaviour is the
+same.
+Okay.
+, everything works.
+You don't have to check the million lines of code.
+Nothing else needs to change.
+Okay.
+And that's, , and that's, , the idea of data
+abstraction.
+And you can do this in other languages as well.
+In ML sorry.
+In in Haskell it's nice because it, it, it automatically,
+, prevents you from making certain kinds of mistakes.
+Okay.
+Are there any questions about that?
+I'm going at kind of breakneck speed here because I
+want to get to another topic, but I can.
+Yeah.
+No, sorry, I thought I saw a hand, but there
+wasn't one anybody.
+Okay.
+That's it.
+Okay.
+I'm going to I'm going to switch to the next
+topic then.
+All right.
+This is only going to take half an hour or
+21 minutes actually.
+, so this is about lazy evaluation and how computation
+using lazy evaluation relates to normal computation.
+And I'm going to say a little bit about sorting
+lists as well.
+And this is this.
+This is a shorter lecture.
+And so it fits.
+It fits.
+Now , there's no reading associated with this because the
+material on this and the textbook is sprinkled throughout.
+, so you will have already encountered the things that
+are relevant to this in reading that you've done already.
+Okay.
+So you know, by now Haskell uses lazy evaluation.
+So that allows you to do computations with infinite lists
+and so forth.
+It's rather an unusual choice, but it allows us to
+do certain cool things.
+And , how does this work?
+, so it works by never computing the whole infinite
+data structure, because of course that would be impossible.
+, it computes just what it needs to give to
+give the answer that you're looking for.
+Okay.
+So if you're if you're doing some computation on infinite
+data structure, but you're only interested in the 47th
+element of this of this infinite list.
+Then only the first 47 elements of the list will
+be computed, and then you can reach in and pick
+out the 47th one, and the rest of it is
+never computed.
+Okay.
+The way it works is that Haskell stores, , ,
+Haskell stores code in place of values, , , which
+when you run it gives you the value.
+Okay.
+It doesn't do that always, but it does it in,
+in, , in the places where it needs to do
+in order to be able to deal with these infinite
+computations and so forth.
+Okay.
+So, , it, it stores the code, it evaluates the
+code when it needs the value and only when it
+needs the value.
+Okay.
+And the code that, that when it runs the code
+to produce the value if that, if that code would
+produce, , an infinite data structure as a value, it
+only produces enough of that data structure to do the
+next step in the computation.
+So for example, it's an infinite list.
+It'll produce maybe the head and then a piece of
+code representing, you know, the computation needs to do to
+get the tail.
+Okay.
+So it's only computing what it needs to make progress
+by storing code in place of data.
+Okay.
+You can't see this when you're writing programs.
+You can't access the code, but you can see the
+effect because of the fact that that things are you
+know, they don't they don't run forever.
+And in fact, sometimes they're surprisingly they're fast in ways
+that you're surprised by.
+Okay, so here's a here's a kind of really stupid
+example, but it illustrates what I want to what I
+want to show you.
+Okay.
+Imagine you want to search for the first odd number.
+, , what is it?
+Okay.
+Then the answer is one.
+Okay.
+But here's a here's a here's a really stupid program
+for finding that the number one is the first odd
+number.
+Okay.
+, , you I've written three versions of this ho
+for higher order comp for list comprehension and rec for
+recursive.
+Okay, so, , this program, it takes the list of
+numbers from zero up to n.
+It filters them to get out the to get the
+odd ones, and then it takes the first one.
+Okay.
+So imagine n is, is , , 30 trillion or
+something that.
+Okay.
+So this produces this enormous, enormous list.
+Filters out all the odd ones okay.
+There's only 15 trillion of them.
+If there are 30 trillion in this list and then
+it takes the first one, it's the answer is one.
+Okay.
+That's a pretty inefficient way to compute the number one
+okay.
+But that's what this program does.
+And this comprehension version does the same thing, essentially just
+written in different syntax.
+Okay.
+This, this, , this bit of code, , computes all
+of the odd numbers from zero up to n, and
+then you pick the first one and it's one.
+, I'm not going to go into the details of
+this, but this is, this is doing it recursively by
+searching.
+Okay.
+, so in a non lazy language, , these two,
+these first two would take time that's proportional to the
+to the number n okay.
+If you, if you want to filter out, , you
+know, the first from the first million numbers, if you
+want to filter out the odd numbers of the first
+billion numbers, okay, it'll be the size, you know, the
+number million or billion or whatever, that will be the
+size of the of the data structures you're dealing with
+here.
+And you have to you have to go through all
+of them, you know, for example, to filter out the
+odd ones.
+okay.
+So linear in n okay.
+Whereas I won't go into the details here.
+But this recursive, this recursive searching function will return the
+result in a couple of steps because it only looks
+at at zero and one, and then it stops because
+that's a that's an odd number.
+Okay.
+So this is this this third one is constant okay.
+But , if you actually run these programs, well first
+of all, if you run it with large value of
+N, it'll all three of them will, will come back
+immediately because, , , it's so fast that, , that
+you can't see that it's taking up time.
+I forgot to say here, this is a way in
+Haskell that you can ask it to tell you how
+fast things are going, and then you get reports on
+time and space this.
+Okay.
+This is, , setting statistics on is what this says.
+Okay?
+So it's telling you this takes zero seconds.
+This is the higher order version.
+Here's another.
+Here's the other version that also takes zero seconds, and
+the recursive version also takes zero seconds.
+And if you try this, if you say, well, okay,
+, ten.
+Let's see, 1 million is not a big enough number.
+Let's try, , you know, 1 trillion or something.
+It won't make any difference.
+It'll still, , return immediately.
+It will still take zero seconds because it doesn't compute
+these big lists because of lazy evaluation.
+Okay, so that's, , that's one interesting thing, okay, about
+lazy evaluation, , things that are that look inefficient or
+sometimes, , really efficient.
+Okay.
+, this is how the recursion version works.
+It takes it takes three steps to get to the
+answer.
+, here's how the higher order version works, where the
+notation here putting things inside a box is my way
+of saying that it's not this value, it's the code
+for producing this value.
+Okay, so if you want H0 of of a million,
+you'll, you'll take, , you know, it's the right hand
+side here and the right and, and the list is
+from zero up to a million.
+But it's code for that list.
+It's not the list itself.
+It's code for producing that list.
+Okay.
+And , okay.
+The, the the composition here changes a little bit.
+And then, and then at this stage you need to
+actually look and see what's in this list.
+And so you evaluate the code enough to give you
+the head of the list okay.
+Head of list is zero.
+And then the rest of the list.
+So cons and then code for the rest of the
+list.
+So the numbers from one up to a million.
+okay.
+Zero is not odd.
+So it gets thrown away.
+I've actually left out a step or two here gets
+thrown away.
+You evaluate this thing again to give you the list
+containing one cons code for the rest of the list.
+Okay, one is odd.
+So, , you know, so the filter, , allows it
+through.
+And, , and that ends up being the answer.
+And you don't ever have to evaluate the rest of
+this, okay?
+If you look at these steps okay, one is the
+answer here.
+, because you're doing a take one of this list
+of this big list, and you only want the first
+element.
+Okay.
+, so this is showing how it's not evaluating this
+whole thing.
+And in addition to this, there's, , okay, there's some
+overhead involved in doing lazy evaluation, so you have to
+be careful.
+, Haskell has to be careful where it's applying this
+kind of packaging things up as code and and evaluating
+them when required.
+, it does very clever analysis of your code to
+decide where the places are that it needs to put
+in, , code instead of values.
+Okay.
+So it doesn't do it everywhere.
+It does it in the place where, , there there
+could be a problem.
+, the analysis is called strictness analysis.
+, and it avoids most of the overhead, , of,
+of doing lazy evaluation.
+Okay.
+So that's one thing I wanted to show you.
+, I'm going to skip this part, and I'll just
+say, , , there's a situation in programming where you,
+, you have a choice.
+Very often a choice between simple code that's slow and
+complicated code that's fast.
+It's going shopping.
+You can buy something that's cheap and not so good,
+and it breaks very quickly.
+Or you can buy something expensive and, you know, high
+quality and it lasts forever.
+Okay.
+You get a choice.
+, and you can decide there's a trade off whether
+you pick, you know, cheap and, and and, and and
+flimsy or expensive and high quality.
+Okay.
+The big wins.
+Okay.
+This is so this is what it's in programming.
+Simple and slow, complex and fast.
+Big win is when you can find a way to
+be both simple and fast.
+So that's cheap and high quality.
+Okay.
+It's a bargain.
+, and , , you know, so in this case,
+for example, this complicated recursive program, you'd expect it to
+take to be really fast compared with this, with this,
+, simple high order program.
+, but in fact, it isn't.
+Okay.
+And this is the result of using lazy evaluation and
+this clever on strictness analysis that that Haskell does for
+you.
+Okay.
+So, .
+Okay.
+Simple is good because simple means you don't have to
+think very hard to, to make it right.
+And of course, fast is good.
+That's clear.
+All right.
+Any questions about that?
+I'm going to say something about sorting now.
+This is a this is a very quick lecture with
+different topics okay.
+I'm going to be showing you some sorting algorithms.
+So what's sorting.
+It's about arranging a list into ascending order.
+And this is a very common thing that you do
+okay.
+In in in computing okay.
+, you know, dictionaries are in alphabetical order.
+I mean, nobody uses dictionaries anymore on paper, but, ,
+in the old days, you had a book and you
+would find things by by looking.
+And it only was possible to find things because the
+words were in order.
+Okay.
+, there's lots of other situations where you need to
+put things in order, and there are different ways of
+doing it.
+Okay.
+, so I'll just want to show you three algorithms
+for doing sorting.
+And the first one is called insertion sort.
+Okay.
+This this top thing is about fold.
+You already know about fold.
+, this is insertion sort and it happens to use
+fold.
+Okay.
+The idea of insertion sort is, , you have a
+list of values, and they're not in any particular order.
+Okay, let's let's imagine that there are numbers, lots of
+numbers.
+Okay.
+So the way to sort this list of numbers is
+that you take another list which starts off being empty,
+and you put each of the numbers from this, from
+this unordered list into this new list, one at a
+time.
+Keeping them, keeping the new list in order as you
+do it.
+So you're doing insert.
+Remember the insert function from our ordered list?
+Okay, it looks for the right place to put each
+number, and then it puts it there so that the
+list is kept in ascending order.
+Okay.
+And so if you do that for all of the
+all of the numbers in your unordered list, you put
+them into this new list, maintaining the order.
+In the end, all of the numbers will be there
+and they'll be in ascending order.
+Okay, that's the idea of insertion sort named insertion sort
+because of the fact that it's using this sum, this
+function insert that you've seen already from.
+, yeah.
+The earlier part of the lecture, I think on Monday
+or whenever it was.
+Okay.
+And, and this is code which sort of repeatedly does
+that.
+, using fold starting from the empty list Okay.
+That's insertion sort.
+So how much time does this take?
+Let's look at the, , at the at the running
+time.
+Okay.
+It's, .
+Does anybody actually have a guess?
+Does anybody n squared, I think I just heard yeah.
+Yeah.
+It's it's quadratic.
+It's n squared.
+It's n squared.
+Because actually because I told you it was no
+I didn't.
+Maybe I did.
+Anyway, , insert is linear.
+Okay.
+Because, , you're putting a new element into a list.
+You have to look for the right place to put
+it.
+Okay.
+So you have to look at everything in the list
+potentially.
+Okay.
+And you have to do that for every one of
+the elements from your original list.
+Okay.
+So , in fact, it's one plus two plus three
+plus four plus dot dot dot plus n steps, which
+is actually n times n minus one over two, but
+that ends up being n squared with a with a
+constant , constant factor.
+Okay.
+So insertion sort.
+Quadratic.
+That's not very good as a sorting method, but it's
+but it's simple.
+, here's another sorting method.
+It's called quicksort.
+.
+Quicksort is , is a so-called divide and conquer method.
+What it does is it takes it takes a list.
+Okay, here's here's a list.
+Ignore the first.
+Ignore the first line.
+I'll come back to that.
+It takes a list.
+And it, , first, , filters out all the things
+in the list.
+Okay, well, it takes a list.
+It looks at the first element.
+Why?
+It filters out all the things that are smaller than
+why In one list.
+In another list, it filters all the things that are
+bigger than Y, and then it sorts both of those
+lists and then joins them together with Y in the
+middle.
+Okay, so here's my unordered list.
+Here's the stuff that's smaller than y.
+Here's the stuff that's bigger than y.
+Here's y in the middle I sort both of these.
+I put them together.
+I ended up with a sorted list.
+Okay.
+, that's called quicksort.
+It was invented by Tony Hoare, who was one of
+the people whose pictures I showed at the beginning of
+the lecture on Monday a week ago.
+, okay.
+How fast is this?
+I mean, did you understand what I just explained as
+what it did?
+Very hand-wavy sort of explanation.
+Okay.
+, how much time does this take?
+Okay.
+If you're lucky.
+And this turns out to be the average case.
+This is n log n time okay.
+And I'll show a diagram later that explains why that's
+the case.
+Okay.
+, because if you're lucky, each time you do the,
+, this breaking down the list into two sublists, you're,
+you're roughly, , you're ending up with two lists, which
+are roughly half the length of the original list.
+Okay.
+And then on the next, on the next time you
+apply Q sort, it's going to be a quarter of
+the, the length of the original list and so forth.
+Okay.
+So you're having the length of the sublists each time.
+, the worst case is a is a list which
+is already sorted, in which case it's quadratic.
+Okay.
+So this is, , this is sometimes very good and
+sometimes not so great.
+Not sometimes just as bad as insertion sort.
+Well, let me explain the first line.
+, it turns out that insertion sort is faster than
+quicksort for a very small lists.
+And so I can add.
+I can add something here which says before doing
+quicksort, look and see how long my list is.
+If it's if it's less than a threshold, just do
+insertion sort.
+Otherwise do quicksort.
+And of course this is recursive.
+So it means once the list gets small enough I
+will be using insertion sort on all of these sub
+lists.
+That's the small sub lists.
+Okay.
+Third method.
+It's called merge sort.
+It always breaks the problem into two lists which are
+half the length of the original lists.
+Okay I'm just going to explain what this does without
+going line by line through it.
+Okay.
+So given given a list it just breaks the list
+into two lists.
+The the first, the first half and the second half.
+Okay.
+That's what that's what is happening here.
+And here, where M is, , M is half the
+length of the list.
+Okay.
+So it takes those.
+It sorts them.
+So then you have two lists which are sorted and
+then it merges them, which is what this code does.
+What is merge?
+Merge is a is a function which takes two sorted
+lists and produces a sorted list as its result.
+And it's kind of imagine shuffling, , you know,
+you shuffle a deck of cards, you split into half,
+and then you and then you interleave them.
+Okay.
+But it's a sort of it's a sort of interleaving
+thing which looks to see where each element should go.
+But you're only ever comparing the lists.
+You're only ever having to look at the first thing
+on the list and so forth.
+It's, , it ends up being linear.
+Linear time.
+You don't have to compare every value with every other
+value.
+You only have to compare the values at the beginning.
+So you're sort of you're sort of, , doing something
+that.
+But at each point you decide whether, okay, here's my,
+here's my two lists.
+, they're going to go sort of together that.
+But at each point you're comparing to see whether, whether
+this should go here or here or maybe here.
+Okay.
+You never have to compare this value with some value
+down here.
+Okay.
+So this is linear.
+And this ends up being always n log n.
+Again I've got a a kind of, , threshold
+thing at the beginning here, , to use insertion sort
+if it's very short.
+And , and here is the picture I promised y
+y these are n log n.
+Okay.
+You're breaking things into Into.
+Sublists.
+Okay.
+Original list length n two sublists of length and over
+two.
+Breaking down into four sub lists of length n over
+four.
+Okay, eventually into lists which are, , small enough that
+you can use insertion sort on them.
+Okay.
+The height of this is log n okay.
+And the and the time okay.
+You've got n elements.
+So it's n log n basically that's the that's the
+explanation kind of hand-wavy explanation.
+And that's what merge sort is always that.
+And quicksort is that.
+If , if you end up, , you know, in,
+in , in the average case, right.
+I've managed to finish on time.
+Thank you for your attention.
+Sorry this was so fast.
+, I hope it was interesting.
+Mm.
+Mm.
+Don't forget to come on Friday to the guest lecture.
+It's going to be fun.
+Hi, I'm still.
+Going to write a function called remove Prop, which you
+had asked him to ask us to do it.
+The function remove prop for the last tutorial.
+Remove or maybe.
+Okay okay.
+Yeah it was, it was, it was replacing or with
+something else.
+Yeah yeah.
+Yeah.
+Yeah with with and and negation.
+Yes yes yes okay.
+I have.
+Done that.
+I need to ask you.
+This is correct.
+No.
+, this is only, sorry.
+Let me let.
+Me turn.
+This off.
+This is this is turning it into a string.
+Okay?
+It wasn't.
+No.
+Strings.
+Yes.
+And not just this one.
+Similar to this one.
+Strings.
+The first.
+String.
+Can.
+I ask you.
+I didn't ask you to do this because it's good
+practice for this week's exercise.
+You've already done so.
+Okay, so we have.
+, well, that's what this is.
+That's the idea.
+Okay.
+Okay.
+Yeah.
+Okay.
+Yeah.
+It was just the wrong thing that you're thinking about.
+So I just.
+I need to use this.
+, yes.
+Because you got some of that.
+Yes.
+Is it good for you?
+.
+Yeah.
+You took us back.
+Yeah.
+And then as you go down the hall.
+And so all of those other problems wouldn't be solved.
+But you do it.
+You do those things.
+It's one of those again.
+But you only lost one of us.
+There's a lot of confusion.
+And I think that's okay.
+Forgive me.
+Thank you.
+I'm just.
+Glad.
+I did it.
+.
+Not that I know of.
+, I'm not sure.
+I mean, the, , the hospital.
+I don't.
+I'm not aware of that as well.
+, yeah.

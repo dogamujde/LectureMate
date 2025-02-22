@@ -1,0 +1,1273 @@
+Hello.
+Hello, hello.
+Oh, hello.
+Oh, it is working.
+Okay, can you come in and sit down, please?
+Lecture's starting right now.
+Okay.
+, so please sit down and, , we're starting off
+with a, , with a couple of minutes on inf
+pals, , from Paulina and Vicky.
+Okay, so go ahead.
+Yeah.
+.
+Hi, everyone.
+So we're here to quickly tell you about impulse.
+It's a peer support service run by super qualified undergraduate
+students.
+and we help you out with info and a bunch
+of cool extracurricular skills.
+We run three days a week in Appleton Tower.
+You can come whenever you .
+There's no signup required, so just scan the website to
+see in detail which sessions we'll be doing.
+And there's no signup required either.
+, we are offering support specifically for infant A this
+semester.
+, so come along to practice and gain more confidence.
+, and the things you've been learning in the previous
+week.
+And we also run, , skill sessions each week.
+, and more next semester, specifically on things that which
+are really useful, , for your university career, which we
+thought we weren't really taught.
+, so things git for you to download your
+assignments later on, which isn't really explained or command line
+to do some of your assignments in, , LaTeX, which
+you might be required to write up some of your
+assignments.
+, and we also running this year portfolio website course.
+So if you've ever wanted to build your own website
+and showcase all your achievements and your projects.
+That's a really good thing to come along to.
+Yeah, that's about it.
+Thank you so much for listening.
+Please scan the QR code and come along.
+We're starting next week Monday, Tuesday, Wednesday.
+Come to any of them.
+There's free snacks and hope to see you there.
+Did you say what Paul stands for?
+Oh, and Paul stands for peer assisted learning support.
+We're run by USAA as well as the School of
+Informatics, so we're really well supported.
+Come along.
+Good.
+Thanks.
+Thank you so much.
+Okay.
+Yeah.
+Right.
+So, .
+Starting off with, , ride of the Valkyries by Richard
+Wagner.
+And I wish this could be louder because it really
+only works if it's deafening.
+Okay, I'll stop there.
+The, .
+This is not really working very well.
+It's not.
+It's not loud enough.
+, I don't know how I can get that to
+be better.
+My previous lecture theatre, it was much better.
+Okay, so today I'm going to be talking about more
+about lists and about recursion.
+, so this week you've got you've had a lecture
+on Monday about a list comprehension.
+And I'm doing Friday as well.
+Today we're out of order because I was travelling this
+week.
+So , so another way to do things with lists
+is using recursion.
+, so I told you about this comprehension.
+I explained this is kind of woosh style programming Okay.
+And, , recursion is the functional programming way of doing
+a kind of, , element at a time.
+, programming, it's it is the closest thing you have
+to loops in conventional programming languages.
+If then else while loops and that sort of thing.
+, some things can't be written using comprehension.
+And we'll see an example of that later on in
+the lecture.
+But with recursion you can do anything.
+Okay.
+And when I say you can do anything that's actually
+a theorem.
+, , you can prove.
+So , you might have heard of Turing machines.
+It's a kind of mathematical model of computation.
+, and the idea is that if you can compute
+something with a Turing machine, that's what it means for
+something to be computable.
+Okay.
+It's a very simple model of competition with little, little
+tiny steps and, , , but you can compute You
+can compute anything that you can compute with a with
+a big computer, okay.
+It's the same, same same power.
+And there is a theorem which says that recursive defined
+ability is equivalent to Turing computability.
+So you can prove mathematically that anything you can compute
+with the Turing machine, you can define with the
+recursive function and vice versa.
+So they're equivalent.
+Okay.
+, okay.
+And this is , the church.
+Church Turing thesis is the name of this, , of
+this theorem.
+Okay.
+, before I get to recursion, I need to say
+a little bit more about, , what's going on here?
+Why did my screen go blank?
+That's interesting.
+Okay, where are the rest of my slides?
+huh.
+Just a second.
+Oh, there they are.
+Okay.
+.
+Interesting.
+Hmm.
+Okay.
+That's a new.
+That's a new, , bug that I haven't seen before.
+Oh, great.
+Okay.
+, luckily, I have a laptop with me which has
+the same stuff on it.
+, give me a second and I will find it.
+You may have read there some sort of big computing
+outage this week or today.
+, and it looks it's just started affecting the,
+, that machine.
+Okay.
+Okay.
+Carrying on.
+Okay, so before we get to recursion, I need to
+explain a little bit more about lists.
+You've heard about lists last time.
+, so I've explained already there's an operation called cons,
+, written with a colon.
+With this type, it takes an element and a list
+puts an element onto the front of a list.
+Okay.
+The element has to be the same type as the
+things in the list.
+Everything in the list has to be the same type.
+And so you use cons in this example here
+to put a one on the front of a list
+containing two and three, you get a list containing all
+three.
+Very exciting.
+, yes.
+, , so there's another operation that you will encounter
+and it's pronounced append.
+And it's written with two pluses also as an as
+an infix operation okay.
+In between the two arguments okay.
+And that's for taking two lists of the same type
+and putting them together end to end.
+So you've got list one here appended to list here.
+And it just joins them in the middle.
+Okay.
+, so I mentioned this at this point just because
+, these are kind of similar but different okay.
+The types are different.
+So cons takes an element and a list and produces
+a list.
+Append takes two lists produces a list.
+They both put things together okay.
+End to end.
+Here's examples of the use of append.
+So there's there's cons.
+The first one.
+These are all uses of append.
+If you try to use them in the wrong way
+you get a typeerror.
+If you try to use cons to put an element
+on the wrong end of a list.
+It's type error if you use cons to put in
+to put a list on the front of another list,
+that's a type error.
+, if you use append to put an element, a
+single element which isn't a list on the front of
+a list, that's a type error, and so forth.
+These are all type errors.
+Okay.
+So these functions are easy to confuse.
+They're different.
+, the the differences in the types okay.
+Types are important.
+So Haskell is kind of annoying.
+You might think you might have already encountered type errors.
+Probably have.
+Okay.
+, you it insists on the types being correct.
+, if the types are not correct, it refuses to
+do anything.
+It just says types are wrong.
+Go away and fix them.
+Okay, now this is annoying, so why can't I just
+say what I want?
+And Haskell is.
+Which should be so clever that it will figure out
+what I mean and do the right thing.
+Okay, Well, .
+That's possible.
+Okay.
+, the problem is, you know, in these days of
+of of AI and ChatGPT and so forth, it's, ,
+it's even easier than it used to be.
+But, , anyway, the thing with this is that if
+the if the computer guesses what I mean, okay, maybe
+it'll get it right 90% of the time.
+Okay.
+And that's, that's very helpful.
+Okay.
+But the other 10% of the time, , it's going
+to be a real problem because, , , a mistake.
+That's a mistake in what the computer has guessed you.
+It thinks you mean.
+Imagine trying to track down a bug that.
+So what you wrote, and then the computer guesses what
+you meant, and then it doesn't work, and you have
+to figure out what the computer was guessing and so
+forth.
+It's really hard to track these kind of things down
+to get.
+It's better to just get it right.
+Okay.
+And another reason, if you get it right, then what
+you've written is what the computer is doing.
+If it's not right, you can see what you wrote.
+You can see, you can figure out what it's doing.
+You can figure out why it's wrong.
+Okay.
+, but often also a type error is a sign
+of a deeper mistake in your thinking.
+Okay.
+, not just that you use the wrong operation here,
+but in some more complicated program, you get a type
+error.
+Often it means you didn't quite understand what you were
+doing.
+And when you get a type error, you realise, oh,
+I forgot some case that I didn't think of before.
+So, , it's a, not a not a typo,
+but a think.
+Oh, all right.
+It exposes your thing goes.
+And there's a, there's a kind of, , claim in
+functional programming and, and these programming languages with these strong
+type systems that if you get the types right, then
+most of the time the program will be right.
+And that's not 100% true, but it's it's actually pretty,
+, pretty close.
+It's, , it's pretty accurate that the types are a
+lot of the story.
+Okay.
+, so get them right and your life will be,
+, much better.
+Okay.
+Now lists.
+So cons is is special.
+And the reason it's special is, is because of is
+because of this property.
+So every list can be written using only this cons
+operation and the empty list.
+The empty list is usually called not.
+It's called nil okay.
+This brackets square brackets with nothing inside the empty list.
+Nil okay.
+Every list can be written using only these two things.
+And here is an example.
+Okay.
+, this list can be written.
+, of course you need the elements of the list,
+but then the operations are cons and nil and this,
+, list of characters or string can be written ,
+again using cons and nil.
+It's kind of obvious if the pattern that you're using
+there is kind of obvious.
+, okay.
+Anyway, this is a, this is a property.
+And not only that, but it can be written.
+Every list can be written only one way using cons
+and nil.
+All right.
+So there is no other way to write this list
+one two, three using cons and nil other than what
+I've written down here okay.
+Okay.
+And that's because.
+And so we can use that to define what a
+list is.
+So a list a list is a is a thing
+that I can build using cons and nil okay.
+So there's the case where there's a there's a
+nil and no cons is that we call the empty
+list.
+Okay.
+Written that.
+nil, or what we can call a constructed list written
+using cons, where the head is an element, let's call
+it x and the tail, let's call it x.
+Is is a list.
+Okay.
+cons x xz.
+All right.
+I'll have something to say about this definition in a
+second.
+This is called a recursive definition because it, , it
+defines a list.
+So this is the the property of being a list.
+So what is a list.
+It's defining that recursively meaning that it defines a list
+in terms of lists.
+So it uses the thing it's defining in the definition.
+And I'll come back to that in a second okay.
+But for now let me just say the fact that
+every list can be written only one way using these
+two operations means that we can use this, as.
+This is why we can use pattern matching to define
+things.
+So every lists, every list matches exactly one of these
+two patterns.
+It's either empty or it's it's a head x.
+, cons , the tail XS.
+This will match only non-empty lists okay.
+And if we're presented with a non-empty list we know
+what x is.
+And we know what x is, is because there's only
+one way of writing the list using cons.
+And so x is the thing before the cons and
+x is the thing x is is the thing after
+the cons.
+Okay.
+, so that's the this fact, the way that we
+define lists.
+, which leads to this, , this property is where
+we get pattern matching from, of course, the names of
+the variables don't matter.
+Okay.
+And so, for example, , you know, if I have
+a function definition, last time I showed you, , definition
+of head and tail, I think.
+Right.
+Thank you.
+Okay.
+, so that says head.
+And then there's a pattern.
+Okay.
+So if I apply that to a list.
+Whatever it is, .
+Okay.
+That is just notation for.
+For this And then there's some other stuff here.
+Okay.
+And, .
+And we know that.
+So this this is in order to evaluate that, we
+need to match this against the pattern x cons xs.
+And we know that x is one and x is
+is the rest okay.
+So all unambiguous straightforward.
+All right.
+, I take the trouble of explaining that in a
+little bit of detail because although now it's all well,
+I hope it looks easy.
+, later on things get a little bit more, ,
+complicated.
+Okay.
+And so these are patterns, and I'll just, I'll just
+say there's there's more notation for patterns.
+You can you can have things , , so here's
+suppose we have a list with five elements that.
+Okay.
+We've got, we've got , this pattern.
+Ex-cons XS.
+Oh, I'm not showing you anything.
+Okay.
+.
+Thank you.
+The problem is, the desktop is not working.
+.
+Sorry.
+Yeah.
+Thank you.
+Please shout if I do that again.
+Okay.
+, so here's a list and we can, we can
+define, , values of variables by matching against the list.
+So I can say in Haskell, ex-cons XS equals my
+list.
+And here here's an example down here okay.
+, so x will be zero because it's the first
+thing.
+And x's will be the list containing everything else.
+I can also use patterns which are which have this
+kind of form.
+They look lists but with variables in them.
+Okay.
+This will match a list of length five as it
+does down here.
+Okay A is equal to zero, B is equal to
+one, c is equal to two, and so forth as
+we see.
+, but if I try to match something of the
+wrong length, I'll get an error message.
+Okay.
+And tells me that the it's an exception which says
+something about the lengths of the list being wrong.
+Okay.
+, anyway, that's useful to know.
+, you're going to be using pattern matching a lot,
+but let me get back to lists and recursion.
+Okay.
+This is the definition of lists that I gave you
+a minute ago.
+Okay.
+, so list is either empty or it's constructed with
+a head x and a tail x.
+So this definition as I said, it's recursive.
+It it defines lists.
+But I'm using lists in the definition okay.
+And so a first reaction to this might be you
+can't do that okay.
+If I'm trying to explain something it's no good for
+me to explain it.
+Assuming that you already know what it is.
+right?
+So why is this okay?
+This is actually okay.
+Okay.
+And it's okay because I've.
+I've done it carefully, , in the right way.
+It's a so-called well-founded definition.
+Okay.
+And the reason it's okay is because I'm defining, ,
+complex lists that, , well, okay, the first case is
+the first case.
+I don't think anybody has a problem with that empty
+list.
+Right.
+It's the second case.
+So I'm I'm explaining a complicated list x cons xz
+with reference to a simple list or simpler list XS
+okay.
+So it's something that's smaller than x cons xs okay,
+so I'm explaining a more complicated thing in terms of
+a simpler thing okay.
+They're both they're both lists okay.
+But I'm explaining a complicated list in terms of simpler
+list, and ultimately in terms of the simplest list of
+all, which is the empty list.
+Okay, so every list I can check it against.
+We just go back.
+I can check it.
+You know, something this.
+I can check it against that definition.
+Here's the definition again.
+And I can check.
+Is that a list?
+And I can say, well, , you know, according to
+the second clause of that, , it's a list provided
+that, you know, one is an element.
+And this thing here is a list.
+Okay.
+Well, I can check whether this is a list because
+this is an element and this thing is a list.
+And I can check whether that's a list by checking
+that that's an element.
+And this empty list is a list.
+And I know that that's a list because that's the
+first case again okay I did that quickly.
+Okay.
+But reference with reference to the definition Using using each
+of the, , the cases.
+, the second one repeatedly.
+Because lists might be long.
+Okay.
+You can you can work out that any list is
+indeed a list with reference to that definition.
+Okay.
+So, , this is a typical example of recursive definition
+of a of a type.
+We're going to see in a minute recursive definition of
+a function okay.
+But that's the idea you define.
+You define something , by explaining the more complicated case
+in terms of the simpler case.
+And then, you know, , it sort of just goes
+along complicated case in terms of simpler case in terms
+of even simpler case, eventually down to the simplest case
+of all.
+And the whole thing works.
+And I'll show you how that, how that computes.
+Okay.
+This is this is, as I said, it's called a
+well-founded definition because it's defining a, .
+I mean, it's a it's a use of recursion where
+you're not just defining something in terms of itself, you're
+defining something in terms of a simpler example, a simpler
+version of itself.
+And this is in contrast.
+So we had this some we've, we've been having this
+, Brexit kind of thing for, for many years in
+the U.K. it's kind of been a, a nightmare, ,
+politically and so forth.
+And, and the first prime minister after the Brexit referendum
+was Theresa may.
+And people were trying to work out what is what
+do we mean by this thing that we've just decided
+to do?
+And her explanation was Brexit means Brexit.
+And this is an example of a non well-founded recursive
+definition okay.
+Which means it doesn't actually mean anything.
+okay.
+So this is not what we're doing in Haskell.
+, , whatever you think of Brexit, this is not
+an explanation of anything.
+I think what she meant is it's obvious I don't
+have to explain it.
+Okay.
+Was what she was trying to say.
+All right.
+Any questions so far?
+I haven't explained enough to have much.
+Does everybody understand recursion?
+Maybe I don't have to explain anymore.
+Yeah.
+No.
+Well.
+We'll see.
+, I think I'll skip this.
+This is a bunch of functions on numbers, so we've
+already seen head and tail, and there's a function called
+null as well.
+Null is a is a test of a list to
+tell you if it's empty or not.
+Okay.
+So null applied to that list will say false and
+null applied to this list will say true.
+Okay.
+Not very exciting.
+Now let's see our first example of a recursive function.
+Okay.
+This is using recursion to define functions.
+And I'll start off by showing you a function you've
+already seen.
+It's the the function that squares every element in the
+list.
+And you defined it.
+We defined it on Friday on Monday using our list
+comprehension.
+So here was the definition up here okay.
+it's the squares of x's.
+Is the list consisting of x times x such
+that x is drawn from x's okay.
+And so we take a list x x is we
+take every element of the list.
+We compute the square.
+We put them all together into a list.
+End of story.
+That's that's computing the squares of a list of of
+of integers okay.
+Type is list of int arrow.
+List of int.
+Okay.
+, we can do the same thing.
+We're using recursion.
+And the the definition using recursion looks this I'm
+going to call it squares rec.
+Not because I need to call recursive functions things ending
+with the word rec, but because I'm defining two functions
+here and I can't use the same name.
+Okay, so , I'll use that name.
+Okay.
+And this is a recursive definition.
+You can see because the function I'm defining squares rec
+also occurs on the right hand side of the definition.
+Okay.
+That's what recursion means.
+And , as is usual with recursive definitions, there are
+there's more than one case.
+And , there's more than one case because there are
+two kinds of lists.
+So we need a case for each of the kinds
+of lists there is.
+Okay.
+There's the empty list and there's the non-empty list.
+So we have a case for the empty list.
+And we have a case for the non-empty list.
+Okay.
+So the squares.
+.
+The squares of a list containing nothing.
+That's easy.
+It's the empty list.
+Okay, so that that line I think should be obvious.
+This is this is in Haskell.
+You can write function definitions by writing a sequence of
+equations.
+I didn't say that.
+Okay.
+Everything we've seen up to now has just been one
+equation.
+You can also do it by having cases okay.
+So this is the empty case and this is the
+non-empty case.
+So in the non-empty case you've got a list containing
+x cons x's.
+And how do you get the square of all the
+elements in that list.
+Well you square the first element.
+There it is.
+And then you, , attach that to the front of
+the result of squaring all the other elements in the
+list.
+Okay.
+So.
+If you haven't seen this before, you might again have
+this problem and saying, wait a minute.
+, that doesn't explain anything.
+, I've just explained squares wreck in terms of itself.
+I'm kind of assuming on the right hand side that
+you know what this does in explaining what this thing
+over here does.
+Okay.
+Why is that?
+Why is that okay?
+You have a question.
+Shall I throw this?
+I hope this is turned on.
+Is this working?
+Yeah.
+, it was up there.
+Yeah.
+, in front of squares.
+Rec ex-cons access.
+It's it splits the list into, , current tiles.
+What does it does in the beginning?
+, There.
+So x and x is those are just, , variable
+names.
+So you could call them head and tail.
+Is that.
+Does that answer your question?
+, I.
+Guess I'm trying to say y is the syntax is
+this.
+Why we writing it down this?
+, every single time we're going to approach something similar
+in recursion, we're going to define lists.
+That's going to substitute for specific case in this format.
+Right.
+That's going to be.
+Always it's going to happen a lot.
+Yeah okay.
+And there's other there's other examples of recursion that you'll
+come across later okay.
+Does that help.
+Yeah okay.
+There's another student here.
+But yeah.
+, I understand this case works because the two cases
+are disjoint.
+Yes.
+So, , Haskell recognises.
+Oh, it's either the case of an empty list or
+the case of a non-empty list.
+Yes.
+So, but what happens when the two cases are not
+disjoint?
+They share a case in common.
+How does Haskell know?
+Yeah.
+.
+What do you mean?
+Good question.
+Okay, the answer is it does them one at a
+time.
+And the first one that matches it, it does.
+Okay.
+So it's possible to write non-overlapping cases.
+Are there other questions right now.
+Okay.
+Yeah.
+So you can have more than two cases.
+And it's possible that they won't sometimes they don't
+overlap.
+They are not disjoint.
+Okay.
+It's good when they are disjoint because then everything is
+very clear okay.
+But in case they're not disjoint, Haskell, , goes one
+at a time.
+Okay.
+So carry on here.
+, so let me see.
+, yeah.
+I was just explaining, , you might complain about this.
+You might say I'm defining squares rec in terms of
+square rec.
+Okay.
+But again, this is a well founded definition.
+I'm explaining squares rec of x convex in terms of
+squares rec of x and x is is simpler than
+x.
+Cons ends xs.
+It's simpler because it's a sub a sub part
+of it okay it's smaller okay.
+If x cons x has n elements, then x has
+n minus one elements.
+And eventually repeating this you get to zero elements and
+zero elements.
+Is the is the empty list okay.
+So, .
+I'll just quickly say that if you have trouble with
+pattern matching, , these two programs are equivalent.
+Okay.
+, and the only difference is that this one, instead
+of using pattern matching, it does, , it does case
+analysis and deconstruction of values using head and tail instead
+of using pattern matching.
+Okay, so if you have trouble with pattern matching this
+is equivalent.
+, I think this is a very nice, elegant, simple
+way to write this rather verbose, complicated thing.
+Okay, this, however, might be more familiar to you, ,
+from other programming languages.
+Okay.
+Right.
+, anyway, I just I'll just briefly say that and
+get on to recursion.
+Okay.
+So, .
+So how does this work?
+Okay.
+And it's useful to look at an example and step
+by step see what's going on.
+Okay.
+And so I'm going to do a little computation of
+this.
+Some of this of this value of squares rec apply
+to list containing 1 to 3.
+We know what the answer is going to be.
+It's going to be list containing 149.
+Okay.
+But how does this how does this come out of
+this definition?
+Okay.
+So, , , first of all, we can expand this
+notation.
+This is just this is just notation for this list
+built using cons and nil.
+Okay.
+And then we can do pattern matching.
+So if we look sorry go back.
+We look at the two the two cases here we
+try to figure out which one of these is going
+to is going to match.
+Well it's not the first one because the list is
+not empty.
+So it's got to be the second one.
+And the pattern is x cons xz.
+So x is one and x is is everything
+after one.
+So it's this list containing two and three okay.
+So I've made a note of that here.
+And then I look at the right hand side of
+of that equation.
+So you know this thing is equal to that thing.
+So I have this thing.
+So what?
+What what is that thing?
+Given that x is one and x is, is this
+list containing two and three.
+Okay.
+Well it's this it's this expression.
+Okay.
+So all I've done is written out the right hand
+side of that definition of the second line of that
+definition, substituting one for x and two cons three cons
+nil for xs okay.
+Is that clear?
+Important here is these are entirely mechanical steps.
+Computer is not being clever.
+It's just what.
+It's just doing what you told it okay.
+The next step okay.
+Again I should have maybe gone slower.
+But.
+But squares rec squares rec here I have to compute
+what that is.
+And again I can use a second the second equation
+here and expand it in just the same sort of
+way okay.
+So one times one is still there, but now I've
+got a expanded version of what Square's rec of this
+some of this list means.
+Okay, X is now two, X is is now the
+list containing three and nothing else.
+And so this expands using the second equation to this
+expression okay two times two cons squares rec of x
+is x is three cons nil okay.
+And then one more step we get this okay.
+Now x is three x's is the empty list.
+And now finally we've got Square's Rec over the empty
+list here.
+And we can apply the first equation to say that
+that's equal to the empty list.
+All right.
+So this has been a sequence of steps that's turned
+this function definition.
+Function application into this, , into this expression which contains
+only multiplication and cons okay.
+So we can do the multiplications and and then use
+the notation for lists to see that that's the list
+that we thought it should be.
+Okay.
+Okay.
+So I went through that a little bit quickly.
+But step by step okay.
+So you have to be able to I mean
+this is a way to understand this.
+If you find it difficult, do it yourself.
+Okay.
+Slowly.
+Make sure you understand the steps.
+Okay.
+This is what the computer is doing.
+It's all very it's actually very simple.
+This is, , you know, step by step, replacing expressions
+with other expressions that you said are equal to them.
+Okay?
+Equal means you can replace it by the other one.
+Okay.
+, in in using equations for computing, we regard them
+as left to right, , rewrite rules.
+Okay.
+You can replace the thing on the left by the
+thing on the right, maintaining the values of the variables
+and so forth.
+Okay.
+As usual.
+Okay.
+So this is this is a way to understand recursion.
+, I'm just looking to see what time it is.
+Okay.
+Right.
+, now if you, , this is an example of
+using QuickCheck again.
+, you've, I've shown you before using QuickCheck, this is
+using QuickCheck to make sure that two versions of the
+same function are okay.
+So I've claimed that these two definitions give the same
+result, and I can use QuickCheck to check that.
+So I can have a program or a little function
+here, which takes a list of integers and checks that
+for that, for that, for a given list of integers
+that.
+Applying squares to xz, which is this sum , version
+of squares using list comprehension that it produces the same
+answer as this recursive definition.
+Okay.
+, so prop squares is, is is what that, ,
+function called.
+It's, it's a, it's a test function.
+Okay.
+And if I, if I, , if I, , run
+Haskell and run QuickCheck, it'll tell me.
+Yes, it works for 100 tests.
+Let me, , I think I have time to show
+you this.
+, and what's interesting is what happens if it if
+it's, .
+If I made a mistake.
+.
+Okay.
+Can you all read that?
+I hope you can.
+, so the program that I just had on the
+screen is, is in the top bit here.
+And I've also added squares cond, which is this version
+using , conditional and and so forth to do the
+instead of pattern matching.
+Okay.
+And my and my prop squares also checks to see
+that that that is equivalent.
+Okay.
+So I can I can now do a quick check
+in the bottom okay.
+The way I've got this set up, the top part
+is the program.
+The bottom part is Haskell running.
+I've just compiled it and I can do a quick
+check of prop squares.
+, and it'll say yes, it's right.
+Okay, so you believe me now?
+What if I made a mistake?
+So go back to my program, and I've Accidentally.
+, in the in the second, in the second, ,
+clause of , of the recursion I've put in x
+times x times x by mistake.
+So it's cubing.
+Okay, , wait a minute.
+I've got a oh, come on.
+Okay, so, , squares rec apply to one, two, three
+will be, , one eight and 27.
+That's wrong.
+Okay.
+, and quick check will quickly discover that, , it's
+called , what's it called again?
+Prop squares.
+Okay, I try, I try to, , to get it
+to check whether squares delivers the same result as squares
+rec and whether squares deliver the same result as squares.
+Cons.
+And , and it says no.
+And here's an example where, where it doesn't work.
+So for example, , the list containing just two, which
+is obvious because, , you know, squares, rec squares of
+that list is that n squares of squares rec of
+that list is eight.
+Okay.
+So you make a mistake.
+, quick check.
+, will, , be helpful sometimes in finding out, ,
+that it was a mistake.
+Okay.
+For that reason, we're kind of, , encouraging you to,
+, to use it and to pay attention to the
+results that it gives.
+Just putting that back the way it is.
+So I'll be able to use it in the future.
+Okay.
+Okay.
+So back to my slides.
+, everybody okay.
+So far?
+.
+Right.
+Okay, here's another example.
+A little bit different.
+Okay.
+This is , , selecting the odd elements.
+Well, this this is an example that I had in
+my other lecture, my previous lecture.
+And here was the example that I had in the
+previous lecture.
+This is , a function definition using using a guard
+comprehension list comprehension with a guard.
+So if you recall, this was, , taking a list
+of numbers and filtering out all of the odd numbers
+from the list.
+Okay.
+So we take a list one, two, three, we
+apply this and we get one and three because two
+is not odd okay.
+And here is a recursive definition of the same function.
+Okay.
+same type.
+I'm calling it ODS req to distinguish it from ODS.
+Okay, same first line of the definition.
+Almost always the first line of a recursive function definition
+on on on lists will be of that form, but
+not always.
+Okay.
+, it'll always be, you know, function applied to empty
+list equals something.
+Usually there's something is going to be the empty list,
+but not always.
+So, , , so, , okay, but what if it's
+not empty?
+What if the list is not empty?
+So the list is contains a head x and a
+tail XS.
+Okay.
+Well then there's two cases.
+And this is how you do a case analysis in
+Haskell.
+Okay.
+So odds rec of x cons x is such that
+ord of x is true Okay.
+So it's it's what we did here.
+We have this guard out of X's out of X.
+And here it is.
+It's a it's a guard on the on this definition
+on this on this equation okay.
+If x is odd then the result is we include
+x.
+And we do consider the result of applying odds req
+to the rest of x.
+The rest of the list, which is x is okay.
+So odds rec apply to this list.
+If x is odd, it's x cons odds rec apply
+to the rest of the list.
+Okay, otherwise we don't include x, so we throw x
+away and we just include the rest of the odd
+numbers and x's okay.
+So that's how you write a kind of case analysis
+in Haskell.
+And the formatting is not required, but it makes it
+easy to read.
+I strongly encourage you to use this style of formatting
+where you've got vertically aligned cases and vertically aligned
+are equal signs.
+And in fact, Haskell has some rules about, , alignment.
+, and they're kind of complicated to explain.
+But if you format things the way that I do
+in my lectures, everything will be okay.
+And if you don't, you might end up with a
+confusing error message.
+So here.
+Are there any performance advantages to using.
+To comprehension.
+Sorry, that was about performance.
+I didn't quite get it all.
+You said is there a difference in performance?
+Okay.
+, there is no no difference in performance.
+Or at least none that you will notice.
+, everything.
+So in this course, I'm kind of encouraging you not
+to worry too much about efficiency.
+Okay, one one reason is that, , the important thing
+is getting it right.
+And whether, you know, computing the wrong answer really fast
+is not very helpful.
+Okay.
+, better to to to get the right answer more
+slowly.
+Okay.
+, Haskell, the Haskell has an incredible amount of kind
+of clever technology in the compiler that, , recognises, ,
+common situations and produces, , code that runs fast.
+Okay, so these two, these two cases will probably, in
+Haskell, produce exactly the same, , , you know, down
+underneath the way that things are computed will probably produce
+the same sequence of computation steps in the end.
+Okay.
+So Haskell is clever that way.
+All right.
+Anything else?
+I'm kind of coming close to my, , the end
+of my lecture here.
+, I'll just say you can do you can do
+it again, a step by step.
+, , run through this to see that it's does
+what you expect.
+Okay.
+You can check it with quick check that it gets
+the right answer.
+Okay.
+I mean, maybe I should go back a second to
+this definition.
+, I said, I mean, is it clear what the
+format of this is?
+Okay.
+You can have more than you can have more than
+two cases.
+Oh, I forgot to say otherwise.
+What otherwise was okay, otherwise is just, , an abbreviation
+for, , the value.
+True.
+Okay.
+The thing after the vertical bar has to be, ,
+an expression which evaluates to true or false.
+Okay.
+If it evaluates to true, then that's the case that
+we take.
+If it evaluates to false, then we go on to
+the next case.
+Always one after the other, okay?
+And otherwise will always be the final case.
+And it just means true.
+Okay.
+It will catch all of the cases that aren't caught
+by the earlier ones.
+Okay?
+Okay.
+Otherwise sounds better than true.
+, for a case set of cases.
+Okay.
+So it's the one that will be true if none
+of the other ones are true.
+Okay.
+, in my lecture, the slides, I'll just quickly show
+you this here is a definition which can't be.
+This is a function which can't be defined using comprehension.
+The sum of a list of integers.
+Does anybody know why it can't be defined using comprehension?
+Yeah.
+Comprehension.
+Right?
+Exactly.
+Comprehension can only produce lists say takes a list and
+produces a list.
+This one produces an integer.
+Okay, so just because of the types it can't be
+done using comprehension.
+But it can be done using using recursion.
+And you know the sum of an empty list is
+zero.
+And the sum of x cons x is the first
+value in the list x plus the sum of the
+rest of the values in the list.
+Okay.
+And here's a computation for some applied to the list.
+, 123.
+The answer is six.
+Okay.
+And product.
+, similarly, , it happens that the product of the
+list one, two, three is also six.
+Okay.
+, interestingly here the so product it does multiplication instead
+of addition.
+Interestingly the , , this is the base case here,
+so-called base case.
+I always I forgot to use this terminology.
+Base case is the empty list case.
+The the result is one because one is the identity
+value for for multiplication.
+Okay.
+And I won't finish this.
+But basically this is just showing how to put it
+all together.
+We had before the the comprehension version of the sum
+of the squares of the odd numbers in the list.
+And here is the recursion version.
+It's basically putting together everything that I had in the
+previous three definitions into one into one definition.
+Okay.
+And you can you can look this up in the
+slides which are in the on the course learn page.
+Thank you.
+I'm out of time.
+, thanks for your attention.
+Yeah.
+So we came a bit later about that, but I
+was just wondering, what's, .
+Why do we use recursion is just a first.
+Instead of what?
+What?
+Instead of the.
+Comprehension?
+Because sometimes you can't write functions using recursion.
+That's the reason.
+That's one reason, yeah.
+Yeah, I can't make.
+My 9 a.m. tutorial because the classes are.
+Yeah, but I'm going to do 1031 and Fergus emailed
+you to tell you that.
+So, , I requested them to change it, but they
+haven't changed it yet.
+Okay.
+I'm going to be going to 1031.
+Yeah.
+Go.
+I mean, as long as the tutors know what you're
+doing and as long as you've requested it.
+I don't know.
+It's on.
+It's on Piazza.
+Okay.
+, there's this list of all the tutorials.
+Okay.
+Okay, so they have to know, and you need to
+apply using that form to switch.
+And I actually don't need to know because I can't
+do anything about it.
+Yeah.
+Huh.
+Why can't you do patterns with more than more than
+XS and XS?
+Why can't you do, for example, X y cons exist.
+You can.
+You can.
+Yes you can.
+Yeah.
+So for example, if you wanted to write a program
+that would, , , throw away every second element of
+a list.
+Okay.
+So keeping only the first element, the third element, the
+fifth element.
+And so far that would be naturally written with a
+pattern what you just said.
+And then the function again.
+Yeah.
+Yeah.
+, would be , f of empty list is
+equal to the empty list.
+F of the list containing just one thing would be,
+, I guess the list containing that one thing and
+list with a cons b cons, , something else I
+don't know.
+, l is equal to a cons f of l.
+All right.
+Yeah.
+Okay.
+Something related to the tutorial, questions.
+To tutorial two or tutorial one.
+Okay, , quick questions or.
+Okay.
+Yeah.
+Are we supposed to return the values according to the
+index number or according to the values in the list?
+Is it necessary that they are going the values?
+The values, not the indices.
+Okay.
+So this will be in a certain order and.
+Within the range given by the.
+Yeah I sorry I mean I mean the values.
+So between you know between 5 and 10, , it's.
+Always going to be in ascending order or descending order
+or something.
+that.
+No, no, no.
+, this is, , so what I mean, you know,
+, it's so this happens to be in ascending order,
+but it doesn't have to be, obviously.
+And I don't mean according to the indices, I mean
+according to the values.
+So if you have a bunch of numbers, then all
+of the ones that are between 5 and 10 as
+values should be in the result.
+Okay.
+Yeah.
+Okay.
+Yeah, yeah.
+How do you avoid .
+How do.
+You.
+Sorry.
+My name collision.
+for example you can define a function f.
+Yeah.
+You take two parameters heads and tails.
+Yeah.
+Then inside that function you can use the head and
+tail function is, , .
+Yeah.
+You, , okay.
+So, .
+One, one thing is you can, you can just avoid
+that by being careful, okay?
+But if you do it, you know.
+Okay.
+As you say, as you say, you can't use you
+head, head, head within this, , this expression here means
+that.
+And tail means that.
+And you can't use them as functions.
+Okay.
+Yeah.
+It creates a new.
+Exactly.
+It's called a scope.
+This is called the scope.

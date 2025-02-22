@@ -1,0 +1,1138 @@
+.
+, something's gone wrong with my, , with the sound
+on this thing.
+I can't play music.
+Sorry.
+Next time.
+I don't know.
+I don't know what it is.
+Everything looks it's, .
+It should work.
+Hmm.
+Oh, well.
+Just have to put up with my lecture without music.
+Okay.
+Let me get started.
+Okay.
+Okay.
+Please sit down and I'll get started.
+I've got a lot to get through today.
+Okay.
+So today I'm going to be talking about data representation
+and possibly getting onto data abstraction.
+I'm not sure if I'll make it that far.
+, so this week you've got, , you've got one
+C and L, , computation and logic lecture on Thursday
+with Julian and three functional programming lectures.
+So today and tomorrow from me.
+And on Friday we have a, a special guest coming
+to give a lecture.
+, his name is John Hughes.
+He's from Chalmers University in Sweden, and he's one of
+the original developers of Haskell and co-inventor of QuickCheck.
+He's a he's a very good speaker, even better than
+me.
+And, , , and he's going to be talking to
+you about QuickCheck and how he's using it with people
+in industry to find bugs in their C programs.
+So it's branched out beyond Haskell, , to other languages
+as well.
+Okay.
+And, , yeah, he's a good speaker.
+It'll be fun.
+It'll be interesting.
+.
+And, .
+Come.
+Please come.
+Okay.
+That's Friday in the usual slot.
+Okay, so today it's, , data representation.
+And what I did last time was talk about, well,
+I talked about rates of growth of, , of of
+functions used to measure efficiency of programs and how, ,
+you know, if you have something that's linear, it's better
+than if it's quadratic, and that's better than if it's
+cubic, and if it's logarithmic in the size of the
+data, that's even better.
+Okay.
+So , and I use that.
+So this was, this was talking about the way that
+we measure, , time, the time that programs take is
+we're worried about the, the shape of the, of the
+runtime, , so-called asymptotic, , , time.
+So the, the way that, that, that the time grows
+as a function of the input size and, and ignoring
+constant factors, just looking at the shape, whether it's a
+straight line or logarithmic or whatever.
+Okay.
+So , and I, and I, , I explained that
+because I wanted to talk about different representations of data
+and how you can have different representations with different, ,
+efficiencies.
+Cece and, .
+And I'm.
+And I'm, , showing that to you by showing you
+four different representations of sets.
+And the first one that I showed you was sets
+as lists.
+And I showed you some code and, , all of
+the implementations of sets that I'm going to show you
+how the same six things are implemented.
+So the, the, the type of sets are the constant,
+the empty set and insert function, a function for turning
+lists into sets, a membership function called element and equality
+testing on sets.
+Okay.
+And , and I gave implementations of these things for
+the simple case of representing sets as ordinary lists.
+And we're talking about sets of we'll be talking about
+sets of integers just to keep things simple.
+Okay.
+, although this is polymorphic, so it works for any
+sets.
+, anyway, , yeah.
+So we went through the code for that, and, ,
+the next one I want to get on to is
+, is representing sets as ordered lists.
+And this was, , motivated by the fact that testing
+equality for sets as, as lists that are not ordered.
+When I say ordered, I mean the elements are in
+ascending order.
+So smallest ones, smallest ones at the beginning going up
+to the biggest ones at the end.
+Okay.
+Ordered by the, the the the the values that are
+in there okay.
+If they're numbers then you've got the small numbers here
+the big numbers here.
+Okay.
+And , and I explained that equality testing on on
+sets represented as ordinary lists is quadratic because the code.
+Well, I mean the code was here.
+And , that code it in order to check whether
+two sets represented as lists are the same, you have
+to check whether all the elements in one are in
+the other, and all the elements in the other one
+are in the first one.
+Okay, so two subset operations.
+Each of those is quadratic okay.
+So testing equality on of of sets representative list is
+quadratic.
+And .
+Okay.
+And this motivated the idea that if we could represent
+sets as ordered lists.
+And here I come to this thing here.
+So , here here is why we have to, why
+we have to do complicated equality testing.
+Because if we do, , insertion of elements into a,
+into a set, represented as a list, we get different,
+different lists which are representations of the same set.
+Okay.
+So these are three representations of a set that contains
+the values one and two.
+But they're in different they're in different orders okay.
+And so equality testing is complicated.
+If we could arrange that they end up.
+In order and without duplicates, then no matter how many
+times we insert numbers into values, into a list, in
+what order or whatever, we end up with the same.
+The same underlying list.
+Okay, it's an order without duplicates.
+And so equality testing on these kinds of things is,
+is is easy compared with with these.
+Okay.
+So this is the motivation or one motivation for ,
+doing representation of sets as ordered lists.
+Okay.
+So I'm going to quickly go through the code.
+You know we know that equality testing is going to
+be faster.
+But what about the other stuff?
+Okay.
+I'm going to quickly go through the code.
+And , I've got a lot of to get through
+this in this lecture, and the emphasis here is not
+on how wonderful my code is or anything that.
+The emphasis is on the the kind of ideas, ,
+that I'm trying to get across.
+So different representations of sets, ordered lists versus unordered lists
+and and so forth.
+The code is relatively routine for how to how to
+implement those things.
+So I'm going to be whizzing through it at a
+relatively quick speed.
+Okay.
+, if you want to look at the details, you
+can download the code and you can play with it
+and you can look at it and, , and so
+forth.
+But I'll try to give you a, well, I'll try
+to go slow enough that it's, , that it's possible
+to understand what I'm talking about at least.
+Okay.
+So if I want to represent, , , sets as
+ordered lists, okay.
+Same, same six things that I'm going to have in
+this, , in this module.
+Okay.
+As before, , I, .
+Okay.
+So sets are still represented as lists.
+Okay.
+Set A is equal to a list of a.
+Okay.
+, I have now, , something I'm calling an invariant.
+And this is a this is a function.
+Okay.
+Well, what is it?
+An invariant of a data representation.
+Is, , is something that characterises the values that I'm
+going to be using in the data representation to represent
+the things that I want to represent.
+So, , what I mean by that is I'm representing
+sets as ordered lists.
+And so I want to specify that the lists have
+to be ordered.
+If the list if a list is not ordered then
+I'm not interested in it.
+I'm only interested in the ordered ones.
+Okay.
+And , that's expressed by this function which tests the
+set and and returns true if it's ordered.
+Okay.
+okay.
+That's expressed in Haskell this.
+Okay.
+We go we go through and look at adjacent pairs
+and check to see that the, the first one is
+smaller than the second one.
+Okay.
+This says that the list is ordered.
+And the fact that I'm using here, , less than
+and not less than or equal to means that not
+only is it ordered, but there are no duplicates.
+Okay.
+There's no cases where, , adjacent elements are equal.
+Okay.
+So this is a, this is expressing in Haskell this
+invariant, this property that I'm talking about ordered lists without
+repetitions.
+And I've written this in Haskell, but it's , it's
+not going to be executed unless I want to test,
+, , values to see if they're, if they're, if
+they're in this invariant or not.
+, but it's convenient to write it down in this
+notation, since we have it handy here.
+, by the way, , you might be wondering what
+this is.
+Okay.
+You'll be seeing these.
+These are these are type qualifications.
+, , this type says that it's a function from
+set of a to bool.
+, but in order to use it, you need a
+type A, which is an ordered type.
+Ordered type means it's a type that I can use
+less than and greater than and less than or equal
+to and so forth on.
+Okay.
+So not all types have that property.
+So it's a kind of proviso, , that it has
+to have that it has to be an order type.
+We saw that actually a little, a little bit before
+, membership.
+This is on ordinary , , sets as ordinary lists.
+So membership has this type.
+It takes an element and a set and tells you
+whether that elements in the set.
+But it only works If the elements in the set
+are elements that you can do, that type you can
+do equality testing on.
+Okay.
+So these are type qualifications.
+And I'll be talking about them in I think next
+week.
+It's there's this a general , feature of, of
+Haskell called type classes.
+And these are examples of type classes.
+But I'll, I'll just for now say that's what's going
+on here and I'll explain it properly next week.
+Okay.
+So for now, just, , understand that that's, , those
+are sort of provisos on when you're allowed to apply
+these, these functions.
+Okay.
+So we're interested in things integers which are,
+which have this order relation on them here.
+, by the way, order implies that you have equality.
+Because if you can if you can test whether whether
+this is less than this and also whether this is
+less than this, then that means that they're equal.
+I mean, if both of those tests are true.
+Okay, so we've got sets, we've got this invariant.
+And now we can write code for the various, ,
+the various things that I want here.
+So empty set is still the empty list, the insert
+function.
+It has to give me, , ordered lists.
+So it has to given, , an element and an
+ordered lists.
+You want to put the new element into the into
+the list.
+Okay, here's the element.
+Here's the list.
+You want to put the element in the right place
+in this list so that you maintain the order.
+You can't just bung it in the front the way
+we did with unordered lists, because it might not be
+the right place.
+Okay.
+So this code looks for the right place and ,
+, gives you back the list together with that new
+element.
+Okay.
+So the right place we've got three cases here, I
+won't.
+Well, I'll just, .
+You know, you go recursively down the list and you
+look for the place where the new element x here,
+, , fits, okay.
+And it fits in the place where, , it's less
+than, , the head of the bit of the list.
+You take the whole list and you're going one at
+a time down.
+You're looking for the place where the element you're inserting
+is less than the head of the rest of the
+list.
+Okay.
+Which is what this code is doing.
+Okay.
+In a situation where x is less than y, you
+you put it in and you're done.
+If it's already there, you don't have to put it
+in because it's already there.
+If it's if it's greater than the element that you're
+looking at, then you insert it further down the list.
+Okay.
+So that's what this code does.
+It goes down the list, looks for the right place
+and puts it in in that place.
+, right.
+So this is take advantage of the, .
+Well, , I shouldn't have said that.
+It's it's, , it's, , , it's preserving the invariant
+and putting the value into the list in the right
+place.
+Okay.
+The the the function which takes a list and turns
+it into a set, it has to, , if it's
+just an any old list, it has to, , put
+it into the right order and remove duplicates.
+And so that's what this code does.
+It sorts the list and it removes duplicates.
+So sort is a built in function in Haskell.
+It's in well it's in data dot Lisp library.
+And nub is a function which removes duplicates.
+So so that's what this code is here.
+, another way to do that, by the way, would
+be to start with the empty list and insert.
+Use this insert function repeatedly, , with a fold or
+something to to insert each element in the right place
+in the list, and then you end up with an
+ordered list.
+Okay, now membership and equality.
+So the important thing is, is equality.
+Equality is really easy.
+As I said, because of this property that the lists
+are ordered okay.
+If the lists are ordered and they have no duplicates,
+then two lists represent the same set.
+If they're the same list, okay, there's no other way
+for them to have the same elements in them then
+for them to be equal as lists and so and
+so.
+Testing equality on sets, , is exactly testing equality on
+the lists that represent those sets if they're ordered without
+duplicates.
+Okay.
+, and membership can also take advantage of the order.
+Okay.
+So if you've got a list here and it's an
+order and you've got an element you want to check
+to see if it's in the list.
+You start at the beginning and you go down looking
+for the for the element to see if it's there.
+And at a certain point maybe you find it.
+Okay.
+Or if you find an element which is bigger than
+the element you're looking for, you know that that element
+that you're looking for can't be there.
+Because if it was there, you would have found it
+already.
+Okay.
+So you can stop.
+And so that's what these these cases are okay.
+If I, if I'm if I'm going this is with
+recursion of course.
+As usual.
+Okay.
+We're going down the list okay.
+If the element I'm looking for.
+Okay x is the element I'm looking for.
+If the element that I'm at currently y is greater
+than x, it means that I've.
+I've gone past the place where x would be if
+it was there.
+And so the answer is false.
+No, the element isn't in the list Okay, if I
+found it, obviously the answer is true.
+If I haven't yet reached the place where the element
+would be because I'm looking at an element that's smaller
+than x, then I continue recursing.
+Okay, so I go down the list until I get
+to the place where it should be.
+It's either there or not, and I and I either
+find it or I stop.
+Okay.
+Okay.
+So how fast are these things?
+Okay.
+So, , with of course, empty set as empty list
+is constant time.
+Okay.
+Inserting an element into a list, , for, for unordered
+lists, it was constant time because it was just cons.
+Okay, here we have to do some work.
+, we have to go down the list, look for
+the right place to put it and put it in
+there.
+So that's linear time.
+Okay.
+It has to go down and look at at most
+, each element once.
+Okay.
+This function that turns a list into a set.
+Okay.
+This is, , , I'll just say now and I'll
+come.
+Well, I'll explain it later.
+Sorting is, , n log n time.
+Okay.
+And nub is actually, , n squared time.
+So this whole thing is going to be n squared
+time.
+I'll talk about sorting.
+In my next lecture I think a little bit
+more about that okay.
+Membership.
+How fast is membership okay.
+So I go down I'm looking for an element.
+I'm going down the list.
+And I might have to go all the way to
+the end, or I might get to stop somewhere in
+the middle if I find the thing or if it's
+if I find out that it can't be there because
+I've already reached an element which is larger than it.
+Okay, so how much time does that take?
+Okay.
+Membership Before for unordered lists was linear.
+Okay.
+, in this case, you might be able to stop
+a little bit before you get to the end, but
+still, in the worst case, it's linear.
+Okay.
+In the worst case, you have to go all the
+way to the end.
+Okay.
+In the average case, you have to go about halfway
+down.
+Okay.
+So instead of being instead of taking n steps, that
+takes n over two steps.
+But that's still linear okay.
+Linear times a constant is still linear.
+Okay.
+It's a bit faster, but it's not , it's not
+a different, , , complexity class.
+Okay.
+And this one here is linear because, , list list
+equality is linear.
+Okay.
+That's a big improvement because for unordered lists it was
+quadratic.
+Okay.
+Any questions about that?
+I want to go on to my next, , my
+next representation.
+Okay.
+Those were two representations of sets as lists.
+, now I want to talk about sets being represented
+as trees.
+Okay?
+Because we can do a lot better if we if
+we represent sets as trees.
+And I'm going to have to draw some pictures.
+The idea is that with sets as trees, we're going
+to be able to check membership in logarithmic time rather
+than linear time.
+Let me draw a picture and show you what I
+mean.
+Okay.
+Right.
+Okay.
+I'm going to be representing sets as trees and they're
+going to be ordered trees.
+Okay.
+What I mean by that let me draw a picture
+of a of a tree.
+.
+.
+Okay.
+There's a tree.
+, it's a it's called a labelled binary tree.
+Okay.
+Binary.
+Because at at each kind of, , these are, these
+are called nodes.
+All of the things here are called nodes.
+Okay.
+, , it's a, it's a binary tree because at
+each node where there are branches, there are two branches.
+Binary meaning two.
+Okay.
+You can have other kinds of trees.
+This is a binary tree.
+It's a labelled binary tree, meaning that we have, ,
+labels at the nodes.
+Okay.
+Labels meaning values.
+So we assign values to the to the nodes.
+We put we put values in the nodes.
+And it's an ordered labelled binary tree because it has
+a special property that at every node let me just
+pick one.
+there that 140.
+Okay.
+Everything.
+In the left subtree is less than the label okay.
+Everything here is less than 40.
+And everything in the right subtree is greater than that
+label.
+Okay.
+And that holds not just for this node.
+It holds for every single node in this tree Okay.
+Now, why is that good?
+Okay.
+It's good because suppose I'm looking for a value and
+I want to see if it's there or not.
+Okay.
+Suppose I'm looking for, , , 33, just to pick
+a value.
+Okay, so I start here.
+I'm looking for 33.
+Okay.
+Well, it's not there, okay.
+It's bigger than what's here.
+So I know I have to go in this direction
+to find it if it's going to be there at
+all.
+Okay, so I go I'm looking for 33.
+I go there, okay, I know I have to go
+this direction because it can't be on this side.
+It has to be on this side somewhere if it's
+there at all.
+Okay, I get to 40.
+Okay?
+It can't be.
+It can't be over here because these are all bigger
+than 40 and 33 is smaller than 40.
+So I have to go that way.
+Okay.
+I get to, .
+32.
+Okay.
+, okay.
+It's not there.
+And it has to be.
+It has to be that way.
+Sorry for my messy diagram.
+, it has to be that way if it's there
+at all, because 33 is bigger than 32.
+And then I get here.
+And if there were, if there were further branches down
+here, I would know that I have to go this
+way.
+But there aren't.
+And so I've, I've reached the end and I and
+I haven't found it.
+So it's not there.
+Okay.
+And, , the thing that's great about this is that
+I've only had to look at, , , one, two,
+three, four out of the, , 123456789 1011.
+I had to look at four out of 11, ,
+labels on this tree.
+Okay.
+Now, this is a small tree, so that might not
+seem very exciting.
+Okay.
+But in general, , so the depth of this tree,
+, is four okay.
+1234.
+Okay.
+The depth is four.
+Okay.
+And so the maximum number of elements in a tree
+of depth four is, , two to the four minus
+one.
+Okay.
+15.
+Okay.
+And in general okay.
+This holds for any n right.
+So a tree of depth n can hold two to
+the n minus one elements.
+Set another way the the length of the longest path
+from from this the root to to the the bottom
+of the tree.
+The leaves is the logarithm of the amount of data
+in the tree.
+Okay.
+And so what I'm saying here is that finding an
+element, whether it's there or not is logarithmic in the
+amount of data.
+Okay.
+And that's really good.
+Okay.
+Remember my pictures back here I'll just flick back okay.
+Logarithm was the one creeping along the bottom.
+You can hardly see it okay.
+Double the amount of data increases the time by one.
+Okay.
+So this is the motivation for looking at, , trees
+for representing sets.
+, specifically labelled ordered labelled binary trees.
+So, so I'm going to show you code for doing
+that.
+, again I mean, these things get increasingly complicated.
+So making things fast involves sometimes making them more complicated.
+That's typical.
+, okay, so we've got now we're going to implement
+the same the same six things.
+Okay.
+A set is going to be represented as a tree.
+And this is our this is an algebraic data type
+for trees of the kind that I just described.
+Okay.
+, a set is represented as a tree which is
+either empty.
+So that's we'll call that nil or it's a node
+consisting of , a left subtree, a label and a
+right subtree.
+Maybe I should leave my picture up here.
+, wait a minute.
+Okay.
+Again, this messy diagram.
+Sorry.
+So a, , So a tree.
+Let's look at let's concentrate on this bit.
+Okay.
+A tree is a left subtree a label and a
+right subtree.
+Okay.
+So this is defined using recursion as usual okay.
+And the two and constructors are nil for the empty
+tree and node.
+For a tree that has two subtrees.
+And the label okay I'm putting the label in the
+middle because that's what the picture looks .
+Doesn't doesn't not very significant okay.
+And then my invariant on these kind of trees is
+more complicated than my previous one.
+Okay.
+What it says is that, , given a set represented
+this way, I want.
+, okay.
+Looking looking from the bottom here, these two, these two,
+these two lines at the bottom.
+Okay.
+It's saying that any node in the tree, , everything
+in the left subtree should be less than the node
+label.
+Okay?
+And everything in the right subtree should be greater than
+the node label.
+That's what this this is doing.
+This is a this is a list comprehension.
+And there's an and apply to it okay.
+It's looking at all of the values in the left
+subtree, checking to see that they're less than the node
+label.
+And that has to be true for all of them
+okay.
+And and and ditto for the for the right subtree
+has to be greater than the node label.
+And so I'm requiring that.
+And I'm requiring that not just at, at the, at
+the sort of root of the tree, the top of
+the tree are requiring it for every single subtree.
+And that's why it's a recursive, , recursive function.
+Okay.
+Okay.
+So what this is expressing is that at every node
+Everything in the left subtree is, .
+Everything in the left subtree is smaller than the node
+level label.
+Everything in the right subtree is greater than the node
+label, and that holds for every single node in the
+tree.
+This uses you see here.
+List this.
+This happens to use a helper function here, which takes
+a tree and gives you a list of all the
+values in the tree.
+And, , I'll just, , say something about this.
+This is something that you quite often do in, ,
+in, in, in computer science with trees is that you're
+interested in, in, in it's called traversing the tree, visiting
+all the labels.
+, sorry.
+Visiting all the nodes in the tree and doing something.
+Okay.
+Traversing.
+And, , and this is traversing a tree and writing
+down the labels.
+So list applied to this tree.
+If this is T.
+This is tea.
+Then the list of T in this case would give
+you all of the labels from left to right.
+.
+And they would end up being an order because of
+the way that I've written this function.
+Okay.
+That's all the all the labels in this tree.
+And the reason that they're in order is not because
+I cleverly written them down in order.
+It's because this function traverses.
+I mean, if we look at this, if we look
+at this, this, , this tree here, it it it,
+it traverses the left subtree that gives me ten, 20
+and 25.
+And then the next thing is the is the node
+label 30.
+And then the next thing is the contents of the
+right subtree which is all this stuff here.
+Okay.
+And if you look at every one of these nodes,
+, the reason why the things end up in that
+order is, is because of this ordered property of the
+tree and the fact that we're putting the the node
+label in between the contents of the left and right
+subtree.
+This is called an in-order traversal.
+Okay.
+Don't need to remember that.
+You might you might come across this at some point
+in later years.
+There's there's other kinds of traversals.
+There's a pre-order traversal, , which would be putting the
+node label in front of the left and right subtrees.
+And there's a post order traversal.
+, , and they're used for different sorts of things.
+Okay.
+, anyway, just mention that in case you hear the
+terminology someday and want to know what it is.
+Right.
+So given that invariant, this is what we need all
+of our trees to obey.
+Is this invariant that they're in order okay.
+An empty set is represented by the empty tree.
+The insert function has to look for the right place
+in the tree to put a new value.
+So.
+So let's go back to my picture.
+This picture is getting worse, more and more cluttered.
+Someday I'm going to have to learn how to draw
+pictures on blackboards and things.
+It's a bit late, but, .
+Anyway, suppose I want to put.
+Suppose I want to put in 33 into this tree.
+Okay.
+We know it's not there.
+We've.
+I explained that before, but suppose I want to put
+it in.
+Okay.
+So, , what I do is I go down the
+tree and I look at the place where it should
+be.
+So that's visiting this node, this node, this node and
+this node, okay.
+In each case it's bigger than 30.
+It's smaller than 40.
+It's bigger than 32.
+It's smaller than 35.
+So it has to go here.
+That's the right place to put it.
+Okay.
+And that's what this code does.
+That code up there.
+Okay.
+It it it goes down the tree visiting, visiting the
+nodes, looking for the right place to put it.
+And then once it finds the right place.
+.
+Actually this is.
+Right.
+Sorry.
+If it finds it, if it finds an empty tree,
+meaning that it's gone all the way to the bottom,
+then it creates a new node with that, with that
+label and empty left and right subtrees.
+If it finds that it's there already, then it doesn't
+have to do anything.
+Otherwise it decides whether to go left or right.
+Okay.
+So again, this is , this is going quite quickly
+to the right place, logarithmic time and putting it in
+the right place.
+, turning a list into a set is, , ,
+repeatedly doing inserts of the elements in the list, starting
+with an empty set.
+You end up with a with a tree that's in
+the right order.
+Okay.
+Using this, using this code here.
+, okay.
+, okay.
+Finding out whether a value is in there.
+I've already explained how this works.
+You know, , it goes down looking for the right
+place for the element, and either it's there or it's
+not.
+And that's what this, that this code does.
+, you know, if you look at looking, looking for
+X in a tree consisting of a node with a
+left subtree, a label Y and a right subtree, either
+x is the same as y, in which case you
+found it, or else x is less than y, in
+which case you have to look in the left subtree
+or x is greater than y, and you have to
+look in the right subtree.
+So at every step we're throwing away about half of
+the contents of the tree, okay?
+Because, for example, if x is less than Y, we're
+looking at the left subtree, the right subtree.
+We don't care what's there because it's not going to
+be.
+That's not where where my element is going to be.
+Okay.
+And likewise here okay.
+So this is the the the reason why I mean
+this is this is logarithmic time.
+You're you're throwing away massive amount of data at every
+step and concentrating on what you need.
+And then finally, , equality, , set equality.
+, wait a minute.
+Set equality.
+We do traversals, these sort of, , in order traversals
+of both of the, , of both of the trees
+and then compare those for equality, because as you've seen,
+the, , the traversal gives us, it's always going to
+give us a list in order this.
+Okay.
+So if we do that for true for Two Trees,
+I'm going to get the same list and I can
+just check whether they're equal.
+Okay, so, , what about efficiency?
+How much time does this take?
+Okay.
+, you know, empty is always going to be constant.
+, insertion.
+I've explained that it's logarithmic.
+Okay.
+Because you, , you're just taking a path from the
+root down to a leaf and then inserting the element
+there.
+Okay?
+You find the right place and you insert it.
+It's a path.
+, if you've got a tree that holds at most
+if the depth is, is n or sorry, let's call
+the depth of D, okay.
+You've got a tree of of depth D.
+It can hold two to the d minus n elements.
+That is to say the path the length of the
+longest path.
+Well, the length of an of a of an average
+path is.
+Is is the logarithm of the amount of data in
+the tree okay.
+And so insertion is logarithmic.
+, turning a list into a tree is n
+log n still.
+Why is that actually okay?
+Because we're doing insertion n times and , insertion is
+logarithmic okay.
+That's where the n log n comes from.
+Membership is logarithmic.
+We've explained I've explained that that was my starting point
+okay.
+This is logarithmic.
+It only has to go down one path through this
+tree.
+And equality is .
+Linear.
+Okay.
+Why is that?
+Because converting a tree to a list is linear.
+Okay.
+Converting this other tree to a list is linear.
+And checking equality of two lists is linear.
+Okay.
+And that's because everything is in ascending order.
+Now any questions at this point?
+No.
+I'm not going to be talking about sets balanced trees.
+And why is that.
+Okay.
+what do I mean by balanced tree?
+Okay.
+We've got a problem.
+I mean, I explain this, it's all wonderful.
+You know, , everything's working.
+Working great.
+It's all fast.
+Okay.
+Problem is.
+, trees comes in, come in different shapes.
+So we've just seen.
+Seen a tree on my on my messy picture.
+.
+Okay, I've just mentioned the word balanced.
+Okay.
+Balanced means more or less the same amount of stuff
+on the left side is on the right side for
+every node.
+Okay.
+This is this is, , roughly balanced.
+Okay.
+But I could have the same data in a tree
+of a different shape.
+So that that tree that I just drew, , looks
+kind of this.
+The shape is something that.
+Okay.
+I could have the same amount of data in a
+tree that looks this.
+.
+, or or , you know, or some other shape.
+Okay.
+.
+I don't know, I don't know if I've got exactly
+the same number of nodes here, but I think I
+probably need to add some more.
+, anyway, , the special thing about this kind of
+tree is that you've packed quite a lot of data
+in for a depth that's, , one, two, three, four.
+Okay, here.
+You've packed.
+I haven't counted, so these may not be exactly the
+same amount of data, but roughly the same amount of
+data.
+And the depth here is, you know, 12345678.
+And here it's about the same.
+Okay.
+So you can you can pack the same amount of
+data into trees of different shapes.
+And sometimes you end up with, with rather shallow trees
+and sometimes you end up with very deep trees.
+Okay.
+And , the the algorithms that I've just shown you
+work.
+They're fast on these balanced trees and on unbalanced trees,
+especially extremely unbalanced trees these ones.
+There are no better than, , ordered lists.
+Okay, so by changing from ordered lists to ordered binary
+trees, we haven't saved anything.
+At least not in the worst case.
+The worst case is when you end up with trees
+that look this.
+Okay, so, , so this is the motivation for looking
+at balanced trees.
+Okay.
+So that's my next.
+My next and last, , choice of representation okay.
+And this is a kind of a cool data structure.
+It's the first kind of really clever data structure that
+you will have seen here.
+, and what it is, it's, it's a, it's a
+way of working with, , ordered trees, , such that
+insertion.
+So, so that they're always balanced, okay.
+They're always balanced.
+And, , insertion is done in a very clever way
+to ensure that this balanced ness is maintained.
+So every time we put elements into a tree, we
+make sure that it's balanced.
+And the clever thing is that can be done very
+efficiently.
+Okay.
+So these are called, , AVL trees after the inventors,
+, the inventors, some, some peoples and Russian, , ,
+computer scientists in the 1960s called Adelson, Belsky and Landis.
+And it's named after them.
+And, , , so the tricky, the clever and tricky
+thing is how do you manage to keep the tree
+balanced in an efficient way?
+Okay, so this is your first example of a clever
+data structure.
+There's lots of clever data structures in computer science.
+You'll see more examples in later courses.
+There's a course in second year called Dumb Algorithms and
+Data Structures.
+And clever data structures is often the source of efficient
+algorithms.
+So I'm talking about a balanced balanced binary tree.
+So here is a picture of a real balanced binary
+tree.
+okay.
+You can see that it's binary.
+So every every fork in this tree it has two
+branches okay.
+And it's balanced because the, , you know, every, every
+leaf is at the same distance from the root.
+So this is a balanced binary tree in real life.
+, cool picture.
+, in computer science, of course, balanced binary binary trees
+are written upside down.
+So this is a balanced binary tree.
+Computer science version okay.
+Same picture upside down.
+, okay.
+You know what a balanced, a balanced binary tree is
+at least, , , from, you know, in the form
+of a picture.
+Okay.
+What what about code?
+Okay.
+Now, this code is actually very similar to the code
+you've already seen here.
+.
+Oh, boy.
+I only have four minutes.
+, it's very similar.
+All of the code is the same except for insertion
+and the the representation.
+, so the representation of, , of of, , sets
+of tree is the same as before, except that I'm
+every node.
+I record the depth in order to be able to,
+, quickly access it.
+, the invariant Is almost the same as before.
+The difference is that, , as well as the elements
+being in the right order in the tree, there's an
+additional requirement that at every node, the left and subtrees
+have depth, which differs at most by one.
+Okay.
+Why why does it differ?
+But most by one I said it should be balanced.
+They should be equal depth.
+Okay.
+, the answer is that they can't always be equal
+depth.
+Because if you've got a tree that isn't full, there's
+always going to be places where the depth is going
+to be a little bit, a little bit off.
+What we're requiring is that it's off by the minimum
+amount.
+So at most one okay, that's what this stuff at
+the bottom here is saying we require not only everything's
+in order, but also that the left and right subtrees,
+, at every point have , a difference of depth
+at most one.
+And then the, .
+I'll just show you.
+So.
+So, .
+Right.
+The code for empty is the same.
+The code for set is the same.
+The code for , element is the same.
+In the code for equals the same.
+The only code that's different is the code for insertion.
+And what the code for insertion does.
+Is actually just the same as before.
+This code is the same as before, except for ,
+once you found the right place for doing an insertion
+and you do the insertion, you follow that by a
+local rebalance step.
+Okay.
+Because it might be that inserting something into this tree,
+, brings it out of balance.
+Okay.
+Now, the code for that is complicated.
+, that's what it looks .
+Okay.
+But in the form of pictures, you can easily understand
+it.
+Let's see if I have time for this.
+I think I do, yeah.
+Okay.
+The, The idea is that once you've, , once you've
+put something into this tree, which was balanced, in the
+worst case, it's out of balance by by one, it
+could be that the that the balance is not just
+not just a difference of one, but a difference of
+two.
+And it turns out that there's two cases where that
+can happen.
+And here's pictures of them.
+Okay.
+Actually there's four cases because there's symmetric variants of this
+okay.
+The idea is in looking at this picture, suppose that
+I do the insertion and it and it results in
+this bit of the tree being too deeper than this
+bit of the tree.
+Okay, A is too deeper than C.
+That's what this picture is meant to, to to to
+show.
+Okay.
+Then I can do a little bit of a, of
+a adjustment to the tree so that it has the
+same stuff in it.
+So A, B and C are still there, the same
+size x and y are still there.
+X and Y still have the same relationship to A,
+B, and C as they did before in the sense
+of, you know, the stuff that's smaller than X is
+to the left, just it was here.
+The stuff that's larger than X is, is y B
+and C that's here.
+Okay.
+And now everything is balanced.
+Okay.
+So you've taken a difference of at most of two
+here and turn it into a difference of zero.
+And similar thing here.
+This is a slightly more complicated picture.
+But again you can take this difference between C and
+D of two and turn it into a into something
+that's some better.
+Okay.
+And you only have to do this at one place.
+It's the place where you've done the insertion.
+.
+Okay.
+, , what I want to say is the result
+of this is you end up with, , I'll say
+this in the next lecture, you end up with, ,
+the, the, the best case complexity of, of balanced trees
+of of of my ordered tree representation.
+So, , thank you for your patience.
+I'll, I'll finish this lecture tomorrow.
+Okay.

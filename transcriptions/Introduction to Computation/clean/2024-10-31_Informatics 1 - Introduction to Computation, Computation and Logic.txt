@@ -1,0 +1,948 @@
+Okay.
+Good afternoon.
+One of my quick polls.
+How many of you have read The Hobbit?
+Right?
+So you'll remember a discussion between Gandalf and Bilbo about
+what do I mean by good morning.
+So I was wondering if I should have a discussion
+about what I mean by good afternoon.
+Am I wishing you a good afternoon?
+Am I hoping it will be a good afternoon?
+Or am I simply saying it's time to start?
+So today we are finishing off what is logically week
+seven and what is currently physically week seven.
+And let me remind you what we're trying to do.
+So the topic of this week is given a formula
+given a formula of propositional logic.
+So very simple logic, not the clever stuff we were
+doing earlier.
+Is there a way to make that formula true by
+giving its variables particular values true or false?
+And what I did last week was introduce a bunch
+of Haskell definitions, which are one way of representing formula
+in conjunctive normal form.
+Let me remind you of some of the slightly strange
+things we had.
+What is a formula?
+A formula in CNF is a big and of a
+bunch of clauses, and each clause is an or of
+a bunch of literals, and a literal is an atom
+or an negated atom.
+So p or not p.
+And the last thing I did was say that this
+function does evaluation because it just computes the end of
+the or of the literals.
+And we have this slightly odd notion of valuation.
+So we were just giving a valuation as something that
+is a list of the true literals.
+You've just done an PHP tutorial with a different type
+of valuation, right?
+Yes, I think I just marked a tutorial with a
+different type of valuation, so I hope you did it.
+, So in the FP tutorial, the valuation was what
+you expect a valuation to be a map from variables
+to true false values.
+In this encoding, a valuation is a list of the
+variables that we know to be true, and we may
+have variables where we don't know yet whether to make
+them true or false.
+So that's why we have a list of things that
+we know to be true.
+And right at the end, we talked about how we
+could take a formula and just by brute force and
+ignorance, check it.
+So the easy way to check it is to try
+all possible assignments of true and false to the variables.
+If there are n variables in the formula, then that
+means there are two to the n possible ways to
+assign true and false to the variables, which is too
+many for any reasonably long formula.
+So what we do in order to find out in
+practice, is to do the kind of thing that we
+did with sequent calculus, but in a more algorithmic way,
+and in formula that are in this particular CNF form.
+So what is the valuation?
+If you think about it from the proof point of
+view?
+You can think of a valuation as some assumptions which
+would allow you to prove the formula.
+So we're not actually doing proofs in here, but the
+idea is the same if you think about a particular
+formula.
+This is one that is in CNF because it's got
+an and and an and and everything inside is always.
+So it's a bunch of ORS, a bunch of ORS,
+single thing anded together.
+And we're looking for values of A, C and D
+that will make this formula true.
+What do we know about valuations for CNF formulae.
+This is an end of clauses.
+So if this formula is true, every clause has to
+be true because it's an and.
+Have we already see that anybody would not worry not
+seeing that.
+So this is what Anne says.
+All of them have to be true.
+What about.
+Thinking of it in proof theory terms, if we were
+writing it as a sequent, we could write it
+this.
+So what's this thing over here?
+This is not A or not C or not D,
+and we're looking for a valuation of a, C and
+D.
+That makes it true.
+In sequent calculus terms we could write we want some
+assumptions which make this right hand side true.
+So now remember that in the sequent calculus when we
+write comma on the right hand side it's the same
+as or.
+So this right hand side is simply that clause there
+and then for this clause this is an A or
+C.
+So I'm looking for a valuation or a set of
+assumptions about variables.
+Same thing which make a or C true.
+And here I'm looking for something that make this makes
+not d true.
+So one can break down the problem of looking for
+variables that make this formula true into looking for a
+set of assignments to variables that makes each one of
+these three clauses true.
+And we're not doing proofs, so we're not really going
+to write these out as proofs.
+We're just using sequent calculus notation because it's a convenient
+to write down.
+But it's not the case that any old valuation will
+do.
+So.
+Is there a valuation?
+Remember, in our sense of valuation, which is a list
+of true literals.
+Could I make a valuation which is not very sensible
+but makes everything true?
+Satisfies makes the formula true.
+Keyword was not sensible.
+So what would I do?
+Yeah.
+I think that sounded too sensible.
+So given any formula, there's a very stupid form of
+valuation which I could do.
+Make everything true.
+Make a true and make not a true.
+Now that's nonsense.
+So I certainly can't have arbitrary assumptions.
+In sequent calculus, there's nothing stopping you writing down a
+comma, not a on the left.
+But that would be nonsense.
+So if we're trying to look for a valuation that
+is an actual valuation and gives you true and false
+values variables, we do have the constraint that whatever we
+write down on the left hand side mustn't contain a
+variable and its negation, because that would amount to saying
+the variable has to be true and false at the
+same time.
+However, the reason we wrote the valuations as we did
+is because we don't necessarily need to know the value
+of every variable.
+So, for example, in order to prove that A or
+not A is true, I don't actually need any assumptions
+at all because it's always true.
+So I don't need an assumption on the left.
+Similarly, if we look at this one, what do I
+need to assume to show that not D is true?
+What's the least thing I can assume about the variables
+that makes not D true?
+D is false.
+Okay or not, D is true.
+So remember the identity.
+What did I call it?
+Immediate rule.
+So we have the immediate rule which says that a
+implies a entails a is always true.
+So that's why we don't have to write down valuations
+of every variable as you did in the FP tutorial.
+So this is the general idea.
+And at the moment it might look a bit abstract.
+But now I'm going to give you an algorithm for
+it.
+And it's going to be hopefully relatively transparent.
+So last week I introduced the four people who invented
+this algorithm.
+This is actually seriously impressive.
+So it's now more than 60 years since they invented
+the algorithm, and it is still the fastest general purpose
+algorithm to do the job.
+There aren't many algorithms that have that property.
+So what do we do again?
+Let me give you the high level description before we
+go into an example and then into a bit of
+pseudocode.
+So we're going to look at one atom at a
+time.
+So one letter a b c d.
+And then we're going to say does it work if
+I make it true.
+Suppose I make it true.
+What happens.
+Well if I make a variable true then I can
+simplify the other formulas by plugging true in for the
+value of that particular variable.
+And so I have a smaller formulae and then I
+use recursion.
+This course is really largely about recursion.
+So once I've got a smaller formula I apply the
+algorithm recursively, and maybe it doesn't work.
+Maybe I can't find evaluations for the other variables that
+make it true.
+Well, if that happens, then I failed.
+And so it was a mistake to set it to
+true.
+So I come back and try setting it to false.
+And again I set the variable to fourth throughout the
+formula.
+That gives me a smaller formula.
+And I do recursion to try to solve that.
+And if that fails, then there is no way to
+make a satisfying assignment, because I will have ended up
+trying every possibility.
+You will want to convince yourselves of that later.
+But that's the outline.
+Let's see it in an example.
+So here's the example from before.
+We're trying to show that it's possible to make not
+A or not C or not D and A or
+C, and not D.
+True.
+and we've broken that down into saying that amounts to
+finding a set of assumptions which makes all of these
+things true at the same time.
+So the algorithm says choose a variable.
+Well, a is the first letter of the alphabet.
+So let's choose a.
+If I look at this formula and set A to
+be true what happens.
+So I've added a is an assumption on the left.
+I look at this thing here I've got not a
+if A is true not A is false false or
+anything is anything.
+So I can just remove that.
+Not A it's false and it doesn't need to appear
+in the disjunct anymore.
+Over here nothing changes.
+In this middle formula I've said I'm assuming a and
+the formula says A or C.
+So it's true.
+So I've made this formula true.
+And I don't need to consider it any more.
+So this is the key step of the algorithm.
+Set A to have a particular value in this case
+true.
+And then simplify by looking for lot A's on the
+right hand side and striking them out and looking for
+plus A's on the right hand side and removing the
+entire clause because we've found a way to make it
+satisfiable.
+This is A or C.
+So if A is true a or C is true.
+Okay.
+So that's the the single key step of the algorithm.
+Who feels unsure about what I'm doing there.
+Who feels sure about what I'm doing there.
+Okay.
+Who apart from the usual suspects, feels sure about what
+I'm doing there?
+Not many people.
+So we'll keep going with the next step.
+And by the end you will be.
+And by the time you've programmed it, you certainly will
+be.
+So Remember, I'm choosing a variable.
+I haven't said how I choose a variable.
+I'm doing the easiest thing I can think of, which
+is to go through in alphabetical order.
+Here I set a to be true and I simplified.
+So now I'm trying to choose a value for C,
+I can try two first.
+So now I've assumed a and C.
+What does that do to this formula.
+Well if c is true not C is false.
+So again I can strike that out.
+And it hasn't done anything over here.
+I've assumed A or C I have assumed A and
+C, but that doesn't tell me anything about not D's.
+So I still have some work to do.
+And over here I actually have the same thing.
+So I've reduced this to two identical formula.
+I now have a and c gives me not D.
+Well that hasn't got us very far yet.
+So now I have to look at another variable.
+Can I make it work by choosing D to be
+true?
+Okay, I set D to true.
+So now I'm assuming that A is true.
+C is true and D is true.
+Now I strike out not D because it's false.
+And now I'm trying to prove an empty right hand
+side.
+What's an empty right hand side?
+Contradiction.
+Contradiction.
+Simpler word.
+False.
+Empty.
+Right hand.
+Empty.
+Right hand side is false.
+So if I strike out the not d here, I
+have a c.
+D is supposed to make false.
+True.
+It's not possible to make false true.
+So this has failed.
+And the same happens here because it's exactly the same.
+So I failed.
+I've set a to be true.
+I've set C to be true.
+And I've set D to be true and I've failed.
+I don't have a satisfying assignment.
+So what do I do?
+Well this is recursion.
+So this is a recursion from this.
+And this is a recursion from that.
+So I'm three levels deep in the recursion.
+So I backtrack up to here and set D to
+be false instead.
+So now I've got a true c true and d
+false.
+And now what happens.
+Everything works nicely I have not d on the left
+and not D on the right.
+So I can strike out that clause.
+Got not D on the left, not D on the
+right because it's the same I strike out that clause.
+And so now I'm claiming that a C and not
+D proves the empty set of clauses.
+What is the empty set of clauses?
+True.
+Okay.
+Clauses are anded together.
+So the end of nothing is true.
+Remember, we went through this at some length a couple
+of weeks ago.
+This is where it's coming up again.
+Essentially, I've discharged everything I have to prove.
+I have three things I had to make.
+True.
+This clause, this clause and that clause.
+And by finding values A, C and not D, then
+I've shown that all of them can be satisfied.
+So this is the end of the algorithm.
+I've got rid of all the clauses.
+And so I've shown that setting a C and not
+D gives me an assignment of variables which makes the
+original formula true.
+Okay.
+So that's.
+A.
+Short algorithm.
+Quite a simple one.
+It would be a good idea if you understood.
+It would be nice if you understood it right now,
+but definitely a good idea if you understand it later.
+Are there any immediate questions that I can help to
+clarify?
+So as always, it will help to do a couple
+of examples.
+If you haven't grabbed it immediately.
+You're going to do a tutorial exercise which uses this
+and then shows you an application of it.
+So much of the rest of this lecture is going
+to be about why this is useful, and useful is
+a relative term here.
+We're obviously not going to give you a useful, useful
+thing, but we'll give you an example which shows how
+powerful it is.
+But before I go on to talking about an application
+of DHFL, let's think a little bit about this algorithm.
+So I said I had to choose a variable to
+set to true.
+So here I chose to do it in alphabetical order
+A, C, d.
+Was that a sensible thing to do?
+I was sensible, it just wasn't clever.
+Is there a cleverer thing to do just staring at
+this thing?
+If I hadn't told you that I was going to
+look at the variables in alphabetical order, which order would
+you look at them in?
+Yeah.
+Wouldn't you look at that one first?
+Because once you've dealt with that, that clause is out
+of the way.
+So this is a completely general principle.
+Always solve the easiest thing first.
+So just staring at this it seems common sense.
+And there's an interesting discussion going on somewhere.
+New scientist I think about what common sense is.
+And one of the definitions I saw in the new
+Scientist I was reading this morning was.
+Common sense is what a politician calls something that they
+want you to believe that all the experts disagree with.
+But this is common sense here that says we should
+start with the simplest clause.
+So why?
+D?
+There are actually two reasons that make D a good
+choice to start doing the algorithm with.
+So one thing is that if we look at this
+clause, not D is the only thing in it.
+So we don't even have to think about what the
+value of D should be.
+We know that D has to be false if we're
+to have any hope of making this entire formula true.
+So it's the only literal in the clause, so we
+must make it false.
+But it also has another slightly more general property.
+It's what is called pure.
+I don't know who came up with this term, but
+pure means that the variable only occurs one way round.
+It only occurs with or not, or it only occurs
+without or not.
+So in this case we see not d and we
+see not d, and there aren't any occurrences of positive
+d.
+So that means that if we can set it to
+zero to false, then that works everywhere.
+If we had both D's and not D's, then we
+would have to think harder about it because we can't
+just say setting it false makes everything good, but because
+not D is the only way it occurs.
+Making not d true or d force is going to
+be helpful in every single clause, or at least not
+harmful.
+So a natural optimisation to the algorithm is say don't
+just use variables at random.
+Look at variables that occur as the only literal and
+look for pure variables.
+So in this case C is not pure and A
+is not pure.
+So D is the first thing to set out to
+look at.
+We set it to false because it's the only choice
+we because of being the only interval in the clause.
+And then we get a whole lot of simplifications at
+once.
+So the first clause disappears because it has not d
+on the right.
+So we have d is false.
+Shows us that d is false.
+This clause disappears because we chose D to make it
+do so.
+And so we've got rid of two clauses.
+And then we don't actually have to do any more
+work either because there's another property of this nice of
+this remaining clause.
+What we have here is a consistent set of literals,
+meaning that we don't have any contradictions in there.
+So this is A and C, there's no not a
+there's no not see.
+So all we have to do is to assume that
+A is true and assume that C is true.
+And then together with D being false, we know that
+we have satisfied this clause and therefore all the original
+formulae.
+So that's a couple of rules that you can use
+to make the algorithm more efficient.
+Not all the time, because you're not guaranteed to get
+a literal and only literal every time.
+And you're not guaranteed to get pure literals all the
+time.
+But if you can find them, the algorithm runs more
+quickly.
+So that's a couple of optimisations that make this algorithm
+the fastest general purpose algorithm.
+And there's one more slight hint.
+When I said that we obviously started with D just
+staring at it.
+I guess the thing that to me was obvious was
+that it's the shortest clause, right?
+So maybe we didn't think it's the only literal way.
+Maybe we just said it's the shortest one.
+Well, if it's the only one, that's good.
+But even if it isn't the only one, it's a
+pretty good rule that you start with the simpler, shorter
+things rather than the long, complicated things.
+So that's an example of the dplyr algorithm for finding
+a satisfying assignment in its optimised version.
+Before I show you pseudocode, always worried about showing pseudocode
+because who can read it?
+But hopefully you.
+Can.
+And questions about what I've done in the example.
+So is there any step in here that somebody would
+explained a bit more?
+Yeah.
+The last step you only need to do in part
+It only seems that.
+What's the word?
+Yes.
+So that's a good point.
+This is an A or C.
+So if we've set A to true then we're done.
+And that works in the original two.
+, we have to find a satisfying assignment.
+So we might as well find the, the strongest satisfying
+assignment as it were.
+So make everything true.
+That can be true.
+Okay.
+Okay.
+Pseudocode.
+We all love pseudocode.
+, this is not Haskell.
+is it?
+Because it says do things set atoms to make all
+literals true.
+Make one little clause true and simplify.
+So if we were teaching you something Java or
+Python or whatever.
+Then this would be the kind of pseudocode that you
+could then refine into a function or procedure, calling some
+other procedures to do some stuff.
+But your programming in Haskell.
+So you have to think about how to turn an
+algorithm into a nice pure piece of functional code.
+Not actually very difficult.
+So you should think about it.
+The code is available or will be available.
+Let's just step through the pseudocode and see what it
+says, and verify that it matches what I've described to
+you on the example.
+So I look at my formula and then I say
+are the literals in it consistent.
+So this is an optimisation I look at the formula
+at the beginning and I say, is it the case
+that every formula, every literal occurs only positively or only
+negatively?
+If that's fine, then I can just make everything true.
+Otherwise, do I have something?
+An empty clause.
+So remember, an empty clause means false.
+An empty formula means true.
+An empty clause is false.
+That's what happens when I've struck out everything on the
+right hand side.
+If there's an empty clause, then I'm trying to prove
+false, which I can't.
+So we've failed.
+We return.
+Fail.
+Otherwise, look for a clause that has one literal in
+it.
+Now, on the previous thing I said, choose a literal
+and recurse, but this is going to optimise the recursion
+a bit.
+So let's look at every clause that has just one
+literal in it and make it true.
+And then do simplification.
+And then we do the same thing with these pure
+literals.
+The literals that only occur one way round.
+Look for all of them, make them true, and do
+the simplification.
+And hopefully in many cases that's going to shorten the
+formula quite a lot, which is going to make the
+recursion terminate faster.
+Then we choose some remaining atom a, b, c, d,
+whatever.
+And this is where the recursion happens.
+We set a true.
+Simplify the result.
+Apply ourselves recursively.
+And if we get an answer, great.
+If we don't get an answer, then we try making
+that variable false.
+Simplify the formula and call ourselves on the result.
+And if that returns an answer, great, we will return
+that.
+If it returns fail, then we failed because we have
+no more options to try for that atom.
+So as an algorithm goes, in some ways it's very
+short and simple because it's describable on one page.
+On the other hand, it's a recursive algorithm which is
+one page long, which in other ways is a little
+complex compared to the toy functions you program earlier.
+So I think it's a nice thing to look at,
+convert it into Haskell.
+So you will be doing that.
+How long do we have?
+I have 20 minutes to talk about Sudoku.
+Right before we go on to talk about the application,
+which is the subject matter of the tutorial.
+So this is a CL tutorial with quite a lot
+of coding in it.
+The optional bits can get quite long, so think carefully
+about whether you want to spend the time on those.
+And the challenge bits are definitely too long, too long
+for me to try.
+Anyway, before we go on and talk about what we
+might do with such an algorithm.
+Are there any questions here and now about what the
+algorithm does?
+Okay, so let me move on to an application.
+So as I say, the code is in the book,
+but try to write your own first.
+It's instructive.
+This is an application which is not one I would
+chosen because I can't do Sudoku.
+Now you might say, because I can't do Sudoku.
+I would want to have a computer do them for
+me.
+But then that defeats the point.
+, do you young people still do Sudoku?
+Looks the usual suspects, doesn't it?
+.
+Kind of puzzle I've never been any good at.
+, so it used to be a popular puzzle game.
+, I think the people who used to do Sudoku
+now spend a lot of their time doing Wordle instead,
+which I understand the point of even less because it's
+less intellectual.
+How many of you do know what Sudoku is, even
+if you don't do it?
+Not everybody.
+Okay, so I have to explain it.
+So the way it works is you're given a grid
+of squares, which is nine by nine, and it's subdivided
+into three bigger squares or sub grids.
+And the idea is to fill this thing with digits
+1 to 9, subject to constraints.
+So you start off being given a partially blank layout
+with some of the numbers filled in.
+And your task is to fill in the numbers.
+Fill in the blanks so that every row contains all
+nine digits.
+Every column contains all nine digits, and every three by
+three square contains all nine digits.
+Well, as long as the projector works, it doesn't matter,
+right?
+We're happy.
+At least until the alarm goes off.
+.
+So it's a completion game.
+Does it matter that we're using digits 1 to 9?
+Am I assuming any numerical properties of the digits 1
+to 9?
+No.
+Okay, so the digits 1 to 9 are a distraction.
+I could use any nine distinct symbols.
+Let me reset the lights because I don't this
+bright light at the front.
+I press the wrong button as I did before.
+Then it resets.
+How do I switch the lights off and on again?
+Okay.
+Okay, so the objective with Sudoku is to Sudoku is
+to fill in the grid such that there are different
+symbols in every row, column, and sub grid.
+It turns out that how difficult this is varies a
+great deal on the starting grid.
+And the people who specialise in setting these puzzles have
+techniques.
+Of.
+Making puzzles that are hard, very hard, almost impossible, and
+possibly occasionally accidentally impossible.
+So it might be a surprise to you that we
+can turn this into something that can be solved by
+DHFL, because that means we're going to turn it into
+a boolean propositional formula.
+Is it obvious to anybody how we can turn Sudoku
+into a Boolean propositional formula?
+Okay.
+It's a technique that once you've seen, you can apply
+to almost anything because it's a it's a very brain
+dead technique, but it's a very powerful technique.
+Remember, right at the beginning of the course, I waffled
+on about binary digits and encodings and so on.
+And the point about that was that everything can be
+reduced to binary encodings.
+And what are true and false?
+They are binary values.
+So this is another instance of turning what looks
+a complex structured system into a bunch of binary questions.
+It's just a rather a lot of questions that we're
+going to have to write down.
+, if you try to solve this question, this is
+one solution to the puzzle.
+And incidentally, I didn't use dplyr to solve it because
+then I would have had to copy and paste it
+in and that would have been a pain.
+These slides are written in latex.
+There's a LaTeX package for typesetting Sudoku puzzles, and incidentally
+includes something to solve Sudoku puzzles as well.
+And if you have any idea of what LaTeX is,
+you should think this is an insane thing to do.
+It is an insane thing to do.
+It's a thousand lines of code that is supposed to
+do typesetting.
+I went to the trouble of trying to work out
+what it was doing, and I can guarantee it is
+not doing well.
+I don't know what it is doing, but.
+So how do we express the Sudoku problem in pure
+logic?
+What we do is reduce it to a bunch of
+statements about what's in a particular cell.
+So remember, what we have is nine by nine grid
+of cells and some symbols to put in them.
+So the basic atomic statement is the cell in row
+seven.
+Column one has the digit four in it.
+So I'm going to cheat quite a lot in this.
+I'm going to say I have an atom.
+So this atom has the form f I jn where
+I jn digits 1 to 9.
+So I have a digit F714, which means the cell
+in row seven, column four has a four in it.
+The notation is a little tricky here, because when I
+write this, I mean there is a separate atom for
+every value of IJN.
+So there's an atom f one, two, three.
+There's an atom one, F111, there's an atom f four,
+seven one, and so on and so on.
+Lots and lots of atoms.
+And this is why boolean formulas get very big when
+you're actually encoding real problems the timetable exam timetabling
+problem into things that you can use a satisfying assignment
+finder for.
+, subscripts are a bit hard to read, so just
+to make the whole thing more readable, I'm going to
+write it as f brackets IJN.
+But remember this is a single symbol.
+I don't mean a function a predicate f applied to
+IJN, I mean a single symbol that just happens to
+be called f three, two, one or whatever.
+And then what I'm going to do is dream up
+some formulae which describe the Sudoku puzzle and the initial
+values that you get.
+And then I'm going to say, if I put all
+these formulas together in one huge and I've described the
+rules of the game, and then we're looking for values
+of the formula which describe how the cells are filled
+with digits in order to make the thing work.
+So you see, I've got two slides left, but they're
+quite complex slides.
+So ten minutes is probably about right.
+So convention whenever I write down an index ij
+or N then it's going to range over 1 to
+9 unless it says otherwise.
+So what do we need to write down?
+What's one property of a Sudoku puzzle that has to
+be true of a good solution?
+There are many properties, but what's one very, very basic
+one?
+Yeah.
+So rows have to have everything.
+But there's something even simpler that we don't even think
+about as humans.
+Remember my atoms are saying cell three four has four
+in it.
+Things that.
+, yeah.
+So the cells have to come from the numbers 1
+to 9.
+So we have to say there is a number in
+it, but there's something even simpler that we need to
+say.
+Yeah.
+We can't put two numbers in the same cell, so
+that's obvious to us.
+But when we try to tell a computer to solve
+it, we have to tell it the obvious things to.
+So this formula is a huge and of a bunch
+of things.
+And it's a very ugly way of saying no cell
+has two values in it.
+So what's going on here?
+It's a big and over I and J.
+So that's the rows and columns of the cell.
+And then for each I and j I'm saying it
+is not the case that I have digit n in
+the cell.
+And I have digit n prime in the cell.
+For any value of n prime that is different from
+n.
+This is very ugly, right?
+It's considering every possibility of double the fillings, double filling
+the cell and saying they don't happen.
+And this is why the formulae get very big.
+And this is why solvers have to be fast.
+Because Boolean encoding is painful.
+, now that's a basic thing, which as humans we
+take for granted.
+But computers don't take anything for granted.
+And now I have to turn it into CNF.
+How do I turn it into CNF?
+Well, if I look at this, this is a not
+of an and so I can push the knot inside
+by using the Morgan's laws.
+And now I have a nice CNF formula, a big
+and of an each clause being an or so.
+Either F is not filled with n or F, either
+the cell doesn't have n or the cell doesn't have
+n primed.
+So slightly contorted way of putting it.
+But that's how one has to think.
+So that was the basic.
+This is the thing that we think of as the
+most basic property of the Ro.
+Every Ro has to have every digit in it.
+Every Ro has each digit.
+This looks a for all.
+And this looks a very exists.
+I'm sorry I know this looks a for all
+as well.
+, but what does it actually look when we
+think about it?
+What it really says is that in every row there
+is a column which has each digit in it.
+So when we try to express that in terms of
+ands and ors, we can do it this.
+For every ro I and every digit n, there is
+a column j such that cell I j has n
+in it.
+So remember the match between and and for all and
+or and there exists for every in there exists a
+J such that cell ej has an n in it,
+so every row has every digit in some column.
+And then we also have to say that every column.
+So now we.
+Have.
+For every column J and every digit n, there is
+a row I such that cell IJN has a digit
+in it.
+, then we have a rather messier one because we
+have to talk about the sub grids.
+Let's flip back to the sub grids.
+These are squares in a big square, and there isn't
+an easy way to talk about them.
+But we don't need an easy way.
+We just need a way that works.
+So there's a lot of brute force formula writing here.
+This is the worst formula.
+And by the way you're going to program this.
+And this is the one where people who get it
+wrong Get it wrong.
+So be warned.
+This is the one you will need to pay attention
+to.
+There are many ways of writing it down.
+You can use 0 to 3 or 0 to 2.
+Let me explain this one when you do it.
+Think very hard about whether you're starting from 0 or
+1, and whether you're adding three or whatever.
+What on earth is this mess saying?
+Well, it's a big and of AWS what's happening in
+the big?
+And I've got a variable A, which is ranging from
+0 to 2, and I've got a variable B, which
+is ranging from 0 to 2.
+These are my ways of describing the individual squares.
+So my A and B here are labelling the big
+squares by.
+Indices starting from zero.
+You might think it's more sensible to use indices starting
+from one.
+It's up to you.
+Just make sure you're consistent.
+But I chose to use a for big square row
+1012 and B for big square column 012.
+So that's saying for every big square the cells in
+that square have every digit in them.
+So what's going on here.
+I've got every digit brought into a big and here.
+So it might actually be easier if you viewed the
+formula as an and of the A and the B
+stuff and an and of the N stuff.
+But we can bring hands together.
+So the inside bit is saying if I let I.
+So this is my row in the whole diagram range
+between Three.
+Square number one and three.
+Square number plus three.
+So in my row big row zero that covers little
+rows one, two and three.
+So this inequality here is describing rows one, two and
+three.
+And for my big row labelled one it's describing rows
+four, five and six.
+Similarly J is ranging over the columns that are in
+the big square.
+And then I'm saying the digit n occurs in one
+of those.
+So the principle is exactly the same as the rows
+and columns.
+It's just the way of describing the squares you're talking
+about is a bit messy.
+.
+Is that enough?
+No.
+What else do I need?
+Yeah.
+Gosh.
+.
+So.
+I have to say that every digit occurs at least
+once.
+Now.
+Do I need to say that every digit occurs at
+least once?
+Because if I have a row with nine cells in
+it and each digit occurs in it, then each digit
+must occur exactly once.
+Right.
+, so I can't have the same digit twice in
+a row, because then I wouldn't be able to have
+every digit in the row.
+Yeah.
+Sorry.
+But we ban double filled at the beginning.
+So this this is actually enough.
+So this is enough to describe a valid solution to
+Sudoku.
+.
+Now, I just said that we don't need to say,
+say that we can't have the same digit twice.
+Because if we have a solution, then it follows that
+the same digit doesn't occur twice as if we had
+one and one in a row, then we would be
+missing some other digit.
+But it turns out, and you will do this in
+the optional part of the tutorial if you have time.
+It turns out that it's useful to add these rules
+when you're actually implementing this stuff.
+So what else do we need?
+We have a description of what a good solution must
+be.
+This formula describes a good solution, except we still have
+to specify what the original starting position of the puzzle
+is.
+Well, there we just take the atoms that describe it.
+So if we had a four in row three one
+then our starting Position has the atom f4.
+Whatever I said f3 one four in it.
+So this is kind of setting you up for the
+tutorial work.
+It's quite a lot.
+So you've got a new algorithm and you've got this
+quite complex encoding.
+It is all in the book and it's also described
+in some detail in the tutorial exercise.
+So have fun.
+You have a bit more time than you would normally
+have to do it, because we're one lecture ahead.
+And don't forget to come to John Hughes lecture tomorrow,
+especially with people who aren't here right now.
+Okay.
