@@ -1,0 +1,1036 @@
+Oh my God.
+Okay, let's get started.
+, today we're going to talk about categories, and, .
+Can you hear me?
+Okay.
+Sorry, I have a bit of a cold.
+, so we're going to start talking about categories.
+So categories are language adjacent.
+So we're no longer really within the domain of language.
+But , as you will see, , category categories concepts
+are a bit words but more abstract.
+And but before we start with that, I owe you
+a little bit of material from the last lecture.
+So let's look at that briefly.
+Last time we looked at vector semantics and how you
+could represent the meaning of of words using what's been
+called context vectors or word embeddings.
+So these are basically vectors of numbers that represent the
+context in which a word can occur.
+And we've looked at one particular model which is sort
+of a classic model, a simple model that was proposed
+about ten years ago for computing these word embeddings called
+word to vec.
+And the idea is we take a vocabulary.
+So here for example, these are names of of cities
+and countries.
+And we represent the vocabulary as a set of what's
+called one hot vectors.
+So as you can see these are vectors that are
+zero everywhere except in one place.
+So if the first element of the vector is the
+one, then that represents Rome.
+If the second one is one that represents Paris, and
+so on.
+So if we have a vocabulary size V, then we
+can have.
+We can represent v words using this one hot representation.
+And we use this one hot representation in as part
+of a simple neural network.
+This is the architecture here.
+So we have our words represented as one hot vectors
+for the input layer.
+And this is the context in which the word occurs
+that we're interested in modelling.
+So here x1 x2 up to xk are the context
+words.
+They're all represented using this one hot representation.
+Then we have a hidden layer which is much much
+smaller in terms of its dimensions.
+So let's say the input layer, each one hot vector
+has 10,000 dimensions.
+It can be more 100,000 million dimensions depending on how
+many words we want to capture.
+The hidden layer will just have a few hundred dimensions.
+And then we have the output layer, which is again
+a one hot representation.
+But now the output word.
+So these are context words.
+And this is the word that we would to
+predict.
+So we can train a network this using backpropagation
+in the standard way.
+And we can do this quite easily if we have
+a large amount of text.
+Because in a text and we've seen an example here,
+we can just take the words we're interested in here
+learn, discover and so on and then the context around
+it.
+So here the task is to take the context words
+initial understanding two meaning the off and so on and
+predict the target word.
+And this is what we're training the the model to
+do.
+And if you train it for long enough, and in
+particular if you use enough training data, then you get
+representations which you can just read off this hidden layer
+here.
+So the representation of the context word w is the
+activation of the hidden layer here.
+And so this hidden layer representation is much more dense.
+It's not one hot.
+It's a dense vector, and it's much more lower dimensional.
+And each word can be associated with a representation
+this a word embedding.
+And these word embeddings then you can compare them using
+cosine using distance.
+Or you can also do some arithmetic on it.
+You can subtract and add them.
+And we've seen some fun examples these where you
+can take the vector for Paris, subtract the vector for
+France and add the vector of Italy.
+And then you find the nearest token, the nearest other
+word with cosine.
+And that is Rome.
+And so on.
+So you can you can solve simple reasoning problems
+that using these word vectors.
+You can do a lot of other stuff, but we
+are interested in cognitive applications in particular.
+So let's assume we have induced these these word vectors
+for large vocabulary.
+What can we do with that.
+So one thing we can do is model lexical processes.
+Semantic priming is one of these processes.
+So that's a classic task in psycholinguistics.
+And you use a lexical decision task, which is a
+task where people see a word.
+And then they have to decide, is this an actual
+word of English or is it.
+Is it a non-word?
+And so in this experiment by Tille and colleagues, they
+showed people a context such as this.
+The gardener pulled the hose around the holes in the
+yard.
+Perhaps the water would solve this problem with a mole.
+And then you give the participants various words to react
+to, to do lexical decision on ground, for example, face
+drawn cancer.
+And what you would find is that the words that
+are related to the context.
+So mole is ambiguous, right?
+Mole can be a skin abnormality, or it can be
+a small rodent.
+And in this context, of course it's a small rodent.
+And so related to that would be ground and drown
+but not face and cancer.
+So that means ground and ground would give you shorter
+reaction times than face and cancer.
+But if you change the context the patient sends sensed
+that this was not a routine visit.
+The doctor hinted that there was a reason to remove
+the mole.
+So now this is no longer related to ground, but
+it's related to face, not related to drone, but related
+to cancer.
+So and now we can use our word representation to
+try to model this behaviour.
+We can simply look at distances right.
+So the vector for mole would incorporate both meanings right.
+The rodent meaning and the skin meaning.
+But if we look at the context vector.
+So for example we take the vectors of all the
+words in the context.
+We could average those for example.
+And then we see whether that's closer to ground face
+drawn on cancer.
+, and so, , if there's a larger cosine between
+the ambiguous word and the related works compared to control
+and the vector average of those context, words should have
+a higher cosine with the semantically congruent words, the words
+that correspond to the same meaning.
+And that's what what you find.
+So, , this is the, , the doctor, , skin
+lesion context.
+And there this is the cosine between that context and
+ground face down in cancer.
+And you get a higher cosine for face and for
+cancer.
+And then if you swap this for the other context,
+then the effect is reversed.
+And you would get a higher cosine for ground and
+drown.
+Right.
+So if you take the first context here.
+So this is a way of modelling the relatedness of
+words.
+In particular, it deals with the fact that words can
+be ambiguous, and then the context can tell you which
+which meaning is the correct one.
+So this is something that people have done.
+Another application would be to capture, for example, a synonym
+task.
+So this is from the Tufnell test, a test of
+English as a foreign language.
+And that test contains questions this.
+You will find the office at the main intersection and
+then choose the synonym right place, crossroads roundabout building and
+what you can do here.
+You can just take the vector of intersection, the word
+embedding of intersection.
+And compared to the embedding for place, for crossroads, for
+roundabout and for building.
+And presumably the synonym is most similar.
+Right.
+It's a synonym of intersection will be most similar to
+intersection itself.
+So you can just take the cosine between intersection and
+place between intersection crossroads, and so on.
+And in this case, crossroads is the closest word embedding
+out of those four.
+And using this simple method you can get 80% correct
+on the on the synonym task.
+And this was before LMS were even invented.
+Right.
+So LMS can do this task of course as well.
+But this is a much, much simpler model that just
+uses lexical vectors.
+And.
+Yeah.
+So the , you get about 80% correct.
+, the average of the test takers is about 65%.
+And here's a paper that, , that explained this explains
+this in more detail.
+Okay.
+, so we have a way of representing words which
+we can we can build these representations just from raw
+text.
+We don't need to engineer complicated rules or, , ,
+do a lot of, , complicated probabilities or counting anything
+that.
+So this is really something that, , who strength it
+is that it is very simple and it can work
+with large amounts of data.
+That's really where the, , the representational power comes from.
+You saw the models.
+The model is really simple.
+And, , of course, in subsequent work, people have developed
+more complicated word embedding models.
+But the idea is, is really the same.
+You try to model the context in which a word
+occurs and you're predicting the word or the context.
+In fact, you can do you can do it in
+either direction.
+, there's limitations as, as we quickly mentioned last time.
+So you don't have different word senses, right?
+The two different senses of mould, it's the same vector.
+There's no way of distinguishing it.
+, you don't really have a representation for word order.
+So these two sentences.
+They mean the same for the word vectors.
+Because, you know, if you add vectors or , the
+the context is not ordered in the model.
+Right.
+Here we just have an average essentially.
+Right.
+Because it's a weighted sum , in the model.
+So these context words, when we compute the hidden layer
+it's just the sum of the inputs.
+Right.
+So the order doesn't matter if you're some things.
+So we have no easy way of representing word
+order.
+And again this is something that people have later tried
+to solve.
+There's something called position embeddings, which is used in all
+the more modern language models, , to try to deal
+with this problem of, , the order of the words
+not being represented.
+Okay.
+So, , let's now move from words to categories.
+So we talk about conceptual categories.
+What's the difference.
+And then we look at two main theories of categorisation.
+One of them is the classical theory which is the
+feature based account and similarity based accounts.
+These are actually quite similar to the embeddings we just
+seen.
+We've just seen because they represent the categories as something
+vectors, vectors of features or vectors of properties, but
+they also use a notion of similarity.
+So they're cognate in terms of the concepts that you're
+using with the word embeddings.
+And then we talk a little bit about potential problems.
+Okay.
+So we've discussed words starting with the lexicon and word
+segmentation finding the boundaries in the speech speed stream using
+things minimum description length to to figure out how
+to divide the speed stream into words in a lexicon,
+which which words to assume, and how this relates to
+the boundaries.
+We've looked at probabilities as a way of finding the
+boundaries.
+Then we've looked at word learning in the sense of
+finding the reference of of a word.
+So what does the word dog mean?
+If we learn a new word ducks, what does
+that mean?
+And so on.
+So what are the mechanisms there?
+We've seen a set of biases for word learning.
+And then last time we looked at word semantics at
+the vector based representations of of words.
+So categories which is what we're going to talk about
+today are more abstract than words.
+And we will see how.
+They can include simple classes of objects.
+For example dog right.
+Without words, you don't refer to an individual dog.
+It's a set of possible objects that share certain properties.
+Can be abstract categories, things even number or prime
+number or power of two, which we cannot easily define
+in terms of just a set of things that we
+have been exposed to.
+There's obviously an infinite number of prime numbers or more
+complicated abstract concepts democracy, rectitude or something that.
+So children are able to acquire categories roughly at the
+same time when they're acquiring language.
+So they and this is an interesting process in the
+sense that it's not directly dependent on language.
+Right.
+Children in different countries, different cultures, they learn different languages,
+but they end up roughly with the same set of
+categories.
+So how do how does category development work.
+And in particular, how do we figure out whether something
+belongs to a particular category?
+So first let's try to define categories or concepts.
+So we will look at the function of concepts.
+We look at how people categorise things put them into
+into categories and how these concepts or categories are represented.
+You're already wondering perhaps why I sometimes say categories, sometimes
+say concepts.
+I will use the two terms as synonyms.
+In the literature, there's sometimes a distinction in that categories
+are more concrete things cats and dogs and tables.
+Whereas concepts are more abstract things even number or
+democracy.
+Okay.
+But for the purposes of this lecture, we don't really
+need to make a distinction between categories and concepts.
+So a concept is a class of objects or events
+or things that somehow belong together and are put into
+a set or a class or a and or a
+category.
+Okay.
+So we can just think of them as sets.
+And the process of taking an individual object, sometimes called
+an exemplar, and deciding which concept it belongs to.
+So this is Fido, which is my pet at home
+and belongs to the category dog.
+That process is called categorisation.
+Categorisation.
+Okay, so why?
+Why is this useful?
+Why categorise things?
+So first of all, cognitive economy right.
+We don't need to talk about individual domestic animals, individual
+Fido's or whatever the dog is called.
+We can generalise.
+We can say in general a dog is a certain
+size, has fur bags.
+Certain properties are shared among all members of the category.
+That makes it more efficient.
+Decreases the amount of information we need to process.
+We can also make perception more efficient because there are
+certain features that are distinctive.
+For example, I don't know barking is is that's typical
+of dogs, but having fur is you know, cats have
+that too.
+Lots of other animals have fur.
+So it makes things easier to perceive, to learn, to
+remember, to recognise, and so on.
+It also allows us to make predictions.
+Right.
+So you go to a friend's house and you see
+an animal.
+It looks a dog.
+Never seen the animal before, but if you categorise it
+as a dog, then you know roughly what kind of
+behaviour to expect.
+For example.
+Okay.
+So you can make predictions.
+Communication categories are important.
+If I say dog, it's very likely that most of
+you will mean something very similar because you have the
+same category.
+It's independent of the of which language you speak and
+so on.
+So they help us communicate as well.
+Here's an example.
+So Roche, who's one of the founders of of the
+categorisation literature.
+So she has a following quote one wishes to gain
+from one's categories is a is a great deal of
+information about the environment while conserving finite resources as much
+as possible.
+Right.
+So you don't want to do a lot of processing
+or use a lot of memory.
+It's an abstraction, an abbreviation that makes things more efficient.
+Okay.
+Let's look at the category cat.
+And so if I recognise this animal as a cat
+then I automatically know a lot of things about it.
+Catches mice, likes milk, fish, , likes to rub up
+against people and objects.
+It's a feline in terms of taxonomy related to tigers
+and lions, is said to have nine lives in folklore.
+Sleeps a lot.
+Night active.
+Has whiskers.
+I know things about the behaviour.
+It's difficult to train normally.
+In contrast to dogs, for example, catches mice.
+That's also part of the behaviour and so on.
+So all of this is somehow included in the category
+cat.
+Plus physical properties of course.
+Right.
+It is a certain size, typically has fur.
+it has sharp teeth and so on.
+These physical properties of course, but it goes way beyond
+that.
+So and let's assume it's a new category, right.
+At some point a child has not encountered any cats
+before, but then they encounter a few cats and they're
+able to abstract and generalise and come up with a
+category cat.
+And that's more economical Then, remembering the features of all
+the cards that the child has seen.
+And there can be exceptions, of course.
+Right.
+So the category bird, for example, normally includes the bird
+can fly, but of course there's flightless birds, I don't
+know, penguins and ostriches and so on.
+So the occasional exception doesn't seem to prevent us from
+making this categorisation decision.
+Okay, so we don't have to track all the features
+separately.
+And this leads us to the classical theory of categorisation.
+And this theory is not really a theory that people
+still adhere to.
+But it's important to see why it doesn't work, because
+that explains why the other theories of categorisation are preferred.
+Okay, so this literally goes back to Aristotle.
+One of his books is called categories.
+And he had the idea that categories are just a
+list of features, essentially.
+So.
+These features need to be necessary and jointly sufficient.
+So that means an object to be part of the
+category has to have these necessary features.
+And altogether the necessary features are enough to define the
+category right.
+You don't need any other features.
+So it's a complete set.
+And then you have a very simple theory of categorisation.
+Learning amounts to figuring out what the features are, and
+then assigning an object to a category amounts to just
+checking the features.
+So for Cat it's mice, has fur, sharp teeth and
+so on.
+You check the lists, the list, and then you decide
+that this is a cat rather than a dog.
+So simple.
+It looks something this.
+Teacup is a concrete object, has a concave shape, can
+hold liquids, has a handle, and it's typically used for
+hot drinks or hot liquids.
+So.
+And these all need to be necessary features.
+So that means an object has to have all these
+features in order to be a teacup.
+And they have to be jointly sufficient.
+So all of these features together define the teacup and
+nothing more is required.
+So let's see does this actually work?
+Here's a short quiz.
+So if you haven't scanned the QR code take a
+moment to do that.
+And I'm.
+.
+Okay, a few more participants.
+Okay.
+So quick exercise.
+We talked about the Aristotelian theory that says you have
+to have a set of necessary and jointly sufficient features.
+So which of the following do you think is a
+necessary feature of the category cat.
+So necessary means if it doesn't have this feature it's
+not a cat.
+Thank you.
+Oh, yes.
+Thank.
+You.
+Thank you.
+Well, I guess you could.
+Say that last.
+Time.
+I would say that I woke up.
+that.
+Okay, let's see what people thought.
+These are the results.
+So there isn't really a very clear picture.
+First feature is small domestic animal.
+, so depends a little bit on whether you focus
+on the small.
+I mean, all cats I think, have to be small.
+Unless, you know, they're not domestic cats, but lions or
+something that.
+But do they have to be domestic?
+What about a wild cat?
+What about a stray cat?
+So maybe sharp claws?
+Well, in theory.
+But what about cats?
+You know, who, , have lost their claws or their
+claws have become.
+, they're no longer sharp.
+Maybe it's a very old cat.
+, it's still a cat, right?
+Fur coat?
+Well, yes.
+Maybe the typical cat has a fur coat, but there
+is naked cat breeds as well, so these don't have
+any fur or have very little fur.
+Long tail.
+Sure, many cats have long tails, but you could imagine
+a cat that has lost its tail and still a
+cat Ruff tongue.
+Probably hard to imagine.
+Cat without ruff tongue.
+Sharp teeth.
+Well, cats are actually quite.
+I used to have a cat.
+Cats are quite common.
+It's quite common that they get gum disease and then
+they can lose their teeth.
+So that's very sad.
+But then there's still cats.
+Right.
+So, , what I, what I'm trying to show here
+is that, yes, these are all very reasonable features, but
+are there are they necessary?
+Perhaps not.
+Right.
+So a cat that happens to lose its tail or
+its teeth is still a cat.
+And so there's something at odds with this, with this
+theory here.
+, so let's go back and look at alternatives.
+Yeah.
+So, , the, the classical theory implies certain things.
+So all members of the are equally good, all members
+of the category are equally good, and the category boundaries
+are really inflexible.
+So in the sense that if this cat doesn't happen
+to have a tail, then it's no longer a cat.
+According to this theory, right.
+If cat is an if tail is a necessary feature,
+on the other hand, it's quite intuitive.
+It's very economical.
+You just write down the features and you check the
+features.
+Easy to talk about.
+And in fact, if you look at definitions then they
+often are in terms of features.
+So in in a in a textbook you define a
+certain concept.
+In maths you define I don't know prime number or
+something that.
+Or in a, in a In a dictionary, you define
+a word.
+Often these are in terms of features, so it's easy
+to communicate.
+Easy to check.
+Category membership once you have the definition.
+So it's really hard to find a good set of
+features though that are really necessary or insufficient.
+As we saw, there's borderline cases.
+As I said, the cat that happens to be particularly
+small or happens to be a breed without fur.
+Is that still a cat?
+Maybe we want to include it, but we want to
+say maybe it's not a typical cat.
+And this is actually called topicality effects.
+So if you ask people to describe a cat and
+then we'll describe a typical cat or pick out out
+of a set of pictures, people can pick out the
+most typical exemplar of a category.
+So this is called topicality effects and the definitional theory.
+The Aristotelian theory doesn't have anything to say about that.
+So that's another limitation.
+And then in some cases people can't even agree on
+definitions.
+What is art.
+What is a game?
+What is a teacup even.
+And here, for example, if we go back to our
+teacup definition and we look at properties four and five.
+Well you could imagine a teacup without handles for example
+Chinese or Japanese teacups normally don't have handles.
+, can be used to drink hot liquids.
+Is that really required?
+, also, not having the handle makes it more difficult.
+And but if you get rid of four and five,
+then you just have concrete concave and can hold liquid
+and there's, you know, buckets and balls and there's lots
+of things that meet the definition then.
+So it's no longer a good definition.
+So even even a simple case this you can
+contest some of the properties.
+And The whole approach starts to seem problematic.
+Membership is not always clear cut.
+Is olive a fruit or is it a vegetable?
+Is a poet an animal?
+Well, at some level all people are animals, right?
+So this is strictly true, but it seems very counterintuitive.
+Candlestick is that furniture and so on.
+So it's , people struggle with definitions in those cases.
+And then there's these technicality effects that I've already mentioned.
+And we'll come back to that once we look at
+similarity based theories.
+So typical category.
+So a Robin is a fairly typical bird.
+A dog is a fairly typical mammal.
+Diamond is really a good example of a precious stone
+and so on.
+But how about atypical one?
+An ostrich is not a bird doesn't fly.
+Whale is a mammal, but maybe not a very typical
+one.
+Turquoise is a precious stone, but maybe not as typical
+as a diamond.
+And so on.
+And people actually show slower reaction times for atypical compared
+to typical category members.
+Okay, so that's something that we need to take into
+account in our theory of category membership.
+And yeah, it's you know, if you Google a bit,
+you find a lot of atypical examples.
+Is this a share?
+It's more a chaise longue right.
+Or sofa type thing.
+Is this really a cat?
+Looks a bit a dog.
+Is this really a dog with all this hair and
+a weird shape and so on?
+So there's always atypical category members.
+So people have tried to tweak the classical theory, but
+it's not really something that people advocate anymore.
+So what's the alternative?
+So the alternative are similarity based theories of categorisation.
+And you can think of these as defined in terms
+of.
+Features.
+Just the classical theory.
+But now we don't need to check all the features
+anymore.
+It's enough if if two elements are similar in terms
+of their features.
+Okay.
+So a bit the word vectors we saw a
+moment ago.
+Right.
+, intersection and crossroad.
+, they are synonyms or near synonyms.
+So they have similar vectors.
+And here we are assuming that the members of the
+category have similar vectors.
+And we'll see how we can make this precise in
+a moment.
+Okay.
+So we no longer need to meet all the all
+the elements of the definition.
+So and this is.
+Can be illustrated.
+And I don't think Wittgenstein invented this, but he came
+up with some nice examples.
+So the elements of a category or concept are similar,
+and they resemble each other members of a family
+resemble each other.
+So this is the Wittgenstein family.
+This, I think, is the great man himself.
+And this is a composite.
+The pictures of the family members superimposed on each other.
+And the result is someone who looks a typical
+member of the family.
+But it doesn't look any one member.
+Okay.
+And so this is an analogous analogy that he suggests
+for categories.
+Right.
+The members of the category, they're all similar to each
+other.
+And you can average them and get a prototypical member.
+But they're not.
+There's no simple definitional rule to say whether something is
+within the category or not.
+Okay, so this is just a motivating example.
+There is actually a theory that's based on this.
+It's called prototype theory.
+And it says that categories are organised around a category
+prototype, which is a summary of of the elements of
+the individual representation, a bit the average family member
+here.
+And so you have different words.
+And you would have one particular representation which is sort
+of an abstract, very typical bird.
+And that's the prototype.
+And then categories become a bit a bit fuzzy right.
+Because you can if you have a new member you
+can see is it close to the prototype or not?
+But it might be close to several prototypes, right?
+So there might be in between the category in between
+two categories.
+And the membership is meant to be similarity based.
+So you would say that this bird is clearly very
+similar to the prototype.
+That's a bit less similar but still quite similar.
+This one is sort of small and and and pudgy,
+but still similar to the prototype, whereas an ostrich would
+be less similar, or a penguin would be even less
+similar, and so on.
+Right.
+So now you have a notion a of topicality.
+The prototype is the most typical category member.
+And you have a notion of how good a category
+member you are, how close you are to the prototype.
+And you get these fuzzy fuzzy boundaries, right.
+So is this a cup or a ball?
+It could be both.
+And in the prototype theory you could say, well, it's
+0.75 a ball and 0.25 a cup, right?
+Because you have the prototype for cup prototype football.
+And then this is somewhere in between and maybe a
+bit closer to ball.
+All right.
+So you you get this for free that the boundaries
+are no longer clear.
+They're fuzzy.
+And something can be a mix of multiple categories.
+And you can express whether it's typical or close to
+the prototype.
+So now we can explain prototype quality sorry, topicality effects
+and borderline cases.
+It's also economical right.
+So you compute this prototype just by averaging right.
+This gives us a theory of learning as well.
+I encounter lots and lots of words and I just
+average the the representations for each of these birds and
+the average I can Continuously update the average.
+The average is my prototype, and so I have a
+simple way of representing the the category.
+, , problem is that sometimes averages and and summaries
+are ill defined or bad.
+I mean, I can average the pictures of birds, for
+example, but, , for, for numbers, for example, this wouldn't
+really work very well.
+Right.
+So, , the prototypical prime number, I don't know, maybe
+five is a prototypical prime number, but it's certainly not
+the average of all prime numbers that wouldn't work.
+Right.
+Or for concepts.
+, democracy, I don't know, is this concept the average
+of the properties of all democratic countries.
+So yeah, it might work quite well for concrete things,
+but for abstract things numbers and abstract concepts probably
+doesn't work as well.
+, and, , it also imposes strong restrictions on learnability.
+Right?
+Because only if I can build these prototypes, a category
+is learnable.
+And that might be too restrictive.
+So people have come up with an alternative.
+It's another similarity based theory.
+And it's based on, , not it doesn't use a
+prototype basically.
+So, , and this is called exemplar theory.
+So it essentially means instead of building a prototype and
+averaging, whenever you encounter an element of your category, you
+just store it.
+And so you have cats and dogs.
+You store all instances of cats and dogs that you've
+you've ever seen.
+And then you have a new animal here, this one
+in the middle, and you just compute the similarity to
+all the cats and all the dogs.
+And if it's on average closer to cat here, black
+is the cats compared to closer to dog here red
+are the dogs.
+Then you classify this as a cat.
+Okay.
+So it, , it does away with the prototype.
+It assumes you store all the exemplars, and then you
+just check the existing exemplars, which, you know, the category
+of.
+And you, you output the one that you're closest to
+on average.
+Right.
+Average distance to all the cats.
+Average distance to all the dogs.
+And then based on this this is a cat because
+the average distance to all the cats is lower okay.
+And here's a an algorithm.
+So you have a list of all previous, , exemplars.
+Us.
+And now you want to classify a new exemplar.
+So you retrieve all the cats you've encountered.
+I retrieve the memories of all known cats.
+Memory of a dog, memory of stuffed animals, memory of
+a raccoon, and so on.
+And then you compute the total similarity or average similarity
+of the positive and negative exemplars.
+And then this is a cat.
+If it is more similar to the cat exemplars than
+the non cat exemplars okay.
+And this is actually , in machine learning this is
+called classification.
+In case you've you've seen this before.
+This is exactly the same idea has been invented independently
+in machine learning or maybe not independently I don't know.
+So and but I keep talking about similarities.
+How do I compare to cats?
+Right.
+So I have to encode the cats in some way,
+for example as a vector of features.
+And then I can compute the similarity.
+I can do cosine similarity or I can just count
+how many features are the same.
+, cosine similarity as we've seen in the previous lecture
+would be an example.
+So this is all a bit abstract.
+So I think it will help to look at an
+example.
+And let's do this now.
+Okay.
+So this is a really simple example.
+We have a new animal.
+Rex can be either a cat or a dog.
+And, , I give you a set of features.
+So the size is four.
+It has fur.
+So fur equals.
+Yes.
+CSS Carnival equals null.
+So it's only those three features.
+And is Rex a cat or a dog?
+Based on exemplar theory.
+And these are my exemplars.
+Only for exemplars.
+Fido.
+Category.
+Dog.
+Size five.
+Fur.
+Yes.
+Carnivore.
+Yes.
+Max.
+Category.
+Dog size 2.5.
+For.
+Yes.
+Carnivore.
+Yes.
+And so on.
+So what I need to do now is to compare
+Rex to each of these exemplars.
+And measure the distance.
+And here we're just going to assume distance is the
+number of features that are different right.
+So or similarity is the number of features that are
+the same.
+So for example if we compare Rex and Fido size
+is five.
+Size is four.
+So that's different.
+For yes for yes that's the same carnivore.
+Yes.
+No.
+So distance would be two right.
+Because two out of three features are different.
+Then we do the same for all the four categories,
+and then we classify Rex as the category that it
+is closest to.
+Right.
+That the similarity is highest.
+Okay.
+So you take a moment to try to work this
+out.
+Sometimes.
+I said.
+That I don't know if you guys.
+You know.
+I.
+Just want to be able.
+To do.
+Something.
+I love it.
+Okay, let's see what people think.
+Okay.
+So.
+Let's go through each of the exemplars.
+So, , this has a similarity of two.
+No.
+Sorry.
+One.
+, this has a similarity of, , one as well,
+because, size is different.
+First, the same carnival is different.
+This has a similarity of one.
+No.
+Carnival?
+No.
+For yes of one.
+And this has a similarity of.
+So this is the closest right.
+Two out of three.
+But if you take the overall similarity.
+Right.
+Similarity to this card in this card, then this is
+higher than the similarity to this dog and this dog.
+So the correct the correct answer is cat.
+Right.
+So this is the most similar one.
+But we're looking to the we're looking at the overall
+similarity right.
+So we have two cats and two dogs.
+So we can just count how many features are the
+same for the two cats.
+And how many features are the same for the two
+dogs.
+And there's more shared features with the dogs.
+With the cats.
+So Rex is a cat.
+Okay.
+Final question.
+We have looked at this exemplar theory and we've just
+seen an example.
+Right.
+You need to compare to all the exemplars.
+And then you need to see on average.
+Which category are you closest to.
+What are potential problems.
+Here's a list of potential problems.
+So if you have a large number of exemplars then
+this doesn't work very well.
+We can't deal with taxonomic effects how categories are related.
+We need to define features.
+We can't model topicality effects.
+We require a similarity function.
+We can't handle cases where an exemplar is more part
+of more than one category.
+So what do you think?
+Which are possible limitations?
+And we have got to be good to go.
+So.
+Yeah.
+I think it's all right.
+I don't.
+Know.
+What's.
+Going on behind them?
+Okay.
+So what do people think?
+Okay, here's the answer.
+So one problem is large number of exemplars.
+Let's assume, you know, you've seen a lot of dogs,
+maybe hundreds or in case of other things.
+I don't know people.
+You've seen hundreds, maybe thousands, right?
+So it's a very costly computation if you have to
+compare to all the elements of the set of people
+or cats.
+So that's a problem.
+You need to get the features somehow, right.
+Maybe you can learn them in the same as you
+learn word embeddings.
+But that's an open question.
+Topicality effects are difficult to, , to model.
+We know that a certain new object is a cat
+or a dog, but we don't know how typical it
+is for that category.
+That's a difference to the prototype theory, right?
+Where we could just say, is it very similar to
+the prototype or not?
+Here we don't have any prototypes and cases where an
+object is part of more than one category are also
+difficult to handle.
+Okay.
+But.
+Okay, so just to contrast the two similarity based approaches.
+So they're both similarity based but they use similarity in
+a different way.
+Prototype theory assumes that there's a prototype, a kind of
+average, a typical member of the category.
+And then we just need to compute similarity to the
+prototype, so much less computation.
+In exemplar theory, you assume you have stored all the
+exemplars, and then you compute the distance to the individual
+exemplars in a category.
+So there's no abstraction, there's no prototype, there's no topicality.
+There are some evidence that shows that maybe both types
+of theories, there's some truth in it, but they're used
+in different situations.
+For example, you could start by learning a category in
+terms of exemplars.
+But then as you see more and more of them,
+you start to abstract and build prototypes.
+So it could be part of the same process.
+So I have a bit of time in this talk
+to talk about a few a few problems of both
+similarity based approaches, prototype and exemplar based.
+It's sometimes hard to know which properties to compare, right?
+This is a plum and a lawnmower.
+They're both red.
+They both weigh less than a ton.
+They both found on Earth.
+They're both bigger than a grain of sand.
+These are all properties, but maybe not the ones we
+want to compare.
+So how do we figure that out?
+Right.
+We need to be given our features somehow.
+Then there's context effects.
+So if you ask people if Sweden, Poland or Hungary
+is more similar to Austria, then Sweden is more similar
+than Hungary.
+If you ask.
+Sweden, Norway or Hungary?
+Most.
+Sweden, Norway or Hungary.
+More similar to Austria than people say.
+Hungary is more similar than Sweden.
+So these are so-called framing effects and will actually come
+back to these framing effects in the next lecture in
+another context.
+And then there is not just similarity.
+There's things function as well.
+Right.
+So these shoes they look wellies.
+But are they actually wellies right.
+They have an open top.
+So that wouldn't actually be very useful in a in
+in in rain.
+So do they still count as wellies or is this
+maybe an Aristotelian essential property.
+And if they don't, you know, if they don't keep
+out the water then we don't want to classify them
+that way.
+Okay, I'll skip the last example and we're out of
+time.
+Thank you very much.

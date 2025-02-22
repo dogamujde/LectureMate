@@ -1,0 +1,4996 @@
+WEBVTT
+
+00:00:06.800 --> 00:00:07.120
+<v Speaker 0>Thank.
+
+NOTE CONF {"raw":[98]}
+
+00:00:10.160 --> 00:00:10.320
+<v Speaker 0>You.
+
+NOTE CONF {"raw":[98]}
+
+00:00:11.600 --> 00:00:12.040
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:00:12.040 --> 00:00:13.040
+<v Speaker 1>Welcome, everyone.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:13.400 --> 00:00:16.560
+<v Speaker 1>Um, this is lecture eight and we're going to talk
+
+NOTE CONF {"raw":[52,100,100,100,100,100,100,100,100,100]}
+
+00:00:16.560 --> 00:00:17.920
+<v Speaker 1>about word segmentation.
+
+NOTE CONF {"raw":[100,78,100]}
+
+00:00:17.920 --> 00:00:19.760
+<v Speaker 1>So what is word segmentation.
+
+NOTE CONF {"raw":[100,100,100,86,100]}
+
+00:00:19.760 --> 00:00:23.320
+<v Speaker 1>It's it's essentially the task of taking a speech stream
+
+NOTE CONF {"raw":[70,100,100,100,100,100,100,100,100,100]}
+
+00:00:23.800 --> 00:00:26.640
+<v Speaker 1>and finding the word the word boundaries.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:00:27.000 --> 00:00:29.680
+<v Speaker 1>Finding out where a word ends and where the next
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:29.680 --> 00:00:30.400
+<v Speaker 1>one starts.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:30.880 --> 00:00:33.440
+<v Speaker 1>And that might sound like an easy task, but we'll
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:33.440 --> 00:00:35.960
+<v Speaker 1>see why it's difficult and in which respect it's difficult.
+
+NOTE CONF {"raw":[100,100,100,100,82,96,97,100,100,100]}
+
+00:00:35.960 --> 00:00:39.360
+<v Speaker 1>And also how to how to tackle that task.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:00:39.480 --> 00:00:42.880
+<v Speaker 1>It's obviously a task that also children, when they acquire
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,100,100]}
+
+00:00:42.880 --> 00:00:47.320
+<v Speaker 1>the language needs, need to master because they, they get
+
+NOTE CONF {"raw":[100,100,93,98,100,100,100,100,99,100]}
+
+00:00:47.400 --> 00:00:49.600
+<v Speaker 1>an augmented speech stream.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:49.600 --> 00:00:51.760
+<v Speaker 1>They don't know what the words are, where they start
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:51.760 --> 00:00:52.720
+<v Speaker 1>and end and so on.
+
+NOTE CONF {"raw":[71,100,100,100,100]}
+
+00:00:53.960 --> 00:00:57.040
+<v Speaker 1>Before we get started, very quick announcement.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:00:57.400 --> 00:01:00.130
+<v Speaker 1>Um, next week we are starting with office hours.
+
+NOTE CONF {"raw":[97,100,100,52,52,100,100,100,100]}
+
+00:01:00.610 --> 00:01:05.489
+<v Speaker 1>So one of the Tas, Jon Watts, is offering office
+
+NOTE CONF {"raw":[100,100,100,100,92,82,100,100,100,100]}
+
+00:01:05.489 --> 00:01:08.170
+<v Speaker 1>hours on Mondays and Tuesdays.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:08.690 --> 00:01:10.890
+<v Speaker 1>And the times and locations and so on on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:10.890 --> 00:01:11.770
+<v Speaker 1>course website.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:11.890 --> 00:01:15.490
+<v Speaker 1>So these are for basically dropping in and asking questions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:15.490 --> 00:01:19.370
+<v Speaker 1>about the course, be it the assignments, the lecture materials,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:19.370 --> 00:01:20.690
+<v Speaker 1>the tutorials and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:21.050 --> 00:01:24.130
+<v Speaker 1>So these are just another way of getting help if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:24.130 --> 00:01:26.090
+<v Speaker 1>you're stuck with any of the course material.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:28.250 --> 00:01:28.650
+<v Speaker 1>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:28.650 --> 00:01:29.930
+<v Speaker 1>So let's get started.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:31.250 --> 00:01:34.490
+<v Speaker 1>And this worked when I tried it anyway.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,77]}
+
+00:01:35.610 --> 00:01:36.090
+<v Speaker 1>Just.
+
+NOTE CONF {"raw":[100]}
+
+00:01:38.410 --> 00:01:42.290
+<v Speaker 0>Oh look.
+
+NOTE CONF {"raw":[100,56]}
+
+00:01:42.890 --> 00:01:44.410
+<v Speaker 1>No sorry for that.
+
+NOTE CONF {"raw":[93,100,100,100]}
+
+00:01:46.970 --> 00:01:47.210
+<v Speaker 0>Oh.
+
+NOTE CONF {"raw":[90]}
+
+00:01:49.650 --> 00:01:50.010
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[70]}
+
+00:01:50.050 --> 00:01:51.770
+<v Speaker 1>So we talk about speech segmentation.
+
+NOTE CONF {"raw":[100,100,85,100,100,100]}
+
+00:01:51.770 --> 00:01:54.770
+<v Speaker 1>It's in the context of language development language acquisition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:01:55.050 --> 00:01:58.570
+<v Speaker 1>And then we'll introduce a new concept called transitional probability
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:58.990 --> 00:02:02.230
+<v Speaker 1>which is a form of conditional probability, which is something
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:02.230 --> 00:02:02.510
+<v Speaker 1>you might.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:02.550 --> 00:02:03.870
+<v Speaker 1>Have seen in other contexts.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:04.350 --> 00:02:06.910
+<v Speaker 1>And then we'll talk about a few experiments.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:02:06.950 --> 00:02:10.910
+<v Speaker 1>And people have tried to find out how children segment
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,61,100]}
+
+00:02:11.670 --> 00:02:12.110
+<v Speaker 1>words.
+
+NOTE CONF {"raw":[100]}
+
+00:02:12.430 --> 00:02:16.310
+<v Speaker 1>And then we'll introduce another concept called minimum description length,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:17.030 --> 00:02:20.070
+<v Speaker 1>which in the context of word segmentation is important because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:20.070 --> 00:02:22.670
+<v Speaker 1>it allows you to derive a whole lexicon rather than
+
+NOTE CONF {"raw":[100,100,100,100,100,90,100,100,100,100]}
+
+00:02:22.670 --> 00:02:23.990
+<v Speaker 1>just individual words.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:25.150 --> 00:02:25.630
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:02:25.990 --> 00:02:30.430
+<v Speaker 1>Now this is not going to work okay.
+
+NOTE CONF {"raw":[51,47,47,100,98,98,100,98]}
+
+00:02:31.430 --> 00:02:34.430
+<v Speaker 1>This is also a good way of introducing another modelling
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:34.430 --> 00:02:35.030
+<v Speaker 1>paradigm.
+
+NOTE CONF {"raw":[100]}
+
+00:02:35.030 --> 00:02:37.150
+<v Speaker 1>So so far we've seen rule based models.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:02:37.590 --> 00:02:40.670
+<v Speaker 1>You know, Pinker's idea that there's a word stored in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,92,96,100,100]}
+
+00:02:40.670 --> 00:02:42.230
+<v Speaker 1>the lexicon, and then we have a bunch of rules
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:42.230 --> 00:02:43.270
+<v Speaker 1>that operate on them.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:44.190 --> 00:02:48.230
+<v Speaker 1>Sometimes we need extra mechanisms like blocking sort of traditional
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:48.230 --> 00:02:49.950
+<v Speaker 1>linguistic way of doing things.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:51.310 --> 00:02:53.230
+<v Speaker 1>And we've seen neural network models.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:53.630 --> 00:02:56.870
+<v Speaker 1>Yesterday, for example, we talked about how these can maybe
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:56.870 --> 00:02:58.600
+<v Speaker 1>also acquire the past tense.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:58.960 --> 00:03:02.360
+<v Speaker 1>And they were successful in some respects, not so successful
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,90,100]}
+
+00:03:02.360 --> 00:03:06.800
+<v Speaker 1>in other respects, but they are a radical empiricist paradigm
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:07.080 --> 00:03:10.560
+<v Speaker 1>because they don't require any rules, not even a lexicon.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:10.720 --> 00:03:14.160
+<v Speaker 1>It's really just association of input and output patterns that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:14.160 --> 00:03:15.840
+<v Speaker 1>we learn and generalise over.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:16.240 --> 00:03:19.520
+<v Speaker 1>So all we need is a powerful learning algorithm.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:19.880 --> 00:03:25.200
+<v Speaker 1>We've applied them to past tense, which is obviously taking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:25.200 --> 00:03:27.280
+<v Speaker 1>a base form of a verb and turning it into
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:27.280 --> 00:03:28.280
+<v Speaker 1>the past tense form.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:28.600 --> 00:03:31.600
+<v Speaker 1>This is interesting because in some cases it's a regular
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:31.600 --> 00:03:34.080
+<v Speaker 1>process that you can describe by a rule if you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:34.080 --> 00:03:37.760
+<v Speaker 1>want to, but in other cases the verbs are irregular.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:38.200 --> 00:03:41.280
+<v Speaker 1>This is actually something that comes fairly late in language
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:41.280 --> 00:03:44.080
+<v Speaker 1>acquisition, sort of in the middle of the second year
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:44.080 --> 00:03:45.600
+<v Speaker 1>of of a child's life.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:46.120 --> 00:03:48.480
+<v Speaker 1>Today we're going to look at something that comes really
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:48.480 --> 00:03:53.600
+<v Speaker 1>early, something that even newborns can do quite well, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:53.600 --> 00:03:55.040
+<v Speaker 1>is word segmentation.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:55.400 --> 00:03:59.300
+<v Speaker 1>And we'll introduce a third modelling framework, probabilistic modelling, which
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,98]}
+
+00:03:59.340 --> 00:04:01.100
+<v Speaker 1>sort of combines the two extremes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:01.180 --> 00:04:04.940
+<v Speaker 1>So there we assume there's some symbolic knowledge, some rules,
+
+NOTE CONF {"raw":[100,100,100,100,87,100,100,100,100,100]}
+
+00:04:05.300 --> 00:04:09.140
+<v Speaker 1>but there's probabilities attached to to this knowledge.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:09.500 --> 00:04:13.100
+<v Speaker 1>So there's some numeric and and learnable information but also
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:13.100 --> 00:04:16.140
+<v Speaker 1>some rule based information which maybe we want to assume
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:04:16.140 --> 00:04:16.660
+<v Speaker 1>is innate.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:16.660 --> 00:04:17.540
+<v Speaker 1>We don't have to.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:18.940 --> 00:04:19.260
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:04:19.299 --> 00:04:23.740
+<v Speaker 1>So combining numerical information and rules and the rules may
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:23.740 --> 00:04:24.820
+<v Speaker 1>be innate as I said.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:24.860 --> 00:04:27.460
+<v Speaker 1>Well the probabilities most people want to assume that those
+
+NOTE CONF {"raw":[100,100,74,100,100,100,100,100,100,100]}
+
+00:04:27.460 --> 00:04:27.940
+<v Speaker 1>are learned.
+
+NOTE CONF {"raw":[100,97]}
+
+00:04:28.380 --> 00:04:34.140
+<v Speaker 1>So this is a way of combining ideas from rationalism,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:34.140 --> 00:04:38.540
+<v Speaker 1>nativism on the one hand, and empiricism learning based approaches
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:38.540 --> 00:04:39.300
+<v Speaker 1>on the other hand.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:40.140 --> 00:04:42.860
+<v Speaker 1>And today we're going to talk about what segmentation next
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:42.860 --> 00:04:45.900
+<v Speaker 1>week we're going to we're going to talk about word
+
+NOTE CONF {"raw":[100,93,93,73,100,100,100,100,100,89]}
+
+00:04:45.900 --> 00:04:49.380
+<v Speaker 1>learning and how to derive the semantics of words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:04:50.940 --> 00:04:52.940
+<v Speaker 1>But first we need the words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:53.700 --> 00:04:54.820
+<v Speaker 1>Before we can do that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:54.820 --> 00:04:54.990
+<v Speaker 1>It.
+
+NOTE CONF {"raw":[46]}
+
+00:04:55.190 --> 00:04:58.070
+<v Speaker 1>Okay, so if we try to situate this in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:58.070 --> 00:05:00.070
+<v Speaker 1>context of language development as a whole.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:05:00.470 --> 00:05:05.750
+<v Speaker 1>So starting from birth children, well babies at that point
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:05.790 --> 00:05:08.030
+<v Speaker 1>only make very limited sounds.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:08.030 --> 00:05:08.710
+<v Speaker 1>Vegetative.
+
+NOTE CONF {"raw":[100]}
+
+00:05:09.030 --> 00:05:12.150
+<v Speaker 1>Vegetative sounds sort of.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:14.270 --> 00:05:15.990
+<v Speaker 1>Gurgling and stuff like this.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:16.550 --> 00:05:19.670
+<v Speaker 1>Then things start to sound a bit more like language
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:19.670 --> 00:05:22.390
+<v Speaker 1>with cooing laughter.
+
+NOTE CONF {"raw":[100,100,79]}
+
+00:05:22.510 --> 00:05:28.390
+<v Speaker 1>At about 16 weeks, vocal play and babbling where they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:28.390 --> 00:05:30.390
+<v Speaker 1>say things like blah blah blah blah blah blah blah
+
+NOTE CONF {"raw":[100,100,100,47,87,87,87,87,87,87]}
+
+00:05:30.430 --> 00:05:31.430
+<v Speaker 1>and so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:31.910 --> 00:05:33.990
+<v Speaker 1>And that is between 6 and 10 months.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:34.310 --> 00:05:36.550
+<v Speaker 1>Note that this is productive language, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97]}
+
+00:05:36.590 --> 00:05:38.750
+<v Speaker 1>This is what the babies produce.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:39.790 --> 00:05:41.830
+<v Speaker 1>We don't know what they understand at this point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:05:41.910 --> 00:05:43.310
+<v Speaker 1>This is much harder to measure.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:43.510 --> 00:05:44.630
+<v Speaker 1>But of course we can.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:44.630 --> 00:05:48.590
+<v Speaker 1>We can listen to and record what they produce in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:48.590 --> 00:05:49.430
+<v Speaker 1>terms of language.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:50.190 --> 00:05:54.730
+<v Speaker 1>Then finally, at around a year, 10 to 18 months.
+
+NOTE CONF {"raw":[100,100,100,82,100,100,100,100,100,100]}
+
+00:05:54.930 --> 00:05:59.970
+<v Speaker 1>They start with single word utterances, things like doggy or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,69,100]}
+
+00:06:00.650 --> 00:06:01.330
+<v Speaker 1>all gone.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:01.850 --> 00:06:03.970
+<v Speaker 1>If you assume that's a single word.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:05.130 --> 00:06:06.810
+<v Speaker 1>So stuff like this happens.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:06.810 --> 00:06:09.770
+<v Speaker 1>It's isolated utterances, isolated words.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:10.530 --> 00:06:14.130
+<v Speaker 1>Then the utterances become longer at around 18 months to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,89]}
+
+00:06:14.170 --> 00:06:15.410
+<v Speaker 1>two word utterances.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:16.410 --> 00:06:17.850
+<v Speaker 1>Then telegraphic speech.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:17.850 --> 00:06:21.330
+<v Speaker 1>By that I mean speech that doesn't have any articles
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:21.330 --> 00:06:25.850
+<v Speaker 1>and pronouns and prepositions and stuff like that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:25.850 --> 00:06:27.530
+<v Speaker 1>It's really just nouns and verbs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:28.650 --> 00:06:31.770
+<v Speaker 1>That happens around two years, and then about half a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:31.770 --> 00:06:36.370
+<v Speaker 1>year later, children start producing full sentences.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:36.890 --> 00:06:40.050
+<v Speaker 1>And, you know, if you know a three year old,
+
+NOTE CONF {"raw":[100,99,99,100,100,100,100,100,100,100]}
+
+00:06:40.450 --> 00:06:42.490
+<v Speaker 1>they can talk quite a lot already.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:42.610 --> 00:06:44.930
+<v Speaker 1>So you can have a pretty good conversation with a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:44.930 --> 00:06:45.610
+<v Speaker 1>three year old.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:45.690 --> 00:06:51.650
+<v Speaker 1>So all of this happened surprisingly early and quickly and
+
+NOTE CONF {"raw":[100,100,100,100,54,100,100,100,100,100]}
+
+00:06:51.650 --> 00:06:54.820
+<v Speaker 1>not exactly at the same time scale for every child,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:55.060 --> 00:06:58.740
+<v Speaker 1>but the stages are the same and the outcome is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:58.740 --> 00:07:00.260
+<v Speaker 1>pretty much the same as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:00.660 --> 00:07:04.380
+<v Speaker 1>So that is the surprising bit that this is this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:04.420 --> 00:07:06.260
+<v Speaker 1>sort of predetermined sequence.
+
+NOTE CONF {"raw":[100,100,98,100]}
+
+00:07:06.420 --> 00:07:09.060
+<v Speaker 1>And that's also why some people assume that that's something
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:09.060 --> 00:07:13.100
+<v Speaker 1>that's innate, that, you know, unless something goes wrong, everyone
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:13.100 --> 00:07:14.860
+<v Speaker 1>ends up learning the language.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:15.220 --> 00:07:19.860
+<v Speaker 1>Obviously, there's still differences in how proficient we are, how
+
+NOTE CONF {"raw":[100,67,100,100,100,100,100,100,100,100]}
+
+00:07:20.060 --> 00:07:22.020
+<v Speaker 1>how big our vocabulary is, and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:22.380 --> 00:07:27.100
+<v Speaker 1>But the grammar and the basic vocabulary you end up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:27.100 --> 00:07:28.620
+<v Speaker 1>with comparable.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:29.580 --> 00:07:35.420
+<v Speaker 1>And so for for all of this we need a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:35.420 --> 00:07:35.980
+<v Speaker 1>lexicon.
+
+NOTE CONF {"raw":[100]}
+
+00:07:35.980 --> 00:07:37.380
+<v Speaker 1>And we talked about that before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:37.700 --> 00:07:40.300
+<v Speaker 1>And whether you assume that the lexicon is, you know,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:40.340 --> 00:07:44.460
+<v Speaker 1>a pinker stylist or it's just a diffuse pattern in
+
+NOTE CONF {"raw":[100,100,70,100,100,100,100,93,100,100]}
+
+00:07:44.460 --> 00:07:47.980
+<v Speaker 1>the brain, like a neural network model would assume it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:47.980 --> 00:07:49.460
+<v Speaker 1>needs to be somewhere, right?
+
+NOTE CONF {"raw":[100,100,100,100,98]}
+
+00:07:49.500 --> 00:07:52.100
+<v Speaker 1>We need we need that knowledge about words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:52.520 --> 00:07:57.240
+<v Speaker 1>So associations between sound sequences, their meanings and their syntax.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:57.520 --> 00:07:59.760
+<v Speaker 1>So the the sequence.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:00.560 --> 00:08:01.680
+<v Speaker 1>Dog.
+
+NOTE CONF {"raw":[73]}
+
+00:08:02.120 --> 00:08:06.160
+<v Speaker 1>Dog is associated with a certain sound.
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100]}
+
+00:08:06.200 --> 00:08:08.280
+<v Speaker 1>It's associated with certain meaning.
+
+NOTE CONF {"raw":[91,100,100,100,100]}
+
+00:08:08.280 --> 00:08:10.520
+<v Speaker 1>Maybe also evoke certain imagery.
+
+NOTE CONF {"raw":[100,100,52,100,100]}
+
+00:08:11.440 --> 00:08:12.480
+<v Speaker 1>And there's syntax.
+
+NOTE CONF {"raw":[100,98,100]}
+
+00:08:12.480 --> 00:08:13.840
+<v Speaker 1>We know that this is a noun.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:14.960 --> 00:08:18.560
+<v Speaker 1>All of this needs to be sort of acquired, bundled
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:18.560 --> 00:08:22.720
+<v Speaker 1>up, and then stored in the mental lexicon somehow.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:23.960 --> 00:08:27.760
+<v Speaker 1>And children, of course, they don't read until much later,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:27.800 --> 00:08:28.000
+<v Speaker 1>right?
+
+NOTE CONF {"raw":[98]}
+
+00:08:28.040 --> 00:08:32.039
+<v Speaker 1>They don't read until they, they they basically start start
+
+NOTE CONF {"raw":[100,100,100,100,45,67,100,100,100,100]}
+
+00:08:32.039 --> 00:08:32.520
+<v Speaker 1>school.
+
+NOTE CONF {"raw":[100]}
+
+00:08:32.840 --> 00:08:35.760
+<v Speaker 1>So initially this is all based on speech, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95]}
+
+00:08:35.800 --> 00:08:39.039
+<v Speaker 1>So all language acquisition, at least for the first 5
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:39.039 --> 00:08:40.960
+<v Speaker 1>or 6 years, has to be based on speech.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:41.360 --> 00:08:45.520
+<v Speaker 1>There's obviously some cultures that speak a language that doesn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:45.520 --> 00:08:46.440
+<v Speaker 1>have a written form.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:46.840 --> 00:08:49.720
+<v Speaker 1>So definitely that has to be speech all the way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:50.610 --> 00:08:50.890
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:08:50.930 --> 00:08:53.330
+<v Speaker 1>And then there's the problem that in the speed stream,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,90,100]}
+
+00:08:53.330 --> 00:08:55.170
+<v Speaker 1>there isn't really any spaces.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:55.250 --> 00:08:57.890
+<v Speaker 1>So if you look at a speed stream like, like
+
+NOTE CONF {"raw":[100,100,100,100,100,91,100,100,98,100]}
+
+00:08:57.890 --> 00:09:02.130
+<v Speaker 1>this here, this is the, um, the sound wave.
+
+NOTE CONF {"raw":[100,100,100,100,100,90,100,100,100]}
+
+00:09:02.570 --> 00:09:05.410
+<v Speaker 1>So the amount of energy over time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:06.050 --> 00:09:10.890
+<v Speaker 1>And sure, there's bits where there's more or less energy,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:11.170 --> 00:09:14.410
+<v Speaker 1>but it doesn't correspond to to word boundaries.
+
+NOTE CONF {"raw":[100,100,100,100,100,82,100,100]}
+
+00:09:15.130 --> 00:09:19.530
+<v Speaker 1>And so you have this problem of, uh, associating this,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:09:20.650 --> 00:09:25.690
+<v Speaker 1>uh, the sensory input, the signal that comes in with
+
+NOTE CONF {"raw":[63,69,100,100,100,100,100,100,100,100]}
+
+00:09:25.690 --> 00:09:26.650
+<v Speaker 1>discrete words.
+
+NOTE CONF {"raw":[97,100]}
+
+00:09:26.770 --> 00:09:30.450
+<v Speaker 1>And there's a problem also that the word doesn't always
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:30.450 --> 00:09:31.290
+<v Speaker 1>sound the same.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:31.610 --> 00:09:34.810
+<v Speaker 1>So if two people say dog, they don't pronounce it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:34.810 --> 00:09:36.450
+<v Speaker 1>in exactly the same way.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:37.050 --> 00:09:40.290
+<v Speaker 1>A child will have a higher pitch than an adult,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:40.290 --> 00:09:41.130
+<v Speaker 1>for example.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:41.850 --> 00:09:46.090
+<v Speaker 1>Um, if you speak a dialect, you're going to pronounce
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:46.090 --> 00:09:47.490
+<v Speaker 1>the words differently, and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:47.610 --> 00:09:50.950
+<v Speaker 1>But somehow the child is still able to pick up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:52.550 --> 00:09:54.510
+<v Speaker 1>the fact that this is always the word dog, it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,89,100]}
+
+00:09:54.510 --> 00:09:56.550
+<v Speaker 1>always refers to the same concept and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:09:57.470 --> 00:10:00.790
+<v Speaker 1>And let's go back to written language for a moment
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:00.790 --> 00:10:02.190
+<v Speaker 1>just because it's slightly easier.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:02.630 --> 00:10:06.030
+<v Speaker 1>So this is a poem where I've removed all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:06.030 --> 00:10:10.230
+<v Speaker 1>spaces, and it is in a language that maybe you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:10.230 --> 00:10:11.550
+<v Speaker 1>don't know is Spanish.
+
+NOTE CONF {"raw":[100,100,87,100]}
+
+00:10:12.430 --> 00:10:17.230
+<v Speaker 1>And yeah, this is really hard to make sense of.
+
+NOTE CONF {"raw":[94,96,100,100,100,100,100,100,100,100]}
+
+00:10:18.150 --> 00:10:20.990
+<v Speaker 1>And that's sort of the situation the child is in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:21.390 --> 00:10:22.510
+<v Speaker 1>Doesn't speak the language.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:22.550 --> 00:10:22.710
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[93]}
+
+00:10:22.710 --> 00:10:25.670
+<v Speaker 1>Because they haven't learned it yet and they don't have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:25.670 --> 00:10:27.350
+<v Speaker 1>any spaces or word boundaries.
+
+NOTE CONF {"raw":[100,100,100,89,100]}
+
+00:10:28.350 --> 00:10:28.910
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[74]}
+
+00:10:29.030 --> 00:10:31.110
+<v Speaker 1>If you want to look up the poem, here's the
+
+NOTE CONF {"raw":[100,100,100,100,100,79,100,100,92,60]}
+
+00:10:31.110 --> 00:10:31.430
+<v Speaker 1>link.
+
+NOTE CONF {"raw":[100]}
+
+00:10:31.910 --> 00:10:34.870
+<v Speaker 1>And here, if you want to follow that link, maybe
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:34.870 --> 00:10:35.670
+<v Speaker 1>in your own time.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:35.870 --> 00:10:37.630
+<v Speaker 1>There's another interesting example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:37.710 --> 00:10:40.430
+<v Speaker 1>This is an example with ASL.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:40.470 --> 00:10:44.390
+<v Speaker 1>American Sign Language and sign languages work more or less
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:44.390 --> 00:10:48.550
+<v Speaker 1>like spoken or written languages, but the word boundaries are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:48.600 --> 00:10:49.680
+<v Speaker 1>completely different.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:49.840 --> 00:10:53.280
+<v Speaker 1>So if you're not a signer and you look at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:53.280 --> 00:10:56.360
+<v Speaker 1>someone signing ASL, you will find it really hard to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:56.360 --> 00:11:00.600
+<v Speaker 1>determine where a word ends and where a word starts,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:00.600 --> 00:11:03.680
+<v Speaker 1>because the individual words don't correspond 1 to 1 to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:03.720 --> 00:11:04.280
+<v Speaker 1>signs.
+
+NOTE CONF {"raw":[80]}
+
+00:11:04.440 --> 00:11:04.640
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[93]}
+
+00:11:04.680 --> 00:11:08.440
+<v Speaker 1>There's multiple signs that can make up a word as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,75]}
+
+00:11:09.200 --> 00:11:11.920
+<v Speaker 1>a sign that can mean different things and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:12.520 --> 00:11:15.560
+<v Speaker 1>So that is the situation that the child is in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:15.960 --> 00:11:16.760
+<v Speaker 1>to start with.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:18.480 --> 00:11:22.320
+<v Speaker 1>And here, for example, let's assume you're able to transcribe
+
+NOTE CONF {"raw":[100,96,100,100,100,100,96,100,100,100]}
+
+00:11:22.320 --> 00:11:25.880
+<v Speaker 1>this and you can hear the associated letters or phonemes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91,100,100,100]}
+
+00:11:25.880 --> 00:11:27.320
+<v Speaker 1>with with a speech signal.
+
+NOTE CONF {"raw":[100,100,88,100,100]}
+
+00:11:27.600 --> 00:11:29.840
+<v Speaker 1>Then you still need to find the word boundaries, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:29.880 --> 00:11:32.160
+<v Speaker 1>This could be the right on the tea kettle.
+
+NOTE CONF {"raw":[100,100,100,100,87,99,100,72,72]}
+
+00:11:32.200 --> 00:11:35.080
+<v Speaker 1>Often chips there.
+
+NOTE CONF {"raw":[84,100,76]}
+
+00:11:35.120 --> 00:11:37.760
+<v Speaker 1>Donate a kettle of chips of ten chips.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,64,100]}
+
+00:11:37.800 --> 00:11:38.280
+<v Speaker 1>Sorry.
+
+NOTE CONF {"raw":[93]}
+
+00:11:39.480 --> 00:11:39.920
+<v Speaker 1>There.
+
+NOTE CONF {"raw":[48]}
+
+00:11:39.960 --> 00:11:42.360
+<v Speaker 1>Donate a kettle of ten chips, and so on.
+
+NOTE CONF {"raw":[100,98,100,100,92,100,100,100,100]}
+
+00:11:42.680 --> 00:11:45.280
+<v Speaker 1>And this is also why speech recognition is hard for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:45.280 --> 00:11:45.880
+<v Speaker 1>machines.
+
+NOTE CONF {"raw":[100]}
+
+00:11:46.600 --> 00:11:50.100
+<v Speaker 1>Well, nowadays machines are pretty good at it, but it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:50.100 --> 00:11:52.300
+<v Speaker 1>took a lot of time to to get them to
+
+NOTE CONF {"raw":[100,100,100,100,100,66,100,100,100,100]}
+
+00:11:52.340 --> 00:11:54.780
+<v Speaker 1>that point because of this ambiguity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:54.820 --> 00:11:55.060
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[94]}
+
+00:11:55.100 --> 00:11:57.980
+<v Speaker 1>Even if you are able to take the sound wave,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,82,82]}
+
+00:11:58.460 --> 00:12:01.340
+<v Speaker 1>turn it into a sequence of phonemes, then there's still
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,91,100]}
+
+00:12:02.100 --> 00:12:04.540
+<v Speaker 1>the the task of finding the word boundaries.
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100,100]}
+
+00:12:05.100 --> 00:12:05.700
+<v Speaker 1>And.
+
+NOTE CONF {"raw":[100]}
+
+00:12:07.780 --> 00:12:10.740
+<v Speaker 1>Sometimes you can have multiple sentences that make sense, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:12:10.780 --> 00:12:14.300
+<v Speaker 1>And so how do you distinguish between them?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:15.380 --> 00:12:15.980
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:16.220 --> 00:12:19.940
+<v Speaker 1>So before the child can even do the past tense
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:19.940 --> 00:12:23.100
+<v Speaker 1>or other complicated things, they need to know what the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:23.100 --> 00:12:23.740
+<v Speaker 1>boundaries are.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:23.900 --> 00:12:24.140
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:12:24.180 --> 00:12:27.100
+<v Speaker 1>They cannot find the past tense of a verb if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:27.100 --> 00:12:31.380
+<v Speaker 1>they don't know what a verb is, and they cannot
+
+NOTE CONF {"raw":[100,88,100,100,97,100,100,100,100,100]}
+
+00:12:31.380 --> 00:12:33.820
+<v Speaker 1>find the bit in the speech stream that is used
+
+NOTE CONF {"raw":[100,100,100,100,100,83,100,100,100,100]}
+
+00:12:33.820 --> 00:12:34.940
+<v Speaker 1>to denote verbs.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:35.260 --> 00:12:37.540
+<v Speaker 1>So this is very, very sort of basic thing that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:37.540 --> 00:12:38.740
+<v Speaker 1>needs to happen first.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:39.180 --> 00:12:42.260
+<v Speaker 1>So you need to the infant learning the language needs
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:42.260 --> 00:12:45.260
+<v Speaker 1>to divide the input into reusable units.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:46.470 --> 00:12:50.350
+<v Speaker 1>Then the question is how does she represent those units
+
+NOTE CONF {"raw":[100,100,100,100,100,100,74,100,100,100]}
+
+00:12:51.070 --> 00:12:56.550
+<v Speaker 1>and what she knows about then them and when this
+
+NOTE CONF {"raw":[100,100,100,100,100,89,100,100,100,100]}
+
+00:12:56.550 --> 00:12:57.150
+<v Speaker 1>happens.
+
+NOTE CONF {"raw":[100]}
+
+00:12:57.430 --> 00:13:00.270
+<v Speaker 1>So it turns out that this can happen quite early.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:00.270 --> 00:13:03.630
+<v Speaker 1>We'll see an experiment in a moment with eight month
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100,100,100,100]}
+
+00:13:03.630 --> 00:13:08.710
+<v Speaker 1>old babies who definitely don't speak yet, but we're still
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:08.710 --> 00:13:14.950
+<v Speaker 1>able to do word segmentation and of course, speech segmentation.
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,95,100]}
+
+00:13:15.470 --> 00:13:17.070
+<v Speaker 1>Why do we need words right?
+
+NOTE CONF {"raw":[100,100,100,100,100,99]}
+
+00:13:17.110 --> 00:13:19.190
+<v Speaker 1>Maybe words are just things that a linguist has made
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:19.190 --> 00:13:22.030
+<v Speaker 1>up, given that the the speech stream is continuous.
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100]}
+
+00:13:22.350 --> 00:13:24.550
+<v Speaker 1>But of course you need them in a lot of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:24.550 --> 00:13:25.750
+<v Speaker 1>different places, right?
+
+NOTE CONF {"raw":[100,100,96]}
+
+00:13:25.790 --> 00:13:28.590
+<v Speaker 1>In the lexicon you want to organise a lexicon in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,83,100,100]}
+
+00:13:28.590 --> 00:13:30.070
+<v Speaker 1>some way morphology.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:30.070 --> 00:13:35.550
+<v Speaker 1>So things like plurals and past tense, these apply to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:35.590 --> 00:13:37.630
+<v Speaker 1>certain units in your speech stream.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:37.830 --> 00:13:42.390
+<v Speaker 1>Then syntax and phonology, phonology things like for example stress,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:44.110 --> 00:13:45.430
+<v Speaker 1>intonation and so on.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:45.690 --> 00:13:50.170
+<v Speaker 1>And syntax is then building building sentences out of those
+
+NOTE CONF {"raw":[100,46,46,100,100,100,100,100,100,100]}
+
+00:13:50.170 --> 00:13:50.610
+<v Speaker 1>words.
+
+NOTE CONF {"raw":[100]}
+
+00:13:50.970 --> 00:13:54.290
+<v Speaker 1>And you don't build those sentences out of arbitrary bits
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:54.290 --> 00:14:00.570
+<v Speaker 1>of speech, but reusable, uh, discrete units that we call
+
+NOTE CONF {"raw":[100,100,100,92,71,99,100,100,100,100]}
+
+00:14:00.570 --> 00:14:01.010
+<v Speaker 1>words.
+
+NOTE CONF {"raw":[100]}
+
+00:14:01.610 --> 00:14:03.330
+<v Speaker 1>So that's why this is important.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:04.850 --> 00:14:07.090
+<v Speaker 1>And now how the how does the child do this.
+
+NOTE CONF {"raw":[100,84,99,62,100,100,92,100,100,100]}
+
+00:14:07.130 --> 00:14:09.370
+<v Speaker 1>And we'll see a few examples now.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100]}
+
+00:14:09.370 --> 00:14:14.250
+<v Speaker 1>But then we'll, we'll drill down into one particular, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:14.290 --> 00:14:17.050
+<v Speaker 1>one particular Q that they use.
+
+NOTE CONF {"raw":[100,100,58,100,100,100]}
+
+00:14:17.650 --> 00:14:19.410
+<v Speaker 1>So things like stress patterns.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:19.730 --> 00:14:23.450
+<v Speaker 1>So English has the advantage that, uh, the stress is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:14:23.450 --> 00:14:24.250
+<v Speaker 1>fairly regular.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:24.490 --> 00:14:26.890
+<v Speaker 1>Not 100% regular, but most of the time it's the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:26.890 --> 00:14:29.010
+<v Speaker 1>first syllable of a word that's being stressed.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:29.210 --> 00:14:35.010
+<v Speaker 1>So here English usually stresses first syllables.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:35.290 --> 00:14:38.010
+<v Speaker 1>Always the first syllable gets the stress right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100]}
+
+00:14:38.410 --> 00:14:42.290
+<v Speaker 1>And so well that's a good good way to break
+
+NOTE CONF {"raw":[100,100,95,100,100,99,100,100,100,100]}
+
+00:14:42.290 --> 00:14:43.130
+<v Speaker 1>up the speech stream.
+
+NOTE CONF {"raw":[100,100,79,100]}
+
+00:14:43.170 --> 00:14:43.410
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:14:43.410 --> 00:14:44.290
+<v Speaker 1>You find the stress.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:44.340 --> 00:14:47.420
+<v Speaker 1>You find the the part of the speed stream that
+
+NOTE CONF {"raw":[100,100,90,100,100,100,100,58,98,100]}
+
+00:14:47.420 --> 00:14:48.540
+<v Speaker 1>has the most energy.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:48.940 --> 00:14:50.980
+<v Speaker 1>And that's where you insert a word boundary.
+
+NOTE CONF {"raw":[100,98,100,100,100,99,100,100]}
+
+00:14:51.180 --> 00:14:52.420
+<v Speaker 1>Other languages work differently.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:52.420 --> 00:14:54.620
+<v Speaker 1>French always has the stress on the last syllable.
+
+NOTE CONF {"raw":[100,100,100,87,100,100,100,100,100]}
+
+00:14:55.940 --> 00:14:58.500
+<v Speaker 1>A lot of languages are not as regular, so you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:58.500 --> 00:15:01.260
+<v Speaker 1>can't rely on that completely.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:01.980 --> 00:15:05.980
+<v Speaker 1>But in some languages that's a really useful piece of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:05.980 --> 00:15:06.580
+<v Speaker 1>information.
+
+NOTE CONF {"raw":[100]}
+
+00:15:06.580 --> 00:15:12.420
+<v Speaker 1>So the difference between hamster and hamster right here the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:12.420 --> 00:15:13.740
+<v Speaker 1>stress is on the first syllable.
+
+NOTE CONF {"raw":[99,99,100,100,100,100]}
+
+00:15:13.740 --> 00:15:16.260
+<v Speaker 1>So we want this to be a unit in here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:17.340 --> 00:15:18.420
+<v Speaker 1>stress is on stir.
+
+NOTE CONF {"raw":[85,85,100,67]}
+
+00:15:18.460 --> 00:15:21.420
+<v Speaker 1>So this has to be a separate word okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98]}
+
+00:15:21.660 --> 00:15:24.940
+<v Speaker 1>So that sort of information is available in the form
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,71,100]}
+
+00:15:24.940 --> 00:15:27.980
+<v Speaker 1>of stress for a tactic.
+
+NOTE CONF {"raw":[100,100,88,92,98]}
+
+00:15:27.980 --> 00:15:28.740
+<v Speaker 1>Constraints.
+
+NOTE CONF {"raw":[100]}
+
+00:15:28.980 --> 00:15:32.020
+<v Speaker 1>So words are not just made up in an arbitrary
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:32.060 --> 00:15:34.340
+<v Speaker 1>way, but they're made up of syllables normally.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:34.340 --> 00:15:37.700
+<v Speaker 1>And a syllable typically contains a vowel.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100]}
+
+00:15:37.940 --> 00:15:40.340
+<v Speaker 1>And then there's a consonant cluster following that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:40.340 --> 00:15:42.300
+<v Speaker 1>And a consonant cluster.
+
+NOTE CONF {"raw":[100,96,100,100]}
+
+00:15:44.440 --> 00:15:46.560
+<v Speaker 1>Before and after the vowel right.
+
+NOTE CONF {"raw":[100,100,100,100,100,93]}
+
+00:15:46.600 --> 00:15:50.040
+<v Speaker 1>So a vowel and a finite set of consonant clusters
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:15:50.240 --> 00:15:51.920
+<v Speaker 1>at the beginning and at the end.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:52.480 --> 00:15:55.800
+<v Speaker 1>And then of course, not all consonant clusters are possible
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:55.800 --> 00:15:59.120
+<v Speaker 1>in all languages, so something like a dog is not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,83,100,100,100]}
+
+00:15:59.480 --> 00:16:01.240
+<v Speaker 1>a possible English word.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:01.840 --> 00:16:02.120
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:16:02.160 --> 00:16:05.480
+<v Speaker 1>So we probably want to assume a boundary here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:05.480 --> 00:16:07.760
+<v Speaker 1>And the belongs to the previous word.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100]}
+
+00:16:08.080 --> 00:16:11.880
+<v Speaker 1>And dog is a nice possible word of English because
+
+NOTE CONF {"raw":[100,100,100,100,87,100,100,100,100,100]}
+
+00:16:11.880 --> 00:16:15.360
+<v Speaker 1>it has the o, the vowel, and then a consonant
+
+NOTE CONF {"raw":[100,100,100,93,100,100,100,100,87,100]}
+
+00:16:15.360 --> 00:16:16.240
+<v Speaker 1>before and after.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:16.760 --> 00:16:20.080
+<v Speaker 1>So this regularities are called formal tactics.
+
+NOTE CONF {"raw":[100,100,100,100,100,39,100]}
+
+00:16:20.560 --> 00:16:23.880
+<v Speaker 1>And the nativists would say, of course this is innate
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:23.920 --> 00:16:25.200
+<v Speaker 1>for tactics, is innate.
+
+NOTE CONF {"raw":[100,95,90,100]}
+
+00:16:25.200 --> 00:16:28.280
+<v Speaker 1>And that helps you to segment speech.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:29.400 --> 00:16:32.440
+<v Speaker 1>Then once you know a few words, right, you've learned
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,88]}
+
+00:16:32.480 --> 00:16:34.480
+<v Speaker 1>dog, you've learned bark, and so on.
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100]}
+
+00:16:34.760 --> 00:16:37.160
+<v Speaker 1>Then if you hear a sentence where dog and bark
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:37.520 --> 00:16:39.920
+<v Speaker 1>occurs and some other words that you don't know, then
+
+NOTE CONF {"raw":[100,84,100,100,100,100,100,100,100,100]}
+
+00:16:39.920 --> 00:16:42.120
+<v Speaker 1>that makes the segmentation task much easier, right?
+
+NOTE CONF {"raw":[100,100,100,100,99,100,100,72]}
+
+00:16:42.210 --> 00:16:44.730
+<v Speaker 1>Because you can segment out those those two words and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:44.730 --> 00:16:45.890
+<v Speaker 1>then the rest.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:45.930 --> 00:16:48.130
+<v Speaker 1>Maybe you need to assume new words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:48.690 --> 00:16:50.970
+<v Speaker 1>So this is called bootstrapping.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:51.050 --> 00:16:52.690
+<v Speaker 1>You start with some things that you know.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:53.090 --> 00:16:57.370
+<v Speaker 1>And then that makes the the number of possible combinations
+
+NOTE CONF {"raw":[100,100,100,100,100,81,100,100,100,100]}
+
+00:16:57.410 --> 00:16:58.090
+<v Speaker 1>go down.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:59.690 --> 00:17:03.530
+<v Speaker 1>But in the following we'll focus on something very specific
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:03.970 --> 00:17:05.689
+<v Speaker 1>statistic regularities.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:06.290 --> 00:17:15.490
+<v Speaker 1>So um, the uh words obviously are repeated, but also
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:17:15.530 --> 00:17:19.329
+<v Speaker 1>the patterns within the words are repeated in a predictable
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:19.329 --> 00:17:19.610
+<v Speaker 1>way.
+
+NOTE CONF {"raw":[100]}
+
+00:17:20.490 --> 00:17:22.610
+<v Speaker 1>And we'll see in a moment how we can measure
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:22.610 --> 00:17:25.890
+<v Speaker 1>this and how a child can potentially exploit this to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:26.970 --> 00:17:28.170
+<v Speaker 1>do word segmentation.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:28.170 --> 00:17:32.450
+<v Speaker 1>So we'll focus not on not on these things here,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:32.450 --> 00:17:34.690
+<v Speaker 1>but just on the statistical regularities.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:35.530 --> 00:17:38.890
+<v Speaker 1>But before we do that there's a quick quiz.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100]}
+
+00:17:40.910 --> 00:17:45.190
+<v Speaker 1>And so this is our I'll give you the opportunity
+
+NOTE CONF {"raw":[100,100,100,100,100,91,100,100,100,100]}
+
+00:17:45.190 --> 00:17:47.790
+<v Speaker 1>to, uh, to scan the code.
+
+NOTE CONF {"raw":[99,99,87,100,100,100]}
+
+00:17:48.950 --> 00:17:51.710
+<v Speaker 1>And then we'll start with a quiz.
+
+NOTE CONF {"raw":[100,100,100,100,100,86,100]}
+
+00:17:56.670 --> 00:18:00.830
+<v Speaker 0>And this is really great.
+
+NOTE CONF {"raw":[63,97,97,41,39]}
+
+00:18:01.550 --> 00:18:01.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[26]}
+
+00:18:05.070 --> 00:18:05.350
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[62]}
+
+00:18:16.870 --> 00:18:17.150
+<v Speaker 0>Thank you.
+
+NOTE CONF {"raw":[26,26]}
+
+00:18:30.270 --> 00:18:31.950
+<v Speaker 1>Okay, maybe let's get started now.
+
+NOTE CONF {"raw":[90,100,100,100,100,100]}
+
+00:18:36.030 --> 00:18:40.240
+<v Speaker 1>So, uh, we have already hinted at the fact that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:18:40.280 --> 00:18:43.360
+<v Speaker 1>what segmentation might also be something that happens in text,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:43.760 --> 00:18:46.080
+<v Speaker 1>and there's actually languages in the world that are written
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:18:46.080 --> 00:18:47.080
+<v Speaker 1>without spaces.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:47.640 --> 00:18:50.720
+<v Speaker 1>And I've given you a few examples here, and I'd
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:50.720 --> 00:18:53.080
+<v Speaker 1>like you to guess which of these are written without
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:53.080 --> 00:18:53.680
+<v Speaker 1>spaces.
+
+NOTE CONF {"raw":[100]}
+
+00:18:53.960 --> 00:18:56.160
+<v Speaker 1>So that means, even though it's a written form of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:56.160 --> 00:18:58.360
+<v Speaker 1>the language, we still have the segmentation problem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:58.640 --> 00:19:02.760
+<v Speaker 1>So classical Latin Mohawk, which we saw in the tutorial
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:02.760 --> 00:19:05.720
+<v Speaker 1>in week one Portuguese, Mandarin or Thai.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98]}
+
+00:19:06.440 --> 00:19:08.800
+<v Speaker 1>So which of these are written without spaces?
+
+NOTE CONF {"raw":[100,100,100,100,100,99,99,100]}
+
+00:19:21.680 --> 00:19:22.360
+<v Speaker 0>What do you think?
+
+NOTE CONF {"raw":[98,97,97,97]}
+
+00:19:26.240 --> 00:19:28.560
+<v Speaker 0>About that.
+
+NOTE CONF {"raw":[96,57]}
+
+00:19:45.020 --> 00:19:45.380
+<v Speaker 0>Amen.
+
+NOTE CONF {"raw":[100]}
+
+00:19:45.780 --> 00:19:45.980
+<v Speaker 0>Amen.
+
+NOTE CONF {"raw":[100]}
+
+00:19:52.060 --> 00:19:52.260
+<v Speaker 0>Amen.
+
+NOTE CONF {"raw":[100]}
+
+00:19:52.420 --> 00:19:52.820
+<v Speaker 0>Amen.
+
+NOTE CONF {"raw":[100]}
+
+00:19:53.620 --> 00:19:53.940
+<v Speaker 0>Amen.
+
+NOTE CONF {"raw":[100]}
+
+00:19:57.900 --> 00:19:58.260
+<v Speaker 0>Amen.
+
+NOTE CONF {"raw":[100]}
+
+00:20:01.380 --> 00:20:03.220
+<v Speaker 1>Okay, let's see what people think.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:05.740 --> 00:20:06.460
+<v Speaker 1>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:06.460 --> 00:20:08.900
+<v Speaker 1>So Latin, 17%.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:20:08.940 --> 00:20:10.460
+<v Speaker 1>Mohawk 50.
+
+NOTE CONF {"raw":[100,99]}
+
+00:20:10.500 --> 00:20:15.900
+<v Speaker 1>Portuguese 15 for Mandarin, 80 Mandarin and five.
+
+NOTE CONF {"raw":[93,100,98,100,98,100,100,100]}
+
+00:20:15.940 --> 00:20:16.340
+<v Speaker 1>Thai.
+
+NOTE CONF {"raw":[81]}
+
+00:20:17.100 --> 00:20:18.300
+<v Speaker 1>Let's see what's correct.
+
+NOTE CONF {"raw":[74,100,100,100]}
+
+00:20:21.140 --> 00:20:24.580
+<v Speaker 1>Okay, so classical Latin is actually an interesting case because,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:24.620 --> 00:20:27.820
+<v Speaker 1>you know, people don't learn Latin in school anymore, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:27.820 --> 00:20:32.220
+<v Speaker 1>But if you learn Latin in some way, then it
+
+NOTE CONF {"raw":[100,100,100,72,100,100,100,100,100,100]}
+
+00:20:32.220 --> 00:20:36.100
+<v Speaker 1>is written in a nice, um, contemporary way where you
+
+NOTE CONF {"raw":[100,100,100,100,100,74,100,100,100,100]}
+
+00:20:36.100 --> 00:20:38.310
+<v Speaker 1>have upper and lower case letters.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:38.310 --> 00:20:41.110
+<v Speaker 1>You have spaces, you have punctuation, punctuation marks, and so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:41.110 --> 00:20:41.350
+<v Speaker 1>on.
+
+NOTE CONF {"raw":[100]}
+
+00:20:42.270 --> 00:20:44.310
+<v Speaker 1>In ancient Rome, they didn't have any of this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:44.430 --> 00:20:45.670
+<v Speaker 1>It was all uppercase.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:45.670 --> 00:20:47.950
+<v Speaker 1>No spaces, no punctuation marks.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:48.430 --> 00:20:48.670
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[87]}
+
+00:20:48.710 --> 00:20:50.910
+<v Speaker 1>You can still see this in inscriptions and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:50.950 --> 00:20:53.950
+<v Speaker 1>It just goes on without any breaks.
+
+NOTE CONF {"raw":[88,100,100,100,100,100,100]}
+
+00:20:54.230 --> 00:20:56.550
+<v Speaker 1>So Classical Latin was written without spaces.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:56.870 --> 00:21:04.830
+<v Speaker 1>Mohawk is just written in a normal alphabet.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:04.870 --> 00:21:07.110
+<v Speaker 1>There's nothing special in Portuguese as well.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100]}
+
+00:21:07.430 --> 00:21:10.750
+<v Speaker 1>Mandarin is interesting, and as you correctly guessed, there is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,100,100]}
+
+00:21:10.750 --> 00:21:13.590
+<v Speaker 1>Of course, it's a longer graphic language, so it's written
+
+NOTE CONF {"raw":[100,100,100,100,45,92,100,100,99,100]}
+
+00:21:13.590 --> 00:21:14.470
+<v Speaker 1>in longer graphs.
+
+NOTE CONF {"raw":[100,49,100]}
+
+00:21:14.830 --> 00:21:18.070
+<v Speaker 1>But the spaces between the longer graphs don't correspond necessarily
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:18.070 --> 00:21:19.310
+<v Speaker 1>to word spaces, right?
+
+NOTE CONF {"raw":[100,100,100,83]}
+
+00:21:19.350 --> 00:21:22.590
+<v Speaker 1>A word can correspond to one, two, three, four longer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,64]}
+
+00:21:22.590 --> 00:21:27.030
+<v Speaker 1>graphs, and the word boundaries are not written down.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:21:27.950 --> 00:21:32.830
+<v Speaker 1>Uh, Thai is similar, but is written in a syllable
+
+NOTE CONF {"raw":[58,66,100,100,100,98,100,100,100,100]}
+
+00:21:32.830 --> 00:21:35.510
+<v Speaker 1>alphabet rather than a letter alphabet.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:36.810 --> 00:21:38.090
+<v Speaker 1>Also without spaces.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:39.530 --> 00:21:39.890
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:39.930 --> 00:21:40.650
+<v Speaker 1>Moving on.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:41.530 --> 00:21:42.010
+<v Speaker 1>Oh, yes.
+
+NOTE CONF {"raw":[100,99]}
+
+00:21:42.010 --> 00:21:44.570
+<v Speaker 1>So I need to introduce this before we go there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:47.850 --> 00:21:48.170
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:48.210 --> 00:21:52.010
+<v Speaker 1>So hopefully I've convinced you that segmentation is an actual
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:52.010 --> 00:21:55.010
+<v Speaker 1>problem, even in some written languages, but definitely in spoken
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:55.010 --> 00:21:55.490
+<v Speaker 1>language.
+
+NOTE CONF {"raw":[100]}
+
+00:21:56.010 --> 00:21:58.410
+<v Speaker 1>And so how do you go about that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:58.450 --> 00:22:01.970
+<v Speaker 1>So transitional probability is one solution.
+
+NOTE CONF {"raw":[100,52,100,100,100,100]}
+
+00:22:02.650 --> 00:22:06.490
+<v Speaker 1>So this is about the regularities in the sound sequences
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:06.490 --> 00:22:07.650
+<v Speaker 1>of of a language.
+
+NOTE CONF {"raw":[80,100,100,100]}
+
+00:22:07.770 --> 00:22:08.210
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:22:08.850 --> 00:22:12.170
+<v Speaker 1>Segmentation is only possible if things are repeated right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:12.210 --> 00:22:17.050
+<v Speaker 1>Some words like the or dog or blue are occur
+
+NOTE CONF {"raw":[100,100,100,90,100,100,100,100,100,100]}
+
+00:22:17.090 --> 00:22:17.850
+<v Speaker 1>more than once.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:17.930 --> 00:22:20.690
+<v Speaker 1>If you look at enough text or speech and so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:20.690 --> 00:22:23.930
+<v Speaker 1>you can find these regularities, you can find these repetitions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:25.570 --> 00:22:30.330
+<v Speaker 1>So there is a consistent sequence of the elements both
+
+NOTE CONF {"raw":[100,97,97,100,100,100,100,100,100,100]}
+
+00:22:30.330 --> 00:22:36.340
+<v Speaker 1>between words and within words and within the words, certain
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:36.380 --> 00:22:39.340
+<v Speaker 1>sequences can occur that can't occur between words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:41.180 --> 00:22:44.260
+<v Speaker 1>So you need to look at these transitions between the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:44.260 --> 00:22:47.500
+<v Speaker 1>different sounds or the different letters, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91]}
+
+00:22:47.780 --> 00:22:51.300
+<v Speaker 1>Some occur frequently within words, and some occur frequently between
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:51.300 --> 00:22:51.740
+<v Speaker 1>words.
+
+NOTE CONF {"raw":[100]}
+
+00:22:52.540 --> 00:22:56.020
+<v Speaker 1>And so basically if you look at the unlikely transitions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:56.500 --> 00:23:00.940
+<v Speaker 1>then these are informative about word boundaries.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:01.420 --> 00:23:06.420
+<v Speaker 1>So and for that we need a simple probabilistic idea.
+
+NOTE CONF {"raw":[100,87,100,100,100,100,100,100,100,100]}
+
+00:23:06.620 --> 00:23:11.140
+<v Speaker 1>The idea of transitional probability which is really just a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:11.140 --> 00:23:12.300
+<v Speaker 1>conditional probability.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:12.300 --> 00:23:14.540
+<v Speaker 1>So the probability of y given x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:14.940 --> 00:23:18.780
+<v Speaker 1>So this means you have encountered x which can be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:18.780 --> 00:23:19.260
+<v Speaker 1>an event.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:19.260 --> 00:23:20.980
+<v Speaker 1>But in our case it's going to be a letter
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:20.980 --> 00:23:21.700
+<v Speaker 1>or a sound.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:22.140 --> 00:23:25.660
+<v Speaker 1>And what's the probability that you will also see y.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:26.100 --> 00:23:26.340
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:23:26.380 --> 00:23:27.300
+<v Speaker 1>So you've seen x.
+
+NOTE CONF {"raw":[100,95,100,100]}
+
+00:23:27.580 --> 00:23:30.460
+<v Speaker 1>What's the probability the next letter or sound is y.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:31.260 --> 00:23:33.780
+<v Speaker 1>And this is defined as the joint probability of x
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:33.780 --> 00:23:36.000
+<v Speaker 1>and y divided by the probability of x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:23:36.800 --> 00:23:40.120
+<v Speaker 1>And this can be approximated or estimated by taking the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:40.120 --> 00:23:44.000
+<v Speaker 1>frequency of x and y occurring together, and the frequency
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:44.000 --> 00:23:45.520
+<v Speaker 1>of x occurring on its own.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:46.480 --> 00:23:46.800
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[98]}
+
+00:23:46.840 --> 00:23:48.520
+<v Speaker 1>So very simple concept.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:23:48.520 --> 00:23:50.320
+<v Speaker 1>And let's look at a quick example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:51.680 --> 00:23:54.880
+<v Speaker 1>Let's look at a particular phoneme the phoneme the.
+
+NOTE CONF {"raw":[100,100,100,100,100,99,92,92,77]}
+
+00:23:54.920 --> 00:23:55.600
+<v Speaker 1>In English.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:56.040 --> 00:23:59.200
+<v Speaker 1>Let's assume we have a text that occurs 200,000 times,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:23:59.760 --> 00:24:04.480
+<v Speaker 1>and in 190,000 times.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:04.480 --> 00:24:07.480
+<v Speaker 1>The next uh phoneme is a vowel.
+
+NOTE CONF {"raw":[100,100,68,100,100,100,100]}
+
+00:24:07.680 --> 00:24:11.200
+<v Speaker 1>So the, this, that, there, and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:24:11.720 --> 00:24:13.840
+<v Speaker 1>There's lots of vowels after this phoneme.
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100]}
+
+00:24:14.800 --> 00:24:19.120
+<v Speaker 1>Um, and then a mere 200 times we find that
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100,100,100,100]}
+
+00:24:19.240 --> 00:24:22.680
+<v Speaker 1>it occurs before the phoneme.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:22.720 --> 00:24:23.080
+<v Speaker 1>Mhm.
+
+NOTE CONF {"raw":[87]}
+
+00:24:24.360 --> 00:24:24.800
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[94]}
+
+00:24:24.840 --> 00:24:26.800
+<v Speaker 1>So what are our transition probabilities.
+
+NOTE CONF {"raw":[100,100,100,99,99,81]}
+
+00:24:26.840 --> 00:24:30.000
+<v Speaker 1>So the probability of a vowel given the would be
+
+NOTE CONF {"raw":[100,73,100,100,86,100,100,96,100,100]}
+
+00:24:30.000 --> 00:24:32.680
+<v Speaker 1>190,000 divided by 200,000.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:32.720 --> 00:24:37.290
+<v Speaker 1>That is 0.95, and the probability of mm given the
+
+NOTE CONF {"raw":[100,100,90,100,100,100,100,38,100,100]}
+
+00:24:37.610 --> 00:24:40.010
+<v Speaker 1>would be 200 divided by 200,000.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:40.050 --> 00:24:41.450
+<v Speaker 1>That's 0.001.
+
+NOTE CONF {"raw":[98,95]}
+
+00:24:42.210 --> 00:24:42.570
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:42.610 --> 00:24:51.530
+<v Speaker 1>So having um, uh, having the uh vowel next is
+
+NOTE CONF {"raw":[100,100,100,78,100,100,67,100,100,100]}
+
+00:24:51.730 --> 00:24:53.530
+<v Speaker 1>a lot more probable than having.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:53.650 --> 00:24:54.010
+<v Speaker 1>Mhm.
+
+NOTE CONF {"raw":[52]}
+
+00:24:54.050 --> 00:24:54.610
+<v Speaker 1>Next.
+
+NOTE CONF {"raw":[100]}
+
+00:24:54.890 --> 00:24:58.810
+<v Speaker 1>And of course this is because thumb is not a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,84,100,100,100]}
+
+00:24:58.810 --> 00:25:02.170
+<v Speaker 1>possible sequence of consonants in English.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:02.610 --> 00:25:03.090
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:03.450 --> 00:25:07.010
+<v Speaker 1>So this can only occur if there's a word boundary.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:25:07.410 --> 00:25:09.690
+<v Speaker 1>So something like I don't know.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:12.930 --> 00:25:14.930
+<v Speaker 1>10th month or something.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:16.810 --> 00:25:17.090
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:25:17.090 --> 00:25:20.130
+<v Speaker 1>We have our first and then we have um and
+
+NOTE CONF {"raw":[100,100,88,37,100,100,100,100,97,100]}
+
+00:25:20.130 --> 00:25:23.170
+<v Speaker 1>because this cannot occur in the same word one after
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:23.170 --> 00:25:25.650
+<v Speaker 1>the other, there needs to be a word boundary there.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:25:26.570 --> 00:25:26.970
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:27.010 --> 00:25:30.450
+<v Speaker 1>So where this transition probability is low, we want to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:30.810 --> 00:25:34.830
+<v Speaker 1>uh, to assume a world boundary where it is high.
+
+NOTE CONF {"raw":[100,100,100,100,77,100,100,100,100,95]}
+
+00:25:35.470 --> 00:25:42.550
+<v Speaker 1>For example, this is actually not super great, for example,
+
+NOTE CONF {"raw":[100,100,52,56,100,100,100,100,57,85]}
+
+00:25:43.110 --> 00:25:46.910
+<v Speaker 1>but in cases like the and there and so on.
+
+NOTE CONF {"raw":[100,100,100,100,89,100,100,100,100,100]}
+
+00:25:47.470 --> 00:25:49.590
+<v Speaker 1>We have our other and then we have a vowel
+
+NOTE CONF {"raw":[100,100,92,52,100,100,100,100,100,100]}
+
+00:25:50.310 --> 00:25:51.070
+<v Speaker 1>behind it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:51.070 --> 00:25:53.670
+<v Speaker 1>And this is the the vast majority of cases.
+
+NOTE CONF {"raw":[100,100,100,58,100,100,100,100,100]}
+
+00:25:53.830 --> 00:25:56.390
+<v Speaker 1>So we want to assume that's the same word.
+
+NOTE CONF {"raw":[100,100,98,98,100,99,100,100,100]}
+
+00:25:56.910 --> 00:26:02.510
+<v Speaker 1>Whereas if a weird consonant follows the then we want
+
+NOTE CONF {"raw":[82,100,100,100,100,100,100,100,100,100]}
+
+00:26:02.510 --> 00:26:04.750
+<v Speaker 1>to assume it's it's a word boundary.
+
+NOTE CONF {"raw":[100,100,80,100,100,88,100]}
+
+00:26:05.670 --> 00:26:07.870
+<v Speaker 1>And if we look at a more elaborate example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:26:07.870 --> 00:26:10.750
+<v Speaker 1>So we have a sentence down here, this is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:26:10.750 --> 00:26:11.670
+<v Speaker 1>sentence of English.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:12.230 --> 00:26:17.230
+<v Speaker 1>And then here I have plotted the bigram transition probability.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:17.630 --> 00:26:23.790
+<v Speaker 1>So this is this probability here as computed over all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,40,100,100,100]}
+
+00:26:23.790 --> 00:26:25.870
+<v Speaker 1>pairs of letters in a given text.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:25.910 --> 00:26:26.150
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[84]}
+
+00:26:26.190 --> 00:26:29.550
+<v Speaker 1>We just took a large text and we computed the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:29.550 --> 00:26:39.280
+<v Speaker 1>probability Of um of age given two of I given
+
+NOTE CONF {"raw":[100,97,93,100,100,100,67,100,100,100]}
+
+00:26:39.320 --> 00:26:41.960
+<v Speaker 1>h of s given I of I given s, and
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:26:41.960 --> 00:26:42.440
+<v Speaker 1>so on.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:42.720 --> 00:26:46.040
+<v Speaker 1>And we plot the probability here, and then you can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:46.040 --> 00:26:49.760
+<v Speaker 1>see certain cases where the probability has a minimum.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:26:50.400 --> 00:26:52.280
+<v Speaker 1>And I've marked these by lines here.
+
+NOTE CONF {"raw":[100,100,100,87,100,100,100]}
+
+00:26:52.280 --> 00:26:57.760
+<v Speaker 1>So here for example then here after is here as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:57.760 --> 00:26:58.560
+<v Speaker 1>well and so on.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:58.560 --> 00:27:01.080
+<v Speaker 1>And not all of these correspond to word boundaries but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,91,100,100]}
+
+00:27:01.080 --> 00:27:06.520
+<v Speaker 1>some do like for example, this is and then uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,63]}
+
+00:27:06.560 --> 00:27:11.840
+<v Speaker 1>there was no word boundary detected here because as is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:11.880 --> 00:27:13.400
+<v Speaker 1>could could be a word as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:13.440 --> 00:27:13.640
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:27:13.680 --> 00:27:16.200
+<v Speaker 1>So that's actually a good sequence that can occur within
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:16.200 --> 00:27:19.320
+<v Speaker 1>a word and then sentence.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:19.480 --> 00:27:22.400
+<v Speaker 1>This is more like a syllable boundary here here as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:22.400 --> 00:27:22.600
+<v Speaker 1>well.
+
+NOTE CONF {"raw":[100]}
+
+00:27:22.600 --> 00:27:23.360
+<v Speaker 1>Syllable boundary.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:23.360 --> 00:27:26.800
+<v Speaker 1>Then we have another word boundary, word boundary syllable boundary
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:26.800 --> 00:27:27.480
+<v Speaker 1>and so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:27.920 --> 00:27:32.260
+<v Speaker 1>So this these places where the transitional probabilities are low
+
+NOTE CONF {"raw":[100,100,100,100,100,100,72,100,100,100]}
+
+00:27:32.740 --> 00:27:37.020
+<v Speaker 1>are indicative of boundaries, and sometimes they're syllable boundaries, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,44,100,100,100]}
+
+00:27:37.020 --> 00:27:40.020
+<v Speaker 1>other times they're word boundaries, sometimes false alarms.
+
+NOTE CONF {"raw":[100,100,88,100,100,100,100,100]}
+
+00:27:40.620 --> 00:27:43.460
+<v Speaker 1>So it's important to note that this is not a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:43.460 --> 00:27:47.340
+<v Speaker 1>perfect indicator of a word boundary, but is one of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,88,100,100]}
+
+00:27:47.340 --> 00:27:50.100
+<v Speaker 1>the sources of information that is available to the child.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:50.660 --> 00:27:53.820
+<v Speaker 1>These transitional probabilities, in addition to all the other things
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:53.820 --> 00:27:59.060
+<v Speaker 1>that we've said bootstrapping, uh, stress patterns, tactics and so
+
+NOTE CONF {"raw":[100,100,100,92,56,100,100,100,100,100]}
+
+00:27:59.060 --> 00:27:59.300
+<v Speaker 1>on.
+
+NOTE CONF {"raw":[100]}
+
+00:27:59.860 --> 00:28:02.620
+<v Speaker 1>And the assumption is, if the child takes all these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:02.620 --> 00:28:07.340
+<v Speaker 1>different heuristics together, then this is good enough to allow
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:07.340 --> 00:28:10.220
+<v Speaker 1>them to stipulate, uh, word boundaries.
+
+NOTE CONF {"raw":[100,100,100,70,100,100]}
+
+00:28:12.780 --> 00:28:13.300
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[88]}
+
+00:28:13.620 --> 00:28:16.220
+<v Speaker 1>Um, that is the theory, right?
+
+NOTE CONF {"raw":[90,100,100,100,100,97]}
+
+00:28:16.260 --> 00:28:20.460
+<v Speaker 1>So we think about the problem in abstract speech stream
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,92,100]}
+
+00:28:20.460 --> 00:28:20.820
+<v Speaker 1>comes in.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:20.860 --> 00:28:21.820
+<v Speaker 1>There's no boundaries.
+
+NOTE CONF {"raw":[86,100,100]}
+
+00:28:21.820 --> 00:28:23.020
+<v Speaker 1>How do we find the boundaries?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:23.020 --> 00:28:25.620
+<v Speaker 1>We can use probability and tactics and so on.
+
+NOTE CONF {"raw":[100,100,100,100,51,100,100,100,100]}
+
+00:28:26.020 --> 00:28:28.020
+<v Speaker 1>But what do children do in practice?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:28.100 --> 00:28:29.270
+<v Speaker 1>How do we find out?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:29.830 --> 00:28:33.070
+<v Speaker 1>So here's an example for a clever experiment.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:33.070 --> 00:28:35.870
+<v Speaker 1>This is an older study by Safran et al.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,84,100,100]}
+
+00:28:36.350 --> 00:28:39.470
+<v Speaker 1>And they looked at eight month old babies.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:39.870 --> 00:28:45.310
+<v Speaker 1>So these children, they cannot speak, they cannot walk yet
+
+NOTE CONF {"raw":[100,100,100,90,100,100,100,100,95,100]}
+
+00:28:45.310 --> 00:28:45.990
+<v Speaker 1>and so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:46.310 --> 00:28:49.630
+<v Speaker 1>But it turns out they can learn where the word
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:49.670 --> 00:28:50.350
+<v Speaker 1>boundaries are.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:50.790 --> 00:28:52.390
+<v Speaker 1>And this is how they found out.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:53.470 --> 00:28:57.830
+<v Speaker 1>So the experimenters, they made up a language out of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:57.830 --> 00:29:01.310
+<v Speaker 1>nonsense words because they obviously didn't want to test a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:01.310 --> 00:29:02.710
+<v Speaker 1>particular existing language.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:02.750 --> 00:29:02.950
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[77]}
+
+00:29:02.990 --> 00:29:06.470
+<v Speaker 1>Because it's about language acquisition where you start not knowing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:06.510 --> 00:29:07.110
+<v Speaker 1>the language.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:07.190 --> 00:29:08.950
+<v Speaker 1>Can you still find the word boundaries?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:09.870 --> 00:29:13.550
+<v Speaker 1>And then they gave them words in this language, for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:13.550 --> 00:29:18.870
+<v Speaker 1>example, pas de deux, de TI, budo, and so on.
+
+NOTE CONF {"raw":[100,100,100,98,100,63,78,100,100,100]}
+
+00:29:19.830 --> 00:29:24.230
+<v Speaker 1>And then once you have trained the child a little
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:24.230 --> 00:29:24.470
+<v Speaker 1>bit.
+
+NOTE CONF {"raw":[100]}
+
+00:29:24.470 --> 00:29:27.590
+<v Speaker 1>So training here just means listening to sequences of words
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:27.590 --> 00:29:28.200
+<v Speaker 1>like this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:28.800 --> 00:29:30.000
+<v Speaker 1>And then you test them.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:30.000 --> 00:29:33.280
+<v Speaker 1>You find out, you give them other words which either
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:33.280 --> 00:29:35.240
+<v Speaker 1>they've heard before or they haven't heard before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:35.320 --> 00:29:36.800
+<v Speaker 1>And can they distinguish them?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:36.800 --> 00:29:39.840
+<v Speaker 1>So probably could be something that I've heard before, but
+
+NOTE CONF {"raw":[100,100,52,100,100,77,90,100,100,100]}
+
+00:29:40.520 --> 00:29:45.200
+<v Speaker 1>would be a sequence that is possible, but they haven't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:45.200 --> 00:29:45.800
+<v Speaker 1>heard before.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:46.320 --> 00:29:49.400
+<v Speaker 1>And it's best to understand this using an example.
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100]}
+
+00:29:49.400 --> 00:29:52.720
+<v Speaker 1>So this is this is all obviously spoken language.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:52.800 --> 00:29:57.920
+<v Speaker 1>So they would hear something like barbecue or Galati.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,58,100,94]}
+
+00:29:57.960 --> 00:30:00.040
+<v Speaker 1>So it sounds terrible.
+
+NOTE CONF {"raw":[100,99,100,100]}
+
+00:30:00.040 --> 00:30:02.720
+<v Speaker 1>And it's really hard to imagine that the children can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:02.720 --> 00:30:03.600
+<v Speaker 1>make sense of this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:03.960 --> 00:30:06.880
+<v Speaker 1>But hidden in the stream are word boundaries.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100]}
+
+00:30:07.520 --> 00:30:10.240
+<v Speaker 1>So here, for example, barbecue is a word, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,78]}
+
+00:30:10.240 --> 00:30:11.840
+<v Speaker 1>It's repeated all the time.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:13.000 --> 00:30:14.800
+<v Speaker 1>T budo is also a word.
+
+NOTE CONF {"raw":[48,79,100,100,100,100]}
+
+00:30:14.800 --> 00:30:16.240
+<v Speaker 1>It's repeated all the time.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:16.840 --> 00:30:18.000
+<v Speaker 1>But something like.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:18.040 --> 00:30:19.400
+<v Speaker 1>What was my example here?
+
+NOTE CONF {"raw":[100,100,100,100,95]}
+
+00:30:20.560 --> 00:30:25.600
+<v Speaker 1>Dog Ola is not a word, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98]}
+
+00:30:25.640 --> 00:30:27.300
+<v Speaker 1>It crosses a word boundary.
+
+NOTE CONF {"raw":[100,100,77,100,100]}
+
+00:30:27.660 --> 00:30:30.220
+<v Speaker 1>And also that means it's not repeated or it's not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:30.220 --> 00:30:32.940
+<v Speaker 1>repeated as often as the real words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:32.980 --> 00:30:35.540
+<v Speaker 1>I don't know if we can have another example of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:35.780 --> 00:30:40.460
+<v Speaker 1>here's another example of dog collar, but less, much less
+
+NOTE CONF {"raw":[100,100,100,100,77,57,100,100,100,100]}
+
+00:30:40.460 --> 00:30:41.060
+<v Speaker 1>common.
+
+NOTE CONF {"raw":[100]}
+
+00:30:41.420 --> 00:30:46.580
+<v Speaker 1>And so some transitions are really likely right here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:30:46.580 --> 00:30:49.060
+<v Speaker 1>So from PA to B and from B to Ku.
+
+NOTE CONF {"raw":[100,100,82,100,100,100,100,100,100,87]}
+
+00:30:49.460 --> 00:30:51.860
+<v Speaker 1>And some transitions are not very likely here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:51.860 --> 00:30:55.100
+<v Speaker 1>For example, from Ku to T or from door to
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,61,100]}
+
+00:30:55.140 --> 00:30:55.420
+<v Speaker 1>go.
+
+NOTE CONF {"raw":[88]}
+
+00:30:56.340 --> 00:30:59.660
+<v Speaker 1>And are the children able to to tell the difference
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:30:59.940 --> 00:31:04.820
+<v Speaker 1>right between these high transitional probabilities that indicate we're within
+
+NOTE CONF {"raw":[78,100,100,100,99,100,100,100,47,100]}
+
+00:31:04.820 --> 00:31:08.460
+<v Speaker 1>a word, and low transitional probabilities that indicate where between
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,97,100]}
+
+00:31:08.460 --> 00:31:09.220
+<v Speaker 1>the word right.
+
+NOTE CONF {"raw":[100,100,77]}
+
+00:31:09.260 --> 00:31:11.740
+<v Speaker 1>So this is the exact same logic that we applied
+
+NOTE CONF {"raw":[100,99,99,100,100,100,100,100,100,100]}
+
+00:31:11.740 --> 00:31:19.500
+<v Speaker 1>here to our vowel and the versus m and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,73,100,100]}
+
+00:31:19.500 --> 00:31:20.300
+<v Speaker 1>transition.
+
+NOTE CONF {"raw":[100]}
+
+00:31:21.740 --> 00:31:25.340
+<v Speaker 1>And now of course the million dollar question is how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:25.340 --> 00:31:26.110
+<v Speaker 1>do we even know?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:26.350 --> 00:31:26.830
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[81]}
+
+00:31:27.030 --> 00:31:28.110
+<v Speaker 1>These kids can't speak.
+
+NOTE CONF {"raw":[94,95,95,100]}
+
+00:31:29.750 --> 00:31:33.070
+<v Speaker 1>You know, they probably are not able to follow instructions
+
+NOTE CONF {"raw":[98,98,100,100,100,100,100,100,100,100]}
+
+00:31:33.070 --> 00:31:34.790
+<v Speaker 1>very well and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:34.870 --> 00:31:37.350
+<v Speaker 1>So we need basically a trick.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:38.350 --> 00:31:42.390
+<v Speaker 1>And so this is how these experiments are normally run.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:42.390 --> 00:31:45.550
+<v Speaker 1>This is called the head turned preference procedure.
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100]}
+
+00:31:46.350 --> 00:31:50.510
+<v Speaker 1>So we have our baby here sitting on the lap
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:50.510 --> 00:31:57.830
+<v Speaker 1>of caregiver let's say mother listening to the pas de
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,48,48]}
+
+00:31:58.110 --> 00:31:59.390
+<v Speaker 1>deux and so on.
+
+NOTE CONF {"raw":[27,100,100,100]}
+
+00:31:59.950 --> 00:32:02.230
+<v Speaker 1>And this of course gets boring very quickly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:02.350 --> 00:32:05.510
+<v Speaker 1>So a child listens to that for for a while.
+
+NOTE CONF {"raw":[100,50,100,100,100,100,100,100,100,100]}
+
+00:32:05.790 --> 00:32:08.870
+<v Speaker 1>Then there's a break and then they're given a new,
+
+NOTE CONF {"raw":[100,92,100,100,100,100,54,100,100,100]}
+
+00:32:09.950 --> 00:32:17.510
+<v Speaker 1>uh, a sequence of words that are either valid, they
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100,100,100,100]}
+
+00:32:17.510 --> 00:32:20.670
+<v Speaker 1>occur in the training data, like PA, BQ, which is
+
+NOTE CONF {"raw":[100,97,100,100,100,100,60,39,100,100]}
+
+00:32:20.670 --> 00:32:25.170
+<v Speaker 1>the first one here, or they're given a sequence That
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:25.170 --> 00:32:27.850
+<v Speaker 1>is not one that is frequent in the training data
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:27.890 --> 00:32:28.770
+<v Speaker 1>like dog or LA.
+
+NOTE CONF {"raw":[100,66,77,56]}
+
+00:32:28.770 --> 00:32:30.810
+<v Speaker 1>So this would be this one here that crosses the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:30.810 --> 00:32:31.530
+<v Speaker 1>word boundary.
+
+NOTE CONF {"raw":[95,100]}
+
+00:32:32.690 --> 00:32:36.050
+<v Speaker 1>And infants have a natural tendency to turn their head
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:36.050 --> 00:32:38.010
+<v Speaker 1>towards things that are new and interesting.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:38.650 --> 00:32:42.450
+<v Speaker 1>So we're predicting that the words that they haven't recognised,
+
+NOTE CONF {"raw":[100,65,100,100,100,100,100,100,100,90]}
+
+00:32:42.450 --> 00:32:45.370
+<v Speaker 1>that they haven't seen at the training time are new
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:45.370 --> 00:32:46.010
+<v Speaker 1>and interesting.
+
+NOTE CONF {"raw":[100,100]}
+
+00:32:46.010 --> 00:32:47.250
+<v Speaker 1>So they should turn their head.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:48.250 --> 00:32:48.650
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[92]}
+
+00:32:48.690 --> 00:32:50.010
+<v Speaker 1>And this is what happens.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:50.570 --> 00:32:55.290
+<v Speaker 1>So here this is the time it takes them to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:55.290 --> 00:32:58.610
+<v Speaker 1>turn their head for the pod words.
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100]}
+
+00:32:59.530 --> 00:33:02.450
+<v Speaker 1>And this is the time we know.
+
+NOTE CONF {"raw":[100,100,100,100,100,43,58]}
+
+00:33:02.490 --> 00:33:02.930
+<v Speaker 1>Sorry.
+
+NOTE CONF {"raw":[88]}
+
+00:33:03.330 --> 00:33:04.330
+<v Speaker 1>Longer listening time.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:33:04.330 --> 00:33:04.610
+<v Speaker 1>Sorry.
+
+NOTE CONF {"raw":[97]}
+
+00:33:04.650 --> 00:33:05.650
+<v Speaker 1>This is how long they.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:06.290 --> 00:33:08.890
+<v Speaker 1>They pay attention to the new words which are the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:08.890 --> 00:33:09.530
+<v Speaker 1>part words.
+
+NOTE CONF {"raw":[66,100]}
+
+00:33:09.570 --> 00:33:09.730
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[98]}
+
+00:33:09.770 --> 00:33:12.530
+<v Speaker 1>Which they haven't had the training time and the words
+
+NOTE CONF {"raw":[100,100,100,58,84,100,100,100,100,100]}
+
+00:33:12.690 --> 00:33:14.370
+<v Speaker 1>which they have heard at training time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:33:14.850 --> 00:33:15.130
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[96]}
+
+00:33:15.170 --> 00:33:17.930
+<v Speaker 1>So they pay more attention to the to the things
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:17.930 --> 00:33:21.170
+<v Speaker 1>they haven't seen before compared to the things that they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,90]}
+
+00:33:21.170 --> 00:33:21.930
+<v Speaker 1>have seen before.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:22.330 --> 00:33:26.260
+<v Speaker 1>So that means when they heard the stream, then it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:33:26.260 --> 00:33:29.660
+<v Speaker 1>wasn't just a sequence of nonsense syllable, but syllables.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:33:29.660 --> 00:33:33.700
+<v Speaker 1>But they were actually able to memorise patterns and later
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100,100]}
+
+00:33:33.700 --> 00:33:36.860
+<v Speaker 1>on to recognise whether they've seen these patterns before or
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:33:36.860 --> 00:33:37.220
+<v Speaker 1>not.
+
+NOTE CONF {"raw":[100]}
+
+00:33:38.060 --> 00:33:38.420
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[89]}
+
+00:33:38.460 --> 00:33:41.060
+<v Speaker 1>And this has been taken as evidence in the literature
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:42.260 --> 00:33:46.980
+<v Speaker 1>that children use these statistical or probabilistic cues about word
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,94]}
+
+00:33:47.020 --> 00:33:47.580
+<v Speaker 1>boundaries.
+
+NOTE CONF {"raw":[100]}
+
+00:33:47.740 --> 00:33:47.940
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[99]}
+
+00:33:47.980 --> 00:33:52.980
+<v Speaker 1>So the first here, the nonsense language, um, there's no
+
+NOTE CONF {"raw":[100,31,100,23,91,100,100,52,100,100]}
+
+00:33:53.020 --> 00:33:53.980
+<v Speaker 1>word boundaries.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:54.700 --> 00:33:57.100
+<v Speaker 1>It's a continuous stream.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:57.580 --> 00:34:00.380
+<v Speaker 1>Obviously, they don't know the language because it's made up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:00.740 --> 00:34:04.860
+<v Speaker 1>So they have to use statistics and then they get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:04.860 --> 00:34:09.300
+<v Speaker 1>the new stimuli and we measure the the time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:09.580 --> 00:34:11.659
+<v Speaker 1>They pay attention to the new stimuli.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:14.540 --> 00:34:18.460
+<v Speaker 1>And then we see that the words they're able to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:18.460 --> 00:34:20.460
+<v Speaker 1>discriminate between words and part words.
+
+NOTE CONF {"raw":[100,100,100,100,93,100]}
+
+00:34:20.460 --> 00:34:25.520
+<v Speaker 1>So sequences that span a word boundary, like these ones,
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:34:25.520 --> 00:34:26.480
+<v Speaker 1>for example here.
+
+NOTE CONF {"raw":[100,100,95]}
+
+00:34:27.000 --> 00:34:29.720
+<v Speaker 1>So we take three syllables, but we make sure that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:29.720 --> 00:34:31.000
+<v Speaker 1>they span the word boundary.
+
+NOTE CONF {"raw":[98,98,66,83,100]}
+
+00:34:33.000 --> 00:34:36.200
+<v Speaker 1>So there seems to be some statistical learning going on,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:36.200 --> 00:34:37.600
+<v Speaker 1>some probabilistic learning.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:38.320 --> 00:34:41.320
+<v Speaker 1>And you might say, okay, this could be a fluke
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:41.360 --> 00:34:43.360
+<v Speaker 1>if this was just this one study.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:43.360 --> 00:34:47.000
+<v Speaker 1>But this was 20 years ago, and there have been
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:47.000 --> 00:34:49.879
+<v Speaker 1>lots and lots of studies showing something similar.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:51.159 --> 00:34:53.760
+<v Speaker 1>Okay, so we have pretty good evidence that humans use
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:54.000 --> 00:34:56.760
+<v Speaker 1>statistical information to segment speech.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:57.480 --> 00:35:02.560
+<v Speaker 1>And the limitations of the original story was all three
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:02.560 --> 00:35:03.560
+<v Speaker 1>syllable words.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:04.000 --> 00:35:09.000
+<v Speaker 1>The probabilities were very simple, either 1 or 0.33.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,99,99]}
+
+00:35:09.440 --> 00:35:13.160
+<v Speaker 1>And then in subsequent work, people have looked at longer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:13.160 --> 00:35:16.720
+<v Speaker 1>words and other probabilistic cues and so on.
+
+NOTE CONF {"raw":[100,87,100,100,82,100,100,100]}
+
+00:35:17.280 --> 00:35:19.720
+<v Speaker 1>And here's a fun Ted talk if you want to
+
+NOTE CONF {"raw":[100,100,100,100,67,74,100,100,100,100]}
+
+00:35:19.720 --> 00:35:20.360
+<v Speaker 1>find out more.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:20.930 --> 00:35:25.490
+<v Speaker 1>So this Patricia Kuhl, who talks about her research in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:25.490 --> 00:35:29.690
+<v Speaker 1>this area and reviews a lot of different experiments and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:29.690 --> 00:35:33.130
+<v Speaker 1>results, not just this one study by Safran and colleagues.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,74,100,100]}
+
+00:35:35.690 --> 00:35:42.090
+<v Speaker 1>Okay, let's do a few questions about transitional probability before
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:42.090 --> 00:35:42.770
+<v Speaker 1>we move on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:49.610 --> 00:35:50.090
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:50.210 --> 00:35:54.410
+<v Speaker 1>So first of all, we've seen the transitional probability of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:54.410 --> 00:35:55.530
+<v Speaker 1>y given x right.
+
+NOTE CONF {"raw":[100,100,100,98]}
+
+00:35:55.570 --> 00:35:59.290
+<v Speaker 1>This is the probability of encountering a certain unit.
+
+NOTE CONF {"raw":[100,100,78,100,100,100,100,100,100]}
+
+00:35:59.330 --> 00:36:02.450
+<v Speaker 1>Let's say a phoneme or a letter given that you've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:02.450 --> 00:36:04.290
+<v Speaker 1>seen another letter or another phoneme.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:05.610 --> 00:36:08.090
+<v Speaker 1>And this is good for word segmentation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:08.210 --> 00:36:11.650
+<v Speaker 1>You can show that it's useful for written words as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:11.650 --> 00:36:15.570
+<v Speaker 1>well, not just spoken ones, but what could you possibly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:15.570 --> 00:36:16.930
+<v Speaker 1>detect using this paradigm?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:16.970 --> 00:36:18.490
+<v Speaker 1>Is there anything else you can think?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:19.590 --> 00:36:23.830
+<v Speaker 1>Uh, where probabilities such as these conditional probabilities are useful,
+
+NOTE CONF {"raw":[76,100,100,100,100,100,99,100,100,100]}
+
+00:36:24.510 --> 00:36:29.350
+<v Speaker 1>for example, to detect phrase boundaries to segment images.
+
+NOTE CONF {"raw":[100,100,100,100,63,100,100,100,100]}
+
+00:36:29.630 --> 00:36:29.950
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[97]}
+
+00:36:29.990 --> 00:36:33.510
+<v Speaker 1>To find the objects in an image, uh, to take
+
+NOTE CONF {"raw":[100,100,100,92,100,100,100,74,100,95]}
+
+00:36:33.510 --> 00:36:34.670
+<v Speaker 1>phoneme boundaries.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:35.230 --> 00:36:35.630
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[95]}
+
+00:36:35.670 --> 00:36:39.590
+<v Speaker 1>The the units that make up the speech stream to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:39.630 --> 00:36:43.070
+<v Speaker 1>detect sentence boundaries or to detect syllable boundaries.
+
+NOTE CONF {"raw":[100,100,100,100,88,100,100,100]}
+
+00:36:44.030 --> 00:36:45.150
+<v Speaker 1>So take a guess.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:01.430 --> 00:37:01.950
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[91]}
+
+00:37:05.150 --> 00:37:05.390
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[43]}
+
+00:37:06.790 --> 00:37:09.710
+<v Speaker 0>You know what I mean?
+
+NOTE CONF {"raw":[90,90,88,75,88]}
+
+00:37:18.600 --> 00:37:19.040
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:37:23.920 --> 00:37:24.080
+<v Speaker 0>That's.
+
+NOTE CONF {"raw":[91]}
+
+00:37:35.280 --> 00:37:35.760
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:37:45.520 --> 00:37:45.880
+<v Speaker 0>I think.
+
+NOTE CONF {"raw":[99,89]}
+
+00:37:48.400 --> 00:37:48.840
+<v Speaker 0>That's good.
+
+NOTE CONF {"raw":[95,94]}
+
+00:37:50.400 --> 00:37:52.040
+<v Speaker 1>Okay, let's see what people think.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:54.120 --> 00:37:54.720
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:55.960 --> 00:37:57.840
+<v Speaker 1>Ah, it seems to work for everything.
+
+NOTE CONF {"raw":[88,100,100,100,100,100,100]}
+
+00:37:57.840 --> 00:37:58.480
+<v Speaker 1>Almost.
+
+NOTE CONF {"raw":[100]}
+
+00:37:59.000 --> 00:38:00.120
+<v Speaker 1>So phrase boundaries.
+
+NOTE CONF {"raw":[100,96,100]}
+
+00:38:00.120 --> 00:38:01.440
+<v Speaker 1>Let's talk about that first.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:02.240 --> 00:38:03.160
+<v Speaker 1>Yes, definitely.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:03.240 --> 00:38:06.640
+<v Speaker 1>So if you think about I don't know example again
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:06.640 --> 00:38:07.240
+<v Speaker 1>the dog.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:10.000 --> 00:38:15.480
+<v Speaker 1>So sentence boundary detection is the task of taking a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:15.480 --> 00:38:18.540
+<v Speaker 1>sequence of words and finding where a sentence ends or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:18.580 --> 00:38:19.140
+<v Speaker 1>begins.
+
+NOTE CONF {"raw":[100]}
+
+00:38:19.620 --> 00:38:20.620
+<v Speaker 1>And here, for example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:20.660 --> 00:38:22.180
+<v Speaker 1>Do we want the sentence boundary here?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:22.220 --> 00:38:22.980
+<v Speaker 1>Probably not.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:23.220 --> 00:38:26.300
+<v Speaker 1>Because in English you can't really have a sentence that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:26.300 --> 00:38:27.260
+<v Speaker 1>ends in the.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:27.980 --> 00:38:28.300
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:38:28.340 --> 00:38:30.020
+<v Speaker 1>There needs to be something else after that.
+
+NOTE CONF {"raw":[46,100,100,100,100,100,100,100]}
+
+00:38:30.340 --> 00:38:32.580
+<v Speaker 1>Typically an adjective or a noun.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:32.860 --> 00:38:36.340
+<v Speaker 1>So this is going to be a high transitional probability.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,100]}
+
+00:38:36.940 --> 00:38:37.140
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[99]}
+
+00:38:37.180 --> 00:38:39.740
+<v Speaker 1>So that sort of information is also useful for sentence
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:39.740 --> 00:38:40.300
+<v Speaker 1>boundaries.
+
+NOTE CONF {"raw":[100]}
+
+00:38:40.620 --> 00:38:44.540
+<v Speaker 1>If you have a sentence boundary then presumably the next
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:44.540 --> 00:38:46.940
+<v Speaker 1>word is a low probability.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:47.660 --> 00:38:48.380
+<v Speaker 1>Transition.
+
+NOTE CONF {"raw":[97]}
+
+00:38:49.540 --> 00:38:51.060
+<v Speaker 1>Image segmentation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:53.340 --> 00:38:54.460
+<v Speaker 1>I don't think so.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:54.620 --> 00:38:59.900
+<v Speaker 1>I mean it's maybe possible in theory if you want
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:59.900 --> 00:39:04.500
+<v Speaker 1>to find the edges of objects in an image.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:06.620 --> 00:39:10.580
+<v Speaker 1>Then that could indicate a transitional probability.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:11.220 --> 00:39:14.540
+<v Speaker 1>However, in reality this is not something people use in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:14.540 --> 00:39:15.700
+<v Speaker 1>image segmentation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:15.980 --> 00:39:18.310
+<v Speaker 1>So the answer is no.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:18.310 --> 00:39:19.430
+<v Speaker 1>Phoneme boundaries.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:20.790 --> 00:39:27.070
+<v Speaker 1>Perhaps most most researchers assume the phonemes you know the
+
+NOTE CONF {"raw":[100,100,100,100,99,99,100,100,100,100]}
+
+00:39:27.070 --> 00:39:28.870
+<v Speaker 1>phonemes before you do anything.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:29.350 --> 00:39:32.950
+<v Speaker 1>And there is actually pretty good evidence that this is
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:39:32.950 --> 00:39:34.630
+<v Speaker 1>something that is probably innate.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:34.790 --> 00:39:36.270
+<v Speaker 1>An inventory of phonemes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:36.270 --> 00:39:39.590
+<v Speaker 1>So in the world's languages, there's about 4045 phonemes.
+
+NOTE CONF {"raw":[99,100,100,98,100,88,100,100,100]}
+
+00:39:40.390 --> 00:39:45.150
+<v Speaker 1>And what happens during language acquisition is that you stop
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:45.150 --> 00:39:47.710
+<v Speaker 1>being able to recognise and produce the ones that don't
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:39:47.710 --> 00:39:48.750
+<v Speaker 1>occur in your language.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:49.190 --> 00:39:53.590
+<v Speaker 1>For example, English doesn't have a phoneme, so English speakers
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:53.590 --> 00:39:55.110
+<v Speaker 1>often are not able to pronounce it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:55.110 --> 00:39:58.710
+<v Speaker 1>But you can show that as babies you're able to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,100]}
+
+00:39:58.710 --> 00:40:00.670
+<v Speaker 1>recognise and pronounce these phonemes.
+
+NOTE CONF {"raw":[95,100,100,100,100]}
+
+00:40:00.670 --> 00:40:02.710
+<v Speaker 1>So it's a process of unlearning probably.
+
+NOTE CONF {"raw":[81,100,97,100,100,100,100]}
+
+00:40:03.110 --> 00:40:04.950
+<v Speaker 1>So that's probably a different mechanism.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:07.150 --> 00:40:08.190
+<v Speaker 1>Phrase boundaries.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:08.190 --> 00:40:11.110
+<v Speaker 1>Sentence boundaries work very similar to phrase boundaries.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:11.110 --> 00:40:12.870
+<v Speaker 1>So yes, definitely.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:13.030 --> 00:40:14.270
+<v Speaker 1>And syllable boundaries.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:14.350 --> 00:40:20.050
+<v Speaker 1>We've already seen this example with the, um, where we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,99,100,100]}
+
+00:40:20.050 --> 00:40:23.170
+<v Speaker 1>looked at the transitional probabilities in a sentence and we
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100,100]}
+
+00:40:23.170 --> 00:40:25.570
+<v Speaker 1>got some word boundaries, but we also got some syllable
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:25.570 --> 00:40:26.050
+<v Speaker 1>boundaries.
+
+NOTE CONF {"raw":[100]}
+
+00:40:26.050 --> 00:40:29.450
+<v Speaker 1>So probably syllable boundaries are not as strong as the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:40:29.450 --> 00:40:31.450
+<v Speaker 1>word boundaries, but they work in a similar way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:31.850 --> 00:40:32.650
+<v Speaker 1>So yes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:34.170 --> 00:40:38.730
+<v Speaker 1>So these I think are the the correct answers.
+
+NOTE CONF {"raw":[100,100,100,100,100,81,100,100,100]}
+
+00:40:38.770 --> 00:40:39.450
+<v Speaker 1>Moving on.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:41.130 --> 00:40:46.810
+<v Speaker 1>So um, if you're able to see slide 15, which
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:40:46.810 --> 00:40:51.610
+<v Speaker 1>was the slide with the, um, nonsense language, uh, can
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,78,100]}
+
+00:40:51.610 --> 00:40:54.170
+<v Speaker 1>you work out these transitional probabilities?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:54.410 --> 00:41:00.050
+<v Speaker 1>The transitional probability of T given Q the transition probability
+
+NOTE CONF {"raw":[100,100,100,100,93,100,49,100,100,100]}
+
+00:41:00.050 --> 00:41:03.490
+<v Speaker 1>of DAW given bu and of Rau given p.
+
+NOTE CONF {"raw":[100,91,100,97,100,100,52,100,91]}
+
+00:41:04.170 --> 00:41:07.130
+<v Speaker 1>So just to quickly go back.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:14.420 --> 00:41:14.660
+<v Speaker 1>This.
+
+NOTE CONF {"raw":[100]}
+
+00:41:14.660 --> 00:41:15.180
+<v Speaker 1>Was this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:15.220 --> 00:41:16.100
+<v Speaker 1>Here it is.
+
+NOTE CONF {"raw":[58,44,45]}
+
+00:41:17.100 --> 00:41:19.940
+<v Speaker 1>I'm talking about this set of words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:28.420 --> 00:41:30.660
+<v Speaker 1>So if possible, solutions here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:31.820 --> 00:41:32.580
+<v Speaker 1>2/5.
+
+NOTE CONF {"raw":[100]}
+
+00:41:33.460 --> 00:41:34.380
+<v Speaker 1>0/3.
+
+NOTE CONF {"raw":[100]}
+
+00:41:34.940 --> 00:41:35.700
+<v Speaker 1>5/5.
+
+NOTE CONF {"raw":[100]}
+
+00:41:44.420 --> 00:41:47.620
+<v Speaker 0>165.
+
+NOTE CONF {"raw":[35]}
+
+00:41:54.540 --> 00:41:54.900
+<v Speaker 0>This is.
+
+NOTE CONF {"raw":[94,85]}
+
+00:41:57.260 --> 00:41:57.660
+<v Speaker 0>Something.
+
+NOTE CONF {"raw":[94]}
+
+00:42:04.140 --> 00:42:04.380
+<v Speaker 0>That.
+
+NOTE CONF {"raw":[94]}
+
+00:42:10.980 --> 00:42:11.460
+<v Speaker 0>You.
+
+NOTE CONF {"raw":[50]}
+
+00:42:19.360 --> 00:42:20.080
+<v Speaker 0>I don't know.
+
+NOTE CONF {"raw":[83,82,100]}
+
+00:42:26.880 --> 00:42:29.280
+<v Speaker 0>What's happening?
+
+NOTE CONF {"raw":[82,80]}
+
+00:42:29.960 --> 00:42:30.360
+<v Speaker 0>Something.
+
+NOTE CONF {"raw":[51]}
+
+00:42:30.600 --> 00:42:31.080
+<v Speaker 0>Something.
+
+NOTE CONF {"raw":[77]}
+
+00:42:31.960 --> 00:42:32.120
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[77]}
+
+00:42:32.160 --> 00:42:32.800
+<v Speaker 0>Here we go.
+
+NOTE CONF {"raw":[54,58,55]}
+
+00:42:37.840 --> 00:42:38.200
+<v Speaker 0>Come on.
+
+NOTE CONF {"raw":[31,31]}
+
+00:42:40.200 --> 00:42:42.160
+<v Speaker 1>Okay, so I don't want to spend too much time
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:42:42.160 --> 00:42:47.560
+<v Speaker 1>on this, so I'll give you the answers, and I
+
+NOTE CONF {"raw":[100,100,91,100,100,100,100,100,100,100]}
+
+00:42:47.680 --> 00:42:51.920
+<v Speaker 1>will quickly show you how to do the first one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:51.920 --> 00:42:52.400
+<v Speaker 1>t given.
+
+NOTE CONF {"raw":[97,100]}
+
+00:42:52.400 --> 00:42:52.680
+<v Speaker 1>Q.
+
+NOTE CONF {"raw":[58]}
+
+00:42:53.280 --> 00:42:55.400
+<v Speaker 1>So what we need to do here is, first of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:55.400 --> 00:42:57.760
+<v Speaker 1>all, to count how often t occurs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:58.160 --> 00:43:05.840
+<v Speaker 1>There's one, two, three, four, five t's okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,88,100]}
+
+00:43:09.160 --> 00:43:12.240
+<v Speaker 1>And then we need to work out how often this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:12.250 --> 00:43:14.050
+<v Speaker 1>T is preceded by Q.
+
+NOTE CONF {"raw":[47,100,100,100,62]}
+
+00:43:14.050 --> 00:43:15.170
+<v Speaker 1>So there's one here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:16.010 --> 00:43:17.250
+<v Speaker 1>This is something else.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:18.250 --> 00:43:19.610
+<v Speaker 1>This is something else.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:21.290 --> 00:43:24.170
+<v Speaker 1>And this has a cool and this is something else.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:24.250 --> 00:43:26.210
+<v Speaker 1>So it's two out of five.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:27.210 --> 00:43:27.690
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:27.970 --> 00:43:31.210
+<v Speaker 1>So count how often they occur together and count how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:31.210 --> 00:43:33.250
+<v Speaker 1>often tea occurs on its own.
+
+NOTE CONF {"raw":[100,75,100,100,99,100]}
+
+00:43:39.810 --> 00:43:40.210
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:40.290 --> 00:43:41.530
+<v Speaker 1>So are we done now?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:42.570 --> 00:43:43.610
+<v Speaker 1>Unfortunately not.
+
+NOTE CONF {"raw":[100,70]}
+
+00:43:43.610 --> 00:43:44.290
+<v Speaker 1>Not so.
+
+NOTE CONF {"raw":[88,80]}
+
+00:43:44.450 --> 00:43:47.970
+<v Speaker 1>Now we have a way of segmenting our speech stream
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:47.970 --> 00:43:49.690
+<v Speaker 1>of finding word boundaries.
+
+NOTE CONF {"raw":[75,100,100,100]}
+
+00:43:51.010 --> 00:43:52.850
+<v Speaker 1>However, there's often ambiguity.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:52.890 --> 00:43:55.410
+<v Speaker 1>Often there's more than one way to segment the speech
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:43:55.410 --> 00:43:55.810
+<v Speaker 1>stream.
+
+NOTE CONF {"raw":[100]}
+
+00:43:56.090 --> 00:43:59.970
+<v Speaker 1>If you remember the example at the beginning, the kettle
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:00.010 --> 00:44:03.570
+<v Speaker 1>on the red chips or whatever it was there, we
+
+NOTE CONF {"raw":[100,100,98,100,100,100,94,100,100,100]}
+
+00:44:03.570 --> 00:44:06.890
+<v Speaker 1>could find different ways of inserting meaningful phrase boundaries.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:06.890 --> 00:44:08.490
+<v Speaker 1>And so how do we know which one is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:08.490 --> 00:44:09.170
+<v Speaker 1>correct one?
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:09.730 --> 00:44:13.270
+<v Speaker 1>So Because we are not learning just a single word.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:13.270 --> 00:44:14.910
+<v Speaker 1>We are learning a lot of words at the same
+
+NOTE CONF {"raw":[80,80,100,100,100,100,100,100,100,100]}
+
+00:44:14.910 --> 00:44:15.310
+<v Speaker 1>time.
+
+NOTE CONF {"raw":[100]}
+
+00:44:16.350 --> 00:44:20.790
+<v Speaker 1>You need to combine the speech segmentation with basically the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:20.790 --> 00:44:22.150
+<v Speaker 1>learning of the lexicon.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:22.510 --> 00:44:23.950
+<v Speaker 1>The the set of words.
+
+NOTE CONF {"raw":[99,100,100,100,100]}
+
+00:44:24.950 --> 00:44:29.670
+<v Speaker 1>And here two authors, Brandon Cartwright, came up with a
+
+NOTE CONF {"raw":[100,100,100,100,28,100,100,100,100,100]}
+
+00:44:29.670 --> 00:44:33.510
+<v Speaker 1>clever idea that uses a concept that's called minimum description
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:33.510 --> 00:44:33.990
+<v Speaker 1>length.
+
+NOTE CONF {"raw":[100]}
+
+00:44:34.550 --> 00:44:39.510
+<v Speaker 1>So basically it's a way of learning a lexicon that's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:39.510 --> 00:44:41.030
+<v Speaker 1>as efficient as possible.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:41.470 --> 00:44:44.350
+<v Speaker 1>You have some some data, some information that comes in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:44.350 --> 00:44:45.590
+<v Speaker 1>either speech or text.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:45.990 --> 00:44:49.230
+<v Speaker 1>And you want to find a lexicon that describes that
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:44:49.230 --> 00:44:52.510
+<v Speaker 1>speech or text as efficiently, efficiently as possible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:44:53.190 --> 00:44:55.270
+<v Speaker 1>And they came up with the following formula.
+
+NOTE CONF {"raw":[100,100,100,100,100,88,100,89]}
+
+00:44:55.270 --> 00:44:57.790
+<v Speaker 1>So they compute the size of what they call the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:57.790 --> 00:44:58.550
+<v Speaker 1>description.
+
+NOTE CONF {"raw":[100]}
+
+00:44:58.670 --> 00:45:01.950
+<v Speaker 1>So this is basically the encoding of of your input.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:02.350 --> 00:45:05.030
+<v Speaker 1>And this is the size of your lexicon and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:05.030 --> 00:45:09.390
+<v Speaker 1>size of the how you use that lexicon.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:09.430 --> 00:45:14.560
+<v Speaker 1>The data encoding and you want to if you want
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:14.560 --> 00:45:16.520
+<v Speaker 1>to compare different lexical.
+
+NOTE CONF {"raw":[100,100,100,32]}
+
+00:45:16.560 --> 00:45:16.760
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:45:16.800 --> 00:45:19.400
+<v Speaker 1>So you have different ways of segmenting your speech stream.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:19.640 --> 00:45:21.480
+<v Speaker 1>You want to find which one is the better one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:21.640 --> 00:45:25.000
+<v Speaker 1>Then you compute this description length and you take the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:25.000 --> 00:45:27.360
+<v Speaker 1>one with the smallest description length.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:28.160 --> 00:45:30.400
+<v Speaker 1>So how does the description length actually work?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:31.960 --> 00:45:35.120
+<v Speaker 1>So first of all, it has a few advantages.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:35.120 --> 00:45:38.360
+<v Speaker 1>First of all, it gives you the a preference for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,82,83,100,100]}
+
+00:45:38.360 --> 00:45:40.560
+<v Speaker 1>shorter words, which is generally a good idea.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:41.800 --> 00:45:47.960
+<v Speaker 1>It has a preference for reusing words and it also
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100,100,100,100]}
+
+00:45:48.000 --> 00:45:50.280
+<v Speaker 1>maximises the probability of each word.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:50.480 --> 00:45:54.160
+<v Speaker 1>So what uses words that occur as often as possible.
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100,100,100]}
+
+00:45:54.920 --> 00:45:57.760
+<v Speaker 1>And it's best to to look at an example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:57.760 --> 00:46:03.280
+<v Speaker 1>So here's a made up example of two utterances here.
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100,100,100]}
+
+00:46:03.320 --> 00:46:04.960
+<v Speaker 1>Do you see the kitty kitty kitty.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:05.000 --> 00:46:06.000
+<v Speaker 1>Do you like the kitty?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:07.040 --> 00:46:11.380
+<v Speaker 1>Um, and let's assume we've segmented this, maybe using transitional
+
+NOTE CONF {"raw":[78,100,100,100,100,100,100,100,100,98]}
+
+00:46:11.380 --> 00:46:14.540
+<v Speaker 1>probability or whatever information we have to segment it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:14.980 --> 00:46:17.860
+<v Speaker 1>And note that the segmentation isn't quite correct here, so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:17.860 --> 00:46:21.660
+<v Speaker 1>that we've treated as a single word, which makes sense
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:46:21.660 --> 00:46:25.100
+<v Speaker 1>because it occurs in each utterance and always kitty and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,75,100]}
+
+00:46:25.140 --> 00:46:25.980
+<v Speaker 1>occur together.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:26.140 --> 00:46:28.420
+<v Speaker 1>So maybe this is not a bad segmentation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:46:29.340 --> 00:46:32.100
+<v Speaker 1>And then this brings us to the lexicon.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:46:32.100 --> 00:46:35.780
+<v Speaker 1>So the lexicon here is simply an enumeration of all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:35.780 --> 00:46:36.340
+<v Speaker 1>the words.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:36.580 --> 00:46:40.180
+<v Speaker 1>So do is a word the kitty because we haven't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:40.180 --> 00:46:42.460
+<v Speaker 1>segmented it as a word you like.
+
+NOTE CONF {"raw":[100,100,65,100,100,100,100]}
+
+00:46:42.500 --> 00:46:42.740
+<v Speaker 1>See.
+
+NOTE CONF {"raw":[94]}
+
+00:46:42.780 --> 00:46:45.220
+<v Speaker 1>So we only have five words here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:46.460 --> 00:46:49.140
+<v Speaker 1>And then we have what's called the derivation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:46:49.220 --> 00:46:51.700
+<v Speaker 1>So this is just a list of the words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:51.700 --> 00:46:56.500
+<v Speaker 1>So one is two, three is u, five is c
+
+NOTE CONF {"raw":[100,100,100,83,100,100,74,100,100,94]}
+
+00:46:56.980 --> 00:46:58.700
+<v Speaker 1>and two is the kitty.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:58.740 --> 00:47:03.660
+<v Speaker 1>So this is the derivation of these utterances given this
+
+NOTE CONF {"raw":[100,100,100,81,100,100,100,100,100,100]}
+
+00:47:03.660 --> 00:47:04.300
+<v Speaker 1>lexicon.
+
+NOTE CONF {"raw":[100]}
+
+00:47:05.300 --> 00:47:05.780
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:06.340 --> 00:47:08.830
+<v Speaker 1>And now you can see the trade off, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,88]}
+
+00:47:08.830 --> 00:47:11.390
+<v Speaker 1>We can either have a lexicon that has a lot
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:11.430 --> 00:47:14.390
+<v Speaker 1>of short words that are repeated all the time, or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:14.390 --> 00:47:16.710
+<v Speaker 1>we can have a lexicon with longer words that are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:16.710 --> 00:47:18.110
+<v Speaker 1>less frequently repeated.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:18.630 --> 00:47:21.190
+<v Speaker 1>In one case, the lexicon will be long, but the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:21.190 --> 00:47:24.470
+<v Speaker 1>derivation will be short and not the case, the lexicon
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:24.470 --> 00:47:26.390
+<v Speaker 1>will be long and the derivation will be short.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:47:26.670 --> 00:47:26.910
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[75]}
+
+00:47:26.910 --> 00:47:29.030
+<v Speaker 1>So we're trading off the length of the lexicon and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:29.030 --> 00:47:30.510
+<v Speaker 1>the length of the derivation.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:30.910 --> 00:47:34.350
+<v Speaker 1>And this is exactly what minimum description length says, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:47:34.750 --> 00:47:36.070
+<v Speaker 1>The size of the lexicon.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:36.070 --> 00:47:38.670
+<v Speaker 1>So we see how long this lexicon is and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:38.670 --> 00:47:40.070
+<v Speaker 1>size of the data encoding.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:40.310 --> 00:47:43.190
+<v Speaker 1>So we count how long the derivation is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:43.750 --> 00:47:47.230
+<v Speaker 1>And we just define the size as the number of
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:47:47.230 --> 00:47:48.390
+<v Speaker 1>letters and digits.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:49.030 --> 00:47:49.270
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[97]}
+
+00:47:49.310 --> 00:47:52.230
+<v Speaker 1>So we count how many digits are there in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:52.230 --> 00:47:55.790
+<v Speaker 1>lexicon not counting the the spaces.
+
+NOTE CONF {"raw":[100,100,100,84,100,100]}
+
+00:47:56.350 --> 00:48:00.230
+<v Speaker 1>And we count how many numbers are there in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:00.230 --> 00:48:01.030
+<v Speaker 1>derivation.
+
+NOTE CONF {"raw":[100]}
+
+00:48:02.390 --> 00:48:04.790
+<v Speaker 1>And so if you do this then you get a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:04.790 --> 00:48:07.650
+<v Speaker 1>length of 25 for the lexicon and the length of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:07.650 --> 00:48:08.730
+<v Speaker 1>ten for the derivation.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:08.850 --> 00:48:12.250
+<v Speaker 1>There's ten different words in the derivation, so the description
+
+NOTE CONF {"raw":[51,100,100,100,100,100,100,100,100,100]}
+
+00:48:12.250 --> 00:48:14.530
+<v Speaker 1>length overall will be 35.
+
+NOTE CONF {"raw":[100,80,78,100,100]}
+
+00:48:16.810 --> 00:48:19.370
+<v Speaker 1>And let's assume we have this segmentation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:19.370 --> 00:48:23.850
+<v Speaker 1>So this segmentation is treating the and Kitti as separate
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,49,100,100]}
+
+00:48:23.850 --> 00:48:25.770
+<v Speaker 1>words but is otherwise the same.
+
+NOTE CONF {"raw":[100,100,99,100,100,100]}
+
+00:48:26.050 --> 00:48:28.210
+<v Speaker 1>So we have a slightly bigger lexicon right.
+
+NOTE CONF {"raw":[100,100,100,75,100,100,100,99]}
+
+00:48:28.250 --> 00:48:30.490
+<v Speaker 1>Because the and Kitti are now separate words in the
+
+NOTE CONF {"raw":[100,100,100,88,100,91,100,100,100,100]}
+
+00:48:30.490 --> 00:48:31.050
+<v Speaker 1>lexicon.
+
+NOTE CONF {"raw":[100]}
+
+00:48:31.210 --> 00:48:34.210
+<v Speaker 1>But we have a and we have a slightly longer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:34.210 --> 00:48:35.050
+<v Speaker 1>derivation.
+
+NOTE CONF {"raw":[100]}
+
+00:48:35.370 --> 00:48:41.170
+<v Speaker 1>So because now here one is two, three is you,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,48]}
+
+00:48:41.450 --> 00:48:44.690
+<v Speaker 1>five is see and two is the and so on.
+
+NOTE CONF {"raw":[76,100,43,100,100,100,100,100,100,100]}
+
+00:48:45.250 --> 00:48:48.570
+<v Speaker 1>And so if we combine these then we get a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:48:48.570 --> 00:48:52.690
+<v Speaker 1>description length of 26 as the number of characters in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:52.690 --> 00:48:55.690
+<v Speaker 1>the lexicon and 13 as the number of characters in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:55.690 --> 00:48:56.690
+<v Speaker 1>the derivation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:56.690 --> 00:49:01.810
+<v Speaker 1>So 39 so that means here the description length is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:01.810 --> 00:49:03.410
+<v Speaker 1>longer than here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:03.850 --> 00:49:08.820
+<v Speaker 1>So that means this lexicon would be better under this
+
+NOTE CONF {"raw":[100,100,100,100,100,93,100,100,100,100]}
+
+00:49:08.820 --> 00:49:12.340
+<v Speaker 1>measure of minimum description length than this lexicon.
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100]}
+
+00:49:13.100 --> 00:49:17.140
+<v Speaker 1>Okay, so here you might say well, but the kitty
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,92,95]}
+
+00:49:17.180 --> 00:49:18.300
+<v Speaker 1>should be two separate words.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:18.300 --> 00:49:20.180
+<v Speaker 1>So it's actually giving us the wrong answer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:49:20.460 --> 00:49:23.140
+<v Speaker 1>But what's what's going on of course, is that if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:23.140 --> 00:49:25.780
+<v Speaker 1>you've only ever seen those three utterances, then you have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:25.780 --> 00:49:28.740
+<v Speaker 1>no evidence to to assume that there is a separate
+
+NOTE CONF {"raw":[100,100,96,100,100,100,87,100,100,100]}
+
+00:49:28.740 --> 00:49:31.380
+<v Speaker 1>word from Kitty because you've only seen it with Kitty,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:32.020 --> 00:49:32.420
+<v Speaker 1>right?
+
+NOTE CONF {"raw":[94]}
+
+00:49:32.460 --> 00:49:36.060
+<v Speaker 1>So this is actually the more efficient encoding.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:49:36.660 --> 00:49:38.820
+<v Speaker 1>And this is what MDL tells us here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:49:41.260 --> 00:49:41.820
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:42.740 --> 00:49:45.180
+<v Speaker 1>So I'm out of time.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:45.180 --> 00:49:49.860
+<v Speaker 1>So I'll skip this is the details of the the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:49.860 --> 00:49:51.740
+<v Speaker 1>experiment that Brenton Cartwright did.
+
+NOTE CONF {"raw":[100,100,43,100,100]}
+
+00:49:52.940 --> 00:49:57.300
+<v Speaker 1>But to summarise we've talked about speech segmentation and we've
+
+NOTE CONF {"raw":[100,100,63,100,100,100,100,100,100,100]}
+
+00:49:57.340 --> 00:49:59.900
+<v Speaker 1>talked about how to find the word boundaries.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:50:00.220 --> 00:50:02.620
+<v Speaker 1>And then once you have an idea of where the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:02.620 --> 00:50:05.960
+<v Speaker 1>word boundaries are, how do you actually compute the lexicon,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,66,100]}
+
+00:50:06.200 --> 00:50:08.520
+<v Speaker 1>given that there's still a lot of ambiguity and a
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:50:08.520 --> 00:50:11.080
+<v Speaker 1>lot of possible ways of segmenting your speech stream?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:50:12.320 --> 00:50:12.600
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:50:12.600 --> 00:50:13.160
+<v Speaker 1>That's it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:13.360 --> 00:50:13.920
+<v Speaker 1>Thank you.
+
+NOTE CONF {"raw":[100,100]}

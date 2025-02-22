@@ -1,0 +1,1087 @@
+That's us there.
+Yeah.
+Yeah, yeah.
+Perfect.
+Okay, so just, , talking to us.
+Okay.
+Awesome.
+Yeah.
+And I hear you tell everybody we're setting.
+All right, everyone, the recording is live.
+We're going to go ahead and get started.
+I'm going to turn it over to Condren.
+Yeah.
+To give a quick announcement.
+Yes.
+Hello.
+Okay.
+Hello.
+Hi, everyone.
+I'm Catherine from type sig.
+Type sig being the, , student society on programming languages
+and theoretical computer science.
+And this is a bit of a, an advertisement for
+tuples, which is our student conference, , running at the
+end of Flexible learning week.
+So you should come and I'll try and convince you.
+, what is tuples?
+It's a student conference.
+, which is.
+Yeah.
+Meaning it's meant for students you and me.
+, and what we've done is we've gathered 12 speakers
+from across the UK to speak about theoretical computer science.
+So you have we have two tracks, one on general
+theory and the other one on programming languages.
+, and we have speakers, 12 speakers, you know, from,
+from all of these, , over here.
+, if you look at these words and you don't
+know what they mean, that's totally fine.
+, we the goal of this conference is that we
+introduce you to these things.
+And even though some of the topics might be a
+bit involved, , we're trying to make it as accessible
+as possible.
+, right.
+An important thing is you can switch between the tracks
+during the day.
+So don't feel you have to stick to one.
+You can jump around depending on which talks you find
+more interesting.
+, to give you an example, , we have one
+speaker in the theory track, which is Christian.
+, he will, , he's very interested in, , geometric
+complexity theory, which I don't know much about, but if
+you're interested in that, you could come to his talk.
+, and we also have Thurston coming from Nottingham who
+will talk about fancy types.
+So types that type systems that go a bit beyond,
+, the type systems you'd find in Java or other
+languages.
+And what can we do with them?
+Right.
+So, , when will it happen?
+23rd February at the end of Flexible Learning Week.
+, from about 10 a.m., maybe a bit earlier till
+530 in nucleus.
+In fact, one of the lecture theatres is going to
+be this one.
+So please come and then you can get your tickets
+there.
+It costs £5, but if you use that code that
+I've added this morning for you guys, , you can
+get £1 off.
+, and in that ticket price, you get catering for
+the whole day.
+So you get lunch, you get coffee and snacks.
+So even if you just want food, you can come
+for that.
+It's quite cheap.
+, and you also get access to all the talks
+and types of branded items.
+So you will give out conference tote bags and stickers
+and stuff.
+So that should be.
+Should be fun.
+Thank you.
+Thanks.
+Terrific.
+Thanks so much.
+, while I'm switching over to my laptop, I'll make
+one more appeal for anyone who came in late.
+Does anybody have one of the HDMI to Mac dongles?
+I have one of the old Mac pros.
+If anybody happens to have that, it'd be a hero.
+If you suddenly find it, simply interrupt the lecture.
+Someone does.
+Let me see if this works.
+I have one of the old ones.
+Thank you so much.
+This might be it.
+Well, I will.
+I get plugged in here.
+, you can tell I'm not Fiona.
+I think she sent out an email about it.
+Possibly.
+, she's in Glasgow today.
+I think attending some sort of workshop or conference or
+something this.
+So I'm the Ta for the course.
+My name is Colton.
+I'm a PhD student at the university.
+I studied generative AI.
+I used the to the Java class though back at
+my previous university.
+So Fiona asked if I could jump in.
+And so I'm going to be giving the lecture today.
+And I have a cold.
+I haven't lectured this course before.
+And my laptop doesn't plug into this.
+So I found all of this out this morning.
+And so I'm trying to do my best to still
+put on a great lecture.
+So let me see if this works.
+, if it does, that'll be phenomenal because I won't
+have to use my friend's laptop.
+, but Let's see.
+All right.
+Thank you so much.
+Thank you so much for the for the adaptor.
+Come grab it from me after.
+So, yes.
+Flexible learning.
+The only announcement I have to make is flexible learning
+week is next week.
+That means no lecture, no tutorials, no labs, no no
+nothing.
+There is nothing going on with the course as far
+as an in-person commitment.
+So don't don't show up.
+No one, no one will be around.
+Hope everyone has some fun plans by the way I
+see.
+Definitely not revising.
+We've all been there.
+Hope everyone has safe travels.
+If you're if you're leaving Edinburgh.
+Okay, so I noticed that screen was flickering.
+If that keeps happening, I'll switch, but I'll go for
+it for now.
+So today we're talking about the stack versus the heap.
+And if you've studied any data structures at all, you
+might be thinking, oh boy, exciting.
+We're going to be talking about data structures and algorithms
+today because you will have possibly heard the stack and
+the heap are both data structures.
+But I am sorry to disappoint that this is just
+memory today.
+So we're going to be talking about different memory structures
+that Java uses under the hood in order to store
+everything that you do while you code.
+Up until now, I think Fiona has talked to you
+about memory, specifically with storing objects.
+And so today we're going to go into a bit
+more depth on what actually happens when you store objects
+versus normal variables.
+They get stored in two different places.
+And how knowing this can help you avoid what we
+call side effects when you're working with objects.
+So this is a bit lower level than the just
+syntactical Java you've been learning throughout the course, but it's
+actually quite interesting and something you're going to run into
+fairly often.
+So so far you've learned that objects have a static
+compile time type defined inside a class.
+So when you create an object in Java, you have
+to tell Java what type of object it is.
+These are then instances of these classes are created at
+runtime and you've learned all about the new keyword.
+Fiona tells me so that creates a new object.
+And as we see, the new keyword is very important
+for knowing how it gets assigned in memory.
+And then objects are reference types, so they get passed
+by reference.
+What that means is unlike an integer or a primitive
+type, where if you pass the integer one to a
+function, it's getting an actual value of one.
+But if you pass an object to a function, it's
+not getting the actual object, it's getting a reference to
+where that object lives in memory.
+This is a little tricky to wrap your head around,
+but we're going to go over some examples today where
+hopefully it'll make more sense.
+Okay, so I think I think the circle class has
+either come up before in the course or has been
+teased that it's going to come up in the course,
+but we're going to talk all about it today, and
+then we're going to use it to write some code.
+So the circle class is is public.
+It has a constructor that takes a double radius.
+That would be the radius of the circle.
+We have a get area method that returns a double
+which would be the area of a circle.
+So pi r squared.
+So with the radius we can compute that.
+We have a void method called enlarge that can increase
+the radius of the circle by a certain factor.
+And then we have our Boolean equals method, which all
+objects typically have, which gives you a way to compare
+if two of the same type of object are equal.
+And you'll notice at the bottom right there, the equals
+method is going to return true if means if and
+only if if and only if A is a circle
+of the same size.
+So this particular equals method is not going to check
+if the two objects are pointing to the exact same
+spot in memory.
+This equals method is going to be checking.
+Do two circles have the same radius.
+So even if they're stored separately, if they have the
+same radius we're going to consider them equal.
+We'll get some practice with this in a second.
+We'll get some practice with this right now.
+So I'm going to erase all of this.
+And I'm going to have a go.
+You can see this right.
+Yeah I'm going to have a have a go at
+writing this from scratch, because I think Fiona usually does
+some live coding.
+I'm going to have a go with that.
+And also, the lecture today isn't that long.
+So I'm actually going to walk through the code because
+there aren't a ton of slides.
+And so we're going to go through this.
+And yeah if anyone has any questions at any point
+feel free to throw your hand up.
+All right.
+So a couple of things we're going to do here.
+So we're going to make a circle called C1.
+And that's going to equal a new circle.
+And I'm going to give that a radius of one.
+And then I'm going to print out the area.
+Actually I guess I could print the radius.
+I'll print out the radius of the circle.
+By the way the circle class is right here.
+And the reason that I can access the radius variable
+is because it's public here.
+So if this if this were private, which you often
+see when you're writing Java, a lot of the class
+variables will be private.
+If I switch that to private.
+Notice how I get an error.
+I can't call the radius this if it's private,
+because private means it's only accessible inside the class.
+I could still call get area because that's a public
+method on the class.
+It's public, but I want to show you how the
+radius gets manipulated.
+So I could either write a get radius method that
+would return the radius, or just to make things easy
+for today.
+I'm going to make this class variable public, which means
+I can access it here.
+Radius that.
+Right.
+So then if I go ahead and.
+Compile and run this, I get.
+And hopefully you can see that I get 1.0.
+I can try to make it a little bigger, but
+then it gets tough to see.
+Right.
+So I'm going to make another circle.
+So circle C2 equals new circle.
+And I'm going to give this one a radius of
+two.
+And then I will print out C2 is radius same
+as the first one.
+And then I'm going to make a third circle.
+And this is where we get a little bit more
+interesting.
+So I'm going to make circle C3.
+I'm going to set that equal to C1 that.
+And then I'm going to print out C3 dot radius
+so.
+So I'm going to run this.
+All right.
+And notice what we get.
+So radius of one radius of two for the two
+circles that I made from scratch.
+So because I used the new keyword, those get assigned
+to a place in memory.
+And then I made C3 by setting an equal to
+C1.
+And we see that C3 is radius is one, so
+the same as circle one.
+Hopefully that makes sense.
+We're saying that they're equal.
+So now we're going to test a few equalities.
+So if we say.
+Circle one equals equals circle two versus circle one dot
+equals circle two.
+And then I'll do the same thing for circle one
+and circle three.
+So circle one equals circle three.
+And print out circle one dot equals circle three.
+this.
+Take a second and think about what these might produce.
+Well I run it.
+Okay, so if I print out circle one equals equals
+circle two.
+Remember the equals equals operator is checking if these objects
+are actually the same.
+If they point to the same spot in memory, they
+don't.
+Right.
+Because I've created two new circles with the new keyword.
+Every time you use the new keyword, you're creating a
+new spot in memory for that object.
+So because those are two different spots in memory, I've
+used new two different times.
+Those objects are not the same.
+If I say to see 1.2. equals is using this
+method here that we've defined where all we're checking are.
+If the radii are the same radii, radius is if
+they're the same.
+If they're the same, the circles are the same.
+So one and two are not equal, so that also
+returns false.
+But now when I print out C1 equals equals c3
+that returns true.
+Those are the same object in memory.
+Because when we created circle three we didn't use the
+new keyword.
+We set it equal to C1.
+C1 already exists in memory.
+So C3 just points to that same spot in memory
+that C1 occupies.
+Therefore when we compare them with equals equals they're true.
+They're the same exact object in memory.
+And naturally if we use dot equals that also is
+going to return true because they're the exact same object
+in memory, meaning they both have the same radius of
+one.
+Now we're going to do one other interesting thing.
+I am going to.
+I'm going to enlarge C1.
+By a factor of two.
+Now, I'll take a second to think about what might
+happen here.
+I'll run the code.
+Okay.
+Actually I should.
+I should probably print out the radiuses again after this.
+So let me print out, and it'll be more interesting
+if we do this.
+Yeah, let's do that.
+Okay.
+So ignore ignore these first three.
+That was that was originally the radii of the three
+circles.
+So now I've in the large C1 by a factor
+of two.
+And remember our enlarge method that just takes the radius
+and multiplies it by whatever factor I've passed in.
+So I've effectively changed the radius of circle one from
+1 to 2.
+I've multiplied it by two.
+So now the radius of all three circles is two.
+But if I compare c1 to c2 this line down
+here line 18.
+If I compare them it's still false.
+Because remember the equals equals operator is just checking if
+they're occupying the same space in memory if they're the
+same object.
+So these are still two different objects.
+So even though the radii are the same they're not
+the same object.
+But the one that has changed is c1 c2.
+They may not be the same object in memory, but
+they do have the same radius now.
+They now both have a radius of two.
+So the one thing that's changed is that has flipped
+from false to true, because they now have the same
+radius.
+C1 and C3 are still the same circle.
+Cool.
+They both got enlarged.
+So they're both still true.
+Okay, so we've done all that.
+That's that's a little taster of the theory behind what
+we're talking about today.
+Stack versus heap.
+So so far memory has been just this abstract space
+where we store things.
+But actually it's not just memory.
+There's two types stack and there's heap in the Java
+virtual machine manages both of these.
+So I'm not going to write this code I don't
+know why it's a little small.
+There we go.
+I think this might make the most sense.
+Yeah.
+So we'll start with stack memory.
+There's stack and there's heap.
+Stack is transient.
+Transient meaning temporary.
+So we store local variables on the stack.
+Objects will get stored on the heap and we'll talk
+about that more in a second.
+So in this code example here we're in the main
+method we have an int called jack money.
+We have another int called jack target and we have
+a double called weeks.
+None of those are objects.
+Those are all primitive types.
+So they all go on the stack.
+And we see that represented here on the right.
+So Jack money and its value jack target is value
+weeks and its value that all gets stored on the
+stack.
+And they're all highlighted in blue.
+And there's a little call out to the right saying
+a stack frame.
+This is a fancy way of simply saying that any
+time you're inside of a method, all of the variables
+in that method get their own stack frame in the
+stack.
+So I'll show you an example in a second where
+we have more than one stack frame, And just at
+the bottom here.
+This would also include things the main method has
+the args parameter passed into it function arguments.
+Those would also get stored on the stack in the
+stack frame, as well as the return address if someone
+if another function called this one, but we're omitting those
+for now for simplicity.
+Okay, so here's what I was just mentioning.
+Here's a second method called calc weeks that has two
+arguments.
+Int money and int target.
+And then two doubles sweets and red money.
+And those are in a different method.
+So those get a different frame on the stack.
+Hopefully that all makes sense so far inside of a
+method.
+Any primitive variable types not objects.
+They get a place on the stack and there are
+frames separating the variables that are in each method on
+the stack, and they're highlighted in different shades of blue
+here.
+All right.
+So you might be thinking, great, why do I care.
+So the stack is not unlimited sized.
+It's a finite amount of memory on your computer.
+So you can fill it up.
+And if you do fill it up, you've probably written
+code with a bug in it and your computer will
+crash.
+Well, Java will attempt to stop your computer from crashing
+by crashing itself, but you can actually kind of mess
+your computer up if you accidentally overflow the stack.
+And so I don't know if you've talked about recursion
+at all yet in the course, but you're going to
+either get to it now or in a future term,
+or you've already talked about it.
+But recursion is where a function, a method, calls itself,
+and it can call itself as many times as needed
+until it returns the correct answer.
+You'll often see this with things summing a number
+or doing a factorial, for example.
+So ten factorial is ten times nine times eight.
+Rather than writing that all out or using a for
+loop, you can do a clever recursive function call that
+calls itself with one less number each time and adds
+it all up.
+It's a really cool process, but if you mess up
+in recursion, what often happens is it's going to run
+an infinite number of times because you've not ended the
+loop correctly, as it were.
+And so in this case, if n gets very large
+or you make a mistake, you get a stack overflow.
+And this is literally the namesake of Stack Overflow.
+The programming help website that you've probably all seen.
+So it's that's a joke on if you've made a
+mistake while you're programming, you could literally overflow your stack.
+And that's an error that will crash your program and
+your computer.
+If the recursion is too deep.
+As it says here, you can actually, , Set the
+amount of stack memory that Java is going to use
+on your computer, which is kind of cool.
+I've done that before.
+There's really, really never a need for it.
+But if you ever wanted to, you can look that
+up on Stack Overflow.
+You can change your stack memory.
+Okay, so local variables go on the stack.
+The heap gets objects.
+So let's talk a bit about that.
+Now as opposed to where we were just using ints
+and doubles and other primitive types in the last example.
+Now we're going to add the heap with objects.
+So here we're making a car mycar.
+We're setting it equal to new car.
+Here's the single most.
+This is the single most important thing you have to
+remember about when to store something on the heap.
+If you say new in your code, it's going on
+the heap.
+That's the rule of thumb, and that's the easiest way
+to remember it.
+If you've written new meaning, you're creating a new object
+that's going to get stored on the heap.
+The new keyword literally means allocate new memory for me
+on the heap.
+So that's what you're doing when you say that.
+And so in this case we create a variable mycar
+and we say new.
+Now here's here's the tricky bit.
+The variable itself that you made in this case mycar.
+The mycar variable that gets stored on the stack.
+Because that's just a local variable any of the
+others that you've made.
+But instead of having a value in this case
+the variable gas has the value 20.
+And we see that on our stack, the variable my
+car is an object because we've said new.
+And so there's an arrow here that points to the
+heap where the values of the car then reside.
+So that's the difference.
+With an object it's going to be a pointer.
+We call it in the C programming language.
+It's called a called a pointer.
+In Java we probably just call it a reference.
+My car is on the stack, but it's referencing an
+object that's in the heap in memory.
+Okay, so what happens if I make another variable
+I did in my code example?
+So in my code example I had C1 and I
+set that equal to C3.
+I didn't use the new keyword.
+So here's the same example.
+We say car your car equals my car right.
+So first step did we use the new keyword.
+We did not.
+So that means we are not going to create any
+new memory on the heap.
+So we shouldn't be adding a second frame or a
+second chunk of variables for a new car, because we
+didn't say new.
+So okay, we don't have to make any changes to
+the heap.
+We know that for sure because we didn't say new,
+but we are dealing with objects so that your car
+variable.
+As you can see by, the arrow references the same
+object in memory as my car references.
+So there are two separate variables my car and your
+car.
+They both live on the stack in.
+The value of each of them is a reference to
+the same object in memory.
+So back to my example of the circles.
+That's why when we enlarged circle one, circle three also
+would get enlarged because they were referring.
+Well I guess I enlarged circle two to show that
+they would all be the same.
+If I had enlarged circle one.
+Circle three would enlarge two because they're the same circle,
+they're pointing to the exact same space.
+So that's what I was sort of demonstrating in that
+first code example.
+And then this is seeing it on paper.
+By contrast to this example where we did not use
+the new keyword.
+Here's an example where we do use the new keyword.
+So all I've changed here.
+The only thing that's changed is now instead of your
+car equalling my car, your car equals a new car.
+Okay.
+Step one.
+Did we use the new keyword?
+Yes.
+So that means we have to go to the heap
+and we have to put a new object there.
+So that's what we've done in this case.
+And then the other car doesn't reference my car.
+It references its own separate car in the heap.
+So in this case they would be distinct.
+And the difference is solely on that new keyword.
+That's how you know.
+Right.
+So this can get tricky for a number of reasons.
+And I'm going to try to demonstrate that.
+And then we'll look at another pretty interesting code example.
+So in in this case, and this might be what
+I have the code for.
+Yeah.
+Let me just run the code for this.
+Let me write the code for this.
+I think it'll be more interesting that way.
+Okay.
+So good.
+And let me erase this.
+I need to get it to.
+Add one.
+Sorry.
+Yeah.
+All right.
+So here we have some code.
+And this is passing around an array.
+So in the main the main method here we're creating
+an array the values of zero and one.
+We're calling add one on that array which we have
+the add one method up here.
+And then afterwards we're just printing out the values
+of the array.
+So it looks it looks pretty straightforward.
+But what does everybody think this is going to print
+out I have.
+Oh, wait, this reminds me Fiona does pets of the
+lecture, which I have.
+She sent them to me.
+This is lucky.
+I think I read in the email that lucky is
+actually blind, has some trouble sitting, but is perfect.
+So this is lucky.
+Shout out Lucky's owner.
+And this is.
+This is Willow who is just absolutely lovely.
+Thanks for sending in your pets.
+Please keep sending in your pets.
+You can email them to Fiona and they'll make it
+into lecture.
+Right.
+Okay, so on the clap you'll see this.
+I'll put the code back up so you can see
+the code.
+But you've got five options for what you think this
+is going to print.
+So let me give you 30 to 60s to make
+your guesses.
+Yes, yes.
+Everyone got that?
+Here's the code again.
+Okay.
+Okay.
+We're very torn.
+That's great.
+, here's here's what it'll actually be.
+All right.
+One, one.
+So slight majority.
+Got that?
+What's happening here?
+We're creating.
+And notice how there was a big split.
+This is this is a confusing topic and one that's
+very important to understand.
+And these are called side effects.
+The the name of what I'm showing you right now
+is a side effect.
+It's not actually clear what it's going to print.
+It's not straightforward as seeing it all in in one
+method because we're passing by reference.
+And so this is a side effect of that.
+So I've created an array zero one.
+Okay straightforward.
+We've passed that to the add one function sorry method
+method in Java.
+So A comes up here and we're taking the first
+value and we're incrementing it by one.
+Remember objects which arrays are objects just a car.
+Just circle they're passed by reference.
+So when we send a up to the add one
+method, it has the actual reference to where that array
+lives in memory.
+So when it goes and updates this by incrementing the
+first value by one, it's literally changing that in the
+heap in the memory.
+So when we come back down to the main method,
+and we go ahead and print that out.
+We get one one.
+It actually updated because the A that's referenced here is
+the same A that was referenced up here because we
+passed it by reference.
+So it actually gets changed in memory and its value
+is actually different.
+Okay everyone following that.
+So far we have two other ways we can look
+at this.
+So now instead of saying an array and incrementing the
+first value I'm going to set this equal to a
+new int array.
+A value two.
+All I've changed is that sending it to a new
+array of value two.
+Now what's returned.
+Okay.
+We got a good split again.
+Let's run it and see.
+Zero one.
+Let's see what everyone said again.
+Close.
+We got it.
+But close.
+Yeah.
+People are discussing it.
+This one.
+I think this one is confusing after the one that
+we just saw.
+But let me try to explain it.
+So in the last one, we manipulated the actual memory
+that the array Occupied in the heat.
+So in both places it was referencing the same thing.
+And so it actually got updated.
+Remember what I said when we used the new keyword?
+The new keyword creates a new section on the heap.
+So now we're not talking about the array that existed
+originally.
+We have that one here, but we're making an entirely
+new one down here on the heap.
+Then we're creating a local variable, an array.
+And we're setting that equal to that new section on
+the heap.
+So here's our old one up here.
+Here's the old array.
+But now instead of changing this one, we've made a
+whole new one entirely separate.
+And it would be equal to zero zero because we
+didn't initialise it.
+But then the method doesn't do anything else.
+It just returns.
+We never touched the top one.
+We never touched it at all.
+We just made an entirely separate one and then did
+nothing with it.
+In fact, in IntelliJ my I'm using VS code in
+IntelliJ.
+If you have all the things turned on that tell
+you stuff about your code, it would actually grey an
+array out here.
+It would grey it out.
+I don't know if anyone's writing it, but it'll literally
+grey this out because you never used it.
+You made a variable and then never did anything with
+it at all.
+So we print zero one.
+Nothing happens.
+We just print the original array.
+The the one that we pass in is not not
+changed at all.
+Not updated in any way whatsoever.
+Hopefully I'm blowing your mind a bit.
+It'll make more sense once you do some examples.
+I think the assignments, homeworks, etc..
+Tutorials, labs.
+We've got a lot of this, so you'll definitely be
+an expert by the time you go through it a
+few times.
+Now last but not least, I have one more.
+I have one more.
+So if instead of this I'm going to return.
+I'm going to return an array and then I need
+to change this, returning it into a I need semicolon.
+And then I need to say a equals I think
+right.
+Okay.
+So now what have I done.
+I'm returning I'm returning the array.
+And I'm setting a equal to that array down here.
+So I've changed what the add one method actually does.
+So one last time.
+What are we getting here.
+Okay okay.
+We have somewhat of a consensus.
+Let's see if you're all right.
+It'd be awesome if it was just not that one
+at all.
+No, you're exactly right.
+You're exactly right.
+In this case, for anyone who didn't get this one,
+or just so you understand it, last time in the
+previous example, I made a new place on the heap
+for this new array and then did absolutely nothing with
+it.
+But in this case, I've made a new place on
+the heap and then I'm taking that.
+So it's zero zero.
+I've made this new array that's zero zero.
+And then I'm taking that and literally passing it back
+to the method that called it by returning it and
+then setting a equal to that.
+So in this case I've replaced a originally referenced the
+first array in memory.
+But now on line nine I'm saying okay, a you're
+not referencing that spot in memory anymore.
+A is referencing the new array that I just made
+in the method up there.
+Makes sense.
+Cool.
+Good job getting the last one.
+Sorry.
+Where are my slides?
+Okay.
+All of that was this example.
+oh.
+She had these all on the slides, but I wanted
+to write it out.
+Okay.
+So side effects everything we just saw there that,
+I said at the beginning, that is all what we
+call side effects.
+Because a lot of programmers don't really ever learn the
+nuances of what you just saw.
+And this can be a huge source of bugs and
+errors in code, both in school and and in industry.
+This happens all the time.
+So there's precautions we can take against this by making
+objects immutable.
+So that means once you create them, you can't change
+them.
+So they might get assigned a space on the heap.
+And then you make them you mark them as immutable
+so you can't actually update them at all.
+Whatever they start as they are staying, whatever that was
+forever.
+Circle and car were mutable.
+We could change them in memory because we did.
+We saw some examples of that.
+There's some fancy things you can do with immutability.
+I think these might come up later in the course,
+but we're not we're not going to look at them
+just now.
+Just know that that is something you can do.
+You can mark things as immutable, cannot be changed.
+If you do that.
+You don't have to worry about side effects.
+But why does Java even do this at all?
+It's because it's really convenient to pass an object all
+around your code base.
+It could visit 50, 101,000 methods in some production code
+bases, and to be able to update that object as
+it flies around your code base is actually really convenient
+and allows you a lot more positives than negatives, as
+long as you're careful and know what you're doing.
+Okay, so we've now established that objects, in addition to
+everything we talked about on the first slide of lecture,
+reside on the heap, we've we've now established that okay.
+So.
+The stack I mentioned was transient temporary it the stack
+variables only exist while the code is in that method,
+if that makes any sense.
+So if you're in the main method we make we
+make our stack variables.
+Then we go off to some other method.
+That method is going to come back to the main
+method.
+So we keep those we keep that stack variable alive.
+But then we go off into some other method.
+It makes its own stack frame puts its variables in
+there.
+Once we return from that other method, the stack variables
+for that one just get erased.
+Java does that automatically.
+The heap does.
+It works the same way.
+So in our in our lovely second example where we
+made this new array, did absolutely nothing with it and
+then left the method.
+Fiona might have this.
+Yes.
+So in this case, we made something on the heap,
+did nothing with it, and then left.
+Java has a a function or a process called garbage
+collection.
+That's literally what it's called.
+And if anything you create on the heap is not
+used by your code.
+Java garbage collects it, so Java erases it.
+Why does Java do this?
+Unlike the stack, which is temporary and takes up just
+a little bit of space on your computer.
+The heap is your computer's memory in a lot of
+ways, so you are actually writing to your computer's memory.
+Java manages this, but it's possible to actually write to
+your computer's memory.
+And so it's really important that we clean this up,
+because if we don't say you wrote some buggy code
+that made a million arrays on the heap, well, there's
+a million arrays on your laptop's storage now and no
+easy way to remove them.
+You'd have to write some special code to go find
+them all and erase them off of your computer.
+So that would actually happen if Java didn't have this.
+If anyone has used the lovely C language, C does
+not garbage collect for you does not.
+If you allocate memory for something on the heap, it'll
+just live there forever unless you go and close it,
+erase it at the end of your code.
+So in C we have to manually do this.
+We have to manually go in and find everything in
+our code that we assign memory for and erase it
+before the code ends.
+So if you ever take C or know anything about
+it, you know what I'm talking about.
+But Java does that for us, which is very convenient.
+Okay, I think this last example.
+Well, I'll show you this and then I'm going to
+hop into one more code example for the last couple
+of minutes.
+So in this case we've made an array of objects
+because remember, we can do that too.
+And so an array is an object.
+And then objects are objects.
+So what happens then.
+Well when we make an array called some circles it's
+an array.
+So the name of the array goes in the stack.
+We use the new keyword to make our array.
+So that goes into the heap.
+And it allocates in this case five null values.
+Because an object that hasn't been initialised or instantiated is
+null.
+So when we make our circle array we make five
+nulls.
+And then we go in and we say okay the
+third circle index two.
+We're going to make that a new circle of value
+ten.
+We said new again.
+If we say new we need new space in the
+heap.
+So we actually then in the heap make another new
+section to store that circle.
+And here's the tricky part.
+Some circles has a reference to those five nulls.
+But then that third circle now has its own reference
+to where it lives in the heap.
+That's why there's two arrows there.
+So when we have objects in objects, nothing really changes.
+There's just more arrows to think about.
+Integer.
+And yeah, this is generally showing the same thing.
+Okay I'm going to try in the last seven minutes
+I literally have one more code example.
+And then we are done.
+So we are going to do this.
+I'm going to erase that and attempt to do it
+myself again.
+So we've got a circle array called some circles.
+And that's going to equal a new circle array of
+length five just we showed.
+And then I will say for I equals zero I
+is less than some circles dot length I plus plus
+we will say some circles at I is going to
+be a new circle and I'm just going to give
+them all a radius of of one that.
+This is just a simple example.
+Now the question here becomes how do we copy this.
+So you're writing some code and you want to copy
+what you have for an integer is easy.
+If you have five a equals five.
+You can just say b is five, B is now
+its own five.
+But you can't do that with objects as we saw,
+because if you set one equal to the other, they
+reference the same spot in memory.
+So how do we actually make a copy?
+Well, what you might think is that we could say
+infer for time's sake, I will copy this.
+So I'm going to say shallow copy.
+There's a notion of a shallow versus a deep copy.
+And you might be able to guess, , what that's
+going to mean.
+So phi is zero.
+I is less than, I'll say shallow copy dot length
+i++.
+And then we'll say a shallow copy at I equals
+some circles at I.
+Okay.
+So what have I done here.
+I'm saying that in our shallow copy array we're going
+to iterate over it.
+And we're just going to take whatever was in some
+circles at that index.
+And we're going to set that equal to our new
+array's value at that position.
+So we're going through and setting okay.
+In our new array, we're taking each circle and we're
+setting them as is the new one.
+All right.
+That's that's one way.
+Can anybody think of a problem that could come up.
+Yeah.
+Those are interesting.
+Yes.
+Yeah exactly.
+And if you didn't hear that, all of the shallow
+copy circles are just going to be pointers Ters to
+the circles in some circles.
+Is this bad?
+Well, maybe yes, maybe no.
+Depends on what you're trying to do.
+This is a perfectly valid way to do it.
+But what's the problem?
+The problem is, if you go and update any of
+the circles in some circle.
+So say I took a circle, one in some circle
+and enlarged it.
+It's enlarging the circle in shallow copy two because they
+both point to the same thing.
+So if you change anything in some circles it's going
+to affect all the circles in shallow copy.
+And you probably don't want that.
+If you're copying an array, you probably want a copy
+of it to do something else with at least most
+of the time.
+So this shallow copy gets people all the time, and
+then they have all sorts of side effects in their
+code, and they don't know why it's happening.
+So you can do this, but be careful.
+So what do we want instead?
+We want what we would call in programming a deep
+copy, a true copy, an actual copy.
+So to get that I'll say a circle array deep
+copy equals new circle array five.
+Nothing has changed.
+I'll set up a for loop.
+We'll iterate over it.
+And now take a second and think about what I
+might do here.
+I think it's probably in the in the slides.
+But if you haven't seen the slides yet think for
+a second.
+What would we actually want to do here instead of
+just assigning the pointers the references?
+Yes.
+Yes, exactly.
+New.
+New is your friend when you're trying to make an
+actual new copy of something.
+So we can say deep copy at I equals new
+circle.
+And then remember we want them to be the same
+as in some circles.
+So the way that we would do that is we
+would say, remember we pass circle a radius.
+Right.
+So we can get the radii from some circles.
+So this will be some circles at I dot's radius.
+Let me make this smaller.
+Let me just move this over and I need my
+semicolon.
+Okay.
+So this is doing the same thing but completely different.
+Each deep copy circle is going to be not a
+not a reference to some circles, but instead a reference
+to its own brand new circle in memory that has
+the same radii as all the circles and some circles.
+So if I had made all of these radii different
+in some circle, that would be reflected here.
+So this is how to make a deep copy.
+Now if I change any of the circles in some
+circles, that's going to change the same circles in shallow
+copy, but it's not going to change any of the
+circles in deep copy.
+Those deep copy ones are all their own spaces and
+memory.
+And so you've made what, this bottom one a true
+copy.
+This is an important concept that you'll get to practice
+with a bit more in the coming weeks.
+So I don't have any more questions.
+I think the last thing is, yeah, garbage collector.
+And here's here's a summary of today.
+So we looked at the stack.
+We looked at the heap.
+We looked at how references work.
+We looked at side effects.
+We looked at garbage collection immutable and finally deep and
+shallow copy.
+So that's the working understanding of memory that you now
+have.
+You'll get some practice with this.
+And that's all I've got for today.
+Thanks.
+Very.

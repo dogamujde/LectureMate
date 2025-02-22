@@ -1,0 +1,984 @@
+Come to informatics one.
+Cognitive science.
+We'll start in a few minutes while we start.
+Now, actually.
+And before we get started, could you please scan the
+QR code?
+This will take you to a club page.
+And we're going to use book club for this lecture
+and also subsequent lectures as a way of interacting with
+what is quite a large class.
+So it's a good way to participate.
+And so hopefully this will work.
+Let's see.
+We have 51 people already.
+I just wait a little bit give people the opportunity
+to sign up.
+Yeah.
+I think that's.
+Yeah.
+So.
+I mean.
+Okay, maybe let's get started.
+At this point.
+I'll show the QR code again later on when we
+actually need it.
+Let's switch to the slides.
+So welcome to Informatics one cognitive science.
+, this is, , a from scratch introduction to cognitive
+science with a computational computational slant.
+So it's obviously taught by folks in informatics.
+And there is a focus on computational methods and computational
+modelling.
+But we also introduce all the cognitive material that you
+need to do that.
+You need to know to do that modelling.
+I'll quickly explain what we mean by cognitive science and
+give an overview of the course.
+Then I'll talk about the organisation.
+How do the assignments work.
+How do the quizzes function and so on.
+And then there will be a quick preview of next
+time pizza problems.
+All right.
+So you have already scanned this.
+If not you can scan it now.
+And then we have two quick questions for you.
+So anyone still need to scan the QR code.
+Show people.
+Okay so now let's switch.
+Okay.
+Let's wait till we have 110.
+Okay, so now this will just be a quick survey.
+This is really for me and Matthias to find out,
+, what kind of background you have and what kind
+of expectations you have for the course.
+So here you can vote.
+, what degree are you enrolled in cognitive science?
+, one of the various informatics degrees psych, philosophy, linguistics,
+and so on.
+Okay.
+Let's see.
+Okay.
+We have a lot of informatics people, around 50%.
+And then the remaining 50% are distributed across cognitive science,
+Mathematics and others seem to be the strongest, , the
+strongest subjects.
+Okay.
+Thank you.
+Then which year are you in?
+, it's really just a course for first and second
+year students.
+Most students are first year.
+But just to find out.
+Oh, sorry.
+That was the wrong button.
+Yes.
+Some second year, some visiting students.
+85%.
+First years.
+Okay, so this was mostly for testing work lab, but
+also to, , to find out a little bit about
+you guys.
+Okay, this is the team, of course, lectures.
+So there's materials handling here, and myself and I have
+a mic.
+If I can get it to work.
+Okay.
+Okay.
+So I'll start.
+Hi.
+, I'm Matthias Hennig.
+I'm, .
+I'm doing research in computational neuroscience.
+So we are, , constructing models of brain function, and
+we're also analysing neural data.
+And I'll be teaching the second half of this course,
+which is more leaning towards neuroscience.
+So we'll be exploring, , how the brain works and
+what that means for computer science from a neuroscientific perspective.
+So for instance, I'm going to teach you how we
+see things, how vision works.
+We're going to see how, , activity in the brain
+of neurones relates to artificial neural networks and whether these
+are different or similar.
+And some of these are interesting questions which range all
+the way into philosophy.
+So there's a lot to discuss there.
+And yeah, I'm looking forward to seeing you in.
+After the flexible learning week or how was it called?
+Yes.
+When?
+I'll be starting my part.
+Cool.
+I'll introduce myself as well.
+Quickly.
+So I'm Frank.
+I'll do the non-euro part of the course.
+That part deals with high level cognitive function, in particular
+with language, but also with things decision making or
+categories and concepts.
+And I'll introduce some of the computational techniques.
+Starting actually with neural networks, but also things Bayesian
+modelling that Mathias will also then pick up in his
+half of the course.
+There's also two teaching assistants, Robin Green and Jordan Schwartz,
+who are not here, but who do a lot of
+the work behind the scenes.
+In particular to do with the labs and and the
+assignment.
+Okay.
+Let's start with what is cognitive science?
+So you might have seen this hexagon before.
+It's supposed to illustrate the different component disciplines.
+Things philosophy and psychology contribute to cognitive science, but
+also AI, neuroscience, anthropology and linguistics.
+And they all interact in mysterious ways.
+So that's why there's all these connecting lines.
+In this course, we can't cover all of this, and
+we can't cover all possible subject areas and all possible
+cognitive functions.
+We will focus mostly on this part here.
+Well, some linguistics as well, and a little bit of
+anthropology.
+Not a lot of philosophy, but the methods are often
+shared with AI and with neuroscience in particular.
+Matthias part and the experimental aspects that we'll touch upon
+are mostly from cognitive psychology.
+Personally, I think it's better to think in terms of
+cognitive functions rather than in terms of disciplines.
+So the cognitive functions we're going to deal with are
+vision, language, memory, decision making, these kind of things.
+And then all the different disciplines, they have aspects to
+contribute.
+For example linguistics obviously if you study language then linguistics
+has a lot to contribute.
+If you want to model cognitive functions, and AI is
+useful because of all the machine learning techniques and so
+on.
+Okay.
+So as a discipline, you can define cognitive science as
+the science of mental representation and processes.
+So representation a representation is a description of information in
+the mind in your brain ultimately in biology.
+And the process is something that goes on in the
+brain that works with that information without representation.
+For example, sensory information comes in.
+It could be auditory information or visual information.
+And you translate it into some sort of representation.
+Ultimately an activation.
+Patterns of neurones.
+And then this representation underpins behaviour in some sense.
+So for example.
+You see something and then you speak for example you
+describe what you've seen.
+Right.
+So there's an action.
+There's motor control.
+There's an output that's being generated by the cognitive system.
+And we basically have sensory information being translated to representations
+or the other way around.
+And sometimes we have internal representation for example verbal representations
+being translated to numerical representations stuff this.
+So it's all about representations and the processes that operate
+on them.
+And in this course we're going to look at cognitive
+science from various angles.
+So we will see what kind of questions cognitive scientists
+normally ask about representations and cognitive processes what kind of
+data they collect.
+And this can go from behavioural data, brain imaging data,
+neuroscientific data, questionnaires, , data for models where you generate
+simulations and use those simulations as data, what kind of
+theories they build.
+And these can be verbal theories, but they can also
+be mathematical or numerical.
+And then ultimately computational models, algorithms and implementations of algorithms
+that simulate cognitive processes.
+So we'll encounter all of this in the course.
+And as I said there is an emphasis on computational
+modelling.
+We'll talk about that a lot more on Thursday.
+Why computational modelling.
+Why is it not enough to just measure things and
+gather data?
+I will argue that you can use modelling to evaluate
+theories, to generate new hypotheses, and ultimately guide the collection
+of new data.
+So your model predicts something, and then you can gather
+new data to to test that prediction.
+This will all become a lot less abstract and more
+concrete, with lots of examples starting on Thursday.
+Okay, but let's look at a few examples.
+And here again there's a show of hands.
+Well woo club contribution.
+So I have three questions for you.
+So first of all does the brain get physically bigger
+when we learn something new.
+Could we still deal with quantities if we didn't have
+any numbers.
+Let's assume we're in a culture where there is no
+words for numbers.
+And finally, can computers learn anything that we learn that
+humans can learn?
+Okay.
+And I would you to vote.
+These are all questions we'll encounter in the course.
+So I'd you to vote on these questions.
+And hold on.
+Where is my old club?
+Okay, so first one, does our brain get physically bigger
+when we learn something new?
+And lots of people have already voted, so let's see.
+Most people say no.
+Well, there's actually evidence that it does get bigger.
+In particular, there's a study we'll look at in the
+second part of the course where researchers have looked at
+the hippocampus.
+Hippocampus is a part of the brain that is involved
+in navigation.
+And they found that this is bigger in people who
+are trained in navigation.
+Namely taxi drivers who, you know, navigate for a living
+and who are trained to basically know the map of
+a city very well.
+And the hippocampus is actually physically bigger than in non
+taxi drivers.
+So that is an interesting fact.
+Next question.
+So let's assume we're in a culture where we don't
+have words for numbers.
+Can we still deal with quantities.
+What do you think.
+Well.
+Oh, sorry.
+Okay.
+Almost everyone is convinced that that's the case.
+And that's the correct answer.
+And again, we'll look at this in more detail.
+, in.
+I.
+Think end of towards the end of next week, ,
+where we'll, , look at people in a culture called,
+.
+Well, , Piranha and the speakers and the members of
+this culture, they speak a language that doesn't have a
+number of words, but you can run experiments that show
+that they're still able to count in the sense that
+they're able to deal with quantities that can match quantities,
+same quantities on each other.
+And so this can be shown experimentally and is a
+cognitive development that they go through, just children in
+other cultures.
+They learn this counting procedure even though they don't have
+number words.
+So that's an interesting anthropological fact.
+And then final questions.
+So a lot of hype at the moment about AI
+around large language models and agents.
+And they might take over the world and so on.
+So.
+Surely they can learn anything.
+We can learn.
+What do you think?
+Just need a big enough neural network.
+Oh, sorry.
+Okay.
+So opinion is divided.
+There isn't a clear answer.
+Maybe.
+Not surprising.
+, I have In the slides, there's a reference to
+a paper where they essentially argue that the answer ultimately
+is yet is yes, if we have enough data and
+enough compute.
+But yeah, there's no clear answer for that yet.
+And let's go back to my slides.
+So these are the answers.
+Just to summarise, the taxi drivers.
+Yes, they're hippocampi the areas at the at the stem
+of the brain.
+They grow when they learn how to navigate.
+, Piraha.
+, a tribe in the Amazon have no expressions for
+numbers, but they can do number matching tasks from a
+certain age, right?
+So they need to learn this as children and,
+oh, already tomorrow I'm talking about this.
+Sorry.
+Thursday.
+And, , yeah.
+No clear answer for question three.
+Maybe.
+Here are some references if you want to know more
+about these these questions.
+Okay.
+Now let's go back to the course.
+So we talked a bit about cognitive science to discipline.
+Now let's talk about this course a little bit.
+And we were.
+We were here.
+So there's no correct answer.
+But if you could tell me in a word or
+two, what do you find most exciting about the course?
+What are you looking forward to most?
+So I'll actually switch on the word cloud.
+Okay.
+Neuroscience is winning Python.
+Python is good.
+I'll say a little bit about Python.
+Okay.
+Thank you very much.
+, I promise you, the first part of the course
+that doesn't have a lot of neuroscience in it is
+also fun, but obviously you're more interested in the second
+part, which is this part.
+Okay.
+What are some other interesting things?
+Consciousness.
+Yes.
+There won't be a lot about consciousness.
+I'm really sorry.
+Reading research papers.
+Yes.
+You definitely get the opportunity.
+Interdisciplinary.
+It will be very interdisciplinary.
+There will be some programming of cognitive models.
+Some linguistics.
+Excellent.
+All right.
+Next question.
+, what are you most worried about in terms of
+this course?
+Anything that could be problematic that you're scared of?
+Thank you.
+Thank you.
+Okay.
+Coding looms large workload at the exam.
+I'll say a little bit about the exam.
+Essay writing.
+There's no essay writing.
+You'll be glad to learn.
+Yes.
+Big brain, this happens sometimes with these word clouds that
+some some words go viral.
+Okay, cool.
+And, yeah, too much philosophy.
+No.
+Neither Matthias or I are a philosopher, so there won't
+be a lot of philosophy.
+Let's see, what else is there?
+Memorisation.
+Being bored.
+You are not going to be bored.
+Okay.
+Moving on.
+So this course, as I've already said, is a bit
+computational.
+It's not, you know, it's gentle in terms of the
+computational content.
+And I'll talk about that in a moment.
+But it would be useful to know.
+Have you ever used Python before?
+You can say lots a fair amount a bit, never.
+Keep pressing the wrong button.
+Okay.
+, most of you have had some exposure to Python.
+This is great to make things a bit easier.
+But we'll also provide lots of support for those who
+have not used Python or maybe not done any programming
+before.
+This is actually the next question.
+Do you have experience with any other programming languages?
+Haskell, for example?
+I wouldn't I don't know why anyone would, but Haskell
+seems to be popular around here.
+Any other Experiences?
+Yes.
+Okay.
+Fantastic.
+Just Python.
+No programming at all.
+5%.
+Excellent.
+And how about maths?
+So there won't be huge amounts of maths in this
+course, but some.
+Well, let's say high school level maths is there.
+So have you done higher or A-level maths.
+Maybe even some maths courses at university.
+Or maybe not so keen on maths.
+Okay.
+So most people have seen some math before so that's
+going to be useful.
+As I said it's not going to be super complicated.
+And that was it in terms of questions.
+Okay.
+Now I'll tell you a little bit more about the
+course and about the content, but also about how the
+course will be run.
+As I said, it's an introduction to cognitive science.
+Starting from scratch has a computational focus.
+And why does it say three main parts, two main
+parts?
+So the first part is the one before Flexible Learning
+week.
+We're going to talk about language categories which are sort
+of semantic objects related to language and decision making.
+So for example, if people have to decide between various
+options and they know about the probability of these options,
+how do they make a decision under uncertainty.
+So we'll talk about that as well, which is not
+sort of a language thing.
+And then in Mathias part after FLW it's going to
+be about memory vision and neural computation.
+We'll introduce some of the important problems and questions in
+the field.
+Give an overview of the data and also the theories
+if you Had prior experience to cognitive exposure to cognitive
+science, for example, in the introduction to cognitive science, which
+is the first semester course, or in psychology one day,
+then you will recognise some of these things.
+But we are offering the the more modelling and theory
+oriented computational perspective.
+And you will also learn how to design, implement and
+test cognitive models in the assignment in particular and in
+the labs.
+So these are the practical parts of the of the
+course.
+Okay.
+So let me briefly try to convince you why modelling
+is a good thing and what kind of models you
+will encounter.
+So sometimes people use model and theory interchangeably.
+They will talk about, I don't know, a model of
+sensory perception or a model of eye movements.
+And what they actually mean is a theory, a precise
+theory that's either written down in mathematical terms or in
+verbal terms, but is precise enough to make testable predictions.
+This is not what we're going to mean by model.
+When we say model, we mean something that's actually implemented.
+There's an algorithm.
+There's an implementation.
+It's something you can run.
+It's simulates the behaviour.
+It doesn't just describe it, albeit , some theories are
+very precise and mathematical, but they don't simulate the behaviour.
+And models can have physical, mathematical and computational aspects to
+it.
+We'll deal with the computational aspects.
+So , I don't know.
+This is a robot for example is a type of
+model, is a physical model that implements certain interactive behaviour.
+The robot, of course, needs to interact with its environment.
+, this is one of these mathematical models.
+This is illustrating Stephen's law, , which tells you how
+the perceived magnitude of the stimulus , relates to the
+physical magnitude.
+So you have the the perceived magnitude, the magnitude estimate
+here on the y axis and the stimulus magnitude, the
+physical intensity on the y axis and depending on the
+modality.
+So for example, if you just ask participants to estimate
+the length of a line, then the actual length and
+the perceived length, they are linearly related.
+Right.
+So we have a straight line coefficient of one.
+But other things for example estimating the brightness of
+a light flash, , people systematically overestimate the brightness.
+So the coefficient is smaller than one or an electric
+shock.
+, you underestimate the strength.
+And so the intensity the coefficient is, , more than
+one.
+So this tells us basically that there's a clear mathematical
+relationship which you can actually write as this simple exponential
+equation here where k is the constant.
+P is the perceived magnitude and s is the intensity.
+And then there's a modality specific exponent n.
+So that would be one for line length smaller than
+one for brightness and bigger than one for electric shock.
+And this is a type of model.
+And you can easily imagine how to implement this and
+simulate the behaviour.
+But in this, at this form, in this form it's
+just an equation.
+So it can be an artefact a robot can
+be a mathematical equation Stephen's Law.
+It can be something this.
+This is the , the model of eye movement behaviour
+called easy Reader, which takes visual input here and then
+decides, , whether to make a saccade, whether to move
+to the next word.
+Right.
+So this is for reading.
+, and it controls the eye movements in reading and
+reading.
+You move from word to word in little jumps.
+Basically, these are called saccades.
+And it tells you here in the motor control part,
+whether to make a saccade and jump to the next
+word, or whether to process the next word.
+So pay attention to the next word, or go to
+the word after whether to initiate an attention shift and
+so on.
+So this is sometimes called a box and arrow model.
+You don't need to understand the details, but you need
+to understand that if people say model they sometimes mean
+something this.
+So in this case there is actually a computational implementation
+as well of easy reader of the eye movement control
+model, which you can run and which will produce a
+sequence of fixations and saccades on the page as you
+read write, which you can then compare to human to
+human behaviour.
+But the diagram here is this is a model just
+as a sequence of boxes and arrows.
+Okay, so these are three different types of models that
+we encounter.
+Then there's models this.
+There's a neural network of course.
+And you have an input layer a hidden layer, an
+output layer.
+And basically you have a vector of data that you
+transform into another vector of outputs.
+And there is no theory in the same sense as
+there's a theory that's encapsulated here in the, in the
+boxes in error or in the mathematical formulation here.
+But it's really just a mechanism, right?
+It's an architecture, a mechanism that transforms transforms an input
+into an output.
+So this is also something that people call a model
+and we'll encounter in the course.
+Okay.
+In terms of the material that we'll see in the
+first part of the course, we'll start with an introduction
+to language, some facts about words and sentences that you
+need to know.
+Then we'll talk about language acquisition.
+How do children learn language?
+We'll introduce a neural network model of a particular part
+of language acquisition in particular past tense.
+It's a model of past tense acquisition.
+Then we talk about speech a little bit in particular
+works.
+Word segmentation introduce another modelling paradigm and apply that to
+speech segmentation.
+It's called Bayesian modelling.
+It's a form of probabilistic modelling.
+We'll talk about word learning.
+We'll also look at a Bayesian model there.
+We'll introduce another concept.
+Communication efficiency which stems from information theory which is a
+part of computer science, which has also been used as
+a tool for modelling cognitive processes.
+We'll talk about semantics, the meaning of words.
+In particular, I'll introduce something called vector semantics or word
+embeddings.
+These are essentially derived from neural networks as well.
+So this goes back to the to the earlier part
+of the course here.
+And then we'll talk about categories and decision making and
+biases in decision making in particular.
+And also about how to model these computationally.
+We'll go back to actually the Bayesian modelling paradigm here.
+So as you can see it's a mixture of topics,
+in this case mostly in the realm of language and
+modelling paradigms.
+Right.
+In the literature there's a bunch of different modelling paradigms
+and they're suitable in different situations.
+And this is something you hopefully will get out of
+the course that there's an array of tools, and you'll
+learn how to how to use these tools and when
+they are applicable, then in Mathias part, it's more about
+the neural foundations of cognition, particularly talking about memory, vision,
+and neural computation.
+Starting a little bit with brain anatomy and brain function,
+talking about individual neurones, how you would model at that
+level.
+Right.
+So there's different modelling paradigms that are appropriate at the
+neural level.
+How you record data, how you record neural activity.
+This is quite different from when you're studying language.
+And you can, , you know, get people to produce
+sentences.
+And this is your data here.
+You can record from the brain or you can use
+brain imaging.
+, he will talk quite a lot about vision and
+the relationship between vision and memory, , looking at various
+modelling paradigms again, for example, hope filled networks.
+So this is also called auto associative memory.
+It's a paradigm that in particular is used to model
+visual memory and reinforcement learning, which is another modelling paradigm
+will also be be touched upon.
+And, , let's talk a little bit about how the
+course is run.
+So this course is suitable for outside students.
+And most of you are at least half of you
+are not Informatics students.
+There will be some programming in Python, in the assignments
+and in the labs.
+, if you've taken the introduction to cognitive science, you
+will have had some programming exposure informatics one day as
+well.
+Some maths.
+But as I said, don't be.
+Don't be scared.
+The maths will not be very difficult.
+, the labs are there to provide help with programming.
+In fact, we'll start with labs next week and it
+will be a gentle introduction.
+You'll learn how to use notable, which is the programming
+environment we'll use.
+You will be introduced to NumPy and, , simple Python
+libraries and concepts that will be useful for the assignments
+and for the, for the labs in subsequent weeks.
+, there's also if you need help, if you're an
+informatics student, then you will have seen enough space.
+So there is an INF based tutor for this course
+as well.
+So if you have questions about the course, about the
+assignments, about the labs and so on, I will post
+once the INF based sessions start.
+They probably don't start until week 2 or 3.
+So these are drop in sessions where you can ask
+for help.
+And there's INF pals.
+This is run by the Student Union, is a peer
+assisted learning scheme which also covers this course.
+, yes.
+So we have already done this cool.
+lectures.
+Obviously there's going to be three lectures each week.
+, they'll all be in person.
+We are recording all the lectures, too.
+, they're also live streamed.
+So if you.
+I'm not going to say if you can't get out
+of bed because it's 3:00, but if you're not able
+to come in on campus, Then you can you can
+watch the live stream.
+, I'll try to keep a weekly schedule.
+So by that, I mean on Friday we'll release all
+the material for the next week.
+Right.
+So you can you can look at it on Friday,
+maybe start looking at a few things over the weekend
+and on Monday and then on Tuesday is the first
+lecture.
+Right.
+And this this dump of material will include the lecture
+slides, the tutorial, the lab.
+But it will also include sort of a list of
+tasks.
+So reminding you there's a deadline this week or you
+expect it to look at the following reading and so
+on.
+So there's a small web page for each each week.
+And that has a list of tasks and a set
+of material that you need for that week.
+And that will appear each Friday.
+, and it's basically to help you manage your time,
+schedule your time, and also to encourage you to do
+preparation ahead of time because you're going to benefit more
+from the lectures.
+And yeah.
+Keeping up with the lectures in general is a good
+idea because binge watching 30 lectures, that's.
+Yeah, that's really hard to do.
+Okay.
+In addition to lectures there's tutorials.
+Tutorials are small group sessions.
+These are between 12 and 15 students.
+They're led by a colleague or by a PhD student.
+And they cover the material from the lectures.
+So there's one tutorial each week.
+These are more theoretical and mathematical exercises.
+You'll get a question sheet ahead of time.
+Please look at these questions.
+Attempt to to answer the questions.
+And then the tutorials are there to answer any questions
+that you have, any things that are unclear, but also
+to go through your answers and give you feedback.
+And the tutorials are meant to be as interactive as
+possible and they work best if you prepare ahead of
+time.
+In general, there are good preparation for the exam because
+the tutorial questions are quite similar to the exam question
+to what the exam questions will be.
+Question sheets.
+So for next week's tutorial, the question sheet is already
+out.
+If you want to have a look, the tutorials start
+next week.
+You hopefully were all auto enrolled in a tutorial group.
+If you haven't been, or if you're in the wrong
+group, you can go in my ID and change the
+enrolment.
+Sometimes there might be a clash with another course.
+We have 12 tutorial groups, so hopefully you can find
+one that that suits you.
+Okay, then there's the labs.
+The labs are practical sessions.
+They happen in the in the computing rooms in Apple
+Tower.
+And these are drop in sessions.
+So you haven't been assigned to a group.
+There's however five lab sessions.
+So you can just choose one of them that suits
+you and just drop.
+In the two hours, there's going to be two demonstrators
+per session, and you're supposed to work through the the
+lab exercises, which come in the form of a Python
+notebook.
+And as I said, we'll start very gently with some
+programming, some numpy, numpy, and so on.
+And but the demonstrators are there to help you to,
+to guide you, to answer any questions you have and
+so on.
+This will build up relevant background for the assignment.
+The assignment will be issued towards the end of week
+five.
+If I remember correctly.
+And then , in in the remaining labs, you'll be
+able to get help with the assignment in the labs.
+So again, if you have problems with the assignment, just
+drop in.
+Talk to the demonstrator, and, , Hopefully they'll be able
+to help.
+As I said, there will be Python notebooks.
+You work through it independently and there's two demonstrators on
+hand to help.
+The labs will also start in week two.
+The first lab has already been issued, so go onto
+notable and have a look at the lab.
+If you have a moment.
+As I said, you don't need to enrol unlike the
+tutorials then assessment.
+Okay.
+So there's multiple components to the assessment.
+So there is one assignment which will appear towards the
+end of the first half of the course.
+It will be worth 20%.
+It's a practical assignment.
+It will also use Python notebooks.
+So it's if you've been to the labs this will
+be no surprise.
+It's similar type of material.
+There will also be quizzes.
+Quizzes are short multiple choice , let's say tests.
+Mini Many exams that happen every other week.
+The first one is next week, and then every other
+week.
+There's one of these quizzes, so there's five in total.
+Each of them are 4% of the mark.
+And then finally there's an exam at the end of
+the course in the exam period.
+And that will be 60% of your of your mark.
+Assignments are practical requiring programming.
+I've already said this.
+And if you're not quite sure and you think you
+need extra practice, we will also issue this again.
+Has actually been issued a practice assignment.
+This is assignment zero.
+It is not assessed but you can get feedback.
+So have a look.
+This is also notable.
+And this is really for you to see.
+You know what the difficulty level will be of the
+actual assignment.
+And whether you're comfortable with that or whether you want
+to work to get to that level by the time
+The the assignment one.
+The actual assignment is issued.
+You can submit this until week three and you will
+get feedback on your submission.
+You won't get any any marks.
+It doesn't count towards your assessment.
+It's just for practice the quizzes.
+We will issue these on Friday and they're due on
+Monday.
+, so they're really meant to be.
+Really?
+They're short.
+It's around ten questions.
+As I said, multiple choice.
+So you will not spend more than, say, 30 minutes
+on these questions.
+They're really I mean, you get some credit for these,
+but the quizzes are there so that you keep up
+with the material rather than trying to leave everything to
+the exam period and the dates when these will be
+issued, the hand in deadlines, the marking deadlines, all these
+things are in the course website.
+And this brings me to the link here.
+Don't go to the old website.
+I'm not kidding, because if you Google the course, you
+still get the old website which redirects to the new
+website.
+But this is a new website.
+The old website.
+If you see something very green, that's the old website.
+And this website has all the all the dates.
+And , here is the overview when the quizzes will
+be released, when the assignments will be released and so
+on.
+So this is all here.
+And.
+Learn page.
+So if you've taken informatics courses before then you will
+know that we don't really learn that much.
+So informatics puts all the materials on open course.
+So this is the open course site that you just
+saw.
+which is much more user friendly.
+And in particular it's open.
+AII the materials are available to anyone.
+So we're using Open course for all the materials online.
+Though we use learn for the assignments.
+And also the lecture recordings are access to learn.
+Oh, notable if you want to log into notable and
+to Piazza actually then learn you need to do this
+for loan announcements will also happen through loan.
+But the course material, the slides and the tutorials and
+so on are on the course website.
+We are going to use Piazza, which probably you've used
+before.
+It's a discussion forum and it's mostly used for peer
+support.
+So if you have any questions about the content then
+post them on Piazza and you guys can help each
+other.
+Obviously the lectures and Tas will also read your postings
+and reply if appropriate.
+The link to Piazza is online, you should just be
+able to log in by following that link.
+Okay, so, , before I give this brief preview, ,
+any questions about the course at this point?
+Anything I haven't covered?
+No.
+Everyone's happy.
+Yeah.
+The.
+Exam is the first time.
+.
+So.
+Did you say it's the first year it's running?
+No, no, this course has been running for a while.
+The exam?
+Okay.
+Yeah.
+So it was running without exam last year and the
+year before.
+But there's all the exams, , from previous.
+Yeah, it's a good point.
+This particular incarnation didn't have an exam last year.
+We will provide a mock exam, I think.
+And in particular, in addition will will provide guidance to
+which of the old exams, which are, as I said,
+more than a year or two years old, are still
+current because the material has changed, but some things haven't
+changed.
+And so the the questions are still relevant.
+Yeah, that's a good point.
+Last year this course was coursework only for.
+Neuroscience focus or coding focus.
+The exam is focussed on the material covered in the
+lectures, so there won't be any coding in the exam.
+The coding is assessed through through the assignment.
+That's the plan.
+So it will be multiple choice questions and short answer
+questions where you have to write text.
+It won't be coding.
+Yeah.
+How much time do you spend.
+On the internet?
+, so for each lecture, I'm setting between 1 or
+2 obligatory readings and then a few optional readings.
+I would only expect you to look at the obligatory
+readings.
+, maybe an hour per lecture.
+Something that.
+Sorry.
+, no.
+So the question was whether you're expected to take notes.
+, you mean for the readings or for the lectures?
+, no.
+So the the stuff that's examined will all be in
+the lectures.
+So the slides are sufficient.
+But if you want more background, if you want additional
+detail, if you want a more elaborate elaborate explanation.
+That's what the readings are for, right?
+So they're complimentary.
+They don't provide additional examiner material, but they provide additional
+background and complimentary stuff in addition to the stuff that's
+covered in the lectures.
+Other questions.
+Okay.
+Very briefly.
+And we're almost out of time.
+, this is a preview to next to the next
+lecture.
+So everyone likes pizza.
+, this is a study that people have done, ,
+where the setup is as follows.
+So you go to your favourite pizza place, and they
+have an offer of two small pizzas for the same
+price as one large pizza.
+So you can have two 12 inch pizzas for the
+same price as one 18 inch pizza.
+And, , what would you prefer?
+And why don't I have a wool club question for
+this?
+No, sorry, I don't think I do.
+.
+So depending on how you formulate this question.
+, there's there's a definite answer.
+For example, if you formulate this in terms of the
+area.
+Right.
+So you should go for more pizza in the sense
+of more area of pizza.
+And of course, we can work this out because we
+know the diameter of the pizza.
+And then we know that the area of the 12
+inch pizzas is 226in², and the area of the single
+large pizza is 154 inch squared.
+So the large pizza is actually the better deal.
+If all you care about is area.
+And so what's going on?
+Most people probably will have thought the two small pizzas
+are are better, but what's going on?
+Why is , you know, is your pizza place trying
+to deceive you or what's going on?
+Why are you trying to sell you these two small
+pizzas?
+And in particular, why do people think that it's a
+better deal most of the time.
+And that's something we will talk about next time.
+And, , the answer behaviourally the answer is simply that
+people are bad at estimating areas.
+They're good at estimating lengths and linear quantities, but they're
+bad at estimating areas.
+, but that's obviously just an observation and description.
+This is not an explanation.
+So why are they bad at estimating areas?
+And in particular, would building a computational model be useful
+in this case.
+And that's one of the things we're going to talk
+about on Thursday.
+All right.
+This is the reference if you want to find out
+more.
+It's actually also the reading for next time.
+And there's a talk if you want to get all
+the details.
+That's it for today.
+Thank you very much.
+And.
+I just.

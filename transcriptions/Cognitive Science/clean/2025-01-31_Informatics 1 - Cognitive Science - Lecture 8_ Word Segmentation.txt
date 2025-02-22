@@ -1,0 +1,999 @@
+Thank.
+You.
+Okay.
+Welcome, everyone.
+, this is lecture eight and we're going to talk
+about word segmentation.
+So what is word segmentation.
+It's it's essentially the task of taking a speech stream
+and finding the word the word boundaries.
+Finding out where a word ends and where the next
+one starts.
+And that might sound an easy task, but we'll
+see why it's difficult and in which respect it's difficult.
+And also how to how to tackle that task.
+It's obviously a task that also children, when they acquire
+the language needs, need to master because they, they get
+an augmented speech stream.
+They don't know what the words are, where they start
+and end and so on.
+Before we get started, very quick announcement.
+, next week we are starting with office hours.
+So one of the Tas, Jon Watts, is offering office
+hours on Mondays and Tuesdays.
+And the times and locations and so on on the
+course website.
+So these are for basically dropping in and asking questions
+about the course, be it the assignments, the lecture materials,
+the tutorials and so on.
+So these are just another way of getting help if
+you're stuck with any of the course material.
+All right.
+So let's get started.
+And this worked when I tried it anyway.
+Just.
+Oh look.
+No sorry for that.
+Oh.
+Okay.
+So we talk about speech segmentation.
+It's in the context of language development language acquisition.
+And then we'll introduce a new concept called transitional probability
+which is a form of conditional probability, which is something
+you might.
+Have seen in other contexts.
+And then we'll talk about a few experiments.
+And people have tried to find out how children segment
+words.
+And then we'll introduce another concept called minimum description length,
+which in the context of word segmentation is important because
+it allows you to derive a whole lexicon rather than
+just individual words.
+Okay.
+Now this is not going to work okay.
+This is also a good way of introducing another modelling
+paradigm.
+So so far we've seen rule based models.
+You know, Pinker's idea that there's a word stored in
+the lexicon, and then we have a bunch of rules
+that operate on them.
+Sometimes we need extra mechanisms blocking sort of traditional
+linguistic way of doing things.
+And we've seen neural network models.
+Yesterday, for example, we talked about how these can maybe
+also acquire the past tense.
+And they were successful in some respects, not so successful
+in other respects, but they are a radical empiricist paradigm
+because they don't require any rules, not even a lexicon.
+It's really just association of input and output patterns that
+we learn and generalise over.
+So all we need is a powerful learning algorithm.
+We've applied them to past tense, which is obviously taking
+a base form of a verb and turning it into
+the past tense form.
+This is interesting because in some cases it's a regular
+process that you can describe by a rule if you
+want to, but in other cases the verbs are irregular.
+This is actually something that comes fairly late in language
+acquisition, sort of in the middle of the second year
+of of a child's life.
+Today we're going to look at something that comes really
+early, something that even newborns can do quite well, which
+is word segmentation.
+And we'll introduce a third modelling framework, probabilistic modelling, which
+sort of combines the two extremes.
+So there we assume there's some symbolic knowledge, some rules,
+but there's probabilities attached to to this knowledge.
+So there's some numeric and and learnable information but also
+some rule based information which maybe we want to assume
+is innate.
+We don't have to.
+Okay.
+So combining numerical information and rules and the rules may
+be innate as I said.
+Well the probabilities most people want to assume that those
+are learned.
+So this is a way of combining ideas from rationalism,
+nativism on the one hand, and empiricism learning based approaches
+on the other hand.
+And today we're going to talk about what segmentation next
+week we're going to we're going to talk about word
+learning and how to derive the semantics of words.
+But first we need the words.
+Before we can do that.
+It.
+Okay, so if we try to situate this in the
+context of language development as a whole.
+So starting from birth children, well babies at that point
+only make very limited sounds.
+Vegetative.
+Vegetative sounds sort of.
+Gurgling and stuff this.
+Then things start to sound a bit more language
+with cooing laughter.
+At about 16 weeks, vocal play and babbling where they
+say things blah blah blah blah blah blah blah
+and so on.
+And that is between 6 and 10 months.
+Note that this is productive language, right?
+This is what the babies produce.
+We don't know what they understand at this point.
+This is much harder to measure.
+But of course we can.
+We can listen to and record what they produce in
+terms of language.
+Then finally, at around a year, 10 to 18 months.
+They start with single word utterances, things doggy or
+all gone.
+If you assume that's a single word.
+So stuff this happens.
+It's isolated utterances, isolated words.
+Then the utterances become longer at around 18 months to
+two word utterances.
+Then telegraphic speech.
+By that I mean speech that doesn't have any articles
+and pronouns and prepositions and stuff that.
+It's really just nouns and verbs.
+That happens around two years, and then about half a
+year later, children start producing full sentences.
+And, you know, if you know a three year old,
+they can talk quite a lot already.
+So you can have a pretty good conversation with a
+three year old.
+So all of this happened surprisingly early and quickly and
+not exactly at the same time scale for every child,
+but the stages are the same and the outcome is
+pretty much the same as well.
+So that is the surprising bit that this is this
+sort of predetermined sequence.
+And that's also why some people assume that that's something
+that's innate, that, you know, unless something goes wrong, everyone
+ends up learning the language.
+Obviously, there's still differences in how proficient we are, how
+how big our vocabulary is, and so on.
+But the grammar and the basic vocabulary you end up
+with comparable.
+And so for for all of this we need a
+lexicon.
+And we talked about that before.
+And whether you assume that the lexicon is, you know,
+a pinker stylist or it's just a diffuse pattern in
+the brain, a neural network model would assume it
+needs to be somewhere, right?
+We need we need that knowledge about words.
+So associations between sound sequences, their meanings and their syntax.
+So the the sequence.
+Dog.
+Dog is associated with a certain sound.
+It's associated with certain meaning.
+Maybe also evoke certain imagery.
+And there's syntax.
+We know that this is a noun.
+All of this needs to be sort of acquired, bundled
+up, and then stored in the mental lexicon somehow.
+And children, of course, they don't read until much later,
+right?
+They don't read until they, they they basically start start
+school.
+So initially this is all based on speech, right?
+So all language acquisition, at least for the first 5
+or 6 years, has to be based on speech.
+There's obviously some cultures that speak a language that doesn't
+have a written form.
+So definitely that has to be speech all the way.
+.
+And then there's the problem that in the speed stream,
+there isn't really any spaces.
+So if you look at a speed stream ,
+this here, this is the, , the sound wave.
+So the amount of energy over time.
+And sure, there's bits where there's more or less energy,
+but it doesn't correspond to to word boundaries.
+And so you have this problem of, , associating this,
+, the sensory input, the signal that comes in with
+discrete words.
+And there's a problem also that the word doesn't always
+sound the same.
+So if two people say dog, they don't pronounce it
+in exactly the same way.
+A child will have a higher pitch than an adult,
+for example.
+, if you speak a dialect, you're going to pronounce
+the words differently, and so on.
+But somehow the child is still able to pick up
+the fact that this is always the word dog, it
+always refers to the same concept and so on.
+And let's go back to written language for a moment
+just because it's slightly easier.
+So this is a poem where I've removed all the
+spaces, and it is in a language that maybe you
+don't know is Spanish.
+And yeah, this is really hard to make sense of.
+And that's sort of the situation the child is in.
+Doesn't speak the language.
+Right.
+Because they haven't learned it yet and they don't have
+any spaces or word boundaries.
+Okay.
+If you want to look up the poem, here's the
+link.
+And here, if you want to follow that link, maybe
+in your own time.
+There's another interesting example.
+This is an example with ASL.
+American Sign Language and sign languages work more or less
+spoken or written languages, but the word boundaries are
+completely different.
+So if you're not a signer and you look at
+someone signing ASL, you will find it really hard to
+determine where a word ends and where a word starts,
+because the individual words don't correspond 1 to 1 to
+signs.
+Right.
+There's multiple signs that can make up a word as
+a sign that can mean different things and so on.
+So that is the situation that the child is in
+to start with.
+And here, for example, let's assume you're able to transcribe
+this and you can hear the associated letters or phonemes
+with with a speech signal.
+Then you still need to find the word boundaries, right.
+This could be the right on the tea kettle.
+Often chips there.
+Donate a kettle of chips of ten chips.
+Sorry.
+There.
+Donate a kettle of ten chips, and so on.
+And this is also why speech recognition is hard for
+machines.
+Well, nowadays machines are pretty good at it, but it
+took a lot of time to to get them to
+that point because of this ambiguity.
+Right?
+Even if you are able to take the sound wave,
+turn it into a sequence of phonemes, then there's still
+the the task of finding the word boundaries.
+And.
+Sometimes you can have multiple sentences that make sense, right?
+And so how do you distinguish between them?
+Okay.
+So before the child can even do the past tense
+or other complicated things, they need to know what the
+boundaries are.
+Right.
+They cannot find the past tense of a verb if
+they don't know what a verb is, and they cannot
+find the bit in the speech stream that is used
+to denote verbs.
+So this is very, very sort of basic thing that
+needs to happen first.
+So you need to the infant learning the language needs
+to divide the input into reusable units.
+Then the question is how does she represent those units
+and what she knows about then them and when this
+happens.
+So it turns out that this can happen quite early.
+We'll see an experiment in a moment with eight month
+old babies who definitely don't speak yet, but we're still
+able to do word segmentation and of course, speech segmentation.
+Why do we need words right?
+Maybe words are just things that a linguist has made
+up, given that the the speech stream is continuous.
+But of course you need them in a lot of
+different places, right?
+In the lexicon you want to organise a lexicon in
+some way morphology.
+So things plurals and past tense, these apply to
+certain units in your speech stream.
+Then syntax and phonology, phonology things for example stress,
+intonation and so on.
+And syntax is then building building sentences out of those
+words.
+And you don't build those sentences out of arbitrary bits
+of speech, but reusable, , discrete units that we call
+words.
+So that's why this is important.
+And now how the how does the child do this.
+And we'll see a few examples now.
+But then we'll, we'll drill down into one particular, ,
+one particular Q that they use.
+So things stress patterns.
+So English has the advantage that, , the stress is
+fairly regular.
+Not 100% regular, but most of the time it's the
+first syllable of a word that's being stressed.
+So here English usually stresses first syllables.
+Always the first syllable gets the stress right.
+And so well that's a good good way to break
+up the speech stream.
+Right.
+You find the stress.
+You find the the part of the speed stream that
+has the most energy.
+And that's where you insert a word boundary.
+Other languages work differently.
+French always has the stress on the last syllable.
+A lot of languages are not as regular, so you
+can't rely on that completely.
+But in some languages that's a really useful piece of
+information.
+So the difference between hamster and hamster right here the
+stress is on the first syllable.
+So we want this to be a unit in here
+stress is on stir.
+So this has to be a separate word okay.
+So that sort of information is available in the form
+of stress for a tactic.
+Constraints.
+So words are not just made up in an arbitrary
+way, but they're made up of syllables normally.
+And a syllable typically contains a vowel.
+And then there's a consonant cluster following that.
+And a consonant cluster.
+Before and after the vowel right.
+So a vowel and a finite set of consonant clusters
+at the beginning and at the end.
+And then of course, not all consonant clusters are possible
+in all languages, so something a dog is not
+a possible English word.
+Right.
+So we probably want to assume a boundary here.
+And the belongs to the previous word.
+And dog is a nice possible word of English because
+it has the o, the vowel, and then a consonant
+before and after.
+So this regularities are called formal tactics.
+And the nativists would say, of course this is innate
+for tactics, is innate.
+And that helps you to segment speech.
+Then once you know a few words, right, you've learned
+dog, you've learned bark, and so on.
+Then if you hear a sentence where dog and bark
+occurs and some other words that you don't know, then
+that makes the segmentation task much easier, right?
+Because you can segment out those those two words and
+then the rest.
+Maybe you need to assume new words.
+So this is called bootstrapping.
+You start with some things that you know.
+And then that makes the the number of possible combinations
+go down.
+But in the following we'll focus on something very specific
+statistic regularities.
+So , the words obviously are repeated, but also
+the patterns within the words are repeated in a predictable
+way.
+And we'll see in a moment how we can measure
+this and how a child can potentially exploit this to
+do word segmentation.
+So we'll focus not on not on these things here,
+but just on the statistical regularities.
+But before we do that there's a quick quiz.
+And so this is our I'll give you the opportunity
+to, , to scan the code.
+And then we'll start with a quiz.
+And this is really great.
+Okay.
+Yeah.
+Thank you.
+Okay, maybe let's get started now.
+So, , we have already hinted at the fact that
+what segmentation might also be something that happens in text,
+and there's actually languages in the world that are written
+without spaces.
+And I've given you a few examples here, and I'd
+you to guess which of these are written without
+spaces.
+So that means, even though it's a written form of
+the language, we still have the segmentation problem.
+So classical Latin Mohawk, which we saw in the tutorial
+in week one Portuguese, Mandarin or Thai.
+So which of these are written without spaces?
+What do you think?
+About that.
+Amen.
+Amen.
+Amen.
+Amen.
+Amen.
+Amen.
+Okay, let's see what people think.
+All right.
+So Latin, 17%.
+Mohawk 50.
+Portuguese 15 for Mandarin, 80 Mandarin and five.
+Thai.
+Let's see what's correct.
+Okay, so classical Latin is actually an interesting case because,
+you know, people don't learn Latin in school anymore, right?
+But if you learn Latin in some way, then it
+is written in a nice, , contemporary way where you
+have upper and lower case letters.
+You have spaces, you have punctuation, punctuation marks, and so
+on.
+In ancient Rome, they didn't have any of this.
+It was all uppercase.
+No spaces, no punctuation marks.
+Right?
+You can still see this in inscriptions and so on.
+It just goes on without any breaks.
+So Classical Latin was written without spaces.
+Mohawk is just written in a normal alphabet.
+There's nothing special in Portuguese as well.
+Mandarin is interesting, and as you correctly guessed, there is.
+Of course, it's a longer graphic language, so it's written
+in longer graphs.
+But the spaces between the longer graphs don't correspond necessarily
+to word spaces, right?
+A word can correspond to one, two, three, four longer
+graphs, and the word boundaries are not written down.
+, Thai is similar, but is written in a syllable
+alphabet rather than a letter alphabet.
+Also without spaces.
+Okay.
+Moving on.
+Oh, yes.
+So I need to introduce this before we go there.
+Okay.
+So hopefully I've convinced you that segmentation is an actual
+problem, even in some written languages, but definitely in spoken
+language.
+And so how do you go about that.
+So transitional probability is one solution.
+So this is about the regularities in the sound sequences
+of of a language.
+Right.
+Segmentation is only possible if things are repeated right.
+Some words the or dog or blue are occur
+more than once.
+If you look at enough text or speech and so
+you can find these regularities, you can find these repetitions.
+So there is a consistent sequence of the elements both
+between words and within words and within the words, certain
+sequences can occur that can't occur between words.
+So you need to look at these transitions between the
+different sounds or the different letters, right.
+Some occur frequently within words, and some occur frequently between
+words.
+And so basically if you look at the unlikely transitions
+then these are informative about word boundaries.
+So and for that we need a simple probabilistic idea.
+The idea of transitional probability which is really just a
+conditional probability.
+So the probability of y given x.
+So this means you have encountered x which can be
+an event.
+But in our case it's going to be a letter
+or a sound.
+And what's the probability that you will also see y.
+Right.
+So you've seen x.
+What's the probability the next letter or sound is y.
+And this is defined as the joint probability of x
+and y divided by the probability of x.
+And this can be approximated or estimated by taking the
+frequency of x and y occurring together, and the frequency
+of x occurring on its own.
+Okay.
+So very simple concept.
+And let's look at a quick example.
+Let's look at a particular phoneme the phoneme the.
+In English.
+Let's assume we have a text that occurs 200,000 times,
+and in 190,000 times.
+The next phoneme is a vowel.
+So the, this, that, there, and so on.
+There's lots of vowels after this phoneme.
+, and then a mere 200 times we find that
+it occurs before the phoneme.
+Mhm.
+Okay.
+So what are our transition probabilities.
+So the probability of a vowel given the would be
+190,000 divided by 200,000.
+That is 0.95, and the probability of mm given the
+would be 200 divided by 200,000.
+That's 0.001.
+Okay.
+So having , , having the vowel next is
+a lot more probable than having.
+Mhm.
+Next.
+And of course this is because thumb is not a
+possible sequence of consonants in English.
+Okay.
+So this can only occur if there's a word boundary.
+So something I don't know.
+10th month or something.
+Right.
+We have our first and then we have and
+because this cannot occur in the same word one after
+the other, there needs to be a word boundary there.
+Okay.
+So where this transition probability is low, we want to
+, to assume a world boundary where it is high.
+For example, this is actually not super great, for example,
+but in cases the and there and so on.
+We have our other and then we have a vowel
+behind it.
+And this is the the vast majority of cases.
+So we want to assume that's the same word.
+Whereas if a weird consonant follows the then we want
+to assume it's it's a word boundary.
+And if we look at a more elaborate example.
+So we have a sentence down here, this is a
+sentence of English.
+And then here I have plotted the bigram transition probability.
+So this is this probability here as computed over all
+pairs of letters in a given text.
+Right.
+We just took a large text and we computed the
+probability Of of age given two of I given
+h of s given I of I given s, and
+so on.
+And we plot the probability here, and then you can
+see certain cases where the probability has a minimum.
+And I've marked these by lines here.
+So here for example then here after is here as
+well and so on.
+And not all of these correspond to word boundaries but
+some do for example, this is and then ,
+there was no word boundary detected here because as is
+could could be a word as well.
+Right.
+So that's actually a good sequence that can occur within
+a word and then sentence.
+This is more a syllable boundary here here as
+well.
+Syllable boundary.
+Then we have another word boundary, word boundary syllable boundary
+and so on.
+So this these places where the transitional probabilities are low
+are indicative of boundaries, and sometimes they're syllable boundaries, but
+other times they're word boundaries, sometimes false alarms.
+So it's important to note that this is not a
+perfect indicator of a word boundary, but is one of
+the sources of information that is available to the child.
+These transitional probabilities, in addition to all the other things
+that we've said bootstrapping, , stress patterns, tactics and so
+on.
+And the assumption is, if the child takes all these
+different heuristics together, then this is good enough to allow
+them to stipulate, , word boundaries.
+Okay.
+, that is the theory, right?
+So we think about the problem in abstract speech stream
+comes in.
+There's no boundaries.
+How do we find the boundaries?
+We can use probability and tactics and so on.
+But what do children do in practice?
+How do we find out?
+So here's an example for a clever experiment.
+This is an older study by Safran et al.
+And they looked at eight month old babies.
+So these children, they cannot speak, they cannot walk yet
+and so on.
+But it turns out they can learn where the word
+boundaries are.
+And this is how they found out.
+So the experimenters, they made up a language out of
+nonsense words because they obviously didn't want to test a
+particular existing language.
+Right.
+Because it's about language acquisition where you start not knowing
+the language.
+Can you still find the word boundaries?
+And then they gave them words in this language, for
+example, pas de deux, de TI, budo, and so on.
+And then once you have trained the child a little
+bit.
+So training here just means listening to sequences of words
+this.
+And then you test them.
+You find out, you give them other words which either
+they've heard before or they haven't heard before.
+And can they distinguish them?
+So probably could be something that I've heard before, but
+would be a sequence that is possible, but they haven't
+heard before.
+And it's best to understand this using an example.
+So this is this is all obviously spoken language.
+So they would hear something barbecue or Galati.
+So it sounds terrible.
+And it's really hard to imagine that the children can
+make sense of this.
+But hidden in the stream are word boundaries.
+So here, for example, barbecue is a word, right?
+It's repeated all the time.
+T budo is also a word.
+It's repeated all the time.
+But something .
+What was my example here?
+Dog Ola is not a word, right?
+It crosses a word boundary.
+And also that means it's not repeated or it's not
+repeated as often as the real words.
+I don't know if we can have another example of
+here's another example of dog collar, but less, much less
+common.
+And so some transitions are really likely right here.
+So from PA to B and from B to Ku.
+And some transitions are not very likely here.
+For example, from Ku to T or from door to
+go.
+And are the children able to to tell the difference
+right between these high transitional probabilities that indicate we're within
+a word, and low transitional probabilities that indicate where between
+the word right.
+So this is the exact same logic that we applied
+here to our vowel and the versus m and the
+transition.
+And now of course the million dollar question is how
+do we even know?
+Right?
+These kids can't speak.
+You know, they probably are not able to follow instructions
+very well and so on.
+So we need basically a trick.
+And so this is how these experiments are normally run.
+This is called the head turned preference procedure.
+So we have our baby here sitting on the lap
+of caregiver let's say mother listening to the pas de
+deux and so on.
+And this of course gets boring very quickly.
+So a child listens to that for for a while.
+Then there's a break and then they're given a new,
+, a sequence of words that are either valid, they
+occur in the training data, PA, BQ, which is
+the first one here, or they're given a sequence That
+is not one that is frequent in the training data
+dog or LA.
+So this would be this one here that crosses the
+word boundary.
+And infants have a natural tendency to turn their head
+towards things that are new and interesting.
+So we're predicting that the words that they haven't recognised,
+that they haven't seen at the training time are new
+and interesting.
+So they should turn their head.
+Okay.
+And this is what happens.
+So here this is the time it takes them to
+turn their head for the pod words.
+And this is the time we know.
+Sorry.
+Longer listening time.
+Sorry.
+This is how long they.
+They pay attention to the new words which are the
+part words.
+Right?
+Which they haven't had the training time and the words
+which they have heard at training time.
+Right.
+So they pay more attention to the to the things
+they haven't seen before compared to the things that they
+have seen before.
+So that means when they heard the stream, then it
+wasn't just a sequence of nonsense syllable, but syllables.
+But they were actually able to memorise patterns and later
+on to recognise whether they've seen these patterns before or
+not.
+Okay.
+And this has been taken as evidence in the literature
+that children use these statistical or probabilistic cues about word
+boundaries.
+Right.
+So the first here, the nonsense language, , there's no
+word boundaries.
+It's a continuous stream.
+Obviously, they don't know the language because it's made up.
+So they have to use statistics and then they get
+the new stimuli and we measure the the time.
+They pay attention to the new stimuli.
+And then we see that the words they're able to
+discriminate between words and part words.
+So sequences that span a word boundary, these ones,
+for example here.
+So we take three syllables, but we make sure that
+they span the word boundary.
+So there seems to be some statistical learning going on,
+some probabilistic learning.
+And you might say, okay, this could be a fluke
+if this was just this one study.
+But this was 20 years ago, and there have been
+lots and lots of studies showing something similar.
+Okay, so we have pretty good evidence that humans use
+statistical information to segment speech.
+And the limitations of the original story was all three
+syllable words.
+The probabilities were very simple, either 1 or 0.33.
+And then in subsequent work, people have looked at longer
+words and other probabilistic cues and so on.
+And here's a fun Ted talk if you want to
+find out more.
+So this Patricia Kuhl, who talks about her research in
+this area and reviews a lot of different experiments and
+results, not just this one study by Safran and colleagues.
+Okay, let's do a few questions about transitional probability before
+we move on.
+Okay.
+So first of all, we've seen the transitional probability of
+y given x right.
+This is the probability of encountering a certain unit.
+Let's say a phoneme or a letter given that you've
+seen another letter or another phoneme.
+And this is good for word segmentation.
+You can show that it's useful for written words as
+well, not just spoken ones, but what could you possibly
+detect using this paradigm?
+Is there anything else you can think?
+, where probabilities such as these conditional probabilities are useful,
+for example, to detect phrase boundaries to segment images.
+Right?
+To find the objects in an image, , to take
+phoneme boundaries.
+Right.
+The the units that make up the speech stream to
+detect sentence boundaries or to detect syllable boundaries.
+So take a guess.
+Okay.
+Yeah.
+You know what I mean?
+Yeah.
+That's.
+Right.
+I think.
+That's good.
+Okay, let's see what people think.
+Okay.
+Ah, it seems to work for everything.
+Almost.
+So phrase boundaries.
+Let's talk about that first.
+Yes, definitely.
+So if you think about I don't know example again
+the dog.
+So sentence boundary detection is the task of taking a
+sequence of words and finding where a sentence ends or
+begins.
+And here, for example.
+Do we want the sentence boundary here?
+Probably not.
+Because in English you can't really have a sentence that
+ends in the.
+Right.
+There needs to be something else after that.
+Typically an adjective or a noun.
+So this is going to be a high transitional probability.
+Right.
+So that sort of information is also useful for sentence
+boundaries.
+If you have a sentence boundary then presumably the next
+word is a low probability.
+Transition.
+Image segmentation.
+I don't think so.
+I mean it's maybe possible in theory if you want
+to find the edges of objects in an image.
+Then that could indicate a transitional probability.
+However, in reality this is not something people use in
+image segmentation.
+So the answer is no.
+Phoneme boundaries.
+Perhaps most most researchers assume the phonemes you know the
+phonemes before you do anything.
+And there is actually pretty good evidence that this is
+something that is probably innate.
+An inventory of phonemes.
+So in the world's languages, there's about 4045 phonemes.
+And what happens during language acquisition is that you stop
+being able to recognise and produce the ones that don't
+occur in your language.
+For example, English doesn't have a phoneme, so English speakers
+often are not able to pronounce it.
+But you can show that as babies you're able to
+recognise and pronounce these phonemes.
+So it's a process of unlearning probably.
+So that's probably a different mechanism.
+Phrase boundaries.
+Sentence boundaries work very similar to phrase boundaries.
+So yes, definitely.
+And syllable boundaries.
+We've already seen this example with the, , where we
+looked at the transitional probabilities in a sentence and we
+got some word boundaries, but we also got some syllable
+boundaries.
+So probably syllable boundaries are not as strong as the
+word boundaries, but they work in a similar way.
+So yes.
+So these I think are the the correct answers.
+Moving on.
+So , if you're able to see slide 15, which
+was the slide with the, , nonsense language, , can
+you work out these transitional probabilities?
+The transitional probability of T given Q the transition probability
+of DAW given bu and of Rau given p.
+So just to quickly go back.
+This.
+Was this.
+Here it is.
+I'm talking about this set of words.
+So if possible, solutions here.
+2/5.
+0/3.
+5/5.
+165.
+This is.
+Something.
+That.
+You.
+I don't know.
+What's happening?
+Something.
+Something.
+Yeah.
+Here we go.
+Come on.
+Okay, so I don't want to spend too much time
+on this, so I'll give you the answers, and I
+will quickly show you how to do the first one
+t given.
+Q.
+So what we need to do here is, first of
+all, to count how often t occurs.
+There's one, two, three, four, five t's okay.
+And then we need to work out how often this
+T is preceded by Q.
+So there's one here.
+This is something else.
+This is something else.
+And this has a cool and this is something else.
+So it's two out of five.
+Okay.
+So count how often they occur together and count how
+often tea occurs on its own.
+Okay.
+So are we done now?
+Unfortunately not.
+Not so.
+Now we have a way of segmenting our speech stream
+of finding word boundaries.
+However, there's often ambiguity.
+Often there's more than one way to segment the speech
+stream.
+If you remember the example at the beginning, the kettle
+on the red chips or whatever it was there, we
+could find different ways of inserting meaningful phrase boundaries.
+And so how do we know which one is the
+correct one?
+So Because we are not learning just a single word.
+We are learning a lot of words at the same
+time.
+You need to combine the speech segmentation with basically the
+learning of the lexicon.
+The the set of words.
+And here two authors, Brandon Cartwright, came up with a
+clever idea that uses a concept that's called minimum description
+length.
+So basically it's a way of learning a lexicon that's
+as efficient as possible.
+You have some some data, some information that comes in
+either speech or text.
+And you want to find a lexicon that describes that
+speech or text as efficiently, efficiently as possible.
+And they came up with the following formula.
+So they compute the size of what they call the
+description.
+So this is basically the encoding of of your input.
+And this is the size of your lexicon and the
+size of the how you use that lexicon.
+The data encoding and you want to if you want
+to compare different lexical.
+Right.
+So you have different ways of segmenting your speech stream.
+You want to find which one is the better one.
+Then you compute this description length and you take the
+one with the smallest description length.
+So how does the description length actually work?
+So first of all, it has a few advantages.
+First of all, it gives you the a preference for
+shorter words, which is generally a good idea.
+It has a preference for reusing words and it also
+maximises the probability of each word.
+So what uses words that occur as often as possible.
+And it's best to to look at an example.
+So here's a made up example of two utterances here.
+Do you see the kitty kitty kitty.
+Do you the kitty?
+, and let's assume we've segmented this, maybe using transitional
+probability or whatever information we have to segment it.
+And note that the segmentation isn't quite correct here, so
+that we've treated as a single word, which makes sense
+because it occurs in each utterance and always kitty and
+occur together.
+So maybe this is not a bad segmentation.
+And then this brings us to the lexicon.
+So the lexicon here is simply an enumeration of all
+the words.
+So do is a word the kitty because we haven't
+segmented it as a word you .
+See.
+So we only have five words here.
+And then we have what's called the derivation.
+So this is just a list of the words.
+So one is two, three is u, five is c
+and two is the kitty.
+So this is the derivation of these utterances given this
+lexicon.
+Okay.
+And now you can see the trade off, right?
+We can either have a lexicon that has a lot
+of short words that are repeated all the time, or
+we can have a lexicon with longer words that are
+less frequently repeated.
+In one case, the lexicon will be long, but the
+derivation will be short and not the case, the lexicon
+will be long and the derivation will be short.
+Right?
+So we're trading off the length of the lexicon and
+the length of the derivation.
+And this is exactly what minimum description length says, right.
+The size of the lexicon.
+So we see how long this lexicon is and the
+size of the data encoding.
+So we count how long the derivation is.
+And we just define the size as the number of
+letters and digits.
+Right.
+So we count how many digits are there in the
+lexicon not counting the the spaces.
+And we count how many numbers are there in the
+derivation.
+And so if you do this then you get a
+length of 25 for the lexicon and the length of
+ten for the derivation.
+There's ten different words in the derivation, so the description
+length overall will be 35.
+And let's assume we have this segmentation.
+So this segmentation is treating the and Kitti as separate
+words but is otherwise the same.
+So we have a slightly bigger lexicon right.
+Because the and Kitti are now separate words in the
+lexicon.
+But we have a and we have a slightly longer
+derivation.
+So because now here one is two, three is you,
+five is see and two is the and so on.
+And so if we combine these then we get a
+description length of 26 as the number of characters in
+the lexicon and 13 as the number of characters in
+the derivation.
+So 39 so that means here the description length is
+longer than here.
+So that means this lexicon would be better under this
+measure of minimum description length than this lexicon.
+Okay, so here you might say well, but the kitty
+should be two separate words.
+So it's actually giving us the wrong answer.
+But what's what's going on of course, is that if
+you've only ever seen those three utterances, then you have
+no evidence to to assume that there is a separate
+word from Kitty because you've only seen it with Kitty,
+right?
+So this is actually the more efficient encoding.
+And this is what MDL tells us here.
+Okay.
+So I'm out of time.
+So I'll skip this is the details of the the
+experiment that Brenton Cartwright did.
+But to summarise we've talked about speech segmentation and we've
+talked about how to find the word boundaries.
+And then once you have an idea of where the
+word boundaries are, how do you actually compute the lexicon,
+given that there's still a lot of ambiguity and a
+lot of possible ways of segmenting your speech stream?
+Okay.
+That's it.
+Thank you.

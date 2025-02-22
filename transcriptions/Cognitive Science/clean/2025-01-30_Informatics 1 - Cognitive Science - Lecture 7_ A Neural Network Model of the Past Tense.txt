@@ -1,0 +1,1019 @@
+Lord.
+Jesus.
+Christ Jesus our.
+Lord.
+And.
+Saviour Jesus.
+Christ our Lord.
+Amen.
+Amen.
+Amen.
+The Lord.
+Jesus.
+So.
+Hi everyone.
+Let's get started.
+, unfortunately, there's technical problems again.
+So I think I'll be okay, but you won't be
+able to see the whole club because somehow the the
+system here doesn't recognise my laptop.
+, so you should still be able to do the
+whole club.
+You just.
+We just won't see the results.
+So let's see how it goes.
+Anyway, the slides are there and the recording should work
+as well.
+It worked last time.
+You've probably seen that.
+, sorry.
+The last time in this room.
+Okay, so we talked about backpropagation.
+We talked about neural networks and perceptrons.
+And today we're going to see an application in cognitive
+science of those methods.
+So we'll discuss a classical model of past transformation.
+So we're basically looking at this as an alternative way
+of looking at past tense formation.
+Right.
+We've seen the words and rules approach where you analyse
+it as a word being acquired initially words being acquired,
+then rules being acquired.
+Then the two of them interacting in an interesting way.
+And all of this was to explain how children learn
+the past tense and other phenomena in the language that
+they're exposed to.
+And the neural network approach is the the total opposite
+of this in a sense, because it doesn't assume any
+rules, any words.
+It just assumes a general learning mechanism.
+So we're going to see a model called the McClelland
+model.
+As I said, a classic model first invented in the
+80s.
+We'll look in particular on the at the features, because
+even if you assume a neural network model and you
+assume a general learning algorithm backpropagation, you still need
+to be very careful about how you represent the input
+and the output of your model.
+And we're going to discuss this in some detail.
+And then we'll talk a little bit about the model
+and ask the question whether it actually adequately captures the
+phenomenon which is past tense acquisition here.
+And then we'll sort of fast forward 25 years and
+look at a more contemporary model of past tense acquisition
+by Kirov and Cotterell, which applies all the latest deep
+learning.
+I mean, this model is also a few years old
+now, but much more advanced deep learning techniques than were
+available in the 80s.
+And the results are somewhat surprising.
+So we'll come to that.
+Okay.
+But just to quickly remind you, and I've just said
+something along those lines, so we've seen the sort of
+classical symbolic rationalist word and rules approach.
+Where you have a rule, for example, stick ed at
+the end of the base form of the verb to
+generate past tense forms, and then you need a large
+lexicon.
+You need to put irregular verbs directly into the lexicon.
+You need something blocking to avoid people generating both
+the regular and the irregular form, for example.
+Hold, hold and hold.
+Hold it.
+You don't want both of them, at least not at
+the same time.
+And that is already sort of hinting at problems with
+that approach.
+Right.
+Blocking.
+That's just a stipulation.
+There isn't really good evidence for it.
+It's ad hoc.
+And maybe we won't necessarily that in our system.
+And here we're going to look at the alternative.
+Let's assume we have no rules.
+We don't even have a lexicon.
+Children just learn past tense forms by analogy.
+Right.
+So they have forms fold folded, mould Mould.
+It's called scolded.
+So hold, hold.
+It is a natural analogy which ultimately turns out to
+be incorrect, but we can explain where it comes from.
+We don't really need rules, we just need things to
+be similar in a certain way.
+And that sort of represents the empiricist approach or the
+the approach where everything is learned rather than innate.
+Right.
+Remember we contrasted rationalism where things are assumed to be
+innate and genetically encoded in some way to a learning
+based approach, an empiricist approach where things are acquired by
+cultural transmission.
+They're not encoded in your genes.
+Neural networks we've seen we've seen very simple examples.
+It's computer modelling approach inspired very loosely by biological networks.
+And we've seen perceptions and feedforward networks, which are sort
+of an assembly of perceptrons and Of course, a neural
+network model learns by example, right?
+Sees lots of examples of past tense.
+And then it's able to pick up general patterns.
+So this should work for both regular and irregular verbs.
+That's that's the hope.
+, but that's not everything.
+Right.
+So we obviously want the model to learn the past
+tense.
+That's fine.
+But we also want the model to have some cognitively
+plausible features.
+For example U-shaped learning.
+Right.
+If you remember this, , in the acquisition of the
+past tense and actually in the acquisition of quite a
+lot of other cognitive, , capabilities, we see this U-shaped
+curve where initially during development we get a fairly low
+error rate.
+So most of the verbs are produced correctly.
+Then with time, the error rate goes up and correctness
+goes down somewhere here, and then correctness increases again.
+So we get a U-shaped curve.
+High accuracy.
+Low accuracy than high accuracy again.
+And for example, if you take a single verb spoke.
+Speak spoke.
+Then the child would initially get this correct.
+But then I would say speak for a while and
+then go back to spoke.
+Right.
+And the explanation in a rule based framework is that
+in the first stage, children just remember, just memorise everything.
+Say they don't know a lot of past tense forms,
+and they just memorise both the regular ones and the
+irregular ones.
+Then once they see more and more verbs in stage
+two, the error rates go down because they realise the
+error rates go up because they realise you can just
+stick ed at the end of a verb.
+And they apply this everywhere they overgeneralise so they assume
+everything is regular.
+We've learned this fancy new rule.
+So we just use it everywhere.
+And this manifests itself as an increased error rate.
+Then later on in stage three, they pick up on
+the fact that some verbs do not use the rule
+and they memorise those ones, the irregular ones.
+But the rule remains and can be used for everything
+else.
+And then the error rate goes down again, correctness goes
+up.
+And so that's sort of the canonical explanation for the
+U-shaped curve.
+And now the neural net guys, they assume they can
+get this curve just through a general learning algorithm.
+No rules, no lexicon, no blocking.
+None of this is necessary.
+That's the claim.
+Okay.
+And this is the model Y hat.
+And McClelland, as I said, goes back to the 80s.
+It was part of a new paradigm in psychology or
+psychological modelling at that time called parallel distributed processing, which
+we now call deep learning or neural nets, sometimes called
+connectionism, though nobody.
+I don't think a lot of people use that ,
+Monica.
+, and the idea is not only to build a
+model that can learn the past tense.
+That is maybe not so difficult, but to build a
+model that is able to actually.
+Sorry, wrong direction that is able to simulate.
+Simulate the U-shaped curve that we had here.
+Okay.
+And the general approach is that you build a model
+that just does that.
+It takes a base form and generates the past tense
+form.
+It doesn't do language processing in general.
+It doesn't do actually, , understanding.
+It only does generation.
+So it's a very limited, , a limited approach that
+can only model this particular phenomenon, this particular set of
+data, which is quite common in cognitive modelling.
+You don't build a full model of, , even one
+cognitive faculty language processing.
+But you build a model of a particular phenomenon and
+you want to capture a particular data just because it's
+so hard to try to model everything at once.
+And more specifically, what we do, we take a phonological
+representation.
+So representation in terms of the sounds of the stem
+of the base form.
+And we output a phonological representation of the correct past
+tense.
+And then you can test this with new verbs, with
+verbs that the model hasn't seen before.
+Obviously you give it some verbs with the correct past
+tense during training, but you can test it then with
+new verbs that you haven't seen before and should be
+able to generalise to those new verbs to generate the
+correct past tense form.
+Okay, so.
+In this, in this model there's no lexicon, no rules.
+As I've already said, it is a two level fully
+connected feedforward perceptron network very similar to the network we've
+seen in The Last Lecture.
+The initial version didn't even use hidden units, just had
+an output layer and an input layer and still worked.
+Later versions were more fancy, added hidden units, and so
+on.
+As I said, we're taking.
+So I'm using these slashes here to indicate the phonological
+form.
+So that would be dance and sync.
+And then the past dance form would be danced and
+sang.
+Okay so this is the what goes in as the
+input.
+And this is what comes out as the output.
+So base form goes in.
+We have the neural network doing the magic.
+And then it produces the past tense form of the
+verb okay.
+And now the question is of course how do we
+get these verbs into the model.
+Right.
+Because the model as we saw last time, just takes
+in numbers and outputs numbers.
+Right.
+It doesn't.
+It's not there.
+It doesn't process letters or words or linguistic input or
+speech or anything that.
+It's a vector of numbers, goes in vector numbers.
+Numbers comes out.
+So we now need to represent our verbs as a
+sequence of numbers, as a vector of numbers that we
+can input into the neural net.
+And this is in any sort of neural network modelling.
+That's part of the problem designing the input and output
+representations.
+Right.
+Because it's a neural network is basically computing a function
+on vectors from vector to vector.
+So we need to design what these vectors look .
+And so I will spend quite a lot of time
+on discussing these feature representations.
+Okay.
+So as I said the design of the features of
+the input and output representation is really important.
+And that's still true for modern neural networks right.
+Modern neural networks, they use something called word embeddings when
+you use them for language processing.
+We'll talk about those actually next week.
+They are more advanced and more complicated than the simple
+representations we'll discuss today.
+But the question of representation is is still a crucial
+one.
+Okay.
+So Raymond McClelland assumed that you have a you represent
+a word came, for example, as a sequence of
+phonemes.
+So this would be a and m.
+And these things are sort of I don't know.
+If you've studied some linguistics then you'll know about the,
+the IPA, the International Phonetic Alphabet.
+These are sort of Ascii representations of IPA, and they
+assume 35 phonemes, which is enough to represent all the
+sounds in English.
+Note that there's more phonemes than letters.
+And now we need to represent the context as well.
+So we cannot just say okay, here we have a
+phoneme and a phoneme and so on.
+, we need to represent what comes before and after
+that phoneme.
+Why is that important?
+Well, because verbs behave differently based on their context.
+So for example, there's patterns sing sang, ring rang,
+springs rang.
+Where if you have this, if you have an eye
+and phoneme.
+Right.
+So in sing you have the e and then
+you have.
+And if you have that then you have this pattern
+here.
+Sing sang, ring rung and so on.
+This is common to all of these.
+And we want the model to be able to represent
+that right.
+So individual phonemes would not be sufficient.
+So we encode the context.
+And that also gives us information about the relative position
+of the phoneme.
+So the the authors call this with phones.
+This is named after an author called Winkle gren who
+invented that representation, but doesn't matter.
+So sing things would become this, right?
+Or came would become that.
+And then in terms of triples or phonemes, this would
+be hash s I s I I n I mean
+hash and hash is the word boundary beginning or end
+of the word okay.
+So we know here that there's two phones, two phonemes
+involved, and they are at the beginning of the word
+here.
+These three phones phonemes are also involved.
+And then in the middle of the word and so
+on.
+So we we take our word represented as phonemes and
+then we take all possible triples.
+Okay.
+So that's a very simple representation.
+Now we need to figure out how to encode those
+triples.
+And then we're basically in a position where we can
+where we can train the network.
+So for example, using this representation we can represent that
+sing becomes sang.
+So I n end of word becomes an end of
+word independent of word length.
+Remember we're mapping the input onto the output right.
+So if we have this representation then we don't care
+what's preceding this.
+We can still learn this mapping from in to an
+okay.
+So that's what we want the model to to to
+learn.
+So we need to enable it to represent that.
+Okay.
+So now we have these 35 phonemes and they're in
+triples.
+So we have 35 to the power of three possibilities.
+right?
+So if we take all, all possible triples this
+over our 35 phonemes, and this is about 40,000 possibilities,
+which is fairly long for an input.
+Right now we have an input.
+In our simple examples we only had 2 or 3
+input units.
+Now we need 40,000.
+And for today's technology that's not really a problem.
+We can we can have very long inputs.
+But back in the 80s they weren't really able to
+train this.
+So they opted for a simpler representation where they took
+phonological features.
+So for example k, the phoneme k can be represented
+as interrupted because it's a plosive.
+It's at the articulated at the back of the mouth.
+It's a stop stops and it's unvoiced.
+Good would be the voiced version, right?
+So linguists.
+Phonology.
+They thought of ways of representing phonemes in terms of
+these features.
+So , and using features that for, for
+consonants this would be the feature representation for k.
+This would be the feature representation for a.
+This would be the feature representation for.
+Mhm.
+we can get a simpler and smaller set of
+features.
+So this gives us 11 binary features.
+So which we can represent as zero and one.
+so and these are now called whittle features rather
+than whittle phones.
+And now we have 11 to the third possible
+combinations.
+There's some redundancy and there are some combinations that can't
+occur.
+So we take those away and we're left with 460.
+So now we only need 460 input units.
+which makes the network a lot more compact and
+easier to train.
+Okay, so at this point, yeah.
+So 460 input units.
+And these are the same as the output units.
+Right.
+Because the input and the output are both verbs represented
+as phonological features.
+So for a given word we activate all the features
+in the phonemes together.
+So thing would activate those features here.
+Beginning of word c s I, n in end of
+word, and the other phonemes are not being represented, and
+the order of the phonemes is not being represented.
+We still get a reasonably large network, right?
+We have 460 input units, 460 output units.
+So this gives about 200,000 connections weights that we will
+need to learn.
+And we are not assuming a hidden layer.
+We start the training by setting them all to zero,
+and the authors have a set of 200 sorry, 420
+input output pairs.
+Right?
+Pairs sing, sang, walk walked where the model knows
+the correct answer.
+Remember backpropagation is is a supervised learning algorithm.
+So during training we need to know the correct answer.
+And if the model doesn't generate the correct answer, then
+this gives us an error signal which we propagate into
+the network to adjust the weights.
+That's how the training works.
+Okay.
+So let's try to get our heads around the features.
+And this should work.
+Even though you cannot see it on the screen it
+should work on your phones.
+So if you could try this for a second.
+And then you should see the first question.
+Yes, sir.
+Yes.
+Sir.
+Okay.
+And.
+Hope people can see the question.
+I cannot display it because the.
+This device doesn't have a network and that device doesn't
+connect to the projectors.
+Okay.
+So the question is we're taking a verb spring, and
+we have the phonological representation for that.
+And then you're supposed to break this down into, ,
+into the wiggle phones.
+So there's one correct answer here.
+One two 3 or 4.
+It's.
+Okay.
+I'll give you another 30s.
+Let's see what people think.
+Can you actually see the results now on your screens?
+Yes.
+No, no.
+Okay, I'll read it out.
+18% have opted for number one.
+56% for number two.
+25% for number three and 0% for number four.
+And the correct answer is number two.
+Okay.
+So let's quickly look at this.
+So number one.
+what's wrong here for number one.
+Any anything wrong here with the first solution.
+Exactly.
+So number one these are obviously this is a representation
+you could choose, but it's not the one that the
+authors have chosen here.
+It's using sequences of four phonemes rather than three.
+Right.
+So it's a four grammar rather than a trigram representation.
+Then two was the correct one, where we are chopping
+it up so that we have each phoneme represented and
+the context of that phoneme, right?
+The previous one, and that includes the beginning and the
+end of the word and the following one.
+And what's wrong with three?
+Why is that not correct?
+We've forgotten the beginning and end of the word.
+Why is that even important?
+Why do we want to represent the end of the
+word in the beginning of the word?
+Well, because certain things happen at syllable boundaries and at
+word boundaries.
+Right?
+Certain linguistic processes.
+And for example, the thing in spring in English, that
+really can only happen at the end of the word.
+It's not something that's can be in the middle of
+the word.
+So we want the model to be able to you
+know, it's only sees numbers, right?
+So we want the model to know that this is
+an end of the word.
+And then for finally it's just a representation of the
+individual phonemes.
+It doesn't use triples or phonemes.
+Okay.
+So moving on to the next question.
+And this is these calculations.
+And as I said, contemporary neural networks are able to
+really represent large inputs, often millions of words or hundreds
+of thousands of words.
+But still even then, we need to think about what
+the input should be .
+And we don't want it to be too big because
+it makes computation difficult.
+So if we use triples of phones or phonemes, how
+many input units do we do we need?
+If we use the 11 features and again triples?
+How many inputs do we need if we use just
+individual phonemes.
+So we're just using a representation that shows whether something
+is a phoneme is present in the world or not,
+or we use a sequence of individual phonemes.
+So you're supposed to find the the correct calculation in
+terms of input units.
+For each of these representations.
+So in this case you need to think how many
+possible phonemes.
+How many possible features.
+How do we compute the number or the number of
+combinations.
+And so on.
+And so.
+Forth.
+And.
+Okay.
+Let's have a look at what people think.
+Okay, so the most popular pairing was 11 feature combinations.
+Triples of phonemes requires 11 to the third binary input
+units and then the next popular ones.
+Individual phonemes requires 35 binary input units.
+A sequence of three individual phonemes is 35 times three.
+That's also correct.
+Okay, great.
+Let's go through each of them.
+One by one.
+So tripled cell phones, right?
+We have 35 phones.
+And of course, in each of the positions in our
+triple, we can have 35 combinations.
+So it would be 35 times 35 times 35.
+So that's , 42,875.
+So that's a lot of different input units.
+And it's it was too big for McClelland, for Hamilton
+and McClelland.
+If we instead use the feature combinations right now, a
+phone is not a binary unit, but it's a combination
+of features.
+And we have 11 different different features.
+So it would be 11 to the third.
+That's 1331.
+If we just look at individual phones then we just
+have 35 units, right.
+We don't represent triples.
+We just say, I don't know, Kat.
+The phones are K, A and T and we we
+represent those.
+We have 35 units and we switch on the ones
+that are present in a word.
+So that's really short, but it's arguably too simple as
+a representation.
+Then if we have three individual phones.
+So by that I mean we take 35 units representing
+the first phone, 35 units a second, 35 to the
+third.
+So that would be 35 times 3 to 105 units.
+Okay.
+That is not a bad representation, but it has one
+crucial limitation.
+What's the limitation of a representation this where we
+just have three different phones in each represented as its
+features or as as the phones themselves?
+It seems pretty, pretty neat as a representation.
+But what's what's the what's the limitation?
+Why don't we do that?
+Well, because we can only represent three three letter words,
+right?
+We can't represent any words that are longer or shorter
+than that.
+And in particular in in the case of the past
+tense, often the length actually changes, right?
+Because you add a past tense suffix.
+So that's not a good representation for us.
+What people do if they want a representation this,
+they make it much longer.
+Right.
+So let's assume instead of three letters you assume 20
+letters.
+And that's probably long enough for most verbs in English.
+And then you still have the problem.
+What about words that are shorter.
+So you need to pad.
+, how can you represent the.
+The same suffix can appear in different places.
+Right.
+So you have the suffix ed in English, but of
+course in a three letter word and in a five
+letter word it appears at a different position.
+So you need to somehow represent that as well.
+So these fixed length representations, they are popular representations.
+But for this particular task they're probably not very suitable.
+Okay, I will skip the next one in the interest
+of time and move back to the lecture.
+Okay, let's talk about the training and the structure of
+the model a little bit.
+So as we've said, this is a very simple model
+that only has an input layer and an output layer.
+There's nothing in between.
+So there's no hidden no hidden units which would normally
+be here.
+It works anyway because the task is fairly simple.
+And then we have each of these units representing a
+triple of different feature combinations.
+So for example this feature combination or that feature combination
+which I've just here written for example as back vowel
+and an n and then the end of the word
+and so on, or two consonants at the beginning of
+the word and so on.
+So there's 460 of these and the same in the
+output 460 of those.
+And , how do we train this?
+So we use the perceptron learning algorithm.
+We don't need to use backpropagation because there's no hidden
+layer.
+, but we assume we have correct input output pairs.
+So pairs walk walked or sink sunk.
+And then we initialise the weights and the threshold.
+They just said everything to the zero to start with.
+And then we go through a loop where we look
+at each training example, calculate the output for the training
+example compared to the correct answer.
+So we input walk for example, but of course represented
+as a set of triples of features.
+And then we generate the output again represented as a
+as triples of features.
+And compared to our target is it worked or not.
+And we update our weights and the threshold, which we've
+just encoded as a bias term in order to make
+the answer similar.
+The output similar to the target.
+Remember we take the output.
+We take the target, which in this case is just
+a long list of ones and zeros.
+And we want to make them more similar.
+So we compute the error and we adjust our weights
+based on the error.
+So exactly using the perceptron learning rule that we saw
+in the last two lectures.
+And then we keep doing this right.
+We iterate through all the training examples.
+And then we iterate through the whole training set multiple
+times until the error becomes small enough.
+And here it's up to you to define what means
+what you mean by small enough.
+The error will in most cases not go down to
+zero, but it will become very small and then it
+will not reduce anymore, or it will just fluctuate a
+little bit.
+And people often draw an error curve, start with a
+large error and then sort of goes down and eventually
+it stabilises.
+Okay.
+You also call this convergence.
+The network has converged and then you stop training.
+So you need a criterion here, right?
+You need to sort of say the error is small
+enough and then I stop.
+Okay.
+So how do they do this.
+In in in practice.
+So they need a lot of training iterations.
+84,000.
+So they go through this loop basically 84,000 times.
+, and this worked for the 420 verbs in the
+training set.
+So they're able to to learn all these verbs.
+This in itself is not super surprising, right?
+A model is supposed to learn the training set and
+supposed to get the error down to zero or close
+to zero.
+The interesting thing is, when you try it on new
+data, when you see whether it generalises to unseen data.
+So they tested the model on 86 unseen verbs or
+regular and irregular irregular verbs that they hadn't trained on,
+and two thirds of them were assigned the correct past
+tense.
+So, you know, an error rate of 25% and the
+irregular ones typically were over generalised.
+So.
+Dig, dig.
+Catch.
+Catched.
+And so it was able to learn verbs.
+And it was able to generalise to some extent to
+new verbs.
+But it still made errors.
+Once the training was done.
+And that is interesting.
+But the most interesting thing is, do we actually see
+the same behaviour that we see in children?
+So the authors claim that they see U-shaped learning.
+So initially, for example, the model correctly generated give gave
+but then it shifted to give and then shifted back
+to gave.
+there are certain error patterns.
+So for example if a verb ended in t or
+It was reluctant to apply the rule, and it made
+overgeneralisation errors that we see in children.
+Clang clang set where verbs that are regular, the model
+things are irregular.
+And sorry, this was the wrong.
+.
+So how did they achieve this?
+So they they.
+The authors Rumelhart and McClelland, , they looked at what
+children do, and they assume that children learn common verbs
+first, walk and talk and so on, and then
+infrequent ones, I don't know, rationalise or something that
+later.
+And so they built this into their model.
+So they trained first using ten verbs, and eight of
+them were irregular.
+And the irregular ones they observe are learned earlier than
+the irregular ones.
+So they trained it with the remaining 410 verbs, which
+were mostly regular.
+And they also observe that children.
+If you remember this, there is this growth spurt where
+children suddenly learn a lot of verbs and ones or
+words in general, not just verbs.
+And so they they see something that in that
+the error rates increased dramatically at the start of this
+phase, where they learn lots of verbs and then they
+recover again.
+And the model made errors just such as break, break.
+So this is the learning curve that they found where
+on the x axis you have the number of trials
+during learning, and then you have the irregular and irregular
+verbs here.
+And you see that they they both converge to a
+high level of correctness.
+But there's this, , this blip where accuracy goes down
+and then it goes up again.
+And the authors argue that this is our U-shaped curve.
+So it doesn't really look the you that we've.
+We've seen.
+Right.
+And it's also only there for the irregular ones which
+is also strange.
+And in general it seems a pretty small effect.
+So.
+When other authors saw this, they were quite sceptical.
+And there has been a lot of subsequent work looking
+at this and trying to replicate this, this U shaped
+learning.
+So and also conceptually, you can think and say, okay,
+so in that training regime, they switched from mostly irregular
+verbs in the beginning to mostly irregular verbs later on.
+And when children hear language, is it actually of that
+pattern.
+Probably not.
+Right.
+It's not parents suddenly decide to use lots of
+regular verbs after initially having used only irregular verbs.
+That would be very strange.
+And so this is actually something we don't have any
+evidence for.
+Then they claim that they model this growth spurt in
+the vocabulary.
+It turns out that that's also not correct because this
+growth spurt happens early on in in the second year
+of life, whereas the overgeneralisation errors that actually happen between
+2 and 3, they happen later in life.
+Initially, kids don't know a lot of verbs.
+They actually start with nouns in the first year of
+life.
+So that claim is also not quite right.
+And then what's with the training scheme?
+So they had this complicated training scheme right.
+Ten verbs which are irregular and frequent.
+And then 410 verbs which are mostly regular and less
+frequent.
+And they get the U-shaped curve.
+But actually if you change the training regime, it's quite
+brittle and the effect is not necessarily replicated.
+So this is not a very stable finding.
+Unfortunately.
+me.
+, there's other problems.
+So it only produces past tense forms.
+It cannot understand past tense forms.
+You cannot sort of use the model in reverse for
+rule based account.
+That's not a problem, right?
+The rules in the lexicon are the same for doesn't
+matter what you do with them.
+You can generate, you can understand, you can read and
+write and so on.
+And here this is just a model of listening, right.
+Because it uses phonological representations sorry speech production rather than
+listening.
+, then it has a very detailed model of the
+pronunciation, right?
+In terms of these features, , obviously we would actually
+this to be general.
+And these feature representations should appear in other parts of
+the language system as well.
+So every network needs to needs to model this separately.
+That doesn't make sense either.
+And then these wicked vehicle features are also simplified.
+For example, they don't really represent the order, right?
+They only have the context, the previous and the next
+phoneme, but they don't represent the order of the of
+of the features.
+They miss other aspects of phonology as well.
+So it's in many, in many ways too simple what
+they're doing.
+Okay.
+And I have a few questions.
+Questions for you.
+So what would you say is the other main criticisms
+of the Rumelhart and McClelland model?
+We've discussed some some aspects, but for example, that it
+doesn't learn irregular verbs, that training takes too much time,
+that the U-shaped learning is actually not convincing.
+Maybe it's just an artefact of the training regime that
+they've devised.
+, it's not robust against changes in the training regime.
+Doesn't capture that.
+The children learn common verbs first, or the representation is
+oversimplified.
+So what do you think are valid criticisms of the
+model?
+Let's see.
+How?
+So.
+Okay.
+So let's have a look at each of these.
+Number one it doesn't learn irregular verbs correctly.
+So 29% thought that this is, , a valid criticism.
+, yes.
+I think it's a valid criticism.
+.
+In particular, for unseen irregulars.
+You wouldn't expect perfect, , performance.
+Right?
+Humans, if they see a new verb and they don't
+know it's irregular, they might get it wrong.
+But in particular, at training time, you would expect it
+to pick up all the irregulars correctly.
+The next one, 21% training takes too much time.
+, no, that's not a valid criticism because we actually
+don't look at the training time, right?
+We just look at the overall shape of the learning
+curve.
+In a model, the training time will depend on, you
+know, how good your implementation is, how fast your hardware
+is.
+And these things are not interesting from a cognitive point
+of view.
+Then the third one, a modelling of the U-shaped learning,
+is an artefact of the unusual training regime.
+Yes.
+So people were actually not able to replicate this.
+And we'll see another model in a moment that has
+the same problem.
+You don't get the U-shaped training training curve, and it's
+an artefact of the training regime.
+So the model is not robust.
+If you change the training regime.
+Then the next one is, , doesn't capture the fact
+that children learn common verbs first.
+, that is probably true.
+But, they have just basically engineered the training regime.
+So the model doesn't really say anything about that because
+they assume that the learning happens with the common verbs
+first, and the representation with the weaker features is oversimplified.
+We've already said this.
+For example, it cannot represent the order of the different
+triples.
+It can only represent whether the triple is there or
+not.
+Okay.
+So the next one and I think we're sort of
+out of time.
+So I'll skip the the next one.
+Sorry.
+So that we can quickly talk about the next model.
+So this is an extreme version of a model in
+the sense that there's no rules.
+Everything is memorised.
+It's it's just learning from data, generalising from data.
+But it makes testable predictions.
+, then people have done experiments and try to validate
+those predictions.
+And they have also proposed other models that, , for
+example, use different input representations.
+, they have a hidden layer.
+They have a rule mechanism, for example, to model
+the regular verbs and so on.
+And we'll briefly look at one such model, the Kirov
+and Cotterell model, , which uses a different neural network
+architecture called the recurrent network, which has the advantage that
+it can represent an input of an arbitrary length, which,
+as we said, is a useful thing for any language
+data, really, because we don't know how many phones our
+word is going to have.
+We don't know how many, , how many words in
+a sentence and so on.
+So we want to have a flexible representation this.
+, it doesn't use wiggle features.
+It just represents the, , the phonemes directly.
+, it uses what's called an encoder decoder architecture.
+And this is basically one network that encodes the input
+and another network that decodes the output.
+And this is quite a common architecture in language processing.
+It uses an attention mechanism, which is basically a way
+of saying which parts of the input and the output
+are important.
+And then it also addresses this criticism that the model
+can only do one thing, and you would have to
+train another model, for example, to recognise past tense verbs.
+So it uses something called multi-task learning, which allows it
+to learn multiple tasks at the same time.
+So past tense is only one of them.
+Okay, so this is the encoder decoder architecture where we
+have a recurrent network here.
+And note these connections here between the units in the
+same in the same layer.
+These are called recurrent connections.
+And then the output vector is the input for the
+decoder.
+So we have two.
+This is actually an example from translation English to Korean.
+So we have an encoder that encodes the English and
+a decoder that decodes the Korean.
+This is actually commonly used in machine translation models as
+well.
+And this is what they find.
+So they compare to a rule based model, the minimal
+generalisation learner which is a state of the art rule
+based model.
+And then they have a single task learner and a
+multi-task learner.
+And this is the accuracy on the training set.
+So they get very high accuracies on the training set
+which perhaps is is not surprising.
+Right.
+On the training set and both for the sorry for
+the regular verbs and the irregular verbs, and on the
+development set and on the test set.
+So development set is a type of test set that
+gets slightly lower accuracies, but still in the high 90s.
+And.
+the the rule based model here.
+They achieve similar performance.
+But what about the irregular ones?
+So on the training set no problem.
+But on the development set and test set, , we
+have significantly worse performance.
+So, , and this is maybe it's a plausible behaviour,
+right?
+Because then if you give a human learner an irregular
+verb that I haven't seen before, initially they would probably,
+, not correct correctly find the past tense form.
+And this is their learning curve.
+So you have, , the regulars here, , the irregulars
+in the multitask or the single task setting.
+And as you can see, the performance eventually goes up
+to nearly 100.
+Here on the on the training set.
+But it takes much longer to get there for the
+irregular ones.
+Right.
+On the x axis you have the number of training
+iterations again.
+And crucially.
+What again do we not see?
+There is no U-shape right of any kind.
+There's a bit of a zigzag here for the irregulars.
+For the regulars, definitely.
+They go straight to 100.
+But the irregulars are.
+A bit more difficult to learn.
+Take a bit longer, but we don't see a U-shaped
+curve.
+So at some level.
+And this is just one of the the models that
+people have published.
+Right.
+But at some level, the neural network exercise was a
+success in terms of learning the verbs and generalising or
+over generalising for the irregulars as well.
+But it was a failure in the terms in terms
+of modelling particular aspects of human behaviour.
+For example, U-shaped learning, where the error initially is low,
+then high, then low again.
+That is not something that we see in in neural
+networks.
+Okay.
+With that in mind.
+Oh yeah.
+Some some examples.
+So it makes interesting overgeneralisation.
+And it oscillates.
+So for example between clang clang and clink clink.
+, so these are the phonetic representations here.
+, but ultimately, , we don't see the U-shaped curve
+and the U-shaped curve that we see in the, ,
+in the McClelland and Rumelhart model is probably an artefact
+of their training, of their training regime.
+Okay.
+, we will look at other aspects of, , language
+tomorrow.
+We'll look at speech segmentation and we'll look at some
+modelling paradigms there.
+Thank you.
