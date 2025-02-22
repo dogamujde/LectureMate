@@ -1,0 +1,945 @@
+Do you think?
+So try to get attention or, .
+Do it in the .
+Should I just start?
+.
+Should I?
+Yeah, it's it is recorded.
+So.
+She should be on.
+My test.
+Yeah.
+.
+Hi, guys.
+, so we're your student reps, and we're here to
+voice your concerns and to, , staff in the university.
+, so one way that you can do this is
+by scanning the QR code for our weekly feedback form.
+So if you have any concerns, , regarding university life
+in general or anything that's just making your life harder
+than it needs to be, you can just scan the
+QR code and you can give us feedback so we
+can relate that to staff in our weekly meetings.
+We have also left our personal emails up there.
+So if you have any other concerns, feel free to
+just send us a little email.
+And is that all?
+I think that's it from us.
+Yeah.
+Thank you.
+Should we just come back here?
+Okay.
+Good afternoon from me.
+So yesterday I was generalising sequence and we talked about
+this idea where sequence can have not just one predicate
+on the left or on the right, but can have
+lists of predicates or sets of predicates.
+When you do it In Haskell, it's a list, but
+really it's a set.
+And the principle of having sets of predicates is that
+what's on the left is all the things that you're
+assuming in order to get what's on the right, which
+is a list of possibilities that you might be able
+to prove.
+And we spent some time arguing that the meaning of
+this is the end of everything on the left entails
+the order of everything on the right.
+And I went on to try to justify this as
+a useful thing to do, because in most pieces of
+reasoning, in most proofs, then we have a bunch of
+assumptions that are being carried around through most of the
+proof and a specific assumption that we're actually working with
+in order to try to prove B, although B might
+actually need some of the assumptions in here, but these
+might be something we assume all the time, and so
+we don't normally want to think about them.
+Any questions or requests for clarification or repetition of anything
+that we did yesterday?
+There's quite a lot of conceptual advance coming in yesterday
+and today, so tutorial will hope we'll hopefully bed it
+in two.
+So I want to.
+Just give an example.
+Going back to something we did earlier.
+You remember the the drinking age in Scotland thing at
+the time I said it was a slightly odd example
+because we did it in terms of rules and really
+it's about sequence.
+So here is how if I had written the book
+the Buying Alcohol in Scotland example would be presented So
+we've got a bunch of assumptions people are over
+18.
+If you remember, I said that was a background assumption,
+and I know there were a couple of people who
+aren't hard on you.
+We have a predicate saying if you're in Scotland, we
+have a predicate saying it's daytime, and then we have
+a conclusion, which is can you legally buy alcohol should
+you wish to?
+And as I remarked last time, there's a bit of
+fast talking going on here because what is x?
+X is really a triple involving a person and a
+place and a time.
+That's the situation we're talking about.
+And what we are trying to conclude is whether in
+that situation, that person at that time in that place
+can legally buy alcohol.
+And the assumption that is currently the state in Scottish
+law is that you need to be over 18.
+You need to be in Scotland, obviously.
+and you need to be doing this in daytime, defined
+as between 10 and 10.
+And if that's the case, then you can legally buy
+alcohol in Scotland.
+And we're not actually talking about the rest of the
+world.
+So this is now one of these sequence with a
+bunch of propositions, predicates on the left, all of which
+are necessary.
+And when we were presenting it in terms of rules,
+we were talking about denying the conclusion and flipping things
+back and forwards.
+But if we think about it as a sequence which
+is arguably more natural, we can also do the same.
+So let's think about how contra position works for us
+in this setting.
+When we had just one predicate on the left, contra
+position was negate and flip.
+When we have multiple things, then contra position is negate
+and flip.
+But you only choose one of the things on the
+left.
+Not all of them.
+So I can do, , if you're 18 and you're
+in Scotland and you can't legally buy alcohol, then it
+must be Night-Time.
+Or I can do a composition of L and S
+and get.
+If you're 18 and you can't legally buy alcohol and
+it's daytime, then you must not be in Scotland.
+And so on and so on.
+So that's how quantal position worked before.
+If you compare this sequence setting with the rule based
+setting, you'll see that we're doing the same thing.
+But what more can we do with multiple predicates on
+the left.
+So this comma here is really an.
+And so therefore we can work out what would happen
+if we wanted to do composition of two premises.
+Suppose I wanted to take this thing and say, can
+I take the conclusion and deny both the assumptions S
+and D?
+Well, I can work out what happens if I try
+to do that, because comma is the same as and
+so I could replace the comma by an and break
+this down into two predicates a simple one and a
+compound one.
+And then I could do quantum position on l and
+this s.
+And so that's negate and flip L comes over to
+the left and is negated d s and d goes
+over to the right and negated.
+What can I do with the thing on the right.
+Well we have D Morgan's laws, which you are supposed
+to remember from propositional logic, although I think only a
+small proportion of you remembered seeing them, but the and
+the not of the and is the author of the
+nots.
+Just remember that mantra.
+So not s d is not s or not D
+and comma on the right is just or so we
+can break that down again into not S and not
+d.
+So actually I can take the L and I can
+contra pose it with two predicates on the left.
+And it still works.
+I've done negate of the L and flipped it.
+And I've negated both these predicates and flipped it.
+So if I can do it for two, can I
+do it for three?
+Yes.
+Yes.
+I mean the same.
+Exactly the same argument works.
+I just replace that comma by an and move the
+whole thing over, and then I have the not of
+the ans and that breaks down into the Or of
+the nots and the ORS turn into commas.
+Can anybody see.
+Well okay, let's let's do the question as stated.
+Can you say what's the general composition rules?
+So in these sequence where I might have lots of
+things on the left and lots of things on the
+right.
+What's the general statement of composition in the negate and
+flip framework?
+So when I had one it was just negate and
+flip.
+Now I've shown you that when we have several things
+we might be able to do more than one.
+So what would be the general statement of quantum position.
+Yeah.
+We get a set of , so I get a
+set of, , propositions and I'd take the law
+of that set in the answer set.
+So yeah, that's not think about the all in the
+end because contrary position as we did it didn't do
+this argument explicitly.
+So this is an argument justifying the quantum position works.
+I want just the simple description of quantum position.
+So before it was take two predicates negate and flip.
+What's the simple description of the most general quantum position
+I can do here?
+Yeah.
+So.
+Yeah.
+Maybe.
+Right.
+So we've got a couple of suggestions there.
+So one is take any bunch of predicates on the
+left, any bunch of predicates on the right, negate them
+and flip them as I said okay.
+Now I think you were saying something that follows from
+that.
+, take any set on the left, any set on
+the right, negate the things and move them to the
+other side.
+What is a particularly boring set to negate and flip?
+Yeah, the empty set.
+Okay, so the empty set is simultaneously the most important
+set.
+And the most boring set.
+It's the most important set because it's the set from
+which we build the entire rest of the set theoretic
+universe.
+And obviously it's the most boring because it has nothing
+in it.
+.
+So what happens if I choose a predicate here?
+, on the right for you, and I choose the
+empty set of predicates here, and I do negate and
+flip.
+This predicate is negated and move to the left.
+There's nothing here to do.
+So actually, the most general form of composition is choose
+a bunch of predicates, even one or many.
+Negate them and move them to the other side.
+You don't even need to be swapping them.
+You can just move predicates between left and right provided
+you negate them.
+, did that make sense?
+Yeah.
+What?
+Okay.
+Shall I move on to the board?
+Most things are easier when they're slower.
+The whole purpose of blackboards is to make things slow
+enough to follow.
+So before we started introducing multiple things.
+Composition was.
+Take the two predicates on each side, negate them and
+flip them.
+Now, I just argued that we could generalise this and
+say.
+Choose two predicates on one side and one on another
+and negate and flip.
+Okay, so that would give us a.
+Okay.
+Did everybody follow up to that point?
+Shout if you didn't need.
+Need me to say more?
+Or look at the slide again at your leisure.
+.
+Okay.
+And so what we just did the final bit was
+say, well, if I can choose any of these predicates
+and any of these predicates and flip them around, I
+could actually choose none of the things on the left
+and one thing on the right.
+And then I get.
+The thing just by moving one predicate to the other
+side and negating it.
+And if you think about it, that's now the simplest
+possible form of composition, taking one thing and moving it
+to the other side and negating it and all other.
+So the kind of composition we did previously is
+doing two of those at the same time.
+So when I said negate and swap secretly, I knew
+that we could express it as take this, negate it
+and move it and take this, negate it and move
+it.
+But in the original setting, we had to have exactly
+one predicate on each side, so we had to combine
+the two moves into a single swap.
+Now we can do things one at a time, which
+is much more general and lets us do lots of
+other good stuff.
+Okay, can I take that as red for the moment?
+All this stuff is moderately technical.
+Thank you for the usual people.
+Usual thumbs up.
+, but it has to be gone through and the
+tutorial will help if you're having a little difficulty following
+it.
+So what have I done?
+What I've actually given you is the basic outline of
+Gerhard Jensen's sequent calculus.
+And while there are several forms of logical reasoning that
+differ slightly in the way they present things, the sequent
+calculus is one that is particularly easy to work with.
+It's not necessarily the most natural, but it's the easiest
+to work with, and you're going to be programming with
+it.
+So we want it to be easy to work with.
+What are the key differences from the kind of Aristotelian
+reasoning that we've done before?
+Well, it talks about all kinds of logical formulae.
+All have first order logic and not just the categorical
+propositions.
+And the other key difference is that it only deals
+with entailment.
+So we only prove that some assumptions prove a conclusion.
+It doesn't have any way explicitly built into the system
+of working with not entails.
+So previously we used not entails in order to smuggle
+existential statements in because in order to make an existential
+statement, what we really said was it's not the case
+that everything is the negative of the existential.
+But in normal first order logic, we have the exists
+quantifier as a primitive operation, and so we don't need
+to smuggle it in as a negated for all, although
+frequently we do, because it often makes the working easier.
+Now, having said that, I'm going to give you sequent
+calculus with all of logic.
+Actually, for most of the course, I'm not going to
+will just concentrate on the propositional fragment.
+So in some ways we're now getting simpler.
+Well, in very definite way we're actually doing simpler stuff
+than syllogisms.
+, but it can be extended and probably right at
+the end of the course.
+I will come back and talk about how we actually
+deal with the full power of universal and existential quantification.
+So this is now where you would come in to
+most courses teaching logic, computer science.
+You'd have done basic propositional logic, and then they would
+not talk about syllogisms and jump in here and start
+talking about this proof system.
+So let me remind you of things that we've already
+seen.
+We argued yesterday that comma and end of the same
+thing.
+Well, actually we defined comma and and to be the
+same thing.
+And we also argued that this rule is sound.
+If C gives you a and c gives you b,
+then certainly C gives you both a and B.
+And similarly with the or all on the right is
+defined to be comma And we're forced to anyway.
+And on the left, if you know that A gives
+you C and B gives you C, then as long
+as you have at least one of A and B,
+then you get C.
+, this is a warning about some notation.
+So up to now we have been carefully using double
+lines to say that the rules go backwards.
+From now on, all the rules go backwards.
+So just to make the slides less cluttered I'm going
+to use a single line.
+But everything from now on, unless specifically stated otherwise, is
+backwards sound as well as forward sound.
+, these are rules that only talk about a couple
+of predicates.
+We have all these assumptions that might be floating around
+all the rest of the proof that you're dealing with.
+So the most general statement of these things has the
+bunch of current assumptions on the left.
+And it also has a bunch of current anti assumptions
+on the right.
+This thing is always a bit strange.
+So this is this stuff on the right is what
+gets left out in some of the easier to understand,
+but slightly harder to work with versions of logic.
+, the only way really to get used to it
+is to work with some examples.
+But roughly the gamma is the stuff you're assuming, if
+you to think of it that way, you can
+say it's the part of the universe that I'm working
+inside.
+Gamma is what's true, and I'm working inside gamma.
+And then what's the delta?
+Well, basically the delta is stuff in gamma that you've
+moved to the other side as part of the proof.
+So technically, the part of the universe that a comma
+B gives you something a and B gives you something
+is true in is where the stuff on the left
+is true and all the stuff on the right is
+false.
+, you will find that when you work with proofs,
+you just have to kind of follow the symbols.
+The nice thing about the proofs that we're going to
+be doing is that you do not have to think
+so any kind of mathematical proof where it's completely automatic
+and you don't have to think is a good thing,
+because it means you can get the computer to do
+it for you.
+So these rules are about and and or any questions
+about this most general form of them.
+Okay.
+Then just now we were talking about quantum position.
+And we argue that it generalises to rules this.
+I can take a predicate on the right, and I
+can negate it and move it to the left.
+And I can take a predicate on the left, and
+I can negate it and move it to the right.
+Instantly notice that I've been giving these rules names.
+So these things to the side are names of rules.
+And these are customary names.
+What do they mean?
+The L stands for left and the R stands for
+right.
+So this is the rule that lets you do something
+with and on the left.
+And this is the rule that lets you do something
+with and on the right.
+So here do something means just split it apart with
+commas.
+Here doing something with the hand on the right means
+introducing breaking it down into two subsidiary assumptions.
+Similarly here this is not on the left.
+What do I do with a not on the left?
+What do I do with a not on the right?
+, that's almost all the rules that we're going to
+deal with.
+But there's one more rule that we need.
+Because although it's obvious, we have to say that it's
+obvious.
+And that's this rule.
+So forget about the stuff at the beginning.
+It just says every property implies itself, which is a
+very basic principle.
+It would be a bit sad if properties did not
+imply themselves, but it has to be said because otherwise
+we don't know it.
+, so you have been doing quite a lot of
+recursion in Haskell recently, right?
+Fairly sure you have.
+And when you do write a recursive function in Haskell,
+there's always a base case.
+Well, okay, almost always a base case that finishes it
+off the simple case.
+And then there are the complex cases that let you
+build up the more complicated stuff.
+And this rule that says A entails a is the
+base case of many proofs.
+, remember this notation?
+We saw this in the existential assumption notation.
+This rule here says from no assumptions at all.
+We can prove that A entails a.
+In other words, a entails A is just a fact
+of the universe, and indeed not of the universe.
+It's a fact of all universes.
+Okay, so I'm going to get into some actual proofs
+very soon now.
+And this means we're actually going quite fast this year.
+So any questions clarification.
+Okay.
+Why am I doing proofs.
+What's the point of proofs?
+Well, we want to know whether formulae are true or
+not.
+Why do we want to know whether formulae are true?
+Because we want to know whether the things that they
+describe in the real world or in the real mathematical
+world are true.
+So we've been talking about valid syllogisms.
+A valid syllogism is one that is true in every
+universe.
+And so a formula that is true in every universe
+is something that is particularly useful, because it means we
+can use it without having to worry about the details
+of the universe at hand.
+You will see the word tautology used.
+In order to describe formulae that are universally valid.
+Some people will make a pedantic distinction between being a
+tautology and being universally valid.
+I'm probably not going to be able to make the
+pedantic distinctions, so I'm not going to try to explain
+it.
+, tautology basically means self proving or true of its
+own, right?
+What does it mean to prove that some formula A
+is valid in every universe?
+Well, if you remember from last time, the sequence that
+says A is true is no.
+Assumptions entail A.
+There was a question on Piazza asking for further explanation
+of that.
+I hope that the further explanation I provided was useful,
+and at least the further explanation I provided after I
+had slept was useful.
+And so what we're trying to do when we prove
+that a formula is valid is to deduce enough.
+No assumptions entail a.
+And what I'm going to do is just show you
+by example how we would go about doing this.
+So here is a formula not P or Q and
+not P or P.
+Stare at that for a bit and see if you
+agree with me that it is necessarily true.
+Whatever P and Q are.
+Yeah, this is true.
+It is true.
+The right hand side is two and it is false.
+Yeah.
+So it can be quite hard to look at formulas
+this and work out whether it's true or not.
+But here the the easiest way to do is what's
+just been said to break it down by cases.
+Well, we've got P and we've got Q.
+It's possible that both P and Q are important, but
+actually they aren't.
+So let's just look at what happens when P.
+If P is true, then p is true and therefore
+this or is true.
+And so the whole thing is true.
+If not, p is the case.
+So p is false then well this is true.
+But this is also true because not p or q
+is true whatever q is.
+So basically we have true and true or false which
+is true.
+So whatever values p and q have this is a
+tautology.
+You could do this by truth tables if you wanted
+to.
+So when you did propositional logic at school, if you
+did it in your school computer science, you would have
+done this kind of thing with truth tables.
+But we're going to do it by proving it from
+no assumptions, using only sound principles of reasoning.
+So.
+And this is one of the most challenging pieces of
+type setting in the course.
+This is what we're trying to prove.
+We want to prove from no assumptions that this formula
+holds over here on the right.
+I've set out the entire list of rules that we
+might be able to use.
+Now, I said that we don't have to think so,
+since we don't have to think you can do the
+thinking for me.
+So looking at this formula, what can I do to
+it to try to break it down and work up
+to things with no assumptions at all?
+, wait a moment.
+I just want to see if anybody else is going
+to come in further back.
+No.
+Go ahead.
+So what.
+Should we what.
+Should we do?
+.
+So there's a suggestion to do.
+Exchange, to flip, to negate it and move it over.
+, no, because that makes it more complicated.
+Puts more, puts another symbol in front of the formula.
+So the idea of taking a formula and proving it
+is always to try to break it down into smaller
+and smaller components until you've broken it down into no
+components at all, which is no assumptions.
+So you should always be looking for ways to make
+the formula smaller.
+As we go up using the rules, we're trying to
+break the formula down.
+It's doing a Haskell recursion.
+You've got a big data structure.
+You break it down.
+Yeah.
+We know.
+What the bracket.
+Yep.
+So you're saying this is not the policy?
+Yep.
+I mean, we're not doing any arguments about whether things
+are true.
+We're trying we're constructing a proof.
+So this is purely syntactic manipulation.
+But the key point here is the one that you've
+made that if we look at this formula it's P
+or something.
+So what's the the top level of the formula.
+you don't know what syntax trees are I think.
+Does anybody know what a syntax tree is?
+No.
+You're going to learn them.
+So if you think about how you would represent this
+formula inside a computer as a Haskell programmer, as a
+Haskell programmer, Haskell program.
+You as a programmer would write something .
+This.
+.
+So what I've done there is just take the formula
+and represent it as a Haskell data structure, basically.
+So and is an operator that takes two 4 million.
+One on the left, one on the right.
+.
+And so when we look at a formula this,
+we say that the or here is.
+When it's written as an or.
+Is the outermost or the the topmost connective in the
+formula.
+It's basically looking at the brackets.
+If you look at the formula at the most abstract
+level, it's P or something else.
+What is or.
+Well this is an all on the right of a
+formula.
+What can we do with an all on the right
+of a formula.
+Comma.
+Okay.
+We've got a rule for or on the right here
+which says that when we see A or B on
+the right, we can replace the or with a comma.
+So that's what I've done there.
+Or has just turned into a comma.
+So notice this is braindead.
+There was actually only one thing we could do here.
+If you look at any of the other rules, they
+don't apply.
+, what's the next thing I can do?
+So now I'm looking at this formula where I've broken
+it down into this bit and this bit.
+What's the topmost connective.
+What's the outer connective in this formula?
+I'm hearing some things but shout, shout a bit louder.
+And so it's not P and some stuff.
+it's an and it's on the right.
+I've got a rule that says what I can do
+with and on the right.
+If I see A and B on the right, then
+I have to split my proof into two sub proofs.
+So notice what's going on here.
+I'm trying to prove this.
+And when I do the introduction of this rule, I'm
+creating a sub proof on the left to deal with
+a and a sub proof on the right to deal
+with B.
+So here I'm going to have to try to prove
+not P there and not P or Q here.
+And as always, this p here is being carried along
+because the rule here says the delta, all the rest
+of the stuff on the right is unchanged.
+So I look at the formula I'm concerned with.
+I apply the rule to it and move it back
+up.
+What am I going to do next?
+Now I've got two things to deal with.
+One of them is slightly easier than the other.
+Yeah.
+, you want to do me to deal with.
+Sorry.
+That's all on the right.
+Yeah.
+Okay, so if I look at this one, this says,
+remember comma on the left.
+On the right means or so this is saying not
+p or p.
+That's pretty true.
+So we should be able to prove that.
+But in order to prove it using the rules we
+have to flip one of these to the left so
+we can take not P and flip it to the
+left.
+That leaves me trying to prove that P entails P.
+Well, that was the base case that I assume introduced.
+So on this side of the proof, we're finished.
+No assumptions left on this side of the proof.
+What happens?
+Now I have to deal with or I have all
+on the right.
+I have a rule for dealing with or on the
+right.
+I have to break it down again.
+But instead I've chosen to do.
+No.
+I saw it all on the right.
+I break it down into commas.
+So now I have not P or p.
+Well, this is exactly the same as that, except it's
+got some other junk that I don't care about, so
+I can do exactly the same.
+P entails P or Q, and that's part of the
+identity rule because q here is the delta.
+Look at what the identity rule says.
+It says if you have a the same thing on
+the left and the right, and any old junk on
+the left and any old junk on the right, then
+you're done.
+So here we have p entails P and some junk
+that we don't care about.
+So now we have a proof which starts with no
+assumptions, because there's nothing above the line either here or
+here.
+And working forward, we see the rules.
+Give us the conclusion.
+So that's the structure of a proof in a modern
+sequence calculus, which is a particularly formal version of a
+proof in the same style that you do in mathematics,
+but purely symbolic.
+So you can see that it makes sense.
+So that was your first proper proof.
+From a computer scientists point of view.
+How much sense did it make?
+Okay, I can see some sense.
+I seem a bit of sense.
+Anybody?
+Definitely.
+in the not very much sense at all.
+So I don't necessarily expect it to make sense to
+everybody right now because it's a very formal manipulation.
+But I want to emphasise again the fact that I
+didn't have to do much thinking.
+At almost every case, there was very little choice about
+what to do next.
+So here, for example, when I look at this thing,
+I mean, I can always negate and flip.
+I can always move things from one side to the
+other.
+But here I see an or so that tells me
+I apply the all.
+And that means that you can go away and program
+it, which I believe you may be doing at some
+point.
+So that's what I said.
+.
+Okay.
+We have a couple of possibilities at this point because
+I have another, more complicated proof.
+This is probably enough to be doing the tutorial, although
+you will need to work a bit more on it.
+So would you prefer to stop now?
+And you need to work a bit to do the
+tutorial, or to go through the even more complex stuff
+later?
+The alternative is we leave the slightly more complex stuff
+until next week.
+And don't leave it to next week.
+Right.
+But then the number of people who are expressing that
+view is the kind of people I would expect to
+say that, and there might be a silent majority.
+This is where I need to clap, isn't it?
+But I haven't learned how to use woohoo clap, so
+we're not getting a woohoo clap.
+How about we do it both ways?
+I go through it relatively fast now, but then we
+come back to it next week because it will almost
+certainly need some reinforcement.
+And you might possibly want to see this stuff in
+order to do the tutorial.
+The level of talk.
+I mean, I'm sure you're all talking about the proofs
+going on, but the level of talk is getting loud
+enough that I'm finding it a bit difficult to hear
+myself think.
+And I often find that when I say that people
+haven't even been listening to what I've been saying for
+the last two minutes, because otherwise they would shut up.
+Okay.
+So in general, yeah.
+So talking about things here, but do remember that you
+are surprisingly loud to the people around you, and you
+should maybe try to talk at a volume that doesn't
+interfere with the people next to you and behind you.
+, so I want to show you another example of
+using proofs.
+So often when we try to prove something, we don't
+know whether it's actually true or not.
+It may not be a tautology, it may not be
+valid, and it may be that we try to prove
+it and we find that there's a bunch of assumptions.
+And then that's useful because we know what we need
+to assume if we ever need to use this piece
+of reasoning.
+Now, this is a bit kind of boring because these
+are propositional statements.
+And so nothing is very interesting.
+, but if I give you that and say, stare
+at it and tell me whether it's a tautology, how
+long are we going to be here?
+Too long.
+Right?
+You could do it by truth tables, but I can't
+stare at that and work out whether it's or tautology
+in less than about five minutes or maybe two minutes
+here on a good day.
+But if I try to do a proof of it,
+I will get out of the proof.
+The answer as to whether it's a tautology and if
+it isn't, I'll find out what I need to assume.
+So here's another long and fancy proof, and I think
+this one even has some pretty colours in it to
+make it even clearer than the last one.
+, this is a nasty long formula.
+You probably have difficulty counting the brackets.
+I have difficulty counting the brackets right now.
+So to make it clearer, this is the outermost connective
+in that formula.
+It's got this on the left or this on the
+right.
+When I see an all on the right, then what
+I do is use the all rule to break it
+down into two separate formulae, which I can deal with
+separately.
+So that gives me now a choice.
+I could look at the left hand, the first formula
+on the right.
+The outermost connective of that one is a negation.
+I could look at the formula, the second formula where
+the outermost connective is an Or.
+Do you think it matters which one I do first?
+No it doesn't.
+So in some more general cases it can make proofs
+longer if you do the wrong one first.
+So there's a kind of heuristic that sometimes it makes
+life easier.
+But in general these are going to be completely, well,
+more or less independent operations.
+What I've actually chosen to do is deal with the
+negation.
+So by looking at this negation, I flipped that whole
+thing over to the other side, and I remove the
+negation so strictly.
+This is a double negation.
+Negation flip means removing a negation.
+So now I've got a slightly more balanced formula.
+And now I have some choice about what to do
+again.
+What choices do I have here?
+Yeah.
+So I've got an and on the left and I've
+got an oil on the right.
+Both of those are things I replaced by commas.
+Now technically I have to do this in two steps
+because we have one rule for or and another rule
+for.
+And that's boring right.
+And it needs writing.
+And I hate writing.
+So I'm quite happy for you in proofs that you
+write down to take two obvious steps and do them
+at the same time.
+So I talked previously about the laziness of programmers, mathematicians,
+or at least as lazy as programmers.
+So here I'm doing an all on the right and
+an and on the left, and I'm just writing them
+down in the same rule, although technically it should be
+two rules.
+, what am I left with?
+Any bets on what I should do next?
+Yeah.
+, there's a bunch of things I could do.
+I'm actually going to choose that one because it's the
+first thing.
+So I've got an all on the left, and that
+means I have to break it down into two separate
+sub proofs again.
+, notice that this is now getting quite complicated with
+the gammas and deltas, the junk we're not currently dealing
+with.
+Here's the formula that I'm working on.
+This is junk on the left and this is junk
+on the right.
+So this formula here is left unchanged.
+This stuff on the right is left unchanged when I
+apply the rule.
+So that's why we express these rules in terms of
+the gammas and deltas.
+They just sweep up the stuff we're not currently working
+with.
+So now I've broken this down with a not A
+and a not B.
+Now obviously I'm probably going to do the same again
+because I can do exactly the same with an oar
+here.
+Breaks it down into not C and B.
+And now I have a bunch of stuff which I
+can't prove.
+, because I can't prove that not B, that B
+and not C entails not A and C, and I
+can't prove that B entails c.
+Can I simplify it at all?
+Well, I've got two B's here.
+That's a bit silly.
+I've got an A here.
+, maybe I don't want the A so I can
+just move it over to make it look more straightforward.
+But this isn't doing any useful work.
+It's just removing a few symbols, and I can do
+the same negations over here.
+So now I've moved that C over to here and
+absorbed it into that C.
+So on the right hand side of the proof here,
+I've ended up with assumptions A and B entail C.
+I needed it there and I need it there, and
+now I'm stuck.
+I can't do any more proving because there's just nothing
+more to prove what happens on this side.
+Well, that's actually true because I've got a not a
+here and not a here.
+So there is, , the identity rule that says this
+is simply true.
+So here I've got something where I'm trying to prove
+that this is all tautology, but I can't because I
+get stuck in the proof.
+The fact that I get stuck in the proof needing
+to prove these tells me that this assumption is necessary
+in order for this to be true.
+So what I've learned from here is that this tautology
+requires that A or b, sorry a and b entails
+C, and by flipping to the left you can say
+it.
+Alternatively, As if I know that A is false and
+B is false, and C is true, then this formula
+is true.
+So actually it's not much of a tautology at all.
+It has some very specific assumptions on what needs to
+be true.
+Only one circumstance.
+You could alternatively, of course do this by truth tables,
+in which case you would find that there's just this
+one row of the truth table where the formula is
+actually true.
+Okay, we'll come back to this and do it again
+next week after the tutorial.
+But let me just summarise in the last couple of
+slides what the point of these things is.
+So assumptions give you counterexamples.
+What I did just now is to show that this
+whole formula requires this to be true.
+So a counterexample to the formula is any anywhere where
+this top thing is false.
+For example something where A is true and b is
+true and c is false.
+And finally, something for you to think about before we
+come back to this next week.
+I've shown you that if you have a tautology, you
+the proof succeeds, and every leaf at the top of
+the proof is an eye rule.
+So there are no assumptions.
+If you try to prove a non tautology, you get
+leaves with assumptions which are needed to make the thing
+true.
+Find out what happens when you try to prove something
+that is always false.
+So before next time, do this very simple proof and
+then come back and tell me what you think about
+it.
+Okay, good luck with the tutorial.
+We will come back and do this again next week.
+And then on Friday next week we'll have an examples
+class.
+So come with problems on Friday.

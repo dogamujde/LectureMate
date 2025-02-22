@@ -1,0 +1,5651 @@
+WEBVTT
+
+00:01:59.110 --> 00:01:59.740
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[91]}
+
+00:02:00.460 --> 00:02:01.030
+<v Speaker 0>Oops.
+
+NOTE CONF {"raw":[51]}
+
+00:02:04.180 --> 00:02:07.960
+<v Speaker 0>So that was the theme from Crash Bandicoot three.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:02:08.679 --> 00:02:12.250
+<v Speaker 0>Uh, maybe some of you played that in your youth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:12.970 --> 00:02:13.270
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:02:14.020 --> 00:02:14.950
+<v Speaker 0>On PlayStation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:15.220 --> 00:02:15.970
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:02:15.970 --> 00:02:19.390
+<v Speaker 0>Today I am going to talk about, um, higher order
+
+NOTE CONF {"raw":[98,76,76,100,100,100,100,100,100,100]}
+
+00:02:19.390 --> 00:02:21.790
+<v Speaker 0>functions today and tomorrow.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:22.300 --> 00:02:23.290
+<v Speaker 0>Higher order functions.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:23.290 --> 00:02:28.000
+<v Speaker 0>So starting off with um functions map, filter and fold,
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:02:28.000 --> 00:02:31.150
+<v Speaker 0>which are three higher order functions built into Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:02:31.240 --> 00:02:33.430
+<v Speaker 0>So higher order functions I'll tell you what those are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:33.430 --> 00:02:34.180
+<v Speaker 0>in a second.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:34.510 --> 00:02:41.080
+<v Speaker 0>Um, uh, we're going through rapidly through the, the, the
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,51,98,100]}
+
+00:02:41.080 --> 00:02:43.570
+<v Speaker 0>main things in Haskell that I want to teach you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:43.570 --> 00:02:44.290
+<v Speaker 0>in this course.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:44.290 --> 00:02:47.560
+<v Speaker 0>So we've done lists and list comprehensions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:47.560 --> 00:02:49.120
+<v Speaker 0>We've done recursion.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:49.360 --> 00:02:54.100
+<v Speaker 0>Now higher order functions this week, next week I'll, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:54.460 --> 00:03:00.580
+<v Speaker 0>progress to, um, Algebraic data types and expression trees.
+
+NOTE CONF {"raw":[80,100,100,100,98,98,100,100,100]}
+
+00:03:00.580 --> 00:03:03.040
+<v Speaker 0>And those are kind of the kernel things that I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:03.040 --> 00:03:03.580
+<v Speaker 0>want to teach.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:03.580 --> 00:03:06.280
+<v Speaker 0>I'm going to be going on beyond that and talking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:06.280 --> 00:03:11.590
+<v Speaker 0>about other things, um, you know, various themes and, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:11.590 --> 00:03:13.570
+<v Speaker 0>know, ways of doing things in Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:13.570 --> 00:03:16.600
+<v Speaker 0>But, um, these are kind of the main things that
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:03:16.600 --> 00:03:20.140
+<v Speaker 0>are going to be, um, coming up that you should
+
+NOTE CONF {"raw":[100,100,100,100,79,100,100,100,100,100]}
+
+00:03:20.140 --> 00:03:21.310
+<v Speaker 0>get under your belt.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:21.310 --> 00:03:22.120
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:03:22.120 --> 00:03:25.690
+<v Speaker 0>So map builder and map filter and fold.
+
+NOTE CONF {"raw":[100,100,100,100,100,82,82,100]}
+
+00:03:25.690 --> 00:03:27.550
+<v Speaker 0>So higher order functions.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:27.550 --> 00:03:30.340
+<v Speaker 0>The introduction I'm going to be showing you a bunch
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:30.340 --> 00:03:31.330
+<v Speaker 0>of functions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:31.600 --> 00:03:35.680
+<v Speaker 0>And then uh extracting patterns from these functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:03:35.680 --> 00:03:38.260
+<v Speaker 0>And one of the things you can do with higher
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:38.260 --> 00:03:44.890
+<v Speaker 0>order functions is to um, express patterns of computation in,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:44.890 --> 00:03:49.420
+<v Speaker 0>in single functions and then instantiate these, these patterns of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:49.420 --> 00:03:53.410
+<v Speaker 0>computation, um, to get various functions, which are the ones
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:53.410 --> 00:03:54.310
+<v Speaker 0>you actually want.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:54.310 --> 00:03:54.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:03:54.820 --> 00:03:57.250
+<v Speaker 0>I'll explain that via examples.
+
+NOTE CONF {"raw":[100,100,100,98,100]}
+
+00:03:57.850 --> 00:03:58.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:03:58.180 --> 00:04:01.120
+<v Speaker 0>So I'm going to start with um, map, which is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:01.120 --> 00:04:04.990
+<v Speaker 0>um, the name of a higher order function in Haskell
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:04.990 --> 00:04:06.340
+<v Speaker 0>that I'll come to in a second.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:06.340 --> 00:04:09.460
+<v Speaker 0>And I'll start by showing you a bunch of similar
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:09.460 --> 00:04:13.480
+<v Speaker 0>programs that you've seen before, or maybe not seen before,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:13.480 --> 00:04:15.070
+<v Speaker 0>but they're like ones you've seen before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:15.070 --> 00:04:18.820
+<v Speaker 0>So the first one is this function squares, which squares
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:18.820 --> 00:04:20.500
+<v Speaker 0>all of the integers in the list.
+
+NOTE CONF {"raw":[100,93,100,100,100,92,100]}
+
+00:04:21.160 --> 00:04:23.920
+<v Speaker 0>And you've seen two ways of writing it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:24.280 --> 00:04:28.120
+<v Speaker 0>Um, one is using list comprehension like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:28.990 --> 00:04:33.070
+<v Speaker 0>And the other one is using recursion like this okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:33.070 --> 00:04:34.660
+<v Speaker 0>Very simple programs.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:34.900 --> 00:04:38.890
+<v Speaker 0>Um, so uh, so those compute the same function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:04:38.890 --> 00:04:42.760
+<v Speaker 0>And for example applying squares to this list of numbers,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:42.760 --> 00:04:43.990
+<v Speaker 0>you get that result.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:45.880 --> 00:04:46.450
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[98,100]}
+
+00:04:46.450 --> 00:04:49.690
+<v Speaker 0>So squaring all the numbers in a list um here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:04:49.690 --> 00:04:53.230
+<v Speaker 0>is a function that you haven't seen called ords.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,58]}
+
+00:04:53.230 --> 00:04:57.020
+<v Speaker 0>It uh, it takes a list of characters and produces
+
+NOTE CONF {"raw":[80,40,100,100,100,100,100,100,100,100]}
+
+00:04:57.020 --> 00:04:59.630
+<v Speaker 0>a list of character codes.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:59.660 --> 00:05:01.340
+<v Speaker 0>Now, what's a character code?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:01.850 --> 00:05:02.180
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:05:06.350 --> 00:05:07.820
+<v Speaker 0>Okay, just a second.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:07.820 --> 00:05:12.470
+<v Speaker 0>So, um, every, uh.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:16.490 --> 00:05:20.090
+<v Speaker 0>So we've got this type characters, we've got this type
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:20.090 --> 00:05:20.900
+<v Speaker 0>integers.
+
+NOTE CONF {"raw":[100]}
+
+00:05:21.230 --> 00:05:26.720
+<v Speaker 0>And, um, you can convert from characters to integers using
+
+NOTE CONF {"raw":[96,63,100,100,100,100,100,100,100,100]}
+
+00:05:26.720 --> 00:05:28.580
+<v Speaker 0>a function called ord.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:28.580 --> 00:05:29.360
+<v Speaker 0>And what is it?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:29.390 --> 00:05:32.810
+<v Speaker 0>What it does is it takes, um, a character like,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:32.840 --> 00:05:37.280
+<v Speaker 0>say, a, and it gives you the, um, the underlying,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,61,100,100]}
+
+00:05:37.490 --> 00:05:41.300
+<v Speaker 0>um, uh, sort of numerical code for that, for that,
+
+NOTE CONF {"raw":[100,73,100,100,100,100,100,100,100,100]}
+
+00:05:41.540 --> 00:05:44.540
+<v Speaker 0>uh, for that character, whatever it is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:05:44.780 --> 00:05:45.380
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:45.380 --> 00:05:47.630
+<v Speaker 0>You don't have to know what these codes are.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:05:47.750 --> 00:05:50.300
+<v Speaker 0>Uh, they're just it just happens that there are numerical
+
+NOTE CONF {"raw":[56,100,100,100,100,100,100,100,100,100]}
+
+00:05:50.300 --> 00:05:53.870
+<v Speaker 0>codes for each character, not just, you know, the the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:53.870 --> 00:05:56.780
+<v Speaker 0>normal characters that used to A through Z, you know,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:05:56.780 --> 00:06:00.230
+<v Speaker 0>one through, well, zero through nine and so forth, all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:00.230 --> 00:06:01.550
+<v Speaker 0>the, all the punctuation.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:01.550 --> 00:06:05.870
+<v Speaker 0>But there's something called Unicode, which is you can express,
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:06:06.110 --> 00:06:11.660
+<v Speaker 0>um, all the characters in human language, including, um, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,76,100]}
+
+00:06:11.660 --> 00:06:15.110
+<v Speaker 0>know, Chinese characters and Arabic characters and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:15.110 --> 00:06:15.560
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:06:15.560 --> 00:06:19.340
+<v Speaker 0>So, um, uh, so there's an awful lot of, uh,
+
+NOTE CONF {"raw":[100,100,72,100,100,100,100,100,100,82]}
+
+00:06:19.340 --> 00:06:22.670
+<v Speaker 0>character codes, um, and an awful lot of characters.
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,100]}
+
+00:06:22.670 --> 00:06:24.860
+<v Speaker 0>So this is a way of converting and the way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:24.860 --> 00:06:27.200
+<v Speaker 0>that these, um, the way that these happen to be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,100,100]}
+
+00:06:27.200 --> 00:06:30.440
+<v Speaker 0>arranged, the only thing that's really interesting about them is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:30.440 --> 00:06:33.920
+<v Speaker 0>that, um, uh, if you've got, you know, you've got
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:06:33.920 --> 00:06:36.020
+<v Speaker 0>letters A through Z, you know, A is less than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:36.050 --> 00:06:37.850
+<v Speaker 0>B, is less than C is less than D, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:37.850 --> 00:06:38.570
+<v Speaker 0>so forth.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:38.570 --> 00:06:41.240
+<v Speaker 0>The character code for A is less than the character
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:41.240 --> 00:06:42.860
+<v Speaker 0>code for B and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:42.860 --> 00:06:43.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:06:43.130 --> 00:06:46.550
+<v Speaker 0>So the the character codes kind of mirror the order
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:46.550 --> 00:06:49.040
+<v Speaker 0>of the, of the letters in the alphabet and the,
+
+NOTE CONF {"raw":[100,100,100,100,100,55,100,100,100,100]}
+
+00:06:49.070 --> 00:06:51.650
+<v Speaker 0>and the digits, um, and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:51.650 --> 00:06:51.830
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:06:51.830 --> 00:06:53.990
+<v Speaker 0>That's the only thing you really that really matters.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:54.050 --> 00:06:55.670
+<v Speaker 0>Okay, so anyway, there's this function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:55.670 --> 00:06:57.560
+<v Speaker 0>It happens to be used in this example, which is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:57.560 --> 00:06:59.510
+<v Speaker 0>the only reason I'm really telling you about it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:59.960 --> 00:07:03.440
+<v Speaker 0>Um, uh, and there happens to be another function that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:03.440 --> 00:07:06.890
+<v Speaker 0>goes the other direction called um chr.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,88]}
+
+00:07:06.890 --> 00:07:09.650
+<v Speaker 0>So given a character code, you can get a character.
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:07:10.940 --> 00:07:11.690
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:12.860 --> 00:07:15.110
+<v Speaker 0>So this happens to be this is used in this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:15.110 --> 00:07:15.710
+<v Speaker 0>example.
+
+NOTE CONF {"raw":[100]}
+
+00:07:15.710 --> 00:07:19.430
+<v Speaker 0>Let me switch back both screens to that example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:07:19.430 --> 00:07:23.510
+<v Speaker 0>So um, given a list of characters or a string
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:07:23.510 --> 00:07:27.470
+<v Speaker 0>like this, you can compute the list of all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:27.470 --> 00:07:31.100
+<v Speaker 0>character codes of the characters in that string in order.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:31.100 --> 00:07:31.430
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:31.430 --> 00:07:34.970
+<v Speaker 0>So um, as I said, A is 90 converts to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:34.970 --> 00:07:37.220
+<v Speaker 0>97, um, and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:37.220 --> 00:07:37.730
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:37.730 --> 00:07:41.240
+<v Speaker 0>So this is done with this list comprehension by applying
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:41.240 --> 00:07:43.580
+<v Speaker 0>the function ord to everything in the list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:44.300 --> 00:07:47.600
+<v Speaker 0>And you can do it using recursion okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:47.810 --> 00:07:49.610
+<v Speaker 0>Or it's applied to the empty list as the empty
+
+NOTE CONF {"raw":[100,97,58,100,100,100,100,52,100,100]}
+
+00:07:49.610 --> 00:07:49.970
+<v Speaker 0>list.
+
+NOTE CONF {"raw":[100]}
+
+00:07:49.970 --> 00:07:52.350
+<v Speaker 0>Or it's to apply to a list with at least
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100,100,100]}
+
+00:07:52.350 --> 00:07:55.170
+<v Speaker 0>one element in it gives you all of that element,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,65,100,100,100]}
+
+00:07:55.170 --> 00:07:57.330
+<v Speaker 0>and then the odds of the rest of the list.
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:07:57.660 --> 00:08:01.380
+<v Speaker 0>Okay, so you've seen you know, it's very similar to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:08:01.410 --> 00:08:04.620
+<v Speaker 0>um, to, to to um, to square.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100]}
+
+00:08:04.620 --> 00:08:07.350
+<v Speaker 0>And in fact, if I kind of rapidly sort of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,69,95]}
+
+00:08:07.350 --> 00:08:10.440
+<v Speaker 0>go back and forth between these two definitions, okay, it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,87,100]}
+
+00:08:10.440 --> 00:08:12.480
+<v Speaker 0>kind of hard to read that when I'm doing it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:12.480 --> 00:08:17.340
+<v Speaker 0>But the difference between these two definitions, sorry, is, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,88,100,100]}
+
+00:08:17.700 --> 00:08:19.620
+<v Speaker 0>you know, they've both got a base case of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:19.620 --> 00:08:21.780
+<v Speaker 0>empty of the empty list is equal to the empty
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:21.780 --> 00:08:22.380
+<v Speaker 0>list.
+
+NOTE CONF {"raw":[100]}
+
+00:08:23.100 --> 00:08:26.700
+<v Speaker 0>And in the case of the non-empty list, uh, sorry,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,72,100,100,100]}
+
+00:08:26.700 --> 00:08:28.440
+<v Speaker 0>I keep messing up.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:28.590 --> 00:08:31.890
+<v Speaker 0>Um, in case of the non-empty list, the function that's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,51]}
+
+00:08:31.890 --> 00:08:35.430
+<v Speaker 0>there's a function applied and it's, you know, ah, I
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,74,100]}
+
+00:08:35.430 --> 00:08:36.360
+<v Speaker 0>keep going the wrong way.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:36.360 --> 00:08:37.950
+<v Speaker 0>So it's ordered in this case.
+
+NOTE CONF {"raw":[100,100,67,100,100,100]}
+
+00:08:37.950 --> 00:08:40.440
+<v Speaker 0>And it's, and it's, you know, x times x in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:40.440 --> 00:08:42.390
+<v Speaker 0>this case okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:08:42.390 --> 00:08:45.390
+<v Speaker 0>In the recursive in the recursive case also x times
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:45.390 --> 00:08:47.220
+<v Speaker 0>x or ord okay.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:47.220 --> 00:08:54.120
+<v Speaker 0>So generalising we've got A function that, um, you know,
+
+NOTE CONF {"raw":[100,91,100,100,100,100,100,100,100,100]}
+
+00:08:54.120 --> 00:08:55.770
+<v Speaker 0>in the empty in the case of the empty list,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:55.770 --> 00:08:57.390
+<v Speaker 0>it produces the empty list as a result.
+
+NOTE CONF {"raw":[91,100,100,100,100,100,97,100]}
+
+00:08:57.390 --> 00:09:00.210
+<v Speaker 0>And then in the case of the non-empty list, it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:00.210 --> 00:09:01.440
+<v Speaker 0>applies a function.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:02.970 --> 00:09:06.660
+<v Speaker 0>In my first example, squaring in the second example ord
+
+NOTE CONF {"raw":[100,100,100,100,100,93,100,100,100,95]}
+
+00:09:06.660 --> 00:09:09.870
+<v Speaker 0>to all to each of the elements okay, before going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:09.870 --> 00:09:10.680
+<v Speaker 0>on to the next one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:10.680 --> 00:09:13.170
+<v Speaker 0>And so this is a function that's built in and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:13.170 --> 00:09:15.570
+<v Speaker 0>it's called map built into Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,96,100]}
+
+00:09:15.570 --> 00:09:17.490
+<v Speaker 0>It's in the Haskell prelude okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,96]}
+
+00:09:17.490 --> 00:09:22.020
+<v Speaker 0>Called map um and I this is a higher order
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:22.020 --> 00:09:22.500
+<v Speaker 0>function.
+
+NOTE CONF {"raw":[100]}
+
+00:09:22.500 --> 00:09:24.990
+<v Speaker 0>The reason I call it a higher order function is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,89,100,100,100]}
+
+00:09:24.990 --> 00:09:27.090
+<v Speaker 0>because it has um.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:29.430 --> 00:09:32.550
+<v Speaker 0>It has a function as argument.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:33.480 --> 00:09:34.170
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:34.170 --> 00:09:37.770
+<v Speaker 0>You're not just so far we've been applying functions to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:37.770 --> 00:09:41.130
+<v Speaker 0>integers and characters and strings and lists and and things
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:41.130 --> 00:09:41.730
+<v Speaker 0>like that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:41.730 --> 00:09:42.330
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:42.330 --> 00:09:46.380
+<v Speaker 0>This function map takes a function as an argument.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:09:46.380 --> 00:09:49.870
+<v Speaker 0>So a function from A to B Okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:50.110 --> 00:09:50.500
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:09:52.480 --> 00:09:56.200
+<v Speaker 0>Which means that the type of of map, looking at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:56.200 --> 00:09:58.720
+<v Speaker 0>the whole type it has, I'm calling this a sort
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:09:58.720 --> 00:09:59.500
+<v Speaker 0>of nested.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:59.500 --> 00:10:00.670
+<v Speaker 0>It's got nested arrows.
+
+NOTE CONF {"raw":[96,100,100,98]}
+
+00:10:00.670 --> 00:10:03.760
+<v Speaker 0>So you haven't just got the arrows between the arguments.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:03.760 --> 00:10:06.310
+<v Speaker 0>First argument, second argument, result.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:06.310 --> 00:10:08.890
+<v Speaker 0>You know, not just these two arrows, but you've got
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:08.890 --> 00:10:11.920
+<v Speaker 0>an arrow inside the type of one of the arguments.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:12.700 --> 00:10:15.040
+<v Speaker 0>This is why it's called a higher order function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:15.040 --> 00:10:17.680
+<v Speaker 0>You can look at the previous functions we've been going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:18.280 --> 00:10:18.970
+<v Speaker 0>going through.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:18.970 --> 00:10:22.300
+<v Speaker 0>And these are these all these all have just um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:22.300 --> 00:10:28.930
+<v Speaker 0>you know, arrows between um, uh, arguments and results, sometimes
+
+NOTE CONF {"raw":[100,100,100,100,100,58,100,100,100,100]}
+
+00:10:28.930 --> 00:10:29.770
+<v Speaker 0>more than one argument.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:29.770 --> 00:10:33.910
+<v Speaker 0>But, um, okay, here's a, here's an argument that itself
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:33.910 --> 00:10:36.970
+<v Speaker 0>has a, has a function is a function with an
+
+NOTE CONF {"raw":[100,100,100,100,100,85,100,100,100,100]}
+
+00:10:36.970 --> 00:10:37.750
+<v Speaker 0>arrow in it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:37.750 --> 00:10:38.080
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:38.080 --> 00:10:42.250
+<v Speaker 0>So functional programming is what I'm telling you is what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:42.250 --> 00:10:43.180
+<v Speaker 0>I'm teaching you here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:43.180 --> 00:10:45.670
+<v Speaker 0>And and one of the aspects of functional programming is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:45.670 --> 00:10:48.100
+<v Speaker 0>that functions are the kind of main thing that we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:48.100 --> 00:10:49.780
+<v Speaker 0>that are of interest.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:49.780 --> 00:10:52.960
+<v Speaker 0>And another reason why it's called functional programming is it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:52.960 --> 00:10:56.290
+<v Speaker 0>functions are used as data or can be used as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:56.290 --> 00:10:58.570
+<v Speaker 0>data, which is what's going on here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:58.600 --> 00:10:58.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:58.930 --> 00:11:03.640
+<v Speaker 0>So function a function is used as a normal value
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:03.640 --> 00:11:05.680
+<v Speaker 0>just like integers and strings and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:05.680 --> 00:11:09.250
+<v Speaker 0>And you can pass them around as, as arguments of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:09.250 --> 00:11:12.730
+<v Speaker 0>functions, also as results of functions as you'll see later.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:12.730 --> 00:11:13.270
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:13.870 --> 00:11:18.160
+<v Speaker 0>Um, and not just simple functions like a from A
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,100,100]}
+
+00:11:18.160 --> 00:11:20.050
+<v Speaker 0>to B, but more complex functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:20.980 --> 00:11:23.950
+<v Speaker 0>And this gives you surprising power, it turns out.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:24.130 --> 00:11:28.270
+<v Speaker 0>So, um, uh, this is a definition of map.
+
+NOTE CONF {"raw":[100,100,100,100,100,85,100,100,100]}
+
+00:11:28.270 --> 00:11:29.890
+<v Speaker 0>You can write it in two ways.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:29.890 --> 00:11:33.850
+<v Speaker 0>Um, this is a function written using list comprehension.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:33.850 --> 00:11:38.920
+<v Speaker 0>And this is a function definition written using recursion and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:38.920 --> 00:11:40.390
+<v Speaker 0>the function.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:40.390 --> 00:11:40.780
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:40.780 --> 00:11:44.530
+<v Speaker 0>So um, map uh takes two arguments.
+
+NOTE CONF {"raw":[100,100,100,71,100,100,100]}
+
+00:11:44.530 --> 00:11:47.230
+<v Speaker 0>First the function that it's going to apply to every
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:11:47.230 --> 00:11:51.280
+<v Speaker 0>element in the list and then the the list that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:51.280 --> 00:11:54.220
+<v Speaker 0>you're wanting to apply that function to all the elements
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:54.220 --> 00:11:54.670
+<v Speaker 0>of.
+
+NOTE CONF {"raw":[100]}
+
+00:11:56.500 --> 00:11:57.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:57.010 --> 00:12:01.720
+<v Speaker 0>And then it proceeds, as you'd expect, applying the function
+
+NOTE CONF {"raw":[100,100,100,91,100,87,100,100,100,100]}
+
+00:12:01.720 --> 00:12:04.870
+<v Speaker 0>here, uh, to each element in the list.
+
+NOTE CONF {"raw":[100,66,100,100,100,100,100,100]}
+
+00:12:05.710 --> 00:12:10.450
+<v Speaker 0>Or for the recursive definition, um, applying the function first
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:10.450 --> 00:12:13.660
+<v Speaker 0>to the first thing in the list and then applying
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:13.660 --> 00:12:16.900
+<v Speaker 0>it, uh, recursively to everything else in the list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:12:22.390 --> 00:12:23.050
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:23.170 --> 00:12:27.430
+<v Speaker 0>Um, in the case of, uh, no, I just I
+
+NOTE CONF {"raw":[99,100,100,100,100,100,87,100,84,100]}
+
+00:12:27.430 --> 00:12:28.690
+<v Speaker 0>won't say what I was going to say.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:29.380 --> 00:12:36.760
+<v Speaker 0>Um, um, so I can now use this to define
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:36.760 --> 00:12:38.140
+<v Speaker 0>squares in a new way.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:39.490 --> 00:12:41.800
+<v Speaker 0>I mean, the point was that this is basically the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:41.800 --> 00:12:46.970
+<v Speaker 0>same definition as these previous two, accept generalised.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,45]}
+
+00:12:46.970 --> 00:12:47.330
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:47.330 --> 00:12:51.260
+<v Speaker 0>So we've we've extracted the pattern and written it down
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:51.260 --> 00:12:55.220
+<v Speaker 0>in general where the thing that's generalised is the function
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:55.220 --> 00:12:56.240
+<v Speaker 0>that we're applying.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:57.320 --> 00:12:59.930
+<v Speaker 0>And so I can use this now to, to write
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:59.930 --> 00:13:03.470
+<v Speaker 0>a new definition of squares, exactly the same result as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:03.470 --> 00:13:04.580
+<v Speaker 0>the previous ones.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:04.940 --> 00:13:07.760
+<v Speaker 0>Uh, so um, and I define it using map.
+
+NOTE CONF {"raw":[74,100,69,100,100,100,100,100,100]}
+
+00:13:13.250 --> 00:13:13.610
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:13.610 --> 00:13:17.630
+<v Speaker 0>There's map being applied and I apply it to a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:17.630 --> 00:13:19.820
+<v Speaker 0>function and to the list that I want to get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:19.820 --> 00:13:20.930
+<v Speaker 0>the squares of.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:23.210 --> 00:13:27.710
+<v Speaker 0>And the function I define here as a helper function.
+
+NOTE CONF {"raw":[100,100,100,100,83,100,79,100,100,100]}
+
+00:13:27.980 --> 00:13:28.760
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:28.970 --> 00:13:31.280
+<v Speaker 0>Um square of x is x times x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:31.430 --> 00:13:34.520
+<v Speaker 0>And so to get the squares of x is I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,69,48,100]}
+
+00:13:34.520 --> 00:13:38.990
+<v Speaker 0>apply map to this function square and the list that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:38.990 --> 00:13:43.280
+<v Speaker 0>I want to get the squares of okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91,100]}
+
+00:13:43.280 --> 00:13:46.160
+<v Speaker 0>And that gives exactly the same result as these other
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:46.160 --> 00:13:46.850
+<v Speaker 0>two definitions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:47.060 --> 00:13:49.100
+<v Speaker 0>Is that is that clear?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:49.100 --> 00:13:51.770
+<v Speaker 0>I think it's pretty easy to see.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:51.770 --> 00:13:52.940
+<v Speaker 0>But if there's a question.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:52.940 --> 00:13:53.330
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:13:55.850 --> 00:13:57.080
+<v Speaker 0>I'll just square it.
+
+NOTE CONF {"raw":[61,100,86,38]}
+
+00:13:57.800 --> 00:13:59.360
+<v Speaker 0>Maybe I'll let you have this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:59.360 --> 00:13:59.870
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:00.770 --> 00:14:01.190
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[96]}
+
+00:14:02.000 --> 00:14:04.190
+<v Speaker 1>If you took out the map and just put squares
+
+NOTE CONF {"raw":[100,100,75,100,100,100,100,100,100,95]}
+
+00:14:04.190 --> 00:14:07.310
+<v Speaker 1>axis instead and then we're square x equals x times
+
+NOTE CONF {"raw":[39,100,100,100,100,49,100,100,100,100]}
+
+00:14:07.310 --> 00:14:08.660
+<v Speaker 1>x, would it still work?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:09.170 --> 00:14:12.980
+<v Speaker 0>Okay, uh, if I understand what you, what you just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:12.980 --> 00:14:17.030
+<v Speaker 0>said you want to apply square to X is okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:17.030 --> 00:14:19.700
+<v Speaker 0>It has the wrong type is the problem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:20.120 --> 00:14:22.610
+<v Speaker 0>Um, so square has type into arrow int.
+
+NOTE CONF {"raw":[100,100,100,100,100,95,80,100]}
+
+00:14:23.090 --> 00:14:25.130
+<v Speaker 0>And so if you apply it to a list of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:25.130 --> 00:14:26.750
+<v Speaker 0>integers it will have the wrong type.
+
+NOTE CONF {"raw":[100,88,100,100,100,100,100]}
+
+00:14:27.200 --> 00:14:27.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:28.580 --> 00:14:29.720
+<v Speaker 0>Other questions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:33.110 --> 00:14:33.440
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[93]}
+
+00:14:33.680 --> 00:14:34.340
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:34.670 --> 00:14:37.580
+<v Speaker 0>Um so that's my first example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:37.580 --> 00:14:42.800
+<v Speaker 0>This is a commonly used, um, higher order function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:42.800 --> 00:14:47.960
+<v Speaker 0>Um, uh uh, you know, just showing how it works.
+
+NOTE CONF {"raw":[98,78,97,100,100,100,100,100,100,100]}
+
+00:14:47.960 --> 00:14:51.590
+<v Speaker 0>Applied, applied to this, uh, to this square, uh, function
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:14:51.590 --> 00:14:52.730
+<v Speaker 0>for squaring numbers.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:52.730 --> 00:14:55.640
+<v Speaker 0>We, um, you know, we could take this definition of
+
+NOTE CONF {"raw":[100,89,100,100,100,97,100,100,100,100]}
+
+00:14:55.640 --> 00:14:58.340
+<v Speaker 0>it, expand it, and we can see that it's doing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:58.340 --> 00:14:59.570
+<v Speaker 0>what we wanted to do.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:00.680 --> 00:15:01.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:01.130 --> 00:15:04.310
+<v Speaker 0>The main point here, if you would compare this with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:04.310 --> 00:15:08.540
+<v Speaker 0>the with the computation sequence for the squares function, the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:08.540 --> 00:15:13.040
+<v Speaker 0>only difference is that we're, um, that we're, uh, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,76,100,100]}
+
+00:15:13.040 --> 00:15:17.540
+<v Speaker 0>know, taking the function f here, which is, uh, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:17.540 --> 00:15:21.350
+<v Speaker 0>is instantiated with this function square here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:21.350 --> 00:15:26.390
+<v Speaker 0>And instead of uh, and that's what's showing up in,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:26.390 --> 00:15:30.590
+<v Speaker 0>in each of the, um, you know, as a result
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:30.590 --> 00:15:32.090
+<v Speaker 0>of the application.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:32.390 --> 00:15:32.930
+<v Speaker 0>Um, yeah.
+
+NOTE CONF {"raw":[95,100]}
+
+00:15:33.140 --> 00:15:35.000
+<v Speaker 0>You know, it's applied to each of these, each of
+
+NOTE CONF {"raw":[100,100,100,61,100,100,100,100,100,100]}
+
+00:15:35.000 --> 00:15:35.900
+<v Speaker 0>these values.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:38.510 --> 00:15:41.480
+<v Speaker 0>So, um, I'll just flash this up on the screen.
+
+NOTE CONF {"raw":[100,65,100,100,100,100,100,100,100,100]}
+
+00:15:41.480 --> 00:15:43.230
+<v Speaker 0>This is the recursive definition.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:43.560 --> 00:15:43.890
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[99]}
+
+00:15:46.860 --> 00:15:48.180
+<v Speaker 0>Uh, the computation sequence.
+
+NOTE CONF {"raw":[97,100,100,100]}
+
+00:15:48.180 --> 00:15:48.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:48.540 --> 00:15:51.390
+<v Speaker 0>And ord or it is the same sort of idea
+
+NOTE CONF {"raw":[100,54,100,100,100,100,100,100,100,100]}
+
+00:15:51.390 --> 00:15:52.140
+<v Speaker 0>ords.
+
+NOTE CONF {"raw":[100]}
+
+00:15:52.140 --> 00:15:55.980
+<v Speaker 0>You get that ords function here by um.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:58.140 --> 00:16:02.010
+<v Speaker 0>Instantiating or applying map to the Ord function where Ord
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:02.010 --> 00:16:03.540
+<v Speaker 0>is this function here?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:03.540 --> 00:16:05.490
+<v Speaker 0>That's, uh, that I explained.
+
+NOTE CONF {"raw":[100,60,100,100,100]}
+
+00:16:05.490 --> 00:16:11.550
+<v Speaker 0>It's being used to, um, convert a character to its
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:16:11.550 --> 00:16:12.480
+<v Speaker 0>character code.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:12.900 --> 00:16:13.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:18.030 --> 00:16:21.780
+<v Speaker 0>Um, in this case, in this case, the function ord
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:21.780 --> 00:16:23.430
+<v Speaker 0>is is already defined.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:23.430 --> 00:16:25.740
+<v Speaker 0>So I don't have to define it myself using where
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:16:25.740 --> 00:16:26.010
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:26.010 --> 00:16:28.740
+<v Speaker 0>So this is this is the only big difference here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:28.740 --> 00:16:31.830
+<v Speaker 0>between this definition okay.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:31.830 --> 00:16:35.250
+<v Speaker 0>Applying the map to the existing function ord.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:35.250 --> 00:16:38.070
+<v Speaker 0>Whereas here we had to define it using a helper
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:38.070 --> 00:16:38.700
+<v Speaker 0>function.
+
+NOTE CONF {"raw":[100]}
+
+00:16:42.210 --> 00:16:45.270
+<v Speaker 0>And these functions, by the way, these can be complex
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:45.270 --> 00:16:45.990
+<v Speaker 0>functions.
+
+NOTE CONF {"raw":[100]}
+
+00:16:45.990 --> 00:16:48.600
+<v Speaker 0>These these are these happen to be my examples happen
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,90]}
+
+00:16:48.600 --> 00:16:49.950
+<v Speaker 0>to be very simple little functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:49.950 --> 00:16:52.710
+<v Speaker 0>They can be complicated functions as complicated as you want
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:52.710 --> 00:16:53.340
+<v Speaker 0>them to be.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:54.030 --> 00:16:56.160
+<v Speaker 0>Um doing lots of computation.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:58.920 --> 00:16:59.670
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:59.670 --> 00:17:01.470
+<v Speaker 0>Let me carry on to the next example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:01.470 --> 00:17:02.880
+<v Speaker 0>This is called filter.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:02.880 --> 00:17:06.750
+<v Speaker 0>And this is another common pattern of computation and another
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:07.050 --> 00:17:08.910
+<v Speaker 0>function that's built into Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:10.380 --> 00:17:15.209
+<v Speaker 0>Um, it's the idea of, uh, extracting, um, things from
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:17:15.209 --> 00:17:17.790
+<v Speaker 0>a list that satisfy a predicate.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:18.780 --> 00:17:22.079
+<v Speaker 0>So here we've got, um, a function you've seen already
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:22.079 --> 00:17:23.040
+<v Speaker 0>called odds.
+
+NOTE CONF {"raw":[100,94]}
+
+00:17:23.040 --> 00:17:25.560
+<v Speaker 0>It takes the odd numbers of a list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:25.560 --> 00:17:30.390
+<v Speaker 0>So you've seen this, both the, um, definition using um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:17:30.390 --> 00:17:34.680
+<v Speaker 0>list comprehension and the definition using recursion.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:35.490 --> 00:17:36.030
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:36.030 --> 00:17:39.060
+<v Speaker 0>So um, and it's done using a guard.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:39.090 --> 00:17:43.560
+<v Speaker 0>So for each x drawn from XZ.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,45]}
+
+00:17:44.520 --> 00:17:49.440
+<v Speaker 0>If it's odd, then we include it in the result.
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:17:50.640 --> 00:17:51.150
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:51.150 --> 00:17:56.220
+<v Speaker 0>And here was the definition using um recursion where the
+
+NOTE CONF {"raw":[100,100,65,100,100,100,100,100,100,100]}
+
+00:17:56.220 --> 00:17:58.740
+<v Speaker 0>guard is used in a case analysis.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:59.100 --> 00:18:01.770
+<v Speaker 0>Um, in the, you know, in the second in the
+
+NOTE CONF {"raw":[100,100,100,87,87,100,100,100,100,100]}
+
+00:18:01.770 --> 00:18:03.060
+<v Speaker 0>second equation here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:05.040 --> 00:18:05.520
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[94,94]}
+
+00:18:05.520 --> 00:18:06.210
+<v Speaker 0>You remember that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:06.210 --> 00:18:08.730
+<v Speaker 0>So that's all the odd numbers of a list using
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,79,100,100]}
+
+00:18:08.730 --> 00:18:13.650
+<v Speaker 0>a guard to uh, to, to um, uh, pick out
+
+NOTE CONF {"raw":[100,100,99,72,100,100,100,98,100,100]}
+
+00:18:13.650 --> 00:18:16.380
+<v Speaker 0>the ones that are odd and odd is a built
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:16.380 --> 00:18:17.220
+<v Speaker 0>in function.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:18.240 --> 00:18:23.070
+<v Speaker 0>Um, here is a function which takes, um, a list
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:23.070 --> 00:18:27.120
+<v Speaker 0>of, uh, characters, and it returns the ones that are
+
+NOTE CONF {"raw":[100,51,100,100,100,100,100,100,100,100]}
+
+00:18:27.120 --> 00:18:27.600
+<v Speaker 0>digits.
+
+NOTE CONF {"raw":[100]}
+
+00:18:27.600 --> 00:18:29.850
+<v Speaker 0>Those are the numerical digits.
+
+NOTE CONF {"raw":[100,100,87,100,100]}
+
+00:18:29.850 --> 00:18:32.070
+<v Speaker 0>And so, for example, if you apply it to this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:32.070 --> 00:18:35.190
+<v Speaker 0>string, um, a to C three, it gives you two
+
+NOTE CONF {"raw":[100,54,99,85,93,98,100,100,100,100]}
+
+00:18:35.190 --> 00:18:37.920
+<v Speaker 0>and three because a and C are not digits.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:38.440 --> 00:18:38.830
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:38.830 --> 00:18:44.530
+<v Speaker 0>And this uses, uh, again, it's a list comprehension definition
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:44.530 --> 00:18:44.980
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:18:44.980 --> 00:18:47.560
+<v Speaker 0>And it's using is digit, which is a built in
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,100]}
+
+00:18:47.980 --> 00:18:54.730
+<v Speaker 0>function in the library that I think you already saw
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:54.730 --> 00:18:57.070
+<v Speaker 0>in your tutorial exercise.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:57.400 --> 00:18:57.790
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:18:59.920 --> 00:19:03.220
+<v Speaker 0>It's using that to um, to, to pick out the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:03.220 --> 00:19:04.510
+<v Speaker 0>ones that are digits.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:04.690 --> 00:19:05.080
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:05.080 --> 00:19:09.430
+<v Speaker 0>So we return x drawn from xz such that is
+
+NOTE CONF {"raw":[100,100,98,100,100,100,48,100,100,100]}
+
+00:19:09.430 --> 00:19:10.960
+<v Speaker 0>digit of x is true.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:10.960 --> 00:19:12.670
+<v Speaker 0>And we return the list of those.
+
+NOTE CONF {"raw":[100,94,84,100,100,100,100]}
+
+00:19:12.670 --> 00:19:16.240
+<v Speaker 0>So it's it's removing the ones that are not digits.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:20.350 --> 00:19:20.950
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:20.950 --> 00:19:22.660
+<v Speaker 0>So two examples here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:23.740 --> 00:19:25.750
+<v Speaker 0>And I could show you another ten.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:25.750 --> 00:19:29.770
+<v Speaker 0>But by now you're bored and you're thinking please can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:29.770 --> 00:19:33.520
+<v Speaker 0>we just finally have a higher order function that expresses
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:33.520 --> 00:19:35.440
+<v Speaker 0>this, um, pattern of computation?
+
+NOTE CONF {"raw":[100,84,100,100,100]}
+
+00:19:35.560 --> 00:19:36.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:36.010 --> 00:19:37.930
+<v Speaker 0>And the answer is yes you can.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:37.930 --> 00:19:39.130
+<v Speaker 0>It's called filter.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:39.280 --> 00:19:39.760
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:39.760 --> 00:19:42.460
+<v Speaker 0>So it's it's a generalisation.
+
+NOTE CONF {"raw":[100,100,100,100,92]}
+
+00:19:42.460 --> 00:19:44.650
+<v Speaker 0>Going back to these two examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:44.650 --> 00:19:47.380
+<v Speaker 0>What's changing here is the highlighted thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:47.380 --> 00:19:52.780
+<v Speaker 0>Basically it's a it's a pattern of computation where you're
+
+NOTE CONF {"raw":[100,100,52,100,100,100,100,100,100,100]}
+
+00:19:52.780 --> 00:19:57.280
+<v Speaker 0>going through a list and and filtering out the the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:57.280 --> 00:20:03.010
+<v Speaker 0>values that satisfy a predicate, a predicate a predicate is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:03.010 --> 00:20:06.010
+<v Speaker 0>a function from a type to booleans.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:06.010 --> 00:20:06.370
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:06.370 --> 00:20:09.130
+<v Speaker 0>You've seen this in um, computation and logic.
+
+NOTE CONF {"raw":[100,100,100,100,82,100,98,100]}
+
+00:20:09.130 --> 00:20:11.080
+<v Speaker 0>This this um terminology.
+
+NOTE CONF {"raw":[100,100,80,100]}
+
+00:20:14.050 --> 00:20:14.440
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:14.440 --> 00:20:19.390
+<v Speaker 0>So we supply uh, an arbitrary predicate called p here
+
+NOTE CONF {"raw":[100,100,100,52,100,100,100,100,100,100]}
+
+00:20:21.250 --> 00:20:23.860
+<v Speaker 0>of type a arrow bool okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:23.890 --> 00:20:25.150
+<v Speaker 0>A can be any type.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:25.780 --> 00:20:26.380
+<v Speaker 0>It's the type.
+
+NOTE CONF {"raw":[99,100,100]}
+
+00:20:26.380 --> 00:20:28.210
+<v Speaker 0>It's the type of the things in the list that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:28.210 --> 00:20:30.760
+<v Speaker 0>we want to filter okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:30.760 --> 00:20:35.830
+<v Speaker 0>And we use that predicate in the guard here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:37.130 --> 00:20:37.400
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:37.400 --> 00:20:40.580
+<v Speaker 0>So we're looking for all the things x drawn from
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:40.580 --> 00:20:44.990
+<v Speaker 0>XZ such that p of x is produces true.
+
+NOTE CONF {"raw":[43,100,100,100,100,100,100,100,100]}
+
+00:20:47.150 --> 00:20:47.690
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:47.690 --> 00:20:51.410
+<v Speaker 0>So the guard the sorry the predicate could be um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:52.760 --> 00:20:56.540
+<v Speaker 0>well the predicate could be odd.
+
+NOTE CONF {"raw":[100,100,100,100,100,97]}
+
+00:20:59.570 --> 00:21:03.530
+<v Speaker 0>Like this as we had in our example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:03.530 --> 00:21:09.380
+<v Speaker 0>Or it could be um, is digit as we had
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:09.380 --> 00:21:10.520
+<v Speaker 0>in the other example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:11.960 --> 00:21:12.440
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:12.440 --> 00:21:13.490
+<v Speaker 0>That was a little bit fast.
+
+NOTE CONF {"raw":[73,73,100,100,100,100]}
+
+00:21:13.490 --> 00:21:14.630
+<v Speaker 0>Let me just back up.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:14.900 --> 00:21:15.470
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:15.470 --> 00:21:16.910
+<v Speaker 0>The definition of filter.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:19.280 --> 00:21:20.570
+<v Speaker 0>Again higher order function.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:20.570 --> 00:21:23.780
+<v Speaker 0>Because we've got a a function as the first argument
+
+NOTE CONF {"raw":[100,100,100,80,100,100,100,100,100,100]}
+
+00:21:23.780 --> 00:21:24.290
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:21:24.290 --> 00:21:29.210
+<v Speaker 0>It's got an arrow in its type filter is defined.
+
+NOTE CONF {"raw":[100,100,100,100,100,70,100,100,100,100]}
+
+00:21:29.720 --> 00:21:33.380
+<v Speaker 0>Uh here are two ways of defining filter using um
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:33.380 --> 00:21:35.330
+<v Speaker 0>list comprehension and recursion.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:36.950 --> 00:21:41.930
+<v Speaker 0>And, um, it's exactly the same program as you've seen
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:41.930 --> 00:21:47.630
+<v Speaker 0>here, except that we've generalised by, um, uh, generalising odd
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:21:47.630 --> 00:21:50.750
+<v Speaker 0>and is digit to um, this predicate P.
+
+NOTE CONF {"raw":[100,87,100,100,60,100,100,100]}
+
+00:21:52.970 --> 00:21:53.720
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[88]}
+
+00:21:54.200 --> 00:21:55.310
+<v Speaker 0>Is that clear?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:58.580 --> 00:22:01.580
+<v Speaker 0>Um, and so this is this is odds defined, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,86]}
+
+00:22:01.580 --> 00:22:08.570
+<v Speaker 0>three ways recursive list comprehension recursion and um, using filter
+
+NOTE CONF {"raw":[100,100,81,100,100,100,100,100,100,100]}
+
+00:22:08.870 --> 00:22:10.610
+<v Speaker 0>this higher order function filter.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:14.600 --> 00:22:14.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:14.930 --> 00:22:20.810
+<v Speaker 0>And likewise um digits defined three ways list comprehension recursion
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:20.810 --> 00:22:24.470
+<v Speaker 0>and using the higher order function filter.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:27.140 --> 00:22:30.020
+<v Speaker 0>And as I said this predicate can be as complicated
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,100]}
+
+00:22:30.020 --> 00:22:30.830
+<v Speaker 0>as you want.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:31.220 --> 00:22:33.710
+<v Speaker 0>Uh, only important thing is it has to produce bool
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,57]}
+
+00:22:33.710 --> 00:22:34.640
+<v Speaker 0>as a result.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:35.090 --> 00:22:40.220
+<v Speaker 0>Okay, so, um, you could, uh, filter, uh, the, um,
+
+NOTE CONF {"raw":[100,100,90,100,100,96,100,100,100,100]}
+
+00:22:41.720 --> 00:22:45.560
+<v Speaker 0>you know, the prime numbers from a list or, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:46.220 --> 00:22:46.970
+<v Speaker 0>anything you want.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:46.970 --> 00:22:47.750
+<v Speaker 0>Yeah, whatever.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:47.840 --> 00:22:52.100
+<v Speaker 0>Okay, so those are two examples so far of, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:52.100 --> 00:22:55.340
+<v Speaker 0>higher order functions that are built into Haskell, commonly used
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:55.340 --> 00:22:56.150
+<v Speaker 0>higher order functions.
+
+NOTE CONF {"raw":[94,100,100]}
+
+00:22:56.150 --> 00:22:58.730
+<v Speaker 0>You can use them in your programs to make them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:58.730 --> 00:23:00.200
+<v Speaker 0>often simpler.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:00.200 --> 00:23:00.920
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:01.160 --> 00:23:05.240
+<v Speaker 0>Um, you know, because this pattern arises so often and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:05.240 --> 00:23:08.990
+<v Speaker 0>instantiate is just a matter of, of of invoking these
+
+NOTE CONF {"raw":[67,100,100,100,100,100,100,100,100,100]}
+
+00:23:08.990 --> 00:23:12.170
+<v Speaker 0>functions map or filter and, um, and coming up with
+
+NOTE CONF {"raw":[100,100,100,100,100,52,100,100,100,100]}
+
+00:23:12.170 --> 00:23:15.380
+<v Speaker 0>the, with the, with the predicate or the function that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:15.380 --> 00:23:16.730
+<v Speaker 0>you want to apply them to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:17.990 --> 00:23:18.500
+<v Speaker 0>Yep.
+
+NOTE CONF {"raw":[63]}
+
+00:23:21.260 --> 00:23:21.710
+<v Speaker 0>Why?
+
+NOTE CONF {"raw":[96]}
+
+00:23:21.710 --> 00:23:22.670
+<v Speaker 0>Why is sorry.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:22.700 --> 00:23:27.110
+<v Speaker 2>Why does it rather than integer it returns a list
+
+NOTE CONF {"raw":[87,87,87,100,100,100,52,99,100,100]}
+
+00:23:27.110 --> 00:23:27.830
+<v Speaker 2>of characters.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:30.440 --> 00:23:33.000
+<v Speaker 0>You mean the digits function Yeah.
+
+NOTE CONF {"raw":[100,100,100,100,100,99]}
+
+00:23:33.030 --> 00:23:35.640
+<v Speaker 0>Digits takes a list of characters to list of characters,
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100,100,100,100]}
+
+00:23:35.640 --> 00:23:38.730
+<v Speaker 0>because it takes a list of characters.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:38.730 --> 00:23:40.890
+<v Speaker 0>And it and it removes all the ones that are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:40.890 --> 00:23:43.800
+<v Speaker 0>not digits and produces a list of characters, which is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:43.800 --> 00:23:45.150
+<v Speaker 0>the ones remaining.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:45.540 --> 00:23:46.110
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:46.110 --> 00:23:47.880
+<v Speaker 0>Or that is to say, it picks out the ones
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:47.880 --> 00:23:48.660
+<v Speaker 0>that are digits.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:48.660 --> 00:23:51.300
+<v Speaker 0>The digits are our characters.
+
+NOTE CONF {"raw":[100,100,100,76,100]}
+
+00:23:51.300 --> 00:23:51.900
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:51.900 --> 00:23:55.860
+<v Speaker 0>The character, you know, one or 2 or 3 or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:55.860 --> 00:23:56.130
+<v Speaker 0>whatever.
+
+NOTE CONF {"raw":[100]}
+
+00:23:56.130 --> 00:23:56.790
+<v Speaker 0>It's a character.
+
+NOTE CONF {"raw":[88,49,100]}
+
+00:23:56.790 --> 00:23:57.870
+<v Speaker 0>It's not the number.
+
+NOTE CONF {"raw":[99,100,100,100]}
+
+00:23:58.590 --> 00:24:00.060
+<v Speaker 0>Okay, that's that's the thing.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:00.060 --> 00:24:00.600
+<v Speaker 0>All right?
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:00.600 --> 00:24:05.730
+<v Speaker 0>There's no automatic conversion between between, um, digits, which are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:05.730 --> 00:24:09.990
+<v Speaker 0>characters and numbers for adding in things.
+
+NOTE CONF {"raw":[100,100,100,100,100,54,100]}
+
+00:24:09.990 --> 00:24:10.620
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:10.950 --> 00:24:12.720
+<v Speaker 0>Um, of course you can convert.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:13.380 --> 00:24:19.680
+<v Speaker 0>Um, there's a function called, uh, I forget, which does
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:19.680 --> 00:24:19.860
+<v Speaker 0>it?
+
+NOTE CONF {"raw":[100]}
+
+00:24:19.860 --> 00:24:23.850
+<v Speaker 0>I think you used it in your tutorial exercise, I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,90,100]}
+
+00:24:23.850 --> 00:24:24.660
+<v Speaker 0>don't remember.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:24.900 --> 00:24:27.750
+<v Speaker 0>Um, anyway, there's a way to convert from strings to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:27.780 --> 00:24:28.650
+<v Speaker 0>to to numbers.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:28.650 --> 00:24:29.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:29.010 --> 00:24:33.480
+<v Speaker 0>And it it only works if the string has digits,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:33.480 --> 00:24:34.530
+<v Speaker 0>only digits in it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:34.530 --> 00:24:35.040
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[96]}
+
+00:24:35.580 --> 00:24:37.290
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,87]}
+
+00:24:37.890 --> 00:24:39.060
+<v Speaker 0>Other questions?
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:41.370 --> 00:24:43.710
+<v Speaker 0>I want to now go to the next example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:43.710 --> 00:24:46.290
+<v Speaker 0>And it's the last example I want to show you.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:46.290 --> 00:24:47.790
+<v Speaker 0>It's a bit trickier to understand.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:47.790 --> 00:24:49.380
+<v Speaker 0>It's more complicated okay.
+
+NOTE CONF {"raw":[94,100,100,100]}
+
+00:24:49.380 --> 00:24:50.640
+<v Speaker 0>It's called fold.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:52.890 --> 00:24:56.220
+<v Speaker 0>And here I'm going to show you a bunch of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:56.220 --> 00:25:02.160
+<v Speaker 0>functions um again that display this pattern of computation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:02.400 --> 00:25:06.810
+<v Speaker 0>So the first one is some, uh, some you've seen
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:06.810 --> 00:25:07.320
+<v Speaker 0>before.
+
+NOTE CONF {"raw":[100]}
+
+00:25:07.320 --> 00:25:10.710
+<v Speaker 0>It adds together, um, a list of numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:10.710 --> 00:25:12.120
+<v Speaker 0>These ones happen to be in order.
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100]}
+
+00:25:12.120 --> 00:25:13.500
+<v Speaker 0>They don't have to be in order.
+
+NOTE CONF {"raw":[100,100,100,100,100,80,100]}
+
+00:25:13.740 --> 00:25:16.080
+<v Speaker 0>Um, so the sum of these, this list of numbers
+
+NOTE CONF {"raw":[99,100,100,69,100,100,100,100,100,100]}
+
+00:25:16.080 --> 00:25:16.770
+<v Speaker 0>is ten.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:17.400 --> 00:25:18.030
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:18.030 --> 00:25:23.100
+<v Speaker 0>And what it does is it starts it's a it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:25:23.100 --> 00:25:24.390
+<v Speaker 0>a recursive definition here.
+
+NOTE CONF {"raw":[93,100,100,100]}
+
+00:25:24.390 --> 00:25:27.360
+<v Speaker 0>You can't define it using list comprehension because the result
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:27.360 --> 00:25:28.320
+<v Speaker 0>is not a list.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:28.890 --> 00:25:32.850
+<v Speaker 0>Um, so it it takes a list of numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:33.660 --> 00:25:35.490
+<v Speaker 0>If there are no numbers in the list, result is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:35.490 --> 00:25:36.150
+<v Speaker 0>zero.
+
+NOTE CONF {"raw":[100]}
+
+00:25:37.080 --> 00:25:39.330
+<v Speaker 0>If there's at least one number in the list, it
+
+NOTE CONF {"raw":[100,93,100,100,100,100,100,100,100,100]}
+
+00:25:39.330 --> 00:25:42.000
+<v Speaker 0>adds that number to the sum of the rest of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:42.000 --> 00:25:42.810
+<v Speaker 0>the numbers.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:42.840 --> 00:25:44.820
+<v Speaker 0>Okay, you've seen this definition already.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:46.560 --> 00:25:50.760
+<v Speaker 0>And you remember why this is a zero here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:51.720 --> 00:25:54.570
+<v Speaker 0>Instead of seven or some other number.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:57.150 --> 00:25:57.780
+<v Speaker 0>Identity.
+
+NOTE CONF {"raw":[100]}
+
+00:25:57.780 --> 00:25:58.050
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:25:58.050 --> 00:26:01.200
+<v Speaker 0>It's the it's the identity of the.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:03.360 --> 00:26:05.430
+<v Speaker 0>Of the of the operation plus.
+
+NOTE CONF {"raw":[100,100,100,100,98,100]}
+
+00:26:06.720 --> 00:26:07.260
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[81]}
+
+00:26:08.580 --> 00:26:11.640
+<v Speaker 0>And that's the reason why it's kind of the right
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:11.640 --> 00:26:12.360
+<v Speaker 0>answer.
+
+NOTE CONF {"raw":[100]}
+
+00:26:13.050 --> 00:26:18.000
+<v Speaker 0>Um, you know, it's perfectly possible to define a function
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:18.000 --> 00:26:22.200
+<v Speaker 0>like somewhere where it isn't zero, where, you know, it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:22.200 --> 00:26:25.410
+<v Speaker 0>would automatically add 17 to the sum of a list,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:26:25.410 --> 00:26:28.620
+<v Speaker 0>but that would probably not be what you want.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:26:29.500 --> 00:26:31.000
+<v Speaker 0>Okay, but it would work.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:31.930 --> 00:26:32.320
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:32.320 --> 00:26:33.880
+<v Speaker 0>Product is similar.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:34.180 --> 00:26:36.610
+<v Speaker 0>Instead of adding together the numbers in a list, we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,63,100,100]}
+
+00:26:36.610 --> 00:26:38.470
+<v Speaker 0>multiply the numbers in a list.
+
+NOTE CONF {"raw":[100,100,100,100,95,100]}
+
+00:26:38.470 --> 00:26:42.610
+<v Speaker 0>And so the operation we use to put together the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,74]}
+
+00:26:42.610 --> 00:26:46.000
+<v Speaker 0>each number with the with the recursive call to the
+
+NOTE CONF {"raw":[100,100,100,79,100,100,100,100,100,100]}
+
+00:26:46.000 --> 00:26:49.390
+<v Speaker 0>product of the rest of the list is the multiplication
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:49.390 --> 00:26:51.880
+<v Speaker 0>operation multiplication function.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:53.980 --> 00:26:57.670
+<v Speaker 0>Remember these these things here used um, you know, to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100,100,100]}
+
+00:26:57.670 --> 00:26:58.750
+<v Speaker 0>multiply or to add.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:58.750 --> 00:27:00.790
+<v Speaker 0>These are also functions, of course.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:01.090 --> 00:27:03.250
+<v Speaker 0>Um, the only thing that's special about them is that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:03.250 --> 00:27:08.320
+<v Speaker 0>they're written using, um, written using kind of, uh, symbols
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,69,100]}
+
+00:27:08.320 --> 00:27:11.740
+<v Speaker 0>rather than, uh, spelled out, um, alphabetically.
+
+NOTE CONF {"raw":[100,100,83,100,100,100,100]}
+
+00:27:11.740 --> 00:27:12.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:12.130 --> 00:27:14.110
+<v Speaker 0>Another another thing that's special about them is that they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:14.110 --> 00:27:17.290
+<v Speaker 0>happen to be built into the computer operations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:17.470 --> 00:27:21.370
+<v Speaker 0>Um, so, uh, you know, so they're they're already there.
+
+NOTE CONF {"raw":[88,100,100,100,100,100,100,100,100,100]}
+
+00:27:21.370 --> 00:27:25.630
+<v Speaker 0>But, um, anyway, um, so again, the, uh, the, the,
+
+NOTE CONF {"raw":[100,98,100,94,100,100,100,50,100,100]}
+
+00:27:25.630 --> 00:27:28.480
+<v Speaker 0>the value here that we start with in case the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:28.480 --> 00:27:32.890
+<v Speaker 0>list is is empty is again the the identity element
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:32.890 --> 00:27:34.180
+<v Speaker 0>for multiplication.
+
+NOTE CONF {"raw":[91,100]}
+
+00:27:35.140 --> 00:27:35.500
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:35.500 --> 00:27:39.610
+<v Speaker 0>Product of the empty list is one okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:39.610 --> 00:27:43.510
+<v Speaker 0>Which seems a bit odd when you start, but otherwise,
+
+NOTE CONF {"raw":[100,100,99,99,100,100,100,100,100,100]}
+
+00:27:43.570 --> 00:27:46.390
+<v Speaker 0>um, well, first of all, uh, because it's the identity
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100,100,100,100]}
+
+00:27:46.390 --> 00:27:49.240
+<v Speaker 0>element and that means that, you know, if it was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:49.240 --> 00:27:51.820
+<v Speaker 0>zero, which, which would be the other obvious thing to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:51.820 --> 00:27:54.730
+<v Speaker 0>write here, then the product of any list would be
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:27:54.730 --> 00:27:58.210
+<v Speaker 0>zero, because it would be zero times all the things
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:58.210 --> 00:27:58.960
+<v Speaker 0>in the list.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:03.190 --> 00:28:04.000
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:04.420 --> 00:28:06.610
+<v Speaker 0>Um, three more examples.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:07.120 --> 00:28:08.950
+<v Speaker 0>This because this one's a little bit more complicated.
+
+NOTE CONF {"raw":[73,100,100,100,100,100,100,100,100]}
+
+00:28:08.950 --> 00:28:12.250
+<v Speaker 0>I want to show you five examples instead of two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:12.280 --> 00:28:14.950
+<v Speaker 0>So this is a function and it's built into Haskell
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:14.950 --> 00:28:18.370
+<v Speaker 0>is called concat which is short for concatenate.
+
+NOTE CONF {"raw":[58,100,100,100,100,100,100,100]}
+
+00:28:19.420 --> 00:28:22.120
+<v Speaker 0>Concatenate is a word you may not have come across,
+
+NOTE CONF {"raw":[100,85,100,100,100,100,100,100,100,100]}
+
+00:28:22.120 --> 00:28:25.570
+<v Speaker 0>but it's a kind of computer science jargon word meaning,
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:28:25.630 --> 00:28:29.170
+<v Speaker 0>uh, Putting together a bunch of a bunch of strings
+
+NOTE CONF {"raw":[52,100,100,100,100,100,100,100,100,100]}
+
+00:28:29.170 --> 00:28:32.860
+<v Speaker 0>or sequences or something like that, end to end.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:33.250 --> 00:28:37.420
+<v Speaker 0>Okay, so example being like here we've got concat applied
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:37.420 --> 00:28:40.240
+<v Speaker 0>to a list of strings and it just joins together
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:40.240 --> 00:28:42.820
+<v Speaker 0>all the strings in this list, one after the other
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:42.820 --> 00:28:45.430
+<v Speaker 0>concat and eight okay.
+
+NOTE CONF {"raw":[66,66,66,100]}
+
+00:28:45.430 --> 00:28:46.660
+<v Speaker 0>To get that result.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:46.690 --> 00:28:46.960
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:46.960 --> 00:28:49.480
+<v Speaker 0>So this is showing what it does.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:49.840 --> 00:28:52.990
+<v Speaker 0>Here's another example on lists of numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,82]}
+
+00:28:54.220 --> 00:28:54.940
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:54.940 --> 00:28:58.630
+<v Speaker 0>Works for any kind of lists that is to say
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:58.630 --> 00:28:59.950
+<v Speaker 0>lists of lists.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:00.160 --> 00:29:01.630
+<v Speaker 0>And here's the type.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:03.370 --> 00:29:03.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:03.790 --> 00:29:06.280
+<v Speaker 0>It takes a a list of lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:07.270 --> 00:29:10.540
+<v Speaker 0>And it gives you a list of the same kind
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:10.540 --> 00:29:13.990
+<v Speaker 0>of elements as were in each of the lists in
+
+NOTE CONF {"raw":[100,100,100,56,100,100,100,100,100,100]}
+
+00:29:13.990 --> 00:29:14.890
+<v Speaker 0>the list of lists.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:14.890 --> 00:29:15.520
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[84]}
+
+00:29:15.550 --> 00:29:16.660
+<v Speaker 0>If you understand what I mean.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:16.660 --> 00:29:19.810
+<v Speaker 0>So so you've got a list of strings here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:19.810 --> 00:29:23.080
+<v Speaker 0>And it gives you a string or a list of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:23.080 --> 00:29:24.340
+<v Speaker 0>lists of numbers.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:24.340 --> 00:29:26.270
+<v Speaker 0>And it gives you a list of numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:27.950 --> 00:29:28.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:29.060 --> 00:29:29.870
+<v Speaker 0>Clear.
+
+NOTE CONF {"raw":[100]}
+
+00:29:29.870 --> 00:29:32.300
+<v Speaker 0>So this is built in in Haskell happens to be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:32.300 --> 00:29:33.710
+<v Speaker 0>built in because it's so useful.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:33.710 --> 00:29:37.490
+<v Speaker 0>And it, um, what it does is, uh, again, in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,65,100,100]}
+
+00:29:37.490 --> 00:29:39.020
+<v Speaker 0>the case of the empty list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:39.680 --> 00:29:42.410
+<v Speaker 0>Well, not again, in the case of the empty list,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:42.410 --> 00:29:44.510
+<v Speaker 0>it gives you the empty list as a result.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:44.510 --> 00:29:44.780
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:44.780 --> 00:29:46.850
+<v Speaker 0>Because there's nothing to join together.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:46.850 --> 00:29:49.220
+<v Speaker 0>So the result has to be a list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:49.220 --> 00:29:50.750
+<v Speaker 0>And so it's the empty list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:55.040 --> 00:29:59.990
+<v Speaker 0>And, um, the function that's used to, to combine the
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:29:59.990 --> 00:30:04.310
+<v Speaker 0>first element in the list with the recursive call of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:04.310 --> 00:30:06.950
+<v Speaker 0>concatenating everything else in the list is this function called
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:06.950 --> 00:30:10.310
+<v Speaker 0>append that I introduced some lectures ago okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:10.310 --> 00:30:13.730
+<v Speaker 0>Plus plus it means you know like if you if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:13.730 --> 00:30:15.830
+<v Speaker 0>you apply it to con and cat it would give
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:30:15.830 --> 00:30:19.190
+<v Speaker 0>you concat just joining two strings end to end.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:30:19.190 --> 00:30:21.560
+<v Speaker 0>And so this is kind of the generalisation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,90]}
+
+00:30:21.560 --> 00:30:24.500
+<v Speaker 0>Concat is kind of the generalisation of append to a
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,97]}
+
+00:30:24.530 --> 00:30:26.240
+<v Speaker 0>to a list of lists.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:28.490 --> 00:30:29.660
+<v Speaker 0>Okay, again.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:29.660 --> 00:30:31.100
+<v Speaker 0>You know why is.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:31.280 --> 00:30:34.700
+<v Speaker 0>Why is the the result in the case of, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,56]}
+
+00:30:34.700 --> 00:30:35.630
+<v Speaker 0>the empty list?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:35.630 --> 00:30:37.460
+<v Speaker 0>Why is it the empty list?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:40.010 --> 00:30:43.310
+<v Speaker 0>You know, it's because the empty list is the identity
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:43.850 --> 00:30:46.130
+<v Speaker 0>element for append.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:46.160 --> 00:30:46.880
+<v Speaker 0>Empty list.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:46.880 --> 00:30:47.240
+<v Speaker 0>Append.
+
+NOTE CONF {"raw":[100]}
+
+00:30:47.240 --> 00:30:50.510
+<v Speaker 0>Anything is whatever the anything is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:52.370 --> 00:30:54.170
+<v Speaker 0>Okay, so this is what you have to start off
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:54.170 --> 00:30:54.770
+<v Speaker 0>with.
+
+NOTE CONF {"raw":[100]}
+
+00:30:54.800 --> 00:30:55.280
+<v Speaker 0>Oops.
+
+NOTE CONF {"raw":[68]}
+
+00:30:55.280 --> 00:30:57.020
+<v Speaker 0>This is what you have to start off with to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:57.020 --> 00:30:59.390
+<v Speaker 0>make this recursive definition work.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:00.800 --> 00:31:02.180
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:02.180 --> 00:31:03.560
+<v Speaker 0>Is that clear?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:04.130 --> 00:31:09.020
+<v Speaker 0>I'll just mention here the, um, I said already that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:09.470 --> 00:31:13.040
+<v Speaker 0>it's common when you've got a list that you use
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:13.040 --> 00:31:15.890
+<v Speaker 0>a variable name, it's not required, but it's common to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:15.890 --> 00:31:17.630
+<v Speaker 0>use a variable name with an s at the end.
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:31:17.630 --> 00:31:18.440
+<v Speaker 0>Plural.
+
+NOTE CONF {"raw":[100]}
+
+00:31:18.440 --> 00:31:20.330
+<v Speaker 0>And you pronounce it x is okay.
+
+NOTE CONF {"raw":[100,100,100,100,62,62,100]}
+
+00:31:20.330 --> 00:31:21.830
+<v Speaker 0>You've got a list of x's.
+
+NOTE CONF {"raw":[100,100,100,100,100,48]}
+
+00:31:21.830 --> 00:31:25.550
+<v Speaker 0>So the things in the list you call X and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,67,100]}
+
+00:31:25.550 --> 00:31:28.430
+<v Speaker 0>um, and the and the and the whole list is,
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:31:28.430 --> 00:31:30.650
+<v Speaker 0>is, is a list of X's.
+
+NOTE CONF {"raw":[100,100,100,100,100,50]}
+
+00:31:30.650 --> 00:31:31.100
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:31.100 --> 00:31:33.920
+<v Speaker 0>When you've got a list of lists like here okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:33.920 --> 00:31:37.490
+<v Speaker 0>This is a list of lists then um, you kind
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:37.490 --> 00:31:39.440
+<v Speaker 0>of do that again.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:39.440 --> 00:31:41.690
+<v Speaker 0>And so it's a it's got two S's at the
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,100]}
+
+00:31:41.690 --> 00:31:45.200
+<v Speaker 0>end and it's pronounced it's pronounced x's.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,83]}
+
+00:31:45.620 --> 00:31:46.070
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:46.070 --> 00:31:49.250
+<v Speaker 0>So um, this is, this is only a little, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:31:49.250 --> 00:31:53.960
+<v Speaker 0>helpful, uh, convention to make it easy to see in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:53.960 --> 00:31:56.090
+<v Speaker 0>your program what the lists are and what the lists
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:56.090 --> 00:31:57.290
+<v Speaker 0>of lists are and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:57.290 --> 00:31:59.870
+<v Speaker 0>And of course, you could use more X's if more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,72,100]}
+
+00:31:59.870 --> 00:32:02.270
+<v Speaker 0>S's, if you've got lists of lists of lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:32:03.650 --> 00:32:04.220
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:04.220 --> 00:32:05.630
+<v Speaker 0>So three examples so far.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:05.630 --> 00:32:06.530
+<v Speaker 0>Here's another two.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:06.530 --> 00:32:10.310
+<v Speaker 0>Quickly the uh and applied to a list of booleans.
+
+NOTE CONF {"raw":[100,100,77,100,100,100,100,100,100,100]}
+
+00:32:10.310 --> 00:32:11.300
+<v Speaker 0>You've seen this already.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:11.300 --> 00:32:14.360
+<v Speaker 0>You've used it in your computation and logic tutorial.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,44,100,100]}
+
+00:32:14.360 --> 00:32:17.420
+<v Speaker 0>So and applied to a list of truth values produces
+
+NOTE CONF {"raw":[100,88,92,100,100,100,100,100,100,100]}
+
+00:32:17.420 --> 00:32:19.640
+<v Speaker 0>true only if all the truth values are true.
+
+NOTE CONF {"raw":[100,100,100,100,100,86,100,100,100]}
+
+00:32:19.640 --> 00:32:21.170
+<v Speaker 0>And it's defined like this.
+
+NOTE CONF {"raw":[100,96,100,100,100]}
+
+00:32:21.180 --> 00:32:25.380
+<v Speaker 0>And here's the, um, you know, takes a list of
+
+NOTE CONF {"raw":[100,100,100,92,100,100,100,100,100,100]}
+
+00:32:25.380 --> 00:32:26.880
+<v Speaker 0>bull to a bull.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:26.880 --> 00:32:31.560
+<v Speaker 0>Um, here's the, uh, conjunction being applied to combine the
+
+NOTE CONF {"raw":[100,100,100,76,100,100,100,100,100,100]}
+
+00:32:31.560 --> 00:32:35.940
+<v Speaker 0>results and the, um, the the starting value is true
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:32:35.940 --> 00:32:42.000
+<v Speaker 0>because true is the identity for conjunction and or, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,61]}
+
+00:32:42.240 --> 00:32:46.350
+<v Speaker 0>you know, similarly disjunction and identity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:46.350 --> 00:32:47.100
+<v Speaker 0>False.
+
+NOTE CONF {"raw":[100]}
+
+00:32:47.430 --> 00:32:47.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:47.820 --> 00:32:49.710
+<v Speaker 0>So you're familiar with these functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:49.710 --> 00:32:51.630
+<v Speaker 0>I don't know if you saw the definitions, but anyway,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:51.630 --> 00:32:52.260
+<v Speaker 0>there they are.
+
+NOTE CONF {"raw":[98,100,100]}
+
+00:32:52.260 --> 00:32:52.860
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:54.210 --> 00:32:55.050
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:32:57.060 --> 00:32:58.440
+<v Speaker 0>We've got a pattern.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:59.910 --> 00:33:00.330
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:00.330 --> 00:33:01.830
+<v Speaker 0>You've seen five examples.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:02.340 --> 00:33:07.770
+<v Speaker 0>Um, the pattern I've highlighted the things that are changing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:07.770 --> 00:33:08.550
+<v Speaker 0>in the pattern.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:08.550 --> 00:33:12.240
+<v Speaker 0>There's the there's the result that you, uh, produce in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,66,100,100]}
+
+00:33:12.240 --> 00:33:13.560
+<v Speaker 0>the case where the list.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:13.560 --> 00:33:13.830
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:13.830 --> 00:33:16.680
+<v Speaker 0>Well, first of all, you're taking a list of things
+
+NOTE CONF {"raw":[95,100,100,100,100,98,100,100,100,100]}
+
+00:33:16.680 --> 00:33:18.030
+<v Speaker 0>and producing a result.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:19.290 --> 00:33:20.040
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:20.070 --> 00:33:23.070
+<v Speaker 0>In the case the list is empty, you produce a
+
+NOTE CONF {"raw":[100,88,100,100,100,100,100,100,100,100]}
+
+00:33:23.070 --> 00:33:26.100
+<v Speaker 0>value, but the value produce is different in each of
+
+NOTE CONF {"raw":[100,100,100,100,78,100,100,100,100,100]}
+
+00:33:26.100 --> 00:33:26.700
+<v Speaker 0>these cases.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:26.700 --> 00:33:28.680
+<v Speaker 0>Zero one empty list.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:28.680 --> 00:33:31.290
+<v Speaker 0>True false okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:31.680 --> 00:33:37.920
+<v Speaker 0>And and you're combining you're doing a recursive call combining
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100,100]}
+
+00:33:37.920 --> 00:33:41.250
+<v Speaker 0>the first thing in the list with the recursive call
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:41.250 --> 00:33:42.360
+<v Speaker 0>of everything else.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:42.360 --> 00:33:42.750
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:42.750 --> 00:33:44.700
+<v Speaker 0>And the operation that you're using here is different in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:44.700 --> 00:33:45.420
+<v Speaker 0>each case.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:45.420 --> 00:33:51.990
+<v Speaker 0>You know, plus times um append conjunction disjunction.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:52.140 --> 00:33:52.740
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:52.740 --> 00:33:59.160
+<v Speaker 0>So um, abstracting this up, an extract by abstracting this
+
+NOTE CONF {"raw":[100,86,100,100,100,44,100,56,100,100]}
+
+00:33:59.160 --> 00:34:01.740
+<v Speaker 0>to a pattern of computation, you know, you're going to
+
+NOTE CONF {"raw":[100,100,100,100,100,90,90,100,100,100]}
+
+00:34:01.740 --> 00:34:04.200
+<v Speaker 0>have to supply two things because there are two things
+
+NOTE CONF {"raw":[100,100,91,100,100,100,100,100,100,100]}
+
+00:34:04.200 --> 00:34:05.340
+<v Speaker 0>that keep changing.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:05.550 --> 00:34:06.060
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:06.060 --> 00:34:09.120
+<v Speaker 0>There's the there's the sort of starting value and there's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:09.120 --> 00:34:12.389
+<v Speaker 0>the operation you're using for combining things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:12.389 --> 00:34:18.929
+<v Speaker 0>And so um, this pattern is um called fold and
+
+NOTE CONF {"raw":[100,100,93,100,100,100,100,100,100,100]}
+
+00:34:18.929 --> 00:34:23.220
+<v Speaker 0>um, it's, uh, it's built into Haskell and the function
+
+NOTE CONF {"raw":[47,100,97,100,100,100,100,100,100,100]}
+
+00:34:23.220 --> 00:34:25.110
+<v Speaker 0>is a little bit more the definition is a little
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:25.110 --> 00:34:27.929
+<v Speaker 0>bit more complicated, but anyway, it's a higher order function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:27.929 --> 00:34:33.090
+<v Speaker 0>And here is the, uh, the functional, uh, the function
+
+NOTE CONF {"raw":[100,100,100,100,79,100,100,100,100,100]}
+
+00:34:33.090 --> 00:34:35.669
+<v Speaker 0>being used as a, as a first argument here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:36.300 --> 00:34:37.020
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:39.510 --> 00:34:44.070
+<v Speaker 0>But it's got, as I said, it takes two arguments
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:44.879 --> 00:34:48.360
+<v Speaker 0>in order to, you know, if you want to instantiate
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:48.360 --> 00:34:49.590
+<v Speaker 0>it, you need to give it two arguments.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:49.590 --> 00:34:51.450
+<v Speaker 0>You need to give the function and you need to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:51.450 --> 00:34:52.950
+<v Speaker 0>give it the starting value.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:53.100 --> 00:34:54.600
+<v Speaker 0>And so the function.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:57.600 --> 00:34:58.770
+<v Speaker 0>Is called f.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:58.770 --> 00:35:02.040
+<v Speaker 0>Here the starting value is called v okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:02.040 --> 00:35:04.020
+<v Speaker 0>In case the list okay.
+
+NOTE CONF {"raw":[100,100,100,93,100]}
+
+00:35:04.020 --> 00:35:06.330
+<v Speaker 0>The result here is you know, you give it a
+
+NOTE CONF {"raw":[100,100,100,93,100,100,95,100,100,100]}
+
+00:35:06.330 --> 00:35:09.630
+<v Speaker 0>list and it gives you a result of the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:09.630 --> 00:35:11.490
+<v Speaker 0>type as the things in the list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:12.120 --> 00:35:12.810
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:13.110 --> 00:35:15.780
+<v Speaker 0>Um, if the list is empty the result is V
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:16.260 --> 00:35:16.650
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:16.650 --> 00:35:17.490
+<v Speaker 0>The starting value.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:17.490 --> 00:35:19.480
+<v Speaker 0>This is the second parameter here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:19.480 --> 00:35:23.230
+<v Speaker 0>It's that same v okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:23.230 --> 00:35:27.850
+<v Speaker 0>If the list is not empty then you apply f.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:35:27.850 --> 00:35:28.870
+<v Speaker 0>It's a it's an argument.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:28.870 --> 00:35:30.580
+<v Speaker 0>It's a list with two arguments.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:30.580 --> 00:35:36.190
+<v Speaker 0>You apply f to that element x and to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:36.190 --> 00:35:41.410
+<v Speaker 0>recursive call of applying fold to f and v.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:41.410 --> 00:35:42.040
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:42.580 --> 00:35:46.090
+<v Speaker 0>And the rest of the list okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:46.090 --> 00:35:47.380
+<v Speaker 0>So we've got a pattern.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:47.860 --> 00:35:55.060
+<v Speaker 0>We instantiate it by supplying a binary function f and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:55.750 --> 00:35:56.710
+<v Speaker 0>a value.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:57.460 --> 00:36:01.300
+<v Speaker 0>Usually the value, as I've shown in these examples is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:01.300 --> 00:36:04.000
+<v Speaker 0>the identity value for the function.
+
+NOTE CONF {"raw":[84,100,100,100,100,100]}
+
+00:36:06.940 --> 00:36:07.240
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:07.240 --> 00:36:11.860
+<v Speaker 0>Identity meaning you know v applying f to v and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:11.860 --> 00:36:16.180
+<v Speaker 0>whatever it is gives the same result as v, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:16.180 --> 00:36:20.890
+<v Speaker 0>is the same as applying f to um v and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:36:20.890 --> 00:36:22.060
+<v Speaker 0>that entity value.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:22.990 --> 00:36:26.140
+<v Speaker 0>Its left and right identity is the name of that
+
+NOTE CONF {"raw":[74,100,100,100,100,83,100,100,100,100]}
+
+00:36:26.140 --> 00:36:27.340
+<v Speaker 0>in mathematics.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:29.230 --> 00:36:32.470
+<v Speaker 0>Okay, so this is a little bit more complicated.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:36:32.470 --> 00:36:34.030
+<v Speaker 0>So I'm going to spend a little bit more time
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:34.030 --> 00:36:35.200
+<v Speaker 0>explaining this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:36.340 --> 00:36:43.120
+<v Speaker 0>Um, and one uh, one thing that might help because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:43.120 --> 00:36:46.150
+<v Speaker 0>the functions that I'm using here are always infix functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,78,100]}
+
+00:36:46.150 --> 00:36:47.230
+<v Speaker 0>If you look at them.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:47.470 --> 00:36:51.070
+<v Speaker 0>Okay, it might help to write this using infix function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,62]}
+
+00:36:51.070 --> 00:36:53.740
+<v Speaker 0>So I'm taking exactly this definition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:53.740 --> 00:36:57.610
+<v Speaker 0>And I'm just changing it by writing the the the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,100,100]}
+
+00:36:57.610 --> 00:37:01.690
+<v Speaker 0>right hand side of this second equation with f as
+
+NOTE CONF {"raw":[100,100,100,100,76,100,100,100,100,100]}
+
+00:37:01.690 --> 00:37:02.980
+<v Speaker 0>an infix function.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:04.300 --> 00:37:04.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:04.930 --> 00:37:09.070
+<v Speaker 0>I can make any, any kind of, um, you know,
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:37:09.070 --> 00:37:14.200
+<v Speaker 0>function written using letters into infix by putting these like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:14.200 --> 00:37:16.760
+<v Speaker 0>backticks around around the name.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:16.760 --> 00:37:17.540
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[100]}
+
+00:37:18.500 --> 00:37:20.150
+<v Speaker 0>So that's what I've done here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:21.860 --> 00:37:23.090
+<v Speaker 0>It's the same function.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:23.090 --> 00:37:25.070
+<v Speaker 0>I'm just using it as an infix, meaning that I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:25.070 --> 00:37:27.890
+<v Speaker 0>put the arguments, you know, to the left and to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:27.890 --> 00:37:28.490
+<v Speaker 0>the right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:37:29.000 --> 00:37:29.360
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:29.360 --> 00:37:33.170
+<v Speaker 0>But that's exactly the same expression as I had a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:33.170 --> 00:37:36.830
+<v Speaker 0>second ago where F was, you know, use f, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:37:36.830 --> 00:37:38.660
+<v Speaker 0>then you give the first argument, you give the second
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:37:38.660 --> 00:37:39.350
+<v Speaker 0>argument.
+
+NOTE CONF {"raw":[100]}
+
+00:37:39.350 --> 00:37:39.560
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[80]}
+
+00:37:39.560 --> 00:37:42.080
+<v Speaker 0>So it's just a notational thing okay.
+
+NOTE CONF {"raw":[100,78,100,100,100,100,100]}
+
+00:37:42.080 --> 00:37:45.260
+<v Speaker 0>But it helps to explain what I'm doing here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:45.260 --> 00:37:46.610
+<v Speaker 0>And let me show you.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:48.740 --> 00:37:50.030
+<v Speaker 0>How that works.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:01.130 --> 00:38:01.430
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:01.430 --> 00:38:02.960
+<v Speaker 0>Using my using my example.
+
+NOTE CONF {"raw":[100,100,100,100,54]}
+
+00:38:02.960 --> 00:38:07.880
+<v Speaker 0>So some if I apply some to A1 up to
+
+NOTE CONF {"raw":[100,86,100,100,100,100,100,87,100,100]}
+
+00:38:07.880 --> 00:38:08.600
+<v Speaker 0>an.
+
+NOTE CONF {"raw":[100]}
+
+00:38:11.360 --> 00:38:11.630
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:11.630 --> 00:38:12.140
+<v Speaker 0>What's that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:12.140 --> 00:38:14.450
+<v Speaker 0>It's A1 Plus.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:17.660 --> 00:38:21.260
+<v Speaker 0>Dot dot dot up to a n plus zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,43,43,100,100]}
+
+00:38:21.530 --> 00:38:22.160
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:22.160 --> 00:38:24.650
+<v Speaker 0>The zero is the is what I you know I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:24.650 --> 00:38:26.840
+<v Speaker 0>go with recursion down this list and then eventually I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:26.840 --> 00:38:27.350
+<v Speaker 0>get to the end.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:27.350 --> 00:38:29.120
+<v Speaker 0>And that's where the zero comes from.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:29.120 --> 00:38:31.550
+<v Speaker 0>And then I'm adding these.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:35.240 --> 00:38:36.380
+<v Speaker 0>I'm adding these up okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:36.380 --> 00:38:37.190
+<v Speaker 0>Product.
+
+NOTE CONF {"raw":[100]}
+
+00:38:44.150 --> 00:38:46.640
+<v Speaker 0>Is similar but it uses multiplication.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:50.630 --> 00:38:52.700
+<v Speaker 0>Um concat.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:57.410 --> 00:39:00.440
+<v Speaker 0>Is similar but it's using append.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:12.110 --> 00:39:13.400
+<v Speaker 0>Do you see that in the back?
+
+NOTE CONF {"raw":[68,100,100,100,100,100,100]}
+
+00:39:15.830 --> 00:39:16.820
+<v Speaker 0>I hope so.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:17.690 --> 00:39:18.230
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:39:25.280 --> 00:39:25.550
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:39:25.550 --> 00:39:26.390
+<v Speaker 0>And.
+
+NOTE CONF {"raw":[100]}
+
+00:39:41.810 --> 00:39:43.070
+<v Speaker 0>And or.
+
+NOTE CONF {"raw":[100,99]}
+
+00:39:43.370 --> 00:39:43.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[98]}
+
+00:39:43.820 --> 00:39:44.960
+<v Speaker 0>Five examples.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:45.380 --> 00:39:47.870
+<v Speaker 0>So, I mean, the the pattern is obvious when I
+
+NOTE CONF {"raw":[100,100,100,80,79,68,68,100,100,100]}
+
+00:39:47.870 --> 00:39:49.340
+<v Speaker 0>write them down like this.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:49.400 --> 00:39:51.710
+<v Speaker 0>Um, so this is, this is not the definition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:51.710 --> 00:39:55.700
+<v Speaker 0>This is what the definition gives you as a, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:57.050 --> 00:40:01.580
+<v Speaker 0>you know, for, for a list of length n, okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:01.580 --> 00:40:08.180
+<v Speaker 0>So um, fold apply to F and v and a
+
+NOTE CONF {"raw":[100,100,100,70,100,100,100,100,100,100]}
+
+00:40:08.180 --> 00:40:08.750
+<v Speaker 0>list.
+
+NOTE CONF {"raw":[100]}
+
+00:40:12.150 --> 00:40:12.690
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:12.690 --> 00:40:13.770
+<v Speaker 0>It's it's.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:20.160 --> 00:40:21.660
+<v Speaker 0>It's exactly the same.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:23.190 --> 00:40:23.610
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:40:26.310 --> 00:40:30.990
+<v Speaker 0>With each one of these operations replaced by f.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96]}
+
+00:40:33.600 --> 00:40:34.290
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:39.120 --> 00:40:41.580
+<v Speaker 0>I don't know if that's helpful, but it's helpful for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:41.580 --> 00:40:42.360
+<v Speaker 0>me anyway.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:42.780 --> 00:40:47.490
+<v Speaker 0>Um, I think it makes it pretty clear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:47.970 --> 00:40:51.090
+<v Speaker 0>Um, there's another there's another diagram I want to show
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:51.090 --> 00:40:51.930
+<v Speaker 0>you in a minute.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:52.620 --> 00:40:54.750
+<v Speaker 0>Uh, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:54.750 --> 00:41:02.280
+<v Speaker 0>So I can use going back to my, um, my
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,83,100]}
+
+00:41:02.280 --> 00:41:03.210
+<v Speaker 0>code here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:03.240 --> 00:41:03.600
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:03.600 --> 00:41:06.360
+<v Speaker 0>So I can use fold to define all of these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:06.360 --> 00:41:08.550
+<v Speaker 0>five functions in one in kind of one line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:41:08.640 --> 00:41:10.800
+<v Speaker 0>So, um, so some.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:12.300 --> 00:41:13.860
+<v Speaker 0>Okay, here's a previous definition.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:13.860 --> 00:41:14.940
+<v Speaker 0>Here's what it does.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:14.940 --> 00:41:16.320
+<v Speaker 0>And you can define it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:16.320 --> 00:41:23.700
+<v Speaker 0>Some of X's is just fold um plus zero x
+
+NOTE CONF {"raw":[87,100,34,100,100,100,100,100,100,62]}
+
+00:41:23.700 --> 00:41:25.770
+<v Speaker 0>is okay.
+
+NOTE CONF {"raw":[62,100]}
+
+00:41:25.770 --> 00:41:31.350
+<v Speaker 0>There's a slight um whoops a slight um, thing you
+
+NOTE CONF {"raw":[100,100,100,100,66,100,100,100,100,100]}
+
+00:41:31.350 --> 00:41:33.960
+<v Speaker 0>need to remember here, which is that if you want
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:33.960 --> 00:41:36.510
+<v Speaker 0>to use I don't know if this is actually come
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:36.510 --> 00:41:37.770
+<v Speaker 0>up, it says recall that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:37.770 --> 00:41:39.630
+<v Speaker 0>I don't know if I've actually said this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:39.630 --> 00:41:40.080
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:40.080 --> 00:41:45.750
+<v Speaker 0>But a, um, um, a function which is written using
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:45.750 --> 00:41:48.360
+<v Speaker 0>a symbol like plus or times or whatever.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:48.360 --> 00:41:48.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:48.930 --> 00:41:53.820
+<v Speaker 0>So normally you write that function, um, infix meaning you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:41:53.820 --> 00:41:55.770
+<v Speaker 0>provide the arguments left and right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:56.760 --> 00:41:57.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:57.780 --> 00:42:00.960
+<v Speaker 0>Um, if you would just write the function a plus
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:00.960 --> 00:42:04.650
+<v Speaker 0>here without the parentheses, then Haskell would think you're trying
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:04.650 --> 00:42:08.250
+<v Speaker 0>to add fold or fold to zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:08.790 --> 00:42:09.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:09.180 --> 00:42:11.070
+<v Speaker 0>And it would will give you a give you an
+
+NOTE CONF {"raw":[100,73,38,80,100,100,100,100,100,100]}
+
+00:42:11.070 --> 00:42:11.550
+<v Speaker 0>error.
+
+NOTE CONF {"raw":[100]}
+
+00:42:11.910 --> 00:42:12.420
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:12.420 --> 00:42:14.340
+<v Speaker 0>You need to tell Haskell what I mean.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:14.340 --> 00:42:17.730
+<v Speaker 0>Here is the function, not the function applied to two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:17.730 --> 00:42:18.270
+<v Speaker 0>arguments.
+
+NOTE CONF {"raw":[100]}
+
+00:42:18.270 --> 00:42:18.510
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:18.510 --> 00:42:19.530
+<v Speaker 0>Just a function.
+
+NOTE CONF {"raw":[100,66,100]}
+
+00:42:19.530 --> 00:42:19.920
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:19.920 --> 00:42:23.160
+<v Speaker 0>To get to get the function, you put parentheses around
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:23.160 --> 00:42:24.600
+<v Speaker 0>it okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:24.600 --> 00:42:27.660
+<v Speaker 0>Just to Haskell notation you put parentheses around a symbol
+
+NOTE CONF {"raw":[100,66,100,100,100,100,100,100,96,100]}
+
+00:42:27.690 --> 00:42:29.820
+<v Speaker 0>to make it to change it from being infix to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:29.850 --> 00:42:33.390
+<v Speaker 0>to normal which is called prefix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:34.380 --> 00:42:34.800
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:34.800 --> 00:42:37.650
+<v Speaker 0>So here's here's what I mean by you know here's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:37.650 --> 00:42:38.430
+<v Speaker 0>infix.
+
+NOTE CONF {"raw":[100]}
+
+00:42:40.230 --> 00:42:44.340
+<v Speaker 0>Here's what I just called prefix okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:44.340 --> 00:42:48.570
+<v Speaker 0>Infix um function goes in between the arguments prefix.
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100,100]}
+
+00:42:48.570 --> 00:42:50.790
+<v Speaker 0>The the function goes before the argument.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:50.790 --> 00:42:53.850
+<v Speaker 0>So that's, that's why that's, that's why these parentheses are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:53.850 --> 00:42:54.240
+<v Speaker 0>there.
+
+NOTE CONF {"raw":[100]}
+
+00:42:56.220 --> 00:42:56.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:57.180 --> 00:43:01.170
+<v Speaker 0>So anyway sum is fold applied to um plus and
+
+NOTE CONF {"raw":[100,100,77,100,99,66,100,71,100,100]}
+
+00:43:01.170 --> 00:43:01.920
+<v Speaker 0>zero.
+
+NOTE CONF {"raw":[100]}
+
+00:43:02.130 --> 00:43:04.740
+<v Speaker 0>Um and for all the other definitions I can do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:04.740 --> 00:43:06.120
+<v Speaker 0>exactly the same kind of thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:06.120 --> 00:43:10.930
+<v Speaker 0>So for product it's multiplication and one for concat, it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:10.930 --> 00:43:13.570
+<v Speaker 0>append and empty list and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:13.570 --> 00:43:14.110
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:16.330 --> 00:43:20.020
+<v Speaker 0>So this is um, all of these, uh, examples, all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:20.020 --> 00:43:22.900
+<v Speaker 0>of these five examples written using fold.
+
+NOTE CONF {"raw":[63,100,100,100,100,100,100]}
+
+00:43:23.530 --> 00:43:27.100
+<v Speaker 0>And um, here's a computation sequence which I'm not going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:27.100 --> 00:43:29.830
+<v Speaker 0>to go through, but it's the same actually.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:29.830 --> 00:43:31.990
+<v Speaker 0>Sorry, this was the same one you've seen before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:32.230 --> 00:43:34.690
+<v Speaker 0>Um, for some step by step.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:34.720 --> 00:43:35.200
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:35.200 --> 00:43:36.640
+<v Speaker 0>Using the recursive definition.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:36.640 --> 00:43:41.260
+<v Speaker 0>And if I write it using fold, then um, then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:41.560 --> 00:43:43.690
+<v Speaker 0>uh, it's a little bit longer just because I have
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:43:43.690 --> 00:43:46.660
+<v Speaker 0>to expand what fold means.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:46.990 --> 00:43:50.800
+<v Speaker 0>Um, but basically I'm doing the same thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:50.800 --> 00:43:52.390
+<v Speaker 0>Thing one plus.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:52.510 --> 00:43:55.030
+<v Speaker 0>Okay, if I'm applying to one and two here, then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:55.030 --> 00:43:58.300
+<v Speaker 0>in fact, this this last this next to last line
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,74,100,100]}
+
+00:43:58.300 --> 00:44:04.300
+<v Speaker 0>here is, um, exactly what I wrote on the piece
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:04.300 --> 00:44:05.890
+<v Speaker 0>of paper a second ago.
+
+NOTE CONF {"raw":[100,100,100,100,97]}
+
+00:44:09.700 --> 00:44:12.910
+<v Speaker 0>Okay, first line up there for the case where we've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:12.910 --> 00:44:14.410
+<v Speaker 0>got A1 and A2.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:14.710 --> 00:44:16.240
+<v Speaker 0>So we're n equals two.
+
+NOTE CONF {"raw":[100,87,100,100,100]}
+
+00:44:19.660 --> 00:44:21.670
+<v Speaker 0>So are there any questions.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:23.590 --> 00:44:26.980
+<v Speaker 0>There is a particular question that I'm hoping somebody will
+
+NOTE CONF {"raw":[94,94,100,100,100,100,100,100,100,100]}
+
+00:44:26.980 --> 00:44:27.610
+<v Speaker 0>ask.
+
+NOTE CONF {"raw":[100]}
+
+00:44:31.330 --> 00:44:31.780
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[94]}
+
+00:44:33.460 --> 00:44:35.770
+<v Speaker 3>It's like the function also called.
+
+NOTE CONF {"raw":[65,79,84,79,92,87]}
+
+00:44:37.390 --> 00:44:40.330
+<v Speaker 0>Are you just said it I think.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:40.990 --> 00:44:44.080
+<v Speaker 4>Yeah I mean there is also a function called L
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,100,100,100]}
+
+00:44:44.380 --> 00:44:48.970
+<v Speaker 4>and I mean um, I think it works just like,
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,96,100,100]}
+
+00:44:48.970 --> 00:44:54.460
+<v Speaker 4>uh, it takes, uh, the first argument and then adds
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:54.460 --> 00:44:55.210
+<v Speaker 4>the list to it.
+
+NOTE CONF {"raw":[100,94,100,100]}
+
+00:44:55.480 --> 00:44:56.830
+<v Speaker 4>But is there a difference?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:56.830 --> 00:44:58.300
+<v Speaker 4>Like, can they be different?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:58.330 --> 00:44:59.170
+<v Speaker 0>I'll explain that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:59.170 --> 00:44:59.470
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:44:59.470 --> 00:45:03.970
+<v Speaker 0>So the question was about, um, fold l okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:03.970 --> 00:45:06.100
+<v Speaker 0>So what I was expecting is a question and it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:06.100 --> 00:45:09.610
+<v Speaker 0>kind of it's exactly what you just said, expressed in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:09.610 --> 00:45:12.790
+<v Speaker 0>a different way, is why am I talking about a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:12.790 --> 00:45:14.080
+<v Speaker 0>function called fold?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:14.080 --> 00:45:17.620
+<v Speaker 0>But writing a function which is written fold r.
+
+NOTE CONF {"raw":[91,100,100,100,100,100,100,100,44]}
+
+00:45:18.070 --> 00:45:20.320
+<v Speaker 0>And you asked, what about fold L?
+
+NOTE CONF {"raw":[100,100,79,100,100,100,100]}
+
+00:45:20.350 --> 00:45:23.350
+<v Speaker 0>Okay, there is it turns out there's, there's two functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:23.350 --> 00:45:25.150
+<v Speaker 0>There's fold r and fold L.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:25.150 --> 00:45:30.190
+<v Speaker 0>And what fold are means is to fold a bracketing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,70,100,62,100]}
+
+00:45:30.220 --> 00:45:31.660
+<v Speaker 0>to the to the right.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:32.410 --> 00:45:33.070
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:45:33.910 --> 00:45:36.580
+<v Speaker 0>Um, bracketing to the right means.
+
+NOTE CONF {"raw":[99,100,100,100,100,100]}
+
+00:45:43.720 --> 00:45:46.090
+<v Speaker 0>Means that the way this works.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:50.560 --> 00:45:53.590
+<v Speaker 0>Is like that and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:53.590 --> 00:45:54.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:45:55.840 --> 00:45:57.580
+<v Speaker 0>That's what I mean by bracketing to the right.
+
+NOTE CONF {"raw":[60,100,100,100,100,100,100,100,100]}
+
+00:45:57.580 --> 00:45:58.870
+<v Speaker 0>This is what fold.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:58.900 --> 00:46:01.750
+<v Speaker 0>This is what fold are does I'm going to stop
+
+NOTE CONF {"raw":[100,100,100,100,67,100,100,100,100,100]}
+
+00:46:01.750 --> 00:46:04.300
+<v Speaker 0>talking about fold and probably talk about fold.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:46:04.300 --> 00:46:05.420
+<v Speaker 0>Ah Okay.
+
+NOTE CONF {"raw":[83,100]}
+
+00:46:05.570 --> 00:46:08.960
+<v Speaker 0>Um, so there's another.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:08.990 --> 00:46:13.010
+<v Speaker 0>There's another one which has the same type, but it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:13.010 --> 00:46:18.500
+<v Speaker 0>has a different definition which results in, um, I'll just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:18.500 --> 00:46:19.130
+<v Speaker 0>write it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:27.590 --> 00:46:28.220
+<v Speaker 5>Uh.
+
+NOTE CONF {"raw":[99]}
+
+00:46:37.220 --> 00:46:38.150
+<v Speaker 0>Sorry, f.
+
+NOTE CONF {"raw":[100,94]}
+
+00:46:48.350 --> 00:46:51.710
+<v Speaker 0>I'm not sure that that's very clear, because my horrible
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:46:51.710 --> 00:46:52.430
+<v Speaker 0>handwriting.
+
+NOTE CONF {"raw":[100]}
+
+00:46:52.430 --> 00:46:57.920
+<v Speaker 0>But it's it's doing the same computation, you know, using
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:57.920 --> 00:46:59.480
+<v Speaker 0>using f everywhere.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:01.130 --> 00:47:03.890
+<v Speaker 0>I should maybe first, um, put the Put Francis in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,90,100,100]}
+
+00:47:03.890 --> 00:47:04.370
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:47:06.080 --> 00:47:06.680
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:06.680 --> 00:47:09.470
+<v Speaker 0>It's it's it's using f to combine all these things
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100,100,100,100]}
+
+00:47:09.470 --> 00:47:13.760
+<v Speaker 0>with V at the beginning, and the bracketing goes to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:13.760 --> 00:47:14.570
+<v Speaker 0>the left.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:16.700 --> 00:47:17.390
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:18.050 --> 00:47:20.960
+<v Speaker 0>If if f is associative.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:23.510 --> 00:47:25.970
+<v Speaker 0>And commutative then these are the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:26.300 --> 00:47:28.850
+<v Speaker 0>They give the same result okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,80]}
+
+00:47:29.450 --> 00:47:33.800
+<v Speaker 0>Um if not then they can give different results.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100]}
+
+00:47:37.190 --> 00:47:42.050
+<v Speaker 0>Let me show you a different diagram that might help.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:44.780 --> 00:47:45.890
+<v Speaker 0>Okay a list.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:46.880 --> 00:47:50.360
+<v Speaker 0>I said a list is always constructed.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100]}
+
+00:47:52.490 --> 00:47:55.520
+<v Speaker 0>Using cons and the empty list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:47:56.870 --> 00:47:57.260
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:48:00.710 --> 00:48:01.610
+<v Speaker 0>So, um.
+
+NOTE CONF {"raw":[100,95]}
+
+00:48:01.610 --> 00:48:02.210
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:48:02.370 --> 00:48:04.170
+<v Speaker 0>Uh, that's a cons.
+
+NOTE CONF {"raw":[100,100,100,60]}
+
+00:48:07.110 --> 00:48:12.690
+<v Speaker 0>Okay, so the list, the list a1 cons, a2 cons,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:12.690 --> 00:48:13.440
+<v Speaker 0>etc..
+
+NOTE CONF {"raw":[84]}
+
+00:48:15.480 --> 00:48:18.990
+<v Speaker 0>Up to a n cons nil can be written like
+
+NOTE CONF {"raw":[100,100,85,85,100,100,100,100,100,100]}
+
+00:48:18.990 --> 00:48:19.440
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:48:19.440 --> 00:48:19.890
+<v Speaker 0>This is.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:19.890 --> 00:48:21.480
+<v Speaker 0>This is called a tree.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:21.480 --> 00:48:24.390
+<v Speaker 0>I don't know if you've encountered trees in Julien's lectures
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,47,100]}
+
+00:48:24.390 --> 00:48:24.990
+<v Speaker 0>yet.
+
+NOTE CONF {"raw":[100]}
+
+00:48:25.650 --> 00:48:28.020
+<v Speaker 0>Have you know.
+
+NOTE CONF {"raw":[100,100,79]}
+
+00:48:28.020 --> 00:48:31.740
+<v Speaker 0>Okay, trees in computer science are written upside down.
+
+NOTE CONF {"raw":[100,100,79,100,100,100,100,100,100]}
+
+00:48:31.740 --> 00:48:36.300
+<v Speaker 0>Okay, so trees in in in nature grow upwards, trees
+
+NOTE CONF {"raw":[100,100,100,52,100,100,100,100,100,100]}
+
+00:48:36.300 --> 00:48:39.480
+<v Speaker 0>in computer science grow downwards.
+
+NOTE CONF {"raw":[58,100,100,100,100]}
+
+00:48:40.380 --> 00:48:40.800
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:40.800 --> 00:48:43.470
+<v Speaker 0>And you can use trees to represent expressions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98]}
+
+00:48:43.470 --> 00:48:47.160
+<v Speaker 0>So we're combining A1 with with.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:48:51.000 --> 00:48:55.230
+<v Speaker 0>Um with cons with the result of all this which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:55.230 --> 00:48:58.080
+<v Speaker 0>is A2 combined with cons with all this.
+
+NOTE CONF {"raw":[100,100,100,100,100,35,100,100]}
+
+00:48:58.080 --> 00:48:58.410
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:58.410 --> 00:49:00.630
+<v Speaker 0>Anyway, I hope you can understand this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:00.630 --> 00:49:02.610
+<v Speaker 0>This is only an informal explanation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:02.610 --> 00:49:07.020
+<v Speaker 0>And so fold our of f of v.
+
+NOTE CONF {"raw":[100,100,100,78,100,100,100,90]}
+
+00:49:07.590 --> 00:49:09.690
+<v Speaker 0>It basically takes that picture.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:13.260 --> 00:49:17.490
+<v Speaker 0>And replaces all of the cons with FS.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,72]}
+
+00:49:21.720 --> 00:49:25.440
+<v Speaker 0>And the empty list with a V is what's going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:25.440 --> 00:49:26.160
+<v Speaker 0>on here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:29.370 --> 00:49:30.000
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:30.000 --> 00:49:33.300
+<v Speaker 0>And the picture for fold L is different.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:49:34.440 --> 00:49:35.370
+<v Speaker 0>It's in the book.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:35.370 --> 00:49:37.680
+<v Speaker 0>Try to figure out yourself well.
+
+NOTE CONF {"raw":[100,100,100,100,100,91]}
+
+00:49:37.680 --> 00:49:42.210
+<v Speaker 0>Try to write the definition yourself and and then try
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:42.210 --> 00:49:43.950
+<v Speaker 0>to figure out what the picture would be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:49:44.220 --> 00:49:44.970
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:44.970 --> 00:49:47.100
+<v Speaker 0>My time is almost up.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:47.100 --> 00:49:48.720
+<v Speaker 0>I'll just show you the last thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:48.720 --> 00:49:52.170
+<v Speaker 0>This is just showing how you can combine these functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:52.170 --> 00:49:54.870
+<v Speaker 0>And so remember my example, the sum of the squares
+
+NOTE CONF {"raw":[100,100,100,100,100,91,100,100,100,100]}
+
+00:49:54.870 --> 00:49:56.340
+<v Speaker 0>of the odd numbers in the list.
+
+NOTE CONF {"raw":[100,100,100,100,100,52,100]}
+
+00:49:56.580 --> 00:49:59.310
+<v Speaker 0>Um, you can combine, you know, you can write one
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100,100,100,100]}
+
+00:49:59.310 --> 00:50:02.400
+<v Speaker 0>one line definition with a helper function, the sum of
+
+NOTE CONF {"raw":[100,100,100,100,92,100,100,100,100,100]}
+
+00:50:02.400 --> 00:50:04.380
+<v Speaker 0>the square of the of the odd numbers in the
+
+NOTE CONF {"raw":[100,58,100,100,99,100,95,100,100,72]}
+
+00:50:04.380 --> 00:50:05.040
+<v Speaker 0>list there.
+
+NOTE CONF {"raw":[100,98]}
+
+00:50:05.700 --> 00:50:06.570
+<v Speaker 0>Thank you.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:07.290 --> 00:50:08.100
+<v Speaker 0>Uh, more.
+
+NOTE CONF {"raw":[90,100]}
+
+00:50:08.130 --> 00:50:08.640
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:50:11.010 --> 00:50:12.990
+<v Speaker 0>More higher order functions tomorrow.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:50:39.600 --> 00:50:40.350
+<v Speaker 6>I just want to ask that.
+
+NOTE CONF {"raw":[87,95,99,99,100,71]}
+
+00:50:40.890 --> 00:50:43.620
+<v Speaker 6>What's the for our use for like the mean what's
+
+NOTE CONF {"raw":[100,100,75,46,87,100,96,99,71,100]}
+
+00:50:43.620 --> 00:50:44.280
+<v Speaker 6>what's what.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:45.540 --> 00:50:46.980
+<v Speaker 0>Fold are what is it?
+
+NOTE CONF {"raw":[78,67,100,100,100]}
+
+00:50:46.980 --> 00:50:48.000
+<v Speaker 0>It means fold.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:50:48.660 --> 00:50:49.740
+<v Speaker 0>Uh, to the right.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:50.160 --> 00:50:52.020
+<v Speaker 6>Like like what's the purpose of using this?
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100]}
+
+00:50:52.020 --> 00:50:53.580
+<v Speaker 6>When when when do we use when do we use
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:50:53.580 --> 00:50:53.700
+<v Speaker 6>it?
+
+NOTE CONF {"raw":[58]}
+
+00:50:53.700 --> 00:50:54.960
+<v Speaker 7>Oh, uh.
+
+NOTE CONF {"raw":[88,100]}
+
+00:50:54.960 --> 00:51:02.110
+<v Speaker 0>Well, defining things, which, uh, Combine items in the list
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100,100]}
+
+00:51:02.110 --> 00:51:03.040
+<v Speaker 0>together.
+
+NOTE CONF {"raw":[100]}
+
+00:51:03.940 --> 00:51:06.400
+<v Speaker 0>I mean, you've seen examples, some in product and so
+
+NOTE CONF {"raw":[100,100,100,100,92,100,100,100,100,100]}
+
+00:51:06.400 --> 00:51:06.910
+<v Speaker 0>forth.
+
+NOTE CONF {"raw":[100]}
+
+00:51:06.910 --> 00:51:08.830
+<v Speaker 0>This kind of thing happens all the time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:51:08.860 --> 00:51:12.850
+<v Speaker 0>Like an example would be more complicated with example would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,86,100,100]}
+
+00:51:12.850 --> 00:51:15.250
+<v Speaker 0>be if you want to sort the elements in a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,55]}
+
+00:51:15.250 --> 00:51:18.880
+<v Speaker 0>list into into ascending order, you know, you've got a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:18.880 --> 00:51:20.440
+<v Speaker 0>list of numbers, you want to put them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:51:20.440 --> 00:51:23.050
+<v Speaker 0>You want to produce a list which is in all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:23.050 --> 00:51:24.010
+<v Speaker 0>of them in order.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:51:24.010 --> 00:51:24.640
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[90]}
+
+00:51:24.850 --> 00:51:29.170
+<v Speaker 0>Um, this is um, fold applied to a function called
+
+NOTE CONF {"raw":[100,100,100,75,100,100,100,100,100,100]}
+
+00:51:29.170 --> 00:51:31.060
+<v Speaker 0>insert starting with the empty list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:51:31.060 --> 00:51:33.700
+<v Speaker 0>So you insert the elements one at a time into
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:33.700 --> 00:51:34.270
+<v Speaker 0>an empty list.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:51:34.270 --> 00:51:38.380
+<v Speaker 0>It grows and it always keeps the resulting elements in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:38.380 --> 00:51:39.010
+<v Speaker 0>order.
+
+NOTE CONF {"raw":[100]}
+
+00:51:39.010 --> 00:51:39.940
+<v Speaker 0>That's an example.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:51:39.940 --> 00:51:40.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:51:40.180 --> 00:51:43.150
+<v Speaker 0>Lots of times you're putting together stuff in a list
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:43.150 --> 00:51:46.480
+<v Speaker 0>using some sort of operation and building up a result
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,75]}
+
+00:51:46.480 --> 00:51:47.050
+<v Speaker 0>like that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:51:47.050 --> 00:51:48.370
+<v Speaker 0>Okay, that's an example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:51:48.370 --> 00:51:49.390
+<v Speaker 0>You'll see them coming up.
+
+NOTE CONF {"raw":[100,100,82,100,100]}
+
+00:51:49.390 --> 00:51:49.660
+<v Speaker 0>Yep.
+
+NOTE CONF {"raw":[80]}
+
+00:51:49.990 --> 00:51:50.350
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:51:50.350 --> 00:51:51.520
+<v Speaker 0>Did you have one more?
+
+NOTE CONF {"raw":[100,100,100,79,57]}
+
+00:51:52.090 --> 00:51:54.700
+<v Speaker 6>Because I assume that for L is more useful than
+
+NOTE CONF {"raw":[89,100,82,100,64,78,100,100,100,100]}
+
+00:51:54.700 --> 00:51:55.360
+<v Speaker 6>for R or.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:51:55.540 --> 00:51:58.330
+<v Speaker 0>Actually fold R I would say is more often used
+
+NOTE CONF {"raw":[100,100,88,100,100,100,100,100,100,100]}
+
+00:51:58.330 --> 00:52:02.590
+<v Speaker 0>because they're equivalent and it's kind of more intuitive how
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:52:02.590 --> 00:52:03.430
+<v Speaker 0>it works.
+
+NOTE CONF {"raw":[100,100]}
+
+00:52:03.490 --> 00:52:03.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:52:03.910 --> 00:52:06.190
+<v Speaker 0>But um, they're usually equivalent.
+
+NOTE CONF {"raw":[100,96,100,100,100]}
+
+00:52:06.490 --> 00:52:06.790
+<v Speaker 6>Yeah.
+
+NOTE CONF {"raw":[90]}
+
+00:52:07.360 --> 00:52:10.510
+<v Speaker 6>Mentioned something about partial computation and it's that you don't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,51,100,100,100]}
+
+00:52:10.510 --> 00:52:11.500
+<v Speaker 6>have to put all of the.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:52:12.010 --> 00:52:12.250
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:52:12.250 --> 00:52:13.810
+<v Speaker 0>Partial partial evaluation.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:52:13.810 --> 00:52:14.440
+<v Speaker 0>I'll come to that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:52:14.440 --> 00:52:16.480
+<v Speaker 0>It'll be in the next lecture okay.
+
+NOTE CONF {"raw":[90,100,100,100,100,100,82]}
+
+00:52:17.050 --> 00:52:17.380
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:52:17.380 --> 00:52:17.950
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[99]}
+
+00:52:18.490 --> 00:52:19.480
+<v Speaker 0>I just wanted to ask.
+
+NOTE CONF {"raw":[95,100,94,100,100]}
+
+00:52:20.020 --> 00:52:21.670
+<v Speaker 8>Is there no way to raise the volume?
+
+NOTE CONF {"raw":[93,99,100,100,100,100,100,100]}
+
+00:52:22.450 --> 00:52:23.200
+<v Speaker 0>The volume?
+
+NOTE CONF {"raw":[100,100]}
+
+00:52:23.200 --> 00:52:25.570
+<v Speaker 0>Yeah, I would like to I'm going to ask about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:52:25.570 --> 00:52:27.760
+<v Speaker 0>that because, for example, the music is almost inaudible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:52:28.660 --> 00:52:29.320
+<v Speaker 6>That's what I meant.
+
+NOTE CONF {"raw":[100,100,100,99]}
+
+00:52:29.560 --> 00:52:29.890
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:52:30.760 --> 00:52:32.860
+<v Speaker 0>It should be blasting everywhere especially.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:52:32.980 --> 00:52:33.280
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[92]}
+
+00:52:33.430 --> 00:52:33.970
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:52:33.970 --> 00:52:35.350
+<v Speaker 0>I'll just log myself out.
+
+NOTE CONF {"raw":[100,100,86,100,100]}
+
+00:52:35.350 --> 00:52:35.860
+<v Speaker 0>Give me a second.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:52:35.860 --> 00:52:36.220
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[88]}
+
+00:52:36.550 --> 00:52:37.240
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[88]}
+
+00:52:37.240 --> 00:52:37.600
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[44,72]}
+
+00:52:37.630 --> 00:52:38.050
+<v Speaker 0>Hi.
+
+NOTE CONF {"raw":[97]}
+
+00:52:38.530 --> 00:52:41.080
+<v Speaker 6>I'm not really sure that the purpose of the code
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,98]}
+
+00:52:41.080 --> 00:52:44.230
+<v Speaker 6>are for the specific application.
+
+NOTE CONF {"raw":[93,73,100,100,100]}
+
+00:52:44.440 --> 00:52:44.830
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:52:44.830 --> 00:52:48.670
+<v Speaker 0>So I showed little examples of, um, you know, these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,87,100,100,100]}
+
+00:52:48.670 --> 00:52:49.780
+<v Speaker 0>five examples.
+
+NOTE CONF {"raw":[100,100]}
+
+00:52:49.780 --> 00:52:50.410
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:52:50.590 --> 00:52:54.880
+<v Speaker 0>This this happens more frequently than just these five examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:52:54.880 --> 00:52:55.240
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:52:55.240 --> 00:52:58.450
+<v Speaker 0>So whenever you're, you know, working on a list of
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,100,100]}
+
+00:52:58.450 --> 00:53:00.130
+<v Speaker 0>items and you want to combine, you want to build
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:53:00.130 --> 00:53:03.310
+<v Speaker 0>up a result one at a time from from the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:53:03.310 --> 00:53:04.510
+<v Speaker 0>elements in the list.
+
+NOTE CONF {"raw":[100,98,100,100]}
+
+00:53:05.110 --> 00:53:07.270
+<v Speaker 0>Um, it happens all the time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:53:07.990 --> 00:53:09.910
+<v Speaker 6>The result is actually the same.
+
+NOTE CONF {"raw":[51,51,61,100,100,100]}
+
+00:53:09.910 --> 00:53:11.440
+<v Speaker 6>But how?
+
+NOTE CONF {"raw":[100,100]}
+
+00:53:11.770 --> 00:53:12.100
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:53:12.100 --> 00:53:13.060
+<v Speaker 0>What's the question then?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:53:13.060 --> 00:53:15.070
+<v Speaker 0>Fold is fold L in pulled out.
+
+NOTE CONF {"raw":[100,100,100,96,90,99,92]}
+
+00:53:16.600 --> 00:53:17.260
+<v Speaker 0>Yeah, yeah.
+
+NOTE CONF {"raw":[100,100]}
+
+00:53:17.260 --> 00:53:20.230
+<v Speaker 0>Well, like I said, building up a result in stages
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,96,100,100]}
+
+00:53:20.230 --> 00:53:23.260
+<v Speaker 0>from the elements in a list using always the same
+
+NOTE CONF {"raw":[100,100,100,94,90,100,100,100,100,100]}
+
+00:53:23.260 --> 00:53:24.160
+<v Speaker 0>operation.
+
+NOTE CONF {"raw":[100]}
+
+00:53:26.290 --> 00:53:27.310
+<v Speaker 6>The same result Y.
+
+NOTE CONF {"raw":[90,91,84,60]}
+
+00:53:28.060 --> 00:53:29.470
+<v Speaker 0>No, no, it's not the same.
+
+NOTE CONF {"raw":[99,100,100,100,100,100]}
+
+00:53:29.470 --> 00:53:30.730
+<v Speaker 0>What do you mean, the same result?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:53:30.730 --> 00:53:34.540
+<v Speaker 6>Like after the calculations, they both have got the same
+
+NOTE CONF {"raw":[75,100,100,89,100,100,100,100,100,100]}
+
+00:53:34.540 --> 00:53:34.900
+<v Speaker 6>result.
+
+NOTE CONF {"raw":[91]}
+
+00:53:34.900 --> 00:53:36.790
+<v Speaker 0>You mean fold L and fold are.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,48]}
+
+00:53:36.850 --> 00:53:37.570
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:53:37.570 --> 00:53:37.960
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:53:37.960 --> 00:53:40.960
+<v Speaker 0>So usually it doesn't matter which one you use.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:53:41.590 --> 00:53:42.040
+<v Speaker 0>Is that the.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:53:42.070 --> 00:53:43.270
+<v Speaker 0>Is that the question?
+
+NOTE CONF {"raw":[100,100,98,100]}
+
+00:53:43.570 --> 00:53:44.140
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:53:44.140 --> 00:53:45.220
+<v Speaker 0>Usually it doesn't matter.
+
+NOTE CONF {"raw":[100,96,100,100]}
+
+00:53:48.730 --> 00:53:50.470
+<v Speaker 0>You can you can use either one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:53:50.470 --> 00:53:52.690
+<v Speaker 0>It's uh most people use fold.
+
+NOTE CONF {"raw":[100,74,100,100,100,100]}
+
+00:53:52.690 --> 00:53:52.900
+<v Speaker 0>Ah.
+
+NOTE CONF {"raw":[50]}
+
+00:53:52.900 --> 00:53:55.670
+<v Speaker 0>Because it's more intuitively Uh, actually, I'm just.
+
+NOTE CONF {"raw":[100,100,100,100,76,100,100,100]}
+
+00:53:55.670 --> 00:53:58.250
+<v Speaker 0>I realise I'm just, uh, broadcasting here.
+
+NOTE CONF {"raw":[100,85,100,100,100,100,100]}
+
+00:53:59.330 --> 00:53:59.660
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:53:59.690 --> 00:54:00.290
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[97]}
+
+00:54:01.760 --> 00:54:02.030
+<v Unknown>Yeah.
+
+NOTE CONF {"raw":[96]}
+
+00:54:02.900 --> 00:54:03.230
+<v Unknown>Okay.
+
+NOTE CONF {"raw":[99]}
+
+00:54:04.130 --> 00:54:04.580
+<v Unknown>Hi.
+
+NOTE CONF {"raw":[61]}
+
+00:54:07.460 --> 00:54:07.850
+<v Unknown>I'm fine.
+
+NOTE CONF {"raw":[48,45]}
+
+00:54:11.180 --> 00:54:11.660
+<v Unknown>I am.
+
+NOTE CONF {"raw":[97,97]}
+
+00:54:13.730 --> 00:54:14.570
+<v Speaker 9>Is this such thing as.
+
+NOTE CONF {"raw":[100,70,96,100,69]}

@@ -1,0 +1,1062 @@
+Just come outside for the night.
+Take your time.
+Get your knife dirty.
+Thank me.
+Have you.
+Been keeping p p p p p p p p
+p p p We need to get a feel for.
+The charisma estate where you win your prize.
+Fuck that paper, baby.
+My face on the dotted line.
+I've been flying out of town for some peace of
+mind.
+It's always.
+They just want a peace of mind.
+I've been focussed on the future.
+Never right now.
+What I'm sippin I can butchie the pick up around.
+I'm the one that introduce you to.
+To you right now.
+Oh my God, that be baby, baby when I right.
+Try to fight in the night.
+Though my life ain't a sneak.
+Ain't it?
+Ain't it ain't 18.
+P p p p p p p p p p
+p p p p p p p p p p.
+Sir.
+Wait.
+Wait.
+Wait.
+He asked.
+Me my sheet.
+Last year.
+You try to confirm if I mean your time.
+Holy shit.
+I hung around Philly I'm on a plane.
+Sorry.
+Shout out to your friends.
+I'm goin crazy.
+How can it be?
+She's not innocent.
+She's trying to go right.
+So, , one of your classmates recommended that I play
+this, , this music.
+.
+, I guess more up to date than my usual
+selections, but, .
+Yeah.
+Makes me a little dizzy to watch this graphics actually,
+but never mind.
+, yes.
+So, , today I'm going to, , , give a
+lecture on, , data representation.
+And data abstraction today is data representation.
+And, , on Monday I'll carry on with this and
+then talk about data abstraction.
+So, , we've now finished with the most important, ,
+elements of functional programming in Haskell.
+You know, you've learned about, , lists and comprehensions, recursion,
+, higher order functions, algebraic data types, , and so
+forth, pattern matching, function definitions, all these things.
+And now I'm going to be talking about an idea,
+, of programming, which is not specific to Haskell.
+, , it's , the, the topic of data abstraction.
+And so one of the, I would say top 3
+or 4 for ideas in programming.
+, , and the the the what it allows you
+to do is to separate getting things right from making
+things go fast.
+And so you can deal with those two things separately
+and, and in that way deal with them better.
+But first, I want to announce the, , the 2024,
+, Informatics one eight programming competition.
+, so there's a competition for this course with prizes,
+, which are Amazon vouchers.
+But the most important prize is the is, is that
+you'll become famous and and you'll have something to put
+on your CV that you won the, you know, first
+or second prize or whatever for this course.
+Okay.
+The Amazon vouchers, I have to say, are not for
+a very large amount of money, but it's the thought
+that counts.
+, , they're sponsored by this company, Galois here.
+This is an American company that uses a lot of
+Haskell.
+, they do a lot of work for the US
+government, and, , , they use Haskell, , to, to
+do almost all of their programming.
+, so, , the competition is, , you have to
+write a Haskell program with interesting graphics.
+Okay.
+, there are some graphics libraries in Haskell.
+I'm not the right person to ask about them, but
+you have to find about find out about them yourself,
+and you can use them to to make a nice
+picture or an animation or something that.
+And, , there are some entries from a previous year
+online at this website.
+, I'll show you these in a second.
+, anyway, , this is of course, of course, optional,
+but it's fun, and I do encourage you to give
+it a try.
+, the prizes will be awarded in the last FP
+lecture of this semester.
+.
+, the submission is about a week before that.
+Okay.
+So, , , something to do if you feel motivated.
+, let me just show you some pictures from a
+previous year.
+This is actually, I think, 2019.
+So these students will have all graduated by now.
+Let me find this.
+Okay.
+.
+Oh, well, that's that's big enough.
+I'm going to turn the lights down because some of
+these are dark and you won't see them.
+Okay.
+So, .
+Yeah.
+I don't know how to get this is okay.
+Right.
+.
+, so some nice pictures.
+.
+You know, they have , sometimes, , often have reasons
+behind them.
+This is a Sierpinski triangle.
+This, , this thing there.
+Here's an animated one.
+, another animated one.
+These are all third prizes.
+There were a lot of, , there were a lot
+of submissions that year.
+, okay, I'll just flick through these, , okay.
+Some some Mandelbrot set, , things there.
+.
+Okay.
+This is from chaos theory, I think.
+Lorenz attractor.
+.
+Another animation.
+, okay.
+So these are the sort of things some previous students
+have have, , submitted.
+You can click on this yourself and, and, , and
+look at these, , with more time.
+I think the code is provided as well for these,
+, for these if you go into that website.
+Okay.
+So that's the that's the programming competition.
+Okay.
+But , we should talk about data representation and data
+abstraction now.
+, okay.
+Any questions about that?
+The judging, , will be on the basis of, ,
+aesthetic appeal and, , , how interesting the idea is
+behind it.
+And, , maybe the level of ambition.
+Okay, that is high ambition is better than low ambition.
+, within the context of what you're able to do
+in a couple of weeks in this course.
+Okay.
+No questions.
+No.
+Okay.
+I'll carry on.
+Okay.
+So, , I'm going to talk about efficiency.
+, so up until now, , I've been telling you
+not to worry about making your programs run fast.
+Okay?
+, worry about whether they're correct or not.
+So, you know, get it right.
+Keep it simple.
+Make it clear.
+Don't worry about efficiency.
+Okay.
+, and this is this is in response to students
+who come and say, you know, is recursion slower or
+faster than list comprehension and so forth.
+, okay.
+, these these things normally don't make that much difference.
+Okay.
+And Haskell is implemented using lots of clever, , optimisations
+and things.
+So that often exactly the way you write a program
+is not going to make any difference to how fast
+it runs.
+Okay.
+So so this is the reason why I've been saying
+don't worry about efficiency, okay.
+, but sometimes in programming you do need to worry
+about making things run fast, and that's especially when you're
+dealing with very large amounts of data, you know?
+So, , for example, Google, , you know, the way
+that it gets searched to run, the way that it
+runs is that it does, , it indexes the entire
+internet.
+, you know, well, it used to be overnight.
+Now I don't know how long it takes, but anyway,
+it goes through the enormous amounts of data out there
+in the internet and looks at all of it and,
+and compiles an index using, , you know, warehouses full
+of computers to do this concurrently and so forth.
+, of course, when you're dealing with gazillion, , gigabytes
+of data, , you have to use good algorithms, okay?
+And not and not just, , the first thing you
+thought of.
+Okay.
+So when you're processing lots of data, then of course
+efficiency is important.
+Okay.
+So that's what I want to talk about now is,
+is, , some of these concerns and this is a
+topic called a complexity theory.
+And there's, , you know, some, some material about this
+in the second year.
+, once you get there.
+Okay.
+So this is just a little taste of that.
+So, , this is Donald Knuth, who is, , one
+of the Turing Award winners.
+, and he said premature optimisation is the root of
+all evil.
+And this is true.
+And I'm going to prove it to you.
+Okay.
+I'm going to write down my proof.
+Okay.
+Ready?
+Okay.
+So we all know that money is the root of
+all evil, right?
+Okay.
+Actually, , that's not the, the correct, , quotation.
+The correct one is the love of money.
+Is the root of all evil.
+And that's from, , that's actually in the Bible.
+First book of Timothy.
+, there, if you want to look it up.
+Okay.
+So you can read that, right.
+Okay.
+Okay.
+But we also know, , time is money.
+Right.
+Everybody knows that time is money.
+So actually, the love of time.
+You know, therefore, the love of time.
+Is the root of all evil.
+And, .
+What's the love of time?
+Well that's optimisation.
+Okay.
+Making things fast.
+Okay, so optimisation.
+Optimisation is the root of all evil.
+So that's not sequin calculus, but it's an informal, informal
+proof that optimisation is the root of all evil.
+And , , Donald Knuth says premature optimisation.
+So that's optimising before , you know, as , too
+early.
+All right.
+So, , that's my, , proof of this fact, and
+nobody laughed.
+So my joke didn't work.
+But never mind.
+, that's that's better.
+Okay.
+Anyway, , here's another here's another authority.
+This is, , Tony Hawk.
+Sir Tony hawk, , , agreeing with Donald Knuth, And
+he's another Turing Award winner.
+Okay.
+We're going to look at the difference between good programs
+and bad programs, not the difference between, , , programs,
+, you know, okay programs and slightly better programs going
+to be talking about dramatic differences between programs.
+So it's not about whether, you know, , repeating in
+addition, somewhere in a computation, rather than storing the value
+of the addition and then reusing it is, is is,
+, you know, whether that makes things faster.
+But about the difference between different algorithms, okay.
+And sometimes the difference can be huge, but it depends
+on the amount of data you're dealing with.
+And let me show you a little example.
+And this is a this is a, a contrived, ,
+simple example just to, just to make a point.
+.
+Okay.
+Suppose that we've got a list of lists.
+Okay.
+These are.
+These are, , Em lists.
+Okay.
+There's, , x is one through, x is m, and
+each of these lists is of length n okay.
+And we want to, , concatenate them all together.
+Okay.
+Join the men to end.
+Okay.
+There's two ways that we can do this.
+There's more than two ways, but here are two ways.
+There's.
+I can do it with a fold L okay.
+This little program here, you know, fold l using using
+append, starting with the empty list and taking this, this
+list of lists.
+And I get this computation.
+Okay.
+, this is, this is what that that program effectively
+does.
+Okay.
+, now let's look and see what it's doing here.
+So, , I want to count the number of steps
+that it's taking.
+Okay.
+Now, , it's doing a lot of appends and the
+code for append.
+, if you recall, , you probably don't.
+But anyway, it does recursion on the left hand argument.
+Okay.
+So effectively the size of the left hand argument in
+this case it's the empty list.
+The size of this argument is how many steps it's
+going to take to do the append.
+So if it's got, you know, an empty list then
+it gives the answer immediately.
+It's zero steps, essentially zero steps with some overhead for
+recursion and so forth.
+Okay.
+If it's a if it's a list with 100 items,
+it does essentially 100 steps.
+Okay.
+, I'm not counting exactly.
+I'm sort of talking about the ballpark amount of steps
+that's taking.
+Okay.
+So it's it's the number of steps that the first
+argument is long.
+Okay.
+So if we look at this computation, the first the
+first bit Here are.
+The first bit is taking zero steps.
+Let's say okay.
+And the result of that is a list of length
+n.
+Because each of these lists of length n okay.
+The next the next depend okay.
+The left hand argument has length n, so that takes
+n steps.
+The next append the first argument is of length two.
+And so this takes two n steps and so forth
+and so forth and so forth.
+And we get this number of steps okay.
+It's, it's it's that's an expression.
+And that expression , adds up to , it's
+m minus one times m over two times n.
+Okay.
+I'm going to use a notation that I'm going to
+define in a minute, , called O notation.
+, for writing this down.
+And, , the important thing is that it's proportional.
+You can read this, that it's of order or proportional
+to m squared times n.
+Okay.
+So that's, that's the result of doing it that way.
+If I do it, if I do it instead of
+fold l here, if I place that with a fold
+r, and I'm not telling you this because I want
+you to use fold R instead of fold L is
+just this particular computation comparing two ways of doing it.
+If I do it with a fold r, I get
+the same answer and the computation looks .
+Now looks this.
+Because the difference between fold l and fold r is
+kind of bracketing to the left versus bracketing to the
+right.
+Okay.
+And and looking looking at this computation, I'm doing you
+know the left hand argument here has n is
+of length n.
+So this takes n steps.
+And then this append takes n steps and this append
+takes n steps and so forth.
+Okay, so I end up doing n times m
+steps.
+Okay.
+The result the number of steps is proportional to m
+times n okay.
+And comparing these to these two things there.
+Okay.
+, this is, this is m times.
+This takes m times longer than this okay.
+If there are if m is a thousand, then it's
+a thousand times.
+, it takes a thousand times as long.
+Okay.
+And this is the kind of thing I'm talking about
+with, , with efficiency.
+Is that, , a choice of sometimes the order in
+which you do things or, , you know, when it's
+when it's in a recursive program or something, it can
+make a big difference.
+And, and, , another point here is that the efficiency
+or the time that something takes is, of course, dependent
+on the amount of data that you've got.
+It makes no sense to talk about how fast a
+program is without saying what what size the data is.
+Okay, so we were talking about the the time a
+computation takes as a function of how much data we're
+using as the input.
+And so what we're interested in is, is how the
+time grows as a function of the amount of data
+that we're giving it to to compute with.
+Okay.
+So let me show you some pictures.
+And this is comparing growth rates of functions okay.
+So the two functions I had here were m squared
+times n and m times n.
+I'll start with slightly simpler examples.
+So here here are two curves.
+There's a linear one.
+So this is this is this is okay.
+t t is the is the is the y
+axis and and n is the the x axis.
+Okay.
+So here is t equals n.
+It's a it's a straight line with with slope
+one.
+And here is t equals n squared.
+Okay.
+Ignore the well actually the scale here is correct.
+Yeah.
+The intersection is at one.
+.
+Intersection is at x equals one or.
+Sorry.
+n equals one.
+Okay.
+But you see , the of course the, the linear
+, the linear one is a straight line this.
+And the and the, the quadratic one, the parabola is,
+is, , growing much faster once you get past this
+intersection.
+It grows much faster.
+Okay.
+So if you look at something , , n equals
+a thousand, then then you know you'll be way, way,
+way up into the ceiling here.
+And this one will still be over there somewhere.
+Okay.
+.
+Sorry.
+That there that that direction.
+, I'm looking at everything.
+, mirror image of what you're looking at.
+Okay.
+, so the point here is that is that, ,
+if n is is is large, then this function is
+enormously, , gives enormously larger values than this function.
+Okay.
+It exceeds that function.
+Okay.
+So this is, this is this is why I would
+say that a linear function is faster than a quadratic
+function.
+This is the these two specific functions, this specific linear
+function and this specific quadratic function.
+What if I talk.
+What if I look at a fast a fast quadratic
+function and a slow linear function.
+Let's say it's it's half the speed the or
+sorry, it takes half the time.
+The fast quadratic function and the linear function takes double
+the time.
+Okay.
+So that means we've got instead of t equals n
+we've got t equals two n.
+And instead of t equals n squared we've got t
+equals you know n squared over two or or t
+equals one half n squared.
+Okay.
+Then the picture looks this.
+So the the the linear function has.
+Now you know it's gone from a, a slope
+that to a slope that.
+And , the the quadratic function is a little
+bit flatter.
+Okay.
+But still once you get to t n equals
+four, which is this intersection, it's still the case that
+the quadratic function is going to always exceed.
+The value is always going to exceed the value of
+the linear function okay.
+So it's better for n greater than for And who
+cares about who cares about the the value for and
+less than for?
+I mean, we're talking about about size of problems here.
+Okay.
+If you're computing something and, , and you've got an
+algorithm which is faster but only for inputs of length
+less than four, who cares?
+Right.
+You're interested in inputs of length 1000 or 1 million,
+right?
+I don't care about length, for it's fast.
+Both of them are fast.
+Okay.
+, okay, so this is about, , , a slow
+linear function versus a faster quadratic function.
+What if instead of twice as fast, I'm talking about
+100 times as fast, okay.
+Or a thousand times as fast?
+Okay, we've got the same picture.
+It's just that the intersection point moves in that direction.
+Okay.
+So, , to the to the right.
+Okay.
+, and so, , the, the, the quadratic function will
+be faster for, you know, inputs of length, you know,
+up to a thousand or something that.
+But then beyond that, , the linear one will still
+win.
+So what I'm trying to argue here is that the
+shape of the function that matters and not, for example,
+whether it's one n or two n or three n
+or 17 n or whatever.
+It's not it's not the it's not the constant factor
+here and here.
+It's the fact that it's n versus n squared, okay.
+It's the shape of these, of these, , of these
+, curves here that matter.
+And we've got a notation that I mentioned already, ,
+called , big O notation.
+And this is a definition of it.
+So this is not a, this is the first
+time I'm showing you not a Haskell program, but a
+mathematical definition.
+And this is a way of .
+This is a notation for describing growth rates of functions.
+Okay.
+And I'm not going to go into this in a
+lot of detail, but the idea is that, , ,
+a function, , we say f is Big-O of G
+when g is an upper bound for f for big
+enough inputs.
+Okay.
+That means that g is larger than f, provided you
+look at at big inputs and not at small inputs.
+And there's a precise definition of that here, which, ,
+you know, for big enough inputs is , is captured
+by this bit here.
+, you know, you're only looking at, at inputs which
+are greater than some, some some value.
+, and , and you ignore constant multiplicative factors, which
+is what this is doing here.
+, and, and, and I want to give you an
+intuition for this rather than have you look at the
+definition okay.
+The intuition is that, , all linear functions are of
+order n.
+Okay.
+And , here's the reason, , which is related to
+this definition here.
+Okay.
+But , for now, the thing to remember is linear
+functions are of order n no matter what the constant
+factors are.
+Okay.
+There's a two there and there's a ten here.
+Doesn't matter the same.
+The also 15 n plus 32 would be of order
+n okay.
+Main thing is it's linear.
+Okay.
+, you know, , constant factors don't matter.
+So any, any, , quadratic function is of order n
+squared, no matter what the, , the coefficients are.
+Okay.
+, any cubic function is of order n cubed.
+Okay.
+So it's this notation is a way of talking about
+the shape of the function without looking at the details
+about, you know, exactly.
+You know, is it, is it three n cubed plus
+two n squared plus whatever or, or you know it's
+just the point that it's n cubed is important here.
+And this also applies to things logarithmic logarithmic
+functions.
+And here for example, it doesn't matter what the base
+of the logarithm is.
+It It's, , it doesn't matter for this, ,
+for this notation.
+Okay, so this is this is a way of describing,
+, shapes of functions without without looking to carefully at
+the details of the functions.
+Okay.
+Just whether they're quadratic, cubic, linear or whatever.
+This is great for lazy people, okay.
+Because it means you don't need you know, these are
+these are going to be used to describe the runtime
+of programs.
+It means you don't have to look too carefully at
+the details of the program and exactly how long it
+takes to do each step, and exactly how many steps
+are being done.
+, in, you know, in the process of, of doing
+an append or whatever, what matters is the, , the,
+, the form of the recursion, for example.
+Okay, you can usually read off, , these these, ,
+you know, whether the whether the algorithm is linear or
+quadratic or whatever, you can usually read it off by
+just eyeballing the program and saying, well, , it's linear
+because, for example, it doesn't do any recursion or in
+fact, , yeah.
+In fact, it's probably constant time.
+If it doesn't do any recursion, it's linear because it
+does.
+It does this kind of recursion.
+It's quadratic because it has , , nested recursion or
+something that.
+Okay.
+So , so this is the sort of thing that
+I'm going to be interested in is whether programs are
+linear, quadratic, cubic, whatever.
+Here's some more pictures.
+Okay.
+Here's , here's linear quadratic cubic and n and ,
+to the fourth power.
+, okay.
+, linear.
+If you manage to write a program that has linear
+runtime, That's great.
+, if it's got quadratic runtime that some, that's usually
+okay.
+, cubic or into the fourth is usually too
+slow.
+Okay.
+And it depends on what you're doing, whether quadratic is
+okay.
+If you need if you're if you're dealing with really
+big data sets , Google's , indexing algorithm, actually
+linear is too slow.
+, you need something that's sublinear and it's very hard
+to get that.
+, here's some more curves.
+Okay.
+Here's here's, , logarithmic along the bottom.
+Okay.
+So so logarithmic.
+.
+It's really slow growing.
+It means you you double the size of the problem,
+and you only increase the runtime by one.
+Sorry.
+, yes.
+You only increase the time by one.
+Okay, so you double, you double the size of the
+program.
+You increase this time by one.
+So this is very, very slow growing.
+Whereas, , this this is exponential two to the
+n.
+This means increasing the size of the program of the
+problem by one doubles the time it takes to do
+the computation.
+So this is incredibly fast growing okay.
+And in between we've got things .
+Well linear.
+And this is n log n n log n turns
+out to be the time of sorting algorithms.
+Good sorting algorithms.
+Okay.
+So there are these different.
+There's the different, , kind of , growth rates that
+we're going to be coming across.
+And so I'm going to be talking about some algorithms
+and I'm going to be talking about their growth, their
+their time complexity, their growth rate in these terms.
+And by the way, you can also talk about space
+instead of time.
+So the space that that a computation takes up.
+But I'm not going to be going into that.
+Okay.
+Are there any questions so far.
+This is just sort of general, , getting us into
+the right place where I can talk about efficiency in
+terms that make sense for the examples I'm going to
+be showing you.
+Okay.
+Does that making some sort of some sort of sense.
+Yeah.
+Okay.
+I see some thumbs up in the audience.
+That's good.
+Right.
+So let me, , let me carry on then to
+the next thing that I want to talk about, I'm
+going to show you, , , a simple example of,
+, of implementing sets of integers.
+, and I'm going to be showing you how to
+do this in four different ways.
+, so I'm going to be talking about sets with
+a few operations, always the same operations for each of
+the ways that I'm going to represent sets and the
+operations are, , checking membership checking equality.
+, those are the main ones, actually, , you know,
+building building sets, , from elements and then checking equality
+and, and, , and membership.
+Okay.
+So I'll do this in four different ways.
+And then I'm going to compare the efficiency of these
+four representations in the terms that I've just described.
+Okay.
+So I'm going to start with the simplest.
+And now we're into Haskell programs for doing this.
+Okay.
+I'll start with the simplest representation that there is,
+which is to represent a set as a list.
+And by the way, the code, the code for this
+is all you know.
+You can download it.
+It's it's it's together with the lecture, , slides on
+the course's, , learn page.
+Okay.
+, and I'll just mention a little bit what's at
+the beginning here.
+So, , I haven't talked about this yet.
+So you can structure Haskell programs into modules.
+So modules are , , components of programs, and you
+can build when you start building big programs, you, you
+build them out of self-contained modules, which you then combine.
+All right.
+And in fact, , you know, for example, all of
+the library, all the stuff in the library is structured
+into modules.
+You've got, for example, the data dot list module, which
+contains a whole lot of functions to do things with
+lists.
+And, , this is the, , the quick check module.
+Okay.
+So I'm going to be defining, , for each of
+my, , choices of representation.
+I'm going to be defining it as a module.
+And the way you define a module is you give
+it a name.
+So this is the module list.
+And and you say what it is that the module
+, exports.
+That is what it makes available to , to other
+modules that import it.
+Okay.
+And in each of my modules I'm going to be
+exporting the same things, okay.
+The same six things the, the the representation of sets.
+So that's a type called set with a capital S.
+And then these six things there's a value empty which
+is a set a function insert which takes a value
+and a set and gives you a set a function
+set which takes a list and turns it into a
+set, , a function element which takes an element and
+a set and checks whether that element is in that
+set or not, and equal, which takes two sets and
+tells you whether or not they're equal.
+Okay.
+So I'm going to be running through four four modules.
+And each one is going to have a different representation
+of data.
+And so the first one we represent sets.
+And by the way these are going to get these
+going to be of increasing complex.
+Well increasing they're going to be more complicated as
+I go on, but they're going to be more efficient
+as I go on.
+Okay.
+So, , it's often the case that making things efficient
+requires making them, , , making them more complicated, which
+is one reason why, , premature optimisation is a bad
+idea.
+Because if you, if you make things complicated, , they're
+less likely to be correct.
+So you should rather get them to be correct and
+then and then worry about whether they're fast or not.
+But, , anyway, so here's sets implemented as lists.
+So that is to say a set of elements of
+type A, I'm going to represent just as a simple
+list of, of of values of type A, okay.
+Just, you know, list the elements of the sent.
+Okay.
+And then and then these functions are easy.
+Right.
+The empty set is the empty list.
+Inserting a value into a set is just a matter
+of using cons.
+So we just put it on the front of the
+list.
+So we have a an element and a set represented
+as a list.
+And we, we just , put the new element onto
+the front of that list using cons.
+, this value, this, this function set, the ID is
+it takes a list and turns it into a set.
+And in this case, if the set is a list.
+If that's the representation, I don't have to do anything.
+So this this function doesn't do anything at all.
+Okay.
+And then the two more interesting functions here are are
+membership and equality.
+Okay.
+Well membership.
+It's not it's not that interesting because we've got a
+built in function which checks to see whether a value
+is a, is a is a member of a of
+a list.
+And it's called elem.
+And so we're just going to implement element.
+That's my function which takes some a value and a
+set representatives a list and gives me a boolean whether
+that element is in the list or not in the
+set or not.
+Okay.
+So , you know, x element x X is.
+I'm using infix here with back quotes.
+That's the same as x lm x.
+This is a function that's defined in Haskell for working
+on on lists.
+Okay, let's stop for a second and think about, ,
+the time it takes to do these, these things.
+Okay.
+, and specifically here.
+What's happening here?
+Okay.
+Well, you can look up the code for, for lm
+in, , in the Haskell library and what it does,
+I mean, you've got a list here.
+Okay, here's my list.
+And you're looking to see if an elements in the
+list or not of values in the list.
+Okay.
+What does it do?
+It does the obvious thing.
+It starts at the beginning.
+Compares the value to see if it's if it's at
+the front.
+If it's not at the front, then it looks at
+the next value.
+And if it's not there, then it looks at the
+next value and so forth.
+Going down the list until it gets to the end.
+And if it's not any of those elements, then the
+answer is false.
+It's not there.
+Okay.
+Otherwise it stops when it finds the element.
+Okay.
+So it's going through the list from the beginning, checking
+each element in turn until it finds the one that's
+looking for it runs out.
+Okay.
+So what what is the you know, that's, , o
+of what?
+, big o of what?
+Yeah, o of that big o of n yeah.
+It's linear.
+Okay.
+Because it's it's, you know, if the list is of
+length n, it will have to look on average.
+It will have to look at half of them.
+Okay.
+And over two.
+But I've said constant factors don't matter.
+So the fact that it's n over two rather than
+n over three or n doesn't matter.
+It's o of n okay.
+Linear.
+This one's linear.
+Okay.
+Let's look at at this other function.
+equal.
+This is testing equality of .
+Of sets.
+Sets.
+Representatives.
+Lists.
+Okay.
+Now how do we check if two sets are equal
+sets represented as lists?
+Okay.
+Now we have to worry about this representation.
+So we can't just compare the lists used to represent
+the sets using equality.
+And why is that?
+Okay, so.
+, let's look at a computation.
+Okay.
+, going back a slide, I said insert is cons
+and empty is the empty list.
+Okay.
+So this is going to give me this list.
+Right.
+You know why.
+Okay.
+It's it's, you know, cons two onto the empty list
+and then cons one onto that.
+That gives me this list.
+Okay.
+What happens if I do it the other way around?
+Well I get two comma one.
+Right.
+Okay.
+Or if I or if I, , a little bit
+more complicated, suppose I insert one into insert two and
+two insert one of empty.
+Then I get 1 to 1.
+Okay.
+So , these.
+Okay.
+What you get with these, with these computations.
+These sets should all be regarded as equal, okay.
+Because they've all got the same elements in them.
+They're just in a different order here.
+And in this case you've inserted one twice.
+But for sets it doesn't matter how many times something
+is in a set, it's it's the same the same
+set okay.
+So these should all be regarded as, as equal in
+the sense of , of the function that I'm defining
+here.
+Okay.
+So in order to, , you know, if you've got
+the sets represented this, you have to do a
+little bit of work to work out whether or not
+two sets are equal.
+Okay.
+And the way that I've done this here is I've,
+I've, I've used a helper function called subset.
+Okay.
+So x is is a subset of Ys.
+If if everything is in X appears in Y.
+Okay.
+So there's a comprehension there.
+You look at all the x every x in X's
+and you check to see whether x is in y's.
+And if that's the case for all of those values
+in xs you do a conjunction.
+Then x is a subset of y's.
+Okay.
+And equality equality xs is equal to ys.
+If x is a subset of y's.
+And also y's is a subset of XS.
+Okay.
+.
+Oh, here we go.
+So how fast is equality?
+Okay.
+, well.
+, we are we're doing we're doing element hood, which
+we've seen is linear.
+We're doing that repeatedly here.
+Okay.
+So you know this this this x is equal Y's
+is defined in terms of subsets.
+So let's first look at subset okay.
+And what we're doing here is we're repeatedly doing this
+linear computation.
+And we're doing it the number of times that
+x is has elements okay.
+So what does that give me.
+Yeah.
+N squared.
+Yeah n squared quadratic okay.
+So so if these are both if these are both
+of length n then this takes n squared time
+okay o of n squared okay.
+And doing that twice what we're doing here is doing
+that twice first time and the second time, okay, possibly
+getting different results because we're doing it one way around,
+then the other way around.
+Okay.
+So this is this is twice a quadratic.
+So it's the same as quadratic.
+Yeah.
+What do you have.
+Okay.
+And of course adds adds some.
+You mean this and yeah okay.
+So that's linear right.
+Because it's taking a list of , of values and
+, checking to see if one of them has is
+false or not.
+Okay.
+So it's, so it's this part is quadratic and this
+part is linear.
+And a quadratic plus linear is quadratic okay.
+And and two quadratics is a quadratic okay.
+So O of n squared.
+Okay.
+So that's my first implementation of of sets.
+Sets lists.
+, I'll just have time to introduce the next one.
+Okay.
+So this.
+This explanation here motivates a different way of representing of
+representing sets.
+My idea is going to be to represent them as
+ordered lists without repetitions.
+Okay.
+So in order to list by an ordered list, I
+mean this one's ordered.
+Okay.
+, increasing order of values one followed by two.
+This is not.
+This is in the wrong order.
+Okay?
+If I'm talking about increasing order.
+Okay, this is in the wrong order.
+Okay, so I wouldn't use that.
+I would use this.
+And this has repetitions okay.
+There's two two occurrences of one here.
+So if I could somehow work out, , work the
+representation out that all of these deliver an ordered list
+instead of a unordered list.
+And if the list doesn't have repetitions.
+So I don't want I don't want this, I want,
+I want that okay.
+Ordered list of the values in the set.
+Then equality testing is easy okay.
+Because if I arrange it that these always delivered an
+ordered list of values, then checking equality is just comparing
+these lists for equality okay.
+Which is which is linear okay.
+We just run down the lists and compare them elements
+at a time okay.
+So this is going to be the the way that
+I'm going to do this.
+, and I'll just show you there is some code
+for this, and I'll come into this.
+, I'll explain this next time, okay?
+Are there any I have time for, , one question
+or possibly two if they're short.
+Anybody?
+Yeah.
+Register is there.
+Sorry.
+Can you please be quiet?
+Is there any way of what?
+I don't remember you.
+Do you have to register for the competition.
+Or do you have to register for the competition?
+, no, no, no, you just have to submit and
+there will be instructions about submission.
+, you'll get those soon, okay?
+Okay.
+Thanks, everybody.
+See you on Monday.
+Yeah.

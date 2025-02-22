@@ -1,0 +1,1023 @@
+All.
+Right, let's let's start.
+Please sit down.
+So I've been asked to again remind you of this
+event that's happening today.
+Tomorrow Thursday careers event with employers coming to, , meet
+students, , with , it's in McEwan's Hall, McEwan Hall,
+which is in George Square.
+And, , , opportunities include things , , internships, ,
+, which are also available sometimes for students in the
+summer of their first year.
+Okay.
+So might be of interest.
+, or if you want to see who might be
+wanting to employ you in four years when you're finished.
+Okay.
+So for today, we have, , this music here.
+This is, .
+Sorry, I wanted to explain this.
+This is, , , an eight year old singing, ,
+the Queen of the night aria from Magic Flute, which
+is a famous, , piece of music.
+Very difficult to sing.
+And, , and it's funny to watch her as she
+does this.
+, so I'll just play.
+This for a couple of minutes.
+It was a powerful thought for the end of the
+film.
+Which is firstly.
+So that although these truths are the reference for her
+father to have a new birth mother with the problem
+of.
+000.
+Oh.
+000000.
+To die for me.
+All right.
+So that's the queen of the night.
+So the queen of the night is, , is singing
+this song to her daughter to say, you better do
+what I say or else.
+, so, , that's with all the correct facial expressions
+and so forth.
+, right.
+But what you really want to know about is select,
+take and drop, which is what this lecture is about.
+So these are three functions that are built into Haskell.
+And again I'm showing you the code for these to
+to show you some other patterns of recursive functions okay.
+so this is a sequence of three, the third
+in a sequence of three lectures about recursion.
+, because recursion is such an important topic, you need
+to see lots of examples.
+Next tutorial exercise, the one for next week, due to
+do today in a week is going to be a
+bunch of, , exercises with recursion, so you'll get lots
+of practice.
+Okay.
+And apart from being, , interesting examples of recursive function
+definitions, these are also things that are useful, , in
+your daily life in Haskell programming.
+So first, , what what these are for.
+Okay, so, , this first one, , I'm calling it
+select, but it's written with two exclamation marks as an
+infix function.
+So this selects, , a particular position within a list.
+Okay.
+, it's , , okay.
+You give it a list this.
+String words.
+This is remember, a string is a list of characters.
+Seems not to have, , you know, penetrated everybody's brains,
+, so far.
+But anyway, that's what it is.
+It's a list is a sequence of a string of.
+Sorry, a string is a list of characters.
+And, , so this is five characters W, o, R,
+D and s, and the third one in this, ,
+in this list, starting with zero W is position zero,
+zero is position one, ah is position two and D
+is position three.
+So if you ask for the thing in position three,
+you get a d the letter D the character D.
+Okay.
+That is select.
+And now those of you who are used to writing
+programs in in C or Java or something this
+will say, great.
+Finally, I've discovered the most important function in Haskell because
+you will be used to writing programs that have things
+, .
+, I don't know, you know, whatever it is this
+is this is kind of array indexing, at least in
+some languages.
+Okay, , you've got an array.
+You want to find out what's in position number n,
+and that's how you do it.
+You you, , you address it that way.
+Array indexing.
+So this is kind of array indexing, except it's
+indexing into lists.
+And you will think, great, I know this now.
+It's so important.
+I'm going to be using this all the time, okay?
+Because that's what I do when I write programs in
+Java or C.
+, but you would be wrong because in, in, in,
+in Haskell and functional programming, this is a, this is
+a function that's available.
+But, , you know, instead of writing that you write
+this.
+It's available.
+You can use it.
+Sometimes it's handy, but it's actually very rarely used in
+the sense that if you find yourself using it, probably
+there's a better way to do whatever it is that
+you wanted to do.
+Okay, so but anyway, it's one of the things I
+want to tell you about in this lecture.
+Okay.
+, , next one, the the function take.
+Okay.
+Take.
+You give it a number and you give it a
+list, and it gives you, , the first of that
+many, , items from the list.
+Okay.
+so take three of words it gives you.
+The first three letters were okay take and drop.
+Drop gives you everything after the first however many it
+is items.
+So these are shown here working on strings.
+But strings are just an example of lists.
+So it will work just as well on lists of
+any kind.
+Okay so those are the three functions I want to
+talk about in today's lecture.
+, they're handy, but , mainly I wanted to show
+you examples of recursive function definitions.
+Okay.
+Got it so far.
+So remember those three functions.
+What they do okay.
+Because they're going to keep coming up throughout the lecture.
+So take and drop and select.
+Okay.
+So I'm frequently going to be showing you.
+, different ways of defining the same function.
+So here are, here are the, , a way to
+define these three functions, , using comprehensions, list comprehensions.
+And in a minute I'm going to show you how
+to define these three function using recursion.
+Okay.
+But first comprehensions because we learned that a few weeks
+ago or well, last week I guess, , and
+these definitions.
+So this is select take and drop.
+And I'm using this name select comp and take
+comp and drop comp.
+, not because I need to use the word comp
+in a definition using comprehensions, but just because I'm about
+to define, , select and take and drop and I
+want to avoid, , you know, name clashes.
+Okay.
+So all three of these are using, , a kind
+of programming idiom that I mentioned in the last lecture,
+which is unzipping, you say no.
+I used to be able to highlight that.
+This seems to have taken that away from these displays.
+Okay.
+So so this thing here, zip the list from, you
+know, of numbers starting from zero going off forever and
+and a list.
+Okay.
+We've got it.
+We've got it here.
+We've got it here and we've got it here.
+And as I explained last time, what you get from
+this is a list of pairs.
+So here are the pairs okay.
+And the first item in the pair is a position.
+And the second item is the thing that's in that
+position okay.
+You're , you know, if you start counting from zero
+and, you know, zero, one, two, three, four, five, the
+thing in this position, zero is going to be, ,
+it's going to result in a pair of the form
+zero comma, whatever it is.
+Okay, next one pair, one comma, whatever is in that
+position and so forth.
+So this is going to give you a list of
+, of, of positions paired with the thing that's in
+that position.
+Okay.
+So that happens here.
+It happens here and it happens here.
+And then what we do with that is , is
+gives us the result of these functions.
+Okay.
+So if we've got a list of pairs of positions
+and things in that position and we want to find
+the ith thing.
+So all we need to do is pick the one
+where the position is I.
+Okay.
+So we're looking through the list that's formed here.
+And we want the one okay is select X is
+I okay.
+So we want the thing in the ith position.
+So we look for the case where j the position
+we get here is equal to I.
+Okay.
+So that selects that gives us a list of all
+the things in position I.
+Okay.
+There's only going to be one or actually at most
+one okay.
+Because I might be minus one or something.
+Okay.
+okay.
+At most one.
+And and so it's going to be a list
+containing one thing, let's say usually one thing.
+And so we need to actually extract that thing, whatever
+it is from the list okay.
+And so I'm going to define a helper function called
+the the takes the list and gives you the only
+thing in the list okay.
+It's the thing in the list.
+All right.
+So , , so that's what this does okay.
+It gives you the unique thing which is in position
+I.
+Okay.
+Is that clear?
+Anybody have a problem with that?
+No.
+Okay.
+, take and drop are, , similar, except that the
+the guard here at the end is different.
+Okay, so this is looking in the thing, looking for
+the thing that's in position I.
+And this is looking for all the things that are
+in position, , less than I this is for take.
+And this is all the things that are in position,
+, greater than or equal to I.
+Okay.
+Remembering we're indexing from zero.
+So, , take comp apply to three and list will
+give you the first three things.
+That is the ones in position zero one and two.
+Okay.
+And drop will give you all the things after that.
+So positions 3456 etc..
+All right.
+Okay.
+You understand those.
+So it's using this trick or this this this idea
+that you use zip to pair positions with things in
+that position.
+So just showing you how that works.
+, for, for the function take.
+, just I don't think I want to go through
+this in detail, but you can kind of do the
+computation sequence where you take, for example, the the list
+of characters words here.
+Here is the list of pairs of positions of, you
+know, position zero, one, two, three, etc. for those for
+the for that list, we've got list of pairs here.
+We're looking for the the ones where J is less
+than three which are the first the first three of
+those pairs.
+And we're picking out x sorry, I should have
+said that before.
+We're picking out X for the positions that are less
+than I hear.
+Okay.
+So.
+So we pick out w we pick out oh.
+And we pick out R but not D and S
+because the guard is not true for those for those
+two cases.
+So this war and that's the answer.
+Okay.
+These computation sequences are useful to kind of understand really
+what's going on.
+But , you know, after you've done enough of them,
+they should be, should be kind of quite clear, I
+hope, , how to do that if you write it
+out all in detail, it takes a lot of writing.
+So, , a little boring, but, , getting the steps
+is worthwhile.
+Okay, so before I go into the recursive definitions, I
+just want to, .
+Remind you about recursive definitions of lists and recursive definitions
+of, of numbers, of natural numbers.
+Okay.
+So as I said, you know, every list can be
+using written using only this constructor or this, this function
+cons and the empty list.
+And we saw how that worked.
+Okay.
+There's that list written using those things.
+And and here is this list of characters written using
+those things.
+And that came from the recursive definition of what a
+list is.
+And as I said, a list is either, you know,
+the empty list.
+I said, I say null here, but it should be
+nil.
+Oh, sorry.
+No, no it's either it's either null written this,
+which I pronounced nil, or it's a constructed list written
+that which has a head x and a tail
+x.
+That's what I meant to say.
+Okay, okay.
+And then similarly, and I don't think I showed you
+this last time or maybe, maybe I did, but I
+don't think so.
+, we can define natural numbers recursively, , by saying
+how you can build them.
+Okay.
+So a natural number.
+Okay.
+Natural number.
+That's the terminology in mathematics for numbers 0123 and so
+on.
+So no negative numbers.
+Just the just the ones from zero onwards.
+Okay.
+So a natural number is either zero or it's the
+successor of a natural number.
+Successor is a number plus one.
+Okay.
+So we can take zero.
+We can take zero plus one.
+That's one.
+We can take zero plus one plus one.
+That's two zero plus one plus one plus one is
+three and so forth.
+All of the numbers we can get that way okay.
+All generated by this recursive definition.
+Recursive.
+Because I'm defining a natural number and I'm using, ,
+what it is to be a natural number in the
+definition.
+Okay.
+In Haskell, when I write recursive functions on lists, I
+use exactly the definition, the recursive definition of lists.
+I write cases which have, you know, patterns
+nil and x cons x's as patterns for the cases.
+, in Haskell, , we don't have patterns for, for
+natural numbers, but we, we do something kind of similar,
+, as, as seen in this definition here instead
+of, instead of, , zero and , n plus one,
+we use zero, and we and we are use subtraction
+of one.
+Okay.
+So, , kind of same idea, but without having a
+pattern.
+So we have here for example zero.
+And then we have another pattern I, which is it
+has to be something plus one because it's not zero.
+Okay.
+So here is here is code for select.
+This is this function that indexes into a list and
+picks out the thing that's in the position, , that
+you're asking for.
+So the ith position okay.
+So okay.
+You give it a list, you give an integer and
+it gives you the thing in that position.
+And there are two cases recursive definition, two cases, the
+base case where you're looking for the thing in position
+zero.
+Remember we're indexing starting from position zero the first the
+one at the beginning.
+And so if you've got a list first of all,
+if you've got a list that's just empty, you can't
+select the thing in position, in any position, because there
+isn't anything, right?
+Okay.
+So we don't have a case for that because there
+isn't anything you can write for that case.
+Okay.
+Haskell will, , will will give an error in that
+case.
+Okay.
+But if there is something in the list, then you
+can index and try to find something in a certain
+position.
+And if it's if it's position zero and the list
+is x cons x, then of course the answer is
+is x.
+It's the first thing in the list okay.
+Position zero.
+The first thing.
+Okay.
+Is that clear.
+That's the base case.
+Okay.
+If if if you're not looking for the thing
+in positions zero, then you're looking for the thing in
+some other positions.
+So let's call it I.
+So I is not equal to zero.
+It's at least one.
+Okay.
+So the thing that you're looking for is not x
+because x is in position zero.
+It has to be something in XS.
+Okay, so what we do is we we select from
+X is not the thing in position I but the
+thing in position I minus one okay.
+We thrown away the first thing.
+And so what we're looking for now is the
+thing in X is at position I minus one.
+So we subtract one from the index okay.
+If we're looking at the thing in position one then
+then you know I would be one here and
+we'd be looking for the thing in, in XS at
+position zero.
+Okay.
+Which would be the first thing.
+It's kind of confusing talking about position zero.
+And then it's the first thing, but that's.
+Yeah, that's what it is.
+Okay.
+Is that definition reasonably clear.
+This is doing recursion simultaneously On a list.
+The first argument is a list and on natural number,
+which is the second argument.
+Okay, so we've got, we've got , a base case.
+So we have a base case for , for the
+natural number.
+, we could have a base case for the empty
+list as well, but that's just going to produce an
+error.
+And so we let Haskell do that by itself.
+We don't have to write it down.
+, if you want it to be tidy, you might
+write, , you might write, you know, empty list.
+, select I is equal to, , in Haskell, there's
+a function called error.
+, well, I'll do it on the laptop.
+Function called error.
+You can call, .
+Just a second.
+, no.
+Error.
+Okay, first of all, what type does it have?
+You can always, , you want to find out about
+a function.
+You can you can ask what type it is.
+So there's, , that's how you do that.
+So it takes a, a list of a list of
+characters that is a string, and it produces, , a,
+which means it can produce anything, which means you can
+put it in any context.
+You can't see.
+Oh, you can't see.
+.
+Thank you.
+I pushed the button, but it didn't work.
+Okay, thanks.
+You can ask for the type of a function, and
+you get it.
+The fact that this produces a value of type of
+type A, meaning any type.
+That's rather unusual.
+, what it means is you can put this in
+any context.
+Okay.
+And, , , you can, , supply it with an
+error message and it will produce, , it'll produce an
+exception containing your error message.
+Okay.
+So I could have written, , a third case here
+with an error message if I wanted to.
+Okay.
+That's how you would do it.
+Anyway, there's a code.
+, could you take a minute or two and try
+to write the code for, , take and drop recursive
+code for take and drop?
+Okay.
+Could you please do that right now?
+Okay.
+And they are not so much different from from these
+here.
+You're going to need three cases for for each of
+them okay.
+One for the case where the the number zero and
+one for the case where you've got the empty list
+and one for the case where, , yeah, the other
+case.
+Introducing the world's first certified of.
+Lessons from jeopardy!
+If you know the.
+Okay, , maybe you've managed to do that.
+Or maybe you were distracted by me playing silly music,
+but, .
+Anyway, .
+, here's here's the answer.
+Or an answer.
+Okay.
+.
+Right.
+So, , the code for take.
+You know, as I said, there are three cases for
+each of these.
+You've got the case where where where the number is
+zero.
+, you've got the case where the list is empty,
+and then you've got the case where the number is
+non-zero and the list is non-empty.
+Okay.
+The recursive case.
+Okay.
+So , so we want to take zero zero items
+from a list XZ okay.
+Obviously the result is the empty list.
+Okay.
+If, , if you want to take any number of
+items from the empty list, well, there aren't any, so
+you're out of luck, so you've got to return the
+empty list.
+You could return an error if you wanted.
+But the way take is defined in Haskell, it'll give
+you the empty list.
+So if you ask for the first, you know, n
+items of a list, that's that's shorter than that.
+It'll it'll just give you what's in the list and
+nothing more.
+Okay.
+, but if you want the ith item from a
+list x cons xs and I is greater than zero.
+Okay.
+So, , so that means that the that the item
+x, the first item has to be included because you're
+taking the first I and , and that includes x
+here.
+Okay.
+So ex cons and then you want all of the
+other ones.
+Okay.
+All of the remaining ones which are, that is to
+say, the I minus one, , number of items from
+the list XZ, which is the, , what you have
+left when you remove X or when you ignore x.
+Okay.
+So we take, you know, take I of x cons
+x is its x cons take I minus one of
+x is okay.
+Did did did some of you get that or something
+similar to that okay.
+It's some.
+It's not too different from what's here I mean at
+least the recursive the recursive case.
+You know you're you're doing a similar sort of thing.
+There's an I minus one here and you're, you're applying
+it.
+, you're applying the recursive call.
+The recursive call is to I minus one and XZ,
+which is the the tail of this of this list
+and and the the drop case is the same except
+that , except your your returning the rest.
+So if you drop zero from xz, the result is
+XZ.
+If you're dropping, , some number other than zero from
+the empty list, the result is the empty list.
+And if you're dropping I from x axis, it's the
+same as dropping I minus one from XZ.
+Okay.
+So you drop the first one and then you drop
+all of the I minus one other ones after that.
+Okay.
+So simultaneous recursion on the A number and a
+list.
+So we need two base cases except here where I
+didn't write it down because it would just be an
+error.
+Okay.
+Any questions about that.
+Is that a question.
+Yeah.
+You have to be a little more assertive.
+You don't need the first down function definition.
+For what?
+Zero access.
+You don't need the first definition.
+Ah, yes.
+That's a good point.
+Okay.
+Good.
+Good point.
+Yes.
+, exactly.
+Yes.
+These, , , actually, you don't need two here because
+the second one.
+, wait a minute.
+No, you do need it.
+Wait a minute.
+Yeah, you need it.
+Okay.
+So if the if the first argument you were saying
+you don't need both of these, right?
+Okay.
+Okay.
+You say we just need the first one.
+Okay.
+Well, .
+Okay.
+If you only had the first case this would work,
+provided you don't want this behaviour that you get in
+Haskell that taking the first n items in the list,
+which is of length less than n, gives you just
+what's in the list and nothing more.
+Okay, what you would get if you left out.
+The second case is you.
+You'd get an error on that case.
+Okay, so, .
+Yeah.
+No, sorry.
+I thought you were.
+I thought you were pointing out correctly that something is
+redundant, but it isn't.
+It isn't redundant.
+You'd get a different function that way.
+Okay.
+Anybody else have a question?
+Yeah.
+Wait a second.
+I can't.
+I can't hear you.
+Let me try throwing you a this red thing.
+Do you always have to start from the beginning of
+the list.
+Or you always.
+Have?
+Sorry, I can't even do.
+You have to start from the beginning of the list.
+If you're taking or dropping, do you have to start
+from the beginning of the list, or can you start
+partway for it?
+Do you have to start at the beginning of the
+list?
+Is that what you're asking?
+You're always going, , , let's see.
+Left to right.
+Okay.
+Because because the list is built using cons and that's
+and that is, , always putting things on the left
+at the beginning.
+Okay.
+Sorry I didn't catch you at the beginning.
+Anybody else want to try with the red cube?
+No.
+Okay.
+, I'll skip this.
+This is just explaining pattern matching.
+, again.
+Yeah, this was explaining pattern matching in terms of conditionals.
+, I don't think I need to explain that.
+, I let me see.
+Yeah.
+You can.
+There are different ways of writing these things.
+So this is just showing that, , , if you
+wanted to make this a little bit clearer.
+You might in the last case add a guard.
+So this is a this is this is making explicit
+in the last case here that it only applies if
+I is greater than zero okay.
+The code is otherwise the same okay.
+You know it's going to be greater than zero because
+you've already checked for the case where I is equal
+to zero okay.
+Because you do this in sequence.
+But it is actually nicer to make that explicit by
+putting it in the code.
+So, , you know, here we've got three cases that
+are quite simple.
+You could imagine in some much more complicated program.
+It might be that by the time you've got to
+this case, you've forgotten that it's, , that you've already
+checked this.
+Okay.
+So this is just making it explicit.
+Okay.
+So here is just showing how take works for a
+particular example.
+, so take three of words.
+This string, this list words.
+, so applying the third, the third case.
+The third case, , , several times we get w
+and then O and then R, so we're where we're
+going from three to 2 to 1.
+We've got W O and R the first three
+items.
+And then , and then at the end of that
+we take, take zero of, of DZ the last, the
+last bit.
+Okay.
+And that applying the, the first case here gives us
+the empty list.
+Okay.
+So there we produce from here the empty list.
+And the result is w o and r okay.
+Is that clear I hope right.
+so I just want to now, , , spend
+a little bit of time looking at what happens when
+you take infinite lists.
+Okay, so I said, in Haskell, you can compute with
+infinite lists.
+And that's and that's true.
+You get you get results.
+, , for, , for programs on infinite lists, I
+showed you the infinite list of prime numbers.
+I mean, that was maybe I showed you the computing
+forever, which is what you expect for something that's infinite.
+, if I'd if I'd written a little, , I
+could have applied a function to it that took the
+nth number in a list.
+And then you could ask something , what's the 374th
+prime number?
+And it would just compute that many prime numbers and
+then give you the 374th one would be more, ,
+a more kind of, , appropriate way of demonstrating that.
+But the point is, you can compute with these infinite
+lists and then and then produce finite, , results from
+them.
+Okay.
+You have to take some care doing this.
+And here's an example of of not taking enough care.
+I've explained how, , how I'm going to show you
+this actually working.
+.
+I've, , I've explained how you can define take, ,
+in two ways.
+There we go.
+Up there, the the with a comprehension first and with
+no sorry recursion first, comprehension second.
+Okay.
+But, , they actually produce so they produce the same
+answers for finite lists, but for infinite lists, the,
+the result is different.
+Okay.
+It's on the slide, but I'll just show it to
+you in actual, , actually running.
+So you believe me.
+So if I do, , take take of, , what
+was the example there?
+Three Of the list.
+From ten on up.
+I'll get, as I would expect, , lists containing ten,
+11 and 12.
+So that's the first three things in this list.
+Okay, but if I do take comp of three, ,
+ten on up, what I'll get is, , I'll get
+Haskell telling me that the, the list that I want
+contains ten, 11 and 12, and then it it doesn't
+end the computation.
+, here we are.
+Yeah.
+The computation hasn't ended yet.
+It's still looking.
+It's still looking for some other item that might be
+in that list.
+Okay.
+Why is that?
+I have to interrupt it.
+Okay.
+Why is that?
+Okay.
+, it's because of the code here.
+Okay.
+If you look at this code, you, , you know,
+you take.
+Maybe I have this on a slide.
+Let me see.
+.
+This is too complicated.
+I'm not going to go into this.
+But if you look at the recursive one, if you
+look at the recursive one, it's, , it's counting down,
+and then eventually it gets to zero.
+, and the answer is the empty list.
+Okay.
+But the, .
+Oh, sorry.
+This is the one I wanted to show you.
+This is this is also not very helpful.
+.
+.
+Well.
+Let me do this on paper.
+.
+Okay, so what have we got here?
+We've got the code up.
+Let me show you the.
+Code.
+There.
+Okay.
+Take comp.
+So, what's going on here?
+We're going through the items in zip.
+0...
+And, , and x is so X is in this
+case is , is ten, 1112.
+Actually, wait a minute.
+Excuse me.
+.
+It's ten.
+It's.
+Yeah, ten.
+It's ten.
+11.
+12 going on forever.
+Okay.
+So what do I get from that?
+I get zero ten.
+It's a list.
+Zero ten.
+111.
+Two.
+12.
+Three.
+13.
+Okay.
+Going on forever.
+And so looking at the code.
+So this is what's computed by by this bit.
+Okay.
+And it's looking for a cases where the first thing
+in the pair is less than I, I in this
+case is three.
+Okay.
+So it looks at this, it says yes zero is
+less than three.
+, part of the answer should be ten.
+Next item.
+Yes one is less than three.
+So the next bit of the answer is 11.
+okay.
+Here two is less than three.
+The third item should be 12.
+And then it looks at this.
+Okay.
+, well, no, three is not less than three.
+Don't include that one looks at that one.
+Four is not less than three.
+Don't include that one.
+It keeps on going.
+Looking faithfully.
+, one after the other.
+For an item where the first thing in the in
+the pair is less than three, it will of course,
+never find one.
+Okay?
+Because the the indices are increasing, but Haskell doesn't know
+that.
+So it'll keep looking.
+Never finding anything.
+And so that's why after you know, producing ten 1112,
+it'll just sit there and and not and not stop
+okay.
+It's just looking forever.
+So this is an example of how you have to
+be a little careful with infinite lists and, , you
+know, lazy computation works.
+, depending on how you mean.
+Depending on how you you use it, it'll it'll work
+and give you answers that you want.
+And sometimes you have to be careful.
+Okay.
+Where am I?
+Here.
+Okay.
+Have a few more minutes.
+I just want to, , talk to you a little
+bit more about arithmetic, because the way that the recursive
+definition of natural numbers is, , is given, , the
+way that you can write functions on natural numbers.
+This is, , from mathematics, , about 130, 140 years
+ago.
+, it's something called piano arithmetic.
+Piano is spelled piano, which is not the thing
+that you play with 88 keys.
+, , musical instrument.
+It's, , the man, , Giuseppe.
+Piano.
+Okay.
+And he was the first one to, , to write
+this down and to understand how induction works.
+, mathematical induction.
+Okay.
+And so here is, , piano arithmetic used.
+Suppose you had that you, that you didn't have addition
+multiplication and , exponentiation.
+So here is how you could define these three things
+okay.
+On on natural numbers okay.
+Numbers zero and greater.
+Right.
+So plus it takes two integers, produces an integer
+and is defined by recursion.
+So m number m plus zero.
+It's recursion on the second argument okay m plus zero
+is m and n plus n for m greater than
+zero.
+Okay.
+Well that's recursively you look at m plus n
+minus one whatever that is.
+And then you add one to it.
+Okay.
+So for example three plus two is three plus one
+plus one.
+You know.
+You know four plus 72 is four plus 71 plus
+one okay.
+And so forth.
+So this is a recursive definition of plus if you
+didn't have plus if all you had that is to
+say if all you had was plus one, you didn't
+have anything except plus one and zero.
+Okay.
+The plus here is not actually a recursive invocation of
+this.
+Plus it's a it's a separate, separate operation.
+Okay.
+bit confusing okay.
+Let's look at times.
+So so how would you define times recursively.
+Okay.
+Well as m times zero is zero okay.
+And any things times zero is zero.
+All right.
+And m times n it's , n copies of
+em added together.
+So em plus em, plus em plus m n times
+added together.
+And this is what this is doing here.
+You take, , to get em copies of N, you
+get n minus one copies of em, and then you
+put another copy of em onto it, and you add
+them all together.
+That's what's happening here.
+All right.
+And similarly for exponentiation.
+Okay.
+M to the power of zero is one m.
+Anything to the power of zero is one and m
+to the power of n.
+It's you take n copies of em and you
+multiply them together.
+So similar pattern is what we had here just now.
+Except we're using multiplication to put together the the the
+things.
+Okay.
+So m times, m times m times m etc. however
+many you need.
+Okay.
+And, , just showing that working.
+This is, this is two plus three computation sequence.
+, you know, you eventually work your way down to
+two plus zero, and then you add one a bunch
+of times to get five.
+Okay.
+So that's just a kind of perhaps curiosity for those
+of you who are doing maybe computer science and mathematics,
+this is something you might learn about in mathematics is
+kind of the foundations of mathematics include how do
+you define what the numbers are?
+, and here's a picture of Giuseppe Piano.
+, and, , slightly funny looking man.
+, but anyway, he invented piano arithmetic.
+, and, .
+That's that's all I wanted to say, but I want
+to give you some time to ask questions.
+So are there any questions at this point?
+, before I finish the lecture.
+Any hands or maybe you've got you've had enough of
+recursion and you just want to go away.
+, perhaps.
+Okay, you can come up afterwards and ask.
+So next time, thank you for your attention.
+Next time we're going to have higher order functions okay.
+Next lecture.
+So thank you.
+Yeah.
+And last.
+Slide you define slide matrix for.
+For some , wait a minute.
+, you mean wait a minute.
+Let me just get to it.
+That one.
+Yeah.
+Yes.
+Yeah.
+I was trying to explain.
+This is kind of a this is kind of a,
+, unfortunate way that I wrote this down.
+The way this was done in mathematics is actually you
+define, , you don't use zero and plus one, you
+use zero, and you use a function called sometimes succ
+for successor or s for successor.
+, and it's applied to a, you know, a number.
+And so and so instead of writing, instead of writing
+zero plus one plus one plus one, I would write
+successor of successor of successor of zero.
+And instead of writing this I would write m
+plus zero equals m and m plus successor , of
+n equals m plus n.
+I would write successor of that.
+Okay.
+So that's really what I'm trying to do.
+When I write that.
+.

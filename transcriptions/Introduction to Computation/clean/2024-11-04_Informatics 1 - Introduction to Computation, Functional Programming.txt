@@ -1,0 +1,1055 @@
+Okay.
+Good afternoon.
+, themes from James Bond, obviously.
+, right.
+Today I'm going to talk to you about, , type
+classes.
+So, , this is a, you know, yet another feature
+of Haskell, and you've seen them.
+You've seen them coming up in, in code already, but
+not explained properly.
+So type classes are used to describe classes of types
+that have something in common.
+, example , that you've seen already is the EC
+type class and the show type class.
+And , a couple of others might have popped up.
+Okay.
+And this is another idea from Haskell that's been adopted
+by some other programming languages.
+And it's used to deal with situations in which there
+are certain operations, equality, that can be used for
+many types, but not all types.
+Okay.
+Everybody paying attention.
+Okay.
+So this is another, another, , thing in, , in
+Haskell's type system that, , that I'm telling you about
+and by now you will have.
+Whoops.
+I don't know why the lights go off in this
+room sometimes.
+, by now you will have heard so much about
+types and Haskell.
+So you will have got the idea that that they're
+important.
+Okay, but there's different kinds.
+And you may be by now.
+Can you stop talking, please?
+Yeah.
+By now, you may be a little bit bewildered by
+all the different kinds of types and what they have
+to do with each other.
+So let me try to take a step back and
+explain before I go any further.
+Okay.
+So we've got in Haskell and then and well we've
+got values and expressions okay.
+And these are things zero and one plus
+one times.
+x and, , , empty list.
+And, , the function plus is a is a is
+a value.
+Okay.
+And , expressions and values have types.
+And types.
+there are built in types int and
+lists the list of booleans and things
+ordered binary trees, you know, all sorts of types
+you will have, , you will have seen oops.
+, you know, there are, , function types and lists
+of functions.
+Okay.
+And so forth.
+, so these are all types and values and expressions
+are classified by types.
+So we write for example zero colon colon int and
+you know empty list Colon.
+Colon, list of bool or list of int or list
+of bull arrow int.
+Okay, and some of these are built in.
+And so built in things int and intolerable.
+there are type synonyms.
+So these are things type name equals
+string.
+In the last tutorial exercise when you were doing
+variables with with, with names which were strings
+or type predicate A equals a arrow bool.
+So this was just giving a name to A to
+a type or a type expression for some reason.
+And then there were the algebraic data types.
+So these were these were built in these were these
+were synonyms for existing types.
+And these were actually, , defining a new type.
+So something tree equals , empty or, or
+you can't read.
+Okay.
+Thank you.
+, oops.
+Better.
+Okay.
+, node applied to, , tree and tree.
+Okay.
+So algebraic data types defining a new type with constructors
+okay.
+And what I'm going to tell you about today is
+type classes.
+, things EQ show ord there's going to
+be more.
+So these are .
+They're groupings of types okay.
+That share characteristic.
+And I will explain all that.
+So you will have seen these in places
+well they used to qualify types.
+So there are things well I'll explain.
+Okay.
+, and then and then finally I've shown you, ,
+abstract data types or data abstractions.
+Okay.
+And this is not a new kind of type.
+This is a way of using Haskell.
+To encapsulate, , to encapsulate, , representations.
+Sorry, I can't write , to, to to encapsulate representations
+of data.
+So, , so I showed you four versions of sets.
+That is to say, four representations of sets, two different
+list representations and two different tree representations.
+And so data abstract data types or data abstractions is
+a way of using things in Haskell actually the module
+system to encapsulate those.
+Okay.
+So that's the spectrum of things that have to do
+with types.
+Okay.
+And , I think that's all there is as far
+as types of concern in Haskell might be that I'm
+forgetting something, but if it is, if that's the case,
+then, , it's not something I'm going to be talking
+about in in future lectures.
+It would be some advanced thing that maybe I haven't
+learned about myself yet.
+Don't know.
+Okay.
+So anyway, so there's that.
+, and so here we are with type classes.
+And let me show you.
+I'll just leave that up for a second in case
+you're still reading it.
+.
+So here's an example, or at least an example of
+our motivating example.
+Okay, so you've seen this function before.
+This is the membership function for , for lists.
+So , , looking just at the stuff over here,
+the type says we take a, we take a value
+and we take a list of that kind of values,
+and, and we produce a boolean.
+And the idea is that if that value is in
+that list, then the answer is true.
+Right.
+So membership for ordinary lists of values.
+Okay.
+, but as you've seen, the type of that has
+a sort of qualifier at the beginning it says, ,
+that that's the type.
+But I require a type of values a which has
+this property that it you can do equality on it
+okay.
+So I've mentioned this before.
+I've said it's a requirement when you use this function
+that you have a type this.
+I said maybe that there are some types that
+don't satisfy that, which is why we have to give
+the qualification.
+And I said that I would explain this later properly.
+So later has now arrived.
+I'm going to explain this properly okay.
+So here goes.
+So here are three definitions of of of this function
+okay I to do this.
+So there's higher order version.
+There's a comprehension version the recursion version.
+All three of these ways of doing it I mean
+you can you can read this code I mean it's
+familiar to you by now I think how you would
+do this using fold using a comprehension with an Or
+at the front or using a recursive definition.
+Okay.
+, each one of these features the equality function somewhere.
+Okay.
+, you know, we, , here, we, , we map,
+, we use map to go down the list to
+check to see whether a value is equal to X
+or not.
+You get a list of booleans, and then you accumulate,
+, whether one of those is true or not using
+disjunction.
+, here you're, you're you're doing the same thing using
+comprehension.
+You're checking to see for every element in Y whether
+or not sorry, every element in Y's, whether x is
+equal to it.
+You get a bunch of booleans you do or to
+get the truth value whether one of those is true.
+And here's recursive definition each one uses equality.
+Okay.
+, no matter how you write this function, you have
+to use equality.
+There's no getting around it, okay?
+You have to compare the value you're given with the
+values and the list to find out if it's there
+or not.
+Okay.
+And so this is why this this type definition, this,
+this type of , this type signature has this qualification
+in it.
+You have to use equality.
+Okay.
+And , and so when we use it, , it
+works if we've got a type which has equality, okay.
+Which is what the, , type signature says.
+So for example, integers.
+Okay.
+Checking to see whether that number one is in that
+list.
+The answer is false okay.
+Equality works on integers.
+We know that okay.
+Same thing for for for for characters okay.
+Equality works for characters.
+So you can check to see if a character is
+in a string or not.
+Okay.
+, same goes for pairs consisting of integers and and
+and characters here.
+Okay.
+So we can check to see whether this pair is
+in this list of pairs okay.
+And same for lists, , you know, lists of characters
+or strings.
+So we can check to see if a string is
+in a list of strings.
+Okay.
+But.
+For functions it doesn't work.
+Okay.
+We can't check to see whether this function.
+Is in this list of functions.
+Okay.
+These are both lists of functions.
+So this is a list of function.
+So oops.
+you know the negation function and the function that
+negates and then and then negates the result okay.
+Maybe this is a a function on integers okay.
+You or you take the you know you give it
+three.
+It gives you minus three.
+This one gives you minus minus three which is equal
+to three Okay, so, , it doesn't work on functions.
+Okay?
+Haskell refuses to test equality on functions.
+, why is that?
+Okay, well, the error message says I can't do equality
+on functions, and it suggests maybe you wanted to define
+it yourself somehow.
+Okay.
+Why doesn't Haskell test equality on functions?
+Okay.
+, because it's it's.
+Well, it's kind of impossible depending on your point of
+view.
+Okay.
+So think of it.
+Okay.
+You want to check?
+Let's suppose this is a list of functions on integers.
+You want to check whether a function on integers is
+in a list of functions as integers okay.
+So checking equality you have a function on the integers.
+You want to check to see if it's equal to
+the first one or not.
+Okay.
+Checking that means, , One way to do it would
+be to check all of the values of of of
+that function for all inputs.
+Okay.
+You check to see whether that function applied to zero
+is equal to this other function applied to zero.
+And then you check if that's true.
+You check to see if it's it's true for one
+and so forth.
+And there's an infinite number of integers actually.
+int int is 64 bit integers.
+So it's not infinite but it's very large.
+Okay.
+, so , so Haskell just refuses, you could, you
+could say, well, you know, let's look at this example
+here.
+This is the entity function.
+, and this thing here on integers, this is also
+the identity function.
+Okay.
+It negates and then negates again which gets you back
+to to x okay.
+And so you could say, well using some fancy algebraic
+manipulation system that, that cleverly knows about, you know, the
+fact that, , negation Twice gives you the same thing
+as not negating at all, then you could recognise that
+that is actually equal to this.
+Okay.
+And that's true.
+Okay.
+But in general that doesn't work.
+It's an undecidable problem whether to algebraic expressions over integers
+are the same.
+Okay.
+So anyway , , you could also say, well, for
+booleans, , functions on booleans are finite, you know, small
+finite functions.
+And so you could check those anyway.
+, Haskell just says, no, I'm not going to do
+it.
+Go away.
+, if you want, you can define it yourself and
+you can actually define it yourself if you want to.
+And I'll show you, you know, the mechanism for doing
+that.
+It says add an instance declaration.
+, you can actually do that.
+You could say you could define it to say that
+equality on on functions is always false or it's always.
+True.
+Or you could be fancy and you could say for
+integers, provided it's the first, the values from zero up
+to ten coincide will regard functions as equal.
+You could do that if you want, but Haskell doesn't
+have it built in, which means that you get error
+messages this when you try to apply functions
+LM to lists of functions.
+Okay.
+So this is this was an example involving an equality
+type class.
+Here is how it works when you try to apply
+it here is here is defining inequality the equality
+type class and instances of it okay.
+This is actually not the full definition.
+I'm going to get to the full definition in a
+minute.
+But .
+, just put that back up on both screens.
+Right.
+, this is a slightly simplified version, but, .
+Okay.
+.
+Never mind.
+So this is defining the equality type class.
+If it wasn't built in, it is built in.
+So you don't have to do this, but this is
+how you would do it if it wasn't built in.
+Okay.
+It says, , I want a new type class and
+it's called EC.
+, capital letters or initial capital letter.
+And you're saying that, , EC is a type class,
+, which for a given type A, , , it
+requires that you've got an equality function.
+So with this name and this type and this type
+involves, of course, the type A.
+Okay.
+So it says, , for in order to have a,
+an instance of a equality of this equality type class,
+you need to type a and you need a inequality
+function with that name.
+And then you can once you've defined that, that's the
+equality type class defined.
+Then you can define instances of the type class.
+For example here we define int and char.
+And well coming up this is a little bit
+more complicated pairs and lists as being instances of
+this type class.
+Okay.
+So first of all, int in order to declare
+something as a type is an instance of a type
+class, you have to say what's the what's the equality
+okay.
+And so for int the equality is a is a
+built in function in Haskell, which is basically , ,
+referencing , built in, you know, in the hardware, there
+is a way of comparing integers for equality.
+And so that's just the name of that, of that
+hardware instruction for, for comparing integers for equality.
+Okay.
+So you just say instance EC that's the type
+class, int is the name that you is the type
+that you want to declare as an instance of that
+type class.
+And then you say what the definition of the required
+function is.
+Okay.
+There might be more than one function here.
+You'll see examples of that coming up.
+Okay.
+In this case just one for for char we
+can say, well, , two characters x and y are
+equal if and only if, , the character codes for
+those characters are equal.
+Okay.
+Remember this is function ord, which, , , for every
+character gave you a number, which was the character code.
+Okay.
+And it's a 1 to 1 mapping.
+So , so you can compare, you can, you can
+convert both of the characters to integers.
+And then here you're using integer equality.
+Okay.
+These two these two expressions are integers.
+And that's integer equality which was the thing you just
+defined a minute ago.
+Okay.
+Okay.
+With me so far.
+Yeah.
+, slightly more complicated.
+Are these two last these two examples here.
+And this is declaring pairs as an instance of EC.
+Okay.
+, but in order for a pair, a pair type,
+you know, , first component, type A, second component, type
+B, in order for that to be an equality type,
+you need to have equality on A and B.
+Obviously you need to compare.
+You want to compare the components of a pair.
+You need to be able to compare, , you know,
+if you want to compare the the pair, you need
+to compare the components of the pair.
+So in order to compare whether you know UV is
+equal to x, y or not So you as of
+type A, , v is of type B.
+X is of type A, y is of type B.
+In order to compare those two things for equality, you
+need to compare you with x and v with y.
+Okay.
+Component wise , equality okay.
+And this this equality here, this equality here is, ,
+this is a quality on a.
+Okay.
+Because U and V are the first components of a
+value of type you comma b and this and this
+type and this equality here.
+this is over values of type b okay.
+So in order to in order to compute equality on
+pairs of type A comma B, you need equality
+on A, you need equality on B.
+And that's the reason why you have this kind of
+conditional, , type instance declaration.
+Okay.
+It says, , we've got a quality on Paris, provided
+we have got a quality on the types forming the
+pair and the same thing down here.
+So if you you got that.
+Okay.
+So for example, you can't compute equality of pairs of
+functions or pairs of a function and a boolean.
+Okay.
+Because you wouldn't have one of these conditions satisfied.
+And then , same sort of idea with lists.
+You can't, , get equality on listening unless you have
+equality on the components of the list.
+Right?
+So you're saying that, , , list of a is
+an instance of EC provided A is an instance of
+EQ and here is a recursive definition of what equality
+does.
+So, you know, you've got two lists.
+Preparing for quality.
+You you go down the list and compare the elements
+one at a time.
+Okay.
+And that's a little recursive definition which does that.
+, equality on the left here is the equality on
+lists.
+Equality here.
+This is equality on the components of the list.
+So this is a quality on a and equality here.
+This is the recursive call to this function we're defining.
+So this is equality on lists of a okay.
+Okay.
+So this is an example of defining a type class
+and instances of a type class.
+new syntax is is this, , this this
+thing class.
+, you know, class class name type variable where and
+then and then a list of a list of function
+signatures.
+Function type signatures okay.
+And then instance type class type where and then
+a, a list of definitions of those functions.
+Okay.
+And , you know, you can use recursive functions and
+so forth.
+These can be, these can be as complicated as you
+want.
+Okay.
+So that's kind of the basic idea.
+And I'm going to skip a couple of slides.
+I'll just for those of you who want to look
+at this kind of thing, , this is this is
+explaining how, how type classes are, , definable in terms
+of features that are already in Haskell.
+So this is this is saying it's actually just
+a convenience, , for something you could write yourself if
+you wanted to.
+Okay.
+, this is explained in the textbook in a and
+I think a nicer way than it is in this
+slide.
+But if you want, you can look.
+Okay.
+So let me do this now properly.
+This is this is now the actual, , definition of
+EC and a couple of other type classes, Ord and
+Sho.
+So we're defining EC AUD.
+And show.
+Okay.
+Three three definitions here okay.
+So EC I showed you a second ago but I
+said that was not the full definitions.
+This is actually the full definition here.
+Okay.
+the other one was a little bit simplified.
+So actually EC the type class gives you equality and
+also inequality okay.
+This is the negated equality.
+So there's actually two functions required there.
+Okay.
+However, and this is this is a typical situation with
+type classes.
+, it turns out you can define one of these
+functions in terms of the other one.
+Okay.
+And so , you know, negated equality is , you
+do equality and then you apply not okay.
+So this is actually part of the definition of this
+type class.
+That negated equality is defined by default as the negation
+of the normal equality okay.
+This is a default.
+That means that when you define an instance of this
+of this , of this class, you can, if you
+want, define a different, , a different give a different
+definition of, of type inequality.
+Okay.
+And this is a typical this is a, this is
+a thing you can do with with type classes.
+Here you have a type class Ord where you've got
+four things that are required in order for something to
+be, , an instance of AUD.
+Okay.
+However, you only actually need one of them, and the
+other three are defined by default in terms of that
+one.
+Okay.
+The one that you're that you really need is this
+one.
+And , and the others are defined this using
+.
+Using that one and equality.
+Okay.
+Here's equality being used here.
+Okay.
+Because of that and because it makes sense, , this
+this equality, , is required as a condition, , on
+the definition of this type class.
+Okay.
+It doesn't make sense to have an order relation if
+you don't have an equality relation.
+That's what this is saying.
+Okay.
+So yeah you need less than.
+You need less than or equal to.
+You need greater than, you need greater than or equal
+to.
+But it's good enough to just give less than or
+equal to and to define the other ones in terms
+of that.
+Okay.
+So that's equality.
+That's Ord.
+And then you've seen the class show, , coming up
+in previous, , you know, previous lectures.
+This is the class of things that you can convert
+to strings.
+So what you need is a function called show which
+turns a value into a string.
+Okay.
+So, , yeah.
+So this is the way that you can define type
+classes of your own.
+These three are built in.
+But if you wanted to you could have define them
+yourself okay.
+So those are defining the type classes.
+What about defining instances of these type classes.
+Okay.
+So we can define booleans as being instances of all
+three of these type classes.
+And here's the declaration of that.
+Okay.
+So you know defining something as an instance of a
+type class, you say , instance , the type class
+name the type name where.
+And then you have to give definitions of the functions
+required in this case definitions.
+The functions required are equality okay.
+And then negated equality is provided for free.
+So this definition of equality for bool case by
+case not very exciting okay.
+, this is a definition of , of less than
+or equal to for bool.
+Okay.
+, the definition here is a bit arbitrary.
+Okay.
+It's saying that false is less than or equal to
+true.
+Rather than the other way around.
+It's a bit arbitrary.
+We could have done it the other way around.
+The only reason why we do it this way is,
+, because this case.
+, means this is actually equivalent to the implication, ,
+implication on booleans.
+Okay.
+It's true for all for all pairs, except for true
+is not less than or equal to false.
+Okay.
+Just true implies false is false.
+Okay.
+So this is deliberate.
+And I don't know whether Julian has talked about Boolean
+algebras or not.
+There's a concept of Boolean algebra.
+If he hasn't talked about it, it's just explained in
+the book.
+, and if you want to make booleans into a
+Boolean algebra, , this is the way that you define,
+Less than or equal to.
+Okay.
+Finally, , show you can define , bool is instance
+of show using this definition.
+And, , I've used kind of English names of the
+Boolean values here.
+You could if you want to use a different language
+or any string you want.
+Really.
+It's just that, , I'm using English okay.
+Any questions anybody.
+Up to this point, this is all kind of, ,
+pretty easy, I think.
+Just new stuff, but, .
+Okay.
+, pairs.
+Okay.
+You can define, , that that, , we've already seen
+this.
+Actually, you can define EC, , you can define the
+pairs or instance of EC provided the value, the, the
+the types involved in the pair, both of those are
+instances of EQ.
+Okay, I've shown you that definition already.
+, here's a definition of of of of pairs being
+an instance of ord.
+So Ord is this some class where we've got less
+than or equal to and other order relations.
+And the definition here of less than or equal to
+is perhaps not what you'd expect.
+Not sure.
+I mean, if you looked at if you look at
+the definition for equality, you could think, well, a similar
+sort of thing.
+For here we would just say that x comma y
+is less than or equal to x prime comma y
+prime provided x is less than or equal to x
+prime and y is less than or equal to y
+prime.
+So that's kind of element component wise.
+order okay.
+This is a different definition.
+And this is the usual one for pairs.
+And it's the one that's built into Haskell.
+And the motivation for this is , I'll show you.
+It's because when you extend this to lists, it's the
+one that you want.
+Okay, but I'll just tell you what it is for
+now, okay?
+We say that less than that x comma y is
+less than or equal to x prime comma y prime.
+If either x is less than or equal sorry x
+is less than y.
+Okay, then it doesn't matter what y and y prime
+are, then this one is less than or equal to
+that one okay.
+Or x and x prime are equal and y is
+less than or equal to y prime.
+Okay.
+So , you know, so if the first components are
+equal then we look at the second components.
+If the first components are not equal but the first
+one is less than the second one less then not
+less than or equal to.
+Then we look at the second components.
+Okay.
+And here's a show function which just puts the the
+the strings for the two components.
+, concatenates them with a comma in between in parentheses
+around them.
+Okay.
+These are.
+I'll say it again.
+These are these are built into Haskell.
+So this is how you would define them if you
+had to define them yourself.
+And then for lists for each of these we've got
+a little recursive definition.
+Okay.
+, I've shown you the one for lists for, for
+, EQ already.
+, for I'll just say for show.
+, you, you kind of put the, the elements in
+the list.
+Turn them all into strings, concatenate them, put commas in
+between and put square brackets around them.
+So that's a that's the code that does that.
+Okay I'm not going to look at that in detail
+I want to focus on this.
+, this case for AUD here.
+Okay.
+So this is a little recursive definition of of
+less than or equal to for lists.
+And what does it give you?
+, okay.
+Well.
+Let me show you some examples.
+Okay.
+So this gives us, , what's, , the, the, the
+order that you have, , in the dictionary.
+For example, bar is less than or equal to bat.
+Okay.
+If you look for those two words in the dictionary,
+the first one will come before the second one.
+And bat will be less than or equal to, ,
+battery.
+Okay.
+Because, , the first three.
+The first three letters of this are the same as
+that, but this one's longer.
+Okay.
+And of course, , you know, , Aardvark.
+Is less than or equal to to that.
+Okay.
+You can already see in the first letter that it's
+going to come before that.
+.
+You know, .
+Also something , .
+You know, a followed by Z.
+Okay.
+So A is less than B, so it doesn't matter
+that Z is greater than A.
+All right.
+Second second thing.
+Okay.
+Anyway, so this is this is the dictionary ordering.
+And and this is and this is a recursive definition
+of that.
+Okay.
+And, , if you remember what I wrote for for
+pears, it's the same, you know, it's the same thing,
+but generalised, you know, so B followed by, , a
+is less than or equal to, , be followed by,
+, you know, see.
+Okay.
+First things are the same.
+Second one, you compare, , whereas, , you know, a
+comma Z is also less than or equal to b
+comma c.
+Sorry, I put, I put back quotes in there.
+I mean, I mean ordinary quotes.
+Sorry, I'm getting confused with my Haskell.
+In all of these cases, I meant this kind of
+quote, normal old quotes.
+Okay.
+, right.
+So dictionary ordering, also known as, , lexicographic ordering.
+That's the sort of computer science jargon okay.
+, comes from the word lexicon, which is a fancy
+word for dictionary.
+Okay.
+Have you got that right?
+, so this is the code that you would write
+if you needed to define these things in Haskell.
+It's built in.
+, and, and there's even something nicer than that in
+Haskell, which is that when you define I explained how
+to define these three things as, as algebraic data types.
+And then I said there's some magic words you can
+say when you define an algebraic data type, which, ,
+automatically gives you, , equality functions and show functions and
+so forth.
+Okay.
+So, , so if you do that with these three
+data type definitions bool, pair and list with these magic
+magic words at the end, deriving EQ, comma or comma
+show you can.
+You can also just derive one of them.
+, so for any algebraic data type you can do
+this and it will automatically give you the code.
+, I've shown you.
+Okay.
+Haskell writes it for you automatically.
+Okay.
+Using the types, , so, you know, , for example,
+just looking at the last one we looked at, we
+looked at lists just now, it will automatically write equality
+function for this for for this type.
+Okay.
+, it's it's a recursive type.
+The definition of equality is recursive.
+, , you know, to going back to the definition,
+, , if you, if you've got a, A list
+which is empty.
+Well, let's look at this one.
+You've got a list which is which is, , built
+using a cons.
+Maybe I should let me let me look at the
+let me look at the equality case just to make
+my explanation simpler.
+Okay.
+List building using a cons comparing with a nil list.
+Those are not going to be equal and the same
+the other way around okay.
+But if they're both used built using a cons, we
+compare the first elements and then we look recursively at
+the rest of the list.
+Okay.
+So this is the automatic.
+This is the the definition of EQ you get automatically
+for this from this okay.
+And the same for ord okay.
+This is the definition you automatically get from that okay.
+The definition of show is actually not the one giving
+here.
+This is the one that's built in for for lists
+in in Haskell.
+But if you were to define lists yourself and you'd
+say, I want to derive show.
+You'd get a you'd get a conversion to strings, which
+involves the constructors, cons and nil.
+Okay.
+But otherwise these things would give you what you'd expect.
+Actually for here show would also be different would be
+, using the constructor MC pair.
+Okay, so Haskell writes the code for you.
+And why is that good?
+Okay, first of all, I should say there are about
+seven of these type classes that you can do this
+for.
+Haskell will build will will build the code for you
+automatically.
+, those are three of them.
+, , this is good because the code is boring
+and so it's nice to not have to write it.
+Okay.
+Another reason is that, , , it's good to not
+write code.
+If you can get if you can get it written
+automatically for you.
+, because if Haskell writes it, it'll get it right.
+And if you write it, especially if it's boring, you
+might get it wrong because you're bored.
+, writing these writing these definitions is is.
+There's nothing interesting going on here.
+Okay, so, , you might make a mistake and then
+your code would be wrong, and then you'd get bugs.
+Okay.
+And so it's good that Haskell will do this for
+you.
+, to save you, work to save you.
+Making mistakes.
+Okay.
+, so that's that's a good thing.
+Let me see how much time I have.
+Okay.
+.
+I have too much stuff in the rest of this
+lecture to get through, but I'll just.
+I'll just hit a couple of high points and then,
+.
+I mean, in general, I just want to kind of
+inform you about the type classes, how they work, how
+you can define them, and the rest of the lecture
+is just a bunch of examples.
+So, .
+So for example, you remember that I defined sets in
+four different ways.
+And so I can make those an instance of EC
+as well if I want.
+Okay.
+Allowing me to use equality.
+This double equals sign to compare sets rather than using
+the function that I've defined.
+, for sets.
+Okay.
+I can just say, well, , you know, provided I've
+got an ordered type, okay.
+Because my, my representation.
+Well, this would be required for three of the four
+representations of sets.
+Okay.
+If I've got an ordered an ordered type A, then
+I have an equality on sets of A.
+And it's and it's the equal function that I define.
+Okay.
+And .
+And this is.
+This is necessary if I want the right answer.
+Because if I were to define equality using, you know,
+deriving.
+Sorry, deriving this.
+If I were to do that for, for, for example,
+ordered trees, then the equality I get would give me
+the wrong answer, because we've seen that two ordered trees
+can be equal if they have the same elements but
+different structure.
+Okay, , they have to satisfy the invariant.
+But it could be that the that, , you know,
+one of them is, , , well different shape.
+Okay.
+And so this gives you the ability to give the
+right equality for, for, for sets.
+Okay.
+So you can do that if you want.
+I will talk about, , the numerical type classes.
+So Haskell has a lot of different type classes for
+numbers.
+Okay.
+, so first of all, it's got a lot of
+types for numbers.
+You've got, you've got int which is 64 bit integers,
+you've got integer spelled out which is infinite precision integers.
+You've got floats which is floating point numbers.
+You've got double which is double precision floating point numbers.
+There are rationals that you've seen in your, , the
+tutorial involving matrices.
+, there are complex numbers.
+, , there are , probably some that I forgot.
+Okay.
+So there's a lot of different kinds of numbers in
+Haskell, and I don't I don't expect you to remember
+all these, all these different types of numbers because they're
+not important for this course.
+Okay.
+But they're there.
+And there's also a lot of different type classes involving
+numbers which kind of keep these different types in order
+in a certain way.
+And I also don't expect you to remember all these
+because they're not important.
+Okay.
+But you will have seen for instance, num okay.
+And I just want to tell you a little bit
+about what's in these, these type classes.
+, so you would have seen num, for example, ,
+at the beginning of the course, if you made a
+mistake with some function that involved arithmetic, then you would
+get some error message which would complain about something not
+being an instance of num.
+Okay.
+And what it was referring to is this type class
+here.
+So if you try to , well, different kinds of
+mistakes you can make with, with numbers.
+, okay.
+So num is the most basic type classes and it's,
+and it's the one where you have , , types
+which allow addition, subtraction and multiplication and a couple of
+other functions.
+Okay.
+And, , you know , not necessarily Division.
+Okay.
+Because, , , division, Division in a, in a in
+a type , , , float is written using this
+function name and division in a, in an integer integer
+division is written using this name.
+So these are, these are sort of integral types
+int and these are this is for types float
+with real with an actual division function in okay.
+So so , you know you've got you've got num
+which has at least additions subtraction, multiplication, negation a way
+to convert things from integers to to values of that
+type.
+, you've got fractional which is , which is Haskell's
+name for things rational numbers , , real integral,
+which is Haskell's name for things integers, which are,
+, where you have things division and modulo.
+Okay.
+So fairly complicated, , bunch of type classes here.
+And you can and you can define, you know, how
+num is an how float is an instance of num.
+And these reference the kind of built in machine instructions
+for doing, for doing , addition of floating point numbers
+and so forth.
+This is all this is all built in, so you
+don't have to worry about it.
+Okay.
+But, , well, the next thing in this lecture is
+explaining how if you wanted to define natural numbers as
+a, as a, as an abstract data type, which I
+think I've shown you, , you can also define, ,
+that, , wait a minute.
+Right.
+You can define that as an instance of numb.
+Okay, I won't I won't tell you what the rest
+of this thing is.
+There's a lot more examples here.
+You can look through them if you want.
+, , ending up with expression trees.
+Okay.
+, okay, that's enough for this lecture, though.
+And, , I'll carry on with a different topic tomorrow.
+So thanks for your attention.
+Mhm.
+Mhm.
+Hi.
+I have a.
+Couple of questions.
+I think this is from last week's chapter.
+The dates of chapter 21.
+Chapter 21, and I'm kind of confused on did we
+go through modules and week seven.
+But we did a little bit quickly.
+I mean, I explained each one of my examples, had
+a module declaration with an import and with and with
+this parenthesis list of exports.
+So I did explain that it was pretty quick.
+But , you know, that was where I explained it
+in that lecture.
+Yeah.
+, basically this topic is about how you can import
+modules and also define functions and those modules that refer
+to other functions.
+Yes.
+Yeah.
+And how that can also go really wrong if.
+If you, if you export.
+Oh hi there.
+Yeah.
+Oh sorry.
+I'm, I'm broadcasting.
+How you.
+I could leave you.
+Say goodbye.
+Everyone's gaining the broadband.
+Wi-Fi seven on E makes every device work better.
+Even yours.

@@ -1,0 +1,5541 @@
+WEBVTT
+
+00:01:31.350 --> 00:01:32.340
+<v Speaker 0>Let's try now.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:37.620 --> 00:01:40.350
+<v Speaker 0>Okay, I've taken the mic off mute, so it should
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:40.350 --> 00:01:41.610
+<v Speaker 0>be working a bit better.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:43.140 --> 00:01:43.590
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[68,68]}
+
+00:01:43.590 --> 00:01:47.010
+<v Speaker 0>Don is not introducing me, so I'll introduce myself.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:01:47.430 --> 00:01:48.750
+<v Speaker 0>I'm Phil Wadler.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:48.780 --> 00:01:51.120
+<v Speaker 0>I'm a professor at the University of Edinburgh.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:51.150 --> 00:01:53.580
+<v Speaker 0>Some of you would have seen the lectures I gave
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:53.580 --> 00:01:54.210
+<v Speaker 0>last week.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:54.210 --> 00:01:56.400
+<v Speaker 0>How many people were here for those lectures?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:57.540 --> 00:02:00.880
+<v Speaker 0>And who wasn't here for those, but is here now.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:02:02.260 --> 00:02:05.470
+<v Speaker 0>And who didn't raise their hand either of those times?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:07.120 --> 00:02:07.720
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:02:07.720 --> 00:02:08.350
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[96]}
+
+00:02:10.869 --> 00:02:14.380
+<v Speaker 0>So today we're going to talk about propositions of types.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:14.470 --> 00:02:16.930
+<v Speaker 0>Um, as you'll know, I had my hip replaced recently.
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:02:16.930 --> 00:02:20.020
+<v Speaker 0>So most of the time I'm just going to be,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:20.530 --> 00:02:22.300
+<v Speaker 0>uh, sitting like this, but maybe I will get up
+
+NOTE CONF {"raw":[75,100,100,100,100,100,100,100,100,100]}
+
+00:02:22.300 --> 00:02:23.260
+<v Speaker 0>and wander around.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:23.260 --> 00:02:24.130
+<v Speaker 0>We will see.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:27.790 --> 00:02:30.160
+<v Speaker 0>Are there any questions before I start?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:31.870 --> 00:02:35.200
+<v Speaker 0>So if I say something you don't understand, you have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:35.200 --> 00:02:37.150
+<v Speaker 0>a job, which is to raise your hand and ask
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:37.150 --> 00:02:37.900
+<v Speaker 0>a question.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:37.900 --> 00:02:38.560
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:02:40.810 --> 00:02:42.220
+<v Speaker 0>We'll see how that works.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:42.370 --> 00:02:43.240
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[75]}
+
+00:02:43.930 --> 00:02:50.080
+<v Speaker 0>So who wants to learn the hilarious story of computability
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:50.080 --> 00:02:50.740
+<v Speaker 0>theory?
+
+NOTE CONF {"raw":[100]}
+
+00:02:56.620 --> 00:02:59.440
+<v Speaker 0>So algorithms go back quite a ways.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:59.440 --> 00:03:06.550
+<v Speaker 0>There was Euclid's algorithm about 300 years BCE, and algorithms
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:03:06.550 --> 00:03:09.580
+<v Speaker 0>are named for al-Khwarizmi, who came up with a few
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:03:09.580 --> 00:03:12.640
+<v Speaker 0>and lived around 800 in the Christian era.
+
+NOTE CONF {"raw":[100,100,64,100,100,100,100,100]}
+
+00:03:15.430 --> 00:03:21.700
+<v Speaker 0>But we didn't have a formal definition of algorithm until
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:21.700 --> 00:03:23.440
+<v Speaker 0>the early 1900s.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:23.440 --> 00:03:28.810
+<v Speaker 0>So around 1935, three papers come out at once Alonzo
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:28.810 --> 00:03:31.960
+<v Speaker 0>Church's Lambda Calculus, which you now all know a bit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:31.960 --> 00:03:32.710
+<v Speaker 0>about.
+
+NOTE CONF {"raw":[100]}
+
+00:03:32.800 --> 00:03:38.050
+<v Speaker 0>Kurt Girdles recursive functions and Alan Turing's Turing machines.
+
+NOTE CONF {"raw":[100,77,100,100,100,100,100,100,100]}
+
+00:03:38.050 --> 00:03:40.030
+<v Speaker 0>How many people have heard of Alan Turing?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:03:40.810 --> 00:03:41.470
+<v Speaker 0>Most of you.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:41.470 --> 00:03:42.250
+<v Speaker 0>Very good.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:43.180 --> 00:03:45.040
+<v Speaker 0>So we're going to learn a little bit about the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,92]}
+
+00:03:45.040 --> 00:03:45.370
+<v Speaker 0>story.
+
+NOTE CONF {"raw":[100]}
+
+00:03:45.370 --> 00:03:47.680
+<v Speaker 0>But, you know, it's a bit like buses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95]}
+
+00:03:47.680 --> 00:03:50.890
+<v Speaker 0>You wait around 2000 years for a definition of algorithm,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91,100,100,100]}
+
+00:03:50.890 --> 00:03:53.470
+<v Speaker 0>and then three come along at once.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:54.190 --> 00:03:56.590
+<v Speaker 0>Why did this happen?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:59.500 --> 00:04:03.340
+<v Speaker 0>So it all goes back to David Hilbert.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100]}
+
+00:04:03.760 --> 00:04:06.460
+<v Speaker 0>He wanted what we all want, which is to put
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:06.460 --> 00:04:08.980
+<v Speaker 0>all mathematicians out of business.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:09.310 --> 00:04:12.250
+<v Speaker 0>So he was, among other things, a logician, one of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:12.250 --> 00:04:14.740
+<v Speaker 0>the first formal logicians.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:15.370 --> 00:04:20.560
+<v Speaker 0>And he wrote about the entire problem, which just means
+
+NOTE CONF {"raw":[100,100,100,100,100,85,100,100,100,100]}
+
+00:04:20.560 --> 00:04:21.430
+<v Speaker 0>decision problem.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:21.430 --> 00:04:23.170
+<v Speaker 0>But it sounds much better in German.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:23.530 --> 00:04:26.200
+<v Speaker 0>And what that was was the idea that you should
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:26.200 --> 00:04:30.280
+<v Speaker 0>be able to write out a formula in logic, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:30.280 --> 00:04:34.420
+<v Speaker 0>then have an algorithm that determines whether you've just made
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:34.420 --> 00:04:37.090
+<v Speaker 0>a true statement or a false statement.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:37.540 --> 00:04:40.330
+<v Speaker 0>So you wouldn't need people anymore to decide what was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:40.330 --> 00:04:40.870
+<v Speaker 0>true or false.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:40.870 --> 00:04:43.150
+<v Speaker 0>You could have a computer decide it.
+
+NOTE CONF {"raw":[100,80,100,100,100,86,86]}
+
+00:04:47.320 --> 00:04:48.250
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:04:50.710 --> 00:04:53.830
+<v Speaker 0>Hilbert puts this forward, and then along comes Kurt Gödel
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:54.950 --> 00:05:00.050
+<v Speaker 0>And girdle comes up with his incompleteness theorem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:01.310 --> 00:05:06.020
+<v Speaker 0>So what the incompleteness theorem says is basically what he
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100,100,100,100]}
+
+00:05:06.020 --> 00:05:09.410
+<v Speaker 0>showed is that you could formalise in arithmetic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:09.410 --> 00:05:11.840
+<v Speaker 0>So first he showed you could take any string of
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100,100]}
+
+00:05:11.840 --> 00:05:14.420
+<v Speaker 0>symbols and encode it as a number.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:05:14.420 --> 00:05:17.480
+<v Speaker 0>So properties of strings of symbols could actually be properties
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:17.480 --> 00:05:18.350
+<v Speaker 0>of numbers.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:18.350 --> 00:05:21.050
+<v Speaker 0>And then he wrote down a property of numbers saying
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:21.380 --> 00:05:25.280
+<v Speaker 0>um, this number denotes a valid formula.
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100]}
+
+00:05:25.280 --> 00:05:28.340
+<v Speaker 0>And even you give it two numbers and it says
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100,100,100,100]}
+
+00:05:28.460 --> 00:05:33.140
+<v Speaker 0>the first number denotes a valid proof of the second
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:33.140 --> 00:05:34.970
+<v Speaker 0>number, which is a valid formula.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:36.080 --> 00:05:38.480
+<v Speaker 0>So you could just have a statement about numbers that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:38.480 --> 00:05:40.370
+<v Speaker 0>says this statement is approved.
+
+NOTE CONF {"raw":[100,100,100,88,88]}
+
+00:05:40.370 --> 00:05:43.310
+<v Speaker 0>And it turns out that you could set it up
+
+NOTE CONF {"raw":[100,93,100,100,100,100,100,100,100,100]}
+
+00:05:43.520 --> 00:05:47.150
+<v Speaker 0>so that the statement itself had a number, and that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:47.150 --> 00:05:50.090
+<v Speaker 0>number was the number that it was the proof of.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:51.140 --> 00:05:53.840
+<v Speaker 0>In other words, he showed how you could write a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:53.840 --> 00:05:58.310
+<v Speaker 0>statement saying, this statement is you could do it for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:58.310 --> 00:06:00.200
+<v Speaker 0>this statement is provable, but it's more interesting.
+
+NOTE CONF {"raw":[92,100,100,100,46,81,100,100]}
+
+00:06:00.200 --> 00:06:02.510
+<v Speaker 0>You could also do it to say this statement is
+
+NOTE CONF {"raw":[71,100,100,100,100,100,100,100,100,100]}
+
+00:06:02.510 --> 00:06:03.620
+<v Speaker 0>not provable.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:05.420 --> 00:06:08.840
+<v Speaker 0>So you'd have a statement saying there is no number
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,92,100]}
+
+00:06:08.840 --> 00:06:10.910
+<v Speaker 0>that is a proof of this formula.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100]}
+
+00:06:10.910 --> 00:06:13.130
+<v Speaker 0>And that formula would itself have a number.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:13.130 --> 00:06:16.790
+<v Speaker 0>And that was the number that appeared in the formula.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:18.500 --> 00:06:20.480
+<v Speaker 1>Mhm.
+
+NOTE CONF {"raw":[100]}
+
+00:06:22.820 --> 00:06:26.090
+<v Speaker 0>So as soon as you can do this you're in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:26.090 --> 00:06:26.780
+<v Speaker 0>trouble.
+
+NOTE CONF {"raw":[100]}
+
+00:06:27.620 --> 00:06:28.010
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:06:28.010 --> 00:06:29.300
+<v Speaker 0>Because consider the statement.
+
+NOTE CONF {"raw":[100,100,87,100]}
+
+00:06:29.300 --> 00:06:31.790
+<v Speaker 0>This statement is not provable.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:32.270 --> 00:06:34.190
+<v Speaker 0>Well there are only two possibilities.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:34.190 --> 00:06:34.730
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:06:34.760 --> 00:06:37.460
+<v Speaker 0>It is provable or it's not provable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:38.960 --> 00:06:40.070
+<v Speaker 0>Which is it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:40.220 --> 00:06:45.440
+<v Speaker 0>Well if it's provable it says it's not provable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:45.830 --> 00:06:49.850
+<v Speaker 0>So if it's provable you've proved something that's false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:50.960 --> 00:06:52.700
+<v Speaker 0>So if you know anything about logic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:52.730 --> 00:06:54.890
+<v Speaker 0>You know, that's a really bad idea.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:55.100 --> 00:06:57.500
+<v Speaker 0>You do not want to be able to prove things
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:57.500 --> 00:06:58.580
+<v Speaker 0>that are false.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:59.270 --> 00:07:03.170
+<v Speaker 0>So assuming your logic is sound, meaning that everything that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:03.170 --> 00:07:05.960
+<v Speaker 0>you can prove in it is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:06.500 --> 00:07:07.850
+<v Speaker 0>What follows?
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:07.880 --> 00:07:11.540
+<v Speaker 0>Well, what follows is the other one must hold, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:07:11.540 --> 00:07:14.030
+<v Speaker 0>is, um.
+
+NOTE CONF {"raw":[100,98]}
+
+00:07:14.030 --> 00:07:17.330
+<v Speaker 0>It's not provable.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:18.020 --> 00:07:20.510
+<v Speaker 0>Oh, but it says it's not provable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:21.020 --> 00:07:22.340
+<v Speaker 0>So it's true.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:24.710 --> 00:07:26.240
+<v Speaker 0>So you've got two possibilities.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:26.240 --> 00:07:27.530
+<v Speaker 0>Your logic is unsound.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:27.530 --> 00:07:29.030
+<v Speaker 0>Really, really bad.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:29.960 --> 00:07:33.770
+<v Speaker 0>Or your logic is incomplete.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:34.130 --> 00:07:37.490
+<v Speaker 0>There are true things that you cannot prove.
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100]}
+
+00:07:39.380 --> 00:07:43.160
+<v Speaker 0>So that's not nearly as bad as being unsound, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:43.160 --> 00:07:45.740
+<v Speaker 0>it's still really, really annoying.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:47.720 --> 00:07:51.380
+<v Speaker 0>So as soon as this happened, people began to take.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,88]}
+
+00:07:51.380 --> 00:07:51.390
+<v Speaker 0>stake.
+
+NOTE CONF {"raw":[45]}
+
+00:07:53.700 --> 00:07:54.690
+<v Speaker 0>Let's go back for a minute.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:55.830 --> 00:07:59.460
+<v Speaker 0>As soon as it happened, people began to think, oh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:59.490 --> 00:08:04.950
+<v Speaker 0>well, maybe there is no algorithm that could determine whether
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:04.950 --> 00:08:06.570
+<v Speaker 0>anything was true or false, because what they sort of
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100,100]}
+
+00:08:06.570 --> 00:08:09.120
+<v Speaker 0>had in mind is you just look at all possible
+
+NOTE CONF {"raw":[100,98,98,100,100,100,100,100,100,100]}
+
+00:08:09.120 --> 00:08:11.670
+<v Speaker 0>proofs and eventually you'd find the right one.
+
+NOTE CONF {"raw":[100,100,100,76,100,100,100,100]}
+
+00:08:11.910 --> 00:08:14.760
+<v Speaker 0>But now there was a possibility that was true, but
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,100,100,100]}
+
+00:08:14.760 --> 00:08:16.140
+<v Speaker 0>there was no proof.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:16.950 --> 00:08:20.700
+<v Speaker 0>So now they're beginning to think, hmm, maybe you can't
+
+NOTE CONF {"raw":[100,100,100,94,94,94,100,100,100,100]}
+
+00:08:21.120 --> 00:08:21.660
+<v Speaker 0>decide this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:21.660 --> 00:08:24.390
+<v Speaker 0>So the race was on, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:24.390 --> 00:08:27.270
+<v Speaker 0>What they wanted to do was to show that there
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:27.270 --> 00:08:31.950
+<v Speaker 0>was no algorithm that could determine whether a given thing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:31.950 --> 00:08:35.550
+<v Speaker 0>was true or false, or even provable or not provable,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:36.030 --> 00:08:38.969
+<v Speaker 0>which we've now learned is not quite the same thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:41.370 --> 00:08:44.370
+<v Speaker 0>So the race was on, and as long as you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:44.370 --> 00:08:49.440
+<v Speaker 0>were looking for an algorithm, you didn't really need a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:49.440 --> 00:08:50.640
+<v Speaker 0>definition of algorithm.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:08:50.640 --> 00:08:53.310
+<v Speaker 0>You just write it down and it would be just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:53.310 --> 00:08:58.470
+<v Speaker 0>like Justice Stewart's definition of pornography, which was I know
+
+NOTE CONF {"raw":[100,100,84,100,100,100,100,100,100,100]}
+
+00:08:58.470 --> 00:09:00.120
+<v Speaker 0>it when I see it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:00.630 --> 00:09:03.840
+<v Speaker 0>So you look at the algorithm and go, yeah, that's
+
+NOTE CONF {"raw":[100,54,100,100,100,100,100,100,100,100]}
+
+00:09:03.840 --> 00:09:04.590
+<v Speaker 0>an algorithm.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:05.250 --> 00:09:08.460
+<v Speaker 0>But as soon as you want to say there's no
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:08.460 --> 00:09:13.410
+<v Speaker 0>possible algorithm, then you need a formal definition of algorithm.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,82]}
+
+00:09:13.410 --> 00:09:15.780
+<v Speaker 0>So you know exactly what an algorithm is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:15.780 --> 00:09:19.380
+<v Speaker 0>And you can say nope, there's nothing that does that.
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:09:20.670 --> 00:09:22.290
+<v Speaker 0>So the race was on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:23.070 --> 00:09:25.770
+<v Speaker 0>The first to come up with the definition was Alonzo
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:09:25.770 --> 00:09:26.640
+<v Speaker 0>Church.
+
+NOTE CONF {"raw":[100]}
+
+00:09:26.640 --> 00:09:28.230
+<v Speaker 0>So he was a logician.
+
+NOTE CONF {"raw":[100,100,100,99,100]}
+
+00:09:28.230 --> 00:09:30.150
+<v Speaker 0>He was not a movie star despite what he looked
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,99]}
+
+00:09:30.150 --> 00:09:30.720
+<v Speaker 0>like.
+
+NOTE CONF {"raw":[100]}
+
+00:09:31.920 --> 00:09:38.400
+<v Speaker 0>And church came up with ta da, the lambda calculus.
+
+NOTE CONF {"raw":[100,100,100,100,100,73,78,100,100,100]}
+
+00:09:38.820 --> 00:09:41.820
+<v Speaker 0>And he came up with this way of encoding numbers
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:41.820 --> 00:09:44.820
+<v Speaker 0>as lambda terms, which I believe you've covered a bit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,81,100,100,100]}
+
+00:09:44.820 --> 00:09:45.270
+<v Speaker 0>in class.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:45.270 --> 00:09:47.160
+<v Speaker 0>This is called church numerals.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:47.280 --> 00:09:51.010
+<v Speaker 0>And it just says, well, the number one takes a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:51.010 --> 00:09:54.160
+<v Speaker 0>function and a thingy and applies the function to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:54.160 --> 00:09:55.270
+<v Speaker 0>thing he wants.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:55.300 --> 00:09:57.730
+<v Speaker 0>The number two you take a function and a thingy
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:57.730 --> 00:10:00.400
+<v Speaker 0>and you apply the function to the thingy twice.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,90]}
+
+00:10:00.430 --> 00:10:03.130
+<v Speaker 0>Number three you take a function and a thingy and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91,94,100,100]}
+
+00:10:03.130 --> 00:10:05.260
+<v Speaker 0>you apply the function three times and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:05.260 --> 00:10:07.750
+<v Speaker 0>So you have this encoding of numbers, and they show
+
+NOTE CONF {"raw":[100,99,66,100,100,100,100,100,100,100]}
+
+00:10:07.750 --> 00:10:10.060
+<v Speaker 0>that using that encoding of numbers you could.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:10:10.060 --> 00:10:11.860
+<v Speaker 0>By the way this would be much easier if you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:11.860 --> 00:10:13.030
+<v Speaker 0>included zero.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:13.030 --> 00:10:13.900
+<v Speaker 0>But he didn't.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:13.900 --> 00:10:15.340
+<v Speaker 0>But he still made it work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:15.850 --> 00:10:19.120
+<v Speaker 0>These days we include zero as a natural number as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:19.120 --> 00:10:19.600
+<v Speaker 0>well.
+
+NOTE CONF {"raw":[100]}
+
+00:10:21.010 --> 00:10:24.190
+<v Speaker 0>Anyhow, he had the encoding he showed.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:24.190 --> 00:10:27.400
+<v Speaker 0>It was very easy to define things like plus and
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:10:27.400 --> 00:10:31.120
+<v Speaker 0>times with an awful lot of work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:31.540 --> 00:10:35.200
+<v Speaker 0>His, um, PhD student Stephen Carlini showed that you could
+
+NOTE CONF {"raw":[100,60,100,100,47,74,100,100,100,97]}
+
+00:10:35.200 --> 00:10:37.840
+<v Speaker 0>define minus one, which was the really hard one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:38.530 --> 00:10:40.510
+<v Speaker 0>Um, cleaning actually discovered this when he went to the
+
+NOTE CONF {"raw":[88,92,100,100,100,100,100,100,100,100]}
+
+00:10:40.510 --> 00:10:41.380
+<v Speaker 0>dentist.
+
+NOTE CONF {"raw":[100]}
+
+00:10:41.470 --> 00:10:44.110
+<v Speaker 0>When they put him under with laughing gas, he suddenly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:44.110 --> 00:10:48.430
+<v Speaker 0>had a vision of how to define the subtract one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:48.430 --> 00:10:51.100
+<v Speaker 0>function and went back to church and said this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:51.100 --> 00:10:52.900
+<v Speaker 0>And church said, oh well, I'm glad you figured that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:52.900 --> 00:10:54.850
+<v Speaker 0>out because I was about to give up on this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:54.850 --> 00:10:56.200
+<v Speaker 0>lambda calculus stuff.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:57.430 --> 00:10:59.950
+<v Speaker 0>So now they have lambda calculus, and once they could
+
+NOTE CONF {"raw":[100,100,100,56,100,100,100,100,100,100]}
+
+00:10:59.950 --> 00:11:02.170
+<v Speaker 0>do all these things, they said, you know, you could
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:11:02.170 --> 00:11:04.870
+<v Speaker 0>just do anything with this.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:04.960 --> 00:11:07.630
+<v Speaker 0>So all of the encodings that girdle did, you could
+
+NOTE CONF {"raw":[100,100,100,100,100,89,94,100,100,100]}
+
+00:11:07.630 --> 00:11:10.240
+<v Speaker 0>redo in lambda calculus.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:11:10.240 --> 00:11:12.430
+<v Speaker 0>And once they had a formal definition of what it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:12.430 --> 00:11:15.550
+<v Speaker 0>meant to compute something, they could easily show.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:15.550 --> 00:11:18.340
+<v Speaker 0>Well, there are some things you could define but not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:18.340 --> 00:11:19.180
+<v Speaker 0>compute.
+
+NOTE CONF {"raw":[100]}
+
+00:11:19.210 --> 00:11:23.110
+<v Speaker 0>And the first of these was the halting problem given
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:23.110 --> 00:11:26.230
+<v Speaker 0>a lambda term itself, is there another lambda term that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:26.230 --> 00:11:28.480
+<v Speaker 0>decides if that has a normal form or doesn't have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:28.480 --> 00:11:29.320
+<v Speaker 0>a normal form?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:29.890 --> 00:11:33.520
+<v Speaker 0>So they were working with untyped lambda calculus rather than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:33.520 --> 00:11:38.290
+<v Speaker 0>typed lambda calculus, but the ideas are very similar and
+
+NOTE CONF {"raw":[95,100,100,100,100,88,92,100,100,100]}
+
+00:11:38.290 --> 00:11:41.080
+<v Speaker 0>write Lambda calculus is extremely simple.
+
+NOTE CONF {"raw":[83,100,100,100,100,100]}
+
+00:11:41.170 --> 00:11:43.300
+<v Speaker 0>It's the world's simplest programming language.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:43.300 --> 00:11:45.550
+<v Speaker 0>This is defined right before there were computers.
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100]}
+
+00:11:45.550 --> 00:11:50.200
+<v Speaker 0>I referred to computer before, but computer back then meant,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:51.040 --> 00:11:54.310
+<v Speaker 0>um, a person, usually a woman, who would sit at
+
+NOTE CONF {"raw":[95,100,100,100,100,100,68,92,100,100]}
+
+00:11:54.310 --> 00:11:56.950
+<v Speaker 0>an adding machine and follow the rules that were given.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:57.100 --> 00:11:59.080
+<v Speaker 0>So computers were actually people.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:00.430 --> 00:12:02.740
+<v Speaker 0>Um, but again, you could solve a computer that would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:02.740 --> 00:12:03.820
+<v Speaker 0>follow an algorithm.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:04.150 --> 00:12:07.240
+<v Speaker 0>And this is the world's simplest programming language.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:08.080 --> 00:12:11.020
+<v Speaker 0>Um, back before we had electronic computers, it just has
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:12:11.020 --> 00:12:13.150
+<v Speaker 0>variables, lambda abstractions.
+
+NOTE CONF {"raw":[100,100,52]}
+
+00:12:13.150 --> 00:12:15.400
+<v Speaker 0>So this stands for a function, right?
+
+NOTE CONF {"raw":[100,100,100,100,84,95,95]}
+
+00:12:15.730 --> 00:12:18.550
+<v Speaker 0>Um, take an argument x and then substitute that in
+
+NOTE CONF {"raw":[100,100,100,100,81,100,100,100,100,79]}
+
+00:12:18.550 --> 00:12:19.900
+<v Speaker 0>n and then compute n.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:19.900 --> 00:12:22.720
+<v Speaker 0>So if n was x times x then this would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:22.720 --> 00:12:24.940
+<v Speaker 0>be the function that squares things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:25.240 --> 00:12:28.030
+<v Speaker 0>And then if you took the if L was lambda
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100,100,100]}
+
+00:12:28.030 --> 00:12:31.630
+<v Speaker 0>x times x and m was three, then it would
+
+NOTE CONF {"raw":[100,100,100,100,82,100,100,100,100,100]}
+
+00:12:31.630 --> 00:12:34.120
+<v Speaker 0>reduce to three times 3 or 9.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:34.990 --> 00:12:36.640
+<v Speaker 0>So this is application.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:36.640 --> 00:12:38.140
+<v Speaker 0>This is defined a function.
+
+NOTE CONF {"raw":[100,100,97,100,100]}
+
+00:12:38.170 --> 00:12:40.480
+<v Speaker 0>This is a variable that was all you needed.
+
+NOTE CONF {"raw":[100,100,71,100,100,100,100,100,100]}
+
+00:12:42.160 --> 00:12:44.890
+<v Speaker 0>So this goes back to 1932.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:44.920 --> 00:12:47.480
+<v Speaker 0>It's the world's simplest programming language, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,62]}
+
+00:12:47.480 --> 00:12:51.050
+<v Speaker 0>Any programming language you learn now, even Haskell, right, is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:12:51.050 --> 00:12:52.820
+<v Speaker 0>just way more complicated.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:52.850 --> 00:12:56.810
+<v Speaker 0>Just pages and pages and pages of definition, not three
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:56.810 --> 00:12:57.620
+<v Speaker 0>lines.
+
+NOTE CONF {"raw":[100]}
+
+00:12:58.490 --> 00:12:59.360
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:12:59.570 --> 00:12:59.870
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[82]}
+
+00:12:59.870 --> 00:13:01.550
+<v Speaker 0>Java is another programming language.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:01.550 --> 00:13:03.050
+<v Speaker 0>How many people have heard of Java?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:03.470 --> 00:13:04.940
+<v Speaker 0>Yeah, most of you have.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:04.970 --> 00:13:06.650
+<v Speaker 0>It's quite widely known.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:06.650 --> 00:13:09.320
+<v Speaker 0>So this is Duke, the mascot for Java.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:09.320 --> 00:13:14.870
+<v Speaker 0>And in about a decade or so after Java first
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:14.870 --> 00:13:18.500
+<v Speaker 0>came out, they added lambda expressions to Java.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:19.430 --> 00:13:21.170
+<v Speaker 0>I knew some of the people who were working on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,86,100,100]}
+
+00:13:21.170 --> 00:13:23.990
+<v Speaker 0>this at the time, but basically what I like is,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:23.990 --> 00:13:26.240
+<v Speaker 0>you know, this is early 2000.
+
+NOTE CONF {"raw":[97,97,100,100,100,100]}
+
+00:13:26.270 --> 00:13:30.380
+<v Speaker 0>Look at how smug Duke looks about coming up with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:30.380 --> 00:13:33.620
+<v Speaker 0>something that was defined in the 1930s.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:35.150 --> 00:13:35.360
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[55,97]}
+
+00:13:35.360 --> 00:13:36.650
+<v Speaker 0>So congratulations, Duke.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:36.680 --> 00:13:39.230
+<v Speaker 0>You caught up with what happened 70 years ago.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:41.900 --> 00:13:44.600
+<v Speaker 0>So then along comes Kurt Girdle.
+
+NOTE CONF {"raw":[100,100,100,100,70,97]}
+
+00:13:47.120 --> 00:13:48.950
+<v Speaker 0>And he goes.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:50.930 --> 00:13:56.720
+<v Speaker 0>He goes to visit church, who's at Princeton, at the
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:13:56.720 --> 00:13:58.130
+<v Speaker 0>Institute for Advanced Studies.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:58.130 --> 00:14:03.230
+<v Speaker 0>And he looks at this lambda calculus thing, and he
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:03.230 --> 00:14:06.080
+<v Speaker 0>says the same thing that most people say today when
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:06.080 --> 00:14:08.960
+<v Speaker 0>they see lambda calculus, which is I don't understand that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:08.960 --> 00:14:09.590
+<v Speaker 0>That's crazy.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:09.590 --> 00:14:10.820
+<v Speaker 0>That can't be right.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:12.500 --> 00:14:16.640
+<v Speaker 0>And he said, and so church said, fine, you come
+
+NOTE CONF {"raw":[100,99,91,100,100,95,100,100,100,100]}
+
+00:14:16.640 --> 00:14:18.050
+<v Speaker 0>up with your own way of doing it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:18.050 --> 00:14:19.490
+<v Speaker 0>And girdle did.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:19.490 --> 00:14:22.040
+<v Speaker 0>He came up with recursive functions, which is what we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:22.040 --> 00:14:24.890
+<v Speaker 0>use in Haskell all the time now, just a function
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:14:24.890 --> 00:14:28.880
+<v Speaker 0>that's defined on itself, acting on a smaller argument.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:28.880 --> 00:14:32.150
+<v Speaker 0>So he had recursive functions over numbers, but you can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:32.150 --> 00:14:35.000
+<v Speaker 0>do recursive functions over arbitrary data types.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:35.000 --> 00:14:38.060
+<v Speaker 0>But just numbers was enough to capture the idea of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:38.060 --> 00:14:39.110
+<v Speaker 0>computability.
+
+NOTE CONF {"raw":[100]}
+
+00:14:40.550 --> 00:14:44.510
+<v Speaker 0>And so he said, this is what we should use.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:44.510 --> 00:14:48.830
+<v Speaker 0>And again, church's student Carlini, who I mentioned before, wrote
+
+NOTE CONF {"raw":[100,100,55,97,66,100,100,100,100,100]}
+
+00:14:48.830 --> 00:14:51.320
+<v Speaker 0>this down and published it with attribution.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:56.000 --> 00:14:57.650
+<v Speaker 0>Um, so it was first presented as a series of
+
+NOTE CONF {"raw":[97,100,100,100,100,100,67,100,100,100]}
+
+00:14:57.650 --> 00:15:00.800
+<v Speaker 0>lectures at Princeton, and he wrote it down, and then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:00.800 --> 00:15:03.470
+<v Speaker 0>cleaning and church went off, and they showed that everything
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:03.470 --> 00:15:06.140
+<v Speaker 0>that you could do with lambda calculus, you could do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:06.140 --> 00:15:09.140
+<v Speaker 0>with recursive functions, and that everything you could do with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:09.140 --> 00:15:11.720
+<v Speaker 0>recursive functions, you could do lambda calculus.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:11.720 --> 00:15:12.920
+<v Speaker 0>So they were equivalent.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:13.010 --> 00:15:17.390
+<v Speaker 0>So they went back to girdle and said, look, you
+
+NOTE CONF {"raw":[100,100,100,100,100,57,100,100,100,100]}
+
+00:15:17.390 --> 00:15:20.240
+<v Speaker 0>didn't like our idea, but your idea is the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:21.290 --> 00:15:24.260
+<v Speaker 0>The tension was unbearable.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:25.790 --> 00:15:28.730
+<v Speaker 0>So girdle thinks about this for a while and they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,77]}
+
+00:15:28.730 --> 00:15:33.050
+<v Speaker 0>says, hmm, my definition is the same as your official
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,86]}
+
+00:15:33.200 --> 00:15:34.310
+<v Speaker 0>inner definition.
+
+NOTE CONF {"raw":[38,87]}
+
+00:15:35.270 --> 00:15:35.600
+<v Speaker 0>Hmm.
+
+NOTE CONF {"raw":[62]}
+
+00:15:37.340 --> 00:15:39.260
+<v Speaker 0>Mine must be wrong then.
+
+NOTE CONF {"raw":[98,100,100,100,100]}
+
+00:15:39.530 --> 00:15:42.510
+<v Speaker 0>He just really didn't like lambda calculus.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:46.740 --> 00:15:53.220
+<v Speaker 0>So then along comes Alan Turing, who looks, as you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:53.220 --> 00:15:54.150
+<v Speaker 0>can see, very young.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:54.150 --> 00:15:57.720
+<v Speaker 0>He was actually a undergraduate at the time he did
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:57.720 --> 00:15:57.930
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:15:57.930 --> 00:15:59.580
+<v Speaker 0>So if you guys are thinking of something to do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:59.580 --> 00:16:02.820
+<v Speaker 0>for your final year project, here's something to compete with.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:02.820 --> 00:16:05.580
+<v Speaker 0>You could do the equivalent of defining Turing machines.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:09.330 --> 00:16:12.480
+<v Speaker 0>So, um, I'm exaggerating slightly.
+
+NOTE CONF {"raw":[100,91,100,100,100]}
+
+00:16:12.480 --> 00:16:14.070
+<v Speaker 0>He wasn't an undergraduate.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:14.070 --> 00:16:19.380
+<v Speaker 0>He had just finished his, um, undergraduate degree at Cambridge
+
+NOTE CONF {"raw":[100,100,100,100,100,64,100,100,100,100]}
+
+00:16:19.380 --> 00:16:21.270
+<v Speaker 0>when he published this paper.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:21.450 --> 00:16:24.900
+<v Speaker 0>But he was he was basically an undergraduate.
+
+NOTE CONF {"raw":[100,98,98,100,100,100,100,100]}
+
+00:16:24.930 --> 00:16:26.850
+<v Speaker 0>He hadn't gone to graduate school yet.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:26.850 --> 00:16:31.230
+<v Speaker 0>And he publishes this paper defining Turing machines, a third
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:16:31.230 --> 00:16:33.000
+<v Speaker 0>way of doing arbitrary computations.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:33.000 --> 00:16:37.170
+<v Speaker 0>But he did something that church did not do and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:37.170 --> 00:16:38.670
+<v Speaker 0>the girdle did not do.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:38.700 --> 00:16:40.140
+<v Speaker 0>He gave an argument.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:40.140 --> 00:16:42.480
+<v Speaker 0>why what a computer could do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:42.480 --> 00:16:43.560
+<v Speaker 0>Remember computers?
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:43.560 --> 00:16:45.720
+<v Speaker 0>A person sitting and following an algorithm.
+
+NOTE CONF {"raw":[64,100,100,100,100,100,100]}
+
+00:16:45.720 --> 00:16:48.960
+<v Speaker 0>What a computer could do is what a Turing machine
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:16:48.960 --> 00:16:49.620
+<v Speaker 0>could do.
+
+NOTE CONF {"raw":[96,100]}
+
+00:16:49.800 --> 00:16:52.260
+<v Speaker 0>And he said things like, okay, we'll have squares which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,55,55,100,100]}
+
+00:16:52.260 --> 00:16:54.990
+<v Speaker 0>act as memory because, you know, whoever is doing this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:54.990 --> 00:16:57.720
+<v Speaker 0>can write things down in each square.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:57.720 --> 00:17:00.180
+<v Speaker 0>You can write a finite number of things, he explains.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:00.180 --> 00:17:03.120
+<v Speaker 0>Well, why is it a finite number of things rather
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:03.120 --> 00:17:04.890
+<v Speaker 0>than an infinite number of things?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:04.890 --> 00:17:08.280
+<v Speaker 0>Well, if, you know, I don't have out there, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,64,100,97]}
+
+00:17:08.280 --> 00:17:09.630
+<v Speaker 0>he explained this very well.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:09.630 --> 00:17:15.630
+<v Speaker 0>He said, well, consider the numbers 99999999999999, and the number
+
+NOTE CONF {"raw":[100,100,100,100,100,100,45,100,100,100]}
+
+00:17:15.630 --> 00:17:18.569
+<v Speaker 0>99999999999.
+
+NOTE CONF {"raw":[100]}
+
+00:17:18.990 --> 00:17:20.760
+<v Speaker 0>You might not have noticed, but one of those had
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:20.760 --> 00:17:23.760
+<v Speaker 0>14 nines and one had 15 nines.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:23.760 --> 00:17:26.130
+<v Speaker 0>And he said, look, you can't distinguish these at a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:26.130 --> 00:17:27.030
+<v Speaker 0>glance.
+
+NOTE CONF {"raw":[100]}
+
+00:17:27.030 --> 00:17:29.700
+<v Speaker 0>There's only a small number of things you can distinguish.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:29.700 --> 00:17:32.490
+<v Speaker 0>It can't be an arbitrary, unbounded number of things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:32.490 --> 00:17:34.230
+<v Speaker 0>It's a small fixed number of things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:34.230 --> 00:17:36.210
+<v Speaker 0>So we'll take a finite number of symbols.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:36.210 --> 00:17:38.310
+<v Speaker 0>You can write in each square of the Turing machine.
+
+NOTE CONF {"raw":[100,100,100,86,100,100,100,100,100,100]}
+
+00:17:38.310 --> 00:17:40.170
+<v Speaker 0>And he went on and so he explained why what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:40.170 --> 00:17:45.150
+<v Speaker 0>a Turing machine could do is what a computer could
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100,100,100]}
+
+00:17:45.150 --> 00:17:45.660
+<v Speaker 0>do.
+
+NOTE CONF {"raw":[100]}
+
+00:17:45.900 --> 00:17:47.760
+<v Speaker 0>And then he sketched, um.
+
+NOTE CONF {"raw":[100,100,100,100,94]}
+
+00:17:48.360 --> 00:17:50.130
+<v Speaker 0>So they were very excited about this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:50.130 --> 00:17:53.070
+<v Speaker 0>And then they discovered that they had been scooped by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:53.070 --> 00:17:57.930
+<v Speaker 0>church and scooped by, um, girdle.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:58.110 --> 00:18:01.350
+<v Speaker 0>So they were a bit upset about this, but, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:01.770 --> 00:18:05.190
+<v Speaker 0>Turing's supervisor wrote to these guys and he said, well,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:05.190 --> 00:18:05.730
+<v Speaker 0>what do you think?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:05.730 --> 00:18:08.160
+<v Speaker 0>And they said, oh no, that's enough different that that's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:08.160 --> 00:18:09.480
+<v Speaker 0>worth publishing to.
+
+NOTE CONF {"raw":[100,100,90]}
+
+00:18:09.720 --> 00:18:12.600
+<v Speaker 0>So they published it, referencing the other two papers and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:12.600 --> 00:18:15.780
+<v Speaker 0>sketching the proof that what a Turing machine could do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:15.780 --> 00:18:18.330
+<v Speaker 0>is the same as what lambda calculus could do, or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:18.330 --> 00:18:20.370
+<v Speaker 0>what recursive functions could do.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:20.370 --> 00:18:23.190
+<v Speaker 0>And at that point, Turing actually went off to be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:23.190 --> 00:18:29.790
+<v Speaker 0>a PhD student with church, and, um, did extensions, various
+
+NOTE CONF {"raw":[100,100,100,100,100,100,55,100,100,100]}
+
+00:18:29.790 --> 00:18:34.650
+<v Speaker 0>extensions of Turing machines, uh, and also wrote out the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:34.650 --> 00:18:38.010
+<v Speaker 0>detailed description of how Turing Machine could do what a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,84,100]}
+
+00:18:38.020 --> 00:18:40.480
+<v Speaker 0>lambda term could do and vice versa.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:40.600 --> 00:18:42.610
+<v Speaker 0>And what I love is the.
+
+NOTE CONF {"raw":[100,67,86,100,100,100]}
+
+00:18:42.640 --> 00:18:45.610
+<v Speaker 0>There are many people who don't like lambda calculus.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:45.610 --> 00:18:47.260
+<v Speaker 0>They prefer Turing machines.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:47.260 --> 00:18:49.720
+<v Speaker 0>But what Turing himself said at the beginning of his
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:49.720 --> 00:18:53.110
+<v Speaker 0>paper, maybe he was just buttering up his supervisor, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:53.110 --> 00:18:55.000
+<v Speaker 0>I don't think he was the sort of guy who
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:55.000 --> 00:18:55.690
+<v Speaker 0>would do that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:55.690 --> 00:18:58.120
+<v Speaker 0>He was gay back when it was not accepted to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:58.120 --> 00:18:58.720
+<v Speaker 0>be gay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:58.720 --> 00:19:01.090
+<v Speaker 0>But, you know, he was not in the closet.
+
+NOTE CONF {"raw":[100,95,95,100,100,100,100,100,100]}
+
+00:19:01.990 --> 00:19:05.140
+<v Speaker 0>Um, he was pretty clear about who he was, even
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:05.140 --> 00:19:07.060
+<v Speaker 0>though it was much more dangerous to do that back
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:07.060 --> 00:19:07.510
+<v Speaker 0>then.
+
+NOTE CONF {"raw":[100]}
+
+00:19:09.760 --> 00:19:12.370
+<v Speaker 0>By the way, has anybody seen the film The Imitation
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:12.370 --> 00:19:12.910
+<v Speaker 0>Game?
+
+NOTE CONF {"raw":[100]}
+
+00:19:13.690 --> 00:19:13.960
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:19:13.960 --> 00:19:16.090
+<v Speaker 0>Where they imply that because he was in the closet,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:16.090 --> 00:19:20.410
+<v Speaker 0>he would just, um, accede to blackmail by Germans and
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100,100]}
+
+00:19:20.410 --> 00:19:22.480
+<v Speaker 0>basically be a traitor to his country?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:24.010 --> 00:19:26.620
+<v Speaker 0>Not everything you see in a movie from Hollywood is
+
+NOTE CONF {"raw":[100,100,100,100,100,67,100,100,100,100]}
+
+00:19:26.620 --> 00:19:27.520
+<v Speaker 0>quite true.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:32.050 --> 00:19:34.720
+<v Speaker 0>Anyhow, he wasn't the kind of guy who would butter
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:34.720 --> 00:19:36.820
+<v Speaker 0>up his supervisor, but what he said in the very
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:36.820 --> 00:19:39.910
+<v Speaker 0>first paragraph of this paper, he says, look, okay, we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,87,68,100,100]}
+
+00:19:39.910 --> 00:19:44.140
+<v Speaker 0>going to show lambda machine, um, lambda terms and Turing
+
+NOTE CONF {"raw":[100,100,100,100,62,95,100,100,100,100]}
+
+00:19:44.140 --> 00:19:47.950
+<v Speaker 0>machines are equivalent, and therefore 1st May use the more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:47.950 --> 00:19:51.460
+<v Speaker 0>elegant I quote Turing lambda terms.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:51.460 --> 00:19:55.180
+<v Speaker 0>So he actually thought lambda terms Lambda calculus was more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:55.180 --> 00:19:58.810
+<v Speaker 0>elegant than Turing machines, unlike many people who came after
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:58.810 --> 00:20:01.720
+<v Speaker 0>him who preferred this very mechanical view.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:02.590 --> 00:20:04.390
+<v Speaker 0>Anyway, when all this happened.
+
+NOTE CONF {"raw":[65,100,100,100,100]}
+
+00:20:05.080 --> 00:20:07.330
+<v Speaker 0>Now, there was the third thing with an argument why
+
+NOTE CONF {"raw":[96,68,68,100,100,100,100,100,100,100]}
+
+00:20:07.330 --> 00:20:08.860
+<v Speaker 0>it was what a computer could do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:08.860 --> 00:20:13.570
+<v Speaker 0>And finally girdle was convinced and gave into this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,83,95]}
+
+00:20:15.160 --> 00:20:21.730
+<v Speaker 0>So philosophers like to debate whether mathematics is invented or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:21.730 --> 00:20:22.480
+<v Speaker 0>discovered.
+
+NOTE CONF {"raw":[100]}
+
+00:20:23.080 --> 00:20:25.120
+<v Speaker 0>And what I want to claim is when you have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:25.120 --> 00:20:30.760
+<v Speaker 0>a hat trick, when you have three completely different definitions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:30.760 --> 00:20:33.640
+<v Speaker 0>that turn out to be of the same thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:33.670 --> 00:20:36.230
+<v Speaker 0>The reason they turn out to be the same thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:36.230 --> 00:20:39.830
+<v Speaker 0>It's not that these three people have very little imagination
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:39.830 --> 00:20:42.350
+<v Speaker 0>and all invent exactly the same thing.
+
+NOTE CONF {"raw":[100,63,100,100,100,100,100]}
+
+00:20:42.380 --> 00:20:45.050
+<v Speaker 0>It's because there's the same thing out there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:45.050 --> 00:20:46.520
+<v Speaker 0>It has been discovered.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:52.760 --> 00:20:54.440
+<v Speaker 0>So what do we learn from this?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:54.440 --> 00:20:54.920
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[85]}
+
+00:20:54.950 --> 00:21:00.890
+<v Speaker 0>Girdle was 28 when he basically undermined the life work
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:00.890 --> 00:21:02.750
+<v Speaker 0>of Hilbert, who was 68.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:04.310 --> 00:21:09.380
+<v Speaker 0>Turing was 23 when he settled this raging argument between
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:09.380 --> 00:21:12.650
+<v Speaker 0>church, who is 33, and girdle, who was by then
+
+NOTE CONF {"raw":[100,100,62,100,100,100,100,100,100,100]}
+
+00:21:12.890 --> 00:21:15.140
+<v Speaker 0>no longer to be trusted 30.
+
+NOTE CONF {"raw":[100,100,100,100,100,96]}
+
+00:21:17.840 --> 00:21:20.120
+<v Speaker 0>What should you take away from this?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:22.790 --> 00:21:24.320
+<v Speaker 0>You have an important job.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:25.040 --> 00:21:28.190
+<v Speaker 0>It's your job to keep explaining to your elders like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:28.190 --> 00:21:31.100
+<v Speaker 0>me, when we've got it wrong.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:33.560 --> 00:21:34.040
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:21:34.250 --> 00:21:35.870
+<v Speaker 0>So keep that in mind.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:35.870 --> 00:21:38.090
+<v Speaker 0>It's your job to be setting us straight.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:40.730 --> 00:21:43.100
+<v Speaker 0>Okay, so that's the preface.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:43.100 --> 00:21:45.200
+<v Speaker 0>You now know about computability theory.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:45.500 --> 00:21:49.520
+<v Speaker 0>Now let me tell you a little bit about propositions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:49.520 --> 00:21:50.570
+<v Speaker 0>as types.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:54.290 --> 00:21:55.850
+<v Speaker 0>So here's Gerhard Jensen.
+
+NOTE CONF {"raw":[100,100,100,62]}
+
+00:21:57.440 --> 00:22:03.860
+<v Speaker 0>Um, he was also working in the 1930s, just like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:03.860 --> 00:22:07.310
+<v Speaker 0>Hilbert and Church and Girdle and Turing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:07.640 --> 00:22:11.300
+<v Speaker 0>And in his not his undergraduate work, but in his
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:11.300 --> 00:22:16.520
+<v Speaker 0>PhD thesis, he defined the not one but the two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:16.550 --> 00:22:19.010
+<v Speaker 0>main forms of logic that we use today.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:19.610 --> 00:22:22.400
+<v Speaker 0>And how many people have seen the upside down a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:22.400 --> 00:22:23.060
+<v Speaker 0>that means for.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:23.060 --> 00:22:24.590
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:24.590 --> 00:22:28.730
+<v Speaker 0>So they had that informal logic since the very late
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:28.730 --> 00:22:33.080
+<v Speaker 0>1800s, early 1900s, but that was written by them as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:33.080 --> 00:22:35.450
+<v Speaker 0>an just open and closed parenthesis.
+
+NOTE CONF {"raw":[47,100,100,100,90,92]}
+
+00:22:35.450 --> 00:22:37.370
+<v Speaker 0>There wasn't a special symbol for it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:37.550 --> 00:22:40.850
+<v Speaker 0>So, um, Jensen thought, oh, it'd be nice to have
+
+NOTE CONF {"raw":[100,99,51,100,100,95,100,100,100,100]}
+
+00:22:40.850 --> 00:22:41.840
+<v Speaker 0>a special symbol.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:41.840 --> 00:22:45.230
+<v Speaker 0>So he introduced the upside down A to stand for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:45.230 --> 00:22:45.890
+<v Speaker 0>for all.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:48.290 --> 00:22:50.810
+<v Speaker 0>So here are his rules for one of these major
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:50.810 --> 00:22:51.680
+<v Speaker 0>systems.
+
+NOTE CONF {"raw":[100]}
+
+00:22:51.680 --> 00:22:52.670
+<v Speaker 0>Natural deduction.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:52.670 --> 00:22:54.410
+<v Speaker 0>That's written a bit small.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:54.410 --> 00:22:57.620
+<v Speaker 0>So here are the same rules written larger I've only
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:57.620 --> 00:22:58.700
+<v Speaker 0>written some of them.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:58.700 --> 00:23:02.930
+<v Speaker 0>I've written the rules for and introduction and and elimination
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:02.930 --> 00:23:03.920
+<v Speaker 0>given here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:03.920 --> 00:23:08.510
+<v Speaker 0>And the rules for implication introduction and implication elimination given
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:08.510 --> 00:23:08.780
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:23:08.780 --> 00:23:10.850
+<v Speaker 0>I've written down the rules identically.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:10.850 --> 00:23:15.020
+<v Speaker 0>There's only one difference between the way he wrote them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:15.020 --> 00:23:17.600
+<v Speaker 0>and the way I wrote them, which is he wrote
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:17.600 --> 00:23:21.290
+<v Speaker 0>his letters in German, and I'm writing my letters in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:21.290 --> 00:23:21.980
+<v Speaker 0>English.
+
+NOTE CONF {"raw":[100]}
+
+00:23:24.830 --> 00:23:27.110
+<v Speaker 0>So let's go through these rules.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:27.110 --> 00:23:31.100
+<v Speaker 0>So the most important thing is that unlike the earlier
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:31.100 --> 00:23:34.350
+<v Speaker 0>formalisation of logic, such as those done by Hilbert.
+
+NOTE CONF {"raw":[70,100,88,100,100,100,100,100,100]}
+
+00:23:34.860 --> 00:23:39.450
+<v Speaker 0>His rules come in pairs and the pairs have a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:39.450 --> 00:23:41.640
+<v Speaker 0>very important structuring principle.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:23:41.730 --> 00:23:43.770
+<v Speaker 0>They are introduces and eliminators.
+
+NOTE CONF {"raw":[83,100,66,100,89]}
+
+00:23:43.770 --> 00:23:46.770
+<v Speaker 0>So introduction means, as you read the rule from top
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:46.770 --> 00:23:47.640
+<v Speaker 0>to bottom.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:48.600 --> 00:23:50.820
+<v Speaker 0>That symbol gets introduced, right?
+
+NOTE CONF {"raw":[100,99,100,100,100]}
+
+00:23:50.820 --> 00:23:53.910
+<v Speaker 0>The symbol appears below the line, but not above.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:54.990 --> 00:23:57.030
+<v Speaker 0>Here again eliminators.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:57.030 --> 00:23:59.430
+<v Speaker 0>As you read from top to bottom, the symbol appears
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:59.430 --> 00:24:01.800
+<v Speaker 0>above but not below.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:02.910 --> 00:24:04.860
+<v Speaker 0>So what does this rule say?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:05.220 --> 00:24:08.610
+<v Speaker 0>So you have hypotheses above the line and a conclusion
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100,100]}
+
+00:24:08.610 --> 00:24:09.330
+<v Speaker 0>below.
+
+NOTE CONF {"raw":[100]}
+
+00:24:09.750 --> 00:24:12.090
+<v Speaker 0>So this says if a implies b.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:12.090 --> 00:24:14.940
+<v Speaker 0>So this backwards c it's basically c.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:14.970 --> 00:24:18.480
+<v Speaker 0>For consequence a implies b.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:19.320 --> 00:24:21.660
+<v Speaker 0>If we know that and we know A, what can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:21.660 --> 00:24:24.510
+<v Speaker 0>we conclude when we know A, we know A implies
+
+NOTE CONF {"raw":[100,100,69,100,100,100,100,100,100,100]}
+
+00:24:24.540 --> 00:24:28.110
+<v Speaker 0>B, so we know B, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,91]}
+
+00:24:28.110 --> 00:24:30.180
+<v Speaker 0>That's a rule of logic that you've seen in this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:30.180 --> 00:24:30.870
+<v Speaker 0>class.
+
+NOTE CONF {"raw":[100]}
+
+00:24:32.010 --> 00:24:33.450
+<v Speaker 0>Um, how do you get.
+
+NOTE CONF {"raw":[99,100,100,100,100]}
+
+00:24:33.450 --> 00:24:35.850
+<v Speaker 0>So that's how you use an application.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,62]}
+
+00:24:35.850 --> 00:24:37.350
+<v Speaker 0>How do you get an implication?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:37.440 --> 00:24:39.870
+<v Speaker 0>You say, well, let's assume A is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:24:40.080 --> 00:24:42.330
+<v Speaker 0>I don't have a proof of that, but let me
+
+NOTE CONF {"raw":[100,100,100,100,100,100,89,100,100,100]}
+
+00:24:42.330 --> 00:24:44.190
+<v Speaker 0>just assume A is true.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:44.190 --> 00:24:48.420
+<v Speaker 0>And if assuming A is true, I can prove B,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:24:48.840 --> 00:24:52.680
+<v Speaker 0>then I know that with no assumptions A implies B,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:52.860 --> 00:24:55.890
+<v Speaker 0>so these square brackets mean I'm assuming a.
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100]}
+
+00:24:56.280 --> 00:25:00.750
+<v Speaker 0>And then this label x says I am discharging this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:00.750 --> 00:25:01.590
+<v Speaker 0>assumption.
+
+NOTE CONF {"raw":[100]}
+
+00:25:01.590 --> 00:25:04.320
+<v Speaker 0>So here I'm assuming A, I prove b and here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:25:04.320 --> 00:25:08.310
+<v Speaker 0>with no assumptions whatsoever I conclude a implies b.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:10.860 --> 00:25:11.610
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:13.260 --> 00:25:19.620
+<v Speaker 0>And then conjunction written ampersand is even easier if I
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,100]}
+
+00:25:19.620 --> 00:25:21.420
+<v Speaker 0>have a proof of a and I have a proof
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:21.420 --> 00:25:24.660
+<v Speaker 0>of B, I can conclude that are both a and
+
+NOTE CONF {"raw":[100,100,100,100,100,31,29,100,100,100]}
+
+00:25:24.660 --> 00:25:28.410
+<v Speaker 0>B, and if I know A and B, what can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:28.410 --> 00:25:28.980
+<v Speaker 0>I conclude?
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:28.980 --> 00:25:29.610
+<v Speaker 0>What can I do with it?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:29.640 --> 00:25:32.970
+<v Speaker 0>Well, if I know A and B, I must know
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:32.970 --> 00:25:38.400
+<v Speaker 0>A and I must know B, so you can introduce
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:38.400 --> 00:25:38.550
+<v Speaker 0>an.
+
+NOTE CONF {"raw":[100]}
+
+00:25:38.550 --> 00:25:40.710
+<v Speaker 0>And when you know both A and B, and when
+
+NOTE CONF {"raw":[78,100,100,100,100,100,100,100,100,100]}
+
+00:25:40.710 --> 00:25:43.170
+<v Speaker 0>you've gotten and you can forget one half of it
+
+NOTE CONF {"raw":[100,68,100,100,100,100,100,100,100,100]}
+
+00:25:43.170 --> 00:25:45.330
+<v Speaker 0>and conclude the other half.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:46.080 --> 00:25:47.850
+<v Speaker 0>Any questions about those?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:48.540 --> 00:25:49.860
+<v Speaker 0>Is that clear enough?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:50.580 --> 00:25:51.540
+<v Speaker 0>Are you all bored?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:53.340 --> 00:25:54.000
+<v Speaker 0>Not bored.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:54.000 --> 00:25:54.600
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:55.440 --> 00:25:55.710
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:25:57.390 --> 00:25:57.690
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[99]}
+
+00:25:57.690 --> 00:25:59.610
+<v Speaker 0>Remember, it's your job to ask questions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:00.180 --> 00:26:00.630
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:26:00.630 --> 00:26:02.130
+<v Speaker 0>So let's make use of that.
+
+NOTE CONF {"raw":[100,99,100,100,100,100]}
+
+00:26:02.130 --> 00:26:03.570
+<v Speaker 0>Let's do a little proof.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:03.570 --> 00:26:07.140
+<v Speaker 0>I'm going to show you that b and a implies
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:07.140 --> 00:26:08.460
+<v Speaker 0>a and b.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:09.360 --> 00:26:10.470
+<v Speaker 0>Wow.
+
+NOTE CONF {"raw":[100]}
+
+00:26:10.500 --> 00:26:12.420
+<v Speaker 0>That's completely obvious right?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:12.420 --> 00:26:14.400
+<v Speaker 0>Why would you even bother to prove that?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:14.850 --> 00:26:17.190
+<v Speaker 0>Well, the reason I want to bother to prove it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:17.190 --> 00:26:20.820
+<v Speaker 0>is if our rules work, they should let us prove
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:20.820 --> 00:26:21.030
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:26:21.030 --> 00:26:21.810
+<v Speaker 0>So let's check that.
+
+NOTE CONF {"raw":[100,95,100,100]}
+
+00:26:21.810 --> 00:26:22.500
+<v Speaker 0>That's so.
+
+NOTE CONF {"raw":[99,100]}
+
+00:26:22.500 --> 00:26:25.170
+<v Speaker 0>And it'll give us a simple example of how these
+
+NOTE CONF {"raw":[100,58,100,100,100,100,100,100,100,100]}
+
+00:26:25.170 --> 00:26:26.010
+<v Speaker 0>rules work.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:27.210 --> 00:26:27.600
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:27.600 --> 00:26:29.350
+<v Speaker 0>So I'm going to assume I want to approve an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,63,100]}
+
+00:26:29.350 --> 00:26:29.950
+<v Speaker 0>implication.
+
+NOTE CONF {"raw":[81]}
+
+00:26:29.950 --> 00:26:33.820
+<v Speaker 0>So I start by assuming the thing that is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:33.820 --> 00:26:34.750
+<v Speaker 0>argument.
+
+NOTE CONF {"raw":[100]}
+
+00:26:35.410 --> 00:26:37.450
+<v Speaker 0>The hypothesis of the implication.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:37.450 --> 00:26:39.850
+<v Speaker 0>So let's assume B and A.
+
+NOTE CONF {"raw":[95,99,100,88,100,100]}
+
+00:26:40.090 --> 00:26:42.280
+<v Speaker 0>I'm going to use that assumption twice.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:42.280 --> 00:26:44.470
+<v Speaker 0>And from B and a of course I can conclude
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:44.470 --> 00:26:47.860
+<v Speaker 0>a and from b and a I can conclude b.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:48.850 --> 00:26:50.380
+<v Speaker 0>Well now I've got a proof of a and a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:26:50.380 --> 00:26:51.160
+<v Speaker 0>proof of b.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:51.160 --> 00:26:53.380
+<v Speaker 0>So I've got a proof of a and b and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:53.380 --> 00:26:57.190
+<v Speaker 0>I discharge my assumption, I've got b and a implies
+
+NOTE CONF {"raw":[91,100,100,100,100,100,100,100,100,100]}
+
+00:26:57.400 --> 00:26:58.540
+<v Speaker 0>a and B.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:01.900 --> 00:27:03.280
+<v Speaker 0>Any questions yet.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:06.100 --> 00:27:11.170
+<v Speaker 0>Now the important thing about about rules coming in pairs
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:11.170 --> 00:27:14.440
+<v Speaker 0>is it means you can eliminate certain pairs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:15.220 --> 00:27:18.190
+<v Speaker 0>So if I have an introduction and then I eliminate
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:18.610 --> 00:27:23.320
+<v Speaker 0>I never needed to do that introduction okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:23.320 --> 00:27:26.500
+<v Speaker 0>So instead of saying assume a prove b then I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,81,100]}
+
+00:27:26.500 --> 00:27:29.050
+<v Speaker 0>know a implies B and then give a proof of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:29.050 --> 00:27:30.880
+<v Speaker 0>A, and I can conclude B.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:30.880 --> 00:27:32.890
+<v Speaker 0>What would be a simpler way of coming to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:32.890 --> 00:27:34.090
+<v Speaker 0>same conclusion?
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:34.870 --> 00:27:37.930
+<v Speaker 0>I've got this part written with three dots and this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:37.930 --> 00:27:39.940
+<v Speaker 0>part with three dots.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:39.970 --> 00:27:43.300
+<v Speaker 0>How can I just use those without doing this?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:27:46.630 --> 00:27:49.060
+<v Speaker 0>Well, I've got a proof of a right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98]}
+
+00:27:49.120 --> 00:27:52.780
+<v Speaker 0>So instead of assuming a why don't I just use
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:52.780 --> 00:27:54.520
+<v Speaker 0>the proof of a.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:54.520 --> 00:27:58.480
+<v Speaker 0>So I'm going to simplify the proof so that instead
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:58.480 --> 00:28:01.630
+<v Speaker 0>of assuming A and getting that to b, b I've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,39,92,100]}
+
+00:28:01.630 --> 00:28:03.550
+<v Speaker 0>got a proof of a, and from that I get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:03.550 --> 00:28:04.000
+<v Speaker 0>b.
+
+NOTE CONF {"raw":[100]}
+
+00:28:04.600 --> 00:28:07.540
+<v Speaker 0>Now this looks like I made the proof smaller, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:07.540 --> 00:28:10.870
+<v Speaker 0>in fact I might have made it very much larger
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:11.710 --> 00:28:16.960
+<v Speaker 0>because as we saw here, you might use your assumption
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:16.960 --> 00:28:18.430
+<v Speaker 0>more than once.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:19.270 --> 00:28:21.370
+<v Speaker 0>So here I've used the assumption twice.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:21.370 --> 00:28:25.810
+<v Speaker 0>So if my proof here of a is very big,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:25.810 --> 00:28:29.800
+<v Speaker 0>I might duplicate it two times or even an arbitrary
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:28:29.800 --> 00:28:32.110
+<v Speaker 0>number of times, so the proof would actually get much
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:32.110 --> 00:28:32.740
+<v Speaker 0>bigger.
+
+NOTE CONF {"raw":[100]}
+
+00:28:36.550 --> 00:28:37.690
+<v Speaker 0>Oh, let's skip that.
+
+NOTE CONF {"raw":[58,100,100,100]}
+
+00:28:37.810 --> 00:28:39.580
+<v Speaker 0>Okay, let's do another example.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:39.580 --> 00:28:39.820
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[79]}
+
+00:28:39.820 --> 00:28:43.270
+<v Speaker 0>Let's have got the introduction rule for conjunction.
+
+NOTE CONF {"raw":[100,58,100,100,100,100,100,100]}
+
+00:28:43.270 --> 00:28:45.280
+<v Speaker 0>And then one of the elimination rules.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:45.280 --> 00:28:48.550
+<v Speaker 0>So here from A and B I can conclude a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:48.550 --> 00:28:49.180
+<v Speaker 0>and b.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:49.180 --> 00:28:51.400
+<v Speaker 0>And then from the a and b I can conclude
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:51.400 --> 00:28:51.820
+<v Speaker 0>a right.
+
+NOTE CONF {"raw":[100,63]}
+
+00:28:51.820 --> 00:28:53.650
+<v Speaker 0>What's a simpler way of doing that one.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100]}
+
+00:28:59.290 --> 00:29:01.180
+<v Speaker 0>It's fairly obvious right.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:03.940 --> 00:29:05.440
+<v Speaker 0>What's the simple way of doing this?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:05.440 --> 00:29:06.100
+<v Speaker 0>Proof.
+
+NOTE CONF {"raw":[100]}
+
+00:29:13.300 --> 00:29:14.860
+<v Speaker 0>You're sitting all by yourself in the middle of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:14.860 --> 00:29:16.750
+<v Speaker 0>front row of the second tier.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:16.930 --> 00:29:17.650
+<v Speaker 0>What?
+
+NOTE CONF {"raw":[100]}
+
+00:29:17.650 --> 00:29:20.050
+<v Speaker 0>What's the way of doing this proof directly?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:22.150 --> 00:29:22.570
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[89]}
+
+00:29:25.490 --> 00:29:26.300
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:29:26.300 --> 00:29:27.740
+<v Speaker 0>We've got dot dot, dot ace.
+
+NOTE CONF {"raw":[100,100,100,100,100,42]}
+
+00:29:27.740 --> 00:29:29.570
+<v Speaker 0>That's a much simpler way of proving a so we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:29.570 --> 00:29:30.320
+<v Speaker 0>can just.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:32.840 --> 00:29:33.080
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[79]}
+
+00:29:33.080 --> 00:29:35.210
+<v Speaker 0>Just use dot dot dot A directly.
+
+NOTE CONF {"raw":[100,98,100,100,100,85,100]}
+
+00:29:37.760 --> 00:29:38.270
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:38.270 --> 00:29:40.760
+<v Speaker 0>So let's now we know how to simplify proofs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96]}
+
+00:29:40.970 --> 00:29:43.880
+<v Speaker 0>Here's our little proof that from B and A we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:43.880 --> 00:29:45.140
+<v Speaker 0>can conclude a and b.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:45.320 --> 00:29:46.700
+<v Speaker 0>Here's a proof of B.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:46.730 --> 00:29:47.720
+<v Speaker 0>Here's a proof of A.
+
+NOTE CONF {"raw":[100,99,100,100,100]}
+
+00:29:47.720 --> 00:29:49.220
+<v Speaker 0>Here's a proof of B and a.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:49.340 --> 00:29:54.710
+<v Speaker 0>So by elimination um, I know b and a implies
+
+NOTE CONF {"raw":[100,99,97,97,100,100,100,100,100,100]}
+
+00:29:54.710 --> 00:29:56.540
+<v Speaker 0>a and b I know b and a, so I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:56.540 --> 00:29:59.210
+<v Speaker 0>can conclude a and b, so right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:59.210 --> 00:30:01.400
+<v Speaker 0>But there's a lot of guff here that should be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:01.400 --> 00:30:02.270
+<v Speaker 0>able to get rid of.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:02.270 --> 00:30:02.480
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:30:02.480 --> 00:30:08.540
+<v Speaker 0>Because here's, um, a introducer followed by an eliminator so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:08.540 --> 00:30:09.680
+<v Speaker 0>I can get rid of that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:10.430 --> 00:30:12.860
+<v Speaker 0>So what I do is I take my direct proof
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:12.860 --> 00:30:15.500
+<v Speaker 0>of B and A and copy it in place of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:15.500 --> 00:30:16.700
+<v Speaker 0>those two assumptions.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:16.700 --> 00:30:22.130
+<v Speaker 0>And now I've got to do this.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100]}
+
+00:30:22.910 --> 00:30:25.340
+<v Speaker 0>And then once I've done that copy, I have an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:25.340 --> 00:30:27.830
+<v Speaker 0>an introduction above and an and elimination so I can
+
+NOTE CONF {"raw":[66,66,100,54,99,100,100,100,100,100]}
+
+00:30:27.830 --> 00:30:30.200
+<v Speaker 0>get rid of both of those.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:39.200 --> 00:30:41.750
+<v Speaker 0>And now for my proof of being, my proof of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:41.750 --> 00:30:44.600
+<v Speaker 0>a I've got a direct proof of A and B
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:44.600 --> 00:30:46.640
+<v Speaker 0>rather than an indirect proof.
+
+NOTE CONF {"raw":[100,100,85,100,100]}
+
+00:30:49.130 --> 00:30:49.730
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:51.170 --> 00:30:57.200
+<v Speaker 0>So Jensen was very interested in these pairs of things
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:30:57.200 --> 00:30:59.840
+<v Speaker 0>because he wanted to show that you could always simplify
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:59.840 --> 00:31:00.710
+<v Speaker 0>proofs.
+
+NOTE CONF {"raw":[100]}
+
+00:31:00.770 --> 00:31:04.760
+<v Speaker 0>You want to show that there were no roundabout proofs.
+
+NOTE CONF {"raw":[100,47,100,100,100,100,100,100,95,100]}
+
+00:31:04.880 --> 00:31:08.030
+<v Speaker 0>So he introduced sequent calculus, which is different than this.
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:31:08.030 --> 00:31:11.180
+<v Speaker 0>This is called natural deduction and showed that you could
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:11.180 --> 00:31:15.140
+<v Speaker 0>always eliminate these pairs, except in sequent calculus they're left
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,76,100]}
+
+00:31:15.140 --> 00:31:15.650
+<v Speaker 0>right pairs.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:15.680 --> 00:31:17.930
+<v Speaker 0>You guys have seen sequent calculus right.
+
+NOTE CONF {"raw":[100,100,94,100,95,100,100]}
+
+00:31:18.860 --> 00:31:23.210
+<v Speaker 0>You've not seen natural deduction so much Right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:23.570 --> 00:31:26.510
+<v Speaker 0>Natural deduction is the one everybody else uses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:26.930 --> 00:31:30.740
+<v Speaker 0>But sequent calculus is nice because it's very symmetric, and
+
+NOTE CONF {"raw":[100,97,100,100,100,100,96,100,100,100]}
+
+00:31:30.740 --> 00:31:33.440
+<v Speaker 0>because it was easier for him to prove this elimination
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:33.440 --> 00:31:34.190
+<v Speaker 0>property.
+
+NOTE CONF {"raw":[100]}
+
+00:31:34.400 --> 00:31:38.150
+<v Speaker 0>So you define natural deduction to find sequent calculus proved
+
+NOTE CONF {"raw":[100,86,80,100,100,60,55,98,100,49]}
+
+00:31:38.150 --> 00:31:39.170
+<v Speaker 0>that they were equivalent.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:39.170 --> 00:31:41.240
+<v Speaker 0>And then prove that you could always get rid of
+
+NOTE CONF {"raw":[100,100,60,100,100,100,100,100,100,100]}
+
+00:31:41.240 --> 00:31:44.600
+<v Speaker 0>these roundabout proofs in sequent calculus.
+
+NOTE CONF {"raw":[100,87,100,100,97,100]}
+
+00:31:45.860 --> 00:31:47.360
+<v Speaker 0>Great irony.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:48.170 --> 00:31:51.800
+<v Speaker 0>He needed a roundabout proof to show there are no
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:51.800 --> 00:31:53.240
+<v Speaker 0>roundabout proofs.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:53.930 --> 00:31:56.540
+<v Speaker 0>So this one that I showed you here actually didn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:56.540 --> 00:31:57.620
+<v Speaker 0>come about until.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:57.620 --> 00:32:03.800
+<v Speaker 0>So he did that in the 1935, in the early
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:03.800 --> 00:32:05.300
+<v Speaker 0>1960s, I think.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:06.380 --> 00:32:07.340
+<v Speaker 0>This will horrify you.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:07.340 --> 00:32:07.790
+<v Speaker 0>Roundabout.
+
+NOTE CONF {"raw":[100]}
+
+00:32:07.790 --> 00:32:08.870
+<v Speaker 0>When I was born.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:09.710 --> 00:32:13.430
+<v Speaker 0>Province wrote down the direct proof for natural deduction.
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100]}
+
+00:32:21.000 --> 00:32:24.000
+<v Speaker 0>Okay, so that's Jensen.
+
+NOTE CONF {"raw":[100,100,100,58]}
+
+00:32:24.120 --> 00:32:27.060
+<v Speaker 0>Now let's look in more detail at what church did.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:27.720 --> 00:32:29.910
+<v Speaker 0>So church actually came up with lambda calculus.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:29.910 --> 00:32:33.210
+<v Speaker 0>He wasn't trying to solve the problem of computability.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:32:33.210 --> 00:32:34.800
+<v Speaker 0>That just happened on the side.
+
+NOTE CONF {"raw":[100,100,100,100,100,98]}
+
+00:32:34.800 --> 00:32:37.170
+<v Speaker 0>What lambda calculus was really for was to have a
+
+NOTE CONF {"raw":[89,100,100,80,100,69,42,100,100,100]}
+
+00:32:37.170 --> 00:32:40.200
+<v Speaker 0>compact way of doing what was important, which was writing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:40.200 --> 00:32:42.090
+<v Speaker 0>down formal proofs and logic.
+
+NOTE CONF {"raw":[100,100,100,88,100]}
+
+00:32:43.140 --> 00:32:48.060
+<v Speaker 0>Except it turned out that in untyped lambda calculus, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:48.060 --> 00:32:52.410
+<v Speaker 0>could write things, um, that would let you prove false,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:52.860 --> 00:32:55.350
+<v Speaker 0>which is bad, right?
+
+NOTE CONF {"raw":[100,100,100,94]}
+
+00:32:55.350 --> 00:32:57.300
+<v Speaker 0>You should not have a proof of false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:57.420 --> 00:32:59.280
+<v Speaker 0>So, so it was like, oh, dear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:59.310 --> 00:33:02.250
+<v Speaker 0>You know, well, we can use lambda calculus for computation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:02.370 --> 00:33:03.210
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[80]}
+
+00:33:03.930 --> 00:33:08.160
+<v Speaker 0>Um, oh, by the way, church sort of anticipated that.
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100,100]}
+
+00:33:08.160 --> 00:33:12.510
+<v Speaker 0>So he wrote this first paper on lambda calculus, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,77]}
+
+00:33:12.510 --> 00:33:16.530
+<v Speaker 0>as a compact way of writing down proofs and logic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:33:16.530 --> 00:33:20.550
+<v Speaker 0>But somewhere in the introduction he wrote, it may even
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:20.550 --> 00:33:24.090
+<v Speaker 0>have applications beyond its use in logic.
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100]}
+
+00:33:25.740 --> 00:33:29.580
+<v Speaker 0>So he understood that he had something interesting there, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:29.580 --> 00:33:31.140
+<v Speaker 0>he wanted it for logic.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:31.140 --> 00:33:33.420
+<v Speaker 0>And it turned out you could write down these basically
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:33.420 --> 00:33:37.200
+<v Speaker 0>infinite terms that let you then do proofs of false,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:37.200 --> 00:33:39.030
+<v Speaker 0>which you really didn't want to have.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:33:39.060 --> 00:33:44.460
+<v Speaker 0>So after inventing untyped lambda calculus, he invented ta da!
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,92]}
+
+00:33:45.840 --> 00:33:51.660
+<v Speaker 0>Simply typed lambda calculus and simply typed lambda calculus made
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:51.660 --> 00:33:54.030
+<v Speaker 0>use of an idea that Russell had come up with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:54.030 --> 00:33:57.300
+<v Speaker 0>to avoid other paradoxes like Russell's paradox.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:33:57.840 --> 00:34:00.960
+<v Speaker 0>And so he wrote this down in 1940.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:00.960 --> 00:34:02.820
+<v Speaker 0>So I'm going to show you the simply typed lambda
+
+NOTE CONF {"raw":[89,100,100,100,100,100,94,100,100,100]}
+
+00:34:02.820 --> 00:34:06.720
+<v Speaker 0>calculus, which had the property that all terms terminated.
+
+NOTE CONF {"raw":[100,100,70,100,100,100,100,100,100]}
+
+00:34:06.720 --> 00:34:09.300
+<v Speaker 0>You didn't get these infinite terms, and you could no
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:09.300 --> 00:34:11.340
+<v Speaker 0>longer do a proof of false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:11.340 --> 00:34:15.690
+<v Speaker 0>So simply type lambda calculus was suitable as a basis
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:15.690 --> 00:34:16.679
+<v Speaker 0>for logic.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:16.679 --> 00:34:18.720
+<v Speaker 0>And we will learn a little bit more about just
+
+NOTE CONF {"raw":[100,94,93,100,100,100,100,100,100,100]}
+
+00:34:18.720 --> 00:34:20.070
+<v Speaker 0>how suitable it was.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:21.540 --> 00:34:21.960
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:21.960 --> 00:34:24.419
+<v Speaker 0>So simply type lambda calculus right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:24.419 --> 00:34:25.770
+<v Speaker 0>We have application.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:25.770 --> 00:34:29.340
+<v Speaker 0>If L is a function from A to B and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:29.340 --> 00:34:31.679
+<v Speaker 0>m is a term of type A, then L applied
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:31.679 --> 00:34:32.190
+<v Speaker 0>to m.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:32.190 --> 00:34:33.750
+<v Speaker 0>Well this is a function from A to b, so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:33.750 --> 00:34:36.120
+<v Speaker 0>the result will be a b right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:36.120 --> 00:34:38.790
+<v Speaker 0>You use this in Haskell all the time, except you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:38.790 --> 00:34:41.909
+<v Speaker 0>write this funny thing as an arrow, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:43.200 --> 00:34:46.620
+<v Speaker 0>If x is a term of type A, and I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:46.620 --> 00:34:50.250
+<v Speaker 0>can write a term n of type b, then I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:50.250 --> 00:34:51.600
+<v Speaker 0>can write lambda x n.
+
+NOTE CONF {"raw":[100,100,100,100,98]}
+
+00:34:51.600 --> 00:34:53.520
+<v Speaker 0>So here x is free in n.
+
+NOTE CONF {"raw":[100,100,100,100,98,83,95]}
+
+00:34:53.700 --> 00:34:56.879
+<v Speaker 0>Here its bound in n, and this will be a
+
+NOTE CONF {"raw":[100,52,100,100,100,100,100,100,100,100]}
+
+00:34:56.879 --> 00:35:00.570
+<v Speaker 0>function from an argument of type a to a result
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:00.570 --> 00:35:01.530
+<v Speaker 0>of type b.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:04.290 --> 00:35:06.510
+<v Speaker 0>If m is a term of type A, and n
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:06.540 --> 00:35:08.070
+<v Speaker 0>is a term of type B, we can form an
+
+NOTE CONF {"raw":[100,98,100,100,100,98,100,100,100,100]}
+
+00:35:08.070 --> 00:35:11.580
+<v Speaker 0>m pair, which is an a b pair.
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100,100]}
+
+00:35:11.580 --> 00:35:12.210
+<v Speaker 0>So we write.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:12.780 --> 00:35:14.580
+<v Speaker 0>In Haskell, we write m in pairs.
+
+NOTE CONF {"raw":[100,100,100,100,79,94,100]}
+
+00:35:14.580 --> 00:35:15.300
+<v Speaker 0>Just like this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:15.300 --> 00:35:18.370
+<v Speaker 0>We also write the type A and B just as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:18.370 --> 00:35:21.160
+<v Speaker 0>a and b a comma B in parentheses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:21.910 --> 00:35:25.690
+<v Speaker 0>If L is an ab pair, then pi one of
+
+NOTE CONF {"raw":[100,100,100,99,77,100,100,100,100,100]}
+
+00:35:25.690 --> 00:35:26.830
+<v Speaker 0>L will have type A.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:26.860 --> 00:35:29.800
+<v Speaker 0>We call this first in Haskell FSG.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100]}
+
+00:35:30.250 --> 00:35:33.250
+<v Speaker 0>And if L is an AB pair then pi two
+
+NOTE CONF {"raw":[100,100,99,99,86,45,100,100,100,100]}
+
+00:35:33.250 --> 00:35:34.900
+<v Speaker 0>of L we call this snd.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:34.900 --> 00:35:38.080
+<v Speaker 0>Second in Haskell we'll have type B.
+
+NOTE CONF {"raw":[100,100,100,56,100,100,100]}
+
+00:35:40.210 --> 00:35:41.350
+<v Speaker 0>Is that clear enough.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:41.350 --> 00:35:42.100
+<v Speaker 0>Any question.
+
+NOTE CONF {"raw":[99,96]}
+
+00:35:42.490 --> 00:35:43.480
+<v Speaker 0>Just not like this.
+
+NOTE CONF {"raw":[100,88,100,100]}
+
+00:35:43.540 --> 00:35:45.010
+<v Speaker 0>You could go oh yeah I've seen that in a
+
+NOTE CONF {"raw":[98,69,100,100,100,100,100,100,100,44]}
+
+00:35:45.010 --> 00:35:46.030
+<v Speaker 0>Haskell before.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:46.930 --> 00:35:48.340
+<v Speaker 0>Some of you are nodding.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:48.910 --> 00:35:50.470
+<v Speaker 0>Some of you are asleep.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:50.890 --> 00:35:51.160
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:51.160 --> 00:35:52.090
+<v Speaker 0>We'll move on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:54.250 --> 00:35:54.550
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:54.550 --> 00:35:56.080
+<v Speaker 0>So now we can write a little program.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:56.080 --> 00:35:59.560
+<v Speaker 0>I'm going to write the program that just swaps the,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:59.560 --> 00:36:01.960
+<v Speaker 0>um, elements in a pair.
+
+NOTE CONF {"raw":[78,100,100,100,100]}
+
+00:36:02.350 --> 00:36:06.820
+<v Speaker 0>So this takes a pair, um, Z, which is a
+
+NOTE CONF {"raw":[100,100,100,100,100,89,95,100,100,100]}
+
+00:36:06.850 --> 00:36:08.140
+<v Speaker 0>B and a pair.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:08.140 --> 00:36:11.680
+<v Speaker 0>So be first followed by an a, and I'll compute
+
+NOTE CONF {"raw":[100,58,100,100,100,100,100,100,80,100]}
+
+00:36:11.680 --> 00:36:13.300
+<v Speaker 0>pi two of z.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:13.300 --> 00:36:15.940
+<v Speaker 0>So that's the second component that would have type a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:16.180 --> 00:36:17.830
+<v Speaker 0>and pi one of z.
+
+NOTE CONF {"raw":[100,89,100,100,100]}
+
+00:36:17.860 --> 00:36:21.040
+<v Speaker 0>That's the first component that will have type B, so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:21.040 --> 00:36:23.710
+<v Speaker 0>this returns a pair with the first components in A
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100,100,74,100]}
+
+00:36:23.710 --> 00:36:24.940
+<v Speaker 0>and the second composed of b.
+
+NOTE CONF {"raw":[100,100,100,52,46,100]}
+
+00:36:24.940 --> 00:36:26.830
+<v Speaker 0>So that's an a b pair.
+
+NOTE CONF {"raw":[100,100,100,93,93,100]}
+
+00:36:29.050 --> 00:36:32.170
+<v Speaker 0>And you can see right I just explained all that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:32.170 --> 00:36:32.320
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:36:32.320 --> 00:36:33.460
+<v Speaker 0>But we can see the details right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:33.460 --> 00:36:36.190
+<v Speaker 0>If z is a b a pair pi two of
+
+NOTE CONF {"raw":[100,100,100,100,51,51,100,63,100,100]}
+
+00:36:36.190 --> 00:36:39.070
+<v Speaker 0>z is an a pi one of z is a
+
+NOTE CONF {"raw":[100,100,100,100,92,100,100,100,100,100]}
+
+00:36:39.100 --> 00:36:39.610
+<v Speaker 0>b.
+
+NOTE CONF {"raw":[100]}
+
+00:36:39.610 --> 00:36:41.710
+<v Speaker 0>I can form pi two of z paired with pi
+
+NOTE CONF {"raw":[100,100,100,100,95,96,100,100,100,100]}
+
+00:36:41.710 --> 00:36:42.220
+<v Speaker 0>one of z.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:42.220 --> 00:36:45.070
+<v Speaker 0>That's an a and b, and I can discharge the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:45.070 --> 00:36:45.520
+<v Speaker 0>assumption.
+
+NOTE CONF {"raw":[100]}
+
+00:36:45.520 --> 00:36:48.760
+<v Speaker 0>So it's lambda z uh pi two z pi one,
+
+NOTE CONF {"raw":[100,100,100,100,56,100,93,100,100,100]}
+
+00:36:48.760 --> 00:36:51.790
+<v Speaker 0>z is a b, and a goes to a and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:51.790 --> 00:36:52.660
+<v Speaker 0>b function.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:52.720 --> 00:36:54.610
+<v Speaker 0>It just swaps things around.
+
+NOTE CONF {"raw":[60,100,100,100,100]}
+
+00:36:56.770 --> 00:36:57.190
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:57.190 --> 00:36:59.890
+<v Speaker 0>We can evaluate programs, right.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:59.890 --> 00:37:04.690
+<v Speaker 0>So um, in Haskell we use lazy evaluation which essentially
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:04.690 --> 00:37:09.580
+<v Speaker 0>says substitute term m for every occurrence of variable z.
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:37:11.050 --> 00:37:13.510
+<v Speaker 0>So if we've got lambda z n applied to m,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,84,100,88]}
+
+00:37:13.510 --> 00:37:16.280
+<v Speaker 0>why does I copy out n And with every occurrence
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:37:16.280 --> 00:37:17.810
+<v Speaker 0>of Z replaced by M.
+
+NOTE CONF {"raw":[100,97,100,100,100]}
+
+00:37:20.030 --> 00:37:23.060
+<v Speaker 0>So we'll just take that variable z of type A
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:23.060 --> 00:37:26.840
+<v Speaker 0>and replace it by the term m of type A.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:27.230 --> 00:37:30.200
+<v Speaker 0>And so now we've got n with every occurrence of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:30.200 --> 00:37:33.500
+<v Speaker 0>z replaced by m which has type b.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:33.980 --> 00:37:36.920
+<v Speaker 0>So notice this shows us that as we evaluate a
+
+NOTE CONF {"raw":[100,100,66,100,100,100,100,100,100,100]}
+
+00:37:36.920 --> 00:37:39.530
+<v Speaker 0>term it keeps the same type.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:39.920 --> 00:37:41.210
+<v Speaker 0>It started to type B.
+
+NOTE CONF {"raw":[100,62,65,100,100]}
+
+00:37:41.210 --> 00:37:42.560
+<v Speaker 0>It ends up at type B.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:43.430 --> 00:37:47.690
+<v Speaker 0>And similarly if I've got uh m and n form
+
+NOTE CONF {"raw":[100,100,100,100,100,56,100,100,100,52]}
+
+00:37:47.690 --> 00:37:50.630
+<v Speaker 0>a tuple m n a pair m n and I
+
+NOTE CONF {"raw":[100,100,100,96,100,84,100,100,100,100]}
+
+00:37:50.630 --> 00:37:54.530
+<v Speaker 0>project out the first component, what will that evaluate to?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:58.040 --> 00:37:59.270
+<v Speaker 0>I'm going to pick on the same person.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:59.270 --> 00:38:03.080
+<v Speaker 0>What will that evaluate to m right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95]}
+
+00:38:03.080 --> 00:38:04.490
+<v Speaker 0>It'll just evaluate to m.
+
+NOTE CONF {"raw":[85,100,100,100,100]}
+
+00:38:05.420 --> 00:38:08.630
+<v Speaker 0>So we pick out the first component and Ms. type
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,72,94]}
+
+00:38:08.630 --> 00:38:08.900
+<v Speaker 0>A.
+
+NOTE CONF {"raw":[100]}
+
+00:38:08.900 --> 00:38:09.980
+<v Speaker 0>This has type A.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:09.980 --> 00:38:11.060
+<v Speaker 0>And when we're done.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:13.280 --> 00:38:16.280
+<v Speaker 0>It just evaluates to M, which has type A.
+
+NOTE CONF {"raw":[92,100,100,100,72,100,100,100,100]}
+
+00:38:21.590 --> 00:38:26.540
+<v Speaker 0>Uh, and in fact, uh, because you're always getting rid
+
+NOTE CONF {"raw":[96,100,100,100,90,100,100,100,100,100]}
+
+00:38:26.540 --> 00:38:27.710
+<v Speaker 0>of some things.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:28.160 --> 00:38:28.400
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:38:28.400 --> 00:38:30.470
+<v Speaker 0>This is what we showed is that the type stays
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,100]}
+
+00:38:30.470 --> 00:38:30.890
+<v Speaker 0>the same.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:30.890 --> 00:38:33.830
+<v Speaker 0>So as you evaluate a type program, you still have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:33.830 --> 00:38:35.000
+<v Speaker 0>a type program.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:35.180 --> 00:38:39.110
+<v Speaker 0>And as you evaluate the type program, the types are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:39.110 --> 00:38:40.190
+<v Speaker 0>getting smaller.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:40.190 --> 00:38:40.460
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:38:40.460 --> 00:38:42.200
+<v Speaker 0>We saw that the program might get bigger.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:38:42.200 --> 00:38:42.380
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:38:42.380 --> 00:38:46.820
+<v Speaker 0>You might copy em many times, but the set of
+
+NOTE CONF {"raw":[100,100,100,91,100,100,100,100,100,100]}
+
+00:38:46.820 --> 00:38:50.300
+<v Speaker 0>type distinct types in the program is getting smaller because
+
+NOTE CONF {"raw":[100,100,100,87,100,100,100,100,100,100]}
+
+00:38:50.300 --> 00:38:53.510
+<v Speaker 0>before we had A implies B as one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:38:53.600 --> 00:38:56.570
+<v Speaker 0>If you look at the multiset of types, this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:56.570 --> 00:38:58.550
+<v Speaker 0>one of the multiset of types that appears in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:58.550 --> 00:38:59.660
+<v Speaker 0>program before.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:59.660 --> 00:39:03.110
+<v Speaker 0>But after we've reduced, that's gotten rid, that's gone from
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:03.110 --> 00:39:04.430
+<v Speaker 0>the multiset of types.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:04.430 --> 00:39:06.740
+<v Speaker 0>And the multiset of types that appears in the program
+
+NOTE CONF {"raw":[100,100,100,90,100,100,100,100,100,100]}
+
+00:39:06.740 --> 00:39:07.730
+<v Speaker 0>is finite.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:09.230 --> 00:39:11.180
+<v Speaker 0>So it must always be getting smaller.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:11.180 --> 00:39:13.040
+<v Speaker 0>So programs must terminate.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:14.450 --> 00:39:19.850
+<v Speaker 0>So that argument was first written down by Alan Turing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:20.810 --> 00:39:25.130
+<v Speaker 0>Um, and in fact, it's that property that guarantees that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:25.130 --> 00:39:29.660
+<v Speaker 0>simply type lambda calculus is a good way of formulating,
+
+NOTE CONF {"raw":[100,52,100,100,100,100,100,100,100,100]}
+
+00:39:30.470 --> 00:39:34.040
+<v Speaker 0>uh, it can be used as a meta language for
+
+NOTE CONF {"raw":[98,80,100,100,100,100,100,100,100,100]}
+
+00:39:34.040 --> 00:39:34.820
+<v Speaker 0>logic, but we'll see.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:34.820 --> 00:39:37.700
+<v Speaker 0>It's closer to logic than that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:39.170 --> 00:39:41.720
+<v Speaker 0>Um, so now, right, we can look at evaluating a
+
+NOTE CONF {"raw":[100,100,100,75,100,100,100,100,100,100]}
+
+00:39:41.720 --> 00:39:44.090
+<v Speaker 0>program which we know is guaranteed to terminate.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:39:44.450 --> 00:39:44.960
+<v Speaker 0>And.
+
+NOTE CONF {"raw":[100]}
+
+00:39:44.960 --> 00:39:45.170
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:39:45.170 --> 00:39:49.550
+<v Speaker 0>So here is our swap program applied to a tuple
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:49.550 --> 00:39:51.200
+<v Speaker 0>and followed by M.
+
+NOTE CONF {"raw":[100,100,100,84]}
+
+00:39:51.380 --> 00:39:54.530
+<v Speaker 0>So if we evaluate this right we take NM and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,33,100]}
+
+00:39:54.530 --> 00:39:56.900
+<v Speaker 0>we replace z by NMN.
+
+NOTE CONF {"raw":[100,100,94,100,89]}
+
+00:40:01.520 --> 00:40:02.960
+<v Speaker 0>So now we've got this.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:03.050 --> 00:40:05.120
+<v Speaker 0>And now when we take pi two of an NMN
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:05.120 --> 00:40:08.510
+<v Speaker 0>pair will get m and we take pi one we
+
+NOTE CONF {"raw":[100,52,100,87,100,100,100,100,100,100]}
+
+00:40:08.510 --> 00:40:09.200
+<v Speaker 0>get n.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:16.650 --> 00:40:17.640
+<v Speaker 0>So the program.
+
+NOTE CONF {"raw":[100,100,58]}
+
+00:40:18.060 --> 00:40:20.940
+<v Speaker 0>So swap apply to an NM pair.
+
+NOTE CONF {"raw":[100,100,100,100,100,49,100]}
+
+00:40:20.940 --> 00:40:24.180
+<v Speaker 0>Returns an min pair.
+
+NOTE CONF {"raw":[100,100,61,100]}
+
+00:40:24.180 --> 00:40:27.390
+<v Speaker 0>So we've swapped the components we started with NM and
+
+NOTE CONF {"raw":[98,95,100,100,100,100,100,100,100,100]}
+
+00:40:27.390 --> 00:40:28.890
+<v Speaker 0>we get back min.
+
+NOTE CONF {"raw":[100,100,100,97]}
+
+00:40:30.450 --> 00:40:33.240
+<v Speaker 0>So this second thing I showed you might have looked
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:33.240 --> 00:40:35.430
+<v Speaker 0>a little bit similar to the first thing I showed
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:35.430 --> 00:40:35.760
+<v Speaker 0>you.
+
+NOTE CONF {"raw":[100]}
+
+00:40:36.900 --> 00:40:37.140
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[78]}
+
+00:40:37.140 --> 00:40:43.410
+<v Speaker 0>And in fact it's let's see it's exactly identical.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:43.410 --> 00:40:43.800
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:40:43.800 --> 00:40:48.810
+<v Speaker 0>So I'm not sure if um facilities has said time
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,89,89,100]}
+
+00:40:48.810 --> 00:40:49.320
+<v Speaker 0>to do this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:49.320 --> 00:40:51.120
+<v Speaker 0>Dawn, did you talk to them in time?
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100]}
+
+00:40:53.220 --> 00:40:53.670
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:40:53.670 --> 00:40:54.450
+<v Speaker 0>Well, I'm sorry.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:54.450 --> 00:40:56.910
+<v Speaker 0>What was supposed to happen is that you could reach
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:56.910 --> 00:40:59.190
+<v Speaker 0>under your seat and pull out a pair of rose
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:59.190 --> 00:41:00.420
+<v Speaker 0>coloured glasses.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:02.070 --> 00:41:04.230
+<v Speaker 0>So I want you to pretend that you're wearing rose
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:04.230 --> 00:41:05.430
+<v Speaker 0>coloured glasses.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:05.580 --> 00:41:08.220
+<v Speaker 0>Of course, if you're wearing rose coloured glasses, you won't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:08.220 --> 00:41:10.710
+<v Speaker 0>see all this stuff in red.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:11.160 --> 00:41:14.460
+<v Speaker 0>it will vanish and you'll just be left with the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:14.460 --> 00:41:15.060
+<v Speaker 0>blue.
+
+NOTE CONF {"raw":[100]}
+
+00:41:16.320 --> 00:41:19.050
+<v Speaker 0>And indeed, if you take this set of slides with
+
+NOTE CONF {"raw":[100,100,100,100,100,54,100,100,100,100]}
+
+00:41:19.050 --> 00:41:23.280
+<v Speaker 0>everything in red and blue and compare it to what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:23.280 --> 00:41:27.060
+<v Speaker 0>we had here, it's the same, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:27.060 --> 00:41:33.360
+<v Speaker 0>All the blue stuff here got augmented into red and
+
+NOTE CONF {"raw":[100,100,100,100,100,79,100,100,100,100]}
+
+00:41:33.360 --> 00:41:34.470
+<v Speaker 0>blue stuff here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:34.800 --> 00:41:36.450
+<v Speaker 0>And what does that mean?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:40.500 --> 00:41:44.880
+<v Speaker 0>What that means is all this stuff in red is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:44.880 --> 00:41:48.960
+<v Speaker 0>basically writing out in a term form, the proof this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:48.960 --> 00:41:52.440
+<v Speaker 0>term, right written out here linearly stands for this whole
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:52.440 --> 00:41:53.190
+<v Speaker 0>tree.
+
+NOTE CONF {"raw":[100]}
+
+00:41:53.580 --> 00:41:56.070
+<v Speaker 0>That is the proof of A and b.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:57.180 --> 00:42:00.390
+<v Speaker 0>And in general the red stuff the terms is just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:00.390 --> 00:42:02.790
+<v Speaker 0>another notation for proofs.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:03.030 --> 00:42:05.340
+<v Speaker 0>You can think of the proofs as proof trees or
+
+NOTE CONF {"raw":[100,76,100,100,100,100,100,100,100,100]}
+
+00:42:05.340 --> 00:42:08.160
+<v Speaker 0>parse trees of terms or just as terms.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:10.110 --> 00:42:15.480
+<v Speaker 0>So we've got this very strong correspondence where the blue
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:42:15.480 --> 00:42:24.750
+<v Speaker 0>stuff in logic is formulas of the logic, propositions, statements
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:24.750 --> 00:42:26.190
+<v Speaker 0>that can be true or false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:26.370 --> 00:42:28.890
+<v Speaker 0>And the red stuff is proofs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:31.080 --> 00:42:37.500
+<v Speaker 0>So, um, a formula in logic corresponds to a type
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:38.160 --> 00:42:42.300
+<v Speaker 0>in a type programming language like simply type lambda calculus
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,85,100,100]}
+
+00:42:42.300 --> 00:42:43.230
+<v Speaker 0>or Haskell.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:44.850 --> 00:42:45.630
+<v Speaker 0>A.
+
+NOTE CONF {"raw":[100]}
+
+00:42:48.210 --> 00:42:52.170
+<v Speaker 0>Proof in the logic corresponds to a term in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:52.170 --> 00:42:53.400
+<v Speaker 0>programming language.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:53.820 --> 00:42:56.370
+<v Speaker 0>And most importantly, right.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:56.370 --> 00:43:00.780
+<v Speaker 0>There's a lot of structure preserved here because simplifying a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:00.780 --> 00:43:04.320
+<v Speaker 0>proof corresponds to evaluating a program.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:06.870 --> 00:43:12.040
+<v Speaker 0>So we have propositions as types, proofs as programs, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:43:12.040 --> 00:43:16.480
+<v Speaker 0>simplification of proofs as normalisation of programs.
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100]}
+
+00:43:16.480 --> 00:43:17.950
+<v Speaker 0>Evaluating a program.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:21.040 --> 00:43:21.820
+<v Speaker 1>Mhm.
+
+NOTE CONF {"raw":[98]}
+
+00:43:29.560 --> 00:43:33.640
+<v Speaker 0>So this is sometimes called the Cory Howard isomorphism.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,61,100,100]}
+
+00:43:34.720 --> 00:43:39.100
+<v Speaker 0>Uh and write for programming languages with types.
+
+NOTE CONF {"raw":[71,100,52,100,100,100,100,100]}
+
+00:43:39.100 --> 00:43:43.630
+<v Speaker 0>We often write out arrow times plus and bottom.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:43.900 --> 00:43:47.770
+<v Speaker 0>But in logic the corresponding things are implies which we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:47.770 --> 00:43:51.610
+<v Speaker 0>wrote that way and which we wrote as an ampersand,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:51.610 --> 00:43:52.840
+<v Speaker 0>by the way.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:52.840 --> 00:43:53.140
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[97]}
+
+00:43:53.140 --> 00:43:55.960
+<v Speaker 0>People often do it with this and this, but this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:55.960 --> 00:43:56.830
+<v Speaker 0>is horrible, right?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:56.830 --> 00:43:58.720
+<v Speaker 0>You stand on your head and you can't tell what's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:58.720 --> 00:44:02.770
+<v Speaker 0>going on, but you can very easily confuse and and
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,72,75]}
+
+00:44:02.770 --> 00:44:03.490
+<v Speaker 0>ors.
+
+NOTE CONF {"raw":[72]}
+
+00:44:05.050 --> 00:44:07.120
+<v Speaker 0>Um, so it's much better in fact.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:07.120 --> 00:44:07.390
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[61]}
+
+00:44:07.390 --> 00:44:10.390
+<v Speaker 0>Ampersand for this one and or for this one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:10.690 --> 00:44:14.290
+<v Speaker 0>And, um, Jensen knew that.
+
+NOTE CONF {"raw":[100,100,78,100,100]}
+
+00:44:14.470 --> 00:44:16.600
+<v Speaker 0>But we seem to have forgotten it these days.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:16.600 --> 00:44:20.080
+<v Speaker 0>But in fact, ampersand for this one and the wed,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,28]}
+
+00:44:20.560 --> 00:44:23.320
+<v Speaker 0>the V symbol for that one is a good choice,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:23.320 --> 00:44:26.770
+<v Speaker 0>just as a matter of design that makes it easy
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:26.770 --> 00:44:27.850
+<v Speaker 0>for people to read.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:29.350 --> 00:44:34.900
+<v Speaker 0>Um, so anyhow, this corresponds to um, wedge or ampersand.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:35.050 --> 00:44:38.500
+<v Speaker 0>This corresponds to V and this corresponds to false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:41.320 --> 00:44:46.510
+<v Speaker 0>And it's called the Cary Howard correspondence, because a variant
+
+NOTE CONF {"raw":[100,100,100,100,40,100,100,100,92,100]}
+
+00:44:46.510 --> 00:44:49.750
+<v Speaker 0>of it was discovered by Haskell Curry, the same person
+
+NOTE CONF {"raw":[100,100,100,100,100,100,73,100,100,100]}
+
+00:44:49.750 --> 00:44:52.390
+<v Speaker 0>that Haskell is named after, and the same person.
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100]}
+
+00:44:52.390 --> 00:44:56.890
+<v Speaker 0>The currying is named after, uh, in the 1930s, William
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:56.890 --> 00:45:02.470
+<v Speaker 0>Howard, much later in the 1970s, wrote this out first
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:02.470 --> 00:45:04.090
+<v Speaker 0>for simply typed lambda calculus.
+
+NOTE CONF {"raw":[100,100,89,100,100]}
+
+00:45:04.090 --> 00:45:06.460
+<v Speaker 0>Just what I've shown you, and then said, well, what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:06.460 --> 00:45:08.230
+<v Speaker 0>happens with the rest of logic?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:08.800 --> 00:45:12.490
+<v Speaker 0>Is there also a programming language that corresponds to the
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:45:12.490 --> 00:45:13.420
+<v Speaker 0>rest of logic?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:13.420 --> 00:45:16.120
+<v Speaker 0>And he discovered what's called dependent types.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:16.630 --> 00:45:20.680
+<v Speaker 0>And dependent types are important because they show up in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:20.680 --> 00:45:24.550
+<v Speaker 0>what, uh, lots of proof assistance that we use today.
+
+NOTE CONF {"raw":[100,72,100,100,100,95,100,100,100,100]}
+
+00:45:25.090 --> 00:45:30.070
+<v Speaker 0>So, um, this was published in 1980, but he actually
+
+NOTE CONF {"raw":[100,68,100,100,100,100,100,100,100,100]}
+
+00:45:30.070 --> 00:45:33.250
+<v Speaker 0>discovered it in the early 1970s and then published it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:33.250 --> 00:45:33.970
+<v Speaker 0>in 1980.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:33.970 --> 00:45:39.520
+<v Speaker 0>In a festschrift devoted to, um, Haskell Curry on his
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100,100]}
+
+00:45:39.520 --> 00:45:40.510
+<v Speaker 0>80th birthday.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:41.770 --> 00:45:42.340
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:45:42.340 --> 00:45:46.090
+<v Speaker 0>Right, we've got the Curry Howard correspondence, propositions as types,
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:45:46.090 --> 00:45:51.700
+<v Speaker 0>proofs as programs, and normalisation of proofs as evaluation of
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,100,100,100]}
+
+00:45:51.700 --> 00:45:52.570
+<v Speaker 0>programs.
+
+NOTE CONF {"raw":[100]}
+
+00:45:53.950 --> 00:45:56.710
+<v Speaker 0>And the interesting thing is, the first time I saw
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:56.710 --> 00:45:59.230
+<v Speaker 0>this, I thought, oh, that's just a cute little trick.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:59.230 --> 00:46:03.280
+<v Speaker 0>But it turns out it applies not just to natural
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:03.280 --> 00:46:05.690
+<v Speaker 0>deduction and simply type lambda calculus.
+
+NOTE CONF {"raw":[100,100,100,70,100,100]}
+
+00:46:05.780 --> 00:46:08.840
+<v Speaker 0>But the same thing works for polymorphic types like we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:08.840 --> 00:46:09.950
+<v Speaker 0>have in Haskell.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:46:09.980 --> 00:46:13.070
+<v Speaker 0>The Hindley Miller type system, which was in fact discovered
+
+NOTE CONF {"raw":[100,95,80,100,100,100,100,100,100,100]}
+
+00:46:13.070 --> 00:46:16.400
+<v Speaker 0>once by the logician Hindley and once by the computer
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,100,100,100]}
+
+00:46:16.400 --> 00:46:17.480
+<v Speaker 0>scientist Milner.
+
+NOTE CONF {"raw":[100,93]}
+
+00:46:17.510 --> 00:46:20.630
+<v Speaker 0>There's a more general system called system F, which again
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:20.630 --> 00:46:24.560
+<v Speaker 0>was discovered once by a logician and once by a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:24.560 --> 00:46:25.550
+<v Speaker 0>computer scientist.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:25.580 --> 00:46:29.300
+<v Speaker 0>Basically, what this says is it's a double barrelled name,
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100,100]}
+
+00:46:29.300 --> 00:46:33.200
+<v Speaker 0>Curry Howard, which predicts the existence of other double barrelled
+
+NOTE CONF {"raw":[70,100,100,100,100,100,100,100,100,100]}
+
+00:46:33.200 --> 00:46:33.740
+<v Speaker 0>names.
+
+NOTE CONF {"raw":[100]}
+
+00:46:33.740 --> 00:46:37.490
+<v Speaker 0>It says every good idea will be discovered twice, once
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:37.490 --> 00:46:40.430
+<v Speaker 0>by a logician and once by a computer scientist, because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:40.430 --> 00:46:42.650
+<v Speaker 0>they're doing the exact same thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:46:44.900 --> 00:46:47.420
+<v Speaker 0>And it turns out that pretty much every interesting logic
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:46:47.420 --> 00:46:51.020
+<v Speaker 0>has an interesting corresponding programming language, and vice versa.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:52.280 --> 00:46:55.190
+<v Speaker 0>Um, there's sort of a very important exception to this,
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:46:55.400 --> 00:46:57.590
+<v Speaker 0>which is concurrent programming.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:57.590 --> 00:47:02.300
+<v Speaker 0>There are lots of processed algebras for doing concurrent programming,
+
+NOTE CONF {"raw":[100,100,100,100,58,100,100,100,100,100]}
+
+00:47:02.300 --> 00:47:06.950
+<v Speaker 0>but nobody knows which one corresponds really neatly to a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:06.950 --> 00:47:08.000
+<v Speaker 0>logic yet.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:08.000 --> 00:47:10.820
+<v Speaker 0>There's a lot of work on what's called session types
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,87,100]}
+
+00:47:10.820 --> 00:47:13.370
+<v Speaker 0>and linear logic, which may be a form of the
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:47:13.370 --> 00:47:16.550
+<v Speaker 0>answer, but I think the actual answer is something that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:16.550 --> 00:47:19.310
+<v Speaker 0>maybe somebody here will discover one day.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:23.060 --> 00:47:25.460
+<v Speaker 0>So right, there are lots of functional languages.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:25.460 --> 00:47:30.050
+<v Speaker 0>You've learned Haskell, but there are many, many others, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:30.050 --> 00:47:32.000
+<v Speaker 0>there are lots of proof assistants.
+
+NOTE CONF {"raw":[100,100,100,100,100,75]}
+
+00:47:32.510 --> 00:47:37.490
+<v Speaker 0>So um, the first two were auto math and type
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,93,100,100]}
+
+00:47:37.490 --> 00:47:40.430
+<v Speaker 0>theory done by Matt and Love, based on write in
+
+NOTE CONF {"raw":[100,100,100,90,78,71,100,100,52,39]}
+
+00:47:40.430 --> 00:47:41.330
+<v Speaker 0>1975.
+
+NOTE CONF {"raw":[100]}
+
+00:47:41.330 --> 00:47:43.880
+<v Speaker 0>I told you Howard did his work in the early
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:43.880 --> 00:47:45.050
+<v Speaker 0>1970s.
+
+NOTE CONF {"raw":[100]}
+
+00:47:45.050 --> 00:47:46.730
+<v Speaker 0>He showed it to Matt and Luff, and then Matt
+
+NOTE CONF {"raw":[100,100,100,100,100,99,97,100,100,100]}
+
+00:47:46.730 --> 00:47:48.590
+<v Speaker 0>and Luff came up with type theory.
+
+NOTE CONF {"raw":[100,78,100,100,100,100,100]}
+
+00:47:48.590 --> 00:47:50.210
+<v Speaker 0>So this is a way of saying, this is the
+
+NOTE CONF {"raw":[100,100,100,86,100,100,100,100,100,100]}
+
+00:47:50.210 --> 00:47:52.970
+<v Speaker 0>way we should think of proofs as terms and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,78]}
+
+00:47:52.970 --> 00:47:55.910
+<v Speaker 0>appropriate dependently typed programming language.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:55.910 --> 00:47:58.910
+<v Speaker 0>And then there were many, many other proofs systems that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,33,70,100]}
+
+00:47:58.910 --> 00:48:02.580
+<v Speaker 0>came since one of the important ones was MGL, LCF,
+
+NOTE CONF {"raw":[100,100,99,99,100,100,100,100,32,100]}
+
+00:48:02.580 --> 00:48:05.910
+<v Speaker 0>which was done here at Edinburgh by Robin Milner.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,75]}
+
+00:48:06.600 --> 00:48:08.280
+<v Speaker 0>He used to be a professor.
+
+NOTE CONF {"raw":[52,100,100,100,100,100]}
+
+00:48:08.280 --> 00:48:10.860
+<v Speaker 0>I hold the chair he used to sit in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:48:10.890 --> 00:48:12.180
+<v Speaker 0>That was why I came here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:48:12.180 --> 00:48:15.210
+<v Speaker 0>I couldn't turn down being offered that chair.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:16.290 --> 00:48:20.370
+<v Speaker 0>And MLK, of course, part of that is ML, which
+
+NOTE CONF {"raw":[100,75,100,100,100,100,100,100,35,100]}
+
+00:48:20.370 --> 00:48:23.130
+<v Speaker 0>is one of the early functional programming languages.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:23.160 --> 00:48:25.110
+<v Speaker 0>It was the first one that was tight.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:25.110 --> 00:48:28.110
+<v Speaker 0>And then Haskell came along because we were we were
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:28.110 --> 00:48:29.940
+<v Speaker 0>all in Glasgow at the time, or most of us
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:29.940 --> 00:48:30.300
+<v Speaker 0>were.
+
+NOTE CONF {"raw":[100]}
+
+00:48:30.300 --> 00:48:32.220
+<v Speaker 0>And we looked across what was going on here in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:32.220 --> 00:48:34.470
+<v Speaker 0>Edinburgh and we said, oh, that type system is neat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:34.470 --> 00:48:37.650
+<v Speaker 0>Let's do a lazy, functional language that has that type
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:48:37.650 --> 00:48:38.250
+<v Speaker 0>system.
+
+NOTE CONF {"raw":[100]}
+
+00:48:39.390 --> 00:48:39.600
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:48:39.600 --> 00:48:41.490
+<v Speaker 0>So one of the important things, right, if you have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:48:41.490 --> 00:48:44.370
+<v Speaker 0>a good idea, other people will pick up and use
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:44.370 --> 00:48:45.420
+<v Speaker 0>that good idea.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:47.520 --> 00:48:50.100
+<v Speaker 0>The the trick is to make your idea simple enough
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100,100,100]}
+
+00:48:50.100 --> 00:48:52.710
+<v Speaker 0>that other people can understand it and pick it up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:52.710 --> 00:48:53.550
+<v Speaker 0>and use it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:55.470 --> 00:48:59.070
+<v Speaker 0>So I'm going to conclude with just two minutes with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:59.070 --> 00:49:01.830
+<v Speaker 0>I normally stay away from philosophy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:02.100 --> 00:49:06.450
+<v Speaker 0>But we saw philosophy was very important to Turing getting
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:06.450 --> 00:49:07.500
+<v Speaker 0>his work accepted.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:07.530 --> 00:49:09.000
+<v Speaker 0>So I'm just going to do a tiny bit of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:09.000 --> 00:49:09.840
+<v Speaker 0>philosophy.
+
+NOTE CONF {"raw":[100]}
+
+00:49:10.800 --> 00:49:11.580
+<v Speaker 0>So, right.
+
+NOTE CONF {"raw":[100,99]}
+
+00:49:11.580 --> 00:49:14.070
+<v Speaker 0>Sometimes we want to talk to aliens, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,78]}
+
+00:49:14.070 --> 00:49:15.420
+<v Speaker 0>We've actually done this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:15.420 --> 00:49:18.120
+<v Speaker 0>So this is the the Voyager.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:18.120 --> 00:49:21.630
+<v Speaker 0>This is a plaque that appears on the Voyager satellite.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:21.630 --> 00:49:23.700
+<v Speaker 0>And this shows you where Voyager went.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:23.700 --> 00:49:23.910
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:49:23.910 --> 00:49:28.440
+<v Speaker 0>There's the sun, there's a Venus, sorry, Mercury and Venus
+
+NOTE CONF {"raw":[100,100,100,100,75,100,100,100,100,100]}
+
+00:49:28.440 --> 00:49:30.900
+<v Speaker 0>and Earth, and it left Earth and swings around the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,90,100,100,100]}
+
+00:49:30.900 --> 00:49:34.650
+<v Speaker 0>sun and Jupiter in between Jupiter and Saturn, and then
+
+NOTE CONF {"raw":[100,100,100,86,100,100,100,100,100,100]}
+
+00:49:34.650 --> 00:49:36.330
+<v Speaker 0>leaves the solar system.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:36.330 --> 00:49:39.030
+<v Speaker 0>So in case any aliens find it, hopefully they can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:39.030 --> 00:49:41.460
+<v Speaker 0>look at this and work out what's going on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:49:41.460 --> 00:49:45.870
+<v Speaker 0>This is showing a bunch of quasars, and they're the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:45.870 --> 00:49:49.740
+<v Speaker 0>frequency in which hydrogen, um, vibrates when you look at
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:49:49.740 --> 00:49:51.120
+<v Speaker 0>these different quasars.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:51.120 --> 00:49:53.280
+<v Speaker 0>And then the length of the line is the distance
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:53.280 --> 00:49:58.200
+<v Speaker 0>from those quasars to sol to where this satellite originated
+
+NOTE CONF {"raw":[100,100,100,100,61,100,100,100,100,86]}
+
+00:49:58.200 --> 00:49:58.440
+<v Speaker 0>from.
+
+NOTE CONF {"raw":[100]}
+
+00:49:58.440 --> 00:50:00.390
+<v Speaker 0>And then there are pictures of people on it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:50:00.420 --> 00:50:04.680
+<v Speaker 0>Now, depending on the aliens that see this right, they
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100,100]}
+
+00:50:04.680 --> 00:50:07.380
+<v Speaker 0>may look at this and go, um, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:50:07.380 --> 00:50:08.520
+<v Speaker 0>They'll probably work out.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:08.520 --> 00:50:10.650
+<v Speaker 0>Length of a line means distance.
+
+NOTE CONF {"raw":[100,100,55,100,100,100]}
+
+00:50:10.650 --> 00:50:12.330
+<v Speaker 0>These are written in binary.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:50:12.330 --> 00:50:15.180
+<v Speaker 0>They can probably work out that binary means numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100]}
+
+00:50:15.180 --> 00:50:18.330
+<v Speaker 0>Maybe they can work out the schematic of the solar
+
+NOTE CONF {"raw":[100,100,100,100,100,70,100,100,100,100]}
+
+00:50:18.330 --> 00:50:18.870
+<v Speaker 0>system.
+
+NOTE CONF {"raw":[100]}
+
+00:50:18.870 --> 00:50:20.670
+<v Speaker 0>They'll look at this and either go, that's a bunch
+
+NOTE CONF {"raw":[84,100,100,100,100,100,100,100,100,100]}
+
+00:50:20.670 --> 00:50:23.850
+<v Speaker 0>of weird lines, or maybe they'll look right.
+
+NOTE CONF {"raw":[100,100,100,100,100,86,98,96]}
+
+00:50:23.850 --> 00:50:25.800
+<v Speaker 0>If Star Trek is right, they'll look at it and
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100,100,100]}
+
+00:50:25.800 --> 00:50:27.450
+<v Speaker 0>go, oh, they're just like us.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:50:28.290 --> 00:50:29.940
+<v Speaker 0>Except they don't have pubic hair.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:50:34.050 --> 00:50:37.020
+<v Speaker 0>Okay, so if we talk to aliens, right, they might
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:37.020 --> 00:50:38.130
+<v Speaker 0>understand.
+
+NOTE CONF {"raw":[100]}
+
+00:50:38.130 --> 00:50:39.780
+<v Speaker 0>They might understand some of it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:50:39.780 --> 00:50:41.700
+<v Speaker 0>They might not understand all of it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:50:42.030 --> 00:50:42.420
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:50:42.420 --> 00:50:45.000
+<v Speaker 0>Length of a line, probably understand drawing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:50:45.000 --> 00:50:46.170
+<v Speaker 0>Maybe they'll understand.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:50:46.170 --> 00:50:49.200
+<v Speaker 0>Maybe not in how many people have seen the.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:50:49.230 --> 00:50:51.240
+<v Speaker 0>It's quite old now Independence Day.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:50:51.540 --> 00:50:55.500
+<v Speaker 0>So in this they, um, uh, destroy all the aliens
+
+NOTE CONF {"raw":[100,100,100,79,99,52,100,100,100,100]}
+
+00:50:55.500 --> 00:50:56.640
+<v Speaker 0>by giving them a virus.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:50:56.640 --> 00:50:58.320
+<v Speaker 0>The virus is written in C.
+
+NOTE CONF {"raw":[100,100,100,100,100,85]}
+
+00:50:59.890 --> 00:51:02.980
+<v Speaker 0>Well, actually, Java had come out then, but I'm pretty
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,76,100,100]}
+
+00:51:02.980 --> 00:51:05.410
+<v Speaker 0>sure it wasn't in Java because Java had not yet
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:05.410 --> 00:51:07.150
+<v Speaker 0>spread through the known universe.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:51:08.440 --> 00:51:11.230
+<v Speaker 0>But they give they send them a virus written in
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:51:11.230 --> 00:51:13.240
+<v Speaker 0>C that then destroys the aliens.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:51:16.300 --> 00:51:20.560
+<v Speaker 0>If we sent aliens something written in C, would they
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,100]}
+
+00:51:20.560 --> 00:51:21.910
+<v Speaker 0>even be able to figure out what it means?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:51:21.910 --> 00:51:22.060
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[79]}
+
+00:51:22.060 --> 00:51:25.510
+<v Speaker 0>Maybe it would be like length of lines, but more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:25.510 --> 00:51:26.890
+<v Speaker 0>likely it's like this, right?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:51:26.890 --> 00:51:28.630
+<v Speaker 0>It's like, what is this stuff?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:51:30.160 --> 00:51:30.550
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:51:30.550 --> 00:51:32.860
+<v Speaker 0>So if we sent them something written in C, they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:32.860 --> 00:51:34.720
+<v Speaker 0>probably wouldn't understand it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:51:35.440 --> 00:51:38.830
+<v Speaker 0>But what if we sent them something written in lambda
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:51:38.830 --> 00:51:39.760
+<v Speaker 0>calculus?
+
+NOTE CONF {"raw":[100]}
+
+00:51:40.990 --> 00:51:42.700
+<v Speaker 0>Would they understand that?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:51:46.570 --> 00:51:51.700
+<v Speaker 0>So should we call lambda calculus the universal programming language
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:51.700 --> 00:51:54.370
+<v Speaker 0>because it's something that aliens would understand.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:51:54.790 --> 00:51:57.910
+<v Speaker 0>Well, these days, I first gave this talk, I had
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:57.910 --> 00:51:59.410
+<v Speaker 0>to explain what multiverses are.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:51:59.410 --> 00:52:01.120
+<v Speaker 0>Now, you've all seen the Marvel films.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98]}
+
+00:52:01.120 --> 00:52:02.770
+<v Speaker 0>You know what multiverses are.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:52:03.490 --> 00:52:05.680
+<v Speaker 0>And right, scientists actually talk about this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:52:05.680 --> 00:52:09.070
+<v Speaker 0>It's like, it turns out that the different forces in
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100,100,100,100]}
+
+00:52:09.070 --> 00:52:12.880
+<v Speaker 0>our universe, like the weak electromagnetic force, is just strong
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:52:12.880 --> 00:52:14.440
+<v Speaker 0>enough to keep matter together.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:52:14.680 --> 00:52:17.740
+<v Speaker 0>If it was a little stronger, everything would collapse.
+
+NOTE CONF {"raw":[85,90,90,100,100,100,100,100,100]}
+
+00:52:17.740 --> 00:52:18.910
+<v Speaker 0>You wouldn't have atoms.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:52:18.910 --> 00:52:20.140
+<v Speaker 0>It's a little bit weaker.
+
+NOTE CONF {"raw":[95,100,100,100,100]}
+
+00:52:20.680 --> 00:52:22.180
+<v Speaker 0>The electrons would fly away.
+
+NOTE CONF {"raw":[97,100,100,100,100]}
+
+00:52:22.180 --> 00:52:23.380
+<v Speaker 0>You wouldn't have atoms.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:52:23.710 --> 00:52:26.980
+<v Speaker 0>So they say, well, why is it that the force
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:52:26.980 --> 00:52:29.230
+<v Speaker 0>is exactly right for matter to exist?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:52:29.260 --> 00:52:31.540
+<v Speaker 0>They say, well, it's because we're here to see it.
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:52:31.540 --> 00:52:34.810
+<v Speaker 0>There are other universes where it's stronger or weaker, but
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100,100]}
+
+00:52:34.810 --> 00:52:37.270
+<v Speaker 0>we're not there to see it in our universe.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:52:37.270 --> 00:52:38.410
+<v Speaker 0>We're there to see it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:52:38.410 --> 00:52:40.150
+<v Speaker 0>It's just right to have matter.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:52:40.360 --> 00:52:43.750
+<v Speaker 0>So scientists actually reason about multiverses a bit.
+
+NOTE CONF {"raw":[100,100,100,62,100,100,100,100]}
+
+00:52:44.230 --> 00:52:47.860
+<v Speaker 0>Now, in a multiverse, you might have different weak electromagnetic
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100,100,100,100]}
+
+00:52:47.860 --> 00:52:48.610
+<v Speaker 0>force.
+
+NOTE CONF {"raw":[100]}
+
+00:52:49.000 --> 00:52:52.720
+<v Speaker 0>You might have, um, different strength of gravity.
+
+NOTE CONF {"raw":[100,100,100,73,100,100,100,100]}
+
+00:52:52.960 --> 00:52:53.200
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[100]}
+
+00:52:53.200 --> 00:52:54.820
+<v Speaker 0>Different gravitational constant.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:52:54.820 --> 00:52:58.870
+<v Speaker 0>One thing I think you will not have different is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:52:58.870 --> 00:53:00.400
+<v Speaker 0>the laws of logic.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:53:03.610 --> 00:53:03.820
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[88]}
+
+00:53:03.850 --> 00:53:06.700
+<v Speaker 0>Logic goes beyond the universe.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:53:06.700 --> 00:53:09.850
+<v Speaker 0>It goes across multiverses.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:53:10.300 --> 00:53:14.650
+<v Speaker 0>Maybe there are multiverses with different logic, but my imagination
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:53:14.650 --> 00:53:16.630
+<v Speaker 0>is not great enough to consult them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:53:19.750 --> 00:53:21.220
+<v Speaker 0>So what does that mean?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:53:21.520 --> 00:53:26.650
+<v Speaker 0>That means we cannot call lambda calculus the universal programming
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:53:26.650 --> 00:53:27.190
+<v Speaker 0>language.
+
+NOTE CONF {"raw":[100]}
+
+00:53:27.190 --> 00:53:30.310
+<v Speaker 0>Why can we not call it the universal programming language?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:53:30.310 --> 00:53:33.460
+<v Speaker 0>Because doing so is too limiting.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:53:35.590 --> 00:53:37.390
+<v Speaker 0>So I will stop there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:53:37.390 --> 00:53:40.240
+<v Speaker 0>I just want to leave you with one thought, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:53:40.240 --> 00:53:44.020
+<v Speaker 0>You've learned about Haskell, which is very practical language, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:53:44.020 --> 00:53:45.790
+<v Speaker 0>one thing that makes it work so well is that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,52]}
+
+00:53:45.790 --> 00:53:48.940
+<v Speaker 0>it's based on lambda calculus, which, as we've seen, is
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:53:48.940 --> 00:53:49.990
+<v Speaker 0>very simple.
+
+NOTE CONF {"raw":[100,100]}
+
+00:53:50.770 --> 00:53:56.210
+<v Speaker 0>Um, something that was basically independently discovered three times because
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:53:56.720 --> 00:53:59.810
+<v Speaker 0>computation was discovered three times, and lambda calculus is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,82,100]}
+
+00:53:59.810 --> 00:54:01.820
+<v Speaker 0>model of computation.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:54:02.840 --> 00:54:05.510
+<v Speaker 0>And what I want you to go away with is
+
+NOTE CONF {"raw":[100,75,100,100,100,100,100,100,100,100]}
+
+00:54:05.510 --> 00:54:07.100
+<v Speaker 0>the thought that if you have a tough job to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:54:07.100 --> 00:54:10.370
+<v Speaker 0>do, you should think that this is a job for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:54:10.370 --> 00:54:11.300
+<v Speaker 0>lambda calculus.
+
+NOTE CONF {"raw":[100,100]}
+
+00:54:27.230 --> 00:54:28.070
+<v Speaker 2>I will stop there.
+
+NOTE CONF {"raw":[96,84,98,100]}
+
+00:54:28.190 --> 00:54:29.120
+<v Speaker 0>Thank you very much.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:54:50.270 --> 00:54:50.450
+<v Speaker 2>So.
+
+NOTE CONF {"raw":[54]}

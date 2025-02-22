@@ -1,0 +1,902 @@
+Okay.
+Good afternoon everyone.
+So yesterday we started talking about finite automata, finite state
+machines and drew some diagrams and introduce some diagrammatic notation,
+and at some point introduced a few symbols.
+I'm about to throw a lot more symbols at you,
+because we're going to try to do something vaguely mathematical.
+And in order to do maths, we need symbols.
+Did anybody have questions from yesterday?
+Things they would explained again or differently?
+Yeah.
+So could everybody else please be quiet so I can
+hear people speak here?
+, so the question about ways to think about this.
+What about how long is it?
+Oh, how long can a sentence be in English?
+You mean in the digression?
+Yeah.
+Would it be acceptable to say somebody?
+, so that's a much more stringent definition that was
+being suggested by some people yesterday.
+Can a sentence last longer than anybody can pay attention
+to it?
+, I mean, there are no right or wrong answers,
+are there?
+This is a matter of opinion about what you think
+a reasonable definition is.
+, so the subtext behind all that stuff was really,
+what's the difference between doing mathematics, where we just define
+things to be whatever we want and doing something more
+human, where we want things that are vaguely sensible.
+You might say that the same applies to other things
+in computing.
+, any questions about the automata stuff?
+Any notations that were unclear?
+Good.
+, so yesterday I think we finished off with this
+little diagram.
+Now I want to get symbolic because I want to
+build that automaton from simpler automata.
+And in order to do that, I have to be
+able to define the operations I'm building on automata.
+And that means, inevitably, notation.
+So a lot of the notation I'm going to introduce
+now is pretty standard throughout much of theoretical computer science
+and indeed mathematics.
+So if this is the first time you've seen it,
+don't think of it as a complete waste.
+It's not just for this course.
+You will see these notations again.
+And you need to develop a facility in reading notations
+and understanding.
+People should always define notations, but in practice they don't
+because very common notations are often taken as understood.
+Just as we don't define times and plus most of
+the time.
+, so suppose I've got a set sigma.
+So if you remember from yesterday, I was using sigma
+to be the name of the input alphabet, the labels
+that the machine reads from the outside world.
+So if I've got any set sigma, then when I
+write Sigma star, I mean the set of strings where
+the letters of the strings are that alphabet.
+And by strings here I mean strings, as you know,
+strings in Haskell.
+, I suppose in Haskell they're technically lists.
+In maths, we don't think of them as lists, but
+a sequence of things in sigma is a string over
+sigma.
+This little star here is called the cleaning star.
+You might remember that cleaner was the guy on my
+title slide.
+So this is one of many notations he introduced.
+, I need often to talk about the empty string,
+because it's the simplest string in Haskell.
+You have multiple ways to write the empty string, but.
+A pair of double quotes would do it.
+Or even just the empty list, because in Haskell, strings
+are lists.
+Typically, in theoretical work we tend to use the letter
+epsilon Greek epsilon for the empty string.
+I don't think there's any more profound reason for this
+than that.
+Epsilon begins with E, and so does empty.
+, an epsilon is used for little things a lot.
+, what do we do with strings?
+You've done a bunch of things with strings and indeed
+lists in Haskell.
+One of the things you've done with them is concatenate
+two strings.
+This is something, of course we do in text processing
+all the time.
+There are several ways of concatenating strings.
+You might stick a letter on the beginning, or you
+might put two strings together.
+So if S is some string and I want to
+add a letter to the beginning, then I just write
+x s.
+, I realise at this point that because we've also
+been teaching you Haskell with the notation that Haskell avoids,
+this can get confusing.
+This is maths.
+So this is two separate variables x and s.
+This is not x is as you would write in
+Haskell.
+Okay.
+So when I'm doing maths variables are single letters.
+And unless they aren't and it will be obvious if
+they aren't.
+So if I write x s I mean the letter
+s followed by the letters in the string s.
+I could put s on the end as well.
+These are strings.
+They're not lists.
+There's no cons.
+I don't have to worry about colons and so on.
+Then I want to talk about the transition function.
+So yesterday I said that we could describe the arrows
+in a finite automaton by a function.
+And the function was called delta because transitions are changes
+and delta means changes in calculus.
+And the transition function takes the state you're at and
+the letter you're seeing and tells you where to go
+next.
+It is often useful to talk about what happens when
+you read several letters.
+So this function tells you what to do when you've
+read one letter.
+We can define a function called Delta star, which tells
+you where you end up after reading several letters.
+So Delta Star takes the state you're currently in, takes
+a string of input letters, and tells you what state
+you'll end up in after reading the string of input
+letters.
+That's easily defined by recursion if you're all familiar with
+recursion now.
+How do we define it?
+Well, if we're in a state and we read the
+empty string, in other words, we haven't done anything at
+all yet, then we stay where we are and this
+is staying where we are not moving to where we
+are.
+If we're in a state and we read a letter
+X, and then we have some more input to read,
+then we just move to the state that X tells
+us to move to.
+So that's delta q x go from q two the
+state that x takes us to.
+And then we recursively apply the string transition function to
+the remaining input.
+So this should be nice and familiar to you.
+You could implement this in Haskell very easily indeed.
+You will implement it in Haskell very easily.
+Some of you probably already have.
+, but it's a piece of notation that we use
+in order to argue about finite automata and ultimately do
+proofs about them.
+, any questions about these definitions so far?
+Is there any notation in there that I haven't explained?
+We're getting to another bit of the course where there's
+a risk of me using a notation, because I know
+it and have forgotten that you might not have seen
+it.
+So please shout whenever there's anything unexplained.
+For example, I'm betting that I've used something in this
+definition that you haven't seen before.
+Probably haven't seen before.
+Any unknown symbols to you there?
+Yeah.
+This thing.
+Right.
+Okay.
+so how many of you have seen that used before?
+Okay.
+And for the rest of you, is it completely obvious
+what it means?
+Yes.
+Some.
+No.
+, well, I could be being perverse and using it
+in a way that's different, but all I'm really doing
+is being lazy.
+I told you that mathematicians are lazy.
+, laziness is one of the most desirable aspects in
+a mathematician.
+, it's a backwards membership sign, and all it means
+is membership written the other way round.
+So what I mean here is that I want to
+talk about some s, and this s is a member
+of Sigma Star.
+Remember Sigma star is the set of strings.
+, why am I using backwards membership?
+Let me explain how to be lazy.
+If I didn't do it, I would have to write.
+So I have saved myself one s and one.
+And that's clearly worth introducing a new symbol for, isn't
+it?
+Well, no, but you will see this kind of notation
+thrown around, so I thought I'd put it in here.
+So if s is a string of letters in the
+input alphabet, the trace is what we see the automaton
+doing when it reads the string.
+So in particular we look at the set of states
+and we see it goes from the initial state which
+remember is q0.
+Then it goes to some other state because it reads
+a one and goes to q1, it reads A2 goes
+to Q2 and so on.
+And this sequence of states is the trace the
+execution execution trace of a program?
+If any of you have yet found out how to
+debug Haskell, you will be watching traces of function evaluation.
+So trace is the word commonly used to describe the
+way that a machine or a program or a function
+behaves as it evolves step by step.
+So everybody happy with the definition of trace.
+This is the definition that we use in order to
+do whatever it is we're trying to do with finite
+automata.
+What we're mostly using them for is to decide whether
+a string is in a particular language.
+And in order to do that, we need to talk
+about the strings that the automaton accepts.
+Remember, automata have final states or accepting states which are
+good and any other state is bad.
+And you read a string, you end up in a
+good state or a bad state.
+The language accepted by an automaton M, which we write
+L of M, is the strings that take you to
+a good state.
+And again, remember this notation from yesterday.
+F is the string of good states, final states accepting
+states, whatever you want to call them.
+So when is the language accepted exactly?
+If the string transition function from the initial state reading
+the string takes you into the set of final states.
+Okay.
+Any questions on that definition.
+So these definitions are core to the next two weeks.
+I want to say a little bit more about laziness
+on the side.
+, it gets extremely boring right?
+Right.
+Boring.
+Writing down at the start of every definition.
+Let em be a machine with a set of states
+Q and an input alphabet.
+Sigma and a transition function.
+Delta and initial state q nought and final states f.
+So if I talk about em, you can assume that
+it is q sigma delta q nought f.
+And if I stick things on top of letters
+primes or hats or anything else, you can assume, unless
+I say otherwise, that its set of states is going
+to be Q dashed and its input alphabet is going
+to be sigma dashed, and so on and so on
+and so on.
+, mathematicians use many ways of extending symbols, primes.
+This is called double prime or double dashed.
+Sometimes we use numbers.
+We can use various fancy accents or complexes, whatever.
+But if I decorate an Em with something, you can
+generally assume that everything else in the machine gets decorated.
+Unless I say it isn't.
+So we'll see that fairly shortly when we start defining
+some constructions on automata.
+So final chance to ask any clarifications about notation and
+definitions before I start using them.
+Nope.
+Okay, so why do I want to do this?
+Languages accepted by machines are an interesting class of languages.
+It turns out that they are particularly well structured and
+we can combine them in nice ways.
+So it's useful to have a convenient word to describe
+the class of languages that is accepted by finite automata.
+And we're going to use the term regular for this
+if you come.
+Anybody come up through the French education system?
+No.
+Yes.
+So the French in general prefer to use rational rather
+than regular for reasons that I've never quite understood.
+And you may see both, but most in most English
+speaking maths we talk about regular languages.
+And for the moment we'll say that a language is
+regular.
+If we can build a finite automaton that accepts it,
+in the sense that this definition of acceptance gives regular
+languages a nice because they're easy to analyse, and we
+can construct regular languages from other regular languages in the
+way that we're about to do.
+So if an automaton recognises a regular language, then if
+we have two automaton two automata, we can think about
+combining them in various ways and seeing if we can
+construct more interesting languages.
+So there are a bunch of ways things we might
+do to a language.
+One rather obvious thing we might do with a language
+is say, actually, this is the language of bad things.
+So sometimes it's easier to talk about which things are
+bad than to talk about which things are good.
+So maybe it's easy to define the bad strings.
+And then can we build a machine that define describes
+the good things instead?
+This is complementing the automaton.
+If we can build a machine that accepts a particular
+language L, how do we build a machine that accepts
+the complement of L.
+, and I know from previous years that not everybody
+has seen all of these definitions.
+If you want to talk about the difference of two
+sets, that is the thing.
+That is things that are in A but are not
+in B, there are a couple of common notations you've
+used.
+Just out of idle curiosity, who is already used to
+seeing minus for that?
+Very few who is already used to seeing backslash for
+that?
+Slightly more.
+I'm sure the rest of you have seen notations for
+set difference.
+Is there another notation?
+There probably are.
+You will see both.
+I tend to prefer minus because backslash is just an
+ugly symbol.
+And besides it's used a lot in programming for various
+things.
+, so by a minus B I mean things that
+are in A and not in B.
+So if I have an automaton to accept a language,
+how do I build an automaton that accepts the complement
+language?
+It's not very hard.
+Without looking at the rest of the slide, can you
+see how to do it?
+Yeah.
+The complement.
+Of.
+Complement of L so I.
+.
+Sigma.
+, I can't do anything to Sigma because the input
+alphabet is the same.
+I have to change something in the machine.
+Yeah.
+I just want to be accepted and not accepted.
+Swap the accepting and non accepting states.
+Yeah.
+Okay.
+So how does the complement work.
+A string is in the complement if it is not
+in the original language.
+So when it's a string accepted by an automaton when
+it hits a good state.
+When is it rejected.
+When it hits a bad state.
+So if I swap the good states and the bad
+states, I accept the compliment language.
+Okay.
+, so here I have a demonstration of abusive notation
+again.
+So here is a machine with the standard letters q,
+sigma, delta, q nought f nought.
+If I want to accept the complement of the language,
+then all I have to do is make good states
+bad and bad states good, which I can do by
+saying that the good states of this m bar are
+the bad states of the original automaton Q minus F
+good states.
+All states are bad states.
+, there is a catch here.
+So I told you yesterday when I introduced the black
+hole convention that you need to remember that it's there.
+The black hole convention said that we often don't draw
+states where it's obvious what happens.
+But of course, if I take an automaton with a
+black hole state and I complement it, then the black
+hole state becomes an accepting state.
+So it appears in the automaton and has to be
+drawn as such.
+So while space saving conventions are a good thing, you
+have to remember where they've been used and undo them
+if necessary.
+So does this make sense?
+Anybody not see what I'm doing here?
+What if you were doing this in Haskell?
+What would the bar represent?
+Not.
+I mean, it means complement.
+So.
+But if you're implementing this in Haskell, as you will,
+what type of thing would bar be?
+So what I'm doing here is asking you to think
+about mathematical notation in a more programming way.
+So mathematicians just write m bar.
+But if I were programming this stuff up, what would
+I be doing?
+Yeah.
+So if I were programming this, I'd be applying a
+function called Complement my automaton or something.
+Oh.
+So, , if you prefer to think about programming than
+maths, you can go quite a long way by translating
+mathematician style notation into functions.
+So the bar here, you can think of as an
+operator that is taking an automaton M and giving you
+back another automaton that is the complement of it.
+And this definition of m bar on the right is
+what you would you would write as the right hand
+side of your function definition in Haskell.
+So what have I just done?
+I've taken on automaton and built another automaton that returns
+the compliment language.
+This tells me something.
+And here I'm going to introduce some more terminology, which
+is probably new to you.
+This tells me something quite important.
+It tells me that the set of regular languages is
+closed under complement.
+Have you any idea what closed under means?
+Some do.
+Some have seen it before.
+Who's never seen this before?
+Okay.
+That leaves a very large number of you where I'm
+very surprised if you've seen it before, because it doesn't
+usually pop up until university maths.
+, I don't think it comes in linear algebra.
+What do I mean when I say that the set
+of regular languages is closed under complement?
+Well, all I mean is that if I take a
+regular language and compliment it, then it is still regular.
+So this term closed under is used a lot in
+building mathematical things.
+It means I have a big set of nice things,
+and I do something to it, which takes me back
+into the set of nice things.
+So in this case, my nice things.
+Are regular languages, and if I take a language and
+compliment it, then I still get a regular language.
+Why do I get a regular language?
+Because I've been able to build an automaton that accepts
+it.
+So that's good because complimenting languages is something one does
+all the time.
+But we can't go very far just by taking languages
+and complimenting them and complimenting them back again, because the
+complement of the complement is the original.
+And actually, if you look at this construction, this construction
+also has the property that if you do it twice,
+you get back to where you started, which is not
+always the case with complementing constructions.
+What else can we do?
+So yesterday we talked about an automaton that recognised a
+moderately complicated set of languages.
+That was the set of strings of zeros and ones
+where there were an even number of ones and an
+odd number of zeros.
+Or was it the other way round?
+, and I asked, do you think whether there was
+a way of structuring that in some way?
+Well, there are a couple of ways.
+We'll see one now and another next week.
+But I want to introduce now another construction on automata.
+This is maybe not so Obviously not so immediately.
+Obviously an interesting thing to do if I've got two
+languages and I'm going to call them L and L
+Prime, and they're regular languages, meaning I can construct them,
+I can build them, build automata to recognise them.
+Can I build a language that accepts the intersection of
+the two languages?
+So the intersection of the languages, that means a string
+that is in both languages.
+Why do we want to do this?
+Well, actually in practice we don't want to do it
+very often.
+In everyday programming with regular languages, you don't often use
+the intersection operator.
+And there's also a good practical reason, which we will
+see maybe next week why we don't do that.
+But if you can think of a reason, a situation
+where you might want it, you have two good properties
+of languages.
+You need your languages to satisfy this property to be
+good, and you also want them to satisfy this property
+to be good.
+You would a single thing to check both properties
+simultaneously, and that gives you the intersection of the two
+languages.
+It's a little bit harder to see how to take
+two automata for two different languages, and plug them together
+to accept something that is in the intersection, but not
+very hard.
+, how are we doing for time, 20 minutes and
+two slides?
+Maybe I should let you think about it a bit.
+Can you think about.
+How you might connect two automata together so that a
+string has to pass through both of them, and be
+good in both of them in order to be counted
+as a good string.
+Any ideas coming up?
+If I give you a string, and I ask you
+to tell me whether it's accepted by this one, and
+also by this one.
+There are several things you could do.
+What's one one easy thing you could do?
+Yeah.
+So I could say run it through this one.
+If it fails there, then it fails.
+Otherwise, run it through this one.
+If it comes out the other end with good, then
+it's passed through both.
+, that's one way.
+It's slightly unpretty, but it works.
+Wouldn't it be nice if we could kind of run
+the two machines together, rather than one after the other?
+So what we're going to do is find a way
+to take a string and feed it effectively to both
+automata at the same time, and that's not actually Very
+hard.
+We just have to define a rather large automaton that
+codes up the states of both automata at once.
+So I'll give you the formalism first, and then I'll
+give you the picture.
+So what we have here is automaton one m which
+is q sigma blah blah, and automaton M dashed which
+has dashes.
+However, these two automata have the same input alphabet, so
+they both have input alphabet sigma because they're looking at
+the same set of input strings.
+Here's a definition.
+This is a definition of what the product of two
+automata, or to be precise, it's the definition of the
+product of two deterministic finite automata.
+Remember I said yesterday we were dealing with deterministic machines
+Dfas.
+We'll get a little more complex next week.
+What is the product of two automata?
+Automata?
+Well, the set of states is the product of the
+set of states.
+So q cross, q prime.
+Now I think actually after my tutorial yesterday, are you
+all by now familiar with the use of times to
+represent the Cartesian product of two sets?
+Who is not?
+So some people are definitely a bit dodgy.
+Who is sure that they're unsure?
+Right.
+So we have some notation that needs explaining.
+, this stuff is in the basic set theory that
+we ask you to read before starting the course, I'm
+pretty sure, but it doesn't hurt to refine it.
+So if I've got a set.
+A and A set B the Cartesian product.
+So that's Cartesian after Descartes is simply the set of
+pairs.
+The set of pairs of things.
+First element from the first set and second element from
+the second set.
+So in other words, you're just looking at one element
+in each set and that is your new state.
+So here what I'm saying is that the state of
+the product automaton is a state in this one, together
+with a state in this one.
+You'll see that diagrammatically shortly.
+The input alphabet is the same because we're trying to
+recognise the language.
+Then there's going to be a transition function, which I
+have to define on the next line.
+What's the initial state of a product?
+Well, if I'm taking two automata and I want to
+run them together, the initial state should be the initial
+state of the two halves.
+I start at the beginning.
+What are the accepting states?
+What are the good states?
+Well, my aim here is to accept the language that
+is the intersection of the strings.
+So I want good states to be ones that are
+good in both halves of the construction.
+So an accepting state is a good state in M
+and a good state in M dashed.
+What does the transition function do?
+Well, the transition function is supposed to take a state
+in one and a state in the other, and tell
+you where to go when you read an input.
+That's straightforward, right?
+Because if I read an input a here in this
+automaton, I see where I go with an A in
+this automaton, I see where I go with an A,
+and that's where I end up.
+So that's what this says.
+If I'm in state Q in the left and Q
+dash in the right, and I read an A, then
+I run the left hand one to get to the
+new state there, and I run the right hand one
+to get to the new state there.
+So what does this look pictorially?
+Here is a product automaton.
+So this is the thing we saw yesterday.
+These are two simpler automata.
+If you look at this thing on the left, what
+does it do?
+The thing in red.
+This is an automaton that reads zeros and flips back
+and forward between zeros even and zeros.
+aud and it does nothing at all.
+It reads the ones, but just stays where it is.
+So this is an automaton that just counts the zeros
+in the input string.
+And it's good when there's an even number of zeros.
+The blue thing here is another very simple automaton.
+It counts the ones in the input strings, so it
+flips back and forward between an even number of ones
+and an odd number of ones.
+It doesn't care about the zeros.
+And this is good when the number of ones is
+odd.
+So if we have a string that is satisfied by
+both of these things, we have a string which has
+an even number of zeros and an even number of
+odds, which is the thing we tried to build yesterday
+from scratch.
+But if you look at what goes on here and
+you construct the automaton, so let's do it bit by
+bit for two states here.
+There are two states here.
+So they are going to be two times two for
+states over here.
+What are the states.
+They are simply the pairs of the states in the
+two halves.
+So E0 and e1 gives us a state here E0
+and O1 gives us a state there 0010001.
+So we now have states on the right hand side
+which are combinations of states on the left of the
+halves here.
+If you then look at the transition function it does
+the obvious thing.
+So here the transition function for one on the e
+on the zero half, it takes us from even to
+even.
+And on the one half it takes us from even
+to odd.
+And this is what that definition does for those two
+constructions.
+If you think about how this thing runs, the product
+automaton is essentially running these two machines in parallel.
+So the initial state of the two machines, if you
+had them running separately, just feeding them the same input
+would be this.
+This gives you the initial state of the product.
+I read some input, read the zero say in the
+left hand in the broken down automata.
+Then I see this one move and I see this
+one go back to where it is.
+And that corresponds to the movement here in the product
+automaton.
+And everything keeps working that.
+So how far am I going to do this?
+It gets a bit boring, doesn't it?
+.
+This was quite a nice construction.
+, there were a couple of ways one could think
+about doing it.
+So before I talk about the on the fly stuff,
+do you see what I'm doing there?
+When I just connect the automaton together, run them in
+parallel, feeding the input both at the same time?
+That's a fairly intuitive construction.
+You should ask yourself about black hole states.
+, one thing that you might wonder is, do I
+need to build the whole thing?
+So this thing is a mathematical definition.
+It defines an entire product or automaton with every conceivable
+state in it.
+Every possible combination of states in the two halves.
+And sometimes it might be more efficient to start at
+the beginning state and just build the states up as
+you need them.
+So if I were building this in an incremental way,
+then I would start here and say, well, look, I've
+got E and E0, so I've got E0 and E1,
+I do a transition, something happens.
+Now I find myself in a state which must be
+called zero, zero and E1.
+So I know that's in the automaton.
+And as I run through I will add states to
+my construction.
+The reason this is sometimes useful is because sometimes automata
+have a lot of states that are never actually reached.
+And it if your product automaton has the property that
+most of the states are never reached, it can save
+a lot of space because.
+Quick question.
+If M and M have size n, what's the size
+of the product automaton.
+N squared n times n because Cartesian product has n
+times n possible pairs of states, and generally that's bad.
+So if we can, we want to try to avoid
+making automata big.
+This is actually why we don't tend to use the
+intersection operator very much in practice, because intersecting automaton makes
+them bigger.
+Also, often it's not clear why we want to do
+it.
+It's relatively rare to have an application where you say,
+I want a string to be in two languages, but
+it does happen.
+.
+We've talked now about building Strings that are accepted by
+both automata at the same time.
+What's the other obvious thing we could ask about?
+Two automata or two languages.
+Yeah.
+Say again.
+So I can't quite hear.
+You say you need to shout louder for me to
+hear them.
+.
+In this university, a PhD thesis can be written in
+either English or Gaelic.
+So possibly I might want to consider strings that are
+in the union of two languages.
+.
+So another thing we might ask is given an input,
+is it in one language or the other?
+Now this is something that is actually used much more
+in practice.
+Because if you think about trying to describe a programming
+language, programming languages have lots of constructions in them.
+Each one gives you a valid construction.
+So a function definition, a list, a function application or
+whatever, and a string of characters is a good part
+of the programming language.
+If it's a good function definition or a function application
+or expression or whatever your language has.
+So building up regular expressions by taking the union of
+things is something that we do all the time.
+, I've just accidentally used the term regular expression, which
+I was trying not to use yet.
+How many people already use regular expressions?
+Okay, so the rest of you.
+Next week we will talk about regular expressions here, but
+then go away and find out about them because they
+are incredibly useful.
+If you have a decent search facility that allows you
+to specify regular expressions, and if you do things
+searching for email, matching a particular property, then looking for
+things that are the union of two things is something
+I do a lot.
+For example, I need to search my mail frequently to
+find something I might have forgotten, and I can remember
+that it may have been from one of three people
+because they were the people involved.
+So I want to search my mail for mail that
+is from Joe Bloggs.
+Don John Doe or Ann Ferguson say So because I
+use a civilised mail client, I can do things
+that.
+I can use regular languages to describe the male that
+I want to search.
+And I can say, show me all the males from
+this person or this person or this person.
+And because regular regular languages allow you a lot of
+slop, I can do more sophisticated things.
+Even if I can't remember their names.
+It doesn't matter as long as I can remember part
+of their names.
+, so if you are doing things on any reasonable
+information system, it should provide you with a way of
+doing wildcard searches.
+If I say wildcard search, does that mean something to
+more people?
+Yeah.
+So that's also implemented by means of regular languages.
+So this is one of the basic things looking for
+the union of two languages.
+And the curious thing is that the construction is almost
+identical, which is a bit odd because we would expect
+some kind of sum to be rather different from some
+kind of product.
+But in this case of deterministic automata, I'm going to
+define this slightly complicated looking beast.
+So m and m prime are as before.
+They are two automata.
+And I'm going to define a sum m plus deterministic
+of m prime almost exactly the same as before.
+So I'm running the two automata in parallel.
+This is the same.
+This is the same.
+This is the same.
+This is the same.
+The only difference is that I'm just changing the accepting
+states.
+So when I build the product automaton, I said the
+accepting states are the ones that are good in both
+automata.
+And now I'm simply saying that the accepting states are
+the ones that are good in either automaton.
+So what does this say?
+This says.
+A state is good if it's any old state on
+the left and a good state on the right, or
+alternatively, it's a good state on the left and any
+old state on the right.
+So this is exactly the same construction as before, just
+with a different set of accepting states.
+And that means that a string is accepted by this
+construct.
+Exactly.
+If it's accepted by either one or the other of
+the two halves, or both, of course.
+.
+I should at this point see how many people will
+get something out of this.
+, I wrote here all the states on the left
+times, the good states on the right, all the good
+states on the left, times the good state.
+Such times, all the states on the right.
+Another way of writing that is to say take all
+the good, good states on the left.
+So I take all the good, all, take all the
+states in both automata, and subtract off the states that
+are bad in both of them.
+Now, which states are bad in both halves of the
+construction?
+The state is bad in both halves.
+If it's in the bad states in the left half,
+and the bad states in the right half.
+Now, if I take this slightly awkward notation and use
+both complement as I have been using, I could write
+that as the bar of f bar times f bar
+f prime bar.
+, does that remind you of anything at all?
+I think I heard somebody say something.
+Yeah.
+So I definitely heard somebody say something in that time.
+, I remember the, the not of the and is
+the or of the knots and so on.
+So we've got a relationship here of negation between some
+and product.
+The sum of two automata has a set of final
+states, which is the complement of the product of the
+complement of the states.
+So that's not a coincidence because union intersection are or
+an and and so there's some Demogorgon stuff going
+on here or in the the word that I use
+a lot.
+Duality.
+So what have I done in the course of the
+last half hour?
+We've built up automata from smaller automata.
+And this has told us that if I take regular,
+regular languages and do things to them, they stay regular.
+For some things that I can do, I can take
+a language, I can complement it, and it's still a
+regular language.
+I can take two regular language, two regular languages intersect
+them, and that's a regular language, because I can build
+an automaton that accepts it, and I can take two
+languages and take their union.
+And that's still a regular language, because I can build
+this automaton that accepts it.
+That's quite a useful and powerful set of things to
+be able to do to a language, because it's the
+logical operations.
+It's not.
+And an or so that means I can manipulate languages
+with logical operators and be confident that I can build
+automata to recognise them if I want to, which is
+how such search facilities in civilised databases and the
+work.
+.
+Again.
+Think about what you should do with the black hole
+states.
+So next week we will go on and generalise this
+a bit further.
+I've been talking about deterministic automata, so I should tell
+you what nondeterministic automata are.
+They are a very weird thing.
+So I'll spend some time next week talking about the
+weirdness of them.
+But they're also a very useful thing.
+They're one of those things that we can invent as
+mathematicians, even though they have no physical reality.
+And they make using these regular languages much, much easier,
+as you will see.
+So please, before next week, go over this stuff and
+come back on Thursday with any questions you have, because
+we need to get the questions sorted out before going
+on and finishing what is actually the final compulsory topic
+of the course?
+There are some non compulsory stuff in week 11 for
+anybody who want it.
+Okay so it's 3:00 now it's one minute past.
+Beg your pardon.

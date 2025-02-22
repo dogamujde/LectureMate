@@ -1,0 +1,1061 @@
+Okay.
+Ready?
+Yep.
+Okay, let me just, .
+Okay.
+Good afternoon.
+.
+Settle down.
+, yeah.
+So today we have a guest lecture from John Hughes.
+, John, , did his PhD in Oxford and then
+spent some time as a professor at Glasgow University, ,
+before moving to Chalmers University in, in Sweden, where he's
+been, , for many years now.
+So John is one of the designers of Haskell.
+, so you can complain to him about all the
+things that you've been made to learn this semester and,
+, and co, , co-inventor of QuickCheck, and he has
+a company that he uses that, that that uses QuickCheck
+to help people in industry find bugs in their code.
+And so John will be telling us about some experiences
+with that, I guess.
+Yeah.
+Thanks, John.
+Okay.
+Go ahead.
+Okay.
+Can you hear me?
+Yeah.
+Good.
+So indeed, I am a professor at Chalmers, as you
+can see, and co-founder of cubic.
+So I'm going to talk about testing today.
+And I often give this talk to audiences of software
+developers for industry.
+So I'd to start out by asking them a
+question.
+So I'm going to ask you a question to the
+same one who really, really loves testing.
+Okay.
+1 or 2.
+You know, I get a similarly enthusiastic response from industrial
+software developers.
+There may be a few people who love it But
+actually there are very, very few people go to work
+in the morning thinking, great, today I get to write
+100 tests.
+It's more testing.
+It's something that people do because you have to.
+Otherwise your software won't work.
+So testing, it's something that many people regard as rather
+hard.
+And I just want to consider a little why that
+is.
+Okay, so suppose you're testing some software which has, let's
+say n different features for some number n.
+Generally speaking you'll need to write several tests for each
+feature.
+So let's suppose you write 3 or 4 tests per
+feature.
+That's okay.
+That's a linear amount of work order n.
+That means the amount of work is proportional to n.
+But everybody who's developed more complex software knows that if
+you test one feature at a time, there will be
+bugs that you miss.
+Many bugs only appear when you use two features in
+combination.
+So how many pairs of features are there?
+Well, obviously roughly n squared.
+So that's a quadratic number of test cases that you
+have to write if you want to test thoroughly.
+And you know, even testing every pair of features will
+not find all of your bugs.
+Some of them may only appear when you test when
+you use three features together.
+Okay, so now we're talking about a cubic amount of
+work.
+This does not sound good.
+And some bugs are caused by what are called race
+conditions.
+That is when the software is doing several things at
+the same time.
+And just depending on what happens to be done first.
+What happens to be done second?
+You can get errors that appear and maybe they will
+appear once in a million runs.
+So you know your software fails.
+You wonder why you run it again.
+It works fine.
+That is hair.
+Terribly difficult.
+I'm very, very difficult to test for.
+So this is, you know, in brief, why people find
+testing hard.
+So what's the answer?
+Don't write tests.
+Generate them.
+That's what you've been doing with QuickCheck so far.
+And that is the approach that I advocate.
+So how does QuickCheck work?
+Well, you have an API under test.
+, I'm going to talk now about testing software with
+internal state.
+Usually the test cases that we generate for those are
+sequences of operations, random sequences of operations.
+So we just keep generating those until the test fails
+and when it does.
+, I hope you've noticed shrinking happening in your own
+use of QuickCheck.
+Usually when a test fails of this sort, then most
+of the operations are irrelevant.
+They're just there because the thing was generated randomly.
+Normally, there are just a few key operations that are
+enough to provoke the failure.
+So this is where shrinking can kick in and generate
+a very small test case that also fails.
+And debugging those tests where everything that happens is relevant
+to the failure.
+That is very, very easy.
+Much easier than debugging a large test with a lot
+of random junk.
+So I to run a demo at this point,
+and I'm going to run a demo of a circular
+buffer.
+I don't know whether you know what that is, but,
+, I'll show you a little example so that hopefully
+it will become clear if I can figure out how
+to.
+Okay.
+Good.
+So I've got, , a few functions that implement a
+queue.
+So what do I mean by a queue?
+I mean something that you can put numbers into.
+In this case, let's make a queue with space for
+five elements.
+And now I'm going to put a one into it.
+So this is airline code I'm writing.
+Erlang is very similar to Haskell actually.
+it's a different programming language.
+But if you know Haskell then it's very easy to
+learn.
+So there we are.
+I've put one and two into the queue.
+So you can imagine a queue of people or with
+person number one and person number two in it.
+Now I can ask how many values are in the
+queue.
+What should the answer be?
+Two of course.
+And then I can take values out of the queue.
+There's one.
+What will I get if I call this again?
+There it is.
+What will I get if I call it again?
+Three zeros.
+There's the one again.
+There's the two again.
+Remember I called it a circular buffer.
+That's because we go around in a circle.
+So now we'll get zeros again.
+Whoops.
+And then the one and two again.
+And so on.
+So you can see that the code works is actually
+implemented in C.
+Who's heard of the C programming language.
+Almost everybody okay.
+So it's quite small and simple.
+, and it obviously works.
+Let's test it with QuickCheck.
+Now, you have presumably seen QuickCheck.
+, for the case of testing pure functions only.
+Oh dear me.
+Why can't I?
+Okay, this seems to have.
+Okay.
+Please come back.
+Okay.
+Yes.
+So how do we how do we test these things
+with sequences of operations where we generate a sequence of
+API calls?
+It's just a list.
+I'm sure you've been using lists.
+, we make a simple model state.
+So in the case of a queue, we model the
+contents just by the list of numbers that should be
+in it.
+And then we write post conditions for each operation to
+check that the result is right.
+So all of this stuff is written in Erlang apart
+from the code itself.
+So we use Erlang for testing code in all kinds
+of programming languages.
+See for example as an example.
+, here's a test case that we might use for
+queues where we put three numbers in.
+We get two numbers out and we can model the
+state just by a list.
+It's very slightly more complicated than that.
+But the principle is here.
+And then we write post conditions that just check that,
+, you can see every call to get returns.
+The first element that was in the queue when we
+call it.
+Okay, we won't bother with the code fragments.
+Let's just run some tests.
+Okay.
+Can we see this?
+Nope.
+Why can we see nothing?
+Now we can see it.
+Good.
+Okay, so.
+Let me compile my airline code, which is my specification.
+And then I'll just use the Erlang version of QuickCheck.
+To test the code.
+Dawn, look.
+So what happened?
+What happened here was, first of all, we generated a
+long random test.
+Here it is.
+It's got 32 steps.
+Okay.
+This test failed.
+Would you to debug a test case with 32
+steps?
+No.
+But then you've seen shrinking happening.
+Here it is.
+It's happened here.
+And we end up with this test case with three
+steps.
+And what is happening?
+Okay.
+Look at this.
+This part of the screen shows us what happened.
+So we created a queue of size one.
+We put one value into it, and then we asked
+the size.
+How many elements are in the queue now?
+One.
+What does size return?
+Zero.
+Zero is not equal to one.
+And so the test fails.
+Okay.
+So why did this happen?
+Well let's have a look at the code.
+So here is the code for put.
+So as I said, this is in the C programming
+language, which I realise you're not familiar with.
+But, , , what's happening here is that we are
+taking the value n, and we are writing it into
+a buffer at a position determined by Q arrow imp,
+the input pointer.
+And then we're incrementing the input pointer modulo the size
+of the q.
+What is the size of the q one.
+So we're changing the input point from 0 to 0
+plus one.
+That's one modulo one.
+What's one modulo one zero.
+Ah.
+So I bet looking at that code it looks right,
+but it's not.
+So the problem here is that when you put a
+value into the buffer, the input pointer wraps around back
+to the beginning immediately.
+So the q that is full.
+Looks exactly a queue that is empty.
+And so the size function gets confused and returns zero.
+So that's not right.
+So how can we fix this?
+, it turns out that this is a well known
+problem, and there is a well known way of fixing
+it.
+So this is the code that creates a new queue.
+And if you think about it, you'll see that this
+problem of the input pointer wrapping around when the thing
+is full that's going to hit every size of queue,
+not just queues of size one, and it's going to
+hit us when the queue becomes full.
+It's going to look empty.
+So here's the trick.
+Well, I'm asked to create a queue of size n.
+I will actually create one of size n plus one.
+Don't tell anybody.
+Now this means that if anybody sees my bug, they
+must first have put N plus one items into a
+queue of size n, and what does that mean?
+That means it's their fault.
+And I escaped blame.
+And this is the goal of all good software engineering.
+Okay, so I've made that change.
+Now I'm going to recompile the C code.
+, which I do this.
+And now I just want to rerun that test.
+And I can do that with this version of QuickCheck
+just by saying aeccae check.
+So this is a special function that reruns the last
+failed test.
+What do you know?
+It passes now.
+That's great.
+So that seems to work.
+Let's just run a few more random tests to be
+sure.
+Darn, it still doesn't work.
+Look at what happened here.
+We made a queue of size one.
+That's really two.
+We put two items in.
+So that input pointer will have wrapped around back to
+zero.
+We took one item out.
+Okay.
+We put two things in.
+We took one thing out.
+How many things are in the queue?
+One.
+What does size return?
+Minus one.
+That can't be right.
+Let's look at the code for the size function which
+is down here.
+So it's just taking the difference between this input pointer
+which is zero and this output pointer which is one.
+Okay.
+So that's zero minus one.
+That's minus one modulo the size which is two.
+What is minus one modulo two.
+It's plus one.
+I have a mathematics degree.
+I know that.
+But is this the modulo operator?
+No, it's the C remainder operator, which, if this argument
+is negative, gives a negative result.
+And obviously the size of the queue should never be
+negative.
+So what I have to do is to make sure
+that this expression is never negative.
+How can I achieve that?
+There we are.
+Let's take the absolute value.
+Whoops.
+Okay.
+And now if I recompile the C code again.
+And rerun that last test it passes.
+So actually now we're in a situation which is.
+rather a situation that arises a lot in industry.
+We found a bug.
+We created a test case.
+We've just run it.
+That provokes the bug and we fix the code.
+And now that test passes, all our tests are green.
+So we're done.
+Right?
+Shall I run some more random tests just to see?
+Yeah.
+Okay.
+Darn.
+Not done.
+Okay.
+What happened here?
+We started off by creating a queue of size two.
+That's really three.
+This is progress.
+This is a shrunk example.
+We create a queue of size two because queues of
+size one work now.
+Great.
+And then what happened?
+We put three things in.
+So we made that input pointer wrap around.
+We took one thing out.
+How many things are in the queue?
+Two.
+What are the size?
+Function?
+Return?
+One.
+Why?
+Because now that C code is computing minus one modulo
+three.
+That is two mathematically.
+But the absolute value just converts to minus one into
+a plus one.
+So this was the wrong thing to do.
+We made a patch that actually just made the problem
+worse by disguising the bug in the simplest case that
+could provoke it before.
+Now, the right way to fix this is to make
+sure this expression is positive without changing its value modulo
+size, and that we can do by just adding on.
+The size again.
+Okay, so now this is always going to be positive.
+And it should should be returning the correct result.
+So let's recompile the C code.
+Rerun that last test?
+Yes, we fixed that.
+Run some random tests.
+Ooh, 100 tests passed.
+Now.
+Are we satisfied?
+Let's.
+Okay, so at this point, I would normally run tests
+for maybe ten minutes.
+, let's just run them for 10s.
+Okay.
+So now each dot is 100 tests.
+, whoops.
+There we are.
+4700 tests.
+Say it works now.
+I'm happy.
+My code is perfect.
+Actually, as far as I know, it does work now.
+Okay, so let us go back to.
+My story.
+Okay, so what I wanted to show you with that
+was, , an example where we write one property.
+So we wrote one property that said the C code
+behaves in a way that that matches the state machine
+model, and that property can be used to find many
+different bugs.
+And I hope what I showed you when we looked
+in each case at a minimal failing example, I hope
+you'll agree with me that seeing those minimal failing tests
+makes diagnosing the problems very easy.
+So we think of shrinking as extracting the signal
+from the noise of random tests.
+Random tests contain a lot of noise.
+That is their purpose.
+That's why they're good at provoking faults, at provoking problems
+you wouldn't think of testing for.
+But it's useless for debugging.
+But when we shrink a failed random test and we
+get a signal, then we get a minimal test that
+is easy to debug and that makes problems easy to
+find.
+Okay.
+, the C code in this case was only a
+few lines.
+Can we do this for real?
+Well, let me tell you about one of the larger
+projects we've done at the company.
+, we tested the outer SAR basic software for Volvo
+cars.
+So what is outer SA?
+Outer SA is a standard for the software and vehicles.
+And the idea is that if the people who make
+components and subsystems for vehicles follow the standard, then when
+you plug them together, they'll just work.
+And in this diagram you can see the basic software.
+, so this is software that is supposed to run
+on every processor in a car.
+And there can be 100 of them nowadays.
+, So if you look at the diagram you recognise
+on the right hand side you can see the Ethernet
+there.
+That is a network.
+These four vertical columns are protocol stacks.
+The Can bus is one that's very heavily used in
+cars.
+And every coloured box is a module that is described
+by the standard that is supposed to exist.
+And these coloured boxes, they're all described by a PDF
+of 1 or 200 pages.
+So what's the point of this standard?
+Well, the theory is that car manufacturers should be able
+to buy code from different providers and just have them
+work.
+What happens in practice?
+If you buy all your code from the same provider,
+it probably will work seamlessly.
+But if you want to play them off against each
+other and get the parts you know at the lowest
+price, which Volvo Cars wants to do.
+Well, it turns out that's often not the case.
+Or what really happens is when you first put a
+car together, you can't even boot it, let alone drive
+it.
+So they hired us to develop QuickCheck tests for the
+vendor's software, the vendor's implementations for basic software to make
+sure they really were following the standard.
+, here's one bug that we found.
+This was a bug in a canvas stack and on
+the canvas.
+Every message has a message identifier, which is also its
+priority.
+The smaller the number, the higher the priority.
+So in this test case, what's happening is we're first
+of all sending a message with priority one that gets
+sent straight away.
+And then we call functions to send messages with with
+priority two and three.
+But the bus is busy.
+So those messages cannot be sent yet.
+So they get queued up in the protocol stack.
+And then the last step in the test case is
+a function that is usually called by the software.
+You know, the hardware bus driver software.
+So it says confirming transmission of message number one.
+So now the stack should select the next message to
+send on the bus.
+Which message should it send?
+The one with priority two.
+Which message did it send?
+The one with priority three.
+How so?
+Well, we had the source code in this case.
+So to explain why this happened, I have to explain
+that the Can bus standard is quite old.
+And when it was first defined then 11 bits were
+set aside for these can IDs.
+But that means you could only have 200 different kinds
+of message in the whole car.
+It's just not enough for a modern vehicle.
+So there's a new version of the standard that permits
+extended canids of 29 bits.
+You get to get a lot more message types in
+there, but it all has to be backwards compatible.
+So you can still use a standard canid if you
+.
+And this particular protocol stack supported both.
+And it stored the ID in an unsigned 32 bit
+integer.
+But it needs to remember whether it's a standard or
+an extended canid, because it has to generate packets within
+a different format depending on which.
+So they use the top bit of this 32 bit
+identifier integer to record whether it was an extended or
+a standard canid.
+Of course, no reason you shouldn't do that.
+Here's what I didn't tell you about that example.
+The message with priority two had an extended canid.
+And guess what?
+When comparing the priorities of messages.
+If you're going to do this, it's important to mask
+off that top bit because it really makes no difference
+to the priority.
+What kind of ID and message has.
+And the developers had forgotten to do this.
+So that message with priority two that was treated as
+a message with priority two to the 31 plus two.
+No wonder it was sent last.
+So I really this example.
+, it shows the power of shrinking.
+So, you know, a much more complicated test was generated
+to begin with that shrank down to these four steps.
+It shows that this message, this method, can find bugs
+forgetting to mask off a bit in a low
+level C program, and it can generate a small test
+case that provokes the bug and makes it easy to
+find.
+I also it because it's important.
+Everything in the car talks on the canvas, and those
+priorities are there for a good reason.
+Here's a tip.
+Next time you're doing emergency braking, don't adjust the volume
+on the radio.
+The volume messages might take priority over the braking one
+if they got the priorities wrong.
+So you know it's a matter of life or death.
+Perhaps we read 3000 pages of PDFs to write this
+code.
+That turned into about 20,000 lines of QuickCheck code.
+We tested a million lines of C code from six
+different suppliers, and we found more than 200 problems.
+More than 100 of them were problems in the standard
+itself.
+So, I mean, don't be impressed by something just because
+it's called a standard.
+If it's a long document that has not been tested,
+it's likely to contain mistakes and Our code was ten
+times shorter than comparable test code when we found anything
+similar at all.
+So I showed you a demo using very small programs.
+You might have wondered, does this method scale to large?
+You know, large amounts of code?
+Yes it does.
+The last story I want to tell you is a
+story about some industrial Erlang code, which starts with a
+message to the Erlang mailing list back in 2007.
+We know there's a lurking bug somewhere in the debt's
+code.
+We've got bad objects and premature end of file every
+other month.
+For the last year, we've not been able to track
+the bug down because the file is repaired automatically next
+time it's opened.
+Okay, so I'm sure you can feel too bad Turnquist
+Distress, but we can all feel sorry for him.
+But you don't know the context of this.
+Oh, maybe you are aware of Klarna nowadays.
+Klarna.
+Well known in Scotland too.
+So back at this time it was a relatively small
+Start-Up company in Sweden.
+And they provided invoicing services for web shops.
+They needed a database to do that.
+And they used the one that came together with Erlang.
+That's a distributed database that provides database transactions, distribution, replication
+of data, backups, lots of lots of good stuff, but
+it needs a back end to actually store the data
+in files.
+And that back end is called debts.
+It stores tuples.
+You've studied tuples and Haskell stores the same kind of
+thing in Erlang in files.
+So that's based on top of the file system.
+And Dex was the component that was crashing every couple
+of months.
+And when something fails as rarely as that, it's often
+because of a race condition.
+So these tend to lead to programs that work most
+of the time.
+But every now and then they fail and they can
+fail catastrophically.
+At the time, I was interested in testing for race
+conditions, so let me explain how I did it.
+First of all, let's go from the sublime to the
+ridiculous.
+Imagine testing something very simple.
+Do you recognise this?
+Maybe they don't exist anymore.
+I don't think they exist anymore in Sweden, but it
+used to be something that every bakery or deli counter
+would have.
+And people would come along.
+They would take a ticket from this ticket dispenser, and
+then the person behind the counter would call out the
+next number and that person would go for service.
+So suppose we were going to try and implement a
+ticket dispenser in Erlang.
+Well, we would have to define a take ticket operation.
+And is that all you need?
+Well, every now and then the roll of tickets runs
+out, right?
+And somebody comes along and puts in a new role.
+So that's resetting the ticket dispenser.
+It'll go back to ticket number one.
+So let's suppose that we just want to implement those
+two operations.
+Here is a unit test.
+So this is a kind of test that people write
+in the industry for all kinds of software that just
+performs a number of calls and checks that the answers
+are as they should be.
+So what I've written here is a piece of Erlang
+code that calls a reset.
+It takes three tickets.
+It does a reset, it takes another ticket, and it
+pattern matches the result of each call against a pattern.
+You've learned about patterns in Haskell.
+They used a little differently in Erlang, but this just
+matches and thus checks that you know the calls to
+take ticket return one, two, three and one and the
+two calls to reset return a constant called okay.
+So how can we model that?
+Well, it's very easy.
+We'll generate sequences of reset and take operations.
+We can model the state of the dispenser just by
+the number of the next ticket, or maybe the number
+of the previous ticket.
+And then we can just check the results against the
+model and make sure that they agree.
+So that's all very well.
+Right.
+If those operations are performed in sequence.
+But what if some of them are performed in parallel?
+So what if two customers come along?
+So first of all, somebody resets the ticket dispenser and
+then two customers come along and one of them takes
+two tickets.
+For some reason, I mean, why not?
+And the other one takes one ticket, but they're both
+trying to do it at the same time.
+Right now, the whole purpose of a ticket dispenser is
+to regulate the flow of many customers so that two
+customers should try and use it at the same time.
+It's not a strange situation.
+But now what are what are the expected results here?
+Well, we might get okay from the reset.
+And then the left customer might get tickets one and
+two and the right one.
+Ticket three.
+But that's not the only thing that can happen, is
+it?
+It might be that the customer on the right gets
+ticket number two, and the first one gets tickets one
+and three.
+In that case, the customer on the right kind of
+leapt in in between.
+It's a bit rude, but it's not wrong.
+But this should never happen where both customers get ticket
+number one.
+So when we test this code, we want to run
+parallel programs and we want to accept the first two
+outcomes but not the third one.
+So this is a bit awkward to write tests for
+because there are three possible correct outcomes.
+And this is only a small example, right?
+Here's a larger parallel test.
+How many correct outcomes are there of this test?
+It turns out there are 30.
+And that means that the conventional approach to testing, which
+is to write down what results you expect.
+It just doesn't scale to running this kind of test.
+You can't do it with a conventional approach.
+Can we do it with QuickCheck?
+Well, the question is, can we write code that will
+recognise a correct collection of outputs?
+And the way that we do that is just to
+search through all possible ways of ordering those calls.
+So here in red we have an observed output.
+And here we have a hypothesised sequence in which we
+might have done those calls which explains the output that
+we see.
+Right.
+And we explain it by looking at what the model
+that we have says.
+And.
+So by doing that, we might have to search through
+a large number of possible orders.
+But if we can find an order that explains what
+we see, we say, yes, the test passed.
+If we can't, it must have failed.
+So when I run tests, I have an implementation of
+this stuff.
+I'm not going to demo it now, but when I
+run tests, they fail.
+And QuickCheck produces a little example this.
+It says if we run two calls to take a
+ticket in parallel, they can both return ticket number one.
+And there's no possible interleaving of these two calls that
+can explain this result.
+, this was the implementation I wrote for Take Ticket.
+It's an Erlang.
+It reads from a global variable the value n, and
+then it writes n plus one.
+And when you do that twice in parallel, it's possible
+that both customers will do the read.
+Both of them will compute.
+They get the same value.
+Of course, they'll both compute the same ticket to return,
+and then they'll both write one back into the global
+variable.
+, it's a classic race condition.
+And the point is not that this is a very
+tricky race condition.
+It's a very classic one, very well known one.
+The point is that we can find it very easily.
+So let's talk about debts, debt, stores, data.
+, it stores tuples in a file.
+It stores many tuples.
+, the tuples have curly brackets around them.
+In Erlang, unlike Haskell, which has round brackets, the first
+element of the tuple is the key.
+And there are a bunch of operations that one can
+perform.
+One can insert a list of tuples into a table.
+One can delete a key from a table, which will
+delete all the tuples that have that key.
+, insert new is insert.
+Except that if any of the keys is already in
+the table, then it's a no op.
+And there are other operations.
+Basically, if you've used a tuple store ever, there is
+nothing surprising.
+There's just a bunch of operations and they are really
+easy to model, right?
+To model them and to predict how the code should
+behave.
+We just use a list of tuples to keep track
+of what should be in the file.
+So in this case, I wrote a quick check specification
+that was less than 100 lines of code of the
+core of the the database.
+And that's pretty good because the actual code itself was
+more than 6000 lines spread across four different modules.
+It was supporting hash tables on the disk, multiple versions
+of the format, you name it.
+There are reasons why there was so much code, but
+the core of its behaviour was quite simple, and I
+started running parallel tests.
+They failed immediately.
+Look at this.
+So what's happening here?
+First of all, we have a prefix, which we do
+first.
+So we open the file and that creates a table.
+And then in parallel we insert an empty list of
+tuples into the table.
+That's a no op that returned okay.
+And then we use insert new to insert an empty
+list of tuples into the table that also returns okay.
+Now QuickCheck says there's no possible interleaving of these two.
+But they were both okay.
+Right.
+So what's the problem?
+Here's a tip.
+Sometimes there's no alternative.
+You just have to read the documentation.
+Here's what it says about insert new.
+Look at the result type.
+It's supposed to be a boolean.
+You studied buildings in Haskell, right?
+They're either true or false.
+Same in Erlang.
+They're either true or false.
+And I had previously run tens of thousands of sequential
+tests of this code and insert new had returned.
+True or false every time.
+Now I suddenly run a parallel test and it returns.
+Okay.
+Something's wrong.
+Well, I went on.
+I ran some more tests and got another one.
+Here it is.
+So here, first we open the file and then we
+do two things in parallel.
+We insert the tuple zero zero into the table, and
+we use insert new to try and insert zero zero
+into the table.
+And that timed out.
+And at the time I was doing this I had
+only recently written the test code.
+So I wondered, oh, is my code buggy or is
+the bug in Dats?
+How will I know that I noticed this message.
+It looks as though the bug was in debt and
+sure enough it was.
+So at this point I decided insert new just doesn't
+work.
+Let's leave it out of our generated tests.
+And I started generating tests so the rest of the
+code.
+Here's the third bug I found.
+If you open a file first and then you do
+two things in parallel, you reopen the file and in
+the other hand and the other process, you insert zero
+zero into the table.
+Okay.
+And that works.
+Then you ask for the entire contents of the table.
+What should be in there?
+I just put in zero zero.
+Right.
+So I should get zero zero.
+What did I get back?
+The empty list.
+Nothing.
+No possible interleaving.
+Okay, so you might think this.
+This test looks a little suspicious because I'm re-opening the
+file in a parallel process.
+I should explain Erlang is a parallel programming language, is
+designed for highly concurrent systems.
+We expect there might be thousands of processes using the
+database at the same time, all of them will need
+to make sure it's open, so it's perfectly okay to
+call open file in a parallel process while the file
+is already open.
+It should work, but it doesn't.
+So I found these bugs and I was very pleased
+with myself.
+I sent them off to Ericsson, where there was a
+man who was working on the code and maintaining it,
+and he said, thank you very much, John.
+But they're not the bugs that were behind the message
+to the mailing list because the symptoms are different.
+So I said, oh, that's pretty.
+What are the symptoms?
+And he said, well, the problem is that the file
+is being corrupted.
+So I asked him, how can I find out whether
+the file is corrupt?
+And he sent me one line of code that could
+check to see whether the file was corrupt.
+So I took my tests, and I just added that
+line to the test so that the test said, well,
+we run a parallel test.
+The results should be explainable the way that we talked
+about, and the file should not be corrupt.
+I started running tests.
+Ten minutes later, I found this bug.
+Look at this.
+What's it doing?
+It's opening the file, closing it, opening it again, and
+then doing three things in parallel.
+It's inserting.
+oh.
+Sorry.
+It's looking up the key zero in the table.
+It finds nothing.
+That's okay.
+And then it's making two calls to insert to insert
+a tuple zero zero into the table.
+And both those calls succeeded and the overall result was
+okay in that all the all the return values are
+consistent with the model.
+But when I checked for corruption what did I get
+but premature end of the file.
+So this corrupted the database.
+Now what?
+I love this example as well.
+This was produced by shrinking a larger example.
+When I looked at it, I thought, open, close, open.
+Come on, that can't possibly be necessary.
+So I manually simplified the test to just do an
+open there, and I ran that simplified test tens of
+thousands of times.
+And guess what?
+It passed every single time.
+Open close open is necessary.
+Why?
+Because when we start the test, the file does not
+exist.
+That first open creates the file, then we close it.
+Then we open an existing file that leads to a
+very slightly different state.
+And that's slightly different state is essential to making this
+bug possible.
+So I thought, okay, that's great, I turned it off.
+I got the code fixed.
+I was giving a talk at a developer conference shortly
+afterwards, and what I was going to talk about, it
+was nowhere near as much fun as this.
+So I thought, I know.
+I'll just make these slides and I'll spend half the
+talk on the original topic, and then I'll talk about
+this stuff.
+So I did that.
+But of course I hadn't kept the QuickCheck output, so
+I had to rerun the tests.
+And remember I said this one took ten minutes to
+find as I was running the test to find this,
+what did I find?
+But this one.
+Okay, so what are we doing?
+We open a file, we put a tuple into it
+with a key one, and then we do two things
+in parallel.
+One of them is re-opening the file.
+Remember we know that's a little dangerous.
+And the other one is looking up zero which is
+not there, and deleting the one which is there.
+Everything all the results were okay, but when I checked
+for corruption.
+Bad object.
+Here's the message again.
+We know there's a lurking bug somewhere in the code.
+We've got bad objects and premature end of file.
+Every other month.
+Last year, by the time I did this work, those
+bugs were actually kicking in once a week.
+And they were bringing down the main server at Klarna,
+and it took several hours to bring it back up
+again every week.
+But in this case, when I reported these bugs, along
+with these simple cases that provoke them.
+The guy working with the code was able to fix
+them each time within a day.
+Before I did this work, of course, I was not
+the first person to look for this bug, and the
+best hypothesis that people had was, well, it seems to
+happen when the file gets to around one gigabyte.
+Maybe it's something to do with rehashing.
+I know the guy working with the code had spent
+more than six weeks at Klarna trying to track the
+bug down.
+Now we know that to provoke the bugs, you need
+a database with at most one record.
+Each bug can be provoked with only 5 or 6
+calls.
+And given those simple examples, it took less than a
+day to fix and find to find and fix each
+bug.
+And that just shows the incredible power of shrinking.
+And it shows how hopeless it is to look for
+bugs race conditions in errors that happen in production,
+where not only the 5 or 6 relevant things have
+happened, but millions of irrelevant things as well.
+So tracking down the reason for a bug in that
+situation is virtually impossible.
+Property based testing.
+It finds more bugs with less effort.
+Don't write tests.
+Generate them.
+And that's what I've got for you.
+Ask questions.
+Not done.
+Ask for questions.
+Oh, yes.
+Questions.
+Questions.
+There's one.
+Oh.
+Oh.
+Oh, well.
+.
+Just shout.
+Yeah.
+So this should be always guaranteed to generate the minimum
+test case.
+, in a certain sense.
+So shrinking stops when all the ways in which we
+can make the test case smaller lead it to a
+test that also passes.
+So it's a local minimum in that sense.
+But what that means, it depends very much on which
+smaller candidate tests we try.
+And that is something that is partially provided by the
+library and partially configurable.
+So basically the idea is when you're using the tool,
+then if you can think of a way of simplifying
+a test that would make it easier to debug, you
+can program that as a shrinking strategy.
+And then it will be applied every time there is
+a test that could potentially be simplified that way that
+has failed.
+So, you know, you can gradually, over time, build up
+the power of your shrinking.
+And it's worth spending time working on that, because it
+makes every bug reported to you in the future simpler
+to diagnose.
+What else?
+Any other questions?
+No, I have a question.
+.
+I mean, do you do you get an estimate of
+how much money?
+, you've saved a company Klarna when they find
+a bug this?
+You can try asking a company Klarna how much
+the particular bug would have cost them.
+But don't expect an answer.
+Okay, that's commercially sensitive information.
+Okay.
+I mean, you know that it's six, six man weeks.
+Was it that was spent looking for the bug?
+Yeah, I.
+Mean, that's that's already a bit of money.
+Yeah, that's already quite a lot of money.
+Yeah.
+Okay.
+Anybody else?
+Okay.
+Well, .
+Okay.
+Well let's thank.
+John again then.
+Thank you.
+Okay.
+Thank you.
+That's all stuff they.
+Got from your.

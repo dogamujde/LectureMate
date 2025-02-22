@@ -1,0 +1,915 @@
+But good afternoon.
+This is quite a dense lecture, I'm afraid so.
+We will get going.
+Thank you for turning out on a cold afternoon.
+Although possibly, if your place is anything mine, you
+feel inclined to let the university pay for the heating
+rather than you.
+So last week we talked about finite automata, finite state
+machines, and we talked about them deterministically.
+There was a lot of notation introduced, a lot of
+pictures, a lot of symbols.
+Hopefully the fact that you have all more or less
+successfully programmed them up in Haskell has helped bed everything
+in.
+Are there any questions from last week or questions about
+the basics, anything that you didn't understand after doing the
+tutorial.
+Okay, so this week we're going to continue with these
+machines.
+And we're going to talk about a kind of machine
+that at first sight doesn't make a lot of sense,
+but turns out to be very useful.
+And also a little bit about how we actually use
+them in practice.
+So who are today's people?
+These are both people I know.
+Michael Rubin is one of the greatest logicians, and computer
+scientists and set theorists and complexity theorists of the 20th
+century has produced many seminal results.
+Dana Scott.
+is someone whose connection with the topics today goes back
+quite early in his career, and later on contributed to
+a vast array of topics in theoretical computer science semantics.
+Dana is was the supervisor for a number of our
+most senior professors here.
+And as you can see, he's quite old now, so
+even the people he supervised are now retired.
+But at least as of the last time I checked,
+he was still around.
+So what are we talking about today?
+I want to start by thinking about what we did
+last week.
+We thought about a way to build an automaton that
+is kind of the sum of two automata, in the
+sense that it accepts both the languages of the two
+bits.
+So we had the.
+What's this one?
+This is the.
+, even number of zeros.
+And this is the odd number of ones.
+And when we built the some construction which I wrote
+with this little D, because we were doing everything with
+deterministic automata, we said, well, we can do it.
+It's exactly the same as building the project, the product.
+But the set of accepting states is simply the union
+of the set of accepting states instead of a product.
+So our accepting states of those where either component is
+accepting.
+So we said build the product.
+And this is accepting because E0 is this is accepting
+because O1 is this is accepting because O1 is.
+, that was a little bit odd because it's odd
+for product to look sum but it works.
+Now I want to think about Another way of thinking
+about it.
+Skip that bit.
+Kind of boring.
+So that was just the evaluation of it.
+But we saw that last week.
+, why do we need to do this?
+So why do we actually have to build this product
+automaton?
+We've taken a two, two, two state automata, and we've
+protected them and added some more transitions.
+But wouldn't it somehow be nicer if we could just
+take the two original automata, not connect them in any
+way, and just run them together and say, if one
+of them says yes, that's fine.
+Or indeed, if we're looking for the product of both
+of them, say, yes, that's fine, but that's a harder
+question.
+Well, that's just what we did, right when we built
+the product and turned it into the sum.
+The way we constructed the product was by taking the
+two components and running them independently.
+We ran this half and this half, and we made
+product states, which let us track the state in each
+of the two halves independently.
+Why can't we just treat this as a DFA by
+itself?
+Well, because it isn't deterministic.
+It's not deterministic, chiefly because it has two start states.
+This is a start state, and this is a start
+state.
+, so it's not a deterministic finite automaton, but is
+it something else?
+Well, if you remember, when I introduced finite automaton, I
+gave a definition of finite automaton.
+And then I said, and by the way, we're only
+interested in the deterministic ones.
+So how about we stop saying we're only interested in
+the deterministic ones, and think about what it might mean
+if we just didn't have that restriction at all.
+So what do we call something that is not a
+deterministic automaton?
+Well, perhaps Unimaginatively we call it a non-deterministic automaton.
+And these will be called NFA.
+So I will tend to use this abbreviation a lot.
+And this is the original automata that I introduced.
+But we can have any number of start states.
+So it's got think of that.
+Think of it as having distributed state.
+There are many states and all of them might be
+switched on when you reboot the machine.
+And moreover, it might have any number of transitions from
+one state to another.
+So.
+Deterministically, I expect if I'm in a state and I
+see the letter A, there's only one place I might
+go.
+But in a non-deterministic automaton.
+There might be two places I could go.
+So here I've got something where if I see an
+A, I might go there or I might go there,
+and if I see a B, I might go there
+and I might go there.
+At this point, you should be worried.
+Okay.
+What do I mean with this word?
+Might.
+Might is not a very mathematical word.
+, so we're going to have to think about that.
+, but first of all, I'm going to introduce yet
+more symbolism.
+But this is all symbols you've seen before with a
+slight modification.
+So this is my definition of a general kind of
+automaton.
+Non-deterministic automaton.
+We've got the set of states as usual.
+We've got the input alphabet as usual.
+We've got a transition.
+Now it's no longer a function.
+It's now a relation.
+Because when it was deterministic, it was a function because
+for every start and letter there was a unique target
+state.
+Now it's a relation simply because there may be many
+target states.
+And the easiest mathematical way to represent that is as
+a relation between source states, target states, and input labels.
+And instead of having one starting state, we now have
+a set of starting states.
+, possibly I should call this capital Q0 or something,
+but I'm calling.
+It's the final states.
+The accepting states are the same as before.
+There are good states and bad states, but we're going
+to have to think about what it means to accept
+because we're no longer in the nice, simple, deterministic state
+where we know where we end up.
+, we don't need a black hole convention anymore, so
+we won't use it.
+Why don't we need a black hole convention?
+Because we just don't write down any transitions that we
+don't want, because the thing can just stop.
+If you read the book when I define deterministic automata,
+you saw that the book actually defines deterministic automata to
+be this, and then adds the constraints that there's
+exactly one start state.
+And this relation delta is functional.
+It is, of course entirely a matter of taste.
+Whether you define dfas as we want them to begin
+with and then relax them as I've done, or whether
+you start by defining the general case and say, by
+the way, deterministic ones have these particular properties, , different
+people have different views on how to do this.
+So that's just notation.
+It's just saying, basically, a finite automaton is a graph
+of states with arrows between them.
+But how do we understand this thing?
+What is this thing that we're building in terms of
+computation?
+And the thing that makes an NFA different is that
+there might be lots of states that are switched on,
+or active or current at the same time.
+In a deterministic automaton, it was easier.
+There was only one state, and that was the current
+state.
+Now there might be many current states.
+And how do we know which states are active?
+Well, when you switch the automaton on all the start
+states, all the initial states are active.
+So that might be two states.
+In the case of the zero, even zeros and odd
+ones.
+And then how does the machine behave?
+Well if some state is active.
+For example, suppose this state is active.
+Maybe it's the initial state.
+What happens when I read an A?
+I said we might go to the top or we
+might go to the middle.
+What do we do with nondeterministic automata is keep track
+of all the places that we might be.
+So if I see an A.
+That happens.
+What does this mean in terms of computation?
+It's not entirely clear.
+I'll talk about that in a moment.
+But that's how we can at least make a definition
+of what it means for a transition to happen.
+Non-deterministic.
+So we make active all the states that we might
+go to.
+And this is why we don't need the black hole
+state if we don't go anywhere.
+For example, if instead I read a C.
+So if from the initial state I read a C,
+there is no state.
+So this state stops being active and no other state
+becomes active.
+So the automaton is just dead.
+So that's the equivalent of the black hole state.
+We don't need any explicit black hole states that keep
+reading stuff forever.
+We just say automata can die and become switch off.
+, and then what happens when we've read all the
+input?
+We're in some state.
+So let's go back to the A case.
+What we're going to do, and this is quite critical
+is say We will say that the automaton has accepted
+the input.
+If any of the places we might be in is
+a good state.
+So remember, the double circle means a good state.
+Here, after doing an A, I might be in a
+bad state.
+I might be in a good state.
+We're going to say that if it's in any, if
+any of the states we might be in a good,
+then we're good.
+Now, does that make any sense to you?
+Yeah, maybe, , it's an alternative.
+We could have said.
+Maybe we could have said if all of them.
+So maybe we're quite restrictive.
+And we would want to say we accept the input
+if all the states are good.
+, it turns out that doing it this way is
+more practically useful.
+We can think about the other type, and we will
+think about it briefly right at the end.
+But this way has a lot of practical applications, whereas
+the other way round has fewer practical applications.
+, again, the magic word duality, the idea of any
+accepting state versus all accepting states, these are dual concepts
+in a precise sense, but we tend not to cover
+that in this course.
+Although if you go on and do Introduction to Theoretical
+Computer Science in third year, you'll get a bit more
+about this.
+.
+That's what we did when we built the sum of
+two automata by looking at the two components effectively.
+But when we were in the deterministic world, we couldn't
+leave them as two independently running things.
+We had to tie them together into one bigger thing.
+Okay.
+Any questions about what I'm doing so far?
+This construction.
+So here's a question.
+How much memory do I need if I'm going actually
+to program one of these things?
+How much state is there to keep track of?
+Yeah.
+.
+Yeah.
+Yeah.
+So that's the number of states.
+, so the question was then how much space do
+I need to track that number of states?
+So I've got a bunch of states.
+Each state can be either active or not active.
+So I need one bit of memory for each state.
+.
+With a deterministic automaton, I didn't need so much memory.
+Because if a deterministic automaton has n states, I just
+need to know which of those n states is the
+currently active state.
+So I need a a number big enough to express
+one to n, which is log n bits.
+So a deterministic automaton is much more compact than a
+non-deterministic automaton in terms of the memory used if you're
+going to program the thing.
+So actually running a non-deterministic automaton requires exponentially more memory,
+which sounds at first sight a bad thing, but
+it's still only one bit per state.
+So as long as you have a reasonable number of
+states, this is not a big deal.
+Or at least not these days.
+, how do we understand this?
+So I said run an NFA.
+You've already implemented Dfas.
+How would you go and run an NFA?
+Just do the same thing over and over.
+I mean, you do kind of the same thing.
+So with Dfas you track the current state.
+, you fed it the input you saw.
+What's the current state at the end?
+Was is that a good state running an NFA?
+What you're going to do.
+Of course, is more complex because now we have initial
+states, possibly several.
+We feed it an input.
+It might go all over the place.
+We have to keep track of lots of current states.
+And after we've read the input, we have a bunch
+of current states.
+And then we have to see if any of them
+is accepting.
+So it's more complex but not hard to implement.
+But do we have any kind of understanding of what
+we're really thinking about?
+Because this idea of having multiple current states and everything
+being good, if one of them is good is a
+bit artificial.
+Yeah.
+Would it be run everything in parallel or would we
+go as an advantage?
+Do you go through one and then another.
+That's a very good question.
+So the question was if you're trying to run a
+non-deterministic automaton, does everything run in parallel or are you
+exploring first one path, then the other path, then the
+other path?
+, what's the answer?
+What's the answer if you're implementing it?
+I mean, do you know any way to do it
+other than by exploring one path after another?
+, so.
+There are.
+ways, obviously, of doing computation in parallel.
+Actually all your computers have many cores in your CPU.
+I don't know how many cores.
+The current CPU of the kind you buy has eight,
+16, 16 now.
+, and of course, if you care to find the
+resources, we have an assortment of supercomputers scattered around the
+place with several thousand processors.
+And in principle, you could run things in parallel.
+Okay, but that's always a bit artificial, because what if
+there are more paths than several thousand?
+What we would really to do is think of
+the things running in parallel, without actually having to implement
+them in parallel.
+And that's where there's a disconnect between our intuitive understanding
+of what we would to do and the universe
+that we happen to live in.
+So there are a couple of ways of trying to
+understand what a non-deterministic automaton is.
+This is one way, and you will see this way
+used a lot in computational complexity theory if you choose
+to do that.
+So one way we could try to say is that,
+well, the machine has a bunch of start states.
+When we turn on the machine guesses or chooses.
+What does that mean?
+Not well defined.
+One of the start states.
+And then it behaves a deterministic automaton, except that
+whenever it has more than one transition as a choice,
+for example, here it has the choice of going there
+or there.
+Again, it guesses chooses which one to follow, or alternatively
+it dies.
+If there is no choice.
+And then we say, when does the machine accept?
+Well, if there was a way that the machine could
+have guessed right all the time and got to a
+good point, then the input string is accepted.
+This is a notion of machine and an understanding of
+non-determinism that, as I say, is used a lot in
+theoretical analysis because you can turn it into a mathematical
+formalism that is quite easy to work with by talking
+about.
+Suppose I have a sequence of guesses that works well,
+and then computing with that.
+But the words guess and choice are very misleading here.
+They don't actually correspond to anything we can really do.
+So it doesn't mean toss a coin, it doesn't mean
+any more sophisticated kind of gambling thing.
+And it absolutely is not quantum anything.
+Okay.
+, when you see this kind of thing, you tend
+to think that it is quantum.
+there is.
+What happens in the quantum world is partly probabilistic and
+partly non-deterministic.
+It shares characteristics of both.
+But this theoretical notion is not quantum.
+And you can in fact combine non-deterministic non-determinism in this
+sense with quantum computation and get something more complicated than
+either, which is possibly not a great idea.
+But people do it, of course, because people with funding
+will do anything.
+, there's another way that is sometimes helpful.
+Instead of saying, we have to guess at each choice,
+let's say, well, we don't know what to do, but
+there's somebody much cleverer out there who tells us what
+to do.
+Now, that's also not physically realisable because who is?
+Well, depending on your religious beliefs, it's not physically realisable.
+Who is this thing that tells you which way to
+go?
+This does turn out to be a useful way of
+thinking about things, theoretically, because you can use it to
+think about things that are much, much more complicated than
+simply nondeterminism.
+And you can use the notion of an oracle that
+tells you how to make your choice correctly, to leapfrog
+from nondeterminism to code nondeterminism and back and forth and
+get much more complicated things, which I talked about in
+the introduction to to theoretical computer science.
+There's a fair chance that by the time you get
+to third year, I might be teaching that course again.
+So this is a pre-emptive advert.
+Okay, so I've said we have these machines.
+I've said they don't actually have any realistic real world
+understandings.
+So why am I introducing something which is purely a
+piece of mathematical Role play instead of something modelling something
+real in the universe.
+Why do we want to use them?
+Because they're actually extremely useful.
+It doesn't matter that they don't correspond to a real
+physical thing.
+They turn out to be a much easier thing to
+deal with for many practical purposes than deterministic automata.
+, in particular, some of the constructions we did last
+week are much easier, and there are constructions that I
+didn't even talk about last week because they were unnecessarily
+complicated, which are also easy with Nsfas.
+And in particular, we want to do string processing a
+lot for parsing programming languages, parsing natural language, recognising bad
+signals, whatever.
+And with nondeterministic automata.
+Things are quite easy.
+So here's an example.
+What's the language?
+Consider this language.
+The input alphabet is a B, and all we really
+care about is whether the string ends with the sequence
+a b.
+Okay, so we don't care about what happens at the
+beginning, only at the end.
+Can you build a deterministic automaton to recognise that.
+I mean hopefully you can, but it's a bit messy
+because we know that we don't care about most of
+the input, but we have to care about it long
+enough to realise whether it at the end, whether it's
+at the end or not.
+So when I try to build a DFA, it looks
+this.
+What's going on here?
+Well, if I see an A, we might be about
+to hit the end, so we'd better remember it.
+If we see a B, we might be at the
+end.
+If we are, that's good.
+Now what happens?
+Well, if we see a B, then our string no
+longer ends with a B.
+So we'd better go back to the beginning.
+If we see an A or string now ends with
+BA, but it would be okay if it then saw
+a B next.
+And it's a bit hard to understand, right?
+Or at least I found it.
+Find these things hard to understand.
+, looking at that, do you agree that it recognises
+the language I say it recognises?
+Hey, some of you are having to think about it
+as I am.
+Here's the nondeterministic version.
+We read A and B, A's and B's at the
+beginning of the string.
+Then we read an a, then we read a B
+and we're done.
+Why does this work?
+Because if we feed it some string, there are lots
+of ways to run this automaton that get it wrong,
+because they.
+So suppose we fed it just the string a b.
+One way to run the automaton is to go a
+B and end up in the wrong place.
+But it doesn't matter because there is one right way
+to read it.
+If I feed it the string a b, the right
+way is to go a B and end up in
+the good place.
+If I feed it the string a, a, b, the
+right way to read it is a, a, b, and
+we end up accepting the string.
+There is one way to accept.
+I claim that this is much easier to understand than
+this, and certainly much easier to construct than this, at
+least once you're in the habit of building these things.
+And that's the primary reason that we use Nfus, because
+it's easy to recognise to build automata that recognise strings
+with nice, simple properties that.
+Are we doing okay?
+Any questions so far?
+Yeah.
+So just to clarify, if we fed the long term
+finite automaton a string ABBA.
+We would start off by well, being active in state
+zero and state one, with first day active in state
+zero, state two because of the peak, and then the
+last day would sort of kill off the state of
+state two.
+Right.
+So let's let me let's run through that.
+In fact, let's actually do it on the board because
+I ought to have done this.
+And.
+What happens if we feed it ABBA.
+Right.
+Well, so initially this state is active.
+We feed it a.
+So this state stays active and this one becomes active.
+We feed it B this state is active.
+So feeding it B leaves it active.
+This state is active.
+So feeding it B moves the activity to there.
+Okay.
+We feed it a with a.
+This state is active so it stays active.
+This becomes active.
+This state doesn't have any transition.
+So that state is dead.
+So we've fed it ABA and we've ended up with
+two active states neither of which is accepting.
+And so the thing doesn't accept.
+Our thanks here that's useful to have negative examples.
+Any other questions?
+Okay, so that was pictures and intuition.
+There's more notation, I'm afraid.
+One of the things I dislike about this subject is
+the amount of notation, but one needs it.
+And the main reason that you need the notation is
+because you have to program this stuff, and you will
+need to think about it a bit.
+So.
+How do I talk about.
+The set of currently active states.
+So I have a transition function which says an input
+letter A takes me from a state to a state.
+But it might be many target states for any source
+state and vice versa.
+This thing is just really tracking the current set of
+states.
+So how do you all know the notation?
+Curly p?
+Curly P power set.
+Do you all know the term power set?
+Anybody not know the term power set?
+Power set the set of subsets of something.
+So.
+If I have a set S.
+Then the power set is the set of subsets of
+my original set.
+You will also see this thing written as two to
+the power s, for reasons that are either obvious to
+you or aren't obvious, but will become so eventually.
+And that was definitely in the stuff we asked you
+to read before starting the course.
+, so what is this?
+This is a transition function, but it says these
+are my currently active states in here.
+So that's my Q hat.
+I read an input letter, and then I get the
+currently active states.
+And this slightly messy union is just saying for every
+state that is currently active union over Q, I look
+at the places I can go to by doing an
+A, and I just union them all together.
+So it's generalising the idea of the transition function to
+think about a function from the current set of active
+states to the new set of active states.
+And it is a function because I'm now thinking about
+the set of all the states that are switched on.
+And when I do a transition, I get another set
+of states that are switched on.
+, yet again, I'm using slightly different notation from the
+book.
+If you care about these things, then read the two
+definitions carefully and decide which one you prefer.
+If you remember last week we had a thing called
+the string transition function, and this was just something that
+said, instead of looking at what happens when I do
+one transition, let's look at what happens when I do
+a sequence of transitions.
+So if I am in state Q and I do
+ABA, where do I end up?
+This is exactly the analogous thing.
+If I have a current set of active states and
+I do some sequence of input actions, where do I
+end up?
+So the notation is messy, but the concept is simple.
+Simple.
+The notion of trace is very similar.
+So last week a trace was the sequence of states
+that we went through by looking at which state was
+active in the deterministic automaton.
+And now the trace is the sequence of sets of
+currently active states.
+So this is the initial set of active states.
+And then as I feed it input then we get
+successive sets of active states.
+So that's my formal definition.
+What's the language accepted.
+This is where the slight complexity comes in because we
+say anything works.
+Again messy notation A string is accepted.
+If I look at the string transition function, compute the
+set of final states that we end up in and
+see if any of them is in the set of
+good states.
+So that's that's all that that says.
+.
+Are these definitions looking a bit familiar?
+No.
+How do they differ from the definitions we had last
+week for deterministic finite automaton?
+Well, last week we had a transition function.
+We had a string transition function.
+We had a trace that was a set of states.
+Now we've got a transition function which is a works
+on sets of states.
+Likewise the string transition function.
+The trace is a sequence of sets of states.
+Aren't these definitions actually basically the same as we had
+last week, except that I've written Capital Q's instead of
+little Q's.
+So this might be suggesting to you that we could
+talk about a deterministic automaton where the state of a
+deterministic automaton is a set of states of the original
+automaton, which is what we're about to do.
+, because we need to prove this very important theorem.
+So last week I said that we define the regular
+languages to be the things that are accepted by a
+deterministic finite automaton.
+So that was our definition of regular.
+And now I'm going to say that a language is
+regular if and only if there is some non-deterministic automaton
+and accepts it.
+Now that's a theorem, not a definition.
+So it's something that we have to prove.
+Now, this might be a surprising theorem.
+Or if I had kept my mouth shut two minutes
+ago, it might be a surprising theorem.
+Because Nondeterminism looks as if it ought to be more
+complicated than determinism.
+But if it's the case that the regular languages are
+the languages accepted by Dfas, and it's also the case
+that the regular languages are the languages accepted by Nfus,
+then that tells us that nfus are basically the same
+as Dfas in terms of what they can do.
+So we've introduced all this complexity of weird non-deterministic stuff,
+which makes no sense to achieve nothing.
+Now, clearly I haven't done that.
+Why have I done it?
+Because it lets us achieve the same thing in a
+much more concise and easier way.
+How do I prove this?
+I've said it's a theorem.
+I haven't proved it.
+Well, what we do is say you give me a
+language that is recognised by a nondeterministic automata.
+I will simply build the deterministic automata that accepts the
+same language.
+And it's very easy and we've already done it.
+, so you will see it called the subset construction.
+When you write it down as a piece of mathematical
+notation, it looks a bit messy.
+In fact, it looks the previous page.
+But intuitively we've already done the process several times.
+So here's our nondeterministic automaton.
+This is the even number of zeros and odd number
+of ones thing yet again.
+So as a nondeterministic automaton it has two start states.
+And when we run the automaton, we have to keep
+track of how the two start states evolve as we
+read input.
+Well, that's what we did when we built the product
+automaton.
+So we said, these are the initial states that corresponds
+to a state over here.
+Now last time when we were building the product we
+wrote this as brackets E0 comma e1.
+Now I'm just writing it as a set E zero
+e1.
+Well that doesn't matter because these things are different.
+, and similarly when I look at how this state
+behaves well as a nondeterministic automata, 19 to look at
+where this one goes, and I need to look at
+where this one goes.
+And I find that when I read a zero, I
+get e zero going to zero zero and e1 going
+to E1.
+So I move to a state where these are the
+currently active states, and I do that, and I do
+that, and I do that and I do that.
+So I which is exactly the same diagram as I
+had before.
+Okay, so simply by running these two things in parallel
+and keeping track of the set of states, I've done
+the same as the product construction.
+Here's another example.
+This one has some non-deterministic transitions in it to make
+it more complicated.
+It's a curious fact that no, it's not a curious
+fact.
+It's because it was earlier.
+, so here's the example on the board again.
+So this has the non-deterministic transitions.
+This is one that reads strings that end with an
+a b.
+I said it was easy to build non-deterministic.
+See what happens if I try to determine size it
+by keeping track of the current set of states?
+Well, that's the initial state.
+There.
+If either.
+If A happens, then as we saw on the board,
+we moved to a state where both zero and one
+are active.
+If B happens in this state, we move to a
+state where just zero is active.
+When I look at this state where either 0 or
+1 might be active, if B happens, I move to
+a state where 0 or 2.
+This is what I did on the board a moment
+ago.
+And if A happens, we come back to where we
+are.
+We have to keep going until we run out of
+things to do.
+So A takes me back to there and B takes
+me to there.
+And that I think, is the end.
+And magically we have got back to the thing I
+came up with as a deterministic automaton to try to
+recognise this language on the previous slide.
+A few few minutes ago.
+You might ask, is this always going to happen?
+Is it if I write down the obvious deterministic automaton,
+which wasn't very obvious, I have to say, and I
+write down the obvious non-deterministic automaton, and I do this
+kind of construction where I go tracking states.
+Do I get back to the obvious deterministic automaton?
+And the answer in general is no.
+So it was just pure good luck that in this
+example, it happened to work out and give me the
+same thing that I had come up with out of
+my head.
+, are we doing.
+Yes.
+Okay.
+So any questions about what I'm doing there?
+Key thing is that we're just building a new kind
+of deterministic automaton where the states of the new thing
+are sets of states of the old thing.
+So in terms of programming it, that's very easy as
+you will find out, all you need to do is
+say, right, States of automaton can be anything.
+They might as well be sets of states of some
+other automaton.
+, so this is a intuitive proof of the fact
+that nondeterministic automata are the same in their power as
+deterministic ones.
+It doesn't look something that your average mathematics supervisor
+would be happy with.
+So I suppose we have to think about what it
+looks in mathematics.
+, mathematically, we go right down the definition of what
+this automaton is.
+It looks this.
+It's got a lot of tedious notation.
+So I've got some non-deterministic automaton, and I'm going to
+define its deterministic version with a hat on it.
+What is m hat?
+Well, the states of m hat are sets of states
+of the original.
+The input alphabet is the same.
+The state set transition function is something messy that I'm
+going to have to define the initial states.
+Remarkably, the initial states are something I don't have to
+change.
+So here this is the set of initial states in
+this deterministic automaton.
+This is one state.
+It's the one state that is the set of the
+initial states of the original automaton.
+So it can get a bit confusing keeping what level
+you're working at.
+And the final states are something messy.
+I'm going to have to define.
+So this delta hat thing I defined a couple of
+slides ago.
+So you can go back and read it and the
+set of accepting states.
+Well I also defined it.
+What are the good sets of accepting states.
+They are any set of states of the original automaton,
+where at least one of the states is good because
+we accept non-deterministic if any of our final states is
+a good state, and this very tedious notation says that.
+, I remarked earlier, when we were building the product,
+that building it bit by bit.
+So on the fly is the term usually used for
+building it bit by bit, as we did on the
+previous slide.
+In this subset construction, there are often a lot of
+sets of states that can never be reached in running
+the automaton.
+So defining it mathematically this.
+Implementing this definition is not usually a great idea.
+It's usually a much better idea to follow your nose
+that.
+, you will see the term super states.
+Sometimes all that means is a state in the non-deterministic
+in the deterministic automaton, which is a set of states
+in the original one.
+The term super state just makes it easier to keep
+track of where you are in which automaton.
+So practically speaking, if you need to determine as an
+automaton.
+And there are cases where you do need to determine
+eyes an automaton, then you will do it on the
+fly as we did with the picture.
+So at this point, I could now spend ten very
+boring minutes doing an actual mathematical proof that this definition
+does the right thing.
+You are fortunate that you're doing a computer science degree,
+not a math degree, so I don't have to do
+that.
+But do try and get some practice in doing mathematical
+proofs.
+So some of you are going to successfully avoid almost
+all of them, but some of you them.
+So for those of you who doing proofs, write
+down, as a mathematician would the proof that the language
+accepted by the original NFA is the same as the
+language accepted by this thing that we've just built, that
+is a deterministic automaton.
+, the proof is in the book, so if you
+get stuck, you can go and look at it.
+I think that's probably a good point to stop before
+introducing something a little bit more complicated, but usefully much
+more useful in practice.
+, so let me just say a bit about the
+plan for the rest of the course tomorrow.
+With a bit of luck, will be the last official
+lecture.
+It's possible I might not quite finish it, in which
+case we will continue next week.
+So what am I planning to do next week?
+, I have an assortment of optional things which those
+of you who are not fed up with me, and
+presumably that's all of you, because the rest of you
+aren't here.
+, you can come and learn about some of the
+things I find fun.
+So there are three things that I can talk about
+next week.
+It's possible I can just about managed to do all
+of them with luck, so they are more about regular
+expressions.
+Tomorrow we're going to talk about regular expressions, which is
+why we are introducing Nsfas.
+We don't use Nsfas as humans.
+We use something which is equivalent to them, but much
+easier to write.
+And there are some fun things that you can do
+with things much worse.
+Another thing I can do is talk about the medieval
+syllogisms, which I kind of promised I would do if
+you wanted me to.
+And then the other thing I can do, which I
+traditionally do every year, once somewhere is give a talk
+about infinity and some very large numbers.
+So my provisional plan would be that on Friday I
+will do the infinity talk, , not least because it
+is a talk that is very hard to fit into
+50 minutes, and it almost always takes 55 minutes and
+way to end.
+And on Thursday, if necessary, I will finish off this
+topic, but otherwise I will probably talk about the syllogisms
+first that will have music in it just for a
+change.
+And and I will.
+When I played the music, I have done my best
+to get permission.
+I failed to do so because the group no longer
+exists, but I tried and if there's time after that,
+then I'll say a little bit more about the regular
+expressions.
+So I hope to see you tomorrow for the rest
+of the official course.
+And I hope to see quite a few of you
+next week.

@@ -1,0 +1,573 @@
+Okay.
+Good afternoon.
+So as you've hopefully seen since I posted the announcement
+on learn and not on Piazza.
+And incidentally, last time I looked, only about half of
+you were on Piazza, which is a bit disappointing because
+the more people are there, the more people can answer
+questions.
+, the lectures are a little shuffled because there is
+a special event next week.
+Has Don yet told you about the special event next
+week?
+Oh well, it should be fun or interesting.
+I won't steal his thunder because he arranged it.
+So today we'll finish off what is normally week six.
+And then tomorrow and Thursday we'll do what is nominally
+week seven.
+And on Friday, there's a vaguely Haskell related lecture by
+somebody who's very eminent in the Haskell community.
+And the reason he's here is because he also happens
+to be the partner of the Miller lecture.
+You all got my email about the Miller lecture.
+You probably didn't notice it.
+Or a few of you are coming.
+Who does?
+Remember getting email from me about a millner lecture?
+Okay, so three of you remember it.
+The other I, the others of you are either not
+on top of your email or have extremely effective filters
+for ignoring stuff that is not of interest.
+So last week we were talking about Karnow Takano maps.
+And these were this engineer's way of identifying a concise
+formula that describes a particular truth table, if you will,
+or part of a universe.
+And we ended up discussing a few techniques.
+We ended up discussing a few techniques for making them
+short, which included things looking for the rectangles that
+are actually overlapping on the torus, the doughnut, and looking
+for rectangles that overlap and therefore save you one variable.
+Anybody have any questions about all that stuff?
+Are you comfortable that you can go and do it?
+It's pretty easy, so I hope you are.
+It's really nice if you get it perfectly right, because
+your tutorials are so much easier to mark when they're
+all correct.
+And this one of course is not easy to auto
+mark.
+So most of the CL tutorials, the tutors actually
+have to look at it and what they will do
+is pattern match against the sample answers.
+So if you can get the sample answers something similar
+to that, that's great.
+But in many of the cases there may be 1
+or 2 different possible correct answers.
+And then the tutors have to think which they don't
+, but it's good for them.
+So what have we been doing?
+If you look at the formulae we've been producing through
+the whole string of exercises, they have something in common.
+They all have the property that they are taking, a
+union Of an even rectangle union of even rectangles.
+So there's the union, the or, and the even rectangle
+is being described by filtering it down by which rows
+and columns it's true at.
+So each rectangle is described by an and of things,
+sometimes positive things and sometimes negative things.
+And then we are oring together a bunch of rectangles.
+This is a type of formula, a way of representing
+formulae, which turns out to be very useful in many
+ways.
+So they are all ORS of ands, and the technical
+name for it is slightly unhelpfully disjunctive normal form.
+Why is it?
+How many of you know what a normal form means?
+So normally this is a mathematician use of the word
+normal.
+Phew.
+Okay.
+You will see a lot of normal forms.
+, you are doing linear algebra at the moment.
+Have you not had any normal forms for matrices yet?
+Are you expecting to get normal forms?
+I think you probably will later in linear algebra, or
+certainly next year.
+, a normal form means a particular form of matrix
+or formula or whatever that is highly constrained.
+So it has a particular pattern it has to match.
+And that makes it particularly easy to deal with.
+, for example, if you're looking at matrices, there are
+various tricks you can do, changing the axes of
+your coordinate system so that you can turn what is
+a messy matrix even into sometimes a diagonal matrix, or
+at least into a matrix with components with non-zero
+entries in the upper right.
+It's a long time since I did this, so I've
+forgotten all the matrix normal forms.
+But in logic we talk about putting a formula into
+normal form to mean putting it into a particular shape
+that is easy to deal with.
+In some ways, it's not the case that a particular
+normal form is always the best way to describe a
+formula in every situation.
+We'll see that in some cases, some normal forms are
+better than others, but there are many applications where you
+want to massage the formula into a shape that is
+nice to deal with.
+So this is disjunctive normal form.
+I have always found this hard to remember its disjunctive
+normal form.
+It's disjunctive because the outermost combinator is an or.
+We'll building an all of an and or is disjunction.
+So this is called disjunctive normal form.
+If you want to put it in more mathematical, traditional
+notation, you can say that formally we have some formula
+is in DNF.
+If it has a bunch of what we call literals.
+So these are either variables or negated variables.
+so I've got that wrong haven't I?
+A literal is a boolean variable.
+And we allow literals or negated literals.
+We take an and of those and then each of
+those gives us an and and then we build up
+an or so.
+These are the rectangles and this is the union of
+the rectangles in your formula.
+So any questions about this as a definition of notation.
+Is everybody now completely happy with the use of big
+V and big wedge.
+A multi-way.
+And just the sum notation, I index over whatever
+is convenient.
+So I'm indexing over j goes from one to however
+many things I have in each clause.
+.
+Is anybody pedantic enough to notice an error in this
+definition?
+To do with the indexes.
+Index.
+Sorry.
+, so that's because I'm intentionally not saying what the
+index is ranging over because I don't know.
+Okay.
+I can make it range over anything.
+A bit more subtle than that.
+Yeah.
+That equals two.
+And three is the same as I.
+No.
+So that's not the case because I've written Ige in
+a particular order there.
+, some people to put commas between indexes.
+I don't.
+So, , applied mathematicians tend not to put commas between
+indexes and nor do we.
+Does my definition of DNF say that all these ans
+have to have the same number of literals in them.
+And whether whether I'm this is an error is a
+bit debateable really, given how sloppy I'm being, but kind
+of suggests here that J is ranging over something fixed,
+whereas actually it could be ranging over different things for
+different I.
+So P one might have J going from 0 to
+3, p two might have J going from 0 to
+2.
+So if I were being really pedantic, I would write
+j sub I and j sub I there to make
+it clear that j doesn't have to range over the
+same things for every value of I that I choose.
+, we are generally not going to worry about that
+level of pedantry, although when you program the stuff you
+do, so when you program this stuff, you will need
+to think about such things.
+Any questions or comments?
+Okay, so what have we been doing?
+We have been taking a description of a formula in
+terms of a truth table, basically, and converting it to
+DNF by using our human intuition to recognise patterns.
+As I said last week, we will do it more
+mechanistically.
+In fact, we will do it more mechanistically tomorrow.
+But before that, I want to talk a little bit
+more about Cono maps and other ways of looking at
+it, and alternative normal forms.
+Somebody asked a question about this on Piazza.
+A little bit premature since I was going to talk
+about it today.
+, how many of you have actually read ahead in
+the book about Cano maps?
+Okay, I'm going to confuse you, but the rest of
+you are not going to be confused because you haven't
+done the reading.
+So that's all right.
+, well, I'm not going to confuse you because you
+won't find it confusing, but I'm going to treat things
+slightly differently from the way the book does.
+, what we've been doing here is looking at the
+places where the formula is true and building up a
+description of that.
+So here I described it as a and c or
+a and b and D.
+Sometimes you might see a truth table or part of
+the universe or whatever, where on the face of it,
+it's easier for you as a human to look at
+the places where the thing is zero, rather than where
+the thing is one.
+So here is a map.
+, if we do what we've done so far, what
+is the right way?
+What is the correct cono map description to pull out?
+So think about that for a minute or two.
+Okay.
+I shouldn't need to think too hard about this because
+this is about human intuition, but remembering some of the
+slightly odd things that we've done in getting here.
+, so how many rectangles do you find when you
+do what we've done so far?
+Who has four or more?
+Who has three?
+Who has two?
+Okay.
+Who has one?
+So I think that if we do what we did
+before, we will get that.
+So this is using both of the slightly tricky features
+that we've done before.
+Firstly remembering that this thing is on a Taurus.
+So the rows wrap round.
+So the pink area is just described by one rectangle
+where b is false, and the green area is described
+by one rectangle where d is false.
+And it's also taking advantage of overlapping.
+We can overlap the corners which lets us break it
+down into just two rectangles, each of which is a
+nice big rectangle.
+Each of these rectangles covers half the grid.
+So we have a very short formula describing it not
+be or not D, which is perhaps not totally obvious,
+right?
+It certainly wasn't totally obvious to me.
+So those of you with two rectangles presumably got that,
+because I think that's the only way to do it
+with two rectangles.
+If you had 3 or 4, then you weren't being
+quite efficient enough.
+However, if I look at that thing, let's forget the
+rectangles.
+What's the pattern that obviously stands out to us as
+humans?
+Yeah.
+What we see at first sight, or at least what
+I see at first sight, is the square of zeros
+in the middle, which is one rectangle.
+So why can't I describe it by one rectangle?
+Well, it's because it's zero.
+It's not one, But surely we shouldn't be hung up
+on whether things are true or false or not.
+We're just trying to describe the universe.
+So if we look at the zeros, if we describe
+the zero rectangle, this pink thing, then doing what we
+did before that is b and d, is that right?
+B d is true here, D is true here, B
+is true here, B is true here.
+So the pink rectangle is described by b and d.
+And therefore we can say that the universe is described
+by the formula not b and d because we're just
+describing the negation of the pink rectangle.
+Is that a DNF formula?
+Who thinks it is a DNF formula.
+Who thinks it definitely isn't a DNF formula?
+Okay.
+Thank you.
+Have to do something about all these undecided people.
+How many times have I said that this must be
+about number ten?
+, it isn't DNF because a DNF formula is a
+big disjunction of ands of literals or negative literals.
+Well, this isn't a big disjunction at all because it's
+got a knot on the outside.
+For some reason I don't have a slide about this,
+but.
+Is there any manipulation we can do to this formula
+to may turn it into something that is DNF?
+I heard the right word any more.
+People want to shut up the right word or words.
+The Morgan.
+Okay, I told you some weeks ago that you need
+to have the Morgan in your head and ready to
+apply instantly.
+So if I do the Morgan to this, I get.
+That which hopefully is what I got on the previous
+slide, so that's fine.
+So one approach to this is to look at the
+zeros.
+Say we've got a description of the zeros.
+Negate that description and then use De Morgan to turn
+it into the kind of formula we were looking for,
+which is talking about positives.
+, before I do a more complex example, any questions
+about this example?
+Yeah.
+So here's a more complex example.
+So this is another thing which has lots of ones
+in a rather unhelpfully scattered way.
+So we'll do the same little exercise.
+So take a moment to analyse that as we did
+last week, and see how many distinct rectangles you end
+up using to describe that by looking at the ones.
+Okay.
+So again, who has four or more rectangles?
+Who has three?
+Who has two?
+, okay.
+, would you to say how you got to.
+Aha.
+So these and those.
+Now that doesn't count for us because it's not an
+even rectangle.
+It has length.
+Side length.
+Three rectangles have to have side length.
+That is a power of two.
+So 248 because that's the only way we can describe
+them in terms of variables.
+Okay.
+.
+So this is what I believe is the most efficient
+way to do it.
+We take the centre thing, take this square and this
+square, and again we do the overlapping technique.
+And then that gives us a couple of squares which
+are described by two variables.
+And actually they're nice symmetrical things because this is a
+nice symmetrical diagram.
+And the central area is where B is won.
+, but that was a bit of work, and on
+the face of it, it's much easier to look at
+this thing as a bunch of zeros.
+So if I look at it as zeros, then I
+just see the two simple rectangles here, and I end
+up with a formula that looks this.
+Now this is where life is getting a bit complicated,
+because what I have here is something that is definitely
+not in disjunctive normal form, because it's a negation.
+If I do the Morgan on this, am I going
+to get a formula in DNF?
+When I do to Morgan.
+What happens?
+Yeah.
+Yeah.
+So if you haven't internalised the Morgan yet, then.
+Go back and think about what happens if I take
+a negation and do the Morgan on it.
+What does the Morgan say to Morgan?
+Says the not of the or is the end of
+the nots and the not of the and is the
+not of the ORS.
+What that ultimately means is if you take this negation
+and you do Morgan all the way inside, what you
+end up doing is simply changing Ands into ORS and
+vice versa, and changing the negation of the inside things.
+So if I have the Morgan internally in my head,
+I can simply say.
+It looks that.
+And I did not do that by laboriously applying to
+Morgan twice to the outside and the inside.
+I just used the shortcut of saying if I negate
+something and push all the negations inward using the Morgan
+High chain exchange, and ignore and flip the polarity of
+all the literals here.
+If they were positive, they become negative and vice versa.
+, so what I've now got is something that has
+an and on the outside I don't need these anymore.
+And the and is joining together two formulae that have
+alls in them.
+That's not what we wanted for disjunctive normal form, but
+it looks kind of similar, but opposite.
+Do you think there might be a name for this?
+Yeah, it might possibly be conjunctive normal form.
+Okay.
+So disjunctive normal form is the and or of ands.
+And conjunctive normal form is an and of ors.
+So we can do it that.
+And then what can we do.
+How much am I going to say before I go
+on and say a little bit more about conjunctive normal
+form?
+Then those of you who've been reading the book will
+have seen that the book treats examples this differently.
+Has anybody noticed that I'm doing it differently from the
+book?
+Okay.
+If you read what the book says.
+The book does this in using that magic word.
+Again, the dual way to what we did last week.
+So when we were looking at things, looking at the
+ones in a corner map, we looked for rectangles, even
+rectangles that we could take the union of in order
+to find all the ones in the diagram.
+The book says that if you're looking at a table
+and you're trying to find the zeros and describe them
+by rectangles, you should be looking for intersecting rectangles that
+cover all the zeros.
+I've tried.
+I simply cannot do this.
+My head will not let me calculate with intersecting rectangles
+on a diagram.
+And I suspect I'm probably not the only person who
+finds that difficult.
+So for me, it's much easier to do it this
+way to build up the zeros, as in the same
+way that we did for ones as a union of
+rectangles, and then say, we're taking the negation of that,
+and then just apply the negation using the Morgan, which
+is guaranteed to work nicely.
+If you read the book and you find that your
+brain allows you to calculate with intersecting rectangles easily, I
+would be very interested to know and have you talk
+about the thought process that happens in your brain.
+Because I tutored this course for a couple of years
+before I started lecturing it, and that particular bit was
+always a nightmare in the tutorials, so I didn't really
+see why I should continue this nightmare.
+Once I have control of the course.
+, but there may be some people who can do
+it that way.
+, why are we so.
+I've just shown you a formula in conjunctive normal form,
+which is the obvious opposite of DNF.
+Suppose I take a formula in DNF and I negate
+it then, as I showed you just now, completely automatically
+the negation is easy.
+So if I take an Or of ans of something,
+the not of an or of ans and something is
+just the end of the AWS of the nots, it's
+very simple and beautiful.
+, is this obvious?
+I give you any formula.
+You can hit it with De Morgan's laws and the
+distributive laws and all the other laws until you force
+it into either DNF or CNF according to your choice.
+So who thinks that's obvious.
+Mhm.
+So if maybe anybody think it's so completely unobvious that
+it might not even be true.
+Which leaves the rest of you thinking about how we
+might convince ourselves that it's true.
+So if I told you, go away and prove that
+any formula can be turned into DNF, how would you
+go about doing it?
+And you haven't had much experience in doing proofs of
+things, so probably.
+You might find it a little difficult to think about
+it mathematically.
+But this is not just a course about logic.
+How else can you convince yourself that you can do
+something.
+Quick check.
+Well, quick check convinces you that you've done something right.
+Or at least it doesn't convince you.
+It gives you high confidence.
+First of all, you have to do the thing, right.
+You program it right.
+So rather than saying, can you go away and prove
+that any formula can be converted into DNF, if I
+instead said, go away and write a program to turn
+any formula into DNF, would that be significantly less intimidating?
+Not for everybody, no.
+, that's a shame, because you're going to do it,
+I think.
+Or are you going to do it?
+I can't remember, maybe I'm going to do it.
+At least one of us is going to do it.
+, but you're becoming experienced Haskell programmers.
+And you know what to do with Haskell with.
+Haskell, you do recursive functions which break things down and
+build them up again.
+So what's the obvious way to start massaging a formula?
+Break it down if it's an and do something with
+the two halves if it's an or do something.
+So I think maybe I will give you that to
+go away and think about before tomorrow.
+So for the moment, you can take my word for
+it that any Boolean expression can be converted before we
+start talking about it tomorrow, which we will do.
+Think about how you would do it, or think about
+why it should perhaps be relatively straightforward, or at least
+straightforward to do somehow, although maybe not obvious how to
+do efficiently.
+Up here I said that it's straightforward to take a
+conjunctive model.
+Either way, round a DNF formula negate it, and the
+negation is in CNF.
+This is a slightly more interesting question.
+If I give you a formula in DNF.
+So without the negation there, can you convert it to
+CNF?
+So can you turn it, take a formula that is
+an all of a Nand and turn it into a
+formula that is an and of ORS.
+I've told you just here that this can always be
+done.
+So the answer to can you convert.
+It must be yes.
+But you might wonder what happens.
+Do formulae get bigger when they when you change them
+to try and turn them into one of these normal
+form?
+Do you have any guesses as to how much bigger
+a formula might get?
+If I give you some random formula in DNF and
+I say hit it with the Morgan until it turns
+into CNF.
+Might it get bigger or smaller?
+And it might get either bigger or smaller I suppose.
+But any guesses on how bad things can be?
+So double the size.
+So we think maybe the formula gets twice as big
+if we hit it until it turns into CNF.
+Any advance on doubling.
+Yeah.
+So I still can't hear two to the n exponential
+growth.
+Genuine exponential growth.
+any other ideas?
+Okay.
+So exponential growth is the right answer.
+If you take formula which has n symbols in it,
+and it's in DNF and you convert it to CNF,
+you might end up with a formula that has two
+to the N symbols in it.
+Is this bad news?
+So for the kind of formulae we deal with, they
+are typically for, I don't know, two, three, four, maybe
+ten symbols long.
+So even for that two to the n is not
+very pleasant, because two to the ten is 1024.
+However, where is all this stuff actually used?
+This stuff is actually used in automated description of circuits
+and proofs and things.
+And there the formulae might be thousands or tens of
+thousands of symbols long.
+And you do not want.
+Do not want exponential growth on something 10,000 symbols long
+because our computers cannot deal with it.
+So it's a very interesting question, which we will partly
+answer in the next week or two, about whether it's
+possible to convert between DNF and CNF without getting this
+disastrous growth.
+, I am filling in time a bit, but I
+think we'll just finish early.
+But before we finish early, do before tomorrow.
+Think about both of these things.
+Firstly, think about how you would go about converting a
+formula into DNF or CNF given just some arbitrary formula.
+And secondly, see if you can come up with the
+kind of example that gives you nasty growth.
+See if you can come up with a little formula
+in DNF that gets much, much bigger if you try
+to convert it into CNF.
+It's not an easy exercise for people who are not
+familiar with this kind of thing, but you might find
+yourself coming up with it.
+So.
+So tomorrow I will move on to the mechanistic, the
+algorithmic conversion of formulae into DNF, which is a pretty
+cool topic for reasons that I will be happy to
+explain tomorrow.
+But before we do that, any final questions or any
+comments or questions about anything else in the course?
+Okay, so we have ten minutes free time, which is
+good because I have a meeting about something else to
+deal with.
+So see you tomorrow.

@@ -1,0 +1,798 @@
+Okay.
+Good afternoon everyone.
+So as I said a few times, I think it's
+a time to slow down a little bit, take a
+breather, because this is essentially a break between a couple
+of sections of the course.
+So this has been about logic and proof.
+And we're going to do one more logical thing next
+week part of this week.
+and then after that, we move on to thinking about
+computation more directly.
+What we do next will be a kind of bridge
+between them, but we've introduced quite a lot of stuff.
+We've introduced logic, , propositional logic.
+So logistic logic and we've introduced various ways of proving.
+And I haven't been looking at the tutorial marks.
+Overall, I think a lot of people are fairly happy
+with everything, but not everybody is.
+So as I told you, I plan for today to
+be basically going back over anything you would me
+to go back over and doing any problems or answering
+any questions.
+And the idea is that we do them, not me.
+, so over to you.
+What would you me to do?
+Yeah.
+So the existential assumption is still worrying some people.
+How many people are still a bit worried by the
+existential assumption?
+More and more and more.
+A few , so I guess there are a couple
+of aspects of it.
+Is the UN clarity what it is or why we're
+talking about it?
+, in particular, I think maybe.
+It's probably easiest if I write on the screen, because
+then the people online can see more easily, and I
+can also state it around.
+So one question is.
+Then what's the the meaning of universal quantification.
+So universal quantification we expect to mean for all x.
+But what is x.
+So for us x means all x in some universe.
+I forget what what kind of symbol did I use
+for universes right at the start of the course?
+Was it curly letters?
+I can't remember.
+Let's use curly letters.
+That's supposed to be a curly X.
+, so we've got some universe, and we make some
+statement that for all x.
+P of x is true.
+And the thing that confuses Fuses many people.
+And that leads to the difference between us and Aristotle
+is whether the empty universe is legitimate.
+Do we allow the empty universe as a sensible thing
+to talk about?
+So I've been trying to indoctrinate you for five, six
+weeks now, five weeks about the right answer to this.
+But possibly indoctrination isn't the most reasonable way of doing
+things.
+So who is completely happy with the idea that it
+makes sense to talk about logic in an empty universe?
+Okay, who thinks it's definitely a bit odd?
+Only one.
+So that leaves about 90% of you uncommitted.
+So what do you think?
+Somebody who didn't raise a hand at all.
+What do you think about it?
+If I had a better memory, I would point at
+one of you, but I don't.
+I suppose this gets back or down to a rather
+fundamental thing about mathematics.
+So making a decision about whether we should talk about
+empty universes.
+What kind of decision is that?
+Is it a mathematical decision forced on us by logic?
+Is it, .
+Is it a matter of personal preference?
+Is it a matter of sociological preference?
+Yeah, I guess it's so that we can take into
+account Is.
+So?
+So we can take into account things.
+That sounds a kind of pragmatic reason.
+Okay.
+, so fundamentally, I think what I've been arguing is
+that it simply makes life easier.
+, so many of you have already programmed in languages
+with arrays.
+If you programmed in any civilised language with arrays, array
+indexes started at zero.
+Did you have to get used to that?
+Was it surprising?
+Yes.
+Okay.
+Anybody find it completely natural from the beginning?
+Yeah.
+Did anybody go to a primary school where the way
+you counted was 012 at age five?
+Possibly.
+Places exist 5 or 6.
+Seven, depending on which country you first went to school
+in.
+, so is zero a natural number?
+Okay, that's an interesting question.
+No it's not.
+Okay.
+It's not an interesting question.
+It's a completely trivial question, but it's a question that
+people can still argue about.
+So a quick straw poll is zero a natural number,
+not natural.
+Oh, very few yes's.
+Who says no zero is not a natural number?
+Okay, this is a binary question.
+A number is either a natural number or it isn't.
+So there's no excuse for not having answered one way
+or the other.
+If you really pushed me this, I'm going to
+have to get whew clap out.
+Except I don't know how to use woo clap yet,
+so you're safe.
+, you might to know that we use woo
+clap in university Senate meetings for taking votes, so I
+know how to use it as a customer, but not
+as a lecturer.
+, so is there a natural number?
+It's a matter of definition, right?
+And when I say natural number, I mean whatever we
+mean by that, that symbol that we use to represent
+the natural numbers.
+, so if at school, we tend to get taught
+that the natural numbers are one, two, three, as soon
+as you get into university maths, university pure maths, at
+any rate you get told that the natural start at
+zero.
+, why?
+Because it just makes life easier.
+It happens to be easier to set up a working,
+consistent, logical mathematical universe.
+If the first, if the most fundamental thing you can
+think of is zero rather than one, but it's not
+critically important.
+It's kind of the same with this universal quantification.
+Can we talk about quantifying over the empty universe?
+Well, we can decide that it means something.
+And it turns out by the consensus of about 150
+years of modern logic, that it's much easier if we
+can.
+Aristotle was many things.
+He was a philosopher, not just a logician.
+In fact, logicians as such didn't exist.
+So he would have said he was a philosopher.
+And for him, the idea of talking about a bunch
+of things that don't exist is meaningless.
+If we are going to talk about quantification over the
+empty universe, then what does it mean?
+If we say for every unit, every unicorn has one
+horn and there are no unicorns, then should that be
+a true statement?
+, I argued, yes, but of course that also means
+every unicorn has two horns should be a true statement
+if there are no unicorns or indeed any other statement.
+So there are interesting questions there about dealing with counterfactual
+worlds.
+And there we get into a whole other realm of
+logic.
+But fundamentally, the existential assumption is about making this decision,
+that logic is cleaner if you can quantify over empty
+sets.
+And that means that.
+If I write in first order logic.
+For all x, p of x implies q of x
+if it's the case that.
+If p of x is false of everything you're talking
+about.
+In other words, there are no things that are p
+of x.
+Then the universal statement in modern logic is true.
+For every thing x p of x implies q of
+x, false implies anything is true.
+And that's how we translate the Aristotelian term.
+Every p is q.
+And for Aristotle then we're saying but there aren't any
+p.
+And so he considered that a silly thing to say.
+We don't.
+So if we want to do Aristotle's reasoning, we need
+to add the assumption to our basic reasoning techniques that
+whenever we talk about something, it exists.
+Hence, what we really want to write in modern logic
+is.
+That whatever predicate we might talk about.
+There is something which satisfies it.
+But we were doing syllogisms, so we didn't have modern
+logic to hand.
+So you started this long digression, not digression.
+Is that the point that you're unhappy about so far,
+or is it the the actual formulation that we come
+to?
+Yeah.
+So I think what we said.
+So that's how we wrote the existential assumption.
+Right.
+And it's a very weird thing at first sight, because
+it says it is not the case that A entails,
+not a and that seems odd because what does.
+A entails not a mean.
+That's clearly nonsense, right.
+Because things can't be both A and not a, but
+what that really means turned into first order logic.
+Is for everything in the universe, a of x implies
+not a of x.
+Okay.
+And then we go back up to where we were
+before and say if A is false about everything in
+the universe, then this statement is actually always true because
+A is A of x is false for every x,
+and therefore the implication because of this weird way implication
+behaves is also true.
+So it is possible for this sequence whole, but it's
+only possible to hold if the universe is empty.
+So therefore, if we simply cross it out, we're saying
+the universe is not empty.
+For you walking out there.
+But you're just getting closer.
+Thanks.
+This is readable.
+Yes.
+Very readable.
+So and then the the other aspect of the formulation
+was this vertical line.
+Remember what we're doing when we write a proof rule
+is saying from what's on top what's on the bottom
+follows.
+So if we leave the top blank that says what's
+below follows from nothing at all.
+So it's always true.
+So we've got various sorts of always true going on
+here.
+And we have the rules and the implication and the
+sequent.
+Does that help?
+Okay.
+Anybody else?
+Yeah.
+So applying the existential assumption to some syllogism that sounds
+a good thing to do.
+, this means you want me to prove a syllogism
+in front of you or produce a counterexample, right?
+Or something.
+, let's try to derive one of the Aristotelian syllogisms
+from Barbara.
+I hope I can do this.
+, anybody have the book handy to save me?
+Trying to look it up.
+Can you find me an Aristotelian existential syllogism that isn't
+valid for us, but is for Aristotle.
+Not very quickly, but neither can I find one very
+quickly, except the one that was in the tutorial.
+But that would be boring.
+, I have some slides on them, didn't I?
+But I didn't list the others.
+No.
+That was a good example, I think.
+, it was, but then presumably you've all just done
+it, so therefore you don't need to go through it
+again.
+.
+Oh.
+That's interesting.
+It's better.
+.
+I thought he had a list of them.
+Have I mentioned that you shouldn't use the Wikipedia page
+on syllogisms?
+So I don't know why it's linked in the book.
+It's a lousy page.
+Sorry.
+So.
+, the ones that we don't believe to be true.
+Okay, here's here's an example, Bob, about about a let
+me get that out of the way and write it
+down in symbolic form.
+So this syllogism says.
+If A entails B.
+And C entails a.
+Then some Greeks see.
+Okay.
+So this is an Aristotelian syllogism supposedly.
+Is it valid for us?
+No.
+Let me look further back in the room.
+What can we say that tells us instantly that why
+it's not valid for us?
+You don't have a pair of knobs?
+Yeah.
+There's not.
+So there's only one negated syllogism.
+Okay.
+Or to think about it another way.
+Remember, the way we've set up syllogisms things with entails
+a universal statements and things with not entails existential statements.
+So this is making a formal statement and a formal
+statement.
+And therefore, for us as modern logicians, we haven't asserted
+that anything exists, but on the bottom it's asserting something
+exists.
+So with a bit of luck, we can derive that
+from Barbara and the existential assumption whether we can actually
+do that online.
+Let's see.
+So somebody tell me what I might do.
+So what I'm trying to do here is to build
+a proof that the bottom holds.
+And somewhere up top I want to use the existential
+assumption.
+Which means I would probably.
+quite to have the negation on the top.
+How could I get the negation to the top?
+Well, actually, you know, maybe I don't want to do
+that.
+Whatever I do, there's going to be a negation here.
+So which of these predicates?
+I've got three predicates A, b and C, which is
+the one where I'm asserting existence on the bottom.
+C c yeah.
+Agreed.
+So I'm saying that some c are b because I'm
+saying that seed is not entail not b.
+So it's a fairly good bet.
+That I'm going to need to use that assumption that
+C exists in order to prove this.
+Yeah.
+You.
+Can propose the print.
+Which the.
+So if we can propose the second premise and conclusion.
+We get that.
+So he.
+Then confirms the first premise by itself.
+Okay, so I was listening.
+We know that not be not be and.
+Then see is you know so.
+So.
+So I say that again.
+Okay.
+Let's see.
+Yep.
+Okay.
+So if I sort of swap these round then I
+get a Barbara shaped top.
+So we know that.
+From Barbara we get.
+.
+Not a yes.
+Yep.
+.
+.
+So, , so that again.
+Is one element.
+Then, you know.
+Can we make that a formal up?
+Put that into a rule somewhere.
+Some of you did the exercise in the tutorial, so
+can you apply what you did there to this slightly
+different one?
+Okay, so we plug these two together.
+Plug these two together to get the result.
+That's a much more complicated piece of reasoning than just
+doing the manipulation from Barbara, where if you take any
+of our sound syllogisms, the 15 of them, you can
+just work.
+Well, I find it easier to work backwards, but here
+you have to work out how to plug the existential
+assumption into the proof you're doing.
+So that was done on the fly, and it's not
+terribly clear.
+Would it be helpful for me to take this and
+after this lecture, write it out in a neat form
+and post the result?
+Okay.
+Yeah, of course this is a bad move because that
+means it's more work for me, whereas you're the ones
+supposed to be doing the work, but never mind.
+, doing proofs live is something I have always found
+very difficult.
+So that's why I ask you to do it because
+many of you are better at it than I am.
+What do you think a proof is?
+So what we've been doing here is trying to show
+that a particular particular conclusion is sound.
+By assuming particular premises and by applying some rules that,
+let us say a conclusion follows from these premises.
+Are we doing something real or are we just shuffling
+symbols around?
+You may possibly have never thought about this issue, but
+it's something that worries mathematicians.
+Well, it doesn't worry concerns mathematicians quite a lot.
+Is mathematics real?
+If it is real, what kind of real is it?
+.
+So I guess that depends.
+Do you believe that there could be a different universe
+in which, , Pythagoras theorem was false?
+You do?
+Okay, interesting.
+So how are you stating Pythagoras theorem for that?
+.
+Mhm.
+Okay, so Pythagorean geometry, Pythagoras theorem is a statement about
+triangles in the plane in a Euclidean plane.
+, you should know this is Pythagoras.
+Is Pythagoras theorem true for triangles that we draw on
+the surface of the Earth?
+No.
+Anybody not know that?
+So the flatness of the surface is essential.
+And the easiest way to think, to see that is
+to think about the globe.
+I'm no good at drawing three dimensional objects, but let's
+try anyway.
+.
+So there's the Earth and there's the equator and there's
+the pole.
+If you think about this triangle.
+Has 390 degree angles in it, but it's a triangle
+on the surface of a sphere.
+And so Pythagoras doesn't apply on the.
+And none of the triangle geometry applies.
+, and of course, those of you who are doing
+physics or have done some physics know that whatever else
+the universe is, it is probably not a Euclidean geometry.
+Actually, that's not Pythagoras theorem anyways.
+It's you have to get something else to make a
+Pythagorean nonsense out of it.
+, so there's an issue about what mathematics is, to
+the extent that it's a universal truth and what it
+is to the extent that it's true in the universe
+we're working on, and whether logic is a universal truth.
+So if you ask a logician.
+They will say that logic is a universal truth.
+Why?
+Fundamentally, because we are symbols shuffling what we do when
+we do logic, or if we do group theory, which
+you will be doing if you're doing maths or Newtonian
+dynamics, you set up some assumptions.
+You set up some equations which you think are a
+model of the world.
+If it's the world you're modelling and then you prove
+some stuff using those equations and definitions, and then it's
+up to you to validate whether your conclusion actually works
+in the real world.
+If you're doing applied mathematics.
+As I said in the very beginning of the lecture,
+in logic, we have lots of different forms of logic.
+So we're giving you classical logic.
+But classical logic is not always the right logic to
+be talking about a particular real life problem, because you
+may be talking about a problem involving people's beliefs involving
+probabilities, where classical logic is simply not a good model.
+So mathematicians tend to be quite schizophrenic about this.
+, who has heard of the term Platonism?
+Two.
+Two.
+Any advance on two.
+Okay.
+Three.
+Two and a half.
+Three.
+Platonism is.
+This is a simplification because it's always more complicated.
+Platonism is a philosophical view point that things are real,
+and in particular mathematical objects are real.
+So the real numbers exist, complex numbers exist.
+The wavefunction of the electron exists.
+And as I go through those, through through those three
+things, you might be more and more sceptical about whether
+they actually exist.
+But I think most working Mathematicians go through their everyday
+lives on the basis that we're talking about things that
+exist.
+On the other hand, it's impossible to come up with
+a very convincing justification for why these things exist.
+We can't even come up with a justification for ourselves
+existing.
+So how do I know you're there?
+How do I know I'm here?
+Could all be in a simulation.
+I don't believe we are.
+I don't believe those arguments.
+But that's a matter of faith rather than reason.
+And so there's an alternative view which says that mathematics
+is simply symbol shuffling according to derived rules.
+We have some symbols, we have rules for transforming symbols.
+And what comes out of the end is just what
+comes out at the end according to our particular rules.
+And this is a very computer science way of thinking
+about logic.
+But curiously, it led on to some very important and
+profound developments in logic.
+Even if you think logic is real, which we will
+not be able to cover in this lecture in this
+course, but which you will meet later on, and at
+the moment I'm wasting time.
+Enthusiastically.
+Let me stop wasting time and say, what else would
+you to discuss?
+Yeah.
+That's.
+The one where I split the universe in half.
+That was the way of the comma, I believe.
+Yeah.
+, I don't believe I would.
+Was that this lecture week or last week?
+I've got an hour.
+Yeah.
+, so that was this.
+I'm not entirely sure that I would have chosen to
+put this in had I been writing the course or
+the book in the first place, but it's essentially trying
+to justify the use of these.
+Let me get my red circle up again.
+The use of these sequence with sets of premises on
+the left and right hand side.
+So if I'm thinking about a whole bunch of things
+together with a entailed B.
+How do I think about that?
+I mean, we've said that comma means and and the
+sets are really separated by commas.
+So logically speaking, I'm saying everything in and of everything
+in gamma together with Anded with A gives you B.
+, but that's not the way I tend to be
+thinking about it, because if I'm looking at a particular
+proof when I'm doing one stage in a proof, remember
+you're looking for a one rule to apply, and the
+rules all talk about one thing on the left and
+one thing on the right.
+And doing something.
+To one of them, or usually just one thing on
+the right and just one thing on the left.
+So there's the exchange will even.
+That's one thing.
+So we're only looking at one thing.
+But often when I'm deciding what to do here, I
+might be looking for a rule that I can apply
+to a.
+And it might be that what's in gamma is just
+some stuff that is going to be carried around for
+several steps in the proof.
+We're doing short proofs.
+So even if you look at proofs .
+This one.
+.
+So if you look at this proof here, then once
+we've broken down the right hand side, you with a
+comma on the right so that this p splits off
+into the comma.
+Remember that bit okay.
+So this p is now being carried all the way
+up this tree and all the way up this tree
+without ever changing.
+So it's not what we're focusing on and all the
+things we're not focusing on.
+We can shuffle off into Delta on the right or
+gamma on the left.
+, and where does the other way of thinking about
+it come?
+So that's this idea of thinking about gamma as the
+background assumptions at this stage in the proof, when we
+look at the Venn diagram, this is the Venn diagram
+for A entails B, which remember says the a only
+bit is empty because every A must be in here
+in B.
+But when we have the gamma in here A entails
+B is only true when all of gamma are there
+as well, because we need the gamma and A to
+entail B.
+So in terms of the Venn diagram, it's saying we
+know it's empty provided that gamma holds.
+And here I'm just splitting the universe into the bit
+where gamma all hold and the bit where any of
+gamma doesn't hold.
+So I'm not really sure that the diagram is terribly
+useful.
+It's there for people who diagrammatic reasoning.
+And presumably Mike Foreman, who wrote this, likes diagrammatic reasoning
+because he put all these Venn diagrams in in the
+first place.
+I'm a symbolic reasoner, so it doesn't do much for
+me.
+But some people diagrams.
+, yeah, since I've said that.
+So in your own view of yourself, how many people
+would say they're primarily pictorial reasoners.
+Diagrammatic reasoners?
+Very few.
+Primarily symbolic reasoners.
+Very few, but slightly more.
+, which leaves a lot of people who are either
+equally happy with both or equally unhappy with both.
+.
+How do you reason?
+Comes up with.
+How do you program as well?
+So I notice on Piazza a few places where Don
+has been saying you cannot do programming by trial and
+error.
+And I'm sure that observation is addressed to many more
+than the one person it was addressed to at the
+time.
+But of course, it's also true.
+In maths you can't do maths by trial and error.
+But let's be honest about it.
+The process of actually constructing a mathematical proof can involve
+quite a lot of trial and error thinking.
+Maybe this is the way I go about it, but
+then you have to do the rigorous steps and you
+get stuck.
+So you say that didn't work.
+I have another idea, and this is actually true of
+the best mathematicians in the world, as well as the
+everyday mathematicians us.
+They have ideas, they try them out, they don't work.
+They have another idea.
+And these days they even ask asked ChatGPT for ideas.
+How many of you heard of have heard of Terence
+Tao?
+Okay.
+, so if you have any interest in modern mathematics
+at all, look up Terence Tao and listen to some
+of his lectures, some of his talks.
+Read what he does.
+He's an interesting person because he is quite possibly the
+most brilliant mathematician on the planet today.
+And he's also a nice, warm, ordinary human being, which
+was very much not the case of most of the
+great mathematicians of the last century.
+, he was a child prodigy, so he was one
+of these people who got a gold medal in the
+International Mathematical Olympiad at the age of 11 or 12
+or something.
+, but unlike many child prodigies, he continued to develop
+as a mathematician, and he's a quite remarkable problem solver.
+So he likes digging into a new field, finding a
+problem, and then solving it.
+Which can be quite annoying for the people who've who've
+spent their careers working on the problem, but it advances
+mathematics.
+The reason I mention him is because about a year
+ago, when I was being very sceptical about ChatGPT, as
+I still am, I was a bit shocked to receive
+to listen to a talk by him where he said
+ChatGPT gives me some good ideas despite the fact that
+it's complete garbage, it's hallucinates nonsense, but it can still
+give you ideas.
+And he said it cut quite a lot of time
+off finding the right way to approach some problem.
+, I'm still enthusiastically wasting time.
+, anything else to do?
+Any other concrete questions?
+Nothing.
+.
+Okay, well, I could make us sit here.
+I could probably talk randomly about something else for another
+seven minutes, but I'm not sure it's entirely useful.
+, what I would ask you to do.
+So if you've done the tutorial and you were happy
+with it, then there's really nothing more to say.
+If you did the tutorial and were unhappy with it,
+so you found it difficult to do some of the
+proofs in particular.
+I mean, so the existential one is tricky, but the
+other proofs are things you should be able to do
+because they're almost unthinking.
+And let me give you a heads up that it's
+going to be quite important to be able to do
+these proofs, or at least to understand why they're done,
+because you have an exercise coming up at the end
+of the course, then use Piazza and use yourselves.
+So remember, we encourage you to talk to each other.
+We're one of the few courses that encourages collaboration.
+So if there were a bunch of people who are
+feeling that they would to work some more on
+this, and if you're not sure who each other are,
+then remember that you can post anonymously to each other
+on Piazza so you can, if you wish, post.
+Is there anybody else who would a little self-help
+group on proofs?
+And if you so choose at an appropriate time and
+you want me to come along, I could do so.
+Although that's not the ideal.
+I don't have many appropriate times, because that's the way
+my job is at the moment.
+But all things are possible.
+Potentially.
+And also tutorials.
+, since we've got a moment.
+Tutorials.
+Tutorials in this course are always a little bit problematic
+because there are people who really need them.
+There are people don't.
+I guess those of you who are attending the lecture
+are not a representative sample.
+So straw poll tutorials, useful or not?
+So who thinks useful?
+That's not really enough.
+Who thinks definitely not useful.
+Okay, that's actually not too bad.
+, which means some of you, quite a few of
+you think they have some utility, but not a great
+deal.
+So if you have ideas for making them more useful,
+then do tell your tutor, because we have a very
+wide range of tutors and also tell us.
+Okay, so unless you come back tomorrow with some very
+burning questions.
+I think we're going to make an early start on
+the week six material, get ahead a bit, and hopefully
+have a slightly more relaxed rest of the semester.
+Thanks.
+And I will light this up a bit more neatly
+and post it.
+Saving it.
+For the existential assumption.
+And just be a Venn diagram with an exercise for
+neutral.
+That's it.
+That's how.
+And for the week six material, can you post the
+reading that we should.
+Yes yeah I will arrive as soon as I get
+back to my office.
+I'll publish the week six stuff.
+Okay.
+Thank you.
+Hi.
+I'm coming a second time to ask about this.
+So the second I left, I completely forgot.
+Okay, so why is the not feeling good?
+Because there can't be something.
+They can't know they're not P is there?
+Because it came in from here.
+So we have a rule that says this thing is
+an and that's the end in the middle.
+So the rule for sorry the rule for and on
+the right says you break it into two trees.
+So this p is two there this and carries to
+there.
+And then this.
+Not pork goes there and this not P goes there
+okay.
+So he did he did the.
+He did.
+At the same time.
+or for the P.
+No.
+So so this P is just being carried through.
+This is being carried through as part of a delta
+on the right.
+So we're not doing anything to that.
+In this world, we're focusing entirely on this formula here.
+And it's an end formula.
+So we break it down and we have to do
+two separate subtrees.
+One there for this half, one there for that half.
+And the P is just the stuff on the right
+that's unchanged when we do this bit.
+So.
+We understand.
+What I want just for clarification again.
+So according to existential rule this what for us
+would be not implies equals to this , which
+would be easier to draw towards this lower c
+not implies a.
+So C does not imply a.
+C implies not a no.
+Because this says that every C is not A, and
+this says that some sea is not a.
+Exactly.
+So I thought existential assumption would work.
+It makes it equal.
+No not.
+No.
+What does existential assumption here.
+How do we see it says.
+I mean, it says what it says, which is that.
+It just.
+It says something exists.
+So universal statements.
+Assert for all something or other.
+But they don't assert the existence.
+Or existence.
+Yeah.
+So again, so the social assumption we're talking about for
+example, and modal logic and thought about all universe.
+And the assumption comes down to language.

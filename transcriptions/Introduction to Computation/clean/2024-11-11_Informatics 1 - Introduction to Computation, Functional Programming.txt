@@ -1,0 +1,1070 @@
+Okay.
+Good afternoon.
+, so, , my lecture today, I want to talk
+about, , combinatorial algorithms.
+But first, a couple of announcements.
+, so this morning, , the programming project was released.
+It's on the course learn page.
+You can download it.
+, , it's worth 20% of the mark for this
+course.
+You have until the Friday in one, two, three weeks
+to submit it.
+, , let's see.
+, you might have questions about it.
+, before you start, , I suggest that maybe tomorrow's
+lecture would be a good time to ask those questions.
+I mean, you can ask another time if you want,
+but tomorrow's, , you know, tomorrow you would have had
+a chance to look at it a bit and think
+about, , think about it.
+I've.
+I've designed it.
+So.
+So it's a course.
+It's.
+Sorry.
+It's a project for implementing sequent calculus.
+For those of you who haven't looked at it yet,
+implementing sequence calculus in Haskell.
+So it combines computation and logic and functional programming.
+And I've tried to design it so that you can,
+, , get maximum feedback on your progress as you
+go.
+So there are tests that, , are published in the,
+in the project last two pages of the of the
+project handout has a list of tests that your code
+is going to be subjected to.
+And those tests have been, , , have been put
+into the auto checker.
+Auto.
+Yeah.
+Auto checker.
+, so when you submit your code, it will go
+through the, through those tests and you can see what
+the results are.
+And, , getting a certain number of certain ones of
+these tests, passing a certain number of these tests gives
+you a certain numbers of points.
+Okay.
+So you should be able to it's essentially you can
+mark your project yourself.
+, almost your tutors will also be looking at your
+code.
+Okay.
+.
+All right.
+So anyway that's, that's designed to make it, , you
+know, remove, , doubt.
+, okay.
+, so today and tomorrow I'm going to be talking
+about combinatorial Algorithms next week.
+, you have, , lectures from Phil Wadler on monads.
+So Phil Wadler is one of the designers of Haskell,
+and he is the guy who, , introduced monads into
+Haskell.
+So what are monads?
+Will you find out next week from Phil?
+But it's a kind of answer to the question of,
+, how do you get Haskell to actually, , do
+anything other than calculate?
+Other than calculate.
+Okay.
+How do you get it to, , print things and
+consume input and so forth.
+So monads is the answer.
+And Phil will tell you about them next week.
+So I'm going to be a way that next week,
+, the week after that is the last week of
+semester.
+And , it's quite possible that the Monday lecture will
+be cancelled because I think by then, unless Phil takes
+longer than he should, , we will have covered everything.
+, in the FP strand.
+, the Tuesday of the last week.
+Week is the, , is the, , the programming, ,
+competition, , prize giving.
+So on that day, the beginning of that lecture will
+be devoted to showing what the submissions were and then
+handing out prizes to the to the ones who won
+the prizes.
+And then the rest of that lecture will be another,
+, lecture from Phil Wadler, a special end of, ,
+end, of course lecture.
+, that is something you will not want to miss.
+, legendary, , performance.
+Okay.
+, but today combinatorial algorithms.
+So this is another lecture in this sequence where I'm
+using Haskell, , , to explain something else rather than
+to show you new features and so forth.
+So I'm using Haskell because it's very convenient to write
+the programs I'm going to be writing using list comprehensions.
+, so very simple short programs that way.
+, list comprehensions in combination with recursion.
+The topic is, is algorithms to solve problems that are
+intractable or close to intractable.
+, so, , by that I mean, , , where
+you are sometimes, , the best way to solve the
+problem is to enumerate possible solutions and check them to
+see if they're actually solutions or not.
+This is so called generate and test.
+, algorithms.
+Okay.
+And when I say intractable I mean , , two
+to the n , complexity or sometimes worse or
+algorithms which which might be that bad, but we can
+do a bit better by being clever.
+So you've seen situations where we can be clever by
+using clever data representation.
+So for example, the balanced binary trees was an example
+of that.
+Okay.
+But there are some cases where you can't you can't
+actually do much better than than generate and test.
+, and then there are things which are, which are
+kind of in between.
+So an example of something that's in between is the
+satisfiability problem.
+So you've learned about the DPL algorithm for solving
+satisfiability problems.
+And when you did e when you did the
+tutorial, , associated with that, , you would have been
+running that algorithm and seeing that it's actually able to
+deal with quite big, , you know, huge numbers of
+clauses, , quite efficiently or comparatively efficiently.
+Okay, so that's a case of a clever algorithm that
+finds a solution most of the time quite quickly.
+But actually in the worst case, , satisfiability is is
+an intractable problem.
+So, , DHFL will not always find a solution quickly.
+And in the worst case, it takes some two to
+the n time where n is the number of variables
+in the in the in the clauses.
+Okay.
+And that's the same complexity as producing a truth table,
+, for the, for all of the clauses.
+And , and finding a row that has a true
+at the end.
+Okay.
+So generating all the possible, , you know, combinations of
+things and then looking for one that's, .
+That's correct.
+Okay.
+So, , another example of an intractable problem is finding,
+, prime factors of a large number.
+And that fact that that's intractable is what's lies behind,
+, cryptography methods, I mean, methods.
+, yeah.
+So all of the, all the cryptography methods that are
+used to do things , , keep your bank account,
+, transactions secret.
+.
+Another example of a problem that's, , , okay.
+So I should say, , the example of DPL is,
+, is an example that shows that worst case, ,
+complexity, which is what we've been concentrating on.
+I've been talking, you know, I've been talking about the
+worst case.
+So if the tree isn't balanced or if DHFL doesn't
+find the solution quickly.
+Okay.
+So that's about worst case complexity.
+But the fact that DHFL often finds the solution fairly
+quickly shows that that's not everything.
+And another example that shows that it's not everything is
+actually the the type checker in Haskell.
+, so this style of type checking was invented in
+the 1970s and it was implemented in different programming languages.
+, and, you know, since then and used by a
+lot of people and nobody knew what the, what the
+complexity of this algorithm was.
+It was a little bit complicated to figure it out.
+, and but everybody was happy.
+It ran quite quickly.
+, you, you could, you know, run your programs through
+it, would infer your type automatically.
+, everything was wonderful.
+And it was a big surprise when it was discovered
+more than 20 years after the algorithm was invented, that
+it was, in fact, worst case, , complexity.
+Horrendous.
+, , I don't know, , what it is in
+terms of, , the style of, , you know, whether
+it's two to the n, I think it probably is
+two to the N, or perhaps even worse than two
+to the N.
+, but there's almost no programs that achieve this, ,
+this worst case.
+So you have to try.
+I mean, none of the natural programs that you would
+write to do anything have have that worst case behaviour.
+And so the fact that in the worst case, it's,
+it's intractable is meaningless.
+In that particular example, you have to go really out
+of your way and look very hard to find something
+that, , that does badly.
+Anyway.
+, so a situation where the number of possible solutions
+grows rapidly with the problem size is called combinatorial explosion.
+And this is another example of this sort of thing
+is, , so-called travelling salesman problem.
+This is one of the famous, , intractable, intractable problems.
+It's a situation where you have a bunch of cities
+that the salesman is supposed to visit, or sales person
+is supposed to visit, and you're looking for the the
+shortest length route, which will visit all of the cities
+once and without repetitions.
+And the only way to solve that, or at least
+the only way that's known to solve that, is to
+enumerate all the possible routes and then, , measure them
+to see which one is the shortest.
+Okay.
+, sometimes we can do better for that.
+And we're going to be looking at some of these
+things now.
+Okay.
+And I'll start with some sorry.
+The microphone is doing strange things I think because it's
+too close.
+Okay.
+I'm going to start by looking at some functions that
+I need to to tell you about in order to
+talk about the problems that I want to talk about.
+So, , now you've seen already So it removes repetitions
+from a list.
+So for example nub of avocado.
+So there's two A's and two O's in that.
+So if you apply nub to it it removes
+the, the repetitions.
+, if you apply it to a string or a
+list that doesn't have repetitions, then it doesn't it doesn't
+change anything.
+Okay.
+So we've seen that before.
+Just reminding you what it's called.
+It's in the it's built into Haskell in one of
+the libraries.
+Okay.
+I'm going to be talking about, , problems that work
+on lists.
+Most of the things I'm going to be talking about
+are working on lists.
+And, , they're working on lists that contain no repetitions.
+Okay.
+Which is why I just told you about nub.
+Okay.
+And, , to check to see if a list contains
+no repetitions, we can apply this function, , distinct, which
+is defined here.
+Okay.
+.
+Just happens the problems I'm going to be talking about,
+, make sense when we're talking about such, such, such
+lists.
+Okay.
+And, , you can check to see if a list
+is distinct in this sense.
+, if it's equal to it's nub.
+Okay.
+This is taking advantage of the fact that nub, ,
+preserves the order of elements.
+So, , avocado is not distinct because it contains repetitions,
+whereas peach is distinct.
+Okay.
+In this sense of distinct.
+Okay.
+So these are just preliminaries, , that I want to
+mention before I dive into the actual problems I want
+to solve.
+Just one last thing is I'm going to be using
+QuickCheck to test my, , my solutions.
+And, , you know, you're familiar with QuickCheck.
+It generates 100 test cases and then tries the thing.
+You want to check on each of those test cases.
+The problem here is going to be that for the
+problems I'm looking at, , if the test cases are
+large, then they will take forever to to check.
+So this is this is a quick check with a
+bound on the size of the test cases.
+So I can I can.
+So I'm calling this function size check.
+And I give it a number.
+And that's the kind of maximum size of test cases
+that it's going to generate.
+If I, if I apply this function and , it's
+, it's using , one of the documented parameters of,
+of, of quick check, you can find these parameters and
+documentation.
+, there's a pointer in the textbook if you're interested.
+, , so this is something which controls the maximum
+Size of the of the test cases.
+Okay.
+.
+So there are things I'm going to be looking at
+that really would take too long if you don't, ,
+restrict the size of the test cases.
+So the first problem I want to look at is
+looking at sublists of a lists.
+Okay.
+And this is , , subset.
+You've seen subset already.
+, if the lists are representing, , , sets.
+So, , you know, is, is a list a subset
+of another list?
+Okay.
+Well, , here's a, here's a function that you've seen
+already for checking this.
+I called it subset before.
+, , so , x is is a subset is
+sub list of Ys if all of the elements in
+XS.
+So we use a list comprehension here.
+So for x taken from XZ.
+, we're checking to see if x is an element
+of y's where LM is this built in list membership
+function in Haskell.
+Okay.
+, and if that's the case for all x and
+xz.
+So we do a conjunction here to to compute
+that.
+Then x is is a sub list of y's.
+Okay.
+So you've seen this code before.
+, so I'm just reminding you.
+And so for example, , this list of characters P
+a this is a sub list of, of Apple.
+Okay.
+Because, , you know, here's a P, here's an E,
+and here's an A.
+Okay.
+So all of the characters in that list are in
+this list.
+So it's a sub list.
+On the other hand peach is not a sublist of
+apple because you know P a is there, but C
+and H are not there.
+Okay, so that's what I mean by a sublist.
+And now comes the problem.
+, suppose I want to generate all the sublists of
+a list.
+Okay.
+How many are there?
+, so I said already that sub list of a
+list is a subset of a set.
+Okay.
+, so does anybody know how many subsets there are
+of a set?
+Set of size n.
+How many subsets?
+Yeah, two to the N, correct.
+Yeah.
+Very good.
+, yeah.
+So the set of all subsets of a set is
+called the power set.
+And it has two to the n elements.
+So, .
+First example of something with two to the end in
+this lecture so far.
+Okay.
+, so.
+So in a subset of xz, every element of xz
+is either in this, in that sub list or not.
+Okay.
+And why do we get two to the N of
+them.
+Okay.
+So little diagram.
+Okay.
+So here is our my list of n elements.
+And for each of these elements.
+I'm thinking about putting it into a sub list.
+So this is my sub list.
+And so for X1, is it going to be in
+or is it going to be out?
+Question mark.
+Okay.
+Two choices for X2.
+Is it going to be in or out.
+Okay.
+Again two choices.
+And same for x3.
+And all the way down to x n okay.
+So we've got for every one of these elements we've
+got two choices.
+And so we've got two times two times two times
+two choices.
+And that's two to the n okay.
+Because there's n okay.
+There's n independent , two way choices okay.
+And you know, you get the list itself.
+If all of these choices is in is, is to
+put them in.
+, if you if all the choices is to leave
+it out, then you get the empty list.
+Okay.
+And so here is a here is code that basically
+uses that idea to generate the list of all sublists.
+Or maybe I'll maybe I'll leave that out in case
+I leave that up in case it's helpful.
+Okay.
+So , looking at the looking at the the recursive
+case here, this is using recursion.
+, so, , it's saying that if we've got a
+non-empty list, then to generate all the sublists of that
+non-empty list okay.
+List is x cons xs.
+So we generate all the sub lists of xs and
+and all of those are going to be sub
+lists of x cons xs.
+This is this corresponds to the case over here where
+, the new thing that I'm, that I'm adding, okay,
+let's say let's say we're looking at the case where
+it's the list x one cons everything else.
+Okay.
+So, .
+So, , this first bunch of sub lists or all
+the sub lists of everything else where we've decided not
+to add x1, or in this case, it's in this
+case it's x.
+Right.
+And then and then the other ones here.
+These are all the cases where we've, , decided to
+add in this other element.
+Okay.
+So we're taking all the, .
+Whoops.
+Oh well, my highlighting went away.
+.
+Yeah, we're taking all the sublists of XS and we're
+adding X into them.
+Okay, so all the sublists of XS without x added,
+all the sublists of XS with x added.
+Okay.
+And in the case of the empty list, it isn't
+the case.
+Usually we are.
+Very often we have some space cases of these sorts
+of things where, you know function apply to empty list
+is equal to the empty list.
+In this case that's not appropriate because there is one
+sublist of the empty list, namely the empty list.
+And that's why it's the single element of this of
+this result.
+Okay.
+The other reason is if this was empty, then this
+recursion would never produce anything because it's always working from
+the sub.
+You know, the sublists of the, of the, of the
+next smaller size.
+And if we start off with nil then we just
+take nil.
+cons map of something onto nil, and so forth.
+We'd never get any any sublists.
+Okay.
+, so, .
+, the code for this is downloadable in, , along
+with the lecture slides.
+And so I've got it all, , running here on
+my laptop, and so we can check to see, you
+know, about, , what are the sub lists of, ,
+of whatever you want.
+So, .
+You know, those are all the the sub lists of,
+, of, , the the list from numbers from one
+to 1 to 4.
+And, , we can check to see if the length
+of that is, , is what it should be.
+It's 16.
+So that's two to the four.
+Okay.
+.
+, let's try, , 1.., , eight.
+Okay.
+256.
+That's two to the eight.
+Okay, so I won't print those out because there's, ,
+it's just a screen full of numbers.
+Okay.
+Have you got that?
+That's okay.
+That's an easy.
+That's an easy, , example of the kind of thing
+that I'm going to be doing here.
+Okay.
+, so intractable in the sense that it's, , producing
+a very large output.
+, other problems we're going to be looking at are
+going to be producing, being produced smaller outputs that are
+going to be more difficult to produce.
+Okay.
+For the problems that I'm going to be looking at,
+I'm going to be doing a quick check test to
+make sure that they are, , are satisfy the properties
+that I want.
+And so I'm going to be in each case showing
+you these.
+So.
+So the property that I want subs to satisfy is
+relatively complicated compared with the sort of properties that you've
+been used to seeing.
+So this is , this is saying that, , for,
+for lists, exes which are distinct.
+Remember that means no repetitions.
+Okay.
+Then, , then first of all, , anything in anything
+in this, , in this result, subs of X's, any
+Y's is going to indeed be a sub list of
+exes.
+Okay, so we're only generating sub lists here.
+, and we're not generating any of the sub lists
+twice.
+That's what this says okay.
+Each of them is distinct from the others.
+And not only that, but each of the sublists is
+themselves distinct, meaning there's no repetitions in the sublists.
+Okay.
+These are these are different properties.
+These are this is no repeated elements in the sublists.
+And this is no sublist generated twice.
+And and you know, whereas this first property said everything
+we generate is a sublist.
+, the last property here is that we're generating all
+of them.
+Okay.
+So the number that we generate is, is what we
+expect.
+It's two to the, to the length to the power
+of the length of the sublist of the length of
+the list.
+Right.
+So I mean this could be satisfied.
+The rest of these things could be satisfied if the
+subs function would generate only the empty list.
+Okay.
+But this is the one that's saying we have to
+actually get enough of them.
+Okay.
+So I could, , you know, I can apply this
+to, .
+You know, I can do it over here.
+It's more exciting to see it actually happening.
+.
+.
+Okay.
+It takes.
+It takes a second.
+, and, , it, , it passes 100 tests.
+, by the way, this this thing here, you see
+it?
+You see it on the on the, , you see
+it up there and you see it in the slide.
+, what is this business about 30 discarded.
+Okay.
+, so you you may or may not have, ,
+used properties that had, , this kind of thing in
+them.
+So these are sort of preconditions on properties.
+So I'm interested in checking this property, but only for
+the cases where X is is distinct.
+Okay.
+So this is sort of conditional property that I'm checking.
+And , quick check allows that.
+And it looks for 100 tests.
+, but, , disregarding the ones that don't satisfy this
+property.
+And so 30 discarded here means it checked actually 130
+, , test cases, but 30 of them didn't pass
+this, , this, , this precondition.
+So that's what that means.
+And by the way, this reminds me, I should, ,
+check I should, , set the timer, , so that
+when I do a, .
+Yeah, this is set up so that, , when you,
+, when you run a computation, it tells you how
+much time and space it took.
+I don't know if you've seen this before.
+I think I've shown it to you.
+And it's in the practical, , in the exercise this
+week.
+Okay, so that's, , generating sublists of lists.
+I now want to talk about, , permutations of a
+list.
+Okay.
+So this is this is all the ways of rearranging
+this elements.
+So not not , not all of the lists which
+are contained within the first list, but, , all the
+ways of rearranging a list to, to , yeah.
+Of all, all the way to rearranging the elements of
+lists.
+And so how many of these are there?
+Does anybody know?
+So a list of length n how many ways are
+there of rearranging the elements of n or permutations of
+n?
+I mean, I think you might know because it's a
+standard thing that you do in, , combinatorics, which is
+something you might possibly have seen before.
+Anybody know?
+Okay.
+Yeah.
+N factorial.
+Exactly.
+Very good.
+Yes.
+, and why is it n factorial?
+, let's look, .
+So, , we've got our list of n a list
+of n elements.
+Let me do this again.
+Okay.
+And we're going to produce a new list of n
+elements.
+And it's the rearranged, , rearranged version of this.
+Okay.
+And so for the first, for the first element, what
+are we going to put here?
+, okay.
+It could be any one of these elements.
+So, , well, I should just say there's, there's n
+choices of what's going to go in here.
+Okay.
+Could be any any of these.
+But once we've decided which one it is, it's not
+eligible to go in any of the other places.
+Okay.
+So, , so in position two, I don't have any
+choices anymore.
+I only have n minus one choices.
+Okay, whichever one that is.
+Okay.
+And in the next position, whatever it is that we
+just put in there, there aren't going to be n
+minus one choices anymore.
+There's going to be n minus two choices.
+Okay.
+And so forth.
+And when we get to the last position, there's only
+going to be one choice because we've already used up
+all of the other.
+n minus one elements.
+Okay.
+So , you know, n times n minus one, times
+n minus two, etc. down to one, this is equal
+to n factorial.
+Okay.
+So that's some.
+That's a large number.
+.
+So let's see how we generate these.
+, so I have two, two ways of generating these
+that I want to look at.
+One of them, one of them is to use the
+Cartesian product.
+Okay.
+Cartesian product is, .
+, well.
+Let me just remind you by showing you an example.
+Cartesian product of, .
+, something , .
+Of a list with three elements.
+, of characters and another list with some four numbers
+in it.
+Okay.
+It generates.
+So this is the list of pairs with one element
+from the first list and one element from the second
+list.
+Okay.
+So it's , , it's a product.
+Okay.
+So it's the , yeah.
+The number of things in here is the size of
+the first list times the size of the second list.
+Because for each one of these pairs, we have to
+pick one element from here and one element from here.
+Okay.
+Cartesian product UV.
+This was, this was appeared already somewhere in the course.
+Okay.
+And so , what I'm going to use here for
+this, , for this , permutation thing is , I'm
+just looking for the code.
+, wait a minute.
+Ah!
+Come on.
+.
+Okay.
+.
+Do I have this here?
+No, I don't.
+Okay.
+So, .
+So Cartesian product of of two lists.
+There's the code.
+You just, , you just create pairs where, , the
+first element is from the first.
+The second element is from the second list.
+And in generalisation of that to , to lists,
+, to taking Cartesian product, of a list of
+lists is is this okay?
+So, , Cartesian product of a list of lists you
+first contain, you first generate the Cartesian product of
+of of the table of the list.
+And then you, , and then you add all the
+possible, , elements from the first list to that.
+Okay.
+And here here's an example.
+, here.
+Okay.
+So.
+You know, if you, if you take, if you take
+Cartesian product of these three lists okay.
+So everyone here has an element from the first list,
+an element from the second list, an element from the
+third list.
+So AC and and and so forth.
+down to be d g okay.
+And , there's no repetitions there.
+So that's , that's Cartesian product.
+And then the idea of , of doing, of doing
+permutations using this , is the code.
+Is the code up there?
+The idea is that a way to generate all the
+permutations is to.
+Is to take a list and take the n fold
+Cartesian product of the list with itself.
+Okay.
+, and then look for the ones of those that
+are permutations of the original list, which means that they
+contain no repetitions.
+Okay.
+And that works.
+So this is what this this is what this code
+does.
+Okay.
+Remember CP is Cartesian product of a list of lists.
+So you take you take the list that you're interested
+in X is it has to be distinct.
+No repetitions okay.
+You take the the n fold.
+, you take n copies of that.
+That's what replicate does.
+Takes a list and it gives you a list of
+n copies of that thing.
+So where n is the length of x is.
+So we've got, we've got okay.
+And then we take the Cartesian product of that.
+And then we look through for all the ones that
+are distinct okay.
+No repetitions.
+Okay.
+And and it works okay.
+So you know.
+Okay.
+It works.
+And let me just do some experiments here.
+So , it works.
+I'm going to be looking for the length of this
+thing because I don't want to print them all out
+because then the printing dominates.
+So if I look for the permutations of the list
+from one up to n .
+Computing is going to take a while.
+.
+Actually, I hope that wasn't too many.
+It might have been too ambitious there.
+Okay.
+Why is it taking a long time?
+Okay, so think about what it's doing here.
+Okay, so, , it's taking the, , the enfold Cartesian
+product of this list.
+This list is of length ten.
+It's taking the n fold product, the ten fold product
+of a list of length ten with itself.
+Okay.
+So that's, , that's ten to the ten lists.
+Ten to the ten is 10 billion.
+Okay.
+So it's, it's it's producing a 10 billion lists.
+And then it's looking at each one of those lists
+to see whether it contains repetitions or not.
+okay.
+We know that they're going to be and ten
+factorial of those.
+Okay.
+So.
+Let's do a little computation here.
+Oops.
+You can't see it.
+Okay.
+So I'm going to go through 10 billion.
+You can't see it.
+thank you.
+What can you see.
+Oh you can't even you can't see anything.
+That's a no good.
+Okay, so this is this is the functions that the
+thing's still computing.
+So we've got 10 billion lists.
+, so n factorial is, , ten factorial is, .
+.
+, 3 million.
+628,800.
+Okay, so.
+So what that means is that if I'm checking each
+one of those to see whether it contains repetitions, only
+that many of them, I mean, it's lots of them,
+but but but that many of them are going to
+succeed.
+So it's, it's one in , 2756.
+Okay.
+If I do the same computation for n equals 20,
+I end up with, , it's one inch 43 million.
+Okay.
+, and this is kind of the reason why this
+is taking forever.
+Okay.
+It still hasn't stopped.
+I should have started with a smaller number.
+Anyway, we can still wait for that and see how
+long it takes.
+.
+Okay, so this is not a great way to do
+this.
+Let's think of something better.
+I mean, the reason why it's not great is because
+it's a generated search algorithm where the number of things
+that it's asking to search through is enormous.
+Okay.
+And and finding something.
+So finding a needle in this huge haystack is taking
+a long time because there's only only 1 in 7,
+, 1 in 2756 of the things in the haystack
+is a needle.
+Okay.
+And when the when the problem gets larger, it's even
+going to be a smaller proportion.
+Okay.
+So what's a better way?
+A better way is, , uses this function called splits.
+Let me see what time it is.
+Okay.
+So a better way.
+We consider all the ways of splitting a list, which
+means separating one element from the rest.
+Okay.
+And that's what this function does.
+So given a list, you, , you split it into
+an element from the list and everything else in the
+list.
+And this function computes all the ways of doing that.
+Okay.
+So and this is going to be useful in our
+definition of of permutations okay.
+So given a list X is.
+a split one of the possible splits is
+is is if we take a value k from zero
+up to n minus one.
+Okay.
+So these are the positions in the list x is
+if x if n is the length of x
+is.
+Sorry, I should have said that first n is the
+length of x is and the positions in X is
+our index from zero up to n minus one.
+Okay.
+There's n elements and their index starting from zero.
+And so we can take we can take the .
+We can take the the element in position k.
+So that's our, that's our, you know, that's our element
+that we're, that we're picking out.
+And then the rest of the list is, is, is
+produced by this by this here.
+Okay.
+It's the stuff before K and this stuff after k
+and concatenated or appended.
+Okay.
+And so for example for the list ABC we've got
+a together with BC, B together with AC and C
+together with AB.
+Okay.
+For any list of length n there's going to be
+n splits one for every element in the list.
+Okay.
+And the and the remainder is always going to be.
+If you've got a list of length n these, these,
+these lists here are always going to be n minus
+one long.
+And then using the splits function we can do perms.
+Because I mean you remember what I was talking about
+with the , , computing, the , the number of
+permutations there were I talked about.
+You choose an element from the list and put it
+in position one, and then and then, , and then
+you choose another element from the list, minus the first
+one that you picked and put it in position two
+and so forth.
+And that's exactly what this algorithm is doing.
+Okay.
+So, , you know, given a list, given a non-empty
+list, it, , it computes the splits of that on
+an empty list.
+And , and that gives you, , you know, a
+bunch of a bunch of splits and taking taking one
+of them, y ys.
+We, , we put y in the first position, and
+then, , and then, , , Zs here is, ,
+is taken from permutations of the remaining elements.
+Okay.
+So this is, this is a slightly more complicated recursion
+than what you're used to.
+Okay.
+We're not recursing on.
+You're used to that when you do, , recursion on
+a list, you do something with XZ, and then and
+then the result is computed by doing something with y
+and the elements that you get from, from that, from
+that recursive call here it's a little more complicated.
+We, we, we divide x cons xs into y comma
+y's.
+We do something with Y's.
+, we come up with Zs and then we combine
+Y with , elements of Zs.
+Okay, so, , a little bit more, , complicated, but
+same, same basic pattern here.
+Okay.
+So, , you know, so looking, for example, a moment
+ago, we had, , you know, splits being a, ,
+a comma b c was the first one.
+Okay.
+And so and so from this we get the permutations
+of of BC are BC and CB.
+And then we attach a to the front of them.
+And the second thing in our list of splits was
+b comma AC.
+And so here we get b and then a, c
+and b with c a.
+Okay.
+So .
+Let's see what's happening with our, with our thing here.
+Oh this is still going.
+Oh well I don't know how long this will take.
+I'm going to stop it.
+Okay, well, it will have terminated eventually.
+, I would have expected it to actually finish by
+now, but, , perms is faster.
+Okay.
+So length.
+Okay.
+Faster, but not but not instantaneous.
+I'm expecting about five seconds.
+Oh, sorry.
+No, sorry.
+This one's going to be 18 seconds.
+I should have started with a smaller one.
+Anyway, this one's about 18 seconds, I think.
+The other one.
+I don't know how long it would have taken, but
+a lot, a lot longer.
+.
+Oh, yeah.
+There we go.
+18 seconds, 18.81 seconds.
+Okay, so still it's taking a while.
+It's generating, , ten factorial, , things.
+But, , in a much more efficient way.
+Okay.
+And, .
+How much time do I have?
+Right.
+, so these are the properties that, , that permutations
+has to satisfy.
+Okay.
+, you know, , everything in the list that it
+generates has to be a permutation.
+They're all distinct.
+, they're all different.
+And, , there's the number of them that we expect.
+Okay.
+I have just two minutes.
+It gives me just a chance to, , mention the
+next thing I'm going to be looking at.
+So this is about, , choosing, , a k elements
+from a list of length n, and, , , this
+is another classic problem in combinatorics, which is, .
+I don't know if you know this notation.
+Okay.
+, choosing Key elements from a list of length n
+okay, the.
+This is the number of ways that you can do
+that.
+, and , the number of ways is , is
+this.
+Okay.
+And this is called binomial coefficient.
+, , it's the coefficient when you compute.
+Well I'll have to explain it next time.
+, right.
+So that's my next problem.
+Remember , to have a look at the programming project
+and come with your questions next time okay.
+So thank you for your attention.
+Yeah.
+More than.
+Any product.
+We.
+Build wealth every day with trading.
+Two.
+Invest with zero commission.
+We were good.
+We were gold.
+Kind of dream that can't be sold.
+We were right till we weren't Built a home and
+watched it burn.
+I didn't want to leave you.
+I didn't want to lie.
+Started to cry.
+But then I remembered I.
+I can buy my soul flowers by my name in
+the sand.
+Talk to myself for hours.
+See things you don't understand.
+I can take my soul dancing.
+And I can hold my own head.
+Yeah I can love me better than you can love
+me.
+I can love me better.
+Baby.
+You love me better.
+Are you love me better?
+Ain't my nails cherry red?
+Match the roses.
+That you left.
+No No regret.
+I forgive every.
+Word you say.
+Ooh.
+I didn't want to leave you, babe.
+I didn't wanna fight.
+Started to cry, but then remembered I.
+I can promise the flowers round my name in the
+sand.
+Talk to myself or I will say things you don't
+understand.
+But I can take my soul dancing, yeah, I can
+hold.
+Morning.
+Yeah I can love me better than you can love
+bear.
+I can love me better when you love me better.
+I can love you better.
+Baby.
+You love me better.
+I can love you better, baby.
+Better.
+Love me better.
+I.
