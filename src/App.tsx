@@ -31,99 +31,99 @@ function App() {
           number: 1,
           title: 'Introduction and Functional Programming',
           summaries: [
-            '2024-09-16_Informatics 1 - Introduction to Computation, Introductory Lecture.pdf',
-            '2024-09-17_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-09-19_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-09-20_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+            '2024-09-16_Informatics 1 - Introduction to Computation - Course Overview and Setup.pdf',
+            '2024-09-17_Informatics 1 - Introduction to Computation - Basic Programming Concepts.pdf',
+            '2024-09-19_Informatics 1 - Introduction to Computation - Introduction to Functional Programming.pdf',
+            '2024-09-20_Informatics 1 - Introduction to Computation - Functions and Types.pdf'
           ]
         },
         {
           number: 2,
           title: 'Computation and Logic',
           summaries: [
-            '2024-09-23_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-09-24_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-09-26_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-09-27_Informatics 1 - Introduction to Computation, Functional Programming.pdf'
+            '2024-09-23_Informatics 1 - Introduction to Computation - Boolean Logic and Truth Tables.pdf',
+            '2024-09-24_Informatics 1 - Introduction to Computation - Propositional Logic.pdf',
+            '2024-09-26_Informatics 1 - Introduction to Computation - Predicate Logic.pdf',
+            '2024-09-27_Informatics 1 - Introduction to Computation - Logic Programming.pdf'
           ]
         },
         {
           number: 3,
           title: 'Functional Programming Basics',
           summaries: [
-            '2024-09-30_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-10-01_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-10-03_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-10-04_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+            '2024-09-30_Informatics 1 - Introduction to Computation - Higher Order Functions.pdf',
+            '2024-10-01_Informatics 1 - Introduction to Computation - Recursion Fundamentals.pdf',
+            '2024-10-03_Informatics 1 - Introduction to Computation - List Processing.pdf',
+            '2024-10-04_Informatics 1 - Introduction to Computation - Pattern Matching.pdf'
           ]
         },
         {
           number: 4,
           title: 'Advanced Concepts',
           summaries: [
-            '2024-10-08_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-10-10_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-10-11_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+            '2024-10-08_Informatics 1 - Introduction to Computation - Type Systems.pdf',
+            '2024-10-10_Informatics 1 - Introduction to Computation - Polymorphism.pdf',
+            '2024-10-11_Informatics 1 - Introduction to Computation - Abstract Data Types.pdf'
           ]
         },
         {
           number: 5,
           title: 'Functional Programming Applications',
           summaries: [
-            '2024-10-14_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-10-15_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-10-17_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-10-18_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+            '2024-10-14_Informatics 1 - Introduction to Computation - Monads Introduction.pdf',
+            '2024-10-15_Informatics 1 - Introduction to Computation - Functors and Applicatives.pdf',
+            '2024-10-17_Informatics 1 - Introduction to Computation - Error Handling.pdf',
+            '2024-10-18_Informatics 1 - Introduction to Computation - IO Operations.pdf'
           ]
         },
         {
           number: 6,
           title: 'Advanced Logic',
           summaries: [
-            '2024-10-21_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-10-22_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-10-24_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-10-25_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+            '2024-10-21_Informatics 1 - Introduction to Computation - First Order Logic.pdf',
+            '2024-10-22_Informatics 1 - Introduction to Computation - Natural Deduction.pdf',
+            '2024-10-24_Informatics 1 - Introduction to Computation - Proof Techniques.pdf',
+            '2024-10-25_Informatics 1 - Introduction to Computation - Logic Applications.pdf'
           ]
         },
         {
           number: 7,
           title: 'Guest Lecture and Applications',
           summaries: [
-            '2024-10-28_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-10-29_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-10-31_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-11-01_Informatics 1 - Introduction to Computation, John Hughes guest lecture.pdf'
+            '2024-10-28_Informatics 1 - Introduction to Computation - Lazy Evaluation.pdf',
+            '2024-10-29_Informatics 1 - Introduction to Computation - Stream Processing.pdf',
+            '2024-10-31_Informatics 1 - Introduction to Computation - Program Optimization.pdf',
+            '2024-11-01_Informatics 1 - Introduction to Computation - John Hughes guest lecture.pdf'
           ]
         },
         {
           number: 8,
           title: 'Advanced Programming Concepts',
           summaries: [
-            '2024-11-04_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-11-05_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-11-07_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-11-08_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+            '2024-11-04_Informatics 1 - Introduction to Computation - Type Classes.pdf',
+            '2024-11-05_Informatics 1 - Introduction to Computation - Category Theory Basics.pdf',
+            '2024-11-07_Informatics 1 - Introduction to Computation - Parser Combinators.pdf',
+            '2024-11-08_Informatics 1 - Introduction to Computation - Domain Specific Languages.pdf'
           ]
         },
         {
           number: 9,
           title: 'Complex Applications',
           summaries: [
-            '2024-11-11_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-11-12_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-11-14_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-11-15_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+            '2024-11-11_Informatics 1 - Introduction to Computation - Concurrent Programming.pdf',
+            '2024-11-12_Informatics 1 - Introduction to Computation - Parallel Processing.pdf',
+            '2024-11-14_Informatics 1 - Introduction to Computation - Distributed Systems.pdf',
+            '2024-11-15_Informatics 1 - Introduction to Computation - Real World Applications.pdf'
           ]
         },
         {
           number: 10,
           title: 'Final Topics',
           summaries: [
-            '2024-11-25_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-11-26_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
-            '2024-11-28_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
-            '2024-11-29_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+            '2024-11-25_Informatics 1 - Introduction to Computation - Advanced Type Systems.pdf',
+            '2024-11-26_Informatics 1 - Introduction to Computation - Program Analysis.pdf',
+            '2024-11-28_Informatics 1 - Introduction to Computation - Code Optimization.pdf',
+            '2024-11-29_Informatics 1 - Introduction to Computation - Course Review.pdf'
           ]
         }
       ]
@@ -132,17 +132,94 @@ function App() {
       id: '2',
       name: 'Introduction to Linear Algebra',
       weeks: [
-        { number: 1, title: 'Vectors and Matrices' },
-        { number: 2, title: 'Linear Transformations' },
-        { number: 3, title: 'Eigenvalues and Eigenvectors' },
-        { number: 4, title: 'Vector Spaces' },
-        { number: 5, title: 'Orthogonality' },
-        { number: 6, title: 'Determinants' },
-        { number: 7, title: 'Inner Product Spaces' },
-        { number: 8, title: 'Diagonalization' },
-        { number: 9, title: 'Singular Value Decomposition' },
-        { number: 10, title: 'Linear Programming' },
-        { number: 11, title: 'Applications in Data Science' }
+        {
+          number: 1,
+          title: 'Vectors and Matrices',
+          summaries: [
+            '2024-09-16_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0640_00_G.0070_Monday 12_00.pdf',
+            '2024-09-19_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-09-20_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        },
+        {
+          number: 2,
+          title: 'Linear Transformations',
+          summaries: [
+            '2024-09-26_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-09-27_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        },
+        {
+          number: 3,
+          title: 'Eigenvalues and Eigenvectors',
+          summaries: [
+            '2024-10-03_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-10-04_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        },
+        {
+          number: 4,
+          title: 'Vector Spaces',
+          summaries: [
+            '2024-10-10_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-10-11_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        },
+        {
+          number: 5,
+          title: 'Orthogonality',
+          summaries: [
+            '2024-10-17_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-10-18_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        },
+        {
+          number: 6,
+          title: 'Determinants',
+          summaries: [
+            '2024-10-24_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-10-25_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        },
+        {
+          number: 7,
+          title: 'Inner Product Spaces',
+          summaries: [
+            '2024-10-31_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-11-01_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        },
+        {
+          number: 8,
+          title: 'Diagonalization',
+          summaries: [
+            '2024-11-07_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-11-08_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        },
+        {
+          number: 9,
+          title: 'Singular Value Decomposition',
+          summaries: [
+            '2024-11-14_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-11-15_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        },
+        {
+          number: 10,
+          title: 'Linear Programming',
+          summaries: [
+            '2024-11-21_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf'
+          ]
+        },
+        {
+          number: 11,
+          title: 'Applications in Data Science',
+          summaries: [
+            '2024-11-28_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Thursday 12_00.pdf',
+            '2024-11-29_MATH1 Introduction to Linear Algebra  Lecture_12_00_Lecture_0612_01_1.02_Friday 12_00.pdf'
+          ]
+        }
       ]
     },
     {
@@ -287,12 +364,8 @@ function App() {
     }
   }
 
-  const handleDownloadSummary = async (week: Week, courseName: string) => {
+  const handleDownloadSummary = async (lecture: string, courseName: string) => {
     try {
-      if (!week.summaries || week.summaries.length === 0) {
-        throw new Error('No summaries available for this week');
-      }
-
       let basePath = '';
       if (courseName === 'Object Oriented Programming') {
         basePath = '/transcriptions/Object Oriented Programming/summaries/pdf/';
@@ -302,28 +375,32 @@ function App() {
         basePath = '/transcriptions/Cognitive Science/summaries/pdf/';
       } else if (courseName === 'Introduction to Computation') {
         basePath = '/transcriptions/Introduction to Computation/summaries/pdf/';
+      } else if (courseName === 'Introduction to Linear Algebra') {
+        basePath = '/transcriptions/Introduction to Linear Algebra/summaries/pdf/';
       } else {
         throw new Error('Course not supported');
       }
 
-      // Download each summary for the week
-      for (const summary of week.summaries) {
-        const response = await fetch(`${basePath}${summary}`);
-        if (!response.ok) {
-          console.error(`Failed to fetch summary: ${summary}`);
-          continue;
-        }
-        
-        const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = summary;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+      // Extract lecture information from filename
+      const datePart = lecture.split('_')[0];
+      const date = new Date(datePart);
+      const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+      
+      const response = await fetch(`${basePath}${lecture}`);
+      if (!response.ok) {
+        console.error(`Failed to fetch summary: ${lecture}`);
+        throw new Error('Failed to fetch summary');
       }
+      
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = lecture;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     } catch (error) {
       console.error('Error downloading summary:', error);
       setError('Failed to download summary. Please try again.');
@@ -339,28 +416,28 @@ function App() {
           const weekSummaries: string[] = [];
           if (week.number === 1) {
             weekSummaries.push(
-              '2025-01-13_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Monday 12_00.pdf',
-              '2025-01-16_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Thursday 12_00.pdf'
+              '2025-01-13_Informatics 1 - Object Oriented Programming - Introduction to OOP Concepts.pdf',
+              '2025-01-16_Informatics 1 - Object Oriented Programming - Classes and Objects.pdf'
             );
           } else if (week.number === 2) {
             weekSummaries.push(
-              '2025-01-20_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Monday 12_00.pdf',
-              '2025-01-23_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Thursday 12_00.pdf'
+              '2025-01-20_Informatics 1 - Object Oriented Programming - Inheritance and Polymorphism.pdf',
+              '2025-01-23_Informatics 1 - Object Oriented Programming - Abstract Classes and Interfaces.pdf'
             );
           } else if (week.number === 3) {
             weekSummaries.push(
-              '2025-01-27_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Monday 12_00.pdf',
-              '2025-01-30_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Thursday 12_00.pdf'
+              '2025-01-27_Informatics 1 - Object Oriented Programming - Encapsulation and Data Hiding.pdf',
+              '2025-01-30_Informatics 1 - Object Oriented Programming - Method Overloading and Overriding.pdf'
             );
           } else if (week.number === 4) {
             weekSummaries.push(
-              '2025-02-03_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Monday 12_00.pdf',
-              '2025-02-06_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Thursday 12_00.pdf'
+              '2025-02-03_Informatics 1 - Object Oriented Programming - Exception Handling.pdf',
+              '2025-02-06_Informatics 1 - Object Oriented Programming - File IO and Serialization.pdf'
             );
           } else if (week.number === 5) {
             weekSummaries.push(
-              '2025-02-10_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Monday 12_00.pdf',
-              '2025-02-13_Informatics 1 - Object Oriented Programming - Lecture_Lecture_0639_01_1.15_Thursday 12_00.pdf'
+              '2025-02-10_Informatics 1 - Object Oriented Programming - Design Patterns Part 1.pdf',
+              '2025-02-13_Informatics 1 - Object Oriented Programming - Design Patterns Part 2.pdf'
             );
           }
           return {
@@ -374,13 +451,30 @@ function App() {
         ...course,
         weeks: course.weeks.map(week => {
           const weekSummaries: string[] = [];
-          if (week.number <= 5) {
-            const monday = new Date(2025, 0, 13 + (week.number - 1) * 7);
-            const thursday = new Date(2025, 0, 16 + (week.number - 1) * 7);
-            
+          if (week.number === 1) {
             weekSummaries.push(
-              `2025-${String(monday.getMonth() + 1).padStart(2, '0')}-${String(monday.getDate()).padStart(2, '0')}_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Monday 13_00.pdf`,
-              `2025-${String(thursday.getMonth() + 1).padStart(2, '0')}-${String(thursday.getDate()).padStart(2, '0')}_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Thursday 13_00.pdf`
+              '2025-01-13_MATH1 Calculus and Its Appl - Limits and Continuity.pdf',
+              '2025-01-16_MATH1 Calculus and Its Appl - Differentiation Basics.pdf'
+            );
+          } else if (week.number === 2) {
+            weekSummaries.push(
+              '2025-01-20_MATH1 Calculus and Its Appl - Chain Rule and Applications.pdf',
+              '2025-01-23_MATH1 Calculus and Its Appl - Product and Quotient Rules.pdf'
+            );
+          } else if (week.number === 3) {
+            weekSummaries.push(
+              '2025-01-27_MATH1 Calculus and Its Appl - Integration Fundamentals.pdf',
+              '2025-01-30_MATH1 Calculus and Its Appl - Integration Techniques.pdf'
+            );
+          } else if (week.number === 4) {
+            weekSummaries.push(
+              '2025-02-03_MATH1 Calculus and Its Appl - Applications of Integration.pdf',
+              '2025-02-06_MATH1 Calculus and Its Appl - Area and Volume.pdf'
+            );
+          } else if (week.number === 5) {
+            weekSummaries.push(
+              '2025-02-10_MATH1 Calculus and Its Appl - Differential Equations.pdf',
+              '2025-02-13_MATH1 Calculus and Its Appl - Series and Sequences.pdf'
             );
           }
           return {
@@ -816,7 +910,7 @@ function App() {
                                   key={index}
                                   whileHover={{ scale: 1.02 }}
                                   whileTap={{ scale: 0.98 }}
-                                  onClick={() => handleDownloadSummary(week, selectedCourse.name)}
+                                  onClick={() => handleDownloadSummary(summary, selectedCourse.name)}
                                   className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 transition-colors duration-200"
                                 >
                                   <motion.div
@@ -828,10 +922,11 @@ function App() {
                                     </svg>
                                   </motion.div>
                                   <span>
-                                    {summary.includes('Monday') ? 'Monday Lecture' : 
-                                     summary.includes('Thursday') ? 'Thursday Lecture' : 
-                                     summary.match(/\d{4}-\d{2}-(\d{2})/) ? `${new Date(summary.split('_')[0]).toLocaleDateString('en-US', { weekday: 'long' })} Lecture` : 
-                                     'Download Summary'}
+                                    {(() => {
+                                      const datePart = summary.split('_')[0];
+                                      const date = new Date(datePart);
+                                      return date.toLocaleDateString('en-US', { weekday: 'long' });
+                                    })()}
                                   </span>
                                 </motion.button>
                               ))}
