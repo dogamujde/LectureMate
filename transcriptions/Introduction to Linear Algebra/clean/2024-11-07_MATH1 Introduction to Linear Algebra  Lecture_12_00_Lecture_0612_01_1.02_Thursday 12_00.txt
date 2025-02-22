@@ -1,0 +1,760 @@
+Hello.
+Welcome to week eight of LA.
+, I hope the course is going well so far.
+, this week, , is a very important week because
+it's, , a week in which we look back at
+some results that we have already started in the course,
+and we extend it to more general structures.
+We know about linear transformation in R2 and R3, and
+we know about vector orthogonality in R2 and R3.
+But this week we're going to extend that to our
+end.
+And this is really what mathematics is about.
+, recycling , properties and objects and things that we
+know already in familiar spaces and translate that onto something
+that is more complicated.
+So even if we do not have any geometric insight
+about what our N looks , because it goes beyond
+what we can model with our everyday experience, because we
+live in three dimension.
+Mathematics allows us to write interesting results and interesting properties
+beyond that by using what we know.
+So to be a little bit more specific, this week
+is divided, as you know, in two lessons today we
+will do dot product orthogonality length Cauchy-Schwarz distances, triangle inequality
+and tomorrow will all be about similarity Eigen eigenvectors eigenvalues
+and eigenspaces.
+I have covered these topics in videos.
+This time I put them in the reading.
+Can you just tell me did the video work?
+Okay.
+Because last time we had some problems because they were
+in the reading quiz.
+Yes.
+Yes.
+It was included in the reading.
+In the reading instructions.
+Is that.
+Is this creating any confusion?
+Okay.
+, okay.
+So, , let's start.
+So the structure of today's, , of today's lesson will
+be the usual one.
+We're going to do some exercises on this content.
+And , so let's start by logging in into the
+book club of the, of the , of the lesson
+please.
+I'm just going to split the screen so I can
+continue on one.
+And and we jump straight into into that.
+, with the first question that I will open on
+bookclub in a moment, I'll give you some more time
+to scan the QR code.
+And the first question we start very simple.
+, I give you the length of two vectors and
+the value of the scalar product.
+And then I'm asking you for the length of some
+linear combination of the two of the two vectors.
+And what I ask you to do is To input
+the value, the numerical value of that expression based on
+the length of the vector and their scalar product.
+I'll give you a few minutes to think about it.
+Sketch down some calculations.
+You can then enter the number directly in bookclub, and
+then we will go it together through it.
+And then sort of halfway through, I will drop a
+hint to let you know how to do that.
+Okay.
+Okay, so the first questions are in.
+I can see that zero and six are the two
+most common ones.
+I'm just going to drop the hint right now.
+, in the reading for today, there was a formula
+that you might find useful, which is , the one
+from example, 5.3.2, which gives you the, , the expression
+for what we're trying to calculate.
+Okay.
+So zero and six seem to be the most common
+values that you come up with.
+, let's go through this together, shall we?
+, we can simply apply the, , property that, ,
+we, we just saw.
+And the idea here is that, , the linear combination
+splits up in two contributions.
+One that depends only on the length of the vectors
+and one that depends on the other scalar product.
+And then we can calculate each term independently.
+And if you run through the calculation six was indeed
+the correct answer.
+So , very well done, most of you.
+, just one thing that I noticing someone put in
+minus six.
+, now, I don't want to pick on you, but,
+, I'm asking for a square length.
+Okay?
+So immediately negative values should be discarded because, .
+, because length are defined positive already.
+, or rather non-negative because the length can be zero.
+When is the length zero?
+There's only one vector whose length is zero.
+Yes, the length is always positive unless the vector is
+zero, in which case is zero, so it's non-negative.
+But then we square it as well.
+So something squared is also non-negative by definition.
+okay.
+Let prove this.
+, this proposition which was , in the reading.
+Let me just switch back.
+, full screen.
+, we have , the proposition A x plus b
+length squared equals to that.
+, how would you approach proving this?
+Can you throw some ideas at me?
+Yes.
+yes.
+We write the length as the.
+Yes, we use the definition of the length, which is
+defined in terms of the dot of the of the
+dot product.
+So we know that the length is defined as the
+square root of the dot product of the vector with
+itself.
+So squared length will just be the dot product with
+the vector with itself.
+And then we can distribute the dot product between axe
+plus b and itself.
+And we get all the terms that, , that we
+want.
+Except now these two terms here are now expressed in
+the terms of the dot product.
+But no harm is done because then we can move
+back with the definition of length, , to get the
+result that we wanted.
+Okay.
+So the square length of, , I don't remember what
+it was, was two x minus three y was six
+for that reason, the length itself was the square root
+of that.
+Okay.
+Do you have any questions about this?
+, this first this first question.
+Okay, excellent.
+So let's move on to the second one.
+Let me switch back to half and half.
+And now now I'm going to close this though because
+I don't want you to peek at this.
+The next question is a staple of Allah.
+You know this format I put in some statements.
+Some are true, some are false.
+I made them up, or I corrupted some true statements
+that were in the reading.
+And it's your job to identify which ones are true
+and which ones are not.
+And then we will go through through them one by
+one, and we will comment on why each one is
+true or false.
+So I'll give you a few minutes to think about
+this.
+And then, .
+Then we will go through them together.
+Okay, I see that almost 60 people have come in
+with their question.
+I'll give you one more minute to think about so
+we can maybe get to 100.
+Okay, we're almost there.
+95 answers.
+Let's have a look at the other answers.
+Okay, so, , we have one, two.
+And for being clearly in the lead for what you
+think are the correct ones.
+Three is fairly, , is a fairly shared opinion that
+three is false and five mostly, but, , not really.
+Okay.
+, I can already tell that you're doing well, but
+let's go through them one by one just for the
+fun of it.
+, statement one was every orthogonal set in n is
+linearly independent.
+You got most true.
+, and this is in fact true.
+You had a actually a theorem in the reading, ,
+that says exactly this.
+And, , let's try to talk for a few seconds.
+Why is that?
+, linearly independent means that any linear combination is zero
+if and only.
+Well, if a linear combination is zero, then the coefficient
+must be zero.
+There's no way of combining the sets with non-zero
+coefficients such that they they they returned the zero vector.
+And why is orthogonality important here?
+Well, because if all the vectors are two by two,
+, are pairwise orthogonal, then there is no way of
+cancelling out a vector with any of the others,
+because all the others give an orthogonal component with respect
+to that vector in the set, and so to get
+zero we need to.
+We need to zero out the coefficient of the vector,
+giving out that first and that first that first direction.
+This is the intuitive part.
+, now let's try and prove it in a way
+that it's a little bit more formal.
+That was just, , me trying to give you the
+idea and hand-waving it a little bit.
+, okay.
+, as I mentioned before, we want to show that
+the set is linearly independent.
+And so we need to take the linear combination and
+set it equal to zero.
+And we need to show that that implies t1 TC
+must be zero.
+Okay.
+How can we isolate a direction.
+Well that's what the scalar product is for.
+So we can take the dot product of both sides
+of the equation with x1.
+So we're we know that the scalar product is
+in a way a projection, and so we are projecting
+the equation along the direction of x1.
+And then my intuitive argument of before now will apply
+in the sense that now that we have projected the
+equation onto the direction of x1, x1 will be the
+only one giving us contribution.
+So if we want to cancel out the contribution in
+that direction, we will need to we that will force
+T1 to zero.
+And then we can repeat projecting it around onto all
+the vectors.
+And because they're all pairwise orthogonal, then we will get
+all of the coefficients of the linear combination equal to
+zero.
+Hence the vectors are linearly independent.
+And this is really the concept of the proof.
+Here I just formalise it a little bit.
+And we have projected the equation by taking the dot
+product with x1 on both sides, and everything goes away
+because the vectors are pairwise orthogonal except the very first
+term here.
+.
+The vector.
+This is the only the only one that's surviving.
+And so we have zero equals t the length of
+x one.
+But, , x one cannot be zero because that's come
+from the definition of being of being orthogonal.
+Vectors are orthogonal if they're dot if their dot product
+is zero but the vectors are non-zero.
+So in here we already have the hypothesis that all
+these vectors are non-zero.
+And so the length is different from zero.
+And then t one is equal from a is equal
+to zero.
+And then we project to t2 and this is on
+x two.
+And this will be the only one surviving.
+And then we do that k times onto dk.
+And we get that all the coefficients needs to be
+zero.
+Hence the set is linearly independent.
+Excellent.
+Any questions about this proof?
+Okay.
+, yeah, I forgot to put that on screen.
+We just repeat everything k times.
+Okay.
+Statement.
+True.
+Was, , the most widely loved, , the standard basis
+or orthonormal?
+And, yes, that is, of course, true.
+That's part of the reason why it's taken as the
+standard base.
+And there's not really a proof here.
+We just need to think about how these, , vectors
+are constructed and then take the dot product between them.
+And we will see that the dot product is equal
+to one.
+If we're taking the same two vectors and is equal
+to zero if the two vectors are different from each
+other.
+And the reason is, well, of course, if it's the
+same vector, the scalar product will be zero plus 0.0
+plus zero.
+But then the two ones meet at the same place.
+We get plus one plus zero.
+And everything works out as one.
+If they're different, the two ones are in different positions,
+so each one will be multiplied by the corresponding zero
+and the whole dot product will be zero.
+Okay.
+Any questions about the orthonormal base.
+Okay.
+next one.
+, the length of a vector is the sum of
+its components in modulo.
+Of course, because the length needs to be, , equal
+or greater than zero.
+And as you, as most of you, 93% of you
+correctly identify, this is actually false.
+And why is that?
+Why is this wrong?
+Anyone?
+It should be discarded of the squares.
+Yes.
+Thank you very much for that.
+That is a corruption of the correct formula, which looks
+this.
+, and there's really nothing to add here.
+I just took the took the definition and made it
+wrong in a way that could look vaguely correct because
+both sides are greater than zero, but there's nothing more
+to that.
+Okay.
+And then statement for if the dot product of two
+vectors is equal to the product of their length.
+Here I missed a balding formula.
+Then the two vectors are multiples of each other.
+You are most of you identifying this as true and
+that is indeed correct.
+Can I ask you why?
+Or where where where did you take this result from?
+Sorry.
+You can find that cosine of theta equals one because.
+That's not why you could not do that.
+Yes.
+That's that's a way of doing it which is contained
+in the proof of the Cauchy-Schwarz inequality.
+Or you can just use the Cauchy-Schwarz inequality.
+The second part of the Schwarz inequality says that the
+the equality.
+In consequence.
+We will see that later.
+So don't don't worry.
+Is is actually inequality if and only if the vectors
+are multiple from each other.
+And normally it's right the other way around it's red.
+If the vectors are multiple of each other, then that
+equality is true.
+But actually it's an if and only if.
+And that was the point of this statement.
+It works both ways.
+Okay, so it's enough to check that the dot product
+between two vectors is equal to the product of the
+lengths to show that they are collinear, essentially.
+Okay.
+, so yeah, this is, , , this wrong is
+within , is within quotes because it's just the unusual
+way of reading it.
+But if and only if work both ways.
+Okay.
+, so I want to take a break of ,
+10s before going to statement five and, , remind you
+of the whole of Cauchy-Schwarz inequality.
+As you probably can tell from the videos that hopefully
+you've watched the first video.
+I really stress how important Cauchy-Schwarz is not only in
+linear algebra, but across mathematics.
+, it's just a very convenient way.
+In mathematics.
+We need to bound things all the time.
+And the dot product is also very common in mathematics.
+And so any inequality that bounds cross product is very
+useful.
+And I'm sure you will see 101 ways of applying
+Cauchy-Schwarz in future courses.
+So just something to, , keep with you, , from
+this course here.
+Okay.
+, statement five was, , was this one the length
+of x minus z is equal to the length of
+x minus y plus y minus plus the length of
+y minus z.
+And most of you correctly identified this as false.
+And why is it false?
+What did I corrupt here?
+Because there you are saying that for each triangle, ,
+the length of one side is equal to the sum
+of the other two lengths.
+Yes.
+It's actually an.
+Inequality.
+Yeah, that's exactly what what what I'm saying is, I'm
+saying taking two sides of a triangle is as long
+as taking the third one, which is not wrong.
+How do I make it right?
+Just.
+Yeah, I just put a smaller and equal two there.
+, and, , and I get the triangle inequality, which
+is part of, , of today's topics.
+And, , a note that that, , that, , equality,
+, applies if the three vectors are collinear.
+I'm missing.
+I'm missing something here.
+I need to have both z and y a multiple
+of x, because then the vectors are on the same
+line, and therefore doing the two sides of the degenerate
+triangle that all lies onto a single line is equal
+to take the third one.
+Okay, so if they're all collinear, then, , my claim
+here in statement five would actually work.
+Okay, so now, , this is, , the most difficult
+things the size of today.
+So after this one, it's all going to be downhill.
+No worries.
+, I've come up with three vectors in R5, which
+is a is an unusually large vector space.
+So that's why that's part of the reason why this
+exercise is complicated.
+And what I want to do here is to create,
+, orthogonal set in R5.
+So I want to take vectors from this set as
+many as I want.
+And I want to add vectors in such a way
+that I have five, , , orthogonal vectors in R5.
+And , the question is how many parameters do I
+need to express the generic vector that are perpendicular to
+all three vectors?
+Okay, so I have these three vectors in R5.
+And what I want to do is to essentially complete
+the orthogonal set.
+So I want to account for the remaining dimensions which
+are not taken up by this set.
+And I'm asking you, , how many how many
+parameters do I need to achieve that?
+And the answer to this question, actually, let me hide
+them very quickly, is you can have, , well, you
+will see it on your device, but do I need
+one parameter, two parameters, three parameters or four parameters?
+I appreciate this question is a bit more complicated than
+usual, so if it's not clear what I'm asking, I'm
+happy to repeat and go over it again.
+, has.
+Is everyone clear with my request.
+Okay.
+If you have any question, just raise your hand.
+I'll give you probably five minutes for this one because
+this one is tough.
+Okay, I'll come around.
+So stop me if you have any questions.
+So, , just to clarify things a little bit further,
+if anyone has still any doubt.
+, nobody came up with any question, but I saw
+some confused faces.
+A scaled down version of that problem would be number
+two.
+Same problem, but smaller.
+, let's have this vector here.
+Zero one the the same question.
+How many parameters do we need to express the generic
+version for the generic vector perpendicular to this one?
+The answer is one, because, , the vectors that are
+a multiple of one zero are all and only are
+the ones and are all and only the vectors that
+are perpendicular to this one in R2.
+Okay, so this is the the reasoning that I'm thinking
+of that one is just a beefed up version of
+this.
+Okay, hope that helps with clarifying what I'm after.
+Okay, I'm going to give you 30 more seconds to
+finish voting now because we have two more questions after
+this, which are easy, but I want to take my
+time for that as well.
+Okay, so last few seconds to submit your answer.
+If you're still having voted, we're just about to.
+And then we'll go through this together.
+, okay.
+Let's have a look at what you came up with.
+Okay.
+so there's a good split between 2 and 3.
+, so we can go through this together right now.
+But if someone who voted to and someone who voted
+three is brave enough to tell me and the class
+why they think the other answer is wrong, I would
+highly appreciate that.
+Completely optional.
+You don't have to, but if you voted 2 or
+3, which spoiler alerts?
+The answer is one of the two and you think
+the other one is wrong.
+Can you tell me your reasoning?
+Yeah.
+So just, , just for everyone to hear what he
+said.
+He said so.
+So you voted three.
+He voted three.
+And he thinks that two is wrong because one of
+the vectors in the set is a linear combination of
+the other two.
+Okay.
+I'll leave that to, , to steam for a minute,
+maybe try to discuss his observation, and then we will
+do a raise of hands between 2 and 3 again.
+Okay, so one more minute.
+Discuss with that insight.
+, is I'm telling you, the answer is not four
+is not one.
+It's either 2 or 3.
+And then we will do a raise of hands.
+Okay.
+Prepare yourself for your for the hand raising.
+, if you think the correct answer is we need
+two parameters, please raise your hand now.
+Okay.
+If you think we need three parameters, raise your hand
+now.
+Okay.
+That's, , less turnout than, , the last election, but
+that's good.
+Okay, let's, , let's actually go about and do it.
+Okay, so that observation, thank you very much was the
+winning one.
+The answer is in fact, three.
+And the reason is exactly that.
+It's because the vectors are not linearly independent.
+, but actually the third one is equal to the
+sum of the two of the first two.
+And so in particular, the span, the space of the
+span of the two of the three vectors will be
+equal to the span of the first two, because the
+third one is already in the span putting it ,
+in, , in the in the set.
+Generating the span doesn't really add anything to the span
+itself.
+And then there are two ways of thinking about this.
+The first one is to think about dimension of subspaces
+and dimensions of span.
+The dimension of the span is equal to the dimension
+of the number of linearly independent vectors.
+So it's two and the dimension of the space is
+five.
+And so how many dimensions are left?
+, well, it's five minus two.
+So we have three missing dimensions, one parameter per dimension
+to parameterise.
+, the components along that specific dimension.
+And we get three.
+And this is an okay way of reasoning if you've
+grown familiar enough with how dimension and hyperspace is work,
+that's all good.
+But if you're, .
+I'm sure we can always revert back to solving a
+linear system.
+Now, the vectors were given in a in a column
+format, but we can always transpose them and nothing really
+changes.
+We just put them in line.
+And then we can consider this system here.
+Right.
+Which is the system created by the first two vectors,
+which are the linearly independent ones considered as rows of
+an augmented matrix of a system.
+And so we have five, , we have five variables
+and we have two independent equations.
+So how many parameters do we need to give out
+the solution.
+That will be three parameters okay.
+And note that if I was to put the
+the third equation in the one given by the
+third vector, that wouldn't change, , that wouldn't change the
+number of independent equation, because the third one would be
+just the sum of the first two, because the vectors,
+of course, are in relation with each other.
+Okay, so this exercise was to give you an insight
+of how dimensions and span and hyper spaces work in
+higher dimension, which is exactly what we did here subconsciously
+in a.
+In essence, this vector here locks in one dimension, the
+bottom one, the y dimension.
+If we're in our two xy and we need how
+many parameters do we need?
+Well, we need as many parameters as we have three
+dimensions which is one.
+It's the x here.
+And this works here as well.
+Okay.
+Do you have any questions.
+Right.
+So the next question will be something a bit new
+at least I've never tried it.
+The next book club question is an ordering question without
+please, without looking at the words proof on the book,
+because that would be very easy.
+I have created a blog, proof of the words inequality.
+All the passages are in there, but they're all mixed
+up.
+Can you reorder to create a proof that makes sense?
+And that is your next your next task.
+So I'll give you a few minutes to think about
+this.
+Okay, so what I about this exercise, I'm not
+going to stop you quite yet, but it really helps
+you to think about what logical step you can do
+at some point.
+And one tip that I give you is be careful
+of using quantities or relations that you have not yet
+introduced.
+That would not give us a logically consistent proof.
+So make sure that everything you use in a line
+you have either in the hypothesis or you have introduced
+it, , in a line above, because that is really
+what, , logical consistency, , means in, , in the
+context of proofs.
+Okay.
+30 more seconds to, , finish this task because we
+only have ten minutes left and we still have a
+question, so I want to spare some time for that
+one, even if the last one is very quick.
+Okay, we are in 92.
+If you can please finish voting, so maybe we can
+reach 100 in this question as well then.
+That would be great.
+9899 100.
+Okay, let's have a look at the, , the most
+common answers.
+So the caveat here is that there's two versions that
+works because two steps you can put in.
+Either way, it doesn't matter because they're sort of independent.
+, okay, I'm going to go through my reconstruction and
+then you can, you can check along which, which answer
+you, you have put down.
+Okay.
+What's inequality?
+, how does it work?
+Well, typically if we check special cases this one,
+, if the vectors are zero, we can get rid
+of them straight away.
+It's a sort of a nuisance that we can deal
+with at the beginning.
+It's a very simple case.
+Get it out straight up.
+, straight.
+Straight ahead.
+So, , we check that if the vectors are the
+zero vectors, there's nothing to prove.
+We have zero less than or equal than zero, and
+everything works.
+Okay, so why do we do this?
+Well, because then we can assume, , that, , a
+is greater than zero and , y is, , Y's
+length is greater than zero as well.
+Okay.
+, now, , this is where the two, , interchangeable,
+, lines comes in.
+As you can see, there are exactly the same.
+I just calculate different quantities with a different sign in
+there.
+And so by calculating that equal to the cross product,
+we can show two different inequalities.
+Okay.
+And these two lines three and four you could put
+in either in either order.
+And these are really this is really the core of
+the Cauchy-Schwarz proof, because then step five and six are
+just tightening up three and four.
+And so we have two quantities a, b
+minus the, the scalar product greater than equal than zero
+and ab plus the scalar product greater than zero.
+So by reordering that we can conclude that the scalar
+product sits between minus ab and ab, and that is
+equivalent to writing the scalar product , smaller than the
+absolute value of a and b, which then we can
+write as the length.
+Bye bye bye.
+Point two.
+Okay, so here you can see why we did 0.1
+at the very beginning, because, , that allows us to
+write step six, that the lengths are greater than zero.
+So we can divide and move them around without any,
+any worries.
+Okay, so congratulations.
+If you reconstructed the proof correctly and then we can
+move to the last question we check out.
+Very simple.
+It's just a lecture summary.
+So it's a multiple choice sort of complete the complete
+the the sentence.
+I'll give you a couple of minutes and then we
+will we will tie up the lecture together , by
+going over these, , together.
+Okay, maybe we can just do the first one, get
+it out of the way, because it's so simple.
+Just scream the answer to me.
+Two vectors, u and v, are said to be orthogonal
+if their dot product is equal to.
+Yes.
+Excellent.
+What about number two?
+The equality holds if and only if U and V
+are.
+.
+Linearly independent.
+And independent.
+Yeah.
+I don't remember the, , I would say orthogonal, but
+maybe orthogonal was not in the choices I made.
+Yes.
+Also linearly independent would work.
+, no.
+Or linearly dependent.
+Oh, okay.
+Okay.
+Okay.
+Number three.
+The triangle inequality.
+The length of the sum of the two vector is.
+Someone tells me otherwise.
+I have to peak less than or equal to.
+Yes.
+Excellent.
+Number four, the equality holds only a few.
+And VR.
+Yes.
+That's the second part of the Cauchy-Schwarz again.
+And now for number five and number six.
+Let's go over them together.
+, let's actually start from six just because it's easier.
+, what is the maximum value of the scalar product
+between , two vectors?
+Well, , the best we can do is to bound
+the quantity.
+With the Cauchy-Schwarz.
+Right, we can .
+We can bounded above by the product of the length
+and that that value is realised when the vectors are
+collinear and oriented in the same direction.
+So we can't bound them any stricter.
+We can say, , less than 0.9, because we can
+find two vectors for which that bound is not true,
+and solution of five, which was by far the most
+difficult of this of this one.
+Let's have a look.
+, yes, you did very well.
+, this comes from the triangle inequality, and unlike the
+others, this is not quite a straight, straight,
+goal, but, , it's not too far off.
+, we can, , .
+We can use the triangle inequality, applying it to x
+minus y plus y, and that it's greater than x
+minus y.
+Length plus y length.
+And on the right hand side we get just the
+length of x.
+Because obviously y and minus y simplify on the left
+hand side.
+And then we can do the same thing with everything
+reversed.
+So now we have y equals y minus x plus
+x.
+And now note that we have that x minus y
+is greater or equal than x minus y.
+And it's also smaller equal than the other one.
+And so we can conclude with the with the form
+of of the question.
+So that is a, that is , a consequence of
+the triangle inequality.
+It's 1:00.
+So the lecture finishes here.
+If you have any question, please come and see me.
+Thank you very much for coming.

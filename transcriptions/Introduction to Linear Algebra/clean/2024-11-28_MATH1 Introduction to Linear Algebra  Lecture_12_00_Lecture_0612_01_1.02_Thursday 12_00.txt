@@ -1,0 +1,1124 @@
+So.
+Right.
+Okay.
+So welcome to this, , last but final session of
+Ila.
+, as advised on the announcement, I will be doing
+a sort of high level revision session today.
+, and then tomorrow there's two tutors that will give
+a much more sort of practical examples.
+Type class.
+Yeah.
+I hope you're getting something from that.
+, so my, , what I'm doing today is, is
+a quite different style to what I've done so far.
+So there's not new material.
+I won't be having any club polls, but rather I
+try to sort of organise a bit of all the
+stuff that we've done into sort of what, what are
+the really important things?
+How do they fit together?
+What are the things we expect you to be able
+to do for the synoptic assessment, or people that later
+expect you to be able to know this of all
+the stuff that we've done.
+And I'm also trying to show you a little bit
+of where these things are used for outside of Ila.
+Yeah.
+So you probably had a little bit of that, but
+this is a sort of overview.
+And to some extent the slides that I've got here
+will be uploaded and they should be sort of reference
+material for you to be able to look through and
+say, oh yeah, these are the things I ought to
+know.
+Right.
+Okay.
+Without further ado.
+So this is the stuff that we've done here.
+I've just copied all the chapter titles from Nicholson there.
+That doesn't necessarily necessarily tell you very much.
+So rather organise this into a sort of few skills
+or things that we've done.
+So we've done we solve systems of linear equations.
+That was the first major bit.
+I talked a bit about matrix algebra algebra.
+And we had inverses of matrices.
+We had determinants.
+How to calculate them.
+We talked about transformations the relation between linear transformations and
+matrices.
+How to find the matrix for a given transformation.
+we've done, done quite a bit of, , ,
+vector geometry, starting with dot products and cross products and
+how to use these to describe lines and planes in
+R2 and R3.
+, and then also sort of a bit more abstract
+bit of talking about a basis of subspaces.
+We have concepts that have no row column eigenspaces.
+, and we talked about orthogonal basis and eigenvalues
+and eigenvectors.
+Yeah.
+.
+Oh yeah.
+And then finally diagonalising a matrix.
+So these are the sort of stuff that we've concentrated
+on, the stuff that we taught you.
+, and just as a highlight and I want to
+go a little bit more into sort of most of
+these and tell you a few more things about that,
+what that means in practice.
+So let's start with Gaussian elimination.
+, the the first thing to say there is really
+that Gaussian elimination.
+If there's one thing that you remember from this course.
+One skill you can do then this would be Gaussian
+elimination.
+Yeah.
+This is one of the most important algorithms, not just
+in what we taught, but full stop anywhere really.
+, and it's sort of, , drive home that point.
+So if I look here is an article from Nick
+Higham, , one of the most, , sort of respected
+applied mathematicians in Britain.
+Unfortunately, he died at the start of this year.
+, actually, his brother death as a teacher, as a
+professor in the school of math here.
+, but he's he's a really known person.
+He had a sort of top ten algorithms in applied
+mathematics.
+, and if you go further down here, , there's
+the list of algorithms, and we should make this a
+little bit larger, , in order actually.
+And in number two, you have matrix factorisation you into,
+let's say a little bit about where it's coming from.
+It's basically Gaussian elimination.
+Yeah.
+So this is this is really an algorithm that is
+used any everywhere.
+Right.
+Okay.
+Go back to that.
+Carry on.
+So, , what have we sort of within our LA.
+, we've used this obviously to solve linear systems of
+equations, but then quite a few other things where Gauss
+elimination came up finding inverses of matrices, calculating determinant.
+, quite a bit of stuff to do with lines
+and planes, vector geometry, , testing whether some vector is
+a linear combination of other, whether they're linear independent.
+All of this has been done by Gaussian elimination.
+And also, , finding bases of various spaces and then
+finding eigenvalues and eigenvectors.
+So it's popped up in Ila pretty much in every
+topic.
+, and outside of Isla, as I said, , everywhere.
+Yeah.
+It's just keep coming sometime in its variants of Lu
+decomposition or Cholesky decomposition is what Nick Higham here said.
+Both of those I think are covered in Nicholson.
+We just didn't go through them, you know.
+But you will you will likely see these again.
+Under these guises.
+But there's really not much going on other than what
+we already had.
+Right.
+Okay.
+I think I want to actually get away from the
+laptop here and have both screens.
+Okay.
+So, , I sort of each of these topics, I
+divide into sort of, , skills, things that, you
+know, should know how to do.
+And I also have something on theory that is applicable
+that you should be aware of, you know, so Gauss
+elimination, the skills are you should be able to perform
+row operation to guess to row echelon form or reduced
+row echelon form.
+Obviously, , find elementary matrices corresponding to the row operation
+and use these all to determine solutions to system of
+equations, But also we know that there's not always just
+one solution.
+There can be zero and infinitely many.
+So you should be able to distinguish these cases and
+if necessary, or if applicable, write down a basis of
+the solution space.
+Now substituting in parameters.
+Doing that and know how to apply this to.
+For example, find the inverse of the matrix.
+Find an eigenspace for an eigenvector.
+.
+Determine the basis of knowledge space, common space, or so
+on.
+.
+There's more.
+When I get to that, , that I'll tell you
+where where these things are.
+Right.
+Okay.
+Theory, , applicable to Gaussian elimination.
+, so the effect of row operations.
+No, they don't change the solution space.
+They don't change the null space, they don't change the
+row space.
+, they may change the determinant depending on what you're
+doing.
+, type three I think, or, , just adding one
+column to run row to the other doesn't, but more
+deploying or swapping rows has an effect, so be careful
+with that.
+, there's an equivalent with elementary matrices, and we can
+determine the rank here by leading ones in row echelon
+form.
+Yeah.
+Right.
+And just as a note, we didn't say much or
+that we've done this or for row operations, pretty much
+the sort of same or similar theory can be developed
+regarding column operations.
+But we haven't really done this here just as a
+sort of awareness.
+Okay.
+So after, , Gaussian elimination, the next thing we did
+was matrix algebra.
+So how to work how to calculate with matrices and
+vectors.
+, so things you should know how to do obviously
+is the rules here.
+So how do I multiply a matrix with a vector.
+How do I multiply matrix with a matrix.
+How do I do a dot product or scalar product.
+How do I do a cross product.
+, I should you should be able to find the
+inverse of the matrix and determine when a matrix has
+an inverse.
+Again Gaussian elimination.
+We've just done that.
+, the theory that we have is while the usual
+rules of calculating with matrices.
+So we had associativity there.
+We had the distributive law.
+, those work as you'd expect.
+We had things that do not work matrices.
+Matrix multiplication isn't isn't symmetric.
+The order matters.
+Yeah.
+, we had stuff that , so c a equals
+c b for just highlight that there, does that follow
+that a equals b.
+And you remember.
+You can tell me whether that's true or not true
+up there.
+It is true when C is invertible.
+Yes.
+So if C is invertible you can multiply both sides
+from the left with c inverse.
+Otherwise this might not be the case.
+Be aware of things that.
+, also, if you do something multiplying matrices together,
+the dimensions much must match.
+You can't do all matrix matrix product or matrix vector
+products and to some extent in this aspect calculating with
+them vectors are really just a special case of matrices.
+Right okay.
+We have these only of course invertible.
+Okay.
+So we talked about inverses of matrices.
+So we had quite a few sort of matrix inversion
+theorem telling you properties about matrices that are equivalent
+to a matrix being invertible.
+I put this sort of in the sort of order
+of importance rather than the order in which we've done
+that.
+, so the most important is probably determinant not being
+equal to zero.
+, but there's quite a few others.
+So that is equivalent with a rank on the matrix
+being a full rank.
+, there's a couple of properties regarding systems of equations.
+So for example, homogeneous system only has the trivial solution.
+Homogeneous system is a system where the right hand side
+is zero.
+Yeah.
+Or indeed.
+This.
+Here is a special case of the one below.
+There is a unique solution for every right hand side.
+So in homogeneous system the unique solution has to be
+zero.
+Yeah.
+something to do with the growth or the columns.
+So if the matrix is invertible, the rows or the
+columns are linearly independent and each set of them spans
+the whole of RN.
+And the first thing we had actually was that you
+can reduce the matrix to the identity by elementary row
+operations.
+So this is all , or the same as .
+, as .
+The matrix being invertible.
+So that brings us to determinant.
+So , these are used for, we use them for
+first of all, determining whether a matrix is invertible, that
+how we introduce them.
+, but then they had quite a big role to
+play in finding eigenvalues, , through the correct characteristic polynomial.
+, and I also said these can be useful for
+determining whether a set of vectors is linearly independent.
+If you've got n vectors and n dimensions, you can
+work out the determinant.
+, and if that is non-zero, these are linearly independent.
+, there's a few oddities that came up aggregate
+or Cramer's rule.
+, not sure how important they are.
+They come up sometimes as an oddity, sort of.
+They allow you to do some proofs.
+You suddenly say, oh yeah, yeah, I've got Cramer's root
+and then everything.
+Everything works out.
+But I'm not really sure whether there's much practical applications
+there.
+Okay.
+So, , things you should know how to do with
+determinants.
+Obviously calculating them.
+So we've got an explicit formula for two by two
+matrices for higher dimensions.
+You typically want to expand by row columns, try to
+exploit zeros or in some cases actually doing row and
+column operations to try to bring the matrix into triangular
+form.
+And then the determinant is just the mould, the, the
+the product of all the diagonal elements there.
+So that might be the best way actually most efficient
+way here for general matrix rules for working with determinants.
+, so to some extent this is what you'd expect.
+I want to make you aware, , first of
+all, maybe maybe the bottom one here.
+So you can take the product determinant of A and
+B apart here, , which also means that within a
+determinant you can actually swap the order of matrices without
+changing the determinant.
+Yeah.
+That can be that can be really quite useful in
+a lot of things.
+Remember that.
+And the other one, if you take a factor k
+out of the determinant.
+Now you might be used.
+We've talked about linear transformation a lot of stuff.
+If you take a factor out it's just the factor
+that stays there.
+That seems to be a natural thing.
+And you might think this works everywhere.
+, for determinants this doesn't work.
+If you take a factor out, it comes out with
+s k to the power of n.
+Now be aware of that easy mistake, mate.
+, so I said about effect of row column operations
+on the determinant.
+And this is used to determine whether a matrix is
+invertible.
+Okay.
+So we use this to do vector geometry.
+, so we've had quite , sort of these are
+various different lines and lines in our 2 or 3
+planes in R3 that we could describe by different forms
+of a parametric or normal version of these equations.
+Smell.
+So I, I claim that there's really only two that
+you have to have to work.
+, no.
+, one the normal form, , and the other, which
+is here called vector form.
+I tend to think about this as the parametric form.
+So in the parametric form of vector form, you have
+a sort of one point on your line or a
+plane.
+, and then some vectors that give you direction which
+you can move along this plane.
+Now, , the one that I have greyed out there,
+the parametric form is at the very bottom is really
+just the vector form written in components.
+There's nothing different going on.
+It's just it's just different notation.
+Right.
+Going back.
+Now the normal form , again you've got P here
+which is any point on your line or on the
+plane.
+, and then you, , I just realised this.
+You should be the same P obviously.
+, and then you've got a normal vector vector which
+is perpendicular to that line in R2 or to the
+plane and R3.
+Or actually, if you want to describe a line in
+R3 unit two of these vectors here.
+, right.
+Okay.
+So you should know these forms.
+, you should yeah.
+You should know all of these units.
+You should know how to set them up.
+You should know how to convert between one or the
+other using stuff cross products or so that might
+be quite useful.
+, you should also have a sort of intuitive feel
+for them knowing what they really what they really tell
+you, you know.
+So an example that I have here is the following.
+So if I've got a plane in R3 that goes
+through the origin, does that mean that the vector, the
+p here in the vector form has to be equal
+to zero?
+You know, it just has to be a scalar multiple
+direction vector.
+Doesn't necessarily.
+Yeah.
+It doesn't necessarily have to be zero.
+Yeah, the P in all these forms actually is just
+one point on the plane or on the line.
+It could be the origin.
+And indeed, if I see that the P is zero,
+that it must go through the origin, but otherwise it
+could just be any.
+There's plenty of others.
+Yeah.
+So know that these things, what they stand for and
+what, what what they actually try to encode them.
+Mhm.
+Right.
+Okay.
+So to some extent the vector geometry is a
+bit unrelated to the rest of Illus in this application.
+But it is important in other areas, you know, so
+there's quite a bit of sort of physics engineering, machine
+learning actually uses quite a lot of ideas from vector
+geometry.
+, obviously something computer graphics or so.
+, you tend to do these things.
+So things you should know how to do is ,
+calculating cross product, scalar product, determining angles between lines
+and planes, determining volume of certain things.
+, calculate Projections onto lines, planes being able to calculate
+the length of a vector or distances.
+Now the theory that that leads into is the I
+have put down here the triangle inequality.
+That is something again that comes up everywhere.
+The triangle inequality in all places where you don't expect
+that there have nothing to do with geometry.
+It's a very, very powerful theoretical tool.
+And one thing that I wanted to make you aware
+here is if I look at those that are highlighted
+in red here, , scalar product determining angles, length of
+vectors, distances, projections.
+And if we're talking about length and the triangle inequality,
+all of those really rely on and only rely on
+the scalar product.
+You know, if I know a scalar product between two
+vectors, I can work out all of these.
+I don't need to know anything else about what a
+length, what the distance is or so.
+I only need to know what a scalar product is.
+Now I can generalise these.
+So I say all of these depend on the scalar
+product.
+I said we can work in other vector space.
+It doesn't have to be the real number.
+I can for example a function space is a really
+odd things.
+As long as I can determine or define something that
+is a scalar product in them, I automatically get all
+of these, get projections, get length of vectors, get angles,
+and something that that I can define in all
+of these things.
+So I can can define angles between two functions for
+example, and things that.
+And these tend to be quite useful actually.
+So be aware of that.
+Scalar product is quite important.
+Stuff the draw of generalisation is what is called
+a Hilbert space.
+That's a vector space with a scalar product.
+And at least those of you who are doing mathematicians
+will will see them.
+Okay, so I'm starting to get a little bit more
+abstract.
+, so the next thing is linear transformations.
+, right.
+Okay.
+This is quite small.
+You've seen this.
+This is a page from Nicholson again.
+, so a linear transformation, , is a transformation of
+it if it satisfies these two axioms that we had
+and we talked about this, that they preserve addition and
+scalar multiplication.
+Now I talked about this in the context here of
+the determinant which isn't linear.
+But typically if I've gotten a and take that out,
+it just stays less than a , and I can
+break up an addition between two vectors by just adding
+their, their things.
+So the important thing we had about them was this
+theorem here, , which says the main thing here is
+if I've got a linear transformation or a linear transformation
+is linear if and only if it is a matrix
+transformation.
+So matrices and linear transformation to some extent are the
+same thing.
+So I said at the beginning, we can think about
+one question that this course addresses is what are actually
+matrices?
+And so this is one answer.
+A matrix is a linear transformation or can describe a
+linear transformation.
+Right okay.
+The other thing is that is quite useful is that
+this theorem tell you if I know the effect of
+a linear transformation on some vectors, I can actually write
+on the matrix.
+Yeah.
+And indeed I think I have that right.
+Okay.
+I'll come back to that.
+So some trivial examples of linear transformations where the
+identity if I don't don't do anything that's a linear
+transformation.
+If I met everything to the zero vector, that's the
+linear transformation.
+, note that that only works for the zero vector.
+, if I map everything to another fixed vector that
+isn't zero, that isn't linear.
+You know, we did say one easy way of recognising
+them is a linear transformation.
+Must map 0 to 0.
+Anything that doesn't do that can it cannot be linear.
+Yep.
+.
+Scalar multiplication.
+, so also if I'm scaling so say everything, I
+double every vector.
+That's a linear transformation.
+I can have different scales in different directions.
+I can double the x component and multiply the y
+component by three.
+that will also give me a linear transformation.
+so these works.
+Translation is not a linear transformation doesn't map 0 to
+0.
+So just moving everything to the side isn't linear.
+, projections are linear.
+, we have this weird property there that, , a
+transformation is defined to be a projection.
+If I apply twice, it's the same as applying it
+once.
+, which is a funny sort of.
+You can think about it and think that this is
+true.
+But it's again, a sort of funny thing about defining
+things by their properties rather than telling you directly what
+they are.
+, rotations are linear transformations.
+Now that's a that's a big example.
+, I haven't put on, but, , mirroring reflections
+or also linear transformations.
+Be aware of this.
+, now I've got a rotation there and I say
+rotation by theta degrees.
+, so the obvious question if I say that is
+this clockwise or anti-clockwise?
+You say anti-clockwise.
+It's a relatively safe answer.
+Yeah.
+Typically, typically, if I don't say anything in mathematics, I
+always assume it's going to be anticlockwise.
+, I might have tried to confuse you, but this
+is actually anticlockwise.
+This is the matrix for anticlockwise.
+How would I check that?
+So I said here the second part of this theorem,
+that all I need to know is what the matrix
+or what the transformation does on the basis vectors.
+, so it's fully specified by the image of the
+basis vectors actually with respect to any basis.
+, we've done this here with respect to the standard
+basis, but you could do this with any basis.
+It would still work.
+Yeah.
+So, , so we have the following there that we
+say if we've got a transformation that maps the first
+basis vector to AC and the second one for to
+BD, well then it must have a C and BD
+as its columns, which you can quickly sort of satisfy.
+If I multiply this out one zero times that makes
+it gives me AC01 times that makes this gives me
+bd.
+So that must be the matrix here.
+So I can now go and apply that to the
+rotation and think well what does the rotation do if
+I have the first unit vector there.
+So this one here, on rotate that by theta
+degrees anti-clockwise.
+That will give me this green one there.
+, and then I need to do a little bit
+of trigonometry and realise that those components are actually the
+cos and the sine.
+So that's got to be the first column of my
+matrix.
+And I can do the same with the other unit
+vector.
+And that gives me the other one.
+So if you want to know something about a matrix
+what transformation is it.
+If you've got a transformation want to know what matrix
+is it?
+First thing probably is just look at the unit vectors.
+That typically tells you everything you need to know about
+what's going on here.
+Okay.
+So, , things you should be able to do, ,
+determine if I give you a transformation or describe a
+transformation, should be able to tell me whether this is
+linear or not.
+, similarly, it should be able to find the matrix.
+, just showed you how to do that.
+You said to some extent be able to go the
+other way around.
+Describe the transformation defined by a given matrix.
+Now, we haven't done that completely.
+, complete that I have given you a set
+of rules.
+It's come up in different ways.
+So I'll just say this here.
+I say a little bit more later when I talk
+about eigenvalues.
+, we've talked a bit about concatenation of two matrix
+transformations again.
+If in doubt, have a look at what happens to
+the unit vectors.
+that usually will get you there.
+theorems or theory.
+, the definition obviously of linearity being able to apply
+them.
+, so that means if I do know this image
+x and y of x and y, I actually know
+the image of x plus y.
+, that might be hidden in some way or so,
+but, , that's a useful thing to know.
+, it's completely defined by its action on the basis
+vector set that a few times.
+Another thing, because linear transformation are the same as matrixes,
+they allow you to determine whether a matrix is invertible
+by thinking, whether the linear transformation that it describes can
+be undone.
+You know, a rotation.
+If I rotate, I can rotate back.
+Yeah.
+No problem.
+If I mirror a reflection of a if I reflect,
+I can reflect back again.
+No problem on doing that a projection.
+If I project, I can't undo it.
+At least I don't know exactly where I've come from.
+Yeah, so the projection cannot be invertible.
+Again, this is a nice test to see whether stuff
+is invertible or not.
+Okay.
+So after that we've sort of gone really to the
+sort of more abstract part of things, , subspaces basis,
+linear independence, rank nullity, all these things.
+So we've done a few things about subspaces.
+, so again, we sort of have axioms of what
+a subspace is.
+And we sort of set hand-waving.
+, so this looks similar to linear transformation.
+A subspace is something that we can define a linear
+transformation on.
+, so what are subspaces, , in R3 lines and
+planes through the origin of subspaces.
+Or they're sort of a generalisation.
+If you go to a higher dimensions, , lines and
+planes that not don't go through the origin or not
+subspaces, then a subspace must include the zero vector.
+And indeed that was one of the axioms of a
+subspace.
+, we've had a lot of different things that are
+subspaces null space, column space, row space a set of
+eigenvectors to a particular to a particular eigenvalue is also
+a subspace.
+, so be aware of that.
+, the span of vectors is a subspace.
+Indeed.
+That's how we sort of motivated, , the span.
+, so I should talk about the span.
+, again, we've had this definition of span is the
+set of all linear combination of these particular vectors.
+, and we we talked about whether sort of there's
+a superfluous vectors in the spanning set.
+, and we've seen that this isn't the case.
+None of the vectors are superfluous.
+None of the vectors we can delete if these vectors
+are linearly independent.
+And there's a weird definition there that spent some time
+on saying this is really the same as saying that
+none of these vectors can be written as a linear
+combination of the others.
+Again, be aware of being able to play with these
+two properties, and if you do have a set of
+vectors that both span and are linearly independent, this is
+what we call a basis with all the properties that
+we just talked about in for a basis for linear
+transformations.
+Nope.
+, right.
+Okay.
+So what should you do?
+What should you be able to do?
+.
+Determine if vectors are linearly independent.
+, if I give you some, , determining a vector
+is a linear combination of some others.
+, if I give you a set of vectors, does
+this span a subspace?
+Is this the basis of the subspace being able to
+find, , a basis for a given subspace?
+, and, , I thought I said there, well, I
+come I'm sure come back to that.
+, , so theory you should be aware of, I
+did say about, , sort of the linear dependence really
+just means no vectors, a linear combination of the others,
+, basis spans and is linearly independent.
+, different basis if I can't have a basis isn't
+unique, I kind of different basis for a subspace from
+an R2.
+I can have just a standard basis, or I can
+have any set of three linearly independent vectors, but all
+bases must have the same number of elements, and that
+is what we call the dimension.
+, right.
+Okay, good.
+So then we had a, , sort of interesting thing
+about this sort of concept of rank and dimension.
+So there are two very useful theorems there.
+, the one of them is the what is called
+the rank theorem.
+, this first of all, tells you that the dimension
+of the column space of the matrix is the same
+as the dimension of the row space.
+, which might be surprising, but it's similar to, ,
+determinant being the same, and that if a matrix is
+invertible, both rows and column vectors have to be linearly
+independent.
+, but , so the dimension of the row and
+the column space is the rank.
+And it actually concretely tells you in the second part,
+how do I find a basis of the column space
+of the matrix or a row space of the matrix.
+So that is a sort of standard question that might
+come up.
+This theorem the second part tells you what to do.
+So it's a useful thing to remember.
+, the other thing is what is called the rank
+nullity theorem.
+, so this one is again one of those we're
+thinking you need to sort of read this carefully three
+times before you know what it tells you.
+, but what it tells is the following, , that
+the rank of a matrix plus the dimension of its
+null space has to equal the dimension that you're in.
+So in other words, if a matrix is rank deficient,
+if you're missing dimensions from the rank of a matrix,
+these and exactly those have to appear in the null
+space.
+So I see again a useful thing to to calculate
+with some of those.
+Right.
+Okay.
+So finally things you should know.
+There should be able to determine the rank of
+the matrix by sort of any of the of the
+methods.
+Gaussian elimination.
+Bring it in row echelon form.
+Maybe you know something about the null space.
+You can use the rank nullity theorem.
+Maybe you know how many vectors are linearly dependent or
+not linearly independent.
+Yeah.
+Determine the dimensions.
+Find basis for row space, column space, and null space.
+Last theorem that we had.
+, every base has the same number of elements.
+I said the dimensions are the same.
+The nullity theorem is surprisingly useful in a lot of
+things.
+Okay, so that brings us to the sort of last
+major topic which is eigenvalues and eigenvectors.
+Now, I was a bit surprised.
+This is a little bit hidden in Nicholson.
+, actually it doesn't have a chapter called eigenvalues.
+Eigenvectors is somewhere hidden into a diagonalization.
+So I would claim that eigenvectors eigenvalues if there's another
+thing apart from God's elimination, you want to remember from
+this course, this is it.
+Yeah.
+This really is very important everywhere in sciences.
+So, , what is this used for within the Ila?
+We use this to talk about diagonalization of matrices.
+And we've got a little bit of insight into the
+geometric transformations described by a matrix.
+I set this earlier.
+So if I know the eigenvalues and eigenvectors I can
+tell you something about what this is what this thing
+does know.
+So if I have a reflection by necessity I need
+to have a minus minus one as an eigenvector eigenvalue.
+Because there is what there are some vectors which are
+mapped to it's, they're negative.
+And I also have to have an eigenvalue that is
+one, because anything in the line or the plane of
+the projection of the transformation is not going to be
+mapped at all.
+It's just going to be mapped to itself.
+So if I've got eigenvalues of one and minus one,
+there is a reflection in there.
+If I've got an eigenvalue of zero there's some sort
+of projection going on.
+A projection maps something to zero, which wasn't zero beforehand.
+And that's always the case.
+Eigenvalue of zero is parametrically.
+There's a projection going on if I haven't got a
+full set of eigenvalues, if I'm missing some because the
+characteristic characteristic polynomial doesn't factorise completely.
+I have a, I have a rotation as part of
+the whole thing.
+So a rotation matrix doesn't factorise completely, and indeed that's
+always the case.
+So I will have as part of the whole thing
+I have a rotation.
+So you can give me some, you can get some
+information about what is going on geometrically.
+As I said, we haven't done this completely, but just
+sort of keep in mind that these things are related.
+Right.
+Okay.
+So where does this lead to outside of Ila?
+And I would claim pretty much all areas of sciences
+Use eigenvectors, eigenvalues, and not just sciences or the medicine,
+humanities or all of these.
+The reason the main thing is really analysis of dynamical
+systems.
+So a dynamical system is something that evolves over time.
+We sort of you in every time step it basically
+the same thing happens to that again.
+So something disease dynamics population dynamics.
+You can say I've got certain number of infected people
+one time step later, there's a rule that tells me
+what happens after that.
+Population dynamics the same predator prey models.
+If you've seen that you know this is a dynamical
+system.
+Also quite a bit of stuff.
+And mechanical engineering or power systems engineering, , can be
+described by dynamical systems and eigenvalues tell you whether such
+a system, what the long term behaviour is, it's the
+stable will any perturbations to the system die down or
+will they blow up.
+You know, So there's a that's a famous example.
+This is the Tacoma Narrows Bridge in the US, which
+I think in the 60s collapsed with the wind coming
+through.
+And the reason is nobody has done the eigenvalue analysis.
+There were some perturbations, namely wind speed coming through at
+a certain direction where the perturbation didn't die down.
+Indeed, , got bigger and bigger.
+So the bridge collapsed.
+But in order to to for this not to happen,
+you can work out eigenvalues of the system and see
+what happens there.
+I give you give you an example in a second,
+, things you should know how to do.
+, calculate eigenvalues of a matrix, obviously including their multiplicity.
+Calculate corresponding eigenvectors and the space the, the basis of
+the eigenspace.
+, and I said a little bit about the concept
+between eigenvalues, what they actually mean to the geometry of
+a certain transformation.
+You know, , there's a bit of theory that I've
+got in italics there, because if not really done any
+of that properly, it's all in Nicholson.
+And we've mentioned a few things.
+Cayley Hamilton came up as a discussion task.
+There's something about complex numbers, of course, everything factorises and
+you always have n eigenvalues.
+, I did say that if you're missing some in
+real numbers, there's a rotation there.
+We haven't really done that.
+It's just stuff to be aware of.
+, where this is where this is leading.
+Okay.
+, then we talked about diagonalization and similarity.
+So matrix A is Diagonalisable.
+If there is a vertical matrix P minus p such
+that I p minus one a times p is a
+diagonal matrix.
+Now or if I half that I can turn it
+the whole way round and say I can decompose my
+matrix into a diagonal matrix and sort of some, some
+mapping there that doesn't undoes a transformation.
+Right?
+Okay.
+So if I have something that.
+Very nice.
+The element of D.
+Here are the eigenvalues of my matrix and the columns
+of the p.
+Here are the corresponding eigenvectors.
+So that's a nice thing.
+Now not every matrix is diagonalisable unfortunately.
+So you should know the theory behind it when I
+can tell that.
+So the real criterion is that all eigenspace for every
+eigenvalue I can work out the eigenvectors.
+That gives me an eigenspace.
+You know the set of all the eigenvectors to their
+eigenvalue.
+And I can work out the dimension of that.
+So for all eigenvectors the eigenspace must have the same
+dimension as the multiplicity of this eigenvalue in the characteristic
+polynomial.
+So that's the criterion for Diagonalisable ability.
+It's a bit of a handful.
+There's a lot of lot of stuff to check.
+Now there's a few sort of shortcuts.
+One of them is if my matrix has got n
+distinct eigenvalues, every eigenvalues must have one eigenvector.
+So there must be at least of dimension one.
+Because I've got n of them, I've got n different
+ones.
+And the first criterion works.
+The other nice nice one is symmetric matrices.
+They always diagonalise.
+So that's also a nice one right.
+You should be able to find a diagonalization.
+And there was something about the sort of near diagonalization
+where if you've got missing eigenvectors for some of these
+eigenspaces you have some full columns in the matrix V.
+So that's something we have to do.
+, so theory that you should be aware of we
+have had conditions, we had these conditions here for Diagonalise
+ability.
+And we had a definition of similarity.
+But I'm not going to say more about that.
+Apart from that it is there.
+What I do want to say something about is this
+one here.
+, so this is very useful.
+So we had I said we had that.
+If it's diagonalisable, I can write p minus one, a
+p equals to D, or I can turn this the
+other way around.
+Now this is very useful, , to say if I
+now want to have the matrix A to some power
+A to the power k.
+Now if I, if I keep writing this, I've got
+a lot of p minus p in the middle that
+all cancel out.
+And I'm left with p times d to the k
+times p.
+Now d to the k is very easy to determine
+what that is now.
+And this now is the link to all the stuff
+I said earlier about dynamical systems and the analysis of
+them, because I can now tell you whether something
+A to the K, whether this some components of that
+go to zero or it blows up.
+Now if the corresponding eigenvalues is less than one in
+modulus, take it to a higher and higher power will
+that this will finally go to zero.
+If it's greater than one in modulus.
+It will blow up.
+If it's one in modulus, it does something else.
+It flips around or it rotates or something that.
+So that's the long term behaviour.
+Now if I go back to all these examples of
+dynamical systems, what they all have in common is that
+I've got a state of the system, I've got a
+vector describing what the system is in and the effect
+how the system evolves from one time period to the
+next can be described by the effect of a matrix
+by a matrix transformation, or at least approximated.
+So if I now want to know what happens in
+a hundred timesteps from now, I just need to keep
+applying this matrix over and over again.
+And to know what happens if I if I keep
+applying the matrix over and over again.
+If I know the eigenvalues, I can tell you exactly
+what happened.
+Well, so that's the where the sort of analysis of
+dynamical system comes from and why eigenvalues are important.
+Okay.
+So final thing.
+orthogonality.
+So we've talked about bases.
+Not all bases have to be orthogonal.
+The standard basis in N tends to be it's orthogonal.
+But there's other things.
+They don't have to be orthogonal.
+However if you have an orthogonal basis this can be
+very useful you know.
+So we have these Fourier coefficients.
+for example, if I, if I give you a
+matrix any matrix in R3 and I'll give you another
+vector, and I want you to express this vector as
+a linear combination of those basis vectors.
+Now I know that that's possible because they're a matrix.
+, but if they're not orthogonal, I would have to
+solve a linear system of equations.
+No, that's really the only way.
+Unless there's something trivially.
+And I just see what it is.
+Yeah.
+But usually you would have to solve a linear system
+of equations if they are orthogonal.
+, there was this sort of Fourier theorem that says
+I can calculate the coefficients directly by just doing projections.
+Now I can get them very quickly.
+, and if they're even orthonormal, I just need to
+do a dot product.
+Yeah.
+So , so this is this can be quite useful
+though.
+, eigenvectors.
+So same thing.
+Not all sets of eigenvectors have to be orthogonal.
+But again if they are this can be very
+useful.
+Now one important case, and indeed the only case where
+you have a set of orthogonal eigenvectors or basis of
+orthogonal eigenvectors is if the matrix is symmetric, and this
+is an if and only if symmetric matrices do diagonalise
+and the eigenvectors can be orthogonal.
+Can choose the eigenvectors to be orthogonal and vice
+versa.
+, now there's a nice application to that.
+, so before I do that, things you should be
+able to do is find an orthogonal, orthonormal basis.
+This is the Gram-Schmidt process.
+If I've got a basis and I want to make
+it into an orthogonal or orthonormal basis.
+, and also finding this applying this Fourier theorem, applying
+finding coefficients with respect to a basis.
+the theory should be where is this principle axis
+theorem.
+So that one was this one that I just had
+there that it says a symmetric matrix has an orthonormal
+basis of eigenvectors.
+Now, , that actually has quite a lot of applications
+in the sciences.
+And I want to just show you one.
+, and this is what it's called the tennis racket
+theorem.
+Now, those of you who do physics will no doubt
+see this again.
+It's just too nice a thing to do, but I
+decide to do that here.
+So I brought a tennis racquet.
+, and the idea is the following.
+I can try to rotate this tennis racket so I
+can rotate it, for example, that, you know, but
+I can rotate it in different ways as well.
+I can, for example, rotate it that.
+Yeah.
+, so that all works.
+Well, it's a bit, but it works.
+Yeah.
+I can try to rotate it this.
+And see what happens.
+It won't just rotate in that direction.
+It'll flip at the same time as a rotated.
+It will do a flip.
+And indeed, it is practically impossible trying to rotate this
+in this direction without doing a flip.
+It will just do that.
+Now, why is that the case?
+And this is not just a tennis racket.
+This is indeed any three dimensional object that you can
+rotate now physically, What's going on?
+If I want to move something that, what I
+need to know is it's mass.
+It's sort of resistance to being moved.
+If I want to rotate something, I need to know
+something.
+That's called the inertia.
+It's resistance to being rotated.
+If I try to do this in three dimensions.
+So I actually get a matrix of inertia, a three
+by three matrix of inertia that I can write down
+or calculate.
+Now this matrix of inertia is symmetric.
+Now symmetric matrix means I've got an orthogonal basis of
+eigenvectors.
+Now the eigenvectors are indeed the three possible rotation axis
+that I've just showed you.
+Those are the eigenvectors of this, , of this this,
+, tennis racket here.
+And there have to be orthogonal to each other.
+Now, why is one or why are two of these
+things stable and the other one not.
+It's again a dynamical system.
+It's again a stability analysis here.
+If I want to rotate it that I'm not
+perfect.
+I can't just rotate in this direction by either me
+not being perfect or by air resistance or something.
+It'll also get rotation components in the other two rotation
+axis.
+So and now I can look at what is happening
+to this motion that I put to it now.
+So there are some dimensions, some rotation acts in which
+this is symmetric any perturbation will die down by
+what the eigenvalues tell me.
+And there's some axis or some rotation components which will
+blow up.
+Well.
+So if I do this here or this here or
+the others, the rotation axis in which I'm doing will
+keep there, or the errors that I put in will
+die down, and the eigenvalues will tell me that if
+I do it that, the arrows won't die down.
+Yeah.
+So the rotation, the arrow that I put in there
+by air resistance or something else will blow up.
+It isn't stable in that direction.
+And as I say, that holds for any that holds
+for any object that I'm trying to rotate.
+It's a little bit more complex.
+It's not just as simple.
+You have to go.
+I mean, I think that's the Wikipedia page.
+You can read it through.
+It's not just looking at whether eigenvalues are less than
+one or larger than one.
+You need to look at the difference of eigenvalues and
+their sign.
+And the sort of two stable rotations comes out of
+that.
+But that's the sort of typical applications of y eigenvectors.
+And this principal axis theorem are important.
+And where they used.
+Right.
+Okay.
+that's the end of what I have with that
+thing here.
+So I hope that you found some of that useful.
+I know it's been a bit of a sort of
+2 to 4, but use it as a, as a,
+as I say, reference to what are the important concept
+of Ila.
+Right.
+It's been a pleasure to teach you.
+, all the best for your future studies.
+And hopefully you enjoy tomorrow's session.
+Thank you.

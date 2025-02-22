@@ -1,0 +1,988 @@
+Oh.
+It's okay.
+I've got my red light here.
+So that's the prompt to start.
+Okay.
+.
+Straight in.
+, as I said yesterday, , what we're doing today
+is pretty much follows on from what we've done yesterday.
+, so we've talked about subspace and spanning.
+We now go through the concepts of linear independence and
+then onto what?
+What we actually mean by a dimension.
+, since it's so tightly interlinked with what I've done
+yesterday, I have a couple of slides, just a few
+minutes of just reminding you where we were yesterday.
+, so we talked about a subspace, and we have
+the definition here.
+It's basically means it's a sort of subset of whatever
+we're working in R, n or so, which is closed
+with respect to vector addition and scalar multiplication.
+So in other words, if we take the vectors and
+sort of take any linear combination of those vectors that
+won't take us outside of the subspace.
+That's the definition of a subspace.
+And we talked a bit about , so linear combinations
+obviously an important concept here.
+We talked about the sort of what's the smallest subspace
+that encompasses some vectors.
+And we see that sort of that is the span.
+So if you've got a couple of vectors then the
+span is the set of all linear combination.
+And that's sort of the smallest subset that includes all
+of these vectors.
+So they span S a subspace sorry subspace should be
+careful that the span is a subspace.
+And indeed it's the smallest subspace that is containing those
+vectors.
+, so to some extent you can think of these
+spanning set the Z as a sort of generating set
+of the subspace.
+Now, we wanted to know a little bit more about
+the relation between these sort of generating sets and the
+subspace that we span and then we've got to I
+think this was just about the last poll here, ,
+that we have.
+Well, , could we have something where we've got three
+vectors and we're looking at the set span or the
+subspace spanned by the first two.
+, and then also the, the subset spanned by the
+last two, , but by all of them, we see
+that these are actually the same one.
+, as long as the vector that we're adding to
+the generating set is a linear combination of the others.
+Yeah.
+And , so to some extent there's a bit of
+a, , of a sort of unsatisfactory situation.
+And let me just go and sort of show you
+what we've got.
+So we've got this situation here that we say, say
+we've been R2 here, , and we've got a where
+are we?
+So that's R2, though, we've got a few vectors.
+So we'll have sort of or something there, and varying
+length, varying directions.
+So we might have this, we might have something
+that that.
+So loads of vectors here.
+And indeed it turns out we can sort of take
+any two of them as the, as the spanning set
+here.
+Any using any of two of them will span of
+R2 unless he's sort of unlucky.
+And I think I've got two here that are opposite
+directions.
+If they're sort of the same direction opposite, they won't
+span the whole thing.
+But otherwise any three of them will span and the
+rest is redundant.
+So can we.
+Can we say something a bit more?
+How do I identify redundant vectors is just enough to
+just take some of them out.
+How many do we need to take out in order
+to have something that isn't redundant anymore?
+So that's sort of the setup where we are starting
+in today.
+So as I said, we've got this thing here that
+we said, , so the span, if I've got two
+vectors that are spanning something, and I'm adding a third
+vector, which is a linear combination of the ones that
+are already have.
+They're not adding anything to that.
+Yeah.
+So what I wanted to start with is to some
+extent turning doing it the other way round.
+So now I've got the following that I've got x.
+Here's the span of some vectors.
+And I'm going to take another vector y which is
+a linear combination of them.
+And the question is so if I have y they're
+now the span of all of these vectors together.
+What's the relation of x and y.
+I'm adding something there.
+I'm not adding something there.
+So that would be the first pole.
+I think I need to halve that there.
+And, , give me a second.
+I'll just set this up so you've got four choices
+and it's only.
+Only one possible answer.
+This looks okay.
+So the polls should be live.
+, and I'll just just in case.
+, I'll give you this the, the QR code there
+for the first, , first half a minute or so.
+Yeah.
+All.
+Right.
+So another 10s or so.
+Oh.
+Okay, so most of you think that you're not adding
+anything and sort of it's the same situation as before,
+although it's not quite the same.
+I talk a little bit about that in a second.
+But if you think, why are we adding something to
+the spanning set to the, to the sort of spanning
+set.
+So we must add something there.
+So it's probably worthwhile just having a look at what's
+going on there.
+So let me just go back and , and I
+do some of these things long winded here because I
+think it's quite important to sort of give you some
+examples of how I work with a span and proving
+things with it.
+, so what do we have?
+What's the set up here?
+We've got x here is the span of those vectors.
+x one down to x k.
+Yeah.
+, we've got to make this slightly larger.
+Okay.
+, we've got y is a vector in this span.
+Yeah.
+And on the other hand, we have capital Y, which
+should be the span of all of these vectors.
+So x one down to x k.
+And then in addition y.
+Yeah.
+and I'm claiming that indeed answer A is correct.
+Yeah.
+So the claim here is the claim here is that
+x is equal to y.
+We've had that now a few times.
+How would you approve that?
+Two sets are identical.
+, I will need to show, , I will need
+to show that X is a subset of Y and
+Y is a subset of x.
+Now, I hope that you sort of believe me, ,
+sort of the spanning set wider is it's larger that
+X is probably a subset of Y, so I'm not
+going to spend anything on that.
+But this here is what I am.
+That that might be contentious here.
+Yeah.
+, so, , we want to show this here.
+, and how do we do that?
+, well, we take any, any Z, which is in
+y, , and show that this actually is in X
+as well.
+Yeah.
+And we want to show that Z is also in
+X.
+So let's go that if you have z in y
+what does this mean.
+that is that is in the span.
+, the span is the space of all linear combinations.
+So in other words, I can write z as a
+linear combination of these vectors.
+So , I know there exists multiples scalars.
+I'm going to call these t one down to t
+k for, for those here for the x's.
+And I'm just going to have a T here for
+the y.
+, and so these are scalars, , such that I
+can write Z as a linear combination of all of
+them.
+So I can write z as T1X1 plus and t
+k x k plus t times y.
+Okay.
+Now I want to show that this z is also
+in x.
+So now this here this is a linear combination
+of the x's and so on.
+That looks all fine.
+This t times y is the bit that I don't
+for that.
+so let's see.
+Let's see what I can do.
+Something with a y.
+I know that y y here is in x.
+Yeah.
+So that means again, I've got, I've, I can write
+it as a linear combination.
+So I have multiples.
+, and I'm going to call these s now
+s one down to s k which are such
+that I can write y as At S1X1 and then
+s k x k.
+Yeah.
+and you might see where this is going.
+, because I can now take this expression for y
+here and substitute that in there.
+Yeah.
+, so if I do that I can write Z
+and I'm going to do this sort of in one.
+Well, okay.
+Now let's let's do that Z is so T1X1 plus
+plus t k x k plus t times.
+And then this expression for y here.
+S1X1 plus s k x k .
+And all I have to do there is now just
+saw terms.
+I want to write this as linear combination of the
+x's.
+So I'm just going to have a look and say
+well what what do I have for X1.
+I have a T1 from here and I've got
+a t times S1 from there.
+, and then finally I've got a t k plus
+t times s k times x k.
+So those things here, , these are sort of obviously
+scalars.
+, I'm just working with scalars there.
+So I've been able to write Z as a linear
+combination of the x's.
+In other words, that indeed, , z indeed is part
+of X as well.
+Yeah.
+So as I say, a little bit long winded, but
+to show you how these sort of arguments of that
+some things in the span of the other works, ,
+because they, they tend to come up quite often.
+, now, the way that I phrased it, you might
+have thought that, , so this really is the same
+as we've done last time.
+, actually slightly different.
+So what we've done yesterday is that we say, ,
+if I've got it, that I've got sort of, ,
+a span of two elements and I'm adding another one
+to that.
+And these are identical.
+That I must have.
+This new element is a linear combination of the others.
+Yeah.
+On the other hand, what I have done now is
+saying if I've got V, which is a linear combination
+of x and u, then adding v to the spanning
+set doesn't change anything.
+So it's two different directions.
+And indeed what we've done here is now have both
+directions.
+In other words these things are equivalent.
+So if I've got a span of two vectors and
+the span of three vectors, these are the same if
+and only if one of the vectors that I've got
+in here must be linear combination of the others.
+Now this gives us a criterion how to decide whether
+a part of our spanning set, or whether some vectors
+in the spanning set are redundant.
+Yeah.
+So we can identify use this to identify superfluous vectors
+in the spanning set now.
+So namely the condition is.
+So given a set of vectors, we know that none
+of the vectors here is superfluous in the spanning set.
+If none of the vectors are linear combination of the
+others.
+Now okay, this is something that that sounds quite nice
+and we know what to do, but how do you
+actually check that?
+How do you check that if I give you a
+couple of vectors.
+So in principle, you would have to check all possible
+ways that this could do that.
+This could be.
+So you'd have to take X1 as a linear combination.
+Is x1 a linear combination of the others, or might
+x2 be linear combination of the others or and so
+on.
+So it's hard to check every single one of them
+if you don't quite believe me that that indeed is
+the case.
+I'll just give you an example in two dimensions.
+So for example, we might just have x1, x2, x3
+our three vectors, and I might have something this
+1001 and zero two.
+Yeah.
+So those three span are two.
+, and indeed, if you look at it, you'll realise
+that sort of either the second or the third there
+are going to be redundant.
+But if I now check and say x1, I cannot
+write as a linear combination of the other two.
+So that's checking that doesn't, doesn't isn't enough.
+I have to go and check whether x2 x3 is
+a linear combination.
+Now in this case it's just two dimensions that are
+simple vectors.
+It's very easy to spot what's going on, but if
+you're doing this in sort of higher dimension, it does
+become that.
+In the worst case, you really have to track through
+all of those conditions.
+Now that's that's that's not nice.
+, instead what you can do is there's this definition
+here which I claim is Equivalent.
+So that's the definition of linear independence.
+So this holds if we cannot write any vector as
+a linear combination of the others.
+That means these vectors are linearly independent.
+And I can actually write this condition in this form
+here.
+At first this looks one window that it looks really
+strange.
+Why would you express it in that way?
+What's what's the sort of having a linear combination that
+is equal to zero is only possible if all the
+if all the, , the, , scalars there are zero.
+, how is that related to the other one?
+But actually, indeed, this is a stroke of genius.
+This is a really nice condition that it's actually easy
+to check, and that is equivalent to having to check
+all the others there.
+So I want to convince you, I just want to
+spend a couple of minutes to convince you that this
+actually is equivalent.
+So if I'm saying none of the vectors can be
+written as a linear combination of the others is the
+equivalent to that.
+I'm saying if I have a linear combination of these
+vectors that is equal to the zero vector, it must
+imply that all my multiples, all my scalars there are
+zero.
+And I think this is actually easier to do to
+prove that the opposites of those statements here are equivalent.
+So what are the opposites?
+, so what's the first one?
+Says none of the vectors can be written as a
+linear combination.
+So what's the opposite of that?
+If I say none of the vectors is a linear
+combination.
+So everyone at least one something different.
+, I'll give you a pole.
+, three options.
+.
+Three choices.
+Oops wait wait wait wait wait.
+So why did I thought of a thought of reset
+this reset reset display, right.
+Okay, so this works now.
+So another 10s.
+Yeah.
+So most of you thought it'd be at least one.
+And that is the case.
+, but it's worthwhile thinking about these things that if
+you've got Qantas that for all or they
+exist or.
+So what is the negation of the.
+Think about an example.
+, you might if you if you're not careful, you
+might think that it is indeed a that you say
+everyone , it's the, it's the opposite.
+But the thing is they're saying with, hey, at least
+one of them, , can be written as a linear
+combination.
+, so where does this take us?
+, so negation of what we have there.
+, so none of the vectors can be written as
+linear combination.
+Negation is at least one of the vectors can be
+written as a linear combination, and the second one there
+is says, well, if you've got a linear combination that
+makes the zero vector that requires all of the scalars
+to be zero, it means we have a combination.
+The negation is that we have a combination of of
+these vectors, where not all of these t's are equal
+to zero such that we make the zero vector.
+Now, , so I claim that those two, they're equivalent.
+, and indeed I just want to quickly, actually, I
+mean, this is a nice example.
+And , last year I think I had this as
+the, as the fourth hand in, , for you to
+show that.
+And I really it.
+And I was quite, , I wasn't half a mind
+to give, just give you that again.
+But I thought they can't really do that.
+So I'll give you the quick argument here how that
+works, but it's something worth thinking about.
+So, .
+We have to prove both directions.
+So first direction is from 1 to 2.
+At least one of the vectors can be written as
+a linear combination of the others.
+So, , I don't want to write too much, but
+assuming assuming that the one that we can write as
+a linear combination, , is x1.
+Yeah.
+, so let's say I can write x1 here, ,
+as a linear combination, so I can write x1 as
+saying this is t two times x two plus and
+so on times t k times xk.
+whenever I have that, I can now simply bring
+the x1 here on to the other side.
+, so I've got zero equals to minus one times
+x1 plus t2 x2 plus and t k x k
+l.
+So I've now got a linear combination of all of
+these vectors that makes zero.
+And I certainly know that this multiple here there is
+not equal to zero.
+Yeah.
+So I've got something something this here.
+If you think I sort of have something special about
+X1, I could obviously do the same thing with everybody
+else.
+It's just to try to save me.
+Save me writing this.
+So the opposite direction.
+I can do the same thing.
+So I'm starting with that.
+I'm saying assuming that I sort of have a linear
+combination t k x k equal to zero.
+, and I say some t k is some t,
+some of them is not equal to zero.
+Yeah.
+, so how do I go.
+Well, assuming and just, just to help me writing this,
+assuming it's T1 again.
+Yeah.
+, assume T1 is not equal to zero.
+, what can I do in that case?
+, I can.
+Well, first of all, I can bring the tea one
+just on one side, the X1, so I can ride
+t1 x1 equal to minus.
+Sorry t2, x2 minus and so on.
+T k x k .
+And then because t1 here is not equal to zero
+I can divide three by it.
+Okay.
+So then x1 equals to minus t2 over t1 x2
+minus and so on t k over t1 x k.
+those here again I just scale it.
+And I've written x1 one of them as a linear
+combination of the other.
+So again nice thing to play around.
+But those two are equivalent.
+And it means that the condition of having, say, none
+of the vectors can be written as a linear combination
+of the others.
+I can write as this linear independence definition there.
+Yeah.
+Now that still looks strange.
+I think if you first see it, because you're not
+saying something is sort of saying it's a logical statement.
+You know, if I've got this equation, then I can
+deduce that or the scalars are zero.
+So how do I work with that in practice?
+So I have a couple of examples where I think
+it's worthwhile that show us a bit where we're wanting
+to go, but that just gives you a little bit
+of an idea of how we play with that.
+, so now that we know that what linear independence
+is, , is it possible to find three linear independent
+vectors in R2?
+, I'll just give you this again as a poll.
+True or false?
+Reset.
+Reset does play, right?
+Okay.
+, that should be live now.
+Right.
+10s.
+Okay.
+Forwards.
+Yeah.
+, indeed.
+, so it's probably quite difficult to sort of get
+a, get a straight argument, but wanting to do is
+to actually show you how to work with this concept.
+So let's, let's just try to try to show that.
+, so what do we do.
+Can we find three linearly independent vectors.
+And I'll probably go back and , half that definition
+of linear independence there.
+, so what do we need to do?
+We have assuming we do.
+You know, let's, let's take three vectors, , x x1,
+x2, y1, y2 and z1 z2, , and these are
+all in R2.
+Yeah.
+him and we now want to know are these linear,
+independent or not?
+So what we need to check is that we say
+if we've got a linear combination of these that make
+the zero vector, , what do we know about that?
+Yeah.
+So let's start that.
+So we consider taking a linear combination of these.
+So t one times X1X2 plus t two times
+Y1Y2 plus t three times z1 z2 .
+And this should be the zero vector.
+Yeah.
+Right.
+So I can write this sort of rewrite this
+in various forms.
+These are obviously sort of two equations.
+, so I could write this as t1 x1 plus
+t2 y1 plus t3 z1 equals to zero and the
+same with the other component.
+Y two plus T3Z2.
+I have to be careful with the indices equal to
+zero.
+Now I'm interested in the values of TS, so I
+can treat this as a system of linear equations thinking
+the axes are numbers that I know.
+I just want to know whether these numbers exist.
+And the t three.
+There are unknowns.
+So I can write this a matrix form.
+, I could write this as saying this is a
+matrix.
+My unknowns is t1, t2, t3.
+And what I need to have here is x1, y1
+z1 and x2 y2 z2 equal to zero.
+And what I've interested in is is there a solution
+to this here?
+, such that all the teeth that not all the
+teeth are equal to zero?
+Now, obviously setting all the is equal to zero is
+a solution.
+But I'm interested in knowing.
+Is there another one?
+Now we have to go back and think right okay.
+We've done linear systems of equations.
+What do we know about them.
+, and actually you can sort of think I can
+go into row echelon form and , well it depends
+a little bit on what these values are, but I
+probably have to have one degree of freedom here.
+Now, if you remember, , I want to just do
+it a little bit more, , proper, , because I'll
+come back to that in a second.
+So I remind you that we did indeed have this
+theorem here, , that says if I've got an M
+times n matrix with rank R and consider the homogeneous
+systems of equation, I've got a homogeneous system of equations.
+Then it says the system has exactly n minus our
+basic solutions.
+So this is what we're getting.
+If we have a degree of freedom , and can
+end in a and in a parameter.
+So this is the number of basic solutions.
+So what does this mean in our case here.
+, when in our case what do we have.
+N is the number of variables here.
+so we've got n equals to three.
+, the rank we don't really know because we don't
+know what these X's are in general.
+, what we do know that at the maximum, there
+can be one leading one, , in the row echelon
+form and every row here.
+So a number of rows is the maximum.
+So the R has to be less than or equal
+to two.
+in other words n minus r has got to
+be greater or equal to one.
+So that means here we've got at least one basic
+solution for the t's which isn't equal to zero.
+So we've got a solution there.
+Yeah.
+Alternatively, I wonder because I come back to that I
+wanted to use that theorem.
+, but we do have did have another theorem that
+simply says if a homogeneous system of equations has more
+variables than equations, , that's what we have, then it
+has a non-trivial solution.
+So in other words, , these , there is a
+non-trivial solution.
+And if we go back what this means, , if
+there wasn't one then the vectors would be linearly independent.
+But we've just shown that whatever we're choosing here, that
+is a non-trivial solution.
+So these vectors cannot be linearly independent.
+So it's not possible to find three linearly independent vectors.
+keep that in mind.
+We'll come back to that.
+Right.
+Okay.
+Again , further sort of playing with with the ,
+linearly independent.
+, so suppose what?
+We have three vectors in R3 that are actually linearly
+independent, and we can stick them into a matrix half.
+These are the column of the matrix.
+, what does that mean for that matrix.
+can we is there a relation to something
+the determinant, or do you think we can't really say
+anything about that?
+, again, I'll give you a pole to play with
+that.
+Reset display.
+That's.
+Right.
+There's probably a little bit of a loaded question.
+The question was just whether which way round is going
+to go.
+, yes, indeed.
+, if the determinant is not equal to zero.
+, These would be linearly independent.
+And there's various ways to think about that.
+For example, I think we've had sort of determinant as
+the is the volume of the sort of shape spanned
+by spanned in the sort of the parallelepiped made
+up of these vectors.
+, so if there is a positive or there is
+a volume which isn't equal to zero, these are sort
+of in all different directions.
+, if the the volume is zero, then there must
+be more or less in the same plane, , which
+means that they are not linearly independent.
+, but indeed, I sort of part of the purpose
+of doing this is that I was going to show
+you, , how we deal with this linearly independence condition.
+, so let's just do that again and, and see
+what we have and why this, this is related to
+the determinant.
+, so assuming that we've got here u, V and
+w are vectors in R3 and the linearly independent.
+, so again we said that this means we've got
+a system.
+We have to look at whether we can find a
+linear combination that makes the zero vector.
+, so let's do that T one.
+And I'm going to write this in components.
+Yeah u1 u2 u3 plus t2 v1 v2
+and v3 plus t3 w1 w2 w3 equals
+to the zero vector.
+Yeah.
+and again this is a linear system of equations
+here.
+, and where the t1, t2 and T3 are my
+variables.
+So I can write this , just in this form
+a matrix with components u1, u to u3.
+V1 v2 v3.
+W1 w2 w3.
+Vector of unknowns t1 t2 t3 equals to zero.
+You know what we're interested in?
+To show that this is linear independent is that that
+this has only the trivial solution.
+Now that's what we call this when we're talking about
+linear systems of equations.
+If we can show that this necessarily means that the
+vector t there has to be equal to zero.
+Now this obviously, as I say is a linear systems
+of equations.
+So I can call this matrix A.
+This here is my vector t and this here is
+the zero vector and again homogeneous systems of
+equation.
+A homogeneous system of equation has only the trivial solution.
+If and we had quite a few conditions there.
+One of them is that this is.
+This is the case if A here is invertible.
+, and that of course is the same as that
+the determinant of A is not equal to zero.
+So that's sort of showing a little bit I think
+we've now taken things from various different parts of the
+course how it all interlinked.
+, actually checking the determinant is not not the worst
+way as actually relatively good way to check whether three
+vectors are linearly independent.
+So it's not just a neat sort of some mathematical
+curiosity, but it's actually relatively useful if you want to
+show that.
+Okay.
+, now so that that sort of leads us now
+to another inversion theorem we had that last time I
+was here we had an inversion theorem.
+Now we've got a few more conditions.
+So we do have that one and two here
+I've basically just shown the matrix A is invertible or
+the determinant is not equal to zero if the columns
+of A are linearly independent.
+Now we've got a few more things here on the
+inversion theorem.
+Something that might be surprising actually is the fourth one
+there.
+That the columns of A are linearly independent is equivalent
+to that the rows of A are linearly independent.
+And you might have thought that they're not necessarily related
+to each other, but going through the determinant, the determinant
+doesn't care whether it's the matrix or you take the
+transpose of the matrix.
+, so if the rows are independent, if the columns
+are linearly independent, the same must be for the rows.
+, so this is from Nicholson.
+I should just say a couple of words.
+There's the last statement there.
+That says the rows of a span, the set of
+all rows.
+Now, this is a funny statement.
+What do you mean by the set of all rows.
+And I think it's related to just to give you
+the context that I said, that if I talk about
+vectors by default, I always mean column vectors.
+Yeah.
+So if I now take the span, the spanning set
+of the rows of a, this would be sort of
+a linear combination of the rows are still row vector.
+So this is sort of a space of row vectors.
+Of course to some extent this is equivalent to just
+the normal R3.
+It's sort of R3 turned on its head or sideways
+or so.
+And typically you wouldn't make the distinction.
+Typically you would just say the the rows of a
+also span R3.
+But if you want it to be really particularly Nicholson
+decided to do that.
+In this case you'll have to talk about the space
+or the set of all the rows, Right.
+And then finally we've got this equivalence that we say
+if the columns are of a or linearly independent, then
+they span the space.
+And now this looks a little bit strange not necessarily
+related with each other.
+And we're going to say a few words in that
+direction here.
+But actually the final proof of that that is true.
+I'm going to give you in the reading quiz or
+talk a little bit more about the reading quiz on
+Monday.
+Now.
+, so but so this might be a bit bit.
+So we said that linear independent and.
+Right okay.
+So .
+No, no I going ahead of myself.
+Right.
+I think where am I with time?
+.
+I might have some time.
+Okay.
+So, , I just so we said we wanted we
+introduce linear independence to show whether a generating a spanning
+set really doesn't have any redundant elements in that.
+So have we.
+Have we succeeded?
+So let's assuming that we've got k vectors here which
+are linearly independent.
+We're going to look at the span of just the
+first of them.
+And then we look at the span of all of
+them.
+And then we look at the span of just k
+minus one of them where we've taken one out.
+Any one of them.
+So what can we say.
+, are these indeed are these the same sets.
+, it's one of them.
+Is a subset of the others the proper subset of
+the others?
+So again, I'd you to have a quick, quick
+think about that.
+All.
+Right, a couple more seconds.
+Okay.
+So again, , probably slightly loaded question.
+, but indeed, , if we have that situation, we
+can now say if they're linearly independent.
+, they said the span said y must be properly
+bigger than X.
+, so if I say properly bigger, , that means
+I must be able to there must be at least
+one vector in Y there that isn't an X.
+, which one is that?
+What can you give me one.
+X k.
+So x k cannot be in x because if x
+k were in x, then I would have been a
+linear combination of the others and there wouldn't have been
+linear independent.
+Yeah.
+Okay.
+So , linear independence is, is a condition that says
+in our spanning set we don't have any redundant vectors.
+Yeah.
+So linearly independent spanning set does not contain superfluous vectors.
+And because there is such a nice property, we're going
+to give it a name to that.
+So a linearly independent spanning set is what we call
+a basis.
+Well, so a subspace or a set of vectors is
+a basis.
+If a the set of vectors is linearly dependent and
+b it spans the subspace okay.
+And now we started with the whole thing of saying
+that this sort of thinking about the sort of the
+spanning set as a generating set was quite unsatisfactory, because
+we don't know what these elements are.
+There might not have the same number of elements, stuff
+that.
+So now we've got basis here, we've got linear independence,
+this world.
+Does this help us?
+, so do we.
+Do we know now anything more?
+Can we fix something?
+, so assuming that we've got a subspace there, we've
+got two different bases for the subspace.
+What's their relation?
+.
+Do they have the same basis?
+Do you have elements in common?
+, can we say that every element of one base
+is a linear combination of the others?
+Do they have the same size?
+That was something that really bugged us about the sort
+of just general generating sets in general spanning sets.
+Do they have at least the same size, or do
+we not get any of these here?
+, again, , I just you to think about
+that for a second.
+A minute indeed.
+Sorry.
+Once I can set this up.
+I've choices that time.
+, no multiple answers.
+Display.
+Okay.
+It should be life.
+Oh, there you are.
+Allowed.
+You should be allowed.
+Multiple answers.
+Sorry if I've set it up incorrectly.
+There are multiple correct answers.
+, but we'll just see what happens.
+Right.
+So not entirely clear here, but there's a sort of
+three.
+And four is where most people put their money.
+, okay.
+I just want to convince you quickly that one and
+two isn't correct.
+.
+Once I've got this right.
+Okay.
+So I could have.
+I could have listed here one zero and zero one
+and assume you believe me that that is a basis
+of R2 linear, independent, and it spans.
+But on the other hand, I also have one one
+and one minus one.
+, we seen yesterday that this spans R2.
+, and those two vectors are linearly dependent.
+So you've got two different bases for our.
+True.
+They don't have any elements in common.
+, so one A and B, their answers are out.
+, every element is a linear combination of the other.
+And indeed that is general.
+But I also have that B1 and B2 are the
+same size.
+And this might be a little bit not entirely obvious
+that that should be the case.
+And, , so I just want to spend a little
+bit of an argument of why this whole.
+So we had this thing, can we find three linearly
+independent vectors in R2.
+And we said, no, we can't.
+And indeed you can generalise this by saying, assuming I've
+got any subspace and the subspace can be spent by
+m vectors.
+So R2 can be spent by two vectors, I
+know that, , and on the other hand I know
+that I've got k linearly independent vectors in there.
+, so I was wondering whether I can find three,
+but this says then generally the number of linearly independent
+vectors has to be less than or equal to the
+number of spanning vectors.
+So this is pretty much the generalisation of what I
+had up here.
+, so if you do believe me that if you
+do believe that and I say, let I have a
+subspace here and I've got two bases.
+Different number of elements.
+Yeah.
+Now I can say that you here my subspace is
+spanned by these first vectors here.
+Yeah.
+Because the base is spans.
+On the other hand the bases must be linearly independent.
+So the second basis here those vectors must be linearly
+independent.
+So in other words k here the number of elements
+here has to be less than or equal to m.
+But I could have done the whole thing the other
+way around.
+Yeah I could have said, , the second set of
+vectors here is a spans the set.
+And this set here.
+No sorry.
+The second set, this here spans the set.
+And that set is linearly independent.
+So also must have m less than or equal to
+k.
+So in other words all bases that I might have
+if I've got two different bases for subspace.
+They must have the same number of elements.
+So that might be a little bit surprising, because it
+says that we say that the number of elements of
+a basis is an invariant of the subspace.
+So it might be a funny name, but it means
+that actually the number of elements of a basis is
+the property of the subspace.
+It's not actually property of the basis itself.
+Whatever you're choosing, you're always going to get the same
+number of elements in a particular subspace.
+And because this is invariant, it doesn't matter how we
+choose the basis.
+We give this a name.
+And that indeed is what is called the dimension of
+a subspace.
+So it's the number of elements in each basis, or
+the maximum number of linearly independent vectors you can find
+in that space.
+So dimension is one of these words that I think
+you've used a lot.
+And you sort of think what it means.
+This here is what it means.
+.
+Mathematically.
+Yeah.
+So before I stop, I just want to have two
+more remarks on this one.
+It means that we now have a classification of all
+the subspaces of R3.
+, namely, we know that R3 has got has got
+three dimensions.
+A basis has got three elements.
+So all the subspaces must have dimension two, 1 or
+0, or a subspace of.
+Mentioned two is any plane through the origin of dimension
+one is any line through the origin, and then dimension
+zero would just be the zero vector, nothing else.
+So fundamentally those are the only subspaces of R2.
+Now the other thing I just want to point out
+is I'm going to go right back to the slide
+that I heart at the beginning or in the middle,
+that I thought there was a reason why I have
+this.
+, so this one here.
+, solution space of a homogeneous system of equations.
+We have seen yesterday that the solution space of this
+is a subspace.
+And the we say that there are for this there
+n minus r basic solutions.
+And we now know why we call this basic solutions.
+Because these solutions are indeed a basis for the subspace
+that is the solution set here.
+So just to say that this is the reason why
+this is called these are called basic solutions.
+Yeah.
+Right okay I think that is it for today.
+And it will be it for me next week is
+Eric I believe.
+And you will see me back again here in week
+11 for a revision clause.
+Yeah, right.
+See you then.

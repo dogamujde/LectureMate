@@ -1,0 +1,811 @@
+Hello.
+Good afternoon.
+Welcome to this lecture today.
+, there is no attendance book left for today.
+This is already the book club for, , the questions
+that we're going to see together.
+, in today's lecture.
+Okay, on the screen, you can see a quick, ,
+some summary of the content of this week.
+, as I mentioned, , , yesterday with , last
+past orthogonality, Cauchy-Schwarz and the triangle inequality yesterday and today
+we will have a look at matrix spaces and then
+similarity will be next week.
+, apologies for yesterday.
+I got confused with the lectures that I'm preparing for
+next Thursday.
+So, , today we will have a look at columns
+and row spaces, image and null spaces, and the relation
+between the image, the column, , and also the rank
+of the matrix.
+Everything that you've seen in your, in your reading for
+today.
+Okay, so this is, , the same, , QR code
+for the book club, and, , please tell me now
+if your book club isn't working because, , if if
+it is for everyone, then, , let's, , let's start
+let's jump straight into it.
+And, , the first question that you will see in
+the book club, , is based on this matrix here.
+, it's a four by three matrix, of course.
+, and the question for you is to find the
+dimension of all the spaces of the matrix.
+So this is a warm up exercise.
+I will give you five minutes to think about how
+you would go about and find, , the dimension of
+those spaces.
+And then, , I will go through the solution of
+the exercise together with you.
+So let me just, , change the book club.
+Okay?
+You should see the first, the first.
+, the first question now.
+This is technically a scoring question, but it was, ,
+just the only way I could put four numerical answers
+on the slider for you.
+So just treat it as, , as, , , as
+normal, , as a normal numerical question.
+Okay.
+I'm going to just hide the answers for some time.
+I invite you to take your time, discuss, discuss with
+your neighbour how you would go about and find the
+dimensions of those spaces.
+I will come around, ask me any question if you
+have some.
+And, , I'll be back on the stage in a
+few minutes.
+As a hint for you to sort of go about
+this exercise.
+Of course.
+Try to remind yourself of what those spaces are, how
+they are defined.
+And then from there you really have two ways.
+You can either apply the definition, find out what the
+spaces, and then find the dimension of the space
+you used to.
+Or if you think the space has any particular property
+that you remember, you can apply other results there.
+, we will see both both methods later.
+Okay, I will leave the question active for now and
+you can still answer it.
+I'm not going to show the answer yet.
+Let's just go through the definition of this four spaces
+very quickly together just to fix the ideas.
+, okay.
+Let's, , matrix let's take it to be square here,
+but it doesn't matter.
+The same, , works with non-square matrices.
+The column space is the subspace of N, and that
+is created by the span of the columns of the
+matrix.
+And you won't be surprised to know that the row
+space is the subspace spanned by the rows of the
+matrix.
+Okay.
+What about the image and the null space?
+Which are the the other two?
+The image space is the set of all vectors that
+can be written by applying the matrix multiplication to any
+vector in the appropriate space.
+So if I can write x as some vector v
+multiplied on the left by the matrix A, then x
+will be an element of the image.
+Okay.
+And , what is the null space?
+Does anyone want to come forward with that?
+Yes.
+Yes yes, that's exactly right.
+The formalism for that is written there.
+But it's essentially what he just said.
+It's the, , it's the set of all vectors that
+are mapped to zero by applying a.
+Okay.
+So we now have, , , lay down the definitions
+of what we are trying to calculate the dimension of.
+Let's start with the column space.
+The column space.
+Let's have a look.
+Let's have a peek at the solutions.
+Okay.
+Most of you believe that the column space has dimensions
+either 2 or 3.
+Okay.
+I'm just going to hide the rest for the for
+the time.
+For the time being.
+And both are reasonable answers.
+And two is actually the correct one.
+It would be three because you have three columns.
+But , now the third column is the sum of
+the previous two hopefully.
+Yes, yes.
+I didn't make, , a calculation over there.
+So, , because, , because the third column is, ,
+linearly dependent on the first two.
+Now the dimension of the column space is equal to
+the span of the first two columns, which are linearly
+independent.
+Of course, you can determine that the first two are
+linearly independent by just looking at the at the last.
+At the last component.
+There's no way these two columns are linearly dependent.
+And so that will be the span of the first
+two columns dimension equal to two.
+Okay.
+, we just essentially, , answer the question by using
+the definition of the space.
+Now, we could do the same thing with the row
+space.
+So this this should be row.
+, the row space is just the span of the
+rows, which I have written vertically, just for a matter
+of space.
+, obviously this this, , vectors cannot be linearly independent
+for a very obvious reason.
+Can you can anyone come up with why they can't
+be independent without doing any calculations?
+Perfect is multiplied by minus one.
+Okay.
+That.
+Yes, that.
+That's that's exactly what I was after.
+That's a very simple calculation.
+And fairly obvious.
+Yes, but also there's four vectors in three components.
+And so three for vectors in R3 will never be
+linearly independent.
+okay.
+So there's two way we can approach this.
+We can calculate the number of linearly independent vectors, which
+essentially means that, , we, we check for, for linear
+independence.
+We do some calculations and we find out how many
+are linearly independent in there.
+Or we can use one result that was in your
+reading, , particularly lemma 5.4.2, which says that if A
+is put into a row echelon form, then the basis
+of the row space will be the rows of the
+reduced row echelon matrix that are non-zero.
+And this involves a slightly different kind of calculations.
+But if you go ahead and try to do that,
+I wonder, is it for a time saving measures?
+Then we get the dimension of the row space is
+also equal to three.
+There's another way of doing it because we know, ,
+the dimension of the of the column space already, but
+we will cross that bridge when we get there.
+Okay, next up, the image space.
+And, , I'm going to, , lay down this claim
+that the column space of A is equal to the
+image space of A.
+And this might be to some surprise for some of
+you, but I'm not going to prove it here.
+And the reason is that I do the proof in
+one of the videos for the reading quiz, so you
+can access the proof in the video.
+It's going to me explaining it to you just online
+from Monday.
+So just keep this in the in the back pocket.
+And , obviously because those two, , those two vector
+spaces are the same space, then they have a, they
+have the same dimension.
+There's nothing else.
+There's nothing else to say.
+, and finally, the null space.
+, how do we find the null space?
+Well, we can just go, , straightforward.
+We solve the system.
+Axe equals zero, and this will return.
+All the solutions of the system will be all the
+vectors in the null space.
+And depending how many parameters we will need to express
+the solutions, , we will get the dimension of the
+null space.
+That is very similar to an exercise we did yesterday,
+the one where I asked how many, , how many
+parameters I need to write down orthogonal and orthogonal vectors
+to a given set, and this runs much, much along
+the same intuition.
+, or we can we can use another result that
+you have, , seen in the readings, which is the
+rank nullity theorem, which says that the rank of A
+is, , plus the dimension of the null space of
+A is equal to n and n.
+Here will be the numbers of columns, and the rank
+of a was defined a very long time ago as
+the number of rows in the reduced row echelon form
+that had a one pivot, , a nontrivial people in
+the in the reduced row echelon form.
+And, , but you've seen in the reading that we
+can rewrite the rank of the matrix as the dimension
+of the column space.
+So essentially there's a few equivalent way we can express
+the rank nullity theorem.
+I don't want to spoil too much because one of
+the next exercises will be exactly about this, but essentially
+we can reread this as the dimension of the column
+space of A plus.
+The dimension of the null space of A is equal
+to n, and now we have calculated the dimension of
+the column space.
+We know what n is.
+We can just bring, , the everything to the right
+hand side, and we find that the dimension of the
+null, a, , is a zero dimensional subspace, and so
+null A will be just the zero vector, because the
+set made up by the zero vector is the only
+vector space of dimension zero.
+And by the way, I want to chip in to
+a question that I've seen on Piazza being asked, ,
+this morning, actually, I think, , which were, which was
+about, , the vector zero specifically.
+And the question was, is the vector zero, , orthogonal
+to everything or not or orthogonal to anything.
+And the answer to the question is it doesn't really
+matter.
+The vector zero is just the vector zero.
+If you take this kind of product with anything, you
+get zero.
+But that is a very weird scalar product because one
+vector is zero.
+And so you can either decide, okay, we consider it
+orthogonal to everything or not orthogonal to anything, and it
+doesn't really matter.
+The reason we say that it's not orthogonal to anything
+in this course, and this is the sort of the
+way that we decided to approach this issue in this
+course, is that it's more convenient to consider it that
+way for talking about orthogonal basis, because otherwise orthogonal basis
+would be defined up to the inclusion of the vector
+zero, which really doesn't do any favour to anyone.
+You have a base, you create the same base with
+the vector zero, which adds nothing, and that is still
+a base.
+If you discard that option, then you can assume that
+the base is, , , is uniquely defined, , by
+its non-zero vectors.
+So that is why, , that is why we, we
+have made this decision.
+But the complete answer is it doesn't really matter.
+Okay.
+So this is for question one.
+, do you have any questions?
+No.
+Excellent.
+In that case, , the one that I just foreshadowed
+here, you have some statements which are all taken from
+the rank nullity theorem.
+, and I would you to choose those that
+are correct.
+They are equivalent version of stating the same thing, which
+is the rank nullity theorem, which we just touched upon.
+, just a minute ago.
+This question I will only give you a couple of
+minutes because it should be fairly quick to answer.
+Okay, I'll give you 30 more seconds to finish.
+In the meantime, hopefully I changed my settings so that
+the display won't go blank every time.
+Fingers crossed it works.
+Okay, I see 60 answers, , that have come in.
+Can we reach 80 before we reveal?
+Okay, we're at 72.
+Submit your vote now.
+Okay, so, , broadly, you, , you just have decided
+that one, three and four and there is actually, ,
+a bit of a conflict on number five.
+Let's have a look at the components of this, ,
+of this of this question.
+Okay.
+This question hinges on two, , equivalences that we have
+discussed briefly in the previous question, which is that the
+rank was defined in terms of the pivot of the
+row echelon matrix, but it's actually also equal to the
+dimension of the column of A, and also the unproven
+things that I claimed before.
+The one that you will find in the reading video
+is that the image of A is actually equal to
+the column space of A.
+So what is the standard way of , , giving
+the rank the rank nullity theorem?
+That would be number four.
+And now how can we do the substitution when we
+know that the rank of a is also the dimension
+of the column of A?
+So one is also true.
+And we also know that from here we can go
+down to this one here, because the dimension of the
+image of A will be equal to the dimension of
+the column of A, because they are the same space.
+Now what about the dimension of the null space plus
+the dimension of the row space?
+Anyone has any idea.
+Who only be true with the row space and the
+column space.
+Have the same.
+The same dimension.
+Is that true?
+If you think it's true.
+Okay.
+Down your hands.
+Raise your hands if you think it's false.
+Okay.
+That content of the rank theorem that says the rank
+can be expressed is equal to n, and that would
+be the dimension of the column space and the dimension
+of the row space.
+Okay.
+, this is just the the theoretical sum up, ,
+that we've, we've just used.
+This was the original definition of the rank.
+And This is the wrong theorem.
+, let our let a be a matrix.
+Then the dimension of the column is equal to the
+dimension of the row, which is equal to the rank
+which we normally called.
+Ah.
+Okay.
+So because of this equality also five would be one
+acceptable way of reframing the rank nullity theory.
+Okay.
+And now I will step down from the from the
+stage for 5 to 10 minutes because we have a
+PhD student here, Chiara, who's working to enhance the mathematic
+teaching in the school.
+And she would your support in her research.
+So I'll let her speak and I'll see you again
+in ten minutes or so.
+Okay.
+Can you hear me?
+I'm Chiara and I'm a PhD student And I would
+to ask you to take part to this survey.
+The aim is to investigate the previous experience and attitude
+to computer programming, and the population is a first year
+student of the School of Mathematics.
+So there is a question about this, but if you
+would to take part.
+Please scan the QR code or have access to the
+link.
+, and this is we would to ask you
+to take part of this survey now.
+So it will take 5 or 10 minutes.
+So please do it now so we can collect the
+the answers.
+And, , yeah.
+If you have other questions please ask me.
+But I think this is enough.
+Does anyone have any questions for cannon yet?
+On this?
+You can, but there is a question.
+, and you can choose if you are a as
+a school of mathematics student.
+So you can also answer all the questions.
+But we will, , take only the data of the
+as the School of Mathematics student so we could focus
+on this kind of students.
+Yeah.
+Okay.
+And, , perhaps to make something, , here, this is
+optional.
+You don't have to do it.
+Yeah, the research is done.
+, the university is doing some interesting data.
+So, , we would appreciate if you.
+Were able to support and is voluntary and anonymous, so
+you don't have to write down your email or other
+data.
+So, , all the data collected are anonymous.
+And you can find also all the information about how
+we will collect the data and other, , info, ,
+in the first page of the, of the survey.
+So before, , give your consent to participate.
+Okay, just for a quick check to know when to
+restart.
+Can you raise your hand if you have finished?
+Okay.
+No worries.
+Take your time.
+Okay, so Carter will probably stay here at the end
+of the lecture during the break.
+So if you have any questions, you can also ask
+her at the end.
+, now I would to continue if that's okay.
+If you.
+Starting in one, 1 or 2 more minutes, there's people
+still finishing.
+apparently.
+If you're still working on it, can you raise your
+hands?
+Two.
+Okay.
+Okay so back to linear algebra.
+We go.
+And question three.
+Now back to the book club.
+I'm just going to put on the QR code.
+So if you've logged out by scanning the other one
+we can go back.
+this one is something that I liked yesterday.
+Yesterday was a trial.
+And today we will do this again.
+It's a reconstruct a proof exercise.
+And this time, the proof that I've chosen is this
+one here it's a let A and B be two
+matrices.
+If you can go from A to B by performing
+a series of elementary row operations, then you can show
+that the row space of the two matrices is the
+same.
+And this works exactly as yesterday.
+You will log in into work and you will see
+a series of logical statements, and your job is to
+put them into the right order, hopefully without referencing the
+proof from the book, because that would be a little
+bit too easy.
+And, , I'll give you a couple of minutes and
+then we will work through the proof, , together as
+usual.
+Is the question working for anyone?
+No.
+Oh, let's have a look, then.
+Oh, I simply didn't change it.
+There we go.
+Sorry about that.
+I hear very silent classroom, as always.
+You're very welcome to discuss with people next to you
+on mathematical issues.
+Okay, let's .
+Oh.
+I see only 11, so I'll give you a couple
+more minutes.
+Okay, we've had a few more coming in.
+A few more seconds if you're just about to submit
+the answer.
+Otherwise, let's start to have a look at the proof.
+Okay.
+, this is a typical way that we do proofs
+in mathematics.
+The general statement is quite complicated because there are many
+ways to move from one matrix to the other using
+elementary row column, and so this method is called from
+Latin divided tempora, which means split up in dominate.
+And so if we can split up the proof into
+several small cases that we can check individually, then we
+have completed the proof.
+And this is exactly what we what we want to
+do here.
+We can pass from one matrix to the other using
+elementary row operations in many times, but all of them
+are composition or successive applications of three main basic operations.
+And so if we check that each operation preserves the
+the row space, then no matter how many or how
+varied the application of these three steps is, then we
+will preserve the row space throughout the whole procedure.
+And so the final matrix will have the same row
+space as the starting one.
+Okay, so what are the three cases?
+Well, as usual, .
+Well, okay.
+Yes, we can check all the allowed types of operations
+separately.
+As usual, proofs are not, , exactly, , perfect in
+terms of the, , in terms of the necessary ordering
+of the steps, in particular, the order in which we
+check the row operation, , doesn't matter.
+, and so we have a few options that were
+all exactly correct.
+That's fine.
+, two of these, , two of these, , ,
+row operations are very easy to check.
+The last one is a little bit more complicated, so
+let's do the two.
+Easy one first.
+First of all, we can swap the rows.
+, but that's, that's, , to no hurt because, ,
+swapping the vectors that generate a span, , a span
+of the rows is how the row space is defined.
+swapping the vectors in the span doesn't change the span,
+so we're all good.
+And the same is true if we multiply one of
+the vectors that create the span by a constant, we
+don't change the span.
+That's because we can.
+Just the span of any set of vectors is equal
+to the span of the rescaled vectors.
+However, we want to rescale them.
+So just rescaling one row here doesn't change the span
+and thus doesn't change the row space.
+Okay, and now for the meaty part of the of
+the of the proof.
+The last allowed row operation is an operation that adds
+a multiple of a row to a different one.
+And let's let's suppose that these are the rows of
+the matrix, and p and q will be obviously the
+ones that interact with each other.
+Oh, whoops.
+Wrong keyboard.
+, And.
+And here we apply theorem 5.1.1 which essentially does this
+for us.
+So this is another example that I've chosen this this
+proof for.
+The hard part of this proof is actually the proof
+of something else.
+So in mathematics we recycle previous results all the time
+if we can, if you can , if you can
+take a difficult concept, divide it up and then ,
+and then reduce it to very simple cases or cases
+that we have already proven.
+That's the, that's the, the best practice really.
+So , because we've proven, , theorem 5.1.1, , this
+is actually, , not a meaty part after all.
+Or at least it was when we proved theorem 5.1.1.
+So, , my two takeaways from this proof is try
+to split up and conquer and split up in a
+way that you can reuse and recycle previous results.
+Okay, so that was the the spirit of this proof.
+And well, then we can conclude we put everything together.
+We say, , any operation that we do, , doesn't
+change the row space.
+, moving to reduce row echelon is just a succession
+of consecutive application of row operation.
+But the row space is, , is preserved at every
+step.
+And thus, if we move from A to it's reduced
+row echelon form by elementary row operations, we preserve the
+row space.
+Okay.
+And I invite you to take your time and look
+out for, , these types of reasoning, these type of
+techniques in the proofs that you encounter in your reading.
+Okay.
+Do you have any questions about this proof, the methods,
+, anything unclear?
+Okay, let's turn to the last exercise.
+And, , I'd to experiment a little bit with
+these exercises.
+And so this is a standard exercise.
+It's a true or false for several statements, but I've
+mixed the difficulty of the statements quite a bit.
+This time.
+There are two statements that are simple or fairly simple.
+And there are two statements that are hard or very
+hard for two very different reasons.
+And we won't only go through the statements themselves, we
+will also comment why they are hard and how to
+to tackle them, , if they ever come up in
+the future.
+So I believe that this is these are the statements
+you will see a triple exclamation mark on two and
+four.
+Those are the hard ones.
+If you feel confident about the simple ones, you can
+just skip to them.
+If you're not confident and you just want the solution,
+you can do the easy one If you want to
+do both, you can.
+You can choose that.
+Okay.
+, I will need at least 8 or 9 minutes
+to discuss this.
+So you have 2 to 3 minutes to think about
+this.
+Okay for this particular exercise.
+I'm not, , too interested in exactly which statement you
+get wrong or right.
+The club is just an excuse to have you think
+about it individually or with your colleagues for some time.
+So let's go through the first one, which was not
+one of the hard one.
+And, , the reason this is, , one of the
+easy one is that it relies heavily on results that
+you have been given.
+Okay.
+You can apply a couple of results that you've seen
+in the reading, and you reach the conclusion that this
+statement is indeed true.
+And it's not straightforward.
+So it's not an easy exercise, but you don't have
+to input much of your own to solve it.
+So let's see how we do it.
+, if A is an invertible matrix, what does it
+mean?
+Well, it means that the rank of the matrix, among
+other things, it means several things.
+It means that the determinant is non-zero.
+It means that all the eigenvalues are non-zero.
+It means a lot of things.
+But among other things, it means that the, , that
+A is invertible, and so the rank is equal to
+n.
+Okay.
+, but now, , because the rank is equal to
+n, that is also equal to the dimension of the
+row space and the column space which have the same
+dimensions.
+Now, in principle, they don't need to be the same
+space.
+But in this particular case, if we have two n
+dimensional spaces in our n, they're both equal to or
+n themselves.
+There are no subspaces of of dimension n in r
+n other than r n itself.
+Okay.
+And so for this reason, a column and row of
+A for an invertible matrix are both equal to r
+n, and therefore they are the same space because they're
+equal to the same vector space.
+Okay.
+As you can see, not an easy problem because there's
+a few things to order around and make falling to
+the right, , into the right place.
+But your input is just in the reordering.
+Okay.
+Now compare that to statement two.
+Now, statement two is a very hard question because instead
+your input here needs to be much more substantial.
+Okay.
+So this is a matrix that it's the not the
+zero matrix but its square matrix is.
+So if we multiply a with itself we get the
+identically zero matrix.
+And we want to show that its rung is smaller
+or equal than n over half.
+And essentially what this exercise requires you is to build
+new knowledge from what you already know entirely new knowledge.
+And this is ultimately the scope of this course and
+the scope of your degree.
+So it makes sense that this may come as quite
+a bit at the moment, but hopefully by the end
+of the course and more generally by the end of
+your degree, this is the sort of things that you
+will grow familiar with.
+So why do I say this is new knowledge?
+Because I don't think we've spoken about how potent matrices
+any potent matrix is.
+Just a it's just the name that mathematicians have given
+to a matrix that have this property here if if
+it's nonzero but one of its power is the zero
+matrix, then we call it potent.
+And so what.
+Exercises.
+What this exercise require is essentially prove a theorem for
+a potent matrix, which is something that we haven't seen.
+And the same is true and we will go about
+and prove it.
+Okay.
+How do we do this?
+, well, , we want to show that.
+Let me put everything on the screen.
+We want to show that the image of the matrix
+A is a subset of the null space of A.
+That is the first step, and it will become clear
+in the next slide why we do that.
+How do we prove it?
+Well because a squared is equal to zero.
+Then if you apply the matrix a square to any
+vectors we get the vector zero because that is the
+the matrix zero.
+But now a squared we can collect the terms differently.
+And we get a of axe equals zero.
+And now note that axe is just the way we
+write the generic element of the image space.
+Okay.
+The image space is the set of all vectors that
+can be written in exactly this form for any vectors
+x in RN.
+Okay.
+So v.
+Here is a vector of the image.
+But now if I transform the vector of the image
+with a if get maps to zero, so that vector
+is also in the null space.
+So any vector that's in the image is also in
+the null, which means that the image is a subset
+of the null space.
+Exactly what what what we wanted to do.
+And why is that useful?
+Well, this is a sort of pigeonhole principle.
+If you have a if you've ever heard about that.
+And if I have a subspace of another space, the
+dimension of the space that is contained in the other
+cannot be bigger than the dimension of the space that
+contains it.
+There's not enough space in the in the vector space
+to contain a larger subspace.
+Subspace with more with a greater dimension.
+Okay.
+And now for the final, , for the final step,
+let's go in with the with the rank nullity theorem.
+Now we have the dimension of the image is smaller
+than the dimension of the null, but the sum of
+the two is n.
+And so if you think about it for more than
+a couple of seconds, this one needs to be smaller
+than n halves, because if this was larger than and
+halves, this is also larger than enhanced.
+And then they can be equal to n okay.
+So this is the type of possibly the
+hardest type of exercises that we can come up with,
+giving you something that you can theoretically construct from what
+you know, but it takes some trial and error or
+being incredibly used to work with these types of objects.
+So no worries if you haven't seen how to solve
+this exercise.
+That's normal.
+I just wanted to show you what type of reasoning
+goes into solving an exercise that requires you a lot
+of input from your part.
+Okay, now, because we've done a hard exercise, let's move
+to .
+Oh, yeah.
+And this is just the just what we just what
+we have proven.
+And this is actually, , something that implies this one.
+So this is an even stronger version of this that
+we that we don't, , that we don't prove.
+If a is a potent matrix, all of its eigenvalues
+are zero.
+And you can you can get our result from this
+one.
+You can try it in your own time.
+Okay.
+Now statement three we revert back to what we are
+familiar with.
+I didn't want to scare you too much.
+And this is a pretty straightforward application of the rank
+nullity theorem, because here essentially what I'm giving you is,
+, the dimension of the null space.
+You have the dimension of the matrix.
+And I'm asking you the dimension of the column, which
+is again using that equivalency with the rank.
+And then you can apply the rank nullity theorem.
+, and then you get, , that the dimension of
+the column space was the rank.
+And so it was equal to three and not to
+two, as I claimed.
+Okay.
+So let's go back to the standard way of doing
+things here.
+And finally statement four and I marked this as difficult.
+And maybe some of you found it extremely difficult.
+And some of you find it extremely easy.
+And the reason why this exercise is difficult is, ,
+that, , it's an easy exercise in disguise.
+Because.
+Why?
+Well, because I set a trap for it.
+, I put a very hard, a very hard hypothesis
+to work with ahead of a statement that is actually
+very easy.
+Okay.
+That statement is once again related to the rank nullity
+theorem, , in a very straightforward way.
+And the rank nullity theorem works for any matrix.
+It doesn't matter if a t a is equal to
+in.
+If it works for any matrix, then it will work
+also for the matrices that have this, , this
+property here.
+And so how do we solve this exercise?
+Well, it's actually, , pretty much a one liner.
+, we can just use, , sorry.
+It said the rank nullity theorem and the rank theorem.
+We can just use the rank theorem, stating that the
+dimension of the column is equal to the dimension of
+the rows, and this should be zero, not minus one
+as a claiming.
+Okay.
+So two types of difficulty we've seen here one genuine
+difficulty and then one , one trap.
+, and the takeaway from this exercise is it's true
+that proofs works from left to right, but don't stop
+on the left, okay?
+Because sometimes the left is hard and the right is
+easy and you waste your time.
+Start decomposing.
+This, , when it's actually pretty simple.
+Okay, time is up.
+Lecture is over.
+I'll see you next week for the workshops and the
+lectures.
+Thank you for coming.

@@ -1,0 +1,923 @@
+Right.
+Okay.
+So as you see, the lecture recording has started.
+I just want to make you aware that that clock
+there is three minutes fast.
+So I'm not going by that one.
+Anyhow, I just want to make you aware before I
+start.
+I've been asked by my peers to display this here.
+It's a group of second and third year students who
+are sort of wanting to pair up with first year.
+, and discussing Ila helping them with Ila.
+These are students who've been in your shoes, , last
+year or the year before.
+And it can be quite useful.
+, especially if you sort of think you could do
+with more help.
+I will include that slide in the set that I'll
+upload on the webpage.
+, later this afternoon if you haven't had a chance.
+, also, those are the attendance poll for this week.
+, Thursday we do the attendance poll.
+, if you're missing this.
+, I've got the coat there because I'm going to
+change that Start now to display my lecture poles, which
+is a different code.
+Right?
+Okay.
+So after that, , linear algebra again week three.
+, so the topic we're doing today is actually two
+relatively different topics that we're doing today that we're doing
+this week first elementary matrices today and then linear transformations
+tomorrow.
+The elementary matrices , to some extent bridges the gap
+between week one where we did Gaussian elimination row operations,
+, and week two where we did matrix algebra.
+, and we're going to see that you have seen
+from reading that this is pretty much two sides of
+the same coin.
+, they're really the same thing.
+We're trying to bridge the gap and seeing the connection
+there.
+, but before we get there, , not this one,
+just to sort of have a warm up, , this
+sort of hangs on from last week.
+, one poll, , that I didn't manage to do
+that, but we will see that something that we're
+going to need later at least an extension.
+So I'd you at the moment.
+, so I just need to quickly go stop this
+here.
+Oh, no.
+I actually can keep this up.
+I just see I've done this cleverer than I thought
+and go.
+, so we've got four choices.
+Reset.
+, and I think I can display that one minute.
+Indeed.
+Right.
+Okay, good.
+Okay.
+Almost time up.
+Right.
+Right.
+Okay.
+.
+Halfway between.
+Halfway between A and B.
+Okay.
+So, , good that I do that.
+, I'm just going to.
+Well, then giving this back to you, I'm just going
+to do this, , on here.
+So I'm asking you once this comes up in a
+second.
+What is a B transpose?
+, and the transpose of that.
+, so there's a couple of rules now that we
+have to play with.
+At the same time, the first thing to notice is
+that this sort of transpose on the B, it's only
+only applies to the B nor to the A.
+So this is really sort of write it as a
+times B transposed and the whole thing transposed.
+, now if I transpose the product of two matrices,
+I actually need to change the order of the matrices.
+And I think that's the bit that the people who
+thought, , that answer A was right had forgotten.
+So I need to change the order of the matrices.
+So I have to say this is B transposed And
+the transpose of that times the first matrix A here
+and again the transpose of that.
+And then I can of course use that.
+I know B transpose.
+Transpose is just the matrix B, so this is B
+a transpose.
+Yeah.
+But do remember that we need to change the order.
+That's the important bit.
+And that's the reason actually why I'm doing this and
+why I'm reminding you because we're seeing that later.
+, so that was answer B.
+, a related thing now in terms of using several
+rules is what would you do if I ask if
+I had three matches this year?
+And I ask you to say, what is A times
+B times C and the whole thing transposed?
+, anybody's got any suspicions?
+What did you see?
+Transpose.
+Times B.
+28.
+That's the sort of obvious thing you'd assume.
+Yeah, you change the order, so it must hold for
+any amount of matrices.
+How would you prove that, though?
+I guess you would do A, B, c transpose.
+So do you that?
+I said.
+Yeah.
+Yeah I know that's correct.
+And you could do it either way.
+You can break it down.
+You're perfectly right.
+I could write this as a and then b c
+and transpose it.
+And then now b c is sort of one matrix
+which don't need to give a name.
+It's just a matrix.
+But we're just a product of two matrices.
+So we can do this as b c transpose times
+A transpose.
+And now we we leave the A transpose there where
+we can now do with a, b, c transpose.
+Again flipping the order there so it is C transposed
+B transposed A transposed.
+, now question is what is it with four matrices
+or 5 or 6 and so on.
+And the suspicion, of course.
+It'll just carry on.
+But you would have to prove it.
+And you can't really prove it for any possible number
+of n.
+So there's something called , , there's something called induction
+that you can use.
+So proof and problem solving, you might have seen this
+in school or proofs and problem solving in semester two
+will go further into that.
+But I just want you to remind you of that
+and also tell you the same rules apply.
+If we had inverses instead of transposes.
+, and , as I say, we're going to need
+that , later.
+Right.
+Okay.
+, so what do I want to do after that.
+So ba transpose was correct.
+, okay.
+So let's get on to what we're doing today.
+Elementary matrices.
+, so the definition that Nicholson gave was the following.
+, and I'll just go with that.
+An elementary matrices is a square matrix.
+that can be obtained from the identity by a single
+elementary row operation.
+A note that is given this definition at the moment,
+not that, comes later.
+It's the matrix that is equivalent to a row operation.
+But it's just saying, , if we can obtain it
+by a single elementary row operation from the identity, then
+it's an elementary matrix.
+Well, and we just to remind you, we had sort
+of three types of row operations.
+Type one is just swapping two rows.
+, type three.
+Type two is multiplying a row with a multiple with
+a with a scalar.
+And type three is adding a multiple of one row
+to another row, , or rather replacing one row by
+that row plus the multiple of another one.
+, actually, in this case, the replacing operation is just
+as important as combining them.
+So you have to You have to replace the correct
+role for this to work.
+, okay.
+So , next poll now that we have the definition
+question is which of these matrices that I've got here,
+, are elementary matrices.
+That's not elementary row operations, elementary matrices.
+So again, , give me a second and I'll display
+the poll again.
+Oh.
+Oh sorry sorry sorry sorry sorry.
+Back, back I did that.
+, there's more than one.
+, there is more than one.
+And I need to give you a poll that allows
+you to give me more than one answer.
+So there we go.
+Sorry.
+.
+Second try.
+Okay, a few more seconds.
+Right.
+You say A and C, , and I believe indeed
+those are the correct answers.
+A few people say also B so , D is
+out.
+, because I said it had to be a square
+matrix.
+D is obviously not square.
+, , although sort of you, it's just swapping two
+rows from.
+But you do need a square matrix.
+, so the other is , matrix A yes.
+I'm multiplying, , the third row by two matrix C
+yes.
+, adding five times the first row to the second.
+, matrix B , if you look closely, you realise
+there's actually two row operations that are in here, one
+after the other.
+, so, , it's both swapping rows one and two.
+, and also more deploying the third row by two.
+, so it's a combination.
+It's not an elementary matrix.
+The elementary matrix is really just obtained by one row
+operation from the identity.
+, okay.
+So that now leads us.
+, so A and C were the correct ones there.
+, that leads us to the sort of, , relation
+this house with Gaussian elimination.
+And Nicholson has this lemma here.
+, if an elementary row operation put this on both
+here.
+, if an elementary row operation is performed on a
+m times n matrix, the matrix we are performing that
+on doesn't have to be square.
+, the result is the matrix E, where E is
+the M times M square.
+No elementary matrix corresponding to that operation.
+, now, I don't know how you .
+When I first read that, I had to read that
+about three times to understand what Nicholson actually meant by
+that.
+So let me paraphrase that a bit.
+So what is it saying is the following.
+, if I've got a matrix A here, and I'm
+performing an elementary row operation on that matrix to get,
+, the matrix, a dash here.
+, and then I say that this elementary row operation,
+, corresponds to the matrix E.
+Well, then I have that.
+I could also get a dash here by taking E
+times a, , or even a little bit more explicit.
+, so if I say if I have an elementary
+row operation, , and I'm going to call this R
+here now performed on a matrix so that by this
+row operation, I'm transferring the matrix A into the matrix
+E dash.
+, this thing that the matrix E here should correspond
+to that row operation means by what we had earlier
+that if I apply the same row operation to the
+identity matrix here, then I'm going to get the matrix
+E that's the elementary matrix.
+, then I also have that a dash here equals
+to E times a.
+So we've now got a link here , between, on
+the one hand, the row operations that we've done in
+week one and the matrix algebra that we've done in
+week two, that they're really just two sides of the
+same coin.
+And that's very, very useful.
+Know it a might be useful if you want to
+do something implement Gaussian elimination on a computer.
+, although you wouldn't actually do that by , by
+multiplying matrices together.
+, but , also this becomes quite important for theoretical
+trying to prove some theory or understanding really what Gauss
+elimination does.
+And also the character of matrices.
+We'll do a little bit of that today.
+, right.
+Okay.
+I think at that point I was just to complete
+the whole thing.
+I was just going to go back to my example
+here.
+, and just to, , sort of just in case,
+, say, well, we've now let's check that this works
+here.
+We've got this matrix C here, , 1511.
+And we certainly obtaining that from the identity matrix by
+adding five times the first row to the second row.
+Yeah.
+Now let's see whether that works.
+Yeah.
+, so we've got this matrix C here , which
+is 111000.
+and we've got a five there, 500.
+, and we are moving the applying that from the
+left by just a general three by three matrix.
+So let's call this just a b c d e
+f g h I.
+Yeah.
+Okay.
+, let's go on.
+, so first element here a this first column here
+times the first row will give us me and a,
+indeed I'll have the same thing for the complete
+first row here.
+This times.
+This will just give me the B this times.
+This will give me the C.
+, now this column here times that row will give
+me A5A plus one times D plus d this times
+that will give me five b plus e times
+one times e.
+and then I'm going to go to five C plus
+f and then finally, this column here times
+that row is going to give me the G.
+, and the same for the other two.
+I'm just going to get H and I back.
+, and indeed , it's a bit off there.
+, indeed.
+We see what we've done here is just adding five
+times the first row to the second row and replacing
+the second row by that.
+Now.
+So this was , r two is replaced by five.
+, by sorry by R two plus five times R1.
+Yeah.
+Okay.
+So , let's do a little bit more on that.
+, so I've got a few more matrices here that
+I just learned, a few row operations that these could
+be, , and I'm just asking you to match them.
+So, , we've got a matching poll here.
+Matching down here.
+And because it's a little bit complex, I want to
+give you two minutes there.
+, you are right.
+Okay.
+And, , just play now.
+Okay.
+That should work.
+, so my matching poll here.
+All right.
+Wait.
+Okay.
+Sorry, sorry, sorry, sorry.
+I need to start again.
+.
+I should be able to reset this here.
+All right.
+Okay.
+Well, we just have to do with that.
+Why can't I not reset this?
+Okay, we'll just have to carry on with that.
+All right.
+Okay.
+The police life.
+I'm going to give you two minutes.
+Okay.
+Results are coming in.
+All right.
+First minute.
+Solo.
+All.
+Right.
+All.
+Right.
+Okay.
+We're almost.
+At the end.
+Right.
+That's it.
+So most frequent answer.
+So people think that see matches to for it's
+the most frequent one.
+And indeed that sort of swapped rows one and two.
+And that is C people also think that E
+matches to one E matches to one.
+So.
+Right.
+Okay.
+, so how do we get the one there from
+the identity matrix adding twice the second row onto the
+first one.
+Yeah.
+, adding twice the second row onto the first one.
+, correct.
+, a doesn't match anything.
+Well, we keep with we leave it, , with a
+a is the one that is left over.
+, B matches to true.
+, so B cells multiplying second row by two be
+matches to two.
+, slightly surprised that that wasn't the most the second
+most popular one.
+And then finally D matches to three D matches.
+Do not have that.
+Just that they all are changed.
+, no d d matches to three.
+So adding twice the first row to the second row.
+, okay.
+And a is the one that is left over.
+, good.
+Okay.
+So, .
+That's fine.
+, recognising elementary matrices.
+, we will have another one.
+So this is all square matrices at the moment.
+So what do you think.
+So there's the matching , the correct one.
+I think that's what we just had.
+, so good.
+, so, , what is the case if I'm applying
+this to a matrix that isn't square?
+, but I've got.
+This one here.
+And I need a poll with three choices.
+I've got a timer, not multiple answers.
+Oh, I thought they reset, but it's hidden down there.
+That's where the reset is hidden.
+Okay.
+Three choices displayed.
+Excellent.
+There we go.
+Okay.
+, almost at the end.
+Right.
+B and indeed B is correct.
+Yeah.
+So, , it's obvious that what we've started swapping rows
+one and two, , and all of these three things
+have somehow swapped rows one and two.
+The question is just what is your starting point.
+And you're swapping you've got two rows here.
+So your starting point has got to be something.
+And I mentioned two.
+And we have to have a square matrix to start
+with.
+so B here is the correct starting point in
+order to swap rows one and two.
+Right.
+I did stress that.
+See here that we can't have but we have to
+have square matrices.
+Otherwise I thought at beginning that it seems quite logical
+that you want something to match the dimension.
+But no, you want something a square matrix in the
+row dimensions.
+So last thing on the sort of just playing around
+with elementary matrices.
+, so all elementary matrices are actually invertible.
+, which is a nice property because all elementary row
+operations we can reverse, we can do the opposite.
+So let's give you an example here.
+So I've got this matrix either similar to what we
+had earlier.
+And I want you to know what is the what
+you want you to tell me or think about what
+is the inverse of that.
+And I'm hoping you that the inverse actually is by
+just replacing that five on the bottom left corner by
+a different number.
+But what should be the number you want to replace
+it with?
+.
+Five choices.
+Reset.
+And play.
+No.
+Sorry.
+Right.
+Okay.
+, it gives you the time, I guess, you know,
+to, , , two minutes.
+I only want at one minute.
+Really?
+I stopped this after one minute.
+Okay, ten more seconds and then I'll go to the
+results.
+So the votes are coming in and you can keep
+them coming in, but I'll show you the results.
+, and most people have said B, which indeed turns
+out to be the correct answer.
+But now the question is, I mean, I am n
+two to, , I am n to remember all of
+these inverses and no, you're not.
+I mean, I don't know them.
+I wouldn't have been able to tell you offhand which
+one of those is the inverse.
+, but you should know how to work these out
+by first principles or so, and I just want to
+quickly go through that.
+So what we're wanting here is that we say we've
+got this matrix.
+, right.
+, so what's our matrix?
+One, one, one and a five down here 00000.
+, and we want to find the inverse.
+So in other words, we want to find a matrix
+here, , such that if we multiply that, we're going
+to get the identity.
+, , so now, of course, I could try playing
+around and then saying, okay, this is a matrix A,
+B, C, D and so on.
+, and let's sort of make a system of equations,
+see whether I can work out whether zeros are, ,
+what it should be, or I can take the hint
+and saying only actually I need one element there.
+, but I can do it in a different way.
+So I'm pretty more deploying here with something that I
+know is going to be an elementary row operation.
+So an elementary matrix and I want to do is
+such that this here becomes the identity.
+So from what we've done before, all I need to
+work out is what row operations do I have to
+do on this matrix here in order to get the
+identity?
+Well, so how how does that work?
+Which row operation is the right one?
+Becomes all three minus five times a one.
+Yes.
+So I can't get that to the identity.
+If I replace the third row, , with the third
+row minus five times the first row.
+Well, so what I need to do is I need
+to replace the third row, , by the third row,
+minus five times the first row.
+, and if we applying this here, the elementary matrix
+corresponding to that is indeed, , starting with the identity
+and then just five times minus five times the first
+row added onto that is the minus five here.
+, that should be it.
+And you can now go through and just check that
+this indeed holds here.
+So one times one gives me one, one times this
+one or the ones on different locations.
+So it all cancels.
+This one here I have a one times minus one
+plus one times.
+Sorry one times minus five plus one times five.
+Cancel.
+It gives me the zero.
+And you can go through that this works, but
+just sort of playing a little bit with what we
+know about elementary row operations.
+Okay.
+So that's sort of enough about this sort of algebra
+and how the whole thing works and how we recognise
+them.
+, let's time to have a little bit of what
+that tells us about the nature of matrices.
+, what we've done so far.
+So the first thing is, , I was wondering why
+why are these things called elementary matrices?
+So is it this guy that says, this is
+really elementary?
+There should be really, really easy.
+And that's why the elementary matrices, it's just it's just
+a simple thing.
+, you might think so, but I don't think that
+that's what why it's called elementary matrices.
+Rather, I think what we've got here is something
+that.
+Yeah.
+You can think of elementary matrices as something Lego
+blocks.
+These are the building blocks of anything else of any
+other, actually any other invertible matrix.
+, and we will see that this sort of final
+result really of that session.
+So that's what, , elementary means in this case.
+These are the building blocks of other matrices.
+Yeah.
+, yeah.
+There are, there are this sort of most, most basic,
+most simple elementary, , invertible matrices that you can think
+of apart from the identity.
+But really, I think it's the building blocks.
+Okay.
+, going into that, , I've got another poll which
+is now getting a little bit more that you need
+to think about what's going on here.
+, so suppose we've got the following situation.
+, I've got A and B are matrices such that
+I can get from A to B by elementary row
+operations and saying I need a sequence of row operations,
+not just one a sequence of k row operations.
+, and I denote by e1, e2, e, k the
+matrices that correspond to these row operations.
+, so that means somehow I must be able to
+write the new matrix B as something u times
+A is something multiplied from the left times A.
+Now it's just not a single matrix.
+It's a sequence of matrices.
+What's the right thing to do here for you?
+Well.
+.
+Not multiple answers.
+And the time I display.
+Yeah, yeah.
+Okay.
+, ten more seconds.
+See, is what most of you say.
+And indeed, , that is the correct answer.
+, and again, , we can sort of get there,
+, by thinking, , so what do we have?
+, we know that we're going to get our matrix
+B, , from the matrix A.
+, by somehow multiplying from the left.
+, and now what do we do?
+, we saying, first of all, we going to apply
+the elementary row operation E1 to it.
+So we're going to start with, , applying E1 to
+that.
+, and then so this becomes the new matrix here.
+And after that we are applying E2 to that, ,
+and so on.
+And then E3, , and we carry on until finally
+we apply e k to the whole thing as the
+last row operation.
+, and of course, , this is now lots of
+brackets.
+We know we can, we can re bracket the whole
+thing.
+We can write this here as EQ times, times E3,
+times e2 times E1, , and that whole thing times,
+eh?
+, and then, , this here.
+, the combination of all these elementary row operations, we
+can just call you, .
+And that was the answer.
+The answer?
+See?
+There.
+Okay.
+So, .
+How do we get this to you?
+.
+And again.
+, so what I've shown you before.
+, so this here, , this is really was from
+a theorem 2.51 and Nicholson.
+, and the theorem actually did have a third part.
+, so here's the theorem again.
+, so, so a suppose that A and B are
+matrices such that you can get from A to B
+by row operations.
+, then we know that we can write B as
+two times a and we've got a representation of
+U.
+That's what we've just done.
+And also Nicholson says the following that indeed we can
+compute you by, , oops, doing this here.
+, what we've known for the, , or what I
+showed you as the algorithm to correct to, to get
+inverses.
+, so we can start with an augmented system here
+that we have the matrix A augmented by the identity,
+apply row operations to A, so that we're going to
+get to be , at the same time the identity
+matrix here would be transformed to you.
+, and I showed you that last time as a
+way to, to get the identity as a sort of
+this is just the magic trick.
+, why does it work?
+, and we now know or have the, , half
+a bit of an understanding and know why this would
+work.
+Let me just check that.
+, I'm not ahead of myself.
+, so what we're saying is basically the following, ,
+that we're saying that if I've got my matrix A
+here.
+Yeah.
+, and I say I can get by elementary by
+some row operations.
+So I'm going to call these row operations.
+Are you here?
+, so if I take this here IU, I'm going
+to get as the row operation, , the corresponding to
+the matrix.
+You I'm going to get to matrix U a and
+this matrix here is b this is what I
+call b.
+So I'm going to get from A to B by
+row operations.
+I these row operations I call ru and you
+as the sort of combination of matrices that corresponds to
+that.
+Yeah.
+That's the setup there.
+, if I now do and say I'm going to
+apply a same row operations here, , to the matrix,
+I to the identity.
+What I'm getting to is also you times I know
+and just this gives me the matrix.
+You.
+And that indeed is what this is saying that if
+I the same row operations that take A to B,
+if I apply them to I , that will give
+me the matrix U.
+, and of course you could ask the matrix B
+that you wanted to get to.
+You could choose the identity.
+, and if you're doing that, , this will now
+give you the proof that indeed what you're getting out
+of the process, in the position of you there is
+the inverse of the matrix you started with.
+Now, , think about that.
+, that just said, this is the reason why the
+whole thing works.
+, and I think let me just check where I
+am at the moment.
+.
+I'm totally sure I might.
+Right.
+Okay, let's let me let me just do that.
+I don't want to do an another example on this.
+Did I, .
+Yeah, I did one two.
+Right.
+Okay.
+So, , let's just have another example on the whole
+thing.
+, keep this up here and say, let's say I've
+got matrices A is , one, two, three, four and
+the matrix B is six, 812.
+Yeah.
+, so , have a look at these.
+, and I sort of, , you should see relatively
+quickly that you can't get from A to B by,
+, two actually row operations.
+, and let's just try this sort of algorithm.
+So we've got one, two, three, four and we say
+we want to apply the same thing here to the
+identity matrix.
+So can anybody tell me a row operation that will
+get me at least in the right direction?
+What should I do?
+So for a one row run it were two.
+Yeah.
+Let's start with that one.
+That at least gives us here.
+So if we're swapping that , so R1 swap with
+R2.
+, that will give us a 3412.
+We're doing the same thing on the identity.
+So this will give us A0110.
+Right.
+Okay.
+, and the other operation, what else do we need
+to multiply?
+Row one by two.
+Indeed.
+So row one gets replaced by two.
+Row one.
+, so this will now give us six, eight one,
+two.
+On the other hand 0210.
+Okay, so this is B , we got there.
+, and, , so this here is B, this here
+is, you know, , and we can now check that,
+, u times a equals to be, you know, ,
+I'm not going to do that here at the moment,
+but it's the whole process at work.
+You take those matrices, multiply them out, convince yourself that
+this actually does work.
+, okay.
+, just to warn you, you may very well get
+something this exercise that a heart here in a
+quiz or in a, , synoptic assessment.
+So it's a, it's a popular, , it's a popular
+thing to ask.
+Right.
+Okay.
+I say this also applies to the identity.
+Okay, so we now know how to get from A
+to B by elementary row operations.
+And what this does with a matrix view.
+The question is can I always go back.
+So once I've done that I have a way from
+A to B with a matrix view.
+Do I know that I can always reverse that.
+So what do you think?
+No, sorry.
+Why does this not work?
+Have I've forgotten?
+Reset.
+Reset.
+Display.
+Yes.
+Okay.
+It works now.
+By 10s.
+Majority think it's always and indeed it is always.
+So and again just just quickly sort of talk you
+through the argument, , why this would be the case.
+So we have seen that if we go from a,
+, to be elementary row operation, , that means that
+we know that we can write B as you times
+A, we use invertible, you know?
+.
+So you as this sort of, , combination of elementary
+matrices.
+, now, of course, we can now multiply the whole
+thing by u minus one to give us that u
+minus one b equals to a.
+Yeah.
+Multiplying from the left by u minus one.
+Or this tells us that a equals to u minus
+one b.
+So again we have that.
+Now we can get we can write A as
+an invertible matrix times B that looks okay.
+The only thing that we have to think about is
+we know that this u here , u here was
+a , was a combination of , a product of
+elementary matrices.
+So this is e k times e2 times E1.
+, so what is u minus one.
+, and this is what I said earlier.
+, so u minus one obviously is this whole thing
+here, , inverted.
+, and now we know how to get that.
+We get that by just changing the order.
+So this is E one minus one times E two
+minus one and so on.
+Times e k minus one.
+Now each of those here, , it's the inverse
+of an elementary matrix Which we know is also an
+elementary matrix.
+So again, we can write a as a sequence of
+elementary matrices applied to be.
+In other words we can get from B to a
+m.
+Okay.
+So to summarise that if we have something that we
+say if it's something this is symmetric, that we
+go from A to B and means we can get
+from B to A if and only if we call
+this an equivalent.
+And in this case we can say that two matrices
+A and B are row equivalent.
+If we go from A to B by elementary row
+operations, and that implies we can also get vice versa
+equivalences.
+Again, not necessarily in this case, but equivalence is again
+is something that you will see a few times.
+So to finish the whole thing off, I've got one
+last, , last poll here.
+, which says that, , I've got an n times
+n matrix.
+, and which of these conditions that are half here
+is now equivalent or is now equivalent to that?
+The matrix A is invertible.
+That is a bit of what we had last week.
+, and a bit of what I've done just now.
+, this again will be a poll, , where I've
+got multiple choices.
+So I'll just set this up.
+And it would have a choice this time or one
+minute display now.
+Okay.
+All.
+Right.
+Ten more seconds.
+Okay.
+Right.
+Okay.
+We're not quite clear.
+B and D are the most favourite, but you're not
+sure, so let's look a, , , it's really equivalent
+to matrix and reduce alone form.
+That's not enough.
+Actually, every matrix is equivalent to a matrix in row
+echelon form.
+If it's an invertible matrix, it'll be actually be.
+It's equivalent to the identity.
+So reduced form is not enough.
+part C it is an elementary matrix, while
+every elementary matrix is invertible, but not every invertible matrix
+is elementary.
+Yeah.
+, rather, .
+D is correct.
+, every elementary matrix is a every invertible matrix is
+a product of elementary matrices.
+Now, , b I should say is correct as well.
+B follows from what we have from the inverse
+theorem we had in the last lecture.
+, for every right hand side there is a solution.
+And also we have been shown that this solution is
+unique.
+I just want to summarise this.
+just one more slide that says the last point that
+we have out there, and a square matrix is invertible
+if and only if it is the product of elementary
+matrices.
+So I've got a representation that I can write every
+invertible matrices as a product there.
+And I to think about this as the Lego
+theorem.
+It tells me indeed that every invertible matrix I can
+make up by using elementary matrices as my building blocks.
+I should add to this that this representation there are.
+The product of elementary matrices is not unique.
+There are several ones of them.
+So this really works more Legos again where you
+can build something in various different ways.
+, rather than say prime numbers where the product is
+unique.
+Right.
+Okay.
+That's it for today.
+I'll see you tomorrow again, where we do something quite
+different.

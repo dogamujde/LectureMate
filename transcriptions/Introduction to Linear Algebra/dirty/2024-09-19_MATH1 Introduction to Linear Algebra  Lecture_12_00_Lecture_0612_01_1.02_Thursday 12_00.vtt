@@ -1,0 +1,5056 @@
+WEBVTT
+
+00:00:25.110 --> 00:00:26.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:00:26.010 --> 00:00:27.000
+<v Speaker 0>Hello.
+
+NOTE CONF {"raw":[100]}
+
+00:00:27.540 --> 00:00:27.900
+<v Speaker 0>Hello.
+
+NOTE CONF {"raw":[100]}
+
+00:00:27.900 --> 00:00:28.500
+<v Speaker 0>Hello.
+
+NOTE CONF {"raw":[100]}
+
+00:00:28.530 --> 00:00:31.710
+<v Speaker 0>We have the red light of go because red means
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:31.710 --> 00:00:32.099
+<v Speaker 0>go.
+
+NOTE CONF {"raw":[100]}
+
+00:00:32.099 --> 00:00:33.810
+<v Speaker 0>So, hello.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:33.900 --> 00:00:37.140
+<v Speaker 0>Welcome to the first actual lecture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:00:37.650 --> 00:00:42.540
+<v Speaker 0>Um, please do do the attendance Thursday is attendance day.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:43.350 --> 00:00:46.950
+<v Speaker 0>Um, so that is important.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:00:47.160 --> 00:00:49.140
+<v Speaker 0>I'm going to give you another five seconds.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100]}
+
+00:00:49.380 --> 00:00:50.490
+<v Speaker 0>Nobody's doing anything.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:00:50.520 --> 00:00:52.410
+<v Speaker 0>Uh, two people back.
+
+NOTE CONF {"raw":[82,98,99,100]}
+
+00:00:52.800 --> 00:00:54.690
+<v Speaker 0>Uh, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:54.690 --> 00:00:57.330
+<v Speaker 0>It's going, it's going.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:58.200 --> 00:00:58.620
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:00:59.280 --> 00:01:00.090
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:01:00.090 --> 00:01:04.040
+<v Speaker 0>yes, proper linear algebra lecture first one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:04.040 --> 00:01:07.010
+<v Speaker 0>So where are we in theory?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:07.040 --> 00:01:11.540
+<v Speaker 0>You have done the reading of section 1.1, 1.2 and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:11.540 --> 00:01:12.470
+<v Speaker 0>1.3.
+
+NOTE CONF {"raw":[100]}
+
+00:01:13.370 --> 00:01:17.660
+<v Speaker 0>That is the understanding that you have done that reading.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:17.660 --> 00:01:21.410
+<v Speaker 0>I am going to work on the assumption you have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:21.410 --> 00:01:22.280
+<v Speaker 0>done that reading.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:23.060 --> 00:01:26.300
+<v Speaker 0>Um, we are in Thursday's lecture because today's Thursday and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,68,100,100]}
+
+00:01:26.300 --> 00:01:27.170
+<v Speaker 0>we are in a lecture.
+
+NOTE CONF {"raw":[100,84,100,86,100]}
+
+00:01:27.440 --> 00:01:29.210
+<v Speaker 0>We have another lecture on Friday.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:30.440 --> 00:01:32.390
+<v Speaker 0>On Monday, the reading.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:32.390 --> 00:01:34.250
+<v Speaker 0>All the quizzes are released on Monday morning.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:34.610 --> 00:01:38.300
+<v Speaker 0>The reading quiz you should probably do before your tutorial,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:38.300 --> 00:01:41.900
+<v Speaker 0>which will be next Tuesday, same as it was this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:41.900 --> 00:01:42.440
+<v Speaker 0>week.
+
+NOTE CONF {"raw":[100]}
+
+00:01:42.680 --> 00:01:44.690
+<v Speaker 0>And then you're going to have the practice and assessed
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,89,100]}
+
+00:01:44.690 --> 00:01:48.200
+<v Speaker 0>quizzes, um, that you need to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:48.380 --> 00:01:51.020
+<v Speaker 0>Oh, it is Wednesday I think you need to do
+
+NOTE CONF {"raw":[67,100,100,100,100,100,100,100,100,100]}
+
+00:01:51.020 --> 00:01:51.890
+<v Speaker 0>before Wednesday.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:52.670 --> 00:01:56.240
+<v Speaker 0>Um, all of that is very calculation based.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:56.240 --> 00:01:57.500
+<v Speaker 0>It's sit down.
+
+NOTE CONF {"raw":[89,97,97]}
+
+00:01:57.500 --> 00:01:59.950
+<v Speaker 0>Can you in this case do a load of row
+
+NOTE CONF {"raw":[100,100,100,79,100,100,100,100,100,100]}
+
+00:01:59.950 --> 00:02:00.520
+<v Speaker 0>reduction.
+
+NOTE CONF {"raw":[100]}
+
+00:02:00.520 --> 00:02:01.990
+<v Speaker 0>Solve some linear systems.
+
+NOTE CONF {"raw":[93,100,100,100]}
+
+00:02:03.010 --> 00:02:07.480
+<v Speaker 0>Next week there will be a piece of homework released.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:07.480 --> 00:02:10.149
+<v Speaker 0>So next week that will cover material.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:10.149 --> 00:02:12.280
+<v Speaker 0>From that it will have one question from this week.
+
+NOTE CONF {"raw":[100,61,100,100,100,100,100,100,100,100]}
+
+00:02:12.310 --> 00:02:16.450
+<v Speaker 0>One question more related to next week's content that you're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:02:16.450 --> 00:02:17.500
+<v Speaker 0>doing with Andreas.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:17.500 --> 00:02:20.380
+<v Speaker 0>And that is more focusing on proof skills rather than
+
+NOTE CONF {"raw":[100,97,92,93,98,100,100,100,100,100]}
+
+00:02:20.380 --> 00:02:22.720
+<v Speaker 0>just calculation skills.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:23.020 --> 00:02:25.240
+<v Speaker 0>So that's kind of where we are.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:25.630 --> 00:02:30.070
+<v Speaker 0>On that note, I know some people heard this on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:30.070 --> 00:02:31.840
+<v Speaker 0>Tuesday in the tutorials.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:31.990 --> 00:02:36.760
+<v Speaker 0>Please log on to stack before Monday.
+
+NOTE CONF {"raw":[100,100,98,98,100,100,100]}
+
+00:02:36.940 --> 00:02:40.540
+<v Speaker 0>So here is learn.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:40.540 --> 00:02:42.190
+<v Speaker 0>Hopefully you have come across this.
+
+NOTE CONF {"raw":[100,60,60,100,100,100]}
+
+00:02:42.190 --> 00:02:45.100
+<v Speaker 0>Anyone got no idea how to find this web page
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,91,91]}
+
+00:02:45.100 --> 00:02:45.760
+<v Speaker 0>at all?
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:47.260 --> 00:02:47.920
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:02:47.920 --> 00:02:48.640
+<v Speaker 0>Great.
+
+NOTE CONF {"raw":[100]}
+
+00:02:49.270 --> 00:02:52.420
+<v Speaker 0>Um, if you go on to online assessments, quizzes and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:52.420 --> 00:02:56.380
+<v Speaker 0>lecture materials, please before Monday, do click through to that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:57.130 --> 00:02:59.580
+<v Speaker 0>Uh, when we refer to stack, that is the link
+
+NOTE CONF {"raw":[71,100,100,100,100,100,100,100,100,100]}
+
+00:02:59.580 --> 00:03:00.810
+<v Speaker 0>we are talking about.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:01.230 --> 00:03:03.240
+<v Speaker 0>Eventually it should load.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:03.870 --> 00:03:07.830
+<v Speaker 0>Um, basically the system needs to see you before Monday
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:07.830 --> 00:03:13.500
+<v Speaker 0>and before anything assists released because otherwise it back scene
+
+NOTE CONF {"raw":[100,100,100,83,100,100,100,66,65,36]}
+
+00:03:13.500 --> 00:03:14.550
+<v Speaker 0>things happen.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:14.610 --> 00:03:16.140
+<v Speaker 0>So fun things happen.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:16.140 --> 00:03:18.390
+<v Speaker 0>If you log on, please log on before Monday.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:18.750 --> 00:03:21.030
+<v Speaker 0>Um, normally it should hopefully be faster than that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:21.030 --> 00:03:23.340
+<v Speaker 0>I'm not sure why it's not wanting to log on.
+
+NOTE CONF {"raw":[95,100,100,100,96,100,100,100,100,100]}
+
+00:03:23.970 --> 00:03:25.170
+<v Speaker 0>We'll give it a second.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:26.100 --> 00:03:31.230
+<v Speaker 0>Um, okay, so while we slightly wait for that, does
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:32.700 --> 00:03:35.280
+<v Speaker 0>anyone have any comments on the reading?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:35.280 --> 00:03:36.390
+<v Speaker 0>How do we find the reading?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:36.390 --> 00:03:37.680
+<v Speaker 0>Was it horrible?
+
+NOTE CONF {"raw":[100,100,96]}
+
+00:03:37.710 --> 00:03:39.690
+<v Speaker 0>Okay, weird.
+
+NOTE CONF {"raw":[100,92]}
+
+00:03:43.170 --> 00:03:43.860
+<v Speaker 1>What was that?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:45.690 --> 00:03:46.290
+<v Speaker 0>It was okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:46.290 --> 00:03:47.040
+<v Speaker 0>Middling.
+
+NOTE CONF {"raw":[100]}
+
+00:03:47.280 --> 00:03:49.110
+<v Speaker 0>Are we most people middling?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:49.470 --> 00:03:51.210
+<v Speaker 0>I'm seeing some kind of.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:51.930 --> 00:03:54.360
+<v Speaker 0>I'm seeing no one jumping up and down, nodding their
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:54.360 --> 00:03:56.100
+<v Speaker 0>head, saying it was the most wonderful reading of their
+
+NOTE CONF {"raw":[62,100,100,100,100,100,100,100,100,100]}
+
+00:03:56.100 --> 00:03:59.390
+<v Speaker 0>life, which, frankly, I would be surprised and questioning your
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:59.390 --> 00:04:00.500
+<v Speaker 0>sanity if you were.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:01.130 --> 00:04:03.650
+<v Speaker 0>Um, but yeah, that is kind of where we were
+
+NOTE CONF {"raw":[100,100,100,91,91,100,100,100,54,54]}
+
+00:04:03.650 --> 00:04:07.160
+<v Speaker 0>expecting it to be somewhat familiar, maybe a different way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,70,100,100,100]}
+
+00:04:07.160 --> 00:04:10.070
+<v Speaker 0>of writing it, different way of looking at it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:04:10.550 --> 00:04:12.320
+<v Speaker 0>Welcome to university maths.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:12.470 --> 00:04:15.260
+<v Speaker 0>This first bit of that you're doing this kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:15.260 --> 00:04:17.450
+<v Speaker 0>first year, most of it the maths.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:18.320 --> 00:04:21.200
+<v Speaker 0>It's a lots of different ways of thinking about maths
+
+NOTE CONF {"raw":[86,63,100,100,100,100,100,100,100,100]}
+
+00:04:21.200 --> 00:04:23.210
+<v Speaker 0>and lots of ways of writing maths.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:23.780 --> 00:04:27.920
+<v Speaker 0>Um, so it should kind of the particularly the beginning.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,92,100,100,100]}
+
+00:04:27.920 --> 00:04:30.980
+<v Speaker 0>That's the hard, the hard bit different ways of seeing
+
+NOTE CONF {"raw":[99,100,100,100,69,93,100,100,100,100]}
+
+00:04:30.980 --> 00:04:31.430
+<v Speaker 0>it.
+
+NOTE CONF {"raw":[82]}
+
+00:04:32.090 --> 00:04:32.570
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:04:32.570 --> 00:04:33.590
+<v Speaker 0>That's still not loading.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:33.590 --> 00:04:34.730
+<v Speaker 0>So I'm going to give up on it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:35.330 --> 00:04:35.990
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:04:36.620 --> 00:04:38.840
+<v Speaker 0>Um, let us return to this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:39.770 --> 00:04:43.490
+<v Speaker 0>So to start with, we are going to actually think
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:43.490 --> 00:04:45.290
+<v Speaker 0>about what is a linear equation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:46.040 --> 00:04:47.930
+<v Speaker 0>Uh, so there are five equations.
+
+NOTE CONF {"raw":[65,100,100,100,100,100]}
+
+00:04:48.980 --> 00:04:52.970
+<v Speaker 0>Uh, and there's going to be another poll if I
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,94,100,100]}
+
+00:04:52.970 --> 00:04:54.170
+<v Speaker 0>can bring it up.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:59.860 --> 00:05:01.180
+<v Speaker 1>The bomb.
+
+NOTE CONF {"raw":[35,50]}
+
+00:05:02.410 --> 00:05:03.160
+<v Speaker 0>It's going to appear.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:03.190 --> 00:05:03.790
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:03.790 --> 00:05:05.290
+<v Speaker 0>So another poll for you to log on.
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100]}
+
+00:05:05.290 --> 00:05:08.080
+<v Speaker 0>That is the poll for today where we are actually
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:08.080 --> 00:05:09.280
+<v Speaker 0>doing content.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:16.180 --> 00:05:17.680
+<v Speaker 0>Doo doo doo doo doo.
+
+NOTE CONF {"raw":[99,100,100,100,100]}
+
+00:05:17.710 --> 00:05:19.360
+<v Speaker 0>Lots of people logging on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:47.440 --> 00:05:48.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:48.010 --> 00:05:49.660
+<v Speaker 0>Numbers seem to be so.
+
+NOTE CONF {"raw":[86,100,100,100,69]}
+
+00:05:49.660 --> 00:05:51.850
+<v Speaker 0>No sudden surge of numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:55.210 --> 00:05:55.750
+<v Speaker 0>Oh.
+
+NOTE CONF {"raw":[94]}
+
+00:05:55.750 --> 00:05:55.800
+<v Speaker 0>We'll.
+
+NOTE CONF {"raw":[46]}
+
+00:05:59.310 --> 00:06:01.350
+<v Speaker 0>Wait for everyone to get on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:15.840 --> 00:06:16.170
+<v Unknown>The bus.
+
+NOTE CONF {"raw":[58,26]}
+
+00:06:18.180 --> 00:06:18.720
+<v Unknown>So I think.
+
+NOTE CONF {"raw":[75,88,87]}
+
+00:06:20.970 --> 00:06:25.380
+<v Speaker 0>Okay, so the first question.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:29.100 --> 00:06:31.410
+<v Speaker 0>Is which of the following are linear?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:32.370 --> 00:06:33.720
+<v Speaker 0>Let us have a vote.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:41.370 --> 00:06:44.580
+<v Speaker 0>To give you a minute to see how we're getting
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:06:44.580 --> 00:06:45.000
+<v Speaker 0>on.
+
+NOTE CONF {"raw":[100]}
+
+00:06:49.680 --> 00:06:50.520
+<v Speaker 2>Do to do.
+
+NOTE CONF {"raw":[67,78,84]}
+
+00:07:18.400 --> 00:07:19.750
+<v Speaker 0>Feel free to have a chat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:21.430 --> 00:07:22.570
+<v Speaker 0>I'll give a slight clue.
+
+NOTE CONF {"raw":[95,100,100,100,100]}
+
+00:07:22.600 --> 00:07:23.860
+<v Speaker 0>It is more than one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:23.890 --> 00:07:26.050
+<v Speaker 0>It is not just one of these equations that is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:26.050 --> 00:07:26.590
+<v Speaker 0>linear.
+
+NOTE CONF {"raw":[100]}
+
+00:07:47.530 --> 00:07:47.860
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:47.890 --> 00:07:49.960
+<v Speaker 0>I'm going to give you 10s.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:51.160 --> 00:07:51.760
+<v Speaker 0>Eight.
+
+NOTE CONF {"raw":[100]}
+
+00:07:53.220 --> 00:08:00.660
+<v Speaker 0>64321.
+
+NOTE CONF {"raw":[100]}
+
+00:08:03.180 --> 00:08:03.660
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:08:04.440 --> 00:08:05.010
+<v Speaker 0>Let's see.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:05.850 --> 00:08:06.600
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:08:08.430 --> 00:08:08.970
+<v Speaker 0>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:08:09.000 --> 00:08:11.580
+<v Speaker 0>So most of you all, we've got some comments.
+
+NOTE CONF {"raw":[100,100,100,100,92,100,100,100,100]}
+
+00:08:11.580 --> 00:08:12.570
+<v Speaker 0>That's exciting.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:12.660 --> 00:08:13.500
+<v Speaker 0>I like comments.
+
+NOTE CONF {"raw":[100,100,98]}
+
+00:08:13.530 --> 00:08:14.910
+<v Speaker 0>Let's go back to see this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:16.770 --> 00:08:22.170
+<v Speaker 0>Um, so we have generally most people seem for is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:08:22.170 --> 00:08:22.740
+<v Speaker 0>linear.
+
+NOTE CONF {"raw":[100]}
+
+00:08:23.580 --> 00:08:24.450
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:08:24.480 --> 00:08:28.410
+<v Speaker 0>That is definitely a linear equation for most definitely linear.
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:08:29.040 --> 00:08:30.480
+<v Speaker 0>Uh, one is not linear.
+
+NOTE CONF {"raw":[72,100,100,100,100]}
+
+00:08:31.620 --> 00:08:33.120
+<v Speaker 0>I also agree with that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:33.570 --> 00:08:35.250
+<v Speaker 0>Um, what's the comment?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:35.250 --> 00:08:36.719
+<v Speaker 0>It is a function of x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:37.200 --> 00:08:40.020
+<v Speaker 0>Anyone else got any comments about why one is not
+
+NOTE CONF {"raw":[95,100,100,100,100,73,71,100,100,100]}
+
+00:08:40.020 --> 00:08:40.590
+<v Speaker 0>linear?
+
+NOTE CONF {"raw":[100]}
+
+00:08:43.830 --> 00:08:45.360
+<v Speaker 0>Yeah that's a quadratic.
+
+NOTE CONF {"raw":[100,27,100,100]}
+
+00:08:45.630 --> 00:08:47.370
+<v Speaker 0>So yeah definitely not.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:47.490 --> 00:08:50.670
+<v Speaker 0>Uh, we also seem to agree that three isn't linear.
+
+NOTE CONF {"raw":[55,100,100,100,100,100,97,100,95,100]}
+
+00:08:51.150 --> 00:08:53.070
+<v Speaker 0>So nine.
+
+NOTE CONF {"raw":[100,97]}
+
+00:08:53.780 --> 00:08:54.350
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:54.980 --> 00:08:55.310
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:08:55.970 --> 00:08:59.090
+<v Speaker 0>Any ideas about why three isn't linear?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:03.410 --> 00:09:04.310
+<v Speaker 0>It's exponential.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:04.310 --> 00:09:04.520
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[97]}
+
+00:09:04.550 --> 00:09:04.880
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:09:04.880 --> 00:09:06.590
+<v Speaker 0>There's a good exponential term in there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:07.010 --> 00:09:07.670
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:07.760 --> 00:09:12.680
+<v Speaker 0>Um, we seem a bit more conflicted between two and
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:09:12.680 --> 00:09:14.060
+<v Speaker 0>to some degree, five.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:14.060 --> 00:09:15.950
+<v Speaker 0>There seems to be some popularity around that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95]}
+
+00:09:15.950 --> 00:09:20.630
+<v Speaker 0>So, um, what I'm going to give you is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:20.630 --> 00:09:24.470
+<v Speaker 0>minute to find someone around you and have a discussion
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:24.470 --> 00:09:28.100
+<v Speaker 0>are two and five linear, and then we'll have another
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100,100]}
+
+00:09:28.100 --> 00:09:28.730
+<v Speaker 0>vote.
+
+NOTE CONF {"raw":[100]}
+
+00:09:29.870 --> 00:09:30.440
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:33.100 --> 00:10:33.430
+<v Speaker 3>Okay.
+
+NOTE CONF {"raw":[97]}
+
+00:10:47.140 --> 00:10:48.940
+<v Speaker 0>Okay, let's try having another vote.
+
+NOTE CONF {"raw":[100,99,100,99,100,100]}
+
+00:10:48.940 --> 00:10:51.010
+<v Speaker 0>You can keep chatting, but feel free to give.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:51.010 --> 00:10:51.070
+<v Speaker 1>A.
+
+NOTE CONF {"raw":[100]}
+
+00:10:51.120 --> 00:10:51.810
+<v Speaker 0>Vote.
+
+NOTE CONF {"raw":[93]}
+
+00:11:09.690 --> 00:11:20.040
+<v Speaker 0>Okay, let's have another 10s 987543.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:20.550 --> 00:11:22.680
+<v Speaker 0>My seconds are very uniform.
+
+NOTE CONF {"raw":[100,91,96,100,100]}
+
+00:11:23.130 --> 00:11:24.360
+<v Speaker 0>Two.
+
+NOTE CONF {"raw":[100]}
+
+00:11:26.010 --> 00:11:26.700
+<v Speaker 0>One.
+
+NOTE CONF {"raw":[100]}
+
+00:11:27.000 --> 00:11:30.120
+<v Speaker 0>Okay, let's see for any better.
+
+NOTE CONF {"raw":[94,58,100,76,100,100]}
+
+00:11:31.020 --> 00:11:34.890
+<v Speaker 0>Okay, so we seem a lot happier that two is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:34.890 --> 00:11:35.310
+<v Speaker 0>linear.
+
+NOTE CONF {"raw":[100]}
+
+00:11:35.340 --> 00:11:37.050
+<v Speaker 0>Let's have a quick look at the comments.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:37.260 --> 00:11:39.180
+<v Speaker 0>Coefficient is constant.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:39.750 --> 00:11:41.010
+<v Speaker 0>Coefficients are constant.
+
+NOTE CONF {"raw":[99,99,100]}
+
+00:11:41.010 --> 00:11:41.400
+<v Speaker 0>Yep.
+
+NOTE CONF {"raw":[97]}
+
+00:11:41.400 --> 00:11:47.280
+<v Speaker 0>So if we look at um number three uh the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:11:47.280 --> 00:11:51.260
+<v Speaker 0>second equation we have log two and we have five
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:51.260 --> 00:11:51.860
+<v Speaker 0>cubed.
+
+NOTE CONF {"raw":[100]}
+
+00:11:51.890 --> 00:11:53.120
+<v Speaker 0>All the coefficients.
+
+NOTE CONF {"raw":[81,100,100]}
+
+00:11:53.330 --> 00:11:57.080
+<v Speaker 0>Now both of those are functions of a number.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:57.080 --> 00:11:58.970
+<v Speaker 0>But a function of a number is just another number.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:58.970 --> 00:11:59.930
+<v Speaker 0>So log three.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:59.960 --> 00:12:01.100
+<v Speaker 0>Five cubed.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:01.340 --> 00:12:02.900
+<v Speaker 0>Five cubes 125.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:02.900 --> 00:12:05.030
+<v Speaker 0>No idea what log three is off the top of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:05.030 --> 00:12:06.950
+<v Speaker 0>my head, but they are just numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:07.100 --> 00:12:08.540
+<v Speaker 0>So yeah, good.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:08.750 --> 00:12:10.730
+<v Speaker 0>It is linear because it is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:10.730 --> 00:12:11.900
+<v Speaker 0>I like that answer.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:12.530 --> 00:12:13.190
+<v Speaker 0>Uh, good.
+
+NOTE CONF {"raw":[96,100]}
+
+00:12:13.190 --> 00:12:13.850
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:14.150 --> 00:12:19.010
+<v Speaker 0>Um, we still seem a bit conflicted about the last
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:19.010 --> 00:12:19.520
+<v Speaker 0>one.
+
+NOTE CONF {"raw":[100]}
+
+00:12:20.150 --> 00:12:20.810
+<v Speaker 0>Let's see.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:20.810 --> 00:12:23.690
+<v Speaker 0>Even if it's invalid, it's still linear variables.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97]}
+
+00:12:23.690 --> 00:12:24.680
+<v Speaker 0>All power of one.
+
+NOTE CONF {"raw":[100,93,100,100]}
+
+00:12:24.980 --> 00:12:26.750
+<v Speaker 0>It's linear with no solution.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:26.990 --> 00:12:28.160
+<v Speaker 0>Those are all true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:28.430 --> 00:12:31.940
+<v Speaker 0>It is an inconsistent linear equation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:32.030 --> 00:12:33.170
+<v Speaker 0>It's not true.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:33.170 --> 00:12:34.370
+<v Speaker 0>It's definitely not true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:34.400 --> 00:12:36.110
+<v Speaker 0>Zero does not equal to.
+
+NOTE CONF {"raw":[100,100,100,100,76]}
+
+00:12:36.140 --> 00:12:40.010
+<v Speaker 0>It is a well-known statement or an invalid statement.
+
+NOTE CONF {"raw":[100,100,100,56,100,100,100,100,100]}
+
+00:12:40.010 --> 00:12:42.980
+<v Speaker 0>But it is definitely a linear equation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:43.400 --> 00:12:44.450
+<v Speaker 0>Inconsistent.
+
+NOTE CONF {"raw":[100]}
+
+00:12:44.450 --> 00:12:46.490
+<v Speaker 0>But linear is what we're going to call that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:12:48.620 --> 00:12:49.610
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:12:53.440 --> 00:12:55.900
+<v Speaker 0>It has no solutions, but it is linear.
+
+NOTE CONF {"raw":[87,100,100,100,100,100,100,100]}
+
+00:12:55.930 --> 00:12:56.560
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:12:56.560 --> 00:12:57.370
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[95]}
+
+00:12:58.540 --> 00:13:00.040
+<v Speaker 0>Um, so another question.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:00.070 --> 00:13:00.520
+<v Speaker 0>There you go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:00.550 --> 00:13:04.810
+<v Speaker 0>The three linear equations two, four and five.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:05.560 --> 00:13:06.280
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:06.280 --> 00:13:10.810
+<v Speaker 0>So following on from that, true or false or solutions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:13:11.110 --> 00:13:14.680
+<v Speaker 0>to a linear equation lie on a straight line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:14.680 --> 00:13:15.820
+<v Speaker 0>What are we thinking?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:16.240 --> 00:13:18.220
+<v Speaker 0>True or false?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:27.370 --> 00:13:31.300
+<v Speaker 0>Again feel free to have a chat with your neighbour.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,71]}
+
+00:13:32.020 --> 00:13:33.970
+<v Speaker 0>See how we feel.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:36.790 --> 00:13:37.840
+<v Speaker 0>To a picture.
+
+NOTE CONF {"raw":[75,99,100]}
+
+00:13:37.840 --> 00:13:38.740
+<v Speaker 0>Maybe.
+
+NOTE CONF {"raw":[100]}
+
+00:14:13.200 --> 00:14:14.100
+<v Speaker 0>Oh, okay.
+
+NOTE CONF {"raw":[97,100]}
+
+00:14:14.100 --> 00:14:15.330
+<v Speaker 0>We've got a good number of votes.
+
+NOTE CONF {"raw":[92,100,84,100,100,100,100]}
+
+00:14:15.360 --> 00:14:18.480
+<v Speaker 0>Let's have another 20s.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:21.690 --> 00:14:23.040
+<v Speaker 0>Oh, you've all gone quiet.
+
+NOTE CONF {"raw":[98,90,100,100,100]}
+
+00:14:23.070 --> 00:14:25.080
+<v Speaker 0>Okay, maybe we don't need 20s.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:25.080 --> 00:14:27.600
+<v Speaker 0>Maybe you have collectively decided we've had enough.
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100,100]}
+
+00:14:28.620 --> 00:14:28.830
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[96]}
+
+00:14:28.830 --> 00:14:33.480
+<v Speaker 0>And let us see what we're going to do.
+
+NOTE CONF {"raw":[98,100,100,100,100,66,100,100,100]}
+
+00:14:35.520 --> 00:14:36.000
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:14:36.150 --> 00:14:37.290
+<v Speaker 0>Oh, okay.
+
+NOTE CONF {"raw":[98,100]}
+
+00:14:37.290 --> 00:14:38.010
+<v Speaker 0>Interesting.
+
+NOTE CONF {"raw":[100]}
+
+00:14:38.010 --> 00:14:40.800
+<v Speaker 0>Again, we're a bit conflicted, which is good.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:40.800 --> 00:14:41.670
+<v Speaker 0>We like this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:41.790 --> 00:14:44.820
+<v Speaker 0>We're asking more interesting questions.
+
+NOTE CONF {"raw":[69,100,100,100,100]}
+
+00:14:45.240 --> 00:14:48.830
+<v Speaker 0>Um, so let's have a look at the comments.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:49.040 --> 00:14:50.390
+<v Speaker 0>Line equals linear.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:50.480 --> 00:14:51.200
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:14:52.160 --> 00:14:54.530
+<v Speaker 0>Um, line equals linear.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:54.590 --> 00:14:54.830
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[96]}
+
+00:14:54.830 --> 00:14:57.860
+<v Speaker 0>So Norm, at school you probably did hear that a
+
+NOTE CONF {"raw":[100,68,100,100,100,100,100,81,100,100]}
+
+00:14:57.860 --> 00:14:59.300
+<v Speaker 0>line is a linear thing.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:00.350 --> 00:15:01.250
+<v Speaker 0>Line's linear.
+
+NOTE CONF {"raw":[43,100]}
+
+00:15:01.520 --> 00:15:03.350
+<v Speaker 0>Kind of in the linguistics.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:03.890 --> 00:15:05.540
+<v Speaker 0>Uh, what about false?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:05.690 --> 00:15:07.400
+<v Speaker 0>Um, it can be in higher dimensions.
+
+NOTE CONF {"raw":[66,100,100,100,100,78,100]}
+
+00:15:07.400 --> 00:15:08.930
+<v Speaker 0>Could lie on a plane.
+
+NOTE CONF {"raw":[99,92,91,100,100]}
+
+00:15:08.960 --> 00:15:09.950
+<v Speaker 0>High dimensions.
+
+NOTE CONF {"raw":[67,100]}
+
+00:15:09.950 --> 00:15:11.300
+<v Speaker 0>High dimensions.
+
+NOTE CONF {"raw":[57,100]}
+
+00:15:11.300 --> 00:15:13.730
+<v Speaker 0>Only false when solutions do not exist.
+
+NOTE CONF {"raw":[100,100,68,100,57,57,100]}
+
+00:15:13.730 --> 00:15:14.990
+<v Speaker 0>That's a very good point.
+
+NOTE CONF {"raw":[93,100,100,100,100]}
+
+00:15:16.070 --> 00:15:18.560
+<v Speaker 0>If you've got zero x plus zero, y equals two.
+
+NOTE CONF {"raw":[100,54,100,100,100,100,100,100,100,100]}
+
+00:15:18.590 --> 00:15:20.270
+<v Speaker 0>Those solutions don't lie on a line.
+
+NOTE CONF {"raw":[100,100,98,97,87,100,100]}
+
+00:15:20.270 --> 00:15:21.890
+<v Speaker 0>Those solutions don't exist.
+
+NOTE CONF {"raw":[100,100,88,96]}
+
+00:15:22.190 --> 00:15:24.470
+<v Speaker 0>Um, you definitely can't draw solutions.
+
+NOTE CONF {"raw":[100,100,100,98,100,80]}
+
+00:15:24.470 --> 00:15:25.190
+<v Speaker 0>So maybe I should.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:25.190 --> 00:15:27.470
+<v Speaker 0>Maybe a better question would be all solutions to a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,100,100,100]}
+
+00:15:27.470 --> 00:15:30.620
+<v Speaker 0>consistent linear equation line a straight line.
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100]}
+
+00:15:31.520 --> 00:15:33.440
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:33.440 --> 00:15:34.850
+<v Speaker 0>So let's give this a bit of a bit of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:34.850 --> 00:15:35.690
+<v Speaker 0>a think.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:36.380 --> 00:15:38.390
+<v Speaker 0>Uh, I'm going to start writing.
+
+NOTE CONF {"raw":[65,100,100,100,100,69]}
+
+00:15:38.390 --> 00:15:38.810
+<v Speaker 0>So yeah.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:38.840 --> 00:15:40.970
+<v Speaker 0>Let me if my at the back particularly the back
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:40.970 --> 00:15:42.740
+<v Speaker 0>if my handwriting goes a bit small.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96]}
+
+00:15:43.340 --> 00:15:44.600
+<v Speaker 0>Uh, no, I want that to be there.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100]}
+
+00:15:45.230 --> 00:15:49.360
+<v Speaker 0>Um, let us consider this equation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:49.360 --> 00:15:52.330
+<v Speaker 0>Hopefully we will all agree that this is a linear
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:52.330 --> 00:15:53.140
+<v Speaker 0>equation.
+
+NOTE CONF {"raw":[100]}
+
+00:15:53.380 --> 00:15:54.340
+<v Speaker 0>Can we all see that?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:54.340 --> 00:15:55.930
+<v Speaker 0>Oh we can I hope.
+
+NOTE CONF {"raw":[68,100,100,100,100]}
+
+00:15:56.800 --> 00:15:59.200
+<v Speaker 0>Okay, so that is a linear equation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:59.320 --> 00:16:02.230
+<v Speaker 0>Can anyone think of a solution to that equation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:02.260 --> 00:16:05.170
+<v Speaker 0>Anyone want to yell out an x y, z that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:05.170 --> 00:16:06.310
+<v Speaker 0>satisfy that zero?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:06.310 --> 00:16:07.030
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:16:07.210 --> 00:16:08.440
+<v Speaker 0>There's a solution.
+
+NOTE CONF {"raw":[92,100,100]}
+
+00:16:09.070 --> 00:16:11.860
+<v Speaker 0>000 definitely satisfies that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:12.370 --> 00:16:13.780
+<v Speaker 0>Anybody think of another one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:13.780 --> 00:16:14.320
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[82]}
+
+00:16:15.250 --> 00:16:16.210
+<v Speaker 0>111.
+
+NOTE CONF {"raw":[100]}
+
+00:16:16.210 --> 00:16:17.260
+<v Speaker 0>Another good one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:18.520 --> 00:16:19.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:20.650 --> 00:16:21.550
+<v Speaker 0>Another one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:21.580 --> 00:16:22.090
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[77]}
+
+00:16:23.230 --> 00:16:23.530
+<v Speaker 0>Two.
+
+NOTE CONF {"raw":[100]}
+
+00:16:23.530 --> 00:16:23.680
+<v Speaker 0>Two.
+
+NOTE CONF {"raw":[100]}
+
+00:16:23.680 --> 00:16:23.860
+<v Speaker 0>Two.
+
+NOTE CONF {"raw":[100]}
+
+00:16:23.860 --> 00:16:24.250
+<v Speaker 0>Two.
+
+NOTE CONF {"raw":[100]}
+
+00:16:24.370 --> 00:16:24.820
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:16:24.820 --> 00:16:26.020
+<v Speaker 0>We could keep going.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:27.310 --> 00:16:28.540
+<v Speaker 0>121.
+
+NOTE CONF {"raw":[100]}
+
+00:16:29.140 --> 00:16:29.620
+<v Speaker 0>One two.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:29.620 --> 00:16:30.160
+<v Speaker 0>Zero even.
+
+NOTE CONF {"raw":[100,90]}
+
+00:16:30.160 --> 00:16:30.310
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:16:30.310 --> 00:16:30.940
+<v Speaker 0>That's a better one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:30.940 --> 00:16:32.140
+<v Speaker 0>That's actually a solution.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:32.470 --> 00:16:32.950
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:32.950 --> 00:16:34.750
+<v Speaker 0>Those are three solutions.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:36.280 --> 00:16:39.340
+<v Speaker 0>Let's draw out some axes.
+
+NOTE CONF {"raw":[95,100,100,100,94]}
+
+00:16:39.340 --> 00:16:41.680
+<v Speaker 0>So we have oh I've got different coloured pens.
+
+NOTE CONF {"raw":[100,100,100,91,100,100,100,97,100]}
+
+00:16:41.680 --> 00:16:42.850
+<v Speaker 0>We've got the origin.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:43.360 --> 00:16:45.760
+<v Speaker 0>We've got 111 which is kind of here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:46.500 --> 00:16:49.380
+<v Speaker 0>And we've got one, two zero, which is kind of
+
+NOTE CONF {"raw":[91,100,100,100,100,100,100,100,100,100]}
+
+00:16:49.380 --> 00:16:49.620
+<v Speaker 0>there.
+
+NOTE CONF {"raw":[76]}
+
+00:16:50.670 --> 00:16:52.740
+<v Speaker 0>Do we think those all lie on a line?
+
+NOTE CONF {"raw":[100,100,100,100,83,69,82,100,100]}
+
+00:16:53.730 --> 00:16:59.460
+<v Speaker 0>No, no, those are quite clearly two different lines.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100]}
+
+00:17:00.990 --> 00:17:01.320
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:01.320 --> 00:17:01.620
+<v Speaker 0>So we're.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:01.620 --> 00:17:02.280
+<v Speaker 1>False.
+
+NOTE CONF {"raw":[100]}
+
+00:17:03.030 --> 00:17:04.260
+<v Speaker 0>Sorry everybody.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:04.290 --> 00:17:06.120
+<v Speaker 0>Linear does not mean lying.
+
+NOTE CONF {"raw":[100,100,100,100,57]}
+
+00:17:06.990 --> 00:17:09.480
+<v Speaker 0>I'm a horrible human being for even asking you that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:09.480 --> 00:17:10.319
+<v Speaker 0>question.
+
+NOTE CONF {"raw":[100]}
+
+00:17:10.319 --> 00:17:12.120
+<v Speaker 0>Linguistics is nonsense.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:12.600 --> 00:17:16.560
+<v Speaker 0>Um, so let us actually think about what else we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:16.560 --> 00:17:17.610
+<v Speaker 0>can do here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:17.760 --> 00:17:20.010
+<v Speaker 0>Where do those solutions lie?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:20.819 --> 00:17:22.350
+<v Speaker 0>Uh, I don't want to go there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:23.400 --> 00:17:24.900
+<v Speaker 0>So there we go.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:24.900 --> 00:17:26.339
+<v Speaker 0>Here is, um.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:27.030 --> 00:17:29.070
+<v Speaker 0>Oh, that's not quite what I want to do yet.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:17:30.000 --> 00:17:30.990
+<v Speaker 0>I want to stick here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:31.650 --> 00:17:33.990
+<v Speaker 0>Um, let's let's think about this solution.
+
+NOTE CONF {"raw":[100,86,100,100,100,96,100]}
+
+00:17:33.990 --> 00:17:37.200
+<v Speaker 0>I could have let me in the reading, we saw
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:37.200 --> 00:17:39.150
+<v Speaker 0>that we could introduce parameters.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:39.480 --> 00:17:42.930
+<v Speaker 0>So kind of other letters that we can write our
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:42.930 --> 00:17:44.400
+<v Speaker 0>solution terms of.
+
+NOTE CONF {"raw":[99,100,100]}
+
+00:17:45.320 --> 00:17:48.860
+<v Speaker 0>So there is a parameter x is a parameter s.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,99]}
+
+00:17:48.860 --> 00:17:50.300
+<v Speaker 0>All I have said is x equals s.
+
+NOTE CONF {"raw":[99,66,66,100,100,100,100,100]}
+
+00:17:50.300 --> 00:17:53.210
+<v Speaker 0>It's nothing actually that fundamental.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:53.720 --> 00:17:56.900
+<v Speaker 0>I could also say y equals r.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,80]}
+
+00:17:56.930 --> 00:17:57.350
+<v Speaker 0>There you go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:57.350 --> 00:17:58.460
+<v Speaker 0>It's another parameter.
+
+NOTE CONF {"raw":[58,100,100]}
+
+00:18:00.830 --> 00:18:05.990
+<v Speaker 0>Having just said, none of this is very fundamental, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:06.200 --> 00:18:08.240
+<v Speaker 0>let's then write down what z equals.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100]}
+
+00:18:08.240 --> 00:18:11.240
+<v Speaker 0>If z is going to satisfy this and x equals
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:11.240 --> 00:18:14.180
+<v Speaker 0>s and y equals r, what z got to equal
+
+NOTE CONF {"raw":[100,100,100,100,52,100,100,74,96,99]}
+
+00:18:14.630 --> 00:18:19.130
+<v Speaker 0>in terms of my parameters to s minus r.
+
+NOTE CONF {"raw":[100,100,100,100,100,71,99,99,70]}
+
+00:18:19.130 --> 00:18:21.020
+<v Speaker 0>Perfect okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:21.290 --> 00:18:23.930
+<v Speaker 0>So far so not terrible.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:23.930 --> 00:18:24.590
+<v Speaker 0>Hopefully.
+
+NOTE CONF {"raw":[100]}
+
+00:18:25.160 --> 00:18:29.510
+<v Speaker 0>Um but now let us have a have a quick
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:29.510 --> 00:18:29.720
+<v Speaker 0>look.
+
+NOTE CONF {"raw":[100]}
+
+00:18:30.050 --> 00:18:31.460
+<v Speaker 0>Have people seen GeoGebra before.
+
+NOTE CONF {"raw":[100,100,99,100,100]}
+
+00:18:31.460 --> 00:18:33.290
+<v Speaker 0>Hands up if you've seen GeoGebra before.
+
+NOTE CONF {"raw":[100,100,100,99,100,100,100]}
+
+00:18:33.650 --> 00:18:35.210
+<v Speaker 0>Yeah that's a good number of you.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:35.210 --> 00:18:35.450
+<v Speaker 0>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:18:35.450 --> 00:18:36.350
+<v Speaker 0>It's really fun.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:36.470 --> 00:18:37.370
+<v Speaker 0>Go and play with it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:37.370 --> 00:18:38.960
+<v Speaker 0>It's a kind of you can do loads of stuff
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:38.960 --> 00:18:41.720
+<v Speaker 0>with it and it's really good for linear algebra, so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:41.720 --> 00:18:43.610
+<v Speaker 0>we will probably be using it quite a lot.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:44.420 --> 00:18:46.500
+<v Speaker 0>Um, Anyway, so here's my point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:47.100 --> 00:18:50.070
+<v Speaker 0>So I could write a solution to this point is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:50.070 --> 00:18:51.930
+<v Speaker 0>going to look like x, y, z.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:52.080 --> 00:18:54.090
+<v Speaker 0>And it's going to look like what if x is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:54.090 --> 00:18:57.690
+<v Speaker 0>S, y is r and z is two s minus
+
+NOTE CONF {"raw":[91,100,100,100,100,100,100,100,94,100]}
+
+00:18:57.690 --> 00:18:58.140
+<v Speaker 0>r.
+
+NOTE CONF {"raw":[100]}
+
+00:18:58.440 --> 00:19:00.480
+<v Speaker 0>That's what all solutions are going to look like.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:01.860 --> 00:19:03.600
+<v Speaker 0>So there's my point there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:04.200 --> 00:19:07.590
+<v Speaker 0>And I've got my smear and they can change.
+
+NOTE CONF {"raw":[100,95,100,100,99,100,100,100,100]}
+
+00:19:08.310 --> 00:19:08.940
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:09.570 --> 00:19:11.490
+<v Speaker 0>So there are my solutions.
+
+NOTE CONF {"raw":[100,62,48,100,100]}
+
+00:19:11.700 --> 00:19:13.800
+<v Speaker 0>All possible solutions running out.
+
+NOTE CONF {"raw":[100,100,100,100,99]}
+
+00:19:13.830 --> 00:19:15.420
+<v Speaker 0>They're definitely not on a line.
+
+NOTE CONF {"raw":[76,100,100,100,100,100]}
+
+00:19:17.010 --> 00:19:18.780
+<v Speaker 0>What kind of shape are they?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:20.730 --> 00:19:22.440
+<v Speaker 0>Anybody got any ideas?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:22.440 --> 00:19:25.020
+<v Speaker 0>But what we are where all these solutions actually do
+
+NOTE CONF {"raw":[95,100,94,66,100,100,100,100,100,100]}
+
+00:19:25.020 --> 00:19:25.440
+<v Speaker 0>lie.
+
+NOTE CONF {"raw":[100]}
+
+00:19:26.130 --> 00:19:26.190
+<v Speaker 1>In.
+
+NOTE CONF {"raw":[30]}
+
+00:19:26.610 --> 00:19:27.570
+<v Speaker 0>A plane.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:28.380 --> 00:19:28.800
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:19:28.830 --> 00:19:31.020
+<v Speaker 0>Look, if I line this up now, can I line
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:19:31.020 --> 00:19:31.260
+<v Speaker 0>it up?
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:31.260 --> 00:19:31.920
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:32.490 --> 00:19:35.340
+<v Speaker 0>It looks like a line there, but in three dimensions,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:35.340 --> 00:19:36.180
+<v Speaker 0>it's a plane.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:36.480 --> 00:19:41.250
+<v Speaker 0>In fact, there is the plane that we are scooting
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:41.250 --> 00:19:42.060
+<v Speaker 0>around them.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:45.080 --> 00:19:53.960
+<v Speaker 0>So, um, what we actually have is we have three
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:53.960 --> 00:19:54.890
+<v Speaker 0>variables.
+
+NOTE CONF {"raw":[100]}
+
+00:19:57.230 --> 00:19:59.270
+<v Speaker 0>And two parameters.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:20:01.430 --> 00:20:05.630
+<v Speaker 0>Or sometimes people call these free variables because they're free
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,84,100]}
+
+00:20:05.630 --> 00:20:07.610
+<v Speaker 0>to be whatever we want.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:07.640 --> 00:20:09.680
+<v Speaker 0>In fact, in GeoGebra, I'm setting them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:09.680 --> 00:20:12.140
+<v Speaker 0>I set them to be between -3 and 3, minus
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:20:12.140 --> 00:20:14.210
+<v Speaker 0>two and four, simply because it kind of made the
+
+NOTE CONF {"raw":[100,100,96,100,100,94,100,100,100,100]}
+
+00:20:14.210 --> 00:20:15.170
+<v Speaker 0>screen look pretty.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:20:15.170 --> 00:20:16.280
+<v Speaker 0>But they could be anything.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:16.280 --> 00:20:18.440
+<v Speaker 0>They could go up to a thousand, a million, whatever.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:20:19.010 --> 00:20:21.170
+<v Speaker 0>Um, it's just they didn't fit on screen then.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:21.560 --> 00:20:22.640
+<v Speaker 0>But these are free parameters.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:22.640 --> 00:20:23.450
+<v Speaker 0>They can be whatever.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:23.450 --> 00:20:25.580
+<v Speaker 0>They can scroll through things, they can do weird and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:25.580 --> 00:20:26.660
+<v Speaker 0>wonderful things.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:27.260 --> 00:20:32.390
+<v Speaker 0>Um, and our solutions lie in a two dimensional plane.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:36.080 --> 00:20:42.470
+<v Speaker 0>So actually, um, we can say more generally that a
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100,100]}
+
+00:20:42.470 --> 00:20:43.720
+<v Speaker 0>linear equation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:47.710 --> 00:20:49.540
+<v Speaker 0>In n variables.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:20:52.180 --> 00:21:02.440
+<v Speaker 0>Has its solutions lying in a n minus one dimensional
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:02.950 --> 00:21:05.380
+<v Speaker 0>plane or hyperplane.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:21:05.380 --> 00:21:08.290
+<v Speaker 0>Sometimes we call them hyperplane if it's kind of the
+
+NOTE CONF {"raw":[100,100,100,100,68,100,43,100,100,96]}
+
+00:21:08.290 --> 00:21:09.640
+<v Speaker 0>posh maths word.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:11.110 --> 00:21:11.560
+<v Speaker 0>Pardon?
+
+NOTE CONF {"raw":[97]}
+
+00:21:12.400 --> 00:21:13.810
+<v Speaker 0>Oh, not on the screen.
+
+NOTE CONF {"raw":[98,100,100,100,100]}
+
+00:21:14.680 --> 00:21:15.400
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:15.970 --> 00:21:16.990
+<v Speaker 0>That's now on the screen.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:17.620 --> 00:21:18.340
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:18.670 --> 00:21:19.030
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:21:19.060 --> 00:21:20.890
+<v Speaker 0>Feel free to yell at me when something falls off
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:20.890 --> 00:21:21.340
+<v Speaker 0>the screen.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:22.540 --> 00:21:24.670
+<v Speaker 0>Um, yes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:24.670 --> 00:21:27.340
+<v Speaker 0>So sometimes we call it call this a hyperplane.
+
+NOTE CONF {"raw":[100,100,100,74,54,100,100,100,97]}
+
+00:21:28.630 --> 00:21:29.170
+<v Speaker 0>Um, if.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:29.170 --> 00:21:29.830
+<v Speaker 1>It's.
+
+NOTE CONF {"raw":[100]}
+
+00:21:30.670 --> 00:21:34.300
+<v Speaker 0>Uh, you might see that language if it's kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:34.300 --> 00:21:37.330
+<v Speaker 0>three, 4 or 5 dimensions because it's not necessarily a
+
+NOTE CONF {"raw":[100,94,94,94,100,98,100,100,100,100]}
+
+00:21:37.330 --> 00:21:39.040
+<v Speaker 0>plane in the way you think of a plane.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:21:39.850 --> 00:21:40.990
+<v Speaker 0>Um, cool.
+
+NOTE CONF {"raw":[100,91]}
+
+00:21:40.990 --> 00:21:43.260
+<v Speaker 0>And that can people kind of understand why?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:43.260 --> 00:21:44.970
+<v Speaker 0>If we have two variables, why are we going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:44.970 --> 00:21:46.800
+<v Speaker 0>have a two dimensional plane?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:48.450 --> 00:21:50.160
+<v Speaker 0>What are my two three variables?
+
+NOTE CONF {"raw":[100,84,86,100,67,100]}
+
+00:21:50.160 --> 00:21:51.030
+<v Speaker 0>Let me do.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:01.680 --> 00:22:03.870
+<v Speaker 0>They let me go in two directions.
+
+NOTE CONF {"raw":[63,100,100,100,100,100,100]}
+
+00:22:05.400 --> 00:22:07.800
+<v Speaker 0>So if we think if we proceed the vector equation
+
+NOTE CONF {"raw":[100,100,100,100,43,42,41,100,100,100]}
+
+00:22:07.800 --> 00:22:09.750
+<v Speaker 0>of a plane where you have a point on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:09.750 --> 00:22:12.690
+<v Speaker 0>plane, and then you might have t times another vector
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:12.690 --> 00:22:14.610
+<v Speaker 0>that lets you go in one direction, and then you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:14.610 --> 00:22:17.400
+<v Speaker 0>might have s times another vector that lets you go
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:17.400 --> 00:22:18.420
+<v Speaker 0>in another direction.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:18.690 --> 00:22:19.260
+<v Speaker 0>There you go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:19.260 --> 00:22:19.950
+<v Speaker 0>Two dimensions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:19.950 --> 00:22:21.180
+<v Speaker 0>I can walk in two dimensions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:22:21.180 --> 00:22:24.510
+<v Speaker 0>I'm not stuck in one dimension in a line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:25.320 --> 00:22:27.840
+<v Speaker 0>So the number of free variables tells me how many
+
+NOTE CONF {"raw":[100,100,100,92,92,100,100,100,100,100]}
+
+00:22:27.840 --> 00:22:29.160
+<v Speaker 0>directions I can move in.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:29.790 --> 00:22:32.490
+<v Speaker 0>And that's why we're going to lie on a however
+
+NOTE CONF {"raw":[100,90,100,100,100,100,100,100,100,97]}
+
+00:22:32.490 --> 00:22:33.930
+<v Speaker 0>many dimensional plane.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:35.100 --> 00:22:36.270
+<v Speaker 0>Everyone happy so far?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:37.080 --> 00:22:37.770
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:22:37.770 --> 00:22:39.600
+<v Speaker 0>Do we have any questions or thoughts?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:39.600 --> 00:22:40.200
+<v Speaker 0>Feelings?
+
+NOTE CONF {"raw":[100]}
+
+00:22:40.200 --> 00:22:40.710
+<v Speaker 0>Comments?
+
+NOTE CONF {"raw":[100]}
+
+00:22:40.760 --> 00:22:41.660
+<v Speaker 0>Complaints?
+
+NOTE CONF {"raw":[97]}
+
+00:22:45.920 --> 00:22:46.610
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:22:47.330 --> 00:22:48.920
+<v Speaker 0>Feel free to interrupt at any point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:48.920 --> 00:22:52.340
+<v Speaker 0>This is very much a kind of interactive thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:53.900 --> 00:22:57.740
+<v Speaker 0>Okay, so let us now return to our.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:58.400 --> 00:23:04.850
+<v Speaker 0>Let's stop that and let us return to, uh, here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:23:04.850 --> 00:23:09.350
+<v Speaker 0>So I gave the question away there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:09.530 --> 00:23:13.610
+<v Speaker 0>I can make that statement true by saying it's happening
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:13.610 --> 00:23:14.870
+<v Speaker 0>in two variables.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:15.290 --> 00:23:18.440
+<v Speaker 0>It is true that a solution to a linear equation
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:18.440 --> 00:23:23.150
+<v Speaker 0>in two variables lie on a line, provided they exist.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:23.990 --> 00:23:24.350
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:23:25.610 --> 00:23:26.210
+<v Speaker 1>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:23:27.530 --> 00:23:28.250
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:28.580 --> 00:23:28.940
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:23:33.020 --> 00:23:34.130
+<v Speaker 0>What about though?
+
+NOTE CONF {"raw":[100,100,58]}
+
+00:23:34.160 --> 00:23:36.740
+<v Speaker 0>Well, so bear that in mind.
+
+NOTE CONF {"raw":[100,100,99,100,100,100]}
+
+00:23:36.740 --> 00:23:41.650
+<v Speaker 0>How many solutions or what dimension Did the solutions of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,88,100,100,100]}
+
+00:23:41.650 --> 00:23:43.300
+<v Speaker 0>x plus two y equal four.
+
+NOTE CONF {"raw":[100,100,100,100,68,98]}
+
+00:23:43.300 --> 00:23:44.200
+<v Speaker 0>Where do they lie?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:23:46.420 --> 00:23:47.200
+<v Speaker 0>On a line.
+
+NOTE CONF {"raw":[100,92,100]}
+
+00:23:48.640 --> 00:23:51.280
+<v Speaker 0>Because it literally says if you have two variables and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:51.280 --> 00:23:54.400
+<v Speaker 0>two linear equation two variables, they lie on a line,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,79,100,100]}
+
+00:23:55.210 --> 00:23:55.840
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[96]}
+
+00:23:56.710 --> 00:23:57.580
+<v Speaker 0>They lie on a line.
+
+NOTE CONF {"raw":[100,100,99,86,100]}
+
+00:23:57.610 --> 00:23:58.990
+<v Speaker 0>Let's go back to GeoGebra.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:59.530 --> 00:23:59.860
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[79]}
+
+00:24:01.840 --> 00:24:02.710
+<v Speaker 0>Useful thing.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:02.740 --> 00:24:03.250
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:03.250 --> 00:24:06.520
+<v Speaker 0>I can type in x plus two, y equals four.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:07.090 --> 00:24:09.130
+<v Speaker 0>Oops, I can't actually and I'm not in the place
+
+NOTE CONF {"raw":[51,100,100,100,100,100,100,100,95,100]}
+
+00:24:09.130 --> 00:24:09.790
+<v Speaker 0>I want to be.
+
+NOTE CONF {"raw":[100,100,100,98]}
+
+00:24:12.490 --> 00:24:16.870
+<v Speaker 0>X plus two y equals four.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:17.350 --> 00:24:18.550
+<v Speaker 0>And nothing's appearing.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:18.550 --> 00:24:19.390
+<v Speaker 0>That's worrying.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:20.290 --> 00:24:20.800
+<v Speaker 0>Oh dear.
+
+NOTE CONF {"raw":[84,51]}
+
+00:24:22.150 --> 00:24:24.580
+<v Speaker 0>This is why technology you shouldn't trust technology.
+
+NOTE CONF {"raw":[100,100,100,100,57,99,99,100]}
+
+00:24:24.610 --> 00:24:25.060
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:25.060 --> 00:24:25.960
+<v Speaker 0>That looks better.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:25.960 --> 00:24:26.560
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[100]}
+
+00:24:26.920 --> 00:24:29.650
+<v Speaker 0>Uh, x plus two Y equals four.
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100]}
+
+00:24:31.060 --> 00:24:32.200
+<v Speaker 0>That's not a line.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:32.230 --> 00:24:33.310
+<v Speaker 0>You all just said.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:33.310 --> 00:24:35.200
+<v Speaker 0>You just said on the board that the solution should
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,100]}
+
+00:24:35.200 --> 00:24:35.920
+<v Speaker 0>lie on a line.
+
+NOTE CONF {"raw":[100,99,62,100]}
+
+00:24:35.920 --> 00:24:37.120
+<v Speaker 0>Why am I getting a plane?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:37.120 --> 00:24:38.380
+<v Speaker 0>It's GeoGebra wrong.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:38.380 --> 00:24:39.280
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:24:41.100 --> 00:24:41.700
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[79]}
+
+00:24:41.970 --> 00:24:44.250
+<v Speaker 0>So you do have to be really careful that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:44.250 --> 00:24:46.830
+<v Speaker 0>Yes, that looks like an equation, a linear equation, two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,91]}
+
+00:24:46.830 --> 00:24:47.700
+<v Speaker 0>variables.
+
+NOTE CONF {"raw":[100]}
+
+00:24:49.170 --> 00:24:51.510
+<v Speaker 0>But that doesn't necessarily mean all we're working with is
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:24:51.510 --> 00:24:52.530
+<v Speaker 0>two variables.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:52.530 --> 00:24:54.570
+<v Speaker 0>In this case, z could be anything.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:54.990 --> 00:24:58.260
+<v Speaker 0>So there's a really sneaky thing that mathematicians can do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:58.260 --> 00:25:01.110
+<v Speaker 0>where we can say x plus two y equals four.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:01.110 --> 00:25:02.310
+<v Speaker 0>Go away and solve that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:02.760 --> 00:25:04.950
+<v Speaker 0>But how many what space are you working in?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:04.950 --> 00:25:06.900
+<v Speaker 0>Are you working in just x and Y?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:06.900 --> 00:25:08.820
+<v Speaker 0>In which case that's not too bad.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:08.940 --> 00:25:10.290
+<v Speaker 0>Or have you got Z?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:10.470 --> 00:25:12.420
+<v Speaker 0>Or have you got a, b c d e f
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:12.420 --> 00:25:12.690
+<v Speaker 0>g?
+
+NOTE CONF {"raw":[100]}
+
+00:25:13.260 --> 00:25:13.830
+<v Speaker 0>How?
+
+NOTE CONF {"raw":[100]}
+
+00:25:13.890 --> 00:25:16.050
+<v Speaker 0>So you need to be aware of how many variables
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:16.050 --> 00:25:17.610
+<v Speaker 0>you've got in the background.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:17.610 --> 00:25:18.990
+<v Speaker 0>How many are in your back pocket.
+
+NOTE CONF {"raw":[100,100,57,100,100,100,100]}
+
+00:25:18.990 --> 00:25:21.030
+<v Speaker 0>You might only be playing with two of them, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:21.030 --> 00:25:24.480
+<v Speaker 0>if you've got three of them in play, then that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,79]}
+
+00:25:24.480 --> 00:25:26.070
+<v Speaker 0>third one is still doing something.
+
+NOTE CONF {"raw":[100,100,92,100,100,100]}
+
+00:25:27.240 --> 00:25:31.230
+<v Speaker 0>Okay, so everything comes with a slight health warning.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:31.440 --> 00:25:34.590
+<v Speaker 0>Be aware of how many dimensions you're actually working with.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:36.030 --> 00:25:40.880
+<v Speaker 0>Okay, so Um, that's linear equations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:42.710 --> 00:25:44.750
+<v Speaker 0>What about system of linear equations?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:45.320 --> 00:25:49.280
+<v Speaker 0>How many solutions can a system of two equations in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:49.280 --> 00:25:49.850
+<v Speaker 0>two variables.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:49.850 --> 00:25:51.620
+<v Speaker 0>So I'm saying now we've only got x and y.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:51.650 --> 00:25:54.500
+<v Speaker 0>There is no hidden z sneaking around.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:55.010 --> 00:25:59.900
+<v Speaker 0>How many solutions can that possibly have?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:03.800 --> 00:26:07.910
+<v Speaker 0>Zero, one and infinity.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:08.030 --> 00:26:08.960
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:26:09.410 --> 00:26:09.980
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:26:09.980 --> 00:26:12.590
+<v Speaker 0>So how can we have zero?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:26:14.900 --> 00:26:15.560
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[46]}
+
+00:26:15.560 --> 00:26:17.840
+<v Speaker 0>If y two linear equations.
+
+NOTE CONF {"raw":[100,95,100,100,100]}
+
+00:26:20.930 --> 00:26:23.090
+<v Speaker 0>What kind of parallel then they never cross.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:23.930 --> 00:26:28.520
+<v Speaker 0>How about how would I get one solution when they.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:28.520 --> 00:26:28.850
+<v Speaker 0>Cos.
+
+NOTE CONF {"raw":[58]}
+
+00:26:28.850 --> 00:26:29.180
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:26:29.210 --> 00:26:29.870
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:33.440 --> 00:26:34.730
+<v Speaker 0>One solution.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:34.760 --> 00:26:36.470
+<v Speaker 0>And what was the third answer.
+
+NOTE CONF {"raw":[99,100,100,100,100,100]}
+
+00:26:37.480 --> 00:26:38.440
+<v Speaker 0>Infinity.
+
+NOTE CONF {"raw":[75]}
+
+00:26:38.440 --> 00:26:38.830
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[92]}
+
+00:26:38.860 --> 00:26:39.460
+<v Speaker 0>Cool.
+
+NOTE CONF {"raw":[99]}
+
+00:26:39.490 --> 00:26:40.750
+<v Speaker 0>When do I get infinity?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:41.830 --> 00:26:42.820
+<v Speaker 0>When it's the same line.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:42.820 --> 00:26:43.540
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[91]}
+
+00:26:48.580 --> 00:26:49.240
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:26:49.240 --> 00:26:51.400
+<v Speaker 0>So if we kind of think about this, this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:51.400 --> 00:26:54.250
+<v Speaker 0>a going back to a kind of dimension counting.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:26:54.280 --> 00:26:57.190
+<v Speaker 0>Here we've got one dimension of solutions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:57.670 --> 00:27:00.940
+<v Speaker 0>Here we've got zero dimensions.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:01.240 --> 00:27:03.190
+<v Speaker 0>And here we just have no solutions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:03.190 --> 00:27:05.590
+<v Speaker 0>So a point is a zero dimensional thing.
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100]}
+
+00:27:05.710 --> 00:27:07.630
+<v Speaker 0>I remember this being a slightly weird thing to get
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:27:07.630 --> 00:27:08.680
+<v Speaker 0>my head around.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:09.370 --> 00:27:12.940
+<v Speaker 0>The reason being, let's go back to a me crab
+
+NOTE CONF {"raw":[100,100,100,93,100,100,100,51,100,99]}
+
+00:27:12.940 --> 00:27:15.310
+<v Speaker 0>crawling along the stage.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:15.310 --> 00:27:17.950
+<v Speaker 0>If I am a point, how many directions can I
+
+NOTE CONF {"raw":[89,52,52,100,100,100,100,100,100,100]}
+
+00:27:17.950 --> 00:27:18.520
+<v Speaker 0>move in?
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:19.870 --> 00:27:20.440
+<v Speaker 0>None.
+
+NOTE CONF {"raw":[99]}
+
+00:27:20.440 --> 00:27:22.030
+<v Speaker 0>Yeah, there were no free parameters.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:22.030 --> 00:27:25.930
+<v Speaker 0>I'm stuck here and I can't move, which is a
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100,100,100,100]}
+
+00:27:25.930 --> 00:27:27.340
+<v Speaker 0>bit annoying if I've got to spend the rest of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:27.340 --> 00:27:28.120
+<v Speaker 0>the lecture here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:28.120 --> 00:27:29.590
+<v Speaker 0>And so I'm going to become a line again.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,100]}
+
+00:27:30.010 --> 00:27:35.380
+<v Speaker 0>Um, so yes, zero dimensions if you've got no directions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:35.380 --> 00:27:35.800
+<v Speaker 0>to move in.
+
+NOTE CONF {"raw":[100,95,49]}
+
+00:27:35.800 --> 00:27:39.630
+<v Speaker 0>So free parameters are actually three variables or parameters, depending
+
+NOTE CONF {"raw":[100,88,100,100,100,94,100,100,100,100]}
+
+00:27:39.630 --> 00:27:40.980
+<v Speaker 0>on how you want to call them, are quite important
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,94,100,100]}
+
+00:27:40.980 --> 00:27:44.550
+<v Speaker 0>because they tell you how how dimensional your spaces.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:27:45.540 --> 00:27:50.100
+<v Speaker 0>Um, so if we have a system of equations, we've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,91]}
+
+00:27:50.100 --> 00:27:53.220
+<v Speaker 0>seen that if we only had a linear equation provided
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100,100]}
+
+00:27:53.220 --> 00:27:56.430
+<v Speaker 0>it was consistent, we got a one dimensional space.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:27:57.240 --> 00:27:59.850
+<v Speaker 0>So if we adding equations.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:03.750 --> 00:28:12.030
+<v Speaker 0>Can not always but it can reduce the dimension.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:14.550 --> 00:28:17.850
+<v Speaker 0>Of the space we're working in of the space of
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:28:17.850 --> 00:28:18.930
+<v Speaker 0>solutions.
+
+NOTE CONF {"raw":[100]}
+
+00:28:22.920 --> 00:28:27.900
+<v Speaker 0>By well one adding I suppose I should say adding
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:27.900 --> 00:28:33.450
+<v Speaker 0>an equation reduces it by one can reduce it by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:33.450 --> 00:28:33.660
+<v Speaker 0>one.
+
+NOTE CONF {"raw":[100]}
+
+00:28:33.660 --> 00:28:34.380
+<v Speaker 0>Not always.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:34.380 --> 00:28:37.700
+<v Speaker 0>Here we added another equation And it didn't.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:37.820 --> 00:28:41.330
+<v Speaker 0>So it is not always true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:42.260 --> 00:28:43.190
+<v Speaker 1>That's gone off the screen.
+
+NOTE CONF {"raw":[65,81,100,100,100]}
+
+00:28:45.710 --> 00:28:46.490
+<v Speaker 0>Thank you.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:46.520 --> 00:28:47.300
+<v Speaker 0>Do yell at me.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:50.150 --> 00:28:50.720
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:50.870 --> 00:28:51.890
+<v Speaker 0>That's all on the screen.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:52.160 --> 00:28:53.150
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:28:55.760 --> 00:28:56.420
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:56.780 --> 00:28:57.170
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:28:58.760 --> 00:28:59.600
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:29:01.880 --> 00:29:07.700
+<v Speaker 0>Let us, uh, return to to our first GeoGebra.
+
+NOTE CONF {"raw":[100,100,66,100,100,100,100,100,100]}
+
+00:29:09.170 --> 00:29:09.470
+<v Speaker 0>There we.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:09.470 --> 00:29:09.890
+<v Speaker 1>Go.
+
+NOTE CONF {"raw":[100]}
+
+00:29:09.980 --> 00:29:12.380
+<v Speaker 0>Oh, everything's disappeared again.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:13.340 --> 00:29:15.290
+<v Speaker 0>Please reload sensibly.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:15.950 --> 00:29:16.430
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:16.430 --> 00:29:19.070
+<v Speaker 0>So that was our plane of solutions that we had.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:29:19.820 --> 00:29:22.490
+<v Speaker 0>Let me now add a second plane and I'm going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:22.490 --> 00:29:23.150
+<v Speaker 0>to add.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:23.150 --> 00:29:24.530
+<v Speaker 0>What am I going to add?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:24.800 --> 00:29:31.190
+<v Speaker 0>I'm going to add the plane two x minus y
+
+NOTE CONF {"raw":[100,100,100,100,100,100,80,100,100,100]}
+
+00:29:31.190 --> 00:29:34.730
+<v Speaker 0>minus z equals zero.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:35.110 --> 00:29:38.380
+<v Speaker 0>So we just to note before we had x plus
+
+NOTE CONF {"raw":[100,66,100,100,100,100,100,100,100,100]}
+
+00:29:38.380 --> 00:29:41.260
+<v Speaker 0>two y minus z equals zero.
+
+NOTE CONF {"raw":[99,100,100,100,100,100]}
+
+00:29:42.580 --> 00:29:42.910
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:29:44.140 --> 00:29:46.210
+<v Speaker 0>And now we're adding this.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:47.230 --> 00:29:48.040
+<v Speaker 0>No we didn't.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:48.490 --> 00:29:50.080
+<v Speaker 0>This is the one we had before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:51.550 --> 00:29:52.960
+<v Speaker 0>This is the first one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:52.960 --> 00:29:55.120
+<v Speaker 0>And now we're going to add this second one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76,100,100]}
+
+00:29:56.320 --> 00:29:59.530
+<v Speaker 0>So we've now got a system of two linear equations
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:01.180 --> 00:30:02.110
+<v Speaker 0>and three unknowns.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:02.530 --> 00:30:04.360
+<v Speaker 0>So if I add to this equation what are we
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,100,100,100]}
+
+00:30:04.360 --> 00:30:08.380
+<v Speaker 0>going to be x plus two y minus z equals
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:08.380 --> 00:30:08.890
+<v Speaker 0>zero.
+
+NOTE CONF {"raw":[100]}
+
+00:30:09.850 --> 00:30:10.480
+<v Speaker 1>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:30:11.590 --> 00:30:14.290
+<v Speaker 0>And let's just change the colour of that so it's
+
+NOTE CONF {"raw":[100,100,100,100,100,91,100,100,100,100]}
+
+00:30:14.290 --> 00:30:15.430
+<v Speaker 0>easier to see.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:16.750 --> 00:30:17.800
+<v Speaker 0>Uh there we.
+
+NOTE CONF {"raw":[98,100,100]}
+
+00:30:17.800 --> 00:30:18.250
+<v Speaker 1>Go.
+
+NOTE CONF {"raw":[100]}
+
+00:30:20.170 --> 00:30:20.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:20.650 --> 00:30:23.080
+<v Speaker 0>So we have two planes.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:23.950 --> 00:30:26.410
+<v Speaker 0>Um, what dimension are we expecting?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:26.410 --> 00:30:31.000
+<v Speaker 0>The space of solutions to be one dimension, a line.
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:30:31.000 --> 00:30:31.930
+<v Speaker 0>In fact, we can see it.
+
+NOTE CONF {"raw":[100,100,100,100,100,50]}
+
+00:30:31.930 --> 00:30:32.200
+<v Speaker 0>Line.
+
+NOTE CONF {"raw":[100]}
+
+00:30:32.200 --> 00:30:35.150
+<v Speaker 0>It's where these two planes cross, Which is what we're
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,96]}
+
+00:30:35.150 --> 00:30:35.960
+<v Speaker 0>expecting.
+
+NOTE CONF {"raw":[100]}
+
+00:30:36.740 --> 00:30:38.720
+<v Speaker 0>Um, and actually we can see this in terms of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:38.720 --> 00:30:39.500
+<v Speaker 0>the parameter.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:40.100 --> 00:30:43.520
+<v Speaker 0>So remember, if we remember before we had x equals
+
+NOTE CONF {"raw":[100,100,92,83,100,100,100,100,100,100]}
+
+00:30:43.520 --> 00:30:48.620
+<v Speaker 0>s, y equals r and we then had z equals
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,92,100]}
+
+00:30:48.800 --> 00:30:50.420
+<v Speaker 0>to s minus r.
+
+NOTE CONF {"raw":[100,100,100,96]}
+
+00:30:50.930 --> 00:30:55.580
+<v Speaker 0>If we add these to our second equation uh we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,89,100]}
+
+00:30:55.580 --> 00:30:59.660
+<v Speaker 0>then going to have well s plus two lots of
+
+NOTE CONF {"raw":[100,100,100,100,58,100,100,100,100,100]}
+
+00:30:59.660 --> 00:31:00.050
+<v Speaker 0>ys.
+
+NOTE CONF {"raw":[50]}
+
+00:31:00.050 --> 00:31:02.330
+<v Speaker 0>So two r minus z.
+
+NOTE CONF {"raw":[100,100,69,100,100]}
+
+00:31:02.330 --> 00:31:06.440
+<v Speaker 0>So minus two s minus r equals zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:07.400 --> 00:31:10.730
+<v Speaker 0>Can simplify that up I'm going to get three r
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,92]}
+
+00:31:10.730 --> 00:31:13.190
+<v Speaker 0>minus s I do believe.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:15.410 --> 00:31:15.800
+<v Speaker 1>Minus.
+
+NOTE CONF {"raw":[96]}
+
+00:31:18.920 --> 00:31:19.490
+<v Speaker 0>Minus one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:19.490 --> 00:31:21.830
+<v Speaker 0>What minus minus is a.
+
+NOTE CONF {"raw":[49,100,100,98,90]}
+
+00:31:22.880 --> 00:31:25.160
+<v Speaker 0>So I get two uh minus minus r.
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,100]}
+
+00:31:25.160 --> 00:31:27.950
+<v Speaker 0>So three r and s minus two s is minus
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100,100]}
+
+00:31:27.950 --> 00:31:28.400
+<v Speaker 0>s.
+
+NOTE CONF {"raw":[100]}
+
+00:31:29.300 --> 00:31:29.870
+<v Speaker 0>Am I wrong?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:29.870 --> 00:31:30.740
+<v Speaker 0>I might be wrong.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:32.510 --> 00:31:33.200
+<v Speaker 0>I'm right.
+
+NOTE CONF {"raw":[97,100]}
+
+00:31:33.200 --> 00:31:33.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:33.670 --> 00:31:34.060
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[96]}
+
+00:31:34.060 --> 00:31:36.040
+<v Speaker 0>It's really weird standing up here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:36.070 --> 00:31:40.930
+<v Speaker 0>Suddenly you lose the ability to do somewhat maths.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,80]}
+
+00:31:41.230 --> 00:31:43.690
+<v Speaker 0>Okay, so that now means s equals to the R,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,99,100,98]}
+
+00:31:44.740 --> 00:31:45.250
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[80]}
+
+00:31:46.660 --> 00:31:50.020
+<v Speaker 0>So that means the space of solutions before we had
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:31:50.020 --> 00:31:53.050
+<v Speaker 0>them as SR2S minus r.
+
+NOTE CONF {"raw":[100,100,73,100,100]}
+
+00:31:53.050 --> 00:31:55.750
+<v Speaker 0>But this extra equation lets us write one of those
+
+NOTE CONF {"raw":[100,100,100,100,100,100,84,100,100,100]}
+
+00:31:55.750 --> 00:31:57.790
+<v Speaker 0>parameters in terms of the other.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:58.000 --> 00:32:00.670
+<v Speaker 0>So now I can get the equation of my line
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:01.270 --> 00:32:03.040
+<v Speaker 0>as well S is three r.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:03.040 --> 00:32:06.850
+<v Speaker 0>So this can be three r or 3 or 4
+
+NOTE CONF {"raw":[100,52,58,100,100,100,93,69,69,69]}
+
+00:32:06.850 --> 00:32:09.520
+<v Speaker 0>times two is six r minus r is five r.
+
+NOTE CONF {"raw":[100,100,100,100,64,100,100,100,100,100]}
+
+00:32:11.230 --> 00:32:12.160
+<v Speaker 0>So there we go.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:12.160 --> 00:32:13.900
+<v Speaker 0>I now have a space with one parameter.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:13.900 --> 00:32:16.480
+<v Speaker 0>So what dimension am I one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:16.480 --> 00:32:18.010
+<v Speaker 0>Yeah I can move in a line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:19.060 --> 00:32:20.740
+<v Speaker 0>That is all good.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:21.280 --> 00:32:21.880
+<v Speaker 0>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:32:21.880 --> 00:32:23.620
+<v Speaker 0>Everybody happy so far then?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:25.690 --> 00:32:28.630
+<v Speaker 0>Um, so yeah.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:28.630 --> 00:32:31.240
+<v Speaker 0>So we'll talk about this a bit more tomorrow.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:32:31.990 --> 00:32:37.680
+<v Speaker 0>But the rank of um, the system of the augmented
+
+NOTE CONF {"raw":[100,100,100,100,58,100,100,100,100,100]}
+
+00:32:37.680 --> 00:32:40.140
+<v Speaker 0>matrix associated to the system.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:40.140 --> 00:32:44.610
+<v Speaker 0>One thing it's kind of doing is counting the I'm
+
+NOTE CONF {"raw":[100,100,57,100,100,100,100,100,100,100]}
+
+00:32:44.610 --> 00:32:46.470
+<v Speaker 0>going to write here meaningful.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:49.500 --> 00:32:51.240
+<v Speaker 0>Equations in your system.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:51.240 --> 00:32:55.470
+<v Speaker 0>So if you've got two, um, two lines that are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:55.470 --> 00:32:57.330
+<v Speaker 0>the same, the rank is not going to count it
+
+NOTE CONF {"raw":[100,100,100,89,89,100,100,100,100,100]}
+
+00:32:57.330 --> 00:32:58.020
+<v Speaker 0>twice.
+
+NOTE CONF {"raw":[100]}
+
+00:32:58.020 --> 00:33:01.770
+<v Speaker 0>It's only counting the ones that actually contribute to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:01.770 --> 00:33:04.650
+<v Speaker 0>solution is one way of kind of thinking about rank
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:04.680 --> 00:33:05.880
+<v Speaker 0>that can be quite helpful.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:06.780 --> 00:33:07.410
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:33:07.860 --> 00:33:09.210
+<v Speaker 0>Everyone happy so far?
+
+NOTE CONF {"raw":[99,100,100,99]}
+
+00:33:10.170 --> 00:33:11.400
+<v Speaker 0>Any questions?
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:11.400 --> 00:33:12.780
+<v Speaker 0>Does anyone have a question?
+
+NOTE CONF {"raw":[100,100,100,94,100]}
+
+00:33:15.420 --> 00:33:15.690
+<v Speaker 1>No.
+
+NOTE CONF {"raw":[98]}
+
+00:33:16.440 --> 00:33:22.680
+<v Speaker 0>So in the reading this then led to theorem 1.2.2.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,80,100,100,100]}
+
+00:33:26.340 --> 00:33:29.250
+<v Speaker 0>So hopefully we saw this in the reading.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:30.030 --> 00:33:35.090
+<v Speaker 0>Um, if a system of m equations in n variables.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:35.090 --> 00:33:38.660
+<v Speaker 0>So it makes it quite clear how many variables you're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:38.660 --> 00:33:39.170
+<v Speaker 0>working in.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:39.170 --> 00:33:42.710
+<v Speaker 0>So even if all your equations look like they're only
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:42.710 --> 00:33:47.120
+<v Speaker 0>in two variables again, health warning check how many you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:47.120 --> 00:33:48.590
+<v Speaker 0>were actually working in.
+
+NOTE CONF {"raw":[87,100,100,100]}
+
+00:33:49.760 --> 00:33:51.920
+<v Speaker 0>Are you in three dimensions?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:51.920 --> 00:33:52.520
+<v Speaker 0>Four dimensions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:52.520 --> 00:33:54.410
+<v Speaker 0>Five dimensions okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:54.410 --> 00:33:56.480
+<v Speaker 0>We want these to be consistent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:56.480 --> 00:34:00.950
+<v Speaker 0>What does consistent mean has a solution.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:00.950 --> 00:34:01.250
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[98]}
+
+00:34:01.250 --> 00:34:04.280
+<v Speaker 0>So inconsistent means we have no solutions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:04.280 --> 00:34:08.840
+<v Speaker 0>Consistent means has solutions.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:08.870 --> 00:34:12.020
+<v Speaker 0>At least one solution okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:12.440 --> 00:34:14.060
+<v Speaker 0>And we're going to say the rank is are.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,93,100]}
+
+00:34:14.060 --> 00:34:17.030
+<v Speaker 0>So we're counting the number of meaningful equations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:17.030 --> 00:34:20.240
+<v Speaker 0>Then as a generalisation of that statement I wrote up
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:34:20.240 --> 00:34:23.270
+<v Speaker 0>some time ago in the box which I've now lost
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100,100]}
+
+00:34:24.020 --> 00:34:24.740
+<v Speaker 0>somewhere.
+
+NOTE CONF {"raw":[100]}
+
+00:34:25.490 --> 00:34:29.480
+<v Speaker 0>Um, this first point is exactly what I wrote.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100]}
+
+00:34:29.690 --> 00:34:31.510
+<v Speaker 0>If we've only got one equation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:31.870 --> 00:34:35.590
+<v Speaker 0>The set of solutions line in n minus r dimensional
+
+NOTE CONF {"raw":[100,100,100,100,100,88,100,100,100,100]}
+
+00:34:35.590 --> 00:34:36.310
+<v Speaker 0>space.
+
+NOTE CONF {"raw":[100]}
+
+00:34:36.429 --> 00:34:37.030
+<v Speaker 0>So in.
+
+NOTE CONF {"raw":[100,79]}
+
+00:34:37.030 --> 00:34:39.490
+<v Speaker 0>Actually if you in the reading it says has n
+
+NOTE CONF {"raw":[97,51,67,100,100,100,100,100,100,100]}
+
+00:34:39.490 --> 00:34:40.899
+<v Speaker 0>minus r parameters.
+
+NOTE CONF {"raw":[100,98,100]}
+
+00:34:40.899 --> 00:34:44.560
+<v Speaker 0>But I think we've established number of parameters equals dimension.
+
+NOTE CONF {"raw":[100,100,100,81,100,100,100,100,100,100]}
+
+00:34:44.590 --> 00:34:46.659
+<v Speaker 0>I will stop doing that dance eventually.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:47.290 --> 00:34:52.240
+<v Speaker 0>Um and this is the big, big theorem that one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:34:52.240 --> 00:34:54.340
+<v Speaker 0>of the big themes of this week's reading.
+
+NOTE CONF {"raw":[100,100,100,91,100,99,100,100]}
+
+00:34:54.940 --> 00:34:58.750
+<v Speaker 0>Uh, and the first part's the kind of important part,
+
+NOTE CONF {"raw":[100,100,100,100,78,100,100,100,100,100]}
+
+00:34:59.140 --> 00:35:01.060
+<v Speaker 0>uh, two and three follow immediately.
+
+NOTE CONF {"raw":[64,100,100,100,100,100]}
+
+00:35:01.060 --> 00:35:03.940
+<v Speaker 0>Why, if n equals r, why is there a unique
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:03.940 --> 00:35:04.750
+<v Speaker 0>solution?
+
+NOTE CONF {"raw":[100]}
+
+00:35:06.640 --> 00:35:09.730
+<v Speaker 4>Because all three variables.
+
+NOTE CONF {"raw":[100,96,76,100]}
+
+00:35:10.330 --> 00:35:12.100
+<v Speaker 4>Yeah n minus r equal to zero.
+
+NOTE CONF {"raw":[89,98,100,48,95,95,100]}
+
+00:35:12.190 --> 00:35:12.730
+<v Speaker 0>Exactly.
+
+NOTE CONF {"raw":[100]}
+
+00:35:12.730 --> 00:35:14.830
+<v Speaker 0>So there were no free variables I'm a point.
+
+NOTE CONF {"raw":[100,100,97,100,91,100,100,100,100]}
+
+00:35:14.830 --> 00:35:17.650
+<v Speaker 0>My point is a unique solution if I'm anything other
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:17.650 --> 00:35:18.490
+<v Speaker 0>than a point.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:18.490 --> 00:35:21.070
+<v Speaker 0>And provided I exist, if I'm on a line, how
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:35:21.070 --> 00:35:22.420
+<v Speaker 0>many solutions are there on the line?
+
+NOTE CONF {"raw":[100,100,92,52,92,58,100]}
+
+00:35:23.350 --> 00:35:24.250
+<v Speaker 0>Infinitely many.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:24.250 --> 00:35:26.110
+<v Speaker 0>If I'm on a plane, there are infinitely many.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:26.110 --> 00:35:30.720
+<v Speaker 0>If I'm in a 264 dimensional hyperplane.
+
+NOTE CONF {"raw":[100,100,39,100,100,100,95]}
+
+00:35:30.720 --> 00:35:34.710
+<v Speaker 0>There are definitely infinitely many solutions, so the only time
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:35:34.710 --> 00:35:37.110
+<v Speaker 0>there is a unique solution is when the number of
+
+NOTE CONF {"raw":[100,52,100,100,100,100,100,100,100,100]}
+
+00:35:37.200 --> 00:35:41.370
+<v Speaker 0>all of your equations equal the number of variables, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:41.370 --> 00:35:43.380
+<v Speaker 0>all of them are contributing to that answer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:44.970 --> 00:35:45.780
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:47.490 --> 00:35:48.330
+<v Speaker 1>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:35:49.260 --> 00:35:50.040
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:35:51.150 --> 00:35:55.920
+<v Speaker 0>So next question, we are moving on to a slightly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:55.920 --> 00:35:56.820
+<v Speaker 0>different bit.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:56.820 --> 00:35:58.530
+<v Speaker 0>Now that's the end of that bit.
+
+NOTE CONF {"raw":[100,92,100,100,100,100,98]}
+
+00:35:59.670 --> 00:36:01.740
+<v Speaker 0>Um, you may be pleased to know.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:02.070 --> 00:36:03.480
+<v Speaker 0>So another question.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:04.410 --> 00:36:05.070
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:36:05.910 --> 00:36:07.320
+<v Speaker 0>This one I'm going to give you a bit longer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:07.320 --> 00:36:08.910
+<v Speaker 0>for now.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:08.910 --> 00:36:09.930
+<v Speaker 0>What are you seeing?
+
+NOTE CONF {"raw":[100,100,100,97]}
+
+00:36:12.810 --> 00:36:17.400
+<v Speaker 0>Um, if there is a system of equations, three equations
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:17.400 --> 00:36:18.360
+<v Speaker 0>in three unknowns.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:18.360 --> 00:36:20.010
+<v Speaker 0>I'm only in three dimensions.
+
+NOTE CONF {"raw":[92,100,100,100,100]}
+
+00:36:20.880 --> 00:36:25.530
+<v Speaker 0>Um, and my question.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:25.530 --> 00:36:27.180
+<v Speaker 1>Is.
+
+NOTE CONF {"raw":[100]}
+
+00:36:28.290 --> 00:36:29.280
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:36:29.870 --> 00:36:33.920
+<v Speaker 0>Firstly turn to your neighbour and find the augmented matrix.
+
+NOTE CONF {"raw":[100,100,100,100,58,100,100,100,100,100]}
+
+00:36:33.920 --> 00:36:35.660
+<v Speaker 0>What is the augmented matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:36.080 --> 00:36:38.720
+<v Speaker 0>And then I'm going to give you four options.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:36:41.030 --> 00:36:43.580
+<v Speaker 0>One of which one of these does not come from
+
+NOTE CONF {"raw":[100,100,55,100,100,100,100,100,100,100]}
+
+00:36:43.580 --> 00:36:44.270
+<v Speaker 0>a raw operation.
+
+NOTE CONF {"raw":[91,41,100]}
+
+00:36:44.270 --> 00:36:45.800
+<v Speaker 0>I'm going to give you a while for this because
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:36:45.800 --> 00:36:47.540
+<v Speaker 0>this is a bit convoluted.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:47.600 --> 00:36:51.380
+<v Speaker 0>Let us first find the augmented matrix and then we'll
+
+NOTE CONF {"raw":[52,52,100,100,100,100,100,100,100,81]}
+
+00:36:51.380 --> 00:36:53.090
+<v Speaker 0>we'll do some more operations.
+
+NOTE CONF {"raw":[71,100,100,94,100]}
+
+00:36:53.720 --> 00:36:57.380
+<v Speaker 0>So if you will write your augmented matrix down actually
+
+NOTE CONF {"raw":[100,100,100,82,100,100,100,100,100,100]}
+
+00:36:57.470 --> 00:36:58.760
+<v Speaker 0>on, um.
+
+NOTE CONF {"raw":[100,100]}
+
+00:37:01.430 --> 00:37:03.410
+<v Speaker 0>On, on a piece of paper and hold it up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:03.410 --> 00:37:05.600
+<v Speaker 0>when you're done or a tablet or something.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:06.140 --> 00:37:07.400
+<v Speaker 0>And we'll see.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:08.090 --> 00:37:08.840
+<v Speaker 1>How.
+
+NOTE CONF {"raw":[100]}
+
+00:37:08.840 --> 00:37:09.560
+<v Speaker 0>We get on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:11.570 --> 00:37:14.780
+<v Speaker 0>So what is the augmented matrix?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:17.720 --> 00:37:18.470
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:37:19.460 --> 00:37:19.880
+<v Speaker 1>Pardon.
+
+NOTE CONF {"raw":[100]}
+
+00:37:21.260 --> 00:37:21.590
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[96]}
+
+00:37:21.620 --> 00:37:21.950
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:37:21.950 --> 00:37:23.870
+<v Speaker 0>So we're just writing down on a piece of paper
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:23.990 --> 00:37:26.270
+<v Speaker 0>just the augmented matrix to begin with.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:37:54.580 --> 00:37:56.110
+<v Speaker 1>Okay, let's.
+
+NOTE CONF {"raw":[100,44]}
+
+00:37:56.140 --> 00:37:58.300
+<v Speaker 0>If you're done, try holding it up and let me.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,100,100]}
+
+00:37:58.780 --> 00:37:59.830
+<v Speaker 0>I'm going to have to come and.
+
+NOTE CONF {"raw":[96,92,92,100,100,100,64]}
+
+00:38:00.100 --> 00:38:00.970
+<v Speaker 1>Oh.
+
+NOTE CONF {"raw":[94]}
+
+00:38:02.260 --> 00:38:04.660
+<v Speaker 0>What are we getting for the augmented matrix?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:38:04.690 --> 00:38:06.700
+<v Speaker 0>Anyone going to hold anything up for me?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:38:07.000 --> 00:38:07.870
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:08.230 --> 00:38:11.590
+<v Speaker 0>Things are looking looking good.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:13.360 --> 00:38:14.980
+<v Speaker 0>Okay, I'm just going to run around the whole lecture
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:14.980 --> 00:38:15.580
+<v Speaker 0>theatre.
+
+NOTE CONF {"raw":[54]}
+
+00:38:15.790 --> 00:38:17.560
+<v Speaker 0>Feel free to wave something at me.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:17.590 --> 00:38:18.040
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:38:18.040 --> 00:38:18.910
+<v Speaker 0>We're looking good.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:18.910 --> 00:38:20.080
+<v Speaker 0>We're looking good.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:21.520 --> 00:38:22.600
+<v Speaker 1>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:38:23.260 --> 00:38:25.060
+<v Speaker 0>I'm liking these answers.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:25.060 --> 00:38:26.380
+<v Speaker 0>I now have to run around the whole while.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,76]}
+
+00:38:26.380 --> 00:38:27.820
+<v Speaker 0>And this was a mistake.
+
+NOTE CONF {"raw":[91,100,100,100,100]}
+
+00:38:28.080 --> 00:38:28.860
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:38:28.860 --> 00:38:29.610
+<v Speaker 0>Nice.
+
+NOTE CONF {"raw":[100]}
+
+00:38:29.610 --> 00:38:30.300
+<v Speaker 0>Excellent.
+
+NOTE CONF {"raw":[100]}
+
+00:38:30.330 --> 00:38:32.370
+<v Speaker 0>We all seem happy with the augmented matrices.
+
+NOTE CONF {"raw":[100,100,100,100,100,58,100,100]}
+
+00:38:32.760 --> 00:38:34.170
+<v Speaker 0>What are we on this side?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:35.430 --> 00:38:36.000
+<v Speaker 0>Excellent.
+
+NOTE CONF {"raw":[100]}
+
+00:38:36.000 --> 00:38:36.420
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:38:36.450 --> 00:38:39.480
+<v Speaker 0>Okay, so too many stairs.
+
+NOTE CONF {"raw":[100,100,66,67,67]}
+
+00:38:39.810 --> 00:38:40.800
+<v Speaker 0>There are a lot of you.
+
+NOTE CONF {"raw":[100,95,100,100,100,100]}
+
+00:38:40.830 --> 00:38:41.880
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:38:41.910 --> 00:38:42.990
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:38:43.320 --> 00:38:44.160
+<v Speaker 1>Excellent.
+
+NOTE CONF {"raw":[100]}
+
+00:38:44.490 --> 00:38:47.430
+<v Speaker 0>Okay, so I think nearly all of you got the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:47.430 --> 00:38:48.270
+<v Speaker 0>right answer there.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:48.840 --> 00:38:49.290
+<v Speaker 1>Which is.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:49.290 --> 00:38:49.890
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:38:50.910 --> 00:38:56.820
+<v Speaker 0>Um, so let us now do the go back to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:56.820 --> 00:38:57.720
+<v Speaker 0>our poll.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:57.870 --> 00:38:59.400
+<v Speaker 0>There were four matrices.
+
+NOTE CONF {"raw":[100,93,100,100]}
+
+00:38:59.430 --> 00:39:03.060
+<v Speaker 0>I have performed some kind of operation on all of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:03.060 --> 00:39:03.540
+<v Speaker 0>them.
+
+NOTE CONF {"raw":[100]}
+
+00:39:03.840 --> 00:39:06.300
+<v Speaker 0>Three of them are a valid row operation.
+
+NOTE CONF {"raw":[100,100,100,100,94,100,95,100]}
+
+00:39:06.660 --> 00:39:08.700
+<v Speaker 0>One of them is something I made up.
+
+NOTE CONF {"raw":[100,100,100,50,94,100,100,100]}
+
+00:39:09.000 --> 00:39:10.800
+<v Speaker 0>Which one did I make up?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:11.250 --> 00:39:14.160
+<v Speaker 0>Again, I'm going to give you another couple of minutes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:14.280 --> 00:39:16.500
+<v Speaker 0>to sit and work through because it is a bit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:16.500 --> 00:39:16.800
+<v Speaker 0>tricky.
+
+NOTE CONF {"raw":[100]}
+
+00:39:16.800 --> 00:39:17.430
+<v Speaker 1>This one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:18.300 --> 00:39:20.730
+<v Speaker 0>What have I done to each of these matrices from
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:20.730 --> 00:39:22.170
+<v Speaker 0>the augmented matrix?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:08.830 --> 00:41:11.260
+<v Speaker 0>Okay, I'm going to give you another 30s.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:11.260 --> 00:41:11.920
+<v Speaker 0>And then.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:13.690 --> 00:41:15.370
+<v Speaker 0>And then we'll discuss this a bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:16.270 --> 00:41:18.430
+<v Speaker 0>It's absolutely fine if you don't know the answer we
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:41:18.430 --> 00:41:19.240
+<v Speaker 0>are going to go through it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:19.240 --> 00:41:22.570
+<v Speaker 0>So, um, you don't have to vote, but it would
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100,100,100]}
+
+00:41:22.570 --> 00:41:23.860
+<v Speaker 0>be nice if you did vote.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:23.860 --> 00:41:25.380
+<v Speaker 0>Even a wrong answer is good.
+
+NOTE CONF {"raw":[100,65,100,99,99,100]}
+
+00:41:25.710 --> 00:41:27.210
+<v Speaker 0>Put some fun comments in.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:37.590 --> 00:41:40.440
+<v Speaker 0>Everything's anonymous so it doesn't really matter.
+
+NOTE CONF {"raw":[52,100,100,100,100,98,100]}
+
+00:41:40.470 --> 00:41:40.650
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[77]}
+
+00:41:40.650 --> 00:41:44.040
+<v Speaker 0>I'm going to give you another 15 seconds.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:48.990 --> 00:41:50.550
+<v Speaker 1>Ten.
+
+NOTE CONF {"raw":[100]}
+
+00:41:52.710 --> 00:41:54.060
+<v Speaker 0>Eight.
+
+NOTE CONF {"raw":[100]}
+
+00:41:54.930 --> 00:41:57.390
+<v Speaker 1>Six.
+
+NOTE CONF {"raw":[100]}
+
+00:41:57.390 --> 00:41:59.160
+<v Speaker 0>Five.
+
+NOTE CONF {"raw":[100]}
+
+00:42:00.120 --> 00:42:01.380
+<v Speaker 0>Four.
+
+NOTE CONF {"raw":[100]}
+
+00:42:01.530 --> 00:42:02.940
+<v Speaker 0>Three.
+
+NOTE CONF {"raw":[100]}
+
+00:42:03.810 --> 00:42:08.340
+<v Speaker 0>Two and one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:09.480 --> 00:42:10.230
+<v Speaker 0>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:42:11.910 --> 00:42:14.910
+<v Speaker 0>Okay, right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:14.910 --> 00:42:16.320
+<v Speaker 0>I'm liking this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:17.490 --> 00:42:22.230
+<v Speaker 0>So most people who voted, we seem to have a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:22.230 --> 00:42:24.180
+<v Speaker 0>clear a clear.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:25.420 --> 00:42:27.100
+<v Speaker 0>There seems to be one clear winner.
+
+NOTE CONF {"raw":[64,100,100,100,100,100,100]}
+
+00:42:27.220 --> 00:42:30.220
+<v Speaker 0>One that seems happier than the rest.
+
+NOTE CONF {"raw":[75,97,100,100,100,100,100]}
+
+00:42:30.220 --> 00:42:34.420
+<v Speaker 0>And actually, that is the correct answer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:34.420 --> 00:42:35.950
+<v Speaker 0>So yay!
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:36.340 --> 00:42:38.110
+<v Speaker 0>But let's just discuss it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:38.320 --> 00:42:42.820
+<v Speaker 0>Um, so in the first one, what did we do?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:42:42.850 --> 00:42:46.630
+<v Speaker 0>What did I do for the first matrix?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:46.720 --> 00:42:49.240
+<v Speaker 0>So I went from, oh, hang on, I now have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:49.240 --> 00:42:49.690
+<v Speaker 0>a problem.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:49.690 --> 00:42:51.070
+<v Speaker 0>You can't see the matrices.
+
+NOTE CONF {"raw":[100,95,100,100,100]}
+
+00:42:51.070 --> 00:42:51.790
+<v Speaker 0>Let's do this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:52.450 --> 00:42:52.870
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:42:53.320 --> 00:42:55.690
+<v Speaker 0>So how did I get from the augmented matrix to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:55.690 --> 00:42:56.170
+<v Speaker 0>the matrix?
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:56.170 --> 00:43:01.150
+<v Speaker 0>111111 minus two three halves 2112.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:01.840 --> 00:43:02.500
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:43:02.500 --> 00:43:04.990
+<v Speaker 0>Divided by two I divided by one by two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:05.020 --> 00:43:07.540
+<v Speaker 0>So we have a slightly weird way of writing this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:07.540 --> 00:43:11.620
+<v Speaker 0>Traditionally, and interestingly, the textbook does not touch this.
+
+NOTE CONF {"raw":[100,100,100,100,100,92,92,100,100]}
+
+00:43:11.620 --> 00:43:16.060
+<v Speaker 0>So, um, the way we like writing this, we don't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:16.060 --> 00:43:20.500
+<v Speaker 0>write equals between row operations because the matrices are not
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100,100,100,100]}
+
+00:43:20.500 --> 00:43:20.980
+<v Speaker 0>equal.
+
+NOTE CONF {"raw":[100]}
+
+00:43:20.980 --> 00:43:24.360
+<v Speaker 0>Please do not write an equal sign between two matrices
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:24.360 --> 00:43:27.210
+<v Speaker 0>as you row do a row operation, because.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:27.210 --> 00:43:27.930
+<v Speaker 1>That's.
+
+NOTE CONF {"raw":[87]}
+
+00:43:28.410 --> 00:43:29.610
+<v Speaker 0>Not right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:30.360 --> 00:43:32.850
+<v Speaker 0>We tend to write arrows instead, and we like to
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,93,100,100]}
+
+00:43:32.850 --> 00:43:35.730
+<v Speaker 0>label these arrows with what we're doing because as you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:35.730 --> 00:43:39.240
+<v Speaker 0>just found out, if someone just writes out some operations,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:39.240 --> 00:43:41.850
+<v Speaker 0>it can be quite hard to work out what's going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:41.850 --> 00:43:43.710
+<v Speaker 0>on and backwards engineer it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:43.710 --> 00:43:47.460
+<v Speaker 0>So for everyone sake, let's write it out quite clearly.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100,100]}
+
+00:43:47.460 --> 00:43:49.380
+<v Speaker 0>And we do it in this really weird way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:49.530 --> 00:43:52.410
+<v Speaker 0>We, um, you cannot see.
+
+NOTE CONF {"raw":[100,99,100,100,100]}
+
+00:43:52.410 --> 00:43:53.370
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:54.960 --> 00:43:56.010
+<v Speaker 0>I will learn one day.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:56.130 --> 00:43:59.490
+<v Speaker 0>So in this first one, we took row two, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:59.490 --> 00:44:04.320
+<v Speaker 0>we're saying the new row two is equivalent to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:04.320 --> 00:44:05.550
+<v Speaker 0>old row two.
+
+NOTE CONF {"raw":[100,100,97]}
+
+00:44:05.550 --> 00:44:09.210
+<v Speaker 0>I've written this is half of the old row two.
+
+NOTE CONF {"raw":[77,77,77,100,100,100,100,100,100,100]}
+
+00:44:12.300 --> 00:44:13.620
+<v Speaker 0>So we do this really weird thing.
+
+NOTE CONF {"raw":[100,100,85,100,100,100,100]}
+
+00:44:13.620 --> 00:44:15.060
+<v Speaker 0>If we kind of say row two is going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:15.060 --> 00:44:17.250
+<v Speaker 0>half of row two, but one's the new row two
+
+NOTE CONF {"raw":[100,100,100,100,100,65,100,100,100,100]}
+
+00:44:17.250 --> 00:44:18.510
+<v Speaker 0>and one's the old row two.
+
+NOTE CONF {"raw":[100,77,100,100,100,100]}
+
+00:44:20.010 --> 00:44:21.720
+<v Speaker 0>And then that gives us I'm not going to write
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,61]}
+
+00:44:21.720 --> 00:44:23.120
+<v Speaker 0>it out, but the matrix in one.
+
+NOTE CONF {"raw":[95,95,100,100,100,100,100]}
+
+00:44:24.110 --> 00:44:24.680
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[73]}
+
+00:44:25.040 --> 00:44:26.690
+<v Speaker 0>What do we do for the second one?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:44:30.800 --> 00:44:32.300
+<v Speaker 0>Yeah, we swapped one and three.
+
+NOTE CONF {"raw":[100,100,100,100,98,100]}
+
+00:44:32.300 --> 00:44:34.250
+<v Speaker 0>So this one's a nicer way of writing it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:34.280 --> 00:44:35.510
+<v Speaker 0>We just write kind of.
+
+NOTE CONF {"raw":[100,100,98,100,100]}
+
+00:44:35.930 --> 00:44:38.360
+<v Speaker 0>We swapped row one and three.
+
+NOTE CONF {"raw":[100,100,100,100,83,100]}
+
+00:44:39.290 --> 00:44:40.220
+<v Speaker 0>We just do an arrow.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:40.250 --> 00:44:41.660
+<v Speaker 0>There's no new old stuff.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:41.690 --> 00:44:43.700
+<v Speaker 0>What do we do for row three?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:43.970 --> 00:44:45.500
+<v Speaker 0>Uh, vector matrix three.
+
+NOTE CONF {"raw":[40,98,100,100]}
+
+00:44:45.500 --> 00:44:46.250
+<v Speaker 0>It's not vector.
+
+NOTE CONF {"raw":[99,100,100]}
+
+00:44:48.770 --> 00:44:49.250
+<v Speaker 0>Art.
+
+NOTE CONF {"raw":[51]}
+
+00:44:49.280 --> 00:44:49.580
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[70]}
+
+00:44:49.580 --> 00:44:50.330
+<v Speaker 0>Row one and three.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:50.330 --> 00:44:51.170
+<v Speaker 0>So here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:51.620 --> 00:44:52.610
+<v Speaker 0>Row three.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:52.610 --> 00:44:53.600
+<v Speaker 0>That's two.
+
+NOTE CONF {"raw":[100,94]}
+
+00:44:53.960 --> 00:44:55.040
+<v Speaker 0>Row three.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:55.040 --> 00:45:00.770
+<v Speaker 0>The new row three became row three plus row one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:02.630 --> 00:45:04.640
+<v Speaker 0>You don't need to write old and new above them
+
+NOTE CONF {"raw":[100,100,100,100,87,95,95,100,100,100]}
+
+00:45:04.640 --> 00:45:05.210
+<v Speaker 0>each time.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:05.210 --> 00:45:08.540
+<v Speaker 0>I'm doing it to make it clear, but, um.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,92]}
+
+00:45:09.830 --> 00:45:10.250
+<v Speaker 0>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:45:10.910 --> 00:45:13.790
+<v Speaker 0>Can anyone actually work out how I got to vector
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:13.790 --> 00:45:14.000
+<v Speaker 0>four?
+
+NOTE CONF {"raw":[97]}
+
+00:45:14.000 --> 00:45:15.710
+<v Speaker 0>I did, actually, that is sensible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:15.710 --> 00:45:18.620
+<v Speaker 0>I didn't just pick numbers out of thin air.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,98,98]}
+
+00:45:21.970 --> 00:45:22.720
+<v Speaker 0>Any ideas.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:22.720 --> 00:45:23.170
+<v Speaker 1>Yet?
+
+NOTE CONF {"raw":[93]}
+
+00:45:23.620 --> 00:45:26.140
+<v Speaker 4>You multiply the coefficients of the above.
+
+NOTE CONF {"raw":[100,80,100,100,22,79,41]}
+
+00:45:27.340 --> 00:45:28.450
+<v Speaker 0>Yeah, exactly.
+
+NOTE CONF {"raw":[87,100]}
+
+00:45:28.450 --> 00:45:30.100
+<v Speaker 0>I have no idea how you'd write that down, because
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100,100,100]}
+
+00:45:30.100 --> 00:45:31.720
+<v Speaker 0>it's weird, but I essentially timed.
+
+NOTE CONF {"raw":[100,100,100,100,100,98]}
+
+00:45:32.170 --> 00:45:36.430
+<v Speaker 0>I made new row three old, rowed three times, row
+
+NOTE CONF {"raw":[100,100,100,100,100,99,27,100,100,100]}
+
+00:45:36.430 --> 00:45:38.890
+<v Speaker 0>two times in some.
+
+NOTE CONF {"raw":[100,100,100,86]}
+
+00:45:39.610 --> 00:45:40.120
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:45:40.630 --> 00:45:42.250
+<v Speaker 0>Um, cool.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:42.250 --> 00:45:43.210
+<v Speaker 1>So that's.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:43.960 --> 00:45:45.250
+<v Speaker 0>Uh, that's nonsense.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:45.250 --> 00:45:47.230
+<v Speaker 0>That is not an elementary row operation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:47.230 --> 00:45:49.330
+<v Speaker 0>Please do not try times in rows together.
+
+NOTE CONF {"raw":[100,100,100,100,85,67,100,100]}
+
+00:45:49.330 --> 00:45:52.450
+<v Speaker 0>You can times them by a scalar like we did
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:52.450 --> 00:45:53.230
+<v Speaker 0>at the beginning.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:53.950 --> 00:45:56.950
+<v Speaker 0>But those are the three options we can swap.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:58.810 --> 00:46:01.000
+<v Speaker 0>We can scale a multiply.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:04.660 --> 00:46:10.540
+<v Speaker 0>And we can add those are three valid row operations
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:11.620 --> 00:46:12.460
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:46:13.960 --> 00:46:15.550
+<v Speaker 0>Are we all happy there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:15.550 --> 00:46:18.640
+<v Speaker 0>Does anyone have any questions or thoughts.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:18.640 --> 00:46:19.420
+<v Speaker 0>Feelings.
+
+NOTE CONF {"raw":[100]}
+
+00:46:19.420 --> 00:46:19.690
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[82]}
+
+00:46:19.870 --> 00:46:20.650
+<v Speaker 0>Combine them.
+
+NOTE CONF {"raw":[62,64]}
+
+00:46:20.910 --> 00:46:22.380
+<v Speaker 0>Yeah, you can combine them.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:22.410 --> 00:46:23.760
+<v Speaker 0>Try not to combine.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:23.790 --> 00:46:26.010
+<v Speaker 0>I wouldn't combine swap with the other two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:46:26.010 --> 00:46:27.990
+<v Speaker 0>But you could do a linear combination.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:27.990 --> 00:46:30.420
+<v Speaker 0>So you could say all three plus one half of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,93,100]}
+
+00:46:30.420 --> 00:46:31.920
+<v Speaker 0>row two for example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:32.520 --> 00:46:36.510
+<v Speaker 0>Um, but yeah, don't go crazy because.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:36.810 --> 00:46:37.650
+<v Speaker 1>The.
+
+NOTE CONF {"raw":[73]}
+
+00:46:37.650 --> 00:46:40.230
+<v Speaker 0>Your tutor has to mark your homework and they have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:40.230 --> 00:46:42.360
+<v Speaker 0>to be able to somehow work out what you've done.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:42.630 --> 00:46:43.020
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:46:43.380 --> 00:46:45.810
+<v Speaker 0>So, yeah, try not to go too crazy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:46:46.410 --> 00:46:47.100
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:46:47.100 --> 00:46:51.810
+<v Speaker 0>We are nearly at times, so I'm going to save
+
+NOTE CONF {"raw":[100,100,100,100,100,100,88,100,100,100]}
+
+00:46:51.810 --> 00:46:52.740
+<v Speaker 0>that for next time.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:53.070 --> 00:46:54.780
+<v Speaker 0>Uh, we're going to do one more poll.
+
+NOTE CONF {"raw":[86,98,100,100,100,100,100,100]}
+
+00:46:56.640 --> 00:46:57.450
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:47:00.090 --> 00:47:05.340
+<v Speaker 0>Slightly to help me design what to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:05.760 --> 00:47:08.400
+<v Speaker 0>Um, hang on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:08.400 --> 00:47:11.520
+<v Speaker 0>I'm just going to change this poll slightly, uh, slightly,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:47:11.520 --> 00:47:13.530
+<v Speaker 0>to help me design what we want to do tomorrow.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:15.480 --> 00:47:18.570
+<v Speaker 0>But there were three topics.
+
+NOTE CONF {"raw":[100,100,76,100,100]}
+
+00:47:19.440 --> 00:47:22.820
+<v Speaker 0>How we feeling about those three topics?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:22.910 --> 00:47:24.890
+<v Speaker 0>Do we know what a linear system is?
+
+NOTE CONF {"raw":[100,100,100,100,63,100,100,100]}
+
+00:47:25.190 --> 00:47:29.630
+<v Speaker 0>Do we know when linear equations are equivalent or systems
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:29.630 --> 00:47:31.190
+<v Speaker 0>of linear equations equivalent?
+
+NOTE CONF {"raw":[90,100,100,93]}
+
+00:47:31.370 --> 00:47:34.940
+<v Speaker 0>And can we carry out elementary row operations?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:35.420 --> 00:47:38.180
+<v Speaker 0>This is mainly to help me decide what we want
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:47:38.180 --> 00:47:39.170
+<v Speaker 0>to do tomorrow.
+
+NOTE CONF {"raw":[100,100,97]}
+
+00:47:39.200 --> 00:47:40.940
+<v Speaker 0>We probably don't want to see the answers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:40.940 --> 00:47:41.720
+<v Speaker 0>Let's hide the results.
+
+NOTE CONF {"raw":[99,99,100,100]}
+
+00:47:41.720 --> 00:47:42.380
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:43.010 --> 00:47:43.670
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:47:46.130 --> 00:47:47.090
+<v Speaker 0>Oh, is there anything else?
+
+NOTE CONF {"raw":[73,100,100,100,100]}
+
+00:47:47.090 --> 00:47:49.670
+<v Speaker 0>Does anyone else have anything they really, really want me
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:49.670 --> 00:47:50.690
+<v Speaker 0>to go through tomorrow.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:50.720 --> 00:47:52.580
+<v Speaker 0>I'm happy to feel free to come up to me
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:47:52.580 --> 00:47:53.390
+<v Speaker 0>at the end.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:54.320 --> 00:47:57.350
+<v Speaker 0>Um, if there's something you want to do.
+
+NOTE CONF {"raw":[100,100,86,100,100,100,100,100]}
+
+00:47:58.100 --> 00:48:01.310
+<v Speaker 0>Otherwise, I'm going to give you an extra 30s there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:02.150 --> 00:48:04.190
+<v Speaker 1>Um, yeah.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:04.190 --> 00:48:05.030
+<v Speaker 0>Thank you for coming.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:05.030 --> 00:48:06.650
+<v Speaker 0>I will see you tomorrow.
+
+NOTE CONF {"raw":[100,100,100,100,100]}

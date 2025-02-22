@@ -1,0 +1,4941 @@
+WEBVTT
+
+00:00:07.980 --> 00:00:08.250
+<v Speaker 0>Oh.
+
+NOTE CONF {"raw":[95]}
+
+00:00:08.250 --> 00:00:09.060
+<v Speaker 0>It's okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:09.660 --> 00:00:11.310
+<v Speaker 0>I've got my red light here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:00:11.610 --> 00:00:13.440
+<v Speaker 0>So that's the prompt to start.
+
+NOTE CONF {"raw":[100,100,100,100,99,100]}
+
+00:00:13.980 --> 00:00:14.850
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:00:15.090 --> 00:00:15.300
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[89]}
+
+00:00:15.420 --> 00:00:16.290
+<v Speaker 0>Straight in.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:16.650 --> 00:00:20.340
+<v Speaker 0>Um, as I said yesterday, uh, what we're doing today
+
+NOTE CONF {"raw":[75,100,100,100,100,52,100,98,100,100]}
+
+00:00:20.340 --> 00:00:24.390
+<v Speaker 0>is pretty much follows on from what we've done yesterday.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:24.780 --> 00:00:27.270
+<v Speaker 0>Um, so we've talked about subspace and spanning.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100]}
+
+00:00:27.570 --> 00:00:30.750
+<v Speaker 0>We now go through the concepts of linear independence and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:30.750 --> 00:00:31.740
+<v Speaker 0>then onto what?
+
+NOTE CONF {"raw":[100,92,77]}
+
+00:00:31.740 --> 00:00:33.840
+<v Speaker 0>What we actually mean by a dimension.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:00:34.290 --> 00:00:36.540
+<v Speaker 0>Uh, since it's so tightly interlinked with what I've done
+
+NOTE CONF {"raw":[56,100,100,100,100,100,100,100,95,100]}
+
+00:00:36.540 --> 00:00:38.730
+<v Speaker 0>yesterday, I have a couple of slides, just a few
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:38.730 --> 00:00:42.240
+<v Speaker 0>minutes of just reminding you where we were yesterday.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:00:42.630 --> 00:00:44.850
+<v Speaker 0>Uh, so we talked about a subspace, and we have
+
+NOTE CONF {"raw":[67,100,69,100,100,100,100,100,100,72]}
+
+00:00:44.850 --> 00:00:46.080
+<v Speaker 0>the definition here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:00:46.350 --> 00:00:49.080
+<v Speaker 0>It's basically means it's a sort of subset of whatever
+
+NOTE CONF {"raw":[63,100,100,100,98,100,100,100,100,100]}
+
+00:00:49.080 --> 00:00:52.080
+<v Speaker 0>we're working in R, n or so, which is closed
+
+NOTE CONF {"raw":[64,100,100,100,96,100,100,100,100,100]}
+
+00:00:52.080 --> 00:00:55.770
+<v Speaker 0>with respect to vector addition and scalar multiplication.
+
+NOTE CONF {"raw":[100,100,100,100,100,52,100,100]}
+
+00:00:55.770 --> 00:00:57.630
+<v Speaker 0>So in other words, if we take the vectors and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:57.630 --> 00:01:00.880
+<v Speaker 0>sort of take any linear combination of those vectors that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:00.880 --> 00:01:03.670
+<v Speaker 0>won't take us outside of the subspace.
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100]}
+
+00:01:04.000 --> 00:01:05.830
+<v Speaker 0>That's the definition of a subspace.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:06.370 --> 00:01:09.610
+<v Speaker 0>And we talked a bit about um, so linear combinations
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100,100,100]}
+
+00:01:09.610 --> 00:01:11.440
+<v Speaker 0>obviously an important concept here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:11.440 --> 00:01:14.320
+<v Speaker 0>We talked about the sort of what's the smallest subspace
+
+NOTE CONF {"raw":[100,100,100,58,100,100,88,100,100,100]}
+
+00:01:14.320 --> 00:01:16.690
+<v Speaker 0>that encompasses some vectors.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:17.380 --> 00:01:20.170
+<v Speaker 0>And we see that sort of that is the span.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:20.740 --> 00:01:23.350
+<v Speaker 0>So if you've got a couple of vectors then the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:01:23.350 --> 00:01:25.540
+<v Speaker 0>span is the set of all linear combination.
+
+NOTE CONF {"raw":[100,100,81,100,100,100,100,96]}
+
+00:01:25.540 --> 00:01:28.750
+<v Speaker 0>And that's sort of the smallest subset that includes all
+
+NOTE CONF {"raw":[100,93,100,100,100,100,100,100,100,100]}
+
+00:01:28.750 --> 00:01:29.980
+<v Speaker 0>of these vectors.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:30.730 --> 00:01:34.690
+<v Speaker 0>So they span S a subspace sorry subspace should be
+
+NOTE CONF {"raw":[100,75,100,34,100,100,100,100,100,100]}
+
+00:01:34.690 --> 00:01:37.240
+<v Speaker 0>careful that the span is a subspace.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100]}
+
+00:01:37.660 --> 00:01:41.110
+<v Speaker 0>And indeed it's the smallest subspace that is containing those
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100,100]}
+
+00:01:41.110 --> 00:01:41.860
+<v Speaker 0>vectors.
+
+NOTE CONF {"raw":[100]}
+
+00:01:42.400 --> 00:01:45.250
+<v Speaker 0>Um, so to some extent you can think of these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,89]}
+
+00:01:45.250 --> 00:01:48.610
+<v Speaker 0>spanning set the Z as a sort of generating set
+
+NOTE CONF {"raw":[100,100,100,57,100,86,100,100,100,100]}
+
+00:01:49.210 --> 00:01:50.860
+<v Speaker 0>of the subspace.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:50.890 --> 00:01:52.840
+<v Speaker 0>Now, we wanted to know a little bit more about
+
+NOTE CONF {"raw":[84,100,100,100,100,100,100,100,100,100]}
+
+00:01:52.840 --> 00:01:56.260
+<v Speaker 0>the relation between these sort of generating sets and the
+
+NOTE CONF {"raw":[100,100,100,100,82,100,100,100,100,100]}
+
+00:01:56.260 --> 00:02:00.240
+<v Speaker 0>subspace that we span and then we've got to I
+
+NOTE CONF {"raw":[100,100,100,100,99,93,100,100,100,100]}
+
+00:02:00.240 --> 00:02:03.540
+<v Speaker 0>think this was just about the last poll here, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,99]}
+
+00:02:03.540 --> 00:02:04.260
+<v Speaker 0>that we have.
+
+NOTE CONF {"raw":[100,100,50]}
+
+00:02:04.260 --> 00:02:08.160
+<v Speaker 0>Well, um, could we have something where we've got three
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:02:08.160 --> 00:02:11.910
+<v Speaker 0>vectors and we're looking at the set span or the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,56,97,100]}
+
+00:02:11.910 --> 00:02:14.190
+<v Speaker 0>subspace spanned by the first two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:14.640 --> 00:02:17.940
+<v Speaker 0>Um, and then also the, the subset spanned by the
+
+NOTE CONF {"raw":[91,100,100,100,100,100,97,100,100,100]}
+
+00:02:17.940 --> 00:02:21.360
+<v Speaker 0>last two, uh, but by all of them, we see
+
+NOTE CONF {"raw":[100,100,81,67,100,100,100,100,88,83]}
+
+00:02:21.360 --> 00:02:23.070
+<v Speaker 0>that these are actually the same one.
+
+NOTE CONF {"raw":[100,100,81,100,100,100,100]}
+
+00:02:23.460 --> 00:02:26.520
+<v Speaker 0>Um, as long as the vector that we're adding to
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,85,100,100]}
+
+00:02:26.520 --> 00:02:31.050
+<v Speaker 0>the generating set is a linear combination of the others.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:31.620 --> 00:02:32.010
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[88]}
+
+00:02:32.520 --> 00:02:37.350
+<v Speaker 0>And um, so to some extent there's a bit of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,68,100,100,100]}
+
+00:02:37.350 --> 00:02:41.850
+<v Speaker 0>a, um, of a sort of unsatisfactory situation.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100]}
+
+00:02:41.850 --> 00:02:44.880
+<v Speaker 0>And let me just go and sort of show you
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:02:44.880 --> 00:02:45.660
+<v Speaker 0>what we've got.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:45.660 --> 00:02:48.210
+<v Speaker 0>So we've got this situation here that we say, say
+
+NOTE CONF {"raw":[100,100,100,51,100,100,100,100,100,100]}
+
+00:02:48.210 --> 00:02:52.350
+<v Speaker 0>we've been R2 here, um, and we've got a where
+
+NOTE CONF {"raw":[98,61,91,100,100,100,100,100,87,100]}
+
+00:02:52.350 --> 00:02:52.710
+<v Speaker 0>are we?
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:52.710 --> 00:02:55.140
+<v Speaker 0>So that's R2, though, we've got a few vectors.
+
+NOTE CONF {"raw":[100,100,100,47,100,100,100,100,63]}
+
+00:02:55.140 --> 00:02:57.910
+<v Speaker 0>So we'll have sort of or something there, and varying
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:02:57.910 --> 00:02:59.560
+<v Speaker 0>length, varying directions.
+
+NOTE CONF {"raw":[97,100,100]}
+
+00:02:59.560 --> 00:03:02.500
+<v Speaker 0>So we might have this, we might have something like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:02.500 --> 00:03:03.880
+<v Speaker 0>that that.
+
+NOTE CONF {"raw":[99,93]}
+
+00:03:03.880 --> 00:03:05.830
+<v Speaker 0>So loads of vectors here.
+
+NOTE CONF {"raw":[85,99,100,90,100]}
+
+00:03:06.460 --> 00:03:09.400
+<v Speaker 0>And indeed it turns out we can sort of take
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:09.400 --> 00:03:13.150
+<v Speaker 0>any two of them as the, as the spanning set
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:03:13.150 --> 00:03:13.450
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:03:13.450 --> 00:03:15.700
+<v Speaker 0>Any using any of two of them will span of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:15.700 --> 00:03:17.380
+<v Speaker 0>R2 unless he's sort of unlucky.
+
+NOTE CONF {"raw":[94,100,43,100,100,100]}
+
+00:03:17.650 --> 00:03:19.510
+<v Speaker 0>And I think I've got two here that are opposite
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:19.510 --> 00:03:20.110
+<v Speaker 0>directions.
+
+NOTE CONF {"raw":[100]}
+
+00:03:20.110 --> 00:03:22.330
+<v Speaker 0>If they're sort of the same direction opposite, they won't
+
+NOTE CONF {"raw":[100,68,100,100,100,100,100,100,50,100]}
+
+00:03:22.330 --> 00:03:23.170
+<v Speaker 0>span the whole thing.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:23.170 --> 00:03:26.470
+<v Speaker 0>But otherwise any three of them will span and the
+
+NOTE CONF {"raw":[100,100,100,85,100,100,100,100,100,100]}
+
+00:03:26.470 --> 00:03:27.790
+<v Speaker 0>rest is redundant.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:28.030 --> 00:03:29.350
+<v Speaker 0>So can we.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:29.380 --> 00:03:31.210
+<v Speaker 0>Can we say something a bit more?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:31.210 --> 00:03:34.360
+<v Speaker 0>How do I identify redundant vectors is just enough to
+
+NOTE CONF {"raw":[100,100,37,100,100,100,82,100,100,100]}
+
+00:03:34.360 --> 00:03:35.800
+<v Speaker 0>just take some of them out.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:35.800 --> 00:03:38.020
+<v Speaker 0>How many do we need to take out in order
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:38.020 --> 00:03:41.110
+<v Speaker 0>to have something that isn't redundant anymore?
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100]}
+
+00:03:41.110 --> 00:03:44.920
+<v Speaker 0>So that's sort of the setup where we are starting
+
+NOTE CONF {"raw":[100,100,100,100,100,80,100,98,98,100]}
+
+00:03:44.920 --> 00:03:45.790
+<v Speaker 0>in today.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:46.600 --> 00:03:49.810
+<v Speaker 0>So as I said, we've got this thing here that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:49.810 --> 00:03:54.370
+<v Speaker 0>we said, um, so the span, if I've got two
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:03:54.370 --> 00:03:57.110
+<v Speaker 0>vectors that are spanning something, and I'm adding a third
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,100]}
+
+00:03:57.110 --> 00:03:59.630
+<v Speaker 0>vector, which is a linear combination of the ones that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:59.630 --> 00:04:00.800
+<v Speaker 0>are already have.
+
+NOTE CONF {"raw":[100,100,79]}
+
+00:04:01.280 --> 00:04:03.230
+<v Speaker 0>They're not adding anything to that.
+
+NOTE CONF {"raw":[98,100,100,100,100,100]}
+
+00:04:03.260 --> 00:04:03.590
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[73]}
+
+00:04:03.770 --> 00:04:06.260
+<v Speaker 0>So what I wanted to start with is to some
+
+NOTE CONF {"raw":[100,100,100,83,100,100,100,100,100,100]}
+
+00:04:06.260 --> 00:04:09.140
+<v Speaker 0>extent turning doing it the other way round.
+
+NOTE CONF {"raw":[100,95,94,87,100,100,100,65]}
+
+00:04:09.890 --> 00:04:12.380
+<v Speaker 0>So now I've got the following that I've got x.
+
+NOTE CONF {"raw":[100,97,93,100,100,100,100,100,100,100]}
+
+00:04:12.380 --> 00:04:15.320
+<v Speaker 0>Here's the span of some vectors.
+
+NOTE CONF {"raw":[52,100,100,100,100,100]}
+
+00:04:16.070 --> 00:04:18.890
+<v Speaker 0>And I'm going to take another vector y which is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:18.890 --> 00:04:20.540
+<v Speaker 0>a linear combination of them.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:20.690 --> 00:04:23.540
+<v Speaker 0>And the question is so if I have y they're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,52,100,80]}
+
+00:04:24.260 --> 00:04:27.110
+<v Speaker 0>now the span of all of these vectors together.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:04:27.710 --> 00:04:30.470
+<v Speaker 0>What's the relation of x and y.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:31.220 --> 00:04:32.600
+<v Speaker 0>I'm adding something there.
+
+NOTE CONF {"raw":[100,100,100,99]}
+
+00:04:33.020 --> 00:04:34.790
+<v Speaker 0>I'm not adding something there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:34.790 --> 00:04:39.830
+<v Speaker 0>So that would be the first pole.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:40.580 --> 00:04:43.220
+<v Speaker 0>I think I need to halve that there.
+
+NOTE CONF {"raw":[100,100,100,100,100,45,100,100]}
+
+00:04:43.220 --> 00:04:45.830
+<v Speaker 0>And, uh, give me a second.
+
+NOTE CONF {"raw":[100,46,100,100,100,100]}
+
+00:04:45.830 --> 00:04:48.710
+<v Speaker 0>I'll just set this up so you've got four choices
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:50.270 --> 00:04:52.040
+<v Speaker 0>and it's only.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:55.440 --> 00:04:58.740
+<v Speaker 0>Only one possible answer.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:59.370 --> 00:05:00.690
+<v Speaker 0>This looks okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:00.690 --> 00:05:03.240
+<v Speaker 0>So the polls should be live.
+
+NOTE CONF {"raw":[100,100,26,100,100,90]}
+
+00:05:04.290 --> 00:05:08.850
+<v Speaker 0>Um, and I'll just just in case.
+
+NOTE CONF {"raw":[100,100,50,100,100,100,100]}
+
+00:05:10.050 --> 00:05:12.900
+<v Speaker 0>Uh, I'll give you this the, the QR code there
+
+NOTE CONF {"raw":[95,100,100,100,100,100,97,100,100,83]}
+
+00:05:12.900 --> 00:05:15.450
+<v Speaker 0>for the first, uh, first half a minute or so.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,51,100,100,100]}
+
+00:05:41.400 --> 00:05:41.610
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[60]}
+
+00:05:45.840 --> 00:05:46.080
+<v Speaker 0>All.
+
+NOTE CONF {"raw":[50]}
+
+00:05:51.620 --> 00:05:52.070
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:05:52.070 --> 00:05:53.840
+<v Speaker 0>So another 10s or so.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:01.850 --> 00:06:02.420
+<v Speaker 0>Oh.
+
+NOTE CONF {"raw":[96]}
+
+00:06:06.020 --> 00:06:10.370
+<v Speaker 0>Okay, so most of you think that you're not adding
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:10.370 --> 00:06:13.460
+<v Speaker 0>anything and sort of it's the same situation as before,
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:06:13.880 --> 00:06:14.990
+<v Speaker 0>although it's not quite the same.
+
+NOTE CONF {"raw":[34,92,100,100,100,100]}
+
+00:06:14.990 --> 00:06:17.090
+<v Speaker 0>I talk a little bit about that in a second.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:17.600 --> 00:06:19.820
+<v Speaker 0>But if you think, why are we adding something to
+
+NOTE CONF {"raw":[100,100,100,100,97,97,97,100,100,100]}
+
+00:06:19.820 --> 00:06:22.100
+<v Speaker 0>the spanning set to the, to the sort of spanning
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:22.100 --> 00:06:22.280
+<v Speaker 0>set.
+
+NOTE CONF {"raw":[95]}
+
+00:06:22.280 --> 00:06:24.200
+<v Speaker 0>So we must add something there.
+
+NOTE CONF {"raw":[95,100,100,100,100,100]}
+
+00:06:24.890 --> 00:06:27.860
+<v Speaker 0>So it's probably worthwhile just having a look at what's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:27.860 --> 00:06:28.910
+<v Speaker 0>going on there.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:29.450 --> 00:06:35.150
+<v Speaker 0>So let me just go back and um, and I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,85,100,100]}
+
+00:06:35.150 --> 00:06:37.310
+<v Speaker 0>do some of these things long winded here because I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:37.310 --> 00:06:39.380
+<v Speaker 0>think it's quite important to sort of give you some
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:39.380 --> 00:06:42.260
+<v Speaker 0>examples of how I work with a span and proving
+
+NOTE CONF {"raw":[100,100,100,88,100,100,50,100,100,100]}
+
+00:06:42.260 --> 00:06:43.880
+<v Speaker 0>things with it.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:06:44.360 --> 00:06:45.560
+<v Speaker 0>Um, so what do we have?
+
+NOTE CONF {"raw":[63,100,100,100,100,100]}
+
+00:06:45.560 --> 00:06:46.400
+<v Speaker 0>What's the set up here?
+
+NOTE CONF {"raw":[98,100,85,85,100]}
+
+00:06:46.400 --> 00:06:49.880
+<v Speaker 0>We've got x here is the span of those vectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:50.910 --> 00:06:54.600
+<v Speaker 0>Um x one down to x k.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99]}
+
+00:06:55.710 --> 00:06:56.010
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:06:56.760 --> 00:07:00.360
+<v Speaker 0>Uh, we've got to make this slightly larger.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100]}
+
+00:07:00.360 --> 00:07:01.020
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[87]}
+
+00:07:01.080 --> 00:07:05.250
+<v Speaker 0>Um, we've got y is a vector in this span.
+
+NOTE CONF {"raw":[100,100,100,69,91,67,100,100,100,99]}
+
+00:07:05.670 --> 00:07:05.940
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:07:06.270 --> 00:07:09.120
+<v Speaker 0>And on the other hand, we have capital Y, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:09.120 --> 00:07:11.730
+<v Speaker 0>should be the span of all of these vectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:07:11.730 --> 00:07:15.870
+<v Speaker 0>So x one down to x k.
+
+NOTE CONF {"raw":[100,86,86,100,100,100,100]}
+
+00:07:15.870 --> 00:07:17.580
+<v Speaker 0>And then in addition y.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:17.610 --> 00:07:17.970
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:07:19.050 --> 00:07:22.110
+<v Speaker 0>Um and I'm claiming that indeed answer A is correct.
+
+NOTE CONF {"raw":[87,100,100,100,100,100,100,100,100,100]}
+
+00:07:22.140 --> 00:07:22.440
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[65]}
+
+00:07:22.500 --> 00:07:26.250
+<v Speaker 0>So the claim here is the claim here is that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:26.250 --> 00:07:29.340
+<v Speaker 0>x is um equal to y.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:29.910 --> 00:07:31.290
+<v Speaker 0>We've had that now a few times.
+
+NOTE CONF {"raw":[99,99,61,100,100,100,100]}
+
+00:07:31.320 --> 00:07:32.370
+<v Speaker 0>How would you approve that?
+
+NOTE CONF {"raw":[100,98,99,100,100]}
+
+00:07:32.370 --> 00:07:34.320
+<v Speaker 0>Two sets are identical.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:34.860 --> 00:07:38.160
+<v Speaker 0>Uh, I will need to show, um, I will need
+
+NOTE CONF {"raw":[94,100,100,100,100,100,98,100,100,100]}
+
+00:07:38.160 --> 00:07:41.520
+<v Speaker 0>to show that X is a subset of Y and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:41.520 --> 00:07:43.500
+<v Speaker 0>Y is a subset of x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:43.500 --> 00:07:46.920
+<v Speaker 0>Now, I hope that you sort of believe me, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,82]}
+
+00:07:47.010 --> 00:07:49.450
+<v Speaker 0>sort of the spanning set wider is it's larger that
+
+NOTE CONF {"raw":[63,67,99,100,100,100,100,47,100,100]}
+
+00:07:49.450 --> 00:07:51.460
+<v Speaker 0>X is probably a subset of Y, so I'm not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:51.460 --> 00:07:52.900
+<v Speaker 0>going to spend anything on that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:53.380 --> 00:07:55.240
+<v Speaker 0>But this here is what I am.
+
+NOTE CONF {"raw":[100,100,99,100,100,100,64]}
+
+00:07:55.240 --> 00:07:57.040
+<v Speaker 0>That that might be contentious here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:57.040 --> 00:07:57.340
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[98]}
+
+00:07:58.060 --> 00:08:01.090
+<v Speaker 0>Um, so, um, we want to show this here.
+
+NOTE CONF {"raw":[95,100,92,100,100,100,100,100,100]}
+
+00:08:01.720 --> 00:08:03.100
+<v Speaker 0>Um, and how do we do that?
+
+NOTE CONF {"raw":[87,100,100,100,100,100,100]}
+
+00:08:03.280 --> 00:08:07.180
+<v Speaker 0>Um, well, we take any, any Z, which is in
+
+NOTE CONF {"raw":[75,91,100,100,100,100,100,100,100,100]}
+
+00:08:07.180 --> 00:08:11.290
+<v Speaker 0>y, um, and show that this actually is in X
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,58,98]}
+
+00:08:11.290 --> 00:08:11.950
+<v Speaker 0>as well.
+
+NOTE CONF {"raw":[92,99]}
+
+00:08:12.070 --> 00:08:12.400
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[72]}
+
+00:08:12.550 --> 00:08:15.220
+<v Speaker 0>And we want to show that Z is also in
+
+NOTE CONF {"raw":[99,100,100,100,100,100,99,100,100,100]}
+
+00:08:15.220 --> 00:08:15.640
+<v Speaker 0>X.
+
+NOTE CONF {"raw":[100]}
+
+00:08:15.730 --> 00:08:18.820
+<v Speaker 0>So let's go that if you have z in y
+
+NOTE CONF {"raw":[100,100,100,100,100,67,100,100,100,100]}
+
+00:08:18.820 --> 00:08:19.930
+<v Speaker 0>what does this mean.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:20.050 --> 00:08:22.810
+<v Speaker 0>Um that is that is in the span.
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100]}
+
+00:08:23.350 --> 00:08:26.620
+<v Speaker 0>Um, the span is the space of all linear combinations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:26.620 --> 00:08:29.200
+<v Speaker 0>So in other words, I can write z as a
+
+NOTE CONF {"raw":[100,72,100,100,100,100,100,100,100,100]}
+
+00:08:29.200 --> 00:08:30.850
+<v Speaker 0>linear combination of these vectors.
+
+NOTE CONF {"raw":[100,100,100,100,96]}
+
+00:08:30.850 --> 00:08:38.050
+<v Speaker 0>So um, I know there exists um multiples scalars.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:38.229 --> 00:08:40.990
+<v Speaker 0>I'm going to call these t one down to t
+
+NOTE CONF {"raw":[100,100,100,100,95,34,36,100,100,100]}
+
+00:08:40.990 --> 00:08:44.200
+<v Speaker 0>k uh for, for those here for the x's.
+
+NOTE CONF {"raw":[100,99,100,100,100,82,100,100,85]}
+
+00:08:44.200 --> 00:08:46.120
+<v Speaker 0>And I'm just going to have a T here for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:46.120 --> 00:08:46.690
+<v Speaker 0>the y.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:47.510 --> 00:08:51.560
+<v Speaker 0>Um, and so these are scalars, um, such that I
+
+NOTE CONF {"raw":[75,100,100,100,100,98,100,100,100,100]}
+
+00:08:51.560 --> 00:08:54.110
+<v Speaker 0>can write Z as a linear combination of all of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:54.110 --> 00:08:54.350
+<v Speaker 0>them.
+
+NOTE CONF {"raw":[100]}
+
+00:08:54.350 --> 00:08:59.150
+<v Speaker 0>So I can write z as T1X1 plus and t
+
+NOTE CONF {"raw":[100,100,100,100,100,100,89,100,100,92]}
+
+00:08:59.150 --> 00:09:03.020
+<v Speaker 0>k x k plus t times y.
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100]}
+
+00:09:03.680 --> 00:09:04.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[62]}
+
+00:09:04.760 --> 00:09:08.570
+<v Speaker 0>Now I want to show that this z is also
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:08.570 --> 00:09:09.530
+<v Speaker 0>in x.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:09.650 --> 00:09:13.010
+<v Speaker 0>So um now this here this is a linear combination
+
+NOTE CONF {"raw":[50,95,100,100,100,100,100,94,100,100]}
+
+00:09:13.010 --> 00:09:14.150
+<v Speaker 0>of the x's and so on.
+
+NOTE CONF {"raw":[100,100,73,100,100,100]}
+
+00:09:14.150 --> 00:09:15.230
+<v Speaker 0>That looks all fine.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:15.230 --> 00:09:18.020
+<v Speaker 0>This t times y is the bit that I don't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:18.020 --> 00:09:19.310
+<v Speaker 0>like for that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:19.850 --> 00:09:20.720
+<v Speaker 0>Uh so let's see.
+
+NOTE CONF {"raw":[52,100,100,100]}
+
+00:09:20.720 --> 00:09:21.800
+<v Speaker 0>Let's see what I can do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:21.800 --> 00:09:22.640
+<v Speaker 0>Something with a y.
+
+NOTE CONF {"raw":[100,100,77,100]}
+
+00:09:22.640 --> 00:09:27.560
+<v Speaker 0>I know that y uh y here is in x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:09:27.920 --> 00:09:28.190
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[83]}
+
+00:09:28.310 --> 00:09:31.700
+<v Speaker 0>So that means again, I've got, I've, I can write
+
+NOTE CONF {"raw":[100,100,100,100,100,100,64,100,100,100]}
+
+00:09:31.700 --> 00:09:32.930
+<v Speaker 0>it as a linear combination.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:32.930 --> 00:09:34.370
+<v Speaker 0>So I have multiples.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:35.600 --> 00:09:38.300
+<v Speaker 0>Um, and I'm going to call these s now um
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,79,100]}
+
+00:09:38.300 --> 00:09:43.850
+<v Speaker 0>s one down to s k um which are such
+
+NOTE CONF {"raw":[52,54,100,100,100,100,100,100,92,100]}
+
+00:09:43.850 --> 00:09:49.650
+<v Speaker 0>that I can write y as At S1X1 and then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,54,100,100]}
+
+00:09:49.650 --> 00:09:51.750
+<v Speaker 0>s k x k.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:52.380 --> 00:09:52.710
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[71]}
+
+00:09:53.730 --> 00:09:55.800
+<v Speaker 0>Um and you might see where this is going.
+
+NOTE CONF {"raw":[65,100,100,100,100,100,100,100,100]}
+
+00:09:56.430 --> 00:09:58.980
+<v Speaker 0>Um, because I can now take this expression for y
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:09:58.980 --> 00:10:01.470
+<v Speaker 0>here and substitute that in there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:02.370 --> 00:10:02.640
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[64]}
+
+00:10:03.480 --> 00:10:06.330
+<v Speaker 0>Um, so if I do that I can write Z
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:06.330 --> 00:10:07.830
+<v Speaker 0>and I'm going to do this sort of in one.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:10:08.070 --> 00:10:09.030
+<v Speaker 0>Well, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:09.030 --> 00:10:13.920
+<v Speaker 0>Now let's let's do that Z is so T1X1 plus
+
+NOTE CONF {"raw":[100,98,93,100,100,72,100,100,82,100]}
+
+00:10:14.310 --> 00:10:19.140
+<v Speaker 0>plus t k x k plus t times.
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100]}
+
+00:10:19.320 --> 00:10:21.540
+<v Speaker 0>And then this expression for y here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:21.930 --> 00:10:27.390
+<v Speaker 0>Um S1X1 plus s k x k um.
+
+NOTE CONF {"raw":[93,31,100,100,100,100,100,94]}
+
+00:10:27.480 --> 00:10:29.100
+<v Speaker 0>And all I have to do there is now just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100,100]}
+
+00:10:29.100 --> 00:10:29.880
+<v Speaker 0>saw terms.
+
+NOTE CONF {"raw":[73,100]}
+
+00:10:30.060 --> 00:10:32.040
+<v Speaker 0>I want to write this as linear combination of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:32.040 --> 00:10:32.760
+<v Speaker 0>x's.
+
+NOTE CONF {"raw":[54]}
+
+00:10:32.760 --> 00:10:35.040
+<v Speaker 0>So I'm just going to have a look and say
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:35.040 --> 00:10:37.230
+<v Speaker 0>well what what do I have for X1.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,86]}
+
+00:10:37.950 --> 00:10:40.860
+<v Speaker 0>Um I have a T1 from here and I've got
+
+NOTE CONF {"raw":[44,100,100,100,81,100,100,100,100,100]}
+
+00:10:40.860 --> 00:10:43.290
+<v Speaker 0>a t times S1 from there.
+
+NOTE CONF {"raw":[100,93,100,100,100,100]}
+
+00:10:44.160 --> 00:10:47.240
+<v Speaker 0>Um, and then finally I've got a t k plus
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,98,98,100]}
+
+00:10:47.240 --> 00:10:50.390
+<v Speaker 0>t times s k times x k.
+
+NOTE CONF {"raw":[100,100,100,100,100,78,78]}
+
+00:10:51.080 --> 00:10:55.370
+<v Speaker 0>So those things here, uh, these are sort of obviously
+
+NOTE CONF {"raw":[100,100,100,100,60,100,100,100,100,100]}
+
+00:10:55.370 --> 00:10:56.180
+<v Speaker 0>scalars.
+
+NOTE CONF {"raw":[100]}
+
+00:10:56.690 --> 00:10:58.670
+<v Speaker 0>Um, I'm just working with scalars there.
+
+NOTE CONF {"raw":[74,100,100,100,100,100,100]}
+
+00:10:58.670 --> 00:11:00.620
+<v Speaker 0>So I've been able to write Z as a linear
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:00.620 --> 00:11:02.810
+<v Speaker 0>combination of the x's.
+
+NOTE CONF {"raw":[100,100,100,58]}
+
+00:11:02.990 --> 00:11:07.730
+<v Speaker 0>In other words, that indeed, um, z indeed is part
+
+NOTE CONF {"raw":[100,100,100,100,100,98,89,100,100,100]}
+
+00:11:07.730 --> 00:11:09.020
+<v Speaker 0>of X as well.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:11:09.560 --> 00:11:09.830
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[84]}
+
+00:11:10.040 --> 00:11:12.110
+<v Speaker 0>So as I say, a little bit long winded, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:12.110 --> 00:11:14.330
+<v Speaker 0>to show you how these sort of arguments of that
+
+NOTE CONF {"raw":[100,100,100,100,72,100,100,100,100,100]}
+
+00:11:14.330 --> 00:11:17.030
+<v Speaker 0>some things in the span of the other works, um,
+
+NOTE CONF {"raw":[86,86,100,100,100,99,100,100,100,98]}
+
+00:11:17.030 --> 00:11:20.150
+<v Speaker 0>because they, they tend to come up quite often.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:20.990 --> 00:11:25.520
+<v Speaker 0>Um, now, the way that I phrased it, you might
+
+NOTE CONF {"raw":[100,100,100,100,100,74,100,100,100,100]}
+
+00:11:25.520 --> 00:11:29.600
+<v Speaker 0>have thought that, um, so this really is the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:29.600 --> 00:11:31.040
+<v Speaker 0>as we've done last time.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:31.640 --> 00:11:33.140
+<v Speaker 0>Um, actually slightly different.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:11:33.140 --> 00:11:36.380
+<v Speaker 0>So what we've done yesterday is that we say, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:11:36.380 --> 00:11:39.650
+<v Speaker 0>if I've got it, that I've got sort of, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:40.880 --> 00:11:43.830
+<v Speaker 0>a span of two elements and I'm adding another one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:43.830 --> 00:11:44.310
+<v Speaker 0>to that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:44.310 --> 00:11:45.810
+<v Speaker 0>And these are identical.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:11:45.960 --> 00:11:47.070
+<v Speaker 0>That I must have.
+
+NOTE CONF {"raw":[95,100,100,100]}
+
+00:11:47.190 --> 00:11:49.920
+<v Speaker 0>This new element is a linear combination of the others.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:50.610 --> 00:11:50.880
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[71]}
+
+00:11:50.910 --> 00:11:52.680
+<v Speaker 0>On the other hand, what I have done now is
+
+NOTE CONF {"raw":[100,100,100,100,100,54,54,100,100,100]}
+
+00:11:52.680 --> 00:11:55.410
+<v Speaker 0>saying if I've got V, which is a linear combination
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,100]}
+
+00:11:55.410 --> 00:11:59.370
+<v Speaker 0>of x and u, then adding v to the spanning
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,100]}
+
+00:11:59.370 --> 00:12:01.110
+<v Speaker 0>set doesn't change anything.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:02.040 --> 00:12:03.480
+<v Speaker 0>So it's two different directions.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:03.690 --> 00:12:05.880
+<v Speaker 0>And indeed what we've done here is now have both
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:12:05.880 --> 00:12:06.480
+<v Speaker 0>directions.
+
+NOTE CONF {"raw":[100]}
+
+00:12:06.480 --> 00:12:08.760
+<v Speaker 0>In other words these things are equivalent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:08.970 --> 00:12:13.140
+<v Speaker 0>So if I've got a span of two vectors and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:12:13.140 --> 00:12:15.780
+<v Speaker 0>the span of three vectors, these are the same if
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100,100,100,100]}
+
+00:12:15.780 --> 00:12:19.050
+<v Speaker 0>and only if one of the vectors that I've got
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,87]}
+
+00:12:19.050 --> 00:12:21.930
+<v Speaker 0>in here must be linear combination of the others.
+
+NOTE CONF {"raw":[87,100,100,100,100,100,100,100,100]}
+
+00:12:22.650 --> 00:12:27.210
+<v Speaker 0>Now this gives us a criterion how to decide whether
+
+NOTE CONF {"raw":[100,100,100,100,100,58,100,100,100,100]}
+
+00:12:27.210 --> 00:12:30.600
+<v Speaker 0>a part of our spanning set, or whether some vectors
+
+NOTE CONF {"raw":[61,100,100,100,100,100,80,100,100,100]}
+
+00:12:30.600 --> 00:12:32.400
+<v Speaker 0>in the spanning set are redundant.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:32.940 --> 00:12:33.360
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[95]}
+
+00:12:33.360 --> 00:12:37.470
+<v Speaker 0>So we can identify use this to identify superfluous vectors
+
+NOTE CONF {"raw":[100,100,99,100,58,58,100,100,100,100]}
+
+00:12:37.470 --> 00:12:40.350
+<v Speaker 0>in the spanning set now.
+
+NOTE CONF {"raw":[100,100,100,100,52]}
+
+00:12:40.770 --> 00:12:42.880
+<v Speaker 0>So namely the condition is.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:43.810 --> 00:12:46.150
+<v Speaker 0>So given a set of vectors, we know that none
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:46.150 --> 00:12:49.330
+<v Speaker 0>of the vectors here is superfluous in the spanning set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,88,100,100,100]}
+
+00:12:49.570 --> 00:12:52.600
+<v Speaker 0>If none of the vectors are linear combination of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:52.600 --> 00:12:53.230
+<v Speaker 0>others.
+
+NOTE CONF {"raw":[100]}
+
+00:12:54.460 --> 00:12:56.980
+<v Speaker 0>Now okay, this is something that that sounds quite nice
+
+NOTE CONF {"raw":[94,100,100,100,100,55,100,100,100,100]}
+
+00:12:56.980 --> 00:12:59.680
+<v Speaker 0>and we know what to do, but how do you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:12:59.680 --> 00:13:00.820
+<v Speaker 0>actually check that?
+
+NOTE CONF {"raw":[100,72,100]}
+
+00:13:01.810 --> 00:13:03.790
+<v Speaker 0>How do you check that if I give you a
+
+NOTE CONF {"raw":[100,100,100,64,100,100,100,100,100,100]}
+
+00:13:03.790 --> 00:13:04.900
+<v Speaker 0>couple of vectors.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:05.560 --> 00:13:09.100
+<v Speaker 0>So in principle, you would have to check all possible
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,80,100,100]}
+
+00:13:09.100 --> 00:13:11.290
+<v Speaker 0>ways that this could do that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:11.290 --> 00:13:11.920
+<v Speaker 0>This could be.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:11.920 --> 00:13:15.460
+<v Speaker 0>So you'd have to take X1 as a linear combination.
+
+NOTE CONF {"raw":[100,100,100,100,90,98,100,100,100,100]}
+
+00:13:15.610 --> 00:13:18.460
+<v Speaker 0>Is x1 a linear combination of the others, or might
+
+NOTE CONF {"raw":[44,94,45,100,100,100,100,100,100,100]}
+
+00:13:18.460 --> 00:13:21.550
+<v Speaker 0>x2 be linear combination of the others or and so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:21.550 --> 00:13:21.670
+<v Speaker 0>on.
+
+NOTE CONF {"raw":[100]}
+
+00:13:21.670 --> 00:13:23.800
+<v Speaker 0>So it's hard to check every single one of them
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100,100,100,100]}
+
+00:13:24.760 --> 00:13:27.310
+<v Speaker 0>if you don't quite believe me that that indeed is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:27.310 --> 00:13:27.790
+<v Speaker 0>the case.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:27.790 --> 00:13:30.970
+<v Speaker 0>I'll just give you an example in two dimensions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:30.970 --> 00:13:36.430
+<v Speaker 0>So for example, we might just have x1, x2, x3
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,97,97]}
+
+00:13:37.030 --> 00:13:40.470
+<v Speaker 0>our three vectors, and I might have something like this
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100,100,100,100]}
+
+00:13:40.470 --> 00:13:46.470
+<v Speaker 0>1001 and zero two.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:47.640 --> 00:13:47.940
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:13:48.600 --> 00:13:51.930
+<v Speaker 0>So those three span are two.
+
+NOTE CONF {"raw":[100,100,100,100,98,98]}
+
+00:13:52.740 --> 00:13:55.530
+<v Speaker 0>Um, and indeed, if you look at it, you'll realise
+
+NOTE CONF {"raw":[63,100,100,100,100,100,100,100,100,83]}
+
+00:13:55.530 --> 00:13:58.260
+<v Speaker 0>that sort of either the second or the third there
+
+NOTE CONF {"raw":[100,98,98,100,100,100,100,100,100,92]}
+
+00:13:58.260 --> 00:13:59.820
+<v Speaker 0>are going to be redundant.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:00.420 --> 00:14:03.900
+<v Speaker 0>But if I now check and say x1, I cannot
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,55,100,100]}
+
+00:14:03.900 --> 00:14:06.090
+<v Speaker 0>write as a linear combination of the other two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:06.480 --> 00:14:09.510
+<v Speaker 0>So that's checking that doesn't, doesn't isn't enough.
+
+NOTE CONF {"raw":[100,95,100,100,93,62,100,100]}
+
+00:14:09.510 --> 00:14:12.600
+<v Speaker 0>I have to go and check whether x2 x3 is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,61,61,100]}
+
+00:14:12.600 --> 00:14:13.740
+<v Speaker 0>a linear combination.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:13.920 --> 00:14:16.230
+<v Speaker 0>Now in this case it's just two dimensions that are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,93]}
+
+00:14:16.230 --> 00:14:16.950
+<v Speaker 0>simple vectors.
+
+NOTE CONF {"raw":[99,100]}
+
+00:14:16.950 --> 00:14:19.620
+<v Speaker 0>It's very easy to spot what's going on, but if
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:14:19.620 --> 00:14:21.840
+<v Speaker 0>you're doing this in sort of higher dimension, it does
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:21.840 --> 00:14:22.740
+<v Speaker 0>become that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:22.740 --> 00:14:25.080
+<v Speaker 0>In the worst case, you really have to track through
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,50,100]}
+
+00:14:25.080 --> 00:14:26.430
+<v Speaker 0>all of those conditions.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:27.360 --> 00:14:29.700
+<v Speaker 0>Now that's that's that's not nice.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:30.630 --> 00:14:36.570
+<v Speaker 0>Um, instead what you can do is there's this definition
+
+NOTE CONF {"raw":[69,100,100,100,100,100,100,100,100,100]}
+
+00:14:36.570 --> 00:14:38.770
+<v Speaker 0>here which I claim is Equivalent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:39.160 --> 00:14:42.970
+<v Speaker 0>So that's the definition of linear independence.
+
+NOTE CONF {"raw":[100,81,76,100,100,100,100]}
+
+00:14:43.840 --> 00:14:46.780
+<v Speaker 0>So this holds if we cannot write any vector as
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100,100]}
+
+00:14:46.780 --> 00:14:48.340
+<v Speaker 0>a linear combination of the others.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:48.370 --> 00:14:51.220
+<v Speaker 0>That means these vectors are linearly independent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:51.910 --> 00:14:54.580
+<v Speaker 0>And I can actually write this condition in this form
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:54.580 --> 00:14:55.060
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:14:55.570 --> 00:14:58.000
+<v Speaker 0>At first this looks one window that it looks really
+
+NOTE CONF {"raw":[98,100,100,100,100,100,89,71,100,100]}
+
+00:14:58.000 --> 00:14:58.750
+<v Speaker 0>strange.
+
+NOTE CONF {"raw":[100]}
+
+00:14:58.990 --> 00:15:00.790
+<v Speaker 0>Why would you express it in that way?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:00.790 --> 00:15:03.490
+<v Speaker 0>What's what's the sort of having a linear combination that
+
+NOTE CONF {"raw":[100,100,66,100,100,100,100,100,100,100]}
+
+00:15:03.490 --> 00:15:07.540
+<v Speaker 0>is equal to zero is only possible if all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:07.570 --> 00:15:13.150
+<v Speaker 0>if all the, um, the, um, scalars there are zero.
+
+NOTE CONF {"raw":[100,100,100,64,100,87,100,100,100,100]}
+
+00:15:13.870 --> 00:15:16.300
+<v Speaker 0>Um, how is that related to the other one?
+
+NOTE CONF {"raw":[100,100,100,66,100,100,100,100,100]}
+
+00:15:16.300 --> 00:15:18.730
+<v Speaker 0>But actually, indeed, this is a stroke of genius.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:19.390 --> 00:15:22.030
+<v Speaker 0>This is a really nice condition that it's actually easy
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,82,100,100]}
+
+00:15:22.030 --> 00:15:25.090
+<v Speaker 0>to check, and that is equivalent to having to check
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:15:25.090 --> 00:15:26.080
+<v Speaker 0>all the others there.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:27.130 --> 00:15:28.750
+<v Speaker 0>So I want to convince you, I just want to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:28.750 --> 00:15:31.180
+<v Speaker 0>spend a couple of minutes to convince you that this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:31.180 --> 00:15:33.340
+<v Speaker 0>actually is equivalent.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:33.490 --> 00:15:35.650
+<v Speaker 0>So if I'm saying none of the vectors can be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:35.650 --> 00:15:38.150
+<v Speaker 0>written as a linear combination of the others is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,92]}
+
+00:15:38.150 --> 00:15:39.560
+<v Speaker 0>equivalent to that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:39.560 --> 00:15:43.700
+<v Speaker 0>I'm saying if I have a linear combination of these
+
+NOTE CONF {"raw":[99,100,100,69,69,100,100,100,100,100]}
+
+00:15:43.700 --> 00:15:47.000
+<v Speaker 0>vectors that is equal to the zero vector, it must
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:47.000 --> 00:15:49.880
+<v Speaker 0>imply that all my multiples, all my scalars there are
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100,100,100]}
+
+00:15:49.880 --> 00:15:50.450
+<v Speaker 0>zero.
+
+NOTE CONF {"raw":[100]}
+
+00:15:52.130 --> 00:15:55.040
+<v Speaker 0>And I think this is actually easier to do to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:55.040 --> 00:16:00.290
+<v Speaker 0>prove that the opposites of those statements here are equivalent.
+
+NOTE CONF {"raw":[100,100,100,85,100,100,100,100,100,100]}
+
+00:16:00.830 --> 00:16:03.350
+<v Speaker 0>So what are the opposites?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:03.740 --> 00:16:05.570
+<v Speaker 0>Um, so what's the first one?
+
+NOTE CONF {"raw":[69,100,100,100,100,100]}
+
+00:16:05.570 --> 00:16:07.370
+<v Speaker 0>Says none of the vectors can be written as a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:07.370 --> 00:16:08.300
+<v Speaker 0>linear combination.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:08.300 --> 00:16:10.160
+<v Speaker 0>So what's the opposite of that?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:10.670 --> 00:16:12.590
+<v Speaker 0>If I say none of the vectors is a linear
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,61,100]}
+
+00:16:12.590 --> 00:16:13.520
+<v Speaker 0>combination.
+
+NOTE CONF {"raw":[100]}
+
+00:16:14.060 --> 00:16:18.320
+<v Speaker 0>So everyone at least one something different.
+
+NOTE CONF {"raw":[100,85,100,100,100,100,100]}
+
+00:16:19.640 --> 00:16:21.620
+<v Speaker 0>Um, I'll give you a pole.
+
+NOTE CONF {"raw":[100,61,96,100,100,52]}
+
+00:16:23.480 --> 00:16:24.800
+<v Speaker 0>Um, three options.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:27.770 --> 00:16:28.490
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[100]}
+
+00:16:28.490 --> 00:16:29.720
+<v Speaker 0>Three choices.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:35.340 --> 00:16:36.780
+<v Speaker 0>Oops wait wait wait wait wait.
+
+NOTE CONF {"raw":[48,100,100,100,100,100]}
+
+00:16:36.780 --> 00:16:39.840
+<v Speaker 0>So why did I thought of a thought of reset
+
+NOTE CONF {"raw":[74,100,89,100,100,100,97,100,100,100]}
+
+00:16:39.840 --> 00:16:46.290
+<v Speaker 0>this reset reset display, right.
+
+NOTE CONF {"raw":[100,100,100,82,100]}
+
+00:16:46.290 --> 00:16:47.490
+<v Speaker 0>Okay, so this works now.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:35.990 --> 00:17:37.730
+<v Speaker 0>So another 10s.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:51.290 --> 00:17:51.710
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:17:51.710 --> 00:17:54.110
+<v Speaker 0>So most of you thought it'd be at least one.
+
+NOTE CONF {"raw":[100,100,100,100,100,42,85,100,100,100]}
+
+00:17:54.110 --> 00:17:55.490
+<v Speaker 0>And that is the case.
+
+NOTE CONF {"raw":[73,100,100,100,100]}
+
+00:17:56.030 --> 00:17:59.120
+<v Speaker 0>Um, but it's worthwhile thinking about these things that if
+
+NOTE CONF {"raw":[100,100,100,86,100,100,100,100,100,100]}
+
+00:17:59.120 --> 00:18:02.210
+<v Speaker 0>you've got like Qantas like that for all or they
+
+NOTE CONF {"raw":[100,100,100,79,100,100,100,100,100,100]}
+
+00:18:02.210 --> 00:18:02.780
+<v Speaker 0>exist or.
+
+NOTE CONF {"raw":[94,93]}
+
+00:18:02.780 --> 00:18:04.280
+<v Speaker 0>So what is the negation of the.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,65]}
+
+00:18:04.310 --> 00:18:05.720
+<v Speaker 0>Think about an example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:06.230 --> 00:18:08.570
+<v Speaker 0>Um, you might if you if you're not careful, you
+
+NOTE CONF {"raw":[100,100,100,100,88,100,100,100,100,63]}
+
+00:18:08.570 --> 00:18:11.120
+<v Speaker 0>might think that it is indeed a that you say
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:11.120 --> 00:18:14.120
+<v Speaker 0>everyone um, it's the, it's the opposite.
+
+NOTE CONF {"raw":[100,100,96,100,98,100,100]}
+
+00:18:14.120 --> 00:18:16.790
+<v Speaker 0>But the thing is they're saying with, hey, at least
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,100,100]}
+
+00:18:16.790 --> 00:18:19.100
+<v Speaker 0>one of them, um, can be written as a linear
+
+NOTE CONF {"raw":[100,100,100,84,100,100,100,100,100,100]}
+
+00:18:19.100 --> 00:18:19.970
+<v Speaker 0>combination.
+
+NOTE CONF {"raw":[100]}
+
+00:18:20.660 --> 00:18:22.250
+<v Speaker 0>Uh, so where does this take us?
+
+NOTE CONF {"raw":[66,100,100,100,100,100,100]}
+
+00:18:22.580 --> 00:18:25.970
+<v Speaker 0>Um, so negation of what we have there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:26.780 --> 00:18:29.780
+<v Speaker 0>Um, so none of the vectors can be written as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:29.780 --> 00:18:30.710
+<v Speaker 0>linear combination.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:30.710 --> 00:18:33.450
+<v Speaker 0>Negation is at least one of the vectors can be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:33.450 --> 00:18:38.400
+<v Speaker 0>written as a linear combination, and the second one there
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:38.400 --> 00:18:42.840
+<v Speaker 0>is says, well, if you've got a linear combination that
+
+NOTE CONF {"raw":[61,94,100,100,99,100,100,100,100,100]}
+
+00:18:42.840 --> 00:18:47.190
+<v Speaker 0>makes the zero vector that requires all of the scalars
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,100]}
+
+00:18:47.190 --> 00:18:50.910
+<v Speaker 0>to be zero, it means we have a combination.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:50.910 --> 00:18:54.000
+<v Speaker 0>The negation is that we have a combination of of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:54.420 --> 00:18:57.540
+<v Speaker 0>these vectors, where not all of these t's are equal
+
+NOTE CONF {"raw":[75,100,96,100,100,100,79,71,100,100]}
+
+00:18:57.540 --> 00:18:59.790
+<v Speaker 0>to zero such that we make the zero vector.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:59.940 --> 00:19:04.530
+<v Speaker 0>Now, um, so I claim that those two, they're equivalent.
+
+NOTE CONF {"raw":[60,86,100,100,100,100,100,100,96,100]}
+
+00:19:05.070 --> 00:19:08.670
+<v Speaker 0>Um, and indeed I just want to quickly, actually, I
+
+NOTE CONF {"raw":[95,100,100,94,100,100,100,100,100,100]}
+
+00:19:08.670 --> 00:19:10.260
+<v Speaker 0>mean, this is a nice example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:10.590 --> 00:19:14.400
+<v Speaker 0>And uh, last year I think I had this as
+
+NOTE CONF {"raw":[82,65,100,100,100,100,100,94,100,100]}
+
+00:19:14.400 --> 00:19:18.000
+<v Speaker 0>the, as the fourth hand in, um, for you to
+
+NOTE CONF {"raw":[100,100,100,100,96,96,100,100,100,100]}
+
+00:19:18.000 --> 00:19:18.780
+<v Speaker 0>show that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:19.260 --> 00:19:20.580
+<v Speaker 0>And I really like it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:20.580 --> 00:19:23.190
+<v Speaker 0>And I was quite, um, I wasn't half a mind
+
+NOTE CONF {"raw":[86,100,100,100,100,100,87,100,100,100]}
+
+00:19:23.190 --> 00:19:24.480
+<v Speaker 0>to give, just give you that again.
+
+NOTE CONF {"raw":[100,74,100,100,100,100,100]}
+
+00:19:24.480 --> 00:19:26.040
+<v Speaker 0>But I thought they can't really do that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:26.040 --> 00:19:29.070
+<v Speaker 0>So I'll give you the quick argument here how that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:29.070 --> 00:19:31.110
+<v Speaker 0>works, but it's something worth thinking about.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:31.240 --> 00:19:32.650
+<v Speaker 0>So, um.
+
+NOTE CONF {"raw":[100,90]}
+
+00:19:34.630 --> 00:19:36.520
+<v Speaker 0>We have to prove both directions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:36.520 --> 00:19:39.460
+<v Speaker 0>So first direction is from 1 to 2.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:39.610 --> 00:19:41.860
+<v Speaker 0>At least one of the vectors can be written as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:41.860 --> 00:19:43.780
+<v Speaker 0>a linear combination of the others.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:44.560 --> 00:19:48.460
+<v Speaker 0>So, um, I don't want to write too much, but
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:19:48.460 --> 00:19:51.940
+<v Speaker 0>assuming assuming that the one that we can write as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,99]}
+
+00:19:51.940 --> 00:19:55.270
+<v Speaker 0>a linear combination, um, is x1.
+
+NOTE CONF {"raw":[100,100,100,100,100,73]}
+
+00:19:55.270 --> 00:19:55.600
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[72]}
+
+00:19:56.350 --> 00:20:00.250
+<v Speaker 0>Uh, so let's say I can write x1 here, um,
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,84]}
+
+00:20:00.250 --> 00:20:03.010
+<v Speaker 0>as a linear combination, so I can write x1 as
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:20:03.010 --> 00:20:06.250
+<v Speaker 0>saying this is t two times x two plus and
+
+NOTE CONF {"raw":[100,100,100,88,92,100,100,100,100,100]}
+
+00:20:06.250 --> 00:20:08.620
+<v Speaker 0>so on times t k times xk.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,78]}
+
+00:20:09.910 --> 00:20:12.220
+<v Speaker 0>Um whenever I have that, I can now simply bring
+
+NOTE CONF {"raw":[100,72,81,96,100,100,100,100,100,100]}
+
+00:20:12.220 --> 00:20:14.440
+<v Speaker 0>the x1 here on to the other side.
+
+NOTE CONF {"raw":[100,100,100,50,50,100,100,100]}
+
+00:20:15.250 --> 00:20:18.580
+<v Speaker 0>Um, so I've got zero equals to minus one times
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100,100,100,100]}
+
+00:20:18.580 --> 00:20:25.000
+<v Speaker 0>x1 plus t2 x2 plus and t k x k
+
+NOTE CONF {"raw":[100,100,73,98,100,100,47,72,91,91]}
+
+00:20:25.600 --> 00:20:26.020
+<v Speaker 0>l.
+
+NOTE CONF {"raw":[75]}
+
+00:20:26.110 --> 00:20:28.360
+<v Speaker 0>So I've now got a linear combination of all of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:28.360 --> 00:20:30.200
+<v Speaker 0>these vectors that makes zero.
+
+NOTE CONF {"raw":[100,100,100,79,100]}
+
+00:20:31.010 --> 00:20:34.100
+<v Speaker 0>And I certainly know that this multiple here there is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:34.100 --> 00:20:35.420
+<v Speaker 0>not equal to zero.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:35.450 --> 00:20:35.810
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[96]}
+
+00:20:35.810 --> 00:20:38.360
+<v Speaker 0>So I've got something something like this here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:38.960 --> 00:20:41.330
+<v Speaker 0>If you think I sort of have something special about
+
+NOTE CONF {"raw":[100,100,100,62,100,100,88,100,100,100]}
+
+00:20:41.330 --> 00:20:44.300
+<v Speaker 0>X1, I could obviously do the same thing with everybody
+
+NOTE CONF {"raw":[88,100,100,100,100,100,100,100,100,100]}
+
+00:20:44.300 --> 00:20:44.540
+<v Speaker 0>else.
+
+NOTE CONF {"raw":[100]}
+
+00:20:44.540 --> 00:20:47.300
+<v Speaker 0>It's just to try to save me.
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100]}
+
+00:20:47.300 --> 00:20:48.650
+<v Speaker 0>Save me writing this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:48.800 --> 00:20:50.600
+<v Speaker 0>So the opposite direction.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:51.440 --> 00:20:52.670
+<v Speaker 0>I can do the same thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:52.670 --> 00:20:54.020
+<v Speaker 0>So I'm starting with that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:54.020 --> 00:20:57.650
+<v Speaker 0>I'm saying assuming that I sort of have a linear
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,99,100,100]}
+
+00:20:57.650 --> 00:21:01.940
+<v Speaker 0>combination t k x k equal to zero.
+
+NOTE CONF {"raw":[100,51,48,94,97,100,100,100]}
+
+00:21:02.630 --> 00:21:06.770
+<v Speaker 0>Um, and I say some t k is some t,
+
+NOTE CONF {"raw":[69,100,100,100,100,100,100,100,100,100]}
+
+00:21:06.800 --> 00:21:09.080
+<v Speaker 0>some of them is not equal to zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:09.140 --> 00:21:09.440
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[79]}
+
+00:21:10.610 --> 00:21:12.860
+<v Speaker 0>Um, so how do I go.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:12.860 --> 00:21:15.590
+<v Speaker 0>Well, assuming and just, just to help me writing this,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:15.590 --> 00:21:17.330
+<v Speaker 0>assuming it's T1 again.
+
+NOTE CONF {"raw":[100,100,79,92]}
+
+00:21:17.540 --> 00:21:17.750
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[77]}
+
+00:21:18.770 --> 00:21:24.230
+<v Speaker 0>Um, assume T1 is not equal to zero.
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100]}
+
+00:21:24.890 --> 00:21:27.170
+<v Speaker 0>Um, what can I do in that case?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:27.470 --> 00:21:28.690
+<v Speaker 0>Um, I can.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:28.690 --> 00:21:30.940
+<v Speaker 0>Well, first of all, I can bring the tea one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,89,96]}
+
+00:21:30.940 --> 00:21:34.480
+<v Speaker 0>just on one side, the X1, so I can ride
+
+NOTE CONF {"raw":[100,92,100,100,100,98,100,100,100,72]}
+
+00:21:34.510 --> 00:21:38.290
+<v Speaker 0>t1 x1 equal to minus.
+
+NOTE CONF {"raw":[97,100,100,100,100]}
+
+00:21:38.380 --> 00:21:41.740
+<v Speaker 0>Sorry t2, x2 minus and so on.
+
+NOTE CONF {"raw":[100,100,100,100,82,100,100]}
+
+00:21:42.280 --> 00:21:45.040
+<v Speaker 0>T k x k um.
+
+NOTE CONF {"raw":[49,61,88,88,70]}
+
+00:21:45.040 --> 00:21:48.370
+<v Speaker 0>And then because t1 here is not equal to zero
+
+NOTE CONF {"raw":[100,100,100,100,74,100,100,100,100,100]}
+
+00:21:48.370 --> 00:21:49.810
+<v Speaker 0>I can divide three by it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:50.440 --> 00:21:50.620
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[66]}
+
+00:21:51.040 --> 00:21:57.160
+<v Speaker 0>So then x1 equals to minus t2 over t1 x2
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:57.160 --> 00:22:02.470
+<v Speaker 0>minus and so on t k over t1 x k.
+
+NOTE CONF {"raw":[100,100,100,100,90,90,100,100,100,100]}
+
+00:22:03.430 --> 00:22:05.740
+<v Speaker 0>Uh those here again I just scale it.
+
+NOTE CONF {"raw":[99,100,100,100,58,100,100,100]}
+
+00:22:05.740 --> 00:22:08.920
+<v Speaker 0>And I've written x1 one of them as a linear
+
+NOTE CONF {"raw":[100,83,100,100,100,100,100,100,97,100]}
+
+00:22:08.920 --> 00:22:10.210
+<v Speaker 0>combination of the other.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:11.890 --> 00:22:15.370
+<v Speaker 0>So again um nice thing to play around.
+
+NOTE CONF {"raw":[100,100,65,100,100,100,100,100]}
+
+00:22:15.370 --> 00:22:17.380
+<v Speaker 0>But those two are equivalent.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:17.770 --> 00:22:21.880
+<v Speaker 0>And it means that the condition of having, say, none
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,60,100]}
+
+00:22:21.880 --> 00:22:24.250
+<v Speaker 0>of the vectors can be written as a linear combination
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:24.250 --> 00:22:25.150
+<v Speaker 0>of the others.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:25.840 --> 00:22:29.570
+<v Speaker 0>I can write as this linear independence definition there.
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100]}
+
+00:22:29.930 --> 00:22:30.230
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:22:31.130 --> 00:22:33.020
+<v Speaker 0>Now that still looks strange.
+
+NOTE CONF {"raw":[100,98,100,100,100]}
+
+00:22:33.020 --> 00:22:35.090
+<v Speaker 0>I think if you first see it, because you're not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:35.090 --> 00:22:39.170
+<v Speaker 0>saying something is sort of saying it's a logical statement.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:22:39.170 --> 00:22:41.720
+<v Speaker 0>You know, if I've got this equation, then I can
+
+NOTE CONF {"raw":[39,39,100,100,100,100,100,100,100,100]}
+
+00:22:41.720 --> 00:22:45.170
+<v Speaker 0>deduce that or the scalars are zero.
+
+NOTE CONF {"raw":[100,100,86,44,100,100,100]}
+
+00:22:45.260 --> 00:22:47.900
+<v Speaker 0>So how do I work with that in practice?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:48.680 --> 00:22:51.470
+<v Speaker 0>So I have a couple of examples where I think
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:51.470 --> 00:22:53.720
+<v Speaker 0>it's worthwhile that show us a bit where we're wanting
+
+NOTE CONF {"raw":[100,100,35,99,100,100,100,100,91,97]}
+
+00:22:53.720 --> 00:22:55.880
+<v Speaker 0>to go, but that just gives you a little bit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:22:55.880 --> 00:22:57.920
+<v Speaker 0>of an idea of how we play with that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:58.580 --> 00:23:02.690
+<v Speaker 0>Um, so now that we know that what linear independence
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:02.690 --> 00:23:06.590
+<v Speaker 0>is, um, is it possible to find three linear independent
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:23:06.590 --> 00:23:08.090
+<v Speaker 0>vectors in R2?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:10.220 --> 00:23:12.890
+<v Speaker 0>Um, I'll just give you this again as a poll.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,96]}
+
+00:23:20.930 --> 00:23:22.880
+<v Speaker 0>True or false?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:24.840 --> 00:23:26.100
+<v Speaker 1>Reset.
+
+NOTE CONF {"raw":[66]}
+
+00:23:26.580 --> 00:23:30.990
+<v Speaker 1>Reset does play, right?
+
+NOTE CONF {"raw":[69,40,69,100]}
+
+00:23:30.990 --> 00:23:31.590
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[99]}
+
+00:23:31.620 --> 00:23:33.480
+<v Speaker 0>Uh, that should be live now.
+
+NOTE CONF {"raw":[100,100,100,100,58,100]}
+
+00:24:20.400 --> 00:24:20.910
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[78]}
+
+00:24:21.180 --> 00:24:22.110
+<v Speaker 0>10s.
+
+NOTE CONF {"raw":[100]}
+
+00:24:32.560 --> 00:24:33.160
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:33.160 --> 00:24:33.730
+<v Speaker 0>Forwards.
+
+NOTE CONF {"raw":[63]}
+
+00:24:33.760 --> 00:24:34.180
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:24:34.630 --> 00:24:35.740
+<v Speaker 0>Um, indeed.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:36.520 --> 00:24:41.650
+<v Speaker 0>Um, so it's probably quite difficult to sort of get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:41.650 --> 00:24:45.250
+<v Speaker 0>a, get a straight argument, but wanting to do is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:24:45.520 --> 00:24:47.770
+<v Speaker 0>to actually show you how to work with this concept.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:47.770 --> 00:24:51.700
+<v Speaker 0>So let's, let's just try to try to show that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:52.660 --> 00:24:54.100
+<v Speaker 0>Uh, so what do we do.
+
+NOTE CONF {"raw":[98,100,100,100,100,100]}
+
+00:24:54.130 --> 00:24:56.440
+<v Speaker 0>Can we find three linearly independent vectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:56.440 --> 00:24:59.950
+<v Speaker 0>And I'll probably go back and uh, half that definition
+
+NOTE CONF {"raw":[80,94,100,100,100,100,45,52,100,100]}
+
+00:24:59.950 --> 00:25:01.540
+<v Speaker 0>of linear independence there.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:02.770 --> 00:25:05.020
+<v Speaker 0>Um, so what do we need to do?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:05.020 --> 00:25:06.970
+<v Speaker 0>We have assuming we do.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:06.970 --> 00:25:12.730
+<v Speaker 0>You know, let's, let's take three vectors, um, x x1,
+
+NOTE CONF {"raw":[65,65,100,100,100,100,100,100,100,100]}
+
+00:25:12.730 --> 00:25:20.080
+<v Speaker 0>x2, y1, y2 and z1 z2, um, and these are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:25:20.080 --> 00:25:22.030
+<v Speaker 0>all in R2.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:22.060 --> 00:25:22.330
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[62]}
+
+00:25:22.330 --> 00:25:25.500
+<v Speaker 0>him and we now want to know are these linear,
+
+NOTE CONF {"raw":[84,100,100,100,100,100,100,96,100,100]}
+
+00:25:25.500 --> 00:25:26.910
+<v Speaker 0>independent or not?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:27.270 --> 00:25:29.970
+<v Speaker 0>So what we need to check is that we say
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:25:29.970 --> 00:25:33.120
+<v Speaker 0>if we've got a linear combination of these that make
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:33.120 --> 00:25:36.330
+<v Speaker 0>the zero vector, uh, what do we know about that?
+
+NOTE CONF {"raw":[100,100,100,56,100,100,100,100,100,100]}
+
+00:25:36.660 --> 00:25:36.960
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[93]}
+
+00:25:36.960 --> 00:25:38.280
+<v Speaker 0>So let's start that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:38.280 --> 00:25:42.960
+<v Speaker 0>So we consider taking a linear combination of these.
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,100,100]}
+
+00:25:42.960 --> 00:25:50.820
+<v Speaker 0>So t um one times X1X2 plus t two times
+
+NOTE CONF {"raw":[100,96,94,100,100,100,100,100,100,100]}
+
+00:25:50.820 --> 00:25:58.530
+<v Speaker 0>Y1Y2 plus t three times z1 z2 um.
+
+NOTE CONF {"raw":[100,100,93,93,100,100,100,97]}
+
+00:25:58.530 --> 00:26:00.060
+<v Speaker 0>And this should be the zero vector.
+
+NOTE CONF {"raw":[100,97,87,100,100,100,100]}
+
+00:26:01.200 --> 00:26:01.470
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[79]}
+
+00:26:03.210 --> 00:26:03.690
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:26:03.690 --> 00:26:07.110
+<v Speaker 0>So I can write this um sort of rewrite this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:07.110 --> 00:26:08.040
+<v Speaker 0>in various forms.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:08.040 --> 00:26:10.440
+<v Speaker 0>These are obviously sort of two equations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:10.980 --> 00:26:14.280
+<v Speaker 0>Um, so I could write this as t1 x1 plus
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:14.280 --> 00:26:20.950
+<v Speaker 0>t2 y1 plus t3 z1 equals to zero and the
+
+NOTE CONF {"raw":[100,100,100,97,100,98,100,100,100,100]}
+
+00:26:20.950 --> 00:26:22.780
+<v Speaker 0>same with the other component.
+
+NOTE CONF {"raw":[100,100,100,100,97]}
+
+00:26:25.030 --> 00:26:29.950
+<v Speaker 0>Y two plus T3Z2.
+
+NOTE CONF {"raw":[92,100,100,100]}
+
+00:26:30.190 --> 00:26:32.290
+<v Speaker 0>I have to be careful with the indices equal to
+
+NOTE CONF {"raw":[34,100,100,100,100,100,100,100,100,100]}
+
+00:26:32.290 --> 00:26:32.770
+<v Speaker 0>zero.
+
+NOTE CONF {"raw":[100]}
+
+00:26:33.640 --> 00:26:41.050
+<v Speaker 0>Now I'm interested in the values of TS, so I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,84,100,100]}
+
+00:26:41.050 --> 00:26:44.920
+<v Speaker 0>can treat this as a system of linear equations thinking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:44.920 --> 00:26:47.950
+<v Speaker 0>the axes are numbers that I know.
+
+NOTE CONF {"raw":[100,79,92,100,100,100,100]}
+
+00:26:48.760 --> 00:26:50.980
+<v Speaker 0>I just want to know whether these numbers exist.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99]}
+
+00:26:50.980 --> 00:26:51.850
+<v Speaker 0>And the t three.
+
+NOTE CONF {"raw":[100,100,49,49]}
+
+00:26:51.850 --> 00:26:54.280
+<v Speaker 0>There are unknowns.
+
+NOTE CONF {"raw":[98,100,95]}
+
+00:26:54.460 --> 00:26:56.230
+<v Speaker 0>So I can write this a matrix form.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:57.040 --> 00:26:59.740
+<v Speaker 0>Um, I could write this as saying this is a
+
+NOTE CONF {"raw":[71,100,100,100,100,100,100,100,100,100]}
+
+00:26:59.740 --> 00:27:00.370
+<v Speaker 0>matrix.
+
+NOTE CONF {"raw":[100]}
+
+00:27:00.370 --> 00:27:04.270
+<v Speaker 0>My unknowns is t1, t2, t3.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:04.720 --> 00:27:08.620
+<v Speaker 0>And what I need to have here is x1, y1
+
+NOTE CONF {"raw":[57,100,100,100,100,100,100,100,100,100]}
+
+00:27:08.620 --> 00:27:16.090
+<v Speaker 0>z1 and x2 y2 z2 equal to zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:16.900 --> 00:27:19.970
+<v Speaker 0>And what I've interested in is is there a solution
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,78,69,100]}
+
+00:27:19.970 --> 00:27:20.840
+<v Speaker 0>to this here?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:21.440 --> 00:27:24.410
+<v Speaker 0>Um, such that all the teeth that not all the
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100,100,100,100]}
+
+00:27:24.410 --> 00:27:25.850
+<v Speaker 0>teeth are equal to zero?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:25.910 --> 00:27:28.190
+<v Speaker 0>Now, obviously setting all the is equal to zero is
+
+NOTE CONF {"raw":[79,100,100,100,88,94,100,100,100,100]}
+
+00:27:28.190 --> 00:27:28.940
+<v Speaker 0>a solution.
+
+NOTE CONF {"raw":[88,100]}
+
+00:27:28.940 --> 00:27:30.410
+<v Speaker 0>But I'm interested in knowing.
+
+NOTE CONF {"raw":[100,97,100,100,100]}
+
+00:27:30.410 --> 00:27:31.580
+<v Speaker 0>Is there another one?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:32.210 --> 00:27:34.160
+<v Speaker 0>Now we have to go back and think right okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:34.160 --> 00:27:35.930
+<v Speaker 0>We've done linear systems of equations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:35.930 --> 00:27:37.370
+<v Speaker 0>What do we know about them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:37.970 --> 00:27:40.940
+<v Speaker 0>Um, and actually you can sort of think I can
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,100]}
+
+00:27:40.940 --> 00:27:44.720
+<v Speaker 0>go into row echelon form and uh, well it depends
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,83,100,100]}
+
+00:27:44.720 --> 00:27:46.580
+<v Speaker 0>a little bit on what these values are, but I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:46.580 --> 00:27:48.980
+<v Speaker 0>probably have to have one degree of freedom here.
+
+NOTE CONF {"raw":[100,94,51,86,100,100,100,100,100]}
+
+00:27:49.100 --> 00:27:52.760
+<v Speaker 0>Now, if you remember, um, I want to just do
+
+NOTE CONF {"raw":[63,100,100,100,54,100,100,100,100,100]}
+
+00:27:52.760 --> 00:27:58.070
+<v Speaker 0>it a little bit more, um, proper, um, because I'll
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:27:58.070 --> 00:27:59.570
+<v Speaker 0>come back to that in a second.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:59.570 --> 00:28:02.870
+<v Speaker 0>So I remind you that we did indeed have this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,52,100,100,100]}
+
+00:28:02.870 --> 00:28:07.400
+<v Speaker 0>theorem here, um, that says if I've got an M
+
+NOTE CONF {"raw":[100,100,84,100,100,100,100,100,100,100]}
+
+00:28:07.400 --> 00:28:11.300
+<v Speaker 0>times n matrix with rank R and consider the homogeneous
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:11.300 --> 00:28:14.930
+<v Speaker 0>systems of equation, I've got a homogeneous system of equations.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,99,100,100]}
+
+00:28:15.170 --> 00:28:18.570
+<v Speaker 0>Then it says the system has exactly n minus our
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100,100,100,56]}
+
+00:28:18.570 --> 00:28:20.340
+<v Speaker 0>basic solutions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:20.430 --> 00:28:21.690
+<v Speaker 0>So this is what we're getting.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:21.690 --> 00:28:25.590
+<v Speaker 0>If we have a degree of freedom um, and can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,78,100,100]}
+
+00:28:25.590 --> 00:28:27.330
+<v Speaker 0>end in a and in a parameter.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:27.330 --> 00:28:29.760
+<v Speaker 0>So this is the number of basic solutions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:30.330 --> 00:28:33.720
+<v Speaker 0>So what does this mean in our case here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:34.440 --> 00:28:36.570
+<v Speaker 0>Um, when in our case what do we have.
+
+NOTE CONF {"raw":[98,97,100,100,100,100,100,100,100]}
+
+00:28:36.570 --> 00:28:39.660
+<v Speaker 0>N is the number of variables here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:40.170 --> 00:28:42.450
+<v Speaker 0>Uh so we've got n equals to three.
+
+NOTE CONF {"raw":[67,100,100,100,100,100,100,100]}
+
+00:28:43.200 --> 00:28:46.020
+<v Speaker 0>Uh, the rank we don't really know because we don't
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:28:46.020 --> 00:28:48.390
+<v Speaker 0>know what these X's are in general.
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100]}
+
+00:28:48.720 --> 00:28:51.390
+<v Speaker 0>Uh, what we do know that at the maximum, there
+
+NOTE CONF {"raw":[74,100,100,100,100,100,100,100,100,100]}
+
+00:28:51.390 --> 00:28:55.380
+<v Speaker 0>can be one leading one, uh, in the row echelon
+
+NOTE CONF {"raw":[100,100,100,100,100,85,100,100,100,100]}
+
+00:28:55.380 --> 00:28:56.580
+<v Speaker 0>form and every row here.
+
+NOTE CONF {"raw":[100,93,100,100,100]}
+
+00:28:56.580 --> 00:28:59.280
+<v Speaker 0>So a number of rows is the maximum.
+
+NOTE CONF {"raw":[100,100,100,100,100,92,98,100]}
+
+00:28:59.280 --> 00:29:00.990
+<v Speaker 0>So the R has to be less than or equal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:00.990 --> 00:29:01.740
+<v Speaker 0>to two.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:02.370 --> 00:29:04.890
+<v Speaker 0>Um in other words n minus r has got to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:04.890 --> 00:29:06.360
+<v Speaker 0>be greater or equal to one.
+
+NOTE CONF {"raw":[100,100,87,100,100,100]}
+
+00:29:07.260 --> 00:29:11.040
+<v Speaker 0>So that means here we've got at least one basic
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:11.040 --> 00:29:15.870
+<v Speaker 0>solution for the t's which isn't equal to zero.
+
+NOTE CONF {"raw":[100,100,100,75,100,68,100,100,100]}
+
+00:29:15.870 --> 00:29:17.510
+<v Speaker 0>So we've got a solution there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:17.660 --> 00:29:17.900
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[97]}
+
+00:29:18.860 --> 00:29:21.650
+<v Speaker 0>Alternatively, I wonder because I come back to that I
+
+NOTE CONF {"raw":[100,100,39,100,100,100,100,100,100,100]}
+
+00:29:21.650 --> 00:29:23.060
+<v Speaker 0>wanted to use that theorem.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:23.690 --> 00:29:28.190
+<v Speaker 0>Um, but we do have did have another theorem that
+
+NOTE CONF {"raw":[76,100,100,100,100,100,100,100,100,99]}
+
+00:29:28.340 --> 00:29:31.310
+<v Speaker 0>simply says if a homogeneous system of equations has more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:31.310 --> 00:29:36.290
+<v Speaker 0>variables than equations, uh, that's what we have, then it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:36.290 --> 00:29:37.700
+<v Speaker 0>has a non-trivial solution.
+
+NOTE CONF {"raw":[100,100,52,100]}
+
+00:29:38.750 --> 00:29:42.980
+<v Speaker 0>So in other words, um, these uh, there is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,90,100,100,100]}
+
+00:29:42.980 --> 00:29:44.360
+<v Speaker 0>non-trivial solution.
+
+NOTE CONF {"raw":[74,100]}
+
+00:29:44.360 --> 00:29:47.780
+<v Speaker 0>And if we go back what this means, um, if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:29:47.780 --> 00:29:51.320
+<v Speaker 0>there wasn't one then the vectors would be linearly independent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:29:51.320 --> 00:29:54.500
+<v Speaker 0>But we've just shown that whatever we're choosing here, that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,26,51,100,100]}
+
+00:29:54.500 --> 00:29:56.330
+<v Speaker 0>is a non-trivial solution.
+
+NOTE CONF {"raw":[100,100,72,100]}
+
+00:29:56.330 --> 00:29:59.240
+<v Speaker 0>So these vectors cannot be linearly independent.
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100]}
+
+00:30:00.860 --> 00:30:04.520
+<v Speaker 0>So it's not possible to find three linearly independent vectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:05.390 --> 00:30:06.560
+<v Speaker 0>Uh keep that in mind.
+
+NOTE CONF {"raw":[97,100,100,100,100]}
+
+00:30:06.740 --> 00:30:08.270
+<v Speaker 0>We'll come back to that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:08.900 --> 00:30:09.380
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:30:09.380 --> 00:30:09.770
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:09.770 --> 00:30:13.880
+<v Speaker 0>Again uh, further sort of playing with with the um,
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,86]}
+
+00:30:13.880 --> 00:30:15.270
+<v Speaker 0>linearly independent.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:16.170 --> 00:30:19.230
+<v Speaker 0>Um, so suppose what?
+
+NOTE CONF {"raw":[91,100,100,91]}
+
+00:30:19.230 --> 00:30:23.040
+<v Speaker 0>We have three vectors in R3 that are actually linearly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:23.040 --> 00:30:27.300
+<v Speaker 0>independent, and we can stick them into a matrix half.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:27.300 --> 00:30:29.010
+<v Speaker 0>These are the column of the matrix.
+
+NOTE CONF {"raw":[100,83,83,100,100,100,100]}
+
+00:30:29.910 --> 00:30:32.370
+<v Speaker 0>Um, what does that mean for that matrix.
+
+NOTE CONF {"raw":[52,100,100,100,100,100,100,100]}
+
+00:30:33.780 --> 00:30:37.350
+<v Speaker 0>Um can we is there a relation to something like
+
+NOTE CONF {"raw":[80,100,100,96,75,44,100,100,100,100]}
+
+00:30:37.350 --> 00:30:40.830
+<v Speaker 0>the determinant, or do you think we can't really say
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:40.830 --> 00:30:42.930
+<v Speaker 0>anything about that?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:44.040 --> 00:30:52.260
+<v Speaker 0>Um, again, I'll give you a pole to play with
+
+NOTE CONF {"raw":[100,100,66,78,100,100,87,100,100,100]}
+
+00:30:52.260 --> 00:30:52.890
+<v Speaker 0>that.
+
+NOTE CONF {"raw":[100]}
+
+00:30:54.090 --> 00:30:56.490
+<v Speaker 1>Reset display.
+
+NOTE CONF {"raw":[90,100]}
+
+00:31:31.330 --> 00:31:31.510
+<v Speaker 0>That's.
+
+NOTE CONF {"raw":[82]}
+
+00:31:59.980 --> 00:32:00.520
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:32:00.850 --> 00:32:02.800
+<v Speaker 0>There's probably a little bit of a loaded question.
+
+NOTE CONF {"raw":[99,100,100,93,100,100,100,100,100]}
+
+00:32:02.830 --> 00:32:05.350
+<v Speaker 0>The question was just whether which way round is going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:05.350 --> 00:32:05.980
+<v Speaker 0>to go.
+
+NOTE CONF {"raw":[100,100]}
+
+00:32:06.730 --> 00:32:08.230
+<v Speaker 0>Um, yes, indeed.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:08.470 --> 00:32:11.290
+<v Speaker 0>Um, if the determinant is not equal to zero.
+
+NOTE CONF {"raw":[68,100,100,100,100,100,100,100,100]}
+
+00:32:11.650 --> 00:32:14.300
+<v Speaker 0>Um, These would be linearly independent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:14.570 --> 00:32:16.910
+<v Speaker 0>And there's various ways to think about that.
+
+NOTE CONF {"raw":[100,93,100,100,100,100,100,100]}
+
+00:32:16.940 --> 00:32:20.360
+<v Speaker 0>For example, I think we've had sort of determinant as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,93]}
+
+00:32:20.360 --> 00:32:25.550
+<v Speaker 0>the is the volume of the sort of shape spanned
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:25.550 --> 00:32:31.460
+<v Speaker 0>by spanned in the sort of like the parallelepiped made
+
+NOTE CONF {"raw":[100,100,66,54,100,100,100,100,100,100]}
+
+00:32:31.460 --> 00:32:32.810
+<v Speaker 0>up of these vectors.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:33.440 --> 00:32:36.410
+<v Speaker 0>Um, so if there is a positive or there is
+
+NOTE CONF {"raw":[69,100,100,100,100,100,100,100,100,100]}
+
+00:32:36.410 --> 00:32:38.420
+<v Speaker 0>a volume which isn't equal to zero, these are sort
+
+NOTE CONF {"raw":[100,100,100,81,100,100,100,100,100,100]}
+
+00:32:38.420 --> 00:32:39.920
+<v Speaker 0>of in all different directions.
+
+NOTE CONF {"raw":[100,98,100,100,100]}
+
+00:32:40.730 --> 00:32:43.340
+<v Speaker 0>Um, if the the volume is zero, then there must
+
+NOTE CONF {"raw":[87,100,62,100,100,100,100,100,100,100]}
+
+00:32:43.340 --> 00:32:45.800
+<v Speaker 0>be more or less in the same plane, um, which
+
+NOTE CONF {"raw":[100,100,100,100,79,100,100,100,68,100]}
+
+00:32:45.800 --> 00:32:48.650
+<v Speaker 0>means that they are not linearly independent.
+
+NOTE CONF {"raw":[100,100,74,74,100,100,100]}
+
+00:32:48.890 --> 00:32:52.910
+<v Speaker 0>Um, but indeed, I sort of part of the purpose
+
+NOTE CONF {"raw":[82,100,100,100,100,100,100,100,100,100]}
+
+00:32:52.910 --> 00:32:55.130
+<v Speaker 0>of doing this is that I was going to show
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:55.130 --> 00:33:00.080
+<v Speaker 0>you, um, how we deal with this linearly independence condition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,56,100]}
+
+00:33:00.560 --> 00:33:04.520
+<v Speaker 0>Um, so let's just do that again and, and see
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:04.520 --> 00:33:06.800
+<v Speaker 0>what we have and why this, this is related to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:06.800 --> 00:33:07.670
+<v Speaker 0>the determinant.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:08.180 --> 00:33:11.860
+<v Speaker 0>Um, so assuming that we've got here u, V and
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:33:11.860 --> 00:33:16.720
+<v Speaker 0>w um are vectors in R3 and the linearly independent.
+
+NOTE CONF {"raw":[100,65,100,100,100,100,100,100,100,100]}
+
+00:33:21.580 --> 00:33:24.790
+<v Speaker 0>Uh, so again we said that this means we've got
+
+NOTE CONF {"raw":[97,100,100,100,98,100,100,100,100,100]}
+
+00:33:24.790 --> 00:33:26.260
+<v Speaker 0>a system.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:26.260 --> 00:33:28.210
+<v Speaker 0>We have to look at whether we can find a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:28.210 --> 00:33:30.700
+<v Speaker 0>linear combination that makes the zero vector.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:33:31.540 --> 00:33:33.220
+<v Speaker 0>Um, so let's do that T one.
+
+NOTE CONF {"raw":[100,100,100,100,100,58,58]}
+
+00:33:33.220 --> 00:33:34.870
+<v Speaker 0>And I'm going to write this in components.
+
+NOTE CONF {"raw":[100,100,100,100,100,61,90,100]}
+
+00:33:34.870 --> 00:33:42.100
+<v Speaker 0>Yeah u1 u2 u3 um plus t2 uh v1 v2
+
+NOTE CONF {"raw":[65,100,100,100,100,100,100,100,100,100]}
+
+00:33:42.100 --> 00:33:50.950
+<v Speaker 0>and v3 uh plus t3 w1 w2 w3 uh equals
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:33:50.950 --> 00:33:52.210
+<v Speaker 0>to the zero vector.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:52.780 --> 00:33:53.080
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[85]}
+
+00:33:54.250 --> 00:33:57.520
+<v Speaker 0>Um and again this is a linear system of equations
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:57.520 --> 00:33:58.060
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:33:58.810 --> 00:34:01.750
+<v Speaker 0>Um, and where the t1, t2 and T3 are my
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:01.750 --> 00:34:02.380
+<v Speaker 0>variables.
+
+NOTE CONF {"raw":[100]}
+
+00:34:02.380 --> 00:34:06.430
+<v Speaker 0>So I can write this um, just in this form
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:06.430 --> 00:34:12.050
+<v Speaker 0>a matrix um with components u1, u to u3.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:12.379 --> 00:34:15.110
+<v Speaker 0>V1 v2 v3.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:15.649 --> 00:34:18.560
+<v Speaker 0>W1 w2 w3.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:19.639 --> 00:34:26.389
+<v Speaker 0>Vector of unknowns t1 t2 t3 equals to zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100]}
+
+00:34:27.230 --> 00:34:29.540
+<v Speaker 0>You know what we're interested in?
+
+NOTE CONF {"raw":[36,42,99,79,100,100]}
+
+00:34:29.540 --> 00:34:33.080
+<v Speaker 0>To show that this is linear independent is that that
+
+NOTE CONF {"raw":[100,100,100,100,100,97,97,100,100,100]}
+
+00:34:33.080 --> 00:34:35.810
+<v Speaker 0>this has only the trivial solution.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:39.050 --> 00:34:43.010
+<v Speaker 0>Now that's what we call this when we're talking about
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100,97,100,100]}
+
+00:34:43.010 --> 00:34:44.450
+<v Speaker 0>linear systems of equations.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:44.450 --> 00:34:48.830
+<v Speaker 0>If we can show that this necessarily means that the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:48.830 --> 00:34:51.710
+<v Speaker 0>vector t there has to be equal to zero.
+
+NOTE CONF {"raw":[100,82,100,100,100,100,100,100,100]}
+
+00:34:52.550 --> 00:34:54.740
+<v Speaker 0>Now this obviously, as I say is a linear systems
+
+NOTE CONF {"raw":[100,100,100,100,100,100,58,92,100,100]}
+
+00:34:54.740 --> 00:34:55.460
+<v Speaker 0>of equations.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:55.460 --> 00:34:57.410
+<v Speaker 0>So I can call this matrix A.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:57.950 --> 00:35:00.920
+<v Speaker 0>This here is my vector t and this here is
+
+NOTE CONF {"raw":[100,100,99,88,100,100,100,100,56,100]}
+
+00:35:00.920 --> 00:35:06.680
+<v Speaker 0>the zero vector um and uh again homogeneous systems of
+
+NOTE CONF {"raw":[100,100,100,86,100,61,100,100,100,100]}
+
+00:35:06.680 --> 00:35:07.530
+<v Speaker 0>equation.
+
+NOTE CONF {"raw":[100]}
+
+00:35:07.830 --> 00:35:11.430
+<v Speaker 0>A homogeneous system of equation has only the trivial solution.
+
+NOTE CONF {"raw":[100,100,100,100,94,100,100,100,100,100]}
+
+00:35:11.910 --> 00:35:15.900
+<v Speaker 0>If and we had quite a few conditions there.
+
+NOTE CONF {"raw":[100,96,100,85,100,100,100,100,100]}
+
+00:35:16.800 --> 00:35:18.990
+<v Speaker 0>One of them is that this is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:18.990 --> 00:35:22.350
+<v Speaker 0>This is the case if A here is invertible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:24.900 --> 00:35:27.450
+<v Speaker 0>Um, and that of course is the same as that
+
+NOTE CONF {"raw":[76,100,100,100,100,100,100,100,100,60]}
+
+00:35:27.450 --> 00:35:32.250
+<v Speaker 0>the determinant of A is not equal to zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:33.390 --> 00:35:35.040
+<v Speaker 0>So that's sort of showing a little bit I think
+
+NOTE CONF {"raw":[100,81,100,100,99,100,100,100,100,100]}
+
+00:35:35.040 --> 00:35:38.250
+<v Speaker 0>we've now taken things from various different parts of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:38.250 --> 00:35:39.840
+<v Speaker 0>course how it all interlinked.
+
+NOTE CONF {"raw":[87,100,100,100,99]}
+
+00:35:40.290 --> 00:35:43.140
+<v Speaker 0>Um, actually checking the determinant is not not the worst
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,100]}
+
+00:35:43.140 --> 00:35:47.640
+<v Speaker 0>way as actually relatively good way to check whether three
+
+NOTE CONF {"raw":[94,80,100,100,100,100,100,100,100,100]}
+
+00:35:47.640 --> 00:35:49.350
+<v Speaker 0>vectors are linearly independent.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:49.350 --> 00:35:52.140
+<v Speaker 0>So it's not just a neat sort of some mathematical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:52.140 --> 00:35:56.190
+<v Speaker 0>curiosity, but it's actually relatively useful if you want to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:56.190 --> 00:35:56.880
+<v Speaker 0>show that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:58.080 --> 00:35:59.100
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:59.760 --> 00:36:04.320
+<v Speaker 0>Um, now so that that sort of leads us now
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:36:04.320 --> 00:36:07.840
+<v Speaker 0>to another inversion theorem we had that last time I
+
+NOTE CONF {"raw":[100,100,100,100,100,78,100,100,100,100]}
+
+00:36:07.840 --> 00:36:09.640
+<v Speaker 0>was here we had an inversion theorem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:10.210 --> 00:36:12.430
+<v Speaker 0>Now we've got a few more conditions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:13.150 --> 00:36:16.660
+<v Speaker 0>So we do have that um one and two here
+
+NOTE CONF {"raw":[100,100,100,100,100,90,100,100,100,100]}
+
+00:36:16.660 --> 00:36:20.920
+<v Speaker 0>I've basically just shown the matrix A is invertible or
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:36:20.920 --> 00:36:23.590
+<v Speaker 0>the determinant is not equal to zero if the columns
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:23.590 --> 00:36:25.570
+<v Speaker 0>of A are linearly independent.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:26.260 --> 00:36:28.180
+<v Speaker 0>Now we've got a few more things here on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:36:28.180 --> 00:36:28.960
+<v Speaker 0>inversion theorem.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:28.960 --> 00:36:33.310
+<v Speaker 0>Something that might be surprising actually is the fourth one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:33.310 --> 00:36:33.550
+<v Speaker 0>there.
+
+NOTE CONF {"raw":[100]}
+
+00:36:33.550 --> 00:36:36.970
+<v Speaker 0>That the columns of A are linearly independent is equivalent
+
+NOTE CONF {"raw":[100,100,100,100,81,100,100,100,100,100]}
+
+00:36:36.970 --> 00:36:39.640
+<v Speaker 0>to that the rows of A are linearly independent.
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100]}
+
+00:36:40.390 --> 00:36:42.700
+<v Speaker 0>And you might have thought that they're not necessarily related
+
+NOTE CONF {"raw":[100,100,100,100,100,100,87,100,100,100]}
+
+00:36:42.700 --> 00:36:47.200
+<v Speaker 0>to each other, but going through the determinant, the determinant
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:36:47.200 --> 00:36:49.870
+<v Speaker 0>doesn't care whether it's the matrix or you take the
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:36:49.870 --> 00:36:51.430
+<v Speaker 0>transpose of the matrix.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:52.060 --> 00:36:56.800
+<v Speaker 0>Um, so if the rows are independent, if the columns
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100,100]}
+
+00:36:56.800 --> 00:36:59.440
+<v Speaker 0>are linearly independent, the same must be for the rows.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:00.610 --> 00:37:02.260
+<v Speaker 0>Um, so this is from Nicholson.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:02.260 --> 00:37:04.120
+<v Speaker 0>I should just say a couple of words.
+
+NOTE CONF {"raw":[100,100,100,100,94,100,100,100]}
+
+00:37:04.120 --> 00:37:05.690
+<v Speaker 0>There's the last statement there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:06.500 --> 00:37:09.980
+<v Speaker 0>That says the rows of a span, the set of
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:37:09.980 --> 00:37:11.300
+<v Speaker 0>all rows.
+
+NOTE CONF {"raw":[100,100]}
+
+00:37:12.410 --> 00:37:14.240
+<v Speaker 0>Now, this is a funny statement.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:14.240 --> 00:37:16.610
+<v Speaker 0>What do you mean by the set of all rows.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:37:17.450 --> 00:37:19.460
+<v Speaker 0>And I think it's related to just to give you
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,100]}
+
+00:37:19.460 --> 00:37:21.590
+<v Speaker 0>the context that I said, that if I talk about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:21.590 --> 00:37:25.430
+<v Speaker 0>vectors by default, I always mean column vectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:25.910 --> 00:37:26.240
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[83]}
+
+00:37:26.480 --> 00:37:29.180
+<v Speaker 0>So if I now take the span, the spanning set
+
+NOTE CONF {"raw":[100,100,100,100,100,56,100,100,100,100]}
+
+00:37:29.180 --> 00:37:33.080
+<v Speaker 0>of the rows of a, this would be sort of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:33.080 --> 00:37:36.320
+<v Speaker 0>a linear combination of the rows are still row vector.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:37:36.470 --> 00:37:39.470
+<v Speaker 0>So this is sort of a space of row vectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:40.130 --> 00:37:42.320
+<v Speaker 0>Of course to some extent this is equivalent to just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:42.320 --> 00:37:43.190
+<v Speaker 0>the normal R3.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:43.190 --> 00:37:45.770
+<v Speaker 0>It's sort of R3 turned on its head or sideways
+
+NOTE CONF {"raw":[68,100,100,100,74,100,100,100,100,100]}
+
+00:37:45.770 --> 00:37:46.430
+<v Speaker 0>or so.
+
+NOTE CONF {"raw":[100,100]}
+
+00:37:46.430 --> 00:37:48.770
+<v Speaker 0>And typically you wouldn't make the distinction.
+
+NOTE CONF {"raw":[100,100,100,99,100,100,100]}
+
+00:37:48.770 --> 00:37:51.230
+<v Speaker 0>Typically you would just say the the rows of a
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100,100]}
+
+00:37:51.230 --> 00:37:52.790
+<v Speaker 0>also span R3.
+
+NOTE CONF {"raw":[100,92,100]}
+
+00:37:52.910 --> 00:37:56.000
+<v Speaker 0>But if you want it to be really particularly Nicholson
+
+NOTE CONF {"raw":[100,100,100,97,79,100,100,100,66,100]}
+
+00:37:56.000 --> 00:37:56.990
+<v Speaker 0>decided to do that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:56.990 --> 00:37:59.510
+<v Speaker 0>In this case you'll have to talk about the space
+
+NOTE CONF {"raw":[100,100,100,93,100,100,100,100,96,100]}
+
+00:37:59.510 --> 00:38:03.910
+<v Speaker 0>or the set of all the rows, Right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:38:03.910 --> 00:38:06.880
+<v Speaker 0>And then finally we've got this equivalence that we say
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:06.880 --> 00:38:10.450
+<v Speaker 0>if the columns are of a or linearly independent, then
+
+NOTE CONF {"raw":[100,100,100,100,100,79,27,96,80,100]}
+
+00:38:10.450 --> 00:38:12.100
+<v Speaker 0>they span the space.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:13.240 --> 00:38:16.750
+<v Speaker 0>And now this looks a little bit strange not necessarily
+
+NOTE CONF {"raw":[91,100,100,100,100,100,100,100,100,100]}
+
+00:38:16.750 --> 00:38:18.100
+<v Speaker 0>related with each other.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:18.100 --> 00:38:20.440
+<v Speaker 0>And we're going to say a few words in that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:20.440 --> 00:38:21.700
+<v Speaker 0>direction here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:21.880 --> 00:38:26.200
+<v Speaker 0>But actually the final proof of that that is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,68,100,100,100]}
+
+00:38:26.800 --> 00:38:28.930
+<v Speaker 0>I'm going to give you in the reading quiz or
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,69,100]}
+
+00:38:28.930 --> 00:38:30.760
+<v Speaker 0>talk a little bit more about the reading quiz on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:30.760 --> 00:38:31.420
+<v Speaker 0>Monday.
+
+NOTE CONF {"raw":[100]}
+
+00:38:31.450 --> 00:38:31.810
+<v Speaker 0>Now.
+
+NOTE CONF {"raw":[84]}
+
+00:38:32.710 --> 00:38:36.100
+<v Speaker 0>Um, so but so this might be a bit bit.
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100,100,100,100]}
+
+00:38:36.100 --> 00:38:38.920
+<v Speaker 0>So we said that linear independent and.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:38.920 --> 00:38:39.640
+<v Speaker 0>Right okay.
+
+NOTE CONF {"raw":[89,100]}
+
+00:38:39.640 --> 00:38:40.660
+<v Speaker 0>So um.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:43.690 --> 00:38:46.810
+<v Speaker 0>No, no I going ahead of myself.
+
+NOTE CONF {"raw":[100,100,84,100,100,100,100]}
+
+00:38:47.920 --> 00:38:48.460
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:38:48.460 --> 00:38:51.640
+<v Speaker 0>I think where am I with time?
+
+NOTE CONF {"raw":[100,100,100,55,70,100,100]}
+
+00:38:51.910 --> 00:38:52.240
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:38:54.430 --> 00:38:55.570
+<v Speaker 0>I might have some time.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:55.570 --> 00:38:56.140
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:56.140 --> 00:39:01.240
+<v Speaker 0>So, um, I just so we said we wanted we
+
+NOTE CONF {"raw":[100,100,100,100,89,100,100,100,44,100]}
+
+00:39:01.250 --> 00:39:05.120
+<v Speaker 0>introduce linear independence to show whether a generating a spanning
+
+NOTE CONF {"raw":[52,100,100,100,100,100,97,100,100,100]}
+
+00:39:05.120 --> 00:39:08.030
+<v Speaker 0>set really doesn't have any redundant elements in that.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100]}
+
+00:39:08.150 --> 00:39:09.620
+<v Speaker 0>So have we.
+
+NOTE CONF {"raw":[100,83,100]}
+
+00:39:09.650 --> 00:39:10.970
+<v Speaker 0>Have we succeeded?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:10.970 --> 00:39:15.680
+<v Speaker 0>So let's assuming that we've got k vectors here which
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:39:15.680 --> 00:39:16.970
+<v Speaker 0>are linearly independent.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:17.660 --> 00:39:19.460
+<v Speaker 0>We're going to look at the span of just the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:19.460 --> 00:39:20.660
+<v Speaker 0>first of them.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:21.080 --> 00:39:23.720
+<v Speaker 0>And then we look at the span of all of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:23.720 --> 00:39:24.290
+<v Speaker 0>them.
+
+NOTE CONF {"raw":[100]}
+
+00:39:24.500 --> 00:39:27.020
+<v Speaker 0>And then we look at the span of just k
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:27.020 --> 00:39:29.750
+<v Speaker 0>minus one of them where we've taken one out.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:29.900 --> 00:39:31.250
+<v Speaker 0>Any one of them.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:31.250 --> 00:39:32.870
+<v Speaker 0>So what can we say.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:33.710 --> 00:39:37.190
+<v Speaker 0>Um, are these indeed are these the same sets.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:37.460 --> 00:39:38.210
+<v Speaker 0>Um, it's one of them.
+
+NOTE CONF {"raw":[51,79,100,100,100]}
+
+00:39:38.210 --> 00:39:40.280
+<v Speaker 0>Is a subset of the others the proper subset of
+
+NOTE CONF {"raw":[92,65,100,100,100,65,100,100,100,100]}
+
+00:39:40.280 --> 00:39:40.910
+<v Speaker 0>the others?
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:41.450 --> 00:39:45.080
+<v Speaker 0>So again, I'd like you to have a quick, quick
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:39:45.080 --> 00:39:46.280
+<v Speaker 0>think about that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:11.250 --> 00:40:11.400
+<v Speaker 2>All.
+
+NOTE CONF {"raw":[43]}
+
+00:40:48.510 --> 00:40:50.490
+<v Speaker 0>Right, a couple more seconds.
+
+NOTE CONF {"raw":[99,81,100,100,100]}
+
+00:40:58.670 --> 00:40:59.690
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:00.740 --> 00:41:04.400
+<v Speaker 0>So again, um, probably slightly loaded question.
+
+NOTE CONF {"raw":[100,100,72,100,100,100,100]}
+
+00:41:05.030 --> 00:41:08.840
+<v Speaker 0>Um, but indeed, um, if we have that situation, we
+
+NOTE CONF {"raw":[97,100,100,99,100,100,100,100,100,100]}
+
+00:41:08.840 --> 00:41:11.360
+<v Speaker 0>can now say if they're linearly independent.
+
+NOTE CONF {"raw":[100,100,100,100,94,100,100]}
+
+00:41:11.840 --> 00:41:15.710
+<v Speaker 0>Um, they said the span said y must be properly
+
+NOTE CONF {"raw":[100,98,100,98,100,100,91,100,100,100]}
+
+00:41:15.710 --> 00:41:17.210
+<v Speaker 0>bigger than X.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:18.020 --> 00:41:20.780
+<v Speaker 0>Um, so if I say properly bigger, um, that means
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:20.780 --> 00:41:22.940
+<v Speaker 0>I must be able to there must be at least
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:22.940 --> 00:41:26.660
+<v Speaker 0>one vector in Y there that isn't an X.
+
+NOTE CONF {"raw":[100,100,100,99,100,100,99,62,100]}
+
+00:41:27.740 --> 00:41:28.910
+<v Speaker 0>Uh, which one is that?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:29.240 --> 00:41:30.260
+<v Speaker 0>What can you give me one.
+
+NOTE CONF {"raw":[36,100,100,100,100,100]}
+
+00:41:32.930 --> 00:41:33.470
+<v Speaker 0>X k.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:34.190 --> 00:41:36.860
+<v Speaker 0>So x k cannot be in x because if x
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,96]}
+
+00:41:36.860 --> 00:41:39.350
+<v Speaker 0>k were in x, then I would have been a
+
+NOTE CONF {"raw":[96,99,100,100,100,54,100,100,100,100]}
+
+00:41:39.350 --> 00:41:42.380
+<v Speaker 0>linear combination of the others and there wouldn't have been
+
+NOTE CONF {"raw":[100,100,100,100,100,100,72,100,100,100]}
+
+00:41:42.380 --> 00:41:43.400
+<v Speaker 0>linear independent.
+
+NOTE CONF {"raw":[84,96]}
+
+00:41:44.090 --> 00:41:44.330
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[88]}
+
+00:41:45.500 --> 00:41:46.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:46.130 --> 00:41:51.560
+<v Speaker 0>So uh, linear independence is, is a condition that says
+
+NOTE CONF {"raw":[100,100,99,63,85,100,100,100,100,100]}
+
+00:41:51.560 --> 00:41:54.560
+<v Speaker 0>in our spanning set we don't have any redundant vectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,70,100,100,100,100]}
+
+00:41:54.890 --> 00:41:55.160
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[91]}
+
+00:41:55.400 --> 00:41:59.640
+<v Speaker 0>So linearly independent spanning set does not contain superfluous vectors.
+
+NOTE CONF {"raw":[100,100,100,99,97,100,100,100,100,100]}
+
+00:41:59.640 --> 00:42:02.460
+<v Speaker 0>And because there is such a nice property, we're going
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,82,100]}
+
+00:42:02.460 --> 00:42:03.900
+<v Speaker 0>to give it a name to that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:03.900 --> 00:42:07.020
+<v Speaker 0>So a linearly independent spanning set is what we call
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:07.020 --> 00:42:07.860
+<v Speaker 0>a basis.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:08.610 --> 00:42:12.840
+<v Speaker 0>Well, so a subspace or a set of vectors is
+
+NOTE CONF {"raw":[78,100,100,100,100,100,100,100,100,100]}
+
+00:42:12.840 --> 00:42:13.470
+<v Speaker 0>a basis.
+
+NOTE CONF {"raw":[97,100]}
+
+00:42:13.470 --> 00:42:17.760
+<v Speaker 0>If a the set of vectors is linearly dependent and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,85,85,100]}
+
+00:42:17.760 --> 00:42:21.120
+<v Speaker 0>b it spans the subspace okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,89]}
+
+00:42:21.900 --> 00:42:24.300
+<v Speaker 0>And now we started with the whole thing of saying
+
+NOTE CONF {"raw":[78,100,100,100,100,100,100,100,100,100]}
+
+00:42:24.300 --> 00:42:27.420
+<v Speaker 0>that this sort of thinking about the sort of the
+
+NOTE CONF {"raw":[100,54,100,100,100,100,100,100,100,100]}
+
+00:42:27.420 --> 00:42:32.190
+<v Speaker 0>spanning set as a generating set was quite unsatisfactory, because
+
+NOTE CONF {"raw":[100,100,72,80,100,100,100,100,100,100]}
+
+00:42:32.190 --> 00:42:34.080
+<v Speaker 0>we don't know what these elements are.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100]}
+
+00:42:34.080 --> 00:42:36.870
+<v Speaker 0>There might not have the same number of elements, stuff
+
+NOTE CONF {"raw":[54,100,100,100,100,100,100,100,100,100]}
+
+00:42:36.870 --> 00:42:37.230
+<v Speaker 0>like that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:37.230 --> 00:42:39.990
+<v Speaker 0>So now we've got basis here, we've got linear independence,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:39.990 --> 00:42:40.620
+<v Speaker 0>this world.
+
+NOTE CONF {"raw":[86,72]}
+
+00:42:40.650 --> 00:42:42.300
+<v Speaker 0>Does this help us?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:43.170 --> 00:42:44.130
+<v Speaker 0>Um, so do we.
+
+NOTE CONF {"raw":[77,100,100,100]}
+
+00:42:44.130 --> 00:42:45.870
+<v Speaker 0>Do we know now anything more?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:46.140 --> 00:42:47.730
+<v Speaker 0>Can we fix something?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:48.210 --> 00:42:50.730
+<v Speaker 0>Uh, so assuming that we've got a subspace there, we've
+
+NOTE CONF {"raw":[84,100,100,100,100,100,100,100,56,100]}
+
+00:42:50.730 --> 00:42:53.580
+<v Speaker 0>got two different bases for the subspace.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:54.540 --> 00:42:56.140
+<v Speaker 0>What's their relation?
+
+NOTE CONF {"raw":[100,77,100]}
+
+00:42:56.500 --> 00:42:56.920
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[96]}
+
+00:42:57.460 --> 00:42:58.840
+<v Speaker 0>Do they have the same basis?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:58.870 --> 00:43:00.340
+<v Speaker 0>Do you have elements in common?
+
+NOTE CONF {"raw":[56,56,100,100,100,100]}
+
+00:43:01.030 --> 00:43:03.910
+<v Speaker 0>Uh, can we say that every element of one base
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:43:03.910 --> 00:43:05.830
+<v Speaker 0>is a linear combination of the others?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:06.190 --> 00:43:07.870
+<v Speaker 0>Do they have the same size?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:07.900 --> 00:43:11.320
+<v Speaker 0>That was something that really bugged us about the sort
+
+NOTE CONF {"raw":[72,100,100,100,100,100,100,100,93,100]}
+
+00:43:11.320 --> 00:43:14.830
+<v Speaker 0>of just general generating sets in general spanning sets.
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100]}
+
+00:43:14.860 --> 00:43:17.680
+<v Speaker 0>Do they have at least the same size, or do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:17.680 --> 00:43:19.780
+<v Speaker 0>we not get any of these here?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:21.460 --> 00:43:26.560
+<v Speaker 0>Um, again, um, I just like you to think about
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:43:26.560 --> 00:43:28.990
+<v Speaker 0>that for a second.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:30.490 --> 00:43:31.660
+<v Speaker 0>A minute indeed.
+
+NOTE CONF {"raw":[100,100,91]}
+
+00:43:31.690 --> 00:43:32.140
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[91]}
+
+00:43:32.140 --> 00:43:34.930
+<v Speaker 0>Once I can set this up.
+
+NOTE CONF {"raw":[99,100,100,100,100,100]}
+
+00:43:36.910 --> 00:43:40.630
+<v Speaker 1>I've choices that time.
+
+NOTE CONF {"raw":[27,84,28,99]}
+
+00:43:40.630 --> 00:43:42.100
+<v Speaker 1>Um, no multiple answers.
+
+NOTE CONF {"raw":[85,99,100,100]}
+
+00:43:42.100 --> 00:43:42.880
+<v Speaker 0>Display.
+
+NOTE CONF {"raw":[100]}
+
+00:43:42.910 --> 00:43:43.450
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[95]}
+
+00:43:44.890 --> 00:43:45.670
+<v Speaker 0>It should be life.
+
+NOTE CONF {"raw":[52,100,100,73]}
+
+00:44:07.760 --> 00:44:09.080
+<v Speaker 0>Oh, there you are.
+
+NOTE CONF {"raw":[99,79,100,100]}
+
+00:44:09.080 --> 00:44:09.410
+<v Speaker 0>Allowed.
+
+NOTE CONF {"raw":[100]}
+
+00:44:09.410 --> 00:44:10.130
+<v Speaker 0>You should be allowed.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:10.130 --> 00:44:10.910
+<v Speaker 0>Multiple answers.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:10.940 --> 00:44:15.410
+<v Speaker 0>Sorry if I've set it up incorrectly.
+
+NOTE CONF {"raw":[100,92,50,100,100,100,100]}
+
+00:44:15.770 --> 00:44:17.630
+<v Speaker 0>There are multiple correct answers.
+
+NOTE CONF {"raw":[87,100,100,100,100]}
+
+00:44:18.500 --> 00:44:21.080
+<v Speaker 0>Um, but we'll just see what happens.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:46.490 --> 00:44:47.270
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:44:47.270 --> 00:44:50.810
+<v Speaker 0>So not entirely clear here, but there's a sort of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:50.810 --> 00:44:51.200
+<v Speaker 0>three.
+
+NOTE CONF {"raw":[100]}
+
+00:44:51.200 --> 00:44:53.950
+<v Speaker 0>And four is where most people put their money.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:54.310 --> 00:44:55.420
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:55.420 --> 00:44:57.850
+<v Speaker 0>I just want to convince you quickly that one and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:57.850 --> 00:44:59.980
+<v Speaker 0>two isn't correct.
+
+NOTE CONF {"raw":[100,79,94]}
+
+00:45:01.030 --> 00:45:01.360
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:45:05.440 --> 00:45:06.820
+<v Speaker 0>Once I've got this right.
+
+NOTE CONF {"raw":[100,81,100,100,100]}
+
+00:45:06.820 --> 00:45:07.150
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:45:07.150 --> 00:45:08.410
+<v Speaker 0>So I could have.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:08.410 --> 00:45:13.000
+<v Speaker 0>I could have listed here one zero and zero one
+
+NOTE CONF {"raw":[100,100,100,54,100,100,100,100,100,100]}
+
+00:45:13.300 --> 00:45:15.550
+<v Speaker 0>and assume you believe me that that is a basis
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:45:15.550 --> 00:45:18.820
+<v Speaker 0>of R2 linear, independent, and it spans.
+
+NOTE CONF {"raw":[100,100,67,93,100,58,58]}
+
+00:45:19.150 --> 00:45:22.900
+<v Speaker 0>But on the other hand, I also have one one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:22.900 --> 00:45:25.180
+<v Speaker 0>and one minus one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:25.870 --> 00:45:28.900
+<v Speaker 0>Uh, we seen yesterday that this spans R2.
+
+NOTE CONF {"raw":[68,93,100,100,100,100,100,97]}
+
+00:45:29.200 --> 00:45:31.180
+<v Speaker 0>Um, and those two vectors are linearly dependent.
+
+NOTE CONF {"raw":[58,100,100,100,100,100,91,85]}
+
+00:45:31.180 --> 00:45:33.250
+<v Speaker 0>So you've got two different bases for our.
+
+NOTE CONF {"raw":[100,82,100,100,100,100,100,98]}
+
+00:45:33.250 --> 00:45:33.760
+<v Speaker 0>True.
+
+NOTE CONF {"raw":[92]}
+
+00:45:34.210 --> 00:45:36.190
+<v Speaker 0>They don't have any elements in common.
+
+NOTE CONF {"raw":[74,96,100,100,100,100,100]}
+
+00:45:36.730 --> 00:45:41.620
+<v Speaker 0>Um, so one A and B, their answers are out.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,86,100,100,100]}
+
+00:45:41.920 --> 00:45:44.260
+<v Speaker 0>Um, every element is a linear combination of the other.
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100,100,100,100]}
+
+00:45:44.260 --> 00:45:45.820
+<v Speaker 0>And indeed that is general.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:46.270 --> 00:45:48.700
+<v Speaker 0>But I also have that B1 and B2 are the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:48.700 --> 00:45:49.780
+<v Speaker 0>same size.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:50.290 --> 00:45:54.860
+<v Speaker 0>And this might be a little bit not entirely obvious
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:54.860 --> 00:45:56.510
+<v Speaker 0>that that should be the case.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:57.080 --> 00:46:00.050
+<v Speaker 0>And, um, so I just want to spend a little
+
+NOTE CONF {"raw":[100,82,100,100,100,100,100,100,100,100]}
+
+00:46:00.050 --> 00:46:03.230
+<v Speaker 0>bit of an argument of why this whole.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,57]}
+
+00:46:03.230 --> 00:46:05.420
+<v Speaker 0>So we had this thing, can we find three linearly
+
+NOTE CONF {"raw":[100,100,86,100,100,100,100,100,100,100]}
+
+00:46:05.420 --> 00:46:06.950
+<v Speaker 0>independent vectors in R2.
+
+NOTE CONF {"raw":[83,100,100,100]}
+
+00:46:07.670 --> 00:46:09.290
+<v Speaker 0>And we said, no, we can't.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:46:09.950 --> 00:46:13.460
+<v Speaker 0>And indeed you can generalise this by saying, assuming I've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:13.460 --> 00:46:17.870
+<v Speaker 0>got any subspace and the subspace can be spent by
+
+NOTE CONF {"raw":[100,100,100,100,80,100,100,100,100,100]}
+
+00:46:17.870 --> 00:46:18.860
+<v Speaker 0>m vectors.
+
+NOTE CONF {"raw":[91,100]}
+
+00:46:19.760 --> 00:46:22.670
+<v Speaker 0>So like R2 can be spent by two vectors, I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:22.670 --> 00:46:25.850
+<v Speaker 0>know that, um, and on the other hand I know
+
+NOTE CONF {"raw":[100,100,74,100,100,100,100,100,100,100]}
+
+00:46:25.850 --> 00:46:29.000
+<v Speaker 0>that I've got k linearly independent vectors in there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:30.890 --> 00:46:34.820
+<v Speaker 0>Um, so I was wondering whether I can find three,
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:46:34.820 --> 00:46:38.150
+<v Speaker 0>but this says then generally the number of linearly independent
+
+NOTE CONF {"raw":[100,100,100,77,100,100,100,100,100,100]}
+
+00:46:38.150 --> 00:46:40.910
+<v Speaker 0>vectors has to be less than or equal to the
+
+NOTE CONF {"raw":[100,91,91,100,100,100,100,100,100,100]}
+
+00:46:40.910 --> 00:46:42.350
+<v Speaker 0>number of spanning vectors.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:42.920 --> 00:46:45.080
+<v Speaker 0>So this is pretty much the generalisation of what I
+
+NOTE CONF {"raw":[100,98,98,100,100,100,100,100,100,100]}
+
+00:46:45.080 --> 00:46:45.860
+<v Speaker 0>had up here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:46:47.330 --> 00:46:49.620
+<v Speaker 0>Um, so if you do believe me that if you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:49.620 --> 00:46:52.350
+<v Speaker 0>do believe that and I say, let I have a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:52.350 --> 00:46:54.660
+<v Speaker 0>subspace here and I've got two bases.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:54.810 --> 00:46:56.370
+<v Speaker 0>Different number of elements.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:56.640 --> 00:46:57.060
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[75]}
+
+00:46:57.900 --> 00:47:01.770
+<v Speaker 0>Now I can say that you here my subspace is
+
+NOTE CONF {"raw":[98,100,95,100,100,100,62,100,100,100]}
+
+00:47:01.770 --> 00:47:03.930
+<v Speaker 0>spanned by these first vectors here.
+
+NOTE CONF {"raw":[100,100,100,100,100,99]}
+
+00:47:03.930 --> 00:47:04.200
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[97]}
+
+00:47:04.200 --> 00:47:06.390
+<v Speaker 0>Because the base is spans.
+
+NOTE CONF {"raw":[100,63,98,98,100]}
+
+00:47:07.320 --> 00:47:09.840
+<v Speaker 0>On the other hand the bases must be linearly independent.
+
+NOTE CONF {"raw":[100,100,100,100,96,57,100,100,89,100]}
+
+00:47:09.840 --> 00:47:12.450
+<v Speaker 0>So the second basis here those vectors must be linearly
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,100]}
+
+00:47:12.450 --> 00:47:13.350
+<v Speaker 0>independent.
+
+NOTE CONF {"raw":[100]}
+
+00:47:14.430 --> 00:47:18.810
+<v Speaker 0>So in other words k here the number of elements
+
+NOTE CONF {"raw":[100,100,100,100,94,100,100,100,100,100]}
+
+00:47:18.810 --> 00:47:20.610
+<v Speaker 0>here has to be less than or equal to m.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,97]}
+
+00:47:21.870 --> 00:47:23.160
+<v Speaker 0>But I could have done the whole thing the other
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:23.160 --> 00:47:23.850
+<v Speaker 0>way around.
+
+NOTE CONF {"raw":[100,52]}
+
+00:47:24.750 --> 00:47:27.990
+<v Speaker 0>Yeah I could have said, uh, the second set of
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100,100,100]}
+
+00:47:27.990 --> 00:47:32.760
+<v Speaker 0>vectors here is a spans the set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:33.150 --> 00:47:34.800
+<v Speaker 0>And this set here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:34.800 --> 00:47:35.460
+<v Speaker 0>No sorry.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:35.460 --> 00:47:37.770
+<v Speaker 0>The second set, this here spans the set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:37.920 --> 00:47:40.290
+<v Speaker 0>And that set is linearly independent.
+
+NOTE CONF {"raw":[100,100,100,100,92,89]}
+
+00:47:40.290 --> 00:47:42.780
+<v Speaker 0>So also must have m less than or equal to
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100,100]}
+
+00:47:42.780 --> 00:47:43.140
+<v Speaker 0>k.
+
+NOTE CONF {"raw":[100]}
+
+00:47:44.040 --> 00:47:46.980
+<v Speaker 0>So in other words all bases that I might have
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100,100]}
+
+00:47:46.980 --> 00:47:49.060
+<v Speaker 0>if I've got two different bases for subspace.
+
+NOTE CONF {"raw":[63,82,100,100,100,100,100,100]}
+
+00:47:49.060 --> 00:47:51.160
+<v Speaker 0>They must have the same number of elements.
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100]}
+
+00:47:52.390 --> 00:47:56.200
+<v Speaker 0>So that might be a little bit surprising, because it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:56.200 --> 00:47:59.110
+<v Speaker 0>says that we say that the number of elements of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:59.110 --> 00:48:01.840
+<v Speaker 0>a basis is an invariant of the subspace.
+
+NOTE CONF {"raw":[100,87,100,100,100,100,100,100]}
+
+00:48:03.040 --> 00:48:04.960
+<v Speaker 0>So it might be a funny name, but it means
+
+NOTE CONF {"raw":[85,87,100,100,100,100,100,100,100,100]}
+
+00:48:04.960 --> 00:48:07.150
+<v Speaker 0>that actually the number of elements of a basis is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:07.150 --> 00:48:09.520
+<v Speaker 0>the property of the subspace.
+
+NOTE CONF {"raw":[85,100,100,100,100]}
+
+00:48:09.970 --> 00:48:13.000
+<v Speaker 0>It's not actually property of the basis itself.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:13.300 --> 00:48:16.180
+<v Speaker 0>Whatever you're choosing, you're always going to get the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:16.180 --> 00:48:18.520
+<v Speaker 0>number of elements in a particular subspace.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:19.570 --> 00:48:22.090
+<v Speaker 0>And because this is invariant, it doesn't matter how we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:22.090 --> 00:48:22.960
+<v Speaker 0>choose the basis.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:22.960 --> 00:48:24.190
+<v Speaker 0>We give this a name.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:24.190 --> 00:48:26.650
+<v Speaker 0>And that indeed is what is called the dimension of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:26.650 --> 00:48:27.550
+<v Speaker 0>a subspace.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:29.020 --> 00:48:33.790
+<v Speaker 0>So it's the number of elements in each basis, or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:33.790 --> 00:48:37.330
+<v Speaker 0>the maximum number of linearly independent vectors you can find
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:37.330 --> 00:48:38.380
+<v Speaker 0>in that space.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:38.920 --> 00:48:41.290
+<v Speaker 0>So dimension is one of these words that I think
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:48:41.290 --> 00:48:42.100
+<v Speaker 0>you've used a lot.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:42.100 --> 00:48:43.870
+<v Speaker 0>And you sort of think what it means.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:44.440 --> 00:48:46.390
+<v Speaker 0>This here is what it means.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:48:46.640 --> 00:48:46.910
+<v Speaker 0>um.
+
+NOTE CONF {"raw":[45]}
+
+00:48:46.910 --> 00:48:48.110
+<v Speaker 0>Mathematically.
+
+NOTE CONF {"raw":[100]}
+
+00:48:48.770 --> 00:48:49.010
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[74]}
+
+00:48:49.550 --> 00:48:51.710
+<v Speaker 0>So before I stop, I just want to have two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,82,100,100,100]}
+
+00:48:51.710 --> 00:48:54.440
+<v Speaker 0>more remarks on this one.
+
+NOTE CONF {"raw":[100,100,100,100,89]}
+
+00:48:54.470 --> 00:48:57.020
+<v Speaker 0>It means that we now have a classification of all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:57.020 --> 00:48:59.510
+<v Speaker 0>the subspaces of R3.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:00.770 --> 00:49:04.820
+<v Speaker 0>Um, namely, we know that R3 has got has got
+
+NOTE CONF {"raw":[42,100,100,100,100,100,100,100,100,100]}
+
+00:49:04.820 --> 00:49:05.810
+<v Speaker 0>three dimensions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:05.810 --> 00:49:07.640
+<v Speaker 0>A basis has got three elements.
+
+NOTE CONF {"raw":[63,100,100,98,100,100]}
+
+00:49:07.640 --> 00:49:12.290
+<v Speaker 0>So all the subspaces must have dimension two, 1 or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,67,52,100,100]}
+
+00:49:12.290 --> 00:49:15.560
+<v Speaker 0>0, or a subspace of.
+
+NOTE CONF {"raw":[100,39,80,100,100]}
+
+00:49:15.560 --> 00:49:19.790
+<v Speaker 0>Mentioned two is any plane through the origin of dimension
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:19.790 --> 00:49:22.400
+<v Speaker 0>one is any line through the origin, and then dimension
+
+NOTE CONF {"raw":[98,96,100,100,100,100,100,100,100,100]}
+
+00:49:22.400 --> 00:49:26.570
+<v Speaker 0>zero would just be the zero vector, nothing else.
+
+NOTE CONF {"raw":[100,99,99,100,100,100,100,100,100]}
+
+00:49:26.720 --> 00:49:30.290
+<v Speaker 0>So fundamentally those are the only subspaces of R2.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:49:31.070 --> 00:49:34.610
+<v Speaker 0>Now the other thing I just want to point out
+
+NOTE CONF {"raw":[92,100,100,100,100,100,96,100,100,100]}
+
+00:49:34.610 --> 00:49:36.710
+<v Speaker 0>is I'm going to go right back to the slide
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,82,73]}
+
+00:49:36.710 --> 00:49:39.020
+<v Speaker 0>that I heart at the beginning or in the middle,
+
+NOTE CONF {"raw":[100,99,91,100,100,100,97,100,100,100]}
+
+00:49:39.020 --> 00:49:41.450
+<v Speaker 0>that I thought there was a reason why I have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:41.450 --> 00:49:41.870
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:49:42.740 --> 00:49:44.720
+<v Speaker 0>Uh, so this one here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:45.820 --> 00:49:50.800
+<v Speaker 0>Um, solution space of a homogeneous system of equations.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:49:51.610 --> 00:49:55.060
+<v Speaker 0>We have seen yesterday that the solution space of this
+
+NOTE CONF {"raw":[69,42,100,100,100,100,100,100,100,100]}
+
+00:49:55.060 --> 00:49:56.170
+<v Speaker 0>is a subspace.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:58.420 --> 00:50:01.480
+<v Speaker 0>And the we say that there are for this there
+
+NOTE CONF {"raw":[100,100,100,100,96,78,60,100,100,97]}
+
+00:50:01.480 --> 00:50:04.000
+<v Speaker 0>n minus r basic solutions.
+
+NOTE CONF {"raw":[100,100,39,100,100]}
+
+00:50:04.960 --> 00:50:08.260
+<v Speaker 0>And we now know why we call this basic solutions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:08.260 --> 00:50:12.640
+<v Speaker 0>Because these solutions are indeed a basis for the subspace
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:12.640 --> 00:50:14.350
+<v Speaker 0>that is the solution set here.
+
+NOTE CONF {"raw":[100,100,82,100,100,100]}
+
+00:50:16.300 --> 00:50:19.090
+<v Speaker 0>So just to say that this is the reason why
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:19.090 --> 00:50:21.460
+<v Speaker 0>this is called these are called basic solutions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:50:22.090 --> 00:50:22.300
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[67]}
+
+00:50:23.590 --> 00:50:27.910
+<v Speaker 0>Right okay I think that is it for today.
+
+NOTE CONF {"raw":[96,96,100,100,100,100,100,100,100]}
+
+00:50:28.870 --> 00:50:31.270
+<v Speaker 0>And it will be it for me next week is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:31.270 --> 00:50:32.500
+<v Speaker 0>Eric I believe.
+
+NOTE CONF {"raw":[66,100,100]}
+
+00:50:33.130 --> 00:50:36.070
+<v Speaker 0>And you will see me back again here in week
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:36.070 --> 00:50:38.230
+<v Speaker 0>11 for a revision clause.
+
+NOTE CONF {"raw":[100,100,95,100,97]}
+
+00:50:38.860 --> 00:50:40.570
+<v Speaker 0>Yeah, right.
+
+NOTE CONF {"raw":[97,98]}
+
+00:50:40.870 --> 00:50:41.530
+<v Speaker 0>See you then.
+
+NOTE CONF {"raw":[100,100,100]}

@@ -1,0 +1,4296 @@
+WEBVTT
+
+00:00:02.310 --> 00:00:03.090
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:03.420 --> 00:00:05.310
+<v Speaker 0>Welcome to today's lecture.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:05.880 --> 00:00:08.370
+<v Speaker 0>Uh, today we don't have attendance.
+
+NOTE CONF {"raw":[88,100,100,100,100,100]}
+
+00:00:08.370 --> 00:00:12.810
+<v Speaker 0>So this, uh, this QR code should take you straight
+
+NOTE CONF {"raw":[100,100,64,100,100,100,100,100,100,100]}
+
+00:00:12.810 --> 00:00:18.600
+<v Speaker 0>to the, um, exercise book club, and, uh, just let
+
+NOTE CONF {"raw":[100,100,85,100,100,100,100,100,100,100]}
+
+00:00:18.600 --> 00:00:20.430
+<v Speaker 0>me check.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:20.580 --> 00:00:21.150
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:00:21.150 --> 00:00:24.990
+<v Speaker 0>The projector has shifted a bit, but hopefully the slides
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:24.990 --> 00:00:28.620
+<v Speaker 0>are still visible there, so no harm in having it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:28.620 --> 00:00:29.100
+<v Speaker 0>there.
+
+NOTE CONF {"raw":[100]}
+
+00:00:29.280 --> 00:00:30.090
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:00:30.780 --> 00:00:31.770
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[98]}
+
+00:00:31.920 --> 00:00:35.220
+<v Speaker 0>Um, start logging in into the book club, please.
+
+NOTE CONF {"raw":[100,100,77,73,100,100,100,100,100]}
+
+00:00:35.490 --> 00:00:41.310
+<v Speaker 0>But before we go there, uh, we need to finish
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100,100]}
+
+00:00:41.310 --> 00:00:44.100
+<v Speaker 0>what we were doing yesterday because we had two statements
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:44.100 --> 00:00:46.770
+<v Speaker 0>that we left, uh, unfinished.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:00:46.770 --> 00:00:49.290
+<v Speaker 0>So we're going to go through that, and then we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:49.290 --> 00:00:54.120
+<v Speaker 0>will start talking about eigenvalues and eigenspaces and eigenvalues, multiplicity
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:54.120 --> 00:00:55.920
+<v Speaker 0>and how they play into each other.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:00:56.130 --> 00:00:59.250
+<v Speaker 0>So, uh, you don't have the book club questions Students
+
+NOTE CONF {"raw":[100,85,100,100,100,100,98,98,100,78]}
+
+00:00:59.250 --> 00:00:59.910
+<v Speaker 0>today.
+
+NOTE CONF {"raw":[100]}
+
+00:00:59.910 --> 00:01:00.510
+<v Speaker 0>You've.
+
+NOTE CONF {"raw":[98]}
+
+00:01:00.630 --> 00:01:03.030
+<v Speaker 0>You've had your chance to have a look at them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:03.030 --> 00:01:03.840
+<v Speaker 0>yesterday.
+
+NOTE CONF {"raw":[100]}
+
+00:01:04.320 --> 00:01:07.110
+<v Speaker 0>Um, but let's pick it up where we left.
+
+NOTE CONF {"raw":[26,100,100,100,100,100,100,100,100]}
+
+00:01:07.110 --> 00:01:10.560
+<v Speaker 0>And I realised that I need also statement three.
+
+NOTE CONF {"raw":[100,100,88,100,100,100,100,100,100]}
+
+00:01:10.560 --> 00:01:14.250
+<v Speaker 0>So statement three in the last, uh, in the last
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:01:14.250 --> 00:01:17.250
+<v Speaker 0>exercise yesterday was the last thing we saw together.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:01:17.250 --> 00:01:20.250
+<v Speaker 0>And it asks to prove that if A is diagonalisable,
+
+NOTE CONF {"raw":[100,100,50,90,90,100,100,100,100,100]}
+
+00:01:20.250 --> 00:01:22.620
+<v Speaker 0>then it's similar to its transposed.
+
+NOTE CONF {"raw":[100,91,100,100,73,100]}
+
+00:01:22.800 --> 00:01:27.270
+<v Speaker 0>And yesterday we saw that this was in fact true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:27.270 --> 00:01:29.850
+<v Speaker 0>And we saw how to get it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:29.850 --> 00:01:34.290
+<v Speaker 0>And the idea was, okay, let's start with the definition
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:34.290 --> 00:01:38.490
+<v Speaker 0>of diagonal diagonalise ability, which essentially means that the matrix
+
+NOTE CONF {"raw":[100,93,81,81,100,100,100,100,100,100]}
+
+00:01:38.490 --> 00:01:43.170
+<v Speaker 0>is similar to the diagonalised version of it, the matrix
+
+NOTE CONF {"raw":[100,100,100,100,89,100,100,100,100,100]}
+
+00:01:43.170 --> 00:01:45.810
+<v Speaker 0>that is diagonal and has the eigenvector, the eigenvalues on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,58,100,100,100]}
+
+00:01:45.810 --> 00:01:46.440
+<v Speaker 0>the diagonal.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:47.940 --> 00:01:52.230
+<v Speaker 0>And then we can invert that the relation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:52.950 --> 00:01:57.180
+<v Speaker 0>And if we calculate the the diagonal matrix of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:57.180 --> 00:02:00.760
+<v Speaker 0>transpose, we find that it can be written this way.
+
+NOTE CONF {"raw":[100,100,100,92,100,100,100,100,100,100]}
+
+00:02:01.210 --> 00:02:05.560
+<v Speaker 0>P minus one t dt, which in which p and
+
+NOTE CONF {"raw":[100,100,100,100,50,100,100,100,100,100]}
+
+00:02:05.560 --> 00:02:09.580
+<v Speaker 0>p minus one are the exact matrices that appear for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:09.580 --> 00:02:13.270
+<v Speaker 0>the diagonalization of A, and then we notice that d
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,63]}
+
+00:02:13.270 --> 00:02:16.960
+<v Speaker 0>t is equal to d because transposing matrices leave the
+
+NOTE CONF {"raw":[63,100,100,100,100,100,100,100,100,100]}
+
+00:02:16.960 --> 00:02:18.970
+<v Speaker 0>diagonal unchanged.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:19.270 --> 00:02:24.910
+<v Speaker 0>And so from here we can then substitute this expression
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:24.910 --> 00:02:27.160
+<v Speaker 0>here and reorganising, we see that.
+
+NOTE CONF {"raw":[100,100,97,100,100,100]}
+
+00:02:27.160 --> 00:02:31.240
+<v Speaker 0>In fact we can find a new invertible matrix p
+
+NOTE CONF {"raw":[100,100,100,100,100,91,81,100,100,89]}
+
+00:02:31.240 --> 00:02:38.560
+<v Speaker 0>p transposed, for which the similarity definition between 80 and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:38.560 --> 00:02:39.550
+<v Speaker 0>A holds.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:39.550 --> 00:02:45.070
+<v Speaker 0>And we say okay, p t is invertible because if
+
+NOTE CONF {"raw":[100,100,100,100,86,86,90,100,100,100]}
+
+00:02:45.070 --> 00:02:48.220
+<v Speaker 0>P is invertible, then its transpose is also invertible, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:48.220 --> 00:02:53.350
+<v Speaker 0>the product of two invertible matrices is itself and is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,56,100]}
+
+00:02:53.350 --> 00:02:55.000
+<v Speaker 0>itself invertible.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:55.090 --> 00:02:59.590
+<v Speaker 0>Now, why do I Uh, redo this, because the next
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:59.590 --> 00:03:02.530
+<v Speaker 0>statement that we saw, well, that we didn't see yesterday,
+
+NOTE CONF {"raw":[100,100,99,100,100,98,100,100,100,100]}
+
+00:03:02.530 --> 00:03:06.370
+<v Speaker 0>rather was that if A is Diagonalisable and B similar
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,86,100]}
+
+00:03:06.370 --> 00:03:10.360
+<v Speaker 0>to A, then B has non-zero eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,100,72,100]}
+
+00:03:10.510 --> 00:03:14.140
+<v Speaker 0>And the reason why I read it, number three is
+
+NOTE CONF {"raw":[100,100,100,100,100,92,92,100,100,100]}
+
+00:03:14.140 --> 00:03:15.550
+<v Speaker 0>that this is also true.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:15.550 --> 00:03:17.710
+<v Speaker 0>And the proof is essentially exactly the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:03:17.800 --> 00:03:19.360
+<v Speaker 0>We use different matrices.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:19.360 --> 00:03:20.890
+<v Speaker 0>We use different properties.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:20.890 --> 00:03:24.550
+<v Speaker 0>But if you write it down, um, it looks and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,79,100,100,100]}
+
+00:03:24.550 --> 00:03:28.840
+<v Speaker 0>feels exactly like, uh, like like the proof before we
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100,100]}
+
+00:03:28.840 --> 00:03:36.550
+<v Speaker 0>start by, uh, the Diagonalisable definition, uh, a similar to
+
+NOTE CONF {"raw":[100,100,100,100,92,100,97,100,100,100]}
+
+00:03:36.550 --> 00:03:37.630
+<v Speaker 0>it's diagonal form.
+
+NOTE CONF {"raw":[52,100,100]}
+
+00:03:37.630 --> 00:03:41.740
+<v Speaker 0>D we invert that and then instead of of uh,
+
+NOTE CONF {"raw":[87,100,100,100,100,100,100,98,100,54]}
+
+00:03:41.740 --> 00:03:48.400
+<v Speaker 0>plugging in this D into some, uh, into the, uh,
+
+NOTE CONF {"raw":[100,100,100,96,100,100,47,100,100,75]}
+
+00:03:48.400 --> 00:03:54.580
+<v Speaker 0>diagonalisable property for a transpose, we use, uh, the similarity,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,52,100,100]}
+
+00:03:54.940 --> 00:03:56.600
+<v Speaker 0>uh, definition instead.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:56.990 --> 00:04:00.950
+<v Speaker 0>And then we can, uh, uh.
+
+NOTE CONF {"raw":[100,100,100,100,97,71]}
+
+00:04:01.220 --> 00:04:03.650
+<v Speaker 0>We can do basically the same substitution.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:03.650 --> 00:04:07.730
+<v Speaker 0>And if we work, uh, again with the same way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:07.730 --> 00:04:11.180
+<v Speaker 0>with the associativity and remembering, then taking the inverse of
+
+NOTE CONF {"raw":[100,66,100,100,100,100,100,100,100,100]}
+
+00:04:11.180 --> 00:04:14.960
+<v Speaker 0>a product is like taking the product of the inverses
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:14.960 --> 00:04:16.370
+<v Speaker 0>in the opposite order.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:16.730 --> 00:04:23.960
+<v Speaker 0>We find something, um, that, uh, um, that show us
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,56,98]}
+
+00:04:23.960 --> 00:04:26.300
+<v Speaker 0>that both A and B reduces to the same diagonal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:26.300 --> 00:04:27.080
+<v Speaker 0>matrix D.
+
+NOTE CONF {"raw":[100,99]}
+
+00:04:27.350 --> 00:04:31.130
+<v Speaker 0>And so because A had non-zero eigenvalue to begin with
+
+NOTE CONF {"raw":[100,100,100,100,99,80,100,100,100,100]}
+
+00:04:31.130 --> 00:04:34.670
+<v Speaker 0>for hypothesis, then also B must follow.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:35.510 --> 00:04:36.230
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:04:36.380 --> 00:04:38.810
+<v Speaker 0>Uh, this is the explicit proof.
+
+NOTE CONF {"raw":[76,100,100,100,100,100]}
+
+00:04:39.500 --> 00:04:44.000
+<v Speaker 0>Um, we can also take a shortcut if we remember
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:44.000 --> 00:04:46.490
+<v Speaker 0>theorem I think it was 5.5.1.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:46.490 --> 00:04:48.170
+<v Speaker 0>I'm going by memory, but I think it was that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,92,98,97]}
+
+00:04:48.320 --> 00:04:52.670
+<v Speaker 0>which says that, uh, if A similar to B, then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:52.670 --> 00:04:54.830
+<v Speaker 0>they have the same eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:54.830 --> 00:04:58.850
+<v Speaker 0>And if it is diagonalisable, it has non-zero eigenvalues, and
+
+NOTE CONF {"raw":[100,95,58,100,100,96,100,62,100,100]}
+
+00:04:58.850 --> 00:05:01.430
+<v Speaker 0>so b must have the same.
+
+NOTE CONF {"raw":[100,94,100,100,100,100]}
+
+00:05:01.610 --> 00:05:06.140
+<v Speaker 0>And this is essentially how we build the proof for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:06.140 --> 00:05:06.740
+<v Speaker 0>that theorem.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:06.740 --> 00:05:10.670
+<v Speaker 0>So going back to first principles rather than using one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:10.670 --> 00:05:14.840
+<v Speaker 0>of the results in your in your bit okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,46,100]}
+
+00:05:16.010 --> 00:05:18.140
+<v Speaker 0>And then the last statement which was the only one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:18.140 --> 00:05:21.590
+<v Speaker 0>that I marked read as the most difficult one, was
+
+NOTE CONF {"raw":[100,100,100,71,100,100,100,100,100,100]}
+
+00:05:21.590 --> 00:05:25.820
+<v Speaker 0>that if a similar to B, then all powers of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:05:25.820 --> 00:05:28.850
+<v Speaker 0>A are similar to the same powers of B, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:28.850 --> 00:05:33.650
+<v Speaker 0>that is true for all integers positive or negative or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:33.650 --> 00:05:34.070
+<v Speaker 0>zero.
+
+NOTE CONF {"raw":[100]}
+
+00:05:34.340 --> 00:05:37.910
+<v Speaker 0>And the reason why I marked this red is not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,85,100,100]}
+
+00:05:37.910 --> 00:05:39.290
+<v Speaker 0>because it's a.
+
+NOTE CONF {"raw":[100,100,52]}
+
+00:05:39.920 --> 00:05:42.350
+<v Speaker 0>The proof itself is particularly difficult.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:42.350 --> 00:05:44.480
+<v Speaker 0>It's because of the first step.
+
+NOTE CONF {"raw":[98,100,100,100,100,100]}
+
+00:05:44.480 --> 00:05:47.450
+<v Speaker 0>You need an intuition that you can use the divide
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:05:47.450 --> 00:05:50.990
+<v Speaker 0>and conquer method that we that we talked about last
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:50.990 --> 00:05:55.440
+<v Speaker 0>week and here, how would you split the the big
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:55.590 --> 00:05:59.880
+<v Speaker 0>heart proof into smaller, simpler cases?
+
+NOTE CONF {"raw":[50,100,100,100,100,100]}
+
+00:06:03.510 --> 00:06:04.140
+<v Speaker 0>Any.
+
+NOTE CONF {"raw":[100]}
+
+00:06:04.140 --> 00:06:07.710
+<v Speaker 0>Anyone has any idea about how I can split this
+
+NOTE CONF {"raw":[100,100,100,100,56,100,100,100,100,100]}
+
+00:06:07.710 --> 00:06:09.690
+<v Speaker 0>into simpler things to check?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:09.690 --> 00:06:09.960
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[78]}
+
+00:06:12.210 --> 00:06:13.440
+<v Speaker 0>Precisely, yes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:13.440 --> 00:06:15.270
+<v Speaker 0>That is the natural thing.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:15.420 --> 00:06:18.600
+<v Speaker 0>So it turns out that this statement yesterday was true.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:06:18.870 --> 00:06:22.260
+<v Speaker 0>And the key idea here is that we can split
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:06:22.260 --> 00:06:25.770
+<v Speaker 0>an equal zero and positive and negative.
+
+NOTE CONF {"raw":[56,99,100,100,100,100,100]}
+
+00:06:25.770 --> 00:06:30.420
+<v Speaker 0>And we it's good practice to start with the easiest
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:30.420 --> 00:06:31.920
+<v Speaker 0>one first.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:31.920 --> 00:06:34.800
+<v Speaker 0>If n is equal zero then both matrices are the
+
+NOTE CONF {"raw":[100,100,100,81,100,100,100,100,100,100]}
+
+00:06:34.800 --> 00:06:35.610
+<v Speaker 0>identity.
+
+NOTE CONF {"raw":[100]}
+
+00:06:35.610 --> 00:06:38.580
+<v Speaker 0>Because a matrix raised to the zero power is the
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100,100,100]}
+
+00:06:38.580 --> 00:06:39.270
+<v Speaker 0>identity.
+
+NOTE CONF {"raw":[100]}
+
+00:06:39.540 --> 00:06:43.020
+<v Speaker 0>And and so it's done.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:43.020 --> 00:06:47.190
+<v Speaker 0>Then for the case uh n greater than zero.
+
+NOTE CONF {"raw":[100,100,100,100,51,100,100,100,100]}
+
+00:06:47.310 --> 00:06:51.810
+<v Speaker 0>There's a key observation that we really need to prove.
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100,100]}
+
+00:06:52.140 --> 00:06:52.530
+<v Speaker 0>I'm sorry.
+
+NOTE CONF {"raw":[65,100]}
+
+00:06:52.530 --> 00:06:54.900
+<v Speaker 0>This is a squared similar to b squared.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,73,100]}
+
+00:06:55.560 --> 00:06:55.800
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[67]}
+
+00:06:55.800 --> 00:06:56.880
+<v Speaker 0>And why is that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:56.910 --> 00:07:01.140
+<v Speaker 0>Well because if a similar to B then we can
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:07:01.140 --> 00:07:02.370
+<v Speaker 0>write B this way.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:02.370 --> 00:07:05.280
+<v Speaker 0>And when we iterate b we write b squared as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:05.310 --> 00:07:06.210
+<v Speaker 0>b times p.
+
+NOTE CONF {"raw":[100,100,98]}
+
+00:07:06.390 --> 00:07:09.060
+<v Speaker 0>This becomes the product of this two.
+
+NOTE CONF {"raw":[100,100,100,100,100,79,100]}
+
+00:07:09.060 --> 00:07:13.740
+<v Speaker 0>And so by by regrouping p minus one p go
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:13.740 --> 00:07:14.340
+<v Speaker 0>away.
+
+NOTE CONF {"raw":[100]}
+
+00:07:14.340 --> 00:07:18.600
+<v Speaker 0>And b square is similar to a squared through the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,100,100]}
+
+00:07:18.600 --> 00:07:23.460
+<v Speaker 0>same matrix P that allows you to move from A
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:23.490 --> 00:07:24.780
+<v Speaker 0>to B to begin with.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:24.780 --> 00:07:27.840
+<v Speaker 0>And so this shows that of course a squared is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:27.840 --> 00:07:29.070
+<v Speaker 0>similar to b squared.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:29.280 --> 00:07:34.200
+<v Speaker 0>And uh, if we can just redo everything with more
+
+NOTE CONF {"raw":[82,51,100,100,100,100,100,100,100,100]}
+
+00:07:34.680 --> 00:07:37.080
+<v Speaker 0>uh with more multiplication of the same matrix, we will
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:07:37.080 --> 00:07:40.860
+<v Speaker 0>get uh p minus one p in between every copy
+
+NOTE CONF {"raw":[100,56,100,100,100,100,100,100,100,100]}
+
+00:07:40.860 --> 00:07:43.410
+<v Speaker 0>of A on the right hand side.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:43.830 --> 00:07:49.920
+<v Speaker 0>And so um, that shows it for all positive integers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:50.100 --> 00:07:52.060
+<v Speaker 0>And what about negative integers?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:52.090 --> 00:07:54.160
+<v Speaker 0>Well, we.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:56.530 --> 00:07:59.890
+<v Speaker 0>The key observation for negative integers is that a to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:59.890 --> 00:08:02.110
+<v Speaker 0>the power of minus n can be written as the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:02.110 --> 00:08:06.040
+<v Speaker 0>inverse of a to the power of n, and uh.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,68]}
+
+00:08:06.040 --> 00:08:10.090
+<v Speaker 0>We know from an exercise and I'm sure you've seen
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:10.090 --> 00:08:14.200
+<v Speaker 0>this, is that if a similar to be their inverse
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,85,100]}
+
+00:08:14.200 --> 00:08:15.490
+<v Speaker 0>are also similar.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:08:15.490 --> 00:08:20.050
+<v Speaker 0>And so the case and less than zero or n
+
+NOTE CONF {"raw":[100,100,100,100,99,100,100,100,100,90]}
+
+00:08:20.050 --> 00:08:24.880
+<v Speaker 0>negative is exactly equal to the first part in which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:24.880 --> 00:08:28.690
+<v Speaker 0>you substitute b with its inverse and A with its
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:28.690 --> 00:08:29.350
+<v Speaker 0>inverse.
+
+NOTE CONF {"raw":[100]}
+
+00:08:29.920 --> 00:08:30.310
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:30.310 --> 00:08:36.400
+<v Speaker 0>So again this exercise was marked as hard because not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:36.400 --> 00:08:39.520
+<v Speaker 0>because the individual cases are particularly hard.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:39.520 --> 00:08:42.640
+<v Speaker 0>But if you try to approach it straight away for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:42.640 --> 00:08:46.900
+<v Speaker 0>any n uh then uh, you won't get you won't
+
+NOTE CONF {"raw":[100,100,58,100,48,100,100,100,100,100]}
+
+00:08:46.900 --> 00:08:50.350
+<v Speaker 0>get far because you can just prove it in one
+
+NOTE CONF {"raw":[100,100,100,100,89,100,100,100,100,100]}
+
+00:08:50.350 --> 00:08:50.890
+<v Speaker 0>go.
+
+NOTE CONF {"raw":[100]}
+
+00:08:51.430 --> 00:08:54.100
+<v Speaker 0>I mean, there might be a way, but I, I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:54.100 --> 00:08:56.890
+<v Speaker 0>can't, I can see it myself.
+
+NOTE CONF {"raw":[100,100,72,100,100,100]}
+
+00:08:57.700 --> 00:08:58.240
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:58.540 --> 00:09:04.390
+<v Speaker 0>So once again, standard, um, technique for proving things in
+
+NOTE CONF {"raw":[100,100,100,100,70,100,100,100,100,100]}
+
+00:09:04.390 --> 00:09:05.020
+<v Speaker 0>mathematics.
+
+NOTE CONF {"raw":[100]}
+
+00:09:05.020 --> 00:09:06.100
+<v Speaker 0>Divide and conquer.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:06.190 --> 00:09:08.830
+<v Speaker 0>That was the point of this last part.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,60]}
+
+00:09:08.830 --> 00:09:09.400
+<v Speaker 0>Question.
+
+NOTE CONF {"raw":[100]}
+
+00:09:10.180 --> 00:09:13.150
+<v Speaker 0>Do you have any questions about any of these statements
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:13.150 --> 00:09:16.150
+<v Speaker 0>that we left over from yesterday?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:21.250 --> 00:09:21.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:22.180 --> 00:09:27.340
+<v Speaker 0>So, uh, this is the same slide as before, but
+
+NOTE CONF {"raw":[89,79,100,100,100,100,100,100,100,100]}
+
+00:09:27.340 --> 00:09:30.100
+<v Speaker 0>now I'm highlighting what we do today.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:30.490 --> 00:09:34.690
+<v Speaker 0>Um, I'm sure you've, uh, you have seen all of
+
+NOTE CONF {"raw":[51,100,100,100,100,100,100,100,100,100]}
+
+00:09:34.690 --> 00:09:36.550
+<v Speaker 0>this in the readings.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:37.030 --> 00:09:43.240
+<v Speaker 0>Uh, but before we start doing exercises, much like yesterday,
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:09:43.840 --> 00:09:47.020
+<v Speaker 0>um, let's give out a couple of definitions that are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:47.020 --> 00:09:50.120
+<v Speaker 0>going to be very important in today's exercises.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,100]}
+
+00:09:50.120 --> 00:09:53.360
+<v Speaker 0>First is the multiplicity of an eigenvalue.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:53.480 --> 00:09:57.140
+<v Speaker 0>So if lambda is an eigenvalue of a matrix A,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:57.140 --> 00:10:05.870
+<v Speaker 0>its multiplicity is the the the algebraic multiplicity of lambda
+
+NOTE CONF {"raw":[100,100,96,72,100,100,100,100,100,100]}
+
+00:10:05.870 --> 00:10:08.240
+<v Speaker 0>as a root of the characteristic polynomial okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,77]}
+
+00:10:08.360 --> 00:10:10.490
+<v Speaker 0>So we've seen a theorem that the roots of the
+
+NOTE CONF {"raw":[100,55,100,100,100,100,100,100,100,100]}
+
+00:10:10.670 --> 00:10:15.920
+<v Speaker 0>of the characteristic polynomials are the eigenvalues of the matrix,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:16.100 --> 00:10:20.240
+<v Speaker 0>and that is the basis on which we can on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,83,100]}
+
+00:10:20.240 --> 00:10:24.440
+<v Speaker 0>which we perform our typical calculation to find eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:24.440 --> 00:10:27.500
+<v Speaker 0>So to find the eigenvalues we solve the determinant of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91,100,100,100]}
+
+00:10:27.500 --> 00:10:31.490
+<v Speaker 0>a minus lambda I or x I minus a.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:31.850 --> 00:10:33.740
+<v Speaker 0>They're all equivalent formulation.
+
+NOTE CONF {"raw":[50,94,100,100]}
+
+00:10:33.740 --> 00:10:37.460
+<v Speaker 0>And the reason why that works is precisely that theorem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,88,100]}
+
+00:10:37.460 --> 00:10:42.320
+<v Speaker 0>Because the determinant of I minus a minus lambda I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:42.320 --> 00:10:47.210
+<v Speaker 0>is a method to write the characteristic polynomial of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:47.240 --> 00:10:49.190
+<v Speaker 0>matrix and the roots.
+
+NOTE CONF {"raw":[100,100,100,99]}
+
+00:10:49.520 --> 00:10:51.050
+<v Speaker 0>We set the determinant equal to zero.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100]}
+
+00:10:51.050 --> 00:10:53.660
+<v Speaker 0>We solve and the roots are the eigenvalues.
+
+NOTE CONF {"raw":[100,100,84,100,100,100,100,97]}
+
+00:10:54.710 --> 00:10:57.230
+<v Speaker 0>And of course a polynomial.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:57.230 --> 00:10:59.780
+<v Speaker 0>You are all familiar with the number of solutions or
+
+NOTE CONF {"raw":[71,71,100,100,100,100,100,100,100,100]}
+
+00:10:59.780 --> 00:11:03.740
+<v Speaker 0>the multiplicity rather of the solutions of a polynomial, something
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:03.740 --> 00:11:06.560
+<v Speaker 0>that looks, for example, like uh.
+
+NOTE CONF {"raw":[100,100,100,100,100,58]}
+
+00:11:11.300 --> 00:11:16.070
+<v Speaker 0>X minus a times x minus b uh equals zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,69,100]}
+
+00:11:16.370 --> 00:11:20.630
+<v Speaker 0>Those both x will be equal to a and b,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:20.630 --> 00:11:22.760
+<v Speaker 0>and both will have multiplicity one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:22.970 --> 00:11:25.790
+<v Speaker 0>And the multiplicity increase.
+
+NOTE CONF {"raw":[100,100,100,68]}
+
+00:11:25.790 --> 00:11:28.760
+<v Speaker 0>If we have something like this now b now A
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76,72,97,86]}
+
+00:11:28.790 --> 00:11:32.390
+<v Speaker 0>has multiplicity equal to okay.
+
+NOTE CONF {"raw":[100,100,100,88,100]}
+
+00:11:32.390 --> 00:11:37.340
+<v Speaker 0>And we've seen that this factor is connected to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:37.340 --> 00:11:41.870
+<v Speaker 0>fact that the characteristic polynomial factors completely and factors completely
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:41.870 --> 00:11:44.600
+<v Speaker 0>means that it can be written all in this form
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:44.600 --> 00:11:49.650
+<v Speaker 0>here of, uh, a succession of product of simple.
+
+NOTE CONF {"raw":[100,100,45,100,100,100,100,100,100]}
+
+00:11:56.550 --> 00:11:56.970
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:11:56.970 --> 00:12:02.280
+<v Speaker 0>And just to be extra, extra clear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:02.700 --> 00:12:06.420
+<v Speaker 0>Raising this to some power is allowed.
+
+NOTE CONF {"raw":[100,100,100,91,100,100,100]}
+
+00:12:06.420 --> 00:12:09.090
+<v Speaker 0>This is still completely factored.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:09.660 --> 00:12:10.350
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:10.860 --> 00:12:14.070
+<v Speaker 0>What is not allowed is to have terms that do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:12:14.070 --> 00:12:17.070
+<v Speaker 0>not factors, uh, any further.
+
+NOTE CONF {"raw":[100,100,94,100,100]}
+
+00:12:17.070 --> 00:12:21.840
+<v Speaker 0>So for example x squared plus one okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:21.840 --> 00:12:25.830
+<v Speaker 0>This is not allowed if, if the characteristic polynomial has
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:25.830 --> 00:12:28.620
+<v Speaker 0>any of these type of terms that you can't reduce
+
+NOTE CONF {"raw":[100,100,82,100,100,100,90,100,58,100]}
+
+00:12:28.620 --> 00:12:33.930
+<v Speaker 0>any further into terms in which the x has power
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,89,100,100]}
+
+00:12:33.930 --> 00:12:37.890
+<v Speaker 0>one, then the characteristic polynomial does not factor completely.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:12:37.890 --> 00:12:42.360
+<v Speaker 0>And then we've seen a theorem that uh states that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:42.510 --> 00:12:45.930
+<v Speaker 0>if, uh, the characteristic polynomial factor is completely.
+
+NOTE CONF {"raw":[100,75,100,100,100,100,100,100]}
+
+00:12:46.380 --> 00:12:51.420
+<v Speaker 0>We have two equivalent to equivalent properties a being diagonalisable
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:51.420 --> 00:12:56.670
+<v Speaker 0>and the dimension of the eigenspaces associated to each eigenvalue
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:57.420 --> 00:13:00.600
+<v Speaker 0>being equal to the algebraic multiplicity of that eigenvalue.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:01.560 --> 00:13:05.550
+<v Speaker 0>Okay, so it's an if and only if if you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:05.550 --> 00:13:07.020
+<v Speaker 0>have something like this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:07.800 --> 00:13:09.330
+<v Speaker 0>That theorem is not true.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:09.330 --> 00:13:11.370
+<v Speaker 0>And we will see an example okay.
+
+NOTE CONF {"raw":[100,100,94,100,100,100,81]}
+
+00:13:12.390 --> 00:13:18.360
+<v Speaker 0>It is required to have uh, uh, a completely, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100,100,100,100]}
+
+00:13:18.900 --> 00:13:22.290
+<v Speaker 0>a completely factorised characteristic polynomial.
+
+NOTE CONF {"raw":[96,100,100,100,100]}
+
+00:13:22.830 --> 00:13:26.130
+<v Speaker 0>Uh, by the way, if the characteristic polynomial is not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:26.130 --> 00:13:27.450
+<v Speaker 0>completely factorised.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:27.480 --> 00:13:29.490
+<v Speaker 0>Is the matrix invertible or not?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:33.720 --> 00:13:36.900
+<v Speaker 0>If the if the characteristic polynomial is in this form.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:36.900 --> 00:13:39.450
+<v Speaker 0>Here, together with this, uh, with this factor here.
+
+NOTE CONF {"raw":[100,100,100,100,79,100,100,100,100]}
+
+00:13:39.450 --> 00:13:39.900
+<v Speaker 0>Now.
+
+NOTE CONF {"raw":[100]}
+
+00:13:42.060 --> 00:13:45.370
+<v Speaker 0>Can we find the diagonal form of the matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:51.910 --> 00:13:54.160
+<v Speaker 0>Okay, we will see it later, but spoiler alert.
+
+NOTE CONF {"raw":[100,100,100,100,76,100,100,100,100]}
+
+00:13:54.190 --> 00:13:59.350
+<v Speaker 0>No, because we don't find enough eigenvalues to, uh, to,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:00.040 --> 00:14:02.740
+<v Speaker 0>um, to to diagonalise the matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:03.040 --> 00:14:03.760
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:04.000 --> 00:14:06.850
+<v Speaker 0>We will see all of this in the following two
+
+NOTE CONF {"raw":[100,91,100,100,100,100,100,100,100,100]}
+
+00:14:06.850 --> 00:14:07.900
+<v Speaker 0>exercises.
+
+NOTE CONF {"raw":[100]}
+
+00:14:07.930 --> 00:14:11.260
+<v Speaker 0>So the first one is just, uh, to do something
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76,100,100,100]}
+
+00:14:11.260 --> 00:14:13.090
+<v Speaker 0>that is slightly different than usual.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:13.120 --> 00:14:15.820
+<v Speaker 0>Instead of like, doing both true and false.
+
+NOTE CONF {"raw":[97,100,79,100,100,100,100,100]}
+
+00:14:16.150 --> 00:14:22.720
+<v Speaker 0>I've created a matching exercise, uh, of logical implications.
+
+NOTE CONF {"raw":[82,100,100,100,100,100,100,100,100]}
+
+00:14:23.410 --> 00:14:26.140
+<v Speaker 0>So on the left hand side, you have the hypothesis.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,64,99]}
+
+00:14:26.140 --> 00:14:28.480
+<v Speaker 0>And on the right hand side you have thesis.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,58]}
+
+00:14:28.480 --> 00:14:34.270
+<v Speaker 0>And then for some reason, this math bit didn't pick
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:34.270 --> 00:14:34.750
+<v Speaker 0>up this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:34.750 --> 00:14:35.770
+<v Speaker 0>This should be lambda.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:36.700 --> 00:14:41.500
+<v Speaker 0>Um, and then, um, yeah, it's your job to match
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:41.500 --> 00:14:44.860
+<v Speaker 0>the numbers with the letters And as usual with these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:44.860 --> 00:14:48.970
+<v Speaker 0>things, there might be multiple that are allowed and we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,83,100,100]}
+
+00:14:48.970 --> 00:14:51.220
+<v Speaker 0>will go through them together in a couple of minutes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:14:51.220 --> 00:14:55.180
+<v Speaker 0>So discuss with your neighbours why you think some are
+
+NOTE CONF {"raw":[100,100,100,100,81,100,100,100,100,100]}
+
+00:14:55.690 --> 00:14:58.480
+<v Speaker 0>better than others as matches between the left and the
+
+NOTE CONF {"raw":[100,100,100,100,73,100,100,100,100,100]}
+
+00:14:58.480 --> 00:14:59.140
+<v Speaker 0>right.
+
+NOTE CONF {"raw":[100]}
+
+00:14:59.260 --> 00:15:02.740
+<v Speaker 0>And we'll pick it up in a couple of minutes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:17:42.360 --> 00:17:46.560
+<v Speaker 0>I have, uh, approximately 30 answers so far.
+
+NOTE CONF {"raw":[43,100,99,100,100,100,100,100]}
+
+00:17:48.360 --> 00:17:51.900
+<v Speaker 0>If you can, uh, submit your answers now, we're going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:51.900 --> 00:17:54.060
+<v Speaker 0>to check them very quickly.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:54.060 --> 00:17:57.120
+<v Speaker 0>But in the meantime, without giving too much away.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:57.210 --> 00:18:00.240
+<v Speaker 0>Just a reminder of three results that we're going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:00.240 --> 00:18:01.650
+<v Speaker 0>use to solve these.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:02.580 --> 00:18:05.790
+<v Speaker 0>These are three theorem that I lifted straight from your
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:05.790 --> 00:18:06.450
+<v Speaker 0>reading.
+
+NOTE CONF {"raw":[100]}
+
+00:18:06.450 --> 00:18:11.040
+<v Speaker 0>Straight from part uh 5.5 of the of the book.
+
+NOTE CONF {"raw":[100,100,100,50,100,100,100,100,100,99]}
+
+00:18:11.820 --> 00:18:16.830
+<v Speaker 0>Um, essay is diagonalisable if and only if, uh, uh,
+
+NOTE CONF {"raw":[97,38,100,100,100,100,100,100,47,97]}
+
+00:18:16.830 --> 00:18:24.210
+<v Speaker 0>the eigenvectors spun around and uh, when, uh, when both
+
+NOTE CONF {"raw":[100,100,85,85,100,100,100,100,100,100]}
+
+00:18:24.210 --> 00:18:28.050
+<v Speaker 0>conditions, both equivalent conditions are satisfied.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:28.050 --> 00:18:30.030
+<v Speaker 0>So A is the is Diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,54,100,100]}
+
+00:18:30.240 --> 00:18:34.620
+<v Speaker 0>Then if the matrix P is invertible, there exists, uh,
+
+NOTE CONF {"raw":[100,100,100,100,87,100,100,100,78,100]}
+
+00:18:34.620 --> 00:18:35.580
+<v Speaker 0>one.
+
+NOTE CONF {"raw":[100]}
+
+00:18:35.940 --> 00:18:40.410
+<v Speaker 0>Uh, sorry, there exists one matrix B, which is invertible,
+
+NOTE CONF {"raw":[94,100,100,87,100,100,47,100,100,100]}
+
+00:18:40.410 --> 00:18:44.790
+<v Speaker 0>and it's exactly the matrix of the eigenvectors put by
+
+NOTE CONF {"raw":[100,88,100,100,100,100,100,100,100,100]}
+
+00:18:44.790 --> 00:18:51.810
+<v Speaker 0>columns such that the matrix returns through similarity the diagonalised
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:51.810 --> 00:18:52.560
+<v Speaker 0>version of a.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:53.040 --> 00:18:56.340
+<v Speaker 0>Okay, so that's the first result that that we use.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:18:56.820 --> 00:19:00.570
+<v Speaker 0>The second one is that if VN are the eigenvectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,74,100,100,100]}
+
+00:19:00.960 --> 00:19:06.600
+<v Speaker 0>uh with corresponding um eigenvalues lambda one, lambda two, lambda
+
+NOTE CONF {"raw":[61,100,100,100,100,100,100,100,100,100]}
+
+00:19:06.600 --> 00:19:11.670
+<v Speaker 0>n all distinct, uh, then uh, the set of the
+
+NOTE CONF {"raw":[100,100,100,96,98,65,100,100,100,78]}
+
+00:19:11.670 --> 00:19:14.130
+<v Speaker 0>eigenvectors is a linearly independent set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:14.310 --> 00:19:16.680
+<v Speaker 0>And here another type of pair.
+
+NOTE CONF {"raw":[100,99,100,100,100,58]}
+
+00:19:16.680 --> 00:19:21.060
+<v Speaker 0>It should be a backslash that makes em both mathematics.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,40,100,100]}
+
+00:19:22.170 --> 00:19:27.870
+<v Speaker 0>And finally, um, if uh which is really a consequence
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:19:27.870 --> 00:19:32.400
+<v Speaker 0>of the previous two, if, uh, a matrix are n
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:19:32.400 --> 00:19:35.940
+<v Speaker 0>times n has and distinct eigenvalues, then it's diagonalisable.
+
+NOTE CONF {"raw":[100,100,84,93,96,100,100,90,100]}
+
+00:19:35.940 --> 00:19:38.890
+<v Speaker 0>That is the second theorem, together with the first part
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:38.890 --> 00:19:40.030
+<v Speaker 0>of the first.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:40.360 --> 00:19:44.620
+<v Speaker 0>Okay, 55 answers in the meantime 56.
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100]}
+
+00:19:44.620 --> 00:19:45.370
+<v Speaker 0>Excellent.
+
+NOTE CONF {"raw":[99]}
+
+00:19:45.820 --> 00:19:49.420
+<v Speaker 0>Um, let's have a look at some of these statements.
+
+NOTE CONF {"raw":[43,100,100,100,100,100,100,100,100,100]}
+
+00:19:49.660 --> 00:19:50.020
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:19:52.660 --> 00:19:54.760
+<v Speaker 0>If A is Diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:54.760 --> 00:19:56.710
+<v Speaker 0>Well, actually, let's have a look at the the answer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,46,100,100]}
+
+00:19:56.710 --> 00:19:57.520
+<v Speaker 0>that you submitted.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:57.520 --> 00:20:02.440
+<v Speaker 0>Now, um, if A is diagonalisable in case of X
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:20:02.440 --> 00:20:06.820
+<v Speaker 0>factor is completely, then the dimension of the eigenspace is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:20:07.060 --> 00:20:09.370
+<v Speaker 0>equal to the multiplicity for all lambdas.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:09.880 --> 00:20:10.510
+<v Speaker 0>Correct.
+
+NOTE CONF {"raw":[100]}
+
+00:20:10.510 --> 00:20:16.420
+<v Speaker 0>That was the first theorem that we saw earlier.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:16.660 --> 00:20:20.440
+<v Speaker 0>If A is triangular upper lower than the eigenvalues are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:20.440 --> 00:20:22.780
+<v Speaker 0>equal to the diagonal elements.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:22.780 --> 00:20:23.920
+<v Speaker 0>Yes absolutely.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:24.460 --> 00:20:26.620
+<v Speaker 0>And let's do the first three.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:26.620 --> 00:20:28.600
+<v Speaker 0>And then we're going to go through them a little
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:28.600 --> 00:20:29.980
+<v Speaker 0>bit more systematically.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:20:30.130 --> 00:20:33.610
+<v Speaker 0>And if we can factor out a factor x minus
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,100]}
+
+00:20:33.610 --> 00:20:37.030
+<v Speaker 0>lambda to the power of n, then the then lambda
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,99]}
+
+00:20:37.030 --> 00:20:38.830
+<v Speaker 0>will be an eigenvalue.
+
+NOTE CONF {"raw":[100,100,100,90]}
+
+00:20:40.210 --> 00:20:44.620
+<v Speaker 0>Because setting x equal lambda makes the characteristic polynomial zero,
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,100]}
+
+00:20:44.650 --> 00:20:47.470
+<v Speaker 0>of course, and the multiplicity will be equal to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:47.470 --> 00:20:48.160
+<v Speaker 0>exponent.
+
+NOTE CONF {"raw":[100]}
+
+00:20:48.160 --> 00:20:49.090
+<v Speaker 0>Absolutely.
+
+NOTE CONF {"raw":[97]}
+
+00:20:49.750 --> 00:20:50.410
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:52.600 --> 00:20:59.140
+<v Speaker 0>Um, so let's uh, give some more constructive proof rather
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:59.140 --> 00:21:00.640
+<v Speaker 0>than say, uh oh.
+
+NOTE CONF {"raw":[100,100,80,100]}
+
+00:21:00.640 --> 00:21:04.180
+<v Speaker 0>It's just, uh, that that statement is uh, is obviously
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,65,100,100]}
+
+00:21:04.180 --> 00:21:04.630
+<v Speaker 0>true.
+
+NOTE CONF {"raw":[100]}
+
+00:21:04.810 --> 00:21:08.890
+<v Speaker 0>Let's start with the triangular matrix result.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:08.890 --> 00:21:13.540
+<v Speaker 0>Why are the eigenvalues equal to the diagonal entries?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:21:14.410 --> 00:21:21.190
+<v Speaker 0>Um, well, we can we can write down the eigenvalues
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:21.400 --> 00:21:24.190
+<v Speaker 0>as the roots of the characteristic polynomial.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:24.430 --> 00:21:26.920
+<v Speaker 0>Nothing nothing new here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:28.330 --> 00:21:30.940
+<v Speaker 0>And now we want to notice something that if A
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:30.940 --> 00:21:34.600
+<v Speaker 0>is triangular then the matrix that appear inside here is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:21:34.600 --> 00:21:38.300
+<v Speaker 0>It's also triangular because when we take the matrix A
+
+NOTE CONF {"raw":[56,100,100,100,100,100,100,100,100,100]}
+
+00:21:38.300 --> 00:21:42.350
+<v Speaker 0>minus x that we use to calculate the characteristic polynomial,
+
+NOTE CONF {"raw":[100,63,100,100,99,100,100,100,100,100]}
+
+00:21:42.980 --> 00:21:47.090
+<v Speaker 0>and the only elements that are modified are the diagonal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:47.090 --> 00:21:51.800
+<v Speaker 0>ones, the ones that are on the diagonal gets a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:51.800 --> 00:21:53.060
+<v Speaker 0>minus x.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:55.550 --> 00:21:59.270
+<v Speaker 0>Component after them, and all other elements of the matrix
+
+NOTE CONF {"raw":[100,100,100,100,92,100,100,100,100,100]}
+
+00:21:59.270 --> 00:22:00.980
+<v Speaker 0>are completely untouched.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:00.980 --> 00:22:04.820
+<v Speaker 0>So the resulting matrix of which we're calculating the determinant
+
+NOTE CONF {"raw":[100,100,100,100,98,100,51,100,100,100]}
+
+00:22:04.850 --> 00:22:06.890
+<v Speaker 0>is also triangular.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:06.890 --> 00:22:10.370
+<v Speaker 0>And we've seen in week four that a determinant of
+
+NOTE CONF {"raw":[100,100,100,100,93,93,100,93,100,100]}
+
+00:22:10.370 --> 00:22:15.620
+<v Speaker 0>a triangular matrix and is just the product of the
+
+NOTE CONF {"raw":[100,100,100,86,90,100,100,100,100,100]}
+
+00:22:16.070 --> 00:22:17.480
+<v Speaker 0>of the diagonal terms.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:17.480 --> 00:22:17.870
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:17.870 --> 00:22:21.110
+<v Speaker 0>So uh, I'm not sure you've seen this symbol.
+
+NOTE CONF {"raw":[100,86,100,100,100,100,100,98,100]}
+
+00:22:21.110 --> 00:22:23.630
+<v Speaker 0>If you haven't, this is a good time to grow
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:23.630 --> 00:22:24.710
+<v Speaker 0>familiar with this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:24.920 --> 00:22:27.560
+<v Speaker 0>Uh, this is just like the sigma for the sum
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:22:27.740 --> 00:22:32.030
+<v Speaker 0>where you sum all the terms, uh, the at various
+
+NOTE CONF {"raw":[100,100,100,100,100,100,66,100,96,100]}
+
+00:22:32.030 --> 00:22:33.320
+<v Speaker 0>values for I.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:33.530 --> 00:22:34.010
+<v Speaker 1>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:22:34.490 --> 00:22:38.990
+<v Speaker 0>So if you have, uh, the sum over, I equal
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,65]}
+
+00:22:38.990 --> 00:22:40.880
+<v Speaker 0>one n of x I.
+
+NOTE CONF {"raw":[100,95,100,100,100]}
+
+00:22:40.910 --> 00:22:45.470
+<v Speaker 0>This is x one plus x two plus six, three,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,62,100]}
+
+00:22:45.770 --> 00:22:48.170
+<v Speaker 0>six, four and so on and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:48.200 --> 00:22:51.800
+<v Speaker 0>This symbol here works exactly the same way, but instead
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:51.800 --> 00:22:55.160
+<v Speaker 0>of having a sum, this is the Greek letter sigma.
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:22:55.160 --> 00:22:59.270
+<v Speaker 0>For some this is the letter the Greek letter capital
+
+NOTE CONF {"raw":[100,71,100,100,100,100,100,100,100,100]}
+
+00:22:59.270 --> 00:23:00.770
+<v Speaker 0>pi for product.
+
+NOTE CONF {"raw":[96,100,100]}
+
+00:23:00.770 --> 00:23:07.010
+<v Speaker 0>So this would be x one times x two times
+
+NOTE CONF {"raw":[100,100,100,100,92,92,100,100,100,100]}
+
+00:23:07.010 --> 00:23:08.390
+<v Speaker 0>x three times.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:08.630 --> 00:23:08.960
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:09.350 --> 00:23:12.860
+<v Speaker 0>So what I'm writing there is just that the determinant
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:12.860 --> 00:23:18.350
+<v Speaker 0>is the product of all the of the diagonal elements
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:18.350 --> 00:23:21.950
+<v Speaker 0>of the matrices of the matrix, which are the I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:22.070 --> 00:23:23.570
+<v Speaker 0>minus one times x.
+
+NOTE CONF {"raw":[100,100,80,100]}
+
+00:23:23.570 --> 00:23:26.210
+<v Speaker 0>Coming from the fact that I've subtracted the identity times
+
+NOTE CONF {"raw":[100,100,100,100,100,48,100,100,100,100]}
+
+00:23:26.210 --> 00:23:26.630
+<v Speaker 0>x.
+
+NOTE CONF {"raw":[100]}
+
+00:23:27.260 --> 00:23:30.440
+<v Speaker 0>Okay, so what are the eigenvalues?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:30.710 --> 00:23:33.090
+<v Speaker 0>I'm sorry, what are the roots of this polynomial?
+
+NOTE CONF {"raw":[31,100,100,100,100,100,100,100,100]}
+
+00:23:33.090 --> 00:23:39.270
+<v Speaker 0>Well, all the roots of this polynomial are exactly the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:39.270 --> 00:23:42.900
+<v Speaker 0>A's, because if x is equal to one of the
+
+NOTE CONF {"raw":[74,100,100,100,100,100,100,100,100,100]}
+
+00:23:42.900 --> 00:23:47.400
+<v Speaker 0>A's, it would cancel out one of these factors here,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:47.400 --> 00:23:48.930
+<v Speaker 0>which are written this way here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:48.930 --> 00:23:52.710
+<v Speaker 0>And the whole polynomial would be would be easier.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,66]}
+
+00:23:53.130 --> 00:23:57.330
+<v Speaker 0>Okay, so the roots of the of the characteristic polynomial
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:57.330 --> 00:24:00.390
+<v Speaker 0>are exactly the diagonal entries of A, and therefore the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:00.390 --> 00:24:03.660
+<v Speaker 0>diagonal entries are the eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:04.500 --> 00:24:05.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:06.420 --> 00:24:09.300
+<v Speaker 0>So this is a bit more constructive than what we've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:09.300 --> 00:24:10.050
+<v Speaker 0>done before.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:11.610 --> 00:24:13.290
+<v Speaker 0>Um okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:13.290 --> 00:24:15.540
+<v Speaker 0>Therefore the eigenvalues are lambda equal.
+
+NOTE CONF {"raw":[100,100,100,100,100,92]}
+
+00:24:16.800 --> 00:24:17.490
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:17.850 --> 00:24:18.240
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:24:20.520 --> 00:24:27.720
+<v Speaker 0>Next up there was uh a uh a statement that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:24:27.720 --> 00:24:28.410
+<v Speaker 0>was this one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:28.410 --> 00:24:28.890
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:24:28.890 --> 00:24:31.530
+<v Speaker 0>Which was if the eigenvectors Vectors span.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:32.490 --> 00:24:36.450
+<v Speaker 0>If the span of the eigenvector is a proper subset
+
+NOTE CONF {"raw":[100,100,100,100,100,79,100,100,100,100]}
+
+00:24:36.450 --> 00:24:41.160
+<v Speaker 0>of n, so not equal to n, it's A, it's
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,97,100]}
+
+00:24:41.160 --> 00:24:42.180
+<v Speaker 0>a proper subset.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:42.300 --> 00:24:45.300
+<v Speaker 0>Then a singular um.
+
+NOTE CONF {"raw":[100,100,100,80]}
+
+00:24:45.930 --> 00:24:46.710
+<v Speaker 0>Correct.
+
+NOTE CONF {"raw":[99]}
+
+00:24:46.710 --> 00:24:48.000
+<v Speaker 0>Absolutely correct.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:48.000 --> 00:24:52.320
+<v Speaker 0>And um, once again, being singular is the opposite of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:52.320 --> 00:24:56.160
+<v Speaker 0>being diagonalisable it means that the determinant is zero.
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100]}
+
+00:24:56.280 --> 00:25:01.320
+<v Speaker 0>And so this is just, uh, uh, negation of the
+
+NOTE CONF {"raw":[100,100,100,100,100,66,100,100,100,100]}
+
+00:25:01.320 --> 00:25:05.010
+<v Speaker 0>if and only if um theorem that we've seen before
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:05.040 --> 00:25:08.850
+<v Speaker 0>that if A is diagonalisable, then the eigenvectors span the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:08.850 --> 00:25:09.810
+<v Speaker 0>entire RN.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:10.020 --> 00:25:13.170
+<v Speaker 0>But now the eigenvectors do not span the entire n.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:25:13.170 --> 00:25:16.410
+<v Speaker 0>And so it's it's not invertible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:16.740 --> 00:25:17.160
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:22.620 --> 00:25:25.290
+<v Speaker 0>Next up the last one I think that we see
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:25.650 --> 00:25:27.780
+<v Speaker 0>uh, more more constructively here.
+
+NOTE CONF {"raw":[92,100,100,100,100]}
+
+00:25:28.230 --> 00:25:29.040
+<v Speaker 0>Uh oh no.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:29.040 --> 00:25:30.820
+<v Speaker 0>There's, there's a couple more, actually.
+
+NOTE CONF {"raw":[96,100,100,100,100,100]}
+
+00:25:31.240 --> 00:25:34.090
+<v Speaker 0>Okay, well, this one, that's not much to say.
+
+NOTE CONF {"raw":[100,100,100,100,82,100,100,100,100]}
+
+00:25:34.090 --> 00:25:36.850
+<v Speaker 0>We've pretty much said it out loud earlier.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:37.270 --> 00:25:42.790
+<v Speaker 0>If we can factor out a term x minus lambda
+
+NOTE CONF {"raw":[100,100,100,100,100,28,100,100,100,100]}
+
+00:25:42.790 --> 00:25:47.200
+<v Speaker 0>and then then of course, uh, the oh it was,
+
+NOTE CONF {"raw":[58,100,100,100,100,100,100,56,85,94]}
+
+00:25:47.500 --> 00:25:48.610
+<v Speaker 0>it was right here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:48.970 --> 00:25:52.210
+<v Speaker 0>And then the multiplicity of lambda is n oh that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,96,100]}
+
+00:25:52.210 --> 00:25:52.390
+<v Speaker 0>is.
+
+NOTE CONF {"raw":[100]}
+
+00:25:52.390 --> 00:25:54.790
+<v Speaker 0>And then I thought that was A0I misread.
+
+NOTE CONF {"raw":[100,100,100,100,99,100,100,100]}
+
+00:25:55.180 --> 00:25:55.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:56.080 --> 00:25:59.290
+<v Speaker 0>Uh, this is just the definition of multiplicity, right.
+
+NOTE CONF {"raw":[99,100,100,100,93,100,100,100,98]}
+
+00:25:59.800 --> 00:26:01.270
+<v Speaker 0>There's nothing going on here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:01.810 --> 00:26:09.850
+<v Speaker 0>Um, the, um, the multiplicity of an eigenvector of an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,100]}
+
+00:26:09.850 --> 00:26:15.760
+<v Speaker 0>eigenvalue is the number of is the, the algebraic multiplicity
+
+NOTE CONF {"raw":[100,100,100,100,81,91,89,100,100,100]}
+
+00:26:15.760 --> 00:26:19.750
+<v Speaker 0>of that eigenvalue as a root of this polynomial okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:22.930 --> 00:26:28.330
+<v Speaker 0>And if A is diagonalisable in k factors completely, then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,90,79,100,100]}
+
+00:26:28.330 --> 00:26:31.000
+<v Speaker 0>the dimension of the eigen space is equal to the
+
+NOTE CONF {"raw":[100,100,100,100,61,74,100,100,100,100]}
+
+00:26:31.030 --> 00:26:32.080
+<v Speaker 0>to the multiplicity.
+
+NOTE CONF {"raw":[93,100,100]}
+
+00:26:32.110 --> 00:26:36.160
+<v Speaker 0>That is the theorem that we saw before referenced in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:36.160 --> 00:26:41.470
+<v Speaker 0>the book as uh uh theorem 5.5.6.
+
+NOTE CONF {"raw":[100,100,96,76,78,100,100]}
+
+00:26:42.850 --> 00:26:43.300
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:44.200 --> 00:26:46.870
+<v Speaker 0>Do you have any questions about any of these statements,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:46.870 --> 00:26:48.640
+<v Speaker 0>any of these combinations?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:49.690 --> 00:26:53.140
+<v Speaker 0>Um, this one was also an allowed one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:53.140 --> 00:26:55.870
+<v Speaker 0>As I mentioned, these questions in book club are not
+
+NOTE CONF {"raw":[100,100,100,57,49,62,86,86,100,100]}
+
+00:26:55.870 --> 00:26:56.620
+<v Speaker 0>perfect.
+
+NOTE CONF {"raw":[100]}
+
+00:26:56.620 --> 00:27:01.150
+<v Speaker 0>This is an equivalent condition for not being diagonalisable, hence
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,82]}
+
+00:27:01.150 --> 00:27:01.750
+<v Speaker 0>singular.
+
+NOTE CONF {"raw":[100]}
+
+00:27:01.750 --> 00:27:05.560
+<v Speaker 0>So both of these uh, matching are are fine.
+
+NOTE CONF {"raw":[100,100,100,100,90,100,52,97,100]}
+
+00:27:06.160 --> 00:27:08.110
+<v Speaker 0>I just picked another one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:08.230 --> 00:27:08.920
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:27:08.920 --> 00:27:10.930
+<v Speaker 2>Which one does not consider.
+
+NOTE CONF {"raw":[100,100,81,100,68]}
+
+00:27:12.850 --> 00:27:15.850
+<v Speaker 0>Which one goes to matches?
+
+NOTE CONF {"raw":[100,100,100,58,70]}
+
+00:27:17.590 --> 00:27:23.020
+<v Speaker 0>Uh, let's see if the determinant of A is equal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:23.020 --> 00:27:25.660
+<v Speaker 0>than zero or is different than zero.
+
+NOTE CONF {"raw":[76,100,25,76,100,100,100]}
+
+00:27:26.560 --> 00:27:26.860
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:27:30.470 --> 00:27:33.140
+<v Speaker 0>I think it was, uh.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:33.230 --> 00:27:34.550
+<v Speaker 0>Oh, that's a touch screen.
+
+NOTE CONF {"raw":[100,100,100,94,94]}
+
+00:27:34.550 --> 00:27:35.090
+<v Speaker 0>Interesting.
+
+NOTE CONF {"raw":[96]}
+
+00:27:35.360 --> 00:27:36.620
+<v Speaker 0>I think it was this one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:38.150 --> 00:27:38.480
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[96]}
+
+00:27:38.720 --> 00:27:40.370
+<v Speaker 0>Because if the owner.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:40.370 --> 00:27:44.060
+<v Speaker 0>Because that is invertible, uh, then a.
+
+NOTE CONF {"raw":[100,100,100,100,99,91,100]}
+
+00:27:44.060 --> 00:27:44.840
+<v Speaker 1>Singular.
+
+NOTE CONF {"raw":[100]}
+
+00:27:45.470 --> 00:27:48.890
+<v Speaker 0>No, then m o none.
+
+NOTE CONF {"raw":[100,91,99,90,98]}
+
+00:27:48.890 --> 00:27:51.890
+<v Speaker 0>Actually, uh, this was supposed to be if the determinant
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,68,100,100]}
+
+00:27:51.890 --> 00:27:52.460
+<v Speaker 0>is, uh.
+
+NOTE CONF {"raw":[100,80]}
+
+00:27:57.890 --> 00:27:58.040
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[64]}
+
+00:27:58.430 --> 00:28:02.990
+<v Speaker 0>And so it's not equivalent to this hypothesis here because
+
+NOTE CONF {"raw":[78,100,100,100,100,100,100,100,100,100]}
+
+00:28:02.990 --> 00:28:05.720
+<v Speaker 0>we're not sure whether or not the factor is completely.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:28:06.650 --> 00:28:07.130
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[87]}
+
+00:28:11.810 --> 00:28:12.860
+<v Speaker 0>Let's see what I put in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:14.870 --> 00:28:16.610
+<v Speaker 1>Um, the determinant is.
+
+NOTE CONF {"raw":[99,98,100,100]}
+
+00:28:16.610 --> 00:28:17.030
+<v Speaker 0>Zero.
+
+NOTE CONF {"raw":[100]}
+
+00:28:17.120 --> 00:28:17.810
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:28:17.810 --> 00:28:19.490
+<v Speaker 0>It was supposed to go with this one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:19.490 --> 00:28:20.750
+<v Speaker 0>Did I get that right?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:21.530 --> 00:28:22.070
+<v Speaker 0>Uh, we.
+
+NOTE CONF {"raw":[96,97]}
+
+00:28:22.070 --> 00:28:23.810
+<v Speaker 2>Said that is diagonalisable.
+
+NOTE CONF {"raw":[98,100,84,100]}
+
+00:28:24.110 --> 00:28:28.220
+<v Speaker 1>If And it says.
+
+NOTE CONF {"raw":[96,100,100,100]}
+
+00:28:29.510 --> 00:28:32.270
+<v Speaker 0>Yeah, yeah, uh, yeah.
+
+NOTE CONF {"raw":[95,97,78,100]}
+
+00:28:32.300 --> 00:28:34.370
+<v Speaker 0>No, you're right, you're probably.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:34.370 --> 00:28:38.720
+<v Speaker 0>Yeah, you've probably spotted something wrong either equal to zero
+
+NOTE CONF {"raw":[100,86,100,99,100,100,100,100,100,100]}
+
+00:28:38.720 --> 00:28:39.530
+<v Speaker 0>or equal here.
+
+NOTE CONF {"raw":[99,100,100]}
+
+00:28:39.530 --> 00:28:40.040
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:28:40.910 --> 00:28:41.210
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:28:41.240 --> 00:28:41.600
+<v Speaker 0>You're right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:41.600 --> 00:28:42.260
+<v Speaker 0>Sorry about that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:43.700 --> 00:28:45.530
+<v Speaker 0>Any any other questions.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:47.960 --> 00:28:48.530
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:28:54.770 --> 00:28:57.500
+<v Unknown>I feel like I've been in space which for all
+
+NOTE CONF {"raw":[100,100,100,21,20,35,75,58,96,100]}
+
+00:28:57.500 --> 00:28:57.620
+<v Unknown>of.
+
+NOTE CONF {"raw":[99]}
+
+00:29:00.110 --> 00:29:01.520
+<v Speaker 0>The eigenspace.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:01.520 --> 00:29:04.880
+<v Speaker 0>Well each eigenvector each eigenvector creates an eigenspace.
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,89]}
+
+00:29:04.880 --> 00:29:05.450
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:29:15.440 --> 00:29:15.830
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:29:15.830 --> 00:29:21.440
+<v Speaker 0>So e lambda a is the eigenspace created by the
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:29:21.440 --> 00:29:24.770
+<v Speaker 0>eigenvectors associated to lambda as an eigenvalue.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:26.630 --> 00:29:27.020
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[98]}
+
+00:29:32.210 --> 00:29:36.290
+<v Speaker 0>It's the one for which lambda is the corresponding eigenvalue.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:36.860 --> 00:29:39.380
+<v Speaker 0>So in other words, it would be the x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:39.410 --> 00:29:43.190
+<v Speaker 0>It's this one is the span of all the axis
+
+NOTE CONF {"raw":[84,100,100,100,100,100,100,100,100,61]}
+
+00:29:43.190 --> 00:29:47.930
+<v Speaker 0>vectors for which a x is equal to lambda x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,94,100,100]}
+
+00:29:52.880 --> 00:29:55.490
+<v Speaker 0>There could be multiple or not.
+
+NOTE CONF {"raw":[84,100,100,100,100,100]}
+
+00:29:59.750 --> 00:30:00.410
+<v Speaker 3>Only one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:00.410 --> 00:30:01.220
+<v Speaker 0>Eigenvector.
+
+NOTE CONF {"raw":[90]}
+
+00:30:02.090 --> 00:30:02.930
+<v Speaker 0>That's the eigen.
+
+NOTE CONF {"raw":[94,100,100]}
+
+00:30:06.800 --> 00:30:07.220
+<v Speaker 3>Vector.
+
+NOTE CONF {"raw":[26]}
+
+00:30:07.970 --> 00:30:09.560
+<v Speaker 0>It depends on the matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:10.550 --> 00:30:11.510
+<v Speaker 0>If two.
+
+NOTE CONF {"raw":[100,99]}
+
+00:30:11.630 --> 00:30:12.800
+<v Speaker 0>If two.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:12.800 --> 00:30:13.430
+<v Speaker 0>If.
+
+NOTE CONF {"raw":[89]}
+
+00:30:13.640 --> 00:30:15.560
+<v Speaker 0>If an eigen.
+
+NOTE CONF {"raw":[100,99,100]}
+
+00:30:16.400 --> 00:30:16.490
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[46]}
+
+00:30:16.490 --> 00:30:17.630
+<v Speaker 0>If an eigen.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:18.290 --> 00:30:18.620
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:30:19.700 --> 00:30:23.420
+<v Speaker 0>If an eigenvalue has a multiplicity two, it could be
+
+NOTE CONF {"raw":[100,100,100,100,78,100,100,100,100,100]}
+
+00:30:23.420 --> 00:30:26.580
+<v Speaker 0>that two different eigenvectors correspond to that.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100]}
+
+00:30:27.120 --> 00:30:30.120
+<v Speaker 0>And that's that's why this dimension will be equal to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:30.120 --> 00:30:30.690
+<v Speaker 0>two.
+
+NOTE CONF {"raw":[100]}
+
+00:30:30.690 --> 00:30:33.180
+<v Speaker 0>And the multiplicity of that eigenvalue in turn will be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:33.180 --> 00:30:33.630
+<v Speaker 0>two.
+
+NOTE CONF {"raw":[98]}
+
+00:30:36.990 --> 00:30:37.470
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:38.700 --> 00:30:41.070
+<v Speaker 0>Uh, for, for for the dimension of the eigenspace to
+
+NOTE CONF {"raw":[82,88,98,100,100,100,100,100,98,100]}
+
+00:30:41.070 --> 00:30:45.330
+<v Speaker 0>be two you need to independent eigenvectors corresponding to that
+
+NOTE CONF {"raw":[100,100,79,79,100,100,100,100,100,100]}
+
+00:30:45.330 --> 00:30:45.840
+<v Speaker 0>eigenvalue.
+
+NOTE CONF {"raw":[100]}
+
+00:30:45.840 --> 00:30:46.290
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:30:46.800 --> 00:30:48.150
+<v Speaker 0>Two linearly independent ones.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:48.150 --> 00:30:52.050
+<v Speaker 0>Otherwise the span of that eigenvalue of that eigenvector can
+
+NOTE CONF {"raw":[100,100,100,100,87,100,100,100,100,100]}
+
+00:30:52.050 --> 00:30:53.220
+<v Speaker 0>never be more than one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:53.220 --> 00:30:57.120
+<v Speaker 0>If you only have one vector as a basis of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:57.120 --> 00:30:58.410
+<v Speaker 0>that subspace.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:04.950 --> 00:31:05.580
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[94]}
+
+00:31:08.790 --> 00:31:09.360
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:31:09.450 --> 00:31:15.240
+<v Speaker 0>So um, next up, um, question two.
+
+NOTE CONF {"raw":[100,100,100,88,100,100,100]}
+
+00:31:16.230 --> 00:31:20.880
+<v Speaker 0>This one I couldn't I couldn't turn it into anything
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:20.880 --> 00:31:21.150
+<v Speaker 0>else.
+
+NOTE CONF {"raw":[100]}
+
+00:31:21.150 --> 00:31:24.570
+<v Speaker 0>So this is a good old true and false four
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,50]}
+
+00:31:24.570 --> 00:31:25.530
+<v Speaker 0>statements.
+
+NOTE CONF {"raw":[100]}
+
+00:31:25.530 --> 00:31:30.660
+<v Speaker 0>I didn't classify them in hard and non hard, although
+
+NOTE CONF {"raw":[100,69,100,100,100,100,100,100,100,100]}
+
+00:31:30.660 --> 00:31:32.880
+<v Speaker 0>the last one is the one that's a little bit,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:33.180 --> 00:31:38.550
+<v Speaker 0>um, a little bit more interesting perhaps just because, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,88]}
+
+00:31:38.550 --> 00:31:40.410
+<v Speaker 0>you probably haven't seen this.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:40.710 --> 00:31:43.560
+<v Speaker 0>Uh, the other ones are applications of what we've seen.
+
+NOTE CONF {"raw":[65,100,100,100,100,100,100,100,100,100]}
+
+00:31:44.400 --> 00:31:44.910
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[72]}
+
+00:31:46.080 --> 00:31:51.840
+<v Speaker 0>Five more minutes to walk, to work through, um, the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:51.840 --> 00:31:55.920
+<v Speaker 0>ones that you, um, that you feel comfortable with.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:31:55.920 --> 00:31:59.370
+<v Speaker 0>And then, um, then we're going to go over them
+
+NOTE CONF {"raw":[100,100,100,100,71,64,64,100,100,100]}
+
+00:31:59.370 --> 00:31:59.970
+<v Speaker 0>together.
+
+NOTE CONF {"raw":[100]}
+
+00:34:21.830 --> 00:34:25.340
+<v Speaker 0>Okay, I have almost 50 answers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:25.340 --> 00:34:29.960
+<v Speaker 0>If you submit them, we can start going through them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:30.409 --> 00:34:31.429
+<v Speaker 0>together.
+
+NOTE CONF {"raw":[100]}
+
+00:34:32.120 --> 00:34:32.840
+<v Speaker 0>Okay?
+
+NOTE CONF {"raw":[100]}
+
+00:34:45.169 --> 00:34:45.860
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:55.010 --> 00:34:55.760
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:55.760 --> 00:35:01.790
+<v Speaker 0>Let's see the first one for which you're mostly confident
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,100,100]}
+
+00:35:01.790 --> 00:35:08.390
+<v Speaker 0>that it's true, but I have purposefully omitted a condition
+
+NOTE CONF {"raw":[100,72,100,100,100,100,87,100,88,100]}
+
+00:35:08.390 --> 00:35:08.900
+<v Speaker 0>there.
+
+NOTE CONF {"raw":[100]}
+
+00:35:09.380 --> 00:35:13.190
+<v Speaker 0>You don't know that the characteristic polynomial factor is completely
+
+NOTE CONF {"raw":[100,89,100,100,100,100,100,72,72,100]}
+
+00:35:13.190 --> 00:35:15.680
+<v Speaker 0>for that matrix, right?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:15.680 --> 00:35:21.200
+<v Speaker 0>That is an equivalency only if the characteristic polynomial factors
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,96]}
+
+00:35:21.200 --> 00:35:22.070
+<v Speaker 0>completely.
+
+NOTE CONF {"raw":[100]}
+
+00:35:22.670 --> 00:35:26.840
+<v Speaker 0>And for that reason why we can produce a counterexample
+
+NOTE CONF {"raw":[100,100,100,100,60,100,100,100,100,100]}
+
+00:35:26.840 --> 00:35:27.560
+<v Speaker 0>to that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:28.100 --> 00:35:31.490
+<v Speaker 0>We can produce a matrix for which the dimension of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:31.490 --> 00:35:35.030
+<v Speaker 0>the eigenspace is equal to the multiplicity for all eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:35.630 --> 00:35:37.700
+<v Speaker 0>But we're missing out on eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,90,100]}
+
+00:35:37.700 --> 00:35:39.980
+<v Speaker 0>And so the matrix is not diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:40.490 --> 00:35:40.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:40.820 --> 00:35:43.820
+<v Speaker 0>So that was one of the points that I was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:43.820 --> 00:35:48.440
+<v Speaker 0>really hoping to make during this, uh, during this lecture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:35:48.530 --> 00:35:54.830
+<v Speaker 0>And again, the catch must factor completely.
+
+NOTE CONF {"raw":[100,100,100,67,100,100,100]}
+
+00:35:54.950 --> 00:35:57.440
+<v Speaker 0>And we can have this counterexample here.
+
+NOTE CONF {"raw":[100,100,100,100,100,79,100]}
+
+00:35:58.340 --> 00:36:02.510
+<v Speaker 0>If you write down the determinant of that matrix, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:02.510 --> 00:36:08.270
+<v Speaker 0>get, uh, uh, this, uh, this expression here and the
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,100,100,100]}
+
+00:36:08.270 --> 00:36:14.360
+<v Speaker 0>characteristic polynomial only has uh, one root which is uh
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:36:14.840 --> 00:36:15.890
+<v Speaker 0>x equal one.
+
+NOTE CONF {"raw":[100,94,100]}
+
+00:36:15.890 --> 00:36:20.130
+<v Speaker 0>And you do that by putting x minus on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:20.130 --> 00:36:23.850
+<v Speaker 0>on the diagonal and expanding over the third row, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:23.850 --> 00:36:27.660
+<v Speaker 0>get x minus one and then x squared plus one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:27.690 --> 00:36:28.260
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:28.410 --> 00:36:33.930
+<v Speaker 0>So this matrix here in principle satisfy the right hand
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:33.930 --> 00:36:35.250
+<v Speaker 0>side condition here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:36.270 --> 00:36:39.720
+<v Speaker 0>The dimension of the eigenspace we will check has multiplicity
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:39.720 --> 00:36:40.170
+<v Speaker 0>one.
+
+NOTE CONF {"raw":[100]}
+
+00:36:40.440 --> 00:36:46.470
+<v Speaker 0>But because it doesn't have a full set of eigenvectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:46.470 --> 00:36:51.210
+<v Speaker 0>corresponding to our spanning R3, it won't be, um, it
+
+NOTE CONF {"raw":[100,100,93,100,100,100,100,100,94,100]}
+
+00:36:51.210 --> 00:36:55.020
+<v Speaker 0>won't be, um, won't be diagonalisable.
+
+NOTE CONF {"raw":[100,100,99,100,100,100]}
+
+00:36:55.440 --> 00:36:58.830
+<v Speaker 0>Uh, the eigenspace corresponding to that eigenvalue is spanned by
+
+NOTE CONF {"raw":[57,100,100,100,100,94,100,100,100,100]}
+
+00:36:58.830 --> 00:36:59.880
+<v Speaker 0>this vector here.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:00.060 --> 00:37:01.860
+<v Speaker 0>And so the dimension is one.
+
+NOTE CONF {"raw":[100,100,100,100,83,100]}
+
+00:37:02.490 --> 00:37:05.370
+<v Speaker 0>And note that this is an if and only if.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:06.120 --> 00:37:06.540
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:37:06.540 --> 00:37:09.660
+<v Speaker 0>For this to be true we must be able to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:09.660 --> 00:37:13.890
+<v Speaker 0>suppose that if if the dimension equals the multiplicity of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:13.890 --> 00:37:16.500
+<v Speaker 0>lambda, then a is diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:16.920 --> 00:37:17.400
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:21.000 --> 00:37:24.360
+<v Speaker 0>Do you have any question about this question here?
+
+NOTE CONF {"raw":[100,100,100,100,83,100,100,100,100]}
+
+00:37:24.360 --> 00:37:28.230
+<v Speaker 0>Because because the next remark is a consequence but mostly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:28.230 --> 00:37:28.800
+<v Speaker 0>unrelated.
+
+NOTE CONF {"raw":[100]}
+
+00:37:28.800 --> 00:37:30.420
+<v Speaker 0>So this would be a good time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:37:35.970 --> 00:37:36.600
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:39.150 --> 00:37:39.510
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:39.510 --> 00:37:42.720
+<v Speaker 0>Well in that case let's have a look at the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:42.720 --> 00:37:44.580
+<v Speaker 0>characteristic polynomial once again.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:44.850 --> 00:37:47.880
+<v Speaker 0>Uh what is what does it mean to factor completely.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:47.880 --> 00:37:51.090
+<v Speaker 0>Well I've written it down earlier, but um.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,78]}
+
+00:37:53.400 --> 00:37:57.540
+<v Speaker 0>It, it you can rephrase that as meaning that the
+
+NOTE CONF {"raw":[55,98,100,100,100,100,100,100,100,100]}
+
+00:37:57.540 --> 00:38:00.480
+<v Speaker 0>sum of the multiplicity of the eigenvalues are equal to
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:38:00.480 --> 00:38:01.530
+<v Speaker 0>the matrix dimension.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:01.530 --> 00:38:05.820
+<v Speaker 0>And, uh, and let's see why very quickly, if it
+
+NOTE CONF {"raw":[100,74,100,97,100,100,100,100,100,100]}
+
+00:38:05.820 --> 00:38:09.060
+<v Speaker 0>factors completely, we know that we can, uh, that we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,68,100]}
+
+00:38:09.060 --> 00:38:13.830
+<v Speaker 0>can write it as a product of first order terms
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:13.830 --> 00:38:15.310
+<v Speaker 0>raised to some powers.
+
+NOTE CONF {"raw":[95,100,99,100]}
+
+00:38:15.610 --> 00:38:18.970
+<v Speaker 0>And of course lambda one to lambda m will be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:38:18.970 --> 00:38:20.320
+<v Speaker 0>our eigenvalues.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:20.320 --> 00:38:26.020
+<v Speaker 0>And because the characteristic polynomial has degree equal to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:26.020 --> 00:38:30.130
+<v Speaker 0>dimension of the matrix, we know that the sum of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:30.490 --> 00:38:33.460
+<v Speaker 0>all these n's and one plus n two plus n
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:33.670 --> 00:38:36.550
+<v Speaker 0>that must be less than or equal to n, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:36.550 --> 00:38:38.950
+<v Speaker 0>Because if there are some was greater than end and
+
+NOTE CONF {"raw":[100,100,90,56,100,100,100,100,100,100]}
+
+00:38:38.950 --> 00:38:42.040
+<v Speaker 0>this would be an n plus something degree polynomial.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:38:42.040 --> 00:38:45.580
+<v Speaker 0>And that's not possible because the characteristic polynomial is at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:45.580 --> 00:38:49.150
+<v Speaker 0>most the dimension of the matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:49.150 --> 00:38:51.400
+<v Speaker 0>So we really have only two options.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:51.940 --> 00:38:58.060
+<v Speaker 0>And we can either have the exact like strictly smaller
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:38:58.060 --> 00:38:59.500
+<v Speaker 0>than or equal to n.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:00.670 --> 00:39:04.000
+<v Speaker 0>And if it's smaller than n then it means that
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100,100,100,100]}
+
+00:39:04.000 --> 00:39:05.170
+<v Speaker 0>there's that.
+
+NOTE CONF {"raw":[64,82]}
+
+00:39:05.170 --> 00:39:08.800
+<v Speaker 0>We're missing some factor here, because the degree of the
+
+NOTE CONF {"raw":[65,100,100,100,100,100,100,100,100,100]}
+
+00:39:08.800 --> 00:39:13.210
+<v Speaker 0>polynomial on the right hand side will be n one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,79]}
+
+00:39:13.210 --> 00:39:15.670
+<v Speaker 0>plus n two plus n n, and we know that
+
+NOTE CONF {"raw":[100,100,100,100,93,86,100,100,100,100]}
+
+00:39:15.670 --> 00:39:18.250
+<v Speaker 0>the degree of the polynomial on the right hand side
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:18.250 --> 00:39:21.280
+<v Speaker 0>on the left hand side, sorry, is n because it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:39:21.280 --> 00:39:22.660
+<v Speaker 0>the characteristic polynomial.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:23.590 --> 00:39:27.250
+<v Speaker 0>And so we're missing one of those factors in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:27.250 --> 00:39:28.210
+<v Speaker 0>form like this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:28.210 --> 00:39:28.690
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:39:28.690 --> 00:39:32.800
+<v Speaker 0>Because if if the remaining degrees on the right hand
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:32.800 --> 00:39:37.090
+<v Speaker 0>side would have been written in this form here as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:37.090 --> 00:39:40.690
+<v Speaker 0>x minus lambda n plus one and n plus one,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,61,100,100,100]}
+
+00:39:40.690 --> 00:39:44.020
+<v Speaker 0>it would be in this in this form already it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:44.020 --> 00:39:45.610
+<v Speaker 0>would be included in this product.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:45.610 --> 00:39:46.780
+<v Speaker 0>But it's not.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:47.140 --> 00:39:53.110
+<v Speaker 0>So I'm missing out on on an factor that I
+
+NOTE CONF {"raw":[100,100,100,100,100,99,63,100,100,100]}
+
+00:39:53.110 --> 00:39:55.780
+<v Speaker 0>can factor that I can factorise completely.
+
+NOTE CONF {"raw":[100,100,100,100,77,98,100]}
+
+00:39:55.780 --> 00:39:59.170
+<v Speaker 0>And so the fact that the, the, the sum of
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,96,100]}
+
+00:39:59.170 --> 00:40:02.470
+<v Speaker 0>the multiplicity of the eigenvalues is strictly less than the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:02.470 --> 00:40:05.050
+<v Speaker 0>size of the matrix implies that I'm, I'm leaving out
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:05.050 --> 00:40:07.630
+<v Speaker 0>one of those factors that prevents me to factor completely
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:40:07.630 --> 00:40:10.420
+<v Speaker 0>the polynomial, and vice versa.
+
+NOTE CONF {"raw":[100,100,66,100,100]}
+
+00:40:10.420 --> 00:40:13.820
+<v Speaker 0>If n one N1 plus n2 plus n m already
+
+NOTE CONF {"raw":[100,96,96,100,100,100,100,65,93,100]}
+
+00:40:13.820 --> 00:40:18.230
+<v Speaker 0>give me a polynomial of degree n, then I can't
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:40:18.230 --> 00:40:22.490
+<v Speaker 0>have any more factor that can create me problem with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,74,100,100]}
+
+00:40:22.490 --> 00:40:24.650
+<v Speaker 0>factorising completely the polynomial, right?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:24.650 --> 00:40:29.330
+<v Speaker 0>Because the factors that I have already written in already
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:29.330 --> 00:40:32.810
+<v Speaker 0>account for the maximum degree that the polynomial can be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,64,100,100,100]}
+
+00:40:33.440 --> 00:40:38.900
+<v Speaker 0>Okay, so I put this remark here mostly because, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,58]}
+
+00:40:38.900 --> 00:40:45.110
+<v Speaker 0>it's uh, something that uh, I use to build that,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76,100,100,100]}
+
+00:40:45.110 --> 00:40:47.030
+<v Speaker 0>uh, counterexample to number one.
+
+NOTE CONF {"raw":[65,100,100,100,100]}
+
+00:40:47.030 --> 00:40:51.920
+<v Speaker 0>It's a counterexample I've built by selecting a matrix that
+
+NOTE CONF {"raw":[100,100,71,86,100,100,100,100,100,100]}
+
+00:40:51.920 --> 00:40:54.980
+<v Speaker 0>had exactly one of these terms here, and a non
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:54.980 --> 00:40:59.510
+<v Speaker 0>factorising term, and exploiting the fact that the multiplicity doesn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:59.510 --> 00:41:02.720
+<v Speaker 0>add up to the dimension of the space in which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,78,100]}
+
+00:41:02.720 --> 00:41:06.620
+<v Speaker 0>the matrix acts, which in our example here was of
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:41:06.620 --> 00:41:07.760
+<v Speaker 0>course R3.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:08.570 --> 00:41:09.080
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:10.430 --> 00:41:11.120
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:41:11.120 --> 00:41:15.260
+<v Speaker 2>So that first one, if you just added the characteristic
+
+NOTE CONF {"raw":[95,84,88,78,100,100,100,100,100,100]}
+
+00:41:15.260 --> 00:41:17.780
+<v Speaker 2>polynomial factorises completely, it would be true.
+
+NOTE CONF {"raw":[100,88,100,100,100,100,100]}
+
+00:41:17.780 --> 00:41:18.260
+<v Speaker 2>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:41:18.650 --> 00:41:19.940
+<v Speaker 0>It's a it's a.
+
+NOTE CONF {"raw":[98,95,100,100]}
+
+00:41:20.240 --> 00:41:22.310
+<v Speaker 0>If you go back and read the theorem we had
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:22.310 --> 00:41:23.720
+<v Speaker 0>it in the previous slide.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:23.930 --> 00:41:26.960
+<v Speaker 0>The theorem goes like um.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:31.280 --> 00:41:31.910
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[89]}
+
+00:41:35.270 --> 00:41:36.170
+<v Speaker 0>Can find it now.
+
+NOTE CONF {"raw":[82,100,100,100]}
+
+00:41:36.170 --> 00:41:37.070
+<v Speaker 0>Oh yes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:37.070 --> 00:41:37.850
+<v Speaker 0>There it is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:37.850 --> 00:41:41.360
+<v Speaker 0>The following are equivalent for a square matrix for which
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,100,100]}
+
+00:41:41.360 --> 00:41:44.630
+<v Speaker 0>the characteristic polynomial k of x factor is completely right.
+
+NOTE CONF {"raw":[100,100,100,75,100,100,100,100,100,100]}
+
+00:41:44.630 --> 00:41:47.480
+<v Speaker 0>So if you add that then you can prove it
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:41:47.480 --> 00:41:50.720
+<v Speaker 0>this by looking at this uh theorem which again I
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:41:50.720 --> 00:41:51.950
+<v Speaker 0>lifted straight from the writing.
+
+NOTE CONF {"raw":[100,100,100,100,94]}
+
+00:41:51.950 --> 00:41:53.960
+<v Speaker 0>So it's in section 5.5 somewhere.
+
+NOTE CONF {"raw":[100,100,100,100,95,100]}
+
+00:41:53.960 --> 00:41:55.340
+<v Speaker 0>But here I didn't include it.
+
+NOTE CONF {"raw":[100,100,100,98,100,100]}
+
+00:41:55.340 --> 00:41:57.710
+<v Speaker 0>And so I could build I could build the counterexample
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,91,97]}
+
+00:41:57.710 --> 00:41:58.280
+<v Speaker 0>that way.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:58.850 --> 00:41:59.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:02.150 --> 00:42:03.500
+<v Speaker 0>Uh, where were we.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:04.310 --> 00:42:06.020
+<v Speaker 0>This is still question one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:06.350 --> 00:42:07.730
+<v Speaker 0>Question two.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:08.240 --> 00:42:08.780
+<v Speaker 0>Remark.
+
+NOTE CONF {"raw":[100]}
+
+00:42:08.780 --> 00:42:14.040
+<v Speaker 0>Okay Number two, if the eigenvectors of a, uh, error
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,90,33]}
+
+00:42:14.430 --> 00:42:15.990
+<v Speaker 0>are n times n.
+
+NOTE CONF {"raw":[86,100,100,100]}
+
+00:42:15.990 --> 00:42:17.190
+<v Speaker 0>Oh, my God, I'm sorry.
+
+NOTE CONF {"raw":[100,100,100,100,97]}
+
+00:42:17.220 --> 00:42:20.550
+<v Speaker 0>Spun our n, so do the ones of a minus
+
+NOTE CONF {"raw":[73,33,100,100,100,100,100,100,100,100]}
+
+00:42:20.550 --> 00:42:21.210
+<v Speaker 0>one.
+
+NOTE CONF {"raw":[100]}
+
+00:42:22.380 --> 00:42:26.370
+<v Speaker 0>Um, you're pretty much okay.
+
+NOTE CONF {"raw":[98,100,100,100,100]}
+
+00:42:26.370 --> 00:42:29.850
+<v Speaker 0>There's there's a tendency towards being this being true.
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100,100,100]}
+
+00:42:30.150 --> 00:42:31.470
+<v Speaker 0>Uh, we're going to do a raise of hands for
+
+NOTE CONF {"raw":[89,100,100,100,100,100,100,100,100,100]}
+
+00:42:31.470 --> 00:42:32.250
+<v Speaker 0>number three.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:32.700 --> 00:42:34.530
+<v Speaker 0>This is indeed true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:34.770 --> 00:42:35.790
+<v Speaker 0>Uh, why?
+
+NOTE CONF {"raw":[74,92]}
+
+00:42:35.790 --> 00:42:41.940
+<v Speaker 0>Well, um, let's pick the eigenvalues of A.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:41.970 --> 00:42:46.380
+<v Speaker 0>We know that they span RN, and for all the
+
+NOTE CONF {"raw":[100,100,100,100,100,21,100,100,100,100]}
+
+00:42:46.380 --> 00:42:52.200
+<v Speaker 0>eigenvectors, we get this equation here, which, um, uh, we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:52.200 --> 00:42:54.540
+<v Speaker 0>can multiply by a minus one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:54.810 --> 00:42:58.710
+<v Speaker 0>Uh, again, if I give you a minus one in
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:42:58.710 --> 00:43:03.150
+<v Speaker 0>the in the hypothesis, it's, uh, it's implied that A's
+
+NOTE CONF {"raw":[100,100,100,100,100,63,100,74,100,73]}
+
+00:43:03.150 --> 00:43:04.650
+<v Speaker 0>is diagonalisable.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:04.650 --> 00:43:06.960
+<v Speaker 0>And it's also implied by the fact that the eigenvectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:43:06.960 --> 00:43:07.290
+<v Speaker 0>span.
+
+NOTE CONF {"raw":[98]}
+
+00:43:07.620 --> 00:43:11.130
+<v Speaker 0>So um, we can multiply by a minus one, which
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:43:11.130 --> 00:43:14.670
+<v Speaker 0>exist, and we get, uh, what do we get?
+
+NOTE CONF {"raw":[68,100,100,100,58,100,100,100,100]}
+
+00:43:14.670 --> 00:43:17.790
+<v Speaker 0>We get a minus one A on one side and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:17.790 --> 00:43:21.930
+<v Speaker 0>lambda a minus one v, I can simplify a minus
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:21.930 --> 00:43:23.880
+<v Speaker 0>one a on one side.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:23.880 --> 00:43:27.360
+<v Speaker 0>Divide by lambda and I get a swap sides here.
+
+NOTE CONF {"raw":[88,100,100,100,100,100,77,77,100,100]}
+
+00:43:27.360 --> 00:43:30.780
+<v Speaker 0>This this used to be this part here multiplied by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:30.780 --> 00:43:32.250
+<v Speaker 0>a minus one on the left.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:32.250 --> 00:43:34.290
+<v Speaker 0>And I also divide it by lambda.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:34.290 --> 00:43:38.880
+<v Speaker 0>So here what I'm left is a minus one lambda
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:38.880 --> 00:43:41.430
+<v Speaker 0>divided by lambda goes away v.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:41.430 --> 00:43:42.690
+<v Speaker 0>So a minus one v.
+
+NOTE CONF {"raw":[100,100,100,100,97]}
+
+00:43:42.870 --> 00:43:45.840
+<v Speaker 0>And here I have a minus one a goes away
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:45.840 --> 00:43:48.840
+<v Speaker 0>as the identity one over lambda v.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:49.020 --> 00:43:51.960
+<v Speaker 0>And so one minus lambda is an eigenvalue of a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:51.960 --> 00:43:54.960
+<v Speaker 0>minus one which we don't particularly care about.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:55.080 --> 00:43:57.990
+<v Speaker 0>But crucially it has the same eigenvector v.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:58.320 --> 00:44:01.380
+<v Speaker 0>And this is true for all pair of eigenvalues eigenvectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:01.380 --> 00:44:03.060
+<v Speaker 0>of a minus one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:03.060 --> 00:44:09.160
+<v Speaker 0>And so a minus one will also have uh, eigenvectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:44:09.160 --> 00:44:12.070
+<v Speaker 0>that span RN because it will be the same.
+
+NOTE CONF {"raw":[100,99,67,100,100,100,100,100,100]}
+
+00:44:12.970 --> 00:44:13.510
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:44:18.880 --> 00:44:19.600
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[89]}
+
+00:44:23.230 --> 00:44:26.380
+<v Speaker 0>I don't know where the duplicates come, uh, came from.
+
+NOTE CONF {"raw":[66,100,100,100,100,100,100,93,100,100]}
+
+00:44:26.890 --> 00:44:30.160
+<v Speaker 0>Uh, number three, the sum of the eigenvalue multiplicities of
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,78,100,100]}
+
+00:44:30.160 --> 00:44:33.820
+<v Speaker 0>an uh n times n matrix sums to n.
+
+NOTE CONF {"raw":[100,72,100,100,96,100,100,100,100]}
+
+00:44:35.740 --> 00:44:36.400
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:44:36.850 --> 00:44:39.970
+<v Speaker 0>This one, it's good that I gave you, uh, before
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,79,100]}
+
+00:44:39.970 --> 00:44:40.540
+<v Speaker 0>the remark.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:40.540 --> 00:44:44.050
+<v Speaker 0>This is essentially the remark that we have just shown.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:44.050 --> 00:44:45.280
+<v Speaker 0>That is false.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:45.730 --> 00:44:47.140
+<v Speaker 0>It's not really true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:47.440 --> 00:44:51.280
+<v Speaker 0>Uh, the same counterexample that I used for the first
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:44:51.280 --> 00:44:54.100
+<v Speaker 0>one also applies to this one here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:55.000 --> 00:44:59.500
+<v Speaker 0>Um, again, this is exactly what we've proven in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91,100,100,100]}
+
+00:44:59.500 --> 00:45:00.220
+<v Speaker 0>remark.
+
+NOTE CONF {"raw":[100]}
+
+00:45:00.640 --> 00:45:03.760
+<v Speaker 0>Uh, this is if and only if the polynomial of
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:45:03.760 --> 00:45:05.410
+<v Speaker 0>the matrix factors completely.
+
+NOTE CONF {"raw":[100,100,65,100]}
+
+00:45:05.410 --> 00:45:07.360
+<v Speaker 0>If it doesn't factor is completely.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:07.390 --> 00:45:08.500
+<v Speaker 0>We're missing out.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:08.530 --> 00:45:12.340
+<v Speaker 0>Non factorised terms that make it so that the some
+
+NOTE CONF {"raw":[65,64,100,100,100,100,100,100,100,99]}
+
+00:45:12.340 --> 00:45:16.270
+<v Speaker 0>of the uh the, some of the multiplicities is strictly
+
+NOTE CONF {"raw":[100,100,88,99,100,100,100,99,100,100]}
+
+00:45:16.270 --> 00:45:17.170
+<v Speaker 0>less than em.
+
+NOTE CONF {"raw":[100,100,90]}
+
+00:45:18.040 --> 00:45:18.640
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:45:23.650 --> 00:45:24.850
+<v Speaker 0>Any questions?
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:26.140 --> 00:45:26.800
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:45:27.250 --> 00:45:31.720
+<v Unknown>I want to understand the formal definition of, uh, an
+
+NOTE CONF {"raw":[100,98,98,100,100,100,100,100,60,87]}
+
+00:45:31.720 --> 00:45:32.470
+<v Unknown>eigenvalue.
+
+NOTE CONF {"raw":[72]}
+
+00:45:32.560 --> 00:45:35.620
+<v Unknown>Because if we see it as a root of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,74,70,100,95]}
+
+00:45:35.620 --> 00:45:41.530
+<v Unknown>characteristic polynomial, then the statement is true, because the sum
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,99,100,97]}
+
+00:45:41.530 --> 00:45:43.870
+<v Unknown>of the multiplicity of all the roots of the polynomial
+
+NOTE CONF {"raw":[100,100,100,100,97,71,100,100,100,100]}
+
+00:45:44.050 --> 00:45:46.120
+<v Unknown>is the degree of the polynomial.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:46.870 --> 00:45:48.280
+<v Speaker 0>That is not true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:48.280 --> 00:45:51.400
+<v Speaker 0>That is true only if you're if you can factorise
+
+NOTE CONF {"raw":[100,100,100,92,100,99,100,100,100,100]}
+
+00:45:51.400 --> 00:45:52.210
+<v Speaker 0>the polynomial.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:52.210 --> 00:45:54.640
+<v Speaker 0>But we can't because we're using real numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:54.910 --> 00:45:55.240
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[86]}
+
+00:45:55.240 --> 00:45:58.870
+<v Speaker 0>So it is not true that the polynomial p of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:58.870 --> 00:46:03.130
+<v Speaker 0>x once again x squared plus one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:03.730 --> 00:46:06.920
+<v Speaker 0>This has no roots, but has a degree too.
+
+NOTE CONF {"raw":[100,100,100,100,100,99,94,100,63]}
+
+00:46:08.180 --> 00:46:12.410
+<v Speaker 2>Polynomial is any number that makes the polynomial be zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,98]}
+
+00:46:12.410 --> 00:46:15.020
+<v Speaker 0>So any real number for us, because we're not working
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:46:15.020 --> 00:46:16.100
+<v Speaker 0>on the complex numbers.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:16.730 --> 00:46:20.930
+<v Speaker 2>We are going to say that, uh, an eigenvalue.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:21.680 --> 00:46:22.190
+<v Speaker 2>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:46:23.990 --> 00:46:28.190
+<v Speaker 0>Yes, because we're working with the real numbers on in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,65,100]}
+
+00:46:28.190 --> 00:46:29.000
+<v Speaker 0>this course.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:29.090 --> 00:46:31.040
+<v Speaker 0>But what you're saying is absolutely correct.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:31.040 --> 00:46:35.630
+<v Speaker 0>What this points all all of this points to something
+
+NOTE CONF {"raw":[45,100,67,100,100,100,100,100,100,100]}
+
+00:46:35.630 --> 00:46:38.300
+<v Speaker 0>that we're not treating in this course that now if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:38.300 --> 00:46:42.140
+<v Speaker 0>you allow the elements of the matrices and the eigenvalues,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:42.170 --> 00:46:45.230
+<v Speaker 0>the eigenvalues of the matrices to be complex number, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:45.230 --> 00:46:48.530
+<v Speaker 0>don't have this problem anymore, because then sure, you can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:48.530 --> 00:46:52.910
+<v Speaker 0>write this as x minus I and x plus I.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,71,100,100,100]}
+
+00:46:53.030 --> 00:46:55.730
+<v Speaker 0>And there's actually something called the fundamental theorem of algebra
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:55.730 --> 00:47:00.530
+<v Speaker 0>that says that a polynomial of degree n has roots.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:01.220 --> 00:47:03.200
+<v Speaker 0>And all of these problems go away.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:03.200 --> 00:47:05.390
+<v Speaker 0>But these problems are created by the fact that we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,99]}
+
+00:47:05.390 --> 00:47:08.960
+<v Speaker 0>not allowing a complex number in this course.
+
+NOTE CONF {"raw":[100,100,66,100,73,100,100,100]}
+
+00:47:08.960 --> 00:47:12.230
+<v Speaker 0>And this is also why the section on complex number
+
+NOTE CONF {"raw":[100,100,100,100,100,91,100,97,100,62]}
+
+00:47:12.230 --> 00:47:13.760
+<v Speaker 0>was excluded from the reading.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:14.240 --> 00:47:19.160
+<v Speaker 0>So we we have to work with that with that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:19.160 --> 00:47:23.000
+<v Speaker 0>restriction in mind, which is a restriction that makes sense
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:23.000 --> 00:47:24.080
+<v Speaker 0>in some applications.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:24.080 --> 00:47:24.320
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:47:24.320 --> 00:47:29.810
+<v Speaker 0>So it's also useful content mathematically creates problem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:29.810 --> 00:47:31.970
+<v Speaker 0>It's more elegant to go to complex numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:31.970 --> 00:47:36.380
+<v Speaker 0>But in some in some application it's a limitation you
+
+NOTE CONF {"raw":[100,100,100,100,100,76,100,100,100,100]}
+
+00:47:36.380 --> 00:47:38.810
+<v Speaker 0>have to deal with okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:41.150 --> 00:47:41.810
+<v Speaker 0>Anything else.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:41.810 --> 00:47:42.230
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:47:43.760 --> 00:47:47.450
+<v Speaker 2>Have anything to do with how like whether whether the
+
+NOTE CONF {"raw":[100,100,100,100,100,38,100,100,100,86]}
+
+00:47:47.450 --> 00:47:51.050
+<v Speaker 2>matrix is organised or is it simple like could you
+
+NOTE CONF {"raw":[91,93,69,100,98,66,45,97,100,100]}
+
+00:47:51.050 --> 00:47:53.720
+<v Speaker 2>add like if I expected completely.
+
+NOTE CONF {"raw":[100,100,72,91,97,100]}
+
+00:47:54.620 --> 00:47:55.370
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:47:58.130 --> 00:48:07.470
+<v Speaker 0>Uh, if, um, If the sorry if the matrix A
+
+NOTE CONF {"raw":[100,100,80,100,100,100,100,100,100,100]}
+
+00:48:07.710 --> 00:48:10.260
+<v Speaker 0>if the characteristic polynomial factor is completely.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:10.650 --> 00:48:10.980
+<v Speaker 2>So yeah.
+
+NOTE CONF {"raw":[91,91]}
+
+00:48:10.980 --> 00:48:12.750
+<v Speaker 2>So if somebody argue about it.
+
+NOTE CONF {"raw":[100,99,71,95,95,57]}
+
+00:48:14.760 --> 00:48:18.390
+<v Unknown>And see like the characteristic polynomial factors completely.
+
+NOTE CONF {"raw":[99,74,100,100,100,100,95,95]}
+
+00:48:18.810 --> 00:48:19.680
+<v Speaker 2>Does that right.
+
+NOTE CONF {"raw":[47,80,100]}
+
+00:48:19.770 --> 00:48:22.890
+<v Speaker 2>Like does that tell you anything about how diagonalisable the
+
+NOTE CONF {"raw":[54,100,100,100,100,100,100,100,61,100]}
+
+00:48:22.890 --> 00:48:23.700
+<v Speaker 2>matrix is or not.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:24.450 --> 00:48:27.810
+<v Speaker 0>Uh, I would need to think about my first.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:48:27.990 --> 00:48:30.960
+<v Speaker 0>My first, uh, answer to that is yes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:30.960 --> 00:48:32.970
+<v Speaker 0>Then the matrix is diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:33.900 --> 00:48:36.930
+<v Speaker 0>But I'll think about it because I'm not 100% sure
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:36.930 --> 00:48:37.590
+<v Speaker 0>here on the spot.
+
+NOTE CONF {"raw":[100,67,45,51]}
+
+00:48:37.590 --> 00:48:39.120
+<v Speaker 0>And also we only have two minutes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:39.120 --> 00:48:41.310
+<v Speaker 0>So unfortunately I have to go through the fourth statement
+
+NOTE CONF {"raw":[100,100,90,100,100,100,100,100,100,100]}
+
+00:48:41.310 --> 00:48:44.520
+<v Speaker 0>because there's one last book club for your feedback about
+
+NOTE CONF {"raw":[100,100,100,100,84,100,100,100,100,100]}
+
+00:48:44.520 --> 00:48:48.900
+<v Speaker 0>what you're sure, most sure and least sure about because,
+
+NOTE CONF {"raw":[100,100,64,100,100,100,100,100,100,100]}
+
+00:48:48.990 --> 00:48:52.380
+<v Speaker 0>um, I need to send that data on to Andreas,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,89,89,100]}
+
+00:48:52.380 --> 00:48:54.210
+<v Speaker 0>who's going to do the the review.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100]}
+
+00:48:54.210 --> 00:48:56.640
+<v Speaker 0>So let's have a look at statement number four quickly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:48:58.020 --> 00:49:00.030
+<v Speaker 0>And this one was true.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:00.030 --> 00:49:03.810
+<v Speaker 0>So another one in which most of you got this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:03.810 --> 00:49:04.470
+<v Speaker 0>wrong.
+
+NOTE CONF {"raw":[100]}
+
+00:49:04.470 --> 00:49:08.580
+<v Speaker 0>And the proof here is fairly simple in the fact
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:08.580 --> 00:49:12.060
+<v Speaker 0>that you can write the definition of eigenvector of A
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:49:12.060 --> 00:49:15.660
+<v Speaker 0>like this, and you can prove that the same eigenvectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:16.020 --> 00:49:19.380
+<v Speaker 0>of A will also be eigenvectors of A plus I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,99,99,95]}
+
+00:49:20.070 --> 00:49:22.920
+<v Speaker 0>with eigenvalue lambda plus one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:23.310 --> 00:49:23.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[82]}
+
+00:49:24.180 --> 00:49:29.130
+<v Speaker 0>Uh, and that comes basically because uh, all vectors are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,67,100,100,100]}
+
+00:49:29.130 --> 00:49:33.300
+<v Speaker 0>eigenvectors of the identity matrix because they get transformed to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:33.300 --> 00:49:33.660
+<v Speaker 0>itself.
+
+NOTE CONF {"raw":[78]}
+
+00:49:33.690 --> 00:49:35.280
+<v Speaker 0>Ta ta ta themselves.
+
+NOTE CONF {"raw":[68,68,68,100]}
+
+00:49:35.370 --> 00:49:38.370
+<v Speaker 0>So v is eigenvector of a plus one with eigenvalue
+
+NOTE CONF {"raw":[100,100,100,100,100,95,95,100,100,100]}
+
+00:49:38.370 --> 00:49:39.450
+<v Speaker 0>lambda plus one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:39.450 --> 00:49:42.930
+<v Speaker 0>And so they have the same sets of eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:49:43.110 --> 00:49:48.090
+<v Speaker 0>And because the first set spanned r n then the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,48,89,100,100]}
+
+00:49:48.090 --> 00:49:51.600
+<v Speaker 0>other set which is the same set will also span
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:51.600 --> 00:49:53.070
+<v Speaker 0>the same one as well.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:53.520 --> 00:49:53.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:53.910 --> 00:49:56.880
+<v Speaker 0>So the last bit is this can take a little
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:56.880 --> 00:49:59.700
+<v Speaker 0>bit longer, but I'm going to leave it open until
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:59.710 --> 00:50:02.530
+<v Speaker 0>the over the end of the lesson so it can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,91,41,100]}
+
+00:50:02.530 --> 00:50:06.340
+<v Speaker 0>have a chance of, uh, of doing this.
+
+NOTE CONF {"raw":[100,100,100,100,99,100,100,100]}
+
+00:50:06.550 --> 00:50:10.900
+<v Speaker 0>Um, this is just, uh, it's a 1 to 4.
+
+NOTE CONF {"raw":[99,100,100,100,69,100,100,98,98,98]}
+
+00:50:10.900 --> 00:50:14.650
+<v Speaker 0>Four means that you're very confident in doing that.
+
+NOTE CONF {"raw":[70,100,100,100,100,100,100,100,100]}
+
+00:50:15.250 --> 00:50:19.180
+<v Speaker 0>Um, and one means you're not at all confident.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:50:19.480 --> 00:50:23.230
+<v Speaker 0>And, um, as you can see, this only covers the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,100,100,78]}
+
+00:50:23.230 --> 00:50:24.640
+<v Speaker 0>some topics from my week.
+
+NOTE CONF {"raw":[100,100,100,100,82]}
+
+00:50:24.640 --> 00:50:27.460
+<v Speaker 0>So week for week eight and week nine because it
+
+NOTE CONF {"raw":[100,100,63,100,100,100,100,100,100,84]}
+
+00:50:27.460 --> 00:50:28.780
+<v Speaker 0>was responsible for those weeks.
+
+NOTE CONF {"raw":[100,100,100,100,72]}
+
+00:50:28.780 --> 00:50:31.780
+<v Speaker 0>So I'm going to send uh that data through.
+
+NOTE CONF {"raw":[100,100,100,100,100,82,100,100,100]}
+
+00:50:31.960 --> 00:50:34.120
+<v Speaker 0>So very important that you get this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:50:34.120 --> 00:50:35.800
+<v Speaker 0>And I'm just going to cover.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:50:35.800 --> 00:50:38.890
+<v Speaker 0>So you're, uh, completely anonymous.
+
+NOTE CONF {"raw":[100,95,100,100,100]}
+
+00:50:39.130 --> 00:50:41.230
+<v Speaker 0>And other than that, it's 1 p.m..
+
+NOTE CONF {"raw":[100,100,100,100,100,93,93]}
+
+00:50:41.230 --> 00:50:42.280
+<v Speaker 0>Thank you for coming.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:42.280 --> 00:50:44.560
+<v Speaker 0>And I'll see you all at the tutorials.
+
+NOTE CONF {"raw":[100,100,100,100,100,86,100,100]}

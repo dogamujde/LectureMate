@@ -1,0 +1,813 @@
+All right.
+Welcome to the second lecture today.
+Apologies for the bumpy start with the music.
+, just to check that your work life is working
+today.
+We do not have attendance, but I am taking suggestion
+for the next week.
+We have together for the pre lecture music that hopefully
+will work a little bit better.
+That will be in a few weeks.
+I think week eight, if I remember correctly, will be
+the next one that we will be together.
+Right.
+, I'll give you one more minute To test out
+your book club very quickly.
+And then?
+Then we can start.
+Right.
+I think, .
+This one will remain anyway.
+So just as a quick recap from yesterday, we are
+talking about determinants and today we will talk about how
+that relates to a matrix inverse and the invertibility property
+of the matrices.
+Why the inverse is useful.
+And how do we find inverse.
+And matrix inverses can be quite difficult.
+There's a very general procedure much the cofactor expansion
+for the determinant.
+And then using the structure of the matrix, we can
+simplify it from time to time, and we will see
+a few exercise along along that line.
+So this is just what we were looking at yesterday.
+This will be the program for today.
+And do you have any question before we start.
+No.
+Okay.
+Okay then this is just the QR code if anyone
+is not having it.
+, okay.
+Let's start by having a quick look at the determinant
+once more and something we haven't touched a lot yesterday
+was the matrix transpose.
+So the transpose is the matrix that you obtain when
+you swap rows and columns.
+So in general if you have a matrix A, in
+which the elements are the I, j.
+Then the matrix a t will be the same matrix,
+but the columns and the rows are now exchanged.
+So the element that was in the ith row jth
+column is now in the jth row ith column.
+And that defines your new matrix.
+so let's take to to square matrices.
+And then I'm combining them , in a fairly imaginative
+way.
+And my question for you is to select all of
+the expressions for that determinant that are equivalent to the
+one that is shown on the board.
+And if you go on bookclub, , as you can
+see, there are a few, , a few options.
+I'm going to hide them.
+So you're not skewed by your by the vote of
+your classmates.
+and think about the properties of the determinant.
+Think about how I am combining those matrices and have
+a.
+Think about it for a couple of minutes.
+Okay, while you consider all options, let's have a look
+at the content of the at the argument of that
+determinant function.
+So what I'm doing, I'm taking the square of A
+multiplying by t, taking the transpose of the whole thing,
+and then multiply the whole thing by a squared once
+more.
+Okay.
+So in order for us to get the determinant of
+that big matrix that we get, and we need to
+think about how the determinants propagates when we do operations
+on the matrices.
+And so let's go over some basic ones.
+And the determinant of a product.
+Is equal to.
+The products of the determinants.
+Absolutely correct.
+And that is the first thing to keep in mind.
+If we have two matrices then we can bring the
+product outside of the determinant in a way.
+And if we transpose a matrix.
+So we swap the orders of rows and columns.
+, do you know what happens with determinant?
+Just scream it.
+I'm not doing.
+I'm going to ask for hands from time to time.
+But otherwise you you you're free to just scream it.
+Yeah, it doesn't change.
+So if we have a matrix A, we take the
+transpose.
+The determinant doesn't care about it at all.
+And if we take the inverse of the matrix, the
+inverse was the the big chunk of material for the
+reading for today's lecture.
+, so what happens to the determinant.
+How does that interact with taking the inverse.
+It's the reciprocal yes.
+, which are three very nice polished, , formulas if
+you want.
+, the last one is particularly nice because the minus
+one at the exponent just migrates out of the out
+of the out of the bracket.
+Okay.
+So these are the three properties that we want to
+keep in mind.
+, let's have a look again at the at the
+prompt that I gave you.
+So we know that the transpose doesn't really care about
+, about, , sorry, the determinant doesn't really care about
+the transpose.
+So we can basically ignore the fact that there is
+a transpose down there.
+So we're left with products.
+And so that determinant is essentially the same as a
+combination of the determinant of A to the fourth power
+and the determinant of B to the one power to
+the first power.
+So just the determinant of B.
+So let's let's have a look at the answers.
+And yeah , you have correctly identified, for the most
+part, the three that are, , all equivalent.
+The tricky one was maybe number four because that's written
+as the determinant of 80 or actually number five as
+well.
+But obviously the determinant of it's the determinant of a.
+So that is also an acceptable and acceptable solution.
+Okay.
+Do you have any questions about this very quick recap
+of some properties of the determinant.
+No okay.
+, so now we really start with the content of
+today's lecture.
+This was a warm up in some sense.
+, because the next question that I prepared for you
+is, , about, , how the determinant interacts with the
+invertibility properties.
+, so we've seen that the determinant and the existence
+of the inverse of a given matrix are strictly related.
+And the invertibility of a matrix also has some consequences
+in terms of the number of solutions in the of
+the linear system that is represented by that matrix of
+coefficients.
+Right.
+So the next exercise I prepared should be open now
+on, , what Colab is a sort of connect the
+start and the end of , of, , logical, ,
+logical implication.
+If a condition is true, there will be some thesis
+or some consequence.
+And in order for that, in order for you to
+complete that, you really need to think about what what
+are the relations between the determinant of a matrix, the
+existence of its inverse and the numbers of solution in
+the problem.
+And the only thing I have to say for this
+question is because there's only a limited number of combinations
+I could input.
+Sometimes multiple options are true.
+So don't don't get too worried if one club says
+that you got the wrong one.
+If it still makes sense, we will go over them
+together.
+Okay?
+As always.
+, consulting your neighbours is always encouraged, but not compulsory.
+Okay.
+Let's have a look at the properties that we're looking
+at.
+Then I'll give you another bit of time to think
+more about the the ones on bookclub specifically, but what
+are the relations that we have seen?
+Well, the first one connects the invertibility of a given
+matrix and the existence and the number of solution of
+the system.
+Right.
+And we say that if A is invertible, then the
+system only has exactly one solution.
+And the reason for that is that if a minus
+one exists, right, we can multiply the system on the
+left on both sides by a minus one.
+When I say multiply to the left, I mean that
+a is multiplied on the left hand side of both
+the left hand side and the right hand side of
+the equation.
+So I basically swoop a a minus one in on
+the left before axe and before b, and now a
+minus one x is just the identity.
+So identity times x.
+We write explicitly our Solution as x equals a minus
+one times b.
+We do the matrix multiplication, assuming that we know the
+inverse a minus one, and that gives us our solution
+directly.
+Okay.
+We're just one matrix multiplication right.
+And the second property, which was again in reading for
+today, is that A is an invertible matrix if and
+only if the determinant is different from zero.
+So that goes both way.
+If A has an inverse, we are sure that its
+determinant is non-zero, and if we find a matrix whose
+determinant is non-zero, we know that the inverse exists.
+We don't know what it is, but we're sure that
+it that it exists.
+Okay.
+And then the negations also work because it's two way
+if A is not invertible, then the determinant is zero.
+And if we find a matrix with zero determinant we
+can be sure that the that the inverse Universe matrix
+does not exist.
+Okay, I'll give you 30 more seconds to have a
+look at the book club with this slide on.
+And then I'll comment on the different, , on the
+different combinations.
+Okay, let's have a look at what we have on
+the left hand side of the book club.
+If the determinant is zero, what do we get?
+Well, the determinant is zero means that the matrix is
+not invertible.
+And so proposition number one up there doesn't really apply
+because because proposition one only says if it's invertible then
+there is a unique solution.
+It doesn't contain the Invertibility property as a consequence only
+as a premise okay.
+So if determinant of A is equal to zero then
+of course a minus one is not defined.
+B would be a really silly logical implication, but hey,
+it's a true one nonetheless.
+If the determinant is zero, then the determinant is zero
+and that's one implies c.
+See.
+If the determinant is zero, then a e squared.
+Yes, yes it does.
+It's a it's a little bit of a weird way
+of saying things.
+But the determinant is only defined for square matrices.
+So if a matrix has a determinant it means that
+it's squared.
+If the determinant is zero then it's unique.
+That doesn't really make any sense.
+We don't really know what it's unique.
+Then A is not invertible.
+It's clearly wrong.
+And the system has a unique solution.
+, and then .
+, what about number four for example, what would you
+connect with number four.
+Sorry.
+B I heard b omega a yeah a I yeah.
+Then a to the minus one is not defined once
+again.
+Invertible matrices are only defined as a subset of the
+square ones.
+We can only calculate the inverse if the matrix is
+squared.
+Okay.
+, let's let's see.
+, six would go with C for example.
+, and with F and there are lots of combinations
+in there.
+Bookclub will tell you if you got one that I
+inputted, but it's not limited to those anyway.
+Okay.
+Do you have any questions about how looking at the
+determinant can help you inform, , make an informed decision
+about the inverse and the system associated with the matrix?
+No.
+Okay.
+Right.
+So we have now a test to determine whether the
+inverse exist.
+But how do we find it?
+We've seen earlier that finding the inverse is oh it's
+there still.
+Finding the inverse is actually really, really important.
+Really convenient because it helps us solving the system in
+one operation.
+So the difficulty of solving this system is not in
+doing this multiplication.
+This is just a matrix multiplication.
+So this difficulty the difficulty of finding the solution here
+we'll have moved into calculating a minus one rather than
+then multiplying it with b right.
+So we do expect that calculating the inverse is a
+somewhat tricky process.
+There is some computation required roughly the same amount of
+computation of solving the system, because we're essentially doing the
+same thing.
+Okay.
+And the general way in which we calculate the inverse
+was in the reading for today.
+So as the next exercise, I just want to give
+you a few minutes.
+Just in the determinant, I don't want you to
+write down the, , the inverse, , overall, but try
+to go through the process that you require to calculate
+the inverse of this very general matrix.
+This matrix has no structure.
+We've seen yesterday that having all positive values is not
+enough information for the structure.
+It doesn't tell us anything about the determinant, the inverse
+or anything.
+, so this is a general matrix.
+We need to go through the general framework.
+So I'll give you 2 to 3 minutes to again
+without doing all the calculations necessarily just go through the
+steps that you would need to tell me what the
+inverse of that matrix is.
+And it's usual sort of midway through.
+That's my tip.
+There's two buzzwords in this tip, which is cofactors and
+aggregate matrix.
+Okay, let's, , go over the over the procedure together,
+and I'll give you a very short version first, and
+then we'll go through together.
+We'll go together through the long version of things.
+The short version is the inverse matrix is one over
+two determinant times the aggregate.
+And the aggregate is the matrix that has the cofactors
+as the elements.
+Okay.
+So that is the short short version of this problem.
+Probably too short.
+So let's go through it bit by bit as as
+you've seen in the reading.
+First of all, as usual, we start with two by
+two matrices because they're compact convenience.
+We can write down almost everything explicitly.
+And if we have a matrix two by two, then
+of course we need the determinant different than zero.
+And the determinant is AD minus BC.
+And we can see in the expression of the matrix
+that why the determinant needs to be different than zero
+because we divide by it.
+And so if the determinant is zero that division we
+can't do.
+And that definition doesn't make any sense.
+And I note that the content of the matrix is
+the cofactor of the two by two matrix.
+Right.
+When you calculate the cofactor with respect to the first
+and for the first column and the first row, you
+eliminate the first row in the first column.
+And all you get is D when you do it
+for when you expand in B, you get , you
+get rid of the other ones.
+And, , as the.
+What is the proof of this?
+Well, it's just a it's just a two.
+It's just a two by two matrix.
+So you can just do the matrix multiplication yourself and
+check out that you get a i2, which is the
+identity matrix of size two by two.
+And I'm going to drop the n in further.
+, in in the rest of this lecture, identity will
+be always of the appropriate dimension.
+Okay.
+So this is the first step.
+, the next step, which is expanding to the larger
+matrices, requires us to talk about the cofactors again, that
+we've seen yesterday.
+And as a reminder, the cofactor is defined as a
+sign times the determinant of the minor matrix, where the
+minus the minor matrix a ij is defined by stripping
+the ith row and the jth column of the matrix
+A.
+And that allows us to define the aggregate matrix, which,
+as I mentioned before in the very short version of
+things, is just the matrix that instead of having the
+elements of A, has the cofactors of A ordered in
+the same way as the elements.
+So cofactors of row one one goes as element one
+one of the aggregate matrix.
+And then what we can see is that there's this
+very, very important theorem that if we multiply the matrix
+A times its aggregate, it's the same if we do
+it in the other direction, which is in itself interesting,
+because we know that matrices in principle do not commute,
+but a matrix always commute with its aggregate.
+That's already interesting in itself, but the real killer deal
+is the last one is the fact that when we
+do the multiplication, we just get the identity matrix multiplied
+by the determinant.
+And that is useful because obviously then we can divide
+by the determinant provided that again the determinant is zero.
+As the condition of the invertibility.
+And if we can divide by the determinant, then aggregate
+divided.
+The determinant is what multiplies a both from the left
+and from the right to get the identity.
+And so that will be our inverse okay, for a
+general matrix, unfortunately, there is no quicker or smarter way
+to get to get the the inverse than doing all
+of the cofactors and dividing each of them by the
+determinant and putting them in inside the matrix.
+Okay, not very convenient But, , in absence of structure,
+the best we can do anyway.
+Any questions?
+No.
+Yeah.
+.
+.
+That's a great question.
+, no.
+That is the transpose of that I missed.
+I'll check.
+I'll check it, and I'll get back to you.
+I might have missed a a transpose, then.
+Okay.
+In the previous one.
+So in the definition of this one.
+So it would be one, two, one, one two going
+down and two one going.
+Right.
+Okay I'll have a look at that.
+Thank you.
+Okay.
+Let's go back to any other questions.
+No.
+Okay.
+Let's have a look at the exercise again.
+If we if you had done the entire thing just
+as a quick check for you, that would be the
+inverse matrix.
+, that, , , multiplies the original one to get
+the inverse.
+Okay.
+Okay.
+Let's go back to our work lab.
+, for question four.
+Question four is in the format that we have seen
+yesterday.
+It's a bunch of statements.
+And my question for you is, , which one are
+true?
+, and which ones I have made up.
+Okay.
+And they all, , they all involve, , determinants and
+inverse, and they're, , and their interaction with matrices that
+as you can see, some of them have some structure
+and some of them don't.
+I don't make any claim about their structure.
+So take a couple of minutes, think about, , those
+claims and then we'll go through them together.
+Yes.
+Yes, sir.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Okay, let's have a look at the results.
+, wait just a few more seconds so maybe we
+can get to 100 people.
+That'd be great.
+Yep.
+Okay.
+, okay.
+So broadly, a good majority of you agree on one
+and two.
+, some of them think that four is.
+For some of you, that would be number four.
+And some of you think that six is, , that
+four is true instead.
+So the only one would be answer six.
+Okay.
+Let's have a look at the first one.
+, if the determinant of A is positive, then the
+determinant of the inverse is also positive.
+Of course that's the reciprocal.
+So the reciprocal of a positive number is
+is a positive number.
+Absolutely.
+The inverse of the diagonal matrix is beautifully simple.
+It's just the diagonal matrix with the entries that are
+the reciprocal of the original one.
+And that is however not true for the for the
+triangular matrix.
+So number three is in fact false.
+And so both people, both the groups of answer four
+and six are both good so far.
+The big question is, , number four, if the determinant
+of a smaller than one, then the determinant of a
+minus one is greater than one.
+And , because the two groups are disagreeing on that
+one, I'll give you 30 more seconds to try and
+convince your neighbours that they're wrong.
+And you're right.
+I was.
+Yes.
+There's a there's a good thing I hadn't thought about.
+The second one might be wrong.
+If the diagonal elements are zero.
+, there's an implicit thing that I should have made
+it clear that those elements are non-zero.
+Yeah, that's technically correct.
+Yes.
+Let's, , let's do a raise of hands.
+, raise your hand if you think that number four
+is true.
+And raise your hand if you think the number four
+is false.
+Okay.
+What's the problem with number four?
+Yeah, I hear you're not screaming it at me, but
+you're talking within yourself.
+If it's negative, right?
+Less than one doesn't necessarily mean between 0 and 1.
+And so if the determinant is for example minus one
+then the reciprocal of that would also be negative.
+So that's why it doesn't work.
+Okay.
+That was excellent.
+And , let's now introduce one more property in the
+mix.
+I think you've seen this already, but I'm going to
+briefly define it for you.
+And yes.
+Can you explain.
+Why in the previous slide why the triangular matrix or
+number three was not true?
+, it's just something I made up.
+If you take, , if you take triangular matrices, you
+will see that, , you, you don't get these, you
+get a combination of numbers.
+It's still.
+It's still triangular.
+We will see that.
+But you don't have the same numbers below.
+You have a different combination of them.
+You can look it up.
+It's just a complex thing.
+It's a complex combination of all the numbers.
+You start with that, go here, here and here.
+You can just copy the , under diagonal elements.
+, the diagonal part is, is okay.
+The problem is that this part here is not the
+same.
+So that's why it's false in general.
+, okay.
+, I'm sure you've seen it, but a symmetric matrix
+is one in which if you swap the rows and
+the columns, you get the same matrix again, if you
+want to see it as a general, as a global
+property of the matrix, you say that if you
+want to see it as a property of the elements,
+then you say that elements ij ith row jth column
+is the same as ag j through jth column.
+And this is an example.
+You can see that ideally if you fold the matrix
+along the main the main diagonal, you end up with
+the same numbers on both sides.
+So this one goes with this one.
+This three goes with this three, this two with this
+two, and so on and so forth.
+Okay.
+So, , we have, , thrown something more in and,
+, for the next question is how does this property
+interact with symmetry?
+If I have a symmetric matrix is a to the
+minus one also symmetric, or is it one of those
+I just make up before I come here again two
+minutes discuss.
+This is the second to last question today there's a
+a little bit less than yesterday.
+So we can take more time to think And then
+we will show either a counterexample or a proof.
+Okay, let's have a brief discussion.
+I'm not going to close the question yet, but you
+don't really have much to go about.
+So sometimes when you don't know how to approach a
+problem.
+Also, looking at the at the answer that I'm suggesting,
+the answers are always only for some and never.
+, sometimes it's very useful to, , have a look
+and at the very simple case and think about, ,
+what that very simple case give us.
+So what would be the easiest matrix for which we
+can check its inverse quickly?
+I to yes.
+, any identity really, but I to in particular, what's
+the inverse of the identity?
+The identity is the identity symmetric.
+Yes.
+Okay.
+So we know that at least for some matrices this
+property must be true.
+It's not false for all matrices.
+So we have already narrowed down the original three answer
+to the two that you correctly recognised as the last
+as the correct ones.
+, now the question is, does it is it true
+for all?
+Can we find some easy matrix to check for which
+the inverse is non symmetric?
+You can try, but I'm not going to let you
+try because the answer is no.
+This is in fact a true property.
+I haven't made this up.
+And I'm going to actually do a very we
+can frame it as a proposition here.
+, let A be non-singular, invertible, then, , a minus
+one is the transpose of, , the original matrix.
+Okay.
+, sorry, I think I misspoke.
+, the inverse matrix is equal to its transpose.
+So it's it's, , it's symmetric.
+That's what I meant.
+Okay, let's do a quick proof sketch.
+Okay.
+, first thing, , let's let's pick up on the
+equivalence that we've seen before.
+A is non-singular.
+So we can find the the inverse.
+And actually the inverse , has this property multiplies to
+the, , to the unit matrix and to the
+identity matrix, which is also equal to its transpose.
+It's symmetric.
+Okay.
+Now we can take this thing here and we can
+transpose.
+Right.
+If two matrices are the same then if we take
+the transport of both then their transpose are also the
+same.
+And because the identity is symmetric, the transpose of this
+is actually still the identity.
+Okay.
+And now we have a product under transposition.
+And we know that the transpose of a product is
+the product of the transpose where the product has been
+flipped.
+So we can write that down.
+We we know a B transpose is BT 80.
+That's what I just said.
+So when I take this and I, I do it
+out, I get a to the minus one t times
+A transpose and that still will be equal to the
+identity.
+Right.
+Okay.
+And now we can we can simplify a because we
+are assuming that A was symmetric to begin with.
+So it's equal to to its transpose.
+And so I can rewrite all this thing here as
+this one here where I dropped this t there.
+Okay.
+, right now here, I say, rearranging the expression.
+What I mean by that is that this thing here
+is equal to I.
+This one here is also equal to I.
+So we can equate both sides to them.
+Okay.
+And why is that useful.
+Well as you see now I have a I have
+the, the result I want to show I have a,
+a minus one equals a minus one transpose.
+The only slightly annoying thing is that they're both multiplied
+to the right by A, but A is invertible.
+So that's not a big problem.
+We can just write multiply by a minus one and
+we get the identity.
+And in fact that's what they do I, I put
+an A minus one to the right of both sides.
+This will cancel.
+And what I get is exactly what I wanted to
+prove.
+, this is, , or that.
+And then I can simplify that and get, , the
+inverse of a is symmetric if we suppose that A
+is symmetric to begin with.
+Okay.
+So number one was the correct one.
+We can actually prove that this is true for all
+invertible symmetric matrices okay.
+And finally last question.
+Much same structure as yesterday I have collected a
+few statements.
+Some I just made up.
+Some are actually true.
+These ones because it's the last question for not only
+for today, but for the week.
+These ones span both yesterday and today's lecture.
+So we have six minutes.
+I'm going to give you three to go through them.
+Some are very simple.
+We've seen them explicitly yesterday, and some are a little
+bit more complicated.
+And then we will wrap that.
+We will wrap up the the lecture by going over
+each one of them independently.
+And also, don't forget to vote in the book club.
+Okay, 30 more seconds.
+Please vote.
+We only have 30 people, so far.
+Okay, let's have a look.
+So you seem to think that one, two and six
+broadly are the are the true ones.
+Okay.
+Let's go through each one of them one by one.
+We should have time because some are very simple.
+The first one a raise your hand if you think
+it's true.
+This is not a trick.
+That's the same one as the previous one.
+I haven't changed it from one side to the other.
+Not intentionally, at least.
+.
+Okay.
+, what's the problem with, , with this?
+Right.
+Right.
+.
+Unintended error.
+Typo.
+Sorry.
+.
+I was , yes.
+This is the correct complete one.
+, it should start with one.
+Yes.
+Of course, that escaped me.
+If it started by one, then it would have been
+the correct one.
+Yeah.
+Okay.
+.
+Good spot.
+Second one.
+.
+Oh, I didn't cover it.
+, a plus a transpose this symmetric.
+And the answer is yes, of course.
+And why is that the case?
+Well.
+Because each element of the sum is equal to the
+element of the original matrix plus its symmetric one.
+And so by by by taking the transpose of this
+of the sum We're just swapping the transpose from one
+to the other, and we get the same, the same
+expression for the element.
+, so and this one, , this in fact, is
+called the symmetric version of a.
+If you have any matrix, you can make it symmetric
+by adding its transpose to it.
+, okay.
+Next up, , if A is upper triangular then a
+square to the minus one is the lower triangular.
+And , no, this one was made up.
+, we know that the being upper or lower triangular
+is conserved both by products and by taking the inverse.
+And so, , taking both together, it doesn't swap the
+non-zero part of the matrix.
+It actually preserves it.
+So it stays, , upper triangular.
+, okay.
+What do we have next?
+, this one.
+Okay.
+This one.
+.
+, okay.
+This one is, .
+What's the problem with this one?
+I'm pointing at it.
+It's non-zero.
+Yes.
+And this one is probably the most important result.
+, I said try to remember this.
+Try to remember the correct version.
+Not.
+Not this one, obviously, but, , calculating the determinant we've
+seen yesterday can be a little bit of a pain.
+But compared to actually finding the inverse matrix is much
+simpler, especially when there's a bit of structure sprinkled into
+the matrix.
+So very important, very important result.
+, probably the one thing I would you to
+take home if you don't take home anything else from
+this week and, .
+Okay.
+Next up, , this property here.
+No, that doesn't work.
+That works for transposed, but in general, it's false.
+, can you think of two matrices a b for
+this?
+One is true when I say in general is false,
+I mean that the there are some matrices for which
+it's false.
+But of course it may still be true for a
+few ones.
+Anyone?
+Two identities?
+Yes.
+Of course.
+, okay.
+And as I mentioned, it works for transposing.
+Not not inverting.
+And then finally, , if the determinant is different than
+zero, we can do that.
+And that is the other very important result that we've
+seen today.
+So , this one was also true.
+So, , well done to all of you.
+And also as an organisational point, I have tried to
+change the, , actually, this one doesn't.

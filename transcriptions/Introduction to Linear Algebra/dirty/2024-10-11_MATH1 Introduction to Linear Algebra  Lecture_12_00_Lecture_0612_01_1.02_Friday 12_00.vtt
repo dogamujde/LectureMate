@@ -1,0 +1,4066 @@
+WEBVTT
+
+00:00:25.380 --> 00:00:26.160
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:26.160 --> 00:00:29.100
+<v Speaker 0>Welcome to the second lecture today.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:00:29.130 --> 00:00:32.400
+<v Speaker 0>Apologies for the bumpy start with the music.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:00:32.850 --> 00:00:36.300
+<v Speaker 0>Um, just to check that your work life is working
+
+NOTE CONF {"raw":[82,100,100,100,100,100,68,37,100,100]}
+
+00:00:36.300 --> 00:00:36.870
+<v Speaker 0>today.
+
+NOTE CONF {"raw":[78]}
+
+00:00:36.900 --> 00:00:39.690
+<v Speaker 0>We do not have attendance, but I am taking suggestion
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,83]}
+
+00:00:39.690 --> 00:00:40.980
+<v Speaker 0>for the next week.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:40.980 --> 00:00:43.380
+<v Speaker 0>We have together for the pre lecture music that hopefully
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:43.380 --> 00:00:45.000
+<v Speaker 0>will work a little bit better.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:00:45.000 --> 00:00:46.440
+<v Speaker 0>That will be in a few weeks.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:00:46.440 --> 00:00:49.590
+<v Speaker 0>I think week eight, if I remember correctly, will be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:49.590 --> 00:00:52.410
+<v Speaker 0>the next one that we will be together.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:00:53.640 --> 00:00:54.510
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:00:54.750 --> 00:01:01.510
+<v Speaker 0>Um, I'll give you one more minute To test out
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:01.540 --> 00:01:03.520
+<v Speaker 0>your book club very quickly.
+
+NOTE CONF {"raw":[100,73,72,100,100]}
+
+00:01:03.700 --> 00:01:04.960
+<v Speaker 0>And then?
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:05.320 --> 00:01:06.640
+<v Speaker 0>Then we can start.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:17.680 --> 00:01:18.310
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[90]}
+
+00:01:18.340 --> 00:01:19.840
+<v Speaker 0>I think, uh.
+
+NOTE CONF {"raw":[100,100,87]}
+
+00:01:20.890 --> 00:01:22.540
+<v Speaker 0>This one will remain anyway.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:22.540 --> 00:01:27.040
+<v Speaker 0>So just as a quick recap from yesterday, we are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:27.040 --> 00:01:31.630
+<v Speaker 0>talking about determinants and today we will talk about how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:31.630 --> 00:01:38.320
+<v Speaker 0>that relates to a matrix inverse and the invertibility property
+
+NOTE CONF {"raw":[100,100,100,45,100,83,100,100,100,100]}
+
+00:01:38.320 --> 00:01:39.130
+<v Speaker 0>of the matrices.
+
+NOTE CONF {"raw":[100,100,89]}
+
+00:01:39.130 --> 00:01:42.880
+<v Speaker 0>Why the inverse is useful.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:43.090 --> 00:01:45.610
+<v Speaker 0>And how do we find inverse.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:46.030 --> 00:01:51.610
+<v Speaker 0>And um matrix inverses can be quite difficult.
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100]}
+
+00:01:51.610 --> 00:01:56.590
+<v Speaker 0>There's a very general procedure much like the cofactor expansion
+
+NOTE CONF {"raw":[67,100,100,100,100,100,100,100,100,100]}
+
+00:01:56.590 --> 00:01:57.520
+<v Speaker 0>for the determinant.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:57.520 --> 00:02:01.180
+<v Speaker 0>And then using the structure of the matrix, we can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:01.180 --> 00:02:03.880
+<v Speaker 0>simplify it from time to time, and we will see
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:03.880 --> 00:02:07.330
+<v Speaker 0>a few exercise along along that line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:09.250 --> 00:02:14.650
+<v Speaker 0>So this is just what we were looking at yesterday.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:14.980 --> 00:02:17.680
+<v Speaker 0>This will be the program for today.
+
+NOTE CONF {"raw":[100,100,100,100,78,100,100]}
+
+00:02:17.890 --> 00:02:21.010
+<v Speaker 0>And do you have any question before we start.
+
+NOTE CONF {"raw":[100,100,100,100,100,91,100,100,100]}
+
+00:02:22.900 --> 00:02:23.350
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[86]}
+
+00:02:23.530 --> 00:02:24.040
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:02:25.060 --> 00:02:28.630
+<v Speaker 0>Okay then this is just the QR code if anyone
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100,100,100,100]}
+
+00:02:28.630 --> 00:02:29.860
+<v Speaker 0>is not having it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:30.460 --> 00:02:31.420
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[64,100]}
+
+00:02:32.470 --> 00:02:37.900
+<v Speaker 0>Let's start by having a quick look at the determinant
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:38.230 --> 00:02:45.580
+<v Speaker 0>once more and something we haven't touched a lot yesterday
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:45.580 --> 00:02:48.640
+<v Speaker 0>was the matrix transpose.
+
+NOTE CONF {"raw":[100,100,100,96]}
+
+00:02:48.760 --> 00:02:51.730
+<v Speaker 0>So the transpose is the matrix that you obtain when
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:51.730 --> 00:02:53.590
+<v Speaker 0>you swap rows and columns.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:53.620 --> 00:03:00.320
+<v Speaker 0>So in general if you have a matrix A, in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,92,100]}
+
+00:03:00.320 --> 00:03:04.610
+<v Speaker 0>which the elements are the I, j.
+
+NOTE CONF {"raw":[100,100,100,100,58,58,57]}
+
+00:03:04.730 --> 00:03:10.190
+<v Speaker 0>Then the matrix a t will be the same matrix,
+
+NOTE CONF {"raw":[100,100,100,100,99,100,100,100,100,100]}
+
+00:03:10.190 --> 00:03:14.570
+<v Speaker 0>but the columns and the rows are now exchanged.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:14.570 --> 00:03:16.520
+<v Speaker 0>So the element that was in the ith row jth
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,100]}
+
+00:03:16.520 --> 00:03:19.520
+<v Speaker 0>column is now in the jth row ith column.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:19.700 --> 00:03:21.980
+<v Speaker 0>And that defines your new matrix.
+
+NOTE CONF {"raw":[95,100,100,100,100,100]}
+
+00:03:22.760 --> 00:03:26.480
+<v Speaker 0>Um so let's take to to square matrices.
+
+NOTE CONF {"raw":[87,100,100,100,100,100,100,100]}
+
+00:03:26.480 --> 00:03:31.700
+<v Speaker 0>And then I'm combining them um, in a fairly imaginative
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:31.700 --> 00:03:32.330
+<v Speaker 0>way.
+
+NOTE CONF {"raw":[100]}
+
+00:03:32.330 --> 00:03:36.980
+<v Speaker 0>And my question for you is to select all of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:36.980 --> 00:03:41.120
+<v Speaker 0>the expressions for that determinant that are equivalent to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:41.120 --> 00:03:43.940
+<v Speaker 0>one that is shown on the board.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:43.940 --> 00:03:47.090
+<v Speaker 0>And if you go on bookclub, uh, as you can
+
+NOTE CONF {"raw":[100,100,100,100,50,49,100,100,100,100]}
+
+00:03:47.090 --> 00:03:52.010
+<v Speaker 0>see, there are a few, um, a few options.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:52.010 --> 00:03:53.120
+<v Speaker 0>I'm going to hide them.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:53.120 --> 00:03:56.030
+<v Speaker 0>So you're not skewed by your by the vote of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:56.030 --> 00:03:57.080
+<v Speaker 0>your classmates.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:57.410 --> 00:03:59.990
+<v Speaker 0>and think about the properties of the determinant.
+
+NOTE CONF {"raw":[47,100,100,100,100,100,100,100]}
+
+00:04:00.020 --> 00:04:05.450
+<v Speaker 0>Think about how I am combining those matrices and have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:05.450 --> 00:04:05.510
+<v Speaker 0>a.
+
+NOTE CONF {"raw":[100]}
+
+00:04:05.510 --> 00:04:07.340
+<v Speaker 0>Think about it for a couple of minutes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:50.480 --> 00:04:54.740
+<v Speaker 0>Okay, while you consider all options, let's have a look
+
+NOTE CONF {"raw":[100,100,100,100,55,100,100,100,100,100]}
+
+00:04:54.740 --> 00:04:58.290
+<v Speaker 0>at the content of the at the argument of that
+
+NOTE CONF {"raw":[100,100,98,100,100,54,100,100,100,100]}
+
+00:04:58.290 --> 00:04:59.460
+<v Speaker 0>determinant function.
+
+NOTE CONF {"raw":[79,100]}
+
+00:04:59.460 --> 00:05:02.250
+<v Speaker 0>So what I'm doing, I'm taking the square of A
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:05:02.250 --> 00:05:07.170
+<v Speaker 0>multiplying by t, taking the transpose of the whole thing,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:07.170 --> 00:05:10.560
+<v Speaker 0>and then multiply the whole thing by a squared once
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,89,100]}
+
+00:05:10.560 --> 00:05:11.070
+<v Speaker 0>more.
+
+NOTE CONF {"raw":[100]}
+
+00:05:11.310 --> 00:05:11.670
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:11.670 --> 00:05:16.110
+<v Speaker 0>So in order for us to get the determinant of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:16.110 --> 00:05:20.490
+<v Speaker 0>that big matrix that we get, and we need to
+
+NOTE CONF {"raw":[96,100,100,100,100,100,50,100,100,100]}
+
+00:05:20.490 --> 00:05:23.940
+<v Speaker 0>think about how the determinants propagates when we do operations
+
+NOTE CONF {"raw":[100,100,100,100,96,77,100,100,100,100]}
+
+00:05:23.940 --> 00:05:24.870
+<v Speaker 0>on the matrices.
+
+NOTE CONF {"raw":[56,100,100]}
+
+00:05:25.050 --> 00:05:28.680
+<v Speaker 0>And so let's go over some basic ones.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:29.160 --> 00:05:31.050
+<v Speaker 0>And the determinant of a product.
+
+NOTE CONF {"raw":[68,100,100,100,100,100]}
+
+00:05:33.960 --> 00:05:34.830
+<v Speaker 0>Is equal to.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:40.920 --> 00:05:42.360
+<v Speaker 0>The products of the determinants.
+
+NOTE CONF {"raw":[100,78,100,100,100]}
+
+00:05:42.360 --> 00:05:43.620
+<v Speaker 0>Absolutely correct.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:44.220 --> 00:05:47.520
+<v Speaker 0>And that is the first thing to keep in mind.
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:05:48.300 --> 00:05:53.910
+<v Speaker 0>If we have two matrices then we can bring the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:53.910 --> 00:05:56.790
+<v Speaker 0>product outside of the determinant in a way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:57.450 --> 00:05:59.790
+<v Speaker 0>And if we transpose a matrix.
+
+NOTE CONF {"raw":[54,100,100,100,99,100]}
+
+00:06:00.270 --> 00:06:03.480
+<v Speaker 0>So we swap the orders of rows and columns.
+
+NOTE CONF {"raw":[100,100,81,100,98,100,100,100,100]}
+
+00:06:04.680 --> 00:06:07.380
+<v Speaker 0>Um, do you know what happens with determinant?
+
+NOTE CONF {"raw":[96,100,100,100,100,100,66,100]}
+
+00:06:10.620 --> 00:06:11.520
+<v Speaker 0>Just scream it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:11.520 --> 00:06:12.300
+<v Speaker 0>I'm not doing.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:12.630 --> 00:06:14.610
+<v Speaker 0>I'm going to ask for hands from time to time.
+
+NOTE CONF {"raw":[100,96,96,100,100,100,100,100,100,100]}
+
+00:06:14.610 --> 00:06:17.550
+<v Speaker 0>But otherwise you you you're free to just scream it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:06:18.780 --> 00:06:20.400
+<v Speaker 0>Yeah, it doesn't change.
+
+NOTE CONF {"raw":[94,100,100,100]}
+
+00:06:21.120 --> 00:06:23.820
+<v Speaker 0>So if we have a matrix A, we take the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:23.820 --> 00:06:24.690
+<v Speaker 0>transpose.
+
+NOTE CONF {"raw":[100]}
+
+00:06:24.690 --> 00:06:27.330
+<v Speaker 0>The determinant doesn't care about it at all.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:28.020 --> 00:06:31.740
+<v Speaker 0>And if we take the inverse of the matrix, the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:31.740 --> 00:06:34.920
+<v Speaker 0>inverse was the the big chunk of material for the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:34.920 --> 00:06:36.510
+<v Speaker 0>reading for today's lecture.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:37.230 --> 00:06:39.360
+<v Speaker 0>Um, so what happens to the determinant.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:39.360 --> 00:06:41.760
+<v Speaker 0>How does that interact with taking the inverse.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:42.780 --> 00:06:44.460
+<v Speaker 0>It's the reciprocal yes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:45.030 --> 00:06:50.760
+<v Speaker 0>Um, which are three very nice polished, uh, formulas if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:50.760 --> 00:06:51.510
+<v Speaker 0>you want.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:51.870 --> 00:06:55.480
+<v Speaker 0>Uh, the last one is particularly nice because the minus
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:06:55.480 --> 00:06:59.590
+<v Speaker 0>one at the exponent just migrates out of the out
+
+NOTE CONF {"raw":[100,74,100,100,100,100,100,100,100,100]}
+
+00:06:59.590 --> 00:07:02.080
+<v Speaker 0>of the out of the bracket.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:02.470 --> 00:07:02.980
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:02.980 --> 00:07:06.310
+<v Speaker 0>So these are the three properties that we want to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:06.310 --> 00:07:07.330
+<v Speaker 0>keep in mind.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:07.690 --> 00:07:12.460
+<v Speaker 0>Uh, let's have a look again at the at the
+
+NOTE CONF {"raw":[78,100,100,100,100,100,100,100,76,100]}
+
+00:07:13.600 --> 00:07:15.340
+<v Speaker 0>prompt that I gave you.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:15.340 --> 00:07:20.200
+<v Speaker 0>So we know that the transpose doesn't really care about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:20.290 --> 00:07:24.370
+<v Speaker 0>uh, about, uh, sorry, the determinant doesn't really care about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:24.370 --> 00:07:24.970
+<v Speaker 0>the transpose.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:24.970 --> 00:07:27.520
+<v Speaker 0>So we can basically ignore the fact that there is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,51]}
+
+00:07:27.520 --> 00:07:28.990
+<v Speaker 0>a transpose down there.
+
+NOTE CONF {"raw":[92,99,100,100]}
+
+00:07:28.990 --> 00:07:32.530
+<v Speaker 0>So we're left with products.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:32.530 --> 00:07:35.770
+<v Speaker 0>And so that determinant is essentially the same as a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:07:35.770 --> 00:07:39.970
+<v Speaker 0>combination of the determinant of A to the fourth power
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:40.150 --> 00:07:45.190
+<v Speaker 0>and the determinant of B to the one power to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:45.190 --> 00:07:45.850
+<v Speaker 0>the first power.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:45.850 --> 00:07:47.800
+<v Speaker 0>So just the determinant of B.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:47.800 --> 00:07:50.650
+<v Speaker 0>So let's let's have a look at the answers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:07:50.950 --> 00:07:57.850
+<v Speaker 0>And yeah Um, you have correctly identified, for the most
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:07:57.850 --> 00:08:02.080
+<v Speaker 0>part, the three that are, uh, all equivalent.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100]}
+
+00:08:02.230 --> 00:08:07.510
+<v Speaker 0>The tricky one was maybe number four because that's written
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:07.510 --> 00:08:11.350
+<v Speaker 0>as the determinant of 80 or actually number five as
+
+NOTE CONF {"raw":[100,100,100,100,54,98,100,100,100,100]}
+
+00:08:11.350 --> 00:08:11.830
+<v Speaker 0>well.
+
+NOTE CONF {"raw":[100]}
+
+00:08:12.400 --> 00:08:15.820
+<v Speaker 0>But obviously the determinant of it's the determinant of a.
+
+NOTE CONF {"raw":[100,100,100,100,100,62,100,100,100,100]}
+
+00:08:15.880 --> 00:08:21.070
+<v Speaker 0>So that is also an acceptable and acceptable solution.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:22.930 --> 00:08:23.530
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:24.310 --> 00:08:28.270
+<v Speaker 0>Do you have any questions about this very quick recap
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:28.270 --> 00:08:30.250
+<v Speaker 0>of some properties of the determinant.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:31.630 --> 00:08:32.740
+<v Speaker 0>No okay.
+
+NOTE CONF {"raw":[100,86]}
+
+00:08:33.490 --> 00:08:36.969
+<v Speaker 0>Uh, so now we really start with the content of
+
+NOTE CONF {"raw":[80,100,100,100,100,100,100,100,100,100]}
+
+00:08:36.969 --> 00:08:37.750
+<v Speaker 0>today's lecture.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:37.750 --> 00:08:40.060
+<v Speaker 0>This was a warm up in some sense.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100]}
+
+00:08:40.630 --> 00:08:43.419
+<v Speaker 0>Um, because the next question that I prepared for you
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:08:43.419 --> 00:08:51.460
+<v Speaker 0>is, uh, about, um, how the determinant interacts with the
+
+NOTE CONF {"raw":[100,100,100,88,100,100,100,100,100,100]}
+
+00:08:51.460 --> 00:08:53.060
+<v Speaker 0>invertibility properties.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:54.020 --> 00:08:57.740
+<v Speaker 0>Um, so we've seen that the determinant and the existence
+
+NOTE CONF {"raw":[47,100,100,100,100,100,100,100,100,100]}
+
+00:08:57.740 --> 00:09:01.610
+<v Speaker 0>of the inverse of a given matrix are strictly related.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:01.610 --> 00:09:07.280
+<v Speaker 0>And the invertibility of a matrix also has some consequences
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:07.280 --> 00:09:11.270
+<v Speaker 0>in terms of the number of solutions in the of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:11.270 --> 00:09:14.390
+<v Speaker 0>the linear system that is represented by that matrix of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:14.390 --> 00:09:14.990
+<v Speaker 0>coefficients.
+
+NOTE CONF {"raw":[100]}
+
+00:09:14.990 --> 00:09:15.500
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:09:16.610 --> 00:09:19.910
+<v Speaker 0>So the next exercise I prepared should be open now
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:19.910 --> 00:09:26.240
+<v Speaker 0>on, uh, what Colab is a sort of connect the
+
+NOTE CONF {"raw":[100,60,100,92,100,100,100,100,100,100]}
+
+00:09:26.240 --> 00:09:32.570
+<v Speaker 0>start and the end of um, of, uh, logical, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,72,100,93,100,100]}
+
+00:09:32.570 --> 00:09:33.980
+<v Speaker 0>logical implication.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:33.980 --> 00:09:37.760
+<v Speaker 0>If a condition is true, there will be some thesis
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:37.760 --> 00:09:39.140
+<v Speaker 0>or some consequence.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:39.140 --> 00:09:41.720
+<v Speaker 0>And in order for that, in order for you to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:41.720 --> 00:09:46.370
+<v Speaker 0>complete that, you really need to think about what what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:46.370 --> 00:09:51.050
+<v Speaker 0>are the relations between the determinant of a matrix, the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:51.060 --> 00:09:54.900
+<v Speaker 0>existence of its inverse and the numbers of solution in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,63,100]}
+
+00:09:54.900 --> 00:09:55.500
+<v Speaker 0>the problem.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:55.800 --> 00:09:58.530
+<v Speaker 0>And the only thing I have to say for this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:58.530 --> 00:10:02.190
+<v Speaker 0>question is because there's only a limited number of combinations
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100,88]}
+
+00:10:02.190 --> 00:10:03.330
+<v Speaker 0>I could input.
+
+NOTE CONF {"raw":[76,100,100]}
+
+00:10:04.020 --> 00:10:06.510
+<v Speaker 0>Sometimes multiple options are true.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:06.510 --> 00:10:10.560
+<v Speaker 0>So don't don't get too worried if one club says
+
+NOTE CONF {"raw":[100,61,100,100,100,100,100,61,90,100]}
+
+00:10:10.560 --> 00:10:11.910
+<v Speaker 0>that you got the wrong one.
+
+NOTE CONF {"raw":[100,95,100,100,100,100]}
+
+00:10:12.000 --> 00:10:14.310
+<v Speaker 0>If it still makes sense, we will go over them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:14.310 --> 00:10:14.970
+<v Speaker 0>together.
+
+NOTE CONF {"raw":[100]}
+
+00:10:14.970 --> 00:10:15.510
+<v Speaker 0>Okay?
+
+NOTE CONF {"raw":[100]}
+
+00:10:40.200 --> 00:10:41.220
+<v Speaker 0>As always.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:41.310 --> 00:10:46.230
+<v Speaker 0>Uh, consulting your neighbours is always encouraged, but not compulsory.
+
+NOTE CONF {"raw":[100,100,100,88,100,100,100,100,72,100]}
+
+00:11:42.960 --> 00:11:43.680
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:43.680 --> 00:11:46.530
+<v Speaker 0>Let's have a look at the properties that we're looking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:46.530 --> 00:11:46.710
+<v Speaker 0>at.
+
+NOTE CONF {"raw":[100]}
+
+00:11:46.710 --> 00:11:50.200
+<v Speaker 0>Then I'll give you another bit of time to think
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:50.200 --> 00:11:55.270
+<v Speaker 0>more about the the ones on bookclub specifically, but what
+
+NOTE CONF {"raw":[100,100,100,100,100,70,97,100,100,100]}
+
+00:11:55.270 --> 00:11:57.310
+<v Speaker 0>are the relations that we have seen?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:57.340 --> 00:12:02.350
+<v Speaker 0>Well, the first one connects the invertibility of a given
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:02.350 --> 00:12:06.370
+<v Speaker 0>matrix and the existence and the number of solution of
+
+NOTE CONF {"raw":[100,100,100,56,58,100,100,100,57,100]}
+
+00:12:06.370 --> 00:12:06.880
+<v Speaker 0>the system.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:06.880 --> 00:12:07.270
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:12:07.270 --> 00:12:11.620
+<v Speaker 0>And we say that if A is invertible, then the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:11.620 --> 00:12:15.550
+<v Speaker 0>system only has exactly one solution.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:15.550 --> 00:12:18.370
+<v Speaker 0>And the reason for that is that if a minus
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:18.370 --> 00:12:21.550
+<v Speaker 0>one exists, right, we can multiply the system on the
+
+NOTE CONF {"raw":[100,67,100,100,100,100,100,100,100,100]}
+
+00:12:21.550 --> 00:12:25.000
+<v Speaker 0>left on both sides by a minus one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:25.090 --> 00:12:27.040
+<v Speaker 0>When I say multiply to the left, I mean that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:27.040 --> 00:12:30.460
+<v Speaker 0>a is multiplied on the left hand side of both
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:30.460 --> 00:12:32.980
+<v Speaker 0>the left hand side and the right hand side of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:32.980 --> 00:12:33.580
+<v Speaker 0>the equation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:33.580 --> 00:12:38.080
+<v Speaker 0>So I basically swoop a a minus one in on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:12:38.080 --> 00:12:42.160
+<v Speaker 0>the left before axe and before b, and now a
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:12:42.160 --> 00:12:44.020
+<v Speaker 0>minus one x is just the identity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:44.020 --> 00:12:45.670
+<v Speaker 0>So identity times x.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:45.670 --> 00:12:51.130
+<v Speaker 0>We write explicitly our Solution as x equals a minus
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100,100,100,100]}
+
+00:12:51.130 --> 00:12:52.060
+<v Speaker 0>one times b.
+
+NOTE CONF {"raw":[100,100,94]}
+
+00:12:52.360 --> 00:12:55.780
+<v Speaker 0>We do the matrix multiplication, assuming that we know the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:55.780 --> 00:12:58.540
+<v Speaker 0>inverse a minus one, and that gives us our solution
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:58.540 --> 00:12:59.260
+<v Speaker 0>directly.
+
+NOTE CONF {"raw":[100]}
+
+00:12:59.440 --> 00:12:59.740
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:59.740 --> 00:13:02.320
+<v Speaker 0>We're just one matrix multiplication right.
+
+NOTE CONF {"raw":[100,100,100,100,100,68]}
+
+00:13:03.610 --> 00:13:06.940
+<v Speaker 0>And the second property, which was again in reading for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:06.940 --> 00:13:10.570
+<v Speaker 0>today, is that A is an invertible matrix if and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:10.570 --> 00:13:13.840
+<v Speaker 0>only if the determinant is different from zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:14.050 --> 00:13:15.790
+<v Speaker 0>So that goes both way.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:15.790 --> 00:13:19.420
+<v Speaker 0>If A has an inverse, we are sure that its
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:19.420 --> 00:13:23.170
+<v Speaker 0>determinant is non-zero, and if we find a matrix whose
+
+NOTE CONF {"raw":[100,100,58,100,100,100,100,98,100,100]}
+
+00:13:23.170 --> 00:13:27.730
+<v Speaker 0>determinant is non-zero, we know that the inverse exists.
+
+NOTE CONF {"raw":[100,100,74,100,100,100,100,100,100]}
+
+00:13:28.240 --> 00:13:30.340
+<v Speaker 0>We don't know what it is, but we're sure that
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:13:30.340 --> 00:13:31.840
+<v Speaker 0>it that it exists.
+
+NOTE CONF {"raw":[92,100,100,100]}
+
+00:13:33.640 --> 00:13:34.270
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:34.540 --> 00:13:38.890
+<v Speaker 0>And then the negations also work because it's two way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:13:38.890 --> 00:13:42.070
+<v Speaker 0>if A is not invertible, then the determinant is zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:42.070 --> 00:13:44.710
+<v Speaker 0>And if we find a matrix with zero determinant we
+
+NOTE CONF {"raw":[100,100,100,99,85,100,100,100,100,100]}
+
+00:13:44.710 --> 00:13:47.750
+<v Speaker 0>can be sure that the that the inverse Universe matrix
+
+NOTE CONF {"raw":[100,100,100,97,97,69,100,100,45,100]}
+
+00:13:47.870 --> 00:13:49.400
+<v Speaker 0>does not exist.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:50.510 --> 00:13:53.420
+<v Speaker 0>Okay, I'll give you 30 more seconds to have a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:53.420 --> 00:13:56.180
+<v Speaker 0>look at the book club with this slide on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:56.180 --> 00:14:00.920
+<v Speaker 0>And then I'll comment on the different, um, on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:00.920 --> 00:14:02.630
+<v Speaker 0>different combinations.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:52.160 --> 00:14:54.710
+<v Speaker 0>Okay, let's have a look at what we have on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:54.710 --> 00:14:56.540
+<v Speaker 0>the left hand side of the book club.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97]}
+
+00:14:56.840 --> 00:15:01.310
+<v Speaker 0>If the determinant is zero, what do we get?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:01.700 --> 00:15:04.940
+<v Speaker 0>Well, the determinant is zero means that the matrix is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:04.940 --> 00:15:06.170
+<v Speaker 0>not invertible.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:06.410 --> 00:15:10.640
+<v Speaker 0>And so proposition number one up there doesn't really apply
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:10.640 --> 00:15:15.680
+<v Speaker 0>because because proposition one only says if it's invertible then
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:15:15.680 --> 00:15:17.540
+<v Speaker 0>there is a unique solution.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:17.540 --> 00:15:22.970
+<v Speaker 0>It doesn't contain the Invertibility property as a consequence only
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:15:23.120 --> 00:15:25.220
+<v Speaker 0>as a premise okay.
+
+NOTE CONF {"raw":[99,100,100,100]}
+
+00:15:25.220 --> 00:15:29.210
+<v Speaker 0>So if determinant of A is equal to zero then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:29.210 --> 00:15:31.760
+<v Speaker 0>of course a minus one is not defined.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:32.840 --> 00:15:36.890
+<v Speaker 0>B would be a really silly logical implication, but hey,
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:15:36.890 --> 00:15:38.840
+<v Speaker 0>it's a true one nonetheless.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:38.990 --> 00:15:41.510
+<v Speaker 0>If the determinant is zero, then the determinant is zero
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:42.500 --> 00:15:45.050
+<v Speaker 0>and that's one implies c.
+
+NOTE CONF {"raw":[100,100,100,90,89]}
+
+00:15:45.050 --> 00:15:45.120
+<v Speaker 0>See.
+
+NOTE CONF {"raw":[100]}
+
+00:15:47.220 --> 00:15:49.590
+<v Speaker 0>If the determinant is zero, then a e squared.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,81,52,96]}
+
+00:15:50.850 --> 00:15:52.590
+<v Speaker 0>Yes, yes it does.
+
+NOTE CONF {"raw":[99,100,100,100]}
+
+00:15:52.590 --> 00:15:54.210
+<v Speaker 0>It's a it's a little bit of a weird way
+
+NOTE CONF {"raw":[79,54,100,100,100,100,100,100,100,100]}
+
+00:15:54.210 --> 00:15:55.980
+<v Speaker 0>of saying things.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:55.980 --> 00:15:59.010
+<v Speaker 0>But the determinant is only defined for square matrices.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:59.010 --> 00:16:01.350
+<v Speaker 0>So if a matrix has a determinant it means that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:01.350 --> 00:16:02.220
+<v Speaker 0>it's squared.
+
+NOTE CONF {"raw":[96,100]}
+
+00:16:03.180 --> 00:16:05.370
+<v Speaker 0>If the determinant is zero then it's unique.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,90,100]}
+
+00:16:05.370 --> 00:16:07.140
+<v Speaker 0>That doesn't really make any sense.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:07.140 --> 00:16:08.880
+<v Speaker 0>We don't really know what it's unique.
+
+NOTE CONF {"raw":[100,100,100,100,100,63,100]}
+
+00:16:09.030 --> 00:16:10.350
+<v Speaker 0>Then A is not invertible.
+
+NOTE CONF {"raw":[100,100,88,100,100]}
+
+00:16:10.350 --> 00:16:11.520
+<v Speaker 0>It's clearly wrong.
+
+NOTE CONF {"raw":[84,100,100]}
+
+00:16:11.520 --> 00:16:14.460
+<v Speaker 0>And the system has a unique solution.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:14.700 --> 00:16:17.460
+<v Speaker 0>Um, and then um.
+
+NOTE CONF {"raw":[100,100,100,68]}
+
+00:16:20.040 --> 00:16:23.910
+<v Speaker 0>Um, what about number four for example, what would you
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:16:23.910 --> 00:16:25.290
+<v Speaker 0>connect with number four.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:31.410 --> 00:16:31.830
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:16:35.580 --> 00:16:42.990
+<v Speaker 0>B I heard b omega a yeah a I yeah.
+
+NOTE CONF {"raw":[100,100,100,85,55,100,100,100,100,100]}
+
+00:16:42.990 --> 00:16:45.030
+<v Speaker 0>Then a to the minus one is not defined once
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:16:45.030 --> 00:16:45.480
+<v Speaker 0>again.
+
+NOTE CONF {"raw":[100]}
+
+00:16:45.900 --> 00:16:49.800
+<v Speaker 0>Invertible matrices are only defined as a subset of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:49.800 --> 00:16:50.700
+<v Speaker 0>square ones.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:50.730 --> 00:16:54.330
+<v Speaker 0>We can only calculate the inverse if the matrix is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:54.330 --> 00:16:54.930
+<v Speaker 0>squared.
+
+NOTE CONF {"raw":[100]}
+
+00:16:56.280 --> 00:16:56.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:57.480 --> 00:16:59.580
+<v Speaker 0>Um, let's let's see.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:00.180 --> 00:17:03.240
+<v Speaker 0>Uh, six would go with C for example.
+
+NOTE CONF {"raw":[99,100,100,100,100,94,100,100]}
+
+00:17:04.470 --> 00:17:08.819
+<v Speaker 0>Um, and with F and there are lots of combinations
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:08.819 --> 00:17:09.420
+<v Speaker 0>in there.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:09.630 --> 00:17:12.959
+<v Speaker 0>Bookclub will tell you if you got one that I
+
+NOTE CONF {"raw":[38,100,100,100,100,99,100,100,100,100]}
+
+00:17:12.959 --> 00:17:16.439
+<v Speaker 0>inputted, but it's not limited to those anyway.
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100,100]}
+
+00:17:17.130 --> 00:17:17.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:17.939 --> 00:17:21.630
+<v Speaker 0>Do you have any questions about how looking at the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:21.630 --> 00:17:26.819
+<v Speaker 0>determinant can help you inform, uh, make an informed decision
+
+NOTE CONF {"raw":[100,100,100,100,100,82,100,100,100,100]}
+
+00:17:26.819 --> 00:17:33.480
+<v Speaker 0>about the inverse and the system associated with the matrix?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:34.920 --> 00:17:35.550
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:17:35.730 --> 00:17:36.360
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:38.880 --> 00:17:39.390
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:17:39.390 --> 00:17:45.730
+<v Speaker 0>So we have now a test to determine whether the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:45.940 --> 00:17:47.230
+<v Speaker 0>inverse exist.
+
+NOTE CONF {"raw":[98,66]}
+
+00:17:47.920 --> 00:17:49.210
+<v Speaker 0>But how do we find it?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:49.240 --> 00:17:53.950
+<v Speaker 0>We've seen earlier that finding the inverse is oh it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:17:53.950 --> 00:17:54.760
+<v Speaker 0>there still.
+
+NOTE CONF {"raw":[98,100]}
+
+00:17:55.120 --> 00:17:57.850
+<v Speaker 0>Finding the inverse is actually really, really important.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:57.850 --> 00:18:00.850
+<v Speaker 0>Really convenient because it helps us solving the system in
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:18:00.850 --> 00:18:01.960
+<v Speaker 0>one operation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:02.140 --> 00:18:05.950
+<v Speaker 0>So the difficulty of solving this system is not in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:05.950 --> 00:18:07.180
+<v Speaker 0>doing this multiplication.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:07.180 --> 00:18:08.890
+<v Speaker 0>This is just a matrix multiplication.
+
+NOTE CONF {"raw":[100,100,100,76,100,100]}
+
+00:18:09.070 --> 00:18:14.920
+<v Speaker 0>So this difficulty the difficulty of finding the solution here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:15.100 --> 00:18:20.380
+<v Speaker 0>we'll have moved into calculating a minus one rather than
+
+NOTE CONF {"raw":[65,100,100,100,100,100,100,100,100,100]}
+
+00:18:21.250 --> 00:18:23.470
+<v Speaker 0>then multiplying it with b right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:23.470 --> 00:18:26.800
+<v Speaker 0>So we do expect that calculating the inverse is a
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,76]}
+
+00:18:26.800 --> 00:18:28.690
+<v Speaker 0>somewhat tricky process.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:28.690 --> 00:18:32.440
+<v Speaker 0>There is some computation required roughly the same amount of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:32.440 --> 00:18:36.040
+<v Speaker 0>computation of solving the system, because we're essentially doing the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:36.040 --> 00:18:36.910
+<v Speaker 0>same thing.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:37.750 --> 00:18:38.470
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:38.860 --> 00:18:45.650
+<v Speaker 0>And the general way in which we calculate the inverse
+
+NOTE CONF {"raw":[82,100,100,100,100,100,100,100,100,100]}
+
+00:18:45.980 --> 00:18:48.170
+<v Speaker 0>was in the reading for today.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:48.170 --> 00:18:51.410
+<v Speaker 0>So as the next exercise, I just want to give
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,100,100]}
+
+00:18:51.410 --> 00:18:52.970
+<v Speaker 0>you a few minutes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:52.970 --> 00:18:55.790
+<v Speaker 0>Just like in the determinant, I don't want you to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:55.790 --> 00:19:02.720
+<v Speaker 0>write down the, um, the inverse, uh, overall, but try
+
+NOTE CONF {"raw":[100,100,100,96,100,100,52,100,100,100]}
+
+00:19:02.720 --> 00:19:06.230
+<v Speaker 0>to go through the process that you require to calculate
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:06.230 --> 00:19:08.540
+<v Speaker 0>the inverse of this very general matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:08.930 --> 00:19:11.060
+<v Speaker 0>This matrix has no structure.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:11.060 --> 00:19:15.140
+<v Speaker 0>We've seen yesterday that having all positive values is not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:15.140 --> 00:19:16.580
+<v Speaker 0>enough information for the structure.
+
+NOTE CONF {"raw":[100,100,100,97,100]}
+
+00:19:16.580 --> 00:19:20.150
+<v Speaker 0>It doesn't tell us anything about the determinant, the inverse
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:19:20.150 --> 00:19:20.930
+<v Speaker 0>or anything.
+
+NOTE CONF {"raw":[99,100]}
+
+00:19:21.380 --> 00:19:23.360
+<v Speaker 0>Um, so this is a general matrix.
+
+NOTE CONF {"raw":[60,100,100,100,100,100,100]}
+
+00:19:23.360 --> 00:19:29.180
+<v Speaker 0>We need to go through the general framework.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:29.180 --> 00:19:33.410
+<v Speaker 0>So I'll give you 2 to 3 minutes to again
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:33.410 --> 00:19:37.220
+<v Speaker 0>without doing all the calculations necessarily just go through the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:37.220 --> 00:19:40.400
+<v Speaker 0>steps that you would need to tell me what the
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100,100,100]}
+
+00:19:40.400 --> 00:19:41.840
+<v Speaker 0>inverse of that matrix is.
+
+NOTE CONF {"raw":[100,100,100,100,67]}
+
+00:20:23.810 --> 00:20:26.930
+<v Speaker 0>And it's usual sort of midway through.
+
+NOTE CONF {"raw":[100,80,100,100,100,95,100]}
+
+00:20:27.260 --> 00:20:28.550
+<v Speaker 0>That's my tip.
+
+NOTE CONF {"raw":[62,100,100]}
+
+00:20:29.210 --> 00:20:33.770
+<v Speaker 0>There's two buzzwords in this tip, which is cofactors and
+
+NOTE CONF {"raw":[92,98,90,100,100,100,100,100,76,100]}
+
+00:20:33.770 --> 00:20:35.060
+<v Speaker 0>aggregate matrix.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:56.190 --> 00:22:01.350
+<v Speaker 0>Okay, let's, uh, go over the over the procedure together,
+
+NOTE CONF {"raw":[100,96,75,100,100,98,100,100,100,100]}
+
+00:22:01.590 --> 00:22:06.090
+<v Speaker 0>and I'll give you a very short version first, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:06.090 --> 00:22:07.650
+<v Speaker 0>then we'll go through together.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:08.550 --> 00:22:12.030
+<v Speaker 0>We'll go together through the long version of things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:12.300 --> 00:22:17.820
+<v Speaker 0>The short version is the inverse matrix is one over
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,60]}
+
+00:22:17.820 --> 00:22:20.250
+<v Speaker 0>two determinant times the aggregate.
+
+NOTE CONF {"raw":[38,100,100,100,100]}
+
+00:22:20.820 --> 00:22:23.490
+<v Speaker 0>And the aggregate is the matrix that has the cofactors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,99]}
+
+00:22:24.030 --> 00:22:26.700
+<v Speaker 0>as the elements.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:26.790 --> 00:22:27.300
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:27.630 --> 00:22:32.070
+<v Speaker 0>So that is the short short version of this problem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:32.070 --> 00:22:33.300
+<v Speaker 0>Probably too short.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:33.420 --> 00:22:38.310
+<v Speaker 0>So let's go through it bit by bit as as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:38.310 --> 00:22:39.400
+<v Speaker 0>you've seen in the reading.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:39.430 --> 00:22:41.560
+<v Speaker 0>First of all, as usual, we start with two by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:41.560 --> 00:22:44.290
+<v Speaker 0>two matrices because they're compact convenience.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:22:44.290 --> 00:22:47.260
+<v Speaker 0>We can write down almost everything explicitly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:47.680 --> 00:22:50.890
+<v Speaker 0>And if we have a matrix two by two, then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:51.100 --> 00:22:54.550
+<v Speaker 0>of course we need the determinant different than zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:54.550 --> 00:22:56.560
+<v Speaker 0>And the determinant is AD minus BC.
+
+NOTE CONF {"raw":[100,100,100,100,81,100,97]}
+
+00:22:56.830 --> 00:22:59.650
+<v Speaker 0>And we can see in the expression of the matrix
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:59.650 --> 00:23:03.760
+<v Speaker 0>that why the determinant needs to be different than zero
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100,100,100]}
+
+00:23:03.760 --> 00:23:05.530
+<v Speaker 0>because we divide by it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:05.530 --> 00:23:08.560
+<v Speaker 0>And so if the determinant is zero that division we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:08.560 --> 00:23:09.490
+<v Speaker 0>can't do.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:09.490 --> 00:23:12.160
+<v Speaker 0>And that definition doesn't make any sense.
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100]}
+
+00:23:13.270 --> 00:23:17.590
+<v Speaker 0>And I note that the content of the matrix is
+
+NOTE CONF {"raw":[100,65,100,100,100,100,100,100,100,100]}
+
+00:23:17.590 --> 00:23:20.140
+<v Speaker 0>the cofactor of the two by two matrix.
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100]}
+
+00:23:20.140 --> 00:23:20.440
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[95]}
+
+00:23:20.440 --> 00:23:23.560
+<v Speaker 0>When you calculate the cofactor with respect to the first
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:23.560 --> 00:23:27.520
+<v Speaker 0>and for the first column and the first row, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:27.520 --> 00:23:29.470
+<v Speaker 0>eliminate the first row in the first column.
+
+NOTE CONF {"raw":[100,100,100,100,65,100,100,100]}
+
+00:23:29.470 --> 00:23:31.600
+<v Speaker 0>And all you get is D when you do it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:31.600 --> 00:23:37.240
+<v Speaker 0>for when you expand in B, you get um, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,77,100]}
+
+00:23:37.240 --> 00:23:38.680
+<v Speaker 0>get rid of the other ones.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:38.830 --> 00:23:40.870
+<v Speaker 0>And, uh, as the.
+
+NOTE CONF {"raw":[72,50,99,76]}
+
+00:23:40.900 --> 00:23:43.060
+<v Speaker 0>What is the proof of this?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:43.090 --> 00:23:45.220
+<v Speaker 0>Well, it's just a it's just a two.
+
+NOTE CONF {"raw":[100,100,100,74,100,100,61,93]}
+
+00:23:45.250 --> 00:23:47.080
+<v Speaker 0>It's just a two by two matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:47.080 --> 00:23:51.490
+<v Speaker 0>So you can just do the matrix multiplication yourself and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:51.490 --> 00:23:55.090
+<v Speaker 0>check out that you get a i2, which is the
+
+NOTE CONF {"raw":[100,100,100,100,100,60,62,100,100,100]}
+
+00:23:55.090 --> 00:23:57.430
+<v Speaker 0>identity matrix of size two by two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:57.640 --> 00:24:02.110
+<v Speaker 0>And uh I'm going to drop the n in further.
+
+NOTE CONF {"raw":[98,85,100,100,100,100,100,100,100,100]}
+
+00:24:02.710 --> 00:24:05.560
+<v Speaker 0>Uh, in in the rest of this lecture, identity will
+
+NOTE CONF {"raw":[82,100,100,100,100,100,100,100,100,100]}
+
+00:24:05.560 --> 00:24:08.620
+<v Speaker 0>be always of the appropriate dimension.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:09.580 --> 00:24:10.210
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:12.820 --> 00:24:14.860
+<v Speaker 0>So this is the first step.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:15.760 --> 00:24:21.070
+<v Speaker 0>Uh, the next step, which is expanding to the larger
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:21.070 --> 00:24:25.690
+<v Speaker 0>matrices, requires us to talk about the cofactors again, that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:24:25.690 --> 00:24:27.010
+<v Speaker 0>we've seen yesterday.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:27.310 --> 00:24:29.920
+<v Speaker 0>And as a reminder, the cofactor is defined as a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:29.920 --> 00:24:34.330
+<v Speaker 0>sign times the determinant of the minor matrix, where the
+
+NOTE CONF {"raw":[96,100,100,100,100,100,95,100,100,100]}
+
+00:24:34.330 --> 00:24:38.450
+<v Speaker 0>minus the minor matrix a ij is defined by stripping
+
+NOTE CONF {"raw":[100,100,100,100,51,38,100,100,100,100]}
+
+00:24:38.450 --> 00:24:42.080
+<v Speaker 0>the ith row and the jth column of the matrix
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:42.080 --> 00:24:42.560
+<v Speaker 0>A.
+
+NOTE CONF {"raw":[100]}
+
+00:24:43.370 --> 00:24:48.140
+<v Speaker 0>And that allows us to define the aggregate matrix, which,
+
+NOTE CONF {"raw":[100,100,70,100,100,100,100,100,100,100]}
+
+00:24:48.140 --> 00:24:50.570
+<v Speaker 0>as I mentioned before in the very short version of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:50.570 --> 00:24:53.540
+<v Speaker 0>things, is just the matrix that instead of having the
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:24:53.540 --> 00:24:58.820
+<v Speaker 0>elements of A, has the cofactors of A ordered in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:58.820 --> 00:25:00.020
+<v Speaker 0>the same way as the elements.
+
+NOTE CONF {"raw":[100,100,100,100,100,72]}
+
+00:25:00.020 --> 00:25:03.680
+<v Speaker 0>So cofactors of row one one goes as element one
+
+NOTE CONF {"raw":[100,100,100,88,100,100,100,100,100,100]}
+
+00:25:03.680 --> 00:25:05.990
+<v Speaker 0>one of the aggregate matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:06.620 --> 00:25:09.710
+<v Speaker 0>And then what we can see is that there's this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:09.710 --> 00:25:13.850
+<v Speaker 0>very, very important theorem that if we multiply the matrix
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:13.850 --> 00:25:18.350
+<v Speaker 0>A times its aggregate, it's the same if we do
+
+NOTE CONF {"raw":[100,100,95,100,96,100,100,100,100,100]}
+
+00:25:18.350 --> 00:25:22.100
+<v Speaker 0>it in the other direction, which is in itself interesting,
+
+NOTE CONF {"raw":[100,100,70,54,100,100,100,100,100,100]}
+
+00:25:22.100 --> 00:25:25.820
+<v Speaker 0>because we know that matrices in principle do not commute,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:25.820 --> 00:25:29.510
+<v Speaker 0>but a matrix always commute with its aggregate.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:29.750 --> 00:25:34.370
+<v Speaker 0>That's already interesting in itself, but the real killer deal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,89]}
+
+00:25:34.370 --> 00:25:36.590
+<v Speaker 0>is the last one is the fact that when we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:36.590 --> 00:25:40.490
+<v Speaker 0>do the multiplication, we just get the identity matrix multiplied
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:40.490 --> 00:25:41.660
+<v Speaker 0>by the determinant.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:41.960 --> 00:25:44.450
+<v Speaker 0>And that is useful because obviously then we can divide
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:44.450 --> 00:25:48.500
+<v Speaker 0>by the determinant provided that again the determinant is zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:48.890 --> 00:25:52.370
+<v Speaker 0>As the condition of the invertibility.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:52.370 --> 00:25:58.190
+<v Speaker 0>And if we can divide by the determinant, then aggregate
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:25:58.190 --> 00:25:58.670
+<v Speaker 0>divided.
+
+NOTE CONF {"raw":[100]}
+
+00:25:58.670 --> 00:26:02.240
+<v Speaker 0>The determinant is what multiplies a both from the left
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100,100,100,100]}
+
+00:26:02.240 --> 00:26:04.850
+<v Speaker 0>and from the right to get the identity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:04.850 --> 00:26:10.250
+<v Speaker 0>And so that will be our inverse okay, for a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:10.250 --> 00:26:16.520
+<v Speaker 0>general matrix, unfortunately, there is no quicker or smarter way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:16.520 --> 00:26:22.460
+<v Speaker 0>to get to get the the inverse than doing all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:26:22.460 --> 00:26:27.470
+<v Speaker 0>of the cofactors and dividing each of them by the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:27.470 --> 00:26:31.010
+<v Speaker 0>determinant and putting them in inside the matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:31.550 --> 00:26:39.420
+<v Speaker 0>Okay, not very convenient But, uh, in absence of structure,
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100,100,100]}
+
+00:26:39.420 --> 00:26:40.830
+<v Speaker 0>the best we can do anyway.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:26:41.280 --> 00:26:42.450
+<v Speaker 0>Any questions?
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:44.280 --> 00:26:44.730
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:26:45.270 --> 00:26:45.630
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:26:46.590 --> 00:26:46.920
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[87]}
+
+00:26:52.230 --> 00:26:52.860
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[81]}
+
+00:26:55.050 --> 00:26:56.130
+<v Speaker 0>That's a great question.
+
+NOTE CONF {"raw":[100,99,76,100]}
+
+00:26:56.310 --> 00:26:57.780
+<v Speaker 0>Uh, no.
+
+NOTE CONF {"raw":[100,89]}
+
+00:27:00.090 --> 00:27:03.690
+<v Speaker 0>That is the transpose of that I missed.
+
+NOTE CONF {"raw":[47,40,100,100,100,98,94,63]}
+
+00:27:04.140 --> 00:27:04.830
+<v Speaker 0>I'll check.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:05.190 --> 00:27:07.020
+<v Speaker 0>I'll check it, and I'll get back to you.
+
+NOTE CONF {"raw":[100,100,100,99,100,100,100,100,100]}
+
+00:27:07.050 --> 00:27:10.440
+<v Speaker 0>I might have missed a a transpose, then.
+
+NOTE CONF {"raw":[100,100,100,100,77,98,100,100]}
+
+00:27:10.740 --> 00:27:11.100
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:11.670 --> 00:27:12.660
+<v Speaker 0>In the previous one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:12.660 --> 00:27:14.460
+<v Speaker 0>So in the definition of this one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:15.300 --> 00:27:18.780
+<v Speaker 0>So it would be one, two, one, one two going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:18.780 --> 00:27:19.890
+<v Speaker 0>down and two one going.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:19.890 --> 00:27:20.520
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:27:21.360 --> 00:27:22.590
+<v Speaker 0>Okay I'll have a look at that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:22.590 --> 00:27:23.250
+<v Speaker 0>Thank you.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:26.940 --> 00:27:27.480
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:27.480 --> 00:27:30.300
+<v Speaker 0>Let's go back to any other questions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:33.150 --> 00:27:33.390
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:27:33.820 --> 00:27:34.360
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:34.750 --> 00:27:37.150
+<v Speaker 0>Let's have a look at the exercise again.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:37.150 --> 00:27:41.620
+<v Speaker 0>If we if you had done the entire thing just
+
+NOTE CONF {"raw":[100,100,100,100,99,100,100,100,100,100]}
+
+00:27:41.620 --> 00:27:45.010
+<v Speaker 0>as a quick check for you, that would be the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:45.010 --> 00:27:46.150
+<v Speaker 0>inverse matrix.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:46.510 --> 00:27:52.540
+<v Speaker 0>Um, that, uh, um, multiplies the original one to get
+
+NOTE CONF {"raw":[100,100,88,100,100,100,100,100,100,100]}
+
+00:27:52.540 --> 00:27:53.230
+<v Speaker 0>the inverse.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:55.870 --> 00:27:56.530
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:58.900 --> 00:27:59.380
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:59.380 --> 00:28:02.170
+<v Speaker 0>Let's go back to our work lab.
+
+NOTE CONF {"raw":[100,100,100,100,100,93,92]}
+
+00:28:03.370 --> 00:28:05.020
+<v Speaker 0>Uh, for question four.
+
+NOTE CONF {"raw":[99,100,100,61]}
+
+00:28:05.020 --> 00:28:08.350
+<v Speaker 0>Question four is in the format that we have seen
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:08.500 --> 00:28:09.640
+<v Speaker 0>yesterday.
+
+NOTE CONF {"raw":[100]}
+
+00:28:10.510 --> 00:28:12.280
+<v Speaker 0>It's a bunch of statements.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:12.280 --> 00:28:17.890
+<v Speaker 0>And my question for you is, uh, which one are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,78,100,100,100]}
+
+00:28:17.890 --> 00:28:18.670
+<v Speaker 0>true?
+
+NOTE CONF {"raw":[100]}
+
+00:28:19.150 --> 00:28:22.330
+<v Speaker 0>Um, and which ones I have made up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:23.170 --> 00:28:23.530
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:23.530 --> 00:28:31.240
+<v Speaker 0>And they all, um, they all involve, um, determinants and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:31.240 --> 00:28:36.430
+<v Speaker 0>inverse, and they're, Um, and their interaction with matrices that
+
+NOTE CONF {"raw":[100,100,75,100,100,100,100,100,100,100]}
+
+00:28:36.430 --> 00:28:39.340
+<v Speaker 0>as you can see, some of them have some structure
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:39.340 --> 00:28:41.080
+<v Speaker 0>and some of them don't.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:41.530 --> 00:28:43.810
+<v Speaker 0>I don't make any claim about their structure.
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100,100]}
+
+00:28:44.080 --> 00:28:49.300
+<v Speaker 0>So take a couple of minutes, think about, uh, those
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,79,100]}
+
+00:28:49.300 --> 00:28:52.660
+<v Speaker 0>claims and then we'll go through them together.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:30.830 --> 00:30:31.280
+<v Unknown>Yes.
+
+NOTE CONF {"raw":[72]}
+
+00:30:40.940 --> 00:30:41.300
+<v Unknown>Yes, sir.
+
+NOTE CONF {"raw":[99,88]}
+
+00:30:48.440 --> 00:30:48.650
+<v Unknown>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:30:51.830 --> 00:30:52.100
+<v Unknown>Yes.
+
+NOTE CONF {"raw":[78]}
+
+00:30:56.600 --> 00:30:56.930
+<v Unknown>Yes.
+
+NOTE CONF {"raw":[97]}
+
+00:31:01.520 --> 00:31:01.940
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:31:12.890 --> 00:31:13.220
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:31:23.480 --> 00:31:25.970
+<v Speaker 0>Okay, let's have a look at the results.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:28.610 --> 00:31:31.920
+<v Speaker 0>Um, wait just a few more seconds so maybe we
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:31:31.920 --> 00:31:33.630
+<v Speaker 0>can get to 100 people.
+
+NOTE CONF {"raw":[100,100,100,78,100]}
+
+00:31:34.650 --> 00:31:35.640
+<v Speaker 0>That'd be great.
+
+NOTE CONF {"raw":[99,100,100]}
+
+00:31:36.120 --> 00:31:36.600
+<v Speaker 0>Yep.
+
+NOTE CONF {"raw":[99]}
+
+00:31:37.350 --> 00:31:38.190
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:38.730 --> 00:31:40.980
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:40.980 --> 00:31:45.990
+<v Speaker 0>So broadly, a good majority of you agree on one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:45.990 --> 00:31:46.920
+<v Speaker 0>and two.
+
+NOTE CONF {"raw":[98,100]}
+
+00:31:48.180 --> 00:31:53.490
+<v Speaker 0>Uh, some of them think that four is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,88,100]}
+
+00:31:53.490 --> 00:31:56.310
+<v Speaker 0>For some of you, that would be number four.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:31:56.310 --> 00:32:02.070
+<v Speaker 0>And some of you think that six is, uh, that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:02.070 --> 00:32:03.330
+<v Speaker 0>four is true instead.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:03.330 --> 00:32:07.530
+<v Speaker 0>So the only one would be answer six.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:07.560 --> 00:32:08.070
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:08.070 --> 00:32:09.960
+<v Speaker 0>Let's have a look at the first one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:11.160 --> 00:32:13.740
+<v Speaker 0>Um, if the determinant of A is positive, then the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:13.740 --> 00:32:15.930
+<v Speaker 0>determinant of the inverse is also positive.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:16.530 --> 00:32:18.450
+<v Speaker 0>Of course that's the reciprocal.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:18.540 --> 00:32:23.670
+<v Speaker 0>So the reciprocal of a positive number is uh um
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,92]}
+
+00:32:23.670 --> 00:32:24.840
+<v Speaker 0>is a positive number.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:24.840 --> 00:32:25.590
+<v Speaker 0>Absolutely.
+
+NOTE CONF {"raw":[95]}
+
+00:32:25.950 --> 00:32:29.880
+<v Speaker 0>The inverse of the diagonal matrix is beautifully simple.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:32:29.880 --> 00:32:33.540
+<v Speaker 0>It's just the diagonal matrix with the entries that are
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100,100,100,100]}
+
+00:32:33.540 --> 00:32:35.520
+<v Speaker 0>the reciprocal of the original one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:36.270 --> 00:32:39.330
+<v Speaker 0>And that is however not true for the for the
+
+NOTE CONF {"raw":[54,100,100,100,100,100,100,97,100,100]}
+
+00:32:39.330 --> 00:32:40.710
+<v Speaker 0>triangular matrix.
+
+NOTE CONF {"raw":[100,100]}
+
+00:32:40.710 --> 00:32:44.010
+<v Speaker 0>So number three is in fact false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:44.310 --> 00:32:48.030
+<v Speaker 0>And so both people, both the groups of answer four
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,61,100]}
+
+00:32:48.030 --> 00:32:50.970
+<v Speaker 0>and six are both good so far.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:51.300 --> 00:32:56.400
+<v Speaker 0>The big question is, uh, number four, if the determinant
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:32:56.400 --> 00:33:00.000
+<v Speaker 0>of a smaller than one, then the determinant of a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:00.000 --> 00:33:03.660
+<v Speaker 0>minus one is greater than one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:04.200 --> 00:33:08.310
+<v Speaker 0>And uh, because the two groups are disagreeing on that
+
+NOTE CONF {"raw":[98,74,100,100,100,100,100,100,100,100]}
+
+00:33:08.310 --> 00:33:10.860
+<v Speaker 0>one, I'll give you 30 more seconds to try and
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100,100,100]}
+
+00:33:10.860 --> 00:33:12.930
+<v Speaker 0>convince your neighbours that they're wrong.
+
+NOTE CONF {"raw":[100,100,95,100,100,100]}
+
+00:33:13.410 --> 00:33:14.550
+<v Speaker 0>And you're right.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:29.200 --> 00:33:29.710
+<v Speaker 0>I was.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:29.710 --> 00:33:30.190
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:33:30.190 --> 00:33:33.670
+<v Speaker 0>There's a there's a good thing I hadn't thought about.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:33.700 --> 00:33:35.320
+<v Speaker 0>The second one might be wrong.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:35.320 --> 00:33:37.750
+<v Speaker 0>If the diagonal elements are zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:38.710 --> 00:33:41.290
+<v Speaker 0>Um, there's an implicit thing that I should have made
+
+NOTE CONF {"raw":[93,94,100,100,100,100,100,100,100,100]}
+
+00:33:41.290 --> 00:33:43.750
+<v Speaker 0>it clear that those elements are non-zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,75]}
+
+00:33:43.990 --> 00:33:46.120
+<v Speaker 0>Yeah, that's technically correct.
+
+NOTE CONF {"raw":[95,100,100,100]}
+
+00:33:46.120 --> 00:33:46.630
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:34:09.730 --> 00:34:13.480
+<v Speaker 0>Let's, uh, let's do a raise of hands.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:13.929 --> 00:34:16.300
+<v Speaker 0>Uh, raise your hand if you think that number four
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:16.300 --> 00:34:17.320
+<v Speaker 0>is true.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:19.419 --> 00:34:21.370
+<v Speaker 0>And raise your hand if you think the number four
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,84,100,100]}
+
+00:34:21.370 --> 00:34:22.389
+<v Speaker 0>is false.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:23.080 --> 00:34:23.530
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:23.530 --> 00:34:25.179
+<v Speaker 0>What's the problem with number four?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:28.250 --> 00:34:30.980
+<v Speaker 0>Yeah, I hear you're not screaming it at me, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,96]}
+
+00:34:30.980 --> 00:34:32.090
+<v Speaker 0>you're talking within yourself.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:32.090 --> 00:34:33.770
+<v Speaker 0>If it's negative, right?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:34.460 --> 00:34:38.450
+<v Speaker 0>Less than one doesn't necessarily mean between 0 and 1.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:38.450 --> 00:34:41.419
+<v Speaker 0>And so if the determinant is for example minus one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:41.600 --> 00:34:44.570
+<v Speaker 0>then the reciprocal of that would also be negative.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:45.409 --> 00:34:46.970
+<v Speaker 0>So that's why it doesn't work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:49.220 --> 00:34:49.909
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:50.360 --> 00:34:53.540
+<v Speaker 0>That was um excellent.
+
+NOTE CONF {"raw":[100,100,71,100]}
+
+00:34:53.659 --> 00:34:58.160
+<v Speaker 0>And um, let's now introduce one more property in the
+
+NOTE CONF {"raw":[97,91,100,97,100,100,100,100,100,100]}
+
+00:34:58.160 --> 00:34:58.640
+<v Speaker 0>mix.
+
+NOTE CONF {"raw":[100]}
+
+00:34:58.640 --> 00:35:01.010
+<v Speaker 0>I think you've seen this already, but I'm going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:01.010 --> 00:35:02.690
+<v Speaker 0>briefly define it for you.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:02.690 --> 00:35:04.130
+<v Speaker 0>And yes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:05.150 --> 00:35:05.690
+<v Speaker 1>Can you explain.
+
+NOTE CONF {"raw":[96,100,100]}
+
+00:35:05.690 --> 00:35:10.760
+<v Unknown>Why in the previous slide why the triangular matrix or
+
+NOTE CONF {"raw":[100,100,100,100,91,99,67,100,100,26]}
+
+00:35:10.760 --> 00:35:11.870
+<v Unknown>number three was not true?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:12.980 --> 00:35:17.480
+<v Speaker 0>Um, it's just something I made up.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100]}
+
+00:35:17.480 --> 00:35:20.960
+<v Speaker 0>If you take, uh, if you take triangular matrices, you
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:35:20.960 --> 00:35:25.520
+<v Speaker 0>will see that, uh, you, you don't get these, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:25.520 --> 00:35:27.440
+<v Speaker 0>get a combination of numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:27.440 --> 00:35:28.100
+<v Speaker 0>It's still.
+
+NOTE CONF {"raw":[97,100]}
+
+00:35:28.100 --> 00:35:29.090
+<v Speaker 0>It's still triangular.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:29.090 --> 00:35:30.140
+<v Speaker 0>We will see that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:30.140 --> 00:35:32.840
+<v Speaker 0>But you don't have the same numbers below.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:33.020 --> 00:35:34.820
+<v Speaker 0>You have a different combination of them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:35.030 --> 00:35:36.260
+<v Speaker 0>You can look it up.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:36.260 --> 00:35:38.780
+<v Speaker 0>It's just like a complex thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:38.780 --> 00:35:41.150
+<v Speaker 0>It's a complex combination of all the numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:41.150 --> 00:35:43.490
+<v Speaker 0>You start with that, go here, here and here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:43.490 --> 00:35:47.330
+<v Speaker 0>You can just copy the uh, under diagonal elements.
+
+NOTE CONF {"raw":[100,92,100,100,100,98,100,100,100]}
+
+00:35:48.320 --> 00:35:51.980
+<v Speaker 0>Um, the diagonal part is, is okay.
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100]}
+
+00:35:51.980 --> 00:35:54.770
+<v Speaker 0>The problem is that this part here is not the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:54.770 --> 00:35:55.160
+<v Speaker 0>same.
+
+NOTE CONF {"raw":[100]}
+
+00:35:55.370 --> 00:35:57.800
+<v Speaker 0>So that's why it's false in general.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:58.880 --> 00:36:01.970
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:02.990 --> 00:36:07.850
+<v Speaker 0>Um, I'm sure you've seen it, but a symmetric matrix
+
+NOTE CONF {"raw":[75,100,100,100,100,100,100,100,100,100]}
+
+00:36:07.850 --> 00:36:12.680
+<v Speaker 0>is one in which if you swap the rows and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:12.680 --> 00:36:15.950
+<v Speaker 0>the columns, you get the same matrix again, if you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:15.950 --> 00:36:18.830
+<v Speaker 0>want to see it as a general, as a global
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:18.830 --> 00:36:21.140
+<v Speaker 0>property of the matrix, you say like that if you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:21.140 --> 00:36:23.240
+<v Speaker 0>want to see it as a property of the elements,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:36:23.240 --> 00:36:28.050
+<v Speaker 0>then you say that elements ij ith row jth column
+
+NOTE CONF {"raw":[100,100,100,100,100,99,100,100,100,100]}
+
+00:36:28.050 --> 00:36:31.530
+<v Speaker 0>is the same as ag j through jth column.
+
+NOTE CONF {"raw":[100,100,100,100,51,92,90,100,100]}
+
+00:36:31.770 --> 00:36:33.390
+<v Speaker 0>And this is an example.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:33.630 --> 00:36:36.780
+<v Speaker 0>You can see that ideally if you fold the matrix
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,66,100,100]}
+
+00:36:36.780 --> 00:36:39.750
+<v Speaker 0>along the main the main diagonal, you end up with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:39.750 --> 00:36:41.130
+<v Speaker 0>the same numbers on both sides.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:41.130 --> 00:36:43.260
+<v Speaker 0>So this one goes with this one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:43.260 --> 00:36:45.780
+<v Speaker 0>This three goes with this three, this two with this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:36:45.780 --> 00:36:47.100
+<v Speaker 0>two, and so on and so forth.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:47.730 --> 00:36:48.240
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:49.230 --> 00:37:00.480
+<v Speaker 0>So, um, we have, uh, thrown something more in and,
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:37:00.480 --> 00:37:04.740
+<v Speaker 0>uh, for the next question is how does this property
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:04.950 --> 00:37:06.420
+<v Speaker 0>interact with symmetry?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:06.660 --> 00:37:09.870
+<v Speaker 0>If I have a symmetric matrix is a to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:09.870 --> 00:37:13.200
+<v Speaker 0>minus one also symmetric, or is it one of those
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:13.200 --> 00:37:16.890
+<v Speaker 0>I just make up before I come here again two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:16.890 --> 00:37:17.760
+<v Speaker 0>minutes discuss.
+
+NOTE CONF {"raw":[100,100]}
+
+00:37:17.760 --> 00:37:20.100
+<v Speaker 0>This is the second to last question today there's a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,91,98]}
+
+00:37:20.760 --> 00:37:22.260
+<v Speaker 0>a little bit less than yesterday.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:22.260 --> 00:37:25.770
+<v Speaker 0>So we can take more time to think And then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:26.820 --> 00:37:30.090
+<v Speaker 0>we will show either a counterexample or a proof.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100]}
+
+00:38:17.400 --> 00:38:19.800
+<v Speaker 0>Okay, let's have a brief discussion.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:20.190 --> 00:38:22.920
+<v Speaker 0>I'm not going to close the question yet, but you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:22.920 --> 00:38:25.180
+<v Speaker 0>don't really have much to go about.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:25.180 --> 00:38:28.060
+<v Speaker 0>So sometimes when you don't know how to approach a
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:38:28.060 --> 00:38:28.750
+<v Speaker 0>problem.
+
+NOTE CONF {"raw":[100]}
+
+00:38:29.110 --> 00:38:32.140
+<v Speaker 0>Also, looking at the at the answer that I'm suggesting,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:32.650 --> 00:38:36.970
+<v Speaker 0>the answers are always only for some and never.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:38:37.960 --> 00:38:43.300
+<v Speaker 0>Um, sometimes it's very useful to, um, have a look
+
+NOTE CONF {"raw":[97,100,99,100,100,100,93,100,100,100]}
+
+00:38:43.570 --> 00:38:49.150
+<v Speaker 0>and at the very simple case and think about, uh,
+
+NOTE CONF {"raw":[100,100,50,100,100,100,100,100,100,52]}
+
+00:38:49.150 --> 00:38:52.240
+<v Speaker 0>what that very simple case give us.
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100]}
+
+00:38:52.960 --> 00:38:56.320
+<v Speaker 0>So what would be the easiest matrix for which we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:56.320 --> 00:38:58.990
+<v Speaker 0>can check its inverse quickly?
+
+NOTE CONF {"raw":[100,100,39,100,100]}
+
+00:39:01.210 --> 00:39:02.410
+<v Speaker 0>I to yes.
+
+NOTE CONF {"raw":[96,58,100]}
+
+00:39:02.800 --> 00:39:07.060
+<v Speaker 0>Um, any identity really, but I to in particular, what's
+
+NOTE CONF {"raw":[100,99,100,100,100,100,40,92,100,100]}
+
+00:39:07.060 --> 00:39:08.350
+<v Speaker 0>the inverse of the identity?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:10.030 --> 00:39:12.220
+<v Speaker 0>The identity is the identity symmetric.
+
+NOTE CONF {"raw":[100,100,100,100,100,95]}
+
+00:39:12.910 --> 00:39:13.330
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:39:13.330 --> 00:39:13.600
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:39:13.600 --> 00:39:17.590
+<v Speaker 0>So we know that at least for some matrices this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:17.590 --> 00:39:18.850
+<v Speaker 0>property must be true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:19.180 --> 00:39:21.400
+<v Speaker 0>It's not false for all matrices.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:21.550 --> 00:39:26.200
+<v Speaker 0>So we have already narrowed down the original three answer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:26.200 --> 00:39:31.420
+<v Speaker 0>to the two that you correctly recognised as the last
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100,49]}
+
+00:39:32.290 --> 00:39:33.670
+<v Speaker 0>as the correct ones.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:34.120 --> 00:39:37.120
+<v Speaker 0>Uh, now the question is, does it is it true
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100,100,100,100]}
+
+00:39:37.120 --> 00:39:37.870
+<v Speaker 0>for all?
+
+NOTE CONF {"raw":[100,91]}
+
+00:39:37.900 --> 00:39:42.880
+<v Speaker 0>Can we find some easy matrix to check for which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:42.880 --> 00:39:44.980
+<v Speaker 0>the inverse is non symmetric?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:45.550 --> 00:39:47.980
+<v Speaker 0>You can try, but I'm not going to let you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,83,83,100,100]}
+
+00:39:47.980 --> 00:39:49.510
+<v Speaker 0>try because the answer is no.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:49.540 --> 00:39:52.120
+<v Speaker 0>This is in fact a true property.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:53.050 --> 00:39:55.480
+<v Speaker 0>Um I haven't made this up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:55.900 --> 00:40:00.970
+<v Speaker 0>And uh I'm going to actually do a very we
+
+NOTE CONF {"raw":[100,76,100,100,100,100,100,100,100,100]}
+
+00:40:00.970 --> 00:40:02.860
+<v Speaker 0>can frame it as a proposition here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:03.310 --> 00:40:07.030
+<v Speaker 0>Uh, let A be non-singular, invertible, then, uh, a minus
+
+NOTE CONF {"raw":[93,85,99,73,76,100,100,94,100,100]}
+
+00:40:07.030 --> 00:40:11.350
+<v Speaker 0>one is the transpose of, uh, the original matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,54,100,100,100]}
+
+00:40:13.180 --> 00:40:13.900
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[69]}
+
+00:40:14.440 --> 00:40:16.570
+<v Speaker 0>Um, sorry, I think I misspoke.
+
+NOTE CONF {"raw":[55,100,100,100,100,100]}
+
+00:40:17.080 --> 00:40:22.100
+<v Speaker 0>Um, the inverse matrix is equal to its transpose.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,89,58]}
+
+00:40:22.100 --> 00:40:25.070
+<v Speaker 0>So it's it's, uh, it's symmetric.
+
+NOTE CONF {"raw":[100,100,100,70,100,100]}
+
+00:40:25.490 --> 00:40:26.600
+<v Speaker 0>That's what I meant.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:26.930 --> 00:40:29.300
+<v Speaker 0>Okay, let's do a quick proof sketch.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:29.300 --> 00:40:30.020
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[86]}
+
+00:40:30.470 --> 00:40:34.340
+<v Speaker 0>Uh, first thing, um, let's let's pick up on the
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:40:34.340 --> 00:40:36.260
+<v Speaker 0>equivalence that we've seen before.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:36.380 --> 00:40:37.460
+<v Speaker 0>A is non-singular.
+
+NOTE CONF {"raw":[100,100,81]}
+
+00:40:37.460 --> 00:40:41.720
+<v Speaker 0>So we can find the the inverse.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:41.720 --> 00:40:45.770
+<v Speaker 0>And actually the inverse uh, has this property multiplies to
+
+NOTE CONF {"raw":[100,100,100,100,80,100,100,100,100,100]}
+
+00:40:45.770 --> 00:40:51.800
+<v Speaker 0>the, uh, to the um unit matrix and to the
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:40:51.800 --> 00:40:55.400
+<v Speaker 0>identity matrix, which is also equal to its transpose.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,70,100]}
+
+00:40:55.400 --> 00:40:56.480
+<v Speaker 0>It's symmetric.
+
+NOTE CONF {"raw":[95,100]}
+
+00:40:57.080 --> 00:40:57.680
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:57.680 --> 00:41:02.480
+<v Speaker 0>Now we can take this thing here and we can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:02.480 --> 00:41:03.050
+<v Speaker 0>transpose.
+
+NOTE CONF {"raw":[100]}
+
+00:41:03.050 --> 00:41:03.320
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[91]}
+
+00:41:03.320 --> 00:41:06.200
+<v Speaker 0>If two matrices are the same then if we take
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:06.200 --> 00:41:11.270
+<v Speaker 0>the transport of both then their transpose are also the
+
+NOTE CONF {"raw":[100,100,100,100,100,75,100,100,100,100]}
+
+00:41:11.270 --> 00:41:11.720
+<v Speaker 0>same.
+
+NOTE CONF {"raw":[100]}
+
+00:41:11.720 --> 00:41:15.680
+<v Speaker 0>And because the identity is symmetric, the transpose of this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:15.680 --> 00:41:17.870
+<v Speaker 0>is actually still the identity.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:18.650 --> 00:41:19.250
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:19.880 --> 00:41:23.810
+<v Speaker 0>And now we have a product under transposition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:23.960 --> 00:41:27.650
+<v Speaker 0>And we know that the transpose of a product is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:41:27.650 --> 00:41:30.710
+<v Speaker 0>the product of the transpose where the product has been
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:30.710 --> 00:41:31.280
+<v Speaker 0>flipped.
+
+NOTE CONF {"raw":[100]}
+
+00:41:31.520 --> 00:41:33.320
+<v Speaker 0>So we can write that down.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:33.320 --> 00:41:36.500
+<v Speaker 0>We we know a B transpose is BT 80.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,61,61]}
+
+00:41:36.500 --> 00:41:37.760
+<v Speaker 0>That's what I just said.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:37.760 --> 00:41:40.910
+<v Speaker 0>So when I take this and I, I do it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,65,100,100,100]}
+
+00:41:40.910 --> 00:41:45.620
+<v Speaker 0>out, I get a to the minus one t times
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:45.620 --> 00:41:48.920
+<v Speaker 0>A transpose and that still will be equal to the
+
+NOTE CONF {"raw":[100,93,100,100,100,100,100,100,100,100]}
+
+00:41:48.920 --> 00:41:49.760
+<v Speaker 0>identity.
+
+NOTE CONF {"raw":[100]}
+
+00:41:50.060 --> 00:41:50.780
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[95]}
+
+00:41:52.790 --> 00:41:53.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[89]}
+
+00:41:53.840 --> 00:42:01.580
+<v Speaker 0>And now we can we can simplify a because we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:01.580 --> 00:42:04.190
+<v Speaker 0>are assuming that A was symmetric to begin with.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:42:04.190 --> 00:42:06.410
+<v Speaker 0>So it's equal to to its transpose.
+
+NOTE CONF {"raw":[100,96,100,98,95,88,100]}
+
+00:42:06.410 --> 00:42:09.500
+<v Speaker 0>And so I can rewrite all this thing here as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:09.500 --> 00:42:13.070
+<v Speaker 0>this one here where I dropped this t there.
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,91,100]}
+
+00:42:14.000 --> 00:42:14.660
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[72]}
+
+00:42:15.350 --> 00:42:23.400
+<v Speaker 0>Um, right now here, I say, rearranging the expression.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:42:23.430 --> 00:42:26.880
+<v Speaker 0>What I mean by that is that this thing here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:27.000 --> 00:42:28.860
+<v Speaker 0>is equal to I.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:28.860 --> 00:42:31.260
+<v Speaker 0>This one here is also equal to I.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:31.290 --> 00:42:34.890
+<v Speaker 0>So we can equate both sides to them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:35.550 --> 00:42:36.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:38.670 --> 00:42:41.160
+<v Speaker 0>And why is that useful.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:41.670 --> 00:42:45.810
+<v Speaker 0>Well as you see now I have a I have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,86,100,100]}
+
+00:42:45.810 --> 00:42:49.020
+<v Speaker 0>the, the result I want to show I have a,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,60]}
+
+00:42:49.020 --> 00:42:52.740
+<v Speaker 0>a minus one equals a minus one transpose.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:52.770 --> 00:42:56.190
+<v Speaker 0>The only slightly annoying thing is that they're both multiplied
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:56.190 --> 00:43:00.600
+<v Speaker 0>to the right by A, but A is invertible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:00.600 --> 00:43:02.070
+<v Speaker 0>So that's not a big problem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:02.070 --> 00:43:04.950
+<v Speaker 0>We can just write multiply by a minus one and
+
+NOTE CONF {"raw":[96,100,100,77,99,100,100,100,100,100]}
+
+00:43:04.950 --> 00:43:06.150
+<v Speaker 0>we get the identity.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:06.660 --> 00:43:10.890
+<v Speaker 0>And in fact that's what they do I, I put
+
+NOTE CONF {"raw":[100,100,100,100,100,77,100,100,100,100]}
+
+00:43:10.890 --> 00:43:13.560
+<v Speaker 0>an A minus one to the right of both sides.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:13.680 --> 00:43:15.120
+<v Speaker 0>This will cancel.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:15.120 --> 00:43:18.060
+<v Speaker 0>And what I get is exactly what I wanted to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:18.060 --> 00:43:18.420
+<v Speaker 0>prove.
+
+NOTE CONF {"raw":[100]}
+
+00:43:20.050 --> 00:43:24.850
+<v Speaker 0>Um, this is, uh, or like that.
+
+NOTE CONF {"raw":[100,100,100,92,100,100,100]}
+
+00:43:25.360 --> 00:43:29.830
+<v Speaker 0>And then I can simplify that and get, uh, the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,89,100]}
+
+00:43:29.830 --> 00:43:33.820
+<v Speaker 0>inverse of a is symmetric if we suppose that A
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:33.820 --> 00:43:35.200
+<v Speaker 0>is symmetric to begin with.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:35.830 --> 00:43:36.220
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:37.450 --> 00:43:40.090
+<v Speaker 0>So number one was the correct one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:40.090 --> 00:43:42.970
+<v Speaker 0>We can actually prove that this is true for all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:42.970 --> 00:43:47.260
+<v Speaker 0>invertible uh symmetric matrices okay.
+
+NOTE CONF {"raw":[100,78,100,100,81]}
+
+00:43:49.510 --> 00:43:51.670
+<v Speaker 0>And finally last question.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:53.500 --> 00:43:58.690
+<v Speaker 0>Much like same structure as yesterday I have collected a
+
+NOTE CONF {"raw":[100,100,100,84,84,100,100,100,100,100]}
+
+00:43:58.690 --> 00:43:59.890
+<v Speaker 0>few statements.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:00.250 --> 00:44:01.720
+<v Speaker 0>Some I just made up.
+
+NOTE CONF {"raw":[100,71,100,100,100]}
+
+00:44:01.720 --> 00:44:03.310
+<v Speaker 0>Some are actually true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:03.310 --> 00:44:06.010
+<v Speaker 0>These ones because it's the last question for not only
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,100]}
+
+00:44:06.010 --> 00:44:07.450
+<v Speaker 0>for today, but for the week.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:07.480 --> 00:44:10.840
+<v Speaker 0>These ones span both yesterday and today's lecture.
+
+NOTE CONF {"raw":[85,85,61,100,100,100,100,95]}
+
+00:44:10.840 --> 00:44:12.910
+<v Speaker 0>So we have six minutes.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:12.910 --> 00:44:16.030
+<v Speaker 0>I'm going to give you three to go through them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:16.030 --> 00:44:17.440
+<v Speaker 0>Some are very simple.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:17.440 --> 00:44:20.500
+<v Speaker 0>We've seen them explicitly yesterday, and some are a little
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:20.500 --> 00:44:21.400
+<v Speaker 0>bit more complicated.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:21.400 --> 00:44:22.600
+<v Speaker 0>And then we will wrap that.
+
+NOTE CONF {"raw":[100,100,100,100,100,88]}
+
+00:44:22.720 --> 00:44:28.810
+<v Speaker 0>We will wrap up the the lecture by going over
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:28.810 --> 00:44:31.420
+<v Speaker 0>each one of them independently.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:36.680 --> 00:45:39.320
+<v Speaker 0>And also, don't forget to vote in the book club.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,56,100,100,100]}
+
+00:46:11.000 --> 00:46:12.920
+<v Speaker 0>Okay, 30 more seconds.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:12.920 --> 00:46:13.970
+<v Speaker 0>Please vote.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:14.000 --> 00:46:16.340
+<v Speaker 0>We only have 30 people, so far.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:43.730 --> 00:46:46.100
+<v Speaker 0>Okay, let's have a look.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:50.720 --> 00:46:53.630
+<v Speaker 0>So you seem to think that one, two and six
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:53.630 --> 00:46:57.260
+<v Speaker 0>broadly are the are the true ones.
+
+NOTE CONF {"raw":[100,100,100,79,100,100,100]}
+
+00:46:57.440 --> 00:46:58.040
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:46:58.040 --> 00:47:02.090
+<v Speaker 0>Let's go through each one of them one by one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:02.120 --> 00:47:04.640
+<v Speaker 0>We should have time because some are very simple.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:47:05.120 --> 00:47:07.370
+<v Speaker 0>The first one a raise your hand if you think
+
+NOTE CONF {"raw":[100,100,100,81,100,100,100,100,100,100]}
+
+00:47:07.370 --> 00:47:08.180
+<v Speaker 0>it's true.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:10.460 --> 00:47:11.390
+<v Speaker 0>This is not a trick.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:11.390 --> 00:47:13.280
+<v Speaker 0>That's the same one as the previous one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:13.280 --> 00:47:15.170
+<v Speaker 0>I haven't changed it from one side to the other.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:15.420 --> 00:47:17.010
+<v Speaker 0>Not intentionally, at least.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:17.790 --> 00:47:18.300
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:47:19.500 --> 00:47:20.220
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:20.610 --> 00:47:23.160
+<v Speaker 0>Uh, what's the problem with, uh, with this?
+
+NOTE CONF {"raw":[97,100,100,100,100,84,100,100]}
+
+00:47:26.820 --> 00:47:27.540
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:47:28.440 --> 00:47:29.160
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:47:29.340 --> 00:47:29.820
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:47:30.510 --> 00:47:31.710
+<v Speaker 0>Unintended error.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:31.740 --> 00:47:32.340
+<v Speaker 0>Typo.
+
+NOTE CONF {"raw":[100]}
+
+00:47:32.370 --> 00:47:33.000
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:47:33.390 --> 00:47:33.630
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[98]}
+
+00:47:33.630 --> 00:47:34.620
+<v Speaker 0>I was like, yes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:34.620 --> 00:47:36.390
+<v Speaker 0>This is the correct complete one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:47:36.690 --> 00:47:37.980
+<v Speaker 0>Uh, it should start with one.
+
+NOTE CONF {"raw":[95,100,100,100,97,100]}
+
+00:47:37.980 --> 00:47:38.220
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:47:38.250 --> 00:47:39.660
+<v Speaker 0>Of course, that escaped me.
+
+NOTE CONF {"raw":[100,100,100,91,100]}
+
+00:47:40.020 --> 00:47:42.750
+<v Speaker 0>If it started by one, then it would have been
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:42.750 --> 00:47:43.500
+<v Speaker 0>the correct one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:43.980 --> 00:47:44.460
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[97]}
+
+00:47:45.000 --> 00:47:45.750
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:46.080 --> 00:47:46.500
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:47:46.650 --> 00:47:47.490
+<v Speaker 0>Good spot.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:47.760 --> 00:47:48.900
+<v Speaker 0>Second one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:49.410 --> 00:47:49.710
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:47:50.070 --> 00:47:51.270
+<v Speaker 0>Oh, I didn't cover it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:51.720 --> 00:47:55.080
+<v Speaker 0>Um, a plus a transpose this symmetric.
+
+NOTE CONF {"raw":[100,100,100,100,100,80,100]}
+
+00:47:55.080 --> 00:47:57.180
+<v Speaker 0>And the answer is yes, of course.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:57.210 --> 00:47:59.100
+<v Speaker 0>And why is that the case?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:47:59.100 --> 00:47:59.610
+<v Speaker 0>Well.
+
+NOTE CONF {"raw":[87]}
+
+00:47:59.820 --> 00:48:04.530
+<v Speaker 0>Because each element of the sum is equal to the
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100,100]}
+
+00:48:04.530 --> 00:48:08.430
+<v Speaker 0>element of the original matrix plus its symmetric one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,64,100,100]}
+
+00:48:08.430 --> 00:48:13.260
+<v Speaker 0>And so by by by taking the transpose of this
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100,72]}
+
+00:48:13.290 --> 00:48:16.320
+<v Speaker 0>of the sum We're just swapping the transpose from one
+
+NOTE CONF {"raw":[100,100,84,99,100,70,100,100,100,100]}
+
+00:48:16.320 --> 00:48:18.750
+<v Speaker 0>to the other, and we get the same, the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:18.750 --> 00:48:20.250
+<v Speaker 0>expression for the element.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:20.910 --> 00:48:26.400
+<v Speaker 0>Um, so and this one, uh, this in fact, is
+
+NOTE CONF {"raw":[31,100,93,100,100,19,100,100,100,100]}
+
+00:48:26.400 --> 00:48:27.840
+<v Speaker 0>called the symmetric version of a.
+
+NOTE CONF {"raw":[100,100,58,48,100,100]}
+
+00:48:28.200 --> 00:48:30.360
+<v Speaker 0>If you have any matrix, you can make it symmetric
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:30.360 --> 00:48:32.700
+<v Speaker 0>by adding its transpose to it.
+
+NOTE CONF {"raw":[100,100,90,100,100,100]}
+
+00:48:33.030 --> 00:48:34.050
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[91,100]}
+
+00:48:34.530 --> 00:48:40.710
+<v Speaker 0>Next up, um, if A is upper triangular then a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:40.710 --> 00:48:42.840
+<v Speaker 0>square to the minus one is the lower triangular.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,87,100,100]}
+
+00:48:43.260 --> 00:48:46.650
+<v Speaker 0>And uh, no, this one was made up.
+
+NOTE CONF {"raw":[98,77,100,100,100,100,100,100]}
+
+00:48:46.920 --> 00:48:50.160
+<v Speaker 0>Uh, we know that the being upper or lower triangular
+
+NOTE CONF {"raw":[100,100,100,100,100,90,100,92,100,100]}
+
+00:48:50.160 --> 00:48:53.850
+<v Speaker 0>is conserved both by products and by taking the inverse.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:53.850 --> 00:48:59.190
+<v Speaker 0>And so, uh, taking both together, it doesn't swap the
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:48:59.190 --> 00:49:00.480
+<v Speaker 0>non-zero part of the matrix.
+
+NOTE CONF {"raw":[64,100,100,100,100]}
+
+00:49:00.630 --> 00:49:02.010
+<v Speaker 0>It actually preserves it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:02.010 --> 00:49:04.920
+<v Speaker 0>So it stays, uh, upper triangular.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:06.180 --> 00:49:07.440
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:07.440 --> 00:49:08.790
+<v Speaker 0>What do we have next?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:09.570 --> 00:49:10.320
+<v Speaker 0>Uh, this one.
+
+NOTE CONF {"raw":[88,100,100]}
+
+00:49:10.320 --> 00:49:10.710
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:10.710 --> 00:49:11.400
+<v Speaker 0>This one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:11.400 --> 00:49:11.700
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[95]}
+
+00:49:15.430 --> 00:49:16.690
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:16.690 --> 00:49:19.240
+<v Speaker 0>This one is, uh.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:20.710 --> 00:49:22.120
+<v Speaker 0>What's the problem with this one?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:22.210 --> 00:49:23.380
+<v Speaker 0>I'm pointing at it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:26.620 --> 00:49:27.430
+<v Speaker 0>It's non-zero.
+
+NOTE CONF {"raw":[100,60]}
+
+00:49:27.460 --> 00:49:28.000
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:49:28.000 --> 00:49:31.630
+<v Speaker 0>And this one is probably the most important result.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:49:32.110 --> 00:49:34.690
+<v Speaker 0>Um, I said try to remember this.
+
+NOTE CONF {"raw":[100,100,81,100,100,100,100]}
+
+00:49:34.690 --> 00:49:36.070
+<v Speaker 0>Try to remember the correct version.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:36.070 --> 00:49:36.340
+<v Speaker 0>Not.
+
+NOTE CONF {"raw":[99]}
+
+00:49:36.550 --> 00:49:41.290
+<v Speaker 0>Not this one, obviously, but, um, calculating the determinant we've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:41.290 --> 00:49:43.420
+<v Speaker 0>seen yesterday can be a little bit of a pain.
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:49:43.420 --> 00:49:47.920
+<v Speaker 0>But compared to actually finding the inverse matrix is much
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:47.920 --> 00:49:51.430
+<v Speaker 0>simpler, especially when there's a bit of structure sprinkled into
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:51.430 --> 00:49:51.940
+<v Speaker 0>the matrix.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:51.940 --> 00:49:55.420
+<v Speaker 0>So very important, very important result.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:55.810 --> 00:49:58.090
+<v Speaker 0>Uh, probably the one thing I would like you to
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:49:58.090 --> 00:50:00.850
+<v Speaker 0>take home if you don't take home anything else from
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100,100,100,100]}
+
+00:50:00.850 --> 00:50:03.520
+<v Speaker 0>this week and, uh.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:04.000 --> 00:50:04.630
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:50:04.780 --> 00:50:09.670
+<v Speaker 0>Next up, um, this property here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:50:10.060 --> 00:50:11.500
+<v Speaker 0>No, that doesn't work.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:11.500 --> 00:50:16.240
+<v Speaker 0>That works for transposed, but in general, it's false.
+
+NOTE CONF {"raw":[100,100,100,58,100,100,100,100,100]}
+
+00:50:17.290 --> 00:50:19.450
+<v Speaker 0>Um, can you think of two matrices a b for
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,92,92,100]}
+
+00:50:19.450 --> 00:50:19.720
+<v Speaker 0>this?
+
+NOTE CONF {"raw":[100]}
+
+00:50:19.720 --> 00:50:22.540
+<v Speaker 0>One is true when I say in general is false,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,69,100]}
+
+00:50:22.540 --> 00:50:25.000
+<v Speaker 0>I mean that the there are some matrices for which
+
+NOTE CONF {"raw":[100,100,100,99,100,100,100,100,100,100]}
+
+00:50:25.030 --> 00:50:25.870
+<v Speaker 0>it's false.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:25.870 --> 00:50:28.660
+<v Speaker 0>But of course it may still be true for a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:28.660 --> 00:50:29.560
+<v Speaker 0>few ones.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:32.890 --> 00:50:33.550
+<v Speaker 0>Anyone?
+
+NOTE CONF {"raw":[100]}
+
+00:50:34.390 --> 00:50:35.470
+<v Speaker 0>Two identities?
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:35.470 --> 00:50:35.770
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:50:35.770 --> 00:50:36.370
+<v Speaker 0>Of course.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:37.300 --> 00:50:39.850
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:39.850 --> 00:50:42.520
+<v Speaker 0>And as I mentioned, it works for transposing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:50:42.520 --> 00:50:43.930
+<v Speaker 0>Not not inverting.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:50:44.500 --> 00:50:50.680
+<v Speaker 0>And then finally, um, if the determinant is different than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:50.680 --> 00:50:52.480
+<v Speaker 0>zero, we can do that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:50:52.480 --> 00:50:55.210
+<v Speaker 0>And that is the other very important result that we've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:55.210 --> 00:50:55.930
+<v Speaker 0>seen today.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:55.930 --> 00:50:58.930
+<v Speaker 0>So um, this one was also true.
+
+NOTE CONF {"raw":[98,87,100,100,100,100,100]}
+
+00:50:58.930 --> 00:51:02.470
+<v Speaker 0>So, uh, well done to all of you.
+
+NOTE CONF {"raw":[100,72,100,100,100,100,100,100]}
+
+00:51:02.470 --> 00:51:08.710
+<v Speaker 0>And also as an organisational point, I have tried to
+
+NOTE CONF {"raw":[100,100,100,64,89,100,100,100,100,100]}
+
+00:51:08.710 --> 00:51:12.280
+<v Speaker 0>change the, uh, actually, this one doesn't.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
