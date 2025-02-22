@@ -1,0 +1,5181 @@
+WEBVTT
+
+00:00:06.520 --> 00:00:07.080
+<v Speaker 0>Oh my God.
+
+NOTE CONF {"raw":[52,51,51]}
+
+00:00:17.200 --> 00:00:18.680
+<v Speaker 1>Okay, let's get started.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:19.160 --> 00:00:23.680
+<v Speaker 1>Um, today we're going to talk about categories, and, uh.
+
+NOTE CONF {"raw":[64,100,99,100,100,100,100,100,90,58]}
+
+00:00:24.000 --> 00:00:24.480
+<v Speaker 1>Can you hear me?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:24.520 --> 00:00:24.880
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[76]}
+
+00:00:25.680 --> 00:00:27.080
+<v Speaker 1>Sorry, I have a bit of a cold.
+
+NOTE CONF {"raw":[99,92,100,100,100,100,100,100]}
+
+00:00:27.800 --> 00:00:31.000
+<v Speaker 1>Um, so we're going to start talking about categories.
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100,100,100]}
+
+00:00:31.280 --> 00:00:33.720
+<v Speaker 1>So categories are language adjacent.
+
+NOTE CONF {"raw":[100,100,100,100,92]}
+
+00:00:33.720 --> 00:00:37.680
+<v Speaker 1>So we're no longer really within the domain of language.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:37.800 --> 00:00:44.160
+<v Speaker 1>But um, as you will see, um, category categories concepts
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,74,100,100]}
+
+00:00:44.440 --> 00:00:48.480
+<v Speaker 1>are a bit like words but more abstract.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:00:48.920 --> 00:00:52.240
+<v Speaker 1>And but before we start with that, I owe you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:52.240 --> 00:00:55.240
+<v Speaker 1>a little bit of material from the last lecture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:00:55.680 --> 00:00:57.880
+<v Speaker 1>So let's look at that briefly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:00.010 --> 00:01:03.650
+<v Speaker 1>Last time we looked at vector semantics and how you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:03.650 --> 00:01:09.570
+<v Speaker 1>could represent the meaning of of words using what's been
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,88]}
+
+00:01:09.570 --> 00:01:12.210
+<v Speaker 1>called context vectors or word embeddings.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:12.530 --> 00:01:16.490
+<v Speaker 1>So these are basically vectors of numbers that represent the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:16.490 --> 00:01:18.330
+<v Speaker 1>context in which a word can occur.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:19.210 --> 00:01:22.610
+<v Speaker 1>And we've looked at one particular model which is sort
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:22.610 --> 00:01:25.850
+<v Speaker 1>of a classic model, a simple model that was proposed
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:25.850 --> 00:01:29.250
+<v Speaker 1>about ten years ago for computing these word embeddings called
+
+NOTE CONF {"raw":[100,100,100,100,100,100,88,100,100,100]}
+
+00:01:29.290 --> 00:01:30.010
+<v Speaker 1>word to vec.
+
+NOTE CONF {"raw":[100,83,100]}
+
+00:01:30.730 --> 00:01:33.770
+<v Speaker 1>And the idea is we take a vocabulary.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:34.010 --> 00:01:37.130
+<v Speaker 1>So here for example, these are names of of cities
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,90,100,100]}
+
+00:01:37.130 --> 00:01:37.810
+<v Speaker 1>and countries.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:38.170 --> 00:01:41.570
+<v Speaker 1>And we represent the vocabulary as a set of what's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:41.570 --> 00:01:43.130
+<v Speaker 1>called one hot vectors.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:43.530 --> 00:01:45.730
+<v Speaker 1>So as you can see these are vectors that are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:45.730 --> 00:01:48.090
+<v Speaker 1>zero everywhere except in one place.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:48.530 --> 00:01:52.130
+<v Speaker 1>So if the first element of the vector is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,55]}
+
+00:01:52.130 --> 00:01:53.530
+<v Speaker 1>one, then that represents Rome.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:53.570 --> 00:01:56.490
+<v Speaker 1>If the second one is one that represents Paris, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:56.490 --> 00:01:56.890
+<v Speaker 1>so on.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:57.370 --> 00:02:00.310
+<v Speaker 1>So if we have a vocabulary size V, then we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:00.310 --> 00:02:00.870
+<v Speaker 1>can have.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:01.230 --> 00:02:04.590
+<v Speaker 1>We can represent v words using this one hot representation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,94,100]}
+
+00:02:05.550 --> 00:02:09.270
+<v Speaker 1>And we use this one hot representation in as part
+
+NOTE CONF {"raw":[100,100,100,100,100,54,100,100,100,100]}
+
+00:02:09.270 --> 00:02:10.910
+<v Speaker 1>of a simple neural network.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:12.310 --> 00:02:13.630
+<v Speaker 1>This is the architecture here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:13.630 --> 00:02:17.270
+<v Speaker 1>So we have our words represented as one hot vectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:17.270 --> 00:02:18.310
+<v Speaker 1>for the input layer.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:18.950 --> 00:02:21.710
+<v Speaker 1>And this is the context in which the word occurs
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:21.710 --> 00:02:23.030
+<v Speaker 1>that we're interested in modelling.
+
+NOTE CONF {"raw":[100,100,100,100,96]}
+
+00:02:23.470 --> 00:02:28.350
+<v Speaker 1>So here x1 x2 up to xk are the context
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100,100]}
+
+00:02:28.350 --> 00:02:28.590
+<v Speaker 1>words.
+
+NOTE CONF {"raw":[100]}
+
+00:02:28.590 --> 00:02:31.870
+<v Speaker 1>They're all represented using this one hot representation.
+
+NOTE CONF {"raw":[76,100,100,100,100,100,100,100]}
+
+00:02:32.590 --> 00:02:35.190
+<v Speaker 1>Then we have a hidden layer which is much much
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:35.190 --> 00:02:37.710
+<v Speaker 1>smaller in terms of its dimensions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:37.950 --> 00:02:42.510
+<v Speaker 1>So let's say the input layer, each one hot vector
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:02:42.510 --> 00:02:43.990
+<v Speaker 1>has 10,000 dimensions.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:43.990 --> 00:02:46.750
+<v Speaker 1>It can be more 100,000 million dimensions depending on how
+
+NOTE CONF {"raw":[57,100,100,78,100,100,100,100,100,100]}
+
+00:02:46.750 --> 00:02:48.670
+<v Speaker 1>many words we want to capture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:49.030 --> 00:02:52.230
+<v Speaker 1>The hidden layer will just have a few hundred dimensions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:52.950 --> 00:02:54.830
+<v Speaker 1>And then we have the output layer, which is again
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:54.830 --> 00:02:56.230
+<v Speaker 1>a one hot representation.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:56.390 --> 00:02:58.040
+<v Speaker 1>But now the output word.
+
+NOTE CONF {"raw":[100,100,100,100,89]}
+
+00:02:58.040 --> 00:02:59.480
+<v Speaker 1>So these are context words.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:59.680 --> 00:03:01.880
+<v Speaker 1>And this is the word that we would like to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:01.880 --> 00:03:02.440
+<v Speaker 1>predict.
+
+NOTE CONF {"raw":[100]}
+
+00:03:02.960 --> 00:03:06.200
+<v Speaker 1>So we can train a network like this using backpropagation
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:06.360 --> 00:03:07.440
+<v Speaker 1>in the standard way.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:08.760 --> 00:03:11.280
+<v Speaker 1>And we can do this quite easily if we have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:11.280 --> 00:03:12.480
+<v Speaker 1>a large amount of text.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:12.680 --> 00:03:16.200
+<v Speaker 1>Because in a text and we've seen an example here,
+
+NOTE CONF {"raw":[100,100,88,100,100,100,100,100,100,100]}
+
+00:03:17.280 --> 00:03:21.800
+<v Speaker 1>we can just take the words we're interested in here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:21.800 --> 00:03:25.360
+<v Speaker 1>learn, discover and so on and then the context around
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:03:25.360 --> 00:03:25.640
+<v Speaker 1>it.
+
+NOTE CONF {"raw":[100]}
+
+00:03:25.840 --> 00:03:28.320
+<v Speaker 1>So here the task is to take the context words
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,70]}
+
+00:03:28.320 --> 00:03:32.040
+<v Speaker 1>initial understanding two meaning the off and so on and
+
+NOTE CONF {"raw":[100,100,83,100,100,89,100,100,100,100]}
+
+00:03:32.040 --> 00:03:33.920
+<v Speaker 1>predict the target word.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:34.400 --> 00:03:37.840
+<v Speaker 1>And this is what we're training the the model to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91,100,100,100]}
+
+00:03:37.840 --> 00:03:38.120
+<v Speaker 1>do.
+
+NOTE CONF {"raw":[100]}
+
+00:03:39.440 --> 00:03:41.680
+<v Speaker 1>And if you train it for long enough, and in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:03:41.680 --> 00:03:46.080
+<v Speaker 1>particular if you use enough training data, then you get
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:03:46.080 --> 00:03:48.880
+<v Speaker 1>representations which you can just read off this hidden layer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:48.880 --> 00:03:49.200
+<v Speaker 1>here.
+
+NOTE CONF {"raw":[100]}
+
+00:03:49.600 --> 00:03:52.680
+<v Speaker 1>So the representation of the context word w is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:52.680 --> 00:03:54.760
+<v Speaker 1>activation of the hidden layer here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:55.280 --> 00:03:58.820
+<v Speaker 1>And so this hidden layer representation is much more dense.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:59.380 --> 00:04:00.420
+<v Speaker 1>It's not one hot.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:00.460 --> 00:04:03.620
+<v Speaker 1>It's a dense vector, and it's much more lower dimensional.
+
+NOTE CONF {"raw":[100,100,100,100,100,52,100,100,100,100]}
+
+00:04:04.180 --> 00:04:07.340
+<v Speaker 1>And each word can be associated with a representation like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,91,100,100]}
+
+00:04:07.340 --> 00:04:08.420
+<v Speaker 1>this a word embedding.
+
+NOTE CONF {"raw":[100,95,100,100]}
+
+00:04:08.620 --> 00:04:12.660
+<v Speaker 1>And these word embeddings then you can compare them using
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:12.660 --> 00:04:14.220
+<v Speaker 1>cosine using distance.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:14.500 --> 00:04:16.900
+<v Speaker 1>Or you can also do some arithmetic on it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:04:16.900 --> 00:04:19.340
+<v Speaker 1>You can subtract and add them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:19.780 --> 00:04:23.100
+<v Speaker 1>And we've seen some fun examples like these where you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,92,100,100]}
+
+00:04:23.100 --> 00:04:27.940
+<v Speaker 1>can take the vector for Paris, subtract the vector for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:27.940 --> 00:04:29.620
+<v Speaker 1>France and add the vector of Italy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:29.980 --> 00:04:32.940
+<v Speaker 1>And then you find the nearest token, the nearest other
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:32.940 --> 00:04:34.500
+<v Speaker 1>word with cosine.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:34.500 --> 00:04:35.340
+<v Speaker 1>And that is Rome.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:35.340 --> 00:04:36.060
+<v Speaker 1>And so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:36.180 --> 00:04:39.300
+<v Speaker 1>So you can you can solve simple reasoning problems like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:39.300 --> 00:04:41.220
+<v Speaker 1>that using these word vectors.
+
+NOTE CONF {"raw":[100,100,52,100,100]}
+
+00:04:43.580 --> 00:04:45.260
+<v Speaker 1>You can do a lot of other stuff, but we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,71]}
+
+00:04:45.260 --> 00:04:47.820
+<v Speaker 1>are interested in cognitive applications in particular.
+
+NOTE CONF {"raw":[71,100,100,100,100,100,100]}
+
+00:04:48.100 --> 00:04:50.900
+<v Speaker 1>So let's assume we have induced these these word vectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:50.900 --> 00:04:52.420
+<v Speaker 1>for large vocabulary.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:52.620 --> 00:04:54.100
+<v Speaker 1>What can we do with that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:54.180 --> 00:04:57.910
+<v Speaker 1>So one thing we can do is model lexical processes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:59.830 --> 00:05:02.070
+<v Speaker 1>Semantic priming is one of these processes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:05:02.470 --> 00:05:05.590
+<v Speaker 1>So that's a classic task in psycholinguistics.
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100]}
+
+00:05:06.310 --> 00:05:09.870
+<v Speaker 1>And you use a lexical decision task, which is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:09.870 --> 00:05:11.030
+<v Speaker 1>task where people see a word.
+
+NOTE CONF {"raw":[100,100,100,84,100,100]}
+
+00:05:11.030 --> 00:05:13.110
+<v Speaker 1>And then they have to decide, is this an actual
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:13.110 --> 00:05:14.790
+<v Speaker 1>word of English or is it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:14.830 --> 00:05:15.830
+<v Speaker 1>Is it a non-word?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:16.750 --> 00:05:20.750
+<v Speaker 1>And so in this experiment by Tille and colleagues, they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,49,100,100,100]}
+
+00:05:20.750 --> 00:05:23.110
+<v Speaker 1>showed people a context such as this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:05:23.110 --> 00:05:25.910
+<v Speaker 1>The gardener pulled the hose around the holes in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:25.910 --> 00:05:26.350
+<v Speaker 1>yard.
+
+NOTE CONF {"raw":[100]}
+
+00:05:26.510 --> 00:05:28.790
+<v Speaker 1>Perhaps the water would solve this problem with a mole.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,88,100]}
+
+00:05:29.510 --> 00:05:33.670
+<v Speaker 1>And then you give the participants various words to react
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:33.710 --> 00:05:36.950
+<v Speaker 1>to, to do lexical decision on ground, for example, face
+
+NOTE CONF {"raw":[100,100,100,100,100,80,100,100,100,100]}
+
+00:05:37.270 --> 00:05:38.910
+<v Speaker 1>drawn cancer.
+
+NOTE CONF {"raw":[52,100]}
+
+00:05:39.590 --> 00:05:42.270
+<v Speaker 1>And what you would find is that the words that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:42.270 --> 00:05:43.790
+<v Speaker 1>are related to the context.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:43.790 --> 00:05:45.190
+<v Speaker 1>So mole is ambiguous, right?
+
+NOTE CONF {"raw":[100,100,100,100,97]}
+
+00:05:45.230 --> 00:05:49.470
+<v Speaker 1>Mole can be a skin abnormality, or it can be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:49.470 --> 00:05:51.030
+<v Speaker 1>a small rodent.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:51.430 --> 00:05:54.230
+<v Speaker 1>And in this context, of course it's a small rodent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:54.610 --> 00:05:57.490
+<v Speaker 1>And so related to that would be ground and drown
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,99,100,76]}
+
+00:05:57.490 --> 00:05:59.130
+<v Speaker 1>but not face and cancer.
+
+NOTE CONF {"raw":[100,100,99,100,100]}
+
+00:05:59.370 --> 00:06:01.890
+<v Speaker 1>So that means ground and ground would give you shorter
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:01.890 --> 00:06:04.730
+<v Speaker 1>reaction times than face and cancer.
+
+NOTE CONF {"raw":[100,100,100,91,100,100]}
+
+00:06:05.290 --> 00:06:09.410
+<v Speaker 1>But if you change the context the patient sends sensed
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,70]}
+
+00:06:09.490 --> 00:06:11.170
+<v Speaker 1>that this was not a routine visit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:11.410 --> 00:06:14.170
+<v Speaker 1>The doctor hinted that there was a reason to remove
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:14.170 --> 00:06:14.730
+<v Speaker 1>the mole.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:15.610 --> 00:06:18.290
+<v Speaker 1>So now this is no longer related to ground, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:18.290 --> 00:06:21.450
+<v Speaker 1>it's related to face, not related to drone, but related
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:06:21.450 --> 00:06:22.090
+<v Speaker 1>to cancer.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:23.450 --> 00:06:26.330
+<v Speaker 1>So and now we can use our word representation to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:26.370 --> 00:06:27.890
+<v Speaker 1>try to model this behaviour.
+
+NOTE CONF {"raw":[100,100,100,100,93]}
+
+00:06:28.210 --> 00:06:31.650
+<v Speaker 1>We can simply look at distances right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,90]}
+
+00:06:31.690 --> 00:06:37.610
+<v Speaker 1>So the vector for mole would incorporate both meanings right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,72]}
+
+00:06:37.650 --> 00:06:40.330
+<v Speaker 1>The rodent meaning and the skin meaning.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:42.170 --> 00:06:44.610
+<v Speaker 1>But if we look at the context vector.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96]}
+
+00:06:44.610 --> 00:06:46.330
+<v Speaker 1>So for example we take the vectors of all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:46.330 --> 00:06:47.370
+<v Speaker 1>words in the context.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:47.490 --> 00:06:49.410
+<v Speaker 1>We could average those for example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:49.690 --> 00:06:52.890
+<v Speaker 1>And then we see whether that's closer to ground face
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:06:52.940 --> 00:06:54.420
+<v Speaker 1>drawn on cancer.
+
+NOTE CONF {"raw":[44,73,100]}
+
+00:06:55.700 --> 00:07:01.260
+<v Speaker 1>Um, and so, um, if there's a larger cosine between
+
+NOTE CONF {"raw":[95,100,100,96,100,100,100,100,83,100]}
+
+00:07:01.260 --> 00:07:04.380
+<v Speaker 1>the ambiguous word and the related works compared to control
+
+NOTE CONF {"raw":[100,100,100,100,100,100,57,100,100,100]}
+
+00:07:05.380 --> 00:07:08.700
+<v Speaker 1>and the vector average of those context, words should have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,51,100,100,100]}
+
+00:07:08.700 --> 00:07:12.220
+<v Speaker 1>a higher cosine with the semantically congruent words, the words
+
+NOTE CONF {"raw":[100,100,41,100,100,100,100,100,100,100]}
+
+00:07:12.220 --> 00:07:14.380
+<v Speaker 1>that correspond to the same meaning.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:15.260 --> 00:07:17.940
+<v Speaker 1>And that's what what you find.
+
+NOTE CONF {"raw":[100,100,92,100,100,100]}
+
+00:07:18.380 --> 00:07:24.220
+<v Speaker 1>So, uh, this is the, uh, the doctor, uh, skin
+
+NOTE CONF {"raw":[100,84,100,100,100,97,100,100,96,100]}
+
+00:07:24.220 --> 00:07:25.340
+<v Speaker 1>lesion context.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:25.740 --> 00:07:29.340
+<v Speaker 1>And there this is the cosine between that context and
+
+NOTE CONF {"raw":[100,70,100,100,100,71,100,100,100,100]}
+
+00:07:29.340 --> 00:07:31.340
+<v Speaker 1>ground face down in cancer.
+
+NOTE CONF {"raw":[100,99,71,80,100]}
+
+00:07:31.540 --> 00:07:34.500
+<v Speaker 1>And you get a higher cosine for face and for
+
+NOTE CONF {"raw":[100,100,100,100,100,82,100,100,100,100]}
+
+00:07:34.500 --> 00:07:35.020
+<v Speaker 1>cancer.
+
+NOTE CONF {"raw":[100]}
+
+00:07:35.180 --> 00:07:37.380
+<v Speaker 1>And then if you swap this for the other context,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:37.500 --> 00:07:38.780
+<v Speaker 1>then the effect is reversed.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:38.780 --> 00:07:42.460
+<v Speaker 1>And you would get a higher cosine for ground and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100,100,100]}
+
+00:07:42.460 --> 00:07:42.940
+<v Speaker 1>drown.
+
+NOTE CONF {"raw":[51]}
+
+00:07:43.380 --> 00:07:43.580
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[97]}
+
+00:07:43.620 --> 00:07:46.060
+<v Speaker 1>So if you take the first context here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:47.540 --> 00:07:50.780
+<v Speaker 1>So this is a way of modelling the relatedness of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:50.780 --> 00:07:51.220
+<v Speaker 1>words.
+
+NOTE CONF {"raw":[100]}
+
+00:07:51.420 --> 00:07:54.440
+<v Speaker 1>In particular, it deals with the fact that words can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:54.440 --> 00:07:57.120
+<v Speaker 1>be ambiguous, and then the context can tell you which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:57.240 --> 00:07:58.840
+<v Speaker 1>which meaning is the correct one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:59.200 --> 00:08:01.720
+<v Speaker 1>So this is something that people have done.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:08:02.680 --> 00:08:07.320
+<v Speaker 1>Another application would be to capture, for example, a synonym
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,88,100]}
+
+00:08:07.320 --> 00:08:07.800
+<v Speaker 1>task.
+
+NOTE CONF {"raw":[100]}
+
+00:08:08.160 --> 00:08:11.880
+<v Speaker 1>So this is from the Tufnell test, a test of
+
+NOTE CONF {"raw":[100,100,100,100,100,47,100,100,100,100]}
+
+00:08:11.880 --> 00:08:13.040
+<v Speaker 1>English as a foreign language.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:13.560 --> 00:08:17.200
+<v Speaker 1>And that test contains questions like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:18.240 --> 00:08:20.880
+<v Speaker 1>You will find the office at the main intersection and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:20.880 --> 00:08:26.880
+<v Speaker 1>then choose the synonym right place, crossroads roundabout building and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,88,100,100,100]}
+
+00:08:27.040 --> 00:08:28.200
+<v Speaker 1>what you can do here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:28.400 --> 00:08:31.640
+<v Speaker 1>You can just take the vector of intersection, the word
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:31.640 --> 00:08:32.840
+<v Speaker 1>embedding of intersection.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:08:33.039 --> 00:08:37.360
+<v Speaker 1>And compared to the embedding for place, for crossroads, for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,94,100]}
+
+00:08:37.360 --> 00:08:38.560
+<v Speaker 1>roundabout and for building.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:39.120 --> 00:08:41.960
+<v Speaker 1>And presumably the synonym is most similar.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:42.080 --> 00:08:42.400
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[91]}
+
+00:08:42.440 --> 00:08:45.680
+<v Speaker 1>It's a synonym of intersection will be most similar to
+
+NOTE CONF {"raw":[100,100,100,100,100,60,100,100,100,100]}
+
+00:08:45.720 --> 00:08:46.920
+<v Speaker 1>intersection itself.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:47.120 --> 00:08:49.680
+<v Speaker 1>So you can just take the cosine between intersection and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:49.680 --> 00:08:52.130
+<v Speaker 1>place between intersection crossroads, and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:52.650 --> 00:08:56.930
+<v Speaker 1>And in this case, crossroads is the closest word embedding
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:56.930 --> 00:08:57.730
+<v Speaker 1>out of those four.
+
+NOTE CONF {"raw":[100,100,100,99]}
+
+00:08:58.490 --> 00:09:02.570
+<v Speaker 1>And using this simple method you can get 80% correct
+
+NOTE CONF {"raw":[100,100,51,100,100,100,100,100,100,100]}
+
+00:09:02.570 --> 00:09:04.370
+<v Speaker 1>on the on the synonym task.
+
+NOTE CONF {"raw":[100,100,100,80,100,100]}
+
+00:09:04.530 --> 00:09:07.290
+<v Speaker 1>And this was before LMS were even invented.
+
+NOTE CONF {"raw":[100,100,100,100,98,81,100,100]}
+
+00:09:07.450 --> 00:09:07.690
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[92]}
+
+00:09:07.730 --> 00:09:09.890
+<v Speaker 1>So LMS can do this task of course as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:10.170 --> 00:09:13.370
+<v Speaker 1>But this is a much, much simpler model that just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:13.370 --> 00:09:15.050
+<v Speaker 1>uses lexical vectors.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:16.250 --> 00:09:16.810
+<v Speaker 1>And.
+
+NOTE CONF {"raw":[100]}
+
+00:09:17.850 --> 00:09:18.210
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:09:18.210 --> 00:09:23.810
+<v Speaker 1>So the uh, you get about 80% correct.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:24.530 --> 00:09:28.970
+<v Speaker 1>Uh, the average of the test takers is about 65%.
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:09:29.290 --> 00:09:34.130
+<v Speaker 1>And here's a paper that, uh, that explained this explains
+
+NOTE CONF {"raw":[100,100,83,100,100,100,100,100,97,100]}
+
+00:09:34.130 --> 00:09:35.010
+<v Speaker 1>this in more detail.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:36.850 --> 00:09:37.290
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:37.650 --> 00:09:42.890
+<v Speaker 1>Um, so we have a way of representing words which
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:09:42.890 --> 00:09:46.250
+<v Speaker 1>we can we can build these representations just from raw
+
+NOTE CONF {"raw":[100,100,100,100,100,92,92,99,100,90]}
+
+00:09:46.250 --> 00:09:46.650
+<v Speaker 1>text.
+
+NOTE CONF {"raw":[100]}
+
+00:09:46.690 --> 00:09:55.020
+<v Speaker 1>We don't need to engineer complicated rules or, uh, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,99,70,100]}
+
+00:09:55.060 --> 00:09:59.460
+<v Speaker 1>do a lot of, um, complicated probabilities or counting anything
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:59.460 --> 00:10:00.100
+<v Speaker 1>like that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:00.180 --> 00:10:03.460
+<v Speaker 1>So this is really something that, uh, who strength it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,100,100]}
+
+00:10:03.460 --> 00:10:06.260
+<v Speaker 1>is that it is very simple and it can work
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:06.260 --> 00:10:07.740
+<v Speaker 1>with large amounts of data.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:07.740 --> 00:10:11.500
+<v Speaker 1>That's really where the, uh, the representational power comes from.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:10:11.500 --> 00:10:12.620
+<v Speaker 1>You saw the models.
+
+NOTE CONF {"raw":[100,96,100,100]}
+
+00:10:12.900 --> 00:10:14.300
+<v Speaker 1>The model is really simple.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:14.820 --> 00:10:19.420
+<v Speaker 1>And, uh, of course, in subsequent work, people have developed
+
+NOTE CONF {"raw":[99,97,100,100,100,100,100,100,100,90]}
+
+00:10:19.420 --> 00:10:21.180
+<v Speaker 1>more complicated word embedding models.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:21.180 --> 00:10:23.700
+<v Speaker 1>But the idea is, is really the same.
+
+NOTE CONF {"raw":[100,100,100,82,100,100,100,100]}
+
+00:10:23.980 --> 00:10:25.980
+<v Speaker 1>You try to model the context in which a word
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:10:25.980 --> 00:10:30.260
+<v Speaker 1>occurs and you're predicting the word or the context.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100]}
+
+00:10:30.460 --> 00:10:32.380
+<v Speaker 1>In fact, you can do you can do it in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:32.380 --> 00:10:33.300
+<v Speaker 1>either direction.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:35.180 --> 00:10:39.820
+<v Speaker 1>Um, there's limitations as, as we quickly mentioned last time.
+
+NOTE CONF {"raw":[100,95,100,100,100,100,95,100,100,100]}
+
+00:10:39.820 --> 00:10:42.500
+<v Speaker 1>So you don't have different word senses, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,92,83,100]}
+
+00:10:42.540 --> 00:10:44.980
+<v Speaker 1>The two different senses of mould, it's the same vector.
+
+NOTE CONF {"raw":[100,100,100,100,100,43,100,100,100,100]}
+
+00:10:44.980 --> 00:10:46.540
+<v Speaker 1>There's no way of distinguishing it.
+
+NOTE CONF {"raw":[77,100,100,100,100,100]}
+
+00:10:47.500 --> 00:10:50.160
+<v Speaker 1>Um, you don't really have a representation for word order.
+
+NOTE CONF {"raw":[86,100,100,100,100,100,86,100,87,100]}
+
+00:10:50.160 --> 00:10:51.400
+<v Speaker 1>So these two sentences.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:51.760 --> 00:10:54.640
+<v Speaker 1>They mean the same for the word vectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:10:54.640 --> 00:11:01.280
+<v Speaker 1>Because, you know, if you add vectors or uh, the
+
+NOTE CONF {"raw":[100,98,98,100,100,100,100,100,58,100]}
+
+00:11:01.280 --> 00:11:03.640
+<v Speaker 1>the context is not ordered in the model.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:04.200 --> 00:11:04.560
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[95]}
+
+00:11:04.600 --> 00:11:07.160
+<v Speaker 1>Here we just have an average essentially.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:07.200 --> 00:11:07.400
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:11:07.440 --> 00:11:11.520
+<v Speaker 1>Because it's a weighted sum um, in the model.
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100]}
+
+00:11:13.080 --> 00:11:16.640
+<v Speaker 1>So these context words, when we compute the hidden layer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:16.640 --> 00:11:18.040
+<v Speaker 1>it's just the sum of the inputs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:18.080 --> 00:11:18.240
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[94]}
+
+00:11:18.280 --> 00:11:20.800
+<v Speaker 1>So the order doesn't matter if you're some things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,84,100,100]}
+
+00:11:21.160 --> 00:11:24.360
+<v Speaker 1>So we have no easy way of representing uh word
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,89,100]}
+
+00:11:24.400 --> 00:11:24.680
+<v Speaker 1>order.
+
+NOTE CONF {"raw":[100]}
+
+00:11:24.680 --> 00:11:29.000
+<v Speaker 1>And again this is something that people have later tried
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:29.000 --> 00:11:29.600
+<v Speaker 1>to solve.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:30.200 --> 00:11:33.320
+<v Speaker 1>There's something called position embeddings, which is used in all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:33.320 --> 00:11:37.320
+<v Speaker 1>the more modern language models, uh, to try to deal
+
+NOTE CONF {"raw":[100,100,100,100,100,81,100,100,100,100]}
+
+00:11:37.320 --> 00:11:40.360
+<v Speaker 1>with this problem of, uh, the order of the words
+
+NOTE CONF {"raw":[100,100,100,100,55,100,100,100,100,100]}
+
+00:11:40.360 --> 00:11:41.480
+<v Speaker 1>not being represented.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:44.760 --> 00:11:45.280
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:45.560 --> 00:11:49.330
+<v Speaker 1>So, uh, let's now move from words to categories.
+
+NOTE CONF {"raw":[84,66,100,100,100,100,100,100,99]}
+
+00:11:51.650 --> 00:11:53.570
+<v Speaker 1>So we talk about conceptual categories.
+
+NOTE CONF {"raw":[100,100,99,100,44,100]}
+
+00:11:53.570 --> 00:11:54.610
+<v Speaker 1>What's the difference.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:54.930 --> 00:11:59.090
+<v Speaker 1>And then we look at two main theories of categorisation.
+
+NOTE CONF {"raw":[100,100,78,100,100,100,100,100,100,100]}
+
+00:11:59.090 --> 00:12:01.650
+<v Speaker 1>One of them is the classical theory which is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,56]}
+
+00:12:01.650 --> 00:12:06.810
+<v Speaker 1>feature based account and similarity based accounts.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:07.170 --> 00:12:12.930
+<v Speaker 1>These are actually quite similar to the embeddings we just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,84,100]}
+
+00:12:12.930 --> 00:12:13.170
+<v Speaker 1>seen.
+
+NOTE CONF {"raw":[78]}
+
+00:12:13.210 --> 00:12:17.810
+<v Speaker 1>We've just seen because they represent the categories as something
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:17.810 --> 00:12:22.290
+<v Speaker 1>like vectors, vectors of features or vectors of properties, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:22.610 --> 00:12:24.730
+<v Speaker 1>they also use a notion of similarity.
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100]}
+
+00:12:25.130 --> 00:12:29.970
+<v Speaker 1>So they're cognate in terms of the concepts that you're
+
+NOTE CONF {"raw":[100,96,99,100,100,100,100,100,100,87]}
+
+00:12:29.970 --> 00:12:32.890
+<v Speaker 1>using with the word embeddings.
+
+NOTE CONF {"raw":[100,99,79,100,100]}
+
+00:12:33.370 --> 00:12:36.330
+<v Speaker 1>And then we talk a little bit about potential problems.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:12:38.010 --> 00:12:38.530
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:38.650 --> 00:12:43.970
+<v Speaker 1>So we've discussed words starting with the lexicon and word
+
+NOTE CONF {"raw":[100,100,100,100,100,100,75,100,100,100]}
+
+00:12:43.970 --> 00:12:48.030
+<v Speaker 1>segmentation finding the boundaries in the speech speed stream using
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,93,100,100]}
+
+00:12:48.030 --> 00:12:52.510
+<v Speaker 1>things like minimum description length to to figure out how
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:12:52.510 --> 00:12:55.910
+<v Speaker 1>to divide the speed stream into words in a lexicon,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:55.910 --> 00:12:59.990
+<v Speaker 1>which which words to assume, and how this relates to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:00.030 --> 00:13:00.630
+<v Speaker 1>the boundaries.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:00.630 --> 00:13:02.910
+<v Speaker 1>We've looked at probabilities as a way of finding the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:02.910 --> 00:13:03.470
+<v Speaker 1>boundaries.
+
+NOTE CONF {"raw":[100]}
+
+00:13:04.190 --> 00:13:07.350
+<v Speaker 1>Then we've looked at word learning in the sense of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:07.350 --> 00:13:09.590
+<v Speaker 1>finding the reference of of a word.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:09.990 --> 00:13:11.670
+<v Speaker 1>So what does the word dog mean?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:11.910 --> 00:13:14.470
+<v Speaker 1>If we learn a new word like ducks, what does
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,72,100,100]}
+
+00:13:14.470 --> 00:13:14.950
+<v Speaker 1>that mean?
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:14.950 --> 00:13:15.550
+<v Speaker 1>And so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:15.870 --> 00:13:17.950
+<v Speaker 1>So what are the mechanisms there?
+
+NOTE CONF {"raw":[90,100,100,100,100,81]}
+
+00:13:17.990 --> 00:13:20.710
+<v Speaker 1>We've seen a set of biases for word learning.
+
+NOTE CONF {"raw":[74,74,100,100,100,100,100,100,100]}
+
+00:13:21.030 --> 00:13:25.670
+<v Speaker 1>And then last time we looked at word semantics at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,89,100,100]}
+
+00:13:25.670 --> 00:13:29.750
+<v Speaker 1>the vector based representations of of words.
+
+NOTE CONF {"raw":[100,100,100,100,83,100,100]}
+
+00:13:31.270 --> 00:13:35.230
+<v Speaker 1>So categories which is what we're going to talk about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:35.230 --> 00:13:37.110
+<v Speaker 1>today are more abstract than words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:37.110 --> 00:13:38.390
+<v Speaker 1>And we will see how.
+
+NOTE CONF {"raw":[100,87,87,100,100]}
+
+00:13:40.510 --> 00:13:43.230
+<v Speaker 1>They can include simple classes of objects.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:43.230 --> 00:13:45.310
+<v Speaker 1>For example dog right.
+
+NOTE CONF {"raw":[100,100,100,96]}
+
+00:13:45.400 --> 00:13:48.680
+<v Speaker 1>Without words, you don't refer to an individual dog.
+
+NOTE CONF {"raw":[97,58,100,100,100,100,100,100,100]}
+
+00:13:48.720 --> 00:13:54.200
+<v Speaker 1>It's a set of possible objects that share certain properties.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:54.840 --> 00:13:58.560
+<v Speaker 1>Can be abstract categories, things like even number or prime
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:58.560 --> 00:14:03.960
+<v Speaker 1>number or power of two, which we cannot easily define
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,100]}
+
+00:14:03.960 --> 00:14:06.280
+<v Speaker 1>in terms of just a set of things that we
+
+NOTE CONF {"raw":[100,100,100,100,86,100,100,100,100,100]}
+
+00:14:06.320 --> 00:14:07.400
+<v Speaker 1>have been exposed to.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:07.720 --> 00:14:11.760
+<v Speaker 1>There's obviously an infinite number of prime numbers or more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:11.760 --> 00:14:17.160
+<v Speaker 1>complicated abstract concepts like democracy, rectitude or something like that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76,100,100,100]}
+
+00:14:18.400 --> 00:14:23.520
+<v Speaker 1>So children are able to acquire categories roughly at the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:23.520 --> 00:14:25.480
+<v Speaker 1>same time when they're acquiring language.
+
+NOTE CONF {"raw":[100,100,100,97,100,100]}
+
+00:14:26.000 --> 00:14:29.840
+<v Speaker 1>So they and this is an interesting process in the
+
+NOTE CONF {"raw":[88,78,100,100,100,100,100,100,100,100]}
+
+00:14:29.840 --> 00:14:32.120
+<v Speaker 1>sense that it's not directly dependent on language.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:32.280 --> 00:14:32.720
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[97]}
+
+00:14:33.240 --> 00:14:37.240
+<v Speaker 1>Children in different countries, different cultures, they learn different languages,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:37.440 --> 00:14:39.400
+<v Speaker 1>but they end up roughly with the same set of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:39.400 --> 00:14:40.080
+<v Speaker 1>categories.
+
+NOTE CONF {"raw":[100]}
+
+00:14:40.600 --> 00:14:44.860
+<v Speaker 1>So how do how does category development work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:45.340 --> 00:14:47.980
+<v Speaker 1>And in particular, how do we figure out whether something
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:47.980 --> 00:14:50.900
+<v Speaker 1>belongs to a particular category?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:53.620 --> 00:14:57.740
+<v Speaker 1>So first let's try to define categories or concepts.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:59.460 --> 00:15:03.540
+<v Speaker 1>So we will look at the function of concepts.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:04.420 --> 00:15:07.380
+<v Speaker 1>We look at how people categorise things put them into
+
+NOTE CONF {"raw":[72,100,100,100,100,98,100,100,100,100]}
+
+00:15:07.420 --> 00:15:11.460
+<v Speaker 1>into categories and how these concepts or categories are represented.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:15:12.260 --> 00:15:16.700
+<v Speaker 1>You're already wondering perhaps why I sometimes say categories, sometimes
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:15:16.740 --> 00:15:17.660
+<v Speaker 1>say concepts.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:18.700 --> 00:15:20.700
+<v Speaker 1>I will use the two terms as synonyms.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:22.420 --> 00:15:26.100
+<v Speaker 1>In the literature, there's sometimes a distinction in that categories
+
+NOTE CONF {"raw":[100,100,100,90,100,100,100,100,100,100]}
+
+00:15:26.220 --> 00:15:29.860
+<v Speaker 1>are more concrete things like cats and dogs and tables.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:30.700 --> 00:15:34.220
+<v Speaker 1>Whereas concepts are more abstract things like even number or
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:15:34.220 --> 00:15:35.020
+<v Speaker 1>democracy.
+
+NOTE CONF {"raw":[100]}
+
+00:15:35.780 --> 00:15:36.300
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[75]}
+
+00:15:36.460 --> 00:15:38.700
+<v Speaker 1>But for the purposes of this lecture, we don't really
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:38.700 --> 00:15:41.220
+<v Speaker 1>need to make a distinction between categories and concepts.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:43.150 --> 00:15:48.030
+<v Speaker 1>So a concept is a class of objects or events
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:48.550 --> 00:15:51.630
+<v Speaker 1>or things that somehow belong together and are put into
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:51.630 --> 00:15:55.590
+<v Speaker 1>a set or a class or a and or a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:55.630 --> 00:15:56.270
+<v Speaker 1>category.
+
+NOTE CONF {"raw":[100]}
+
+00:15:56.630 --> 00:15:56.910
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:56.950 --> 00:15:58.670
+<v Speaker 1>So we can just think of them as sets.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:59.070 --> 00:16:03.630
+<v Speaker 1>And the process of taking an individual object, sometimes called
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:03.630 --> 00:16:08.070
+<v Speaker 1>an exemplar, and deciding which concept it belongs to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:08.350 --> 00:16:10.990
+<v Speaker 1>So this is Fido, which is my pet at home
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:11.150 --> 00:16:12.910
+<v Speaker 1>and belongs to the category dog.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:14.110 --> 00:16:15.990
+<v Speaker 1>That process is called categorisation.
+
+NOTE CONF {"raw":[100,100,100,100,63]}
+
+00:16:15.990 --> 00:16:17.190
+<v Speaker 1>Categorisation.
+
+NOTE CONF {"raw":[98]}
+
+00:16:17.670 --> 00:16:20.590
+<v Speaker 1>Okay, so why?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:20.630 --> 00:16:21.710
+<v Speaker 1>Why is this useful?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:21.950 --> 00:16:23.350
+<v Speaker 1>Why categorise things?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:24.430 --> 00:16:27.550
+<v Speaker 1>So first of all, cognitive economy right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99]}
+
+00:16:27.590 --> 00:16:33.830
+<v Speaker 1>We don't need to talk about individual domestic animals, individual
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:33.830 --> 00:16:36.310
+<v Speaker 1>Fido's or whatever the dog is called.
+
+NOTE CONF {"raw":[66,100,100,100,100,100,100]}
+
+00:16:36.590 --> 00:16:37.870
+<v Speaker 1>We can generalise.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:38.110 --> 00:16:40.710
+<v Speaker 1>We can say in general a dog is a certain
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:40.710 --> 00:16:42.610
+<v Speaker 1>size, has fur bags.
+
+NOTE CONF {"raw":[100,100,100,64]}
+
+00:16:42.810 --> 00:16:46.490
+<v Speaker 1>Certain properties are shared among all members of the category.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:48.010 --> 00:16:49.250
+<v Speaker 1>That makes it more efficient.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:49.250 --> 00:16:52.010
+<v Speaker 1>Decreases the amount of information we need to process.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:54.290 --> 00:16:58.050
+<v Speaker 1>We can also make perception more efficient because there are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,98]}
+
+00:16:58.050 --> 00:16:59.890
+<v Speaker 1>certain features that are distinctive.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:00.490 --> 00:17:05.209
+<v Speaker 1>For example, I don't know barking is is that's typical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:05.209 --> 00:17:09.170
+<v Speaker 1>of dogs, but having fur is you know, cats have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:09.170 --> 00:17:09.569
+<v Speaker 1>that too.
+
+NOTE CONF {"raw":[100,88]}
+
+00:17:09.569 --> 00:17:10.970
+<v Speaker 1>Lots of other animals have fur.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:11.490 --> 00:17:15.449
+<v Speaker 1>So it makes things easier to perceive, to learn, to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:15.449 --> 00:17:17.290
+<v Speaker 1>remember, to recognise, and so on.
+
+NOTE CONF {"raw":[100,100,92,100,100,100]}
+
+00:17:18.089 --> 00:17:20.209
+<v Speaker 1>It also allows us to make predictions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:20.250 --> 00:17:20.569
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[96]}
+
+00:17:20.610 --> 00:17:24.250
+<v Speaker 1>So you go to a friend's house and you see
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:17:24.250 --> 00:17:24.810
+<v Speaker 1>an animal.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:24.810 --> 00:17:25.770
+<v Speaker 1>It looks like a dog.
+
+NOTE CONF {"raw":[91,100,100,100,100]}
+
+00:17:26.490 --> 00:17:29.410
+<v Speaker 1>Never seen the animal before, but if you categorise it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:17:29.410 --> 00:17:31.690
+<v Speaker 1>as a dog, then you know roughly what kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:31.690 --> 00:17:32.610
+<v Speaker 1>behaviour to expect.
+
+NOTE CONF {"raw":[100,98,100]}
+
+00:17:32.610 --> 00:17:33.410
+<v Speaker 1>For example.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:33.890 --> 00:17:34.170
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:34.250 --> 00:17:35.610
+<v Speaker 1>So you can make predictions.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:36.010 --> 00:17:39.050
+<v Speaker 1>Communication categories are important.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:39.050 --> 00:17:41.700
+<v Speaker 1>If I say dog, it's very likely that most of
+
+NOTE CONF {"raw":[100,100,100,100,88,100,100,100,100,100]}
+
+00:17:41.700 --> 00:17:44.940
+<v Speaker 1>you will mean something very similar because you have the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:44.940 --> 00:17:46.180
+<v Speaker 1>same category.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:46.300 --> 00:17:49.140
+<v Speaker 1>It's independent of the of which language you speak and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:49.140 --> 00:17:49.540
+<v Speaker 1>so on.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:50.700 --> 00:17:52.540
+<v Speaker 1>So they help us communicate as well.
+
+NOTE CONF {"raw":[100,90,100,100,100,100,100]}
+
+00:17:52.900 --> 00:17:53.900
+<v Speaker 1>Here's an example.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:53.900 --> 00:18:00.420
+<v Speaker 1>So Roche, who's one of the founders of of the
+
+NOTE CONF {"raw":[100,38,51,100,100,100,100,100,100,100]}
+
+00:18:00.460 --> 00:18:01.860
+<v Speaker 1>categorisation literature.
+
+NOTE CONF {"raw":[75,100]}
+
+00:18:02.340 --> 00:18:05.060
+<v Speaker 1>So she has a following quote one wishes to gain
+
+NOTE CONF {"raw":[100,100,100,81,100,100,100,73,100,100]}
+
+00:18:05.060 --> 00:18:07.460
+<v Speaker 1>from one's categories is a is a great deal of
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:18:07.460 --> 00:18:11.140
+<v Speaker 1>information about the environment while conserving finite resources as much
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:11.140 --> 00:18:11.860
+<v Speaker 1>as possible.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:12.020 --> 00:18:12.220
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[95]}
+
+00:18:12.260 --> 00:18:13.940
+<v Speaker 1>So you don't want to do a lot of processing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:14.300 --> 00:18:15.820
+<v Speaker 1>or use a lot of memory.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:16.580 --> 00:18:20.180
+<v Speaker 1>It's an abstraction, an abbreviation that makes things more efficient.
+
+NOTE CONF {"raw":[100,100,100,77,100,100,100,100,100,100]}
+
+00:18:20.860 --> 00:18:21.140
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:21.180 --> 00:18:22.940
+<v Speaker 1>Let's look at the category cat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:23.500 --> 00:18:26.860
+<v Speaker 1>And so if I recognise this animal as a cat
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:18:26.980 --> 00:18:29.740
+<v Speaker 1>then I automatically know a lot of things about it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:30.140 --> 00:18:35.860
+<v Speaker 1>Catches mice, likes milk, fish, uh, likes to rub up
+
+NOTE CONF {"raw":[100,100,99,100,100,98,100,100,100,100]}
+
+00:18:35.860 --> 00:18:37.460
+<v Speaker 1>against people and objects.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:38.100 --> 00:18:42.670
+<v Speaker 1>It's a feline in terms of taxonomy related to tigers
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:18:42.670 --> 00:18:46.910
+<v Speaker 1>and lions, is said to have nine lives in folklore.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:47.470 --> 00:18:48.270
+<v Speaker 1>Sleeps a lot.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:48.430 --> 00:18:49.510
+<v Speaker 1>Night active.
+
+NOTE CONF {"raw":[99,96]}
+
+00:18:50.350 --> 00:18:51.270
+<v Speaker 1>Has whiskers.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:51.830 --> 00:18:53.270
+<v Speaker 1>I know things about the behaviour.
+
+NOTE CONF {"raw":[100,100,100,100,96,75]}
+
+00:18:53.270 --> 00:18:55.470
+<v Speaker 1>It's difficult to train normally.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:55.470 --> 00:18:59.710
+<v Speaker 1>In contrast to dogs, for example, catches mice.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,100]}
+
+00:18:59.710 --> 00:19:01.510
+<v Speaker 1>That's also part of the behaviour and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,85,100,100,100]}
+
+00:19:01.630 --> 00:19:05.870
+<v Speaker 1>So all of this is somehow included in the category
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:06.110 --> 00:19:06.550
+<v Speaker 1>cat.
+
+NOTE CONF {"raw":[100]}
+
+00:19:08.670 --> 00:19:10.630
+<v Speaker 1>Plus physical properties of course.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:10.790 --> 00:19:11.070
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[83]}
+
+00:19:11.110 --> 00:19:14.350
+<v Speaker 1>It is a certain size, typically has fur.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:15.190 --> 00:19:18.470
+<v Speaker 1>Um it has sharp teeth and so on.
+
+NOTE CONF {"raw":[80,95,100,100,100,100,100,100]}
+
+00:19:18.510 --> 00:19:21.550
+<v Speaker 1>These physical properties of course, but it goes way beyond
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:21.550 --> 00:19:21.950
+<v Speaker 1>that.
+
+NOTE CONF {"raw":[100]}
+
+00:19:24.590 --> 00:19:27.310
+<v Speaker 1>So and let's assume it's a new category, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99]}
+
+00:19:27.350 --> 00:19:29.870
+<v Speaker 1>At some point a child has not encountered any cats
+
+NOTE CONF {"raw":[100,100,100,100,100,99,100,100,100,100]}
+
+00:19:29.870 --> 00:19:32.950
+<v Speaker 1>before, but then they encounter a few cats and they're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:19:32.950 --> 00:19:36.230
+<v Speaker 1>able to abstract and generalise and come up with a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,66]}
+
+00:19:36.230 --> 00:19:37.070
+<v Speaker 1>category cat.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:37.070 --> 00:19:40.970
+<v Speaker 1>And that's more economical Then, remembering the features of all
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100,100,100,100]}
+
+00:19:40.970 --> 00:19:42.970
+<v Speaker 1>the cards that the child has seen.
+
+NOTE CONF {"raw":[100,52,100,100,100,100,100]}
+
+00:19:43.930 --> 00:19:45.850
+<v Speaker 1>And there can be exceptions, of course.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:46.210 --> 00:19:46.530
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[83]}
+
+00:19:46.570 --> 00:19:50.730
+<v Speaker 1>So the category bird, for example, normally includes the bird
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:50.730 --> 00:19:52.930
+<v Speaker 1>can fly, but of course there's flightless birds, I don't
+
+NOTE CONF {"raw":[100,100,100,100,100,55,100,100,100,100]}
+
+00:19:52.930 --> 00:19:55.570
+<v Speaker 1>know, penguins and ostriches and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:55.890 --> 00:19:59.570
+<v Speaker 1>So the occasional exception doesn't seem to prevent us from
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:00.290 --> 00:20:02.450
+<v Speaker 1>making this categorisation decision.
+
+NOTE CONF {"raw":[100,100,94,100]}
+
+00:20:03.650 --> 00:20:06.370
+<v Speaker 1>Okay, so we don't have to track all the features
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:06.370 --> 00:20:07.010
+<v Speaker 1>separately.
+
+NOTE CONF {"raw":[100]}
+
+00:20:08.090 --> 00:20:12.130
+<v Speaker 1>And this leads us to the classical theory of categorisation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,99]}
+
+00:20:12.530 --> 00:20:16.290
+<v Speaker 1>And this theory is not really a theory that people
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:16.410 --> 00:20:17.330
+<v Speaker 1>still adhere to.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:20:17.850 --> 00:20:21.890
+<v Speaker 1>But it's important to see why it doesn't work, because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:21.890 --> 00:20:26.930
+<v Speaker 1>that explains why the other theories of categorisation are preferred.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:27.490 --> 00:20:30.010
+<v Speaker 1>Okay, so this literally goes back to Aristotle.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:30.810 --> 00:20:33.690
+<v Speaker 1>One of his books is called categories.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:34.330 --> 00:20:39.460
+<v Speaker 1>And he had the idea that categories are just a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:39.460 --> 00:20:41.300
+<v Speaker 1>list of features, essentially.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:41.700 --> 00:20:42.180
+<v Speaker 1>So.
+
+NOTE CONF {"raw":[67]}
+
+00:20:42.980 --> 00:20:46.900
+<v Speaker 1>These features need to be necessary and jointly sufficient.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:47.300 --> 00:20:50.540
+<v Speaker 1>So that means an object to be part of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:50.540 --> 00:20:53.860
+<v Speaker 1>category has to have these necessary features.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:54.420 --> 00:20:58.220
+<v Speaker 1>And altogether the necessary features are enough to define the
+
+NOTE CONF {"raw":[100,65,100,100,100,100,100,100,100,100]}
+
+00:20:58.220 --> 00:20:59.540
+<v Speaker 1>category right.
+
+NOTE CONF {"raw":[100,91]}
+
+00:20:59.580 --> 00:21:01.180
+<v Speaker 1>You don't need any other features.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:01.380 --> 00:21:02.580
+<v Speaker 1>So it's a complete set.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:03.060 --> 00:21:05.940
+<v Speaker 1>And then you have a very simple theory of categorisation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:06.820 --> 00:21:10.460
+<v Speaker 1>Learning amounts to figuring out what the features are, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:10.460 --> 00:21:13.660
+<v Speaker 1>then assigning an object to a category amounts to just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:13.660 --> 00:21:14.740
+<v Speaker 1>checking the features.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:14.820 --> 00:21:18.180
+<v Speaker 1>So for Cat it's mice, has fur, sharp teeth and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:18.180 --> 00:21:18.500
+<v Speaker 1>so on.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:18.500 --> 00:21:21.580
+<v Speaker 1>You check the lists, the list, and then you decide
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:21.580 --> 00:21:23.460
+<v Speaker 1>that this is a cat rather than a dog.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:21:25.220 --> 00:21:26.540
+<v Speaker 1>So simple.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:26.900 --> 00:21:27.860
+<v Speaker 1>It looks something like this.
+
+NOTE CONF {"raw":[66,97,100,100,100]}
+
+00:21:27.900 --> 00:21:32.540
+<v Speaker 1>Teacup is a concrete object, has a concave shape, can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:32.540 --> 00:21:36.840
+<v Speaker 1>hold liquids, has a handle, and it's typically used for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,62,100,100,100]}
+
+00:21:36.840 --> 00:21:38.600
+<v Speaker 1>hot drinks or hot liquids.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:40.800 --> 00:21:41.120
+<v Speaker 1>So.
+
+NOTE CONF {"raw":[69]}
+
+00:21:41.160 --> 00:21:43.600
+<v Speaker 1>And these all need to be necessary features.
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100]}
+
+00:21:43.600 --> 00:21:47.320
+<v Speaker 1>So that means an object has to have all these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:47.320 --> 00:21:48.880
+<v Speaker 1>features in order to be a teacup.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95]}
+
+00:21:49.280 --> 00:21:51.200
+<v Speaker 1>And they have to be jointly sufficient.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:51.200 --> 00:21:56.120
+<v Speaker 1>So all of these features together define the teacup and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:57.440 --> 00:21:59.360
+<v Speaker 1>nothing more is required.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:01.920 --> 00:22:04.360
+<v Speaker 1>So let's see does this actually work?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:04.360 --> 00:22:05.360
+<v Speaker 1>Here's a short quiz.
+
+NOTE CONF {"raw":[99,100,100,100]}
+
+00:22:05.840 --> 00:22:10.280
+<v Speaker 1>So if you haven't scanned the QR code take a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:10.280 --> 00:22:11.200
+<v Speaker 1>moment to do that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:26.240 --> 00:22:28.880
+<v Speaker 2>And I'm.
+
+NOTE CONF {"raw":[31,76]}
+
+00:22:38.290 --> 00:22:38.890
+<v Speaker 2>Um.
+
+NOTE CONF {"raw":[57]}
+
+00:22:51.050 --> 00:22:52.690
+<v Speaker 1>Okay, a few more participants.
+
+NOTE CONF {"raw":[99,44,99,100,100]}
+
+00:23:07.610 --> 00:23:08.210
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:08.450 --> 00:23:10.290
+<v Speaker 1>So quick exercise.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:10.450 --> 00:23:14.450
+<v Speaker 1>We talked about the Aristotelian theory that says you have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:14.450 --> 00:23:18.130
+<v Speaker 1>to have a set of necessary and jointly sufficient features.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:18.450 --> 00:23:20.770
+<v Speaker 1>So which of the following do you think is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:20.770 --> 00:23:23.410
+<v Speaker 1>necessary feature of the category cat.
+
+NOTE CONF {"raw":[100,100,100,100,100,96]}
+
+00:23:29.170 --> 00:23:32.770
+<v Speaker 1>So necessary means if it doesn't have this feature it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:32.770 --> 00:23:33.450
+<v Speaker 1>not a cat.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:39.350 --> 00:23:39.990
+<v Speaker 2>Thank you.
+
+NOTE CONF {"raw":[99,99]}
+
+00:23:41.070 --> 00:23:41.830
+<v Speaker 2>Oh, yes.
+
+NOTE CONF {"raw":[52,99]}
+
+00:23:52.310 --> 00:23:52.590
+<v Speaker 2>Thank.
+
+NOTE CONF {"raw":[84]}
+
+00:23:56.590 --> 00:23:56.710
+<v Speaker 2>You.
+
+NOTE CONF {"raw":[84]}
+
+00:23:57.150 --> 00:23:57.710
+<v Speaker 2>Thank you.
+
+NOTE CONF {"raw":[96,96]}
+
+00:24:03.030 --> 00:24:04.390
+<v Speaker 2>Well, I guess you could.
+
+NOTE CONF {"raw":[60,100,100,100,100]}
+
+00:24:07.750 --> 00:24:08.510
+<v Speaker 2>Say that last.
+
+NOTE CONF {"raw":[99,100,48]}
+
+00:24:11.070 --> 00:24:11.310
+<v Speaker 2>Time.
+
+NOTE CONF {"raw":[14]}
+
+00:24:18.630 --> 00:24:21.990
+<v Speaker 2>I would say that I woke up.
+
+NOTE CONF {"raw":[100,55,100,100,61,55,55]}
+
+00:24:35.120 --> 00:24:35.520
+<v Speaker 2>Like that.
+
+NOTE CONF {"raw":[46,45]}
+
+00:24:36.880 --> 00:24:38.760
+<v Speaker 1>Okay, let's see what people thought.
+
+NOTE CONF {"raw":[98,100,100,100,100,100]}
+
+00:24:40.920 --> 00:24:42.040
+<v Speaker 1>These are the results.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:42.600 --> 00:24:44.760
+<v Speaker 1>So there isn't really a very clear picture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:24:45.760 --> 00:24:48.040
+<v Speaker 1>First feature is small domestic animal.
+
+NOTE CONF {"raw":[100,100,100,100,100,99]}
+
+00:24:48.920 --> 00:24:53.560
+<v Speaker 1>Um, so depends a little bit on whether you focus
+
+NOTE CONF {"raw":[68,100,100,100,100,100,100,100,100,100]}
+
+00:24:53.560 --> 00:24:54.160
+<v Speaker 1>on the small.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:54.200 --> 00:24:56.320
+<v Speaker 1>I mean, all cats I think, have to be small.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:56.320 --> 00:25:00.480
+<v Speaker 1>Unless, you know, they're not domestic cats, but lions or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:00.480 --> 00:25:01.320
+<v Speaker 1>something like that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:01.720 --> 00:25:03.720
+<v Speaker 1>But do they have to be domestic?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:03.840 --> 00:25:05.040
+<v Speaker 1>What about a wild cat?
+
+NOTE CONF {"raw":[100,100,52,100,67]}
+
+00:25:05.080 --> 00:25:07.000
+<v Speaker 1>What about a stray cat?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:07.640 --> 00:25:10.160
+<v Speaker 1>So maybe sharp claws?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:10.840 --> 00:25:12.400
+<v Speaker 1>Well, in theory.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:12.400 --> 00:25:14.360
+<v Speaker 1>But what about cats?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:14.400 --> 00:25:19.400
+<v Speaker 1>You know, who, uh, have lost their claws or their
+
+NOTE CONF {"raw":[100,100,100,88,100,100,100,100,100,92]}
+
+00:25:19.400 --> 00:25:20.560
+<v Speaker 1>claws have become.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:20.960 --> 00:25:23.320
+<v Speaker 1>Uh, they're no longer sharp.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:23.520 --> 00:25:25.120
+<v Speaker 1>Maybe it's a very old cat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:25.600 --> 00:25:28.240
+<v Speaker 1>Um, it's still a cat, right?
+
+NOTE CONF {"raw":[74,100,100,100,100,98]}
+
+00:25:28.680 --> 00:25:29.480
+<v Speaker 1>Fur coat?
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:30.320 --> 00:25:30.960
+<v Speaker 1>Well, yes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:30.960 --> 00:25:33.820
+<v Speaker 1>Maybe the typical cat has a fur coat, but there
+
+NOTE CONF {"raw":[100,100,100,99,100,100,100,100,100,100]}
+
+00:25:33.820 --> 00:25:36.340
+<v Speaker 1>is naked cat breeds as well, so these don't have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:36.340 --> 00:25:37.940
+<v Speaker 1>any fur or have very little fur.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:38.580 --> 00:25:39.500
+<v Speaker 1>Long tail.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:40.180 --> 00:25:43.060
+<v Speaker 1>Sure, many cats have long tails, but you could imagine
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:43.060 --> 00:25:45.540
+<v Speaker 1>a cat that has lost its tail and still a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:45.540 --> 00:25:46.620
+<v Speaker 1>cat Ruff tongue.
+
+NOTE CONF {"raw":[100,98,100]}
+
+00:25:47.220 --> 00:25:48.580
+<v Speaker 1>Probably hard to imagine.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:48.620 --> 00:25:49.820
+<v Speaker 1>Cat without ruff tongue.
+
+NOTE CONF {"raw":[91,100,69,100]}
+
+00:25:50.380 --> 00:25:51.340
+<v Speaker 1>Sharp teeth.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:52.100 --> 00:25:54.060
+<v Speaker 1>Well, cats are actually quite.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:54.100 --> 00:25:54.940
+<v Speaker 1>I used to have a cat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:55.140 --> 00:25:56.380
+<v Speaker 1>Cats are quite common.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:56.540 --> 00:25:58.700
+<v Speaker 1>It's quite common that they get gum disease and then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:58.700 --> 00:25:59.780
+<v Speaker 1>they can lose their teeth.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:00.780 --> 00:26:01.700
+<v Speaker 1>So that's very sad.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:01.700 --> 00:26:03.260
+<v Speaker 1>But then there's still cats.
+
+NOTE CONF {"raw":[100,100,76,100,100]}
+
+00:26:03.300 --> 00:26:03.540
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:26:03.580 --> 00:26:07.500
+<v Speaker 1>So, um, what I, what I'm trying to show here
+
+NOTE CONF {"raw":[100,58,98,83,100,100,100,100,100,100]}
+
+00:26:07.500 --> 00:26:11.460
+<v Speaker 1>is that, yes, these are all very reasonable features, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:11.460 --> 00:26:13.260
+<v Speaker 1>are there are they necessary?
+
+NOTE CONF {"raw":[100,61,100,100,100]}
+
+00:26:13.660 --> 00:26:14.540
+<v Speaker 1>Perhaps not.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:14.820 --> 00:26:15.100
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:26:15.140 --> 00:26:17.980
+<v Speaker 1>So a cat that happens to lose its tail or
+
+NOTE CONF {"raw":[77,99,100,100,100,100,100,100,100,100]}
+
+00:26:17.980 --> 00:26:19.900
+<v Speaker 1>its teeth is still a cat.
+
+NOTE CONF {"raw":[100,100,93,100,100,100]}
+
+00:26:20.220 --> 00:26:22.820
+<v Speaker 1>And so there's something at odds with this, with this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:22.820 --> 00:26:23.540
+<v Speaker 1>theory here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:24.700 --> 00:26:28.420
+<v Speaker 1>Um, so let's go back and look at alternatives.
+
+NOTE CONF {"raw":[64,100,100,100,100,100,100,100,100]}
+
+00:26:37.990 --> 00:26:38.430
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:26:38.430 --> 00:26:42.510
+<v Speaker 1>So, uh, the, the classical theory implies certain things.
+
+NOTE CONF {"raw":[98,69,93,100,100,100,100,100,100]}
+
+00:26:42.510 --> 00:26:45.430
+<v Speaker 1>So all members of the are equally good, all members
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:45.430 --> 00:26:50.190
+<v Speaker 1>of the category are equally good, and the category boundaries
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:50.190 --> 00:26:51.590
+<v Speaker 1>are really inflexible.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:51.750 --> 00:26:54.510
+<v Speaker 1>So in the sense that if this cat doesn't happen
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:54.510 --> 00:26:56.430
+<v Speaker 1>to have a tail, then it's no longer a cat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:56.550 --> 00:26:58.550
+<v Speaker 1>According to this theory, right.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:58.590 --> 00:27:02.110
+<v Speaker 1>If cat is an if tail is a necessary feature,
+
+NOTE CONF {"raw":[100,100,100,89,100,100,100,100,100,100]}
+
+00:27:02.510 --> 00:27:04.550
+<v Speaker 1>on the other hand, it's quite intuitive.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:05.190 --> 00:27:06.190
+<v Speaker 1>It's very economical.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:06.190 --> 00:27:08.310
+<v Speaker 1>You just write down the features and you check the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:08.310 --> 00:27:08.870
+<v Speaker 1>features.
+
+NOTE CONF {"raw":[100]}
+
+00:27:09.390 --> 00:27:10.750
+<v Speaker 1>Easy to talk about.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:11.350 --> 00:27:15.630
+<v Speaker 1>And in fact, if you look at definitions then they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:15.750 --> 00:27:18.510
+<v Speaker 1>often are in terms of features.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:18.510 --> 00:27:21.310
+<v Speaker 1>So in in a in a textbook you define a
+
+NOTE CONF {"raw":[100,99,100,97,100,100,100,100,100,100]}
+
+00:27:21.310 --> 00:27:22.350
+<v Speaker 1>certain concept.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:22.790 --> 00:27:26.270
+<v Speaker 1>In maths you define I don't know prime number or
+
+NOTE CONF {"raw":[100,86,100,100,100,100,100,100,100,100]}
+
+00:27:26.270 --> 00:27:27.190
+<v Speaker 1>something like that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:27.550 --> 00:27:30.890
+<v Speaker 1>Or in a, in a In a dictionary, you define
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:30.890 --> 00:27:31.290
+<v Speaker 1>a word.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:31.330 --> 00:27:34.810
+<v Speaker 1>Often these are in terms of features, so it's easy
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:34.810 --> 00:27:35.690
+<v Speaker 1>to communicate.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:36.170 --> 00:27:37.010
+<v Speaker 1>Easy to check.
+
+NOTE CONF {"raw":[100,100,93]}
+
+00:27:37.050 --> 00:27:39.250
+<v Speaker 1>Category membership once you have the definition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:40.010 --> 00:27:43.650
+<v Speaker 1>So it's really hard to find a good set of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:43.650 --> 00:27:47.570
+<v Speaker 1>features though that are really necessary or insufficient.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:47.570 --> 00:27:51.090
+<v Speaker 1>As we saw, there's borderline cases.
+
+NOTE CONF {"raw":[100,100,100,99,100,100]}
+
+00:27:54.890 --> 00:27:58.010
+<v Speaker 1>As I said, the cat that happens to be particularly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:58.010 --> 00:28:01.010
+<v Speaker 1>small or happens to be a breed without fur.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:01.450 --> 00:28:02.730
+<v Speaker 1>Is that still a cat?
+
+NOTE CONF {"raw":[100,99,100,100,100]}
+
+00:28:03.570 --> 00:28:05.450
+<v Speaker 1>Maybe we want to include it, but we want to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:05.450 --> 00:28:07.130
+<v Speaker 1>say maybe it's not a typical cat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:07.610 --> 00:28:09.930
+<v Speaker 1>And this is actually called topicality effects.
+
+NOTE CONF {"raw":[100,100,100,100,100,93,100]}
+
+00:28:10.290 --> 00:28:13.410
+<v Speaker 1>So if you ask people to describe a cat and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,94]}
+
+00:28:13.410 --> 00:28:16.490
+<v Speaker 1>then we'll describe a typical cat or pick out out
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100,100,100]}
+
+00:28:16.490 --> 00:28:18.930
+<v Speaker 1>of a set of pictures, people can pick out the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:18.930 --> 00:28:22.050
+<v Speaker 1>most typical exemplar of a category.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:22.170 --> 00:28:26.530
+<v Speaker 1>So this is called topicality effects and the definitional theory.
+
+NOTE CONF {"raw":[100,100,100,100,94,100,100,100,100,100]}
+
+00:28:26.570 --> 00:28:30.100
+<v Speaker 1>The Aristotelian theory doesn't have anything to say about that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:30.340 --> 00:28:31.980
+<v Speaker 1>So that's another limitation.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:33.780 --> 00:28:36.860
+<v Speaker 1>And then in some cases people can't even agree on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:36.860 --> 00:28:37.500
+<v Speaker 1>definitions.
+
+NOTE CONF {"raw":[100]}
+
+00:28:37.500 --> 00:28:38.340
+<v Speaker 1>What is art.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:38.380 --> 00:28:39.420
+<v Speaker 1>What is a game?
+
+NOTE CONF {"raw":[100,100,98,100]}
+
+00:28:39.700 --> 00:28:41.340
+<v Speaker 1>What is a teacup even.
+
+NOTE CONF {"raw":[100,100,98,100,95]}
+
+00:28:41.740 --> 00:28:44.740
+<v Speaker 1>And here, for example, if we go back to our
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:44.740 --> 00:28:49.020
+<v Speaker 1>teacup definition and we look at properties four and five.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:49.060 --> 00:28:52.300
+<v Speaker 1>Well you could imagine a teacup without handles for example
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:52.300 --> 00:28:55.260
+<v Speaker 1>Chinese or Japanese teacups normally don't have handles.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:56.020 --> 00:28:58.580
+<v Speaker 1>Um, can be used to drink hot liquids.
+
+NOTE CONF {"raw":[68,100,100,100,100,100,98,100]}
+
+00:28:58.620 --> 00:29:00.180
+<v Speaker 1>Is that really required?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:00.940 --> 00:29:04.660
+<v Speaker 1>Um, also, not having the handle makes it more difficult.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:05.580 --> 00:29:08.260
+<v Speaker 1>And but if you get rid of four and five,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:08.460 --> 00:29:12.020
+<v Speaker 1>then you just have concrete concave and can hold liquid
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:12.700 --> 00:29:15.900
+<v Speaker 1>and there's, you know, buckets and balls and there's lots
+
+NOTE CONF {"raw":[100,100,74,74,100,100,97,100,100,100]}
+
+00:29:15.900 --> 00:29:18.500
+<v Speaker 1>of things that meet the definition then.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:18.500 --> 00:29:20.740
+<v Speaker 1>So it's no longer a good definition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:21.260 --> 00:29:23.780
+<v Speaker 1>So even even a simple case like this you can
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:29:24.140 --> 00:29:26.540
+<v Speaker 1>contest some of the properties.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:26.660 --> 00:29:33.110
+<v Speaker 1>And The whole approach starts to seem problematic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:33.990 --> 00:29:36.230
+<v Speaker 1>Membership is not always clear cut.
+
+NOTE CONF {"raw":[100,100,100,100,100,99]}
+
+00:29:36.750 --> 00:29:39.470
+<v Speaker 1>Is olive a fruit or is it a vegetable?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:39.870 --> 00:29:41.310
+<v Speaker 1>Is a poet an animal?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:41.790 --> 00:29:44.710
+<v Speaker 1>Well, at some level all people are animals, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:44.750 --> 00:29:47.950
+<v Speaker 1>So this is strictly true, but it seems very counterintuitive.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,81]}
+
+00:29:48.590 --> 00:29:50.910
+<v Speaker 1>Candlestick is that furniture and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:52.310 --> 00:29:59.550
+<v Speaker 1>So it's uh, people struggle with definitions in those cases.
+
+NOTE CONF {"raw":[99,92,57,100,100,100,100,100,100,100]}
+
+00:30:02.910 --> 00:30:06.310
+<v Speaker 1>And then there's these technicality effects that I've already mentioned.
+
+NOTE CONF {"raw":[100,100,100,100,62,100,100,100,100,100]}
+
+00:30:06.310 --> 00:30:08.230
+<v Speaker 1>And we'll come back to that once we look at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:08.230 --> 00:30:09.630
+<v Speaker 1>similarity based theories.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:10.710 --> 00:30:12.590
+<v Speaker 1>So typical category.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:13.070 --> 00:30:16.230
+<v Speaker 1>So a Robin is a fairly typical bird.
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100]}
+
+00:30:16.270 --> 00:30:18.390
+<v Speaker 1>A dog is a fairly typical mammal.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:18.750 --> 00:30:21.470
+<v Speaker 1>Diamond is really a good example of a precious stone
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:21.470 --> 00:30:22.110
+<v Speaker 1>and so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:22.630 --> 00:30:24.550
+<v Speaker 1>But how about atypical one?
+
+NOTE CONF {"raw":[100,100,100,81,100]}
+
+00:30:24.550 --> 00:30:26.930
+<v Speaker 1>An ostrich is not a bird doesn't fly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:27.450 --> 00:30:30.490
+<v Speaker 1>Whale is a mammal, but maybe not a very typical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:30.490 --> 00:30:30.810
+<v Speaker 1>one.
+
+NOTE CONF {"raw":[100]}
+
+00:30:31.970 --> 00:30:35.410
+<v Speaker 1>Turquoise is a precious stone, but maybe not as typical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:35.410 --> 00:30:36.210
+<v Speaker 1>as a diamond.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:36.210 --> 00:30:36.890
+<v Speaker 1>And so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:37.490 --> 00:30:43.130
+<v Speaker 1>And people actually show slower reaction times for atypical compared
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:43.130 --> 00:30:45.970
+<v Speaker 1>to typical category members.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:46.330 --> 00:30:49.490
+<v Speaker 1>Okay, so that's something that we need to take into
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:49.490 --> 00:30:52.330
+<v Speaker 1>account in our theory of category membership.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:52.610 --> 00:30:54.970
+<v Speaker 1>And yeah, it's you know, if you Google a bit,
+
+NOTE CONF {"raw":[100,100,91,100,100,100,100,100,100,100]}
+
+00:30:54.970 --> 00:30:56.930
+<v Speaker 1>you find a lot of atypical examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:56.970 --> 00:30:57.930
+<v Speaker 1>Is this a share?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:58.650 --> 00:31:00.450
+<v Speaker 1>It's more like a chaise longue right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:00.450 --> 00:31:02.050
+<v Speaker 1>Or sofa type thing.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:02.370 --> 00:31:03.450
+<v Speaker 1>Is this really a cat?
+
+NOTE CONF {"raw":[100,100,100,100,94]}
+
+00:31:03.490 --> 00:31:04.570
+<v Speaker 1>Looks a bit like a dog.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:04.610 --> 00:31:07.530
+<v Speaker 1>Is this really a dog with all this hair and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:07.530 --> 00:31:08.930
+<v Speaker 1>a weird shape and so on?
+
+NOTE CONF {"raw":[65,100,100,100,100,100]}
+
+00:31:09.210 --> 00:31:14.290
+<v Speaker 1>So there's always atypical category members.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:16.570 --> 00:31:20.290
+<v Speaker 1>So people have tried to tweak the classical theory, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:20.290 --> 00:31:24.330
+<v Speaker 1>it's not really something that people advocate anymore.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:25.010 --> 00:31:26.300
+<v Speaker 1>So what's the alternative?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:26.460 --> 00:31:30.900
+<v Speaker 1>So the alternative are similarity based theories of categorisation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95]}
+
+00:31:31.380 --> 00:31:36.460
+<v Speaker 1>And you can think of these as defined in terms
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:36.460 --> 00:31:36.700
+<v Speaker 1>of.
+
+NOTE CONF {"raw":[100]}
+
+00:31:39.180 --> 00:31:39.980
+<v Speaker 1>Features.
+
+NOTE CONF {"raw":[96]}
+
+00:31:40.820 --> 00:31:42.380
+<v Speaker 1>Just like the classical theory.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:42.740 --> 00:31:45.300
+<v Speaker 1>But now we don't need to check all the features
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:45.300 --> 00:31:45.740
+<v Speaker 1>anymore.
+
+NOTE CONF {"raw":[100]}
+
+00:31:45.820 --> 00:31:48.740
+<v Speaker 1>It's enough if if two elements are similar in terms
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:31:48.740 --> 00:31:49.620
+<v Speaker 1>of their features.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:50.140 --> 00:31:50.460
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:50.540 --> 00:31:52.500
+<v Speaker 1>So a bit like the word vectors we saw a
+
+NOTE CONF {"raw":[58,100,100,100,100,100,100,100,100,100]}
+
+00:31:52.500 --> 00:31:53.180
+<v Speaker 1>moment ago.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:53.820 --> 00:31:54.300
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:31:54.540 --> 00:31:57.580
+<v Speaker 1>Uh, intersection and crossroad.
+
+NOTE CONF {"raw":[79,100,100,100]}
+
+00:31:58.540 --> 00:32:02.180
+<v Speaker 1>Um, they are synonyms or near synonyms.
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100]}
+
+00:32:02.180 --> 00:32:03.540
+<v Speaker 1>So they have similar vectors.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:03.780 --> 00:32:06.580
+<v Speaker 1>And here we are assuming that the members of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:06.580 --> 00:32:08.620
+<v Speaker 1>category have similar vectors.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:08.620 --> 00:32:11.660
+<v Speaker 1>And we'll see how we can make this precise in
+
+NOTE CONF {"raw":[100,80,100,100,100,100,100,100,100,100]}
+
+00:32:11.660 --> 00:32:12.260
+<v Speaker 1>a moment.
+
+NOTE CONF {"raw":[100,100]}
+
+00:32:13.180 --> 00:32:13.500
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:13.540 --> 00:32:16.180
+<v Speaker 1>So we no longer need to meet all the all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:16.180 --> 00:32:17.620
+<v Speaker 1>the elements of the definition.
+
+NOTE CONF {"raw":[100,100,100,50,100]}
+
+00:32:18.540 --> 00:32:19.940
+<v Speaker 1>So and this is.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:22.220 --> 00:32:23.220
+<v Speaker 1>Can be illustrated.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:23.220 --> 00:32:27.080
+<v Speaker 1>And I don't think Wittgenstein invented this, but he came
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:27.080 --> 00:32:28.600
+<v Speaker 1>up with some nice examples.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:29.160 --> 00:32:35.960
+<v Speaker 1>So the elements of a category or concept are similar,
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:32:35.960 --> 00:32:40.320
+<v Speaker 1>and they resemble each other like members of a family
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:32:41.760 --> 00:32:43.480
+<v Speaker 1>resemble each other.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:43.680 --> 00:32:45.320
+<v Speaker 1>So this is the Wittgenstein family.
+
+NOTE CONF {"raw":[100,100,100,54,100,100]}
+
+00:32:45.800 --> 00:32:48.480
+<v Speaker 1>This, I think, is the great man himself.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:49.840 --> 00:32:51.160
+<v Speaker 1>And this is a composite.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:53.360 --> 00:32:57.080
+<v Speaker 1>The pictures of the family members superimposed on each other.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:57.640 --> 00:33:02.120
+<v Speaker 1>And the result is someone who looks like a typical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:02.120 --> 00:33:03.160
+<v Speaker 1>member of the family.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:03.480 --> 00:33:06.040
+<v Speaker 1>But it doesn't look like any one member.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:07.200 --> 00:33:07.720
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[84]}
+
+00:33:08.400 --> 00:33:13.680
+<v Speaker 1>And so this is an analogous analogy that he suggests
+
+NOTE CONF {"raw":[100,100,100,100,100,78,100,100,100,100]}
+
+00:33:13.680 --> 00:33:14.600
+<v Speaker 1>for categories.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:15.320 --> 00:33:15.600
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[97]}
+
+00:33:15.640 --> 00:33:17.840
+<v Speaker 1>The members of the category, they're all similar to each
+
+NOTE CONF {"raw":[100,100,100,100,100,64,100,100,100,100]}
+
+00:33:17.840 --> 00:33:18.240
+<v Speaker 1>other.
+
+NOTE CONF {"raw":[100]}
+
+00:33:18.400 --> 00:33:22.600
+<v Speaker 1>And you can average them and get a prototypical member.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:23.850 --> 00:33:25.490
+<v Speaker 1>But they're not.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:26.370 --> 00:33:31.250
+<v Speaker 1>There's no simple definitional rule to say whether something is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:31.250 --> 00:33:32.570
+<v Speaker 1>within the category or not.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:34.210 --> 00:33:36.650
+<v Speaker 1>Okay, so this is just a motivating example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:38.410 --> 00:33:40.490
+<v Speaker 1>There is actually a theory that's based on this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:33:40.530 --> 00:33:42.130
+<v Speaker 1>It's called prototype theory.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:43.410 --> 00:33:48.330
+<v Speaker 1>And it says that categories are organised around a category
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:48.370 --> 00:33:52.890
+<v Speaker 1>prototype, which is a summary of of the elements of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:52.890 --> 00:33:56.370
+<v Speaker 1>the individual representation, a bit like the average family member
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:56.370 --> 00:33:56.690
+<v Speaker 1>here.
+
+NOTE CONF {"raw":[100]}
+
+00:33:59.530 --> 00:34:01.210
+<v Speaker 1>And so you have different words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:01.930 --> 00:34:05.050
+<v Speaker 1>And you would have one particular representation which is sort
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:05.050 --> 00:34:08.330
+<v Speaker 1>of an abstract, very typical bird.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:08.690 --> 00:34:10.090
+<v Speaker 1>And that's the prototype.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:12.250 --> 00:34:17.370
+<v Speaker 1>And then categories become a bit a bit fuzzy right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,78]}
+
+00:34:17.409 --> 00:34:20.850
+<v Speaker 1>Because you can if you have a new member you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:20.850 --> 00:34:23.070
+<v Speaker 1>can see is it close to the prototype or not?
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:34:23.510 --> 00:34:26.750
+<v Speaker 1>But it might be close to several prototypes, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,76]}
+
+00:34:26.790 --> 00:34:31.270
+<v Speaker 1>So there might be in between the category in between
+
+NOTE CONF {"raw":[100,63,100,100,100,100,83,100,100,100]}
+
+00:34:31.270 --> 00:34:32.110
+<v Speaker 1>two categories.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:33.870 --> 00:34:37.470
+<v Speaker 1>And the membership is meant to be similarity based.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:37.669 --> 00:34:40.389
+<v Speaker 1>So you would say that this bird is clearly very
+
+NOTE CONF {"raw":[100,100,100,100,100,100,48,100,100,100]}
+
+00:34:40.389 --> 00:34:41.590
+<v Speaker 1>similar to the prototype.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:41.909 --> 00:34:43.909
+<v Speaker 1>That's a bit less similar but still quite similar.
+
+NOTE CONF {"raw":[46,99,100,100,100,100,100,100,100]}
+
+00:34:43.950 --> 00:34:47.909
+<v Speaker 1>This one is sort of small and and and pudgy,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,56,73,100,100]}
+
+00:34:47.909 --> 00:34:51.710
+<v Speaker 1>but still similar to the prototype, whereas an ostrich would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:51.710 --> 00:34:54.870
+<v Speaker 1>be less similar, or a penguin would be even less
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:54.870 --> 00:34:55.790
+<v Speaker 1>similar, and so on.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:56.429 --> 00:34:56.669
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[92]}
+
+00:34:56.710 --> 00:35:00.110
+<v Speaker 1>So now you have a notion a of topicality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100]}
+
+00:35:00.310 --> 00:35:02.950
+<v Speaker 1>The prototype is the most typical category member.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:03.430 --> 00:35:07.910
+<v Speaker 1>And you have a notion of how good a category
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:07.910 --> 00:35:10.830
+<v Speaker 1>member you are, how close you are to the prototype.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:12.990 --> 00:35:15.430
+<v Speaker 1>And you get these fuzzy fuzzy boundaries, right.
+
+NOTE CONF {"raw":[100,100,100,84,98,100,100,95]}
+
+00:35:15.470 --> 00:35:17.110
+<v Speaker 1>So is this a cup or a ball?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,50,100]}
+
+00:35:18.190 --> 00:35:19.190
+<v Speaker 1>It could be both.
+
+NOTE CONF {"raw":[58,100,100,100]}
+
+00:35:19.550 --> 00:35:22.440
+<v Speaker 1>And in the prototype theory you could say, well, it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:35:22.480 --> 00:35:27.360
+<v Speaker 1>0.75 a ball and 0.25 a cup, right?
+
+NOTE CONF {"raw":[94,100,100,100,81,100,100,99]}
+
+00:35:27.400 --> 00:35:30.960
+<v Speaker 1>Because you have the prototype for cup prototype football.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,65]}
+
+00:35:31.240 --> 00:35:33.480
+<v Speaker 1>And then this is somewhere in between and maybe a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:33.480 --> 00:35:34.600
+<v Speaker 1>bit closer to ball.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:35.640 --> 00:35:36.280
+<v Speaker 1>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:36.640 --> 00:35:41.200
+<v Speaker 1>So you you get this for free that the boundaries
+
+NOTE CONF {"raw":[100,79,100,100,100,100,100,90,100,100]}
+
+00:35:41.200 --> 00:35:42.080
+<v Speaker 1>are no longer clear.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:42.080 --> 00:35:42.760
+<v Speaker 1>They're fuzzy.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:43.160 --> 00:35:46.200
+<v Speaker 1>And something can be a mix of multiple categories.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:46.720 --> 00:35:50.160
+<v Speaker 1>And you can express whether it's typical or close to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:50.160 --> 00:35:51.000
+<v Speaker 1>the prototype.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:53.360 --> 00:35:57.960
+<v Speaker 1>So now we can explain prototype quality sorry, topicality effects
+
+NOTE CONF {"raw":[100,100,100,100,100,43,52,100,100,100]}
+
+00:35:57.960 --> 00:35:59.120
+<v Speaker 1>and borderline cases.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:00.000 --> 00:36:01.560
+<v Speaker 1>It's also economical right.
+
+NOTE CONF {"raw":[100,100,100,85]}
+
+00:36:01.600 --> 00:36:07.120
+<v Speaker 1>So you compute this prototype just by averaging right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97]}
+
+00:36:07.160 --> 00:36:09.080
+<v Speaker 1>This gives us a theory of learning as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:36:10.120 --> 00:36:13.680
+<v Speaker 1>I encounter lots and lots of words and I just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:36:14.040 --> 00:36:18.280
+<v Speaker 1>average the the representations for each of these birds and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:18.280 --> 00:36:21.940
+<v Speaker 1>the average I can Continuously update the average.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:22.260 --> 00:36:25.860
+<v Speaker 1>The average is my prototype, and so I have a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:25.860 --> 00:36:29.300
+<v Speaker 1>simple way of representing the the category.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,98]}
+
+00:36:30.620 --> 00:36:36.820
+<v Speaker 1>Um, uh, problem is that sometimes averages and and summaries
+
+NOTE CONF {"raw":[81,69,100,100,100,100,100,100,100,100]}
+
+00:36:36.940 --> 00:36:38.820
+<v Speaker 1>are ill defined or bad.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:39.260 --> 00:36:42.940
+<v Speaker 1>I mean, I can average the pictures of birds, for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:42.940 --> 00:36:49.500
+<v Speaker 1>example, but, um, for, for numbers, for example, this wouldn't
+
+NOTE CONF {"raw":[100,100,100,92,100,100,100,100,100,100]}
+
+00:36:49.500 --> 00:36:50.460
+<v Speaker 1>really work very well.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:50.580 --> 00:36:50.900
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:36:50.900 --> 00:36:56.900
+<v Speaker 1>So, um, the prototypical prime number, I don't know, maybe
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:56.940 --> 00:36:59.940
+<v Speaker 1>five is a prototypical prime number, but it's certainly not
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:36:59.940 --> 00:37:02.980
+<v Speaker 1>the average of all prime numbers that wouldn't work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:03.580 --> 00:37:04.020
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:37:04.060 --> 00:37:05.460
+<v Speaker 1>Or for concepts.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:06.180 --> 00:37:09.780
+<v Speaker 1>Um, democracy, I don't know, is this concept the average
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100,100]}
+
+00:37:09.780 --> 00:37:13.140
+<v Speaker 1>of the properties of all democratic countries.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:37:13.140 --> 00:37:17.540
+<v Speaker 1>So yeah, it might work quite well for concrete things,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:17.540 --> 00:37:22.830
+<v Speaker 1>but for abstract things like numbers and abstract concepts probably
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:22.830 --> 00:37:23.830
+<v Speaker 1>doesn't work as well.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:25.790 --> 00:37:32.070
+<v Speaker 1>Uh, and, um, it also imposes strong restrictions on learnability.
+
+NOTE CONF {"raw":[97,95,78,100,100,100,100,100,100,100]}
+
+00:37:32.110 --> 00:37:32.350
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[88]}
+
+00:37:32.390 --> 00:37:36.190
+<v Speaker 1>Because only if I can build these prototypes, a category
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:36.190 --> 00:37:36.990
+<v Speaker 1>is learnable.
+
+NOTE CONF {"raw":[100,100]}
+
+00:37:37.830 --> 00:37:40.230
+<v Speaker 1>And that might be too restrictive.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:41.190 --> 00:37:43.190
+<v Speaker 1>So people have come up with an alternative.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:43.310 --> 00:37:45.470
+<v Speaker 1>It's another similarity based theory.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:46.030 --> 00:37:50.750
+<v Speaker 1>And it's based on, um, not it doesn't use a
+
+NOTE CONF {"raw":[100,100,100,100,99,94,100,100,100,100]}
+
+00:37:50.750 --> 00:37:52.590
+<v Speaker 1>prototype basically.
+
+NOTE CONF {"raw":[100,97]}
+
+00:37:53.270 --> 00:37:56.830
+<v Speaker 1>So, uh, and this is called exemplar theory.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100]}
+
+00:37:57.470 --> 00:38:01.590
+<v Speaker 1>So it essentially means instead of building a prototype and
+
+NOTE CONF {"raw":[100,88,100,100,100,100,100,100,100,100]}
+
+00:38:01.590 --> 00:38:06.190
+<v Speaker 1>averaging, whenever you encounter an element of your category, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:06.190 --> 00:38:06.950
+<v Speaker 1>just store it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:08.070 --> 00:38:11.550
+<v Speaker 1>And so you have cats and dogs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:11.550 --> 00:38:14.230
+<v Speaker 1>You store all instances of cats and dogs that you've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,54]}
+
+00:38:14.270 --> 00:38:15.230
+<v Speaker 1>you've ever seen.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:15.630 --> 00:38:18.120
+<v Speaker 1>And then you have a new animal here, this one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:18.120 --> 00:38:21.120
+<v Speaker 1>in the middle, and you just compute the similarity to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:21.160 --> 00:38:22.760
+<v Speaker 1>all the cats and all the dogs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:23.400 --> 00:38:26.960
+<v Speaker 1>And if it's on average closer to cat here, black
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:27.000 --> 00:38:31.400
+<v Speaker 1>is the cats compared to closer to dog here red
+
+NOTE CONF {"raw":[100,100,90,100,100,100,100,100,100,100]}
+
+00:38:31.440 --> 00:38:32.120
+<v Speaker 1>are the dogs.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:32.320 --> 00:38:34.440
+<v Speaker 1>Then you classify this as a cat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:35.560 --> 00:38:36.080
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:37.000 --> 00:38:41.920
+<v Speaker 1>So it, um, it does away with the prototype.
+
+NOTE CONF {"raw":[96,62,67,100,100,100,100,100,100]}
+
+00:38:42.360 --> 00:38:45.840
+<v Speaker 1>It assumes you store all the exemplars, and then you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:45.840 --> 00:38:49.520
+<v Speaker 1>just check the existing exemplars, which, you know, the category
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:49.520 --> 00:38:49.800
+<v Speaker 1>of.
+
+NOTE CONF {"raw":[100]}
+
+00:38:50.400 --> 00:38:53.640
+<v Speaker 1>And you, you output the one that you're closest to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:54.160 --> 00:38:54.800
+<v Speaker 1>on average.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:54.920 --> 00:38:55.200
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[58]}
+
+00:38:55.240 --> 00:38:56.720
+<v Speaker 1>Average distance to all the cats.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:57.120 --> 00:38:58.720
+<v Speaker 1>Average distance to all the dogs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:59.080 --> 00:39:01.640
+<v Speaker 1>And then based on this this is a cat because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:39:01.640 --> 00:39:08.080
+<v Speaker 1>the average distance to all the cats is lower okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,78]}
+
+00:39:08.480 --> 00:39:11.600
+<v Speaker 1>And here's a an algorithm.
+
+NOTE CONF {"raw":[100,100,49,100,100]}
+
+00:39:12.200 --> 00:39:16.160
+<v Speaker 1>So you have a list of all previous, uh, exemplars.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,58,100]}
+
+00:39:16.160 --> 00:39:16.220
+<v Speaker 1>Us.
+
+NOTE CONF {"raw":[86]}
+
+00:39:16.740 --> 00:39:20.260
+<v Speaker 1>And now you want to classify a new exemplar.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:21.660 --> 00:39:25.540
+<v Speaker 1>So you retrieve all the cats you've encountered.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,87,99]}
+
+00:39:26.460 --> 00:39:28.700
+<v Speaker 1>I retrieve the memories of all known cats.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,61,98]}
+
+00:39:32.220 --> 00:39:34.660
+<v Speaker 1>Memory of a dog, memory of stuffed animals, memory of
+
+NOTE CONF {"raw":[100,100,93,100,100,100,100,100,100,100]}
+
+00:39:34.660 --> 00:39:35.660
+<v Speaker 1>a raccoon, and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:35.860 --> 00:39:39.500
+<v Speaker 1>And then you compute the total similarity or average similarity
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:39.980 --> 00:39:42.300
+<v Speaker 1>of the positive and negative exemplars.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:43.100 --> 00:39:44.620
+<v Speaker 1>And then this is a cat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:45.260 --> 00:39:49.900
+<v Speaker 1>If it is more similar to the cat exemplars than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:49.900 --> 00:39:56.380
+<v Speaker 1>the non cat exemplars okay.
+
+NOTE CONF {"raw":[100,100,100,100,77]}
+
+00:39:56.420 --> 00:40:02.100
+<v Speaker 1>And this is actually uh, in machine learning this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:02.100 --> 00:40:03.900
+<v Speaker 1>called classification.
+
+NOTE CONF {"raw":[100,99]}
+
+00:40:04.580 --> 00:40:06.420
+<v Speaker 1>In case you've you've seen this before.
+
+NOTE CONF {"raw":[100,100,63,86,100,100,100]}
+
+00:40:06.460 --> 00:40:12.500
+<v Speaker 1>This is exactly the same idea has been invented independently
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:12.500 --> 00:40:14.860
+<v Speaker 1>in machine learning or maybe not independently I don't know.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:17.750 --> 00:40:21.550
+<v Speaker 1>So and but I keep talking about similarities.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:21.550 --> 00:40:23.230
+<v Speaker 1>How do I compare to cats?
+
+NOTE CONF {"raw":[100,100,100,100,74,100]}
+
+00:40:23.750 --> 00:40:23.990
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[94]}
+
+00:40:24.030 --> 00:40:28.550
+<v Speaker 1>So I have to encode the cats in some way,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:28.550 --> 00:40:30.390
+<v Speaker 1>for example as a vector of features.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:30.830 --> 00:40:32.790
+<v Speaker 1>And then I can compute the similarity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:32.830 --> 00:40:35.870
+<v Speaker 1>I can do cosine similarity or I can just count
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:35.910 --> 00:40:37.310
+<v Speaker 1>how many features are the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:38.030 --> 00:40:42.710
+<v Speaker 1>Um, cosine similarity as we've seen in the previous lecture
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:40:42.710 --> 00:40:43.750
+<v Speaker 1>would be an example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:44.390 --> 00:40:45.870
+<v Speaker 1>So this is all a bit abstract.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:45.870 --> 00:40:47.630
+<v Speaker 1>So I think it will help to look at an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:47.630 --> 00:40:48.270
+<v Speaker 1>example.
+
+NOTE CONF {"raw":[100]}
+
+00:40:49.030 --> 00:40:51.030
+<v Speaker 1>And let's do this now.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:56.590 --> 00:40:57.150
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:57.190 --> 00:40:59.950
+<v Speaker 1>So this is a really simple example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:00.030 --> 00:41:01.310
+<v Speaker 1>We have a new animal.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:02.350 --> 00:41:05.270
+<v Speaker 1>Uh Rex can be either a cat or a dog.
+
+NOTE CONF {"raw":[97,100,100,100,100,95,100,100,100,100]}
+
+00:41:06.110 --> 00:41:09.070
+<v Speaker 1>And, uh, I give you a set of features.
+
+NOTE CONF {"raw":[100,84,100,100,100,100,100,100,100]}
+
+00:41:09.350 --> 00:41:10.910
+<v Speaker 1>So the size is four.
+
+NOTE CONF {"raw":[100,100,100,100,63]}
+
+00:41:11.950 --> 00:41:12.830
+<v Speaker 1>It has fur.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:12.830 --> 00:41:13.670
+<v Speaker 1>So fur equals.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:13.710 --> 00:41:14.070
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:41:14.070 --> 00:41:15.690
+<v Speaker 1>CSS Carnival equals null.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:15.770 --> 00:41:17.530
+<v Speaker 1>So it's only those three features.
+
+NOTE CONF {"raw":[100,77,100,100,100,100]}
+
+00:41:18.130 --> 00:41:20.810
+<v Speaker 1>And is Rex a cat or a dog?
+
+NOTE CONF {"raw":[100,100,95,100,100,100,98,100]}
+
+00:41:21.090 --> 00:41:22.530
+<v Speaker 1>Based on exemplar theory.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:23.010 --> 00:41:24.170
+<v Speaker 1>And these are my exemplars.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:24.210 --> 00:41:25.370
+<v Speaker 1>Only for exemplars.
+
+NOTE CONF {"raw":[100,73,100]}
+
+00:41:25.650 --> 00:41:26.330
+<v Speaker 1>Fido.
+
+NOTE CONF {"raw":[100]}
+
+00:41:26.370 --> 00:41:26.930
+<v Speaker 1>Category.
+
+NOTE CONF {"raw":[100]}
+
+00:41:26.970 --> 00:41:27.410
+<v Speaker 1>Dog.
+
+NOTE CONF {"raw":[100]}
+
+00:41:27.810 --> 00:41:28.970
+<v Speaker 1>Size five.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:29.850 --> 00:41:30.170
+<v Speaker 1>Fur.
+
+NOTE CONF {"raw":[71]}
+
+00:41:30.210 --> 00:41:30.490
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:41:30.490 --> 00:41:31.170
+<v Speaker 1>Carnivore.
+
+NOTE CONF {"raw":[99]}
+
+00:41:31.210 --> 00:41:31.610
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[99]}
+
+00:41:31.970 --> 00:41:32.610
+<v Speaker 1>Max.
+
+NOTE CONF {"raw":[100]}
+
+00:41:32.610 --> 00:41:33.090
+<v Speaker 1>Category.
+
+NOTE CONF {"raw":[100]}
+
+00:41:33.130 --> 00:41:34.890
+<v Speaker 1>Dog size 2.5.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:34.930 --> 00:41:35.090
+<v Speaker 1>For.
+
+NOTE CONF {"raw":[44]}
+
+00:41:35.130 --> 00:41:35.370
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:41:35.370 --> 00:41:35.810
+<v Speaker 1>Carnivore.
+
+NOTE CONF {"raw":[85]}
+
+00:41:35.850 --> 00:41:36.130
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:41:36.130 --> 00:41:36.770
+<v Speaker 1>And so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:37.170 --> 00:41:40.250
+<v Speaker 1>So what I need to do now is to compare
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:40.410 --> 00:41:44.890
+<v Speaker 1>Rex to each of these exemplars.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:45.810 --> 00:41:48.050
+<v Speaker 1>And measure the distance.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:48.090 --> 00:41:52.650
+<v Speaker 1>And here we're just going to assume distance is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:52.650 --> 00:41:55.530
+<v Speaker 1>number of features that are different right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76]}
+
+00:41:55.570 --> 00:41:58.610
+<v Speaker 1>So or similarity is the number of features that are
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:41:58.610 --> 00:41:59.090
+<v Speaker 1>the same.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:59.370 --> 00:42:03.530
+<v Speaker 1>So for example if we compare Rex and Fido size
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:03.530 --> 00:42:04.130
+<v Speaker 1>is five.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:04.290 --> 00:42:04.970
+<v Speaker 1>Size is four.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:04.970 --> 00:42:06.010
+<v Speaker 1>So that's different.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:06.250 --> 00:42:08.730
+<v Speaker 1>For yes for yes that's the same carnivore.
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,88]}
+
+00:42:08.770 --> 00:42:09.010
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[96]}
+
+00:42:09.570 --> 00:42:09.850
+<v Speaker 1>No.
+
+NOTE CONF {"raw":[97]}
+
+00:42:09.850 --> 00:42:11.410
+<v Speaker 1>So distance would be two right.
+
+NOTE CONF {"raw":[100,100,88,100,100,84]}
+
+00:42:11.410 --> 00:42:13.290
+<v Speaker 1>Because two out of three features are different.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:13.780 --> 00:42:17.660
+<v Speaker 1>Then we do the same for all the four categories,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:18.100 --> 00:42:24.020
+<v Speaker 1>and then we classify Rex as the category that it
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,67]}
+
+00:42:24.020 --> 00:42:24.980
+<v Speaker 1>is closest to.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:25.380 --> 00:42:25.700
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[80]}
+
+00:42:25.740 --> 00:42:30.220
+<v Speaker 1>That the similarity is highest.
+
+NOTE CONF {"raw":[99,100,100,100,100]}
+
+00:42:31.700 --> 00:42:32.060
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:32.100 --> 00:42:35.940
+<v Speaker 1>So you take a moment to try to work this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:35.940 --> 00:42:36.260
+<v Speaker 1>out.
+
+NOTE CONF {"raw":[100]}
+
+00:42:50.220 --> 00:42:50.700
+<v Speaker 2>Sometimes.
+
+NOTE CONF {"raw":[40]}
+
+00:42:55.100 --> 00:42:55.500
+<v Speaker 2>I said.
+
+NOTE CONF {"raw":[73,73]}
+
+00:43:07.780 --> 00:43:11.980
+<v Speaker 2>That I don't know if you guys.
+
+NOTE CONF {"raw":[50,98,95,96,44,42,40]}
+
+00:43:13.400 --> 00:43:13.880
+<v Speaker 2>You know.
+
+NOTE CONF {"raw":[86,86]}
+
+00:43:16.000 --> 00:43:16.160
+<v Speaker 2>I.
+
+NOTE CONF {"raw":[66]}
+
+00:43:18.440 --> 00:43:22.960
+<v Speaker 2>Just want to be able.
+
+NOTE CONF {"raw":[65,57,35,35,35]}
+
+00:43:27.360 --> 00:43:28.800
+<v Speaker 2>To do.
+
+NOTE CONF {"raw":[71,47]}
+
+00:43:33.840 --> 00:43:34.280
+<v Speaker 2>Something.
+
+NOTE CONF {"raw":[32]}
+
+00:43:39.920 --> 00:43:41.840
+<v Speaker 2>I love it.
+
+NOTE CONF {"raw":[81,77,28]}
+
+00:43:44.640 --> 00:43:46.280
+<v Speaker 1>Okay, let's see what people think.
+
+NOTE CONF {"raw":[97,100,100,100,100,100]}
+
+00:43:50.160 --> 00:43:50.760
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:51.080 --> 00:43:51.560
+<v Speaker 1>So.
+
+NOTE CONF {"raw":[100]}
+
+00:43:53.600 --> 00:43:56.440
+<v Speaker 1>Let's go through each of the exemplars.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:56.560 --> 00:44:02.520
+<v Speaker 1>So, um, this has a similarity of two.
+
+NOTE CONF {"raw":[100,58,100,100,100,100,100,100]}
+
+00:44:03.000 --> 00:44:03.280
+<v Speaker 1>No.
+
+NOTE CONF {"raw":[100]}
+
+00:44:03.280 --> 00:44:03.560
+<v Speaker 1>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:44:03.600 --> 00:44:03.960
+<v Speaker 1>One.
+
+NOTE CONF {"raw":[100]}
+
+00:44:04.680 --> 00:44:09.440
+<v Speaker 1>Um, this has a similarity of, uh, one as well,
+
+NOTE CONF {"raw":[98,100,100,100,100,100,56,100,100,100]}
+
+00:44:10.240 --> 00:44:12.330
+<v Speaker 1>because, size is different.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:12.370 --> 00:44:14.290
+<v Speaker 1>First, the same carnival is different.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:14.730 --> 00:44:18.650
+<v Speaker 1>This has a similarity of one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:22.570 --> 00:44:23.210
+<v Speaker 1>No.
+
+NOTE CONF {"raw":[100]}
+
+00:44:23.210 --> 00:44:23.890
+<v Speaker 1>Carnival?
+
+NOTE CONF {"raw":[100]}
+
+00:44:23.890 --> 00:44:24.290
+<v Speaker 1>No.
+
+NOTE CONF {"raw":[98]}
+
+00:44:26.290 --> 00:44:28.610
+<v Speaker 1>For yes of one.
+
+NOTE CONF {"raw":[51,100,100,100]}
+
+00:44:28.610 --> 00:44:31.810
+<v Speaker 1>And this has a similarity of.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:32.450 --> 00:44:34.970
+<v Speaker 1>So this is the closest right.
+
+NOTE CONF {"raw":[100,100,100,100,100,86]}
+
+00:44:35.290 --> 00:44:36.570
+<v Speaker 1>Two out of three.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:38.730 --> 00:44:40.770
+<v Speaker 1>But if you take the overall similarity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:40.810 --> 00:44:41.250
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[61]}
+
+00:44:41.290 --> 00:44:44.050
+<v Speaker 1>Similarity to this card in this card, then this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:44.050 --> 00:44:47.170
+<v Speaker 1>higher than the similarity to this dog and this dog.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:47.730 --> 00:44:51.850
+<v Speaker 1>So the correct the correct answer is cat.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:44:52.130 --> 00:44:52.330
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[96]}
+
+00:44:52.370 --> 00:44:54.210
+<v Speaker 1>So this is the most similar one.
+
+NOTE CONF {"raw":[100,100,100,95,57,100,100]}
+
+00:44:54.210 --> 00:44:56.450
+<v Speaker 1>But we're looking to the we're looking at the overall
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:56.450 --> 00:44:57.730
+<v Speaker 1>similarity right.
+
+NOTE CONF {"raw":[100,89]}
+
+00:44:57.770 --> 00:44:59.770
+<v Speaker 1>So we have two cats and two dogs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:44:59.770 --> 00:45:01.930
+<v Speaker 1>So we can just count how many features are the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:01.930 --> 00:45:03.810
+<v Speaker 1>same for the two cats.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:03.810 --> 00:45:05.450
+<v Speaker 1>And how many features are the same for the two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:05.450 --> 00:45:05.930
+<v Speaker 1>dogs.
+
+NOTE CONF {"raw":[100]}
+
+00:45:06.130 --> 00:45:08.290
+<v Speaker 1>And there's more shared features with the dogs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:08.530 --> 00:45:09.210
+<v Speaker 1>With the cats.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:09.790 --> 00:45:11.910
+<v Speaker 1>So Rex is a cat.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:14.150 --> 00:45:14.630
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:45:14.670 --> 00:45:15.630
+<v Speaker 1>Final question.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:15.790 --> 00:45:18.310
+<v Speaker 1>We have looked at this exemplar theory and we've just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:18.310 --> 00:45:19.630
+<v Speaker 1>seen an example.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:20.030 --> 00:45:20.270
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[94]}
+
+00:45:20.270 --> 00:45:22.150
+<v Speaker 1>You need to compare to all the exemplars.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:22.430 --> 00:45:24.590
+<v Speaker 1>And then you need to see on average.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:24.750 --> 00:45:26.550
+<v Speaker 1>Which category are you closest to.
+
+NOTE CONF {"raw":[100,100,100,99,100,100]}
+
+00:45:27.270 --> 00:45:29.190
+<v Speaker 1>What are potential problems.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:30.630 --> 00:45:32.470
+<v Speaker 1>Here's a list of potential problems.
+
+NOTE CONF {"raw":[98,100,100,100,100,100]}
+
+00:45:32.470 --> 00:45:36.830
+<v Speaker 1>So if you have a large number of exemplars then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:36.830 --> 00:45:38.070
+<v Speaker 1>this doesn't work very well.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:39.190 --> 00:45:42.990
+<v Speaker 1>We can't deal with taxonomic effects how categories are related.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:44.470 --> 00:45:46.110
+<v Speaker 1>We need to define features.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:47.630 --> 00:45:49.830
+<v Speaker 1>We can't model topicality effects.
+
+NOTE CONF {"raw":[100,100,100,95,100]}
+
+00:45:50.710 --> 00:45:52.870
+<v Speaker 1>We require a similarity function.
+
+NOTE CONF {"raw":[100,100,83,100,100]}
+
+00:45:54.230 --> 00:45:57.030
+<v Speaker 1>We can't handle cases where an exemplar is more part
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,71,100]}
+
+00:45:57.030 --> 00:45:58.390
+<v Speaker 1>of more than one category.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:59.590 --> 00:46:00.790
+<v Speaker 1>So what do you think?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:01.110 --> 00:46:02.950
+<v Speaker 1>Which are possible limitations?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:13.520 --> 00:46:15.760
+<v Speaker 2>And we have got to be good to go.
+
+NOTE CONF {"raw":[56,100,92,69,81,52,64,36,25]}
+
+00:46:17.000 --> 00:46:17.280
+<v Speaker 2>So.
+
+NOTE CONF {"raw":[70]}
+
+00:46:19.720 --> 00:46:20.000
+<v Speaker 2>Yeah.
+
+NOTE CONF {"raw":[36]}
+
+00:46:24.800 --> 00:46:27.280
+<v Speaker 2>I think it's all right.
+
+NOTE CONF {"raw":[100,100,72,48,48]}
+
+00:46:30.280 --> 00:46:30.960
+<v Speaker 2>I don't.
+
+NOTE CONF {"raw":[90,100]}
+
+00:46:36.200 --> 00:46:36.360
+<v Speaker 2>Know.
+
+NOTE CONF {"raw":[100]}
+
+00:46:38.680 --> 00:46:38.880
+<v Speaker 2>What's.
+
+NOTE CONF {"raw":[100]}
+
+00:46:43.360 --> 00:46:47.400
+<v Speaker 2>Going on behind them?
+
+NOTE CONF {"raw":[100,96,35,19]}
+
+00:46:49.400 --> 00:46:50.000
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[92]}
+
+00:46:50.120 --> 00:46:51.520
+<v Speaker 1>So what do people think?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:56.080 --> 00:46:57.480
+<v Speaker 1>Okay, here's the answer.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:58.480 --> 00:47:01.960
+<v Speaker 1>So one problem is large number of exemplars.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:02.440 --> 00:47:05.080
+<v Speaker 1>Let's assume, you know, you've seen a lot of dogs,
+
+NOTE CONF {"raw":[100,100,92,92,100,100,100,100,100,100]}
+
+00:47:05.080 --> 00:47:09.410
+<v Speaker 1>maybe hundreds or in case of other things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:09.410 --> 00:47:11.850
+<v Speaker 1>I don't know people.
+
+NOTE CONF {"raw":[100,100,100,69]}
+
+00:47:12.370 --> 00:47:14.450
+<v Speaker 1>You've seen hundreds, maybe thousands, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,84]}
+
+00:47:14.490 --> 00:47:17.290
+<v Speaker 1>So it's a very costly computation if you have to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:17.290 --> 00:47:20.090
+<v Speaker 1>compare to all the elements of the set of people
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:20.370 --> 00:47:21.010
+<v Speaker 1>or cats.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:21.650 --> 00:47:22.850
+<v Speaker 1>So that's a problem.
+
+NOTE CONF {"raw":[100,100,96,100]}
+
+00:47:23.690 --> 00:47:26.690
+<v Speaker 1>You need to get the features somehow, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,81,100,100]}
+
+00:47:26.730 --> 00:47:29.570
+<v Speaker 1>Maybe you can learn them in the same as you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:29.570 --> 00:47:30.530
+<v Speaker 1>learn word embeddings.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:30.530 --> 00:47:31.930
+<v Speaker 1>But that's an open question.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:32.450 --> 00:47:37.410
+<v Speaker 1>Topicality effects are difficult to, uh, to model.
+
+NOTE CONF {"raw":[97,100,100,100,100,55,100,100]}
+
+00:47:37.490 --> 00:47:41.730
+<v Speaker 1>We know that a certain new object is a cat
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:41.730 --> 00:47:43.370
+<v Speaker 1>or a dog, but we don't know how typical it
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:47:43.370 --> 00:47:44.450
+<v Speaker 1>is for that category.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:44.690 --> 00:47:47.010
+<v Speaker 1>That's a difference to the prototype theory, right?
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,89]}
+
+00:47:47.050 --> 00:47:48.810
+<v Speaker 1>Where we could just say, is it very similar to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:48.810 --> 00:47:49.970
+<v Speaker 1>the prototype or not?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:50.130 --> 00:47:55.970
+<v Speaker 1>Here we don't have any prototypes and cases where an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:55.970 --> 00:47:58.450
+<v Speaker 1>object is part of more than one category are also
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:58.450 --> 00:47:59.490
+<v Speaker 1>difficult to handle.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:02.530 --> 00:48:03.050
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[99]}
+
+00:48:09.150 --> 00:48:09.350
+<v Speaker 2>But.
+
+NOTE CONF {"raw":[41]}
+
+00:48:11.830 --> 00:48:16.750
+<v Speaker 1>Okay, so just to contrast the two similarity based approaches.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:16.750 --> 00:48:19.550
+<v Speaker 1>So they're both similarity based but they use similarity in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:19.550 --> 00:48:20.270
+<v Speaker 1>a different way.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:20.710 --> 00:48:24.630
+<v Speaker 1>Prototype theory assumes that there's a prototype, a kind of
+
+NOTE CONF {"raw":[100,100,100,100,85,100,100,100,100,100]}
+
+00:48:24.670 --> 00:48:27.950
+<v Speaker 1>average, a typical member of the category.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:28.390 --> 00:48:30.710
+<v Speaker 1>And then we just need to compute similarity to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:30.710 --> 00:48:33.190
+<v Speaker 1>prototype, so much less computation.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:33.630 --> 00:48:36.910
+<v Speaker 1>In exemplar theory, you assume you have stored all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:36.910 --> 00:48:44.190
+<v Speaker 1>exemplars, and then you compute the distance to the individual
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:44.190 --> 00:48:45.470
+<v Speaker 1>exemplars in a category.
+
+NOTE CONF {"raw":[100,100,70,100]}
+
+00:48:45.550 --> 00:48:49.710
+<v Speaker 1>So there's no abstraction, there's no prototype, there's no topicality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,90]}
+
+00:48:51.950 --> 00:48:55.830
+<v Speaker 1>There are some evidence that shows that maybe both types
+
+NOTE CONF {"raw":[84,84,100,100,100,100,100,100,100,100]}
+
+00:48:55.830 --> 00:49:00.270
+<v Speaker 1>of theories, there's some truth in it, but they're used
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:49:00.270 --> 00:49:01.670
+<v Speaker 1>in different situations.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:02.190 --> 00:49:06.200
+<v Speaker 1>For example, you could start by learning a category in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:06.200 --> 00:49:08.400
+<v Speaker 1>terms of exemplars.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:08.920 --> 00:49:11.120
+<v Speaker 1>But then as you see more and more of them,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:11.120 --> 00:49:14.200
+<v Speaker 1>you start to abstract and build prototypes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:14.560 --> 00:49:18.160
+<v Speaker 1>So it could be part of the same process.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:49:18.440 --> 00:49:19.920
+<v Speaker 1>So I have a bit of time in this talk
+
+NOTE CONF {"raw":[100,44,99,100,100,100,100,82,89,100]}
+
+00:49:19.920 --> 00:49:25.400
+<v Speaker 1>to talk about a few a few problems of both
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:25.400 --> 00:49:28.840
+<v Speaker 1>similarity based approaches, prototype and exemplar based.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:30.480 --> 00:49:34.920
+<v Speaker 1>It's sometimes hard to know which properties to compare, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:49:34.960 --> 00:49:36.640
+<v Speaker 1>This is a plum and a lawnmower.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98]}
+
+00:49:36.680 --> 00:49:37.600
+<v Speaker 1>They're both red.
+
+NOTE CONF {"raw":[100,100,98]}
+
+00:49:37.880 --> 00:49:39.640
+<v Speaker 1>They both weigh less than a ton.
+
+NOTE CONF {"raw":[99,100,99,100,100,100,58]}
+
+00:49:40.000 --> 00:49:41.720
+<v Speaker 1>They both found on Earth.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:41.760 --> 00:49:43.720
+<v Speaker 1>They're both bigger than a grain of sand.
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100]}
+
+00:49:43.920 --> 00:49:46.680
+<v Speaker 1>These are all properties, but maybe not the ones we
+
+NOTE CONF {"raw":[100,100,85,100,100,100,100,100,100,100]}
+
+00:49:46.680 --> 00:49:47.560
+<v Speaker 1>want to compare.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:47.640 --> 00:49:49.200
+<v Speaker 1>So how do we figure that out?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:49.880 --> 00:49:50.120
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[93]}
+
+00:49:50.160 --> 00:49:52.240
+<v Speaker 1>We need to be given our features somehow.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:49:53.520 --> 00:49:57.640
+<v Speaker 1>Then there's context effects.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:58.000 --> 00:50:00.480
+<v Speaker 1>So if you ask people if Sweden, Poland or Hungary
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:00.480 --> 00:50:04.520
+<v Speaker 1>is more similar to Austria, then Sweden is more similar
+
+NOTE CONF {"raw":[100,95,100,100,100,88,100,100,100,100]}
+
+00:50:04.620 --> 00:50:05.620
+<v Speaker 1>than Hungary.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:05.860 --> 00:50:06.620
+<v Speaker 1>If you ask.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:50:06.900 --> 00:50:08.300
+<v Speaker 1>Sweden, Norway or Hungary?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:08.340 --> 00:50:08.900
+<v Speaker 1>Most.
+
+NOTE CONF {"raw":[88]}
+
+00:50:08.940 --> 00:50:10.580
+<v Speaker 1>Sweden, Norway or Hungary.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:10.580 --> 00:50:13.100
+<v Speaker 1>More similar to Austria than people say.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:50:13.140 --> 00:50:15.060
+<v Speaker 1>Hungary is more similar than Sweden.
+
+NOTE CONF {"raw":[100,100,100,100,100,96]}
+
+00:50:15.380 --> 00:50:20.460
+<v Speaker 1>So these are so-called framing effects and will actually come
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,51,100,100]}
+
+00:50:20.460 --> 00:50:24.380
+<v Speaker 1>back to these framing effects in the next lecture in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:24.380 --> 00:50:25.420
+<v Speaker 1>another context.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:26.420 --> 00:50:30.380
+<v Speaker 1>And then there is not just similarity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:50:30.380 --> 00:50:31.980
+<v Speaker 1>There's things like function as well.
+
+NOTE CONF {"raw":[97,100,100,100,100,100]}
+
+00:50:32.140 --> 00:50:32.340
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[82]}
+
+00:50:32.380 --> 00:50:36.540
+<v Speaker 1>So these shoes they look like wellies.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:50:36.540 --> 00:50:38.220
+<v Speaker 1>But are they actually wellies right.
+
+NOTE CONF {"raw":[100,100,100,100,100,91]}
+
+00:50:38.260 --> 00:50:41.500
+<v Speaker 1>They have an open top.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:50:41.500 --> 00:50:44.500
+<v Speaker 1>So that wouldn't actually be very useful in a in
+
+NOTE CONF {"raw":[100,51,100,100,100,100,100,99,56,96]}
+
+00:50:44.500 --> 00:50:45.420
+<v Speaker 1>in in rain.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:50:45.980 --> 00:50:50.220
+<v Speaker 1>So do they still count as wellies or is this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:50.220 --> 00:50:53.820
+<v Speaker 1>maybe an Aristotelian essential property.
+
+NOTE CONF {"raw":[100,97,100,100,100]}
+
+00:50:53.820 --> 00:50:56.140
+<v Speaker 1>And if they don't, you know, if they don't keep
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:56.140 --> 00:50:58.420
+<v Speaker 1>out the water then we don't want to classify them
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100,100,100,100]}
+
+00:50:58.420 --> 00:50:58.860
+<v Speaker 1>that way.
+
+NOTE CONF {"raw":[100,100]}
+
+00:51:00.300 --> 00:51:04.110
+<v Speaker 1>Okay, I'll skip the last example and we're out of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:04.110 --> 00:51:04.470
+<v Speaker 1>time.
+
+NOTE CONF {"raw":[100]}
+
+00:51:05.390 --> 00:51:06.230
+<v Speaker 1>Thank you very much.
+
+NOTE CONF {"raw":[100,100,100,100]}

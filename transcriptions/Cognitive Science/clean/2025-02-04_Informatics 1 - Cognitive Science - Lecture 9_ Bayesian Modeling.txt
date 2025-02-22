@@ -1,0 +1,936 @@
+Okay, let's get started.
+Welcome to lecture nine.
+, we're going to talk about Bayesian modelling today.
+So far in the course we've introduced a number of
+approaches for building computational models of cognitive processes.
+Initially we saw rule based models, grammar based models.
+For example, the, , the model that generates past tense
+forms based on a lexicon and a set of simple
+rules.
+Then later on, we looked at neural network models, which
+are in some sense on the other extreme.
+They generate an output just by generalising from input patterns.
+So they combine a powerful learning algorithm, very general learning
+algorithm with a lot of data essentially.
+.
+Then last time we briefly looked at the role of
+probability in learning.
+And today we're going to generalise this and look at
+a framework that essentially combines symbolic aspects and sub symbolic
+aspects, combines rules and probabilities.
+And in particular we're going to look at a paradigm
+called Bayesian modelling, which been which has been popular over
+the last 10 or 15 years in cognitive modelling.
+Today I'll introduce the foundations and I'll try to, ,
+to give you an intuition of what's going on in
+Bayesian modelling.
+Then in the next lecture on Thursday, we're going to
+look at one particular model in quite a lot of
+detail.
+And then we will return to probabilistic modelling also next
+week when we look at other domains than language, when
+we talk about decision making and biases in decision making
+and so on.
+Okay.
+So if you haven't already, please, take a moment to
+scan the QR code, which we'll need later on in
+the course.
+So just give you a few seconds to do that.
+Okay.
+Wait.
+Now.
+Okay, so don't worry.
+The QR code will be back.
+And all right, so we'll introduce some fundamental concepts to
+do with Bayesian modelling called posteriors and priors.
+We'll introduce Bayes rule, which is sort of the main
+formula that we use.
+And you might be familiar with that from probability.
+If you've done some probability and then we'll look at
+two examples.
+These are not cognitive models.
+They're just conceptual examples to do with reference resolution and
+simple decision making.
+And then we'll introduce the concept of Bayesian update, which
+is what you do when your information changes.
+Okay.
+Just to quickly recap, , we have seen, , various
+ways in which during acquisition, in particular language acquisition, children
+are able to infer information from their environment.
+So here, for example, we have a speaker who says
+three koalas.
+And maybe there's also pictures or stuffed toys of koalas.
+The child initially doesn't understand, but then hopefully is able
+to map this onto some sort of counting routine, say
+when they're learning to count.
+And we'll come back to that in the next lecture.
+So in general, they observe an input and infer the
+underlying cognitive technology.
+Be it language, be it counting, be it certain other
+visual concepts, and so on.
+We'll talk about concepts in general next week as well.
+So in this case, I listen to speech and infer
+the underlying words.
+And more generally, you can think of this as an
+experiment.
+You start with a set of beliefs and then you
+observe some evidence, some data, and use this to update
+your beliefs.
+And this sort of constant process of updating is how
+we can model learning.
+Last time we've already looked at a particular type of
+probabilities.
+Transitional probabilities, which is a transitional probability, is the probability
+of a word given the previous word, or in general,
+is the probability of an event y conditioned on the
+existence or occurrence of another event x.
+And today we will generalise this and look at what's
+called Bayesian belief updates.
+Okay, so we'll start with a very simple experiment.
+Here's a mysterious box.
+And the idea is for you to guess what's in
+the box.
+And you can do this on on wall club here.
+So, , you also given the dimensions of the box.
+, 15 by 22 by eight centimetres.
+Here's another picture if you want to see the box
+again.
+And.
+Oops.
+So sorry.
+.
+Yeah.
+Please just vote.
+What do you think is in the box?
+I think that's.
+What?
+This.
+Is.
+Okay.
+Yeah.
+Okay.
+So.
+I was .
+Okay, give you another 30s.
+Okay, let's have a look.
+Okay.
+So you can see, well, it's pretty evenly distributed.
+Some people think it's a book maybe candy.
+Hope abstract noun.
+I'm not quite sure why this is here.
+.
+Schrodinger's cat is also an abstract concept.
+Smaller box seems to be popular, but in the absence
+of any more information other than the size and maybe
+what the box looks , it's really hard to guess.
+So this, , state of absence of information, or sometimes
+you have some information.
+You know that, for example, something really big cannot be
+in the box.
+This is called a prior.
+So in the absence of data or evidence.
+What can you assume?
+This is called a prior.
+And now let's assume that you actually get some more
+information.
+So.
+We can draw this as a distribution right where you
+have your hypotheses book can be carried and so on.
+And the x axis and the probability which we'll call
+prior probability on the y axis.
+And now let's say we want to get some more
+evidence some more information about the box.
+So for example we shake it and there's a does
+this even work here.
+There's a little video here.
+Okay.
+So this is actually my colleague Frank Mollica.
+Shaking the box.
+Okay.
+That's enough.
+And.
+Now you get a vote again.
+Okay, so we have this new evidence obtained by providing
+by doing a small experiment.
+Checking the box.
+What do you think is in the box now?
+So please vote again.
+Okay.
+Yeah.
+Okay.
+So.
+I think.
+It's okay.
+Okay, let's have a look.
+Okay.
+So Candy is now suddenly very, very plausible things
+a scarf maybe wouldn't make that sort of noise.
+A book maybe would make a slightly different noise, a
+smaller box maybe would make a similar noise, depending on
+its size.
+And nothing definitely can be ruled out, right, because of
+the noise and so on.
+So the probability distribution, if you look at this as
+a probability distribution, has changed quite dramatically based on the
+evidence.
+And this is this new distribution is called the posterior
+distribution.
+And we can compare.
+Let's see if this actually works okay.
+Not use this feature before okay.
+So you can see how your distribution has changed from
+initially relatively evenly distributed across the different options to 68%
+candy okay.
+So let's try to formulate this slightly more mathematically.
+So what we've seen is we now have a new
+distribution called the posterior distribution.
+This is this is not your distribution.
+It's just one I made up.
+And the important thing is that the prior distribution green
+changes.
+Once you have the evidence and you get the posterior
+distribution in red.
+Right.
+The the set of hypotheses that called hypothesis, so-called hypothesis
+space remains the same.
+But the probability is assigned to these hypotheses, i.e. the
+distribution changes.
+And mathematically we can express this in a simple formula
+called Bayes rule or Bayes theorem.
+, if we have the probability of a hypothesis h
+given some data D and data is any kind of
+information you can get regarding your hypotheses.
+So in this case, we shook the the box and
+we heard a certain noise.
+So that would be our data.
+So the probability of the hypothesis Hypotheses.
+Say book or candy?
+Given your data, that's p of h given d, and
+this can be computed as the probability of the data
+given the hypothesis times the overall probability of the hypothesis.
+This is called the prior probability, and this is called
+the likelihood divided by the probability of d the probability
+of data.
+Okay.
+So this term here p of h given d is
+called the posterior.
+So what do you believe about the hypothesis once you've
+seen the data.
+This inverse term p of d given h.
+So that's the probability that if your hypothesis is true.
+So there's really candy in the box.
+It has generated this noise.
+In this case it's probably fairly highly highly probable that
+it has generated this clicking noise.
+If there's candy in the box but if the box
+is empty then the probability that it's generating this noise
+is zero, right?
+So this is the probability of the data given the
+hypothesis, also known as likelihood.
+And this is the probability of the hypothesis a priori
+without any information.
+This is called the prior probability or prior beliefs.
+And this was your initial distribution, right?
+When I didn't tell you much about, , about the
+hypothesis, then you could essentially guess that certain things are
+a priori without any evidence that plausible or implausible.
+But other than that, you didn't have enough information, and
+then the probability of D, the probability of the data
+or the evidence, , this is how likely it is
+to hear this noise independent of the hypothesis P of
+D is actually not so important because it's constant, right?
+It's not dependent on the hypothesis.
+So the important terms here are the likelihood and the
+prior.
+Okay.
+So this is all pretty abstract.
+And what is this actually good for.
+Let's do a small calculation to.
+Oh, sorry, I forgot one other bit.
+So the P of D.
+If you want to compute this, you can actually break
+it down as follows.
+You can break it down by summing over all possible
+hypotheses and taking the likelihoods and the price of those
+hypotheses, and computing the posteriors.
+And then if you add them up across all the
+hypotheses.
+So in this case it would be can be a
+smaller box, nothing, and so on.
+Then you get P of D.
+However what people sometimes do is they just ignore p
+of T and then this becomes a proportional to rather
+than equal to, because often we only care about the
+most likely hypothesis.
+We don't care about the probability of that hypothesis.
+And then of course, dividing by a constant p of
+t is the same for all hypotheses doesn't make a
+difference.
+We'll see.
+We'll see an example of that.
+Next time.
+Okay.
+So now we have everything we need.
+Bayes rule.
+And then this simple formula, which allows us to compute
+the probability of the data.
+This is also called marginalisation.
+This process.
+And this can be a problem if the hypothesis space
+is really big.
+You can have an infinite hypothesis space for example.
+Then we have a problem with computing p of d.
+But in this case it's in the example.
+We'll see it straightforward.
+Okay.
+Let's look at this example.
+Reference resolution.
+Reference is when people refer to something with language right.
+So if I say the dog then I can point
+to a dog.
+I can refer to a particular dog or with a
+pronoun.
+Pronouns also have reference.
+If I say he or she, then I refer to
+a person I've talked about earlier.
+So this process is called reference.
+And here we have a toy example where we will
+see that the kind of inference that we can make
+using Bayes rule allows us to formalise this problem of
+reference resolution.
+Okay, let's assume we have a game.
+You have these three smileys here, and you are allowed
+to choose a single word to refer to one of
+the smileys, let's say the middle one.
+So how would you how would you do this?
+How would you pick out a particular smiley so that
+the hearer.
+Right.
+You're talking to someone, you say for example, glasses so
+that the hero can pick out a particular smiley easily.
+Okay.
+Unambiguously.
+So that is the game.
+And obviously in in reality you won't have smileys.
+You will have more complicated objects, you will have lots
+of different objects, but still you have the problem of
+referring to the objects, right?
+If I refer to this telephone, it's easy, I say.
+Telephone.
+There's only one.
+If I want to refer to a student in the
+room.
+There's a lot of students in the room, so I
+need to be much more specific with my reference.
+Okay, so that's what's going on here.
+Okay, so and if we think about this in Bayesian
+terms a priori, if I say a word, then the
+listener can assume that all the smileys, all the three
+smileys are equally likely, right?
+There's no reason to assume that I'm more likely to
+refer to the middle one, as opposed to the left
+or the right one.
+So we have a prior that makes everything equally likely.
+However, once I say my word, I've provided evidence.
+So we treat this word as evidence.
+Just when we shook the box.
+We took this as evidence regarding the information of what's
+in the box.
+Okay.
+So if you draw these bar charts again, then here
+is what's going on.
+So let's assume the words that you can utter is
+glasses smiling or hat.
+Okay.
+So if you you start with the same prior in
+each case left centre right smiley all equally likely.
+So a probability of a third.
+And now you have your evidence.
+Let's say you say glasses.
+This smiley doesn't have any glasses.
+So the posterior probability of that is going to be
+zero.
+Right.
+Because the likelihood that I say glasses, given that the
+smiley is doesn't wear any glasses is zero.
+And these two are equally likely because both smileys wear
+glasses.
+So that's the probability of 0.5.
+Intuitively, if I say smiling well all the smileys are
+smiling, so that is not very informative.
+My probability distribution remains the same.
+All three of them are equally likely.
+If I say hat right, only the right one wears
+a hat, so the left one and the centre one,
+the probability becomes zero because this.
+The the data hat is impossible given the hypothesis left
+or centre.
+But the right smile is the only one with the
+hat, so the probability becomes one.
+So this is the intuition that's going on.
+And it's a similar intuition to the one with a
+box.
+Right.
+We start with a probability distribution that is there in
+the absence of any evidence.
+And here we just assume everything is equally likely.
+Then we get some data, some information, some evidence.
+This is just a single word you're saying.
+Glasses smiling or hat.
+And based on that, we can now figure out which
+of the smileys is being referred to.
+Okay.
+So we go from prior to posterior.
+And how do we go from prior to posterior.
+Well, we have our little formula here, right?
+We have Bayes rule, and we can use this to
+work it out.
+And we'll do this now numerically just to to make
+sure that it actually works.
+Okay.
+Let's look at one example where the, the word that's
+being spoken is classes.
+Right.
+So we go from this prior distribution to this posterior
+distribution.
+Bayes rule which I've written here just slightly differently because
+h and d I use this to indicate individual hypotheses
+rather than sets of hypotheses, but the logic is exactly
+the same.
+So we have the probability of a hypothesis.
+And these are our hypotheses.
+Left centre or right right.
+Remember I've called this the hypothesis space the set of
+all possible hypotheses given the data.
+And the data is that we hear the word glasses
+okay.
+So we start with the probability of the data given
+the hypothesis our likelihood Times the prior probability times the
+probability of the data which I've written here.
+Using this marginalisation formula that we've been given here.
+Okay.
+And now let's put in the numbers to see if
+it works.
+So H is our hypothesis which smiley I'm choosing.
+These are our data.
+Which word I'm uttering or hearing.
+Okay.
+So the probability of the data given the.
+Okay.
+Sorry.
+Let's look at the left smiley.
+So hypothesis is left.
+So this smiley here.
+And now we need to look at the probability of
+the data given the hypothesis.
+The probability that I will say glasses given this smiley
+is zero.
+Right.
+Because this smiley doesn't wear glasses.
+So that probability is zero.
+The prior of our hypothesis is just one over three.
+Because we have three hypotheses.
+We're assuming they're equally likely.
+So this is zero times a third.
+And so we don't really care about the denominator here
+because it's you know, zero by a number.
+It's still zero.
+Okay.
+So that's the probability zero for the left smiley.
+Let's look at the centre smiley here.
+This one here up there.
+So this smiley does wear glasses.
+So the probability that we hear the word glasses given
+the hypothesis the centre smiley is one.
+Right.
+Assuming if there's glasses then this the probability of saying
+glasses is one.
+And then the prior probability is still a third.
+And here we're summing up the other probabilities.
+So zero times a third, one times a third.
+And also for the right smiley one times a third
+right.
+These are these are the three hypotheses left centre and
+right.
+So this is Says one third over.
+Two thirds is one half.
+Okay, so the probability after here in the word glass
+is for the centre smiley is one half.
+And for the right smile is exactly the same computation.
+It's also one half.
+So this is confirming our intuition that initially before hearing
+any evidence, we don't know which of these smileys is
+more likely than any other.
+So they're all equally likely.
+Once we know that they're wearing glasses, only the centre
+and the right one are left over.
+And these are in turn equally likely because we don't
+have any more information.
+So they're both 0.5.
+The posterior probability is 0.5.
+If we then heard another utterance say hat, then we
+could in turn eliminate this possibility.
+And the probability here on the right would go up
+to one.
+Okay, so we can update our probabilities as more information
+becomes available.
+This is called Bayesian update and we'll see that in
+a moment.
+But first there's another quiz.
+Okay.
+So this is sort of very quick check that you've
+been paying attention.
+We've introduced all these terminologies.
+, posterior beliefs likelihood, prior belief evidence.
+Can you match it with the with the right mathematical
+expression?
+Right.
+So H is our hypothesis.
+D is our data our evidence.
+Oh, my.
+Gosh.
+Okay.
+20s.
+Only half the class is voted so far.
+Okay.
+Let's have a look.
+Mm.
+Okay.
+So evidence.
+P of d and probability of the data.
+Prior beliefs p of H is also correct.
+Posterior.
+And then you have to.
+Yeah.
+Probability of hypothesis given the data and probability of the
+data given a hypothesis.
+So the inverse probability is the likelihood and I'll just.
+Okay.
+Most of you have figured it out.
+Okay.
+So here's a slightly more difficult question.
+What if you don't have any prior information.
+And actually we've seen we've seen a case that
+in the reference example.
+If you don't know.
+You know what your hypothesis space is, right?
+So your set of possible outcomes, possible hypotheses.
+But you have no information about, , about these hypotheses
+and how likely they are.
+So what happens then is the probability of h zero
+for all hypotheses.
+Is the probability the same for all hypotheses?
+Or you are in the unfortunate position that you can't
+use Bayes rule.
+Okay, let's have.
+A look.
+Okay.
+Yeah, that's the correct answer.
+So the probability is the same for all hypotheses.
+This is sometimes called a uniform prior right.
+Because it's a uniform probability distribution that assigns the same
+probability to everything.
+If the probability was zero that would be unfortunate because
+then our posterior would be zero as well.
+Then we couldn't really do anything.
+But we've already seen a uniform prior.
+So in the in the smiling example right.
+So here three outcomes.
+Each of them is a third in terms of probability.
+So that would be a uniform prior.
+Whereas in our in our box example the prior was
+not uniform.
+I mean there wasn't a lot of variation.
+But here, for example, we have a lower prior probability.
+So we don't have to have a uniform prior.
+And actually in general.
+In some sense there is no point in using a
+prior if it's uniform, right.
+Because it doesn't add any information.
+And we will look at more interesting priors.
+Well, actually in the next example, but also in the
+next lecture on Thursday.
+Okay.
+So the rest of the lecture is really a complicated
+example.
+Another example of an application of Bayes rule.
+Before we get there.
+Are there any questions.
+Now it's a good point to ask any questions.
+No.
+Everything clear?
+Everything unclear.
+Okay.
+Let's see.
+All right.
+So this is an example.
+Nothing to do with linguistics.
+This time is a decision making example, and we'll talk
+more about decision making and more formally also about biases
+in decision making next week.
+But here's a small example to start with.
+So this is a holiday kind of scenario.
+Peter and John are on vacation in a country where
+they don't speak the local language.
+The city that visiting has awesome hot springs with monkeys,
+and they want to go to the hot springs.
+So this, I don't know, could be Japan.
+Unfortunately, the hot springs do not allow clothing, so they
+have to bathe naked.
+And Peter is really shy about bathing with women.
+Unfortunately, no.
+Sorry.
+Fortunately, the hot springs have one day a week for
+men only and another one for women only.
+And?
+But the place is low tech.
+There's no signage.
+You cannot find out easily which day is for men
+only.
+So Peter has an idea to solve this problem Every
+day they'll go to the spring and see which people
+are coming out.
+And then based on that, they will try to infer
+whether it's men only, women only, or mixed day.
+And obviously this is an inference problem.
+And it's a problem where you use data, right.
+You have an observation.
+You can see who's coming out of the bathhouse.
+And so Bayes rule is basically a great way of
+making this inference.
+Okay.
+And in order to try to apply Bayes rule, the
+first thing you need to do is think about your
+hypothesis space.
+Hypothesis space is the set of possible outcomes that you
+want to draw inference over.
+So here it's fairly straightforward right.
+There's only three possible states.
+One is it's a women only day.
+The other one is no restriction.
+And the third one is a men only day.
+And basically Based on these set of hypotheses and some
+clever assumptions about the prior and some data that we're
+observing.
+We want to figure out which day it is with
+a certain probability.
+Right.
+That's what Bayes rule allows us to do.
+So let's first think about the prior.
+How can we work out the prior.
+Well there's one day per week.
+Women only one day per week.
+Men only seven days in the week, of course.
+So that means our prior should be something this.
+Women only.
+It's one over seven men only the same one over
+seven and no restrictions five over seven the other five
+days.
+Okay, so we don't have a uniform prior.
+We have a prior that gives us some information, namely
+that it's a lot more likely to have an unrestricted
+day than women only or men only day.
+Okay.
+So that's already useful for drawing this inference, right?
+In the absence of any information, we have to assume
+it's most likely that this day has no restrictions.
+Let's assume, you know, the two guys go to the
+spa and watch who's coming out and they see a
+man coming out.
+All right.
+So now we can, , compute the posterior probability using
+Bayes rule.
+And for that we have our prior.
+Prior is the same as before.
+And we have a likelihood term.
+So if it's a woman or women only day then
+the probability of seeing a man is zero.
+Right.
+So we know the likelihood there.
+If it's a day that has no restriction, then the
+likelihood of seeing a man or a woman, let's assume
+is the same, same number of men and women go,
+if it's a man only day, then the likelihood of
+seeing a man is one.
+Okay.
+Because that's the only possible outcome.
+Okay.
+So now we have prior likelihood.
+So we can plug this into Bayes rule.
+oh.
+Sorry, I confused myself.
+Yeah.
+Okay.
+Sorry.
+I'm looking at the two outcomes here.
+, the likelihood of seeing a man and the likelihood
+seeing a woman, given the hypothesis.
+One, 2 or 3.
+So, , the.
+If it's no restriction, the likelihood of each of the
+outcomes is one half.
+If it's women only, then likelihood of men is zero.
+And likelihood of woman is one.
+And for men, it's the other way around.
+Okay.
+So now based on this, we can produce our, ,
+we can compute our prior.
+So just to remind you, the probability of a hypothesis
+given the data, where the data is our observation, Who's
+coming out of the the spa is the probability of
+the data given the hypothesis times the probability of the
+hypothesis divided by the probability of the data.
+So let's compute this product up here first likelihood times
+prior.
+This is sometimes called the posterior score because it's not
+a probability yet right.
+To make it a probability we need to divide by
+p of d.
+So this is simply the product of the prior and
+the likelihood.
+So in the first case zero times one seventh is
+zero one half times 5/7 right.
+So there's no restriction is five over 14 and one
+seventh times one likelihood is one.
+If it's a man only day is one over seven
+okay.
+So.
+Now we need to turn this into a probability.
+And for that we need to compute the probability of
+the evidence here p of d in the denominator of
+Bayes rule.
+So and here we take all the possible outcomes.
+H right.
+H1 h2 h3 times the probability of the of the
+h and then the likelihood of the h.
+So this would be.
+This here is obviously zero.
+This is five over 14.
+This is one over seven.
+This is seven over 14 equals one half.
+So that's the probability of the data.
+So we can plug this in here into Bayes rule.
+And now we get our posterior right.
+It's the women only day.
+The posterior is still zero.
+No restriction is five over seven and men only is
+two over seven.
+Note that these are now probabilities right?
+They sum to one, whereas the posterior score is not
+a probability.
+Okay, so two over seven I don't know.
+Should they go in?
+That's about 28%.
+So it's not a very high probability.
+They're not very certain that this is a man only
+day.
+This is basically what this tells you.
+It's 70% or 72% probability that it is a mixed
+day.
+All right.
+So what to do in this case?
+Well, now we can do what's called a Bayesian update.
+So a single observation isn't a lot of data isn't
+a lot of information.
+And so how about waiting for a bit longer.
+See if more people come out.
+And then hopefully you can make a more certain inference
+about what day it is.
+Okay.
+So they wait another five minutes, five more men come
+out.
+Peter wants to be 90% sure that it's men only
+before they venture into the spa.
+So should they go in?
+Or should they wait longer?
+Is this 90%?
+Have they already achieved the 90% or not?
+Let's see.
+Okay.
+So the same game prior probability remains the same.
+One over seven five over seven one over seven.
+The likelihood of seeing five men and it's a women
+only day is of course zero still.
+And the likelihood of seeing a man in a unrestricted
+day is a half.
+And in men only day is one.
+And so now, of course, we have six pieces of
+evidence in total, right.
+Previous observation and the five new observation.
+So to get the probability, we need to now multiply
+this likelihood by itself six times.
+So in the case of zero that's zero to the
+power of six times the seven is still zero.
+But here for the no restriction it's one half to
+the power of six times the prior five over seven.
+That's five over 484.
+And then for the posterior for men only day, the
+likelihood was one.
+So that's to the power of six is still one
+times one over seven is one over seven.
+Okay.
+So these are the posterior scores.
+These are not probabilities yet.
+We need to normalise them by the probability of the
+data.
+So for that we add this and this.
+And this is 69 over 480 448.
+And we can now compute the posterior by taking our
+posterior score and dividing it by this.
+And so the probability of H2 given the data is
+now 0.072.
+And the probability of h3 only given the data is
+0.9 to 8.
+So around 90% sure that this is a man only
+day.
+It could still be a fluke.
+It's a mixed day and six men came came out,
+maybe a group or something that.
+But if our criterion is that we want to be
+90% sure, then these six observations are sufficient to draw
+the inference that it's H3 with 9,093% probability.
+Approximately.
+Okay.
+oh.
+I'm running early.
+Any any questions?
+Okay.
+So why is this called Bayesian update?
+Right.
+So we started.
+We started with a certain posterior here based on a
+single observation.
+This is not really an update yet.
+This is just a fixed set of data, and I
+want to work out what the probability of my hypothesis
+is.
+And then.
+However, in a lot of situations additional data becomes available.
+So for example you're talking to someone and you keep
+talking.
+So you get more and more information.
+So you accumulate this information.
+And let's assume you want to figure out whether that
+person is friendly or not.
+The more information you have, the more reliable your inference
+will be.
+So you start out with, let's say 50 over 50
+chance that someone is friendly or not.
+But then the more they say, the more certain you
+are.
+One way or the other, right?
+So you update your beliefs continuously as more information becomes
+available.
+Or for example, you are casting a die and you
+want to find out whether the die is, , Is
+fair or not, right?
+From a single throw of the die.
+You.
+You cannot tell.
+But you probably have to assume that it's fair.
+So your prior would be one over six.
+But you keep rolling the die and so you acquire
+more and more information, and ultimately you are able to
+draw the inference whether the die is fair or not.
+So this is another example of Bayesian update.
+So in here what's going on.
+We could in principle whenever someone comes out of this
+bar we can recompute our our posterior.
+All right.
+So we take the previous posterior we add another bit
+of information.
+So as you can see here it's just a product
+that becomes longer and longer the more observations we have.
+And the likelihood is the same in each case.
+It's also imaginable that the likelihood can change from one
+observation to the next.
+But here we're just assuming the likelihoods are all the
+same.
+Okay.
+And this process of updating your beliefs as more and
+more information becomes available is called Bayesian update.
+And it allows you to model this process that we
+become more and more certain about a certain decision or
+about a certain inference.
+The more information is available.
+Okay.
+So to summarise, we've seen Bayes rule as a way
+of calculating the probability of a hypothesis given some evidence.
+For that we need first of all a hypothesis space,
+which is the set of possible hypotheses that we can
+consider in this case.
+In the first example, there were three different smileys.
+In the second example, there were the the different days,
+three different days.
+But the hypothesis space often can be quite large, sometimes
+can even be infinite, makes the computation more complicated.
+So we'll see more complicated examples that later on
+in the course.
+And then in Bayes rule you compute the posterior, which
+is the probability of the hypothesis given the data based
+on the likelihood which is the inverse, the probability of
+the data given the hypothesis.
+Right.
+Let's assume your hypothesis is true.
+How likely are you to observe this kind of data
+and the prior, which is the probability of the hypothesis
+being true a priori in the absence of any evidence.
+This computation of the priors, sometimes also called Bayesian inversion,
+because, as you can see, you invert the direction of
+the conditional from hypothesis, from data given hypothesis to hypothesis
+given data.
+Then you have the evidence which is here in the.
+In the denominator and basically makes this product up here.
+Probability.
+If you don't care about this then you can, ,
+you can get rid of the P of D, right?
+If you just want to know what's the most likely
+hypothesis, then you don't need the denominator, right.
+Because dividing by a constant will not change the order
+of the hypotheses.
+But here, for example, we wanted to be sure that,
+, there's 90% probability, , offers off a given hypothesis.
+Right?
+So there we need to divide by the p of
+t, otherwise we won't get a probability.
+So that's the probability of the evidence.
+So in the intuition is the prior encodes the information
+we have without any observations without any evidence.
+The likelihood encodes the information that we get from an
+observation.
+If we assume the hypothesis is true and then the
+posterior is is a way of combining the two okay.
+And that is a very powerful concept that we can
+assume that there are some knowledge that we know before
+any data could be innate, right?
+Depending on what we're modelling.
+And then there's a knowledge that we get from observations.
+You know the the this is partially rationalist, partially
+empiricist.
+, in in a neural network model, you would assume
+nothing is innate.
+You would only work with the likelihood.
+If you have a sort of rule based approach, then
+everything would be in the priors.
+Everything would be given to you without evidence.
+Okay.
+And the posterior is the result of combining the two
+and recomputing the posterior.
+If we get more evidence, this is called Bayesian update
+because oftentimes in a cognitive task, the situation is dynamic
+changes, more evidence becomes available.
+And we need to change our hypotheses and we can
+use this.
+In general, Bayes rule is a way of analysing, learning
+and inference.
+We'll apply it to word learning in the next lecture,
+and then next week we will talk about decisions.
+These are decisions about possible outcomes.
+Which which outcome is more favourable.
+Which outcome is preferred.
+And we want to model people's decision behaviour.
+And Bayes rule can be used for that as well.
+Okay.
+That's all we.
+Well we're a bit early.
+Thank you very much.

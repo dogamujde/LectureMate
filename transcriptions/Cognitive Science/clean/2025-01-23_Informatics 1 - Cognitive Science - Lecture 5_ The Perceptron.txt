@@ -1,0 +1,904 @@
+We have Jillian Kraft.
+So you feel.
+So.
+Hi.
+Welcome.
+I'm really sorry for the delay, I'm afraid.
+No.
+Internet also means no lecture recording and no wool club.
+All right, so we'll just have the slides today.
+I think I'll make I can make an old lecture
+recording available.
+, just taking the one from last year.
+Okay.
+So today is about, , the perceptron.
+So what is the perceptron?
+It's a very simple neural network architecture.
+So so far we've only talked about, , cognitive models
+in an abstract sense as something that's a computational simulation
+of, of human behaviour and is something that helps you
+understand that behaviour and hopefully generate research hypotheses or test
+research hypotheses.
+Now we're actually going to get down to the nitty
+gritty and talk about a particular modelling framework in in
+more detail.
+And this is neural networks.
+We'll start really simple with the simplest possible architectures called
+the perceptron which is essentially just modelling a single neurone.
+And then tomorrow we'll we'll look at larger assemblies of
+these neurones in something that's called a multi-layer perceptron.
+And in particular we're also going to talk about training.
+How do we actually get these models to learn anything
+from from data.
+Right.
+Last time we talked about radical empiricism as a way
+of of modelling.
+Everything is learning from data.
+And so these are the models that actually are able
+to do that.
+All right.
+, so quick overview.
+, talk about neural networks as a biological, not a
+biological model.
+More a metaphor.
+Then I'll talk about the perceptron and how they can
+use as classifiers.
+And then we'll talk about learning.
+And in particular, the perceptron learning rule probably will run
+out of time because we started late.
+All right.
+So if you think about a neurone then it has
+roughly this is obviously just a caricature, but it has
+roughly the structure.
+You have a neurone here with the nucleus and the
+cell body.
+Then you have dendrites which are connections to other neurones.
+And this is where the neurone gets its input.
+And you have an axon, , which is where the
+neurone is connected to other neurones.
+And at the axon terminal it potentially generates an output.
+So input output in our model will just be numbers
+In in biology, they're electrical currents and they're generated through
+electrochemistry.
+Right.
+And then there's a lot of other parts the
+Schwann cells and node of Ranvier and so on.
+The actual biological neurone is a lot more complicated still.
+And we're not even going to model all of these
+things on the picture.
+Right?
+So that's what I meant when I said, this is
+not a model of a biological neurone.
+This is really a computational device that uses a neurone
+as a metaphor and has a loose relationship to it.
+But the important thing to note is that the neurone
+takes an input, it combines those, and once the input
+reaches a certain threshold, it produces an output.
+It fires and the inputs can be excitatory.
+So increase the output or inhibitory i.e. they reduce the
+output.
+And the important thing is what happens when the axons
+and the dendrites connect between two neurones?
+Right.
+So the dendrite is the input and the axon is
+the output.
+We have a so-called synapse.
+And the synapse basically regulates the firing.
+Right.
+So it waits until a certain amount of input has
+arrived and then it generates an output.
+And this is called firing.
+And this is in biological terms there's a chemical process.
+But here we'll just model it using a function which
+we'll call a threshold function or an output function activation
+function sometimes.
+So that is the only biology in my part of
+the course.
+Matthias will have a lot more to say in his
+part.
+But here we're just using the neurone as a metaphor.
+So taking the inputs and here introducing a little bit
+of notation already, let's call the inputs x1, x2, x3
+and so on.
+And as I said these are numbers real numbers in
+the journal case and then the strength of the connection.
+So the the synapses at the input.
+Here at the dendrites we will call these weights.
+And each input comes with a weight w1, w2, w3
+and so on.
+And then what the neurone does it computes an output
+function, which in our case is just a weighted sum.
+And then what the synapse does, it decides to either
+fire or not.
+And this will just model through a simple threshold function.
+So this is just a single neurone.
+And a single neurone is not very powerful.
+There's not that much we can do, but they're the
+basic units of information processing that we'll assume.
+And if we want to be precise in computational terms,
+we'll talk about units.
+We don't talk about neurones because they're not neurones.
+They're not even proper models of neurones Even though people
+often confused or conflate the two.
+So in the neural network literature, as the name implies,
+people talk about neurones, but in fact they're just simple
+computational units.
+And in biological networks, in the cortex, for example, these
+neurones, they're organised in terms of layers.
+So they're not just randomly distributed but they're organised in
+a certain way, , typically in terms of layers.
+And this is something that we can model as well
+in our artificial neural networks.
+But something is still missing, right.
+So we have these units and that's all great.
+But of course we need connections as well to get
+a network.
+At this point this is just a bunch of nodes.
+So we're interested in the connections and in the neural
+network literature, in almost all cases we assume what's called
+a fully connected network.
+So we have a single unit here let's say in
+layer two.
+And this is connected to all the units in layer
+three and in layer one.
+Right.
+So this is a feed forward network in the sense
+that the connections are only in one direction from top
+to bottom, layer one to layer two, from layer two
+to layer three.
+And it's fully connected in that all these units in
+this layer are connected to all those units in that
+layer.
+So here I'm just drawing the connections of a single
+unit.
+But in in in the general case there's lots of
+units because we're lots of connections because we're assuming it's
+fully connected.
+And these are often just represented as lines.
+So the units are represented as little circles and the
+connections are the lines.
+Why are the connections important.
+Because they are associated with weights.
+And the weights are things that we can actually adjust.
+They're essentially the parameters of the model.
+We can learn the weights and all the knowledge in
+some sense is in the weights, because that's the only
+thing that's learned in the network, right?
+So these arrows, they symbolise the connections.
+And each connection is associated with a weight with the
+number.
+Okay.
+But let's go back to the simple case of a
+single unit.
+So this idea of having a simple computational unit called
+the perceptron is actually quite old, goes back to the
+50s.
+And it's the simplest kind of artificial neural network.
+And people realised quite early on in, in the 60s
+that it's quite limited.
+And there's a lot of things you can't do.
+And we'll talk about that in more detail later in
+the lecture.
+Okay.
+So this is the, the, the kind of diagram that
+we'll see also, for example, in the tutorial next week.
+And this is how to read this.
+So we have our inputs here x.
+The inputs we just assume our numbers.
+And that also means that whatever we want to input,
+be it text, images, sounds, any sort of perception that
+goes into the network has to be numbers, right?
+So everything is a vector.
+, images are represented as vectors.
+Words are represented as vectors through , specific encodings called
+embeddings that we'll talk about later.
+, if you have audio input and so on and
+so forth.
+Everything needs to be input as a sequence of numbers
+x1 to xn.
+And then each of these inputs is associated with a
+weight.
+As I said these are representing the synapses.
+And the weight basically dictates how important that part of
+the input is.
+Okay.
+The weights again can be real numbers.
+, and then here in the quote unquote cell body.
+You have an output function.
+And this is what this little sigma is supposed to
+represent.
+So the output function for us is sorry input from
+the input function.
+Sorry.
+The input function is just a weighted sum.
+So we call this function mu.
+It applies to x.
+So these are all the x's here in the input.
+And it just computes computes the weighted sum.
+So that is the product of y and x I.
+So a given input and a given weight summed over
+all the inputs.
+That's it.
+So we're just assuming that all the inputs get added
+up.
+And then we decide whether to fire whether to produce
+an output or not using an activation function.
+So activation function which I'm writing as f here applies
+to the input function.
+Right.
+So this is our input function.
+And this is the activation function applies to the ,
+to the result of the input function.
+And then in this case, it just returns a one.
+If the input is bigger than a threshold theta or
+zero in all other cases.
+All right.
+So this is just a simple threshold function.
+Step function.
+Right.
+If you draw it.
+And of course in this room there is no whiteboard.
+If you draw it it just looks this right.
+And we'll see other functions later on in the next
+lecture actually.
+But here we just assume you take the inputs, you
+sum them all up.
+If you reach a certain threshold then you produce an
+output.
+If they don't reach the threshold then you stay at
+zero.
+You basically produce no output okay.
+So this is super simple and not very powerful computationally
+on its own.
+But if you combine lots of these units, then you
+can actually, , you can Do everything that neural networks
+can do.
+So everything from ChatGPT to machine translation, image recognition, speech
+to text and so on.
+This is the technology essentially behind all of these, behind
+all of these applications.
+Organised in slightly more complicated ways.
+But the underlying idea is the same.
+Even the learning algorithm that we'll learn, that we'll talk
+about tomorrow is the same for modern neural networks.
+Okay, great.
+So, , yeah.
+And here the activation, the output is very simple.
+It's just zero one.
+You can of course define another function here.
+You could generate a negative output if you're below the
+threshold and so on.
+This is completely up to the to the design of
+the of the network inputs.
+As I've already mentioned in the here, we're assuming that
+in the in the range zero and one.
+So we're assuming a super simple case where everything is
+binary.
+All the inputs are binary, the outputs are binary.
+The weights can be an arbitrary real number.
+But just to make things easier and also to be
+able to compute some simple examples, I'm just assuming that
+the inputs are ones and zeros and the outputs are
+ones and zeros.
+This is not a necessary assumption.
+We don't have to make that assumption.
+It's just for simplicity.
+Now okay.
+So what can we do with this.
+So let's actually work through a simple example.
+This is our perceptron.
+Same as here I'm assuming we only have two inputs.
+And each of them have a weight of 0.5.
+And we have a threshold of one.
+And now we want to show that this perceptron can
+compute simple logical functions.
+So logical functions in computer science are functions that take
+two inputs.
+The inputs are binary and the output is binary.
+So and for example, is a function that returns true,
+or one if both of the inputs are true, or
+one or is a function that returns true if one
+of the inputs is true, and so on.
+So any programming language will have these functions.
+So here this is our function table for the and
+we have two inputs and zero and zero output is
+zero zero and one output is also zero one and
+zero zero.
+And one and one output is one right.
+So this function returns a one if and only the
+inputs are both one.
+Very simple logical function.
+And it would be really cute to be able to
+show that this perceptron that we've just introduced is able
+to model this function.
+So let's see if that's the case.
+And obviously I have given you the weights and I've
+given you the threshold.
+It's a very interesting question of how we get the
+threshold and the weights.
+And this is something we'll come to in the second
+half of the of the lecture.
+Okay.
+So if our input is bigger than the threshold and
+return one, otherwise we return zero.
+Let's assume the input is one zero and one.
+Just here zero and 1 or 1 and zero.
+The order doesn't really matter.
+So now we need to get an output of zero.
+We apply our little equation here right.
+We compute the weighted sum of the inputs.
+So that means zero times 0.51 times 0.5.
+Sum this up is 0.5.
+We check against the threshold.
+Threshold is one so it's below the threshold.
+So the output is zero.
+Okay.
+So that's good because it means that we've got these
+two lines right.
+Let's try the other case.
+Input is one and one right here at both inputs.
+Now we have this case.
+We would to get a one as an output.
+So it's 1.0.5 plus 1.0.5 is one.
+And if it's bigger or equal to the threshold threshold
+is one.
+Then we output a one.
+So we get this right as well the zero.
+You can easily verify yourself that the sum will be
+zero, and then the output will be zero as well.
+So here the output is one.
+And I'm not going through the zero case.
+So.
+Here I've set up the perceptron so that it computes
+the logical function.
+And for us right it I assume everything is binary.
+So these are all the possible inputs.
+And these are the outputs.
+And they correspond to the logical and.
+Before I move on and I don't have any wool
+club or anything but are there any questions anything that
+people would to ask at this point.
+So far so good.
+So this is obviously a toy example with just two
+inputs and a simple logical function.
+Everything binary and.
+But it seems to work for and you can easily
+show that it works for R as well, right?
+The Or function is the same as as this one,
+except that here's a one and here's a one, right?
+Or is one if the input is zero 1 or
+1 0 or 1 one.
+And so maybe this is general enough so that I
+can compute all logical functions.
+If I remember correctly, there's eight logical functions okay.
+what do people think?
+What about a function XOR?
+XOR is the exclusive or.
+So that's this function here.
+Where it is one only if one of the inputs
+is one.
+So this is either or right.
+I'll go either to the theatre or to the cinema,
+not both.
+This is this logical function exclusive or do you think
+we can model that too?
+It should be easy, right?
+Same architecture.
+Maybe we need to change the weights of the threshold.
+Turns out it's not possible with a perceptron.
+And we'll look at the example here.
+So here assuming weights of 0.5 and also a threshold
+of 0.5.
+And then if the input is 1 or 0.
+Our weighted sum is 0.5.
+So that means the output would be one.
+Great.
+If the inputs are zeros then obviously the weighted sum
+is zero and the output is also zero.
+So this case is also correct.
+But if we have two ones then the weighted sum
+is one.
+And this is bigger than our threshold.
+So the output is one whereas the correct output should
+be zero.
+And you can easily show that no matter how you
+set your weights right.
+You have the weights to play with here.
+You could choose different weights or you could choose a
+different threshold.
+But no matter how you set those, you can never
+get the XOR function.
+And so when the perceptron was first invented, this caused
+a bit of a crisis that people discovered that, you
+know, no matter how you set the parameters, the weights
+in the threshold, you cannot actually model even a simple
+logical function XOR.
+Another question is why?
+So let's think about that a little bit.
+So this doesn't work and doesn't work either unfortunately.
+So with a bit more mathematics.
+So people then went and analysed the perceptron and they
+figured out that there is a class of functions that
+the perceptron can learn.
+And this is actually a fairly limited class of function
+functions.
+It's called the class of linearly separable functions.
+So you can think about this follow
+the following.
+So if you draw your data.
+So here we have a very simple case of data.
+Right.
+We have four bits of input and the outputs associated
+with that.
+But in general you can have a lot more data.
+And if we have two dimensions here dimension two and
+dimensions one on the x and y axis.
+And these correspond to our inputs right.
+So in general this can be natural can be real
+numbers.
+It doesn't have to be binary.
+And then we have the two possible outputs zeros and
+ones which are here just circles and pluses.
+And if these inputs and outputs they fall into little
+clusters this.
+And you can draw a line between them.
+Then the perceptron is able to model them.
+So it doesn't really matter whether the line is you
+know it's A vertical line or diagonal this, or
+horizontal line.
+If there's a line that separates the ones in the
+and the zeros, or here the crosses and the and
+the circles, then this is called linearly separable, right?
+Because it's separable by a line.
+And a perceptron can learn this can learn to put
+the ones on in one category and the the zeros
+in the other category.
+In general, this would be a hyperplane rather than a
+line, right?
+In two dimensions it's a line.
+In three dimensions it's a plane.
+But of course you can have higher dimensions.
+There's actually no limit to the dimension.
+And this is then called a hyperplane.
+Once it's three, 4 or 5 dimensions it becomes really
+hard to visualise.
+And these dimensions are the inputs.
+Right here we have two inputs.
+So it's two dimensional.
+Corresponding to the the two lines here.
+Dimension one.
+Dimension one and dimension two.
+But if there were three inputs, then the space would
+be three dimensional.
+The four inputs would be four dimensional, and so on.
+And then you need a plane rather than just a
+line.
+But the same the same thing applies.
+If you can fit this plane, you can find this
+plane to separate the two classes.
+Then you can model it with a perceptron.
+And so why is this not possible with with XOR?
+XOR is so simple.
+Anyone have an idea?
+Cannot separate the points by a line.
+Yeah, I don't know.
+Is it there's no way to differentiate if the
+when it's above the activation function, there's no it's
+differentiating with both or just not.
+Yeah.
+That is roughly the intuition you need.
+Another way of putting it you need a more complicated
+thing than a line.
+You need multiple lines, or you need a curve or
+something that.
+So and we see this here, right?
+If we plot our XOR right.
+These are the two inputs x1 and x2 corresponding to
+the two dimensions here dimension one and dimension two.
+And then this is zero.
+Zero has an output of zero one.
+One has an output of zero as well.
+101 and one zero have an output of one, right.
+This is just how the function is defined that we're
+trying to model.
+And then of course you can easily see that this
+forms a cluster right.
+Those two points.
+But these two points you cannot really draw a cluster.
+I mean you could draw a complicated cluster this
+a U-shaped, but then you need more than one
+line to separate it.
+Or alternatively you draw a line here and a line
+here, but you can't draw a single line that has
+these points on one side and those points on the
+other side.
+That is the intuition, right?
+So this is basically the simplest possible function that has
+this property.
+And so it's the simplest function where we cannot take
+these two points zero zero and one one and zero
+one and one zero and separate them by a line.
+Right.
+For and we only need to separate this from those
+three.
+And we draw the line here.
+So that would be really easy.
+For all.
+The we have one class that takes all these three
+because they're all one.
+And one is this one is zero.
+So we draw the line here and so on.
+So for the other logical functions it's possible the linearly
+separable.
+So you can draw the line to separate the two
+classes.
+And what?
+This is really the only thing the perceptron can do.
+It can.
+It can classify two classes or teaser part two classes
+if they can be separated by a line.
+Right?
+Which is perhaps not super surprising because everything here is
+linear.
+All right.
+Let's go back to our definition.
+This is just a weighted sum.
+It's linear.
+This is just a step function that's linear.
+So we cannot get any curves or anything complicated out
+of this model.
+Okay.
+So and now let's let's think a little bit how
+we could potentially fix this before we talk about learning.
+, if we're , if we have this simple linear
+setup and we are making all these assumptions that it's
+a linear sum, that is a threshold function that the
+inputs and outputs are binary.
+Which of these assumptions do we need to change?
+You think to overcome this problem that we can only
+model linearly separable functions?
+Maybe more complicated activation function.
+Right.
+We could have, I don't know, a tangent or a
+sine function or a quadratic function.
+Turns out that doesn't make a difference.
+It doesn't make the model more powerful.
+It makes it more elegant in certain ways, but it
+doesn't actually allow us to model anything we can't model.
+We can model now.
+What about allowing the inputs to be real numbers and
+the outputs to be real numbers, rather than just binary
+numbers?
+Also doesn't make a difference.
+What about we use lots of different, , lots of
+these, , simple units, and we network them together.
+Does that make a difference?
+Does that make them more powerful?
+Yes.
+Why?
+What's the intuition?
+Very, very simple intuition.
+Yeah.
+You could just separate them into two groups and then
+separate the two groups again.
+Yeah.
+Or more generally, you can model a curve.
+Right.
+So instead of just having to rely, rely on a
+line to separate the two categories, multiple units give you
+a curve that is basically made up of lots of
+little lines.
+Right.
+So you can approximate a more complicated function.
+Each of the units models one segment of that as
+a line.
+So the more units you have, the smoother your your
+curve becomes.
+And you can you can model quite complicated decision surfaces.
+Then these are then called decision services.
+What is a line or a hyperplane in a simple
+model?
+There's a there's another trick though.
+You need to, you need to, , you need
+to have a certain configuration of your neurones.
+Right?
+If you just have one neurone next to the other.
+Right.
+So the input is, is a is a layer of
+lots of different neurones.
+That's not enough.
+If you have two layers, that's also not enough.
+You need what's called a hidden layer.
+And once you have a hidden layer so you have
+an input layer, an output layer and a hidden layer
+in between.
+So at least three layers in your network, then you
+actually have the the maximum possible power.
+In fact, you can show with a setup this.
+You can approximate arbitrary functions right.
+So you have an arbitrary you have a universal function
+approximator once you do that, but with a single layer.
+And no matter how complicated you make the units, you're
+not able to do it.
+But we'll come to that next week.
+, before we do that, , let's talk about learning,
+right?
+So, so far, I have just sort of conjured up
+these weights here.
+And the threshold.
+In the general case, of course, we would to
+not do that, in particular in a large network.
+Right.
+Where we might have tens, hundreds, thousands of neurones.
+If you've been following the literature on large language models.
+Right.
+Contemporary models, they have 200 billion parameters.
+Right.
+So that's 200 billion of these weights.
+No way we can guess those manually.
+Right?
+So we need a way of learning them of throwing
+data at the model and inferring these parameters.
+And that's what we're going to look at next.
+And again to keep things simple we'll just do this
+for the perceptron.
+And then tomorrow we'll talk about the general case.
+And now I just need to check my time.
+Okay.
+Ten minutes.
+So we're unfortunately not going to manage to finish this
+today, but, , we'll continue on Friday.
+Okay.
+So choosing these weights and thresholds, which we have just
+made up here, that is in general not easy.
+We want to learn them from examples, right from training
+examples where we know the correct answer.
+And we use that to set our weights.
+And then on new examples that we haven't seen before.
+Hopefully we'll also get the correct answer.
+So we need a learning algorithm.
+And here's a YouTube video that illustrates it.
+if you want to look at that.
+, so before we get there, here's a simple trick.
+, we said we need to learn the weights here
+w and the threshold.
+The threshold is kind of inconvenient because it's a special
+case.
+So what we can do.
+We can just turn it into a wait.
+So let's assume here we have another input.
+The input always has minus one, the value minus one.
+And the weight is our threshold theta.
+And so we just treat this as another input.
+And then our our activation function becomes just one.
+If the input is bigger than zero and zero otherwise.
+Right.
+So we don't have anything to adjust here in the
+activation function.
+And instead we are adjusting this weight.
+Theta which is one of our behaves in the same
+way as our normal weights.
+So that's just a trick to say from now on
+I will not talk about theta anymore basically, but it's
+completely equivalent these two ways of doing things.
+Okay, so let's try to think what's happening before we
+try to think what a good learning algorithm would be.
+So we want to learn from from examples, right.
+Just here we had all these examples.
+Let's assume we have a set of of examples
+this.
+And we want to adjust our weights based on those
+examples.
+So in the general case here let's assume we have
+four inputs.
+So our inputs look this.
+Sequences of four zeros and ones.
+We're still assuming the input is binary.
+Let's assume we have six exemplars or training items or
+training examples that.
+And we also know what the output is right.
+For this input the output is one for that input
+the output is zero and so on.
+So this is a supervised learning algorithm right.
+That means we know the correct answer for our training
+data.
+Later on we can test it on new examples where
+we don't know the answer.
+But for training we assume that we know the answer.
+And , but we don't know the weights or the
+threshold.
+Right?
+That's what we're trying to adjust.
+So how about we compute the output of the network,
+right.
+Let's assume we initialise our weights in some way.
+We can set them all to zero.
+We can set them to random values.
+But let's assume we have weights.
+And then we can compute the output right.
+Using the formula that we have started with.
+Sorry.
+Here using our activation function our input function and our
+activation function.
+So we compute the output.
+So we get a output which will not be very
+good if we assume random weights to start with.
+But what we can do we can compare this output
+to the correct output.
+Right.
+Remember for our training examples we know the target.
+We know the correct output.
+So here this is wrong.
+This one is right.
+So by chance let's say this one is wrong.
+This one is wrong.
+This one is wrong.
+This one is right again.
+And now it would be very handy if we had
+a way of changing our weights so that the target
+becomes more the output becomes more the target.
+Okay.
+And this is what we're going to do.
+So for each of these examples we're going to change
+our weights so that the output with the current weights
+becomes more the target t for this particular example.
+And this is called the perceptron learning rule.
+And it's only slightly more complicated than what I've said.
+So we adjust the weights so that oh this is
+the output for the current weights.
+Moves closer to T, the target, the desired or correct
+output.
+And for a weight w we adjust it.
+So this little arrow means update the weights to the
+from the previous value plus a difference delta w I
+okay.
+And so how do we compute this difference.
+Delta we we take the difference between the target and
+the output and multiply it by a constant called eta
+and by the input at that point she.
+Okay, so the intuition is if this difference is big,
+then our delta will be big.
+If this difference is small or maybe zero, then our
+delta will be zero, right?
+If the target is the same as the output,
+in this lucky case, for example, then we don't need
+to do an update, right?
+Everything is fine.
+We can move on to the next example.
+Right.
+And then what are the other parts.
+So here the difference this is the really the important
+bit.
+But the ETA is what's called the learning rate.
+This is a constant that you set.
+And it tells you basically how fast you change the
+weights, how fast you learn.
+This is the ETA.
+And then why is there the she.
+What do people think?
+Why does it make sense to also multiply by x
+I x I is the input right at this point.
+Right here it's all binary and but intuitively, if the
+input is very big, then we also want to make
+a big change because the the difference here right is
+caused by the input of course.
+And if the input is big then there will be
+a bigger difference.
+So we also need to reduce or increase the weight
+more.
+And as we'll see tomorrow, this has to do with
+how the error function is defined for the perceptron in
+the general case.
+But here we just assume that for big inputs we
+want to make big changes.
+For small inputs we want to make small changes okay.
+And that's it.
+That's that's really that's all the that's the magic sauce.
+, let's look at an example and I hope I
+still have time.
+Sorry.
+This room doesn't have internet.
+Doesn't have a clock either.
+Let's go through this example and then, , I'll stop
+for today and we'll continue tomorrow.
+Okay.
+So this is our learning rule.
+It's the same rule from here.
+, our update for we we take the current Y
+and add a delta y.
+And this delta y is the difference between the target
+and the output times the input and times the learning
+rate.
+Let's assume the output is one and the target is
+one.
+And in the second case the output is zero and
+the target is one.
+So here first case what should happen.
+What do people think output is one.
+Target is one.
+Nothing should happen.
+Exactly.
+So let's see if that pans out.
+So t minus always one minus one.
+So that is zero of course.
+So the whole term becomes zero.
+We don't care about eta and x I output the
+delta zero.
+So the update is no update.
+That means this example is correct.
+We don't want to change the weights here.
+Of course it's incorrect.
+The output is zero and the target is one.
+So we take target minus output.
+That's one.
+And then we multiply with eta and with x.
+So this is one.
+So the delta will be eta x.
+So depending on the learning rate let's say the learning
+rate is 0.1 and the input is one.
+Then this would be a change of 0.50.1 okay.
+And then yeah.
+So learning rate ETA is always positive and controls how
+big the changes are.
+And if the input is zero and the weight is
+bigger than zero and the weight is bigger than zero,
+then we increase the weight so that w times x
+becomes larger than theta right.
+Remember we're trying to generate an output.
+If they're smaller than zero both of them.
+Then we reduce the weight.
+So we have assumed binary inputs.
+So x can't be smaller than zero.
+But the weight can be smaller than zero.
+And so the weight reduces.
+If they're both zero then sorry.
+If yeah if they're both zero then the output will
+be zero as well.
+Okay.
+And so that's really it.
+And we just do this lots and lots of times
+right.
+So we do this for all our examples.
+So here we do this for all the six examples.
+Update our weights and then we do it again.
+And we get more weight updates.
+Right.
+Because we only make small changes.
+ETA is often a very small number 0.10.01 and so
+on.
+So we only make small changes to the weight each
+time.
+And we do this again and again.
+Each pass through our set of examples is called an
+epoch.
+So we do lots and lots of epochs until there's
+no more changes.
+Then we stop.
+Okay.
+When the weights stop changing, then we can't learn anything
+anymore.
+And hopefully we've learned the target function and we stop.
+And you will get an opportunity to work through this
+in the tutorial next week.
+Actually, I'm out of time, but are there any quick
+questions?
+Yes, please.
+How is the learning rate assignment?
+Yeah.
+No it's a good question.
+So the learning rate I didn't say anything about the
+learning rate.
+It's actually pretty complicated to decide the learning rate.
+And people often use variable learning rates.
+So you use a high learning rate at the beginning
+of for the first few epochs.
+And then you reduce it later on.
+There's whole schedules that you use and so on.
+You want to use something fairly small in relation to
+your weights and your inputs.
+So something 0.5 for this or maybe even 0.1
+for simple examples this.
+But yeah, it's basically empirically determined.
+There isn't any maths behind it.
+Okay, that's all we have time for.
+Thank you.
