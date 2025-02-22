@@ -91,6 +91,9 @@ Use this exact structure:
       // Replace the course name placeholder
       latexContent = latexContent.replace(/\[COURSE_NAME\]/g, `${courseName} - ${weekTitle}`);
 
+      // Generate a filename based on the course and week
+      const fileName = `${courseName.replace(/\s+/g, '_')}_${weekTitle.replace(/\s+/g, '_')}.pdf`;
+
       // Send to our backend for PDF generation
       const response = await fetch(`${this.BACKEND_URL}/generate-pdf`, {
         method: 'POST',
@@ -98,7 +101,9 @@ Use this exact structure:
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          latex: latexContent
+          latex: latexContent,
+          courseName,
+          fileName
         })
       });
 
