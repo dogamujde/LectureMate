@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Listbox, Transition } from '@headlessui/react'
 
 interface Course {
   id: string;
@@ -385,61 +387,180 @@ function App() {
 
   if (!isSetupComplete) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-          <div className="flex items-center justify-center mb-8">
-            <h1 className="text-2xl font-bold text-center">Welcome to LectureMate</h1>
-          </div>
+      <motion.div 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 flex items-center justify-center p-4"
+      >
+        <motion.div 
+          initial={{ y: 20, opacity: 0 }} 
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-md w-full border border-indigo-50"
+        >
+          <motion.div 
+            className="flex items-center justify-center mb-8"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <div className="flex items-center space-x-3">
+              <motion.div
+                whileHover={{ rotate: 180 }}
+                transition={{ duration: 0.5 }}
+                className="bg-indigo-600 p-3 rounded-xl"
+              >
+                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none">
+                  <path d="M19 5V19H5V5H19ZM19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" fill="currentColor"/>
+                  <path d="M14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"/>
+                </svg>
+              </motion.div>
+              <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+                LectureMate
+              </h1>
+            </div>
+          </motion.div>
           
           <div className="space-y-6">
-            <div>
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Select Your Education Level
               </label>
-              <select 
-                className="w-full p-2 border rounded-md"
-                value={educationLevel}
-                onChange={(e) => setEducationLevel(e.target.value)}
-              >
-                <option value="">Select Level</option>
-                <option value="undergraduate">Undergraduate</option>
-                <option value="graduate">Graduate</option>
-                <option value="phd">PhD</option>
-              </select>
-            </div>
+              <Listbox value={educationLevel} onChange={setEducationLevel}>
+                <div className="relative mt-1">
+                  <Listbox.Button className="relative w-full py-3 pl-4 pr-10 text-left bg-white rounded-xl border border-gray-200 cursor-pointer hover:border-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-opacity-75 shadow-sm">
+                    <span className="block truncate">
+                      {educationLevel ? educationLevel.charAt(0).toUpperCase() + educationLevel.slice(1) : "Select Level"}
+                    </span>
+                    <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                      <svg className="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                  </Listbox.Button>
+                  <Transition
+                    as={React.Fragment}
+                    leave="transition ease-in duration-100"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                  >
+                    <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto bg-white rounded-xl max-h-60 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                      {["Undergraduate", "Graduate", "PhD"].map((level) => (
+                        <Listbox.Option
+                          key={level.toLowerCase()}
+                          className={({ active }) =>
+                            `${active ? 'bg-indigo-50 text-indigo-900' : 'text-gray-900'}
+                            cursor-pointer select-none relative py-3 pl-4 pr-4 transition-colors duration-200`
+                          }
+                          value={level.toLowerCase()}
+                        >
+                          {({ selected, active }) => (
+                            <span className={`block truncate ${selected ? 'font-semibold' : 'font-normal'}`}>
+                              {level}
+                            </span>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </Transition>
+                </div>
+              </Listbox>
+            </motion.div>
 
-            <div>
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.8 }}
+            >
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Select Your Field of Study
               </label>
-              <select 
-                className="w-full p-2 border rounded-md"
-                value={field}
-                onChange={(e) => setField(e.target.value)}
-              >
-                <option value="">Select Field</option>
-                <option value="cs">Computer Science</option>
-                <option value="engineering">Engineering</option>
-                <option value="medicine">Medicine</option>
-                <option value="business">Business</option>
-              </select>
-            </div>
+              <Listbox value={field} onChange={setField}>
+                <div className="relative mt-1">
+                  <Listbox.Button className="relative w-full py-3 pl-4 pr-10 text-left bg-white rounded-xl border border-gray-200 cursor-pointer hover:border-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-opacity-75 shadow-sm">
+                    <span className="block truncate">
+                      {field ? field === 'cs' ? 'Computer Science' : 
+                             field === 'engineering' ? 'Engineering' :
+                             field === 'medicine' ? 'Medicine' :
+                             'Business'
+                      : "Select Field"}
+                    </span>
+                    <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                      <svg className="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                  </Listbox.Button>
+                  <Transition
+                    as={React.Fragment}
+                    leave="transition ease-in duration-100"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                  >
+                    <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto bg-white rounded-xl max-h-60 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                      {[
+                        { id: 'cs', name: 'Computer Science' },
+                        { id: 'engineering', name: 'Engineering' },
+                        { id: 'medicine', name: 'Medicine' },
+                        { id: 'business', name: 'Business' }
+                      ].map((option) => (
+                        <Listbox.Option
+                          key={option.id}
+                          className={({ active }) =>
+                            `${active ? 'bg-indigo-50 text-indigo-900' : 'text-gray-900'}
+                            cursor-pointer select-none relative py-3 pl-4 pr-4 transition-colors duration-200`
+                          }
+                          value={option.id}
+                        >
+                          {({ selected, active }) => (
+                            <span className={`block truncate ${selected ? 'font-semibold' : 'font-normal'}`}>
+                              {option.name}
+                            </span>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </Transition>
+                </div>
+              </Listbox>
+            </motion.div>
 
-            <button
-              className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700"
-              onClick={handleSetupComplete}
-              disabled={!educationLevel || !field}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1 }}
             >
-              Continue
-            </button>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className={`w-full py-3 rounded-xl font-medium transition-all duration-200 ${
+                  !educationLevel || !field
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50'
+                }`}
+                onClick={handleSetupComplete}
+                disabled={!educationLevel || !field}
+              >
+                Get Started
+              </motion.button>
+            </motion.div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-white"
+    >
       {/* Header */}
       <div className="border-b">
         <div className="flex justify-between items-center px-6 py-4 max-w-[1200px] mx-auto">
@@ -450,114 +571,194 @@ function App() {
             </svg>
             <span className="text-xl font-semibold">LectureMate</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => {
+              setIsSetupComplete(false);
+              setSelectedCourse(null);
+              setCurrentTerm('first');
+            }}
+            className="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+          >
+            <svg className="w-5 h-5 text-indigo-600" viewBox="0 0 24 24" fill="none">
               <path d="M12 4L3 8L12 12L21 8L12 4Z" stroke="currentColor" strokeWidth="2"/>
               <path d="M3 8V16L12 20L21 16V8" stroke="currentColor" strokeWidth="2"/>
             </svg>
-            <span className="text-gray-600">{field} - {educationLevel}</span>
-          </div>
+            <span className="text-gray-600">
+              {field === 'cs' ? 'Computer Science' : 
+               field === 'engineering' ? 'Engineering' :
+               field === 'medicine' ? 'Medicine' :
+               field === 'business' ? 'Business' : ''} - {educationLevel ? educationLevel.charAt(0).toUpperCase() + educationLevel.slice(1) : ''}
+            </span>
+          </motion.button>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="max-w-[1200px] mx-auto px-6 py-8">
         {/* Term Selector */}
-        <div className="mb-8">
+        <motion.div 
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="mb-8"
+        >
           <div className="flex space-x-4">
-            <button 
-              className={`px-6 py-2 rounded-lg text-sm font-medium ${
-                currentTerm === 'first' ? 'bg-indigo-600 text-white' : 'text-gray-600'
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                currentTerm === 'first' 
+                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg' 
+                  : 'text-gray-600 hover:bg-gray-50'
               }`}
               onClick={() => setCurrentTerm('first')}
             >
               First Term
-            </button>
-            <button 
-              className={`px-6 py-2 rounded-lg text-sm font-medium ${
-                currentTerm === 'second' ? 'bg-indigo-600 text-white' : 'text-gray-600'
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                currentTerm === 'second' 
+                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg' 
+                  : 'text-gray-600 hover:bg-gray-50'
               }`}
               onClick={() => setCurrentTerm('second')}
             >
               Second Term
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-[300px,1fr] gap-8">
           {/* Course List */}
-          <div>
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
             <h2 className="text-gray-900 font-medium mb-4">Courses</h2>
             <div className="space-y-2">
-              {courses.map(course => (
-                <button
-                  key={course.id}
-                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left ${
-                    selectedCourse?.id === course.id 
-                      ? 'bg-indigo-50' 
-                      : 'hover:bg-gray-50'
-                  }`}
-                  onClick={() => setSelectedCourse(course)}
-                >
-                  <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
-                    <path d="M19 5V19H5V5H19ZM19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" fill="currentColor"/>
-                  </svg>
-                  <span className="text-gray-900">{course.name}</span>
-                </button>
-              ))}
+              <AnimatePresence mode="wait">
+                {courses.map(course => (
+                  <motion.button
+                    key={course.id}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-200 ${
+                      selectedCourse?.id === course.id 
+                        ? 'bg-indigo-50 shadow-md' 
+                        : 'hover:bg-gray-50'
+                    }`}
+                    onClick={() => setSelectedCourse(course)}
+                  >
+                    <motion.div
+                      whileHover={{ rotate: 180 }}
+                      transition={{ duration: 0.5 }}
+                      className="text-gray-400"
+                    >
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 5V19H5V5H19ZM19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" fill="currentColor"/>
+                      </svg>
+                    </motion.div>
+                    <span className="text-gray-900">{course.name}</span>
+                  </motion.button>
+                ))}
+              </AnimatePresence>
             </div>
-          </div>
+          </motion.div>
 
           {/* Course Content */}
-          {selectedCourse && (
-            <div>
-              <h1 className="text-2xl font-semibold text-gray-900 mb-6">{selectedCourse.name}</h1>
-              
-              {/* Weekly Sections */}
-              <div className="space-y-6">
-                {selectedCourse.weeks.map(week => (
-                  <div key={week.number} className="border-b border-gray-200 pb-6">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <h3 className="font-medium">Week {week.number}</h3>
-                        <p className="text-gray-600">{week.title}</p>
-                      </div>
-                      {week.summaries && week.summaries.length > 0 ? (
-                        <div className="flex flex-col space-y-2">
-                          {week.summaries.map((summary, index) => (
-                            <button
-                              key={index}
-                              onClick={() => handleDownloadSummary(week, selectedCourse.name)}
-                              className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700"
-                            >
-                              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 4v12m0 0l-4-4m4 4l4-4m-5 8H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
-                              <span>
-                                {summary.includes('Monday') ? 'Monday Lecture' : 
-                                 summary.includes('Thursday') ? 'Thursday Lecture' : 
-                                 summary.match(/\d{4}-\d{2}-(\d{2})/) ? `${new Date(summary.split('_')[0]).toLocaleDateString('en-US', { weekday: 'long' })} Lecture` : 
-                                 'Download Summary'}
-                              </span>
-                            </button>
-                          ))}
+          <AnimatePresence mode="wait">
+            {selectedCourse && (
+              <motion.div
+                key={selectedCourse.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.h1 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-2xl font-semibold text-gray-900 mb-6"
+                >
+                  {selectedCourse.name}
+                </motion.h1>
+                
+                {/* Weekly Sections */}
+                <div className="space-y-6">
+                  <AnimatePresence>
+                    {selectedCourse.weeks.map(week => (
+                      <motion.div
+                        key={week.number}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                        className="border-b border-gray-200 pb-6"
+                      >
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <h3 className="font-medium">Week {week.number}</h3>
+                            <p className="text-gray-600">{week.title}</p>
+                          </div>
+                          {week.summaries && week.summaries.length > 0 ? (
+                            <div className="flex flex-col space-y-2">
+                              {week.summaries.map((summary, index) => (
+                                <motion.button
+                                  key={index}
+                                  whileHover={{ scale: 1.02 }}
+                                  whileTap={{ scale: 0.98 }}
+                                  onClick={() => handleDownloadSummary(week, selectedCourse.name)}
+                                  className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 transition-colors duration-200"
+                                >
+                                  <motion.div
+                                    whileHover={{ y: -2 }}
+                                    transition={{ duration: 0.2 }}
+                                  >
+                                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                                      <path d="M12 4v12m0 0l-4-4m4 4l4-4m-5 8H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                  </motion.div>
+                                  <span>
+                                    {summary.includes('Monday') ? 'Monday Lecture' : 
+                                     summary.includes('Thursday') ? 'Thursday Lecture' : 
+                                     summary.match(/\d{4}-\d{2}-(\d{2})/) ? `${new Date(summary.split('_')[0]).toLocaleDateString('en-US', { weekday: 'long' })} Lecture` : 
+                                     'Download Summary'}
+                                  </span>
+                                </motion.button>
+                              ))}
+                            </div>
+                          ) : (
+                            <span className="text-gray-400 text-sm">No summaries available</span>
+                          )}
                         </div>
-                      ) : (
-                        <span className="text-gray-400 text-sm">No summaries available</span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
+                </div>
 
-              {error && (
-                <p className="mt-4 text-red-600 text-sm">{error}</p>
-              )}
-            </div>
-          )}
+                {error && (
+                  <motion.p 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="mt-4 text-red-600 text-sm"
+                  >
+                    {error}
+                  </motion.p>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
