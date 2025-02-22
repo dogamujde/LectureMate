@@ -758,7 +758,7 @@ function App() {
     >
       {/* Header */}
       <div className="border-b">
-        <div className="flex justify-between items-center px-6 py-4 max-w-[1200px] mx-auto">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 sm:px-6 py-4 max-w-[1200px] mx-auto gap-4">
           <div className="flex items-center space-x-2">
             <svg className="w-8 h-8 text-indigo-600" viewBox="0 0 24 24" fill="none">
               <path d="M19 5V19H5V5H19ZM19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" fill="currentColor"/>
@@ -774,7 +774,7 @@ function App() {
               setSelectedCourse(null);
               setCurrentTerm('first');
             }}
-            className="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+            className="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-sm sm:text-base"
           >
             <svg className="w-5 h-5 text-indigo-600" viewBox="0 0 24 24" fill="none">
               <path d="M12 4L3 8L12 12L21 8L12 4Z" stroke="currentColor" strokeWidth="2"/>
@@ -791,7 +791,7 @@ function App() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-[1200px] mx-auto px-6 py-8">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8">
         {/* Term Selector */}
         <motion.div 
           initial={{ y: -20, opacity: 0 }}
@@ -799,11 +799,11 @@ function App() {
           transition={{ delay: 0.2 }}
           className="mb-8"
         >
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap gap-4">
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+              className={`px-4 sm:px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 currentTerm === 'first' 
                   ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg' 
                   : 'text-gray-600 hover:bg-gray-50'
@@ -815,7 +815,7 @@ function App() {
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+              className={`px-4 sm:px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 currentTerm === 'second' 
                   ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg' 
                   : 'text-gray-600 hover:bg-gray-50'
@@ -827,15 +827,16 @@ function App() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-[300px,1fr] gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[300px,1fr] gap-8">
           {/* Course List */}
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
+            className="lg:block"
           >
             <h2 className="text-gray-900 font-medium mb-4">Courses</h2>
-            <div className="space-y-2">
+            <div className="space-y-2 flex flex-col">
               <AnimatePresence mode="wait">
                 {courses.map(course => (
                   <motion.button
@@ -855,13 +856,13 @@ function App() {
                     <motion.div
                       whileHover={{ rotate: 180 }}
                       transition={{ duration: 0.5 }}
-                      className="text-gray-400"
+                      className="text-gray-400 flex-shrink-0"
                     >
                       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
                         <path d="M19 5V19H5V5H19ZM19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" fill="currentColor"/>
                       </svg>
                     </motion.div>
-                    <span className="text-gray-900">{course.name}</span>
+                    <span className="text-gray-900 text-sm sm:text-base truncate">{course.name}</span>
                   </motion.button>
                 ))}
               </AnimatePresence>
@@ -877,11 +878,12 @@ function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
+                className="min-w-0"
               >
                 <motion.h1 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-2xl font-semibold text-gray-900 mb-6"
+                  className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6"
                 >
                   {selectedCourse.name}
                 </motion.h1>
@@ -898,10 +900,10 @@ function App() {
                         transition={{ duration: 0.2 }}
                         className="border-b border-gray-200 pb-6"
                       >
-                        <div className="flex justify-between items-center">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
                           <div>
                             <h3 className="font-medium">Week {week.number}</h3>
-                            <p className="text-gray-600">{week.title}</p>
+                            <p className="text-gray-600 text-sm">{week.title}</p>
                           </div>
                           {week.summaries && week.summaries.length > 0 ? (
                             <div className="flex flex-col space-y-2">
@@ -921,7 +923,7 @@ function App() {
                                       <path d="M12 4v12m0 0l-4-4m4 4l4-4m-5 8H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
                                   </motion.div>
-                                  <span>
+                                  <span className="text-sm sm:text-base">
                                     {(() => {
                                       const datePart = summary.split('_')[0];
                                       const date = new Date(datePart);
