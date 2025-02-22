@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { NotesService } from './services/NotesService'
 import { type Note } from './types'
 
@@ -13,18 +13,20 @@ interface Week {
   title: string;
   isGenerated: boolean;
   notes?: Note;
+  pdfPath?: string;
+  lectures?: string[];
 }
 
 function App() {
   const [currentTerm, setCurrentTerm] = useState('first')
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null)
-  const [transcript, setTranscript] = useState('')
   const [educationLevel, setEducationLevel] = useState('')
   const [field, setField] = useState('')
   const [isSetupComplete, setIsSetupComplete] = useState(false)
   const [isGenerating, setIsGenerating] = useState(false)
   const [currentWeek, setCurrentWeek] = useState<number | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [expandedWeeks, setExpandedWeeks] = useState<number[]>([])
 
   const firstTermCourses = [
     {
@@ -33,7 +35,15 @@ function App() {
       weeks: [
         { number: 1, title: 'Introduction to Lambda Calculus', isGenerated: false },
         { number: 2, title: 'Higher Order Functions', isGenerated: false },
-        { number: 3, title: 'Recursion and Pattern Matching', isGenerated: false }
+        { number: 3, title: 'Recursion and Pattern Matching', isGenerated: false },
+        { number: 4, title: 'Type Systems', isGenerated: false },
+        { number: 5, title: 'Monads and Functors', isGenerated: false },
+        { number: 6, title: 'Lazy Evaluation', isGenerated: false },
+        { number: 7, title: 'Concurrent Programming', isGenerated: false },
+        { number: 8, title: 'Property Testing', isGenerated: false },
+        { number: 9, title: 'Parser Combinators', isGenerated: false },
+        { number: 10, title: 'Domain Specific Languages', isGenerated: false },
+        { number: 11, title: 'Advanced Applications', isGenerated: false }
       ]
     },
     {
@@ -42,7 +52,15 @@ function App() {
       weeks: [
         { number: 1, title: 'Vectors and Matrices', isGenerated: false },
         { number: 2, title: 'Linear Transformations', isGenerated: false },
-        { number: 3, title: 'Eigenvalues and Eigenvectors', isGenerated: false }
+        { number: 3, title: 'Eigenvalues and Eigenvectors', isGenerated: false },
+        { number: 4, title: 'Vector Spaces', isGenerated: false },
+        { number: 5, title: 'Orthogonality', isGenerated: false },
+        { number: 6, title: 'Determinants', isGenerated: false },
+        { number: 7, title: 'Inner Product Spaces', isGenerated: false },
+        { number: 8, title: 'Diagonalization', isGenerated: false },
+        { number: 9, title: 'Singular Value Decomposition', isGenerated: false },
+        { number: 10, title: 'Linear Programming', isGenerated: false },
+        { number: 11, title: 'Applications in Data Science', isGenerated: false }
       ]
     },
     {
@@ -51,7 +69,15 @@ function App() {
       weeks: [
         { number: 1, title: 'Data Collection and Cleaning', isGenerated: false },
         { number: 2, title: 'Statistical Analysis', isGenerated: false },
-        { number: 3, title: 'Machine Learning Basics', isGenerated: false }
+        { number: 3, title: 'Machine Learning Basics', isGenerated: false },
+        { number: 4, title: 'Exploratory Data Analysis', isGenerated: false },
+        { number: 5, title: 'Regression Models', isGenerated: false },
+        { number: 6, title: 'Classification Models', isGenerated: false },
+        { number: 7, title: 'Clustering and Dimensionality Reduction', isGenerated: false },
+        { number: 8, title: 'Time Series Analysis', isGenerated: false },
+        { number: 9, title: 'Deep Learning Introduction', isGenerated: false },
+        { number: 10, title: 'Natural Language Processing', isGenerated: false },
+        { number: 11, title: 'Big Data Processing', isGenerated: false }
       ]
     }
   ]
@@ -61,27 +87,176 @@ function App() {
       id: '4',
       name: 'Object Oriented Programming',
       weeks: [
-        { number: 1, title: 'Classes and Objects', isGenerated: false },
-        { number: 2, title: 'Inheritance and Polymorphism', isGenerated: false },
-        { number: 3, title: 'Design Patterns', isGenerated: false }
+        { 
+          number: 1, 
+          title: 'Classes and Objects', 
+          isGenerated: false,
+          lectures: [
+            '2025-01-13_OOP Classes and Objects_Lecture_Monday 13_00.pdf',
+            '2025-01-16_OOP Classes and Objects_Lecture_Thursday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 2, 
+          title: 'Inheritance and Polymorphism', 
+          isGenerated: false,
+          lectures: [
+            '2025-01-20_OOP Inheritance and Polymorphism_Lecture_Monday 13_00.pdf',
+            '2025-01-23_OOP Inheritance and Polymorphism_Lecture_Thursday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 3, 
+          title: 'Design Patterns', 
+          isGenerated: false,
+          lectures: [
+            '2025-01-27_OOP Design Patterns_Lecture_Monday 13_00.pdf',
+            '2025-01-30_OOP Design Patterns_Lecture_Thursday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 4, 
+          title: 'SOLID Principles', 
+          isGenerated: false,
+          lectures: [
+            '2025-02-03_OOP SOLID Principles_Lecture_Monday 13_00.pdf',
+            '2025-02-06_OOP SOLID Principles_Lecture_Thursday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 5, 
+          title: 'Exception Handling', 
+          isGenerated: false,
+          lectures: [
+            '2025-02-10_OOP Exception Handling_Lecture_Monday 13_00.pdf',
+            '2025-02-13_OOP Exception Handling_Lecture_Thursday 13_00.pdf'
+          ]
+        },
+        { number: 6, title: 'Unit Testing', isGenerated: false },
+        { number: 7, title: 'Dependency Injection', isGenerated: false },
+        { number: 8, title: 'Concurrency in OOP', isGenerated: false },
+        { number: 9, title: 'Design by Contract', isGenerated: false },
+        { number: 10, title: 'Refactoring Techniques', isGenerated: false },
+        { number: 11, title: 'Advanced OOP Concepts', isGenerated: false }
       ]
     },
     {
       id: '5',
       name: 'Calculus and its Applications',
       weeks: [
-        { number: 1, title: 'Limits and Continuity', isGenerated: false },
-        { number: 2, title: 'Differentiation', isGenerated: false },
-        { number: 3, title: 'Integration', isGenerated: false }
+        { 
+          number: 1, 
+          title: 'Week 1 (Jan 13-16)', 
+          isGenerated: false,
+          lectures: [
+            '2025-01-13_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Monday 13_00.pdf',
+            '2025-01-16_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Thursday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 2, 
+          title: 'Week 2 (Jan 20-23)', 
+          isGenerated: false,
+          lectures: [
+            '2025-01-20_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Monday 13_00.pdf',
+            '2025-01-23_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Thursday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 3, 
+          title: 'Week 3 (Jan 27-30)', 
+          isGenerated: false,
+          lectures: [
+            '2025-01-27_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Monday 13_00.pdf',
+            '2025-01-30_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Thursday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 4, 
+          title: 'Week 4 (Feb 3-6)', 
+          isGenerated: false,
+          lectures: [
+            '2025-02-03_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Monday 13_00.pdf',
+            '2025-02-06_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Thursday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 5, 
+          title: 'Week 5 (Feb 10-13)', 
+          isGenerated: false,
+          lectures: [
+            '2025-02-10_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Monday 13_00.pdf',
+            '2025-02-13_MATH1 Calculus and Its Appl - Lecture _Lecture_0639_01_1.14_Thursday 13_00.pdf'
+          ]
+        },
+        { number: 6, title: 'Week 6', isGenerated: false },
+        { number: 7, title: 'Week 7', isGenerated: false },
+        { number: 8, title: 'Week 8', isGenerated: false },
+        { number: 9, title: 'Week 9', isGenerated: false },
+        { number: 10, title: 'Week 10', isGenerated: false },
+        { number: 11, title: 'Week 11', isGenerated: false }
       ]
     },
     {
       id: '6',
       name: 'Cognitive Science',
       weeks: [
-        { number: 1, title: 'Introduction to Cognition', isGenerated: false },
-        { number: 2, title: 'Memory and Learning', isGenerated: false },
-        { number: 3, title: 'Perception and Attention', isGenerated: false }
+        { 
+          number: 1, 
+          title: 'Introduction to Cognitive Science', 
+          isGenerated: false,
+          lectures: [
+            '2025-01-13_COGSCI Introduction to Cognitive Science_Lecture_Monday 13_00.pdf',
+            '2025-01-16_COGSCI Introduction to Cognitive Science_Lecture_Thursday 13_00.pdf',
+            '2025-01-17_COGSCI Introduction to Cognitive Science_Lecture_Friday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 2, 
+          title: 'Perception and Attention', 
+          isGenerated: false,
+          lectures: [
+            '2025-01-20_COGSCI Perception and Attention_Lecture_Monday 13_00.pdf',
+            '2025-01-23_COGSCI Perception and Attention_Lecture_Thursday 13_00.pdf',
+            '2025-01-24_COGSCI Perception and Attention_Lecture_Friday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 3, 
+          title: 'Memory and Learning', 
+          isGenerated: false,
+          lectures: [
+            '2025-01-27_COGSCI Memory and Learning_Lecture_Monday 13_00.pdf',
+            '2025-01-30_COGSCI Memory and Learning_Lecture_Thursday 13_00.pdf',
+            '2025-01-31_COGSCI Memory and Learning_Lecture_Friday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 4, 
+          title: 'Language Processing', 
+          isGenerated: false,
+          lectures: [
+            '2025-02-03_COGSCI Language Processing_Lecture_Monday 13_00.pdf',
+            '2025-02-06_COGSCI Language Processing_Lecture_Thursday 13_00.pdf',
+            '2025-02-07_COGSCI Language Processing_Lecture_Friday 13_00.pdf'
+          ]
+        },
+        { 
+          number: 5, 
+          title: 'Problem Solving', 
+          isGenerated: false,
+          lectures: [
+            '2025-02-10_COGSCI Problem Solving_Lecture_Monday 13_00.pdf',
+            '2025-02-13_COGSCI Problem Solving_Lecture_Thursday 13_00.pdf',
+            '2025-02-14_COGSCI Problem Solving_Lecture_Friday 13_00.pdf'
+          ]
+        },
+        { number: 6, title: 'Decision Making', isGenerated: false },
+        { number: 7, title: 'Cognitive Development', isGenerated: false },
+        { number: 8, title: 'Social Cognition', isGenerated: false },
+        { number: 9, title: 'Cognitive Neuroscience', isGenerated: false },
+        { number: 10, title: 'Artificial Intelligence', isGenerated: false },
+        { number: 11, title: 'Future of Cognitive Science', isGenerated: false }
       ]
     }
   ]
@@ -89,12 +264,11 @@ function App() {
   const courses = currentTerm === 'first' ? firstTermCourses : secondTermCourses
 
   const handleGenerateNotes = async (weekNumber: number) => {
-    if (!transcript) return
     setIsGenerating(true)
     setError(null)
     setCurrentWeek(weekNumber)
     try {
-      const result = await NotesService.generateNotes(transcript)
+      const result = await NotesService.generateNotes(selectedCourse?.weeks[weekNumber - 1].notes?.content || '')
       
       if (selectedCourse) {
         const updatedCourse = {
@@ -113,12 +287,32 @@ function App() {
     } finally {
       setIsGenerating(false)
       setCurrentWeek(null)
-      setTranscript('')
     }
   }
 
   const handleDownloadNotes = async (week: Week) => {
-    if (week.notes) {
+    if (week.lectures && week.lectures.length > 0 && selectedCourse) {
+      try {
+        const coursePath = selectedCourse.name === 'Calculus and its Applications' ? 'calculus' : 
+                          selectedCourse.name === 'Object Oriented Programming' ? 'oop' : 'cognitive science';
+        // Download each lecture PDF in the week
+        week.lectures.forEach(async (lecture) => {
+          const response = await fetch(`/transcriptions/${coursePath}/summaries/pdf/${lecture}`);
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = lecture;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+      } catch (error) {
+        console.error('Error downloading PDFs:', error);
+        setError('Failed to download PDFs. Please try again.');
+      }
+    } else if (week.notes) {
       try {
         const blob = await NotesService.generatePDF(
           week.notes.content,
@@ -139,6 +333,67 @@ function App() {
       }
     }
   }
+
+  const handleViewNotes = async (week: Week) => {
+    if (expandedWeeks.includes(week.number)) {
+      setExpandedWeeks(expandedWeeks.filter(num => num !== week.number))
+    } else {
+      setExpandedWeeks([...expandedWeeks, week.number])
+    }
+  }
+
+  const handleDownloadLecture = async (lecture: string, courseName: string) => {
+    try {
+      const coursePath = courseName === 'Calculus and its Applications' ? 'calculus' : 
+                        courseName === 'Object Oriented Programming' ? 'oop' : 'cognitive science';
+      const response = await fetch(`/transcriptions/${coursePath}/summaries/pdf/${lecture}`);
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = lecture;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading PDF:', error);
+      setError('Failed to download PDF. Please try again.');
+    }
+  }
+
+  const handleViewPDF = (lecture: string, courseName: string) => {
+    const coursePath = courseName === 'Calculus and its Applications' ? 'calculus' : 
+                      courseName === 'Object Oriented Programming' ? 'oop' : 'cognitive science';
+    const encodedLecture = encodeURIComponent(lecture);
+    const encodedCoursePath = encodeURIComponent(coursePath);
+    const pdfUrl = `http://localhost:5173/transcriptions/${encodedCoursePath}/summaries/pdf/${encodedLecture}`;
+    window.open(pdfUrl, '_blank');
+  };
+
+  useEffect(() => {
+    // Check for available PDFs when a course is selected
+    if (selectedCourse) {
+      const updatedCourse = {
+        ...selectedCourse,
+        weeks: selectedCourse.weeks.map(week => {
+          // For Calculus, Cognitive Science, and OOP courses, if the week has lectures, mark it as available
+          if ((selectedCourse.name === 'Calculus and its Applications' || 
+               selectedCourse.name === 'Cognitive Science' ||
+               selectedCourse.name === 'Object Oriented Programming') 
+              && week.lectures && week.lectures.length > 0) {
+            return {
+              ...week,
+              pdfPath: 'available'
+            };
+          }
+          // For other courses, keep the existing logic
+          return week;
+        })
+      };
+      setSelectedCourse(updatedCourse);
+    }
+  }, [selectedCourse?.id]); // Only run when the course ID changes
 
   const handleSetupComplete = () => {
     if (educationLevel && field) {
@@ -276,16 +531,6 @@ function App() {
             <div>
               <h1 className="text-2xl font-semibold text-gray-900 mb-6">{selectedCourse.name}</h1>
               
-              {/* Transcript Input */}
-              <div className="mb-8">
-                <textarea
-                  className="w-full h-32 p-4 rounded-lg border border-gray-200 resize-none"
-                  placeholder="Enter your lecture transcript here..."
-                  value={transcript}
-                  onChange={(e) => setTranscript(e.target.value)}
-                />
-              </div>
-
               {/* Weekly Sections */}
               <div className="space-y-6">
                 {selectedCourse.weeks.map(week => (
@@ -296,47 +541,64 @@ function App() {
                         <p className="text-gray-600">{week.title}</p>
                       </div>
                       <div className="flex items-center space-x-4">
-                        {week.isGenerated ? (
+                        {(week.pdfPath || (week.lectures && week.lectures.length > 0)) ? (
                           <button
-                            onClick={() => handleDownloadNotes(week)}
+                            onClick={() => handleViewNotes(week)}
                             className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700"
                           >
                             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                              <path d="M4 16V17C4 18.7 5.3 20 7 20H17C18.7 20 20 18.7 20 17V16" stroke="currentColor" strokeWidth="2"/>
-                              <path d="M12 4V16M12 16L8 12M12 16L16 12" stroke="currentColor" strokeWidth="2"/>
+                              {expandedWeeks.includes(week.number) ? (
+                                <path d="M19 9l-7 7-7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              ) : (
+                                <path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                              )}
                             </svg>
-                            <span>Download Notes</span>
+                            <span>View Notes</span>
                           </button>
                         ) : (
-                          <button
-                            onClick={() => handleGenerateNotes(week.number)}
-                            disabled={isGenerating}
-                            className={`flex items-center space-x-2 ${
-                              isGenerating && currentWeek === week.number
-                                ? 'text-gray-400 cursor-not-allowed'
-                                : 'text-indigo-600 hover:text-indigo-700'
-                            }`}
-                          >
-                            {isGenerating && currentWeek === week.number ? (
-                              <>
-                                <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
-                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
-                                </svg>
-                                <span>Generating...</span>
-                              </>
-                            ) : (
-                              <>
-                                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                                  <path d="M12 4L3 8L12 12L21 8L12 4Z" stroke="currentColor" strokeWidth="2"/>
-                                  <path d="M3 8V16L12 20L21 16V8" stroke="currentColor" strokeWidth="2"/>
-                                </svg>
-                                <span>Generate Notes</span>
-                              </>
-                            )}
-                          </button>
+                          <span className="text-gray-400 text-sm">No notes available</span>
                         )}
                       </div>
+                    </div>
+                    {/* Expanded lecture list */}
+                    <div className={`mt-4 pl-4 space-y-2 overflow-hidden transition-all duration-300 ease-in-out ${
+                      expandedWeeks.includes(week.number) ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}>
+                      {week.lectures?.map((lecture, index) => (
+                        <div 
+                          key={index} 
+                          className="space-y-2"
+                        >
+                          <div className={`flex items-center justify-between py-2 px-4 bg-gray-50 rounded-lg transform transition-transform duration-300 ease-in-out ${
+                            expandedWeeks.includes(week.number) ? 'translate-y-0' : 'translate-y-4'
+                          }`}>
+                            <span className="text-sm text-gray-600">
+                              {lecture.split('_')[0]} - {lecture.includes('Monday') ? 'Monday' : lecture.includes('Thursday') ? 'Thursday' : 'Friday'} Lecture
+                            </span>
+                            <div className="flex items-center space-x-3">
+                              <button
+                                onClick={() => handleViewPDF(lecture, selectedCourse.name)}
+                                className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 text-sm"
+                              >
+                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                                </svg>
+                                <span>View PDF</span>
+                              </button>
+                              <button
+                                onClick={() => handleDownloadLecture(lecture, selectedCourse.name)}
+                                className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 text-sm"
+                              >
+                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                                  <path d="M12 4v12m0 0l-4-4m4 4l4-4m-5 8H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                                <span>Download</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ))}
