@@ -1,0 +1,1108 @@
+Let's try now.
+Okay, I've taken the mic off mute, so it should
+be working a bit better.
+All right.
+Don is not introducing me, so I'll introduce myself.
+I'm Phil Wadler.
+I'm a professor at the University of Edinburgh.
+Some of you would have seen the lectures I gave
+last week.
+How many people were here for those lectures?
+And who wasn't here for those, but is here now.
+And who didn't raise their hand either of those times?
+Right.
+Okay.
+So today we're going to talk about propositions of types.
+, as you'll know, I had my hip replaced recently.
+So most of the time I'm just going to be,
+, sitting this, but maybe I will get up
+and wander around.
+We will see.
+Are there any questions before I start?
+So if I say something you don't understand, you have
+a job, which is to raise your hand and ask
+a question.
+Okay.
+We'll see how that works.
+Right?
+So who wants to learn the hilarious story of computability
+theory?
+So algorithms go back quite a ways.
+There was Euclid's algorithm about 300 years BCE, and algorithms
+are named for al-Khwarizmi, who came up with a few
+and lived around 800 in the Christian era.
+But we didn't have a formal definition of algorithm until
+the early 1900s.
+So around 1935, three papers come out at once Alonzo
+Church's Lambda Calculus, which you now all know a bit
+about.
+Kurt Girdles recursive functions and Alan Turing's Turing machines.
+How many people have heard of Alan Turing?
+Most of you.
+Very good.
+So we're going to learn a little bit about the
+story.
+But, you know, it's a bit buses.
+You wait around 2000 years for a definition of algorithm,
+and then three come along at once.
+Why did this happen?
+So it all goes back to David Hilbert.
+He wanted what we all want, which is to put
+all mathematicians out of business.
+So he was, among other things, a logician, one of
+the first formal logicians.
+And he wrote about the entire problem, which just means
+decision problem.
+But it sounds much better in German.
+And what that was was the idea that you should
+be able to write out a formula in logic, and
+then have an algorithm that determines whether you've just made
+a true statement or a false statement.
+So you wouldn't need people anymore to decide what was
+true or false.
+You could have a computer decide it.
+So.
+Hilbert puts this forward, and then along comes Kurt Gödel
+And girdle comes up with his incompleteness theorem.
+So what the incompleteness theorem says is basically what he
+showed is that you could formalise in arithmetic.
+So first he showed you could take any string of
+symbols and encode it as a number.
+So properties of strings of symbols could actually be properties
+of numbers.
+And then he wrote down a property of numbers saying
+, this number denotes a valid formula.
+And even you give it two numbers and it says
+the first number denotes a valid proof of the second
+number, which is a valid formula.
+So you could just have a statement about numbers that
+says this statement is approved.
+And it turns out that you could set it up
+so that the statement itself had a number, and that
+number was the number that it was the proof of.
+In other words, he showed how you could write a
+statement saying, this statement is you could do it for
+this statement is provable, but it's more interesting.
+You could also do it to say this statement is
+not provable.
+So you'd have a statement saying there is no number
+that is a proof of this formula.
+And that formula would itself have a number.
+And that was the number that appeared in the formula.
+Mhm.
+So as soon as you can do this you're in
+trouble.
+Right.
+Because consider the statement.
+This statement is not provable.
+Well there are only two possibilities.
+Right.
+It is provable or it's not provable.
+Which is it.
+Well if it's provable it says it's not provable.
+So if it's provable you've proved something that's false.
+So if you know anything about logic.
+You know, that's a really bad idea.
+You do not want to be able to prove things
+that are false.
+So assuming your logic is sound, meaning that everything that
+you can prove in it is true.
+What follows?
+Well, what follows is the other one must hold, which
+is, .
+It's not provable.
+Oh, but it says it's not provable.
+So it's true.
+So you've got two possibilities.
+Your logic is unsound.
+Really, really bad.
+Or your logic is incomplete.
+There are true things that you cannot prove.
+So that's not nearly as bad as being unsound, but
+it's still really, really annoying.
+So as soon as this happened, people began to take.
+stake.
+Let's go back for a minute.
+As soon as it happened, people began to think, oh,
+well, maybe there is no algorithm that could determine whether
+anything was true or false, because what they sort of
+had in mind is you just look at all possible
+proofs and eventually you'd find the right one.
+But now there was a possibility that was true, but
+there was no proof.
+So now they're beginning to think, hmm, maybe you can't
+decide this.
+So the race was on, right?
+What they wanted to do was to show that there
+was no algorithm that could determine whether a given thing
+was true or false, or even provable or not provable,
+which we've now learned is not quite the same thing.
+So the race was on, and as long as you
+were looking for an algorithm, you didn't really need a
+definition of algorithm.
+You just write it down and it would be just
+Justice Stewart's definition of pornography, which was I know
+it when I see it.
+So you look at the algorithm and go, yeah, that's
+an algorithm.
+But as soon as you want to say there's no
+possible algorithm, then you need a formal definition of algorithm.
+So you know exactly what an algorithm is.
+And you can say nope, there's nothing that does that.
+So the race was on.
+The first to come up with the definition was Alonzo
+Church.
+So he was a logician.
+He was not a movie star despite what he looked
+.
+And church came up with ta da, the lambda calculus.
+And he came up with this way of encoding numbers
+as lambda terms, which I believe you've covered a bit
+in class.
+This is called church numerals.
+And it just says, well, the number one takes a
+function and a thingy and applies the function to the
+thing he wants.
+The number two you take a function and a thingy
+and you apply the function to the thingy twice.
+Number three you take a function and a thingy and
+you apply the function three times and so on.
+So you have this encoding of numbers, and they show
+that using that encoding of numbers you could.
+By the way this would be much easier if you
+included zero.
+But he didn't.
+But he still made it work.
+These days we include zero as a natural number as
+well.
+Anyhow, he had the encoding he showed.
+It was very easy to define things plus and
+times with an awful lot of work.
+His, , PhD student Stephen Carlini showed that you could
+define minus one, which was the really hard one.
+, cleaning actually discovered this when he went to the
+dentist.
+When they put him under with laughing gas, he suddenly
+had a vision of how to define the subtract one
+function and went back to church and said this.
+And church said, oh well, I'm glad you figured that
+out because I was about to give up on this
+lambda calculus stuff.
+So now they have lambda calculus, and once they could
+do all these things, they said, you know, you could
+just do anything with this.
+So all of the encodings that girdle did, you could
+redo in lambda calculus.
+And once they had a formal definition of what it
+meant to compute something, they could easily show.
+Well, there are some things you could define but not
+compute.
+And the first of these was the halting problem given
+a lambda term itself, is there another lambda term that
+decides if that has a normal form or doesn't have
+a normal form?
+So they were working with untyped lambda calculus rather than
+typed lambda calculus, but the ideas are very similar and
+write Lambda calculus is extremely simple.
+It's the world's simplest programming language.
+This is defined right before there were computers.
+I referred to computer before, but computer back then meant,
+, a person, usually a woman, who would sit at
+an adding machine and follow the rules that were given.
+So computers were actually people.
+, but again, you could solve a computer that would
+follow an algorithm.
+And this is the world's simplest programming language.
+, back before we had electronic computers, it just has
+variables, lambda abstractions.
+So this stands for a function, right?
+, take an argument x and then substitute that in
+n and then compute n.
+So if n was x times x then this would
+be the function that squares things.
+And then if you took the if L was lambda
+x times x and m was three, then it would
+reduce to three times 3 or 9.
+So this is application.
+This is defined a function.
+This is a variable that was all you needed.
+So this goes back to 1932.
+It's the world's simplest programming language, right?
+Any programming language you learn now, even Haskell, right, is
+just way more complicated.
+Just pages and pages and pages of definition, not three
+lines.
+So.
+Right.
+Java is another programming language.
+How many people have heard of Java?
+Yeah, most of you have.
+It's quite widely known.
+So this is Duke, the mascot for Java.
+And in about a decade or so after Java first
+came out, they added lambda expressions to Java.
+I knew some of the people who were working on
+this at the time, but basically what I is,
+you know, this is early 2000.
+Look at how smug Duke looks about coming up with
+something that was defined in the 1930s.
+All right.
+So congratulations, Duke.
+You caught up with what happened 70 years ago.
+So then along comes Kurt Girdle.
+And he goes.
+He goes to visit church, who's at Princeton, at the
+Institute for Advanced Studies.
+And he looks at this lambda calculus thing, and he
+says the same thing that most people say today when
+they see lambda calculus, which is I don't understand that.
+That's crazy.
+That can't be right.
+And he said, and so church said, fine, you come
+up with your own way of doing it.
+And girdle did.
+He came up with recursive functions, which is what we
+use in Haskell all the time now, just a function
+that's defined on itself, acting on a smaller argument.
+So he had recursive functions over numbers, but you can
+do recursive functions over arbitrary data types.
+But just numbers was enough to capture the idea of
+computability.
+And so he said, this is what we should use.
+And again, church's student Carlini, who I mentioned before, wrote
+this down and published it with attribution.
+, so it was first presented as a series of
+lectures at Princeton, and he wrote it down, and then
+cleaning and church went off, and they showed that everything
+that you could do with lambda calculus, you could do
+with recursive functions, and that everything you could do with
+recursive functions, you could do lambda calculus.
+So they were equivalent.
+So they went back to girdle and said, look, you
+didn't our idea, but your idea is the same.
+The tension was unbearable.
+So girdle thinks about this for a while and they
+says, hmm, my definition is the same as your official
+inner definition.
+Hmm.
+Mine must be wrong then.
+He just really didn't lambda calculus.
+So then along comes Alan Turing, who looks, as you
+can see, very young.
+He was actually a undergraduate at the time he did
+this.
+So if you guys are thinking of something to do
+for your final year project, here's something to compete with.
+You could do the equivalent of defining Turing machines.
+So, , I'm exaggerating slightly.
+He wasn't an undergraduate.
+He had just finished his, , undergraduate degree at Cambridge
+when he published this paper.
+But he was he was basically an undergraduate.
+He hadn't gone to graduate school yet.
+And he publishes this paper defining Turing machines, a third
+way of doing arbitrary computations.
+But he did something that church did not do and
+the girdle did not do.
+He gave an argument.
+why what a computer could do.
+Remember computers?
+A person sitting and following an algorithm.
+What a computer could do is what a Turing machine
+could do.
+And he said things , okay, we'll have squares which
+act as memory because, you know, whoever is doing this
+can write things down in each square.
+You can write a finite number of things, he explains.
+Well, why is it a finite number of things rather
+than an infinite number of things?
+Well, if, you know, I don't have out there, ,
+he explained this very well.
+He said, well, consider the numbers 99999999999999, and the number
+99999999999.
+You might not have noticed, but one of those had
+14 nines and one had 15 nines.
+And he said, look, you can't distinguish these at a
+glance.
+There's only a small number of things you can distinguish.
+It can't be an arbitrary, unbounded number of things.
+It's a small fixed number of things.
+So we'll take a finite number of symbols.
+You can write in each square of the Turing machine.
+And he went on and so he explained why what
+a Turing machine could do is what a computer could
+do.
+And then he sketched, .
+So they were very excited about this.
+And then they discovered that they had been scooped by
+church and scooped by, , girdle.
+So they were a bit upset about this, but, ,
+Turing's supervisor wrote to these guys and he said, well,
+what do you think?
+And they said, oh no, that's enough different that that's
+worth publishing to.
+So they published it, referencing the other two papers and
+sketching the proof that what a Turing machine could do
+is the same as what lambda calculus could do, or
+what recursive functions could do.
+And at that point, Turing actually went off to be
+a PhD student with church, and, , did extensions, various
+extensions of Turing machines, , and also wrote out the
+detailed description of how Turing Machine could do what a
+lambda term could do and vice versa.
+And what I love is the.
+There are many people who don't lambda calculus.
+They prefer Turing machines.
+But what Turing himself said at the beginning of his
+paper, maybe he was just buttering up his supervisor, but
+I don't think he was the sort of guy who
+would do that.
+He was gay back when it was not accepted to
+be gay.
+But, you know, he was not in the closet.
+, he was pretty clear about who he was, even
+though it was much more dangerous to do that back
+then.
+By the way, has anybody seen the film The Imitation
+Game?
+Right.
+Where they imply that because he was in the closet,
+he would just, , accede to blackmail by Germans and
+basically be a traitor to his country?
+Not everything you see in a movie from Hollywood is
+quite true.
+Anyhow, he wasn't the kind of guy who would butter
+up his supervisor, but what he said in the very
+first paragraph of this paper, he says, look, okay, we're
+going to show lambda machine, , lambda terms and Turing
+machines are equivalent, and therefore 1st May use the more
+elegant I quote Turing lambda terms.
+So he actually thought lambda terms Lambda calculus was more
+elegant than Turing machines, unlike many people who came after
+him who preferred this very mechanical view.
+Anyway, when all this happened.
+Now, there was the third thing with an argument why
+it was what a computer could do.
+And finally girdle was convinced and gave into this.
+So philosophers to debate whether mathematics is invented or
+discovered.
+And what I want to claim is when you have
+a hat trick, when you have three completely different definitions
+that turn out to be of the same thing.
+The reason they turn out to be the same thing.
+It's not that these three people have very little imagination
+and all invent exactly the same thing.
+It's because there's the same thing out there.
+It has been discovered.
+So what do we learn from this?
+Right?
+Girdle was 28 when he basically undermined the life work
+of Hilbert, who was 68.
+Turing was 23 when he settled this raging argument between
+church, who is 33, and girdle, who was by then
+no longer to be trusted 30.
+What should you take away from this?
+You have an important job.
+It's your job to keep explaining to your elders
+me, when we've got it wrong.
+Right.
+So keep that in mind.
+It's your job to be setting us straight.
+Okay, so that's the preface.
+You now know about computability theory.
+Now let me tell you a little bit about propositions
+as types.
+So here's Gerhard Jensen.
+, he was also working in the 1930s, just
+Hilbert and Church and Girdle and Turing.
+And in his not his undergraduate work, but in his
+PhD thesis, he defined the not one but the two
+main forms of logic that we use today.
+And how many people have seen the upside down a
+that means for.
+All right.
+So they had that informal logic since the very late
+1800s, early 1900s, but that was written by them as
+an just open and closed parenthesis.
+There wasn't a special symbol for it.
+So, , Jensen thought, oh, it'd be nice to have
+a special symbol.
+So he introduced the upside down A to stand for
+for all.
+So here are his rules for one of these major
+systems.
+Natural deduction.
+That's written a bit small.
+So here are the same rules written larger I've only
+written some of them.
+I've written the rules for and introduction and and elimination
+given here.
+And the rules for implication introduction and implication elimination given
+here.
+I've written down the rules identically.
+There's only one difference between the way he wrote them
+and the way I wrote them, which is he wrote
+his letters in German, and I'm writing my letters in
+English.
+So let's go through these rules.
+So the most important thing is that unlike the earlier
+formalisation of logic, such as those done by Hilbert.
+His rules come in pairs and the pairs have a
+very important structuring principle.
+They are introduces and eliminators.
+So introduction means, as you read the rule from top
+to bottom.
+That symbol gets introduced, right?
+The symbol appears below the line, but not above.
+Here again eliminators.
+As you read from top to bottom, the symbol appears
+above but not below.
+So what does this rule say?
+So you have hypotheses above the line and a conclusion
+below.
+So this says if a implies b.
+So this backwards c it's basically c.
+For consequence a implies b.
+If we know that and we know A, what can
+we conclude when we know A, we know A implies
+B, so we know B, right?
+That's a rule of logic that you've seen in this
+class.
+, how do you get.
+So that's how you use an application.
+How do you get an implication?
+You say, well, let's assume A is true.
+I don't have a proof of that, but let me
+just assume A is true.
+And if assuming A is true, I can prove B,
+then I know that with no assumptions A implies B,
+so these square brackets mean I'm assuming a.
+And then this label x says I am discharging this
+assumption.
+So here I'm assuming A, I prove b and here
+with no assumptions whatsoever I conclude a implies b.
+All right.
+And then conjunction written ampersand is even easier if I
+have a proof of a and I have a proof
+of B, I can conclude that are both a and
+B, and if I know A and B, what can
+I conclude?
+What can I do with it?
+Well, if I know A and B, I must know
+A and I must know B, so you can introduce
+an.
+And when you know both A and B, and when
+you've gotten and you can forget one half of it
+and conclude the other half.
+Any questions about those?
+Is that clear enough?
+Are you all bored?
+Not bored.
+Okay.
+.
+Right.
+Remember, it's your job to ask questions.
+Right.
+So let's make use of that.
+Let's do a little proof.
+I'm going to show you that b and a implies
+a and b.
+Wow.
+That's completely obvious right?
+Why would you even bother to prove that?
+Well, the reason I want to bother to prove it
+is if our rules work, they should let us prove
+this.
+So let's check that.
+That's so.
+And it'll give us a simple example of how these
+rules work.
+Okay.
+So I'm going to assume I want to approve an
+implication.
+So I start by assuming the thing that is the
+argument.
+The hypothesis of the implication.
+So let's assume B and A.
+I'm going to use that assumption twice.
+And from B and a of course I can conclude
+a and from b and a I can conclude b.
+Well now I've got a proof of a and a
+proof of b.
+So I've got a proof of a and b and
+I discharge my assumption, I've got b and a implies
+a and B.
+Any questions yet.
+Now the important thing about about rules coming in pairs
+is it means you can eliminate certain pairs.
+So if I have an introduction and then I eliminate
+I never needed to do that introduction okay.
+So instead of saying assume a prove b then I
+know a implies B and then give a proof of
+A, and I can conclude B.
+What would be a simpler way of coming to the
+same conclusion?
+I've got this part written with three dots and this
+part with three dots.
+How can I just use those without doing this?
+Well, I've got a proof of a right.
+So instead of assuming a why don't I just use
+the proof of a.
+So I'm going to simplify the proof so that instead
+of assuming A and getting that to b, b I've
+got a proof of a, and from that I get
+b.
+Now this looks I made the proof smaller, but
+in fact I might have made it very much larger
+because as we saw here, you might use your assumption
+more than once.
+So here I've used the assumption twice.
+So if my proof here of a is very big,
+I might duplicate it two times or even an arbitrary
+number of times, so the proof would actually get much
+bigger.
+Oh, let's skip that.
+Okay, let's do another example.
+Right.
+Let's have got the introduction rule for conjunction.
+And then one of the elimination rules.
+So here from A and B I can conclude a
+and b.
+And then from the a and b I can conclude
+a right.
+What's a simpler way of doing that one.
+It's fairly obvious right.
+What's the simple way of doing this?
+Proof.
+You're sitting all by yourself in the middle of the
+front row of the second tier.
+What?
+What's the way of doing this proof directly?
+Yeah.
+Right.
+We've got dot dot, dot ace.
+That's a much simpler way of proving a so we
+can just.
+Right.
+Just use dot dot dot A directly.
+Okay.
+So let's now we know how to simplify proofs.
+Here's our little proof that from B and A we
+can conclude a and b.
+Here's a proof of B.
+Here's a proof of A.
+Here's a proof of B and a.
+So by elimination , I know b and a implies
+a and b I know b and a, so I
+can conclude a and b, so right.
+But there's a lot of guff here that should be
+able to get rid of.
+Right.
+Because here's, , a introducer followed by an eliminator so
+I can get rid of that.
+So what I do is I take my direct proof
+of B and A and copy it in place of
+those two assumptions.
+And now I've got to do this.
+And then once I've done that copy, I have an
+an introduction above and an and elimination so I can
+get rid of both of those.
+And now for my proof of being, my proof of
+a I've got a direct proof of A and B
+rather than an indirect proof.
+Okay.
+So Jensen was very interested in these pairs of things
+because he wanted to show that you could always simplify
+proofs.
+You want to show that there were no roundabout proofs.
+So he introduced sequent calculus, which is different than this.
+This is called natural deduction and showed that you could
+always eliminate these pairs, except in sequent calculus they're left
+right pairs.
+You guys have seen sequent calculus right.
+You've not seen natural deduction so much Right.
+Natural deduction is the one everybody else uses.
+But sequent calculus is nice because it's very symmetric, and
+because it was easier for him to prove this elimination
+property.
+So you define natural deduction to find sequent calculus proved
+that they were equivalent.
+And then prove that you could always get rid of
+these roundabout proofs in sequent calculus.
+Great irony.
+He needed a roundabout proof to show there are no
+roundabout proofs.
+So this one that I showed you here actually didn't
+come about until.
+So he did that in the 1935, in the early
+1960s, I think.
+This will horrify you.
+Roundabout.
+When I was born.
+Province wrote down the direct proof for natural deduction.
+Okay, so that's Jensen.
+Now let's look in more detail at what church did.
+So church actually came up with lambda calculus.
+He wasn't trying to solve the problem of computability.
+That just happened on the side.
+What lambda calculus was really for was to have a
+compact way of doing what was important, which was writing
+down formal proofs and logic.
+Except it turned out that in untyped lambda calculus, you
+could write things, , that would let you prove false,
+which is bad, right?
+You should not have a proof of false.
+So, so it was , oh, dear.
+You know, well, we can use lambda calculus for computation.
+Okay.
+, oh, by the way, church sort of anticipated that.
+So he wrote this first paper on lambda calculus, ,
+as a compact way of writing down proofs and logic.
+But somewhere in the introduction he wrote, it may even
+have applications beyond its use in logic.
+So he understood that he had something interesting there, but
+he wanted it for logic.
+And it turned out you could write down these basically
+infinite terms that let you then do proofs of false,
+which you really didn't want to have.
+So after inventing untyped lambda calculus, he invented ta da!
+Simply typed lambda calculus and simply typed lambda calculus made
+use of an idea that Russell had come up with
+to avoid other paradoxes Russell's paradox.
+And so he wrote this down in 1940.
+So I'm going to show you the simply typed lambda
+calculus, which had the property that all terms terminated.
+You didn't get these infinite terms, and you could no
+longer do a proof of false.
+So simply type lambda calculus was suitable as a basis
+for logic.
+And we will learn a little bit more about just
+how suitable it was.
+Okay.
+So simply type lambda calculus right?
+We have application.
+If L is a function from A to B and
+m is a term of type A, then L applied
+to m.
+Well this is a function from A to b, so
+the result will be a b right.
+You use this in Haskell all the time, except you
+write this funny thing as an arrow, right?
+If x is a term of type A, and I
+can write a term n of type b, then I
+can write lambda x n.
+So here x is free in n.
+Here its bound in n, and this will be a
+function from an argument of type a to a result
+of type b.
+If m is a term of type A, and n
+is a term of type B, we can form an
+m pair, which is an a b pair.
+So we write.
+In Haskell, we write m in pairs.
+Just this.
+We also write the type A and B just as
+a and b a comma B in parentheses.
+If L is an ab pair, then pi one of
+L will have type A.
+We call this first in Haskell FSG.
+And if L is an AB pair then pi two
+of L we call this snd.
+Second in Haskell we'll have type B.
+Is that clear enough.
+Any question.
+Just not this.
+You could go oh yeah I've seen that in a
+Haskell before.
+Some of you are nodding.
+Some of you are asleep.
+All right.
+We'll move on.
+Okay.
+So now we can write a little program.
+I'm going to write the program that just swaps the,
+, elements in a pair.
+So this takes a pair, , Z, which is a
+B and a pair.
+So be first followed by an a, and I'll compute
+pi two of z.
+So that's the second component that would have type a
+and pi one of z.
+That's the first component that will have type B, so
+this returns a pair with the first components in A
+and the second composed of b.
+So that's an a b pair.
+And you can see right I just explained all that
+here.
+But we can see the details right.
+If z is a b a pair pi two of
+z is an a pi one of z is a
+b.
+I can form pi two of z paired with pi
+one of z.
+That's an a and b, and I can discharge the
+assumption.
+So it's lambda z pi two z pi one,
+z is a b, and a goes to a and
+b function.
+It just swaps things around.
+Okay.
+We can evaluate programs, right.
+So , in Haskell we use lazy evaluation which essentially
+says substitute term m for every occurrence of variable z.
+So if we've got lambda z n applied to m,
+why does I copy out n And with every occurrence
+of Z replaced by M.
+So we'll just take that variable z of type A
+and replace it by the term m of type A.
+And so now we've got n with every occurrence of
+z replaced by m which has type b.
+So notice this shows us that as we evaluate a
+term it keeps the same type.
+It started to type B.
+It ends up at type B.
+And similarly if I've got m and n form
+a tuple m n a pair m n and I
+project out the first component, what will that evaluate to?
+I'm going to pick on the same person.
+What will that evaluate to m right.
+It'll just evaluate to m.
+So we pick out the first component and Ms. type
+A.
+This has type A.
+And when we're done.
+It just evaluates to M, which has type A.
+, and in fact, , because you're always getting rid
+of some things.
+Right.
+This is what we showed is that the type stays
+the same.
+So as you evaluate a type program, you still have
+a type program.
+And as you evaluate the type program, the types are
+getting smaller.
+Right.
+We saw that the program might get bigger.
+Right.
+You might copy em many times, but the set of
+type distinct types in the program is getting smaller because
+before we had A implies B as one.
+If you look at the multiset of types, this is
+one of the multiset of types that appears in the
+program before.
+But after we've reduced, that's gotten rid, that's gone from
+the multiset of types.
+And the multiset of types that appears in the program
+is finite.
+So it must always be getting smaller.
+So programs must terminate.
+So that argument was first written down by Alan Turing.
+, and in fact, it's that property that guarantees that
+simply type lambda calculus is a good way of formulating,
+, it can be used as a meta language for
+logic, but we'll see.
+It's closer to logic than that.
+, so now, right, we can look at evaluating a
+program which we know is guaranteed to terminate.
+And.
+Right.
+So here is our swap program applied to a tuple
+and followed by M.
+So if we evaluate this right we take NM and
+we replace z by NMN.
+So now we've got this.
+And now when we take pi two of an NMN
+pair will get m and we take pi one we
+get n.
+So the program.
+So swap apply to an NM pair.
+Returns an min pair.
+So we've swapped the components we started with NM and
+we get back min.
+So this second thing I showed you might have looked
+a little bit similar to the first thing I showed
+you.
+Right.
+And in fact it's let's see it's exactly identical.
+Right.
+So I'm not sure if facilities has said time
+to do this.
+Dawn, did you talk to them in time?
+So.
+Well, I'm sorry.
+What was supposed to happen is that you could reach
+under your seat and pull out a pair of rose
+coloured glasses.
+So I want you to pretend that you're wearing rose
+coloured glasses.
+Of course, if you're wearing rose coloured glasses, you won't
+see all this stuff in red.
+it will vanish and you'll just be left with the
+blue.
+And indeed, if you take this set of slides with
+everything in red and blue and compare it to what
+we had here, it's the same, right?
+All the blue stuff here got augmented into red and
+blue stuff here.
+And what does that mean?
+What that means is all this stuff in red is
+basically writing out in a term form, the proof this
+term, right written out here linearly stands for this whole
+tree.
+That is the proof of A and b.
+And in general the red stuff the terms is just
+another notation for proofs.
+You can think of the proofs as proof trees or
+parse trees of terms or just as terms.
+So we've got this very strong correspondence where the blue
+stuff in logic is formulas of the logic, propositions, statements
+that can be true or false.
+And the red stuff is proofs.
+So, , a formula in logic corresponds to a type
+in a type programming language simply type lambda calculus
+or Haskell.
+A.
+Proof in the logic corresponds to a term in the
+programming language.
+And most importantly, right.
+There's a lot of structure preserved here because simplifying a
+proof corresponds to evaluating a program.
+So we have propositions as types, proofs as programs, and
+simplification of proofs as normalisation of programs.
+Evaluating a program.
+Mhm.
+So this is sometimes called the Cory Howard isomorphism.
+and write for programming languages with types.
+We often write out arrow times plus and bottom.
+But in logic the corresponding things are implies which we
+wrote that way and which we wrote as an ampersand,
+by the way.
+Right.
+People often do it with this and this, but this
+is horrible, right?
+You stand on your head and you can't tell what's
+going on, but you can very easily confuse and and
+ors.
+, so it's much better in fact.
+Right.
+Ampersand for this one and or for this one.
+And, , Jensen knew that.
+But we seem to have forgotten it these days.
+But in fact, ampersand for this one and the wed,
+the V symbol for that one is a good choice,
+just as a matter of design that makes it easy
+for people to read.
+, so anyhow, this corresponds to , wedge or ampersand.
+This corresponds to V and this corresponds to false.
+And it's called the Cary Howard correspondence, because a variant
+of it was discovered by Haskell Curry, the same person
+that Haskell is named after, and the same person.
+The currying is named after, , in the 1930s, William
+Howard, much later in the 1970s, wrote this out first
+for simply typed lambda calculus.
+Just what I've shown you, and then said, well, what
+happens with the rest of logic?
+Is there also a programming language that corresponds to the
+rest of logic?
+And he discovered what's called dependent types.
+And dependent types are important because they show up in
+what, , lots of proof assistance that we use today.
+So, , this was published in 1980, but he actually
+discovered it in the early 1970s and then published it
+in 1980.
+In a festschrift devoted to, , Haskell Curry on his
+80th birthday.
+So.
+Right, we've got the Curry Howard correspondence, propositions as types,
+proofs as programs, and normalisation of proofs as evaluation of
+programs.
+And the interesting thing is, the first time I saw
+this, I thought, oh, that's just a cute little trick.
+But it turns out it applies not just to natural
+deduction and simply type lambda calculus.
+But the same thing works for polymorphic types we
+have in Haskell.
+The Hindley Miller type system, which was in fact discovered
+once by the logician Hindley and once by the computer
+scientist Milner.
+There's a more general system called system F, which again
+was discovered once by a logician and once by a
+computer scientist.
+Basically, what this says is it's a double barrelled name,
+Curry Howard, which predicts the existence of other double barrelled
+names.
+It says every good idea will be discovered twice, once
+by a logician and once by a computer scientist, because
+they're doing the exact same thing.
+And it turns out that pretty much every interesting logic
+has an interesting corresponding programming language, and vice versa.
+, there's sort of a very important exception to this,
+which is concurrent programming.
+There are lots of processed algebras for doing concurrent programming,
+but nobody knows which one corresponds really neatly to a
+logic yet.
+There's a lot of work on what's called session types
+and linear logic, which may be a form of the
+answer, but I think the actual answer is something that
+maybe somebody here will discover one day.
+So right, there are lots of functional languages.
+You've learned Haskell, but there are many, many others, and
+there are lots of proof assistants.
+So , the first two were auto math and type
+theory done by Matt and Love, based on write in
+1975.
+I told you Howard did his work in the early
+1970s.
+He showed it to Matt and Luff, and then Matt
+and Luff came up with type theory.
+So this is a way of saying, this is the
+way we should think of proofs as terms and the
+appropriate dependently typed programming language.
+And then there were many, many other proofs systems that
+came since one of the important ones was MGL, LCF,
+which was done here at Edinburgh by Robin Milner.
+He used to be a professor.
+I hold the chair he used to sit in.
+That was why I came here.
+I couldn't turn down being offered that chair.
+And MLK, of course, part of that is ML, which
+is one of the early functional programming languages.
+It was the first one that was tight.
+And then Haskell came along because we were we were
+all in Glasgow at the time, or most of us
+were.
+And we looked across what was going on here in
+Edinburgh and we said, oh, that type system is neat.
+Let's do a lazy, functional language that has that type
+system.
+Right.
+So one of the important things, right, if you have
+a good idea, other people will pick up and use
+that good idea.
+The the trick is to make your idea simple enough
+that other people can understand it and pick it up
+and use it.
+So I'm going to conclude with just two minutes with
+I normally stay away from philosophy.
+But we saw philosophy was very important to Turing getting
+his work accepted.
+So I'm just going to do a tiny bit of
+philosophy.
+So, right.
+Sometimes we want to talk to aliens, right.
+We've actually done this.
+So this is the the Voyager.
+This is a plaque that appears on the Voyager satellite.
+And this shows you where Voyager went.
+Right.
+There's the sun, there's a Venus, sorry, Mercury and Venus
+and Earth, and it left Earth and swings around the
+sun and Jupiter in between Jupiter and Saturn, and then
+leaves the solar system.
+So in case any aliens find it, hopefully they can
+look at this and work out what's going on.
+This is showing a bunch of quasars, and they're the
+frequency in which hydrogen, , vibrates when you look at
+these different quasars.
+And then the length of the line is the distance
+from those quasars to sol to where this satellite originated
+from.
+And then there are pictures of people on it.
+Now, depending on the aliens that see this right, they
+may look at this and go, , right.
+They'll probably work out.
+Length of a line means distance.
+These are written in binary.
+They can probably work out that binary means numbers.
+Maybe they can work out the schematic of the solar
+system.
+They'll look at this and either go, that's a bunch
+of weird lines, or maybe they'll look right.
+If Star Trek is right, they'll look at it and
+go, oh, they're just us.
+Except they don't have pubic hair.
+Okay, so if we talk to aliens, right, they might
+understand.
+They might understand some of it.
+They might not understand all of it.
+Right.
+Length of a line, probably understand drawing.
+Maybe they'll understand.
+Maybe not in how many people have seen the.
+It's quite old now Independence Day.
+So in this they, , , destroy all the aliens
+by giving them a virus.
+The virus is written in C.
+Well, actually, Java had come out then, but I'm pretty
+sure it wasn't in Java because Java had not yet
+spread through the known universe.
+But they give they send them a virus written in
+C that then destroys the aliens.
+If we sent aliens something written in C, would they
+even be able to figure out what it means?
+Right?
+Maybe it would be length of lines, but more
+likely it's this, right?
+It's , what is this stuff?
+All right.
+So if we sent them something written in C, they
+probably wouldn't understand it.
+But what if we sent them something written in lambda
+calculus?
+Would they understand that?
+So should we call lambda calculus the universal programming language
+because it's something that aliens would understand.
+Well, these days, I first gave this talk, I had
+to explain what multiverses are.
+Now, you've all seen the Marvel films.
+You know what multiverses are.
+And right, scientists actually talk about this.
+It's , it turns out that the different forces in
+our universe, the weak electromagnetic force, is just strong
+enough to keep matter together.
+If it was a little stronger, everything would collapse.
+You wouldn't have atoms.
+It's a little bit weaker.
+The electrons would fly away.
+You wouldn't have atoms.
+So they say, well, why is it that the force
+is exactly right for matter to exist?
+They say, well, it's because we're here to see it.
+There are other universes where it's stronger or weaker, but
+we're not there to see it in our universe.
+We're there to see it.
+It's just right to have matter.
+So scientists actually reason about multiverses a bit.
+Now, in a multiverse, you might have different weak electromagnetic
+force.
+You might have, , different strength of gravity.
+Right?
+Different gravitational constant.
+One thing I think you will not have different is
+the laws of logic.
+Right.
+Logic goes beyond the universe.
+It goes across multiverses.
+Maybe there are multiverses with different logic, but my imagination
+is not great enough to consult them.
+So what does that mean?
+That means we cannot call lambda calculus the universal programming
+language.
+Why can we not call it the universal programming language?
+Because doing so is too limiting.
+So I will stop there.
+I just want to leave you with one thought, right?
+You've learned about Haskell, which is very practical language, but
+one thing that makes it work so well is that
+it's based on lambda calculus, which, as we've seen, is
+very simple.
+, something that was basically independently discovered three times because
+computation was discovered three times, and lambda calculus is a
+model of computation.
+And what I want you to go away with is
+the thought that if you have a tough job to
+do, you should think that this is a job for
+lambda calculus.
+I will stop there.
+Thank you very much.
+So.

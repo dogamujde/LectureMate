@@ -1,0 +1,837 @@
+All right.
+Good afternoon.
+So I hope you all got here safely through the
+exciting wind at Idle Curiosity.
+How many of you cycle?
+Not very many.
+Okay.
+It's exciting time of year for cyclists.
+, so I said we were beginning to move away
+from logic.
+We're still doing one more week of logic, but we're
+doing logic from an engineer's viewpoint.
+So it's actually possible that some of you already know
+this stuff, so who knows.
+Corner maps.
+Okay, you can go to sleep for the week if
+you want.
+Or you might learn something new.
+You never know.
+As you can see from the slide, we're reaching into
+the 20th century in terms of the work done, which
+means that we're at the sad stage of the course
+where every week I have to go and check whether
+the people on my cover slides are still alive or
+not.
+And sadly, Maurice Connor died in my second year of
+teaching the course.
+I never met him.
+He looks as if he was a lovely guy, but
+I don't actually know that.
+So the topic of today and to Thursday is Connor
+maps.
+What are coronal maps?
+They're a way of extracting a formula from a picture.
+So we've been using Venn diagrams to try to understand
+formulae and kernel maps without going the other way.
+What happens if you have the picture or the truth
+table and you want to get a formula out of
+it?
+And this is something that engineers want to do because
+engineers work in pictures.
+I'm going to be stereotyping vigorously for the next week,
+but you need to program informally.
+So to set up the context, suppose we have two
+predicates that we're thinking about called a and B.
+How many different universes are there with A and B
+predicates?
+For I'm seeing a lot of some hands saying for
+any want to choose anything other than four.
+Good.
+.
+So that's how many different regions there are.
+Now, is that the same as the number of universes
+we can distinguish?
+So because two predicates lets us to separate the universe
+into four bits.
+So in principle, we could construct a universe with different
+things in each of those four bits, which might give
+us a new idea about how many distinct universes there
+are, which have just two predicates in them.
+So the people who have four, do you feel inclined
+to change your mind?
+You've got four by going two to the two.
+Right.
+Or something that.
+So if I have A and B, I can describe
+four regions of the universe.
+, what does it mean for two universes to be
+distinguishable?
+Basically, it's whether they're inhabited.
+Each region is inhabited or not.
+Could be empty, could be inhabited.
+So if I have four regions and each of them
+can be either inhabited or empty.
+How many different universes does that give me?
+16.
+So yeah, they look that.
+So that's quite a lot of different universes with predicates.
+And you can obviously see what happens as you add
+predicates.
+, if we do the calculation, the numbers grow up.
+, how many of you get extremely annoyed every time
+some non-technical person talks about something increasing exponentially?
+Right.
+Hopefully by the end of this course, that will be
+99.8% of you.
+This is a case of exponential growth.
+In fact, it's worse.
+It's a case of doubly exponential gross growth, which is
+a meaningful concept with four predicates.
+There are 65,000 different universes that we could be talking
+about.
+And so one of the questions we might ask is
+given a universe with these predicates, can we write down
+the formula that describes it uniquely amongst all the other
+universes?
+So by example, if we're looking at this very simple
+universe here, this is what we had as the syllogism,
+as the categorical proposition.
+Every B is A right.
+So every B is a was our syllogism or categorical
+proposition statement.
+But can we just describe it in terms of Boolean
+logic.
+Well we look at it and say which regions are
+inhabited.
+The outside is that is, that is and this is
+empty.
+So we can just describe each region in term in
+turn.
+We can say not A or B, , whereas not
+A or B that's the outside or a or not,
+b or not B is there or a and B
+or the middle.
+So it's okay for any of those to be inhabited.
+And that's a brute force way of describing it.
+Just looking at every inhabited region and saying that they
+can all be inhabited, but this one isn't mentioned.
+And so it's not going to be.
+But that's certainly not the shortest formula we want.
+And if we're going to describe this universe for circuit
+layout tool or whatever it is we're doing.
+So these were electronic engineers that did this or electrical
+engineers.
+The difference was less well defined in those days.
+If we look at that formula, there are a bunch
+of things we can do.
+It can be simplified in various ways.
+So it can be simplified that by pulling out
+A, not B.
+, we could alternatively think about describing the places that
+are empty.
+So this region here is what region is this B
+and not a b and not a.
+And that must be false.
+So we could describe this universe by saying that B
+and not A must be false negating it.
+And then we could apply to Morgan's law if we
+want it and say it's A or not B.
+So a bunch of formulae, all of which are equivalent,
+all of which describe this universe.
+And the question is, if I give you something that
+is not just a two predicate picture where you have
+16 choices, but a four for a picture where you
+have 65,000 choices, how can you go from the picture
+which you can't understand, or the truth table To a
+formula that uniquely characterises the universe.
+Right.
+Do you get what we're trying to do?
+Extract here?
+, I can increase it by one tiny notch, and
+otherwise I can try putting this closer.
+Does that help?
+Okay, thanks.
+, so the idea here is getting a logical description
+from something that is either a picture or just the
+truth table, because these pictures are our graphical way of
+representing truth tables in one way.
+.
+I have a little side issue here.
+This is actually a relevant side issue for computer scientists.
+, back in the olden days.
+And actually, still, you probably don't need to think about
+it.
+But back in the olden days, discs were expensive, and
+when you bought a 200 gigabyte disk, you expected to
+be able to fit 200GB of files on it.
+And it was very annoying to find out that you
+could only fit 195GB or whatever it is on it.
+And the reason for that was because disk manufacturers use
+the C prefix giga, which means multiply by ten to
+the nine, whereas most things in computer science use the
+binary.
+I hope that computer's not about to explode.
+Most things in computer science use the binary prefix.
+We say giga, but usually we don't mean multiply by
+ten to the minus nine.
+Usually we mean multiply by ten to the 30, which
+is 1074 Around 74 million, roughly, instead of a thousand
+million.
+So this was a great source of annoyance for a
+large portion of my life.
+And eventually somebody, although not the people who define.
+So I decided that the computing industry really needed binary
+prefixes.
+So some of you may have seen these, some of
+you may know them, but some of you may have
+seen them without knowing them.
+They are actually a useful thing to know.
+So you will see people in computer science and the
+other binary oriented subjects talking about Chip, maybe, and Gibby,
+meaning multiply by two to the 10,024.
+So when we say kilobyte in computer science, we always
+mean KiB byte.
+Nobody ever means a thousand bytes when they say kilobyte.
+Likewise megabytes, likewise gigabytes when you're talking about memory.
+But as I said, the disk manufacturers and also the
+tape manufacturers used to talk about gigabytes in the sense
+of ten to the nine.
+So that's just a little side issue.
+, incidentally, this is another completely random thing I said.
+Tape.
+Have any of you ever written files onto a tape
+of any kind?
+Nobody.
+Do you think tape still exists as a storage medium?
+Okay, 95% of you are very wrong.
+Tape is still the large scale storage medium of choice,
+and the capacities increase incredibly every 5 or 10 years.
+Which surprised me because even when I was a student
+40 years ago, people thought tape was on the way
+out.
+And 20 years ago people thought tape was definitely dead.
+But it just keeps on going mainframes.
+So if we've got a way of looking at a
+picture with 65 different universes, 64 different universes, and turning
+it into a formula, except that I haven't told you
+any human comprehensible way of looking at a huge picture
+and extracting a formula from it.
+So how do we do that?
+There are algorithmic ways to simplify Boolean formulae, and we
+will be talking about those a little bit later.
+But as I said this is engineering.
+And engineers are pragmatic people.
+And what we're going to talk about now is a
+very human way of simplifying a formula.
+So what are humans good at?
+Humans are not good at a lot of the things
+that computers are good at.
+We are not good at doing calculations.
+We are not good at manipulating large amounts of data.
+We are very, very good at spotting patterns in things,
+and there are all sorts of good evolutionary reasons for
+that.
+The evo psych people will tell you, because it's important
+to recognise the pattern of a pounce of a tiger
+waiting to jump.
+And I don't know whether you believe evolutionary psychology, but
+I suppose there's probably something in it.
+And it's a side issue.
+We do have bits in our brain, or at least
+do we know that humans do.
+We know that other animals have bits in their brain
+that respond to specific patterns, patterns of vertical stripes,
+or even individual clumps of neurones or neurones that do
+that.
+So it's quite deeply ingrained in our brains, and it's
+not a conscious intellectual thing, but pattern recognition is something
+we do.
+Which is why all these annoying are you a human
+things on And websites try to get you to recognise
+patterns that have been confused in a way that makes
+them hard for machines to do so.
+The corner map is a way of drawing out a
+truth table and colouring it to make it easy to
+pull out a boolean formula, and even better than that,
+to pull out a short Boolean formula.
+So here's a truth table involving the predicates A and
+B.
+I think it's probably the one we looked at earlier.
+What can we do to try to identify a nice
+short formula that describes it?
+Do we need to discuss what it means for a
+formula to be short?
+I mean, technically we should have some definition, but the
+number of symbols in it will do for now.
+So what we can do is highlight the cells that
+are true.
+So this is the bits of the universe that can
+be inhabited, which in our case was the the left
+hand side in the previous picture.
+And stare at it and try to cover it by
+rectangles.
+So this is a bit an IQ test I
+suppose, but it's a very easy IQ test.
+I can't do IQ tests, so I easy IQ
+tests.
+If we look at this and try to cover it
+by even rectangles.
+Now, what do I mean by even rectangles?
+I'll tell you a bit, tell you that more precisely
+later.
+But if you want to cover this L shape by
+a couple of rectangles as simply as possible, what are
+you going to do?
+I could cover it by three, one by one squares.
+Right?
+But is that the simplest thing to do?
+So for some people, it's the simplest.
+For others it isn't.
+So what's an alternative?
+One square off, one square on top and a rectangle
+on the bottom.
+Now bear in mind that these are boolean values, so
+it doesn't matter if I overlap them.
+The stem of the L and the leg of the
+L.
+So we've got several possibilities.
+Which one is nice?
+So the one I just mentioned is to do that
+and that.
+, now I claim that that is something that is
+particularly short because it gives you a nice short description.
+In particular, it gives me the description of the L
+in terms of the things that are a so where
+is A1 there.
+And together with the things that are not B.
+So if I cover the L by two rectangles, then
+I get a formula coming out which is of the
+form A or not B, which I claim is a
+nice short formula.
+If I did that division, which was one of the
+earlier suggestions, the square at the top and the rectangle
+along the bottom, what formula would I get out of
+it?
+Yeah.
+I don't see.
+I mean, eventually I would.
+So how would I get that?
+I mean, let's not do anything clever yet.
+Let's just describe the picture in front of us.
+And or not.
+And so I'm trying to describe a single square on
+the top, which is defined as not a.
+And then I'm trying to describe the rectangle on the
+bottom.
+Which is a.
+, now if you simplify that formula, of course you
+get back to the one that we found by covering
+it with two rectangles.
+But the nice thing about looking for the biggest rectangles
+that cover the shape is that you get the short
+formula out by staring at that, rather than by having
+to do simplification.
+Notice by the way, that when I try to describe
+a single square in this diagram, I have to talk
+about two variables because I'm identifying one cell in a
+two dimensional array.
+When I talk about a row, then I only need
+to mention one variable.
+So the bigger the rectangle I'm describing, the fewer variables
+I have to specify to say what it is, and
+that makes for short formulae.
+So that's why we look for the largest even rectangle.
+I said I'd tell you what I mean by an
+even rectangle.
+I don't actually mean that it has an even number
+of cells in it.
+I mean that its width and height are powers of
+two so that it divides.
+It's either half a table or quarter of a table,
+or an eighth of a table, so that it covers
+one particular variable value.
+.
+Okay.
+We should, , make sure that we've got this two
+variable case sorted out.
+So do you see what we're doing?
+Should we do another example?
+Yes.
+.
+Let's call.
+It.
+C and D.
+No it's not.
+Call it C and D, let's call it p and
+q this time.
+Sorry.
+My ones are becoming more and more continental.
+Sure.
+, what truth table shall we do?
+Something could do.
+Something perverse.
+.
+Trouble is, they're all rather boring.
+Somebody give me one.
+Somebody just read out for binary digits.
+Say for binary digits to me.
+The identity function.
+Equality function.
+Now, that's a nasty one.
+Why is it a nasty one?
+It doesn't have any interesting rectangles.
+It just has one by one squares.
+So if we tediously do it.
+What formula do we get out?
+So people at the front sort of keep quiet for
+a moment, because the other people need to think for
+a bit.
+Okay.
+Can anybody at least halfway back shout out a formula?
+For.
+Okay.
+Not P and not Q.
+That describes that single cell there or P and Q
+which describes that soul there.
+So that's an ugly shape.
+It has a long formula.
+Okay.
+There are of course 16 possible examples we can do.
+I'm not sure it's useful to go through too many
+more of them, but the basic principle is hopefully reasonably
+clear.
+It's about to get a bit more exciting because it's
+a rare situation that, you know, you only have four
+variables.
+I mean, actually in modern world, it's a rare situation
+that you only have any reasonable number of variables.
+But this is back in the old days of manual
+circuit design.
+So just before I go on, any immediate questions about
+what's going on here?
+Okay.
+Engineers extended this up to four.
+In fact, they extended it up to six or even
+eight variables.
+But that's actually more than my brain can cope with.
+So we're going to stick to four variables.
+How can we write down a truth table for four
+variables.
+So if you think about what a truth table for
+four variables ought to look , it ought to be
+a four dimensional table.
+And we are not terribly good at writing down and
+visualising four dimensional tables.
+And some of you may possibly have tried how many
+people had an obsessive phase of drawing hyper cubes?
+Nobody sad.
+It's when you try to draw the hyper, hyper hyper
+cues that it gets exciting.
+You get pretty patterns.
+, and just as a side, if you I did
+once visit A computer science stroke electronics department, which had
+an immersive four dimensional display navigation system where you could
+walk into this planetarium room and steer yourself around
+a four dimensional universe.
+It was a seasick inducing.
+So what I've done here is write down a four
+dimensional truth table by clumping together two of the variables.
+So I've got A and B, and I'm writing down
+combined values.
+So A is zero, B is zero, a is zero,
+b is one as b as one, b is one,
+and so on.
+Similarly, along the top I've written down combined values of
+two variables c and d.
+Now you'll notice that I have not written these values
+in the natural order.
+So I've gone in.
+Normally you would expect to go 00011011 because that's how
+we count.
+At least it's how we count when we've mastered binary,
+which hopefully you all did many years ago.
+Instead, I've written them in this order, and this is
+a very clever and nice little trick.
+So the phrase for writing things in this order is
+writing them as a grey code, which Wikipedia will tell
+you more about if you want to know.
+, the nice thing about it is that as you
+move from one column to another, only one variable is
+changing its values.
+So when I move from zero to 0 to 0,
+one d is changing.
+When I move from zero 1 to 1 one, then
+C is changing.
+When I move from one 1 to 1 zero, then
+D is changing.
+, why is that nice?
+It partly makes the extraction of rectangles easier, and also
+it avoids a problem that is important in circuit design,
+which is race conditions.
+So those of you who are doing hardware are going
+to come across race conditions and we will see.
+We will mention briefly at the end of this section
+how this grey code stuff helps you with that.
+, so what am I going to do?
+Well, I can do things identify a region.
+So here is a rectangle.
+It's an even rectangle.
+And this is characterised by the variable a being one.
+So if you look at the rows here, it's the
+rows where a is one and c and d or
+anything.
+What happens if I want to look at the region
+where b is one.
+I get that.
+So again if I look at the region where B
+is one, I get a nice contiguous rectangle.
+And this wouldn't happen if I wrote these combined values
+in the usual order.
+So something you should do after the lecture is convince
+yourself of that.
+Write out the truth table in the usual order and
+see how you wouldn't get nice rectangles.
+So this describes the region where b is one.
+And similarly this is the region where c is one,
+and this is the region where d is one.
+So any place where one variable takes on A a
+true value is nicely described by a two by four
+rectangle in the table.
+But of course we also want to think about what
+happens when variables are false, because we might need to
+describe a universe in which variables take false values.
+And at first sight, it might look as if this
+isn't going to work so nicely.
+So if I look at.
+The.
+Places where A is zero light pink, then I get
+this nice two by four rectangle.
+Okay.
+But if I want to look at the places where
+B is zero, I get that.
+And at first sight that's not a two by four
+rectangle.
+Last time we had a discussion about geometry.
+So here's some geometry.
+The keyword is in the title of the slide.
+On what surface?
+If we do this to this truth table on a
+suitable surface, we could make this thing be actually a
+rectangle.
+, and now I get to the question who remembers
+what a torus is?
+Okay, who thinks they should remember what a torus is
+and who is quite sure they've never heard the word.
+Okay, a torus is a ring doughnut.
+Okay.
+, I don't know why mathematicians can't call it.
+I suppose because doughnut is an ambiguous word.
+There are wing doughnuts, and there are proper doughnuts with
+a hole in the middle and jam that squirts out.
+But if we draw the truth table on a torus
+on a ring doughnut, then both the zero values and
+the one values are rectangles.
+So the same happens with c and d.
+, this is where c is zero and this is
+where d is zero.
+And the way we think about it is this.
+So values wrap around from the beginning.
+They wrap around from the right to the left.
+So if I go right from here I end up
+here.
+If I go up from here I end up at
+the bottom and so on and so on.
+And there is a picture which I googled up because
+I don't know any graphics package well enough to draw
+a coloured torus, but fortunately somebody else does.
+, So this is a picture of the truth table
+with slightly different colours drawn on a torus.
+So I've got red and blue and green and yellow
+instead of my colours, but roughly it matches.
+So this is strictly speaking it's due to a two
+dimensional geometry, but it's two dimensional geometry on an interestingly
+curved surface.
+And many of us are not very good at thinking
+about these things.
+, I have lousy geometrical visualisation capacities.
+, in fact, the other day I found a courier's
+report from when I was 16, which said I had
+lousy spatial visualisation capacities.
+It's still true.
+But fortunately, we can look at it, look at truth
+tables and do it more diagrammatically.
+, any questions at this point?
+I think examples are what we need to see how
+to do this successfully, what I need it.
+I, by the way, knew none of this before I
+started teaching the course because not being an actual computer
+scientist by origin, I managed to avoid this bit of
+electronics.
+, so here's a four dimensional truth table.
+It has a bunch of zeros and it has a
+bunch of ones.
+This is an easy one.
+What's the easiest rectangle that describes it?
+I mean, it's.
+The simplest possible thing, the square in the middle.
+And somebody said that's B and D.
+Why is it B and D.
+Because this is where B is one and this is
+where d is one.
+okay.
+So far so good.
+That was what we got that everybody see that?
+No.
+Anybody worried about it?
+Not quite sure.
+Okay.
+Here's another one.
+Also straightforward.
+Yeah.
+Mhm.
+Be a Nazi.
+So just look at the rectangle.
+Look at the rows that describe it.
+It's the rose where B is one.
+Look at the columns that describe is the rose where
+c is zero.
+so that's a nice easy case.
+We're going to do another couple of easy cases before
+getting on to slightly more challenging ones.
+What about this one?
+This is also something where there are four true souls,
+but now they're laid out all in a row instead
+of in a nice little square.
+Does that make a difference to how complex the formula
+is?
+Not really.
+, that's my rectangle I'm trying to cover.
+And if I try to describe it, it's this row,
+which is where A is zero and B is zero.
+So this is described by not A and not be.
+Okay.
+Any questions so far.
+Anybody not follow any of these.
+And is willing to admit it which is always the
+hard part.
+What about this one.
+Mhm.
+So again, looking looking at the people a few rows
+back, how many rectangles are there to cover?
+Okay, lots of people are getting it good.
+So this is the tricky one where we say looks
+there are two rectangles, but there's only one because
+this can wrap around.
+And actually we just have a square again.
+And this is the cute bit.
+So this is just a and sorry not A and
+not D.
+By the same principle.
+This rectangle here which wraps round is where a
+is zero and d is false.
+Okay.
+So that's more or less it.
+It's not quite it.
+There's a couple of other cases.
+So everybody see that one now.
+Because if you see this one then essentially you're done.
+Yeah yeah.
+Anybody.
+Not yet see it.
+I'm willing to say so.
+That's right.
+We're going to be done with week six, but maybe
+not quite.
+.
+Okay, so here's a slightly more complex example.
+Now we have two rectangles apparently.
+Can we do anything about this or do we just
+have to say we have two rectangles.
+And if we have two rectangles what's the formula that
+comes out of it?
+Well, yeah.
+So if we have two things to deal with, then
+we need to all them together, as we did with
+that example there.
+We had two one by one cells and we ored
+them together.
+Here we can't do anything clever.
+We just have to recognise that there's a two by
+two cell and a two by two cell here.
+They don't overlap, they're just completely distinct.
+So the shortest sensible description or the shortest description we
+can obviously extract of this table is the red cells
+or the green cells which are not A and not
+C or A and C.
+Everybody happy with that.
+Yeah.
+So here's the one that sometimes catches people.
+How many rectangles?
+One.
+Yeah.
+Yep.
+I'm just looking at some people to see if they're
+going to change their minds as they hear other people.
+Yeah.
+Yeah, yeah.
+So I think we have quite a lot of votes
+for one.
+Why do we have quite a lot of votes for
+one?
+Because this is the tricky thing.
+The torus bends meets itself both ways that way and
+that way.
+So the four corners are actually all next to each
+other.
+So this is a single two by two cell.
+And if you look at the description of it then
+you can see that it's where in fact where
+is it.
+It's where.
+C d is zero and d is zero because it's
+those two columns and , b is zero because it's
+those two rows.
+So not b and not d.
+.
+That's probably quite tricky.
+And notice again we've found in this diagram we found
+a single two by two cell.
+So we've got a nice short formula with just two
+variables in it.
+So of course this is a general thing.
+If we see a one by one cell we get
+a variable with four things anded together.
+If we saw a one by two cell, we would
+have three variables added together.
+When we see a two by two cell, we get
+two variables and so on.
+Right.
+So that's the complex toroidal one.
+I'm happy with that.
+Anybody not see what we're doing there?
+Willie, I should come in with a flotation aid.
+Appropriately coloured.
+, what about this one?
+So now things are getting a little bit more complex,
+and you might need to ponder this one for a
+bit.
+What a natural ways to.
+There are quite a few different ways we could cover
+this with rectangles.
+The question is, which one is a good one or
+which ones might we try?
+Probably.
+You have several possibilities.
+, was anybody thinking of this one?
+So this looks pretty straightforward, right?
+We're looking for even rectangles.
+We've got a column of two there.
+We've got a column of two there.
+And we've got a column sorry a square here.
+And if we describe each of them in turn we
+get not a not c, not d, b, not c,
+d and a c as descriptions of the three squares
+there.
+, in this particular case, there isn't anything better we
+can do.
+We could cover it with a different assortment of rectangles,
+perhaps, but it wouldn't make any difference.
+So now.
+Let's think about something a little bit more complex.
+Have a look at this one.
+And think about what's the obvious thing to do.
+Who thinks this is the obvious thing to do?
+I think it's the obvious thing to do.
+.
+Anybody think it's not the obvious thing to do?
+Okay.
+What's the obvious thing to do?
+Okay, so.
+Ah, but we can't do that because three is not
+an even rectangle.
+So we can't go that and that because that would
+give us a three by one which isn't allowed.
+So rectangles with sides that are powers of two.
+This seems the obvious thing to do.
+What happens if we do that?
+We get a nasty long formula because it's describing a
+single cell in here.
+So this cell is described by A and B and
+not c and d.
+And then this square is described by a and c.
+So we all them together.
+And if we get a formula with six symbols in
+it could we do any better.
+Could we be a little bit sneaky and make the
+formula slightly shorter?
+The one in the middle who just had it be
+a rectangle.
+Mhm.
+Let's see if anybody else further back can come up
+with that.
+Yeah.
+If we overlap things we can do a little bit
+better.
+So this is legitimate, perfectly fine for things to be
+overlapping because we're oring all these things together.
+So it doesn't matter if we cover a particular cell
+twice.
+And by having this redundant cell here, we have saved
+one variable in this pink clause and turned it from
+a four variable clause into a three variable clause, which
+doesn't sound a big deal, but when you're doing
+this on a much larger scale, then it becomes useful.
+And also for sheer human comprehensibility, 2 or 3 years
+about our limit.
+.
+That is actually all I wanted to say about carnal
+maps before we go and talk about what we're actually
+doing when we do carnal maps.
+So after this, we're going to go on and talk
+about symbolic manipulations of formulae which are doing the same
+thing algorithmically and deterministically.
+So kernel maps are great, but what's the defect?
+The defect is they are using human pattern matching capabilities,
+which computers by definition do not have.
+We can program them in, but it's a bit of
+well, I suppose these days someone has almost certainly made
+a large language model that looks at a truth table
+and does tries to into a kernel map.
+In fact, you lot probably use ChatGPT and friends all
+the time, right?
+So those of you who use any of you using
+one with visual capabilities yet, okay, have a play.
+See whether it can do corner maps.
+Most likely it can, because there's a fairly small.
+I have better things to do with my life than
+use ChatGPT, so I'm going to leave it to you
+to do that.
+, before we finish any questions about this?
+Yeah.
+So can I have some quiet for the question, please?
+So it.
+Is.
+What?
+It is.
+.
+So you mean the lectures are a bit out of
+sync?
+Because this is a, .
+That's just because I'm.
+I slowed down a bit, and we might as well
+get ahead a bit, because then if anything goes wrong,
+we don't have to have an extra lecture to catch
+up.
+So I'm in two minds about what to do next
+week, so I will continue with the week six material
+on Thursday.
+On Friday, depending on the negotiation I'm having with Don,
+there are a couple of possibilities.
+I could give you the day off, or I could
+do a voluntary lecture on something more sophisticated for whoever
+feels turning up.
+, whatever.
+So I'll think about it and decide.
+See you.
+, see you on Thursday.

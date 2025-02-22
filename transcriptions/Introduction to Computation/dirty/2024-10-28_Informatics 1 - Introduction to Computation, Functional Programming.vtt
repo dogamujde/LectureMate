@@ -1,0 +1,5691 @@
+WEBVTT
+
+00:01:19.350 --> 00:01:19.800
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[94]}
+
+00:01:28.950 --> 00:01:32.310
+<v Speaker 0>Uh, something's gone wrong with my, uh, with the sound
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:01:32.310 --> 00:01:33.030
+<v Speaker 0>on this thing.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:33.030 --> 00:01:34.350
+<v Speaker 0>I can't play music.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:34.350 --> 00:01:35.070
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:01:38.700 --> 00:01:39.690
+<v Speaker 0>Next time.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:42.810 --> 00:01:43.590
+<v Speaker 0>I don't know.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:44.310 --> 00:01:45.330
+<v Speaker 0>I don't know what it is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:45.330 --> 00:01:46.740
+<v Speaker 0>Everything looks like it's, uh.
+
+NOTE CONF {"raw":[100,100,100,100,99]}
+
+00:01:46.740 --> 00:01:47.820
+<v Speaker 0>It should work.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:50.190 --> 00:01:50.460
+<v Speaker 0>Hmm.
+
+NOTE CONF {"raw":[97]}
+
+00:01:54.720 --> 00:01:55.500
+<v Speaker 0>Oh, well.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:00.520 --> 00:02:04.690
+<v Speaker 0>Just have to put up with my lecture without music.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:04.690 --> 00:02:05.320
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[94]}
+
+00:02:06.400 --> 00:02:07.150
+<v Speaker 0>Let me get started.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:07.150 --> 00:02:07.660
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:02:16.600 --> 00:02:16.870
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:02:16.870 --> 00:02:18.340
+<v Speaker 0>Please sit down and I'll get started.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:18.370 --> 00:02:19.930
+<v Speaker 0>I've got a lot to get through today.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:02:23.380 --> 00:02:24.070
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[69]}
+
+00:02:24.580 --> 00:02:28.150
+<v Speaker 0>So today I'm going to be talking about data representation
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:28.150 --> 00:02:31.150
+<v Speaker 0>and possibly getting onto data abstraction.
+
+NOTE CONF {"raw":[100,100,100,79,100,100]}
+
+00:02:31.180 --> 00:02:32.950
+<v Speaker 0>I'm not sure if I'll make it that far.
+
+NOTE CONF {"raw":[82,100,100,100,100,100,100,100,100]}
+
+00:02:32.980 --> 00:02:37.060
+<v Speaker 0>Um, so this week you've got, um, you've got one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:37.060 --> 00:02:40.270
+<v Speaker 0>C and L, uh, computation and logic lecture on Thursday
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100,100,100,100]}
+
+00:02:40.270 --> 00:02:43.540
+<v Speaker 0>with Julian and three functional programming lectures.
+
+NOTE CONF {"raw":[100,52,100,100,100,100,100]}
+
+00:02:43.540 --> 00:02:45.610
+<v Speaker 0>So today and tomorrow from me.
+
+NOTE CONF {"raw":[100,100,100,100,86,100]}
+
+00:02:45.610 --> 00:02:49.180
+<v Speaker 0>And on Friday we have a, a special guest coming
+
+NOTE CONF {"raw":[100,100,100,100,100,61,100,100,100,100]}
+
+00:02:49.180 --> 00:02:51.040
+<v Speaker 0>to give a lecture.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:51.340 --> 00:02:53.260
+<v Speaker 0>Um, his name is John Hughes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:53.260 --> 00:02:56.950
+<v Speaker 0>He's from Chalmers University in Sweden, and he's one of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:56.950 --> 00:03:03.820
+<v Speaker 0>the original developers of Haskell and co-inventor of QuickCheck.
+
+NOTE CONF {"raw":[100,100,100,100,78,100,100,100,100]}
+
+00:03:04.720 --> 00:03:08.440
+<v Speaker 0>He's a he's a very good speaker, even better than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:08.440 --> 00:03:08.980
+<v Speaker 0>me.
+
+NOTE CONF {"raw":[100]}
+
+00:03:08.980 --> 00:03:13.660
+<v Speaker 0>And, uh, uh, and he's going to be talking to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:13.660 --> 00:03:17.170
+<v Speaker 0>you about QuickCheck and how he's using it with people
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:17.170 --> 00:03:21.160
+<v Speaker 0>in industry to find bugs in their C programs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:21.430 --> 00:03:26.500
+<v Speaker 0>So it's branched out beyond Haskell, uh, to other languages
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:26.500 --> 00:03:27.130
+<v Speaker 0>as well.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:27.400 --> 00:03:27.940
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:03:27.940 --> 00:03:29.830
+<v Speaker 0>And, um, yeah, he's a good speaker.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:29.830 --> 00:03:30.760
+<v Speaker 0>It'll be fun.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:30.790 --> 00:03:32.080
+<v Speaker 0>It'll be interesting.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:32.410 --> 00:03:32.530
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:03:32.530 --> 00:03:33.610
+<v Speaker 0>And, uh.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:33.610 --> 00:03:34.060
+<v Speaker 0>Come.
+
+NOTE CONF {"raw":[92]}
+
+00:03:34.060 --> 00:03:34.660
+<v Speaker 0>Please come.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:34.660 --> 00:03:35.260
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:03:36.100 --> 00:03:38.410
+<v Speaker 0>That's Friday in the usual slot.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:39.070 --> 00:03:43.450
+<v Speaker 0>Okay, so today it's, uh, data representation.
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100]}
+
+00:03:43.960 --> 00:03:47.170
+<v Speaker 0>And what I did last time was talk about, well,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:47.170 --> 00:03:50.860
+<v Speaker 0>I talked about rates of growth of, uh, of of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,64,100]}
+
+00:03:50.860 --> 00:03:56.510
+<v Speaker 0>functions used to measure efficiency of programs and how, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,88]}
+
+00:03:56.510 --> 00:03:58.730
+<v Speaker 0>you know, if you have something that's linear, it's better
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:58.730 --> 00:04:00.890
+<v Speaker 0>than if it's quadratic, and that's better than if it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:00.890 --> 00:04:04.670
+<v Speaker 0>cubic, and if it's logarithmic in the size of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:04.670 --> 00:04:06.020
+<v Speaker 0>data, that's even better.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:06.020 --> 00:04:06.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:04:06.650 --> 00:04:09.530
+<v Speaker 0>So um, and I use that.
+
+NOTE CONF {"raw":[100,99,100,100,100,100]}
+
+00:04:10.640 --> 00:04:12.800
+<v Speaker 0>So this was, this was talking about the way that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:12.800 --> 00:04:18.739
+<v Speaker 0>we measure, uh, time, the time that programs take is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:18.739 --> 00:04:21.470
+<v Speaker 0>we're worried about the, the shape of the, of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:21.470 --> 00:04:27.620
+<v Speaker 0>runtime, uh, so-called asymptotic, uh, uh, time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:27.620 --> 00:04:31.550
+<v Speaker 0>So the, the way that, that, that the time grows
+
+NOTE CONF {"raw":[100,58,100,100,99,100,100,100,100,100]}
+
+00:04:31.550 --> 00:04:35.420
+<v Speaker 0>as a function of the input size and, and ignoring
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:35.420 --> 00:04:38.600
+<v Speaker 0>constant factors, just looking at the shape, whether it's a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,70]}
+
+00:04:38.600 --> 00:04:41.390
+<v Speaker 0>straight line or logarithmic or whatever.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:41.390 --> 00:04:41.780
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:04:41.780 --> 00:04:44.960
+<v Speaker 0>So um, and I, and I, uh, I explained that
+
+NOTE CONF {"raw":[100,68,100,100,100,99,74,100,100,100]}
+
+00:04:44.960 --> 00:04:48.800
+<v Speaker 0>because I wanted to talk about different representations of data
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:48.800 --> 00:04:53.570
+<v Speaker 0>and how you can have different representations with different, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:04:53.570 --> 00:04:54.530
+<v Speaker 0>efficiencies.
+
+NOTE CONF {"raw":[100]}
+
+00:04:54.530 --> 00:04:55.430
+<v Speaker 0>Cece and, um.
+
+NOTE CONF {"raw":[64,100,78]}
+
+00:04:55.430 --> 00:04:56.060
+<v Speaker 0>And I'm.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:56.390 --> 00:05:00.770
+<v Speaker 0>And I'm, uh, showing that to you by showing you
+
+NOTE CONF {"raw":[100,100,89,100,100,100,100,100,100,100]}
+
+00:05:00.770 --> 00:05:02.960
+<v Speaker 0>four different representations of sets.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:02.960 --> 00:05:05.330
+<v Speaker 0>And the first one that I showed you was sets
+
+NOTE CONF {"raw":[100,100,100,100,62,100,100,100,100,100]}
+
+00:05:05.330 --> 00:05:06.200
+<v Speaker 0>as lists.
+
+NOTE CONF {"raw":[87,100]}
+
+00:05:06.770 --> 00:05:10.160
+<v Speaker 0>And I showed you some code and, um, all of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,65,100,100]}
+
+00:05:10.160 --> 00:05:12.260
+<v Speaker 0>the implementations of sets that I'm going to show you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:12.260 --> 00:05:16.910
+<v Speaker 0>how the same six things are implemented.
+
+NOTE CONF {"raw":[77,100,100,100,100,90,98]}
+
+00:05:17.120 --> 00:05:23.030
+<v Speaker 0>So the, the, the type of sets are the constant,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:23.030 --> 00:05:26.660
+<v Speaker 0>the empty set and insert function, a function for turning
+
+NOTE CONF {"raw":[100,100,100,57,100,100,100,100,100,100]}
+
+00:05:26.660 --> 00:05:32.090
+<v Speaker 0>lists into sets, a membership function called element and equality
+
+NOTE CONF {"raw":[100,100,100,81,100,100,100,83,100,100]}
+
+00:05:32.090 --> 00:05:33.290
+<v Speaker 0>testing on sets.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:34.250 --> 00:05:34.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:34.910 --> 00:05:40.640
+<v Speaker 0>And um, and I gave implementations of these things for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:40.640 --> 00:05:45.080
+<v Speaker 0>the simple case of representing sets as ordinary lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:05:45.080 --> 00:05:48.140
+<v Speaker 0>And we're talking about sets of we'll be talking about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:48.140 --> 00:05:49.790
+<v Speaker 0>sets of integers just to keep things simple.
+
+NOTE CONF {"raw":[100,100,100,100,84,100,100,100]}
+
+00:05:49.790 --> 00:05:50.360
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:50.720 --> 00:05:53.880
+<v Speaker 0>Um, although this is polymorphic, so it works for any
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:05:53.880 --> 00:05:54.630
+<v Speaker 0>sets.
+
+NOTE CONF {"raw":[100]}
+
+00:05:54.840 --> 00:05:57.930
+<v Speaker 0>Um, anyway, um, yeah.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:57.930 --> 00:06:01.800
+<v Speaker 0>So we went through the code for that, and, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:02.880 --> 00:06:05.130
+<v Speaker 0>the next one I want to get on to is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,98,100]}
+
+00:06:05.130 --> 00:06:07.860
+<v Speaker 0>um, is representing sets as ordered lists.
+
+NOTE CONF {"raw":[100,100,100,100,94,100,100]}
+
+00:06:07.860 --> 00:06:13.530
+<v Speaker 0>And this was, um, motivated by the fact that testing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:13.530 --> 00:06:17.940
+<v Speaker 0>equality for sets as, as lists that are not ordered.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:17.940 --> 00:06:20.370
+<v Speaker 0>When I say ordered, I mean the elements are in
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:06:20.370 --> 00:06:21.120
+<v Speaker 0>ascending order.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:21.120 --> 00:06:24.300
+<v Speaker 0>So smallest ones, smallest ones at the beginning going up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:24.300 --> 00:06:25.470
+<v Speaker 0>to the biggest ones at the end.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:25.470 --> 00:06:25.920
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:06:25.920 --> 00:06:30.090
+<v Speaker 0>Ordered by the, the the the the values that are
+
+NOTE CONF {"raw":[100,100,81,98,100,100,100,100,100,100]}
+
+00:06:30.090 --> 00:06:30.720
+<v Speaker 0>in there okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:30.720 --> 00:06:33.570
+<v Speaker 0>If they're numbers then you've got the small numbers here
+
+NOTE CONF {"raw":[100,99,100,100,100,100,96,100,100,100]}
+
+00:06:33.570 --> 00:06:34.620
+<v Speaker 0>the big numbers here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:34.680 --> 00:06:35.280
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:06:35.280 --> 00:06:40.530
+<v Speaker 0>And um, and I explained that equality testing on on
+
+NOTE CONF {"raw":[100,83,100,100,100,100,100,100,100,100]}
+
+00:06:40.530 --> 00:06:46.230
+<v Speaker 0>sets represented as ordinary lists is quadratic because the code.
+
+NOTE CONF {"raw":[100,97,95,100,100,100,100,100,100,100]}
+
+00:06:46.230 --> 00:06:49.110
+<v Speaker 0>Well, I mean the code was here.
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100]}
+
+00:06:49.110 --> 00:06:55.170
+<v Speaker 0>And um, that code it in order to check whether
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:55.170 --> 00:06:58.440
+<v Speaker 0>two sets represented as lists are the same, you have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:58.440 --> 00:07:00.870
+<v Speaker 0>to check whether all the elements in one are in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:00.870 --> 00:07:03.600
+<v Speaker 0>the other, and all the elements in the other one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:03.600 --> 00:07:04.740
+<v Speaker 0>are in the first one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:04.740 --> 00:07:06.990
+<v Speaker 0>Okay, so two subset operations.
+
+NOTE CONF {"raw":[94,100,100,100,100]}
+
+00:07:06.990 --> 00:07:10.410
+<v Speaker 0>Each of those is quadratic okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:10.410 --> 00:07:15.450
+<v Speaker 0>So testing equality on of of sets representative list is
+
+NOTE CONF {"raw":[100,100,100,100,75,100,80,47,86,100]}
+
+00:07:15.450 --> 00:07:16.260
+<v Speaker 0>quadratic.
+
+NOTE CONF {"raw":[100]}
+
+00:07:16.260 --> 00:07:17.310
+<v Speaker 0>And um.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:20.670 --> 00:07:21.210
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:21.210 --> 00:07:24.930
+<v Speaker 0>And this motivated the idea that if we could represent
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:25.260 --> 00:07:28.620
+<v Speaker 0>um sets as ordered lists.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:28.620 --> 00:07:30.750
+<v Speaker 0>And here I come to this thing here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:30.750 --> 00:07:34.200
+<v Speaker 0>So um, here here is why we have to, why
+
+NOTE CONF {"raw":[100,90,100,100,100,100,100,100,100,93]}
+
+00:07:34.200 --> 00:07:36.300
+<v Speaker 0>we have to do complicated equality testing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:36.300 --> 00:07:40.770
+<v Speaker 0>Because if we do, um, insertion of elements into a,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,88]}
+
+00:07:40.770 --> 00:07:44.880
+<v Speaker 0>into a set, represented as a list, we get different,
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:07:44.880 --> 00:07:49.350
+<v Speaker 0>different lists which are representations of the same set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:07:49.350 --> 00:07:49.770
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:49.770 --> 00:07:53.260
+<v Speaker 0>So these are three representations of a set that contains
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:53.260 --> 00:07:54.730
+<v Speaker 0>the values one and two.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:54.730 --> 00:07:57.520
+<v Speaker 0>But they're in different they're in different orders okay.
+
+NOTE CONF {"raw":[100,100,93,93,100,100,100,100,100]}
+
+00:07:57.520 --> 00:07:59.920
+<v Speaker 0>And so equality testing is complicated.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:59.920 --> 00:08:02.530
+<v Speaker 0>If we could arrange that they end up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:08:04.600 --> 00:08:10.780
+<v Speaker 0>In order and without duplicates, then no matter how many
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:10.780 --> 00:08:14.500
+<v Speaker 0>times we insert numbers into values, into a list, in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:14.500 --> 00:08:16.990
+<v Speaker 0>what order or whatever, we end up with the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:16.990 --> 00:08:19.030
+<v Speaker 0>The same underlying list.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:19.030 --> 00:08:21.190
+<v Speaker 0>Okay, it's an order without duplicates.
+
+NOTE CONF {"raw":[100,100,91,100,100,100]}
+
+00:08:21.190 --> 00:08:24.040
+<v Speaker 0>And so equality testing on these kinds of things is,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,92]}
+
+00:08:24.040 --> 00:08:27.130
+<v Speaker 0>is is easy compared with with these.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:27.130 --> 00:08:27.340
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:27.340 --> 00:08:30.970
+<v Speaker 0>So this is the motivation or one motivation for uh,
+
+NOTE CONF {"raw":[100,100,100,76,100,100,100,100,100,84]}
+
+00:08:30.970 --> 00:08:34.150
+<v Speaker 0>doing representation of sets as ordered lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:37.630 --> 00:08:38.020
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:38.020 --> 00:08:40.750
+<v Speaker 0>So I'm going to quickly go through the code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:43.060 --> 00:08:44.680
+<v Speaker 0>You know we know that equality testing is going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:44.680 --> 00:08:45.160
+<v Speaker 0>be faster.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:45.160 --> 00:08:46.240
+<v Speaker 0>But what about the other stuff?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:46.240 --> 00:08:46.420
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:46.420 --> 00:08:47.770
+<v Speaker 0>I'm going to quickly go through the code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:08:47.770 --> 00:08:51.130
+<v Speaker 0>And um, I've got a lot of to get through
+
+NOTE CONF {"raw":[100,83,100,100,100,100,77,100,100,100]}
+
+00:08:51.130 --> 00:08:54.670
+<v Speaker 0>this in this lecture, and the emphasis here is not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:54.670 --> 00:08:57.820
+<v Speaker 0>on how wonderful my code is or anything like that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:57.820 --> 00:09:01.480
+<v Speaker 0>The emphasis is on the the kind of ideas, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,66]}
+
+00:09:01.480 --> 00:09:02.770
+<v Speaker 0>that I'm trying to get across.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:02.770 --> 00:09:07.870
+<v Speaker 0>So different representations of sets, ordered lists versus unordered lists
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:07.870 --> 00:09:09.010
+<v Speaker 0>and and so forth.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:09.010 --> 00:09:12.280
+<v Speaker 0>The code is relatively routine for how to how to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,85,100,100]}
+
+00:09:12.280 --> 00:09:13.420
+<v Speaker 0>implement those things.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:13.420 --> 00:09:15.520
+<v Speaker 0>So I'm going to be whizzing through it at a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:15.520 --> 00:09:17.560
+<v Speaker 0>relatively quick speed.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:17.560 --> 00:09:18.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:18.730 --> 00:09:20.170
+<v Speaker 0>Um, if you want to look at the details, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:20.170 --> 00:09:21.970
+<v Speaker 0>can download the code and you can play with it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:21.970 --> 00:09:24.070
+<v Speaker 0>and you can look at it and, um, and so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,62,100,100]}
+
+00:09:24.070 --> 00:09:24.370
+<v Speaker 0>forth.
+
+NOTE CONF {"raw":[100]}
+
+00:09:24.370 --> 00:09:27.220
+<v Speaker 0>But I'll try to give you a, well, I'll try
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:27.220 --> 00:09:29.740
+<v Speaker 0>to go slow enough that it's, uh, that it's possible
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,96,100]}
+
+00:09:29.740 --> 00:09:31.390
+<v Speaker 0>to understand what I'm talking about at least.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:31.990 --> 00:09:32.410
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:32.410 --> 00:09:35.770
+<v Speaker 0>So if I want to represent, uh, uh, sets as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,73,100,100,100]}
+
+00:09:35.770 --> 00:09:38.260
+<v Speaker 0>ordered lists, okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:38.260 --> 00:09:41.650
+<v Speaker 0>Same, same six things that I'm going to have in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:41.650 --> 00:09:43.840
+<v Speaker 0>this, uh, in this module.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:45.190 --> 00:09:45.880
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:45.880 --> 00:09:49.790
+<v Speaker 0>As before, um, I, uh.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:49.790 --> 00:09:50.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:50.180 --> 00:09:52.490
+<v Speaker 0>So sets are still represented as lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:53.270 --> 00:09:53.690
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:53.690 --> 00:09:56.180
+<v Speaker 0>Set A is equal to a list of a.
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100]}
+
+00:09:56.480 --> 00:09:57.080
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:09:57.950 --> 00:10:01.730
+<v Speaker 0>Um, I have now, uh, something I'm calling an invariant.
+
+NOTE CONF {"raw":[100,100,100,100,58,100,100,100,100,100]}
+
+00:10:02.030 --> 00:10:05.300
+<v Speaker 0>And this is a this is a function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:10:06.200 --> 00:10:06.530
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:06.530 --> 00:10:07.940
+<v Speaker 0>Well, what is it?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:07.940 --> 00:10:10.820
+<v Speaker 0>An invariant of a data representation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:11.240 --> 00:10:15.470
+<v Speaker 0>Is, um, is something that characterises the values that I'm
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:15.470 --> 00:10:19.250
+<v Speaker 0>going to be using in the data representation to represent
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:19.250 --> 00:10:20.720
+<v Speaker 0>the things that I want to represent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:20.720 --> 00:10:23.990
+<v Speaker 0>So, um, what I mean by that is I'm representing
+
+NOTE CONF {"raw":[99,95,100,100,100,100,100,100,100,100]}
+
+00:10:23.990 --> 00:10:25.160
+<v Speaker 0>sets as ordered lists.
+
+NOTE CONF {"raw":[100,91,100,100]}
+
+00:10:25.160 --> 00:10:28.040
+<v Speaker 0>And so I want to specify that the lists have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:28.040 --> 00:10:28.970
+<v Speaker 0>to be ordered.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:29.450 --> 00:10:31.790
+<v Speaker 0>If the list if a list is not ordered then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:31.790 --> 00:10:32.690
+<v Speaker 0>I'm not interested in it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:32.690 --> 00:10:34.490
+<v Speaker 0>I'm only interested in the ordered ones.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:34.940 --> 00:10:35.630
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:35.630 --> 00:10:40.010
+<v Speaker 0>And um, that's expressed by this function which tests the
+
+NOTE CONF {"raw":[100,84,100,100,100,100,100,100,100,89]}
+
+00:10:40.010 --> 00:10:45.050
+<v Speaker 0>set and and returns true if it's ordered.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,66,100]}
+
+00:10:45.920 --> 00:10:46.670
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:46.940 --> 00:10:48.620
+<v Speaker 0>Um okay.
+
+NOTE CONF {"raw":[98,100]}
+
+00:10:48.620 --> 00:10:51.050
+<v Speaker 0>That's expressed in Haskell like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:51.080 --> 00:10:51.620
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:51.620 --> 00:10:55.700
+<v Speaker 0>We go we go through and look at adjacent pairs
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:55.700 --> 00:10:58.880
+<v Speaker 0>and check to see that the, the first one is
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:10:58.880 --> 00:11:00.500
+<v Speaker 0>smaller than the second one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:00.860 --> 00:11:01.460
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:01.460 --> 00:11:03.350
+<v Speaker 0>This says that the list is ordered.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:03.350 --> 00:11:07.640
+<v Speaker 0>And the fact that I'm using here, um, less than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:08.210 --> 00:11:11.210
+<v Speaker 0>and not less than or equal to means that not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:11.210 --> 00:11:13.040
+<v Speaker 0>only is it ordered, but there are no duplicates.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:13.040 --> 00:11:13.250
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:13.250 --> 00:11:17.240
+<v Speaker 0>There's no cases where, um, adjacent elements are equal.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:18.620 --> 00:11:19.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:19.130 --> 00:11:21.800
+<v Speaker 0>So this is a, this is expressing in Haskell this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,99,100,100]}
+
+00:11:21.800 --> 00:11:25.850
+<v Speaker 0>invariant, this property that I'm talking about ordered lists without
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:25.850 --> 00:11:26.840
+<v Speaker 0>repetitions.
+
+NOTE CONF {"raw":[100]}
+
+00:11:27.020 --> 00:11:31.010
+<v Speaker 0>And I've written this in Haskell, but it's um, it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,51,100]}
+
+00:11:31.010 --> 00:11:33.830
+<v Speaker 0>not going to be executed unless I want to test,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:34.070 --> 00:11:36.830
+<v Speaker 0>um, uh, values to see if they're, if they're, if
+
+NOTE CONF {"raw":[100,54,100,100,100,100,100,100,100,100]}
+
+00:11:36.830 --> 00:11:39.230
+<v Speaker 0>they're in this invariant or not.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:39.470 --> 00:11:41.780
+<v Speaker 0>Um, but it's convenient to write it down in this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:41.780 --> 00:11:44.390
+<v Speaker 0>notation, since we have it handy here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:45.050 --> 00:11:49.020
+<v Speaker 0>Um, by the way, uh, you might be wondering what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:49.020 --> 00:11:49.800
+<v Speaker 0>this is.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:52.770 --> 00:11:53.370
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:53.370 --> 00:11:55.320
+<v Speaker 0>You'll be seeing these.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:11:55.350 --> 00:11:57.750
+<v Speaker 0>These are these are type qualifications.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:59.670 --> 00:12:04.680
+<v Speaker 0>Um, uh, this type says that it's a function from
+
+NOTE CONF {"raw":[100,66,100,100,100,100,100,100,100,100]}
+
+00:12:04.680 --> 00:12:06.150
+<v Speaker 0>set of a to bool.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:07.440 --> 00:12:11.100
+<v Speaker 0>Uh, but in order to use it, you need a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:11.100 --> 00:12:13.500
+<v Speaker 0>type A, which is an ordered type.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:13.500 --> 00:12:15.660
+<v Speaker 0>Ordered type means it's a type that I can use
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:15.900 --> 00:12:18.750
+<v Speaker 0>less than and greater than and less than or equal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:18.750 --> 00:12:20.010
+<v Speaker 0>to and so forth on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:20.010 --> 00:12:20.340
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:20.340 --> 00:12:22.770
+<v Speaker 0>So not all types have that property.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:22.770 --> 00:12:26.370
+<v Speaker 0>So it's a kind of proviso, um, that it has
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:26.370 --> 00:12:28.530
+<v Speaker 0>to have that it has to be an order type.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,92,58,100]}
+
+00:12:28.530 --> 00:12:32.040
+<v Speaker 0>We saw that actually a little, a little bit before
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:32.340 --> 00:12:33.660
+<v Speaker 0>um, membership.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:33.660 --> 00:12:37.590
+<v Speaker 0>This is on ordinary um, uh, sets as ordinary lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,65,100,100,100,100]}
+
+00:12:37.590 --> 00:12:39.690
+<v Speaker 0>So membership has this type.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:39.690 --> 00:12:41.730
+<v Speaker 0>It takes an element and a set and tells you
+
+NOTE CONF {"raw":[100,100,100,100,67,100,100,100,100,100]}
+
+00:12:41.730 --> 00:12:42.930
+<v Speaker 0>whether that elements in the set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:42.930 --> 00:12:49.560
+<v Speaker 0>But it only works If the elements in the set
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:50.580 --> 00:12:53.640
+<v Speaker 0>are elements that you can do, that type you can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:53.640 --> 00:12:54.990
+<v Speaker 0>do equality testing on.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:55.530 --> 00:12:56.220
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:56.610 --> 00:12:59.580
+<v Speaker 0>So these are type qualifications.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:59.580 --> 00:13:03.480
+<v Speaker 0>And I'll be talking about them in I think next
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:03.480 --> 00:13:04.200
+<v Speaker 0>week.
+
+NOTE CONF {"raw":[100]}
+
+00:13:04.230 --> 00:13:09.930
+<v Speaker 0>It's uh there's this a general uh, feature of, of
+
+NOTE CONF {"raw":[99,97,100,70,100,100,100,100,100,100]}
+
+00:13:09.930 --> 00:13:11.730
+<v Speaker 0>Haskell called type classes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:11.730 --> 00:13:13.920
+<v Speaker 0>And these are examples of type classes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:13.920 --> 00:13:17.040
+<v Speaker 0>But I'll, I'll just for now say that's what's going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:17.040 --> 00:13:20.040
+<v Speaker 0>on here and I'll explain it properly next week.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:20.160 --> 00:13:20.580
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:20.580 --> 00:13:24.030
+<v Speaker 0>So for now, just, uh, understand that that's, uh, those
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,77,100]}
+
+00:13:24.030 --> 00:13:27.150
+<v Speaker 0>are sort of provisos on when you're allowed to apply
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:27.150 --> 00:13:28.800
+<v Speaker 0>these, these functions.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:29.220 --> 00:13:29.490
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:29.490 --> 00:13:31.950
+<v Speaker 0>So we're interested in things like like integers which are,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:31.950 --> 00:13:34.980
+<v Speaker 0>which have this order relation on them here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:36.960 --> 00:13:42.420
+<v Speaker 0>Um, by the way, order implies that you have equality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:42.420 --> 00:13:45.250
+<v Speaker 0>Because if you can if you can test whether whether
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:13:45.250 --> 00:13:47.230
+<v Speaker 0>this is less than this and also whether this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:47.230 --> 00:13:50.440
+<v Speaker 0>less than this, then that means that they're equal.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,81,100]}
+
+00:13:52.450 --> 00:13:54.280
+<v Speaker 0>I mean, if both of those tests are true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:55.090 --> 00:13:57.550
+<v Speaker 0>Okay, so we've got sets, we've got this invariant.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:57.550 --> 00:14:00.250
+<v Speaker 0>And now we can write code for the various, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,69]}
+
+00:14:00.250 --> 00:14:01.960
+<v Speaker 0>the various things that I want here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:01.960 --> 00:14:05.800
+<v Speaker 0>So empty set is still the empty list, the insert
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:05.800 --> 00:14:06.490
+<v Speaker 0>function.
+
+NOTE CONF {"raw":[100]}
+
+00:14:06.490 --> 00:14:09.100
+<v Speaker 0>It has to give me, um, ordered lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98]}
+
+00:14:09.100 --> 00:14:13.120
+<v Speaker 0>So it has to given, uh, an element and an
+
+NOTE CONF {"raw":[100,100,100,98,89,77,100,100,100,100]}
+
+00:14:13.120 --> 00:14:14.170
+<v Speaker 0>ordered lists.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:14.380 --> 00:14:16.840
+<v Speaker 0>You want to put the new element into the into
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:16.840 --> 00:14:17.200
+<v Speaker 0>the list.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:17.200 --> 00:14:18.010
+<v Speaker 0>Okay, here's the element.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:18.010 --> 00:14:18.700
+<v Speaker 0>Here's the list.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:18.700 --> 00:14:20.590
+<v Speaker 0>You want to put the element in the right place
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:20.590 --> 00:14:23.050
+<v Speaker 0>in this list so that you maintain the order.
+
+NOTE CONF {"raw":[100,100,93,100,100,100,100,100,100]}
+
+00:14:23.050 --> 00:14:25.660
+<v Speaker 0>You can't just bung it in the front the way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:25.660 --> 00:14:28.420
+<v Speaker 0>we did with unordered lists, because it might not be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:28.420 --> 00:14:29.440
+<v Speaker 0>the right place.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:29.440 --> 00:14:29.860
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:29.860 --> 00:14:34.990
+<v Speaker 0>So this code looks for the right place and uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,92]}
+
+00:14:35.530 --> 00:14:40.240
+<v Speaker 0>uh, gives you back the list together with that new
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:40.240 --> 00:14:40.630
+<v Speaker 0>element.
+
+NOTE CONF {"raw":[100]}
+
+00:14:40.630 --> 00:14:40.960
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:40.960 --> 00:14:44.020
+<v Speaker 0>So the right place we've got three cases here, I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:44.020 --> 00:14:44.500
+<v Speaker 0>won't.
+
+NOTE CONF {"raw":[100]}
+
+00:14:44.620 --> 00:14:45.730
+<v Speaker 0>Well, I'll just, uh.
+
+NOTE CONF {"raw":[100,93,100,100]}
+
+00:14:46.150 --> 00:14:48.700
+<v Speaker 0>You know, you go recursively down the list and you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:48.700 --> 00:14:51.460
+<v Speaker 0>look for the place where the new element x here,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:52.540 --> 00:14:55.240
+<v Speaker 0>um, uh, fits, okay.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:55.240 --> 00:14:58.900
+<v Speaker 0>And it fits in the place where, um, it's less
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,82,100,100]}
+
+00:14:58.900 --> 00:15:03.790
+<v Speaker 0>than, uh, the head of the bit of the list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:03.790 --> 00:15:05.800
+<v Speaker 0>You take the whole list and you're going one at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:05.800 --> 00:15:06.490
+<v Speaker 0>a time down.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:06.490 --> 00:15:09.430
+<v Speaker 0>You're looking for the place where the element you're inserting
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:09.430 --> 00:15:12.910
+<v Speaker 0>is less than the head of the rest of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:12.910 --> 00:15:13.570
+<v Speaker 0>list.
+
+NOTE CONF {"raw":[100]}
+
+00:15:13.750 --> 00:15:14.320
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:14.320 --> 00:15:16.150
+<v Speaker 0>Which is what this code is doing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:16.150 --> 00:15:16.810
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:16.810 --> 00:15:19.990
+<v Speaker 0>In a situation where x is less than y, you
+
+NOTE CONF {"raw":[100,70,98,100,100,100,100,100,100,100]}
+
+00:15:19.990 --> 00:15:22.090
+<v Speaker 0>you put it in and you're done.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:22.630 --> 00:15:25.270
+<v Speaker 0>If it's already there, you don't have to put it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:25.270 --> 00:15:26.560
+<v Speaker 0>in because it's already there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:26.560 --> 00:15:29.590
+<v Speaker 0>If it's if it's greater than the element that you're
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100,100]}
+
+00:15:29.590 --> 00:15:32.350
+<v Speaker 0>looking at, then you insert it further down the list.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:32.350 --> 00:15:32.560
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:32.560 --> 00:15:33.550
+<v Speaker 0>So that's what this code does.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:33.550 --> 00:15:35.770
+<v Speaker 0>It goes down the list, looks for the right place
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:35.770 --> 00:15:37.810
+<v Speaker 0>and puts it in in that place.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:40.300 --> 00:15:41.140
+<v Speaker 0>Um, right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:41.140 --> 00:15:42.800
+<v Speaker 0>So this is take advantage of the, um.
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,87]}
+
+00:15:42.800 --> 00:15:47.090
+<v Speaker 0>Well, uh, I shouldn't have said that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:47.090 --> 00:15:51.890
+<v Speaker 0>It's it's, uh, it's, um, uh, it's preserving the invariant
+
+NOTE CONF {"raw":[96,100,92,100,94,100,100,100,100,100]}
+
+00:15:52.010 --> 00:15:54.590
+<v Speaker 0>and putting the value into the list in the right
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:54.590 --> 00:15:55.220
+<v Speaker 0>place.
+
+NOTE CONF {"raw":[100]}
+
+00:15:55.280 --> 00:15:55.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:55.790 --> 00:15:58.580
+<v Speaker 0>The the the function which takes a list and turns
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:15:58.580 --> 00:16:01.100
+<v Speaker 0>it into a set, it has to, um, if it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,91,100,100]}
+
+00:16:01.100 --> 00:16:04.790
+<v Speaker 0>just an any old list, it has to, um, put
+
+NOTE CONF {"raw":[100,80,100,100,91,100,100,100,100,100]}
+
+00:16:04.790 --> 00:16:06.620
+<v Speaker 0>it into the right order and remove duplicates.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:06.620 --> 00:16:07.880
+<v Speaker 0>And so that's what this code does.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:07.880 --> 00:16:11.630
+<v Speaker 0>It sorts the list and it removes duplicates.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:11.630 --> 00:16:14.870
+<v Speaker 0>So sort is a built in function in Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:14.870 --> 00:16:18.020
+<v Speaker 0>It's in well it's in data dot Lisp library.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,84,100,100]}
+
+00:16:18.020 --> 00:16:22.250
+<v Speaker 0>And um nub is a function which removes duplicates.
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100]}
+
+00:16:22.250 --> 00:16:25.280
+<v Speaker 0>So so that's what this code is here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:29.450 --> 00:16:31.310
+<v Speaker 0>Um, another way to do that, by the way, would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:31.310 --> 00:16:34.430
+<v Speaker 0>be to start with the empty list and insert.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:34.430 --> 00:16:38.180
+<v Speaker 0>Use this insert function repeatedly, um, with a fold or
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:16:38.180 --> 00:16:42.380
+<v Speaker 0>something to to insert each element in the right place
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:42.380 --> 00:16:43.820
+<v Speaker 0>in the list, and then you end up with an
+
+NOTE CONF {"raw":[63,100,100,100,86,100,100,100,100,100]}
+
+00:16:43.820 --> 00:16:44.660
+<v Speaker 0>ordered list.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:48.260 --> 00:16:51.830
+<v Speaker 0>Okay, now membership and equality.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:51.830 --> 00:16:55.070
+<v Speaker 0>So the important thing is, is equality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:55.070 --> 00:16:56.900
+<v Speaker 0>Equality is really easy.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:58.820 --> 00:17:02.660
+<v Speaker 0>As I said, because of this property that the lists
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:02.660 --> 00:17:03.680
+<v Speaker 0>are ordered okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:03.680 --> 00:17:07.040
+<v Speaker 0>If the lists are ordered and they have no duplicates,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:07.040 --> 00:17:10.520
+<v Speaker 0>then two lists represent the same set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:11.750 --> 00:17:15.500
+<v Speaker 0>If they're the same list, okay, there's no other way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:15.500 --> 00:17:17.839
+<v Speaker 0>for them to have the same elements in them then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,82]}
+
+00:17:17.839 --> 00:17:20.120
+<v Speaker 0>for them to be equal as lists and so and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:20.120 --> 00:17:20.510
+<v Speaker 0>so.
+
+NOTE CONF {"raw":[100]}
+
+00:17:20.510 --> 00:17:25.430
+<v Speaker 0>Testing equality on sets, um, is exactly testing equality on
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,100,100,100]}
+
+00:17:25.430 --> 00:17:28.640
+<v Speaker 0>the lists that represent those sets if they're ordered without
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:28.640 --> 00:17:29.510
+<v Speaker 0>duplicates.
+
+NOTE CONF {"raw":[100]}
+
+00:17:31.820 --> 00:17:32.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:33.230 --> 00:17:35.960
+<v Speaker 0>Um, and membership can also take advantage of the order.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:36.230 --> 00:17:36.710
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:36.710 --> 00:17:38.600
+<v Speaker 0>So if you've got a list here and it's an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,68]}
+
+00:17:38.600 --> 00:17:41.070
+<v Speaker 0>order and you've got an element you want to check
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:41.070 --> 00:17:42.000
+<v Speaker 0>to see if it's in the list.
+
+NOTE CONF {"raw":[100,100,100,100,94,62,100]}
+
+00:17:42.000 --> 00:17:45.150
+<v Speaker 0>You start at the beginning and you go down looking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:45.150 --> 00:17:47.580
+<v Speaker 0>for the for the element to see if it's there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:47.940 --> 00:17:50.820
+<v Speaker 0>And at a certain point maybe you find it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:52.890 --> 00:17:53.520
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:53.520 --> 00:17:56.460
+<v Speaker 0>Or if you find an element which is bigger than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:56.460 --> 00:17:59.700
+<v Speaker 0>the element you're looking for, you know that that element
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:59.700 --> 00:18:01.410
+<v Speaker 0>that you're looking for can't be there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:01.530 --> 00:18:03.480
+<v Speaker 0>Because if it was there, you would have found it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:03.480 --> 00:18:04.110
+<v Speaker 0>already.
+
+NOTE CONF {"raw":[100]}
+
+00:18:04.890 --> 00:18:05.310
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:05.310 --> 00:18:06.330
+<v Speaker 0>So you can stop.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:06.330 --> 00:18:09.840
+<v Speaker 0>And so that's what these these cases are okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:09.840 --> 00:18:12.810
+<v Speaker 0>If I, if I'm if I'm going this is with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:12.810 --> 00:18:13.770
+<v Speaker 0>recursion of course.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:13.770 --> 00:18:14.730
+<v Speaker 0>As usual.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:14.760 --> 00:18:15.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:15.180 --> 00:18:18.180
+<v Speaker 0>We're going down the list okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:18.180 --> 00:18:19.860
+<v Speaker 0>If the element I'm looking for.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:22.470 --> 00:18:24.360
+<v Speaker 0>Okay x is the element I'm looking for.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:24.480 --> 00:18:29.910
+<v Speaker 0>If the element that I'm at currently y is greater
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:29.910 --> 00:18:31.320
+<v Speaker 0>than x, it means that I've.
+
+NOTE CONF {"raw":[100,100,98,100,100,100]}
+
+00:18:31.320 --> 00:18:33.660
+<v Speaker 0>I've gone past the place where x would be if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:33.660 --> 00:18:34.380
+<v Speaker 0>it was there.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:34.380 --> 00:18:35.970
+<v Speaker 0>And so the answer is false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:35.970 --> 00:18:39.270
+<v Speaker 0>No, the element isn't in the list Okay, if I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:39.270 --> 00:18:41.640
+<v Speaker 0>found it, obviously the answer is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:43.380 --> 00:18:45.690
+<v Speaker 0>If I haven't yet reached the place where the element
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:45.690 --> 00:18:49.440
+<v Speaker 0>would be because I'm looking at an element that's smaller
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:49.440 --> 00:18:51.960
+<v Speaker 0>than x, then I continue recursing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:52.350 --> 00:18:54.390
+<v Speaker 0>Okay, so I go down the list until I get
+
+NOTE CONF {"raw":[95,100,99,100,100,100,100,100,100,100]}
+
+00:18:54.390 --> 00:18:55.560
+<v Speaker 0>to the place where it should be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:55.560 --> 00:18:58.080
+<v Speaker 0>It's either there or not, and I and I either
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:58.080 --> 00:18:59.730
+<v Speaker 0>find it or I stop.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:59.760 --> 00:19:00.360
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:03.540 --> 00:19:03.870
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:03.870 --> 00:19:05.610
+<v Speaker 0>So how fast are these things?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:06.450 --> 00:19:07.110
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:07.110 --> 00:19:12.060
+<v Speaker 0>So, um, with of course, empty set as empty list
+
+NOTE CONF {"raw":[100,80,100,100,100,100,100,100,100,65]}
+
+00:19:12.300 --> 00:19:13.860
+<v Speaker 0>is constant time.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:14.100 --> 00:19:14.850
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:14.850 --> 00:19:19.170
+<v Speaker 0>Inserting an element into a list, uh, for, for unordered
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:19:19.650 --> 00:19:23.580
+<v Speaker 0>lists, it was constant time because it was just cons.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,94]}
+
+00:19:23.580 --> 00:19:25.470
+<v Speaker 0>Okay, here we have to do some work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:26.130 --> 00:19:28.170
+<v Speaker 0>Um, we have to go down the list, look for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:28.170 --> 00:19:29.730
+<v Speaker 0>the right place to put it and put it in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:29.760 --> 00:19:30.060
+<v Speaker 0>there.
+
+NOTE CONF {"raw":[100]}
+
+00:19:30.060 --> 00:19:31.620
+<v Speaker 0>So that's linear time.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:32.490 --> 00:19:32.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:32.910 --> 00:19:35.310
+<v Speaker 0>It has to go down and look at at most
+
+NOTE CONF {"raw":[48,100,100,100,100,100,100,74,56,100]}
+
+00:19:36.030 --> 00:19:37.480
+<v Speaker 0>uh, each element once.
+
+NOTE CONF {"raw":[96,100,100,100]}
+
+00:19:38.680 --> 00:19:39.400
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[99]}
+
+00:19:39.760 --> 00:19:42.070
+<v Speaker 0>This function that turns a list into a set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:43.600 --> 00:19:44.110
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:44.110 --> 00:19:47.800
+<v Speaker 0>This is, um, uh, I'll just say now and I'll
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:47.800 --> 00:19:48.160
+<v Speaker 0>come.
+
+NOTE CONF {"raw":[100]}
+
+00:19:48.160 --> 00:19:49.780
+<v Speaker 0>Well, I'll explain it later.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:49.780 --> 00:19:52.240
+<v Speaker 0>Sorting is, um, n log n time.
+
+NOTE CONF {"raw":[100,100,85,100,100,100,100]}
+
+00:19:52.840 --> 00:19:53.620
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:53.620 --> 00:19:57.100
+<v Speaker 0>And nub is actually, uh, n squared time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:57.280 --> 00:19:59.470
+<v Speaker 0>So this whole thing is going to be n squared
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:59.470 --> 00:20:00.010
+<v Speaker 0>time.
+
+NOTE CONF {"raw":[99]}
+
+00:20:01.510 --> 00:20:02.980
+<v Speaker 0>I'll talk about sorting.
+
+NOTE CONF {"raw":[99,100,100,100]}
+
+00:20:03.340 --> 00:20:06.400
+<v Speaker 0>In my next lecture I think um a little bit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:06.400 --> 00:20:09.430
+<v Speaker 0>more about that okay.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:09.430 --> 00:20:10.450
+<v Speaker 0>Membership.
+
+NOTE CONF {"raw":[100]}
+
+00:20:10.450 --> 00:20:12.640
+<v Speaker 0>How fast is membership okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:12.640 --> 00:20:14.710
+<v Speaker 0>So I go down I'm looking for an element.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:14.710 --> 00:20:16.030
+<v Speaker 0>I'm going down the list.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:16.570 --> 00:20:19.090
+<v Speaker 0>And I might have to go all the way to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:19.090 --> 00:20:22.210
+<v Speaker 0>the end, or I might get to stop somewhere in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:22.210 --> 00:20:25.390
+<v Speaker 0>the middle if I find the thing or if it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:25.390 --> 00:20:27.940
+<v Speaker 0>if I find out that it can't be there because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:27.940 --> 00:20:30.070
+<v Speaker 0>I've already reached an element which is larger than it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:30.070 --> 00:20:32.530
+<v Speaker 0>Okay, so how much time does that take?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:34.000 --> 00:20:34.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:34.540 --> 00:20:38.530
+<v Speaker 0>Membership Before for unordered lists was linear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:39.910 --> 00:20:40.690
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:40.990 --> 00:20:45.130
+<v Speaker 0>Um, in this case, you might be able to stop
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:45.130 --> 00:20:48.460
+<v Speaker 0>a little bit before you get to the end, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:48.460 --> 00:20:51.550
+<v Speaker 0>still, in the worst case, it's linear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:51.580 --> 00:20:51.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:20:51.910 --> 00:20:52.900
+<v Speaker 0>In the worst case, you have to go all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:52.900 --> 00:20:53.680
+<v Speaker 0>way to the end.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:54.760 --> 00:20:55.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[96]}
+
+00:20:55.660 --> 00:20:59.140
+<v Speaker 0>In the average case, you have to go about halfway
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:59.140 --> 00:20:59.710
+<v Speaker 0>down.
+
+NOTE CONF {"raw":[100]}
+
+00:20:59.890 --> 00:21:00.400
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:00.400 --> 00:21:02.860
+<v Speaker 0>So instead of being instead of taking n steps, that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,81]}
+
+00:21:02.860 --> 00:21:03.940
+<v Speaker 0>takes n over two steps.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:03.940 --> 00:21:06.430
+<v Speaker 0>But that's still linear okay.
+
+NOTE CONF {"raw":[100,98,100,100,87]}
+
+00:21:06.670 --> 00:21:09.040
+<v Speaker 0>Linear times a constant is still linear.
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100]}
+
+00:21:09.970 --> 00:21:10.480
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:10.480 --> 00:21:13.180
+<v Speaker 0>It's a bit faster, but it's not um, it's not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,92,100,100]}
+
+00:21:13.240 --> 00:21:17.800
+<v Speaker 0>a different, um, uh, complexity class.
+
+NOTE CONF {"raw":[95,100,100,100,100,100]}
+
+00:21:18.370 --> 00:21:18.670
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:18.670 --> 00:21:22.030
+<v Speaker 0>And this one here is linear because, uh, list list
+
+NOTE CONF {"raw":[52,100,100,100,100,100,100,62,93,100]}
+
+00:21:22.030 --> 00:21:23.230
+<v Speaker 0>equality is linear.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:24.010 --> 00:21:24.370
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:24.370 --> 00:21:27.850
+<v Speaker 0>That's a big improvement because for unordered lists it was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:27.850 --> 00:21:29.320
+<v Speaker 0>um quadratic.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:30.880 --> 00:21:31.240
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:31.240 --> 00:21:32.590
+<v Speaker 0>Any questions about that?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:34.850 --> 00:21:37.070
+<v Speaker 0>I want to go on to my next, um, my
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:21:37.070 --> 00:21:38.300
+<v Speaker 0>next representation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:38.300 --> 00:21:38.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:21:38.540 --> 00:21:42.170
+<v Speaker 0>Those were two representations of sets as lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:43.100 --> 00:21:47.090
+<v Speaker 0>Um, now I want to talk about sets being represented
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:47.090 --> 00:21:48.140
+<v Speaker 0>as trees.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:48.920 --> 00:21:49.340
+<v Speaker 0>Okay?
+
+NOTE CONF {"raw":[100]}
+
+00:21:49.340 --> 00:21:51.830
+<v Speaker 0>Because we can do a lot better if we if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:51.830 --> 00:21:53.750
+<v Speaker 0>we represent sets as trees.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:54.260 --> 00:21:56.480
+<v Speaker 0>And I'm going to have to draw some pictures.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:00.440 --> 00:22:03.530
+<v Speaker 0>The idea is that with sets as trees, we're going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,85,100,100,100]}
+
+00:22:03.530 --> 00:22:08.540
+<v Speaker 0>to be able to check membership in logarithmic time rather
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:08.540 --> 00:22:09.740
+<v Speaker 0>than linear time.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:11.960 --> 00:22:13.610
+<v Speaker 0>Let me draw a picture and show you what I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:13.610 --> 00:22:14.090
+<v Speaker 0>mean.
+
+NOTE CONF {"raw":[100]}
+
+00:22:17.120 --> 00:22:17.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:20.180 --> 00:22:20.870
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:22:21.410 --> 00:22:21.710
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:21.710 --> 00:22:26.660
+<v Speaker 0>I'm going to be representing sets as trees and they're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:26.660 --> 00:22:28.250
+<v Speaker 0>going to be ordered trees.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:28.520 --> 00:22:28.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:28.820 --> 00:22:30.800
+<v Speaker 0>What I mean by that let me draw a picture
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:30.800 --> 00:22:31.820
+<v Speaker 0>of a of a tree.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:32.570 --> 00:22:32.930
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:22:54.980 --> 00:22:55.520
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[100]}
+
+00:23:03.470 --> 00:23:04.190
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:04.190 --> 00:23:05.060
+<v Speaker 0>There's a tree.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:23:08.390 --> 00:23:11.630
+<v Speaker 0>Um, it's a it's called a labelled binary tree.
+
+NOTE CONF {"raw":[100,99,48,100,100,100,94,100,100]}
+
+00:23:11.660 --> 00:23:12.110
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:12.110 --> 00:23:12.680
+<v Speaker 0>Binary.
+
+NOTE CONF {"raw":[100]}
+
+00:23:12.680 --> 00:23:16.460
+<v Speaker 0>Because at at each kind of, um, these are, these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:16.460 --> 00:23:17.570
+<v Speaker 0>are called nodes.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:21.110 --> 00:23:22.790
+<v Speaker 0>All of the things here are called nodes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:23:22.790 --> 00:23:23.360
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:23.720 --> 00:23:27.020
+<v Speaker 0>Um, uh, it's a, it's a binary tree because at
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:23:27.020 --> 00:23:30.260
+<v Speaker 0>each node where there are branches, there are two branches.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:30.260 --> 00:23:31.760
+<v Speaker 0>Binary meaning two.
+
+NOTE CONF {"raw":[100,100,95]}
+
+00:23:31.770 --> 00:23:32.490
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:32.850 --> 00:23:34.680
+<v Speaker 0>You can have other kinds of trees.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:34.680 --> 00:23:35.880
+<v Speaker 0>This is a binary tree.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:36.270 --> 00:23:40.470
+<v Speaker 0>It's a labelled binary tree, meaning that we have, um,
+
+NOTE CONF {"raw":[100,100,93,100,100,100,100,100,100,89]}
+
+00:23:41.100 --> 00:23:42.600
+<v Speaker 0>labels at the nodes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:23:42.600 --> 00:23:42.900
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[98]}
+
+00:23:42.900 --> 00:23:44.580
+<v Speaker 0>Labels meaning values.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:44.580 --> 00:23:47.460
+<v Speaker 0>So we assign values to the to the nodes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:47.460 --> 00:23:49.770
+<v Speaker 0>We put we put values in the nodes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:23:50.310 --> 00:23:54.720
+<v Speaker 0>And it's an ordered labelled binary tree because it has
+
+NOTE CONF {"raw":[100,97,100,100,97,100,100,100,100,100]}
+
+00:23:54.720 --> 00:23:58.890
+<v Speaker 0>a special property that at every node let me just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:58.890 --> 00:23:59.640
+<v Speaker 0>pick one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:01.830 --> 00:24:03.840
+<v Speaker 0>Like there that 140.
+
+NOTE CONF {"raw":[100,97,100,100]}
+
+00:24:04.980 --> 00:24:05.700
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:06.750 --> 00:24:07.860
+<v Speaker 0>Everything.
+
+NOTE CONF {"raw":[100]}
+
+00:24:10.110 --> 00:24:15.090
+<v Speaker 0>In the left subtree is less than the label okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:15.090 --> 00:24:16.770
+<v Speaker 0>Everything here is less than 40.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:17.010 --> 00:24:22.410
+<v Speaker 0>And everything in the right subtree is greater than that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:22.410 --> 00:24:23.040
+<v Speaker 0>label.
+
+NOTE CONF {"raw":[100]}
+
+00:24:24.420 --> 00:24:25.140
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:25.260 --> 00:24:28.320
+<v Speaker 0>And that holds not just for this node.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:24:28.320 --> 00:24:32.280
+<v Speaker 0>It holds for every single node in this tree Okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:33.600 --> 00:24:35.220
+<v Speaker 0>Now, why is that good?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:35.880 --> 00:24:36.660
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:38.070 --> 00:24:41.130
+<v Speaker 0>It's good because suppose I'm looking for a value and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:41.130 --> 00:24:42.660
+<v Speaker 0>I want to see if it's there or not.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:42.780 --> 00:24:43.080
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:43.080 --> 00:24:48.600
+<v Speaker 0>Suppose I'm looking for, um, uh, 33, just to pick
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:24:48.600 --> 00:24:49.080
+<v Speaker 0>a value.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:49.080 --> 00:24:52.650
+<v Speaker 0>Okay, so I start here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:52.650 --> 00:24:53.700
+<v Speaker 0>I'm looking for 33.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:53.700 --> 00:24:53.970
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:53.970 --> 00:24:56.370
+<v Speaker 0>Well, it's not there, okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:56.370 --> 00:24:57.840
+<v Speaker 0>It's bigger than what's here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:57.840 --> 00:24:59.730
+<v Speaker 0>So I know I have to go in this direction
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:59.730 --> 00:25:01.230
+<v Speaker 0>to find it if it's going to be there at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:01.230 --> 00:25:01.710
+<v Speaker 0>all.
+
+NOTE CONF {"raw":[100]}
+
+00:25:02.220 --> 00:25:04.920
+<v Speaker 0>Okay, so I go I'm looking for 33.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:08.430 --> 00:25:11.370
+<v Speaker 0>I go there, okay, I know I have to go
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:11.370 --> 00:25:14.130
+<v Speaker 0>this direction because it can't be on this side.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:14.760 --> 00:25:16.740
+<v Speaker 0>It has to be on this side somewhere if it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:16.740 --> 00:25:17.490
+<v Speaker 0>there at all.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:17.580 --> 00:25:19.200
+<v Speaker 0>Okay, I get to 40.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:19.290 --> 00:25:19.740
+<v Speaker 0>Okay?
+
+NOTE CONF {"raw":[100]}
+
+00:25:19.740 --> 00:25:20.430
+<v Speaker 0>It can't be.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:20.430 --> 00:25:22.860
+<v Speaker 0>It can't be over here because these are all bigger
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:22.860 --> 00:25:25.260
+<v Speaker 0>than 40 and 33 is smaller than 40.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:25.260 --> 00:25:27.300
+<v Speaker 0>So I have to go that way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:27.930 --> 00:25:28.710
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:28.710 --> 00:25:30.130
+<v Speaker 0>I get to, um.
+
+NOTE CONF {"raw":[100,100,100,71]}
+
+00:25:31.150 --> 00:25:32.290
+<v Speaker 0>32.
+
+NOTE CONF {"raw":[100]}
+
+00:25:33.370 --> 00:25:34.090
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:34.090 --> 00:25:34.960
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:34.960 --> 00:25:35.770
+<v Speaker 0>It's not there.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:35.770 --> 00:25:36.910
+<v Speaker 0>And it has to be.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:36.910 --> 00:25:39.010
+<v Speaker 0>It has to be that way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:40.060 --> 00:25:41.950
+<v Speaker 0>Sorry for my messy diagram.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:42.880 --> 00:25:45.220
+<v Speaker 0>Um, it has to be that way if it's there
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:25:45.220 --> 00:25:48.370
+<v Speaker 0>at all, because 33 is bigger than 32.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:48.460 --> 00:25:49.870
+<v Speaker 0>And then I get here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:51.220 --> 00:25:53.740
+<v Speaker 0>And if there were, if there were further branches down
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:53.740 --> 00:25:55.510
+<v Speaker 0>here, I would know that I have to go this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:55.510 --> 00:25:56.050
+<v Speaker 0>way.
+
+NOTE CONF {"raw":[100]}
+
+00:25:56.320 --> 00:25:57.550
+<v Speaker 0>But there aren't.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:57.550 --> 00:26:01.630
+<v Speaker 0>And so I've, I've reached the end and I and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:01.630 --> 00:26:02.320
+<v Speaker 0>I haven't found it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:02.320 --> 00:26:03.310
+<v Speaker 0>So it's not there.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:04.210 --> 00:26:04.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:05.200 --> 00:26:08.020
+<v Speaker 0>And, um, the thing that's great about this is that
+
+NOTE CONF {"raw":[100,87,100,100,100,100,100,100,100,100]}
+
+00:26:08.020 --> 00:26:11.260
+<v Speaker 0>I've only had to look at, um, uh, one, two,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,62,100,100]}
+
+00:26:11.260 --> 00:26:17.170
+<v Speaker 0>three, four out of the, um, 123456789 1011.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:17.200 --> 00:26:19.840
+<v Speaker 0>I had to look at four out of 11, um,
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:26:20.830 --> 00:26:22.120
+<v Speaker 0>labels on this tree.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:23.140 --> 00:26:23.890
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:24.820 --> 00:26:27.790
+<v Speaker 0>Now, this is a small tree, so that might not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:27.790 --> 00:26:28.930
+<v Speaker 0>seem very exciting.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:28.930 --> 00:26:29.470
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:29.470 --> 00:26:36.100
+<v Speaker 0>But in general, um, so the depth of this tree,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:37.540 --> 00:26:41.620
+<v Speaker 0>um, is four okay.
+
+NOTE CONF {"raw":[100,100,56,100]}
+
+00:26:41.620 --> 00:26:42.910
+<v Speaker 0>1234.
+
+NOTE CONF {"raw":[100]}
+
+00:26:42.940 --> 00:26:43.330
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:43.330 --> 00:26:44.530
+<v Speaker 0>The depth is four.
+
+NOTE CONF {"raw":[100,100,100,96]}
+
+00:26:45.970 --> 00:26:46.660
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:46.660 --> 00:26:49.900
+<v Speaker 0>And so the maximum number of elements in a tree
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:49.900 --> 00:26:53.950
+<v Speaker 0>of depth four is, um, two to the four minus
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:53.950 --> 00:26:54.550
+<v Speaker 0>one.
+
+NOTE CONF {"raw":[100]}
+
+00:26:54.820 --> 00:26:55.090
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:55.090 --> 00:26:55.840
+<v Speaker 0>15.
+
+NOTE CONF {"raw":[100]}
+
+00:26:58.210 --> 00:26:58.690
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:58.690 --> 00:27:01.570
+<v Speaker 0>And in general okay.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:01.570 --> 00:27:02.860
+<v Speaker 0>This holds for any n right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:02.860 --> 00:27:06.100
+<v Speaker 0>So a tree of depth n can hold two to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:06.100 --> 00:27:08.260
+<v Speaker 0>the n minus one elements.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:08.260 --> 00:27:12.160
+<v Speaker 0>Set another way the the length of the longest path
+
+NOTE CONF {"raw":[81,100,100,100,100,100,100,100,100,100]}
+
+00:27:12.160 --> 00:27:17.740
+<v Speaker 0>from from this the root to to the the bottom
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:17.740 --> 00:27:18.190
+<v Speaker 0>of the tree.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:18.190 --> 00:27:23.170
+<v Speaker 0>The leaves is the logarithm of the amount of data
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:23.170 --> 00:27:23.950
+<v Speaker 0>in the tree.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:24.580 --> 00:27:24.940
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:24.940 --> 00:27:27.590
+<v Speaker 0>And so what I'm saying here is that finding an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:27.590 --> 00:27:30.920
+<v Speaker 0>element, whether it's there or not is logarithmic in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:30.920 --> 00:27:31.790
+<v Speaker 0>amount of data.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:31.790 --> 00:27:32.270
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:32.270 --> 00:27:33.680
+<v Speaker 0>And that's really good.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:34.340 --> 00:27:35.060
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:35.060 --> 00:27:39.200
+<v Speaker 0>Remember my pictures back here I'll just flick back okay.
+
+NOTE CONF {"raw":[100,100,88,100,100,100,100,100,100,100]}
+
+00:27:39.200 --> 00:27:44.330
+<v Speaker 0>Logarithm was the one creeping along the bottom.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:44.330 --> 00:27:46.370
+<v Speaker 0>You can hardly see it okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:46.370 --> 00:27:50.540
+<v Speaker 0>Double the amount of data increases the time by one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:53.600 --> 00:27:54.050
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:27:54.050 --> 00:27:59.030
+<v Speaker 0>So this is the motivation for looking at, uh, trees
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:59.030 --> 00:28:00.560
+<v Speaker 0>for representing sets.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:01.340 --> 00:28:05.780
+<v Speaker 0>Um, specifically um labelled ordered labelled binary trees.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100]}
+
+00:28:07.100 --> 00:28:10.460
+<v Speaker 0>So, so I'm going to show you code for doing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:10.460 --> 00:28:11.060
+<v Speaker 0>that.
+
+NOTE CONF {"raw":[100]}
+
+00:28:12.650 --> 00:28:16.100
+<v Speaker 0>Uh, again I mean, these things get increasingly complicated.
+
+NOTE CONF {"raw":[84,100,100,100,100,100,100,100,100]}
+
+00:28:16.100 --> 00:28:20.480
+<v Speaker 0>So making things fast involves sometimes making them more complicated.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:20.480 --> 00:28:22.340
+<v Speaker 0>That's typical.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:22.850 --> 00:28:27.980
+<v Speaker 0>Um, okay, so we've got now we're going to implement
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:27.980 --> 00:28:30.080
+<v Speaker 0>the same the same six things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:30.410 --> 00:28:31.220
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:31.400 --> 00:28:34.040
+<v Speaker 0>A set is going to be represented as a tree.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:34.040 --> 00:28:36.770
+<v Speaker 0>And this is our this is an algebraic data type
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:37.430 --> 00:28:40.430
+<v Speaker 0>for trees of the kind that I just described.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:40.430 --> 00:28:40.970
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:41.300 --> 00:28:45.230
+<v Speaker 0>Um, a set is represented as a tree which is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:45.230 --> 00:28:46.580
+<v Speaker 0>either empty.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:46.580 --> 00:28:52.160
+<v Speaker 0>So that's we'll call that nil or it's a node
+
+NOTE CONF {"raw":[100,100,71,100,100,100,100,97,100,100]}
+
+00:28:52.160 --> 00:29:00.440
+<v Speaker 0>consisting of um, a left subtree, a label and a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,64]}
+
+00:29:00.440 --> 00:29:01.250
+<v Speaker 0>right subtree.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:01.250 --> 00:29:03.170
+<v Speaker 0>Maybe I should leave my picture up here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:11.930 --> 00:29:12.920
+<v Speaker 0>Uh, wait a minute.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:20.120 --> 00:29:20.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:20.930 --> 00:29:22.370
+<v Speaker 0>Again, this messy diagram.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:22.370 --> 00:29:22.670
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:29:22.670 --> 00:29:25.760
+<v Speaker 0>So a, um, So a tree.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:25.760 --> 00:29:27.980
+<v Speaker 0>Let's look at let's concentrate on this bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:28.880 --> 00:29:29.570
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:29.990 --> 00:29:35.900
+<v Speaker 0>A tree is a left subtree a label and a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:35.900 --> 00:29:36.890
+<v Speaker 0>right subtree.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:38.630 --> 00:29:39.350
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:39.350 --> 00:29:42.860
+<v Speaker 0>So this is defined using recursion as usual okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:42.860 --> 00:29:45.770
+<v Speaker 0>And the two and constructors are nil for the empty
+
+NOTE CONF {"raw":[100,100,100,54,100,100,100,100,100,100]}
+
+00:29:45.770 --> 00:29:46.850
+<v Speaker 0>tree and node.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:46.850 --> 00:29:49.580
+<v Speaker 0>For a tree that has two subtrees.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:49.580 --> 00:29:52.010
+<v Speaker 0>And the label okay I'm putting the label in the
+
+NOTE CONF {"raw":[81,98,100,100,100,100,100,100,100,100]}
+
+00:29:52.010 --> 00:29:55.460
+<v Speaker 0>middle because that's what the picture looks like.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:56.750 --> 00:29:59.720
+<v Speaker 0>Doesn't doesn't not very significant okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:00.260 --> 00:30:03.590
+<v Speaker 0>And then my invariant on these kind of trees is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:03.590 --> 00:30:05.540
+<v Speaker 0>more complicated than my previous one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:06.920 --> 00:30:07.580
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:07.580 --> 00:30:10.850
+<v Speaker 0>What it says is that, uh, given a set represented
+
+NOTE CONF {"raw":[100,100,100,100,100,67,100,100,100,100]}
+
+00:30:10.850 --> 00:30:13.610
+<v Speaker 0>this way, I want.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:16.400 --> 00:30:18.620
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:18.620 --> 00:30:21.050
+<v Speaker 0>Looking looking from the bottom here, these two, these two,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:21.080 --> 00:30:22.760
+<v Speaker 0>these two lines at the bottom.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:22.760 --> 00:30:23.150
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:23.150 --> 00:30:27.810
+<v Speaker 0>It's saying that any node in the tree, um, everything
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:27.810 --> 00:30:31.710
+<v Speaker 0>in the left subtree should be less than the node
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:31.710 --> 00:30:32.370
+<v Speaker 0>label.
+
+NOTE CONF {"raw":[100]}
+
+00:30:33.840 --> 00:30:34.470
+<v Speaker 0>Okay?
+
+NOTE CONF {"raw":[100]}
+
+00:30:34.470 --> 00:30:38.160
+<v Speaker 0>And everything in the right subtree should be greater than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:38.160 --> 00:30:39.090
+<v Speaker 0>the node label.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:39.090 --> 00:30:40.770
+<v Speaker 0>That's what this this is doing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:40.770 --> 00:30:42.750
+<v Speaker 0>This is a this is a list comprehension.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:42.750 --> 00:30:44.430
+<v Speaker 0>And there's an and apply to it okay.
+
+NOTE CONF {"raw":[100,100,100,94,63,100,100,100]}
+
+00:30:44.430 --> 00:30:46.620
+<v Speaker 0>It's looking at all of the values in the left
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:46.620 --> 00:30:51.120
+<v Speaker 0>subtree, checking to see that they're less than the node
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:30:51.120 --> 00:30:51.630
+<v Speaker 0>label.
+
+NOTE CONF {"raw":[100]}
+
+00:30:51.630 --> 00:30:53.730
+<v Speaker 0>And that has to be true for all of them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:53.730 --> 00:30:54.210
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:54.210 --> 00:30:57.690
+<v Speaker 0>And and and ditto for the for the right subtree
+
+NOTE CONF {"raw":[58,94,100,100,100,100,100,100,100,100]}
+
+00:30:57.810 --> 00:31:00.300
+<v Speaker 0>has to be greater than the node label.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:00.300 --> 00:31:02.070
+<v Speaker 0>And so I'm requiring that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:02.070 --> 00:31:06.480
+<v Speaker 0>And I'm requiring that not just at, at the, at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:06.480 --> 00:31:08.640
+<v Speaker 0>the sort of root of the tree, the top of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:08.640 --> 00:31:12.660
+<v Speaker 0>the tree are requiring it for every single subtree.
+
+NOTE CONF {"raw":[100,100,91,100,100,100,100,100,100]}
+
+00:31:12.660 --> 00:31:17.370
+<v Speaker 0>And that's why it's a recursive, uh, recursive function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100]}
+
+00:31:18.060 --> 00:31:18.750
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:19.680 --> 00:31:19.890
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:31:19.890 --> 00:31:22.410
+<v Speaker 0>So what this is expressing is that at every node
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:22.410 --> 00:31:25.170
+<v Speaker 0>Everything in the left subtree is, um.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:25.470 --> 00:31:28.710
+<v Speaker 0>Everything in the left subtree is smaller than the node
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:28.710 --> 00:31:29.610
+<v Speaker 0>level label.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:29.610 --> 00:31:32.100
+<v Speaker 0>Everything in the right subtree is greater than the node
+
+NOTE CONF {"raw":[100,90,100,100,100,100,100,100,100,100]}
+
+00:31:32.100 --> 00:31:34.380
+<v Speaker 0>label, and that holds for every single node in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:34.380 --> 00:31:34.920
+<v Speaker 0>tree.
+
+NOTE CONF {"raw":[100]}
+
+00:31:37.050 --> 00:31:39.120
+<v Speaker 0>This uses um you see here.
+
+NOTE CONF {"raw":[100,100,94,100,100,100]}
+
+00:31:39.120 --> 00:31:41.160
+<v Speaker 0>List this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:41.160 --> 00:31:46.890
+<v Speaker 0>This happens to use a helper function here, which takes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:46.890 --> 00:31:49.230
+<v Speaker 0>a tree and gives you a list of all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:49.230 --> 00:31:50.340
+<v Speaker 0>values in the tree.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:50.520 --> 00:31:54.720
+<v Speaker 0>And, um, I'll just, uh, say something about this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:31:54.720 --> 00:31:57.450
+<v Speaker 0>This is something that you quite often do in, um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:57.720 --> 00:32:00.510
+<v Speaker 0>in, in, in computer science with trees is that you're
+
+NOTE CONF {"raw":[50,100,100,100,100,100,100,100,100,100]}
+
+00:32:00.510 --> 00:32:04.620
+<v Speaker 0>interested in, in, in it's called traversing the tree, visiting
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100,100,100,100]}
+
+00:32:04.620 --> 00:32:05.580
+<v Speaker 0>all the labels.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:05.580 --> 00:32:06.510
+<v Speaker 0>Uh, sorry.
+
+NOTE CONF {"raw":[74,100]}
+
+00:32:06.510 --> 00:32:09.570
+<v Speaker 0>Visiting all the nodes in the tree and doing something.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:09.570 --> 00:32:09.990
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:09.990 --> 00:32:11.040
+<v Speaker 0>Traversing.
+
+NOTE CONF {"raw":[100]}
+
+00:32:11.040 --> 00:32:14.790
+<v Speaker 0>And, um, and this is traversing a tree and writing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:14.790 --> 00:32:16.620
+<v Speaker 0>down the labels.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:16.620 --> 00:32:20.280
+<v Speaker 0>So list applied to this tree.
+
+NOTE CONF {"raw":[100,52,49,100,100,100]}
+
+00:32:20.280 --> 00:32:21.210
+<v Speaker 0>If this is T.
+
+NOTE CONF {"raw":[100,100,100,94]}
+
+00:32:23.110 --> 00:32:23.830
+<v Speaker 0>This is tea.
+
+NOTE CONF {"raw":[100,100,43]}
+
+00:32:23.860 --> 00:32:26.800
+<v Speaker 0>Then the list of T in this case would give
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:26.800 --> 00:32:30.970
+<v Speaker 0>you all of the labels from left to right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:32:33.430 --> 00:32:33.850
+<v Speaker 0>Uh.
+
+NOTE CONF {"raw":[100]}
+
+00:32:39.730 --> 00:32:42.040
+<v Speaker 0>And they would end up being an order because of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,74,100,100,100]}
+
+00:32:42.040 --> 00:32:43.690
+<v Speaker 0>the way that I've written this function.
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100]}
+
+00:32:45.670 --> 00:32:46.420
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:47.020 --> 00:32:49.390
+<v Speaker 0>That's all the all the labels in this tree.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:32:50.470 --> 00:32:53.830
+<v Speaker 0>And the reason that they're in order is not because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:53.830 --> 00:32:55.480
+<v Speaker 0>I cleverly written them down in order.
+
+NOTE CONF {"raw":[100,100,100,100,100,91,100]}
+
+00:32:55.480 --> 00:32:59.740
+<v Speaker 0>It's because this function traverses.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:00.640 --> 00:33:02.020
+<v Speaker 0>I mean, if we look at this, if we look
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:33:02.020 --> 00:33:05.800
+<v Speaker 0>at this, this, um, this tree here, it it it,
+
+NOTE CONF {"raw":[100,100,100,88,100,100,100,100,100,100]}
+
+00:33:05.950 --> 00:33:09.580
+<v Speaker 0>it traverses the left subtree that gives me ten, 20
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:33:09.580 --> 00:33:10.630
+<v Speaker 0>and 25.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:11.530 --> 00:33:15.280
+<v Speaker 0>And then the next thing is the is the node
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:15.280 --> 00:33:16.330
+<v Speaker 0>label 30.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:16.900 --> 00:33:19.450
+<v Speaker 0>And then the next thing is the contents of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:19.450 --> 00:33:21.760
+<v Speaker 0>right subtree which is all this stuff here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:21.760 --> 00:33:22.090
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:22.090 --> 00:33:24.070
+<v Speaker 0>And if you look at every one of these nodes,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:24.460 --> 00:33:26.590
+<v Speaker 0>um, the reason why the things end up in that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:26.590 --> 00:33:29.590
+<v Speaker 0>order is, is because of this ordered property of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:29.590 --> 00:33:32.770
+<v Speaker 0>tree and the fact that we're putting the the node
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:32.770 --> 00:33:34.960
+<v Speaker 0>label in between the contents of the left and right
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:34.960 --> 00:33:35.620
+<v Speaker 0>subtree.
+
+NOTE CONF {"raw":[100]}
+
+00:33:35.620 --> 00:33:38.950
+<v Speaker 0>This is called an in-order traversal.
+
+NOTE CONF {"raw":[100,100,100,93,60,100]}
+
+00:33:42.400 --> 00:33:42.970
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:42.970 --> 00:33:43.930
+<v Speaker 0>Don't need to remember that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:43.930 --> 00:33:46.390
+<v Speaker 0>You might you might come across this at some point
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100,100,100]}
+
+00:33:46.390 --> 00:33:47.380
+<v Speaker 0>in later years.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:47.380 --> 00:33:49.420
+<v Speaker 0>There's there's other kinds of traversals.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:49.420 --> 00:33:55.060
+<v Speaker 0>There's a pre-order traversal, uh, which would be putting the
+
+NOTE CONF {"raw":[100,100,96,100,89,100,100,100,100,100]}
+
+00:33:55.060 --> 00:33:58.120
+<v Speaker 0>node label in front of the left and right subtrees.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:58.120 --> 00:34:00.160
+<v Speaker 0>And there's a post order traversal.
+
+NOTE CONF {"raw":[100,100,100,100,92,100]}
+
+00:34:01.510 --> 00:34:05.410
+<v Speaker 0>Uh, um, and they're used for different sorts of things.
+
+NOTE CONF {"raw":[100,98,100,90,100,100,100,100,100,100]}
+
+00:34:05.410 --> 00:34:06.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:06.130 --> 00:34:09.070
+<v Speaker 0>Um, anyway, just mention that in case you hear the
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:34:09.070 --> 00:34:11.889
+<v Speaker 0>terminology someday and want to know what it is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:13.389 --> 00:34:14.139
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:34:14.500 --> 00:34:16.960
+<v Speaker 0>So given that invariant, this is what we need all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:16.960 --> 00:34:18.310
+<v Speaker 0>of our trees to obey.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:18.310 --> 00:34:22.490
+<v Speaker 0>Is this invariant that they're in order okay.
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100,94]}
+
+00:34:22.879 --> 00:34:25.190
+<v Speaker 0>An empty set is represented by the empty tree.
+
+NOTE CONF {"raw":[100,100,79,100,100,100,100,100,100]}
+
+00:34:26.360 --> 00:34:30.590
+<v Speaker 0>The insert function has to look for the right place
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:30.590 --> 00:34:32.629
+<v Speaker 0>in the tree to put a new value.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:35.780 --> 00:34:36.649
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:34:37.730 --> 00:34:39.679
+<v Speaker 0>So let's go back to my picture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:40.220 --> 00:34:43.070
+<v Speaker 0>This picture is getting worse, more and more cluttered.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:43.460 --> 00:34:45.440
+<v Speaker 0>Someday I'm going to have to learn how to draw
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:45.440 --> 00:34:48.649
+<v Speaker 0>pictures on blackboards and things.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:48.649 --> 00:34:50.179
+<v Speaker 0>It's a bit late, but, uh.
+
+NOTE CONF {"raw":[100,100,100,100,100,82]}
+
+00:34:50.179 --> 00:34:51.740
+<v Speaker 0>Anyway, suppose I want to put.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:51.740 --> 00:34:54.379
+<v Speaker 0>Suppose I want to put in 33 into this tree.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:54.379 --> 00:34:54.950
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:54.950 --> 00:34:56.419
+<v Speaker 0>We know it's not there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:56.600 --> 00:34:56.990
+<v Speaker 0>We've.
+
+NOTE CONF {"raw":[100]}
+
+00:34:57.260 --> 00:34:59.690
+<v Speaker 0>I explained that before, but suppose I want to put
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:59.690 --> 00:35:00.020
+<v Speaker 0>it in.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:00.020 --> 00:35:00.500
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:00.500 --> 00:35:03.590
+<v Speaker 0>So, um, what I do is I go down the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:03.590 --> 00:35:05.870
+<v Speaker 0>tree and I look at the place where it should
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:05.870 --> 00:35:06.230
+<v Speaker 0>be.
+
+NOTE CONF {"raw":[100]}
+
+00:35:06.230 --> 00:35:09.740
+<v Speaker 0>So that's visiting this node, this node, this node and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:09.740 --> 00:35:10.490
+<v Speaker 0>this node, okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:10.490 --> 00:35:12.800
+<v Speaker 0>In each case it's bigger than 30.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:12.800 --> 00:35:14.270
+<v Speaker 0>It's smaller than 40.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:14.300 --> 00:35:15.830
+<v Speaker 0>It's bigger than 32.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:15.860 --> 00:35:17.510
+<v Speaker 0>It's smaller than 35.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:17.510 --> 00:35:19.160
+<v Speaker 0>So it has to go here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:20.570 --> 00:35:22.220
+<v Speaker 0>That's the right place to put it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:23.600 --> 00:35:24.320
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:25.730 --> 00:35:27.410
+<v Speaker 0>And that's what this code does.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:28.640 --> 00:35:29.840
+<v Speaker 0>That code up there.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:29.990 --> 00:35:30.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:30.650 --> 00:35:35.300
+<v Speaker 0>It it it goes down the tree visiting, visiting the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:35.300 --> 00:35:37.280
+<v Speaker 0>nodes, looking for the right place to put it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:37.280 --> 00:35:39.560
+<v Speaker 0>And then once it finds the right place.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:40.070 --> 00:35:40.430
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:35:44.030 --> 00:35:45.200
+<v Speaker 0>Actually this is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:47.480 --> 00:35:47.960
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:35:47.960 --> 00:35:48.350
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:35:48.350 --> 00:35:50.270
+<v Speaker 0>If it finds it, if it finds an empty tree,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:50.270 --> 00:35:52.190
+<v Speaker 0>meaning that it's gone all the way to the bottom,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:52.940 --> 00:35:55.910
+<v Speaker 0>then it creates a new node with that, with that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:55.910 --> 00:35:58.580
+<v Speaker 0>label and empty left and right subtrees.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:59.090 --> 00:36:01.010
+<v Speaker 0>If it finds that it's there already, then it doesn't
+
+NOTE CONF {"raw":[100,100,100,96,97,100,100,100,100,100]}
+
+00:36:01.010 --> 00:36:01.910
+<v Speaker 0>have to do anything.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:01.910 --> 00:36:04.340
+<v Speaker 0>Otherwise it decides whether to go left or right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:36:04.340 --> 00:36:04.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:04.790 --> 00:36:08.510
+<v Speaker 0>So again, this is um, this is going quite quickly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:08.510 --> 00:36:13.130
+<v Speaker 0>to the right place, logarithmic time and putting it in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:13.130 --> 00:36:13.940
+<v Speaker 0>the right place.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:15.140 --> 00:36:20.490
+<v Speaker 0>Um, turning a list into a set is, um, uh,
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:36:20.910 --> 00:36:24.420
+<v Speaker 0>repeatedly doing inserts of the elements in the list, starting
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,100,100,100]}
+
+00:36:24.420 --> 00:36:25.440
+<v Speaker 0>with an empty set.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:25.440 --> 00:36:27.990
+<v Speaker 0>You end up with a with a tree that's in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:27.990 --> 00:36:28.860
+<v Speaker 0>the right order.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:29.790 --> 00:36:30.330
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:30.330 --> 00:36:32.880
+<v Speaker 0>Using this, using this code here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:33.450 --> 00:36:35.580
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:36.540 --> 00:36:37.890
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:37.890 --> 00:36:40.440
+<v Speaker 0>Finding out whether a value is in there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:40.440 --> 00:36:42.270
+<v Speaker 0>I've already explained how this works.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:42.390 --> 00:36:46.110
+<v Speaker 0>You know, um, it goes down looking for the right
+
+NOTE CONF {"raw":[100,100,91,100,100,100,100,100,100,100]}
+
+00:36:46.110 --> 00:36:48.480
+<v Speaker 0>place for the element, and either it's there or it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:48.480 --> 00:36:49.050
+<v Speaker 0>not.
+
+NOTE CONF {"raw":[100]}
+
+00:36:49.320 --> 00:36:52.170
+<v Speaker 0>And that's what this, that this code does.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:52.620 --> 00:36:54.780
+<v Speaker 0>Um, you know, if you look at looking, looking for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:54.780 --> 00:36:57.390
+<v Speaker 0>X in a tree consisting of a node with a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,90]}
+
+00:36:57.390 --> 00:37:01.470
+<v Speaker 0>left subtree, a label Y and a right subtree, either
+
+NOTE CONF {"raw":[100,100,100,100,100,100,76,100,100,100]}
+
+00:37:01.470 --> 00:37:03.300
+<v Speaker 0>x is the same as y, in which case you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:03.300 --> 00:37:06.510
+<v Speaker 0>found it, or else x is less than y, in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:06.510 --> 00:37:08.490
+<v Speaker 0>which case you have to look in the left subtree
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:09.330 --> 00:37:11.160
+<v Speaker 0>or x is greater than y, and you have to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:37:11.160 --> 00:37:12.480
+<v Speaker 0>look in the right subtree.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:12.720 --> 00:37:19.200
+<v Speaker 0>So at every step we're throwing away about half of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:19.200 --> 00:37:21.120
+<v Speaker 0>the contents of the tree, okay?
+
+NOTE CONF {"raw":[100,100,100,100,100,98]}
+
+00:37:21.120 --> 00:37:24.930
+<v Speaker 0>Because, for example, if x is less than Y, we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:24.930 --> 00:37:27.360
+<v Speaker 0>looking at the left subtree, the right subtree.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:27.360 --> 00:37:29.460
+<v Speaker 0>We don't care what's there because it's not going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:29.460 --> 00:37:29.640
+<v Speaker 0>be.
+
+NOTE CONF {"raw":[100]}
+
+00:37:29.640 --> 00:37:31.920
+<v Speaker 0>That's not where where my element is going to be.
+
+NOTE CONF {"raw":[100,100,94,100,66,92,92,100,100,100]}
+
+00:37:33.540 --> 00:37:33.900
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:33.900 --> 00:37:35.610
+<v Speaker 0>And likewise here okay.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:35.610 --> 00:37:38.700
+<v Speaker 0>So this is the the the reason why I mean
+
+NOTE CONF {"raw":[100,100,100,100,94,100,100,100,100,100]}
+
+00:37:38.700 --> 00:37:41.400
+<v Speaker 0>this is this is logarithmic time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:41.400 --> 00:37:44.610
+<v Speaker 0>You're you're throwing away massive amount of data at every
+
+NOTE CONF {"raw":[89,100,100,100,100,97,100,100,100,100]}
+
+00:37:44.610 --> 00:37:47.520
+<v Speaker 0>step and concentrating on what you need.
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100]}
+
+00:37:48.330 --> 00:37:54.390
+<v Speaker 0>And then finally, um, equality, uh, set equality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,67,100]}
+
+00:37:54.780 --> 00:37:55.470
+<v Speaker 0>Um, wait a minute.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:56.400 --> 00:37:57.360
+<v Speaker 0>Set equality.
+
+NOTE CONF {"raw":[87,100]}
+
+00:37:57.390 --> 00:38:01.440
+<v Speaker 0>We do traversals, these sort of, uh, in order traversals
+
+NOTE CONF {"raw":[100,100,100,100,100,100,75,100,100,100]}
+
+00:38:01.440 --> 00:38:04.770
+<v Speaker 0>of both of the, um, of both of the trees
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:04.770 --> 00:38:07.890
+<v Speaker 0>and then compare those for equality, because as you've seen,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:07.890 --> 00:38:10.710
+<v Speaker 0>the, uh, the traversal gives us, it's always going to
+
+NOTE CONF {"raw":[100,83,100,100,100,100,100,100,100,100]}
+
+00:38:10.710 --> 00:38:12.480
+<v Speaker 0>give us a list in order like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:38:12.780 --> 00:38:13.170
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:13.170 --> 00:38:15.670
+<v Speaker 0>So if we do that for true for Two Trees,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:15.670 --> 00:38:18.640
+<v Speaker 0>I'm going to get the same list and I can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:18.640 --> 00:38:19.990
+<v Speaker 0>just check whether they're equal.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:23.770 --> 00:38:28.450
+<v Speaker 0>Okay, so, um, what about efficiency?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:28.450 --> 00:38:30.220
+<v Speaker 0>How much time does this take?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:30.550 --> 00:38:31.240
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:32.440 --> 00:38:35.260
+<v Speaker 0>Um, you know, empty is always going to be constant.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:36.430 --> 00:38:37.960
+<v Speaker 0>Uh, insertion.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:39.130 --> 00:38:41.590
+<v Speaker 0>I've explained that it's logarithmic.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:41.590 --> 00:38:41.890
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:41.890 --> 00:38:45.820
+<v Speaker 0>Because you, um, you're just taking a path from the
+
+NOTE CONF {"raw":[100,100,78,100,100,100,100,100,100,100]}
+
+00:38:45.820 --> 00:38:50.800
+<v Speaker 0>root down to a leaf and then inserting the element
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:50.800 --> 00:38:51.310
+<v Speaker 0>there.
+
+NOTE CONF {"raw":[100]}
+
+00:38:51.310 --> 00:38:51.670
+<v Speaker 0>Okay?
+
+NOTE CONF {"raw":[100]}
+
+00:38:51.670 --> 00:38:53.470
+<v Speaker 0>You find the right place and you insert it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:38:53.470 --> 00:38:54.490
+<v Speaker 0>It's a path.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:54.910 --> 00:38:58.120
+<v Speaker 0>Um, if you've got a tree that holds at most
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:58.360 --> 00:39:01.210
+<v Speaker 0>if the depth is, is n or sorry, let's call
+
+NOTE CONF {"raw":[100,100,100,83,100,100,100,100,100,100]}
+
+00:39:01.210 --> 00:39:03.070
+<v Speaker 0>the depth of D, okay.
+
+NOTE CONF {"raw":[100,100,96,100,100]}
+
+00:39:03.070 --> 00:39:04.930
+<v Speaker 0>You've got a tree of of depth D.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100]}
+
+00:39:04.960 --> 00:39:08.980
+<v Speaker 0>It can hold two to the d minus n elements.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:08.980 --> 00:39:11.500
+<v Speaker 0>That is to say the path the length of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:11.500 --> 00:39:12.610
+<v Speaker 0>longest path.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:14.110 --> 00:39:16.090
+<v Speaker 0>Well, the length of an of a of an average
+
+NOTE CONF {"raw":[100,100,100,100,78,100,100,100,100,100]}
+
+00:39:16.090 --> 00:39:17.200
+<v Speaker 0>path is.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:17.230 --> 00:39:19.930
+<v Speaker 0>Is is the logarithm of the amount of data in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:19.930 --> 00:39:20.800
+<v Speaker 0>the tree okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:20.800 --> 00:39:23.590
+<v Speaker 0>And so insertion is logarithmic.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:25.720 --> 00:39:32.140
+<v Speaker 0>Um, turning a list into a tree is um n
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:32.140 --> 00:39:33.820
+<v Speaker 0>log n still.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:36.430 --> 00:39:38.740
+<v Speaker 0>Why is that actually okay?
+
+NOTE CONF {"raw":[98,100,100,100,100]}
+
+00:39:38.740 --> 00:39:46.060
+<v Speaker 0>Because we're doing insertion n times and uh, insertion is
+
+NOTE CONF {"raw":[100,100,100,100,84,100,100,76,100,100]}
+
+00:39:46.060 --> 00:39:48.220
+<v Speaker 0>logarithmic okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:48.220 --> 00:39:50.110
+<v Speaker 0>That's where the n log n comes from.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:39:54.130 --> 00:39:56.260
+<v Speaker 0>Membership is logarithmic.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:56.260 --> 00:39:58.990
+<v Speaker 0>We've explained I've explained that that was my starting point
+
+NOTE CONF {"raw":[100,70,100,100,100,100,100,100,100,100]}
+
+00:39:58.990 --> 00:39:59.230
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:39:59.230 --> 00:40:00.010
+<v Speaker 0>This is logarithmic.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:00.010 --> 00:40:02.110
+<v Speaker 0>It only has to go down one path through this
+
+NOTE CONF {"raw":[55,100,100,100,100,100,100,100,100,100]}
+
+00:40:02.110 --> 00:40:02.620
+<v Speaker 0>tree.
+
+NOTE CONF {"raw":[100]}
+
+00:40:02.620 --> 00:40:05.680
+<v Speaker 0>And equality is um.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:08.140 --> 00:40:08.740
+<v Speaker 0>Linear.
+
+NOTE CONF {"raw":[100]}
+
+00:40:11.410 --> 00:40:11.770
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:11.770 --> 00:40:12.590
+<v Speaker 0>Why is that?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:12.680 --> 00:40:16.160
+<v Speaker 0>Because converting a tree to a list is linear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:17.390 --> 00:40:17.750
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:17.750 --> 00:40:19.880
+<v Speaker 0>Converting this other tree to a list is linear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:20.060 --> 00:40:22.700
+<v Speaker 0>And checking equality of two lists is linear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:26.750 --> 00:40:27.380
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:27.380 --> 00:40:29.900
+<v Speaker 0>And that's because everything is in ascending order.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:36.830 --> 00:40:39.800
+<v Speaker 0>Now any questions at this point?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:44.750 --> 00:40:45.140
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:40:50.480 --> 00:40:53.300
+<v Speaker 0>I'm not going to be talking about sets balanced trees.
+
+NOTE CONF {"raw":[100,73,100,100,100,100,100,100,99,100]}
+
+00:40:53.300 --> 00:40:54.380
+<v Speaker 0>And why is that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:55.250 --> 00:40:56.000
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:40:56.240 --> 00:40:59.780
+<v Speaker 0>Um what do I mean by balanced tree?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:03.140 --> 00:41:03.410
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:03.410 --> 00:41:04.490
+<v Speaker 0>We've got a problem.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:04.490 --> 00:41:07.010
+<v Speaker 0>I mean, I explain this, it's all wonderful.
+
+NOTE CONF {"raw":[100,100,100,58,100,100,100,100]}
+
+00:41:07.100 --> 00:41:10.250
+<v Speaker 0>You know, uh, everything's working.
+
+NOTE CONF {"raw":[100,100,97,99,100]}
+
+00:41:10.250 --> 00:41:11.000
+<v Speaker 0>Working great.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:11.000 --> 00:41:12.050
+<v Speaker 0>It's all fast.
+
+NOTE CONF {"raw":[96,100,100]}
+
+00:41:12.380 --> 00:41:12.680
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:12.680 --> 00:41:13.640
+<v Speaker 0>Problem is.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:16.130 --> 00:41:20.390
+<v Speaker 0>Um, trees comes in, come in different shapes.
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100]}
+
+00:41:20.480 --> 00:41:21.560
+<v Speaker 0>So we've just seen.
+
+NOTE CONF {"raw":[100,100,100,90]}
+
+00:41:21.740 --> 00:41:25.850
+<v Speaker 0>Seen a tree on my on my messy picture.
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100]}
+
+00:41:29.060 --> 00:41:29.690
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:41:32.360 --> 00:41:34.100
+<v Speaker 0>Okay, I've just mentioned the word balanced.
+
+NOTE CONF {"raw":[100,86,100,100,100,100,100]}
+
+00:41:34.100 --> 00:41:34.370
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:34.370 --> 00:41:37.700
+<v Speaker 0>Balanced means more or less the same amount of stuff
+
+NOTE CONF {"raw":[88,100,100,100,100,100,100,100,100,100]}
+
+00:41:37.700 --> 00:41:39.890
+<v Speaker 0>on the left side is on the right side for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:39.890 --> 00:41:40.460
+<v Speaker 0>every node.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:40.460 --> 00:41:40.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:40.910 --> 00:41:44.630
+<v Speaker 0>This is this is, um, roughly balanced.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:44.630 --> 00:41:45.170
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:45.170 --> 00:41:48.290
+<v Speaker 0>But I could have the same data in a tree
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:48.500 --> 00:41:49.490
+<v Speaker 0>of a different shape.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:49.490 --> 00:41:52.730
+<v Speaker 0>So that that tree that I just drew, um, looks
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:52.730 --> 00:41:54.140
+<v Speaker 0>kind of like this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:57.170 --> 00:41:58.910
+<v Speaker 0>The shape is something like that.
+
+NOTE CONF {"raw":[98,100,100,100,100,100]}
+
+00:42:00.260 --> 00:42:00.890
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:00.890 --> 00:42:02.630
+<v Speaker 0>I could have the same amount of data in a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:02.630 --> 00:42:04.910
+<v Speaker 0>tree that looks like this.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:08.060 --> 00:42:08.390
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:42:12.300 --> 00:42:14.880
+<v Speaker 0>Uh, or or like, you know, or some other shape.
+
+NOTE CONF {"raw":[56,64,100,100,100,100,100,100,100,100]}
+
+00:42:14.880 --> 00:42:15.390
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:15.420 --> 00:42:15.900
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:42:23.220 --> 00:42:25.110
+<v Speaker 0>I don't know, I don't know if I've got exactly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:25.110 --> 00:42:27.030
+<v Speaker 0>the same number of nodes here, but I think I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:27.030 --> 00:42:28.500
+<v Speaker 0>probably need to add some more.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:28.830 --> 00:42:32.610
+<v Speaker 0>Um, anyway, um, the special thing about this kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:32.610 --> 00:42:35.130
+<v Speaker 0>tree is that you've packed quite a lot of data
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:42:35.130 --> 00:42:39.870
+<v Speaker 0>in for a depth that's, um, one, two, three, four.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:39.900 --> 00:42:41.040
+<v Speaker 0>Okay, here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:41.040 --> 00:42:41.820
+<v Speaker 0>You've packed.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:41.820 --> 00:42:44.640
+<v Speaker 0>I haven't counted, so these may not be exactly the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:44.640 --> 00:42:47.490
+<v Speaker 0>same amount of data, but roughly the same amount of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:47.490 --> 00:42:47.790
+<v Speaker 0>data.
+
+NOTE CONF {"raw":[100]}
+
+00:42:47.790 --> 00:42:52.230
+<v Speaker 0>And the depth here is, you know, 12345678.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:52.650 --> 00:42:54.000
+<v Speaker 0>And here it's about the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:54.000 --> 00:42:54.450
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:42:54.450 --> 00:42:56.820
+<v Speaker 0>So you can you can pack the same amount of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:56.820 --> 00:42:58.710
+<v Speaker 0>data into trees of different shapes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:42:58.710 --> 00:43:02.970
+<v Speaker 0>And sometimes you end up with, with rather shallow trees
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:02.970 --> 00:43:05.580
+<v Speaker 0>and sometimes you end up with very deep trees.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:06.060 --> 00:43:06.780
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:06.780 --> 00:43:10.680
+<v Speaker 0>And um, the the algorithms that I've just shown you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:10.710 --> 00:43:11.490
+<v Speaker 0>work.
+
+NOTE CONF {"raw":[100]}
+
+00:43:11.580 --> 00:43:18.780
+<v Speaker 0>They're fast on these balanced trees and on unbalanced trees,
+
+NOTE CONF {"raw":[54,100,100,100,100,100,100,100,100,100]}
+
+00:43:18.780 --> 00:43:22.020
+<v Speaker 0>especially extremely unbalanced trees like these ones.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:22.020 --> 00:43:25.350
+<v Speaker 0>There are no better than, um, ordered lists.
+
+NOTE CONF {"raw":[100,100,100,100,100,99,100,100]}
+
+00:43:27.060 --> 00:43:33.570
+<v Speaker 0>Okay, so by changing from ordered lists to ordered binary
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:33.570 --> 00:43:36.360
+<v Speaker 0>trees, we haven't saved anything.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:37.200 --> 00:43:38.670
+<v Speaker 0>At least not in the worst case.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:38.670 --> 00:43:40.530
+<v Speaker 0>The worst case is when you end up with trees
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:40.530 --> 00:43:41.610
+<v Speaker 0>that look like this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:42.210 --> 00:43:47.460
+<v Speaker 0>Okay, so, um, so this is the motivation for looking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:47.460 --> 00:43:49.710
+<v Speaker 0>at balanced trees.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:50.700 --> 00:43:51.270
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:43:51.270 --> 00:43:52.560
+<v Speaker 0>So that's my next.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:54.570 --> 00:44:00.000
+<v Speaker 0>My next and last, um, choice of representation okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:00.240 --> 00:44:03.990
+<v Speaker 0>And this is a kind of a cool data structure.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:06.060 --> 00:44:10.030
+<v Speaker 0>It's the first kind of really clever data structure that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:10.030 --> 00:44:11.410
+<v Speaker 0>you will have seen here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:13.060 --> 00:44:16.150
+<v Speaker 0>Um, and what it is, it's, it's a, it's a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:44:16.150 --> 00:44:24.640
+<v Speaker 0>way of working with, um, ordered trees, um, such that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:24.640 --> 00:44:25.600
+<v Speaker 0>insertion.
+
+NOTE CONF {"raw":[100]}
+
+00:44:26.230 --> 00:44:28.120
+<v Speaker 0>So, so that they're always balanced, okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:28.120 --> 00:44:29.320
+<v Speaker 0>They're always balanced.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:29.320 --> 00:44:32.740
+<v Speaker 0>And, um, insertion is done in a very clever way
+
+NOTE CONF {"raw":[100,65,100,100,100,100,100,100,100,100]}
+
+00:44:32.740 --> 00:44:36.370
+<v Speaker 0>to ensure that this balanced ness is maintained.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:44:36.370 --> 00:44:39.220
+<v Speaker 0>So every time we put elements into a tree, we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:39.220 --> 00:44:40.750
+<v Speaker 0>make sure that it's balanced.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:41.020 --> 00:44:43.240
+<v Speaker 0>And the clever thing is that can be done very
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:43.240 --> 00:44:44.170
+<v Speaker 0>efficiently.
+
+NOTE CONF {"raw":[100]}
+
+00:44:44.260 --> 00:44:44.770
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:44:44.770 --> 00:44:49.930
+<v Speaker 0>So these are called, um, AVL trees after the inventors,
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:44:50.200 --> 00:44:53.590
+<v Speaker 0>uh, the inventors, some, some peoples and Russian, uh, uh,
+
+NOTE CONF {"raw":[66,100,93,100,100,93,98,100,100,92]}
+
+00:44:53.590 --> 00:44:58.540
+<v Speaker 0>computer scientists in the 1960s called Adelson, Belsky and Landis.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,81,100,100]}
+
+00:44:58.540 --> 00:45:00.130
+<v Speaker 0>And it's named after them.
+
+NOTE CONF {"raw":[100,74,100,100,100]}
+
+00:45:00.130 --> 00:45:04.840
+<v Speaker 0>And, um, uh, so the tricky, the clever and tricky
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:04.840 --> 00:45:06.910
+<v Speaker 0>thing is how do you manage to keep the tree
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:06.910 --> 00:45:08.740
+<v Speaker 0>balanced in an efficient way?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:09.730 --> 00:45:12.610
+<v Speaker 0>Okay, so this is your first example of a clever
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:45:12.610 --> 00:45:13.570
+<v Speaker 0>data structure.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:13.900 --> 00:45:16.600
+<v Speaker 0>There's lots of clever data structures in computer science.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:16.600 --> 00:45:19.360
+<v Speaker 0>You'll see more examples in later courses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:19.660 --> 00:45:22.540
+<v Speaker 0>There's a course in second year called Dumb Algorithms and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,58,100,97]}
+
+00:45:22.540 --> 00:45:23.530
+<v Speaker 0>Data Structures.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:23.530 --> 00:45:28.060
+<v Speaker 0>And clever data structures is often the source of efficient
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:45:28.060 --> 00:45:28.960
+<v Speaker 0>algorithms.
+
+NOTE CONF {"raw":[100]}
+
+00:45:29.950 --> 00:45:33.820
+<v Speaker 0>So I'm talking about a balanced balanced binary tree.
+
+NOTE CONF {"raw":[100,100,100,100,79,100,100,100,100]}
+
+00:45:33.820 --> 00:45:37.300
+<v Speaker 0>So here is a picture of a real balanced binary
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:37.300 --> 00:45:37.870
+<v Speaker 0>tree.
+
+NOTE CONF {"raw":[100]}
+
+00:45:38.350 --> 00:45:39.250
+<v Speaker 0>Um okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:39.250 --> 00:45:41.320
+<v Speaker 0>You can see that it's binary.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:41.320 --> 00:45:44.680
+<v Speaker 0>So every every fork in this tree it has two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:45:44.680 --> 00:45:46.930
+<v Speaker 0>branches okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:46.930 --> 00:45:51.370
+<v Speaker 0>And it's balanced because the, um, you know, every, every
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:51.370 --> 00:45:54.070
+<v Speaker 0>leaf is at the same distance from the root.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:54.970 --> 00:45:57.760
+<v Speaker 0>So this is a balanced binary tree in real life.
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:45:58.150 --> 00:46:00.700
+<v Speaker 0>Um, cool picture.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:46:00.820 --> 00:46:04.810
+<v Speaker 0>Um, in computer science, of course, balanced binary binary trees
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:46:04.820 --> 00:46:06.170
+<v Speaker 0>are written upside down.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:06.170 --> 00:46:08.120
+<v Speaker 0>So this is a balanced binary tree.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:08.120 --> 00:46:10.130
+<v Speaker 0>Computer science version okay.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:10.130 --> 00:46:11.420
+<v Speaker 0>Same picture upside down.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:11.900 --> 00:46:13.490
+<v Speaker 0>Um, okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:13.490 --> 00:46:16.220
+<v Speaker 0>You know what a balanced, a balanced binary tree is
+
+NOTE CONF {"raw":[100,100,100,85,100,100,100,100,100,100]}
+
+00:46:16.220 --> 00:46:20.930
+<v Speaker 0>at least, uh, um, from, you know, in the form
+
+NOTE CONF {"raw":[100,100,100,66,100,100,100,100,100,100]}
+
+00:46:20.930 --> 00:46:21.680
+<v Speaker 0>of a picture.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:46:21.770 --> 00:46:22.250
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:46:22.250 --> 00:46:23.750
+<v Speaker 0>What what about code?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:24.590 --> 00:46:25.190
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:46:25.190 --> 00:46:29.270
+<v Speaker 0>Now, this code is actually very similar to the code
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:29.270 --> 00:46:30.770
+<v Speaker 0>you've already seen here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:31.550 --> 00:46:31.820
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:46:31.820 --> 00:46:32.390
+<v Speaker 0>Oh, boy.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:32.390 --> 00:46:34.220
+<v Speaker 0>I only have four minutes.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:36.380 --> 00:46:38.960
+<v Speaker 0>Um, it's very similar.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:39.080 --> 00:46:42.710
+<v Speaker 0>All of the code is the same except for insertion
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:42.710 --> 00:46:45.800
+<v Speaker 0>and the the representation.
+
+NOTE CONF {"raw":[100,96,100,100]}
+
+00:46:46.250 --> 00:46:49.730
+<v Speaker 0>Uh, so the representation of, uh, of of, uh, sets
+
+NOTE CONF {"raw":[100,100,100,100,100,99,100,100,98,100]}
+
+00:46:49.730 --> 00:46:52.670
+<v Speaker 0>of tree is the same as before, except that I'm
+
+NOTE CONF {"raw":[62,100,100,100,100,100,100,100,100,100]}
+
+00:46:52.670 --> 00:46:53.450
+<v Speaker 0>every node.
+
+NOTE CONF {"raw":[100,73]}
+
+00:46:53.450 --> 00:46:57.590
+<v Speaker 0>I record the depth in order to be able to,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:57.590 --> 00:46:59.690
+<v Speaker 0>um, quickly access it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:01.040 --> 00:47:05.450
+<v Speaker 0>Um, the invariant Is almost the same as before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:47:05.480 --> 00:47:10.100
+<v Speaker 0>The difference is that, uh, as well as the elements
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,100,100,100]}
+
+00:47:10.100 --> 00:47:13.280
+<v Speaker 0>being in the right order in the tree, there's an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:13.280 --> 00:47:18.200
+<v Speaker 0>additional requirement that at every node, the left and subtrees
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,58,100]}
+
+00:47:18.350 --> 00:47:21.680
+<v Speaker 0>have depth, which differs at most by one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:22.520 --> 00:47:23.150
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:23.150 --> 00:47:24.620
+<v Speaker 0>Why why does it differ?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:24.620 --> 00:47:26.480
+<v Speaker 0>But most by one I said it should be balanced.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:26.480 --> 00:47:27.800
+<v Speaker 0>They should be equal depth.
+
+NOTE CONF {"raw":[93,100,100,100,100]}
+
+00:47:27.800 --> 00:47:28.580
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[94]}
+
+00:47:28.850 --> 00:47:31.370
+<v Speaker 0>Uh, the answer is that they can't always be equal
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:47:31.370 --> 00:47:31.730
+<v Speaker 0>depth.
+
+NOTE CONF {"raw":[100]}
+
+00:47:31.730 --> 00:47:34.670
+<v Speaker 0>Because if you've got a tree that isn't full, there's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:34.670 --> 00:47:36.680
+<v Speaker 0>always going to be places where the depth is going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:36.680 --> 00:47:39.110
+<v Speaker 0>to be a little bit, a little bit off.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:47:39.110 --> 00:47:42.110
+<v Speaker 0>What we're requiring is that it's off by the minimum
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:42.110 --> 00:47:42.530
+<v Speaker 0>amount.
+
+NOTE CONF {"raw":[100]}
+
+00:47:42.530 --> 00:47:47.540
+<v Speaker 0>So at most one okay, that's what this stuff at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:47.540 --> 00:47:50.720
+<v Speaker 0>the bottom here is saying we require not only everything's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:47:50.720 --> 00:47:54.110
+<v Speaker 0>in order, but also that the left and right subtrees,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:54.410 --> 00:47:57.980
+<v Speaker 0>um, at every point have uh, a difference of depth
+
+NOTE CONF {"raw":[100,100,100,100,100,51,100,100,100,100]}
+
+00:47:57.980 --> 00:47:58.940
+<v Speaker 0>at most one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:01.310 --> 00:48:03.300
+<v Speaker 0>And then the, um.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:04.500 --> 00:48:05.310
+<v Speaker 0>I'll just show you.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:05.310 --> 00:48:05.580
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:48:05.580 --> 00:48:07.050
+<v Speaker 0>So, uh.
+
+NOTE CONF {"raw":[100,97]}
+
+00:48:08.040 --> 00:48:08.700
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[75]}
+
+00:48:08.970 --> 00:48:10.320
+<v Speaker 0>The code for empty is the same.
+
+NOTE CONF {"raw":[100,100,100,78,78,100,100]}
+
+00:48:10.320 --> 00:48:11.700
+<v Speaker 0>The code for set is the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:11.700 --> 00:48:14.130
+<v Speaker 0>The code for um, element is the same.
+
+NOTE CONF {"raw":[100,100,100,100,76,98,100,100]}
+
+00:48:14.130 --> 00:48:15.210
+<v Speaker 0>In the code for equals the same.
+
+NOTE CONF {"raw":[75,100,100,100,97,100,100]}
+
+00:48:15.210 --> 00:48:18.510
+<v Speaker 0>The only code that's different is the code for insertion.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:18.870 --> 00:48:21.030
+<v Speaker 0>And what the code for insertion does.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:23.100 --> 00:48:24.840
+<v Speaker 0>Is actually just the same as before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:24.840 --> 00:48:28.260
+<v Speaker 0>This code is the same as before, except for um,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:29.490 --> 00:48:33.210
+<v Speaker 0>once you found the right place for doing an insertion
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:33.210 --> 00:48:37.290
+<v Speaker 0>and you do the insertion, you follow that by a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:37.290 --> 00:48:39.030
+<v Speaker 0>local rebalance step.
+
+NOTE CONF {"raw":[100,92,100]}
+
+00:48:42.180 --> 00:48:42.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:42.540 --> 00:48:45.630
+<v Speaker 0>Because it might be that inserting something into this tree,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:45.900 --> 00:48:47.460
+<v Speaker 0>uh, brings it out of balance.
+
+NOTE CONF {"raw":[58,100,100,100,100,100]}
+
+00:48:48.480 --> 00:48:48.810
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:48.810 --> 00:48:51.300
+<v Speaker 0>Now, the code for that is complicated.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:51.990 --> 00:48:53.850
+<v Speaker 0>Um, that's what it looks like.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:48:53.850 --> 00:48:54.300
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:54.300 --> 00:48:56.520
+<v Speaker 0>But in the form of pictures, you can easily understand
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:56.520 --> 00:48:56.820
+<v Speaker 0>it.
+
+NOTE CONF {"raw":[100]}
+
+00:48:56.820 --> 00:48:58.350
+<v Speaker 0>Let's see if I have time for this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:58.350 --> 00:48:59.850
+<v Speaker 0>I think I do, yeah.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:59.850 --> 00:49:00.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:00.540 --> 00:49:03.990
+<v Speaker 0>The, The idea is that once you've, uh, once you've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,35,100,100]}
+
+00:49:03.990 --> 00:49:07.290
+<v Speaker 0>put something into this tree, which was balanced, in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:07.290 --> 00:49:10.380
+<v Speaker 0>worst case, it's out of balance by by one, it
+
+NOTE CONF {"raw":[100,100,98,100,100,97,100,100,100,100]}
+
+00:49:10.380 --> 00:49:14.520
+<v Speaker 0>could be that the that the balance is not just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:14.730 --> 00:49:17.190
+<v Speaker 0>not just a difference of one, but a difference of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:17.220 --> 00:49:17.820
+<v Speaker 0>two.
+
+NOTE CONF {"raw":[100]}
+
+00:49:18.120 --> 00:49:20.940
+<v Speaker 0>And it turns out that there's two cases where that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:20.940 --> 00:49:21.420
+<v Speaker 0>can happen.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:21.420 --> 00:49:22.830
+<v Speaker 0>And here's pictures of them.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:23.100 --> 00:49:23.760
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:23.760 --> 00:49:27.270
+<v Speaker 0>Actually there's four cases because there's symmetric variants of this
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,74,100,100]}
+
+00:49:27.270 --> 00:49:27.960
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:27.960 --> 00:49:31.290
+<v Speaker 0>The idea is in looking at this picture, suppose that
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:49:31.290 --> 00:49:34.650
+<v Speaker 0>I do the insertion and it and it results in
+
+NOTE CONF {"raw":[100,100,100,100,100,93,100,100,100,100]}
+
+00:49:34.830 --> 00:49:40.200
+<v Speaker 0>this bit of the tree being too deeper than this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,68,100,100,100]}
+
+00:49:40.200 --> 00:49:40.770
+<v Speaker 0>bit of the tree.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:40.770 --> 00:49:42.540
+<v Speaker 0>Okay, A is too deeper than C.
+
+NOTE CONF {"raw":[100,100,100,76,100,68,42]}
+
+00:49:42.540 --> 00:49:45.570
+<v Speaker 0>That's what this picture is meant to, to to to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:45.570 --> 00:49:46.290
+<v Speaker 0>show.
+
+NOTE CONF {"raw":[100]}
+
+00:49:47.160 --> 00:49:47.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:49:47.790 --> 00:49:51.330
+<v Speaker 0>Then I can do a little bit of a, of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:51.330 --> 00:49:54.810
+<v Speaker 0>a adjustment to the tree so that it has the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:54.810 --> 00:49:55.710
+<v Speaker 0>same stuff in it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:55.710 --> 00:49:57.870
+<v Speaker 0>So A, B and C are still there, the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,72,100,100]}
+
+00:49:57.870 --> 00:50:00.940
+<v Speaker 0>size x and y are still there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98]}
+
+00:50:02.350 --> 00:50:05.290
+<v Speaker 0>X and Y still have the same relationship to A,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:05.320 --> 00:50:08.590
+<v Speaker 0>B, and C as they did before in the sense
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:08.590 --> 00:50:11.680
+<v Speaker 0>of, you know, the stuff that's smaller than X is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,91,91]}
+
+00:50:11.680 --> 00:50:13.810
+<v Speaker 0>to the left, just like it was here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:50:13.840 --> 00:50:20.470
+<v Speaker 0>The stuff that's larger than X is, is y B
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,81,100]}
+
+00:50:20.470 --> 00:50:22.210
+<v Speaker 0>and C that's here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:22.330 --> 00:50:22.750
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:50:22.750 --> 00:50:24.340
+<v Speaker 0>And now everything is balanced.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:50:26.440 --> 00:50:26.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:50:26.650 --> 00:50:29.320
+<v Speaker 0>So you've taken a difference of at most of two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:29.320 --> 00:50:31.840
+<v Speaker 0>here and turn it into a difference of zero.
+
+NOTE CONF {"raw":[100,100,67,100,100,100,100,100,100]}
+
+00:50:32.020 --> 00:50:33.430
+<v Speaker 0>And similar thing here.
+
+NOTE CONF {"raw":[100,97,100,100]}
+
+00:50:33.430 --> 00:50:35.080
+<v Speaker 0>This is a slightly more complicated picture.
+
+NOTE CONF {"raw":[100,100,83,100,100,100,100]}
+
+00:50:35.080 --> 00:50:38.140
+<v Speaker 0>But again you can take this difference between C and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:38.140 --> 00:50:41.320
+<v Speaker 0>D of two and turn it into a into something
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:41.320 --> 00:50:43.360
+<v Speaker 0>that's some better.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:50:43.510 --> 00:50:43.810
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:50:43.810 --> 00:50:45.310
+<v Speaker 0>And you only have to do this at one place.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:45.310 --> 00:50:47.230
+<v Speaker 0>It's the place where you've done the insertion.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:50:47.680 --> 00:50:47.980
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:50:50.260 --> 00:50:51.010
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[98]}
+
+00:50:51.790 --> 00:50:57.100
+<v Speaker 0>Um, uh, what I want to say is the result
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:57.100 --> 00:51:00.220
+<v Speaker 0>of this is you end up with, um, I'll say
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:00.220 --> 00:51:02.740
+<v Speaker 0>this in the next lecture, you end up with, uh,
+
+NOTE CONF {"raw":[100,100,100,100,70,100,100,100,100,100]}
+
+00:51:02.740 --> 00:51:07.690
+<v Speaker 0>the, the, the best case complexity of, of balanced trees
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:51:07.870 --> 00:51:10.390
+<v Speaker 0>of of of my ordered tree representation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:51:10.390 --> 00:51:13.330
+<v Speaker 0>So, um, thank you for your patience.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:51:13.330 --> 00:51:15.790
+<v Speaker 0>I'll, I'll finish this lecture tomorrow.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:51:15.910 --> 00:51:16.300
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}

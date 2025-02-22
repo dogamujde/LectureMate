@@ -1,0 +1,4741 @@
+WEBVTT
+
+00:00:35.250 --> 00:00:35.700
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:00:35.700 --> 00:00:36.540
+<v Speaker 0>Good afternoon.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:53.790 --> 00:00:55.590
+<v Speaker 0>One of my quick polls.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:00:55.590 --> 00:00:58.110
+<v Speaker 0>How many of you have read The Hobbit?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:00.310 --> 00:01:00.940
+<v Speaker 0>Right?
+
+NOTE CONF {"raw":[92]}
+
+00:01:00.940 --> 00:01:04.239
+<v Speaker 0>So you'll remember a discussion between Gandalf and Bilbo about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,83]}
+
+00:01:04.239 --> 00:01:06.550
+<v Speaker 0>what do I mean by good morning.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:06.580 --> 00:01:08.410
+<v Speaker 0>So I was wondering if I should have a discussion
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:08.410 --> 00:01:10.480
+<v Speaker 0>about what I mean by good afternoon.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:10.570 --> 00:01:12.280
+<v Speaker 0>Am I wishing you a good afternoon?
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100]}
+
+00:01:12.310 --> 00:01:14.620
+<v Speaker 0>Am I hoping it will be a good afternoon?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:01:14.620 --> 00:01:17.380
+<v Speaker 0>Or am I simply saying it's time to start?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:01:19.330 --> 00:01:22.660
+<v Speaker 0>So today we are finishing off what is logically week
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:22.660 --> 00:01:26.800
+<v Speaker 0>seven and what is currently physically week seven.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:28.570 --> 00:01:32.200
+<v Speaker 0>And let me remind you what we're trying to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:32.200 --> 00:01:36.160
+<v Speaker 0>So the topic of this week is given a formula
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:36.850 --> 00:01:38.920
+<v Speaker 0>given a formula of propositional logic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:38.920 --> 00:01:41.740
+<v Speaker 0>So very simple logic, not the clever stuff we were
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:41.740 --> 00:01:42.730
+<v Speaker 0>doing earlier.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:43.270 --> 00:01:46.480
+<v Speaker 0>Is there a way to make that formula true by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:46.480 --> 00:01:50.440
+<v Speaker 0>giving its variables particular values true or false?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:51.880 --> 00:01:55.660
+<v Speaker 0>And what I did last week was introduce a bunch
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:55.660 --> 00:02:00.820
+<v Speaker 0>of Haskell definitions, which are one way of representing formula
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:00.820 --> 00:02:03.040
+<v Speaker 0>in conjunctive normal form.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:04.480 --> 00:02:07.390
+<v Speaker 0>Let me remind you of some of the slightly strange
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:07.390 --> 00:02:08.259
+<v Speaker 0>things we had.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:08.710 --> 00:02:09.850
+<v Speaker 0>What is a formula?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:09.880 --> 00:02:12.880
+<v Speaker 0>A formula in CNF is a big and of a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:12.880 --> 00:02:18.190
+<v Speaker 0>bunch of clauses, and each clause is an or of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,94,100]}
+
+00:02:18.190 --> 00:02:20.740
+<v Speaker 0>a bunch of literals, and a literal is an atom
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100,100]}
+
+00:02:20.740 --> 00:02:21.730
+<v Speaker 0>or an negated atom.
+
+NOTE CONF {"raw":[100,50,100,100]}
+
+00:02:21.730 --> 00:02:23.080
+<v Speaker 0>So p or not p.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:24.880 --> 00:02:28.420
+<v Speaker 0>And the last thing I did was say that this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:28.420 --> 00:02:32.230
+<v Speaker 0>function does evaluation because it just computes the end of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:32.230 --> 00:02:34.300
+<v Speaker 0>the or of the literals.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:34.630 --> 00:02:37.690
+<v Speaker 0>And we have this slightly odd notion of valuation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:02:37.870 --> 00:02:41.320
+<v Speaker 0>So we were just giving a valuation as something that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:41.320 --> 00:02:43.180
+<v Speaker 0>is a list of the true literals.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:43.180 --> 00:02:46.030
+<v Speaker 0>You've just done an PHP tutorial with a different type
+
+NOTE CONF {"raw":[100,100,100,100,55,100,100,100,100,100]}
+
+00:02:46.030 --> 00:02:47.260
+<v Speaker 0>of valuation, right?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:50.320 --> 00:02:54.340
+<v Speaker 0>Yes, I think I just marked a tutorial with a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:54.340 --> 00:02:56.410
+<v Speaker 0>different type of valuation, so I hope you did it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:57.190 --> 00:03:01.430
+<v Speaker 0>Um, So in the FP tutorial, the valuation was what
+
+NOTE CONF {"raw":[100,100,100,100,90,100,100,100,100,100]}
+
+00:03:01.430 --> 00:03:05.000
+<v Speaker 0>you expect a valuation to be a map from variables
+
+NOTE CONF {"raw":[100,100,93,100,100,100,100,100,100,100]}
+
+00:03:05.000 --> 00:03:06.590
+<v Speaker 0>to true false values.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:07.280 --> 00:03:11.240
+<v Speaker 0>In this encoding, a valuation is a list of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:11.240 --> 00:03:14.870
+<v Speaker 0>variables that we know to be true, and we may
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:14.870 --> 00:03:18.200
+<v Speaker 0>have variables where we don't know yet whether to make
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:18.200 --> 00:03:19.190
+<v Speaker 0>them true or false.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:19.190 --> 00:03:20.780
+<v Speaker 0>So that's why we have a list of things that
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:03:20.780 --> 00:03:22.070
+<v Speaker 0>we know to be true.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:25.010 --> 00:03:30.860
+<v Speaker 0>And right at the end, we talked about how we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:30.860 --> 00:03:34.430
+<v Speaker 0>could take a formula and just by brute force and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,91]}
+
+00:03:34.430 --> 00:03:36.410
+<v Speaker 0>ignorance, check it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:36.620 --> 00:03:39.110
+<v Speaker 0>So the easy way to check it is to try
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:39.110 --> 00:03:43.280
+<v Speaker 0>all possible assignments of true and false to the variables.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:43.430 --> 00:03:47.330
+<v Speaker 0>If there are n variables in the formula, then that
+
+NOTE CONF {"raw":[100,100,86,100,100,100,100,100,100,100]}
+
+00:03:47.330 --> 00:03:49.610
+<v Speaker 0>means there are two to the n possible ways to
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:03:49.610 --> 00:03:52.490
+<v Speaker 0>assign true and false to the variables, which is too
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:52.490 --> 00:03:55.220
+<v Speaker 0>many for any reasonably long formula.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:56.780 --> 00:04:01.760
+<v Speaker 0>So what we do in order to find out in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:01.760 --> 00:04:05.720
+<v Speaker 0>practice, is to do the kind of thing that we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:05.720 --> 00:04:11.000
+<v Speaker 0>did with sequent calculus, but in a more algorithmic way,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:11.000 --> 00:04:14.480
+<v Speaker 0>and in formula that are in this particular CNF form.
+
+NOTE CONF {"raw":[100,100,100,100,84,100,100,100,100,100]}
+
+00:04:16.340 --> 00:04:17.810
+<v Speaker 0>So what is the valuation?
+
+NOTE CONF {"raw":[100,100,100,51,61]}
+
+00:04:17.810 --> 00:04:19.489
+<v Speaker 0>If you think about it from the proof point of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:19.489 --> 00:04:19.910
+<v Speaker 0>view?
+
+NOTE CONF {"raw":[100]}
+
+00:04:19.940 --> 00:04:22.340
+<v Speaker 0>You can think of a valuation as some assumptions which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:04:22.340 --> 00:04:24.380
+<v Speaker 0>would allow you to prove the formula.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:24.680 --> 00:04:26.960
+<v Speaker 0>So we're not actually doing proofs in here, but the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:26.960 --> 00:04:31.160
+<v Speaker 0>idea is the same if you think about a particular
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:31.160 --> 00:04:31.910
+<v Speaker 0>formula.
+
+NOTE CONF {"raw":[100]}
+
+00:04:32.240 --> 00:04:34.550
+<v Speaker 0>This is one that is in CNF because it's got
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:34.550 --> 00:04:38.540
+<v Speaker 0>an and and an and and everything inside is always.
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,100,100,94]}
+
+00:04:38.540 --> 00:04:41.510
+<v Speaker 0>So it's a bunch of ORS, a bunch of ORS,
+
+NOTE CONF {"raw":[100,100,100,100,100,92,73,100,100,97]}
+
+00:04:41.900 --> 00:04:43.610
+<v Speaker 0>single thing anded together.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:44.570 --> 00:04:47.450
+<v Speaker 0>And we're looking for values of A, C and D
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:48.020 --> 00:04:50.750
+<v Speaker 0>that will make this formula true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:52.040 --> 00:04:55.940
+<v Speaker 0>What do we know about valuations for CNF formulae.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:04:57.690 --> 00:04:59.820
+<v Speaker 0>This is an end of clauses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:59.910 --> 00:05:04.380
+<v Speaker 0>So if this formula is true, every clause has to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:04.380 --> 00:05:06.180
+<v Speaker 0>be true because it's an and.
+
+NOTE CONF {"raw":[100,100,100,99,100,100]}
+
+00:05:08.400 --> 00:05:11.130
+<v Speaker 0>Have we already see that anybody would not worry not
+
+NOTE CONF {"raw":[82,81,98,100,100,100,96,100,68,100]}
+
+00:05:11.130 --> 00:05:11.910
+<v Speaker 0>seeing that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:12.870 --> 00:05:14.550
+<v Speaker 0>So this is what Anne says.
+
+NOTE CONF {"raw":[100,100,100,100,42,100]}
+
+00:05:14.550 --> 00:05:16.080
+<v Speaker 0>All of them have to be true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:05:18.060 --> 00:05:19.110
+<v Speaker 0>What about.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:23.610 --> 00:05:26.790
+<v Speaker 0>Thinking of it in proof theory terms, if we were
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:26.790 --> 00:05:29.700
+<v Speaker 0>writing it as a sequent, we could write it like
+
+NOTE CONF {"raw":[100,100,100,100,68,100,100,100,100,100]}
+
+00:05:29.700 --> 00:05:30.330
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:05:31.320 --> 00:05:32.880
+<v Speaker 0>So what's this thing over here?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:32.880 --> 00:05:35.820
+<v Speaker 0>This is not A or not C or not D,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:35.820 --> 00:05:38.610
+<v Speaker 0>and we're looking for a valuation of a, C and
+
+NOTE CONF {"raw":[100,100,100,100,72,72,100,95,92,100]}
+
+00:05:38.610 --> 00:05:38.790
+<v Speaker 0>D.
+
+NOTE CONF {"raw":[100]}
+
+00:05:38.790 --> 00:05:40.050
+<v Speaker 0>That makes it true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:40.590 --> 00:05:44.250
+<v Speaker 0>In sequent calculus terms we could write we want some
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:44.250 --> 00:05:47.250
+<v Speaker 0>assumptions which make this right hand side true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:47.280 --> 00:05:51.000
+<v Speaker 0>So now remember that in the sequent calculus when we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:51.000 --> 00:05:53.100
+<v Speaker 0>write comma on the right hand side it's the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:53.100 --> 00:05:53.850
+<v Speaker 0>as or.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:53.850 --> 00:05:57.420
+<v Speaker 0>So this right hand side is simply that clause there
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:05:58.890 --> 00:06:01.860
+<v Speaker 0>and then for this clause this is an A or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:01.860 --> 00:06:02.280
+<v Speaker 0>C.
+
+NOTE CONF {"raw":[100]}
+
+00:06:02.280 --> 00:06:06.600
+<v Speaker 0>So I'm looking for a valuation or a set of
+
+NOTE CONF {"raw":[100,100,100,100,94,94,100,100,100,100]}
+
+00:06:06.600 --> 00:06:08.220
+<v Speaker 0>assumptions about variables.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:08.220 --> 00:06:11.850
+<v Speaker 0>Same thing which make a or C true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100]}
+
+00:06:11.850 --> 00:06:15.450
+<v Speaker 0>And here I'm looking for something that make this makes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,48,100]}
+
+00:06:15.450 --> 00:06:16.710
+<v Speaker 0>not d true.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:17.250 --> 00:06:20.760
+<v Speaker 0>So one can break down the problem of looking for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:20.760 --> 00:06:25.410
+<v Speaker 0>variables that make this formula true into looking for a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:25.410 --> 00:06:29.190
+<v Speaker 0>set of assignments to variables that makes each one of
+
+NOTE CONF {"raw":[100,100,100,90,100,100,100,100,100,100]}
+
+00:06:29.190 --> 00:06:31.350
+<v Speaker 0>these three clauses true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:31.350 --> 00:06:33.540
+<v Speaker 0>And we're not doing proofs, so we're not really going
+
+NOTE CONF {"raw":[100,100,100,100,83,100,100,100,100,100]}
+
+00:06:33.540 --> 00:06:35.130
+<v Speaker 0>to write these out as proofs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:35.130 --> 00:06:39.450
+<v Speaker 0>We're just using sequent calculus notation because it's a convenient
+
+NOTE CONF {"raw":[100,100,100,85,100,100,100,100,100,100]}
+
+00:06:39.450 --> 00:06:40.410
+<v Speaker 0>to write down.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:44.310 --> 00:06:47.820
+<v Speaker 0>But it's not the case that any old valuation will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:06:47.820 --> 00:06:48.480
+<v Speaker 0>do.
+
+NOTE CONF {"raw":[100]}
+
+00:06:48.960 --> 00:06:50.190
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:06:50.190 --> 00:06:51.780
+<v Speaker 0>Is there a valuation?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:53.700 --> 00:06:56.260
+<v Speaker 0>Remember, in our sense of valuation, which is a list
+
+NOTE CONF {"raw":[100,100,100,100,89,99,100,100,100,100]}
+
+00:06:56.260 --> 00:06:58.210
+<v Speaker 0>of true literals.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:58.780 --> 00:07:02.320
+<v Speaker 0>Could I make a valuation which is not very sensible
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:02.320 --> 00:07:04.030
+<v Speaker 0>but makes everything true?
+
+NOTE CONF {"raw":[100,100,100,82]}
+
+00:07:04.060 --> 00:07:06.160
+<v Speaker 0>Satisfies makes the formula true.
+
+NOTE CONF {"raw":[78,100,91,100,100]}
+
+00:07:09.790 --> 00:07:11.020
+<v Speaker 0>Keyword was not sensible.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:11.020 --> 00:07:12.160
+<v Speaker 0>So what would I do?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:19.930 --> 00:07:20.290
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:07:26.500 --> 00:07:28.300
+<v Speaker 0>I think that sounded too sensible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:28.420 --> 00:07:32.530
+<v Speaker 0>So given any formula, there's a very stupid form of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:32.530 --> 00:07:34.240
+<v Speaker 0>valuation which I could do.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:36.220 --> 00:07:37.660
+<v Speaker 0>Make everything true.
+
+NOTE CONF {"raw":[100,100,97]}
+
+00:07:37.690 --> 00:07:40.120
+<v Speaker 0>Make a true and make not a true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:40.360 --> 00:07:41.710
+<v Speaker 0>Now that's nonsense.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:41.710 --> 00:07:45.400
+<v Speaker 0>So I certainly can't have arbitrary assumptions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:46.480 --> 00:07:50.140
+<v Speaker 0>In sequent calculus, there's nothing stopping you writing down a
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:07:50.140 --> 00:07:52.030
+<v Speaker 0>comma, not a on the left.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:52.750 --> 00:07:54.310
+<v Speaker 0>But that would be nonsense.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:54.580 --> 00:07:57.520
+<v Speaker 0>So if we're trying to look for a valuation that
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:07:57.520 --> 00:08:00.790
+<v Speaker 0>is an actual valuation and gives you true and false
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:00.790 --> 00:08:04.750
+<v Speaker 0>values variables, we do have the constraint that whatever we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:04.750 --> 00:08:08.980
+<v Speaker 0>write down on the left hand side mustn't contain a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:08.980 --> 00:08:12.040
+<v Speaker 0>variable and its negation, because that would amount to saying
+
+NOTE CONF {"raw":[100,100,52,100,100,100,100,100,95,100]}
+
+00:08:12.040 --> 00:08:13.930
+<v Speaker 0>the variable has to be true and false at the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:13.930 --> 00:08:14.890
+<v Speaker 0>same time.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:16.450 --> 00:08:20.710
+<v Speaker 0>However, the reason we wrote the valuations as we did
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:20.710 --> 00:08:23.320
+<v Speaker 0>is because we don't necessarily need to know the value
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:23.320 --> 00:08:24.700
+<v Speaker 0>of every variable.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:08:26.020 --> 00:08:30.970
+<v Speaker 0>So, for example, in order to prove that A or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:30.970 --> 00:08:33.909
+<v Speaker 0>not A is true, I don't actually need any assumptions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:33.909 --> 00:08:36.640
+<v Speaker 0>at all because it's always true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:36.729 --> 00:08:39.280
+<v Speaker 0>So I don't need an assumption on the left.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:08:40.150 --> 00:08:43.750
+<v Speaker 0>Similarly, if we look at this one, what do I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:43.750 --> 00:08:47.140
+<v Speaker 0>need to assume to show that not D is true?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100,100,100]}
+
+00:08:58.820 --> 00:09:01.280
+<v Speaker 0>What's the least thing I can assume about the variables
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:01.280 --> 00:09:02.780
+<v Speaker 0>that makes not D true?
+
+NOTE CONF {"raw":[100,100,87,100,100]}
+
+00:09:05.900 --> 00:09:07.010
+<v Speaker 0>D is false.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:07.010 --> 00:09:09.170
+<v Speaker 0>Okay or not, D is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:09.170 --> 00:09:11.960
+<v Speaker 0>So remember the identity.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:11.960 --> 00:09:12.860
+<v Speaker 0>What did I call it?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:12.860 --> 00:09:13.970
+<v Speaker 0>Immediate rule.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:13.970 --> 00:09:16.400
+<v Speaker 0>So we have the immediate rule which says that a
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100,100]}
+
+00:09:16.400 --> 00:09:19.190
+<v Speaker 0>implies a entails a is always true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:09:20.090 --> 00:09:23.420
+<v Speaker 0>So that's why we don't have to write down valuations
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,87]}
+
+00:09:23.420 --> 00:09:26.480
+<v Speaker 0>of every variable as you did in the FP tutorial.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:09:27.830 --> 00:09:29.720
+<v Speaker 0>So this is the general idea.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:30.440 --> 00:09:32.720
+<v Speaker 0>And at the moment it might look a bit abstract.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:32.720 --> 00:09:35.000
+<v Speaker 0>But now I'm going to give you an algorithm for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:35.000 --> 00:09:35.450
+<v Speaker 0>it.
+
+NOTE CONF {"raw":[100]}
+
+00:09:36.650 --> 00:09:40.190
+<v Speaker 0>And it's going to be hopefully relatively transparent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:41.750 --> 00:09:49.160
+<v Speaker 0>So last week I introduced the four people who invented
+
+NOTE CONF {"raw":[100,100,100,100,100,78,77,100,100,100]}
+
+00:09:49.160 --> 00:09:50.210
+<v Speaker 0>this algorithm.
+
+NOTE CONF {"raw":[100,100]}
+
+00:09:51.410 --> 00:09:53.300
+<v Speaker 0>This is actually seriously impressive.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:53.300 --> 00:09:56.750
+<v Speaker 0>So it's now more than 60 years since they invented
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:56.750 --> 00:10:00.860
+<v Speaker 0>the algorithm, and it is still the fastest general purpose
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:00.860 --> 00:10:02.420
+<v Speaker 0>algorithm to do the job.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:02.690 --> 00:10:07.250
+<v Speaker 0>There aren't many algorithms that have that property.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:10:08.630 --> 00:10:10.040
+<v Speaker 0>So what do we do again?
+
+NOTE CONF {"raw":[100,100,100,100,100,55]}
+
+00:10:10.070 --> 00:10:13.490
+<v Speaker 0>Let me give you the high level description before we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:13.970 --> 00:10:16.220
+<v Speaker 0>go into an example and then into a bit of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:16.220 --> 00:10:17.180
+<v Speaker 0>pseudocode.
+
+NOTE CONF {"raw":[100]}
+
+00:10:18.260 --> 00:10:20.330
+<v Speaker 0>So we're going to look at one atom at a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:20.330 --> 00:10:20.780
+<v Speaker 0>time.
+
+NOTE CONF {"raw":[100]}
+
+00:10:20.780 --> 00:10:22.850
+<v Speaker 0>So one letter a b c d.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:23.810 --> 00:10:26.330
+<v Speaker 0>And then we're going to say does it work if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:26.330 --> 00:10:27.350
+<v Speaker 0>I make it true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:27.380 --> 00:10:28.730
+<v Speaker 0>Suppose I make it true.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:28.730 --> 00:10:29.720
+<v Speaker 0>What happens.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:30.770 --> 00:10:33.350
+<v Speaker 0>Well if I make a variable true then I can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:33.350 --> 00:10:36.800
+<v Speaker 0>simplify the other formulas by plugging true in for the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:36.800 --> 00:10:38.960
+<v Speaker 0>value of that particular variable.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:39.260 --> 00:10:41.750
+<v Speaker 0>And so I have a smaller formulae and then I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,65,100,100,100]}
+
+00:10:41.750 --> 00:10:42.770
+<v Speaker 0>use recursion.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:43.670 --> 00:10:46.580
+<v Speaker 0>This course is really largely about recursion.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:47.480 --> 00:10:50.630
+<v Speaker 0>So once I've got a smaller formula I apply the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:50.630 --> 00:10:53.610
+<v Speaker 0>algorithm recursively, and maybe it doesn't work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:53.610 --> 00:10:58.410
+<v Speaker 0>Maybe I can't find evaluations for the other variables that
+
+NOTE CONF {"raw":[100,100,100,100,57,100,100,100,100,100]}
+
+00:10:58.410 --> 00:10:59.400
+<v Speaker 0>make it true.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:01.260 --> 00:11:03.690
+<v Speaker 0>Well, if that happens, then I failed.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:03.690 --> 00:11:05.400
+<v Speaker 0>And so it was a mistake to set it to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:05.400 --> 00:11:06.090
+<v Speaker 0>true.
+
+NOTE CONF {"raw":[100]}
+
+00:11:06.120 --> 00:11:08.820
+<v Speaker 0>So I come back and try setting it to false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:09.630 --> 00:11:12.720
+<v Speaker 0>And again I set the variable to fourth throughout the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,52,82,100]}
+
+00:11:12.720 --> 00:11:13.170
+<v Speaker 0>formula.
+
+NOTE CONF {"raw":[100]}
+
+00:11:13.170 --> 00:11:15.090
+<v Speaker 0>That gives me a smaller formula.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:15.330 --> 00:11:18.090
+<v Speaker 0>And I do recursion to try to solve that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:18.450 --> 00:11:21.750
+<v Speaker 0>And if that fails, then there is no way to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:21.750 --> 00:11:25.050
+<v Speaker 0>make a satisfying assignment, because I will have ended up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:25.050 --> 00:11:26.730
+<v Speaker 0>trying every possibility.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:27.930 --> 00:11:30.690
+<v Speaker 0>You will want to convince yourselves of that later.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100]}
+
+00:11:30.990 --> 00:11:32.700
+<v Speaker 0>But that's the outline.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:11:32.700 --> 00:11:34.470
+<v Speaker 0>Let's see it in an example.
+
+NOTE CONF {"raw":[100,100,100,98,100,100]}
+
+00:11:34.950 --> 00:11:38.280
+<v Speaker 0>So here's the example from before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:39.780 --> 00:11:43.410
+<v Speaker 0>We're trying to show that it's possible to make not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:43.410 --> 00:11:47.520
+<v Speaker 0>A or not C or not D and A or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:47.520 --> 00:11:49.560
+<v Speaker 0>C, and not D.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:11:49.560 --> 00:11:50.370
+<v Speaker 0>True.
+
+NOTE CONF {"raw":[100]}
+
+00:11:50.760 --> 00:11:53.340
+<v Speaker 0>and we've broken that down into saying that amounts to
+
+NOTE CONF {"raw":[100,58,100,100,100,100,100,100,100,100]}
+
+00:11:53.340 --> 00:11:55.860
+<v Speaker 0>finding a set of assumptions which makes all of these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:55.860 --> 00:11:57.750
+<v Speaker 0>things true at the same time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:59.730 --> 00:12:03.270
+<v Speaker 0>So the algorithm says choose a variable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:04.110 --> 00:12:06.060
+<v Speaker 0>Well, a is the first letter of the alphabet.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:12:06.060 --> 00:12:07.440
+<v Speaker 0>So let's choose a.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:09.750 --> 00:12:12.300
+<v Speaker 0>If I look at this formula and set A to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:12.300 --> 00:12:14.790
+<v Speaker 0>be true what happens.
+
+NOTE CONF {"raw":[85,100,100,100]}
+
+00:12:14.880 --> 00:12:17.700
+<v Speaker 0>So I've added a is an assumption on the left.
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,100,100,100]}
+
+00:12:18.150 --> 00:12:21.180
+<v Speaker 0>I look at this thing here I've got not a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:21.840 --> 00:12:25.230
+<v Speaker 0>if A is true not A is false false or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:25.230 --> 00:12:26.850
+<v Speaker 0>anything is anything.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:27.030 --> 00:12:29.070
+<v Speaker 0>So I can just remove that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:29.070 --> 00:12:31.710
+<v Speaker 0>Not A it's false and it doesn't need to appear
+
+NOTE CONF {"raw":[100,100,68,100,100,100,100,100,100,100]}
+
+00:12:31.710 --> 00:12:32.970
+<v Speaker 0>in the disjunct anymore.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:34.110 --> 00:12:35.700
+<v Speaker 0>Over here nothing changes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:36.300 --> 00:12:40.320
+<v Speaker 0>In this middle formula I've said I'm assuming a and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:40.320 --> 00:12:42.840
+<v Speaker 0>the formula says A or C.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:42.960 --> 00:12:44.130
+<v Speaker 0>So it's true.
+
+NOTE CONF {"raw":[100,98,100]}
+
+00:12:44.460 --> 00:12:46.230
+<v Speaker 0>So I've made this formula true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:46.230 --> 00:12:48.420
+<v Speaker 0>And I don't need to consider it any more.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,79,66,66]}
+
+00:12:49.420 --> 00:12:52.030
+<v Speaker 0>So this is the key step of the algorithm.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:12:52.030 --> 00:12:54.790
+<v Speaker 0>Set A to have a particular value in this case
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:54.790 --> 00:12:55.480
+<v Speaker 0>true.
+
+NOTE CONF {"raw":[100]}
+
+00:12:55.480 --> 00:12:59.260
+<v Speaker 0>And then simplify by looking for lot A's on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:59.260 --> 00:13:03.130
+<v Speaker 0>right hand side and striking them out and looking for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:03.130 --> 00:13:06.160
+<v Speaker 0>plus A's on the right hand side and removing the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:06.160 --> 00:13:08.650
+<v Speaker 0>entire clause because we've found a way to make it
+
+NOTE CONF {"raw":[100,100,100,93,100,100,100,100,100,100]}
+
+00:13:08.650 --> 00:13:09.640
+<v Speaker 0>satisfiable.
+
+NOTE CONF {"raw":[100]}
+
+00:13:09.790 --> 00:13:11.020
+<v Speaker 0>This is A or C.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:11.020 --> 00:13:13.780
+<v Speaker 0>So if A is true a or C is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:16.390 --> 00:13:16.720
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:16.720 --> 00:13:19.810
+<v Speaker 0>So that's the the single key step of the algorithm.
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:13:22.030 --> 00:13:25.510
+<v Speaker 0>Who feels unsure about what I'm doing there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:28.660 --> 00:13:30.610
+<v Speaker 0>Who feels sure about what I'm doing there.
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100]}
+
+00:13:32.620 --> 00:13:32.980
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:32.980 --> 00:13:35.710
+<v Speaker 0>Who apart from the usual suspects, feels sure about what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:13:35.710 --> 00:13:36.430
+<v Speaker 0>I'm doing there?
+
+NOTE CONF {"raw":[100,100,92]}
+
+00:13:37.960 --> 00:13:38.980
+<v Speaker 0>Not many people.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:38.980 --> 00:13:40.990
+<v Speaker 0>So we'll keep going with the next step.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:40.990 --> 00:13:42.370
+<v Speaker 0>And by the end you will be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:42.370 --> 00:13:44.260
+<v Speaker 0>And by the time you've programmed it, you certainly will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:44.260 --> 00:13:44.590
+<v Speaker 0>be.
+
+NOTE CONF {"raw":[100]}
+
+00:13:46.900 --> 00:13:50.590
+<v Speaker 0>So Remember, I'm choosing a variable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:50.680 --> 00:13:53.170
+<v Speaker 0>I haven't said how I choose a variable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100]}
+
+00:13:53.170 --> 00:13:57.190
+<v Speaker 0>I'm doing the easiest thing I can think of, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:57.190 --> 00:13:59.020
+<v Speaker 0>is to go through in alphabetical order.
+
+NOTE CONF {"raw":[100,100,100,100,63,100,100]}
+
+00:14:01.300 --> 00:14:04.840
+<v Speaker 0>Here I set a to be true and I simplified.
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100,100]}
+
+00:14:05.020 --> 00:14:08.560
+<v Speaker 0>So now I'm trying to choose a value for C,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:09.370 --> 00:14:11.470
+<v Speaker 0>I can try two first.
+
+NOTE CONF {"raw":[100,100,100,63,100]}
+
+00:14:12.010 --> 00:14:14.290
+<v Speaker 0>So now I've assumed a and C.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:14.590 --> 00:14:16.510
+<v Speaker 0>What does that do to this formula.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:16.780 --> 00:14:19.000
+<v Speaker 0>Well if c is true not C is false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:19.000 --> 00:14:20.860
+<v Speaker 0>So again I can strike that out.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:21.670 --> 00:14:23.920
+<v Speaker 0>And it hasn't done anything over here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:23.920 --> 00:14:27.850
+<v Speaker 0>I've assumed A or C I have assumed A and
+
+NOTE CONF {"raw":[100,100,100,100,100,71,70,100,100,100]}
+
+00:14:27.880 --> 00:14:30.850
+<v Speaker 0>C, but that doesn't tell me anything about not D's.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,58]}
+
+00:14:30.850 --> 00:14:32.740
+<v Speaker 0>So I still have some work to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:33.760 --> 00:14:35.800
+<v Speaker 0>And over here I actually have the same thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:35.800 --> 00:14:38.350
+<v Speaker 0>So I've reduced this to two identical formula.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:38.350 --> 00:14:42.370
+<v Speaker 0>I now have a and c gives me not D.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:44.350 --> 00:14:48.770
+<v Speaker 0>Well that hasn't got us very far yet.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:48.770 --> 00:14:50.960
+<v Speaker 0>So now I have to look at another variable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:51.260 --> 00:14:55.160
+<v Speaker 0>Can I make it work by choosing D to be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:55.160 --> 00:14:55.760
+<v Speaker 0>true?
+
+NOTE CONF {"raw":[100]}
+
+00:14:57.740 --> 00:14:59.060
+<v Speaker 0>Okay, I set D to true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:59.060 --> 00:15:01.010
+<v Speaker 0>So now I'm assuming that A is true.
+
+NOTE CONF {"raw":[100,100,72,100,100,100,100,100]}
+
+00:15:01.040 --> 00:15:02.870
+<v Speaker 0>C is true and D is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:04.850 --> 00:15:07.160
+<v Speaker 0>Now I strike out not D because it's false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:07.160 --> 00:15:09.950
+<v Speaker 0>And now I'm trying to prove an empty right hand
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:09.950 --> 00:15:10.460
+<v Speaker 0>side.
+
+NOTE CONF {"raw":[100]}
+
+00:15:10.460 --> 00:15:12.290
+<v Speaker 0>What's an empty right hand side?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:15.200 --> 00:15:15.950
+<v Speaker 1>Contradiction.
+
+NOTE CONF {"raw":[100]}
+
+00:15:18.140 --> 00:15:19.280
+<v Speaker 0>Contradiction.
+
+NOTE CONF {"raw":[99]}
+
+00:15:19.490 --> 00:15:20.570
+<v Speaker 0>Simpler word.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:23.030 --> 00:15:24.080
+<v Speaker 0>False.
+
+NOTE CONF {"raw":[100]}
+
+00:15:24.080 --> 00:15:24.530
+<v Speaker 0>Empty.
+
+NOTE CONF {"raw":[100]}
+
+00:15:24.530 --> 00:15:25.160
+<v Speaker 0>Right hand.
+
+NOTE CONF {"raw":[100,91]}
+
+00:15:25.280 --> 00:15:25.670
+<v Speaker 0>Empty.
+
+NOTE CONF {"raw":[100]}
+
+00:15:25.700 --> 00:15:27.410
+<v Speaker 0>Right hand side is false.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:28.760 --> 00:15:31.370
+<v Speaker 0>So if I strike out the not d here, I
+
+NOTE CONF {"raw":[100,100,100,100,89,100,95,100,100,100]}
+
+00:15:31.370 --> 00:15:32.270
+<v Speaker 0>have a c.
+
+NOTE CONF {"raw":[100,100,96]}
+
+00:15:32.270 --> 00:15:34.760
+<v Speaker 0>D is supposed to make false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:34.760 --> 00:15:35.420
+<v Speaker 0>True.
+
+NOTE CONF {"raw":[100]}
+
+00:15:35.450 --> 00:15:37.310
+<v Speaker 0>It's not possible to make false true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:37.310 --> 00:15:38.630
+<v Speaker 0>So this has failed.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:38.750 --> 00:15:41.510
+<v Speaker 0>And the same happens here because it's exactly the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:41.600 --> 00:15:43.100
+<v Speaker 0>So I failed.
+
+NOTE CONF {"raw":[100,67,100]}
+
+00:15:43.310 --> 00:15:44.990
+<v Speaker 0>I've set a to be true.
+
+NOTE CONF {"raw":[100,100,100,100,91,100]}
+
+00:15:44.990 --> 00:15:46.340
+<v Speaker 0>I've set C to be true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:46.340 --> 00:15:49.280
+<v Speaker 0>And I've set D to be true and I've failed.
+
+NOTE CONF {"raw":[100,100,100,83,100,100,100,100,68,100]}
+
+00:15:49.280 --> 00:15:51.230
+<v Speaker 0>I don't have a satisfying assignment.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:52.850 --> 00:15:54.050
+<v Speaker 0>So what do I do?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:54.080 --> 00:15:55.430
+<v Speaker 0>Well this is recursion.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:55.430 --> 00:15:57.440
+<v Speaker 0>So this is a recursion from this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:57.440 --> 00:15:59.390
+<v Speaker 0>And this is a recursion from that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:59.390 --> 00:16:01.820
+<v Speaker 0>So I'm three levels deep in the recursion.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:01.820 --> 00:16:05.570
+<v Speaker 0>So I backtrack up to here and set D to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:16:05.570 --> 00:16:06.920
+<v Speaker 0>be false instead.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:07.070 --> 00:16:10.400
+<v Speaker 0>So now I've got a true c true and d
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:10.400 --> 00:16:11.300
+<v Speaker 0>false.
+
+NOTE CONF {"raw":[100]}
+
+00:16:12.950 --> 00:16:14.240
+<v Speaker 0>And now what happens.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:14.240 --> 00:16:17.180
+<v Speaker 0>Everything works nicely I have not d on the left
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:17.180 --> 00:16:18.380
+<v Speaker 0>and not D on the right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:18.380 --> 00:16:20.210
+<v Speaker 0>So I can strike out that clause.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:20.630 --> 00:16:22.310
+<v Speaker 0>Got not D on the left, not D on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:22.310 --> 00:16:24.950
+<v Speaker 0>right because it's the same I strike out that clause.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,94,100,100]}
+
+00:16:25.670 --> 00:16:30.470
+<v Speaker 0>And so now I'm claiming that a C and not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:16:30.470 --> 00:16:33.770
+<v Speaker 0>D proves the empty set of clauses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:34.070 --> 00:16:36.350
+<v Speaker 0>What is the empty set of clauses?
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100]}
+
+00:16:40.940 --> 00:16:41.750
+<v Speaker 0>True.
+
+NOTE CONF {"raw":[100]}
+
+00:16:41.990 --> 00:16:42.500
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:43.490 --> 00:16:45.260
+<v Speaker 0>Clauses are anded together.
+
+NOTE CONF {"raw":[100,100,99,100]}
+
+00:16:45.260 --> 00:16:48.420
+<v Speaker 0>So the end of nothing is true.
+
+NOTE CONF {"raw":[100,100,90,100,100,100,100]}
+
+00:16:48.720 --> 00:16:51.270
+<v Speaker 0>Remember, we went through this at some length a couple
+
+NOTE CONF {"raw":[100,100,100,100,100,72,100,100,100,100]}
+
+00:16:51.270 --> 00:16:52.230
+<v Speaker 0>of weeks ago.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:52.260 --> 00:16:53.850
+<v Speaker 0>This is where it's coming up again.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:55.350 --> 00:16:59.190
+<v Speaker 0>Essentially, I've discharged everything I have to prove.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:59.340 --> 00:17:01.320
+<v Speaker 0>I have three things I had to make.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:01.320 --> 00:17:01.860
+<v Speaker 0>True.
+
+NOTE CONF {"raw":[83]}
+
+00:17:01.890 --> 00:17:04.230
+<v Speaker 0>This clause, this clause and that clause.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:04.410 --> 00:17:08.339
+<v Speaker 0>And by finding values A, C and not D, then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:08.339 --> 00:17:11.220
+<v Speaker 0>I've shown that all of them can be satisfied.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:13.319 --> 00:17:15.689
+<v Speaker 0>So this is the end of the algorithm.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:16.410 --> 00:17:18.030
+<v Speaker 0>I've got rid of all the clauses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:18.030 --> 00:17:21.120
+<v Speaker 0>And so I've shown that setting a C and not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:21.120 --> 00:17:25.140
+<v Speaker 0>D gives me an assignment of variables which makes the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:25.140 --> 00:17:27.150
+<v Speaker 0>original formula true.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:30.810 --> 00:17:31.140
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:31.140 --> 00:17:31.650
+<v Speaker 0>So that's.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:31.650 --> 00:17:31.980
+<v Speaker 1>A.
+
+NOTE CONF {"raw":[100]}
+
+00:17:32.820 --> 00:17:34.020
+<v Speaker 0>Short algorithm.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:34.020 --> 00:17:35.310
+<v Speaker 0>Quite a simple one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:37.680 --> 00:17:39.990
+<v Speaker 0>It would be a good idea if you understood.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100]}
+
+00:17:39.990 --> 00:17:42.450
+<v Speaker 0>It would be nice if you understood it right now,
+
+NOTE CONF {"raw":[100,77,100,100,100,100,100,100,100,100]}
+
+00:17:42.450 --> 00:17:45.000
+<v Speaker 0>but definitely a good idea if you understand it later.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:17:46.380 --> 00:17:50.220
+<v Speaker 0>Are there any immediate questions that I can help to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:50.220 --> 00:17:51.180
+<v Speaker 0>clarify?
+
+NOTE CONF {"raw":[100]}
+
+00:18:00.870 --> 00:18:02.730
+<v Speaker 0>So as always, it will help to do a couple
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:02.730 --> 00:18:03.540
+<v Speaker 0>of examples.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:03.540 --> 00:18:05.520
+<v Speaker 0>If you haven't grabbed it immediately.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:09.480 --> 00:18:13.350
+<v Speaker 0>You're going to do a tutorial exercise which uses this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:13.350 --> 00:18:17.160
+<v Speaker 0>and then shows you an application of it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:17.160 --> 00:18:20.910
+<v Speaker 0>So much of the rest of this lecture is going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:20.910 --> 00:18:23.550
+<v Speaker 0>to be about why this is useful, and useful is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,67,100,100]}
+
+00:18:23.550 --> 00:18:24.960
+<v Speaker 0>a relative term here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:24.960 --> 00:18:27.120
+<v Speaker 0>We're obviously not going to give you a useful, useful
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:27.120 --> 00:18:29.610
+<v Speaker 0>thing, but we'll give you an example which shows how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:29.610 --> 00:18:30.630
+<v Speaker 0>powerful it is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:32.100 --> 00:18:36.270
+<v Speaker 0>But before I go on to talking about an application
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:36.270 --> 00:18:40.050
+<v Speaker 0>of DHFL, let's think a little bit about this algorithm.
+
+NOTE CONF {"raw":[100,84,100,100,100,100,100,100,100,100]}
+
+00:18:40.590 --> 00:18:43.770
+<v Speaker 0>So I said I had to choose a variable to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:43.770 --> 00:18:44.400
+<v Speaker 0>set to true.
+
+NOTE CONF {"raw":[100,68,100]}
+
+00:18:44.410 --> 00:18:46.930
+<v Speaker 0>So here I chose to do it in alphabetical order
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:46.930 --> 00:18:48.640
+<v Speaker 0>A, C, d.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:18:50.410 --> 00:18:53.050
+<v Speaker 0>Was that a sensible thing to do?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:57.250 --> 00:18:59.530
+<v Speaker 0>I was sensible, it just wasn't clever.
+
+NOTE CONF {"raw":[87,87,100,100,100,100,100]}
+
+00:19:00.760 --> 00:19:04.690
+<v Speaker 0>Is there a cleverer thing to do just staring at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:04.690 --> 00:19:05.470
+<v Speaker 0>this thing?
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:05.470 --> 00:19:07.540
+<v Speaker 0>If I hadn't told you that I was going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:07.540 --> 00:19:10.150
+<v Speaker 0>look at the variables in alphabetical order, which order would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:10.150 --> 00:19:11.080
+<v Speaker 0>you look at them in?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:11.530 --> 00:19:11.860
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:19:14.890 --> 00:19:16.780
+<v Speaker 0>Wouldn't you look at that one first?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:16.780 --> 00:19:19.330
+<v Speaker 0>Because once you've dealt with that, that clause is out
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:19.330 --> 00:19:20.080
+<v Speaker 0>of the way.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:20.320 --> 00:19:22.390
+<v Speaker 0>So this is a completely general principle.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:22.390 --> 00:19:24.970
+<v Speaker 0>Always solve the easiest thing first.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:26.350 --> 00:19:32.590
+<v Speaker 0>So just staring at this it seems like common sense.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:33.580 --> 00:19:36.370
+<v Speaker 0>And there's an interesting discussion going on somewhere.
+
+NOTE CONF {"raw":[97,100,99,100,100,100,100,100]}
+
+00:19:36.370 --> 00:19:39.100
+<v Speaker 0>New scientist I think about what common sense is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:40.990 --> 00:19:43.300
+<v Speaker 0>And one of the definitions I saw in the new
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:43.300 --> 00:19:47.290
+<v Speaker 0>Scientist I was reading this morning was.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96]}
+
+00:19:47.410 --> 00:19:51.490
+<v Speaker 0>Common sense is what a politician calls something that they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:51.490 --> 00:19:54.580
+<v Speaker 0>want you to believe that all the experts disagree with.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:58.600 --> 00:20:01.030
+<v Speaker 0>But this is common sense here that says we should
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100,100]}
+
+00:20:01.030 --> 00:20:02.860
+<v Speaker 0>start with the simplest clause.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:04.150 --> 00:20:05.890
+<v Speaker 0>So why?
+
+NOTE CONF {"raw":[100,58]}
+
+00:20:05.890 --> 00:20:06.310
+<v Speaker 0>D?
+
+NOTE CONF {"raw":[89]}
+
+00:20:06.340 --> 00:20:10.060
+<v Speaker 0>There are actually two reasons that make D a good
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,75,100,100]}
+
+00:20:10.060 --> 00:20:13.600
+<v Speaker 0>choice to start doing the algorithm with.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:15.010 --> 00:20:18.400
+<v Speaker 0>So one thing is that if we look at this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:18.400 --> 00:20:21.130
+<v Speaker 0>clause, not D is the only thing in it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:21.130 --> 00:20:23.500
+<v Speaker 0>So we don't even have to think about what the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:23.500 --> 00:20:24.760
+<v Speaker 0>value of D should be.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:24.760 --> 00:20:26.920
+<v Speaker 0>We know that D has to be false if we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,58]}
+
+00:20:26.920 --> 00:20:29.770
+<v Speaker 0>to have any hope of making this entire formula true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:31.210 --> 00:20:34.180
+<v Speaker 0>So it's the only literal in the clause, so we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:34.180 --> 00:20:35.770
+<v Speaker 0>must make it false.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:37.180 --> 00:20:40.180
+<v Speaker 0>But it also has another slightly more general property.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:41.920 --> 00:20:43.820
+<v Speaker 0>It's what is called pure.
+
+NOTE CONF {"raw":[98,100,100,100,100]}
+
+00:20:44.000 --> 00:20:48.200
+<v Speaker 0>I don't know who came up with this term, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:48.200 --> 00:20:53.210
+<v Speaker 0>pure means that the variable only occurs one way round.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,94]}
+
+00:20:53.210 --> 00:20:57.860
+<v Speaker 0>It only occurs with or not, or it only occurs
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:57.860 --> 00:20:58.910
+<v Speaker 0>without or not.
+
+NOTE CONF {"raw":[100,96,100]}
+
+00:21:00.380 --> 00:21:02.420
+<v Speaker 0>So in this case we see not d and we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:21:02.420 --> 00:21:05.660
+<v Speaker 0>see not d, and there aren't any occurrences of positive
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:05.690 --> 00:21:06.110
+<v Speaker 0>d.
+
+NOTE CONF {"raw":[100]}
+
+00:21:06.590 --> 00:21:08.900
+<v Speaker 0>So that means that if we can set it to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:08.900 --> 00:21:12.470
+<v Speaker 0>zero to false, then that works everywhere.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:12.890 --> 00:21:16.790
+<v Speaker 0>If we had both D's and not D's, then we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:16.790 --> 00:21:19.340
+<v Speaker 0>would have to think harder about it because we can't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:19.340 --> 00:21:23.420
+<v Speaker 0>just say setting it false makes everything good, but because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:23.420 --> 00:21:25.460
+<v Speaker 0>not D is the only way it occurs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:25.460 --> 00:21:28.160
+<v Speaker 0>Making not d true or d force is going to
+
+NOTE CONF {"raw":[100,100,100,100,100,71,71,100,100,100]}
+
+00:21:28.160 --> 00:21:31.940
+<v Speaker 0>be helpful in every single clause, or at least not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:31.940 --> 00:21:32.750
+<v Speaker 0>harmful.
+
+NOTE CONF {"raw":[100]}
+
+00:21:34.640 --> 00:21:40.400
+<v Speaker 0>So a natural optimisation to the algorithm is say don't
+
+NOTE CONF {"raw":[100,100,100,97,99,100,100,100,100,100]}
+
+00:21:40.400 --> 00:21:42.290
+<v Speaker 0>just use variables at random.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:42.410 --> 00:21:48.050
+<v Speaker 0>Look at variables that occur as the only literal and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:48.050 --> 00:21:49.790
+<v Speaker 0>look for pure variables.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:50.000 --> 00:21:54.320
+<v Speaker 0>So in this case C is not pure and A
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:54.320 --> 00:21:55.160
+<v Speaker 0>is not pure.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:55.160 --> 00:21:58.160
+<v Speaker 0>So D is the first thing to set out to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,61,100]}
+
+00:21:58.160 --> 00:21:58.910
+<v Speaker 0>look at.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:59.480 --> 00:22:02.030
+<v Speaker 0>We set it to false because it's the only choice
+
+NOTE CONF {"raw":[100,100,100,91,100,100,98,100,100,100]}
+
+00:22:02.030 --> 00:22:05.450
+<v Speaker 0>we because of being the only interval in the clause.
+
+NOTE CONF {"raw":[56,100,100,100,100,100,57,100,100,100]}
+
+00:22:06.500 --> 00:22:08.570
+<v Speaker 0>And then we get a whole lot of simplifications at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:08.570 --> 00:22:09.230
+<v Speaker 0>once.
+
+NOTE CONF {"raw":[100]}
+
+00:22:09.230 --> 00:22:12.200
+<v Speaker 0>So the first clause disappears because it has not d
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:12.200 --> 00:22:12.740
+<v Speaker 0>on the right.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:12.740 --> 00:22:14.090
+<v Speaker 0>So we have d is false.
+
+NOTE CONF {"raw":[100,100,100,100,91,100]}
+
+00:22:14.090 --> 00:22:15.650
+<v Speaker 0>Shows us that d is false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:22:16.970 --> 00:22:20.450
+<v Speaker 0>This clause disappears because we chose D to make it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:20.450 --> 00:22:21.260
+<v Speaker 0>do so.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:21.350 --> 00:22:23.420
+<v Speaker 0>And so we've got rid of two clauses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:24.500 --> 00:22:27.800
+<v Speaker 0>And then we don't actually have to do any more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:27.800 --> 00:22:31.640
+<v Speaker 0>work either because there's another property of this nice of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:31.640 --> 00:22:33.170
+<v Speaker 0>this remaining clause.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:34.790 --> 00:22:41.400
+<v Speaker 0>What we have here is a consistent set of literals,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:42.210 --> 00:22:45.540
+<v Speaker 0>meaning that we don't have any contradictions in there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:46.710 --> 00:22:50.790
+<v Speaker 0>So this is A and C, there's no not a
+
+NOTE CONF {"raw":[100,100,100,100,100,68,100,100,100,100]}
+
+00:22:50.790 --> 00:22:51.930
+<v Speaker 0>there's no not see.
+
+NOTE CONF {"raw":[100,100,100,52]}
+
+00:22:51.960 --> 00:22:54.000
+<v Speaker 0>So all we have to do is to assume that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:54.000 --> 00:22:56.220
+<v Speaker 0>A is true and assume that C is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:57.600 --> 00:22:59.970
+<v Speaker 0>And then together with D being false, we know that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:59.970 --> 00:23:03.480
+<v Speaker 0>we have satisfied this clause and therefore all the original
+
+NOTE CONF {"raw":[52,52,100,100,100,100,100,100,100,100]}
+
+00:23:03.480 --> 00:23:04.200
+<v Speaker 0>formulae.
+
+NOTE CONF {"raw":[100]}
+
+00:23:06.030 --> 00:23:08.580
+<v Speaker 0>So that's a couple of rules that you can use
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:08.580 --> 00:23:10.830
+<v Speaker 0>to make the algorithm more efficient.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:11.190 --> 00:23:14.010
+<v Speaker 0>Not all the time, because you're not guaranteed to get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:14.010 --> 00:23:16.530
+<v Speaker 0>a literal and only literal every time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:16.530 --> 00:23:19.140
+<v Speaker 0>And you're not guaranteed to get pure literals all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:19.140 --> 00:23:19.740
+<v Speaker 0>time.
+
+NOTE CONF {"raw":[100]}
+
+00:23:20.250 --> 00:23:23.190
+<v Speaker 0>But if you can find them, the algorithm runs more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:23.190 --> 00:23:23.820
+<v Speaker 0>quickly.
+
+NOTE CONF {"raw":[100]}
+
+00:23:24.930 --> 00:23:29.790
+<v Speaker 0>So that's a couple of optimisations that make this algorithm
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:29.790 --> 00:23:32.010
+<v Speaker 0>the fastest general purpose algorithm.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:32.940 --> 00:23:35.250
+<v Speaker 0>And there's one more slight hint.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:35.940 --> 00:23:39.540
+<v Speaker 0>When I said that we obviously started with D just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:39.540 --> 00:23:40.500
+<v Speaker 0>staring at it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:40.650 --> 00:23:43.080
+<v Speaker 0>I guess the thing that to me was obvious was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:43.080 --> 00:23:45.150
+<v Speaker 0>that it's the shortest clause, right?
+
+NOTE CONF {"raw":[100,98,100,100,100,100]}
+
+00:23:45.990 --> 00:23:49.290
+<v Speaker 0>So maybe we didn't think it's the only literal way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:49.320 --> 00:23:51.810
+<v Speaker 0>Maybe we just said it's the shortest one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:23:52.530 --> 00:23:54.270
+<v Speaker 0>Well, if it's the only one, that's good.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:23:54.270 --> 00:23:56.670
+<v Speaker 0>But even if it isn't the only one, it's a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:56.670 --> 00:23:59.940
+<v Speaker 0>pretty good rule that you start with the simpler, shorter
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:59.940 --> 00:24:03.780
+<v Speaker 0>things rather than the long, complicated things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:05.730 --> 00:24:10.500
+<v Speaker 0>So that's an example of the dplyr algorithm for finding
+
+NOTE CONF {"raw":[100,100,100,100,100,100,79,100,100,100]}
+
+00:24:10.500 --> 00:24:14.070
+<v Speaker 0>a satisfying assignment in its optimised version.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:14.160 --> 00:24:17.670
+<v Speaker 0>Before I show you pseudocode, always worried about showing pseudocode
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:17.670 --> 00:24:19.080
+<v Speaker 0>because who can read it?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:20.190 --> 00:24:21.150
+<v Speaker 0>But hopefully you.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:21.150 --> 00:24:21.720
+<v Speaker 1>Can.
+
+NOTE CONF {"raw":[100]}
+
+00:24:22.560 --> 00:24:25.650
+<v Speaker 0>And questions about what I've done in the example.
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100]}
+
+00:24:25.650 --> 00:24:27.810
+<v Speaker 0>So is there any step in here that somebody would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:27.810 --> 00:24:30.030
+<v Speaker 0>like explained a bit more?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:33.240 --> 00:24:33.750
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:24:34.980 --> 00:24:39.000
+<v Speaker 2>The last step you only need to do in part
+
+NOTE CONF {"raw":[100,100,100,100,100,94,96,88,34,60]}
+
+00:24:39.000 --> 00:24:40.900
+<v Speaker 2>It only seems that.
+
+NOTE CONF {"raw":[51,100,52,77]}
+
+00:24:40.900 --> 00:24:41.620
+<v Speaker 2>What's the word?
+
+NOTE CONF {"raw":[75,99,98]}
+
+00:24:42.610 --> 00:24:43.060
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:24:43.060 --> 00:24:44.050
+<v Speaker 0>So that's a good point.
+
+NOTE CONF {"raw":[99,100,100,100,100]}
+
+00:24:44.050 --> 00:24:45.700
+<v Speaker 0>This is an A or C.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:46.000 --> 00:24:50.470
+<v Speaker 0>So if we've set A to true then we're done.
+
+NOTE CONF {"raw":[100,100,91,100,100,100,100,100,100,100]}
+
+00:24:52.120 --> 00:24:53.950
+<v Speaker 0>And that works in the original two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95]}
+
+00:24:54.670 --> 00:24:59.110
+<v Speaker 0>Um, we have to find a satisfying assignment.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:24:59.110 --> 00:25:02.230
+<v Speaker 0>So we might as well find the, the strongest satisfying
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100,100,100]}
+
+00:25:02.230 --> 00:25:03.220
+<v Speaker 0>assignment as it were.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:03.220 --> 00:25:04.270
+<v Speaker 0>So make everything true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:04.270 --> 00:25:05.260
+<v Speaker 0>That can be true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:11.410 --> 00:25:11.650
+<v Speaker 1>Okay.
+
+NOTE CONF {"raw":[80]}
+
+00:25:13.180 --> 00:25:13.660
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[94]}
+
+00:25:13.690 --> 00:25:14.590
+<v Speaker 0>Pseudocode.
+
+NOTE CONF {"raw":[100]}
+
+00:25:15.100 --> 00:25:16.720
+<v Speaker 0>We all love pseudocode.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:17.410 --> 00:25:22.210
+<v Speaker 0>Um, this is not Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:22.210 --> 00:25:23.080
+<v Speaker 0>Like is it?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:26.320 --> 00:25:29.560
+<v Speaker 0>Because it says do things set atoms to make all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:29.560 --> 00:25:30.700
+<v Speaker 0>literals true.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:30.700 --> 00:25:33.850
+<v Speaker 0>Make one little clause true and simplify.
+
+NOTE CONF {"raw":[100,100,52,100,100,100,100]}
+
+00:25:35.350 --> 00:25:38.410
+<v Speaker 0>So if we were teaching you something like Java or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:38.410 --> 00:25:40.000
+<v Speaker 0>Python or whatever.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:40.030 --> 00:25:42.310
+<v Speaker 0>Then this would be the kind of pseudocode that you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,92,100,100]}
+
+00:25:42.310 --> 00:25:48.670
+<v Speaker 0>could then refine into a function or procedure, calling some
+
+NOTE CONF {"raw":[100,100,100,100,100,100,58,100,100,100]}
+
+00:25:48.670 --> 00:25:50.590
+<v Speaker 0>other procedures to do some stuff.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:50.710 --> 00:25:53.320
+<v Speaker 0>But your programming in Haskell.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:53.320 --> 00:25:55.510
+<v Speaker 0>So you have to think about how to turn an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:55.510 --> 00:25:59.650
+<v Speaker 0>algorithm into a nice pure piece of functional code.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:26:00.970 --> 00:26:02.470
+<v Speaker 0>Not actually very difficult.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:02.470 --> 00:26:03.730
+<v Speaker 0>So you should think about it.
+
+NOTE CONF {"raw":[100,97,78,100,100,100]}
+
+00:26:03.730 --> 00:26:07.630
+<v Speaker 0>The code is available or will be available.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:09.160 --> 00:26:12.730
+<v Speaker 0>Let's just step through the pseudocode and see what it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:12.730 --> 00:26:17.260
+<v Speaker 0>says, and verify that it matches what I've described to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:17.260 --> 00:26:18.790
+<v Speaker 0>you on the example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:20.350 --> 00:26:24.130
+<v Speaker 0>So I look at my formula and then I say
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:24.580 --> 00:26:26.590
+<v Speaker 0>are the literals in it consistent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:26:26.590 --> 00:26:28.960
+<v Speaker 0>So this is an optimisation I look at the formula
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:28.960 --> 00:26:31.420
+<v Speaker 0>at the beginning and I say, is it the case
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:31.420 --> 00:26:36.220
+<v Speaker 0>that every formula, every literal occurs only positively or only
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:36.220 --> 00:26:37.060
+<v Speaker 0>negatively?
+
+NOTE CONF {"raw":[100]}
+
+00:26:37.730 --> 00:26:40.580
+<v Speaker 0>If that's fine, then I can just make everything true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:26:42.320 --> 00:26:44.510
+<v Speaker 0>Otherwise, do I have something?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:44.510 --> 00:26:45.620
+<v Speaker 0>An empty clause.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:45.620 --> 00:26:48.710
+<v Speaker 0>So remember, an empty clause means false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:48.710 --> 00:26:50.570
+<v Speaker 0>An empty formula means true.
+
+NOTE CONF {"raw":[100,100,100,100,97]}
+
+00:26:50.570 --> 00:26:51.890
+<v Speaker 0>An empty clause is false.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:51.890 --> 00:26:53.840
+<v Speaker 0>That's what happens when I've struck out everything on the
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100,100,100,100]}
+
+00:26:53.840 --> 00:26:54.920
+<v Speaker 0>right hand side.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:55.880 --> 00:26:58.400
+<v Speaker 0>If there's an empty clause, then I'm trying to prove
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:58.400 --> 00:26:59.660
+<v Speaker 0>false, which I can't.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:59.660 --> 00:27:00.740
+<v Speaker 0>So we've failed.
+
+NOTE CONF {"raw":[100,91,100]}
+
+00:27:00.740 --> 00:27:01.370
+<v Speaker 0>We return.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:01.370 --> 00:27:02.120
+<v Speaker 0>Fail.
+
+NOTE CONF {"raw":[100]}
+
+00:27:02.840 --> 00:27:07.550
+<v Speaker 0>Otherwise, look for a clause that has one literal in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:07.550 --> 00:27:07.940
+<v Speaker 0>it.
+
+NOTE CONF {"raw":[100]}
+
+00:27:09.530 --> 00:27:12.230
+<v Speaker 0>Now, on the previous thing I said, choose a literal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:12.230 --> 00:27:15.200
+<v Speaker 0>and recurse, but this is going to optimise the recursion
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,78,100,100]}
+
+00:27:15.200 --> 00:27:15.740
+<v Speaker 0>a bit.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:16.160 --> 00:27:18.770
+<v Speaker 0>So let's look at every clause that has just one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:18.770 --> 00:27:20.750
+<v Speaker 0>literal in it and make it true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:20.750 --> 00:27:22.520
+<v Speaker 0>And then do simplification.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:22.820 --> 00:27:24.770
+<v Speaker 0>And then we do the same thing with these pure
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:24.770 --> 00:27:25.250
+<v Speaker 0>literals.
+
+NOTE CONF {"raw":[100]}
+
+00:27:25.250 --> 00:27:27.800
+<v Speaker 0>The literals that only occur one way round.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:28.070 --> 00:27:30.890
+<v Speaker 0>Look for all of them, make them true, and do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:30.890 --> 00:27:32.060
+<v Speaker 0>the simplification.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:32.300 --> 00:27:34.940
+<v Speaker 0>And hopefully in many cases that's going to shorten the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:34.940 --> 00:27:37.280
+<v Speaker 0>formula quite a lot, which is going to make the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:37.280 --> 00:27:39.350
+<v Speaker 0>recursion terminate faster.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:40.760 --> 00:27:44.330
+<v Speaker 0>Then we choose some remaining atom a, b, c, d,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:44.360 --> 00:27:45.020
+<v Speaker 0>whatever.
+
+NOTE CONF {"raw":[99]}
+
+00:27:45.230 --> 00:27:47.360
+<v Speaker 0>And this is where the recursion happens.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:48.170 --> 00:27:49.670
+<v Speaker 0>We set a true.
+
+NOTE CONF {"raw":[100,100,100,95]}
+
+00:27:49.790 --> 00:27:51.560
+<v Speaker 0>Simplify the result.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:51.560 --> 00:27:53.660
+<v Speaker 0>Apply ourselves recursively.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:53.660 --> 00:27:55.670
+<v Speaker 0>And if we get an answer, great.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:57.020 --> 00:28:00.170
+<v Speaker 0>If we don't get an answer, then we try making
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:00.170 --> 00:28:01.700
+<v Speaker 0>that variable false.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:01.850 --> 00:28:06.110
+<v Speaker 0>Simplify the formula and call ourselves on the result.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:06.320 --> 00:28:10.040
+<v Speaker 0>And if that returns an answer, great, we will return
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,93,100]}
+
+00:28:10.040 --> 00:28:10.520
+<v Speaker 0>that.
+
+NOTE CONF {"raw":[100]}
+
+00:28:10.520 --> 00:28:13.730
+<v Speaker 0>If it returns fail, then we failed because we have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:13.730 --> 00:28:15.950
+<v Speaker 0>no more options to try for that atom.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:17.450 --> 00:28:21.410
+<v Speaker 0>So as an algorithm goes, in some ways it's very
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:21.410 --> 00:28:24.680
+<v Speaker 0>short and simple because it's describable on one page.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:24.920 --> 00:28:27.170
+<v Speaker 0>On the other hand, it's a recursive algorithm which is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:27.170 --> 00:28:29.510
+<v Speaker 0>one page long, which in other ways is a little
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:29.510 --> 00:28:34.520
+<v Speaker 0>complex compared to the toy functions you program earlier.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100]}
+
+00:28:36.150 --> 00:28:39.390
+<v Speaker 0>So I think it's a nice thing to look at,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:39.390 --> 00:28:41.040
+<v Speaker 0>convert it into Haskell.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:41.040 --> 00:28:44.160
+<v Speaker 0>So you will be doing that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:45.210 --> 00:28:46.080
+<v Speaker 0>How long do we have?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:46.080 --> 00:28:48.120
+<v Speaker 0>I have 20 minutes to talk about Sudoku.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:48.450 --> 00:28:52.950
+<v Speaker 0>Right before we go on to talk about the application,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:52.950 --> 00:28:55.440
+<v Speaker 0>which is the subject matter of the tutorial.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:55.440 --> 00:28:58.230
+<v Speaker 0>So this is a CL tutorial with quite a lot
+
+NOTE CONF {"raw":[100,100,100,100,43,100,100,100,100,100]}
+
+00:28:58.230 --> 00:28:59.280
+<v Speaker 0>of coding in it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:59.610 --> 00:29:02.970
+<v Speaker 0>The optional bits can get quite long, so think carefully
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:02.970 --> 00:29:05.070
+<v Speaker 0>about whether you want to spend the time on those.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:05.190 --> 00:29:09.090
+<v Speaker 0>And the challenge bits are definitely too long, too long
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:09.090 --> 00:29:09.750
+<v Speaker 0>for me to try.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:09.750 --> 00:29:13.410
+<v Speaker 0>Anyway, before we go on and talk about what we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:13.410 --> 00:29:15.360
+<v Speaker 0>might do with such an algorithm.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:15.570 --> 00:29:19.380
+<v Speaker 0>Are there any questions here and now about what the
+
+NOTE CONF {"raw":[100,100,100,100,100,66,100,100,100,100]}
+
+00:29:19.380 --> 00:29:20.550
+<v Speaker 0>algorithm does?
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:29.010 --> 00:29:32.640
+<v Speaker 0>Okay, so let me move on to an application.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:34.290 --> 00:29:36.930
+<v Speaker 0>So as I say, the code is in the book,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:36.930 --> 00:29:38.910
+<v Speaker 0>but try to write your own first.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:38.910 --> 00:29:39.990
+<v Speaker 0>It's instructive.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:42.300 --> 00:29:45.120
+<v Speaker 0>This is an application which is not one I would
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:45.120 --> 00:29:46.860
+<v Speaker 0>chosen because I can't do Sudoku.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:46.890 --> 00:29:48.840
+<v Speaker 0>Now you might say, because I can't do Sudoku.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:48.960 --> 00:29:51.030
+<v Speaker 0>I would want to have a computer do them for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:51.030 --> 00:29:51.210
+<v Speaker 0>me.
+
+NOTE CONF {"raw":[100]}
+
+00:29:51.210 --> 00:29:52.980
+<v Speaker 0>But then that defeats the point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:53.520 --> 00:29:56.040
+<v Speaker 0>Uh, do you young people still do Sudoku?
+
+NOTE CONF {"raw":[52,100,100,100,100,100,100,100]}
+
+00:29:58.140 --> 00:29:59.850
+<v Speaker 0>Looks like the usual suspects, doesn't it?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:02.580 --> 00:30:02.880
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:30:05.220 --> 00:30:07.260
+<v Speaker 0>Kind of puzzle I've never been any good at.
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100]}
+
+00:30:08.850 --> 00:30:11.580
+<v Speaker 0>Um, so it used to be a popular puzzle game.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:12.420 --> 00:30:15.270
+<v Speaker 0>Um, I think the people who used to do Sudoku
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:15.360 --> 00:30:18.000
+<v Speaker 0>now spend a lot of their time doing Wordle instead,
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100,100,100]}
+
+00:30:18.000 --> 00:30:21.480
+<v Speaker 0>which I understand the point of even less because it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:21.480 --> 00:30:22.620
+<v Speaker 0>less intellectual.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:24.090 --> 00:30:27.060
+<v Speaker 0>How many of you do know what Sudoku is, even
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:27.060 --> 00:30:28.080
+<v Speaker 0>if you don't do it?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:29.550 --> 00:30:31.470
+<v Speaker 0>Not everybody.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:31.470 --> 00:30:33.180
+<v Speaker 0>Okay, so I have to explain it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:35.770 --> 00:30:39.250
+<v Speaker 0>So the way it works is you're given a grid
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:39.250 --> 00:30:44.470
+<v Speaker 0>of squares, which is nine by nine, and it's subdivided
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:44.470 --> 00:30:49.000
+<v Speaker 0>into three bigger squares or sub grids.
+
+NOTE CONF {"raw":[100,100,100,100,85,100,100]}
+
+00:30:49.780 --> 00:30:52.690
+<v Speaker 0>And the idea is to fill this thing with digits
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:52.690 --> 00:30:55.330
+<v Speaker 0>1 to 9, subject to constraints.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:55.510 --> 00:31:00.370
+<v Speaker 0>So you start off being given a partially blank layout
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:00.370 --> 00:31:02.440
+<v Speaker 0>with some of the numbers filled in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:04.030 --> 00:31:08.800
+<v Speaker 0>And your task is to fill in the numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:31:08.800 --> 00:31:15.190
+<v Speaker 0>Fill in the blanks so that every row contains all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:15.190 --> 00:31:16.270
+<v Speaker 0>nine digits.
+
+NOTE CONF {"raw":[65,100]}
+
+00:31:16.870 --> 00:31:22.840
+<v Speaker 0>Every column contains all nine digits, and every three by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:22.840 --> 00:31:25.780
+<v Speaker 0>three square contains all nine digits.
+
+NOTE CONF {"raw":[100,100,100,100,60,100]}
+
+00:31:33.550 --> 00:31:35.620
+<v Speaker 0>Well, as long as the projector works, it doesn't matter,
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:31:35.620 --> 00:31:36.190
+<v Speaker 0>right?
+
+NOTE CONF {"raw":[100]}
+
+00:31:36.190 --> 00:31:37.330
+<v Speaker 0>We're happy.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:39.190 --> 00:31:40.960
+<v Speaker 0>At least until the alarm goes off.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:42.130 --> 00:31:42.490
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:31:44.860 --> 00:31:48.160
+<v Speaker 0>So it's a completion game.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:48.190 --> 00:31:50.800
+<v Speaker 0>Does it matter that we're using digits 1 to 9?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:55.210 --> 00:31:58.100
+<v Speaker 0>Am I assuming any numerical properties of the digits 1
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:58.100 --> 00:31:58.660
+<v Speaker 0>to 9?
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:59.800 --> 00:32:00.730
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:32:00.760 --> 00:32:03.790
+<v Speaker 0>Okay, so the digits 1 to 9 are a distraction.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:03.790 --> 00:32:05.890
+<v Speaker 0>I could use any nine distinct symbols.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:05.920 --> 00:32:09.430
+<v Speaker 0>Let me reset the lights because I don't like this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:09.430 --> 00:32:10.540
+<v Speaker 0>bright light at the front.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:18.160 --> 00:32:20.590
+<v Speaker 0>I press the wrong button as I did before.
+
+NOTE CONF {"raw":[73,93,100,100,100,100,100,100,100]}
+
+00:32:26.320 --> 00:32:27.310
+<v Speaker 0>Then it resets.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:35.840 --> 00:32:37.820
+<v Speaker 0>How do I switch the lights off and on again?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,94,100,100]}
+
+00:32:41.840 --> 00:32:42.470
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:48.740 --> 00:32:52.490
+<v Speaker 0>Okay, so the objective with Sudoku is to Sudoku is
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100,100,100,100]}
+
+00:32:52.490 --> 00:32:55.310
+<v Speaker 0>to fill in the grid such that there are different
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:32:55.310 --> 00:32:59.210
+<v Speaker 0>symbols in every row, column, and sub grid.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:00.350 --> 00:33:03.710
+<v Speaker 0>It turns out that how difficult this is varies a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:03.710 --> 00:33:05.870
+<v Speaker 0>great deal on the starting grid.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:07.220 --> 00:33:10.100
+<v Speaker 0>And the people who specialise in setting these puzzles have
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:33:10.100 --> 00:33:10.700
+<v Speaker 0>techniques.
+
+NOTE CONF {"raw":[100]}
+
+00:33:10.700 --> 00:33:11.180
+<v Speaker 1>Of.
+
+NOTE CONF {"raw":[100]}
+
+00:33:11.720 --> 00:33:17.240
+<v Speaker 0>Making puzzles that are hard, very hard, almost impossible, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:17.240 --> 00:33:19.760
+<v Speaker 0>possibly occasionally accidentally impossible.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:20.060 --> 00:33:25.940
+<v Speaker 0>So it might be a surprise to you that we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:25.940 --> 00:33:29.060
+<v Speaker 0>can turn this into something that can be solved by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:29.060 --> 00:33:32.270
+<v Speaker 0>DHFL, because that means we're going to turn it into
+
+NOTE CONF {"raw":[38,100,100,100,100,100,100,100,100,100]}
+
+00:33:32.270 --> 00:33:34.670
+<v Speaker 0>a boolean propositional formula.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:35.780 --> 00:33:38.420
+<v Speaker 0>Is it obvious to anybody how we can turn Sudoku
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:38.420 --> 00:33:40.640
+<v Speaker 0>into a Boolean propositional formula?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:41.690 --> 00:33:42.320
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:45.200 --> 00:33:48.440
+<v Speaker 0>It's a technique that once you've seen, you can apply
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:48.440 --> 00:33:51.830
+<v Speaker 0>to almost anything because it's a it's a very brain
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:51.830 --> 00:33:54.680
+<v Speaker 0>dead technique, but it's a very powerful technique.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:56.450 --> 00:33:59.000
+<v Speaker 0>Remember, right at the beginning of the course, I waffled
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:59.000 --> 00:34:01.880
+<v Speaker 0>on about binary digits and encodings and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:02.870 --> 00:34:05.330
+<v Speaker 0>And the point about that was that everything can be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:05.330 --> 00:34:07.250
+<v Speaker 0>reduced to binary encodings.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:07.520 --> 00:34:09.110
+<v Speaker 0>And what are true and false?
+
+NOTE CONF {"raw":[100,100,97,100,100,99]}
+
+00:34:09.110 --> 00:34:11.149
+<v Speaker 0>They are binary values.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:11.690 --> 00:34:16.190
+<v Speaker 0>So this is another instance of turning what looks like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:16.190 --> 00:34:20.120
+<v Speaker 0>a complex structured system into a bunch of binary questions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:20.570 --> 00:34:22.790
+<v Speaker 0>It's just a rather a lot of questions that we're
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,98]}
+
+00:34:22.790 --> 00:34:24.020
+<v Speaker 0>going to have to write down.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:25.580 --> 00:34:30.440
+<v Speaker 0>Um, if you try to solve this question, this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:30.440 --> 00:34:32.010
+<v Speaker 0>one solution to the puzzle.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:32.129 --> 00:34:35.730
+<v Speaker 0>And incidentally, I didn't use dplyr to solve it because
+
+NOTE CONF {"raw":[100,100,100,100,100,67,100,100,100,100]}
+
+00:34:35.730 --> 00:34:38.429
+<v Speaker 0>then I would have had to copy and paste it
+
+NOTE CONF {"raw":[100,100,100,100,100,85,100,100,100,100]}
+
+00:34:38.429 --> 00:34:39.990
+<v Speaker 0>in and that would have been a pain.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:40.260 --> 00:34:41.820
+<v Speaker 0>These slides are written in latex.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:41.850 --> 00:34:45.810
+<v Speaker 0>There's a LaTeX package for typesetting Sudoku puzzles, and incidentally
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:34:45.810 --> 00:34:49.050
+<v Speaker 0>includes something to solve Sudoku puzzles as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:49.470 --> 00:34:51.899
+<v Speaker 0>And if you have any idea of what LaTeX is,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:51.899 --> 00:34:54.870
+<v Speaker 0>you should think this is an insane thing to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:55.440 --> 00:34:57.030
+<v Speaker 0>It is an insane thing to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:57.030 --> 00:34:59.640
+<v Speaker 0>It's a thousand lines of code that is supposed to
+
+NOTE CONF {"raw":[100,96,96,100,100,100,100,100,100,100]}
+
+00:34:59.640 --> 00:35:00.720
+<v Speaker 0>do typesetting.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:01.260 --> 00:35:03.000
+<v Speaker 0>I went to the trouble of trying to work out
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:03.000 --> 00:35:05.040
+<v Speaker 0>what it was doing, and I can guarantee it is
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:35:05.040 --> 00:35:06.570
+<v Speaker 0>not doing well.
+
+NOTE CONF {"raw":[100,100,87]}
+
+00:35:08.880 --> 00:35:10.500
+<v Speaker 0>I don't know what it is doing, but.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:10.740 --> 00:35:14.370
+<v Speaker 0>So how do we express the Sudoku problem in pure
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:14.370 --> 00:35:15.030
+<v Speaker 0>logic?
+
+NOTE CONF {"raw":[100]}
+
+00:35:16.500 --> 00:35:19.890
+<v Speaker 0>What we do is reduce it to a bunch of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:19.890 --> 00:35:22.500
+<v Speaker 0>statements about what's in a particular cell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:22.500 --> 00:35:26.400
+<v Speaker 0>So remember, what we have is nine by nine grid
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:26.400 --> 00:35:30.060
+<v Speaker 0>of cells and some symbols to put in them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:30.060 --> 00:35:34.650
+<v Speaker 0>So the basic atomic statement is the cell in row
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,100]}
+
+00:35:34.650 --> 00:35:35.070
+<v Speaker 0>seven.
+
+NOTE CONF {"raw":[100]}
+
+00:35:35.070 --> 00:35:38.130
+<v Speaker 0>Column one has the digit four in it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:39.510 --> 00:35:44.100
+<v Speaker 0>So I'm going to cheat quite a lot in this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:44.280 --> 00:35:47.280
+<v Speaker 0>I'm going to say I have an atom.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:47.400 --> 00:35:50.730
+<v Speaker 0>So this atom has the form f I jn where
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,73,57,90]}
+
+00:35:50.730 --> 00:35:53.430
+<v Speaker 0>I jn digits 1 to 9.
+
+NOTE CONF {"raw":[58,58,100,100,100,100]}
+
+00:35:53.430 --> 00:36:00.180
+<v Speaker 0>So I have a digit F714, which means the cell
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100,100]}
+
+00:36:00.180 --> 00:36:03.270
+<v Speaker 0>in row seven, column four has a four in it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:05.790 --> 00:36:08.820
+<v Speaker 0>The notation is a little tricky here, because when I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:08.820 --> 00:36:11.370
+<v Speaker 0>write this, I mean there is a separate atom for
+
+NOTE CONF {"raw":[100,100,100,100,96,96,100,100,100,100]}
+
+00:36:11.370 --> 00:36:13.200
+<v Speaker 0>every value of IJN.
+
+NOTE CONF {"raw":[100,100,100,64]}
+
+00:36:13.200 --> 00:36:15.390
+<v Speaker 0>So there's an atom f one, two, three.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:15.390 --> 00:36:18.510
+<v Speaker 0>There's an atom one, F111, there's an atom f four,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,98]}
+
+00:36:18.510 --> 00:36:20.820
+<v Speaker 0>seven one, and so on and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:21.810 --> 00:36:23.490
+<v Speaker 0>Lots and lots of atoms.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:23.490 --> 00:36:26.700
+<v Speaker 0>And this is why boolean formulas get very big when
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:26.700 --> 00:36:30.670
+<v Speaker 0>you're actually encoding real problems like the timetable exam timetabling
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:30.670 --> 00:36:36.490
+<v Speaker 0>problem into things that you can use a satisfying assignment
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:36.490 --> 00:36:38.050
+<v Speaker 0>finder for.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:39.970 --> 00:36:43.090
+<v Speaker 0>Um, subscripts are a bit hard to read, so just
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:36:43.090 --> 00:36:45.160
+<v Speaker 0>to make the whole thing more readable, I'm going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:45.160 --> 00:36:48.670
+<v Speaker 0>write it as f brackets IJN.
+
+NOTE CONF {"raw":[100,100,100,97,100,100]}
+
+00:36:48.670 --> 00:36:51.370
+<v Speaker 0>But remember this is a single symbol.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:51.370 --> 00:36:55.420
+<v Speaker 0>I don't mean a function a predicate f applied to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:55.420 --> 00:36:59.080
+<v Speaker 0>IJN, I mean a single symbol that just happens to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:59.080 --> 00:37:02.890
+<v Speaker 0>be called f three, two, one or whatever.
+
+NOTE CONF {"raw":[100,100,99,99,74,100,100,100]}
+
+00:37:05.830 --> 00:37:09.010
+<v Speaker 0>And then what I'm going to do is dream up
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:09.010 --> 00:37:15.850
+<v Speaker 0>some formulae which describe the Sudoku puzzle and the initial
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:15.850 --> 00:37:17.320
+<v Speaker 0>values that you get.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:17.320 --> 00:37:19.150
+<v Speaker 0>And then I'm going to say, if I put all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:19.150 --> 00:37:22.540
+<v Speaker 0>these formulas together in one huge and I've described the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:22.540 --> 00:37:25.630
+<v Speaker 0>rules of the game, and then we're looking for values
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:25.630 --> 00:37:28.450
+<v Speaker 0>of the formula which describe how the cells are filled
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:28.450 --> 00:37:31.870
+<v Speaker 0>with digits in order to make the thing work.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:33.820 --> 00:37:36.880
+<v Speaker 0>So you see, I've got two slides left, but they're
+
+NOTE CONF {"raw":[100,54,100,100,100,100,100,100,100,100]}
+
+00:37:36.880 --> 00:37:38.110
+<v Speaker 0>quite complex slides.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:37:38.110 --> 00:37:41.170
+<v Speaker 0>So ten minutes is probably about right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:37:42.370 --> 00:37:46.300
+<v Speaker 0>So convention whenever I write down an index like ij
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:37:46.300 --> 00:37:49.070
+<v Speaker 0>or N then it's going to range over 1 to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:49.070 --> 00:37:50.920
+<v Speaker 0>9 unless it says otherwise.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:52.600 --> 00:37:54.460
+<v Speaker 0>So what do we need to write down?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:54.460 --> 00:37:58.960
+<v Speaker 0>What's one property of a Sudoku puzzle that has to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:58.960 --> 00:38:01.480
+<v Speaker 0>be true of a good solution?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:02.590 --> 00:38:05.320
+<v Speaker 0>There are many properties, but what's one very, very basic
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:05.320 --> 00:38:05.830
+<v Speaker 0>one?
+
+NOTE CONF {"raw":[100]}
+
+00:38:06.280 --> 00:38:06.610
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:38:08.500 --> 00:38:10.120
+<v Speaker 0>So rows have to have everything.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:10.120 --> 00:38:12.490
+<v Speaker 0>But there's something even simpler that we don't even think
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:12.490 --> 00:38:13.660
+<v Speaker 0>about as humans.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:14.950 --> 00:38:20.590
+<v Speaker 0>Remember my atoms are saying cell three four has four
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:20.590 --> 00:38:21.100
+<v Speaker 0>in it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:21.460 --> 00:38:22.390
+<v Speaker 0>Things like that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:26.380 --> 00:38:27.320
+<v Speaker 0>Um, yeah.
+
+NOTE CONF {"raw":[94,100]}
+
+00:38:27.320 --> 00:38:29.810
+<v Speaker 0>So the cells have to come from the numbers 1
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,99]}
+
+00:38:29.810 --> 00:38:30.170
+<v Speaker 0>to 9.
+
+NOTE CONF {"raw":[99,99]}
+
+00:38:30.170 --> 00:38:31.520
+<v Speaker 0>So we have to say there is a number in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:31.520 --> 00:38:34.070
+<v Speaker 0>it, but there's something even simpler that we need to
+
+NOTE CONF {"raw":[100,55,100,100,100,100,100,100,100,100]}
+
+00:38:34.070 --> 00:38:34.370
+<v Speaker 0>say.
+
+NOTE CONF {"raw":[100]}
+
+00:38:36.920 --> 00:38:37.670
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:38:37.670 --> 00:38:41.150
+<v Speaker 0>We can't put two numbers in the same cell, so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:41.150 --> 00:38:42.440
+<v Speaker 0>that's obvious to us.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:42.440 --> 00:38:45.320
+<v Speaker 0>But when we try to tell a computer to solve
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:45.320 --> 00:38:48.050
+<v Speaker 0>it, we have to tell it the obvious things to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,61]}
+
+00:38:49.460 --> 00:38:52.670
+<v Speaker 0>So this formula is a huge and of a bunch
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:52.670 --> 00:38:53.540
+<v Speaker 0>of things.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:53.690 --> 00:38:58.010
+<v Speaker 0>And it's a very ugly way of saying no cell
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:58.010 --> 00:38:59.360
+<v Speaker 0>has two values in it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:59.360 --> 00:39:01.280
+<v Speaker 0>So what's going on here?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:01.280 --> 00:39:03.050
+<v Speaker 0>It's a big and over I and J.
+
+NOTE CONF {"raw":[100,100,100,73,100,100,100,100]}
+
+00:39:03.050 --> 00:39:05.600
+<v Speaker 0>So that's the rows and columns of the cell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:05.900 --> 00:39:09.050
+<v Speaker 0>And then for each I and j I'm saying it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:09.050 --> 00:39:13.460
+<v Speaker 0>is not the case that I have digit n in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:13.460 --> 00:39:14.120
+<v Speaker 0>the cell.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:14.120 --> 00:39:17.600
+<v Speaker 0>And I have digit n prime in the cell.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:18.050 --> 00:39:20.750
+<v Speaker 0>For any value of n prime that is different from
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:20.750 --> 00:39:21.230
+<v Speaker 0>n.
+
+NOTE CONF {"raw":[100]}
+
+00:39:22.910 --> 00:39:24.350
+<v Speaker 0>This is very ugly, right?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:24.350 --> 00:39:28.100
+<v Speaker 0>It's considering every possibility of double the fillings, double filling
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:28.100 --> 00:39:30.050
+<v Speaker 0>the cell and saying they don't happen.
+
+NOTE CONF {"raw":[100,98,100,100,100,91,100]}
+
+00:39:30.320 --> 00:39:32.540
+<v Speaker 0>And this is why the formulae get very big.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:32.540 --> 00:39:35.090
+<v Speaker 0>And this is why solvers have to be fast.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:35.240 --> 00:39:37.370
+<v Speaker 0>Because Boolean encoding is painful.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:42.260 --> 00:39:45.950
+<v Speaker 0>Um, now that's a basic thing, which as humans we
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:39:45.950 --> 00:39:46.850
+<v Speaker 0>take for granted.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:46.850 --> 00:39:49.160
+<v Speaker 0>But computers don't take anything for granted.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:50.780 --> 00:39:53.120
+<v Speaker 0>And now I have to turn it into CNF.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98]}
+
+00:39:53.720 --> 00:39:55.310
+<v Speaker 0>How do I turn it into CNF?
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100]}
+
+00:39:55.310 --> 00:39:58.070
+<v Speaker 0>Well, if I look at this, this is a not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,76]}
+
+00:39:58.070 --> 00:40:01.850
+<v Speaker 0>of an and so I can push the knot inside
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:40:01.850 --> 00:40:03.980
+<v Speaker 0>by using the Morgan's laws.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:03.980 --> 00:40:06.560
+<v Speaker 0>And now I have a nice CNF formula, a big
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:06.560 --> 00:40:12.230
+<v Speaker 0>and of an each clause being an or so.
+
+NOTE CONF {"raw":[100,100,52,100,100,100,100,100,100]}
+
+00:40:12.230 --> 00:40:15.950
+<v Speaker 0>Either F is not filled with n or F, either
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:40:15.950 --> 00:40:18.530
+<v Speaker 0>the cell doesn't have n or the cell doesn't have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:18.530 --> 00:40:19.490
+<v Speaker 0>n primed.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:19.670 --> 00:40:21.710
+<v Speaker 0>So slightly contorted way of putting it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:21.710 --> 00:40:23.510
+<v Speaker 0>But that's how one has to think.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:24.860 --> 00:40:26.400
+<v Speaker 0>So that was the basic.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:26.910 --> 00:40:30.090
+<v Speaker 0>This is the thing that we think of as the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:30.480 --> 00:40:33.210
+<v Speaker 0>most basic property of the Ro.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:33.660 --> 00:40:37.470
+<v Speaker 0>Every Ro has to have every digit in it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:39.420 --> 00:40:40.950
+<v Speaker 0>Every Ro has each digit.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:40.980 --> 00:40:42.480
+<v Speaker 0>This looks like a for all.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:42.480 --> 00:40:44.520
+<v Speaker 0>And this looks like a very exists.
+
+NOTE CONF {"raw":[100,100,100,100,99,51,100]}
+
+00:40:44.910 --> 00:40:46.560
+<v Speaker 0>I'm sorry I know this looks like a for all
+
+NOTE CONF {"raw":[81,97,100,100,100,100,100,96,100,100]}
+
+00:40:46.560 --> 00:40:47.280
+<v Speaker 0>as well.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:49.020 --> 00:40:51.000
+<v Speaker 0>Um, but what does it actually look like when we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:51.000 --> 00:40:51.960
+<v Speaker 0>think about it?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:53.550 --> 00:40:56.700
+<v Speaker 0>What it really says is that in every row there
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:40:56.700 --> 00:41:00.360
+<v Speaker 0>is a column which has each digit in it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:41:00.870 --> 00:41:03.210
+<v Speaker 0>So when we try to express that in terms of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:03.210 --> 00:41:05.820
+<v Speaker 0>ands and ors, we can do it like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:41:06.120 --> 00:41:11.910
+<v Speaker 0>For every ro I and every digit n, there is
+
+NOTE CONF {"raw":[100,100,72,96,100,100,100,100,100,100]}
+
+00:41:11.910 --> 00:41:17.310
+<v Speaker 0>a column j such that cell I j has n
+
+NOTE CONF {"raw":[100,100,100,100,100,100,73,73,100,100]}
+
+00:41:17.310 --> 00:41:17.940
+<v Speaker 0>in it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:18.840 --> 00:41:22.770
+<v Speaker 0>So remember the match between and and for all and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:22.980 --> 00:41:27.150
+<v Speaker 0>or and there exists for every in there exists a
+
+NOTE CONF {"raw":[100,92,100,100,100,100,99,72,66,40]}
+
+00:41:27.150 --> 00:41:30.900
+<v Speaker 0>J such that cell ej has an n in it,
+
+NOTE CONF {"raw":[100,100,100,90,56,100,100,99,100,100]}
+
+00:41:31.290 --> 00:41:35.310
+<v Speaker 0>so every row has every digit in some column.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:41:35.310 --> 00:41:37.920
+<v Speaker 0>And then we also have to say that every column.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:37.920 --> 00:41:38.460
+<v Speaker 0>So now we.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:38.460 --> 00:41:39.090
+<v Speaker 1>Have.
+
+NOTE CONF {"raw":[100]}
+
+00:41:40.050 --> 00:41:43.950
+<v Speaker 0>For every column J and every digit n, there is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:43.950 --> 00:41:47.610
+<v Speaker 0>a row I such that cell IJN has a digit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:47.610 --> 00:41:48.210
+<v Speaker 0>in it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:50.490 --> 00:41:55.380
+<v Speaker 0>Um, then we have a rather messier one because we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:55.380 --> 00:41:56.970
+<v Speaker 0>have to talk about the sub grids.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:57.960 --> 00:41:59.850
+<v Speaker 0>Let's flip back to the sub grids.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:02.580 --> 00:42:06.570
+<v Speaker 0>These are squares in a big square, and there isn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:06.570 --> 00:42:08.400
+<v Speaker 0>an easy way to talk about them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:08.610 --> 00:42:10.980
+<v Speaker 0>But we don't need an easy way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:10.980 --> 00:42:12.390
+<v Speaker 0>We just need a way that works.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:12.390 --> 00:42:15.660
+<v Speaker 0>So there's a lot of brute force formula writing here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:15.990 --> 00:42:17.700
+<v Speaker 0>This is the worst formula.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:17.880 --> 00:42:20.310
+<v Speaker 0>And by the way you're going to program this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:42:20.310 --> 00:42:22.980
+<v Speaker 0>And this is the one where people who get it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:22.980 --> 00:42:24.520
+<v Speaker 0>wrong Get it wrong.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:25.420 --> 00:42:26.710
+<v Speaker 0>So be warned.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:26.740 --> 00:42:28.300
+<v Speaker 0>This is the one you will need to pay attention
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:28.300 --> 00:42:28.930
+<v Speaker 0>to.
+
+NOTE CONF {"raw":[100]}
+
+00:42:28.960 --> 00:42:30.970
+<v Speaker 0>There are many ways of writing it down.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100]}
+
+00:42:30.970 --> 00:42:34.180
+<v Speaker 0>You can use 0 to 3 or 0 to 2.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:34.210 --> 00:42:36.580
+<v Speaker 0>Let me explain this one when you do it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:42:36.610 --> 00:42:39.990
+<v Speaker 0>Think very hard about whether you're starting from 0 or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:39.990 --> 00:42:42.700
+<v Speaker 0>1, and whether you're adding three or whatever.
+
+NOTE CONF {"raw":[100,100,100,58,100,100,100,100]}
+
+00:42:44.080 --> 00:42:46.630
+<v Speaker 0>What on earth is this mess saying?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:48.040 --> 00:42:51.070
+<v Speaker 0>Well, it's a big and of AWS what's happening in
+
+NOTE CONF {"raw":[100,100,100,100,93,100,33,100,100,100]}
+
+00:42:51.070 --> 00:42:51.430
+<v Speaker 0>the big?
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:51.430 --> 00:42:54.430
+<v Speaker 0>And I've got a variable A, which is ranging from
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:54.430 --> 00:42:57.880
+<v Speaker 0>0 to 2, and I've got a variable B, which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:57.880 --> 00:43:00.310
+<v Speaker 0>is ranging from 0 to 2.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:01.690 --> 00:43:07.300
+<v Speaker 0>These are my ways of describing the individual squares.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:17.260 --> 00:43:20.320
+<v Speaker 0>So my A and B here are labelling the big
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,54,100,100]}
+
+00:43:20.320 --> 00:43:22.570
+<v Speaker 0>squares by.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:24.820 --> 00:43:26.770
+<v Speaker 0>Indices starting from zero.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:26.800 --> 00:43:29.440
+<v Speaker 0>You might think it's more sensible to use indices starting
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:29.440 --> 00:43:29.830
+<v Speaker 0>from one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:29.830 --> 00:43:30.580
+<v Speaker 0>It's up to you.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:30.580 --> 00:43:32.170
+<v Speaker 0>Just make sure you're consistent.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:32.500 --> 00:43:39.040
+<v Speaker 0>But I chose to use a for big square row
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,94]}
+
+00:43:39.040 --> 00:43:44.770
+<v Speaker 0>1012 and B for big square column 012.
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100]}
+
+00:43:45.400 --> 00:43:50.110
+<v Speaker 0>So that's saying for every big square the cells in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:50.110 --> 00:43:52.720
+<v Speaker 0>that square have every digit in them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:52.840 --> 00:43:55.000
+<v Speaker 0>So what's going on here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:56.200 --> 00:43:59.170
+<v Speaker 0>I've got every digit brought into a big and here.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,88,100]}
+
+00:43:59.170 --> 00:44:03.460
+<v Speaker 0>So it might actually be easier if you viewed the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:44:03.460 --> 00:44:06.250
+<v Speaker 0>formula as an and of the A and the B
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,100]}
+
+00:44:06.250 --> 00:44:09.190
+<v Speaker 0>stuff and an and of the N stuff.
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100]}
+
+00:44:10.720 --> 00:44:12.580
+<v Speaker 0>But we can bring hands together.
+
+NOTE CONF {"raw":[100,100,100,100,62,100]}
+
+00:44:13.450 --> 00:44:17.020
+<v Speaker 0>So the inside bit is saying if I let I.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,47]}
+
+00:44:17.020 --> 00:44:20.770
+<v Speaker 0>So this is my row in the whole diagram range
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:20.770 --> 00:44:22.430
+<v Speaker 0>between Three.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:22.580 --> 00:44:25.130
+<v Speaker 0>Square number one and three.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:25.130 --> 00:44:26.690
+<v Speaker 0>Square number plus three.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:27.200 --> 00:44:32.210
+<v Speaker 0>So in my row big row zero that covers little
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:32.210 --> 00:44:33.980
+<v Speaker 0>rows one, two and three.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:34.250 --> 00:44:37.340
+<v Speaker 0>So this inequality here is describing rows one, two and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:37.340 --> 00:44:37.700
+<v Speaker 0>three.
+
+NOTE CONF {"raw":[100]}
+
+00:44:37.700 --> 00:44:42.410
+<v Speaker 0>And for my big row labelled one it's describing rows
+
+NOTE CONF {"raw":[100,80,100,100,100,85,100,100,100,100]}
+
+00:44:42.410 --> 00:44:43.730
+<v Speaker 0>four, five and six.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:43.970 --> 00:44:48.350
+<v Speaker 0>Similarly J is ranging over the columns that are in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:48.350 --> 00:44:49.340
+<v Speaker 0>the big square.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:49.820 --> 00:44:53.240
+<v Speaker 0>And then I'm saying the digit n occurs in one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:53.240 --> 00:44:54.020
+<v Speaker 0>of those.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:55.850 --> 00:44:59.510
+<v Speaker 0>So the principle is exactly the same as the rows
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,100,100]}
+
+00:44:59.510 --> 00:45:00.080
+<v Speaker 0>and columns.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:00.080 --> 00:45:02.510
+<v Speaker 0>It's just the way of describing the squares you're talking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:02.510 --> 00:45:03.800
+<v Speaker 0>about is a bit messy.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:07.160 --> 00:45:07.580
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:45:10.550 --> 00:45:11.630
+<v Speaker 0>Is that enough?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:13.100 --> 00:45:13.670
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:45:13.670 --> 00:45:14.780
+<v Speaker 0>What else do I need?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:17.930 --> 00:45:18.260
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[95]}
+
+00:45:20.690 --> 00:45:21.020
+<v Speaker 2>Gosh.
+
+NOTE CONF {"raw":[42]}
+
+00:45:24.050 --> 00:45:24.440
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:45:24.770 --> 00:45:26.030
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:45:28.070 --> 00:45:30.620
+<v Speaker 0>I have to say that every digit occurs at least
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:30.620 --> 00:45:31.280
+<v Speaker 0>once.
+
+NOTE CONF {"raw":[100]}
+
+00:45:34.160 --> 00:45:35.120
+<v Speaker 1>Now.
+
+NOTE CONF {"raw":[100]}
+
+00:45:35.870 --> 00:45:38.330
+<v Speaker 0>Do I need to say that every digit occurs at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:38.330 --> 00:45:38.960
+<v Speaker 0>least once?
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:38.960 --> 00:45:41.300
+<v Speaker 0>Because if I have a row with nine cells in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:41.300 --> 00:45:43.580
+<v Speaker 0>it and each digit occurs in it, then each digit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:43.580 --> 00:45:45.170
+<v Speaker 0>must occur exactly once.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:45.200 --> 00:45:45.560
+<v Speaker 1>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:45:52.760 --> 00:45:55.220
+<v Speaker 0>Um, so I can't have the same digit twice in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:55.220 --> 00:45:57.230
+<v Speaker 0>a row, because then I wouldn't be able to have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:57.230 --> 00:45:59.060
+<v Speaker 0>every digit in the row.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:59.990 --> 00:46:00.320
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:46:07.220 --> 00:46:07.640
+<v Speaker 1>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:46:10.970 --> 00:46:13.760
+<v Speaker 0>But we ban double filled at the beginning.
+
+NOTE CONF {"raw":[100,100,68,100,99,100,100,100]}
+
+00:46:15.830 --> 00:46:17.720
+<v Speaker 0>So this this is actually enough.
+
+NOTE CONF {"raw":[100,93,100,100,100,100]}
+
+00:46:17.720 --> 00:46:21.150
+<v Speaker 0>So this is enough to describe a valid solution to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:21.150 --> 00:46:21.840
+<v Speaker 0>Sudoku.
+
+NOTE CONF {"raw":[100]}
+
+00:46:23.610 --> 00:46:23.910
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[97]}
+
+00:46:24.390 --> 00:46:27.540
+<v Speaker 0>Now, I just said that we don't need to say,
+
+NOTE CONF {"raw":[93,100,100,100,100,100,96,100,100,100]}
+
+00:46:27.930 --> 00:46:30.600
+<v Speaker 0>say that we can't have the same digit twice.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:31.020 --> 00:46:35.460
+<v Speaker 0>Because if we have a solution, then it follows that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:35.460 --> 00:46:38.730
+<v Speaker 0>the same digit doesn't occur twice as if we had
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,100,100,100]}
+
+00:46:38.730 --> 00:46:40.890
+<v Speaker 0>one and one in a row, then we would be
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100,100]}
+
+00:46:40.890 --> 00:46:42.180
+<v Speaker 0>missing some other digit.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:42.480 --> 00:46:45.420
+<v Speaker 0>But it turns out, and you will do this in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:45.420 --> 00:46:48.480
+<v Speaker 0>the optional part of the tutorial if you have time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:48.510 --> 00:46:51.330
+<v Speaker 0>It turns out that it's useful to add these rules
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,100,100]}
+
+00:46:51.330 --> 00:46:53.670
+<v Speaker 0>when you're actually implementing this stuff.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:46:54.750 --> 00:46:56.070
+<v Speaker 0>So what else do we need?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:46:56.100 --> 00:47:01.320
+<v Speaker 0>We have a description of what a good solution must
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:01.320 --> 00:47:01.680
+<v Speaker 0>be.
+
+NOTE CONF {"raw":[100]}
+
+00:47:01.680 --> 00:47:04.890
+<v Speaker 0>This formula describes a good solution, except we still have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:04.890 --> 00:47:07.890
+<v Speaker 0>to specify what the original starting position of the puzzle
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:07.890 --> 00:47:08.370
+<v Speaker 0>is.
+
+NOTE CONF {"raw":[100]}
+
+00:47:09.570 --> 00:47:13.290
+<v Speaker 0>Well, there we just take the atoms that describe it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:13.290 --> 00:47:17.460
+<v Speaker 0>So if we had a four in row three one
+
+NOTE CONF {"raw":[100,100,100,100,100,90,100,100,100,100]}
+
+00:47:17.460 --> 00:47:21.900
+<v Speaker 0>then our starting Position has the atom f4.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:23.400 --> 00:47:26.640
+<v Speaker 0>Whatever I said f3 one four in it.
+
+NOTE CONF {"raw":[100,100,100,95,95,97,100,100]}
+
+00:47:29.340 --> 00:47:33.240
+<v Speaker 0>So this is kind of setting you up for the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:33.240 --> 00:47:34.470
+<v Speaker 0>tutorial work.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:34.920 --> 00:47:35.910
+<v Speaker 0>It's quite a lot.
+
+NOTE CONF {"raw":[88,100,100,100]}
+
+00:47:35.910 --> 00:47:38.280
+<v Speaker 0>So you've got a new algorithm and you've got this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:38.280 --> 00:47:40.050
+<v Speaker 0>quite complex encoding.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:40.050 --> 00:47:43.320
+<v Speaker 0>It is all in the book and it's also described
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:43.320 --> 00:47:45.990
+<v Speaker 0>in some detail in the tutorial exercise.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:46.110 --> 00:47:48.270
+<v Speaker 0>So have fun.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:48.270 --> 00:47:50.190
+<v Speaker 0>You have a bit more time than you would normally
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:50.190 --> 00:47:52.500
+<v Speaker 0>have to do it, because we're one lecture ahead.
+
+NOTE CONF {"raw":[100,100,100,100,100,95,100,100,100]}
+
+00:47:52.740 --> 00:47:55.620
+<v Speaker 0>And don't forget to come to John Hughes lecture tomorrow,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:55.620 --> 00:47:58.110
+<v Speaker 0>especially with people who aren't here right now.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:48:00.270 --> 00:48:00.540
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[45]}

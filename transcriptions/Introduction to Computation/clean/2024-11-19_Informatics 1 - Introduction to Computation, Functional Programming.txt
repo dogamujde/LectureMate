@@ -1,0 +1,1062 @@
+Oh.
+Do you want me to speak now?
+Yeah.
+Go ahead.
+All right.
+Yeah.
+Hi, everyone.
+, sorry to interrupt.
+I just want to take a quick minute of your
+time to tell you about a really exciting opportunity that
+we have, which is to climb Kilimanjaro.
+We're putting together a huge team from Edinburgh.
+We've actually got quite a lot of people on board
+already, but it will be great to have even more.
+, I took part in this challenge last year and
+it was actually the best thing I've ever done.
+I could not recommend it any more.
+, but it's a charity challenge.
+So you fundraise in order to come on the climb.
+Half the half of the money you raise covers your
+climb costs, and half of the money goes towards Dig
+Deep.
+Dig deep are a small charity based in the south
+west of Kenya.
+They help to provide clean water, safe toilets and hygiene
+education.
+And in that area of the world, two out of
+three people don't currently have access to clean water.
+So really, really important cause.
+But even more exciting opportunity for you on the climb
+itself.
+You go through four different ecosystems on your way to
+the snow capped summit, which is also the tallest freestanding
+mountain in the world.
+And then after the climb, you have the opportunity to
+see a bit more of Tanzania by going on safari.
+Or you can go to Zanzibar to just relax after
+all of your hard work.
+If you would to find out any more information,
+you can scan the QR code on the screen behind
+me.
+And we're also hosting an information session tonight in 50
+George Square Room Geo two.
+It's going to be at 6 p.m..
+We're going through all the details about the climb, the
+charity, the fundraising and how we can support you with
+your fundraising as well.
+You also get a £100 discount by attending the session.
+So if it is something you're interested in or you
+know anyone who might be, please do come along at
+6 p.m. to go to in 50 George Square.
+Thanks very much.
+Thank you.
+Okay.
+Right.
+Let's get this organised.
+Ah, yesterday.
+It didn't work on both screens.
+Today it does.
+She fixed something.
+Yay!
+Oh, okay.
+Good afternoon, I'm Phillip Wadler.
+I'm lecturing in place of dawn this week.
+, it's great to be back here.
+I used to, , I created this course, actually, so
+it's great to be able to teach it again.
+So before I start, some of you were here yesterday
+and heard me explain how important questions are.
+Are there any questions?
+And just so I can check, it looks there
+are more people here today.
+How many people saw in yesterday's lecture and how many
+people didn't see yesterday's lecture?
+Okay, just a few of you.
+So if you didn't see it, you'll be a little
+bit confused.
+And then you'll go, oh well, I can't ask a
+question because I'm a little bit confused and I didn't
+see it yesterday.
+Just go ahead and ask questions, okay.
+Right.
+So we're talking about monads.
+And yesterday we were talking about IO and monads.
+So IO stands for input output.
+And we learned how a monad lets you describe.
+Right.
+So put char you give it a character and it
+returns a command something that's written io of unit type.
+So right open closed parenthesis drunk.
+It's just the unit type.
+In Haskell it has only one value which is also
+written open close parenthesis.
+So it's quite useful to have sort of ,
+trivial types that in particular here instead of having
+to make up a separate command, IO in general returns
+a value the way we you can say we're not
+interested in the value we returned by saying is it's
+always of this type.
+This type only has one value.
+Nothing to see here.
+No interesting information.
+By the way, does anybody know what this unit type,
+the type of no interesting information is called in the
+C programming language.
+Has anybody programmed in C?
+Yes, some of you.
+I was afraid of that.
+Yes.
+Some of you have been exposed to C.
+And what is the unit type called in C when
+you have a procedure that returns nothing of interest, what's
+its type.
+Void.
+Right.
+Except void sounds empty whereas unit sounds one.
+In fact, this is the type with one value in
+it.
+It's the unit type.
+, the empty type is a different type.
+It has no values in it whatsoever.
+And if you go on to fourth year and take
+my class on Agda, you'll learn just how important the
+empty type is, but that's a different type.
+So C unfortunately makes things a bit confusing by calling
+the unit type the void type.
+It's not type with nothing in it, it's a type
+with one thing in it, but that has no interesting
+information because it's always the same thing.
+Okay, so put char takes a charge and returns a
+command.
+So this is an IO of unit type.
+And if you ever did that command it would print
+an exclamation mark.
+But the point is this is a pure value.
+It stands for something that could, you know, it stands
+for.
+It's a set of instructions to follow, to do something,
+but it doesn't follow the instructions.
+It's just a set of instructions to follow.
+And then this lets you put together two sets of
+instructions to first do the, , the first one and
+then do the second one.
+So if I say put your question mark, put char
+exclamation mark, then that will write out two characters.
+Done really does nothing and returns no interesting value.
+And then we could write a string.
+Right?
+So you take a string.
+If it's empty, you do nothing.
+If it's head and tail xz then first you put
+the character x and then recursively we apply put string
+again to xz so it ends up printing out the
+whole string.
+So put string.
+Question mark playing is the same as.
+Put a question mark, put char exclamation mark and then
+do nothing else.
+, we could also think of put string as just
+folder with sequence and done , composed with map of
+put char.
+So the important thing is there are some laws that
+are satisfied here , m followed by Don is just
+em, right?
+Do em and then do nothing is just do em.
+Do nothing and then do em is just do em,
+do em and then do n, and then do o
+is just do em and then do n and then
+do oh.
+So you can put the parentheses either place.
+And does anybody remember the name for a system that
+has an operator and an identity that satisfy these three
+laws?
+Monoid.
+Correct.
+Sorry.
+, Boolean algebras have two of these in them, right?
+One for conjunction and one for disjunction.
+But a Boolean algebra is a much more sophisticated structure.
+This is very simple, just one operator and one unit
+satisfying these three laws.
+And you'll have bumped into these because these are very
+important for doing just as here folder.
+We often have folder and some boolean operator.
+Some binary operator I'm sorry.
+And then it's unit.
+So that's a very common pattern which is why it's
+worth knowing about monoids.
+But the other reason it's worth knowing about monoids is
+because monad is a pun on monoid.
+So I've told you how to put together commands.
+How do you actually execute a command?
+And the answer is if we bind main.
+So main is just another function in Haskell.
+But by convention main always has type command.
+And by convention when you run a program, whatever is
+bound to main, that's what you do.
+So I gave an example of this yesterday.
+Oh that's not the one I want.
+I gave an example of this yesterday.
+If we say run GHC.
+Well, let's look at the file.
+Confused first.
+But that just says print out an exclamation mark and
+a question mark and an exclamation mark.
+And then if I say, okay, run that program.
+That's what it does.
+It prints the question mark at an exclamation mark.
+Didn't even print a new line after it.
+It just had this funny prompt.
+And the point is that we can then do exceptional
+reasoning in languages with side effects , see print!
+Ha!
+Print!
+Ha goes ha ha!
+But if you say let x be the value of
+print ha in x, followed by x in only, this
+does that as a side effect.
+This does nothing at all, so you only get one.
+Ha!
+The laugh is on you.
+So.
+But in Haskell this does nothing.
+It's just a command.
+It's a list of instructions.
+So saying let em be this list of instructions in
+this new list of instructions M followed by m.
+That's fine.
+That works perfectly well.
+So we don't need to worry about let doing something
+funny.
+It's just a set of instructions.
+And then the next trick is instead of always writing
+unit, we can write something else.
+So I o of char is a command that reads
+something from the input.
+And returns.
+Whatever it was, it read.
+So this is a list of commands.
+And whenever you execute the command, then it's going to
+return a value.
+So when we finally execute this command, if the input
+is a b, c when we're done it's going to
+return the value a.
+And after we've done this it's done something.
+So the remaining input has changed.
+It's now BK we've read the A and B see
+what is left to read.
+Return does nothing except return the value that you give
+it.
+So return of empty list could have type I o
+of string.
+So in this case it's returning the empty string.
+And if the input was BK it would yield the
+value empty string.
+And the input doesn't change it just b c.
+So it does nothing except return a value.
+And now we can combine commands.
+So we first we do this command.
+It does some stuff and it returns a value.
+What are we going to do with that value.
+We are going to pass it into another function.
+This is a separate function.
+It takes an argument of type A.
+So we'll give it that one.
+And then it does some stuff and returns the value
+of type B.
+And this final thing.
+So what does this do.
+So it returns the value this one returned.
+But what does it do.
+It does everything this one does and everything this one
+does.
+So it's combining two things.
+So it's very similar to the operator we saw before.
+But now it's threading a value through.
+So for example if we say get char and then
+apply this function lambda x put char to upper of
+x so it gets the character a x gets bound
+to a to upper of little a is big A,
+and that writes a big A.
+So when the input is a, b, c it produces
+the output a and the remaining input is BC.
+So in general right if m has type AOA and
+k.
+So this is actually a standard technique K stands for
+continuation.
+And quite often you write programs in what's called continuation
+passing style where you have a function that says this
+is what you do afterwards.
+So k takes an a doesn't I of b, then
+m followed by k will be an I o of
+b.
+And again this is just a recipe.
+And what does it do if you ever do it.
+It performs the command m.
+But that will yield a value of type A which
+we'll call x.
+And then it'll perform.
+It'll Ill apply k to x that yield something of
+type I of b.
+So that's some instructions.
+So it will do whatever the instructions say and return
+a value y of type b.
+And then when we're done we just return the final
+value y.
+So here's a program get line which says okay read
+a character.
+Put that in X.
+If it's new line, stop, just return the empty string.
+Otherwise recursively read the rest of the line again.
+You'll stop whenever you finally see a new line.
+Call that x as and return x cons xs.
+So if the input was a b, c new line
+def, it'll return the first line, the string a, b,
+c, and the remaining input.
+It'll eat up the new lines.
+The remaining input will be d e f.
+Okay.
+Any questions about that?
+Especially from people who didn't see the slower Presentation yesterday.
+People who didn't see the slower presentation can nod ,
+okay, I follow that.
+Anybody nodding okay.
+So notice that right?
+Return and bind are related to the things we
+saw before down in sequence.
+Done is just return of again this unit type.
+The thing that C calls void and sequence which just
+combines two commands, is just m bind a function that
+just ignores its argument.
+Its argument is bound to be the value of this
+type, and then goes off and does n.
+So m followed by n can just be written as
+a bind in this way, where you ignore the bound
+value because it's always going to be of the unit
+type.
+So not very interesting.
+Though as I described, the unit type is not very
+interesting, but this is one of the interesting things that
+I hope you'll learn from seeing all this, which is
+that not very interesting types are very useful, but the
+unit type lets us deal just with IE of an
+arbitrary type.
+We don't need to build make up something separate to
+mean a command that doesn't return a value.
+We can just have I o of unit as saying,
+oh, this is a command and don't worry about the
+value it returns.
+It'll always be the same thing.
+And the type the unit type.
+Let's use the types to say whatever it returns.
+We know what it is.
+It will be the one value of the unit type.
+So now we have this echo program which does get
+line binds that to a line.
+This is very similar to the hand we just saw.
+If the line is empty then we'll stop and we'll
+return the unit type.
+So this thing eventually returns the unit type And otherwise
+we will map to upper over the line.
+So put the whole line in uppercase and then we
+will print it out with a new line at the
+end.
+So we read a line.
+Read the new line at the end.
+Print the line.
+Convert the line to uppercase.
+Print the line.
+Print a new line at the end.
+And again I'll just show an example of this.
+Oops.
+Okay.
+And now if I just hit New line, what's going
+to happen.
+Come on.
+If I just hit new lines, what's going to happen?
+The computer will explode.
+Yes.
+No.
+We'll vote.
+How many people think the computer will explode?
+Three.
+Okay.
+How many people think the program will just terminate quietly?
+Ah, it didn't explode.
+How boring.
+Okay, and then we have a special built in notation
+in Haskell called do notation, where, just as a matter
+of engineering the way our brains work, it's much easier
+if you get the short name first and then get
+the thing that has that short name, because then you
+know what to call it.
+Then if you give it a possibly long thing, saying
+what to do, and then the short name to call
+it by.
+So the, , the way Haskell works, right?
+We need a function here.
+So the lambda has to come here.
+So we just defined a special notation that says well
+you write the name here and a backwards arrow.
+And then the function, it looks a little bit
+what you do in the list comprehension.
+, so this program and this one are just the
+same.
+So it says do get char bind x to
+the result, do get line bind XS to the result.
+So that's what's written here.
+And this is just a different way of writing the
+same thing.
+What's most important here is that due notation is written
+with curly braces and with semicolons after each of the
+command, which makes it look a bit see, C
+was the most popular language when Haskell was designed, so
+it was helpful to make it look a little bit
+that.
+But the key thing I said this yesterday, but I'll
+repeat it now, is that because Haskell is a functional
+language, because you can always bind variables with lambda expressions.
+I could just define this.
+I didn't need to get Will Partain, who was in
+charge of the Haskell compiler, to add this special notation.
+I could just write this and experiment with it.
+So that's very important.
+Haskell puts a lot of power at your fingertips.
+That may not always be the most convenient notation, but
+it will be a pretty convenient notation for writing things
+out in.
+So when you become a true programmer, what a true
+programmer does is first they decide the the right language
+for expressing their solution.
+They implement that language, and then they express their solution
+in that language.
+That's really what programming is about.
+And the real power of functional languages is they make
+it very easy to define whatever language it is you
+need.
+So I was doing here with Return and Bind was
+basically defining a language that's useful for expressing sets of
+commands, sequences of commands, instructions to follow whatever you want.
+Okay, so when you write do x one from e1,
+x two from e2, e3, and so on, it really
+means e1 bind lambda x one.
+And then the body of the function is all the
+rest of this e2 bind lambda x two and the
+body is all the rest of this, and so on.
+Okay.
+So we just went through what a monoid is right.
+If you've got an operator , oh plus and a
+value you short for unit such that you is the
+unit for oh plus.
+So you plus x is x x plus you is
+x and x plus y plus z is the same
+no matter how you parentheses it.
+Right.
+There are lots of these around plus and zero times
+and one or and false and and true concatenate and
+the empty list.
+And we saw another one sequence and done.
+These are all examples of monoids.
+Does anybody.
+So this includes the two from Boolean algebra.
+Does anybody else have a favourite example of a monoid?
+No one.
+How about matrix multiplication and the unit matrix?
+Any others vector space?
+Good.
+, so you've got vector addition in the vector
+space.
+And then the unit is the zero vector.
+Right.
+Very good.
+So just lots of these things.
+So a monad is actually very similar to a monoid.
+Right.
+We've got something a unit which is return, and
+we have a property associativity, which is if I
+do m bind the result to x and then do
+n and bind the result to y and then do
+O.
+It doesn't really matter where I put the parentheses.
+And if I return a value v and then bind
+that to x and do m, then that's just
+lambda x m applied to v.
+Or it's also m with x replaced by v.
+If I do m and then do lambda x return
+x, which could also I could just write return there.
+They mean the same thing.
+, then that's just doing M right.
+If I do m bind the result to x and
+then return x, well, that's the same as if I
+just did em.
+Okay.
+So something satisfying.
+These three laws is called a monad, and it doesn't
+look .
+I mean, if you squint, these look very similar, but
+clearly this is doing some extra stuff that this is
+not doing.
+But there's something called category theory.
+And in category three it has such general definitions that
+you can actually turn this one into an instance of
+the definition in category theory of this one.
+So this actually really is a monoid.
+So the reason it's called monad is there's this branch
+of mathematics called category theory.
+it's quite general.
+It's a very useful thing for computer scientists to know
+because it's basically about taking different systems and how you
+relate them.
+So it's a generalisation of algebra.
+In algebra you have different kinds of algebras and mappings
+between them, which are called homomorphisms In categories.
+You have things.
+They might be algebras, they might be sets, they might
+be other thingies.
+They're just called objects.
+And you have mappings between them which are called arrows.
+And very pleased to tell you that the objects in
+category theory have nothing whatsoever to do with object oriented
+programming, but they are very useful for computing.
+, and so if you want to go off and
+study it, it's kind of useful.
+But an example of this is that right?
+You don't need any category theory to understand this.
+I just explained it to you.
+But the people who first discovered these notions were category
+theorists.
+So category theory was first developed in the 40s.
+In the 50s, they found out that this structure was
+quite useful for doing things in algebraic topology, which I
+don't know, but this generalisation came out of it, of
+having a bind operator and a return operator, which they
+had different names for those.
+But it's essentially just this idea.
+And then Eugenio.
+So the reason it's called a monad is it looks
+a lot a monoid, but the pun on that
+monad is a term used by Leibnitz when he did
+philosophy.
+, so monads are something we use in computing all
+the time to structure side effects.
+Actually, when Leibniz was writing about monads, interestingly, he was
+using them for abstract data types because we said about
+monad is it has no windows through which you can
+see it's inside.
+So in other words, it's an abstraction where you can
+understand it from the outside.
+But how it works on the inside is immaterial.
+And the most famous sentence you will find in Leibniz
+says God is a monad.
+So the category theorist, it was called category theory after
+Kant's categorical imperative.
+They just, , sort of decided as a convention everything
+they named, they would give it a name from philosophy.
+So this this actually has three parts to it.
+, one is the name of the thing that builds
+the type.
+So for us that's been fixed at IO, but we'll
+see.
+It can be an arbitrary, , type constructor.
+So the arbitrary constructor, the thing that squishes things together,
+which is bind, and the thing that just pushes something
+into, , into this type, which is called return.
+So it was also called a triple, but that's a
+very boring name.
+Calling them triples when they have three components.
+It's sort of calling something, hey, you.
+So monad was a much better name because it had
+some substance to it.
+And , it alluded to things in category theory.
+Sorry eluded to things in philosophy.
+Let's get this right.
+So I've meant so.
+I've just shown you the one monad that's built in
+to Haskell, which we use for doing stuff.
+But in fact, why says what a, , what?
+Any programming language is most useful for designing your own
+language and then using that to solve your problem.
+So I'm going to show you now how are we
+doing for time?
+Two instances of doing that.
+So in general we have , an arbitrary constructor.
+So here is how monads are defined in Haskell as
+a type class that defines a type class.
+So we can always reuse the names return and greater
+than greater than equal which I'll pronounce bind.
+.
+But in general, you just say monad of m.
+M is an arbitrary type constructor.
+Okay.
+Return takes a value of type A for any type
+A and returns an m of A.
+So before it.
+So before m was I o.
+So this returned an I o of a.
+In general it's just an m of a.
+And similarly bind takes an m of a and an
+a to m of B and returns an m of
+B.
+Example lists form a monad.
+So here open.
+Close is used not to mean the empty list, but
+to mean the list type.
+Right.
+So open close applies to a is what we write.
+Open bracket A closed bracket.
+The type lists of a.
+So return takes an A and gives you a list
+of a.
+Okay I know a function that does that return of
+x returns the list with one thing in it, which
+is x.
+The return takes a value into a list of that
+value and bind.
+Hmm.
+So bind takes a list of a right because it's
+in M of that B list of A and a
+function from A to m of b, so that would
+be from A to list of b and returns a
+list of b.
+How would I do that.
+Okay so m now stands for list k is a
+function that given an element of that list, returns another
+whole list.
+So this M is a list of type a k
+takes an A and returns a list of type b.
+So what does bind do here?
+Well, if I wrote it as a list comprehension that
+would be take x from m, draw x from m,
+and then for each x and m, let y be
+drawn from k of X and then return that list
+of y.
+Notice that this is just equivalent to the following recursive
+definition.
+Empty list bind k is just empty list.
+X cons x is bind k is.
+Apply k to x.
+That will give us a list of b.
+.
+Take x and bind k on it.
+That will give us a list of b.
+We've got two lists of B and we just append
+them.
+Or another way of writing this is m bind k
+is just map k over m.
+So now we've got a list of list of b
+and we concat.
+So that collapses that down to a list of b.
+And in fact when I was first applying monads I
+wasn't doing it for side effects.
+I was doing it for this.
+To understand what's going on with list comprehensions, I realised
+that monads were exactly gave you just enough stuff to
+define a list comprehension and set of do notation, we
+have what's not in Haskell anymore.
+Monad comprehensions where this instead of a list could be
+an arbitrary monad do notation turned out to be a
+little bit easier for people to use.
+And again, when I first did it, I didn't have
+that notation available.
+So I just wrote things out in this way or
+this way.
+Again, I could just define it for myself because Haskell's
+that powerful.
+So it doesn't always give you the exact syntax you
+want, but can give you the exact concept that you
+want.
+, so in fact, do notation and comprehensions are very
+similar.
+So here let's form all pairs where the first component
+is less than the second.
+So that would be all pairs I j where I
+is drawn from the list one to n j is
+drawn from the list I plus one up to n.
+Right.
+So if we think about pairs of four is going
+to be one two, 1314 and then 2324 and then
+three fourths all pairs where the first component is strictly
+less than the second component.
+, but a different way of defining that is I
+could use the list monad and use do notation.
+I could say do I drawn from one to n
+j drawn from I plus one up to n, and
+then return ij.
+So very important thing about bind in monads, about
+guards, in list comprehensions and about do notation is the
+thing that you bind in the first one can be
+used in the second one.
+So the way we get that in, .
+The way we get that out of bind is because
+the second thing pass to bind is a function.
+It can use the value returned by the first one.
+So this idea that whatever you do in the first
+one can be referred to in the second one is
+one reason why monads are so powerful.
+So you see.
+Right.
+So here I've done for a particular list comprehension.
+But you could see that you could always change a
+list comprehension into do notation, just each drawn from turns
+into a bind.
+And then the thing at the beginning turns into return
+of that thing.
+So bind bind bind bind bind bind return Return to
+value.
+Bind.
+Bind.
+Bind.
+Bind.
+Bind.
+Bind.
+Return.
+And this is right here I and J makes use
+of things bound here to the right of it.
+Here we read from left strictly from left to right.
+So we only use things have been bound earlier.
+So that's slightly easier from an engineering point of view.
+No question yet.
+Come on somebody ask a question.
+If you don't ask a question I'm going to have
+to show you how parsers work.
+Right.
+Do people want to see.
+Yes.
+Where's the function.
+Now?
+Where is the function in in here.
+So I just speak a little louder because you're far
+away.
+Ah right.
+So here this is going to turn into use of
+bind.
+So what function is it?
+So the answer is it's the function lambda I followed
+by du of all of this okay.
+And it went by pretty quickly.
+But that's exactly what's written here.
+So when we write x drawn from e1 that means
+e1 bind lambda x1.
+And then the translation of all the rest of that.
+Right.
+Right.
+Good question.
+Excellent.
+Any other questions?
+Yeah.
+How do parsers work.
+All right.
+So now we've got the monad of lists.
+Oh I need to show you one other thing before
+I show you parsers, which is there's some other things
+that you often find in a monad.
+So you often find a monad with a plus.
+So, , these things form a monoid right?
+M0 is the unit m plus is the O plus.
+So M0 is just an m of A for arbitrary.
+A m plus takes two mas and gives us an
+Ma.
+And again lists form a monad plus where m0
+is the empty list and m plus is concatenate.
+And the important.
+The important thing is that for any monad with plus
+we can then define guard.
+So guard takes a bool and returns an m of
+the unit type again.
+So it only has a side effect.
+It doesn't return an interesting value.
+What we do is guard a false is M0 guard
+of trues.
+Do nothing, just return the one thing you can return.
+We could also find m some, which takes a list
+of ma to an ma, and does that by doing
+a folder with m plus and m0.
+And one special case.
+Now.
+, so guards are very useful because they let you
+put conditions right.
+This generalises the notion of a guard from a list
+comprehension to an arbitrary monad.
+So now we could put a guard in there.
+So now I'm doing something before, except just a
+different way of writing the same thing I drawn from
+one to n j, drawn from one to n, and
+have the condition that I should be less than j.
+So we would write that as I drawn from one
+to n j drawn from one to n guard I
+less than j, and then return I j.
+So this maps down to this, this maps down to
+this.
+And again this is going to return, , all pairs
+where the first component is less than the second component.
+Okay.
+Now I can answer your question.
+So a parser of type A, basically what we want
+to do is take a string and return a value
+of type A.
+And for the top level that's fine.
+But if you think about it, when we're parsing something
+as we go through parsing, it will parse the first
+bit.
+So we'll read some of the input and there'll be
+some input left.
+And then we'll parse the second bit.
+So we'll read that bit of input and there'll be
+some input left and so on.
+So you might think of it as something that okay
+we give it the input, we return the value that
+we parsed and whatever bit of the input we did
+not read yet.
+Okay.
+So this I have defined a side effect within Haskell
+itself.
+So just using pure Haskell, no notion of side effect.
+This is my input string.
+This is the remainder of the input string after I've
+read some of it.
+In general you can simulate arbitrary state in this way.
+So one kind of monad which I won't go into
+today is the state monad, which lets you pass around
+an arbitrary data type as state.
+Your state can be whatever you want.
+If you're playing, , checkers it the state might be
+what's on the checkerboard currently.
+Right.
+But we've learned about everything in terms of pure functions.
+Right.
+In the world.
+Right.
+You can the state is that this is in this
+place on the desk.
+I can pick it up and put it on that
+place on the desk.
+So for modelling the real world, having some notion of
+state can be useful.
+This is how you do it.
+Input state whatever value you want to compute paired with
+the output state.
+So Haskell is powerful enough that you can build into
+it modelling arbitrary states.
+So our state is going to be the bit of
+the string we haven't read yet, except for one thing.
+Parser doesn't always work, does it?
+And sometimes we've got arbitrary parses, and we're going to
+try them and pick the one that works.
+So we need to have some way of saying this
+parse didn't work.
+Or even for an ambiguous string.
+There might be multiple ways of parsing it.
+So we might want to say here are three possible
+parses.
+So it's very important to be able to say no
+parses.
+It did not work.
+Or to be able to say, well actually it worked
+really well.
+Here are three different parses.
+Pick the one you .
+So what we're going to do instead of just take
+returning a value and the new state will take the
+input state and return pairs of the value we passed
+and the remaining state.
+And there will be a list of these things.
+And just as Haskell is powerful enough to model the
+notion of state.
+This shows us that Haskell is powerful enough to model
+the notion of nondeterminism.
+We're going to do a kind of angelic nondeterminism.
+But you learned about non-deterministic state machines.
+This is how we modelled it, by having a list
+of results and the remaining, , parsed, , string going
+into the automaton.
+So we did exactly this before for nondeterministic automata.
+See, we take a string and we'll return a list
+of parse string pairs.
+And my colleague Graham Hutton turned this into a little
+poem.
+A parser for things is a function from strings to
+lists of pairs of things and strings, not Doctor Zeus.
+Graham Houghton.
+, so we're going to find a module.
+We want parser to be an abstract type.
+So I just defined a data type a parser of
+a.
+This is a type constructor also named parser.
+Right.
+And just as the fourth string goes to the list
+of a string pairs.
+And then to apply a parser, we take a parser
+of f and s and we just write apply f
+to s, and we get this list of a string
+pairs.
+, and in particular what parse is going to do.
+, this is what you do for a successful parse.
+It applies the thing gets the list, checks that we've
+parsed the whole thing, and then returns the head of
+the list.
+So this succeeds if you parse the whole thing.
+And there is exactly one parse.
+So if you parse the whole input and was unambiguous,
+parse will return the result.
+So now we need to return, define return and bind.
+So return as a parser that takes the un
+parsed input and returns the value x and all the
+UN parsed inputs so it doesn't change the state at
+all.
+And m followed by k is.
+Take the current state, apply M to S, so that'll
+give us a list of XT pairs.
+So x is our values.
+We apply k to x and then we apply that
+to t the new state.
+So original state we get a value and a new
+state apply k to k of x gives us our
+new parser.
+Apply that in state T, get out.
+Finally, state u and return the final value of y
+and the final state U.
+And it's also very helpful to have a monad plus
+right?
+M0 is the parser that always fails.
+Right.
+Return is the parser that always succeeds.
+M0 is the parts of the always fails, and plus
+is parse m parse n combine the results.
+This is very important because if this one fails, it'll
+give you this one.
+If this one fails, it will give you this one.
+So you have two passes and you want two passes
+that you might want to apply.
+It lets you choose.
+So just parse a given one character is very easy
+right?
+You'll be given your state is C followed by S,
+and just return the value c paired with the
+remaining state's.
+So we take the first character off of the input
+state.
+, return that as our as our value, and the
+output state is just the remaining string.
+And then spot takes a predicate over characters and it's
+going to succeed if the character we read satisfies that
+predicate.
+So this is just this.
+If the list is empty, fail here.
+Also, if the list is empty, fail if it's non-empty
+and p of C holds, then return the key pair
+and otherwise fail.
+And then token says read a particular character.
+That's just spot for equal c.
+So if I want to read an open bracket,
+that would just be token open closed.
+quote open parentheses which is spot of equal of
+open parenthesis.
+And then matching an entire given string more than one
+character would just be.
+Well the first one must be x.
+The remainder much match XS and then we return that.
+And notice that when we do a token, the character
+we return is the one that we had to have
+read.
+And now we can do interesting things parse ,
+zero or more things.
+So if plus is one or more things than we
+do plus of p m plus return empty.
+So it might return one or more things, or it
+might be returned to the empty list.
+It parsed nothing at all.
+And then plus of P is going to be read
+a p, read zero or more things and return the
+list formed by concatenating those together.
+So now I can do interesting stuff how do
+I parse the natural number?
+It's just plus of spot of is digit Right.
+One or more digits is going to be a natural.
+And let's just see that at work.
+So this defines all the different things that we just
+saw.
+And so now I could do.
+Apply of plus of is digit.
+To 123.
+A b c d e.
+What.
+Number expect.
+Oh, I'm not running in Haskell.
+Maybe I should run in Haskell.
+That might be better.
+oh.
+It's broken.
+Ah, I know what's wrong.
+That's okay.
+We're at time.
+No demo for you.
+That's okay.
+, but this would, if given the string one, two,
+three a, b c, we return a list of a
+pair in the first element that the pair is the
+number one is the string one, two, three, and the
+remainder would be a b, c.
+And we could generalise that to do expressions right.
+So an expression is either a literal or sum of
+two expressions or product of two expressions.
+If I want to parse those, I just do parse
+the literal m plus, right?
+Do one or the other.
+Parsing a sum or partial multiplication and literal is just
+passing an integer, and add is read an open parenthesis.
+Pass an expression, read a plus.
+Parse an expression.
+Read a close parenthesis.
+Return d plus e.
+Using our constructor for expressions and model is very similar.
+Read an open parenthesis.
+Read an expression.
+Read a times.
+Read another expression.
+Read a closed parenthesis and return d times e.
+So you've seen we can build very powerful languages within
+Haskell.
+Here's a language for describing parsers.
+And for example if you do parsecs of one two,
+three give you one plus two.
+Sorry one plus two times three gives you one plus
+two times three.
+Right.
+There's a paper somebody wrote once called A brief, Incomplete
+and Mostly Wrong History of Programming Languages, where he poked
+fun at lots of programming language developers.
+One of them was me.
+So among all these different entries.
+One of them said.
+So he's got Alonzo Church and Lambda Calculus and Alan
+Turing and so on.
+And this one, in 1990, a committee formed by Simon
+Peyton Jones, Paul Hudak, Philip Wadler, Ashton Kutcher and people
+for the Ethical Treatment of Animals, four of those are
+correct.
+, creates Haskell.
+oh.
+Three of those are correct.
+He left out John Hughes.
+How could he leave out John Hughes?
+All right.
+, creates Haskell a pure, non strict functional language.
+Haskell, get some resistance due to the complexity of using
+monads to control side effects, Wadler tries to appease critics
+by explaining that quote A monad is a monoid in
+the category of endo functors.
+What's the problem?
+I will stop there.
+Thank you.
+So I will also be giving the guest lecture next
+Monday on propositions as types.
+That's a fairly famous talk, so I hope to see
+you there.
+Hi.
+Thank you very much.
+Oh, thanks.
+So you ask the question now.
+Does anybody else do any other functional languages?
+And, .
+Oh.

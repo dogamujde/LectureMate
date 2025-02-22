@@ -1,0 +1,4556 @@
+WEBVTT
+
+00:00:09.360 --> 00:00:09.600
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:00:09.600 --> 00:00:10.890
+<v Speaker 0>Good afternoon everyone.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:00:13.170 --> 00:00:20.880
+<v Speaker 0>So last time we talked about categorical statements.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:00:21.300 --> 00:00:24.360
+<v Speaker 0>And I ended up trying to convince you that it's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:24.360 --> 00:00:29.310
+<v Speaker 0>very easy to program categorical statements in Haskell using things
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:29.310 --> 00:00:31.020
+<v Speaker 0>that you've already learned.
+
+NOTE CONF {"raw":[100,98,100,100]}
+
+00:00:31.350 --> 00:00:33.840
+<v Speaker 0>You didn't seem terribly convinced by the end of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:33.840 --> 00:00:34.500
+<v Speaker 0>lecture.
+
+NOTE CONF {"raw":[100]}
+
+00:00:34.680 --> 00:00:37.380
+<v Speaker 0>So I asked you to go away.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:00:37.380 --> 00:00:39.870
+<v Speaker 0>Refresh the Haskell you've just learned.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:00:40.320 --> 00:00:44.490
+<v Speaker 0>Look at this slide again and come back.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100]}
+
+00:00:45.090 --> 00:00:49.830
+<v Speaker 0>Now, if you still wished to talk about it further.
+
+NOTE CONF {"raw":[100,100,100,100,67,100,100,100,100,100]}
+
+00:00:50.430 --> 00:00:54.390
+<v Speaker 0>So who has successfully improved their understanding of what I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:54.390 --> 00:00:55.590
+<v Speaker 0>was trying to say here?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:00:58.770 --> 00:01:01.770
+<v Speaker 0>Who has unsuccessfully tried to improve.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:04.559 --> 00:01:06.600
+<v Speaker 0>What are the rest of you expecting me to do?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:12.510 --> 00:01:14.280
+<v Speaker 0>Go over it all again, right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:15.780 --> 00:01:18.120
+<v Speaker 0>Um, that's not an efficient way to proceed.
+
+NOTE CONF {"raw":[93,95,100,100,100,100,100,100]}
+
+00:01:18.120 --> 00:01:22.470
+<v Speaker 0>So let me get on my high horse and remind
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:22.470 --> 00:01:24.810
+<v Speaker 0>you that the key thing about university is that you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:24.810 --> 00:01:25.680
+<v Speaker 0>do the work.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:25.830 --> 00:01:29.130
+<v Speaker 0>We provide you the stuff with which to do the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:29.130 --> 00:01:29.730
+<v Speaker 0>work.
+
+NOTE CONF {"raw":[100]}
+
+00:01:29.940 --> 00:01:32.700
+<v Speaker 0>And as I also said early on, this course keeps
+
+NOTE CONF {"raw":[100,100,100,100,100,88,100,100,100,100]}
+
+00:01:32.700 --> 00:01:36.810
+<v Speaker 0>a fairly steady pace up to about week six, where
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:36.810 --> 00:01:38.340
+<v Speaker 0>we take a little bit of a break.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:38.460 --> 00:01:40.950
+<v Speaker 0>So it's really important to keep up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:42.210 --> 00:01:44.640
+<v Speaker 0>Of course I plan for this, so we're going to
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:01:44.640 --> 00:01:46.020
+<v Speaker 0>go over it again anyway.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:46.890 --> 00:01:50.580
+<v Speaker 0>But for those of you who aren't really sure what's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:50.580 --> 00:01:54.960
+<v Speaker 0>going on, you're going to need to speak up and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:54.960 --> 00:01:56.040
+<v Speaker 0>talk about it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:57.360 --> 00:01:59.380
+<v Speaker 0>I mean, ideally you can also do that in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:59.380 --> 00:02:02.380
+<v Speaker 0>tutorial, but we can take maybe five minutes to go
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:02.380 --> 00:02:03.340
+<v Speaker 0>through this again.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:04.840 --> 00:02:07.990
+<v Speaker 0>So you've all seen list comprehension.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:10.090 --> 00:02:14.650
+<v Speaker 0>And you haven't seen list comprehension again since Tuesday, unless
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:14.650 --> 00:02:17.950
+<v Speaker 0>you were one of those people who are going ahead
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:17.950 --> 00:02:20.680
+<v Speaker 0>and doing tutorial two in advance.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:20.680 --> 00:02:23.350
+<v Speaker 0>But in that case, you probably understand this anyway.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:02:23.350 --> 00:02:24.340
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:02:26.890 --> 00:02:28.420
+<v Speaker 0>Who has completely for all?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:28.780 --> 00:02:29.950
+<v Speaker 0>Let me rephrase that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:30.640 --> 00:02:35.740
+<v Speaker 0>Who confidently understands this basic Haskell list comprehension?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:02:35.740 --> 00:02:37.600
+<v Speaker 0>The simple one with just the X there.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,95,72]}
+
+00:02:38.890 --> 00:02:39.610
+<v Speaker 0>More, more.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:39.610 --> 00:02:40.450
+<v Speaker 0>Any more?
+
+NOTE CONF {"raw":[98,98]}
+
+00:02:41.080 --> 00:02:43.870
+<v Speaker 0>Okay, so about one 12:45 third.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:50.260 --> 00:02:52.810
+<v Speaker 0>The way I think of it is because I'm a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:52.810 --> 00:02:53.590
+<v Speaker 0>mathematician.
+
+NOTE CONF {"raw":[100]}
+
+00:02:53.590 --> 00:02:56.740
+<v Speaker 0>So I think of this as Haskell's way of writing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:56.740 --> 00:02:59.710
+<v Speaker 0>the sets that I'm used to writing from school set
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:59.710 --> 00:03:00.280
+<v Speaker 0>theory.
+
+NOTE CONF {"raw":[100]}
+
+00:03:01.450 --> 00:03:04.240
+<v Speaker 0>But not all school set theory is the same.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100]}
+
+00:03:04.240 --> 00:03:06.310
+<v Speaker 0>So let's think about it from a programming point of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:06.310 --> 00:03:06.820
+<v Speaker 0>view.
+
+NOTE CONF {"raw":[100]}
+
+00:03:07.720 --> 00:03:10.570
+<v Speaker 0>This notation is chosen to look like set theory.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:10.570 --> 00:03:12.970
+<v Speaker 0>But Haskell is a program programming language.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:12.970 --> 00:03:14.440
+<v Speaker 0>So what's it really doing?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:15.610 --> 00:03:22.780
+<v Speaker 0>The construction means here's a set of variable x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,58,100,100]}
+
+00:03:22.900 --> 00:03:24.010
+<v Speaker 0>And remember.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:24.040 --> 00:03:26.530
+<v Speaker 0>Does everybody remember what the sign means?
+
+NOTE CONF {"raw":[100,100,100,100,61,100,100]}
+
+00:03:27.430 --> 00:03:27.760
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:03:27.760 --> 00:03:30.040
+<v Speaker 0>Anybody not remember what this sign means.
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100]}
+
+00:03:31.000 --> 00:03:32.830
+<v Speaker 0>Because if you don't you're stuck here okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:03:32.830 --> 00:03:36.280
+<v Speaker 0>So element of same as element.
+
+NOTE CONF {"raw":[100,76,76,100,100,26]}
+
+00:03:37.390 --> 00:03:42.010
+<v Speaker 0>So look at all the x that are elements of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,90,100,100]}
+
+00:03:42.010 --> 00:03:44.860
+<v Speaker 0>list sorry elements of things.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:03:45.610 --> 00:03:47.920
+<v Speaker 0>So this is just taking the list of things and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:47.920 --> 00:03:49.690
+<v Speaker 0>processing them one at a time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:51.820 --> 00:03:53.350
+<v Speaker 0>Um so in this case.
+
+NOTE CONF {"raw":[80,100,100,100,100]}
+
+00:03:57.500 --> 00:03:58.970
+<v Speaker 0>What did I start with?
+
+NOTE CONF {"raw":[99,100,100,100,100]}
+
+00:03:59.360 --> 00:03:59.660
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:04:00.740 --> 00:04:01.490
+<v Speaker 0>Ah.
+
+NOTE CONF {"raw":[100]}
+
+00:04:10.520 --> 00:04:11.780
+<v Speaker 0>How many have I got?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:14.450 --> 00:04:16.370
+<v Speaker 0>Oh, Stu w x y z.
+
+NOTE CONF {"raw":[52,81,96,99,99,99]}
+
+00:04:22.910 --> 00:04:24.620
+<v Speaker 0>Okay, so this is things.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:26.000 --> 00:04:27.320
+<v Speaker 0>That's what we have here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:27.620 --> 00:04:29.660
+<v Speaker 0>And the list comprehension.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:29.660 --> 00:04:32.810
+<v Speaker 0>Comprehension is saying look at every x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:32.810 --> 00:04:34.250
+<v Speaker 0>That is an element of things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:34.250 --> 00:04:36.530
+<v Speaker 0>So take these things one at a time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:38.690 --> 00:04:42.320
+<v Speaker 0>And this comma here is really just another way of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:42.320 --> 00:04:42.830
+<v Speaker 0>writing.
+
+NOTE CONF {"raw":[100]}
+
+00:04:42.830 --> 00:04:48.320
+<v Speaker 0>And we'll see later in the course other situations in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:48.320 --> 00:04:49.640
+<v Speaker 0>which we do that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:49.940 --> 00:04:51.830
+<v Speaker 0>So in some ways you might think this is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:51.830 --> 00:04:52.430
+<v Speaker 0>bit perverse.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:52.430 --> 00:04:52.790
+<v Speaker 0>Why not.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:52.790 --> 00:04:53.060
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[94]}
+
+00:04:53.060 --> 00:04:57.380
+<v Speaker 0>And But the way you should think about it is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:57.380 --> 00:04:59.540
+<v Speaker 0>here's the list of things we're considering.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:59.540 --> 00:05:01.880
+<v Speaker 0>And having got a list of things to think about,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:01.880 --> 00:05:03.260
+<v Speaker 0>which is that lot.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:03.620 --> 00:05:07.580
+<v Speaker 0>We're going to filter them out according to whether they
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:07.580 --> 00:05:09.440
+<v Speaker 0>satisfy this property or not.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:10.340 --> 00:05:13.400
+<v Speaker 0>So here's the list and here's the property or the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:13.400 --> 00:05:15.110
+<v Speaker 0>predicate in our language.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:15.320 --> 00:05:19.760
+<v Speaker 0>And the predicate says x is a triangle and x
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:19.760 --> 00:05:20.690
+<v Speaker 0>is small.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:21.950 --> 00:05:24.500
+<v Speaker 0>So we're going to go through.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:24.980 --> 00:05:27.290
+<v Speaker 0>Skip back a couple of slides because I had helpful
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:05:27.290 --> 00:05:28.130
+<v Speaker 0>diagrams.
+
+NOTE CONF {"raw":[100]}
+
+00:05:29.390 --> 00:05:33.830
+<v Speaker 0>We're going to go through all the things all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,92,100]}
+
+00:05:34.040 --> 00:05:37.280
+<v Speaker 0>every x in things little X and things and say
+
+NOTE CONF {"raw":[91,100,85,100,100,100,98,100,100,100]}
+
+00:05:37.280 --> 00:05:39.500
+<v Speaker 0>is it a triangle and small.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:40.130 --> 00:05:43.070
+<v Speaker 0>And if we do that we find that R isn't.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,65,100]}
+
+00:05:48.230 --> 00:05:51.860
+<v Speaker 0>Y is are not a small triangle because it's a
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:05:51.860 --> 00:05:52.490
+<v Speaker 0>circle.
+
+NOTE CONF {"raw":[100]}
+
+00:05:53.700 --> 00:05:55.380
+<v Speaker 0>S is a small triangle.
+
+NOTE CONF {"raw":[96,100,100,100,100]}
+
+00:05:55.440 --> 00:05:57.840
+<v Speaker 0>Hopefully T isn't.
+
+NOTE CONF {"raw":[100,97,100]}
+
+00:05:59.190 --> 00:06:02.880
+<v Speaker 0>U isn't, V is.
+
+NOTE CONF {"raw":[45,100,100,100]}
+
+00:06:09.000 --> 00:06:12.060
+<v Speaker 0>So then what we've got is a list that has
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:12.060 --> 00:06:12.810
+<v Speaker 0>been filtered.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:12.810 --> 00:06:14.910
+<v Speaker 0>So filtered is a word that is often used to
+
+NOTE CONF {"raw":[100,100,95,100,100,83,100,100,100,100]}
+
+00:06:14.910 --> 00:06:16.200
+<v Speaker 0>describe this process.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:16.740 --> 00:06:18.630
+<v Speaker 0>You have a view of a whole list of things,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:18.630 --> 00:06:20.910
+<v Speaker 0>and you want to filter out the ones that you're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:20.910 --> 00:06:21.690
+<v Speaker 0>interested in.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:22.410 --> 00:06:25.830
+<v Speaker 0>So in this case we're interested in small triangles.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:25.830 --> 00:06:29.760
+<v Speaker 0>So starting from the list things this list comprehension gives
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:29.760 --> 00:06:33.480
+<v Speaker 0>us back the small triangular things which are in this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:33.480 --> 00:06:35.490
+<v Speaker 0>case s v and x.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:37.500 --> 00:06:38.910
+<v Speaker 0>Does that help with that bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:41.610 --> 00:06:42.630
+<v Speaker 0>Somebody says yes.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:42.660 --> 00:06:46.320
+<v Speaker 0>Anybody say no because I'm not quite sure what more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:46.320 --> 00:06:48.240
+<v Speaker 0>to say other than go and program it.
+
+NOTE CONF {"raw":[100,100,100,100,100,93,100,100]}
+
+00:06:53.460 --> 00:06:54.540
+<v Speaker 0>We'll see many more of these.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:54.540 --> 00:06:57.420
+<v Speaker 0>And of course you will be doing lots of examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:58.410 --> 00:07:01.110
+<v Speaker 0>So this is the basic list comprehension.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:01.290 --> 00:07:03.750
+<v Speaker 0>Give me a list which comes from a big list
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:03.750 --> 00:07:06.210
+<v Speaker 0>and is filtered out to be just the things I'm
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:06.210 --> 00:07:06.990
+<v Speaker 0>interested in.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:08.310 --> 00:07:11.310
+<v Speaker 0>The next thing I did you may not have seen
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:11.700 --> 00:07:15.600
+<v Speaker 0>yet in the Haskell side of the course, but all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:15.600 --> 00:07:18.420
+<v Speaker 0>it's doing is saying, well, instead of giving me the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:18.420 --> 00:07:21.810
+<v Speaker 0>things that I want, give me the things that I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:21.810 --> 00:07:24.450
+<v Speaker 0>want and apply this predicate to them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:24.900 --> 00:07:28.470
+<v Speaker 0>So if I take x and apply is rid of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,72,100]}
+
+00:07:28.470 --> 00:07:31.230
+<v Speaker 0>x, I get true or false according as red is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95,100]}
+
+00:07:31.230 --> 00:07:31.800
+<v Speaker 0>x.
+
+NOTE CONF {"raw":[100]}
+
+00:07:32.820 --> 00:07:37.200
+<v Speaker 0>So in this case I've got my filtered list s,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:37.560 --> 00:07:43.740
+<v Speaker 0>v and x, and I'm just returning the value of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:43.740 --> 00:07:45.300
+<v Speaker 0>whether they are red or not.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:45.720 --> 00:07:47.550
+<v Speaker 0>And in this particular case.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:50.280 --> 00:07:53.230
+<v Speaker 0>V is red and the others are false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:53.230 --> 00:07:55.840
+<v Speaker 0>So that gives me back a list of Haskell truth
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:55.840 --> 00:07:56.620
+<v Speaker 0>values.
+
+NOTE CONF {"raw":[100]}
+
+00:07:58.060 --> 00:07:58.840
+<v Speaker 0>False.
+
+NOTE CONF {"raw":[100]}
+
+00:07:58.840 --> 00:07:59.260
+<v Speaker 0>True.
+
+NOTE CONF {"raw":[100]}
+
+00:07:59.260 --> 00:07:59.770
+<v Speaker 0>False.
+
+NOTE CONF {"raw":[100]}
+
+00:07:59.770 --> 00:08:03.100
+<v Speaker 0>So that's is red of S, is red of V,
+
+NOTE CONF {"raw":[100,67,100,94,100,100,100,100,100,100]}
+
+00:08:03.220 --> 00:08:05.950
+<v Speaker 0>and is red of x.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:09.190 --> 00:08:12.850
+<v Speaker 0>So now I've got a list filtered and I've applied
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:12.850 --> 00:08:15.460
+<v Speaker 0>a function a predicate in this case to it to
+
+NOTE CONF {"raw":[100,100,91,100,100,100,100,100,100,100]}
+
+00:08:15.460 --> 00:08:18.640
+<v Speaker 0>give me a set of truth values telling me whether
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:18.640 --> 00:08:20.920
+<v Speaker 0>each of the things I'm interested in is red or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:20.920 --> 00:08:21.460
+<v Speaker 0>not.
+
+NOTE CONF {"raw":[100]}
+
+00:08:23.110 --> 00:08:28.300
+<v Speaker 0>And the final step is a bit of Haskell magic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:28.390 --> 00:08:32.590
+<v Speaker 0>So I asked you this last time, but I forget.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:32.590 --> 00:08:35.950
+<v Speaker 0>Have you already seen the list and function in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:35.950 --> 00:08:36.610
+<v Speaker 0>FP?
+
+NOTE CONF {"raw":[100]}
+
+00:08:36.880 --> 00:08:42.400
+<v Speaker 0>Somebody thinks you have, but many people probably don't remember.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:42.430 --> 00:08:43.539
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:08:47.890 --> 00:08:50.770
+<v Speaker 0>If I apply and to.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:54.310 --> 00:08:55.000
+<v Speaker 0>A list.
+
+NOTE CONF {"raw":[92,100]}
+
+00:08:59.320 --> 00:09:05.620
+<v Speaker 0>That's exactly the same as just ending all the lists,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:09:05.620 --> 00:09:07.180
+<v Speaker 0>all the elements together.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:12.730 --> 00:09:16.870
+<v Speaker 0>So just taking a list of truth values, of course,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:16.870 --> 00:09:18.400
+<v Speaker 0>because this is a Boolean function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:18.400 --> 00:09:20.110
+<v Speaker 0>So it works on truth values.
+
+NOTE CONF {"raw":[100,100,100,100,96,100]}
+
+00:09:20.110 --> 00:09:23.200
+<v Speaker 0>So it's essentially a many place and instead of a
+
+NOTE CONF {"raw":[100,100,100,100,58,100,100,100,100,100]}
+
+00:09:23.200 --> 00:09:25.810
+<v Speaker 0>two place and which is very convenient.
+
+NOTE CONF {"raw":[93,100,70,100,100,100,100]}
+
+00:09:27.850 --> 00:09:32.650
+<v Speaker 0>Um, since we've got the board handy.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100]}
+
+00:09:40.780 --> 00:09:46.960
+<v Speaker 0>What is the value of that Haskell expression and of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:46.960 --> 00:09:48.070
+<v Speaker 0>the empty list?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:55.340 --> 00:09:57.140
+<v Speaker 0>So I've heard both answers.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:57.140 --> 00:10:00.170
+<v Speaker 0>So let's think about it for about another 10s.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:06.200 --> 00:10:07.190
+<v Speaker 0>And let's take a vote.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:07.190 --> 00:10:09.200
+<v Speaker 0>So who thinks it's false?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:11.570 --> 00:10:12.050
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:12.050 --> 00:10:13.490
+<v Speaker 0>Who thinks it's true?
+
+NOTE CONF {"raw":[100,100,99,100]}
+
+00:10:15.290 --> 00:10:20.360
+<v Speaker 0>Majority and quite a large number of people, as usual,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:20.360 --> 00:10:21.290
+<v Speaker 0>who are undecided.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:21.290 --> 00:10:23.690
+<v Speaker 0>I really wish I had an electroshock mechanism.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:10:24.890 --> 00:10:25.130
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:10:28.100 --> 00:10:30.380
+<v Speaker 0>So the answer is true.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:31.310 --> 00:10:34.310
+<v Speaker 0>And we will see that coming up again in logic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:34.910 --> 00:10:39.020
+<v Speaker 0>Um, I talked did I talk about vacuous for one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,90,69,100]}
+
+00:10:39.020 --> 00:10:41.600
+<v Speaker 0>of you emailed me before the course or earlier in
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,57,100]}
+
+00:10:41.600 --> 00:10:45.530
+<v Speaker 0>the course and asked about and of nothing of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:45.530 --> 00:10:46.370
+<v Speaker 0>empty set?
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:47.240 --> 00:10:47.480
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:10:48.890 --> 00:10:51.860
+<v Speaker 0>It's something that took a long while for logic to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:51.860 --> 00:10:58.730
+<v Speaker 0>decide that the and of no things should be true.
+
+NOTE CONF {"raw":[100,100,100,100,100,49,100,100,100,100]}
+
+00:10:59.690 --> 00:11:01.970
+<v Speaker 0>But let me give you a bit of intuition now,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:01.970 --> 00:11:03.950
+<v Speaker 0>and we'll come back to it later in the course.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:03.950 --> 00:11:06.740
+<v Speaker 0>If you think about what and is doing set, theoretically
+
+NOTE CONF {"raw":[100,100,100,100,100,93,100,100,100,100]}
+
+00:11:06.740 --> 00:11:07.970
+<v Speaker 0>it's an intersection.
+
+NOTE CONF {"raw":[98,100,100]}
+
+00:11:10.880 --> 00:11:13.820
+<v Speaker 0>So if I have the and of two properties.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:15.950 --> 00:11:20.060
+<v Speaker 0>Then and is their intersection then if I add a
+
+NOTE CONF {"raw":[100,100,100,87,100,100,100,100,100,100]}
+
+00:11:20.060 --> 00:11:20.960
+<v Speaker 0>third one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:23.300 --> 00:11:25.730
+<v Speaker 0>I need to rub out some stuff because only the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:25.730 --> 00:11:27.200
+<v Speaker 0>bit in the middle is true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:27.200 --> 00:11:30.260
+<v Speaker 0>And every time I put another thing in the and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,76]}
+
+00:11:30.830 --> 00:11:32.990
+<v Speaker 0>fewer and fewer things are true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:33.890 --> 00:11:37.040
+<v Speaker 0>So if I in order for that to make sense,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:37.040 --> 00:11:40.970
+<v Speaker 0>when I had no predators in the hand, everything must
+
+NOTE CONF {"raw":[100,100,100,100,55,100,100,55,100,100]}
+
+00:11:40.970 --> 00:11:41.750
+<v Speaker 0>have been true.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:45.770 --> 00:11:48.210
+<v Speaker 0>And for those of you who are getting on well
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:48.210 --> 00:11:51.510
+<v Speaker 0>with Haskell and recursion, write out the definition.
+
+NOTE CONF {"raw":[100,100,100,100,89,66,100,100]}
+
+00:11:51.510 --> 00:11:54.600
+<v Speaker 0>Implement the and the list and function in terms of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:54.600 --> 00:12:00.510
+<v Speaker 0>the binary and function and standard list definitions and see
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:00.510 --> 00:12:02.700
+<v Speaker 0>what you do, what what you get there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:04.320 --> 00:12:07.440
+<v Speaker 0>But we're only not thinking about that right now.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:12:07.440 --> 00:12:09.210
+<v Speaker 0>We will think about this later on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:10.230 --> 00:12:14.070
+<v Speaker 0>So we have and just as an operator, which takes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:14.070 --> 00:12:16.920
+<v Speaker 0>a list of truth values and collapses them together by
+
+NOTE CONF {"raw":[100,100,100,85,100,100,100,100,100,100]}
+
+00:12:16.920 --> 00:12:19.500
+<v Speaker 0>applying and between all of them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:20.700 --> 00:12:22.860
+<v Speaker 0>So what's this statement now saying?
+
+NOTE CONF {"raw":[100,100,99,100,100,100]}
+
+00:12:22.890 --> 00:12:30.270
+<v Speaker 0>It's saying that's is red and V is red and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:30.810 --> 00:12:35.700
+<v Speaker 0>X is red, which is false because S is not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:35.700 --> 00:12:36.120
+<v Speaker 0>red.
+
+NOTE CONF {"raw":[100]}
+
+00:12:36.570 --> 00:12:40.320
+<v Speaker 0>And in fact, that's enough because it's a list of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:40.320 --> 00:12:40.620
+<v Speaker 0>ands.
+
+NOTE CONF {"raw":[61]}
+
+00:12:40.620 --> 00:12:42.510
+<v Speaker 0>As soon as you see a false value, you know
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:42.510 --> 00:12:43.770
+<v Speaker 0>that it's going to be false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:45.120 --> 00:12:49.380
+<v Speaker 0>But what we've done here is take this quantifier first
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:49.380 --> 00:12:53.010
+<v Speaker 0>order looking thing every, which is a nasty, complicated thing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:53.010 --> 00:12:54.750
+<v Speaker 0>and turned it into a many place.
+
+NOTE CONF {"raw":[100,99,100,100,98,97,100]}
+
+00:12:54.750 --> 00:12:58.680
+<v Speaker 0>And and we'll be doing that all the time because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:58.680 --> 00:13:03.900
+<v Speaker 0>they're fundamentally the same and corresponds to every for all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:03.900 --> 00:13:08.730
+<v Speaker 0>in the same way that or corresponds to there exists
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100,100]}
+
+00:13:08.730 --> 00:13:09.720
+<v Speaker 0>or some.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:12.660 --> 00:13:13.230
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:13.440 --> 00:13:15.300
+<v Speaker 0>Does that help a little bit for some of you?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:17.370 --> 00:13:18.120
+<v Speaker 0>Some.
+
+NOTE CONF {"raw":[100]}
+
+00:13:18.210 --> 00:13:19.170
+<v Speaker 0>Probably the best I can hope.
+
+NOTE CONF {"raw":[99,98,100,100,100,100]}
+
+00:13:19.260 --> 00:13:20.340
+<v Speaker 0>Well, the rest of you.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:20.340 --> 00:13:22.320
+<v Speaker 0>So you're going to do the tutorial so you will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,75,100,100,100]}
+
+00:13:22.320 --> 00:13:23.640
+<v Speaker 0>be forced to think about it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:24.720 --> 00:13:28.440
+<v Speaker 0>Use Piazza as and when you have doubts or questions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:28.440 --> 00:13:29.340
+<v Speaker 0>As always.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:30.450 --> 00:13:34.890
+<v Speaker 0>And because time is finite, I will go on to
+
+NOTE CONF {"raw":[66,100,100,100,100,100,100,100,100,100]}
+
+00:13:34.890 --> 00:13:36.720
+<v Speaker 0>what is really the main topic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:38.430 --> 00:13:40.410
+<v Speaker 0>So this is by way of an example, because we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:40.410 --> 00:13:43.830
+<v Speaker 0>going to use this Haskell example in order to check
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:43.830 --> 00:13:46.390
+<v Speaker 0>our understanding of logic and to show how logic can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:46.390 --> 00:13:47.500
+<v Speaker 0>be programmed.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:50.470 --> 00:13:56.020
+<v Speaker 0>So Haskell is a 1980s, if I remember rightly, programming
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:56.020 --> 00:13:56.770
+<v Speaker 0>language.
+
+NOTE CONF {"raw":[100]}
+
+00:13:57.760 --> 00:14:04.750
+<v Speaker 0>Now we're back in 2300 BC, and this is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:04.750 --> 00:14:11.620
+<v Speaker 0>translation of the slightly unhelpful definition, or rather, it's a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:11.620 --> 00:14:16.060
+<v Speaker 0>slightly unhelpful translation of a definition from Aristotle of what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:16.060 --> 00:14:17.320
+<v Speaker 0>a syllogism is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:18.850 --> 00:14:20.740
+<v Speaker 0>A syllogism is discourse.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:20.740 --> 00:14:23.590
+<v Speaker 0>In the original word there was logos, this word for
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100,100,100,100]}
+
+00:14:23.590 --> 00:14:27.460
+<v Speaker 0>reasoning, discourse, any thing to do with words.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:28.210 --> 00:14:32.740
+<v Speaker 0>A syllogism is discourse in which certain things being stated.
+
+NOTE CONF {"raw":[76,100,100,100,100,100,100,100,100,100]}
+
+00:14:32.740 --> 00:14:36.430
+<v Speaker 0>So you make some assumptions and state them something other
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:36.430 --> 00:14:37.780
+<v Speaker 0>than what is stated.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:37.780 --> 00:14:41.920
+<v Speaker 0>So you try to show something new follows of necessity
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:41.920 --> 00:14:43.420
+<v Speaker 0>from those things.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:43.630 --> 00:14:46.600
+<v Speaker 0>This is a very 19th century translation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:46.600 --> 00:14:48.760
+<v Speaker 0>I think we might translate it differently today.
+
+NOTE CONF {"raw":[100,100,100,100,100,64,100,100]}
+
+00:14:50.500 --> 00:14:56.470
+<v Speaker 0>So here is the classic example, slightly adapted for modern
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:56.470 --> 00:14:57.520
+<v Speaker 0>sensibilities.
+
+NOTE CONF {"raw":[100]}
+
+00:14:58.900 --> 00:15:02.860
+<v Speaker 0>So the standard example of a syllogism goes like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:03.310 --> 00:15:04.990
+<v Speaker 0>All Greeks are human.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:05.950 --> 00:15:08.110
+<v Speaker 0>I think I know some cats who might disagree with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:08.110 --> 00:15:09.040
+<v Speaker 0>that, but never mind.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:09.070 --> 00:15:12.520
+<v Speaker 0>So for our purposes, all Greeks are human.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:14.230 --> 00:15:16.150
+<v Speaker 0>All humans are mortal.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:16.540 --> 00:15:20.200
+<v Speaker 0>Which is true despite Elon Musk and Co's best efforts
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,99,100,100]}
+
+00:15:20.200 --> 00:15:20.950
+<v Speaker 0>so far.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:22.240 --> 00:15:26.110
+<v Speaker 0>From that, it follows that all Greeks are mortal.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:31.330 --> 00:15:33.640
+<v Speaker 0>Do you all accept that as a valid piece of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:33.640 --> 00:15:34.330
+<v Speaker 0>reasoning?
+
+NOTE CONF {"raw":[100]}
+
+00:15:38.740 --> 00:15:40.960
+<v Speaker 0>Does anybody have any doubts about it as a valid
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:15:40.960 --> 00:15:41.870
+<v Speaker 0>piece of reasoning.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:44.120 --> 00:15:46.100
+<v Speaker 0>Is to say.
+
+NOTE CONF {"raw":[52,86,95]}
+
+00:15:47.810 --> 00:15:51.440
+<v Unknown>Otherwise, all payments increase.
+
+NOTE CONF {"raw":[100,57,54,44]}
+
+00:15:52.880 --> 00:15:53.600
+<v Speaker 0>Ah, yes.
+
+NOTE CONF {"raw":[38,100]}
+
+00:15:53.600 --> 00:15:54.920
+<v Speaker 0>So not all humans are Greeks.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:54.920 --> 00:15:57.050
+<v Speaker 0>But of course it's not saying all humans are Greek,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,66]}
+
+00:15:57.050 --> 00:15:59.060
+<v Speaker 0>so it's not making a statement about humans.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:59.060 --> 00:16:02.180
+<v Speaker 0>So the fact that all X or y is completely
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:02.180 --> 00:16:05.030
+<v Speaker 0>different from all y or x is important.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100]}
+
+00:16:06.770 --> 00:16:08.630
+<v Speaker 0>Um, this does of course assume.
+
+NOTE CONF {"raw":[91,100,100,100,100,100]}
+
+00:16:08.630 --> 00:16:10.370
+<v Speaker 0>Well, no, it doesn't assume anything.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:10.370 --> 00:16:12.800
+<v Speaker 0>For this to make sense to us, we assume that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:12.800 --> 00:16:16.040
+<v Speaker 0>Greeks, human and mortal, have their usual meanings.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:16.400 --> 00:16:21.800
+<v Speaker 0>But could you put any set of adjectives or nouns
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:22.130 --> 00:16:25.100
+<v Speaker 0>in the appropriate places for Greeks, human and mortal?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:25.100 --> 00:16:26.630
+<v Speaker 0>And this would still make sense.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:29.510 --> 00:16:34.190
+<v Speaker 0>Okay, so all footballs are bars, all bars of foobar,
+
+NOTE CONF {"raw":[100,100,100,41,100,100,100,100,87,96]}
+
+00:16:34.190 --> 00:16:36.380
+<v Speaker 0>therefore all verbals are foobar.
+
+NOTE CONF {"raw":[100,100,100,89,97]}
+
+00:16:37.880 --> 00:16:38.870
+<v Speaker 0>Valid reasoning.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:38.870 --> 00:16:42.650
+<v Speaker 0>Although It is intentionally nonsensical.
+
+NOTE CONF {"raw":[100,100,100,73,89]}
+
+00:16:43.850 --> 00:16:48.710
+<v Speaker 0>So that's what logic is about producing rules of reasoning
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:16:48.710 --> 00:16:53.480
+<v Speaker 0>that are valid in all universes, whatever the actual meanings
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:53.480 --> 00:16:55.070
+<v Speaker 0>of these things are.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:57.770 --> 00:17:02.150
+<v Speaker 0>Um, just as an aside, I said this was a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:02.150 --> 00:17:06.170
+<v Speaker 0>slight variation of the classic example of the English version
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:06.170 --> 00:17:07.579
+<v Speaker 0>of the classic example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:07.670 --> 00:17:11.329
+<v Speaker 0>Any guesses on what the standard wording of this was?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:11.329 --> 00:17:13.040
+<v Speaker 0>Up to about 1970.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:19.220 --> 00:17:23.240
+<v Speaker 0>So yep, all Greeks are men.
+
+NOTE CONF {"raw":[93,96,100,100,100,100]}
+
+00:17:23.360 --> 00:17:25.550
+<v Speaker 0>All men are immortal.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:26.150 --> 00:17:28.040
+<v Speaker 0>Therefore, all Greeks immortal.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:28.490 --> 00:17:34.760
+<v Speaker 0>And if you want, that wasn't just standard sexism of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:34.760 --> 00:17:35.510
+<v Speaker 0>Europeans.
+
+NOTE CONF {"raw":[100]}
+
+00:17:35.510 --> 00:17:37.640
+<v Speaker 0>Go back and read about the position of women in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:37.640 --> 00:17:39.050
+<v Speaker 0>ancient Greek society.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:39.990 --> 00:17:43.230
+<v Speaker 0>Um, they were not actually fully human in the perception
+
+NOTE CONF {"raw":[73,100,100,100,100,100,100,100,100,100]}
+
+00:17:43.230 --> 00:17:44.010
+<v Speaker 0>of the time.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:46.950 --> 00:17:48.900
+<v Speaker 0>But I don't think Aristotle actually said that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:48.900 --> 00:17:51.000
+<v Speaker 0>I think he used a word which just meant human,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:51.000 --> 00:17:52.590
+<v Speaker 0>but it then got translated.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:55.590 --> 00:18:00.690
+<v Speaker 0>There are many, many, many ways to write a syllogism.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:02.190 --> 00:18:05.340
+<v Speaker 0>So this is one way of writing it as a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:05.340 --> 00:18:06.540
+<v Speaker 0>piece of set theory.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:06.870 --> 00:18:10.020
+<v Speaker 0>And this goes back to what you were saying just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:10.020 --> 00:18:13.410
+<v Speaker 0>now about Greeks and humans and the other way round.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,69]}
+
+00:18:13.410 --> 00:18:15.540
+<v Speaker 0>So here I'm writing this as a piece of set
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:15.540 --> 00:18:16.770
+<v Speaker 0>theoretic notation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:18.000 --> 00:18:20.790
+<v Speaker 0>You should be able to read this fluently by now,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:20.790 --> 00:18:23.790
+<v Speaker 0>because we asked you to revise set theory or learn
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:23.790 --> 00:18:25.530
+<v Speaker 0>it if you didn't get it at school.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:26.610 --> 00:18:29.040
+<v Speaker 0>So if you don't read this fluently, try to get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:29.040 --> 00:18:31.950
+<v Speaker 0>to a point where you do it says the set
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:31.950 --> 00:18:36.330
+<v Speaker 0>of x such that x is our Greek is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:36.330 --> 00:18:38.910
+<v Speaker 0>subset of the set of x such that x is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:38.910 --> 00:18:39.600
+<v Speaker 0>a human.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:40.680 --> 00:18:42.660
+<v Speaker 0>In other words, all Greeks are human.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:43.050 --> 00:18:45.150
+<v Speaker 0>And then the rest of it is just the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:45.270 --> 00:18:47.250
+<v Speaker 0>So the reasoning is the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:47.250 --> 00:18:50.100
+<v Speaker 0>All I've done is change the language I'm using to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:50.100 --> 00:18:52.590
+<v Speaker 0>describe the categorical statements.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:55.590 --> 00:18:59.640
+<v Speaker 0>Modern logic, or at least in modern logic, as we're
+
+NOTE CONF {"raw":[100,100,85,100,100,100,100,100,100,100]}
+
+00:18:59.640 --> 00:19:03.960
+<v Speaker 0>going to write it in this course, we tend to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:03.960 --> 00:19:05.400
+<v Speaker 0>write it like this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:05.610 --> 00:19:07.470
+<v Speaker 0>So here we've missed out the x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:07.470 --> 00:19:09.570
+<v Speaker 0>We've taken the x out of the equation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:10.890 --> 00:19:14.640
+<v Speaker 0>And instead of using nouns like Greeks, we're just using
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:14.640 --> 00:19:15.930
+<v Speaker 0>predicates everywhere.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:16.230 --> 00:19:20.550
+<v Speaker 0>So out here there is some kind of implicit well
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:20.550 --> 00:19:25.230
+<v Speaker 0>actually out here for all x x is Greek, implies
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:25.590 --> 00:19:33.240
+<v Speaker 0>x is human and x is human, implies x is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:33.240 --> 00:19:38.080
+<v Speaker 0>mortal and x is Greek implies X is mortal.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91,100,100]}
+
+00:19:38.230 --> 00:19:43.510
+<v Speaker 0>So the sand, the modern logical notation has this horizontal
+
+NOTE CONF {"raw":[100,100,75,100,100,100,100,100,100,100]}
+
+00:19:43.510 --> 00:19:44.230
+<v Speaker 0>line.
+
+NOTE CONF {"raw":[100]}
+
+00:19:44.230 --> 00:19:47.350
+<v Speaker 0>And what's above the line is the stuff we're assuming.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:19:47.560 --> 00:19:50.170
+<v Speaker 0>And what's below the line is the stuff we're claiming
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:50.200 --> 00:19:54.130
+<v Speaker 0>to be true as a consequence or in traditional language
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:54.130 --> 00:19:58.360
+<v Speaker 0>premises and conclusion or consequence.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:01.000 --> 00:20:05.020
+<v Speaker 0>So this this statement here, this symbol here is pronounced
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:05.020 --> 00:20:10.240
+<v Speaker 0>in various ways, I may sometimes say implies I may
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:10.240 --> 00:20:12.310
+<v Speaker 0>sometimes say entails.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:20:14.080 --> 00:20:16.870
+<v Speaker 0>Um, both of them are slightly awkward because it's being
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:20:16.870 --> 00:20:19.780
+<v Speaker 0>used in a sense subtly different from either of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:19.780 --> 00:20:21.250
+<v Speaker 0>other senses of the word.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:21.760 --> 00:20:26.200
+<v Speaker 0>But think of this as being a statement that if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:26.200 --> 00:20:29.530
+<v Speaker 0>the predicate Greek implies the predicate human in the sense
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:29.530 --> 00:20:32.950
+<v Speaker 0>that for any x Greek of x implies human of
+
+NOTE CONF {"raw":[100,100,100,92,100,100,100,100,100,100]}
+
+00:20:32.950 --> 00:20:35.380
+<v Speaker 0>x, and that's what this means.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:37.180 --> 00:20:39.310
+<v Speaker 0>Does it matter what language you write it in?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:39.340 --> 00:20:43.360
+<v Speaker 0>Well, not really, because it all means the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:43.690 --> 00:20:46.720
+<v Speaker 0>But the advantage of a formal notation is that there
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:46.720 --> 00:20:51.040
+<v Speaker 0>is no room for arguing about what the English means.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:52.270 --> 00:20:53.590
+<v Speaker 0>And we'll see later on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:53.590 --> 00:20:56.110
+<v Speaker 0>Well, actually, even in this example, there is some room
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:56.110 --> 00:20:58.720
+<v Speaker 0>for arguing about what the English means, but we will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:58.720 --> 00:21:00.760
+<v Speaker 0>come to that a bit later.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:04.240 --> 00:21:09.190
+<v Speaker 0>Um, so a few minutes ago I said, does it
+
+NOTE CONF {"raw":[91,100,100,100,100,100,100,100,100,100]}
+
+00:21:09.190 --> 00:21:10.900
+<v Speaker 0>matter what symbols we use?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:11.650 --> 00:21:14.320
+<v Speaker 0>If this is a valid piece of reasoning for Greek,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:14.320 --> 00:21:18.670
+<v Speaker 0>human and mortal, then it's a valid piece of reasoning
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:18.670 --> 00:21:22.090
+<v Speaker 0>for verbal bangers and foobar or whatever I said.
+
+NOTE CONF {"raw":[100,91,44,100,44,49,100,100,100]}
+
+00:21:23.290 --> 00:21:29.650
+<v Speaker 0>So we can write it symbolically saying if A entails
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:29.680 --> 00:21:35.300
+<v Speaker 0>B and b entails C, then A entails C, whatever
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:35.300 --> 00:21:39.890
+<v Speaker 0>actual values predicates we plug in for A, B, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:39.890 --> 00:21:40.370
+<v Speaker 0>C.
+
+NOTE CONF {"raw":[100]}
+
+00:21:43.040 --> 00:21:45.860
+<v Speaker 0>So we've introduced a bunch of new notation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:45.890 --> 00:21:49.070
+<v Speaker 0>Any questions about this notation and what it means?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:21:49.100 --> 00:21:54.560
+<v Speaker 0>Anybody unclear about the meaning of the basic syllogism?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:21:57.740 --> 00:21:59.960
+<v Speaker 2>Sorry the hypothetical.
+
+NOTE CONF {"raw":[100,45,99]}
+
+00:22:01.580 --> 00:22:03.740
+<v Speaker 0>Is it the same as a hypothetical syllogism?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:03.740 --> 00:22:05.720
+<v Speaker 0>I don't know, because I don't know what a hypothetical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:05.720 --> 00:22:06.440
+<v Speaker 0>syllogism is.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:06.440 --> 00:22:08.090
+<v Speaker 0>It sounds like a piece of philosophy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:08.900 --> 00:22:09.140
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[57]}
+
+00:22:09.860 --> 00:22:13.070
+<v Speaker 2>It's so if you ask me.
+
+NOTE CONF {"raw":[99,100,100,100,98,58]}
+
+00:22:17.690 --> 00:22:22.040
+<v Speaker 0>P implies q, q implies f, p implies f s
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:22:22.040 --> 00:22:22.400
+<v Speaker 0>or whatever.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:22.400 --> 00:22:22.820
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:22:22.820 --> 00:22:23.930
+<v Speaker 0>So that's the same.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:26.420 --> 00:22:33.620
+<v Speaker 0>Um, so the reason I'm being slightly cautious is because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:33.620 --> 00:22:36.110
+<v Speaker 0>there is an x implicit in here.
+
+NOTE CONF {"raw":[100,100,100,86,100,100,100]}
+
+00:22:36.350 --> 00:22:39.350
+<v Speaker 0>Whereas if you say p implies q and q implies
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:39.350 --> 00:22:39.710
+<v Speaker 0>r.
+
+NOTE CONF {"raw":[99]}
+
+00:22:39.740 --> 00:22:41.150
+<v Speaker 0>Therefore p implies r.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:41.180 --> 00:22:43.850
+<v Speaker 0>That's a statement of propositional logic as well.
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100]}
+
+00:22:43.850 --> 00:22:46.430
+<v Speaker 0>So are we talking about propositions or are we talking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:46.430 --> 00:22:47.570
+<v Speaker 0>about predicates.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:47.900 --> 00:22:50.090
+<v Speaker 0>So if you do propositional logic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:23:04.970 --> 00:23:08.510
+<v Speaker 0>Then this is a valid rule of propositional logic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:08.840 --> 00:23:10.430
+<v Speaker 0>And we're doing exactly the same thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:10.430 --> 00:23:13.040
+<v Speaker 0>But we're lifting it up to talk about predicates which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:13.040 --> 00:23:17.180
+<v Speaker 0>apply to objects and not just about simple propositions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:24.140 --> 00:23:24.440
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[98]}
+
+00:23:28.640 --> 00:23:29.810
+<v Speaker 0>It's a very good question.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:30.500 --> 00:23:32.550
+<v Speaker 0>Um, can you have more than one predicate on the
+
+NOTE CONF {"raw":[54,100,100,100,100,100,100,100,100,100]}
+
+00:23:32.550 --> 00:23:33.750
+<v Speaker 0>right side here, you mean.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:34.470 --> 00:23:35.400
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:23:35.400 --> 00:23:36.900
+<v Speaker 0>We will come to that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:36.930 --> 00:23:38.550
+<v Speaker 0>Do you want to hazard a guess as to what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:38.550 --> 00:23:39.690
+<v Speaker 0>it might mean now?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:23:41.520 --> 00:23:42.270
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:23:43.230 --> 00:23:46.470
+<v Speaker 0>So we will see a bit later that we can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:46.470 --> 00:23:49.470
+<v Speaker 0>put multiple predicates on the left and multiple predicates on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:49.470 --> 00:23:50.100
+<v Speaker 0>the right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:51.060 --> 00:23:53.400
+<v Speaker 0>But for the moment, we're going to stick to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:53.400 --> 00:23:58.830
+<v Speaker 0>classic Greek full form, Aristotle's form, where we just have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:58.980 --> 00:24:01.050
+<v Speaker 0>one on the left and one on the right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:04.050 --> 00:24:07.080
+<v Speaker 0>Okay, now I think we agreed when I first brought
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:24:07.080 --> 00:24:11.010
+<v Speaker 0>the syllogism up, that this is a piece of valid
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:11.010 --> 00:24:11.550
+<v Speaker 0>reasoning.
+
+NOTE CONF {"raw":[100]}
+
+00:24:11.550 --> 00:24:13.530
+<v Speaker 0>Whatever A, B, and C are.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:14.520 --> 00:24:17.040
+<v Speaker 0>I don't think there's any logic you would want to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:17.040 --> 00:24:19.590
+<v Speaker 0>work with, in which case in which this is not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:19.590 --> 00:24:21.480
+<v Speaker 0>a good piece of reasoning because it would be a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:21.480 --> 00:24:22.980
+<v Speaker 0>very strange world.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:27.720 --> 00:24:31.170
+<v Speaker 0>Okay, so that's the syllogism.
+
+NOTE CONF {"raw":[100,100,100,100,84]}
+
+00:24:31.170 --> 00:24:33.630
+<v Speaker 0>Syllogisms are what we're going to be working with for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:33.630 --> 00:24:35.310
+<v Speaker 0>the next couple of weeks.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:36.990 --> 00:24:40.650
+<v Speaker 0>And the first thing I'm going to do with them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:40.740 --> 00:24:45.120
+<v Speaker 0>is do a slight diversion into some pictures again, and
+
+NOTE CONF {"raw":[100,62,100,100,100,100,100,100,100,100]}
+
+00:24:45.120 --> 00:24:49.260
+<v Speaker 0>discuss a way of checking a syllogism, or indeed another
+
+NOTE CONF {"raw":[100,100,100,100,100,89,100,100,100,100]}
+
+00:24:49.260 --> 00:24:53.070
+<v Speaker 0>logical statement to work out whether it's sound or not.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,100,100,100]}
+
+00:24:54.150 --> 00:24:58.350
+<v Speaker 0>And this is actually a reasonably sophisticated piece of graphical
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:24:58.350 --> 00:25:00.300
+<v Speaker 0>reasoning that we're going to introduce.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:00.600 --> 00:25:02.490
+<v Speaker 0>So let's hope it works.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:04.560 --> 00:25:11.100
+<v Speaker 0>So remember what I did last time I said that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:11.520 --> 00:25:15.180
+<v Speaker 0>if we're trying to determine whether every red triangle is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:15.180 --> 00:25:18.660
+<v Speaker 0>small in a particular universe, like the universe of things,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,75,100]}
+
+00:25:18.870 --> 00:25:22.260
+<v Speaker 0>then we did something like, look at the red region,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:22.260 --> 00:25:26.700
+<v Speaker 0>look at the triangular region, and see if there was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:26.700 --> 00:25:29.130
+<v Speaker 0>anything that was outside the small region.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:29.130 --> 00:25:31.180
+<v Speaker 0>So we were looking for a counterexample.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99]}
+
+00:25:33.310 --> 00:25:35.830
+<v Speaker 0>That was something we did with one particular universe.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:35.860 --> 00:25:38.200
+<v Speaker 0>I suggested that maybe that's how we think about it
+
+NOTE CONF {"raw":[100,100,86,100,99,100,100,100,100,100]}
+
+00:25:38.200 --> 00:25:39.220
+<v Speaker 0>when we do it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:39.610 --> 00:25:41.830
+<v Speaker 0>How can we make it more abstract?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:43.300 --> 00:25:44.890
+<v Speaker 0>Well, what is a Venn diagram?
+
+NOTE CONF {"raw":[100,100,100,94,100,100]}
+
+00:25:45.520 --> 00:25:49.240
+<v Speaker 0>I suppose the first question is, does everybody remember exactly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:49.240 --> 00:25:50.650
+<v Speaker 0>what a Venn diagram is?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:52.630 --> 00:25:55.360
+<v Speaker 0>Who can remember the difference between a Venn diagram and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:55.360 --> 00:25:56.530
+<v Speaker 0>an Euler diagram?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:59.050 --> 00:26:01.060
+<v Speaker 0>Well, that's fair enough, because I didn't know the difference
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:01.060 --> 00:26:04.690
+<v Speaker 0>until I started teaching this course, and I'm not sure
+
+NOTE CONF {"raw":[100,100,100,100,100,100,52,100,100,100]}
+
+00:26:04.690 --> 00:26:05.680
+<v Speaker 0>I ever had known it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:06.400 --> 00:26:08.890
+<v Speaker 0>You will see Euler diagrams used sometime.
+
+NOTE CONF {"raw":[100,100,100,100,45,100,100]}
+
+00:26:08.890 --> 00:26:11.020
+<v Speaker 0>The main difference is that they don't include the whole
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:11.020 --> 00:26:11.860
+<v Speaker 0>universe.
+
+NOTE CONF {"raw":[100]}
+
+00:26:11.860 --> 00:26:14.320
+<v Speaker 0>So this is the whole universe.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:26:14.350 --> 00:26:19.210
+<v Speaker 0>Here we have the three properties within the universe the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,61,100,100]}
+
+00:26:19.210 --> 00:26:21.910
+<v Speaker 0>A things, the B things and the C things.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100]}
+
+00:26:23.410 --> 00:26:28.450
+<v Speaker 0>And that gives us eight possible regions as we were
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:28.450 --> 00:26:31.990
+<v Speaker 0>talking in the first lecture about coding stuff.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:33.550 --> 00:26:37.450
+<v Speaker 0>And so we can naturally give a binary code to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:37.450 --> 00:26:39.430
+<v Speaker 0>each of the regions of the diagram.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:40.750 --> 00:26:46.360
+<v Speaker 0>So this stuff is the outside and it's 000 because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:46.360 --> 00:26:50.140
+<v Speaker 0>it's where A is false, B is false, and C
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:50.140 --> 00:26:51.010
+<v Speaker 0>is false.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:51.400 --> 00:26:56.470
+<v Speaker 0>This region here is 011 because it's where A is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:56.470 --> 00:27:01.900
+<v Speaker 0>false, B is true and c is true and so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:01.900 --> 00:27:02.290
+<v Speaker 0>on.
+
+NOTE CONF {"raw":[100]}
+
+00:27:03.490 --> 00:27:07.270
+<v Speaker 0>So we have a nice simple binary notation to describe
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:07.270 --> 00:27:09.490
+<v Speaker 0>the eight regions of a Venn diagram.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100]}
+
+00:27:10.900 --> 00:27:13.480
+<v Speaker 0>And we can think about programming that up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:13.630 --> 00:27:16.450
+<v Speaker 0>And I don't think I'm going to make you programming
+
+NOTE CONF {"raw":[57,100,100,100,100,100,100,100,100,100]}
+
+00:27:16.450 --> 00:27:16.780
+<v Speaker 0>it up.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:16.780 --> 00:27:18.280
+<v Speaker 0>But it's quite fun to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:20.200 --> 00:27:24.340
+<v Speaker 0>So having got a way to talk about all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:24.340 --> 00:27:28.520
+<v Speaker 0>possible combinations of three Predicates or three properties.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:28.520 --> 00:27:34.010
+<v Speaker 0>Rather, predicates say, then we can use a Venn diagram
+
+NOTE CONF {"raw":[75,100,100,100,100,100,100,100,100,100]}
+
+00:27:34.010 --> 00:27:36.770
+<v Speaker 0>to do reasoning about the relationship between them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:36.890 --> 00:27:40.430
+<v Speaker 0>And it works because the Venn diagram covers every possible
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:40.430 --> 00:27:43.910
+<v Speaker 0>way that the properties can combine in truth, true and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:43.910 --> 00:27:44.540
+<v Speaker 0>false.
+
+NOTE CONF {"raw":[100]}
+
+00:27:46.100 --> 00:27:49.520
+<v Speaker 0>I'm going to introduce a bunch of notational conventions.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100]}
+
+00:27:50.180 --> 00:27:53.090
+<v Speaker 0>These are not universal notational conventions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:53.090 --> 00:27:57.980
+<v Speaker 0>You might see different ones elsewhere, but hopefully in this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:57.980 --> 00:28:00.500
+<v Speaker 0>course we will be fairly consistent.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:02.240 --> 00:28:05.990
+<v Speaker 0>So when I draw a diagram like this, I'm going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:05.990 --> 00:28:11.570
+<v Speaker 0>to use light grey shading like this to indicate graphically
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:28:11.570 --> 00:28:14.720
+<v Speaker 0>that this region here has nothing in it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:15.170 --> 00:28:16.220
+<v Speaker 0>What is this region?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:16.220 --> 00:28:18.740
+<v Speaker 0>It's where A is false and B is true and
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,100]}
+
+00:28:18.740 --> 00:28:19.790
+<v Speaker 0>C is true.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:19.790 --> 00:28:22.790
+<v Speaker 0>So this is the assertion that there are no objects
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:22.790 --> 00:28:23.960
+<v Speaker 0>in this region.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:25.460 --> 00:28:25.760
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:28:25.760 --> 00:28:26.090
+<v Speaker 0>With that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:26.090 --> 00:28:27.080
+<v Speaker 0>As a notation.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:28.190 --> 00:28:29.960
+<v Speaker 0>Hopefully it's intuitive.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:30.800 --> 00:28:32.240
+<v Speaker 0>That says you can't go there.
+
+NOTE CONF {"raw":[32,100,100,100,100,100]}
+
+00:28:34.100 --> 00:28:38.630
+<v Speaker 0>Sometimes I want to say that there is something in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:38.630 --> 00:28:40.010
+<v Speaker 0>one of these regions.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:41.300 --> 00:28:45.320
+<v Speaker 0>And the notation there is a slightly trickier.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:45.470 --> 00:28:48.860
+<v Speaker 0>I'm just going to choose a random letter like x
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:49.580 --> 00:28:51.380
+<v Speaker 0>and write it in there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:51.470 --> 00:28:53.780
+<v Speaker 0>And what I mean by doing that in this form
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:53.780 --> 00:28:58.880
+<v Speaker 0>of reasoning is to say that there is something in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:58.880 --> 00:29:02.180
+<v Speaker 0>this region here, which is where A is true and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:02.180 --> 00:29:04.190
+<v Speaker 0>B is true, and C is false.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:06.800 --> 00:29:07.070
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:29:07.070 --> 00:29:11.090
+<v Speaker 0>So that's Venn diagrams and two pieces of notation for
+
+NOTE CONF {"raw":[100,100,100,95,95,100,100,100,100,100]}
+
+00:29:11.510 --> 00:29:14.960
+<v Speaker 0>talking about whether there is something in a region.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:29:15.770 --> 00:29:18.530
+<v Speaker 0>And if you're reading textbooks you will see people use
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:18.530 --> 00:29:22.010
+<v Speaker 0>the word inhabited to say is a region inhabited or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:22.010 --> 00:29:22.430
+<v Speaker 0>not?
+
+NOTE CONF {"raw":[100]}
+
+00:29:26.060 --> 00:29:27.830
+<v Speaker 0>It's not okay as a piece of notation.
+
+NOTE CONF {"raw":[86,93,100,87,100,100,100,100]}
+
+00:29:29.990 --> 00:29:31.430
+<v Speaker 0>Any questions?
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:35.330 --> 00:29:36.110
+<v Speaker 0>We'll see.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:36.470 --> 00:29:38.960
+<v Speaker 0>There is a question you might ask, but we'll probably
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100,100,100]}
+
+00:29:38.960 --> 00:29:39.620
+<v Speaker 0>come to it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:41.360 --> 00:29:42.650
+<v Speaker 0>Why am I doing this?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:42.680 --> 00:29:45.980
+<v Speaker 0>Well, I'm doing this because I want to introduce Venn
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:45.980 --> 00:29:50.270
+<v Speaker 0>diagrams as a way to look at something which somebody
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,55]}
+
+00:29:50.270 --> 00:29:53.780
+<v Speaker 0>claims to be a syllogism and work out whether it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:53.780 --> 00:29:54.560
+<v Speaker 0>is or not.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:54.590 --> 00:29:56.450
+<v Speaker 0>There are many other ways of doing that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:56.450 --> 00:29:59.750
+<v Speaker 0>We will see two others at least.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:01.280 --> 00:30:04.940
+<v Speaker 0>So here's my categorical statement.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:04.940 --> 00:30:08.720
+<v Speaker 0>This says A entails B, or in other words, every
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:08.720 --> 00:30:10.100
+<v Speaker 0>A is B.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:12.050 --> 00:30:14.390
+<v Speaker 0>Here's a large number of other ways of saying it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:14.390 --> 00:30:17.870
+<v Speaker 0>But this is every a is B a entail speed?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,72,44,100]}
+
+00:30:18.140 --> 00:30:23.030
+<v Speaker 0>So if we look at the Venn diagram for A
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:23.030 --> 00:30:25.800
+<v Speaker 0>and B it's got these four regions.
+
+NOTE CONF {"raw":[100,100,84,84,100,100,100]}
+
+00:30:26.580 --> 00:30:30.000
+<v Speaker 0>And what are we saying when we say A entails
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:30.030 --> 00:30:30.600
+<v Speaker 0>B.
+
+NOTE CONF {"raw":[78]}
+
+00:30:31.380 --> 00:30:34.200
+<v Speaker 0>We're saying that region has nothing in it.
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100,100]}
+
+00:30:36.330 --> 00:30:38.820
+<v Speaker 0>So this is the region where A is true and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:38.820 --> 00:30:39.900
+<v Speaker 0>B is false.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:40.020 --> 00:30:43.380
+<v Speaker 0>That's exactly what is ruled out by the statement that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:43.380 --> 00:30:44.610
+<v Speaker 0>every A is B.
+
+NOTE CONF {"raw":[100,98,98,100]}
+
+00:30:44.790 --> 00:30:49.590
+<v Speaker 0>So if every Greek is human, this region is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:49.590 --> 00:30:51.450
+<v Speaker 0>region of non-human Greeks.
+
+NOTE CONF {"raw":[100,100,94,100]}
+
+00:30:56.400 --> 00:30:58.770
+<v Speaker 0>So what do you think?
+
+NOTE CONF {"raw":[100,86,100,100,100]}
+
+00:30:58.770 --> 00:31:02.910
+<v Speaker 0>It's reasonable to say that this Venn diagram captures exactly
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:02.910 --> 00:31:04.290
+<v Speaker 0>the meaning of this statement.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:05.610 --> 00:31:05.700
+<v Speaker 0>And.
+
+NOTE CONF {"raw":[44]}
+
+00:31:09.450 --> 00:31:11.520
+<v Speaker 0>Distinct shortage of nods.
+
+NOTE CONF {"raw":[100,100,100,81]}
+
+00:31:11.880 --> 00:31:14.040
+<v Speaker 0>Are you willing to believe me for the moment until
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:14.040 --> 00:31:15.960
+<v Speaker 0>you've had a chance for it to sink in?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:31:16.230 --> 00:31:19.710
+<v Speaker 0>So let me remind you of the general idea of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:19.710 --> 00:31:20.190
+<v Speaker 0>lectures.
+
+NOTE CONF {"raw":[100]}
+
+00:31:20.190 --> 00:31:22.560
+<v Speaker 0>It's not necessarily the case that you're going to understand
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:22.560 --> 00:31:24.000
+<v Speaker 0>everything in the first time.
+
+NOTE CONF {"raw":[100,96,100,100,100]}
+
+00:31:24.000 --> 00:31:26.340
+<v Speaker 0>But when you go back through it, which you do,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:26.340 --> 00:31:27.210
+<v Speaker 0>don't you?
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:27.840 --> 00:31:30.540
+<v Speaker 0>And incidentally, one of the ways I screwed up badly,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:30.540 --> 00:31:32.730
+<v Speaker 0>as I told you, was by not going through lectures
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:32.730 --> 00:31:33.450
+<v Speaker 0>afterwards.
+
+NOTE CONF {"raw":[100]}
+
+00:31:33.990 --> 00:31:35.640
+<v Speaker 0>So do make a habit of it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:37.800 --> 00:31:42.030
+<v Speaker 0>Um, so if this is an interpretation of the categorical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:42.030 --> 00:31:47.370
+<v Speaker 0>statement, every A is B, then maybe we can interpret
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:47.370 --> 00:31:50.970
+<v Speaker 0>syllogisms by plugging together diagrams.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:52.230 --> 00:31:57.540
+<v Speaker 0>So here's an attempt to look at the classic syllogism
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:58.050 --> 00:32:01.500
+<v Speaker 0>and represent it as some diagrams.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:01.650 --> 00:32:02.610
+<v Speaker 0>Every a is B.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:02.610 --> 00:32:04.110
+<v Speaker 0>Every b is C, every A is C.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:04.140 --> 00:32:05.820
+<v Speaker 0>Here are the three diagrams.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:05.820 --> 00:32:07.650
+<v Speaker 0>The three individual diagrams.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:07.980 --> 00:32:10.770
+<v Speaker 0>Every a is B, every b is C for C.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:32:11.550 --> 00:32:13.920
+<v Speaker 0>How do I plug Venn diagrams together?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:15.210 --> 00:32:18.090
+<v Speaker 0>Um, if I were slightly better at doing fancy slides,
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:32:18.090 --> 00:32:20.640
+<v Speaker 0>this would be animated, but there are limits to my
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:20.640 --> 00:32:21.210
+<v Speaker 0>patience.
+
+NOTE CONF {"raw":[91]}
+
+00:32:21.210 --> 00:32:25.870
+<v Speaker 0>So it isn't animated makes life easier if we rotate
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:25.870 --> 00:32:29.470
+<v Speaker 0>the diagrams a bit so that we can bring them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:29.470 --> 00:32:30.190
+<v Speaker 0>together.
+
+NOTE CONF {"raw":[100]}
+
+00:32:30.190 --> 00:32:34.180
+<v Speaker 0>So I'm going to rotate that diagram and rotate that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:34.180 --> 00:32:34.960
+<v Speaker 0>diagram.
+
+NOTE CONF {"raw":[100]}
+
+00:32:36.790 --> 00:32:39.100
+<v Speaker 0>What happens if I merge these two.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:39.100 --> 00:32:42.250
+<v Speaker 0>So B is shared between the two diagrams.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:42.250 --> 00:32:44.050
+<v Speaker 0>And a and C are separate.
+
+NOTE CONF {"raw":[100,100,100,100,97,100]}
+
+00:32:44.560 --> 00:32:47.860
+<v Speaker 0>So I can represent them as a merged diagram like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:47.860 --> 00:32:48.460
+<v Speaker 0>that.
+
+NOTE CONF {"raw":[100]}
+
+00:32:51.280 --> 00:32:55.720
+<v Speaker 0>Why are the shadings of this region as they are.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:58.600 --> 00:33:01.600
+<v Speaker 0>So if I look at this region here, why is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:01.600 --> 00:33:02.740
+<v Speaker 0>there nothing in it?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:08.770 --> 00:33:10.900
+<v Speaker 0>Does it corresponds to there?
+
+NOTE CONF {"raw":[98,100,100,100,90]}
+
+00:33:10.960 --> 00:33:11.470
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[67,100]}
+
+00:33:12.430 --> 00:33:17.260
+<v Speaker 0>So it's ruled out by that bit which we can't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:17.260 --> 00:33:18.040
+<v Speaker 0>see over there.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:18.610 --> 00:33:21.310
+<v Speaker 0>On the other hand, this one has nothing ruling it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:21.310 --> 00:33:21.790
+<v Speaker 0>out.
+
+NOTE CONF {"raw":[100]}
+
+00:33:23.410 --> 00:33:24.520
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:33:26.530 --> 00:33:31.990
+<v Speaker 0>This is a way of combining a diagram for two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:31.990 --> 00:33:35.320
+<v Speaker 0>propositions into a diagram that expresses both of them at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:35.320 --> 00:33:36.370
+<v Speaker 0>the same time.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:37.510 --> 00:33:39.220
+<v Speaker 0>How do we extract the bottom one?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,75]}
+
+00:33:39.220 --> 00:33:41.800
+<v Speaker 0>So the logic we're trying to prove is that A
+
+NOTE CONF {"raw":[100,100,100,91,100,100,100,100,100,100]}
+
+00:33:41.800 --> 00:33:44.020
+<v Speaker 0>entails c every a is C.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:44.770 --> 00:33:46.780
+<v Speaker 0>Sorry, every Greek is mortal.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:48.130 --> 00:33:51.760
+<v Speaker 0>So what we do is we take the B and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:51.760 --> 00:33:53.140
+<v Speaker 0>we pull it out.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:53.500 --> 00:33:56.410
+<v Speaker 0>So if B disappears what happens?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:57.760 --> 00:33:59.890
+<v Speaker 0>Well you might think that this happens.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:00.850 --> 00:34:03.700
+<v Speaker 0>So I've just removed B from the diagram.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:04.000 --> 00:34:08.020
+<v Speaker 0>But what I'm left with now is this region which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:08.020 --> 00:34:11.169
+<v Speaker 0>is half empty and half not necessarily empty.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:12.100 --> 00:34:14.080
+<v Speaker 0>If I have a region, half of which is empty
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:14.080 --> 00:34:16.629
+<v Speaker 0>and half of which is not necessarily empty, what can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:16.629 --> 00:34:18.250
+<v Speaker 0>I say about the whole region?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:19.370 --> 00:34:22.190
+<v Speaker 0>So we are not necessarily empty.
+
+NOTE CONF {"raw":[88,76,74,100,100,100]}
+
+00:34:22.190 --> 00:34:24.409
+<v Speaker 0>So this is actually the same as that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:26.270 --> 00:34:30.530
+<v Speaker 0>Um, the way I sometimes like to think about this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:30.770 --> 00:34:34.070
+<v Speaker 0>is that this is all about white paint.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:34.190 --> 00:34:37.040
+<v Speaker 0>When I pull the B away, the white paint spills
+
+NOTE CONF {"raw":[100,100,100,100,88,100,100,100,100,100]}
+
+00:34:37.040 --> 00:34:40.879
+<v Speaker 0>out and covers the rest of the region because white
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:40.879 --> 00:34:42.230
+<v Speaker 0>paint is good stuff.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:42.260 --> 00:34:48.500
+<v Speaker 0>Using lots of stereotypes about colours and it spreads.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100]}
+
+00:34:48.649 --> 00:34:51.080
+<v Speaker 0>It means there might be something here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:51.080 --> 00:34:53.600
+<v Speaker 0>And so if you remove a barrier between a white
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:53.600 --> 00:34:55.790
+<v Speaker 0>bit and a grey bit, the white flows out into
+
+NOTE CONF {"raw":[100,100,100,57,100,100,100,100,100,100]}
+
+00:34:55.790 --> 00:34:56.510
+<v Speaker 0>the grey bit.
+
+NOTE CONF {"raw":[100,64,100]}
+
+00:34:59.480 --> 00:35:01.820
+<v Speaker 0>Being a nice solid covering paint.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:02.810 --> 00:35:07.790
+<v Speaker 0>And this process, each step of it made sense.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:07.790 --> 00:35:13.520
+<v Speaker 0>So I conclude from that that if A entails B
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:13.520 --> 00:35:15.980
+<v Speaker 0>and b entails C, I plug them together.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:15.980 --> 00:35:18.560
+<v Speaker 0>Takeaway b I get this diagram.
+
+NOTE CONF {"raw":[94,100,100,100,100,100]}
+
+00:35:18.560 --> 00:35:21.110
+<v Speaker 0>And this is the diagram for A entails C.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,71]}
+
+00:35:21.440 --> 00:35:27.530
+<v Speaker 0>So my graphical reasoning technique has produced the same answer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:27.530 --> 00:35:30.140
+<v Speaker 0>as the statement of the syllogism there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:30.320 --> 00:35:34.850
+<v Speaker 0>And therefore I conclude that this syllogism is sound in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:34.850 --> 00:35:35.900
+<v Speaker 0>any universe.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:38.000 --> 00:35:39.920
+<v Speaker 0>You will be doing a bit of practice of this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:40.640 --> 00:35:42.590
+<v Speaker 0>It's interesting.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:43.490 --> 00:35:44.570
+<v Speaker 0>Why is it interesting?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:45.860 --> 00:35:50.060
+<v Speaker 0>Partly because reasoning with diagrams is something that all mathematicians
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:50.060 --> 00:35:55.520
+<v Speaker 0>do, but is not something that all mathematicians write down
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:55.520 --> 00:35:56.900
+<v Speaker 0>in the published paper.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:57.590 --> 00:36:02.300
+<v Speaker 0>Because when you draw stuff, you're not being precise most
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:02.300 --> 00:36:03.110
+<v Speaker 0>of the time.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:05.570 --> 00:36:08.060
+<v Speaker 0>And it's interesting to think about whether it's possible to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:08.060 --> 00:36:11.030
+<v Speaker 0>reason with diagrams in a way that is precise.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:36:11.150 --> 00:36:13.790
+<v Speaker 0>And what we're doing here can be turned into something
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:13.790 --> 00:36:14.840
+<v Speaker 0>that is precise.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:15.080 --> 00:36:17.370
+<v Speaker 0>And for those of you who like that kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:17.370 --> 00:36:17.880
+<v Speaker 0>thing.
+
+NOTE CONF {"raw":[100]}
+
+00:36:17.910 --> 00:36:20.670
+<v Speaker 0>Go away and think about making this more precise.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:36:20.670 --> 00:36:24.210
+<v Speaker 0>For example, by programming it, implement Venn diagrams.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:24.210 --> 00:36:25.530
+<v Speaker 0>Think of a way of doing it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:25.890 --> 00:36:30.060
+<v Speaker 0>But for the rest of you, this is a way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:30.060 --> 00:36:34.410
+<v Speaker 0>of saying, if I have a syllogism, is it sound
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:34.410 --> 00:36:35.010
+<v Speaker 0>or not?
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:35.010 --> 00:36:38.550
+<v Speaker 0>And we'll see examples of variations on syllogisms that are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:38.550 --> 00:36:39.300
+<v Speaker 0>not sound.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:41.430 --> 00:36:43.050
+<v Speaker 0>So I'll come back to that when I've got some
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:43.050 --> 00:36:44.280
+<v Speaker 0>more examples.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:44.700 --> 00:36:47.730
+<v Speaker 0>But now I want to introduce you to a very
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:47.730 --> 00:36:51.420
+<v Speaker 0>important word, a very important name.
+
+NOTE CONF {"raw":[100,100,91,100,100,100]}
+
+00:36:52.020 --> 00:36:54.870
+<v Speaker 0>This syllogism here is the one we've been talking about
+
+NOTE CONF {"raw":[99,100,100,66,66,100,100,100,100,100]}
+
+00:36:54.870 --> 00:36:55.500
+<v Speaker 0>so far.
+
+NOTE CONF {"raw":[100,100]}
+
+00:36:55.500 --> 00:36:59.010
+<v Speaker 0>The only example you've seen so far has a name,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:59.160 --> 00:37:00.990
+<v Speaker 0>and its name is Barbara.
+
+NOTE CONF {"raw":[100,95,100,100,100]}
+
+00:37:02.820 --> 00:37:07.020
+<v Speaker 0>I'm not going to explain why it's called Barbara until
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:07.020 --> 00:37:07.740
+<v Speaker 0>later.
+
+NOTE CONF {"raw":[100]}
+
+00:37:08.280 --> 00:37:11.220
+<v Speaker 0>If you have a burning desire to find out right
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:11.220 --> 00:37:11.460
+<v Speaker 0>now.
+
+NOTE CONF {"raw":[100]}
+
+00:37:11.460 --> 00:37:14.010
+<v Speaker 0>Well, preferably not right now, preferably after the lecture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:14.220 --> 00:37:16.290
+<v Speaker 0>If you really want to know why it's called Barbara?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:16.320 --> 00:37:17.880
+<v Speaker 0>Go and look in Wikipedia.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:18.480 --> 00:37:24.810
+<v Speaker 0>But be prepared for a substantial time of confusion, because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:24.810 --> 00:37:27.240
+<v Speaker 0>ancient logic was much harder to deal with than modern
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:27.240 --> 00:37:27.720
+<v Speaker 0>logic.
+
+NOTE CONF {"raw":[100]}
+
+00:37:29.340 --> 00:37:31.740
+<v Speaker 0>But I will explain this in week six, I think,
+
+NOTE CONF {"raw":[100,100,100,100,66,100,100,100,100,100]}
+
+00:37:31.740 --> 00:37:33.870
+<v Speaker 0>for anybody who wants to.
+
+NOTE CONF {"raw":[100,100,100,100,57]}
+
+00:37:34.380 --> 00:37:37.890
+<v Speaker 0>And because this is, in a sense, the fundamental syllogism,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:37.890 --> 00:37:39.720
+<v Speaker 0>it's quite useful to have a name for it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:39.720 --> 00:37:41.970
+<v Speaker 0>So I'm going to call it Barbara all over the
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:37:41.970 --> 00:37:42.510
+<v Speaker 0>time.
+
+NOTE CONF {"raw":[100]}
+
+00:37:43.920 --> 00:37:48.900
+<v Speaker 0>Um, and it has the form that if the premises
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:37:48.900 --> 00:37:50.940
+<v Speaker 0>of the things above the line are valid, then the
+
+NOTE CONF {"raw":[87,97,100,100,100,100,100,100,100,100]}
+
+00:37:50.940 --> 00:37:53.160
+<v Speaker 0>conclusion below the line is valid.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:55.440 --> 00:37:58.590
+<v Speaker 0>So this is the simplest form of syllogism.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:58.590 --> 00:38:01.200
+<v Speaker 0>It's all A or b, all B, A, C or
+
+NOTE CONF {"raw":[100,100,100,63,100,100,100,81,100,80]}
+
+00:38:01.230 --> 00:38:01.860
+<v Speaker 0>ASC.
+
+NOTE CONF {"raw":[73]}
+
+00:38:02.670 --> 00:38:04.590
+<v Speaker 0>What other statements can we make?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:06.990 --> 00:38:11.100
+<v Speaker 0>Instead of saying all A or B, we can say
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100,100]}
+
+00:38:11.100 --> 00:38:14.010
+<v Speaker 0>no a is B um.
+
+NOTE CONF {"raw":[97,100,100,100,100]}
+
+00:38:16.810 --> 00:38:17.740
+<v Speaker 0>Thank you for plausible.
+
+NOTE CONF {"raw":[60,60,61,100]}
+
+00:38:17.740 --> 00:38:18.490
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[84]}
+
+00:38:18.910 --> 00:38:20.920
+<v Speaker 0>No reptile has fur.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:21.790 --> 00:38:22.300
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:23.020 --> 00:38:24.490
+<v Speaker 0>Which is currently true.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:27.520 --> 00:38:31.960
+<v Speaker 0>Um, this is also a statement that is asserting a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:31.960 --> 00:38:34.870
+<v Speaker 0>universally true statement in the universe.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:34.930 --> 00:38:37.690
+<v Speaker 0>So in the universe we live in, reptiles do not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:37.690 --> 00:38:38.260
+<v Speaker 0>have fur.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:38.260 --> 00:38:40.210
+<v Speaker 0>So if you give me a reptile, I can tell
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:40.210 --> 00:38:42.190
+<v Speaker 0>you it doesn't have fur without looking at it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:38:44.140 --> 00:38:47.620
+<v Speaker 0>But from our point of view, this is really the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:47.620 --> 00:38:53.170
+<v Speaker 0>same as saying every A is not B, every reptile
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:38:53.170 --> 00:38:57.100
+<v Speaker 0>does not have fur and is not furry.
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,100]}
+
+00:38:57.730 --> 00:38:59.950
+<v Speaker 0>So from a modern point of view it doesn't look
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:59.950 --> 00:39:00.520
+<v Speaker 0>very different.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:00.520 --> 00:39:03.220
+<v Speaker 0>But from Aristotle's point of view, it did look different
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:03.220 --> 00:39:08.140
+<v Speaker 0>because he didn't have the modern, refined understanding of how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:08.140 --> 00:39:12.700
+<v Speaker 0>negation works, and he understood perfectly well how it worked.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:12.700 --> 00:39:14.350
+<v Speaker 0>But he didn't look at it in quite the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:14.350 --> 00:39:15.190
+<v Speaker 0>way as we do.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:17.230 --> 00:39:19.390
+<v Speaker 0>So here's an example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:19.390 --> 00:39:23.110
+<v Speaker 0>Oh, look, it's an example of a syllogism involving reptiles,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:23.110 --> 00:39:24.370
+<v Speaker 0>snakes and fur.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:27.190 --> 00:39:32.470
+<v Speaker 0>All snakes are reptiles and tails are no reptile has
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:32.470 --> 00:39:33.100
+<v Speaker 0>fur.
+
+NOTE CONF {"raw":[100]}
+
+00:39:33.760 --> 00:39:36.760
+<v Speaker 0>Ah entails not f no.
+
+NOTE CONF {"raw":[81,100,100,100,97]}
+
+00:39:36.760 --> 00:39:40.600
+<v Speaker 0>Therefore no snake has fur S entails not f.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:42.280 --> 00:39:46.330
+<v Speaker 0>Is this just an instance of Barbara that we've been
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:46.330 --> 00:39:47.080
+<v Speaker 0>discussing?
+
+NOTE CONF {"raw":[100]}
+
+00:39:51.040 --> 00:39:51.880
+<v Speaker 0>Lots of nods.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:51.880 --> 00:39:53.170
+<v Speaker 0>Anybody disagree?
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:58.270 --> 00:40:00.760
+<v Speaker 0>Anybody think of a way that they could disagree if
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:40:00.760 --> 00:40:02.590
+<v Speaker 0>they were feeling like being awkward?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:11.200 --> 00:40:12.200
+<v Speaker 0>Okay, well, Let's.
+
+NOTE CONF {"raw":[93,54,51]}
+
+00:40:13.160 --> 00:40:14.930
+<v Speaker 0>Should be able to think of a way to try
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:14.930 --> 00:40:16.310
+<v Speaker 0>to argue against it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:16.790 --> 00:40:18.260
+<v Speaker 0>Um, it works for us.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:18.260 --> 00:40:20.600
+<v Speaker 0>Because for us, not F is a predicate.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:21.110 --> 00:40:25.970
+<v Speaker 0>So being not furry is just as good a predicate
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:25.970 --> 00:40:27.710
+<v Speaker 0>as being furry is.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:29.180 --> 00:40:32.450
+<v Speaker 0>And where Aristotle differed is that he didn't have a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:32.450 --> 00:40:35.900
+<v Speaker 0>way of building new predicates out of old ones.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:36.230 --> 00:40:38.510
+<v Speaker 0>So he didn't have the idea that there was a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:38.510 --> 00:40:39.770
+<v Speaker 0>predicate, not furry.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:39.800 --> 00:40:41.750
+<v Speaker 0>He didn't have the idea that there was a single
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:41.750 --> 00:40:46.100
+<v Speaker 0>predicate Greek and mortal, and that made everything much more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:46.100 --> 00:40:46.940
+<v Speaker 0>complicated.
+
+NOTE CONF {"raw":[100]}
+
+00:40:47.990 --> 00:40:52.310
+<v Speaker 0>So for us, it is an instance of Barbara, because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,80,100]}
+
+00:40:52.310 --> 00:40:57.110
+<v Speaker 0>a negated predicate is also a predicate.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:40:57.500 --> 00:41:01.130
+<v Speaker 0>And there was actually another reason why Aristotle didn't quite
+
+NOTE CONF {"raw":[99,98,100,100,100,100,100,100,100,100]}
+
+00:41:01.130 --> 00:41:04.610
+<v Speaker 0>understand negation in the sense that we do, and we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:04.610 --> 00:41:08.210
+<v Speaker 0>will come on to that later as an optional exercise.
+
+NOTE CONF {"raw":[100,100,81,81,100,100,100,100,100,100]}
+
+00:41:09.440 --> 00:41:13.100
+<v Speaker 0>So if you were learning logic 600 years ago instead
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:13.100 --> 00:41:16.250
+<v Speaker 0>of now, this would not have been called Barbara.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:41:16.280 --> 00:41:18.770
+<v Speaker 0>It would have been called, depending on which country in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:18.770 --> 00:41:22.190
+<v Speaker 0>Europe you were in, sell or rent or rent.
+
+NOTE CONF {"raw":[100,100,100,100,65,100,100,100,100]}
+
+00:41:24.500 --> 00:41:24.800
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[99]}
+
+00:41:26.210 --> 00:41:29.420
+<v Speaker 0>We'll actually chill out and chill out and and cellar
+
+NOTE CONF {"raw":[40,100,100,100,100,99,70,65,99,57]}
+
+00:41:29.420 --> 00:41:29.690
+<v Speaker 0>and.
+
+NOTE CONF {"raw":[100]}
+
+00:41:32.450 --> 00:41:36.020
+<v Speaker 0>Um, but for us, it looks like the standard proposition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:39.350 --> 00:41:43.520
+<v Speaker 0>So what do universal statements look like in Venn diagrams?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:43.520 --> 00:41:45.140
+<v Speaker 0>Here's the one we've already seen.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:45.500 --> 00:41:51.110
+<v Speaker 0>Every A is B and no A is B, so
+
+NOTE CONF {"raw":[100,100,100,100,100,99,100,100,100,100]}
+
+00:41:51.110 --> 00:41:54.800
+<v Speaker 0>no A is B says the middle is empty.
+
+NOTE CONF {"raw":[76,88,90,100,100,100,100,100,100]}
+
+00:41:54.800 --> 00:41:59.870
+<v Speaker 0>There is nothing that is both A and B here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:59.870 --> 00:42:03.410
+<v Speaker 0>I've got a entails B here I've got a entails,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:03.410 --> 00:42:04.400
+<v Speaker 0>not B.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:04.400 --> 00:42:06.590
+<v Speaker 0>There are two other things I could do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:06.590 --> 00:42:09.200
+<v Speaker 0>I could write not A entails B and I could
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:09.200 --> 00:42:11.700
+<v Speaker 0>write Not A entails, not B.
+
+NOTE CONF {"raw":[100,100,100,100,100,49]}
+
+00:42:13.860 --> 00:42:17.820
+<v Speaker 0>So if I draw the Venn diagrams for those statements,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:18.120 --> 00:42:19.380
+<v Speaker 0>I get that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:21.630 --> 00:42:21.870
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:42:21.870 --> 00:42:25.230
+<v Speaker 0>So not A entails B that says that if if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:25.230 --> 00:42:29.130
+<v Speaker 0>I'm outside A, then I must be in B, so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:29.130 --> 00:42:32.160
+<v Speaker 0>that means there is no completely outside region.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:32.160 --> 00:42:33.180
+<v Speaker 0>Nothing is in there.
+
+NOTE CONF {"raw":[78,78,100,100]}
+
+00:42:33.810 --> 00:42:36.810
+<v Speaker 0>And this says if A is not true, if I'm
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:36.810 --> 00:42:39.300
+<v Speaker 0>outside A, then B must not be true.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:39.300 --> 00:42:41.610
+<v Speaker 0>So that region is empty.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:44.130 --> 00:42:48.030
+<v Speaker 0>Um, just looking at these diagrams, what do you notice
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100,100,100,100]}
+
+00:42:48.030 --> 00:42:48.660
+<v Speaker 0>about them?
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:55.380 --> 00:42:58.830
+<v Speaker 0>That's haven't had anything from the back recently.
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100]}
+
+00:42:58.830 --> 00:43:00.690
+<v Speaker 0>Somebody from the back noticed something.
+
+NOTE CONF {"raw":[100,100,100,100,71,100]}
+
+00:43:05.070 --> 00:43:05.460
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:43:08.430 --> 00:43:11.070
+<v Speaker 0>They are mirror images.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:11.070 --> 00:43:12.510
+<v Speaker 0>There's a lot of symmetry here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:12.510 --> 00:43:15.240
+<v Speaker 0>So these two are mirror images of each other.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:17.010 --> 00:43:19.920
+<v Speaker 0>And these two aren't mirror images.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:19.920 --> 00:43:24.900
+<v Speaker 0>But there's something going on.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:26.790 --> 00:43:29.250
+<v Speaker 0>This is a blanking out the middle and this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:29.250 --> 00:43:30.690
+<v Speaker 0>blanking out the outside.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:30.870 --> 00:43:34.290
+<v Speaker 0>So if we look at these two these are the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:34.290 --> 00:43:35.760
+<v Speaker 0>exact mirror images.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:36.690 --> 00:43:43.920
+<v Speaker 0>So A entails B is the mirror image of not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:43.920 --> 00:43:46.200
+<v Speaker 0>A entails not B.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:47.760 --> 00:43:50.370
+<v Speaker 0>If I now swapped b and A here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:50.370 --> 00:43:54.360
+<v Speaker 0>So suppose I wrote not B entails not a, what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:54.360 --> 00:43:55.620
+<v Speaker 0>diagram would I get.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:57.900 --> 00:43:58.830
+<v Speaker 0>The first one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:59.790 --> 00:44:06.510
+<v Speaker 0>So this tells us that not B entails sorry, not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:06.510 --> 00:44:07.360
+<v Speaker 0>a entails.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:07.360 --> 00:44:12.730
+<v Speaker 0>Not B is the same thing as B entails A.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:13.990 --> 00:44:18.430
+<v Speaker 0>This is a very, very useful piece of reasoning, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:18.430 --> 00:44:20.830
+<v Speaker 0>it's one that the lawyer I've been moaning about did
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:20.830 --> 00:44:21.880
+<v Speaker 0>not understand.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:23.740 --> 00:44:31.150
+<v Speaker 0>Um, so this said, if all non Greeks are non-human,
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,88]}
+
+00:44:32.740 --> 00:44:39.130
+<v Speaker 0>then all humans are Greek, which is would be surprising.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:43.750 --> 00:44:47.170
+<v Speaker 0>If you've done proofs in mathematics.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:47.170 --> 00:44:49.690
+<v Speaker 0>So some of you have done proof in mathematics at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:49.690 --> 00:44:50.110
+<v Speaker 0>schools.
+
+NOTE CONF {"raw":[72]}
+
+00:44:50.110 --> 00:44:53.320
+<v Speaker 0>Some of you have not really done proofs in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:53.320 --> 00:44:56.620
+<v Speaker 0>modern sense, but you are doing them because you're going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:56.620 --> 00:44:59.230
+<v Speaker 0>to get proofs throughout first and second year maths.
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100]}
+
+00:45:00.490 --> 00:45:04.570
+<v Speaker 0>Then it's often useful to take a statement of I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:04.570 --> 00:45:06.940
+<v Speaker 0>know a I'm trying to prove be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,69]}
+
+00:45:07.720 --> 00:45:11.530
+<v Speaker 0>I try instead to say, if not be holds, then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,82,98,100]}
+
+00:45:11.530 --> 00:45:13.660
+<v Speaker 0>let me show that not A holds.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:13.870 --> 00:45:17.260
+<v Speaker 0>So that's called proof by contra position.
+
+NOTE CONF {"raw":[100,100,100,100,100,52,100]}
+
+00:45:17.680 --> 00:45:20.920
+<v Speaker 0>You try to prove the opposite direction, but you have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:20.920 --> 00:45:22.090
+<v Speaker 0>to negate things.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:22.720 --> 00:45:25.360
+<v Speaker 0>So we will see this happening again and again and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:25.360 --> 00:45:27.760
+<v Speaker 0>again in many cases.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:29.950 --> 00:45:34.720
+<v Speaker 0>The other thing we can see is that these two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:34.720 --> 00:45:37.660
+<v Speaker 0>diagrams are mirror images of themselves.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:45:37.870 --> 00:45:39.340
+<v Speaker 0>So this is symmetrical.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:39.340 --> 00:45:40.450
+<v Speaker 0>It's its own mirror image.
+
+NOTE CONF {"raw":[97,100,100,100,100]}
+
+00:45:40.450 --> 00:45:41.620
+<v Speaker 0>And so is this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:41.980 --> 00:45:44.320
+<v Speaker 0>So that tells us that if we swap A and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:44.320 --> 00:45:46.270
+<v Speaker 0>B it's still the same.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:46.510 --> 00:45:48.850
+<v Speaker 0>So A entails not B is the same as b
+
+NOTE CONF {"raw":[100,100,100,100,100,90,100,100,100,100]}
+
+00:45:48.850 --> 00:45:50.050
+<v Speaker 0>entails, not A.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:45:50.800 --> 00:45:53.410
+<v Speaker 0>They are again contra positives.
+
+NOTE CONF {"raw":[100,100,100,75,100]}
+
+00:45:55.420 --> 00:45:59.590
+<v Speaker 0>Likewise down here not A entails B is the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:59.590 --> 00:46:03.010
+<v Speaker 0>as not B entails A, so you will be getting
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:03.010 --> 00:46:06.620
+<v Speaker 0>used to flipping these back and forward time and again.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:06.620 --> 00:46:08.720
+<v Speaker 0>And we'll talk a little bit more about the theory
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:08.720 --> 00:46:10.790
+<v Speaker 0>of it next week.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:13.010 --> 00:46:15.230
+<v Speaker 0>Um, I'm going to.
+
+NOTE CONF {"raw":[91,100,100,100]}
+
+00:46:17.570 --> 00:46:19.610
+<v Speaker 0>Keep going for a little bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:46:19.700 --> 00:46:21.140
+<v Speaker 0>So what's going on here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:21.140 --> 00:46:23.600
+<v Speaker 0>What's going on here is that we're using negation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:23.600 --> 00:46:26.420
+<v Speaker 0>And we're also flipping things from one side of and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:46:26.420 --> 00:46:28.100
+<v Speaker 0>tail sign to another.
+
+NOTE CONF {"raw":[86,99,100,100]}
+
+00:46:29.450 --> 00:46:33.230
+<v Speaker 0>So negation and composition are intimately linked.
+
+NOTE CONF {"raw":[100,100,100,91,100,100,100]}
+
+00:46:33.230 --> 00:46:36.800
+<v Speaker 0>And this is one of the things that Aristotle didn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:36.800 --> 00:46:37.910
+<v Speaker 0>completely get.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:39.500 --> 00:46:43.250
+<v Speaker 0>Fortunately, we have a nice idea of negation that works
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:43.250 --> 00:46:43.970
+<v Speaker 0>well.
+
+NOTE CONF {"raw":[100]}
+
+00:46:44.510 --> 00:46:50.900
+<v Speaker 0>So in modern logic and in several modern languages, then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:51.080 --> 00:46:52.880
+<v Speaker 0>we have the law of double negation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:52.880 --> 00:46:54.650
+<v Speaker 0>We discussed that in the first lecture.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100]}
+
+00:46:55.430 --> 00:46:58.580
+<v Speaker 0>In logic, if I say not, not a, then that's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:58.580 --> 00:47:02.510
+<v Speaker 0>the same as a if not, not Greek is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:02.510 --> 00:47:03.470
+<v Speaker 0>same as Greek.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:05.570 --> 00:47:07.100
+<v Speaker 0>And I asked you to think about that so you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,58,100]}
+
+00:47:07.100 --> 00:47:09.260
+<v Speaker 0>can discuss it in tutorials if you did think about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:09.260 --> 00:47:09.680
+<v Speaker 0>it.
+
+NOTE CONF {"raw":[100]}
+
+00:47:10.340 --> 00:47:15.230
+<v Speaker 0>So the law of composition, which describes what I was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:15.230 --> 00:47:21.890
+<v Speaker 0>doing in those diagrams, says that if A entails B
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:21.890 --> 00:47:26.150
+<v Speaker 0>is true, then not B entails not A is true
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:26.150 --> 00:47:27.320
+<v Speaker 0>and the other way round.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:27.320 --> 00:47:30.860
+<v Speaker 0>So this is an if f does anybody not recognise
+
+NOTE CONF {"raw":[100,100,100,100,71,100,100,100,100,84]}
+
+00:47:30.860 --> 00:47:32.000
+<v Speaker 0>I f?
+
+NOTE CONF {"raw":[83,83]}
+
+00:47:34.100 --> 00:47:35.150
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:35.150 --> 00:47:39.890
+<v Speaker 0>It's a very convenient abbreviation that mathematicians use all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:39.890 --> 00:47:40.610
+<v Speaker 0>time.
+
+NOTE CONF {"raw":[100]}
+
+00:47:40.850 --> 00:47:43.850
+<v Speaker 0>We pronounce it as if and only if and it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:43.850 --> 00:47:45.800
+<v Speaker 0>means and if that goes both ways.
+
+NOTE CONF {"raw":[100,89,100,100,100,100,100]}
+
+00:47:45.800 --> 00:47:49.010
+<v Speaker 0>So if I write p if q that means if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:49.010 --> 00:47:51.680
+<v Speaker 0>p then q and also if q then p.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:47:52.160 --> 00:47:54.350
+<v Speaker 0>So that means that p and q have the same
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:54.350 --> 00:47:55.310
+<v Speaker 0>truth values.
+
+NOTE CONF {"raw":[79,100]}
+
+00:47:55.460 --> 00:47:56.060
+<v Speaker 0>They're the same.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:57.410 --> 00:47:59.120
+<v Speaker 0>So it's not this one way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:47:59.120 --> 00:48:01.430
+<v Speaker 0>If that was confusing people earlier on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:03.240 --> 00:48:03.600
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:48:04.110 --> 00:48:08.160
+<v Speaker 0>So well-behaved mathematicians will read it out as if and
+
+NOTE CONF {"raw":[100,49,100,100,100,100,100,100,100,100]}
+
+00:48:08.160 --> 00:48:12.060
+<v Speaker 0>only if mathematicians who are getting fed up might just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:12.060 --> 00:48:13.170
+<v Speaker 0>say if.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:19.110 --> 00:48:24.000
+<v Speaker 0>So what we have here is a piece of reasoning
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:24.120 --> 00:48:30.120
+<v Speaker 0>from contribution contribution that says a if A entails B
+
+NOTE CONF {"raw":[100,89,58,100,100,95,99,100,100,100]}
+
+00:48:30.840 --> 00:48:33.870
+<v Speaker 0>if and only if not B entails not A if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:33.870 --> 00:48:37.140
+<v Speaker 0>and only if not, not A entails not not b.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:37.140 --> 00:48:37.740
+<v Speaker 0>That's.
+
+NOTE CONF {"raw":[100]}
+
+00:48:37.740 --> 00:48:40.140
+<v Speaker 0>And then I apply the law of double negation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:48:40.560 --> 00:48:44.160
+<v Speaker 0>And then that gets me to a entails b again.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:44.430 --> 00:48:48.750
+<v Speaker 0>So by combining these two things I can say that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:48.750 --> 00:48:50.970
+<v Speaker 0>these two statements are exactly the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:50.970 --> 00:48:52.980
+<v Speaker 0>From this I can deduce this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:48:53.280 --> 00:48:56.040
+<v Speaker 0>And if I have this, I can deduce this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:48:56.970 --> 00:49:01.020
+<v Speaker 0>So sometimes not all that often we will write this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:01.050 --> 00:49:04.950
+<v Speaker 0>double line here in order to indicate that this is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:04.950 --> 00:49:07.290
+<v Speaker 0>a rule that goes both ways.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:07.290 --> 00:49:09.240
+<v Speaker 0>So normally rules go downwards.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:09.240 --> 00:49:10.620
+<v Speaker 0>We start with the assumption.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:10.620 --> 00:49:12.870
+<v Speaker 0>And the rule tells us the conclusion.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:13.230 --> 00:49:15.180
+<v Speaker 0>If we write a double line, we mean we can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:15.180 --> 00:49:17.040
+<v Speaker 0>also just flip the rule upside down.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:17.040 --> 00:49:19.770
+<v Speaker 0>And it still works, which is usually not the case.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:19.770 --> 00:49:21.870
+<v Speaker 0>Although in most of our examples it will be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:49:21.870 --> 00:49:25.380
+<v Speaker 0>But in most of logic it's not necessarily the case.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:27.480 --> 00:49:31.680
+<v Speaker 0>Okay, so in the last 30s let me just review
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:33.090 --> 00:49:34.980
+<v Speaker 0>what we have covered today.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:36.780 --> 00:49:39.570
+<v Speaker 0>We've agreed or hopefully we've agreed that we know about
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:49:39.570 --> 00:49:40.740
+<v Speaker 0>double negation.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:40.740 --> 00:49:43.470
+<v Speaker 0>So two knots are the same as no knots at
+
+NOTE CONF {"raw":[100,100,64,100,100,100,100,100,100,100]}
+
+00:49:43.470 --> 00:49:44.040
+<v Speaker 0>all.
+
+NOTE CONF {"raw":[100]}
+
+00:49:44.430 --> 00:49:48.330
+<v Speaker 0>We've talked about Barbara, which we agreed was valid and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:48.330 --> 00:49:50.100
+<v Speaker 0>we talked about contra position.
+
+NOTE CONF {"raw":[100,100,100,87,87]}
+
+00:49:50.310 --> 00:49:53.310
+<v Speaker 0>So next week we will work on these some more.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:53.310 --> 00:49:55.590
+<v Speaker 0>So obviously we'll start by reviewing them.
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100]}
+
+00:49:55.590 --> 00:49:59.130
+<v Speaker 0>And then we'll see lots and lots more syllogisms.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:49:59.590 --> 00:50:01.900
+<v Speaker 0>So enjoy FP tomorrow.
+
+NOTE CONF {"raw":[100,100,98,100]}

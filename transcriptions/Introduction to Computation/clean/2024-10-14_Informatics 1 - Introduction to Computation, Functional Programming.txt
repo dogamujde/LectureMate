@@ -1,0 +1,1097 @@
+Okay.
+Let's start.
+It's ten past.
+, so as usual, I'm going to start with some
+music.
+, but I want to explain first.
+So, , there is a textbook, , which I don't
+particularly recommend.
+It's called The Land of Lisp.
+, the only reason I mention it is because it
+comes with a music video, and I'm jealous because my
+textbook doesn't have a music video, so I thought I'd
+play this one.
+And, , it has words that are relevant to functional
+programming in general, not just Lisp.
+So look at the words when it's playing.
+And I'll also mention that, , Lisp is famous for
+having lots of parentheses because it doesn't really have a
+syntax.
+It's just a bunch of it's, it's well, there's, there's,
+, syntax, , in between a bunch of parentheses.
+Okay.
+So there's no structured syntax in that sense.
+So you'll see stuff about parentheses that's not relevant to
+Haskell.
+But anyway, let me just, , get this thing, ,
+get this thing going.
+You can watch it.
+, a couple of students did a wrap video for
+this course many years ago by sampling Julian and my
+lectures, and, , but it wasn't, , very musical, so
+I won't play that.
+One day I got for this job, so I learned
+a little lisp, and what I found was just surprised.
+It is a language so unique.
+And so expressive.
+So the coding never looks the same in my eyes.
+Now I use parentheses for breakfast.
+And if my program isn't done, I eat parentheses for
+lunch and I They might.
+Look funny, but.
+They have Samantha Power that gives your programs thoughts of
+brevity and puns.
+So for those who want to keep in mind that
+you can dance if you want.
+No, honestly, I just keep.
+Track of the robot's.
+Evolution.
+In the student force.
+Everything to be an object.
+You just tried a bunch of functions.
+Higher order is preferred.
+That way you can combine your code in richer ways.
+Because the lack of state will always be ensured.
+Super fun can keep your mind.
+More simple.
+So clever.
+You.
+One two, three, four.
+I think that's a good place to stop.
+.
+Guitar solo.
+, right.
+So simple but refined.
+Guaranteed to blow your mind.
+Okay, that's, , also applies to Haskell.
+Right.
+So today I'm going to be talking about talking about
+algebraic data types.
+And this is the most important part of functional programming
+that I haven't already talked about.
+Okay.
+So, , worth paying attention.
+, so, , who is, , worried because of the
+scary word algebraic, which sounds it's hard, you know,
+mathematics stuff.
+Anybody?
+Nobody.
+Okay.
+Well, good.
+, usually students worry.
+Okay.
+So, , it's just a word.
+, so don't worry about it in case you
+are worried.
+And, , , there are actually, , in fact, that
+there are reasons for this word which are, , deep
+in mathematics, but it's kind of mathematics at PhD level,
+, that you don't have to worry about for this
+course.
+Okay.
+There's some other things in Haskell that that are also
+have deep mathematical roots that you don't have to worry
+about in this course.
+, anyway, , , this this, .
+, yeah.
+These, these algebraic data types, they are now in all
+functional programming languages.
+, they're actually first developed here in Edinburgh by my
+PhD supervisor in the 1970s, , whose name was Rod
+Birstall, who's now almost 90 and long retired.
+, yeah.
+So lots of stuff in functional programming actually comes from
+Scotland.
+But, , that's not why we teach it here.
+It's it's, , you know, it's it's worldwide now.
+, right.
+So types are very important in functional programming.
+I've made that point, , dozens of times by now,
+and we've seen lots of types already.
+And these were all built in types in Haskell.
+So, you know, integers and characters and tuples and booleans
+and floats and so forth.
+Okay.
+And then ways of building up, , types from other
+types.
+So lists functions.
+, yeah.
+Tuples I mentioned.
+Okay.
+, and and using these you can build up an
+infinite number of types.
+So you've got, you know apart from integers and booleans,
+you've got lists of integers, lists of booleans, lists of
+lists of booleans, pairs consisting of lists of lists of
+lists of functions between integers and booleans and etc., etc..
+Lots, lots of lots of lots of types.
+, and but they're all built in a fixed number
+of ways.
+Okay.
+And now what I'm going to show you is how
+to build new types in an infinite number of ways.
+, and, and on on the way, I'll explain where
+most of these other types come from.
+, originally.
+Okay.
+So, , I'll be doing this via a sequence of
+examples.
+And some of the examples are types you've seen already.
+I'm going to explain how you could have defined them
+if they weren't defined already.
+So booleans is my first example.
+And lists come example number four.
+this is actually ten lines that define ten new
+data types, you know, , , pairs here.
+This is , , this is , , tuples, you
+know, two tuples.
+, yeah.
+So I'm going to be showing you they're going to
+get more and more complicated as I go by.
+, none of them are very complicated.
+But anyway, I'm going to start with really simple examples.
+And so you see the features coming in one at
+a time.
+So starting with booleans.
+So you know what booleans are truth values.
+Where do they come from.
+How would you get them if they weren't already there.
+Okay.
+Well here's how you'd get them.
+.
+All of the examples that I show in lectures, or
+at least most of the examples I show in lectures,
+are available from the course learn page.
+, if you kind of click on code next to
+where you can click on the lecture notes.
+And so these examples you can play with, you can
+download them and play with and and for that
+reason there's some stuff here that's let me see.
+Is this going to work.
+Wait a second.
+Okay.
+My highlighting.
+, yeah.
+, there's some stuff here at the beginning.
+It's not working.
+Okay, the first two lines here.
+Forget about those.
+Those are only, , only in the code that you
+can download, because we're going to be defining stuff that's
+already defined.
+And if you try to run these definitions without hiding
+the the existing definitions, it will just give you a
+bunch of errors.
+Okay.
+So, , so for now, ignore these two lines.
+If you want to play with the code here, you,
+you need them to be there.
+Okay.
+The important thing here is, , this line here beginning
+with data.
+Okay.
+This introduces a new type called bool.
+Okay.
+Data means I'm introducing a new type.
+A new data type.
+, data type means it's a new type.
+It's not related to any of the previous types or
+that is it's not.
+Yeah, it's a different type than all the previous ones.
+It's called bool with a capital B, all types have
+a capital letter at the beginning, and it's defined as
+having two constructors.
+Remember constructors nil and cons for lists okay
+false and true are the constructors for booleans.
+They're capital letters.
+constructors always have capital letters.
+, and so false.
+And this is the reason why false and true in
+Haskell are with, , capital letters.
+By the way, don't know if you've noticed that that's
+what what they are.
+Okay, so so, , , in abstract terms, we're defining
+a new data type here, and we're giving a list
+of its, some of its, of its values, which are
+all constructors with a vertical bar in between them.
+Okay.
+And you will have seen this.
+I actually, , in my first or second lecture, I
+gave you this as a simple way of defining types,
+and Julian has been using it in the Computation and
+Logic lectures for defining the type of things that were,
+you know, data thing equals a, b, c, d with
+vertical bars in between them.
+So that's a case.
+That's a, that's an example of this, of this sort
+of thing.
+In that case there are five values with five.
+Each of them had his name which is a capital
+letter.
+So here we've got two.
+, okay.
+And what this says is that , is that the
+values of bool are false and true.
+It says that there are different.
+So false and true are not the same.
+They're they're not equal.
+And it says that there aren't any other values of
+type bool okay.
+And those things together allow us to do pattern
+matching function definitions on booleans.
+Okay, so here we have three examples of pattern matching
+function definitions which take bool as a as an argument
+okay.
+So look at those in a second.
+before I get there I just want to say
+there's a there's a line here after the data definition
+which is optional.
+, and what it does, I will explain in detail
+in a later lecture.
+Okay.
+For now I'll just say this is kind of a
+magic incantation that you can put after your data type
+definitions, , to automatically give you, , equality, an equality
+function and a function that allows you to print out
+the values.
+Okay.
+Called a show function.
+, so it automatically provides those with without.
+You have to do anything apart from recite this magical
+incantation.
+Okay.
+, so as I said, I'll explain what's going on
+there in a later lecture.
+For now, just take my word for it.
+That's what it does.
+, right.
+And so now pattern matching function definitions, we've got two
+two values of type bool.
+And so if I wanted to find, for example a
+function called nought which is logical negation, I just have
+to give two cases the case for false and the
+case for true.
+Okay.
+, logical conjunction which is built in these are
+all built in-house into Haskell.
+Okay.
+So you don't have to define them.
+But if you wanted to this would be how you
+could do it.
+Okay.
+Logical conjunction.
+, I've defined it here using two cases.
+, on the first argument.
+So false in anything is false and true in anything.
+Is the anything okay.
+You know these definitions already from computation and logic.
+, and disjunction.
+Okay.
+So those are examples of functions defined using pattern matching
+case analysis on this type that I've just defined.
+Okay.
+And as I said the way I define this is
+what makes it possible to write these definitions in that
+style.
+Okay.
+So you used to writing these sorts of definitions.
+The difference here is just that we've defined the function.
+Sorry.
+We've defined the type right there instead of it being
+a type that you're provided.
+Okay.
+.
+I said that you get automatically because of this magical
+incantation here functions for equality and for printing out, ,
+data values.
+Okay.
+, if you didn't get them Automatically, then they you
+could define them this.
+, so, you know, this is a function that computes
+equality.
+And this is a function that converts, , values of
+bool to string, which is what, which is what I
+mean by being able to print out values.
+Okay.
+You need to have a string representation so that they
+can appear on your, on your, you know, screen when
+you're, , when you're using them when you ask to
+print them out.
+Okay.
+But these definitions are provided for you.
+, automatically this one is incorporated into the, into you
+know, you've got a double equals function for testing equality.
+Right.
+You know about that.
+You've used it okay.
+So this definition is incorporated in the double equals function.
+So when you try to do double equals on bool
+it will use essentially this function I mean as
+if it was defined that.
+And if you try to print out something at the
+keyboard and by by that what I mean is you
+you, , write an expression which has type bool.
+It will, , it will need to know what the
+string representation of the result of that is.
+And that's and that's what's happening here.
+Okay.
+This is converting from bool to string.
+It kind of looks it's saying nothing.
+But the thing on the left hand side is a
+bool.
+So it's a value of this type.
+Okay.
+One of these two values.
+And the thing on the right is a string.
+Okay.
+So I've chosen to use a string which is
+the same spelling as the as these values as these
+constructors.
+But it could be anything.
+, so when you use the automatically generated one, it's
+the actual names of the constructors.
+Okay.
+Is that relatively clear?
+If this is a very simple example, I'm going to
+go on to more complicated ones.
+So if you have any questions about that, please ask.
+All right.
+.
+Okay.
+Moving on to the next example.
+This example is, .
+Seasons.
+Winter, spring, summer and fall.
+Not salt and pepper.
+, and this is twice as complicated as the previous
+example because we've got four values rather than two.
+, so we've got a type, a new type called
+Season Capital S, because it's a type and it's got
+four values.
+There they are winter, spring, summer and fall.
+Capital letters at the beginning.
+And I have this magic incantation saying, I want to
+be able to do equality and print out values of
+this function of this type if I need to.
+Okay.
+So, , you know, so apart from the fact that
+there's four values here, this is exactly the same kind
+of thing as with booleans, Right.
+We've got we've got four values.
+Each of them has a constructor.
+naming it , they're all different.
+So they're all not equal to each other.
+, and there are no other values than these four
+of this type which allows us to do pattern matching
+function definitions.
+Right.
+So in this case we've got four values.
+So we will generally I mean doesn't have to
+be but we, we will sometimes have four cases
+we have here okay.
+So if we want to compute, if we want to
+take a season and say what the next season is,
+you know, in sequence, okay, the next season after winter
+is spring and the next after spring is summer and
+so forth.
+Okay.
+So that's what this function definition gives.
+So, , I hope you would have been able to
+write that Yourself or other functions on season.
+I mean, if I just tell you that you can
+do it by cases, right?
+So, for example, , if you want to write a
+function called is warm and it goes from season to
+boolean, you could define it by cases saying winter is
+warm of winter equals false is warm of spring.
+Well, you can define decide what your answers are to
+these things.
+And it depends on whether you're in Scotland or in
+a country with warm seasons or not.
+But , anyway, for each of these, each of these
+seasons, you can give whether it's warm or not by
+cases.
+That was a joke and nobody laughed.
+I'm very disappointed.
+Not a very good joke, anyway.
+Here's here's what the equality function would give you if
+you didn't have it built in.
+And it is built in because of this magic.
+These magic words here.
+Okay.
+Equality.
+It's not.
+I mean, it requires, , requires five cases because you
+need the case where they're equal, which are these first
+four, and then all the other cases are covered by
+the the last one here.
+And, , here's a function for converting seasons to strings.
+.
+Right.
+By the way, I should have said, .
+Data.
+And then a type.
+Whatever.
+, this is defining a new type.
+Okay.
+Which is different from.
+When I introduce a type this.
+You know the type of predicates on a.
+Maybe I'll just fill this in.
+.
+Okay.
+This is defining a new type with constructors.
+This is giving an abbreviation for an existing type.
+This is a type you already had for for each
+for each a you know for each type A this
+is a type.
+You already have the functions from A to bool and
+you're just giving it a name.
+Okay.
+So these are not the same.
+And this is why we use type here and data
+there different different.
+Keywords.
+To introduce them.
+right.
+Clear.
+Okay.
+You can define functions, , which convert, , seasons integers
+and back.
+And here's a way you might do that.
+I'm just.
+These are just examples that I'm, you know, simple examples
+to show you how you can do things with these
+new data types.
+So here's a function converting seasons to integers.
+So winter is zero and spring converts to one and
+so forth here and the other direction from integer to
+season.
+We can do that by case analysis okay I've defined
+this in such a way that these are inverse to
+each other.
+But they're just they're just functions.
+I've decided to define .
+One thing to point out at this point is that
+is that, , seasons are not this is not saying
+seasons are represented by integers.
+Okay.
+, seasons are not represented by anything.
+Okay.
+There's represented they're represented.
+That is to say they're represented by the constructors okay.
+There is nothing when you're competing with seasons other than
+the constructors for the values.
+Okay.
+So the fact that I've defined this function to, to
+give some numerical values corresponding to the seasons doesn't mean
+that the seasons are represented by numbers in the computer,
+okay?
+They're represented by, , these constructors.
+Okay.
+.
+This is in contrast to, , some conventional programming language
+where, for example, false and true are represented by one
+and zero or by or by any non-zero value and
+zero or something.
+There is no representation of these types.
+Other than in terms of the constructors.
+Okay.
+Of course, you know, that's sort of a lie because
+of course, inside the computer there will be a representation
+of these things in terms of, of bits.
+, and it will be chosen to be efficient somehow.
+But that's entirely invisible to you as far as you
+can, as far as you can tell, as far as
+you can access.
+The only things there are of this type are these
+four constructors.
+Okay.
+So here are these.
+Here's this, , this way of converting back and forth,
+, from, from, , seasons to numbers.
+And we can we can use that.
+The reason I define this, or one reason I could
+have defined this, is to make it easier to, to
+define this function.
+Next.
+So here is another version of the next function called
+next prime.
+going from season to season.
+And it computes the same thing as this function I
+had a minute ago.
+Okay, which gave me the next season, but it's done
+using arithmetic.
+So you convert the season to a number, you add
+one to it, and then you take the the result
+of that modulo four.
+So remainder when divided by four.
+Okay.
+In order to get that the the thing after fall
+is winter.
+Right.
+Because three sorry.
+If you if you apply this to fall you get
+three plus one is four.
+Remainder when divided by four is zero.
+convert that back to a season is winter.
+Oh, sorry.
+Here.
+Winter.
+Okay, so this would just be an alternative way to
+define that next function using arithmetic.
+I think you've seen this function mod before.
+, if not it means modulo or Remainder.
+Integer division.
+Remainder.
+Okay.
+And if you wanted to define equality, you could do
+it in terms of these numerical, numerical, , , values
+for seasons.
+, because this because this conversion here is , 1
+to 1 injective okay.
+For every season there's a different number.
+You can check equality of seasons by converting them to
+to to integers.
+And then comparing the integers.
+So this is equality using equality on integers to get
+equality on seasons.
+All right.
+Clear.
+Let's see what time it is okay.
+Okay.
+So this is a little bit boring defining a type
+by enumerating its values.
+can we do anything else.
+Yes of course.
+Otherwise I wouldn't ask that question.
+So, , , here is an example of, , shapes.
+, you could imagine these being the, you know, a
+data type that you might use if you wanted to
+build, , some sort of, , graphical system that has
+different kinds of shapes in it.
+And in this case, I'm only going to be talking
+about two kinds of shapes, , circles and rectangles.
+Okay.
+Of course, you could have lots of other, , kinds
+of shapes, but I'll just stick with those two for
+this, for this example.
+, what this is showing.
+So let's first focus on these two lines here okay
+I'm defining a type shape capital S.
+And it has two cases separated by vertical bar
+okay.
+This is a minute ago I had four cases
+represented by vertical bars.
+Here I have two cases, , separated by vertical bars.
+, these two cases are more complicated than than for
+bool and season because these constructors take values.
+Okay.
+So we have a circle with a radius.
+Circle is a constructor.
+Radius is the type.
+The the type of the value that circle applies to.
+I'll explain that in a second.
+A bit more.
+Rect is a constructor and it takes a width and
+a height.
+Okay.
+What our radius width and height.
+These are just in the first three lines.
+I've just defined these as synonyms for float.
+Okay.
+so I can do that.
+They're just names for float.
+And the only reason I've done that is, , to,
+, make it a little bit clearer what it is
+that these things represent.
+These are just these are just names, okay?
+They have no, , you know, it would be exactly
+the same for this example if I'd written float, float
+and float in these three cases.
+Okay.
+But I want to make my, my explanations a little
+clearer.
+So circle applies.
+It takes a radius and rect.
+Rectangle takes a width and a height okay.
+Again magic magic incantation for equality and show.
+So what do I get?
+From this I get, .
+I get a new type shape and I get two
+constructors circle and rect.
+And circle has type.
+, okay, radius.
+Arrow shape.
+You give it a radius and you get a shape.
+Okay.
+So it's a circle applied to a radius.
+Of course this is just another name for float.
+That's the the function you get from this first line
+here circle radius okay.
+And the other the other constructor is called rect okay.
+Capital letters because it's constructor.
+And it takes.
+A width and a height and gives you a.
+Gives you a shape okay.
+So it's constructor.
+In this case unlike with bool and season it's a
+function okay.
+You've seen constructors that are function already cons for
+lists.
+Okay, so you give it values to get the value
+of the type that you've defined okay.
+Okay.
+This one takes one argument.
+This one takes two arguments.
+And that's what the definition says.
+This is just a this is just something you get
+from this definition.
+So circle.
+This circle function or constructor comes from the first line.
+The rect function comes from the second line.
+Again these are constructors, which means that the only values
+of shape that there are are the ones you can
+produce with these two constructors.
+And the results of applying these constructors to values give
+you shapes that are that are different from each other.
+Okay.
+So , you know, so first of all, shape applied
+to you know, radius one is different from sorry circle
+apply to radius one is different from circle applied to
+radius two okay.
+And also circle apply to anything is different from rect
+applied to anything Okay.
+And this is what allows you to do pattern matching
+function definitions again okay.
+Because you can distinguish between circles and rectangles.
+They're different.
+And you can extract the value.
+that circle was applied to to get a shape
+okay.
+So you can extract the radius from a circle.
+And you can extract the width and height from a
+rectangle.
+And so you can write definitions using those, all of
+those things.
+So here is for example the area of a
+shape as a as a number okay.
+And , there's two cases because this the area of
+a circle is is is pi r squared.
+If r is the radius okay.
+Which is different from the area of a rectangle.
+So if we want to compute area apply to shape.
+If the case is circle with radius r, then the
+answer is pi times r squared.
+Okay.
+Pi is built in in Haskell by the way.
+And if we want to find the area of a
+shape which is a rectangle, the second case applies.
+So we've got a rectangle.
+It's got a width w and a height h.
+And so of course the area of a rectangle with
+with w height h is w times h.
+So that's the answer there.
+So these are you know two different cases two different
+ways of computing the area.
+Okay.
+So this is you know since these are constructors
+with arguments.
+This is the situation where you were defining functions
+on lists where you had to distinguish between, you know,
+the empty list and the list ex-cons, exes or something.
+And you can extract the head and the tail by
+pattern matching.
+And here we're extracting the width and the height or
+the radius using pattern matching.
+Okay.
+So, , this allows you to write these quite compact
+definitions.
+Okay.
+Is that clear?
+Are there any questions?
+Nobody's asking any questions.
+You're either.
+It's either so simple that you understand everything or it's,
+, or you're just, , kind of stunned and, .
+You stunned?
+Yeah.
+Some people are stunned.
+Okay.
+.
+I'll carry on.
+Anyway, , , here is, , here's some code for,
+, checking equality Equality of shapes and for converting shapes
+into, , into strings.
+I won't kind of go through that.
+It's a little bit more complicated just because we've got
+the arguments for the for the, , for the different
+kinds of shapes and so forth.
+Okay.
+The result that you'll get from this, from this code
+for converting shapes into strings will, .
+Will produce, , strings that look circle and then
+a number or rect and then a number and another
+number.
+Okay.
+So , the, the representation of these things, they're not
+going to look, the representation of a circle is not
+going to look this.
+It's going to look circle of six or something.
+Okay.
+, the thing that makes this a circle is not
+that there's some kind of circular thing in the computer,
+it's that they behave circles.
+Okay, so computing the area of a circle gives you
+the right answer for a thing.
+A circle with radius r.
+Okay.
+, okay.
+, now, I just, I just said, you know, with
+this definition here, you can write these nice pattern matching
+function definitions.
+It's only two lines to compute the area of, of
+a shape.
+And there's two cases.
+Okay.
+, if you didn't have pattern matching function definitions, you
+could define functions which, , you know, apply to a
+shape.
+Tell you if it's a circle or not.
+So these are predicates.
+Okay.
+Is something a circle.
+Okay.
+Circle.
+Yes.
+Rectangle.
+No.
+Is it a rectangle you know, for a circle.
+False.
+For rectangle.
+True.
+What's the radius?
+If it's a circle, it's the one.
+you know, that you gave when you form the circle
+and so forth.
+Okay.
+Width and height.
+So these are functions.
+These are called tests and selectors okay.
+These are two tests for checking to see whether something's
+a circle or a rectangle.
+And these are functions for extracting the value that was
+used to build the circle or the rectangle.
+Okay.
+And so if you're not a Haskell programmer, you're
+probably used to definitions this one here for computing
+the area.
+Okay.
+So we've got, you know, cascaded case analysis, , where
+the cases are, you know, is it a circle or
+not?
+Is it a rectangle or not?
+In case it's a circle, we need to extract the
+radius and then compute the result.
+Okay.
+In case it's a rectangle we need to extract the
+width and the height and compute the result.
+Okay.
+Of course, these could be made a little bit shorter
+by putting, you know, instead of w times h where
+w and h are defined here we could say width
+of s times h height of s.
+But anyway you've got a bunch of code there.
+And using these using these these functions.
+And this is all done very compactly using pattern
+matching here.
+This is why I'm a big fan of this style
+of, , of programming.
+Okay.
+, and of course, you could write other functions.
+The only one that I've given here is area.
+All right.
+And of course, in a real graphics package program and
+using Haskell, you would have not just, you know, ,
+not just circles and rectangles, you'd have other shapes and
+you'd also have positions for the, you know, they would
+be in space somewhere and you move them around and
+they change their positions.
+Okay, but this is simplest possible definition for, .
+For this I want to move on to lists.
+So you've been using lists since lecture two or
+something.
+, and so this is how you could get lists
+if they weren't built in.
+And this example, , brings in, , a couple of,
+, of things that you haven't seen yet with the
+previous example.
+So first of all, , , this is a so-called
+parameterised type, meaning that you have not just lists.
+It's not just defining lists.
+You're defining lists of a type, okay?
+A is a type, you know, so you have lists
+of integers or lists of booleans or lists of functions
+from into bool or whatever it is.
+So this is the the type of the items in
+the list.
+Okay.
+And that type appears In the definition.
+Okay.
+So if we want to build lists of integers then
+we need to , you know, use integers.
+And so the type integers will appear.
+Okay.
+It's arbitrary.
+So.
+So it's a that appears here for whatever type it
+is you want to put in.
+Okay.
+Now this we know already it has two cases.
+Oh sorry.
+The other thing that's, that's that's not in the previous
+examples is this is recursive.
+Okay.
+So you've got you're defining lists and you the definition
+involves lists.
+Okay.
+So a recursive recursive parameterised type.
+okay.
+But the rest of it is familiar except for the
+the notation.
+Okay.
+Because you know that a list has two to there
+are two kinds of lists.
+There's the empty list, and there's a list built using
+cons from whoops.
+From an item and a list.
+Okay, so this is exactly the same thing as what
+you used to, except that I'm using nil instead of
+this sort of pair of square brackets.
+And I'm using cons which takes two arguments and place
+of a colon.
+Okay.
+So cons.
+You give it an A and you give it a.
+A list of a and it gives you a list
+of a.
+And so for example cons , three nil okay.
+And what you're used to is , you've got this
+infix Function colon pronounced cons and it has type a
+arrow.
+List of a.
+Arrow.
+List of a.
+And you'd write three.
+Okay.
+So this is what you've been doing up until today.
+All right.
+If you'd if you didn't have lists, if you didn't
+have lists in Haskell, and you introduce them using the
+code there, then you'd be writing this to get the
+same effect as what you've already had up until now,
+using that other notation.
+Okay.
+So it's the same idea, different notation.
+And you can define this yourself.
+And the other ones are built in okay.
+So two cases empty list and a non-empty list.
+, and you can write the same sort of definitions
+you've been writing up to now for lists you can
+write in this kind of self-defined, , list version here.
+Okay.
+So for example, this is the append function for taking
+two lists and joining them together.
+Sort of, you know, one list, another list joining them
+in the middle.
+All right.
+And the definition is recursive, you know.
+So this is a recursive data type.
+And so a definition will typically involve recursion.
+So this is exactly the same definition as I
+gave some number of lectures ago for this append function.
+Append written using double plus okay.
+Takes two lists joins them end to end.
+So empty list append wise is equal to wise and
+a list containing at least one element.
+Okay, so cons x xz append ys okay.
+Recursive call to get x is x is append ys
+and then a cons x onto the front.
+Okay.
+This this was written in a previous lecture
+this.
+.
+Yeah.
+Okay.
+So same thing, different notation.
+, yeah.
+Here's here's just examples.
+The map function on these kinds of lists, , and
+the filter function on these kinds of lists.
+Okay, definitions are exactly the same as they were in
+a previous lecture, except for notation.
+Same.
+Same sort of, , change.
+Okay, so so this is exactly Haskell except for
+notation.
+So we don't have we don't have square brackets here.
+We don't have , we don't have things .
+We don't have things , , strings built in as
+a, as an abbreviation for , for lists of characters
+with a special notation for writing them down.
+Okay.
+You just have the, the, the idea of lists built
+up using items starting from the empty list and the
+ability to write functions on them.
+Okay.
+But that's the that's the main.
+You also don't have list comprehension here okay.
+These are just the values the the values for lists
+okay.
+Is that any questions about that.
+That's the hardest example that I'm going to show you
+today.
+All right.
+And I'm going to carry on with the next lecture
+with more examples.
+But I'm not finished yet.
+, I wanted to show you finally natural numbers, which
+I've already talked about in a previous lecture, how you
+can define, you know, plus and times.
+, I called it piano arithmetic, named after an Italian
+mathematician called Giuseppe Piano from the, , 19th century.
+Okay.
+And I gave these definitions of plus and times and
+exponentiation.
+And the idea was here that that numbers are represented
+by zero and, , and the what you get by
+adding one to a number so you can, you can
+have zero or you can add 1 to 0, or
+you can add 1 to 0 twice and so forth.
+You can get all the, all the natural numbers that
+way.
+And I'm saying here this is defining arithmetic by recursion.
+And it's wrong okay.
+It's not wrong Okay, it's not wrong, but it's not
+as good as it could be.
+Okay?
+And the reason it's not as good as it could
+be is because it says here that these functions work
+on integers, but actually they only work on positive integers.
+That is to say natural number zero.
+And the numbers, , that are greater than zero.
+, so some of these okay, some of them will
+give you a sensible answer if you use a negative
+number on them, , you know, minus three plus zero
+will be minus three here.
+But , really, , , they're for natural numbers.
+Okay.
+So doing this correctly, , correctly, you know, really, ,
+properly representing things, you would represent, , natural numbers using
+a data type.
+And there are two cases, the case of zero with
+a capital Z and the case of, successor of
+a number.
+This is a recursive definition, successor of a natural numbers.
+So successor is the one after it.
+Okay.
+Successor of zero is one, successor of one is two,
+and so forth.
+Okay.
+And then the definitions that I showed you here, translating
+it into this, , into using these constructors, , you
+know, again, I'll just repeat zero is different from successor
+of anything and all of the values of type that
+are obtained using these constructors, allowing me to use pattern
+matching function definitions.
+And so I can write those definitions that zero
+plus n is equal to n successor of m plus
+n is equal to the successor of m plus n,
+and so forth.
+Okay.
+So recursive type definitions lead to recursive function definition.
+So here's the recursion defining plus here.
+In the second case, using plus and the argument M
+here is smaller than the argument successor of M here
+and so forth for these other cases.
+Okay.
+So you could do arithmetic this way.
+, you know, , arithmetic on natural numbers this way.
+Okay.
+And so for example, , what time is it?
+Yeah.
+.
+You know.
+Successor of successor of zero.
+Plus successor of successor of zero equals.
+If you do this computation, the answer will be successor
+of successor of successor of successor of zero.
+Which is another way of writing.
+Two plus two equals four.
+Okay.
+And of course, this is not a sensible way of
+doing arithmetic because imagine, you know, a number a
+million would be represented by successor a million times of
+zero.
+And, .
+You know, that would take up whatever way you represent
+successor and zero would take up lots of storage in
+the computer.
+So of course, in Haskell you don't do this, ,
+for real, for a number, for arithmetic.
+Real arithmetic, you know, whether it's integers or whatever.
+But it would be possible to do that.
+And that's it for today.
+So thanks for your attention.
+Agnes.
+There's a question there.
+Any questions before I stop?
+One minute.
+Now.
+You can come and ask afterwards if you have questions.
+Okay.
+Thanks.
+And we'll have more on this tomorrow.
+Mhm.
+Yeah.
+Yeah.
+Yeah.
+Yeah.
+So .
+Really halfway.
+Yeah.
+That's right.
+Yeah.
+Yeah.
+I'll just put this back in the charger.
+No.
+And .
+Let me just let me.
+Just call you.
+Go.
+Toe to toe.
+Toe.
+Where do you go?
+Knock, knock.
+Who's there?
+No one.
+Enough!
+Quiet!
+You're my mouth with extra gum.
+Chew good.
+When there's a port on a western bay.
+And it serves a hundred ships.
+A day.
+Lonely sailors pass the time away and talk about their
+homes.
+And there's a girl in this harbour town, and she
+works laying whisky down there.
+Say, brandy, fetch another round.
+She serves them.
+Whisky and wine.
+The sailors say brandy.
+You're a fine girl.
+What a good wife you would be.
+Your eyes could steal a sailor from my sister.
+Better than brandy.
+Where's.

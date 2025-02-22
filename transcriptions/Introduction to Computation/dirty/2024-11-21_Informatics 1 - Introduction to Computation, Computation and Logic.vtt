@@ -1,0 +1,4576 @@
+WEBVTT
+
+00:00:15.120 --> 00:00:16.530
+<v Speaker 0>But good afternoon.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:00:17.520 --> 00:00:20.970
+<v Speaker 0>This is quite a dense lecture, I'm afraid so.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:00:21.150 --> 00:00:22.890
+<v Speaker 0>We will get going.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:24.030 --> 00:00:26.700
+<v Speaker 0>Thank you for turning out on a cold afternoon.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:00:26.700 --> 00:00:30.840
+<v Speaker 0>Although possibly, if your place is anything like mine, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:30.840 --> 00:00:33.810
+<v Speaker 0>feel inclined to let the university pay for the heating
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:33.810 --> 00:00:35.190
+<v Speaker 0>rather than you.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:00:36.570 --> 00:00:40.050
+<v Speaker 0>So last week we talked about finite automata, finite state
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:40.050 --> 00:00:43.290
+<v Speaker 0>machines, and we talked about them deterministically.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:00:43.620 --> 00:00:45.930
+<v Speaker 0>There was a lot of notation introduced, a lot of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:45.930 --> 00:00:47.520
+<v Speaker 0>pictures, a lot of symbols.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:00:48.030 --> 00:00:51.510
+<v Speaker 0>Hopefully the fact that you have all more or less
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:51.510 --> 00:00:55.560
+<v Speaker 0>successfully programmed them up in Haskell has helped bed everything
+
+NOTE CONF {"raw":[100,84,100,100,100,100,100,100,100,100]}
+
+00:00:55.560 --> 00:00:56.220
+<v Speaker 0>in.
+
+NOTE CONF {"raw":[100]}
+
+00:00:57.000 --> 00:01:00.660
+<v Speaker 0>Are there any questions from last week or questions about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:00.660 --> 00:01:04.410
+<v Speaker 0>the basics, anything that you didn't understand after doing the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:04.410 --> 00:01:05.280
+<v Speaker 0>tutorial.
+
+NOTE CONF {"raw":[100]}
+
+00:01:11.880 --> 00:01:15.150
+<v Speaker 0>Okay, so this week we're going to continue with these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:15.150 --> 00:01:16.050
+<v Speaker 0>machines.
+
+NOTE CONF {"raw":[100]}
+
+00:01:17.610 --> 00:01:21.210
+<v Speaker 0>And we're going to talk about a kind of machine
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:21.210 --> 00:01:24.360
+<v Speaker 0>that at first sight doesn't make a lot of sense,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:24.360 --> 00:01:26.640
+<v Speaker 0>but turns out to be very useful.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:27.150 --> 00:01:31.020
+<v Speaker 0>And also a little bit about how we actually use
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:31.020 --> 00:01:32.340
+<v Speaker 0>them in practice.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:33.990 --> 00:01:36.300
+<v Speaker 0>So who are today's people?
+
+NOTE CONF {"raw":[100,100,98,100,100]}
+
+00:01:36.360 --> 00:01:38.850
+<v Speaker 0>These are both people I know.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:40.110 --> 00:01:47.430
+<v Speaker 0>Michael Rubin is one of the greatest logicians, and computer
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:01:47.430 --> 00:01:52.140
+<v Speaker 0>scientists and set theorists and complexity theorists of the 20th
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:52.140 --> 00:01:56.550
+<v Speaker 0>century has produced many seminal results.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:57.660 --> 00:01:58.920
+<v Speaker 0>Dana Scott.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:59.830 --> 00:02:06.040
+<v Speaker 0>is someone whose connection with the topics today goes back
+
+NOTE CONF {"raw":[100,100,95,100,100,100,96,100,100,100]}
+
+00:02:06.430 --> 00:02:10.690
+<v Speaker 0>quite early in his career, and later on contributed to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:10.690 --> 00:02:15.910
+<v Speaker 0>a vast array of topics in theoretical computer science semantics.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,73]}
+
+00:02:16.570 --> 00:02:19.510
+<v Speaker 0>Dana is was the supervisor for a number of our
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:02:19.510 --> 00:02:21.310
+<v Speaker 0>most senior professors here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:22.120 --> 00:02:25.210
+<v Speaker 0>And as you can see, he's quite old now, so
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:02:25.210 --> 00:02:27.970
+<v Speaker 0>even the people he supervised are now retired.
+
+NOTE CONF {"raw":[100,100,100,100,100,62,99,100]}
+
+00:02:29.260 --> 00:02:32.050
+<v Speaker 0>But at least as of the last time I checked,
+
+NOTE CONF {"raw":[100,100,100,100,100,65,100,100,100,100]}
+
+00:02:32.050 --> 00:02:33.310
+<v Speaker 0>he was still around.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:02:35.470 --> 00:02:38.170
+<v Speaker 0>So what are we talking about today?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:38.890 --> 00:02:42.340
+<v Speaker 0>I want to start by thinking about what we did
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:42.640 --> 00:02:43.870
+<v Speaker 0>last week.
+
+NOTE CONF {"raw":[100,100]}
+
+00:02:46.750 --> 00:02:50.710
+<v Speaker 0>We thought about a way to build an automaton that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:51.400 --> 00:02:55.000
+<v Speaker 0>is kind of the sum of two automata, in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:55.000 --> 00:02:58.930
+<v Speaker 0>sense that it accepts both the languages of the two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:58.930 --> 00:02:59.590
+<v Speaker 0>bits.
+
+NOTE CONF {"raw":[100]}
+
+00:02:59.920 --> 00:03:01.390
+<v Speaker 0>So we had the.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:01.420 --> 00:03:02.350
+<v Speaker 0>What's this one?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:02.350 --> 00:03:03.370
+<v Speaker 0>This is the.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:05.440 --> 00:03:07.540
+<v Speaker 0>Um, even number of zeros.
+
+NOTE CONF {"raw":[100,100,100,100,86]}
+
+00:03:07.540 --> 00:03:09.790
+<v Speaker 0>And this is the odd number of ones.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:03:10.180 --> 00:03:13.690
+<v Speaker 0>And when we built the some construction which I wrote
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100,100,100]}
+
+00:03:13.690 --> 00:03:16.210
+<v Speaker 0>with this little D, because we were doing everything with
+
+NOTE CONF {"raw":[100,100,100,88,100,100,100,100,100,100]}
+
+00:03:16.210 --> 00:03:19.900
+<v Speaker 0>deterministic automata, we said, well, we can do it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:03:19.900 --> 00:03:23.470
+<v Speaker 0>It's exactly the same as building the project, the product.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:23.470 --> 00:03:26.380
+<v Speaker 0>But the set of accepting states is simply the union
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:26.410 --> 00:03:29.860
+<v Speaker 0>of the set of accepting states instead of a product.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,57,100]}
+
+00:03:29.860 --> 00:03:33.250
+<v Speaker 0>So our accepting states of those where either component is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:33.250 --> 00:03:34.060
+<v Speaker 0>accepting.
+
+NOTE CONF {"raw":[100]}
+
+00:03:34.240 --> 00:03:36.790
+<v Speaker 0>So we said build the product.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:03:37.330 --> 00:03:41.470
+<v Speaker 0>And this is accepting because E0 is this is accepting
+
+NOTE CONF {"raw":[100,100,100,100,100,51,100,100,100,100]}
+
+00:03:41.470 --> 00:03:45.040
+<v Speaker 0>because O1 is this is accepting because O1 is.
+
+NOTE CONF {"raw":[100,89,100,100,100,100,100,100,100]}
+
+00:03:46.810 --> 00:03:50.080
+<v Speaker 0>Um, that was a little bit odd because it's odd
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:50.080 --> 00:03:53.050
+<v Speaker 0>for product to look like sum but it works.
+
+NOTE CONF {"raw":[100,100,100,100,100,69,100,100,100]}
+
+00:03:54.340 --> 00:04:00.280
+<v Speaker 0>Now I want to think about Another way of thinking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:00.280 --> 00:04:01.120
+<v Speaker 0>about it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:02.890 --> 00:04:03.880
+<v Speaker 0>Skip that bit.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:03.880 --> 00:04:04.930
+<v Speaker 0>Kind of boring.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:04:05.530 --> 00:04:07.810
+<v Speaker 0>So that was just the evaluation of it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:07.810 --> 00:04:09.460
+<v Speaker 0>But we saw that last week.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:11.110 --> 00:04:14.830
+<v Speaker 0>Um, why do we need to do this?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:14.830 --> 00:04:17.109
+<v Speaker 0>So why do we actually have to build this product
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:17.109 --> 00:04:18.070
+<v Speaker 0>automaton?
+
+NOTE CONF {"raw":[100]}
+
+00:04:18.489 --> 00:04:22.570
+<v Speaker 0>We've taken a two, two, two state automata, and we've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,92,93,57]}
+
+00:04:22.570 --> 00:04:25.750
+<v Speaker 0>protected them and added some more transitions.
+
+NOTE CONF {"raw":[60,100,100,100,100,100,100]}
+
+00:04:26.410 --> 00:04:29.410
+<v Speaker 0>But wouldn't it somehow be nicer if we could just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,54,100,100]}
+
+00:04:29.410 --> 00:04:32.830
+<v Speaker 0>take the two original automata, not connect them in any
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:32.830 --> 00:04:36.340
+<v Speaker 0>way, and just run them together and say, if one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:36.340 --> 00:04:38.710
+<v Speaker 0>of them says yes, that's fine.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:38.980 --> 00:04:41.170
+<v Speaker 0>Or indeed, if we're looking for the product of both
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:41.170 --> 00:04:43.570
+<v Speaker 0>of them, say, yes, that's fine, but that's a harder
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:43.570 --> 00:04:44.260
+<v Speaker 0>question.
+
+NOTE CONF {"raw":[100]}
+
+00:04:49.150 --> 00:04:53.710
+<v Speaker 0>Well, that's just what we did, right when we built
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:53.710 --> 00:04:57.620
+<v Speaker 0>the product and turned it into the sum.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,57]}
+
+00:04:57.650 --> 00:05:00.710
+<v Speaker 0>The way we constructed the product was by taking the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:00.710 --> 00:05:05.660
+<v Speaker 0>two components and running them independently.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:07.490 --> 00:05:11.240
+<v Speaker 0>We ran this half and this half, and we made
+
+NOTE CONF {"raw":[100,66,100,100,100,100,100,100,91,100]}
+
+00:05:11.240 --> 00:05:14.960
+<v Speaker 0>product states, which let us track the state in each
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:14.960 --> 00:05:16.970
+<v Speaker 0>of the two halves independently.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:17.750 --> 00:05:21.140
+<v Speaker 0>Why can't we just treat this as a DFA by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:21.140 --> 00:05:21.650
+<v Speaker 0>itself?
+
+NOTE CONF {"raw":[100]}
+
+00:05:21.650 --> 00:05:23.480
+<v Speaker 0>Well, because it isn't deterministic.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:24.560 --> 00:05:28.010
+<v Speaker 0>It's not deterministic, chiefly because it has two start states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:05:28.280 --> 00:05:31.010
+<v Speaker 0>This is a start state, and this is a start
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:31.010 --> 00:05:31.640
+<v Speaker 0>state.
+
+NOTE CONF {"raw":[100]}
+
+00:05:33.260 --> 00:05:38.210
+<v Speaker 0>Um, so it's not a deterministic finite automaton, but is
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100,100,100,100]}
+
+00:05:38.210 --> 00:05:39.440
+<v Speaker 0>it something else?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:41.420 --> 00:05:45.080
+<v Speaker 0>Well, if you remember, when I introduced finite automaton, I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:45.080 --> 00:05:47.030
+<v Speaker 0>gave a definition of finite automaton.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:05:47.030 --> 00:05:49.280
+<v Speaker 0>And then I said, and by the way, we're only
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:49.280 --> 00:05:51.650
+<v Speaker 0>interested in the deterministic ones.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:52.010 --> 00:05:54.830
+<v Speaker 0>So how about we stop saying we're only interested in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:54.830 --> 00:05:58.970
+<v Speaker 0>the deterministic ones, and think about what it might mean
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:58.970 --> 00:06:02.060
+<v Speaker 0>if we just didn't have that restriction at all.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:03.710 --> 00:06:08.750
+<v Speaker 0>So what do we call something that is not a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:08.750 --> 00:06:10.400
+<v Speaker 0>deterministic automaton?
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:10.940 --> 00:06:15.320
+<v Speaker 0>Well, perhaps Unimaginatively we call it a non-deterministic automaton.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,75,100]}
+
+00:06:17.030 --> 00:06:19.100
+<v Speaker 0>And these will be called NFA.
+
+NOTE CONF {"raw":[100,100,100,100,100,67]}
+
+00:06:19.490 --> 00:06:22.400
+<v Speaker 0>So I will tend to use this abbreviation a lot.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:23.090 --> 00:06:27.110
+<v Speaker 0>And this is the original automata that I introduced.
+
+NOTE CONF {"raw":[100,100,100,100,100,57,95,100,100]}
+
+00:06:27.110 --> 00:06:29.810
+<v Speaker 0>But we can have any number of start states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:30.170 --> 00:06:31.850
+<v Speaker 0>So it's got think of that.
+
+NOTE CONF {"raw":[100,100,100,100,100,90]}
+
+00:06:32.270 --> 00:06:34.340
+<v Speaker 0>Think of it as having distributed state.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:34.340 --> 00:06:36.680
+<v Speaker 0>There are many states and all of them might be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:36.680 --> 00:06:39.050
+<v Speaker 0>switched on when you reboot the machine.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:40.670 --> 00:06:46.970
+<v Speaker 0>And moreover, it might have any number of transitions from
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:46.970 --> 00:06:48.290
+<v Speaker 0>one state to another.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:48.770 --> 00:06:49.880
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:06:56.970 --> 00:07:00.300
+<v Speaker 0>Deterministically, I expect if I'm in a state and I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:00.300 --> 00:07:02.910
+<v Speaker 0>see the letter A, there's only one place I might
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:02.910 --> 00:07:03.570
+<v Speaker 0>go.
+
+NOTE CONF {"raw":[100]}
+
+00:07:03.810 --> 00:07:06.780
+<v Speaker 0>But in a non-deterministic automaton.
+
+NOTE CONF {"raw":[100,100,100,71,100]}
+
+00:07:09.540 --> 00:07:11.910
+<v Speaker 0>There might be two places I could go.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:11.910 --> 00:07:14.190
+<v Speaker 0>So here I've got something where if I see an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:14.190 --> 00:07:17.790
+<v Speaker 0>A, I might go there or I might go there,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:17.790 --> 00:07:19.830
+<v Speaker 0>and if I see a B, I might go there
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:19.830 --> 00:07:21.060
+<v Speaker 0>and I might go there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:22.860 --> 00:07:24.540
+<v Speaker 0>At this point, you should be worried.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:25.680 --> 00:07:26.250
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:26.910 --> 00:07:28.710
+<v Speaker 0>What do I mean with this word?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:28.710 --> 00:07:29.640
+<v Speaker 0>Might.
+
+NOTE CONF {"raw":[100]}
+
+00:07:30.060 --> 00:07:32.730
+<v Speaker 0>Might is not a very mathematical word.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:33.390 --> 00:07:36.150
+<v Speaker 0>Um, so we're going to have to think about that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:38.250 --> 00:07:40.980
+<v Speaker 0>Um, but first of all, I'm going to introduce yet
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:40.980 --> 00:07:42.000
+<v Speaker 0>more symbolism.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:42.000 --> 00:07:44.760
+<v Speaker 0>But this is all symbols you've seen before with a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:44.760 --> 00:07:46.200
+<v Speaker 0>slight modification.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:46.560 --> 00:07:49.710
+<v Speaker 0>So this is my definition of a general kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:49.710 --> 00:07:50.280
+<v Speaker 0>automaton.
+
+NOTE CONF {"raw":[100]}
+
+00:07:50.280 --> 00:07:52.050
+<v Speaker 0>Non-deterministic automaton.
+
+NOTE CONF {"raw":[66,100]}
+
+00:07:52.050 --> 00:07:54.090
+<v Speaker 0>We've got the set of states as usual.
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100]}
+
+00:07:54.090 --> 00:07:56.370
+<v Speaker 0>We've got the input alphabet as usual.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:56.910 --> 00:07:58.620
+<v Speaker 0>We've got a transition.
+
+NOTE CONF {"raw":[100,100,99,100]}
+
+00:07:58.710 --> 00:08:01.140
+<v Speaker 0>Now it's no longer a function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:01.140 --> 00:08:02.640
+<v Speaker 0>It's now a relation.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:02.640 --> 00:08:06.120
+<v Speaker 0>Because when it was deterministic, it was a function because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:06.120 --> 00:08:09.840
+<v Speaker 0>for every start and letter there was a unique target
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:09.840 --> 00:08:10.500
+<v Speaker 0>state.
+
+NOTE CONF {"raw":[100]}
+
+00:08:10.620 --> 00:08:13.500
+<v Speaker 0>Now it's a relation simply because there may be many
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:13.500 --> 00:08:14.400
+<v Speaker 0>target states.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:14.400 --> 00:08:18.000
+<v Speaker 0>And the easiest mathematical way to represent that is as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:18.000 --> 00:08:23.160
+<v Speaker 0>a relation between source states, target states, and input labels.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:24.360 --> 00:08:27.390
+<v Speaker 0>And instead of having one starting state, we now have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:27.390 --> 00:08:29.160
+<v Speaker 0>a set of starting states.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:30.120 --> 00:08:33.810
+<v Speaker 0>Um, possibly I should call this capital Q0 or something,
+
+NOTE CONF {"raw":[58,100,100,100,100,100,100,74,100,100]}
+
+00:08:33.810 --> 00:08:34.650
+<v Speaker 0>but I'm calling.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:08:34.650 --> 00:08:37.919
+<v Speaker 0>It's the final states.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:37.919 --> 00:08:40.530
+<v Speaker 0>The accepting states are the same as before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:08:40.530 --> 00:08:44.190
+<v Speaker 0>There are good states and bad states, but we're going
+
+NOTE CONF {"raw":[100,84,100,100,100,100,100,100,100,100]}
+
+00:08:44.190 --> 00:08:47.400
+<v Speaker 0>to have to think about what it means to accept
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:47.400 --> 00:08:51.450
+<v Speaker 0>because we're no longer in the nice, simple, deterministic state
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:51.450 --> 00:08:53.280
+<v Speaker 0>where we know where we end up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:56.160 --> 00:09:01.950
+<v Speaker 0>Um, we don't need a black hole convention anymore, so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:09:01.950 --> 00:09:02.970
+<v Speaker 0>we won't use it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:03.870 --> 00:09:05.850
+<v Speaker 0>Why don't we need a black hole convention?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:05.850 --> 00:09:08.850
+<v Speaker 0>Because we just don't write down any transitions that we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:08.850 --> 00:09:13.800
+<v Speaker 0>don't want, because the thing can just stop.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:15.210 --> 00:09:19.770
+<v Speaker 0>If you read the book when I define deterministic automata,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:20.160 --> 00:09:24.540
+<v Speaker 0>you saw that the book actually defines deterministic automata to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:24.540 --> 00:09:28.140
+<v Speaker 0>be like this, and then adds the constraints that there's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:28.140 --> 00:09:29.820
+<v Speaker 0>exactly one start state.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:29.940 --> 00:09:32.910
+<v Speaker 0>And this relation delta is functional.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:33.540 --> 00:09:36.270
+<v Speaker 0>It is, of course entirely a matter of taste.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:09:36.660 --> 00:09:40.470
+<v Speaker 0>Whether you define dfas as we want them to begin
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:40.470 --> 00:09:43.320
+<v Speaker 0>with and then relax them as I've done, or whether
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:43.320 --> 00:09:46.230
+<v Speaker 0>you start by defining the general case and say, by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:46.230 --> 00:09:51.390
+<v Speaker 0>the way, deterministic ones have these particular properties, uh, different
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,91,100]}
+
+00:09:51.390 --> 00:09:53.920
+<v Speaker 0>people have different views on how to do this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:09:55.630 --> 00:09:57.580
+<v Speaker 0>So that's just notation.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:57.580 --> 00:10:00.730
+<v Speaker 0>It's just saying, basically, a finite automaton is a graph
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:00.730 --> 00:10:02.590
+<v Speaker 0>of states with arrows between them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:03.550 --> 00:10:05.860
+<v Speaker 0>But how do we understand this thing?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:05.860 --> 00:10:08.470
+<v Speaker 0>What is this thing that we're building in terms of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:08.470 --> 00:10:09.430
+<v Speaker 0>computation?
+
+NOTE CONF {"raw":[100]}
+
+00:10:11.770 --> 00:10:14.560
+<v Speaker 0>And the thing that makes an NFA different is that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:14.560 --> 00:10:17.560
+<v Speaker 0>there might be lots of states that are switched on,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:17.560 --> 00:10:20.380
+<v Speaker 0>or active or current at the same time.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:10:21.760 --> 00:10:24.130
+<v Speaker 0>In a deterministic automaton, it was easier.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,80]}
+
+00:10:24.130 --> 00:10:26.440
+<v Speaker 0>There was only one state, and that was the current
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:26.440 --> 00:10:27.130
+<v Speaker 0>state.
+
+NOTE CONF {"raw":[100]}
+
+00:10:27.370 --> 00:10:29.770
+<v Speaker 0>Now there might be many current states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:29.770 --> 00:10:32.350
+<v Speaker 0>And how do we know which states are active?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:32.890 --> 00:10:36.430
+<v Speaker 0>Well, when you switch the automaton on all the start
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:36.430 --> 00:10:39.160
+<v Speaker 0>states, all the initial states are active.
+
+NOTE CONF {"raw":[100,57,100,100,100,100,100]}
+
+00:10:39.190 --> 00:10:41.260
+<v Speaker 0>So that might be two states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:41.260 --> 00:10:44.320
+<v Speaker 0>In the case of the zero, even zeros and odd
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,82,100,100]}
+
+00:10:44.320 --> 00:10:45.040
+<v Speaker 0>ones.
+
+NOTE CONF {"raw":[100]}
+
+00:10:46.450 --> 00:10:49.390
+<v Speaker 0>And then how does the machine behave?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:51.760 --> 00:10:55.000
+<v Speaker 0>Well if some state is active.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:55.780 --> 00:11:00.730
+<v Speaker 0>For example, suppose this state is active.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:00.760 --> 00:11:02.410
+<v Speaker 0>Maybe it's the initial state.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:04.180 --> 00:11:06.790
+<v Speaker 0>What happens when I read an A?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97]}
+
+00:11:07.210 --> 00:11:10.630
+<v Speaker 0>I said we might go to the top or we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:10.630 --> 00:11:12.070
+<v Speaker 0>might go to the middle.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:13.420 --> 00:11:16.930
+<v Speaker 0>What do we do with nondeterministic automata is keep track
+
+NOTE CONF {"raw":[100,97,100,100,100,65,100,100,100,100]}
+
+00:11:16.930 --> 00:11:19.360
+<v Speaker 0>of all the places that we might be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:19.600 --> 00:11:23.380
+<v Speaker 0>So if I see an A.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:28.270 --> 00:11:29.410
+<v Speaker 0>That happens.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:31.690 --> 00:11:34.210
+<v Speaker 0>What does this mean in terms of computation?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:34.210 --> 00:11:35.620
+<v Speaker 0>It's not entirely clear.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:11:35.650 --> 00:11:37.330
+<v Speaker 0>I'll talk about that in a moment.
+
+NOTE CONF {"raw":[80,100,100,100,100,100,100]}
+
+00:11:37.540 --> 00:11:40.660
+<v Speaker 0>But that's how we can at least make a definition
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:40.660 --> 00:11:44.530
+<v Speaker 0>of what it means for a transition to happen.
+
+NOTE CONF {"raw":[100,100,100,100,100,96,100,100,100]}
+
+00:11:44.530 --> 00:11:45.790
+<v Speaker 0>Non-deterministic.
+
+NOTE CONF {"raw":[83]}
+
+00:11:46.180 --> 00:11:49.780
+<v Speaker 0>So we make active all the states that we might
+
+NOTE CONF {"raw":[20,100,100,100,100,100,100,100,100,100]}
+
+00:11:49.780 --> 00:11:50.560
+<v Speaker 0>go to.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:52.540 --> 00:11:54.250
+<v Speaker 0>And this is why we don't need the black hole
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:54.250 --> 00:11:56.320
+<v Speaker 0>state if we don't go anywhere.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:56.320 --> 00:11:59.290
+<v Speaker 0>For example, if instead I read a C.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:02.800 --> 00:12:05.800
+<v Speaker 0>So if from the initial state I read a C,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:05.800 --> 00:12:07.330
+<v Speaker 0>there is no state.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:07.330 --> 00:12:11.410
+<v Speaker 0>So this state stops being active and no other state
+
+NOTE CONF {"raw":[100,79,100,100,100,100,100,100,100,100]}
+
+00:12:11.410 --> 00:12:12.190
+<v Speaker 0>becomes active.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:12.190 --> 00:12:14.020
+<v Speaker 0>So the automaton is just dead.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:14.830 --> 00:12:16.990
+<v Speaker 0>So that's the equivalent of the black hole state.
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100]}
+
+00:12:16.990 --> 00:12:19.510
+<v Speaker 0>We don't need any explicit black hole states that keep
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:19.510 --> 00:12:20.650
+<v Speaker 0>reading stuff forever.
+
+NOTE CONF {"raw":[100,96,100]}
+
+00:12:20.650 --> 00:12:24.400
+<v Speaker 0>We just say automata can die and become switch off.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:27.520 --> 00:12:31.480
+<v Speaker 0>Um, and then what happens when we've read all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:31.480 --> 00:12:31.870
+<v Speaker 0>input?
+
+NOTE CONF {"raw":[100]}
+
+00:12:31.870 --> 00:12:33.220
+<v Speaker 0>We're in some state.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:34.000 --> 00:12:37.900
+<v Speaker 0>So let's go back to the A case.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:41.860 --> 00:12:46.000
+<v Speaker 0>What we're going to do, and this is quite critical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:46.000 --> 00:12:51.680
+<v Speaker 0>is say We will say that the automaton has accepted
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:51.680 --> 00:12:52.550
+<v Speaker 0>the input.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:52.910 --> 00:12:55.580
+<v Speaker 0>If any of the places we might be in is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:55.580 --> 00:12:56.720
+<v Speaker 0>a good state.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:56.720 --> 00:12:59.450
+<v Speaker 0>So remember, the double circle means a good state.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100]}
+
+00:12:59.600 --> 00:13:02.030
+<v Speaker 0>Here, after doing an A, I might be in a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:02.030 --> 00:13:02.630
+<v Speaker 0>bad state.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:02.630 --> 00:13:04.280
+<v Speaker 0>I might be in a good state.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:04.430 --> 00:13:07.670
+<v Speaker 0>We're going to say that if it's in any, if
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:13:07.670 --> 00:13:10.040
+<v Speaker 0>any of the states we might be in a good,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:10.220 --> 00:13:11.570
+<v Speaker 0>then we're good.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:13.490 --> 00:13:15.410
+<v Speaker 0>Now, does that make any sense to you?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:19.160 --> 00:13:24.320
+<v Speaker 0>Yeah, maybe, um, it's an alternative.
+
+NOTE CONF {"raw":[100,100,100,52,100,100]}
+
+00:13:24.320 --> 00:13:25.700
+<v Speaker 0>We could have said.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:29.330 --> 00:13:31.610
+<v Speaker 0>Maybe we could have said if all of them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:32.390 --> 00:13:34.400
+<v Speaker 0>So maybe we're quite restrictive.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:34.400 --> 00:13:36.860
+<v Speaker 0>And we would want to say we accept the input
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:36.860 --> 00:13:39.500
+<v Speaker 0>if all the states are good.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:40.100 --> 00:13:43.070
+<v Speaker 0>Um, it turns out that doing it this way is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:43.070 --> 00:13:44.750
+<v Speaker 0>more practically useful.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:44.780 --> 00:13:47.000
+<v Speaker 0>We can think about the other type, and we will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:47.000 --> 00:13:49.310
+<v Speaker 0>think about it briefly right at the end.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:49.490 --> 00:13:52.730
+<v Speaker 0>But this way has a lot of practical applications, whereas
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:52.730 --> 00:13:55.820
+<v Speaker 0>the other way round has fewer practical applications.
+
+NOTE CONF {"raw":[100,100,100,67,100,100,100,100]}
+
+00:13:56.600 --> 00:14:02.660
+<v Speaker 0>Um, again, the magic word duality, the idea of any
+
+NOTE CONF {"raw":[82,100,100,100,100,100,100,100,100,100]}
+
+00:14:02.660 --> 00:14:06.560
+<v Speaker 0>accepting state versus all accepting states, these are dual concepts
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:06.560 --> 00:14:09.470
+<v Speaker 0>in a precise sense, but we tend not to cover
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:09.470 --> 00:14:10.250
+<v Speaker 0>that in this course.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:10.250 --> 00:14:13.550
+<v Speaker 0>Although if you go on and do Introduction to Theoretical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:13.550 --> 00:14:16.310
+<v Speaker 0>Computer Science in third year, you'll get a bit more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:16.310 --> 00:14:17.090
+<v Speaker 0>about this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:19.670 --> 00:14:20.000
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:14:22.370 --> 00:14:25.850
+<v Speaker 0>That's what we did when we built the sum of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:25.850 --> 00:14:29.210
+<v Speaker 0>two automata by looking at the two components effectively.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:29.300 --> 00:14:32.240
+<v Speaker 0>But when we were in the deterministic world, we couldn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:32.240 --> 00:14:34.280
+<v Speaker 0>leave them as two independently running things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:34.280 --> 00:14:37.040
+<v Speaker 0>We had to tie them together into one bigger thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:40.880 --> 00:14:41.330
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:14:41.330 --> 00:14:44.480
+<v Speaker 0>Any questions about what I'm doing so far?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:44.480 --> 00:14:45.740
+<v Speaker 0>This construction.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:49.760 --> 00:14:51.290
+<v Speaker 0>So here's a question.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:52.340 --> 00:14:56.510
+<v Speaker 0>How much memory do I need if I'm going actually
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:56.510 --> 00:14:58.430
+<v Speaker 0>to program one of these things?
+
+NOTE CONF {"raw":[100,98,100,100,100,100]}
+
+00:15:15.410 --> 00:15:18.020
+<v Speaker 0>How much state is there to keep track of?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:20.720 --> 00:15:21.050
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:15:24.110 --> 00:15:24.980
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:15:29.690 --> 00:15:30.410
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[97]}
+
+00:15:30.650 --> 00:15:31.370
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:15:31.790 --> 00:15:34.520
+<v Speaker 0>So that's the number of states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:35.420 --> 00:15:37.460
+<v Speaker 0>Um, so the question was then how much space do
+
+NOTE CONF {"raw":[100,100,100,100,76,100,100,100,100,100]}
+
+00:15:37.460 --> 00:15:39.290
+<v Speaker 0>I need to track that number of states?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:41.090 --> 00:15:43.100
+<v Speaker 0>So I've got a bunch of states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:43.130 --> 00:15:45.560
+<v Speaker 0>Each state can be either active or not active.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:45.570 --> 00:15:48.660
+<v Speaker 0>So I need one bit of memory for each state.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:51.420 --> 00:15:51.750
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:15:54.060 --> 00:15:58.830
+<v Speaker 0>With a deterministic automaton, I didn't need so much memory.
+
+NOTE CONF {"raw":[94,81,100,100,100,100,100,100,100,100]}
+
+00:15:58.830 --> 00:16:02.580
+<v Speaker 0>Because if a deterministic automaton has n states, I just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:02.580 --> 00:16:05.010
+<v Speaker 0>need to know which of those n states is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:05.010 --> 00:16:06.090
+<v Speaker 0>currently active state.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:06.090 --> 00:16:09.420
+<v Speaker 0>So I need a a number big enough to express
+
+NOTE CONF {"raw":[100,100,100,74,100,100,100,100,100,100]}
+
+00:16:09.420 --> 00:16:12.690
+<v Speaker 0>one to n, which is log n bits.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:13.170 --> 00:16:17.790
+<v Speaker 0>So a deterministic automaton is much more compact than a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:17.790 --> 00:16:21.720
+<v Speaker 0>non-deterministic automaton in terms of the memory used if you're
+
+NOTE CONF {"raw":[72,100,100,100,100,100,100,100,100,94]}
+
+00:16:21.720 --> 00:16:23.130
+<v Speaker 0>going to program the thing.
+
+NOTE CONF {"raw":[100,100,98,100,100]}
+
+00:16:23.970 --> 00:16:29.820
+<v Speaker 0>So actually running a non-deterministic automaton requires exponentially more memory,
+
+NOTE CONF {"raw":[100,100,100,67,74,100,100,100,100,100]}
+
+00:16:29.910 --> 00:16:33.000
+<v Speaker 0>which sounds at first sight like a bad thing, but
+
+NOTE CONF {"raw":[100,100,100,100,58,100,100,100,100,100]}
+
+00:16:33.000 --> 00:16:34.470
+<v Speaker 0>it's still only one bit per state.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:34.470 --> 00:16:36.120
+<v Speaker 0>So as long as you have a reasonable number of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:36.120 --> 00:16:38.220
+<v Speaker 0>states, this is not a big deal.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:38.220 --> 00:16:39.570
+<v Speaker 0>Or at least not these days.
+
+NOTE CONF {"raw":[93,100,100,100,100,100]}
+
+00:16:42.240 --> 00:16:46.080
+<v Speaker 0>Um, how do we understand this?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:46.920 --> 00:16:49.380
+<v Speaker 0>So I said run an NFA.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:50.040 --> 00:16:52.200
+<v Speaker 0>You've already implemented Dfas.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:52.200 --> 00:16:54.240
+<v Speaker 0>How would you go and run an NFA?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:00.540 --> 00:17:03.750
+<v Unknown>Just do the same thing over and over.
+
+NOTE CONF {"raw":[65,54,99,99,96,60,60,66]}
+
+00:17:05.370 --> 00:17:07.500
+<v Speaker 0>I mean, you do kind of the same thing.
+
+NOTE CONF {"raw":[100,100,57,100,100,100,100,100,100]}
+
+00:17:07.500 --> 00:17:09.870
+<v Speaker 0>So with Dfas you track the current state.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:10.319 --> 00:17:12.000
+<v Speaker 0>Um, you fed it the input you saw.
+
+NOTE CONF {"raw":[71,100,100,100,100,100,100,100]}
+
+00:17:12.000 --> 00:17:13.410
+<v Speaker 0>What's the current state at the end?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:13.439 --> 00:17:17.699
+<v Speaker 0>Was is that a good state running an NFA?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:17.699 --> 00:17:18.540
+<v Speaker 0>What you're going to do.
+
+NOTE CONF {"raw":[85,100,100,100,100]}
+
+00:17:18.569 --> 00:17:22.260
+<v Speaker 0>Of course, is more complex because now we have initial
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:22.260 --> 00:17:23.850
+<v Speaker 0>states, possibly several.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:23.880 --> 00:17:25.170
+<v Speaker 0>We feed it an input.
+
+NOTE CONF {"raw":[100,100,100,99,100]}
+
+00:17:25.170 --> 00:17:26.430
+<v Speaker 0>It might go all over the place.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:17:26.430 --> 00:17:28.800
+<v Speaker 0>We have to keep track of lots of current states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:29.070 --> 00:17:31.500
+<v Speaker 0>And after we've read the input, we have a bunch
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:31.500 --> 00:17:32.700
+<v Speaker 0>of current states.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:32.700 --> 00:17:36.000
+<v Speaker 0>And then we have to see if any of them
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:36.000 --> 00:17:36.990
+<v Speaker 0>is accepting.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:36.990 --> 00:17:41.940
+<v Speaker 0>So it's more complex but not hard to implement.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:42.630 --> 00:17:47.040
+<v Speaker 0>But do we have any kind of understanding of what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:47.040 --> 00:17:48.750
+<v Speaker 0>we're really thinking about?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:49.710 --> 00:17:52.830
+<v Speaker 0>Because this idea of having multiple current states and everything
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:52.830 --> 00:17:55.290
+<v Speaker 0>being good, if one of them is good is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:55.290 --> 00:17:56.100
+<v Speaker 0>bit artificial.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:56.100 --> 00:17:56.550
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:17:57.390 --> 00:18:01.080
+<v Speaker 1>Would it be run everything in parallel or would we
+
+NOTE CONF {"raw":[100,100,100,100,86,100,100,100,100,100]}
+
+00:18:01.080 --> 00:18:02.490
+<v Speaker 1>go like as an advantage?
+
+NOTE CONF {"raw":[87,96,82,82,82]}
+
+00:18:02.490 --> 00:18:04.560
+<v Speaker 1>Do you go through one and then another.
+
+NOTE CONF {"raw":[78,78,99,100,94,100,100,99]}
+
+00:18:05.760 --> 00:18:06.990
+<v Speaker 0>That's a very good question.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:06.990 --> 00:18:10.410
+<v Speaker 0>So the question was if you're trying to run a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:10.410 --> 00:18:16.320
+<v Speaker 0>non-deterministic automaton, does everything run in parallel or are you
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100,100,100,100]}
+
+00:18:16.320 --> 00:18:18.870
+<v Speaker 0>exploring first one path, then the other path, then the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,75,100]}
+
+00:18:18.870 --> 00:18:19.620
+<v Speaker 0>other path?
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:19.980 --> 00:18:21.210
+<v Speaker 0>Um, what's the answer?
+
+NOTE CONF {"raw":[99,100,100,100]}
+
+00:18:23.550 --> 00:18:25.710
+<v Speaker 0>What's the answer if you're implementing it?
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100]}
+
+00:18:28.320 --> 00:18:29.820
+<v Speaker 0>I mean, do you know any way to do it
+
+NOTE CONF {"raw":[47,47,100,100,100,100,100,100,100,100]}
+
+00:18:29.820 --> 00:18:32.340
+<v Speaker 0>other than by exploring one path after another?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:34.980 --> 00:18:38.310
+<v Speaker 0>Um, so.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:41.820 --> 00:18:42.690
+<v Speaker 0>There are.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:44.590 --> 00:18:48.430
+<v Speaker 0>ways, obviously, of doing computation in parallel.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:48.460 --> 00:18:52.060
+<v Speaker 0>Actually all your computers have many cores in your CPU.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:52.660 --> 00:18:53.770
+<v Speaker 0>I don't know how many cores.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:53.800 --> 00:18:57.190
+<v Speaker 0>The current CPU of the kind you buy has eight,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:57.190 --> 00:18:59.020
+<v Speaker 0>16, 16 now.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:19:00.340 --> 00:19:03.370
+<v Speaker 0>Um, and of course, if you care to find the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:03.370 --> 00:19:06.850
+<v Speaker 0>resources, we have an assortment of supercomputers scattered around the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:06.850 --> 00:19:09.310
+<v Speaker 0>place with several thousand processors.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:09.310 --> 00:19:12.280
+<v Speaker 0>And in principle, you could run things in parallel.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:12.610 --> 00:19:16.450
+<v Speaker 0>Okay, but that's always a bit artificial, because what if
+
+NOTE CONF {"raw":[91,100,100,100,100,100,100,100,100,100]}
+
+00:19:16.450 --> 00:19:18.670
+<v Speaker 0>there are more paths than several thousand?
+
+NOTE CONF {"raw":[100,100,100,76,100,100,100]}
+
+00:19:19.690 --> 00:19:21.850
+<v Speaker 0>What we would really like to do is think of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:21.850 --> 00:19:25.210
+<v Speaker 0>the things running in parallel, without actually having to implement
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:25.210 --> 00:19:26.230
+<v Speaker 0>them in parallel.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:26.500 --> 00:19:33.250
+<v Speaker 0>And that's where there's a disconnect between our intuitive understanding
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:33.250 --> 00:19:35.890
+<v Speaker 0>of what we would like to do and the universe
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:35.890 --> 00:19:37.300
+<v Speaker 0>that we happen to live in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:38.650 --> 00:19:40.690
+<v Speaker 0>So there are a couple of ways of trying to
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:19:40.690 --> 00:19:44.230
+<v Speaker 0>understand what a non-deterministic automaton is.
+
+NOTE CONF {"raw":[100,100,100,51,100,100]}
+
+00:19:46.210 --> 00:19:49.390
+<v Speaker 0>This is one way, and you will see this way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:49.390 --> 00:19:54.190
+<v Speaker 0>used a lot in computational complexity theory if you choose
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:54.190 --> 00:19:55.090
+<v Speaker 0>to do that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:19:56.980 --> 00:20:00.880
+<v Speaker 0>So one way we could try to say is that,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:00.880 --> 00:20:03.310
+<v Speaker 0>well, the machine has a bunch of start states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:03.310 --> 00:20:08.560
+<v Speaker 0>When we turn on the machine guesses or chooses.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:08.740 --> 00:20:09.700
+<v Speaker 0>What does that mean?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:09.790 --> 00:20:10.660
+<v Speaker 0>Not well defined.
+
+NOTE CONF {"raw":[94,56,32]}
+
+00:20:10.660 --> 00:20:12.370
+<v Speaker 0>One of the start states.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:12.880 --> 00:20:17.320
+<v Speaker 0>And then it behaves like a deterministic automaton, except that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:17.320 --> 00:20:20.710
+<v Speaker 0>whenever it has more than one transition as a choice,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:20.710 --> 00:20:23.740
+<v Speaker 0>for example, here it has the choice of going there
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:23.740 --> 00:20:24.340
+<v Speaker 0>or there.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:24.610 --> 00:20:32.560
+<v Speaker 0>Again, it guesses chooses which one to follow, or alternatively
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:32.560 --> 00:20:33.190
+<v Speaker 0>it dies.
+
+NOTE CONF {"raw":[100,100]}
+
+00:20:33.790 --> 00:20:35.290
+<v Speaker 0>If there is no choice.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:37.180 --> 00:20:39.850
+<v Speaker 0>And then we say, when does the machine accept?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:20:39.850 --> 00:20:42.380
+<v Speaker 0>Well, if there was a way that the machine could
+
+NOTE CONF {"raw":[100,100,100,100,100,69,100,100,100,100]}
+
+00:20:42.380 --> 00:20:45.110
+<v Speaker 0>have guessed right all the time and got to a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:45.110 --> 00:20:50.060
+<v Speaker 0>good point, then the input string is accepted.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:51.980 --> 00:20:56.900
+<v Speaker 0>This is a notion of machine and an understanding of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:56.900 --> 00:20:59.480
+<v Speaker 0>non-determinism that, as I say, is used a lot in
+
+NOTE CONF {"raw":[65,100,100,100,100,100,100,100,100,100]}
+
+00:20:59.480 --> 00:21:04.700
+<v Speaker 0>theoretical analysis because you can turn it into a mathematical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:04.700 --> 00:21:08.210
+<v Speaker 0>formalism that is quite easy to work with by talking
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:08.210 --> 00:21:08.810
+<v Speaker 0>about.
+
+NOTE CONF {"raw":[100]}
+
+00:21:09.020 --> 00:21:12.200
+<v Speaker 0>Suppose I have a sequence of guesses that works well,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:12.620 --> 00:21:14.930
+<v Speaker 0>and then computing with that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:16.100 --> 00:21:20.870
+<v Speaker 0>But the words guess and choice are very misleading here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:20.870 --> 00:21:24.080
+<v Speaker 0>They don't actually correspond to anything we can really do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:24.470 --> 00:21:28.820
+<v Speaker 0>So it doesn't mean toss a coin, it doesn't mean
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:28.820 --> 00:21:31.910
+<v Speaker 0>any more sophisticated kind of gambling thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:31.910 --> 00:21:34.910
+<v Speaker 0>And it absolutely is not quantum anything.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:35.510 --> 00:21:35.930
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[74]}
+
+00:21:36.560 --> 00:21:38.300
+<v Speaker 0>Um, when you see this kind of thing, you tend
+
+NOTE CONF {"raw":[81,100,100,100,100,100,100,100,100,100]}
+
+00:21:38.300 --> 00:21:39.560
+<v Speaker 0>to think that it is quantum.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:21:39.920 --> 00:21:41.150
+<v Speaker 0>there is.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:43.700 --> 00:21:49.280
+<v Speaker 0>What happens in the quantum world is partly probabilistic and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:49.280 --> 00:21:50.750
+<v Speaker 0>partly non-deterministic.
+
+NOTE CONF {"raw":[100,91]}
+
+00:21:50.750 --> 00:21:52.730
+<v Speaker 0>It shares characteristics of both.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:21:52.730 --> 00:21:55.400
+<v Speaker 0>But this theoretical notion is not quantum.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:55.490 --> 00:22:00.020
+<v Speaker 0>And you can in fact combine non-deterministic non-determinism in this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,90,58,100,100]}
+
+00:22:00.020 --> 00:22:03.320
+<v Speaker 0>sense with quantum computation and get something more complicated than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:03.320 --> 00:22:06.410
+<v Speaker 0>either, which is possibly not a great idea.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:06.410 --> 00:22:10.250
+<v Speaker 0>But people do it, of course, because people with funding
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:10.250 --> 00:22:11.270
+<v Speaker 0>will do anything.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:13.370 --> 00:22:18.020
+<v Speaker 0>Um, there's another way that is sometimes helpful.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100]}
+
+00:22:20.120 --> 00:22:23.570
+<v Speaker 0>Instead of saying, we have to guess at each choice,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:23.990 --> 00:22:26.630
+<v Speaker 0>let's say, well, we don't know what to do, but
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:22:26.630 --> 00:22:29.330
+<v Speaker 0>there's somebody much cleverer out there who tells us what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:29.330 --> 00:22:29.990
+<v Speaker 0>to do.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:31.460 --> 00:22:34.820
+<v Speaker 0>Now, that's also not physically realisable because who is?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:22:34.820 --> 00:22:38.450
+<v Speaker 0>Well, depending on your religious beliefs, it's not physically realisable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:38.840 --> 00:22:41.030
+<v Speaker 0>Who is this thing that tells you which way to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:41.030 --> 00:22:41.690
+<v Speaker 0>go?
+
+NOTE CONF {"raw":[100]}
+
+00:22:42.110 --> 00:22:44.930
+<v Speaker 0>This does turn out to be a useful way of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:44.930 --> 00:22:51.050
+<v Speaker 0>thinking about things, theoretically, because you can use it to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:51.050 --> 00:22:53.840
+<v Speaker 0>think about things that are much, much more complicated than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:53.870 --> 00:22:55.460
+<v Speaker 0>simply nondeterminism.
+
+NOTE CONF {"raw":[100,61]}
+
+00:22:55.670 --> 00:22:58.130
+<v Speaker 0>And you can use the notion of an oracle that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:58.130 --> 00:23:02.750
+<v Speaker 0>tells you how to make your choice correctly, to leapfrog
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:02.750 --> 00:23:07.550
+<v Speaker 0>from nondeterminism to code nondeterminism and back and forth and
+
+NOTE CONF {"raw":[100,57,100,97,58,100,100,100,100,100]}
+
+00:23:07.550 --> 00:23:10.910
+<v Speaker 0>get much more complicated things, which I talked about in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,71,100,100,100]}
+
+00:23:10.910 --> 00:23:13.880
+<v Speaker 0>the introduction to to theoretical computer science.
+
+NOTE CONF {"raw":[100,100,57,96,100,100,100]}
+
+00:23:14.570 --> 00:23:16.820
+<v Speaker 0>There's a fair chance that by the time you get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:16.820 --> 00:23:19.430
+<v Speaker 0>to third year, I might be teaching that course again.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:19.430 --> 00:23:22.130
+<v Speaker 0>So this is a pre-emptive advert.
+
+NOTE CONF {"raw":[100,100,100,100,89,100]}
+
+00:23:24.410 --> 00:23:27.290
+<v Speaker 0>Okay, so I've said we have these machines.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:23:27.290 --> 00:23:32.090
+<v Speaker 0>I've said they don't actually have any realistic real world
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:32.090 --> 00:23:32.930
+<v Speaker 0>understandings.
+
+NOTE CONF {"raw":[89]}
+
+00:23:32.930 --> 00:23:36.290
+<v Speaker 0>So why am I introducing something which is purely a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:36.290 --> 00:23:41.910
+<v Speaker 0>piece of mathematical Role play instead of something modelling something
+
+NOTE CONF {"raw":[100,100,100,74,100,100,100,100,94,100]}
+
+00:23:41.910 --> 00:23:43.290
+<v Speaker 0>real in the universe.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:23:45.060 --> 00:23:46.440
+<v Speaker 0>Why do we want to use them?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:46.440 --> 00:23:48.210
+<v Speaker 0>Because they're actually extremely useful.
+
+NOTE CONF {"raw":[100,99,100,100,100]}
+
+00:23:48.210 --> 00:23:50.760
+<v Speaker 0>It doesn't matter that they don't correspond to a real
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:50.760 --> 00:23:51.810
+<v Speaker 0>physical thing.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:52.380 --> 00:23:54.960
+<v Speaker 0>They turn out to be a much easier thing to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:54.960 --> 00:23:59.490
+<v Speaker 0>deal with for many practical purposes than deterministic automata.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:01.800 --> 00:24:05.010
+<v Speaker 0>Um, in particular, some of the constructions we did last
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,100,100]}
+
+00:24:05.010 --> 00:24:08.700
+<v Speaker 0>week are much easier, and there are constructions that I
+
+NOTE CONF {"raw":[100,100,100,100,100,84,60,100,100,100]}
+
+00:24:08.700 --> 00:24:11.700
+<v Speaker 0>didn't even talk about last week because they were unnecessarily
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:11.700 --> 00:24:15.000
+<v Speaker 0>complicated, which are also easy with Nsfas.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,83]}
+
+00:24:16.080 --> 00:24:18.990
+<v Speaker 0>And in particular, we want to do string processing a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:18.990 --> 00:24:25.380
+<v Speaker 0>lot for parsing programming languages, parsing natural language, recognising bad
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96,100]}
+
+00:24:25.380 --> 00:24:26.640
+<v Speaker 0>signals, whatever.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:28.140 --> 00:24:30.690
+<v Speaker 0>And with nondeterministic automata.
+
+NOTE CONF {"raw":[100,100,50,100]}
+
+00:24:30.720 --> 00:24:32.250
+<v Speaker 0>Things are quite easy.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:32.520 --> 00:24:34.890
+<v Speaker 0>So here's an example.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:24:36.930 --> 00:24:38.370
+<v Speaker 0>What's the language?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:38.370 --> 00:24:39.780
+<v Speaker 0>Consider this language.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:39.810 --> 00:24:42.900
+<v Speaker 0>The input alphabet is a B, and all we really
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:42.900 --> 00:24:46.230
+<v Speaker 0>care about is whether the string ends with the sequence
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:46.230 --> 00:24:46.890
+<v Speaker 0>a b.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:47.580 --> 00:24:50.700
+<v Speaker 0>Okay, so we don't care about what happens at the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:50.700 --> 00:24:52.380
+<v Speaker 0>beginning, only at the end.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:54.420 --> 00:24:58.170
+<v Speaker 0>Can you build a deterministic automaton to recognise that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,86,100]}
+
+00:24:58.260 --> 00:25:00.240
+<v Speaker 0>I mean hopefully you can, but it's a bit messy
+
+NOTE CONF {"raw":[67,67,100,100,100,100,100,100,100,100]}
+
+00:25:00.240 --> 00:25:03.570
+<v Speaker 0>because we know that we don't care about most of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:03.570 --> 00:25:05.460
+<v Speaker 0>the input, but we have to care about it long
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:05.460 --> 00:25:08.040
+<v Speaker 0>enough to realise whether it at the end, whether it's
+
+NOTE CONF {"raw":[100,100,98,100,74,60,100,100,100,100]}
+
+00:25:08.040 --> 00:25:09.270
+<v Speaker 0>at the end or not.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:09.660 --> 00:25:12.210
+<v Speaker 0>So when I try to build a DFA, it looks
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:12.210 --> 00:25:13.140
+<v Speaker 0>like this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:14.700 --> 00:25:15.930
+<v Speaker 0>What's going on here?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:15.930 --> 00:25:20.490
+<v Speaker 0>Well, if I see an A, we might be about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:20.490 --> 00:25:22.620
+<v Speaker 0>to hit the end, so we'd better remember it.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100]}
+
+00:25:22.920 --> 00:25:25.260
+<v Speaker 0>If we see a B, we might be at the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:25.260 --> 00:25:25.530
+<v Speaker 0>end.
+
+NOTE CONF {"raw":[100]}
+
+00:25:25.530 --> 00:25:26.850
+<v Speaker 0>If we are, that's good.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:26.850 --> 00:25:28.200
+<v Speaker 0>Now what happens?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:28.200 --> 00:25:32.520
+<v Speaker 0>Well, if we see a B, then our string no
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:32.520 --> 00:25:33.780
+<v Speaker 0>longer ends with a B.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:33.780 --> 00:25:35.430
+<v Speaker 0>So we'd better go back to the beginning.
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100]}
+
+00:25:35.430 --> 00:25:38.430
+<v Speaker 0>If we see an A or string now ends with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:38.430 --> 00:25:41.160
+<v Speaker 0>BA, but it would be okay if it then saw
+
+NOTE CONF {"raw":[76,100,100,100,100,100,100,100,100,100]}
+
+00:25:41.160 --> 00:25:42.240
+<v Speaker 0>a B next.
+
+NOTE CONF {"raw":[99,100,100]}
+
+00:25:42.330 --> 00:25:45.330
+<v Speaker 0>And it's a bit hard to understand, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:25:45.330 --> 00:25:46.470
+<v Speaker 0>Or at least I found it.
+
+NOTE CONF {"raw":[97,100,100,100,95,100]}
+
+00:25:46.470 --> 00:25:48.870
+<v Speaker 0>Find these things hard to understand.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:51.060 --> 00:25:54.600
+<v Speaker 0>Um, looking at that, do you agree that it recognises
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,74]}
+
+00:25:54.600 --> 00:25:56.460
+<v Speaker 0>the language I say it recognises?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:25:58.950 --> 00:26:00.960
+<v Speaker 0>Hey, some of you are having to think about it
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100,100,100,100]}
+
+00:26:00.960 --> 00:26:01.740
+<v Speaker 0>as I am.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:01.950 --> 00:26:04.170
+<v Speaker 0>Here's the nondeterministic version.
+
+NOTE CONF {"raw":[100,100,64,100]}
+
+00:26:06.630 --> 00:26:09.750
+<v Speaker 0>We read A and B, A's and B's at the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:09.750 --> 00:26:10.920
+<v Speaker 0>beginning of the string.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:10.920 --> 00:26:13.410
+<v Speaker 0>Then we read an a, then we read a B
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:13.950 --> 00:26:14.880
+<v Speaker 0>and we're done.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:15.870 --> 00:26:17.160
+<v Speaker 0>Why does this work?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:18.180 --> 00:26:24.120
+<v Speaker 0>Because if we feed it some string, there are lots
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:24.120 --> 00:26:28.530
+<v Speaker 0>of ways to run this automaton that get it wrong,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:28.980 --> 00:26:29.940
+<v Speaker 0>because they.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:29.940 --> 00:26:32.640
+<v Speaker 0>So suppose we fed it just the string a b.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:32.880 --> 00:26:35.740
+<v Speaker 0>One way to run the automaton is to go a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:35.860 --> 00:26:38.260
+<v Speaker 0>B and end up in the wrong place.
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100]}
+
+00:26:38.260 --> 00:26:40.690
+<v Speaker 0>But it doesn't matter because there is one right way
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:40.690 --> 00:26:41.230
+<v Speaker 0>to read it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:41.230 --> 00:26:43.120
+<v Speaker 0>If I feed it the string a b, the right
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:43.120 --> 00:26:45.340
+<v Speaker 0>way is to go a B and end up in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:45.340 --> 00:26:46.330
+<v Speaker 0>the good place.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:46.870 --> 00:26:49.810
+<v Speaker 0>If I feed it the string a, a, b, the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,83,100,100,100]}
+
+00:26:49.810 --> 00:26:53.290
+<v Speaker 0>right way to read it is a, a, b, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,87,100,100,100]}
+
+00:26:53.290 --> 00:26:55.210
+<v Speaker 0>we end up accepting the string.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:26:55.390 --> 00:26:57.490
+<v Speaker 0>There is one way to accept.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:26:58.450 --> 00:27:01.660
+<v Speaker 0>I claim that this is much easier to understand than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:01.660 --> 00:27:05.410
+<v Speaker 0>this, and certainly much easier to construct than this, at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:05.410 --> 00:27:08.380
+<v Speaker 0>least once you're in the habit of building these things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:09.790 --> 00:27:13.030
+<v Speaker 0>And that's the primary reason that we use Nfus, because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,79,100]}
+
+00:27:13.030 --> 00:27:17.350
+<v Speaker 0>it's easy to recognise to build automata that recognise strings
+
+NOTE CONF {"raw":[99,81,100,96,100,100,100,100,97,100]}
+
+00:27:17.350 --> 00:27:19.930
+<v Speaker 0>with nice, simple properties like that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:22.960 --> 00:27:24.400
+<v Speaker 0>Are we doing okay?
+
+NOTE CONF {"raw":[78,65,100,100]}
+
+00:27:24.430 --> 00:27:26.500
+<v Speaker 0>Any questions so far?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:27.010 --> 00:27:27.460
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:27:27.820 --> 00:27:31.090
+<v Speaker 1>So just to clarify, if we fed the long term
+
+NOTE CONF {"raw":[100,100,100,100,100,100,92,100,100,100]}
+
+00:27:31.810 --> 00:27:34.360
+<v Speaker 1>finite automaton a string ABBA.
+
+NOTE CONF {"raw":[100,100,91,100,60]}
+
+00:27:34.900 --> 00:27:37.690
+<v Speaker 1>We would start off by well, being active in state
+
+NOTE CONF {"raw":[100,58,100,100,100,70,100,91,100,100]}
+
+00:27:37.690 --> 00:27:41.200
+<v Speaker 1>zero and state one, with first day active in state
+
+NOTE CONF {"raw":[100,88,100,100,79,96,95,100,85,100]}
+
+00:27:41.200 --> 00:27:44.560
+<v Speaker 1>zero, state two because of the peak, and then the
+
+NOTE CONF {"raw":[100,100,100,100,97,85,33,56,100,96]}
+
+00:27:44.560 --> 00:27:49.150
+<v Speaker 1>last day would sort of kill off the state of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,74,100,100]}
+
+00:27:49.150 --> 00:27:49.780
+<v Speaker 1>state two.
+
+NOTE CONF {"raw":[100,97]}
+
+00:27:50.140 --> 00:27:50.530
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:27:50.530 --> 00:27:53.470
+<v Speaker 0>So let's let me let's run through that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:27:53.470 --> 00:27:57.400
+<v Speaker 0>In fact, let's actually do it on the board because
+
+NOTE CONF {"raw":[98,98,100,100,100,100,100,100,100,100]}
+
+00:27:57.400 --> 00:27:58.570
+<v Speaker 0>I ought to have done this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:13.870 --> 00:28:14.920
+<v Speaker 0>And.
+
+NOTE CONF {"raw":[100]}
+
+00:28:18.820 --> 00:28:22.870
+<v Speaker 0>What happens if we feed it ABBA.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,52]}
+
+00:28:22.900 --> 00:28:23.380
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[97]}
+
+00:28:23.800 --> 00:28:29.230
+<v Speaker 0>Well, so initially this state is active.
+
+NOTE CONF {"raw":[100,100,100,70,100,100,100]}
+
+00:28:30.130 --> 00:28:31.480
+<v Speaker 0>We feed it a.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:33.040 --> 00:28:38.350
+<v Speaker 0>So this state stays active and this one becomes active.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:40.240 --> 00:28:43.780
+<v Speaker 0>We feed it B this state is active.
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100]}
+
+00:28:43.780 --> 00:28:46.000
+<v Speaker 0>So feeding it B leaves it active.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:46.030 --> 00:28:47.200
+<v Speaker 0>This state is active.
+
+NOTE CONF {"raw":[86,100,100,100]}
+
+00:28:47.200 --> 00:28:51.010
+<v Speaker 0>So feeding it B moves the activity to there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:54.220 --> 00:28:54.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[80]}
+
+00:28:54.940 --> 00:29:01.360
+<v Speaker 0>We feed it a with a.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:02.230 --> 00:29:05.950
+<v Speaker 0>This state is active so it stays active.
+
+NOTE CONF {"raw":[88,100,100,100,100,100,100,100]}
+
+00:29:05.980 --> 00:29:07.750
+<v Speaker 0>This becomes active.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:07.780 --> 00:29:10.030
+<v Speaker 0>This state doesn't have any transition.
+
+NOTE CONF {"raw":[100,100,100,100,57,78]}
+
+00:29:11.020 --> 00:29:12.430
+<v Speaker 0>So that state is dead.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:12.430 --> 00:29:15.100
+<v Speaker 0>So we've fed it ABA and we've ended up with
+
+NOTE CONF {"raw":[100,90,100,100,64,100,100,100,100,100]}
+
+00:29:15.100 --> 00:29:17.800
+<v Speaker 0>two active states neither of which is accepting.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:17.800 --> 00:29:19.540
+<v Speaker 0>And so the thing doesn't accept.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:22.450 --> 00:29:25.120
+<v Speaker 0>Our thanks here that's useful to have negative examples.
+
+NOTE CONF {"raw":[80,100,54,100,100,100,100,100,100]}
+
+00:29:31.420 --> 00:29:33.290
+<v Speaker 0>Any other questions?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:36.350 --> 00:29:38.810
+<v Speaker 0>Okay, so that was pictures and intuition.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100]}
+
+00:29:40.130 --> 00:29:43.100
+<v Speaker 0>There's more notation, I'm afraid.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:43.850 --> 00:29:45.770
+<v Speaker 0>One of the things I dislike about this subject is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:45.770 --> 00:29:47.900
+<v Speaker 0>the amount of notation, but one needs it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:49.700 --> 00:29:52.400
+<v Speaker 0>And the main reason that you need the notation is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:52.400 --> 00:29:54.380
+<v Speaker 0>because you have to program this stuff, and you will
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:29:54.380 --> 00:29:55.730
+<v Speaker 0>need to think about it a bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:56.330 --> 00:29:57.470
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:30:00.650 --> 00:30:02.660
+<v Speaker 0>How do I talk about.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:04.670 --> 00:30:07.190
+<v Speaker 0>The set of currently active states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:07.700 --> 00:30:11.390
+<v Speaker 0>So I have a transition function which says an input
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:11.390 --> 00:30:14.240
+<v Speaker 0>letter A takes me from a state to a state.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:14.240 --> 00:30:17.150
+<v Speaker 0>But it might be many target states for any source
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:17.150 --> 00:30:18.440
+<v Speaker 0>state and vice versa.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:19.430 --> 00:30:22.400
+<v Speaker 0>This thing is just really tracking the current set of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:30:22.400 --> 00:30:23.180
+<v Speaker 0>states.
+
+NOTE CONF {"raw":[100]}
+
+00:30:23.180 --> 00:30:26.330
+<v Speaker 0>So how do you all know the notation?
+
+NOTE CONF {"raw":[87,34,100,100,100,100,100,100]}
+
+00:30:26.330 --> 00:30:27.020
+<v Speaker 0>Curly p?
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:29.270 --> 00:30:31.010
+<v Speaker 0>Curly P power set.
+
+NOTE CONF {"raw":[100,98,56,56]}
+
+00:30:31.040 --> 00:30:32.660
+<v Speaker 0>Do you all know the term power set?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:32.690 --> 00:30:34.820
+<v Speaker 0>Anybody not know the term power set?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:30:35.630 --> 00:30:38.840
+<v Speaker 0>Power set the set of subsets of something.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:40.520 --> 00:30:41.270
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:30:47.450 --> 00:30:48.920
+<v Speaker 0>If I have a set S.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:04.550 --> 00:31:09.980
+<v Speaker 0>Then the power set is the set of subsets of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:09.980 --> 00:31:11.090
+<v Speaker 0>my original set.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:11.120 --> 00:31:14.690
+<v Speaker 0>You will also see this thing written as two to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:14.690 --> 00:31:18.620
+<v Speaker 0>the power s, for reasons that are either obvious to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:18.620 --> 00:31:21.680
+<v Speaker 0>you or aren't obvious, but will become so eventually.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:31:26.780 --> 00:31:28.700
+<v Speaker 0>And that was definitely in the stuff we asked you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:28.700 --> 00:31:30.510
+<v Speaker 0>to read before starting the course.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:31.290 --> 00:31:33.660
+<v Speaker 0>Um, so what is this?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:33.690 --> 00:31:38.490
+<v Speaker 0>This is like a transition function, but it says these
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:38.490 --> 00:31:41.340
+<v Speaker 0>are my currently active states in here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:42.510 --> 00:31:44.370
+<v Speaker 0>So that's my Q hat.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:44.940 --> 00:31:47.970
+<v Speaker 0>I read an input letter, and then I get the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:47.970 --> 00:31:49.560
+<v Speaker 0>currently active states.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:50.550 --> 00:31:53.880
+<v Speaker 0>And this slightly messy union is just saying for every
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:53.880 --> 00:31:58.920
+<v Speaker 0>state that is currently active union over Q, I look
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:58.920 --> 00:32:01.350
+<v Speaker 0>at the places I can go to by doing an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:01.350 --> 00:32:03.810
+<v Speaker 0>A, and I just union them all together.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:03.990 --> 00:32:08.610
+<v Speaker 0>So it's generalising the idea of the transition function to
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:32:08.610 --> 00:32:11.190
+<v Speaker 0>think about a function from the current set of active
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:11.190 --> 00:32:14.460
+<v Speaker 0>states to the new set of active states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:14.640 --> 00:32:17.130
+<v Speaker 0>And it is a function because I'm now thinking about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:17.130 --> 00:32:19.500
+<v Speaker 0>the set of all the states that are switched on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:19.500 --> 00:32:21.870
+<v Speaker 0>And when I do a transition, I get another set
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:21.870 --> 00:32:23.490
+<v Speaker 0>of states that are switched on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:25.620 --> 00:32:29.040
+<v Speaker 0>Um, yet again, I'm using slightly different notation from the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:29.040 --> 00:32:29.460
+<v Speaker 0>book.
+
+NOTE CONF {"raw":[100]}
+
+00:32:29.460 --> 00:32:32.880
+<v Speaker 0>If you care about these things, then read the two
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:32.880 --> 00:32:36.990
+<v Speaker 0>definitions carefully and decide which one you prefer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:39.690 --> 00:32:42.720
+<v Speaker 0>If you remember last week we had a thing called
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:42.720 --> 00:32:46.440
+<v Speaker 0>the string transition function, and this was just something that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:46.440 --> 00:32:49.620
+<v Speaker 0>said, instead of looking at what happens when I do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:49.620 --> 00:32:51.840
+<v Speaker 0>one transition, let's look at what happens when I do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:51.840 --> 00:32:53.520
+<v Speaker 0>a sequence of transitions.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:53.520 --> 00:32:56.880
+<v Speaker 0>So if I am in state Q and I do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100,100]}
+
+00:32:56.880 --> 00:32:58.860
+<v Speaker 0>ABA, where do I end up?
+
+NOTE CONF {"raw":[98,100,100,100,100,100]}
+
+00:32:59.340 --> 00:33:01.560
+<v Speaker 0>This is exactly the analogous thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:01.560 --> 00:33:04.650
+<v Speaker 0>If I have a current set of active states and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:04.650 --> 00:33:08.010
+<v Speaker 0>I do some sequence of input actions, where do I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:08.010 --> 00:33:08.700
+<v Speaker 0>end up?
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:09.900 --> 00:33:14.220
+<v Speaker 0>So the notation is messy, but the concept is simple.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:14.220 --> 00:33:15.000
+<v Speaker 0>Simple.
+
+NOTE CONF {"raw":[100]}
+
+00:33:16.590 --> 00:33:19.710
+<v Speaker 0>The notion of trace is very similar.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:33:19.710 --> 00:33:23.880
+<v Speaker 0>So last week a trace was the sequence of states
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:23.880 --> 00:33:28.710
+<v Speaker 0>that we went through by looking at which state was
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:28.710 --> 00:33:30.900
+<v Speaker 0>active in the deterministic automaton.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:31.620 --> 00:33:37.140
+<v Speaker 0>And now the trace is the sequence of sets of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:37.140 --> 00:33:38.340
+<v Speaker 0>currently active states.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:38.340 --> 00:33:41.310
+<v Speaker 0>So this is the initial set of active states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:33:41.310 --> 00:33:46.800
+<v Speaker 0>And then as I feed it input then we get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:47.760 --> 00:33:50.370
+<v Speaker 0>successive sets of active states.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:51.840 --> 00:33:53.820
+<v Speaker 0>So that's my formal definition.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:53.820 --> 00:33:55.410
+<v Speaker 0>What's the language accepted.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:55.470 --> 00:33:58.620
+<v Speaker 0>This is where the slight complexity comes in because we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:58.620 --> 00:34:00.030
+<v Speaker 0>say anything works.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:01.110 --> 00:34:06.540
+<v Speaker 0>Again messy notation A string is accepted.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:07.440 --> 00:34:11.190
+<v Speaker 0>If I look at the string transition function, compute the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:11.190 --> 00:34:14.610
+<v Speaker 0>set of final states that we end up in and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:14.610 --> 00:34:16.830
+<v Speaker 0>see if any of them is in the set of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:16.830 --> 00:34:18.030
+<v Speaker 0>good states.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:20.100 --> 00:34:23.280
+<v Speaker 0>So that's that's all that that says.
+
+NOTE CONF {"raw":[100,69,100,100,100,100,100]}
+
+00:34:25.950 --> 00:34:26.370
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:34:29.980 --> 00:34:32.440
+<v Speaker 0>Are these definitions looking a bit familiar?
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100]}
+
+00:34:36.550 --> 00:34:37.210
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[69]}
+
+00:34:39.070 --> 00:34:41.530
+<v Speaker 0>How do they differ from the definitions we had last
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:41.530 --> 00:34:44.169
+<v Speaker 0>week for deterministic finite automaton?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:56.620 --> 00:34:59.680
+<v Speaker 0>Well, last week we had a transition function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:01.450 --> 00:35:03.490
+<v Speaker 0>We had a string transition function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:35:03.640 --> 00:35:06.340
+<v Speaker 0>We had a trace that was a set of states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:08.410 --> 00:35:12.280
+<v Speaker 0>Now we've got a transition function which is a works
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,87]}
+
+00:35:12.280 --> 00:35:13.570
+<v Speaker 0>on sets of states.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:13.570 --> 00:35:15.760
+<v Speaker 0>Likewise the string transition function.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:16.360 --> 00:35:21.190
+<v Speaker 0>The trace is a sequence of sets of states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:24.100 --> 00:35:26.800
+<v Speaker 0>Aren't these definitions actually basically the same as we had
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:26.800 --> 00:35:29.620
+<v Speaker 0>last week, except that I've written Capital Q's instead of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:29.620 --> 00:35:30.610
+<v Speaker 0>little Q's.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:32.260 --> 00:35:34.900
+<v Speaker 0>So this might be suggesting to you that we could
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:34.900 --> 00:35:41.920
+<v Speaker 0>talk about a deterministic automaton where the state of a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:35:41.920 --> 00:35:46.150
+<v Speaker 0>deterministic automaton is a set of states of the original
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:46.150 --> 00:35:49.540
+<v Speaker 0>automaton, which is what we're about to do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:51.760 --> 00:35:55.810
+<v Speaker 0>Um, because we need to prove this very important theorem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:57.070 --> 00:35:59.920
+<v Speaker 0>So last week I said that we define the regular
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:59.920 --> 00:36:02.920
+<v Speaker 0>languages to be the things that are accepted by a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:02.920 --> 00:36:05.140
+<v Speaker 0>deterministic finite automaton.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:05.380 --> 00:36:07.630
+<v Speaker 0>So that was our definition of regular.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:08.200 --> 00:36:12.490
+<v Speaker 0>And now I'm going to say that a language is
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:36:12.490 --> 00:36:16.540
+<v Speaker 0>regular if and only if there is some non-deterministic automaton
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,69,100]}
+
+00:36:16.540 --> 00:36:17.500
+<v Speaker 0>and accepts it.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:19.930 --> 00:36:21.760
+<v Speaker 0>Now that's a theorem, not a definition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:21.760 --> 00:36:23.830
+<v Speaker 0>So it's something that we have to prove.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:25.870 --> 00:36:28.150
+<v Speaker 0>Now, this might be a surprising theorem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:28.300 --> 00:36:31.150
+<v Speaker 0>Or if I had kept my mouth shut two minutes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:31.150 --> 00:36:33.160
+<v Speaker 0>ago, it might be a surprising theorem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:35.620 --> 00:36:39.790
+<v Speaker 0>Because Nondeterminism looks as if it ought to be more
+
+NOTE CONF {"raw":[100,52,100,100,100,100,100,100,100,100]}
+
+00:36:39.790 --> 00:36:41.740
+<v Speaker 0>complicated than determinism.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:43.750 --> 00:36:47.770
+<v Speaker 0>But if it's the case that the regular languages are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:47.770 --> 00:36:52.060
+<v Speaker 0>the languages accepted by Dfas, and it's also the case
+
+NOTE CONF {"raw":[100,84,100,100,100,100,100,100,100,100]}
+
+00:36:52.060 --> 00:36:56.140
+<v Speaker 0>that the regular languages are the languages accepted by Nfus,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,66]}
+
+00:36:56.650 --> 00:36:59.320
+<v Speaker 0>then that tells us that nfus are basically the same
+
+NOTE CONF {"raw":[100,100,100,100,100,81,100,100,100,100]}
+
+00:36:59.320 --> 00:37:01.690
+<v Speaker 0>as Dfas in terms of what they can do.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:01.960 --> 00:37:06.130
+<v Speaker 0>So we've introduced all this complexity of weird non-deterministic stuff,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,79,100]}
+
+00:37:06.130 --> 00:37:08.890
+<v Speaker 0>which makes no sense to achieve nothing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:37:10.060 --> 00:37:11.650
+<v Speaker 0>Now, clearly I haven't done that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:11.800 --> 00:37:13.480
+<v Speaker 0>Why have I done it?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:13.480 --> 00:37:16.330
+<v Speaker 0>Because it lets us achieve the same thing in a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:16.330 --> 00:37:18.640
+<v Speaker 0>much more concise and easier way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:19.900 --> 00:37:21.190
+<v Speaker 0>How do I prove this?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:21.190 --> 00:37:22.240
+<v Speaker 0>I've said it's a theorem.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:37:22.240 --> 00:37:23.410
+<v Speaker 0>I haven't proved it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:24.800 --> 00:37:28.130
+<v Speaker 0>Well, what we do is say you give me a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:28.130 --> 00:37:32.480
+<v Speaker 0>language that is recognised by a nondeterministic automata.
+
+NOTE CONF {"raw":[100,100,100,58,100,100,92,100]}
+
+00:37:32.510 --> 00:37:37.490
+<v Speaker 0>I will simply build the deterministic automata that accepts the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:37.490 --> 00:37:38.570
+<v Speaker 0>same language.
+
+NOTE CONF {"raw":[100,100]}
+
+00:37:39.080 --> 00:37:41.750
+<v Speaker 0>And it's very easy and we've already done it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:42.860 --> 00:37:47.000
+<v Speaker 0>Um, so you will see it called the subset construction.
+
+NOTE CONF {"raw":[87,100,100,100,100,100,95,100,100,100]}
+
+00:37:47.000 --> 00:37:51.140
+<v Speaker 0>When you write it down as a piece of mathematical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:51.140 --> 00:37:52.760
+<v Speaker 0>notation, it looks a bit messy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:52.760 --> 00:37:54.710
+<v Speaker 0>In fact, it looks like the previous page.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:54.860 --> 00:37:58.970
+<v Speaker 0>But intuitively we've already done the process several times.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:59.600 --> 00:38:02.840
+<v Speaker 0>So here's our nondeterministic automaton.
+
+NOTE CONF {"raw":[100,100,100,68,100]}
+
+00:38:04.250 --> 00:38:07.160
+<v Speaker 0>This is the even number of zeros and odd number
+
+NOTE CONF {"raw":[100,100,100,100,100,100,82,90,100,100]}
+
+00:38:07.160 --> 00:38:08.870
+<v Speaker 0>of ones thing yet again.
+
+NOTE CONF {"raw":[100,99,100,100,100]}
+
+00:38:09.230 --> 00:38:13.490
+<v Speaker 0>So as a nondeterministic automaton it has two start states.
+
+NOTE CONF {"raw":[100,100,100,61,100,100,100,99,97,100]}
+
+00:38:14.000 --> 00:38:19.670
+<v Speaker 0>And when we run the automaton, we have to keep
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:19.670 --> 00:38:22.280
+<v Speaker 0>track of how the two start states evolve as we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:22.280 --> 00:38:23.210
+<v Speaker 0>read input.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:23.780 --> 00:38:25.910
+<v Speaker 0>Well, that's what we did when we built the product
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:25.910 --> 00:38:26.720
+<v Speaker 0>automaton.
+
+NOTE CONF {"raw":[100]}
+
+00:38:26.720 --> 00:38:34.700
+<v Speaker 0>So we said, these are the initial states that corresponds
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:34.700 --> 00:38:36.560
+<v Speaker 0>to a state over here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:36.590 --> 00:38:39.050
+<v Speaker 0>Now last time when we were building the product we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:39.050 --> 00:38:42.080
+<v Speaker 0>wrote this as brackets E0 comma e1.
+
+NOTE CONF {"raw":[100,100,100,100,92,100,99]}
+
+00:38:42.230 --> 00:38:45.080
+<v Speaker 0>Now I'm just writing it as a set E zero
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,64,64]}
+
+00:38:45.080 --> 00:38:45.830
+<v Speaker 0>e1.
+
+NOTE CONF {"raw":[97]}
+
+00:38:46.130 --> 00:38:48.620
+<v Speaker 0>Well that doesn't matter because these things are different.
+
+NOTE CONF {"raw":[77,100,100,100,100,100,100,100,100]}
+
+00:38:50.390 --> 00:38:54.500
+<v Speaker 0>Um, and similarly when I look at how this state
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:54.500 --> 00:38:58.400
+<v Speaker 0>behaves well as a nondeterministic automata, 19 to look at
+
+NOTE CONF {"raw":[100,100,100,100,82,96,71,72,100,100]}
+
+00:38:58.400 --> 00:39:00.890
+<v Speaker 0>where this one goes, and I need to look at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:00.890 --> 00:39:02.300
+<v Speaker 0>where this one goes.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:03.110 --> 00:39:04.970
+<v Speaker 0>And I find that when I read a zero, I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:04.970 --> 00:39:08.180
+<v Speaker 0>get e zero going to zero zero and e1 going
+
+NOTE CONF {"raw":[100,85,85,100,100,71,100,100,100,100]}
+
+00:39:08.180 --> 00:39:08.930
+<v Speaker 0>to E1.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:10.190 --> 00:39:13.460
+<v Speaker 0>So I move to a state where these are the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:13.460 --> 00:39:16.850
+<v Speaker 0>currently active states, and I do that, and I do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:16.850 --> 00:39:18.530
+<v Speaker 0>that, and I do that and I do that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:39:18.530 --> 00:39:21.680
+<v Speaker 0>So I which is exactly the same diagram as I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:21.680 --> 00:39:22.550
+<v Speaker 0>had before.
+
+NOTE CONF {"raw":[100,100]}
+
+00:39:22.850 --> 00:39:28.220
+<v Speaker 0>Okay, so simply by running these two things in parallel
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:28.220 --> 00:39:30.920
+<v Speaker 0>and keeping track of the set of states, I've done
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:30.920 --> 00:39:32.870
+<v Speaker 0>the same as the product construction.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:37.640 --> 00:39:39.140
+<v Speaker 0>Here's another example.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:39.140 --> 00:39:42.080
+<v Speaker 0>This one has some non-deterministic transitions in it to make
+
+NOTE CONF {"raw":[100,100,100,100,78,100,100,100,100,100]}
+
+00:39:42.080 --> 00:39:43.280
+<v Speaker 0>it more complicated.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:39:44.150 --> 00:39:49.460
+<v Speaker 0>It's a curious fact that no, it's not a curious
+
+NOTE CONF {"raw":[100,100,100,100,50,100,100,100,100,100]}
+
+00:39:49.460 --> 00:39:49.940
+<v Speaker 0>fact.
+
+NOTE CONF {"raw":[100]}
+
+00:39:50.450 --> 00:39:51.680
+<v Speaker 0>It's because it was earlier.
+
+NOTE CONF {"raw":[98,100,100,100,100]}
+
+00:39:51.920 --> 00:39:54.470
+<v Speaker 0>Um, so here's the example on the board again.
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100]}
+
+00:39:55.730 --> 00:39:58.790
+<v Speaker 0>So this has the non-deterministic transitions.
+
+NOTE CONF {"raw":[100,100,100,100,70,100]}
+
+00:39:59.960 --> 00:40:02.480
+<v Speaker 0>This is one that reads strings that end with an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:02.480 --> 00:40:03.200
+<v Speaker 0>a b.
+
+NOTE CONF {"raw":[97,97]}
+
+00:40:05.210 --> 00:40:07.670
+<v Speaker 0>I said it was easy to build non-deterministic.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,52]}
+
+00:40:07.700 --> 00:40:10.700
+<v Speaker 0>See what happens if I try to determine size it
+
+NOTE CONF {"raw":[49,100,100,100,100,100,100,100,39,100]}
+
+00:40:10.700 --> 00:40:13.460
+<v Speaker 0>by keeping track of the current set of states?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:14.060 --> 00:40:16.100
+<v Speaker 0>Well, that's the initial state.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:19.520 --> 00:40:20.090
+<v Speaker 0>There.
+
+NOTE CONF {"raw":[96]}
+
+00:40:21.140 --> 00:40:22.050
+<v Speaker 0>If either.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:22.080 --> 00:40:26.520
+<v Speaker 0>If A happens, then as we saw on the board,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:26.520 --> 00:40:29.040
+<v Speaker 0>we moved to a state where both zero and one
+
+NOTE CONF {"raw":[100,60,100,100,100,100,100,100,100,100]}
+
+00:40:29.040 --> 00:40:29.940
+<v Speaker 0>are active.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:30.270 --> 00:40:32.850
+<v Speaker 0>If B happens in this state, we move to a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97,100,100]}
+
+00:40:32.850 --> 00:40:35.880
+<v Speaker 0>state where just zero is active.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:36.630 --> 00:40:40.790
+<v Speaker 0>When I look at this state where either 0 or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:40.790 --> 00:40:42.930
+<v Speaker 0>1 might be active, if B happens, I move to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,90,100]}
+
+00:40:42.930 --> 00:40:44.190
+<v Speaker 0>a state where 0 or 2.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:44.220 --> 00:40:45.750
+<v Speaker 0>This is what I did on the board a moment
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:45.750 --> 00:40:46.290
+<v Speaker 0>ago.
+
+NOTE CONF {"raw":[100]}
+
+00:40:46.650 --> 00:40:48.660
+<v Speaker 0>And if A happens, we come back to where we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:48.660 --> 00:40:49.140
+<v Speaker 0>are.
+
+NOTE CONF {"raw":[100]}
+
+00:40:50.940 --> 00:40:52.890
+<v Speaker 0>We have to keep going until we run out of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:52.890 --> 00:40:53.640
+<v Speaker 0>things to do.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:53.640 --> 00:40:57.000
+<v Speaker 0>So A takes me back to there and B takes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:57.000 --> 00:40:57.810
+<v Speaker 0>me to there.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:00.660 --> 00:41:03.900
+<v Speaker 0>And that I think, is the end.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:04.080 --> 00:41:09.000
+<v Speaker 0>And magically we have got back to the thing I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:09.000 --> 00:41:12.030
+<v Speaker 0>came up with as a deterministic automaton to try to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:12.030 --> 00:41:17.760
+<v Speaker 0>recognise this language on the previous slide.
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100]}
+
+00:41:18.360 --> 00:41:20.040
+<v Speaker 0>A few few minutes ago.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:21.780 --> 00:41:25.560
+<v Speaker 0>You might ask, is this always going to happen?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:41:25.560 --> 00:41:28.800
+<v Speaker 0>Is it if I write down the obvious deterministic automaton,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:28.800 --> 00:41:31.950
+<v Speaker 0>which wasn't very obvious, I have to say, and I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:31.950 --> 00:41:35.850
+<v Speaker 0>write down the obvious non-deterministic automaton, and I do this
+
+NOTE CONF {"raw":[100,100,100,100,75,100,100,100,100,100]}
+
+00:41:35.850 --> 00:41:38.820
+<v Speaker 0>kind of construction where I go tracking states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:38.820 --> 00:41:41.550
+<v Speaker 0>Do I get back to the obvious deterministic automaton?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:41:41.550 --> 00:41:43.350
+<v Speaker 0>And the answer in general is no.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:43.350 --> 00:41:45.510
+<v Speaker 0>So it was just pure good luck that in this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:45.510 --> 00:41:47.550
+<v Speaker 0>example, it happened to work out and give me the
+
+NOTE CONF {"raw":[100,100,100,100,100,89,100,100,100,100]}
+
+00:41:47.550 --> 00:41:49.680
+<v Speaker 0>same thing that I had come up with out of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:49.680 --> 00:41:50.370
+<v Speaker 0>my head.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:53.550 --> 00:41:54.780
+<v Speaker 0>Um, are we doing.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:41:54.780 --> 00:41:55.230
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:41:55.590 --> 00:41:56.340
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:56.340 --> 00:41:59.790
+<v Speaker 0>So any questions about what I'm doing there?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,91]}
+
+00:42:02.130 --> 00:42:05.310
+<v Speaker 0>Key thing is that we're just building a new kind
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:05.310 --> 00:42:09.120
+<v Speaker 0>of deterministic automaton where the states of the new thing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:09.120 --> 00:42:11.790
+<v Speaker 0>are sets of states of the old thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:12.300 --> 00:42:15.630
+<v Speaker 0>So in terms of programming it, that's very easy as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:15.630 --> 00:42:17.970
+<v Speaker 0>you will find out, all you need to do is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:17.970 --> 00:42:21.090
+<v Speaker 0>say, right, States of automaton can be anything.
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100]}
+
+00:42:21.090 --> 00:42:23.370
+<v Speaker 0>They might as well be sets of states of some
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:23.370 --> 00:42:24.300
+<v Speaker 0>other automaton.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:26.850 --> 00:42:31.890
+<v Speaker 0>Um, so this is a intuitive proof of the fact
+
+NOTE CONF {"raw":[100,100,100,100,56,100,100,100,100,100]}
+
+00:42:31.890 --> 00:42:36.630
+<v Speaker 0>that nondeterministic automata are the same in their power as
+
+NOTE CONF {"raw":[100,58,100,100,100,100,100,100,100,100]}
+
+00:42:36.630 --> 00:42:38.040
+<v Speaker 0>deterministic ones.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:38.310 --> 00:42:42.150
+<v Speaker 0>It doesn't look like something that your average mathematics supervisor
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:42.150 --> 00:42:43.050
+<v Speaker 0>would be happy with.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:43.050 --> 00:42:45.210
+<v Speaker 0>So I suppose we have to think about what it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:45.210 --> 00:42:46.830
+<v Speaker 0>looks like in mathematics.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:49.110 --> 00:42:53.280
+<v Speaker 0>Um, mathematically, we go right down the definition of what
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,100,100,100]}
+
+00:42:53.280 --> 00:42:54.750
+<v Speaker 0>this automaton is.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:56.430 --> 00:42:57.510
+<v Speaker 0>It looks like this.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:57.540 --> 00:42:59.550
+<v Speaker 0>It's got a lot of tedious notation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:59.550 --> 00:43:03.330
+<v Speaker 0>So I've got some non-deterministic automaton, and I'm going to
+
+NOTE CONF {"raw":[100,100,100,100,51,100,100,100,100,100]}
+
+00:43:03.330 --> 00:43:06.570
+<v Speaker 0>define its deterministic version with a hat on it.
+
+NOTE CONF {"raw":[100,96,97,100,100,100,100,100,100]}
+
+00:43:07.200 --> 00:43:08.250
+<v Speaker 0>What is m hat?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:08.280 --> 00:43:11.580
+<v Speaker 0>Well, the states of m hat are sets of states
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:11.580 --> 00:43:12.750
+<v Speaker 0>of the original.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:12.870 --> 00:43:15.000
+<v Speaker 0>The input alphabet is the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:15.210 --> 00:43:18.240
+<v Speaker 0>The state set transition function is something messy that I'm
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:18.240 --> 00:43:22.930
+<v Speaker 0>going to have to define the initial states.
+
+NOTE CONF {"raw":[100,77,100,100,100,100,100,100]}
+
+00:43:23.290 --> 00:43:25.750
+<v Speaker 0>Remarkably, the initial states are something I don't have to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:25.750 --> 00:43:26.200
+<v Speaker 0>change.
+
+NOTE CONF {"raw":[100]}
+
+00:43:26.200 --> 00:43:29.530
+<v Speaker 0>So here this is the set of initial states in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:29.530 --> 00:43:31.150
+<v Speaker 0>this deterministic automaton.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:31.150 --> 00:43:32.590
+<v Speaker 0>This is one state.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:32.710 --> 00:43:34.840
+<v Speaker 0>It's the one state that is the set of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:34.840 --> 00:43:37.300
+<v Speaker 0>initial states of the original automaton.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:37.990 --> 00:43:40.900
+<v Speaker 0>So it can get a bit confusing keeping what level
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:40.900 --> 00:43:41.980
+<v Speaker 0>you're working at.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:42.400 --> 00:43:44.500
+<v Speaker 0>And the final states are something messy.
+
+NOTE CONF {"raw":[100,100,100,100,92,100,100]}
+
+00:43:44.500 --> 00:43:45.850
+<v Speaker 0>I'm going to have to define.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:47.470 --> 00:43:50.950
+<v Speaker 0>So this delta hat thing I defined a couple of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:50.950 --> 00:43:51.640
+<v Speaker 0>slides ago.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:51.640 --> 00:43:54.070
+<v Speaker 0>So you can go back and read it and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:54.070 --> 00:43:55.450
+<v Speaker 0>set of accepting states.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:55.450 --> 00:43:58.030
+<v Speaker 0>Well I also defined it.
+
+NOTE CONF {"raw":[83,100,100,100,100]}
+
+00:43:58.750 --> 00:44:01.660
+<v Speaker 0>What are the good sets of accepting states.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:44:01.660 --> 00:44:05.050
+<v Speaker 0>They are any set of states of the original automaton,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:05.050 --> 00:44:08.890
+<v Speaker 0>where at least one of the states is good because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:08.890 --> 00:44:13.540
+<v Speaker 0>we accept non-deterministic if any of our final states is
+
+NOTE CONF {"raw":[100,100,82,100,100,100,100,100,100,100]}
+
+00:44:13.540 --> 00:44:19.720
+<v Speaker 0>a good state, and this very tedious notation says that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:22.000 --> 00:44:25.330
+<v Speaker 0>Um, I remarked earlier, when we were building the product,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:25.330 --> 00:44:28.630
+<v Speaker 0>that building it bit by bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:28.780 --> 00:44:31.840
+<v Speaker 0>So on the fly is the term usually used for
+
+NOTE CONF {"raw":[100,100,100,90,90,100,100,100,100,100]}
+
+00:44:31.840 --> 00:44:33.700
+<v Speaker 0>building it bit by bit, as we did on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:33.700 --> 00:44:34.870
+<v Speaker 0>previous slide.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:37.120 --> 00:44:40.300
+<v Speaker 0>In this subset construction, there are often a lot of
+
+NOTE CONF {"raw":[100,100,100,100,66,93,100,100,100,100]}
+
+00:44:41.080 --> 00:44:44.590
+<v Speaker 0>sets of states that can never be reached in running
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:44.590 --> 00:44:45.490
+<v Speaker 0>the automaton.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:45.850 --> 00:44:48.370
+<v Speaker 0>So defining it mathematically like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:48.370 --> 00:44:51.520
+<v Speaker 0>Implementing this definition is not usually a great idea.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:51.880 --> 00:44:55.600
+<v Speaker 0>It's usually a much better idea to follow your nose
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:55.600 --> 00:44:56.500
+<v Speaker 0>like that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:58.060 --> 00:44:59.920
+<v Speaker 0>Um, you will see the term super states.
+
+NOTE CONF {"raw":[82,100,100,100,100,100,92,64]}
+
+00:44:59.920 --> 00:45:03.250
+<v Speaker 0>Sometimes all that means is a state in the non-deterministic
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,87]}
+
+00:45:03.250 --> 00:45:07.060
+<v Speaker 0>in the deterministic automaton, which is a set of states
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:07.060 --> 00:45:08.170
+<v Speaker 0>in the original one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:08.410 --> 00:45:11.050
+<v Speaker 0>The term super state just makes it easier to keep
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:11.050 --> 00:45:13.780
+<v Speaker 0>track of where you are in which automaton.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:15.070 --> 00:45:18.650
+<v Speaker 0>So practically speaking, if you need to determine as an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,27,91]}
+
+00:45:18.650 --> 00:45:19.520
+<v Speaker 0>automaton.
+
+NOTE CONF {"raw":[100]}
+
+00:45:19.520 --> 00:45:21.890
+<v Speaker 0>And there are cases where you do need to determine
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:21.890 --> 00:45:24.500
+<v Speaker 0>eyes an automaton, then you will do it on the
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:45:24.500 --> 00:45:27.710
+<v Speaker 0>fly as we did with the picture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:29.240 --> 00:45:33.470
+<v Speaker 0>So at this point, I could now spend ten very
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:33.470 --> 00:45:38.150
+<v Speaker 0>boring minutes doing an actual mathematical proof that this definition
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:38.150 --> 00:45:39.560
+<v Speaker 0>does the right thing.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:45:41.150 --> 00:45:43.820
+<v Speaker 0>You are fortunate that you're doing a computer science degree,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:43.820 --> 00:45:45.620
+<v Speaker 0>not a math degree, so I don't have to do
+
+NOTE CONF {"raw":[100,100,95,100,100,100,100,100,100,100]}
+
+00:45:45.620 --> 00:45:46.160
+<v Speaker 0>that.
+
+NOTE CONF {"raw":[100]}
+
+00:45:46.160 --> 00:45:49.880
+<v Speaker 0>But do try and get some practice in doing mathematical
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:49.880 --> 00:45:50.270
+<v Speaker 0>proofs.
+
+NOTE CONF {"raw":[100]}
+
+00:45:50.270 --> 00:45:52.970
+<v Speaker 0>So some of you are going to successfully avoid almost
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:52.970 --> 00:45:55.280
+<v Speaker 0>all of them, but some of you like them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:55.280 --> 00:46:00.140
+<v Speaker 0>So for those of you who like doing proofs, write
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:00.140 --> 00:46:04.340
+<v Speaker 0>down, as a mathematician would the proof that the language
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:04.340 --> 00:46:08.540
+<v Speaker 0>accepted by the original NFA is the same as the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:08.540 --> 00:46:12.770
+<v Speaker 0>language accepted by this thing that we've just built, that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:12.770 --> 00:46:16.040
+<v Speaker 0>is a deterministic automaton.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:18.230 --> 00:46:20.810
+<v Speaker 0>Um, the proof is in the book, so if you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:20.810 --> 00:46:23.900
+<v Speaker 0>get stuck, you can go and look at it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:26.480 --> 00:46:31.370
+<v Speaker 0>I think that's probably a good point to stop before
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:31.370 --> 00:46:35.090
+<v Speaker 0>introducing something a little bit more complicated, but usefully much
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,87,100]}
+
+00:46:35.090 --> 00:46:36.620
+<v Speaker 0>more useful in practice.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:37.850 --> 00:46:41.240
+<v Speaker 0>Um, so let me just say a bit about the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:41.240 --> 00:46:46.550
+<v Speaker 0>plan for the rest of the course tomorrow.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,92]}
+
+00:46:47.330 --> 00:46:50.900
+<v Speaker 0>With a bit of luck, will be the last official
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:50.900 --> 00:46:51.650
+<v Speaker 0>lecture.
+
+NOTE CONF {"raw":[100]}
+
+00:46:51.650 --> 00:46:54.230
+<v Speaker 0>It's possible I might not quite finish it, in which
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100,100,100]}
+
+00:46:54.230 --> 00:46:56.090
+<v Speaker 0>case we will continue next week.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:46:56.090 --> 00:46:58.460
+<v Speaker 0>So what am I planning to do next week?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:59.330 --> 00:47:04.370
+<v Speaker 0>Um, I have an assortment of optional things which those
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:04.370 --> 00:47:06.890
+<v Speaker 0>of you who are not fed up with me, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:06.890 --> 00:47:09.140
+<v Speaker 0>presumably that's all of you, because the rest of you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:09.140 --> 00:47:09.800
+<v Speaker 0>aren't here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:10.490 --> 00:47:14.780
+<v Speaker 0>Um, you can come and learn about some of the
+
+NOTE CONF {"raw":[100,76,100,100,100,100,100,100,100,100]}
+
+00:47:14.780 --> 00:47:16.400
+<v Speaker 0>things I find fun.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:16.400 --> 00:47:18.920
+<v Speaker 0>So there are three things that I can talk about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:18.920 --> 00:47:19.490
+<v Speaker 0>next week.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:19.490 --> 00:47:21.770
+<v Speaker 0>It's possible I can just about managed to do all
+
+NOTE CONF {"raw":[97,100,100,100,100,100,82,100,100,100]}
+
+00:47:21.770 --> 00:47:26.480
+<v Speaker 0>of them with luck, so they are more about regular
+
+NOTE CONF {"raw":[100,100,98,90,100,100,100,100,100,100]}
+
+00:47:26.480 --> 00:47:27.140
+<v Speaker 0>expressions.
+
+NOTE CONF {"raw":[100]}
+
+00:47:27.140 --> 00:47:29.690
+<v Speaker 0>Tomorrow we're going to talk about regular expressions, which is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:29.690 --> 00:47:31.760
+<v Speaker 0>why we are introducing Nsfas.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:31.760 --> 00:47:34.040
+<v Speaker 0>We don't use Nsfas as humans.
+
+NOTE CONF {"raw":[100,100,100,91,100,100]}
+
+00:47:34.040 --> 00:47:36.320
+<v Speaker 0>We use something which is equivalent to them, but much
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:36.320 --> 00:47:37.400
+<v Speaker 0>easier to write.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:37.940 --> 00:47:39.950
+<v Speaker 0>And there are some fun things that you can do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:39.950 --> 00:47:41.810
+<v Speaker 0>with things much worse.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:42.590 --> 00:47:45.110
+<v Speaker 0>Another thing I can do is talk about the medieval
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,88]}
+
+00:47:45.110 --> 00:47:48.290
+<v Speaker 0>syllogisms, which I kind of promised I would do if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:48.290 --> 00:47:49.640
+<v Speaker 0>you wanted me to.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:50.180 --> 00:47:53.120
+<v Speaker 0>And then the other thing I can do, which I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:53.120 --> 00:47:57.560
+<v Speaker 0>traditionally do every year, once somewhere is give a talk
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:57.560 --> 00:48:01.790
+<v Speaker 0>about infinity and some very large numbers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:02.780 --> 00:48:06.260
+<v Speaker 0>So my provisional plan would be that on Friday I
+
+NOTE CONF {"raw":[100,100,85,100,100,100,100,100,100,100]}
+
+00:48:06.260 --> 00:48:11.660
+<v Speaker 0>will do the infinity talk, um, not least because it
+
+NOTE CONF {"raw":[100,100,100,100,100,58,100,100,100,100]}
+
+00:48:11.660 --> 00:48:13.760
+<v Speaker 0>is a talk that is very hard to fit into
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,89]}
+
+00:48:13.760 --> 00:48:17.220
+<v Speaker 0>50 minutes, and it almost always takes 55 minutes and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:17.940 --> 00:48:18.840
+<v Speaker 0>way to end.
+
+NOTE CONF {"raw":[95,100,100]}
+
+00:48:19.410 --> 00:48:23.820
+<v Speaker 0>And on Thursday, if necessary, I will finish off this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:23.820 --> 00:48:29.190
+<v Speaker 0>topic, but otherwise I will probably talk about the syllogisms
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:29.190 --> 00:48:32.520
+<v Speaker 0>first that will have music in it just for a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:32.520 --> 00:48:33.180
+<v Speaker 0>change.
+
+NOTE CONF {"raw":[100]}
+
+00:48:33.810 --> 00:48:36.570
+<v Speaker 0>And and I will.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:36.570 --> 00:48:38.670
+<v Speaker 0>When I played the music, I have done my best
+
+NOTE CONF {"raw":[100,100,52,100,100,100,100,100,100,100]}
+
+00:48:38.670 --> 00:48:39.480
+<v Speaker 0>to get permission.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:48:39.480 --> 00:48:41.490
+<v Speaker 0>I failed to do so because the group no longer
+
+NOTE CONF {"raw":[100,89,100,100,100,100,100,100,100,100]}
+
+00:48:41.490 --> 00:48:45.570
+<v Speaker 0>exists, but I tried and if there's time after that,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:45.570 --> 00:48:47.520
+<v Speaker 0>then I'll say a little bit more about the regular
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:47.520 --> 00:48:48.450
+<v Speaker 0>expressions.
+
+NOTE CONF {"raw":[100]}
+
+00:48:48.690 --> 00:48:53.100
+<v Speaker 0>So I hope to see you tomorrow for the rest
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:48:53.100 --> 00:48:54.150
+<v Speaker 0>of the official course.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:54.150 --> 00:48:55.770
+<v Speaker 0>And I hope to see quite a few of you
+
+NOTE CONF {"raw":[100,87,100,100,100,100,100,100,100,100]}
+
+00:48:55.770 --> 00:48:56.490
+<v Speaker 0>next week.
+
+NOTE CONF {"raw":[100,100]}

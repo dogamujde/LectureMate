@@ -1,0 +1,881 @@
+Well, good afternoon everyone.
+So you will probably be happy to hear that we
+are nearing the end of CNF and other logical manipulations,
+But we're going to spend one more week on ways
+of looking at formula, finding satisfying formula, converting formulae into
+form which into different forms, which makes things easier.
+So we're becoming slowly more computational.
+We're actually going to do a little bit of computation
+on formulae today.
+That is I will do a little bit of computation
+and you will do some later.
+And then we will move next week into thinking much
+more directly about computation and simple models of computation, namely
+finite automata.
+So we have a couple of lectures about satisfiability and
+the problem of finding a satisfiable assignment through a formula,
+Given that we know it's we have algorithms that work
+on CNCF.
+So last week we did DHFL and you've worked a
+bit with DHFL.
+You did the Sudoku problem, which I hope was interesting
+to some of you.
+, how many people actually did the timing stuff in
+the last question?
+Okay, but disappointing wasn't that hard.
+So it was an easy mark if you did it.
+, if you those of you who did it will
+have learned that the time required to find a satisfying
+assignment or not depends quite a lot on what constraints
+there are.
+And the the take home message of the exercise was
+actually that adding unnecessary constraints can significantly decrease the time
+that's described in the book, so you'll see more about
+that if you choose to read the book or if
+you discuss in tutorials.
+But the other thing we've talked a little bit about
+last time was whether we can convert a formula to
+CNF in the first place efficiently, and we realised that
+it might blow up exponentially, but we found that sometimes
+we could convert it to a formula which was not
+quite the same formula, but was equivalently satisfiable.
+So last time we looked at logic gates and we
+did a similar kind of thing to formulae.
+And we showed that if you take formula and chuck
+in a bunch of extra variables, you could get a
+formula which is satisfiable if and only if the original
+formula is.
+And today we're first going to take a little sidetrack
+into algebra.
+, you were just doing.
+Some of you were just doing linear algebra a moment
+ago, but we're going to be doing Boolean algebra.
+And after doing a bit of algebra, we're going to
+go back to manipulating formulae and talk about a very
+clever little transformation, which is essentially the logic gate stuff
+we did applied to formulae.
+And then depending on how things go, we will talk
+tomorrow, maybe more about session and then about a slightly
+different problem which is counting assignments.
+I'll say more about that when we get there.
+, so who are this week's people?
+, Henry Shaffer was someone who made a bunch of
+contributions to Boolean algebra, which I'm going to talk about
+now.
+And Gregory Session, who, of course, was Grigori but preferred
+to be known as Gregory in English.
+, is was a guy who did a bunch of
+things in logic, and he's best known for what I'm
+going to talk about today and tomorrow.
+He looks a cheerful kind of guy.
+I never met him, but I believe he was a
+cheerful kind of guy.
+This guy looks scary.
+I don't know whether he was scary.
+So let me start by recapping the very basic stuff
+that we've been doing from the beginning.
+We've been talking about boolean operators.
+We've been talking about Boolean logic and Boolean operators.
+And we have not.
+And an oar, which we took to be the basic
+things.
+You've now seen implication and by implication several times.
+And you've also seen in various places exclusive or A
+or B, but not both, which perhaps raises the question
+how many binary boolean operators are there?
+This is something you can work out easily by thinking
+about truth tables.
+Yeah.
+Anybody further back?
+Okay.
+Sorry I couldn't.
+Quite fair.
+Was that for.
+.
+Well, we got one, two.
+Sorry.
+123, four, five different operators here.
+So.
+What size is the truth table for a binary operator?
+Two by two.
+What possible values can there be in each of the
+four cells?
+Two.
+So therefore there are.
+Of the 16 binary operators, some of which are not
+very interesting.
+, so those of you who are electronically inclined will
+be familiar or become familiar with a couple of others
+which are not and and not or.
+But the full list looks this.
+There's the constant true operator.
+You might wonder, is this a binary operator?
+Well, we can define a binary operator, which is just
+constantly true.
+It's not terribly useful, but it might have some uses
+some time really.
+There's a false which we could make binary if we
+wanted to.
+There's a not operator which is unary normally.
+And then we have a bunch of binary operators.
+These are the traditional ones and or implies implied by
+if an XOR.
+So these are symmetrical Nand and nor.
+So these are again symmetrical.
+so do we want to use all these operators.
+Yeah.
+Hardware designers work with Nand.
+And because it's easy to write to make gates on
+chips that use Nand and Nor, XOR is useful often
+for thinking about things.
+So you might want to manipulate them.
+What have we been doing with boolean operators?
+We've been doing sequent calculus, amongst other things, and you've
+had at least two questions asking you to do this.
+So back in the CL tutorial.
+There was a question saying give sequent calculus rules for
+implies, and I think you were asked for it again
+in an FP tutorial, so should perhaps have been absorbed
+by now.
+And the idea here was that, well, we could always
+deal with immigration by expanding it, because we know that
+A implies B is the same as B or not
+A, so we can always just replace the implication by
+the all and the not.
+But when we're actually doing logic, it's convenient to have
+these derived rules that allow us to manipulate it directly.
+And then you also asked if you did the question
+to give rules for, by implication, equality if and only
+if they're a useful operator in maths.
+Because ultimately many mathematical theorems are about proving a long
+chain of equivalences.
+, very boring exercise.
+If you've done a bunch of stuff in Haskell on
+this already, some of it you did in optional or
+semi optional questions.
+If you really have nothing better to do with your
+time, and I'm sure you do, then you could work
+out how to extend this to all possible operators.
+, just as a side note here, this rule is
+the one that says what we can do when we
+see an implication.
+We're trying to prove it.
+What does it say?
+It says basically, if we're trying to prove that A
+implies B, then we try to prove that A entails
+B.
+And if we forget about the junk, the gamma and
+the delta, then it looks this.
+And this is the encapsulation of what I was saying
+several weeks ago about the same thing at different levels.
+So implication is something happening at the level of formally
+entailment is something happening at the level of universes and
+formally.
+And this rule says that essentially they're the same thing.
+So that's what we've been doing so far.
+We've been doing proofs, but doing proofs is not the
+only way to do things.
+So you are familiar with various forms of algebraic manipulation.
+I hope everybody has been subjected to solving simultaneous equations
+in school.
+Write simultaneous linear equations.
+Anybody think they've never had to solve a simultaneous equation?
+Good.
+Who can't actually remember whether even even what I'm talking
+about?
+I can't say that I've had much use for them
+since school, but never mind.
+, and also in school, you almost certainly solve quadratic
+equations in various ways.
+, there's the formula, there's trying to work out what
+the factors are.
+And I was very happy once I learned the formula,
+because then I never had to remember how to factorise
+stuff.
+, if you are doing CSS and maths, you will
+meet various other forms of algebra.
+If you did further maths at school, then you may
+have met some kinds of other algebra such as group
+group algebras.
+And what I'm going to do now is introduce you
+to some formal algebra about Boolean operators.
+So what is algebra?
+About algebra is about writing equations between things and manipulating
+the equations in order to get other equations, which hopefully
+eventually show you what you want.
+And algebra has many useful properties.
+It's a tool that one can use in several ways,
+so it's a good way to define things.
+Many things in mathematics are defined by writing down the
+equations that they satisfy.
+And once we've got that, then we can use algebra
+to solve statements about some problem.
+When we define things algebraically, we typically say we have
+a bunch of things and they satisfy some properties.
+So these are properties of Boolean operators that you are,
+I hope familiar with.
+You probably take them for granted.
+We discussed them briefly at the start of the course.
+So and and or are both associative.
+If we write a or b or C it doesn't
+matter where we put the brackets.
+Similarly for and so in mathematics we also have.
+The plus is associative times is associative minus of course
+is not.
+we have commutativity a or b is the same
+as b or a.
+And similarly with and and again if we think about
+numbers that's true of plus and times as well.
+This is something that we don't see in numbers so
+much.
+This is a useful fact.
+Sometimes if we know A or we know A and
+B, then we can forget about the B, because if
+we if we might know A and we might know
+A and B, then we know A, but we don't
+necessarily know B.
+So these two things allow you to prove the same
+things or they have the same truth values.
+Whenever you see an equation this you can think
+of it in two ways.
+You could say, can I write a sequence calculus rule
+that proof that takes this into that and vice versa?
+Or you can say, do they have the same truth
+tables?
+And either will demonstrate that the equation is true.
+But when we do algebra, we write down equations which
+we assert to be true.
+And then we see what else we can define about
+them.
+This is another property that we use a lot without
+thinking about it.
+If we have a and we call it with false,
+that's the same as a.
+In other words, false is the identity operator for or
+in the same way that zero is the identity for
+plus true is the identity operator for and in the
+same way that one is the identity operator for times.
+So far this all looks moderately familiar.
+The most dramatic way in which logic differs from arithmetic
+is that we have distributive distributive both ways.
+So when we do arithmetic, we can distribute times over
+plus, but not the other way round, but in logic
+or distributes over and and and distributes over all.
+And you have, I hope, been using these without thinking
+about them too hard all the time.
+And finally, we have excluded middle in various forms.
+Either A or not.
+A is true, and it's not possible for A and
+not A to be true.
+So this is actually a complete characterisation of what the
+Boolean operators are.
+This tells you everything that there is to know about
+the Boolean operators, and anything else we might want to
+know about them can be deduced from these equations.
+This is quite a lot of axioms one, 23456789 ten
+1112.
+Do you think you could reduce the number of axioms
+to talk to completely pin down everything?
+That must be true about Boolean operators.
+It's.
+Not terribly obvious, is it?
+Looking at it.
+So these things, all these axioms seem to do different
+things, and they all tell us useful things.
+, actually, there is one equation which captures all of
+these.
+I do not understand it.
+I spent some time reading it and trying to understand
+it, but I never quite completed the task.
+If you are feeling really courageous, you can go and
+read the paper and see if you can follow the
+argument.
+I guess in principle I could follow it, but I
+just don't have the enthusiasm to do so.
+This was actually the culmination of quite a long programme
+of research.
+Seeing how few axioms do we need?
+How few equations do we need to completely describe the
+Boolean operators?
+It was reduced and reduced and reduced.
+I don't have the date for this.
+I forget it's maybe in the 50s or 60s.
+.
+But when we have these equations, they let us derive
+other useful equations.
+And some of those are things that we've used a
+lot.
+So when we were doing proofs, we use double negation
+to not cancel out.
+, the not of a one is a zero, and
+the not of a zero is a one.
+We use this all the time.
+So this is a simplified form of the absorption property.
+If we have a or a that's just the same
+as a and likewise a and a is the same
+as a and the one that we studied a lot,
+the Morgan laws, they've been around for a long time.
+You might ask why did we not define the Morgan
+as one of our basic operators?
+Well, you can always make a choice of which of
+these equations you want to define as basic.
+This particular bunch is enough to give you everything.
+You could remove some of these and replace it by
+the Morgan if you wanted.
+But it's a matter of taste.
+, why am I doing this?
+Because I want to talk about proof.
+And this is probably the first really serious algebraic proof
+you have seen, depending on what you're doing in maths.
+Have you done any actual algebraic proofs in maths courses
+yet?
+Yeah, with linear algebra stuff.
+So about dot products and vector products okay.
+So you've seen the rules for manipulating dot and vector
+products which I can't remember.
+But again though distributive laws there and anti commutativity for
+vector product and so on and so on.
+So we can do the same kind of thing with
+boolean operators although they're easier than vector products.
+, and I thought I would show you one example,
+but before I go on to doing a proof, there's
+a lot of stuff here.
+Anybody want me to talk any more about any of
+these equations?
+If I give you a random equation and say, prove
+it using these things as your starting assumptions, do you
+have any idea how to start?
+Yeah.
+Well, in that case, you're doing better than I am
+because I find this kind of stuff quite hard.
+And usually I work backwards from what I'm trying to
+prove and try to see if I can get the
+equations.
+, other people will find this kind of thing very
+easy, but computers find it really easy because they can
+do a lot of brute force searching.
+So actually, if you want to do proofs using equations
+these days.
+Asking a computer do it to do it is easier.
+But I will do one non-trivial proof just to show
+you what happens when I say I will do it.
+I don't mean I will create it in front of
+you because that would go horribly wrong.
+But I will show you the proof.
+, so I said that we can prove anything about
+Boolean algebra from these 12 axioms.
+So here's an example of deriving De Morgan's law.
+We've already derived to Morgan's law in several ways.
+We looked at truth tables, and we also did a
+sequent calculus proof of De Morgan's law.
+So now we're trying to do it again algebraically.
+This should give us confidence that algebra does things.
+So basically what we're trying to do is use the
+equations on the previous slide to get from this to
+this, and vice versa.
+, Turns out to be a lot harder than you
+might think.
+And it's helpful to prove a little lemma first.
+So if x or y is equal to one.
+So if x or y is true and x and
+y is false.
+So in other words we're in the exclusive or case
+we have that one of x or y is true
+but not both.
+Then either x is equal to.
+Then x is equal to not y and y is
+equal to not x.
+Because we're in the exclusive war case, we have one
+0 or 0 one.
+I don't think I'm going to prove that lemma.
+I'm going to leave that to you.
+, no, I am going to prove it.
+So here's the proof of that.
+, let's look at not y.
+So I'm trying to look at not y and show
+that it's the same as x.
+So not y is equal to one and not y.
+That's true by the identity operation.
+So the identity rule was back here said that a
+or one sorry a and one equals a.
+I've also used commutativity there because this said that a
+and one equals a.
+So I need commutativity to get one and a equals
+a.
+So I've turned y into one and not why does
+that anything strike you as a bit odd about that.
+Different from the way we proceeded in sequence calculus.
+So when I did a proof in sequence calculus, I
+started with a sequence for the bottom.
+And then I tried to prove it, and I told
+you that it was completely automatic.
+I didn't have to think.
+Why didn't I have to think?
+This is breaking down because I was always simplifying the
+formula.
+What have I done here?
+I've taken something nice and easy, not y, and
+I've turned it into something more complicated.
+one and not.
+Why?
+And for me, this is what makes algebraic proofs difficult.
+You often have to make something more complicated in order
+to get to where you're going.
+This is going to get dramatically more complicated.
+So I've got one and not y.
+Now I'm going to plug in one of my assumptions.
+So I have the assumption that x or y is
+equal to one.
+So I can replace that one by x or y.
+So I've got not y is equal to x or
+y and not y, which is even more complicated.
+And it's quite unclear where we're going here.
+Now I can apply the distributive law and make it
+even more complicated and distribute not why over this so
+not why and these two things is the or of
+these two things and with not why X and not
+why or why are not why.
+, so I've expanded a one letter formula into a
+four letter formula, which doesn't sound a win.
+So now I'm going to simplify a little bit.
+I know that y and not y is false.
+We can't have something being true and false at the
+same time.
+So I can place that by zero.
+Then I can use my assumption again.
+If I see zero, I have an assumption about zero
+that says it's the same about x and y.
+So if I have zero, I can see x and
+y.
+Now at this point I can see I've got an
+x there and an x there.
+So I can use distributive again and pull it out,
+pull the x out of that and give me X
+and not Y or why?
+Now I have the complement rule again.
+Now I have not why or why?
+Which is always one because of the law of the
+excluded middle.
+So that's the same as x and one.
+And that's the same as x by the identity rule.
+So it's taken me 6 or 7 steps.
+How many.
+Seven steps.
+Making things more complicated to show that not y is
+equal to x given these assumptions.
+.
+Do you think you could do that?
+, I mean, I could do it.
+I did do it.
+It took me quite a while because I nobly tried
+to do it myself before looking at the answer.
+, and this is, as I said, this is why
+computer algebra systems are great, because they can churn through
+this stuff and try lots of possibilities so you don't
+have to think so much.
+But so far, all I've done is prove a lemma.
+What I'm actually trying to do is prove this.
+So why have I gone to all the trouble of
+proving this complicated lemma?
+Now I'm going to start looking a mathematician.
+So this looked a computer, right?
+I was doing stuff that is easy to implement, and
+now I'm starting to writing lots of English.
+And there's a word in this text which you should
+always be very suspicious of.
+What's the word in this paragraph that should raise red
+flags easily?
+There are words that mathematicians to use easily, as
+one obviously is another.
+Whenever I see you write, obviously I'm going to look
+very hard, okay, because sometimes obvious things are not obvious.
+, Are we doing for time?
+Yeah.
+Another word is trivial, and I think I have to
+repeat my favourite story about triviality.
+.
+I didn't actually see this, so this is a second
+hand story, but I did maths at Cambridge and the
+graph theory lecturer, there was a guy called Bella Bash.
+Bola bash is very, very smart.
+Well, mathematically, he's extremely smart.
+Politically, he's not so smart.
+, he doesn't have a terribly high tolerance for people
+who are not as smart as him.
+So being taught by him was a scary experience.
+But he threw excellent parties at the end of the
+course with fantastic food.
+So there were definite benefits.
+And in those days, the way lectures in maths happened
+was that the lecturer wrote on the board and we
+sat there copying down what was written on the board.
+The really clever people could understand it in real time,
+and the rest of us had to go back and
+understand it later.
+This is why I don't do this to you.
+I hated trying to understand it in real time because
+I couldn't write fast enough.
+But the story goes that Bob bash was writing down
+a theorem and as is the custom at some point,
+he said, and this step is trivial.
+And he had a strong Hungarian accent, so it was
+this is trivial and a very brave student in the
+audience, said Professor Bola Bash.
+Why is it trivial?
+And Paul Bash turned round, Looked at the board back.
+Looked at the board.
+Walked up and down.
+Walked out of the door.
+Walked up and down the corridor for five minutes.
+Came back and said I was right.
+It is trivial but never explained why.
+I'm not going to do this.
+I see there's a misprint there which has survived three
+years.
+So what does my proof actually say?
+It says I'm trying to prove that not A or
+B is not A, am not b.
+So given that I have the lemma here, it would
+be enough to show that these two things are sum
+of all to one, they or to one, and they
+end to nought.
+Because the lemma tells me that I have two things
+that and that, or to one and to zero, then
+one is the negation of the other.
+so that it would be the negation of that.
+And then I claim that these follow easily by distributive
+complement, associativity and commutativity.
+And when I say easily, all I mean is if
+you write down a long chain of things, you will
+just follow your nose and you will get to the
+end without making things radically more complicated.
+So you should probably try to do the second one.
+So I've done the first one here with a couple
+of omissions which you should fill in, but try to
+do the second one if you want a bit of
+practice in manipulating proofs as you go further, depending on
+what courses you do, you might need to do more
+algebraic proofs, especially if you do maths.
+Okay, so that's Boolean algebra.
+We introduce it mainly as a demonstration of a different
+way of thinking about things and a way of thinking
+about things that is useful, particularly in using doing automated
+proofs of things.
+What about other operators?
+I gave you a bunch of rules for if and
+only if.
+Just as we did with sequent calculus, we can make
+derived equations in algebra instead of sequence calculus.
+So a if and only if be an equation that
+describes that is that a if and only if b
+is the same as A implies b and b implies
+a.
+All that's doing is writing the definition down as an
+equation.
+Similarly, with implication, we just write the definition of the
+definition down as an implication, and that captures it.
+Now we've been talking about CNCF.
+So what might we use Boolean algebra for.
+Well we might use equations to convert a formula into
+conjunctive normal form.
+, but how do we know to do this?
+Because I showed you a nasty proof, which made things
+more complicated in order to get to something simple at
+the end.
+And that's not what we want to do.
+But it turns out that if we want to use
+equations to convert things to conjunctive normal form, then it's
+actually straightforward.
+You can follow your nose.
+We don't have to do difficult proofs.
+, and all we do is do stuff which you're
+doing in FP anyway.
+Get rid of implications.
+So get rid of BI implications using these two things
+that we've defined.
+, if you did the negation normal form exercise, then
+you know that it's straightforward to push negations inwards.
+So then what we end up with is a formula
+with lots of ands and ors and all the negations
+on the inside applied to propositional variables.
+Then we use distributive property and we just keep pushing
+or inside.
+And until all the ORS are inside all the ands.
+And then we have conjunctive normal form.
+And you did that.
+Or at least most of you did it.
+, now I really suggest if you didn't do the
+optional parts, go back and have a look at them
+because they're quite constructive.
+.
+If you try to do this stuff by hand, it
+is very, very boring.
+, as you may have noticed, I'm easily bored.
+If you look at the textbook, then there are worked
+manual examples.
+It would be sadistic of me to make you go
+through work manual examples.
+So you do what any sensible person is does and
+Doesn't make the computer do it instead.
+So where does circuits come in?
+Said we were going to do stuff with circuits.
+Circuits are not really a digression, so this looks as
+if I'm changing into a completely different subject.
+But actually I'm doing the same subject, just in a
+different form.
+If you're a circuit designer, you draw diagrams which have
+gates.
+Gates are transistors with two inputs or one input.
+This is an and gate.
+When the two inputs are positive high voltage, the output
+is high voltage.
+This is an Or gate when one input.
+When at least one input is high voltage, the output
+is high voltage.
+, this is a Not gate.
+When the input is high, the output is low and
+so on and so on and so on.
+And back in the olden days, before this was done
+by computers, people do little diagrams and use these symbols
+and you work through and draw diagrams connecting gates to
+other gates.
+So this is the output of one gate being fed
+into another.
+So this thing here is the circuit for A and
+b or not c and B feeds into an Or
+gate.
+C feeds into a knot which feeds into the Or.
+How many of you did this in school?
+Anybody.
+Quite a few.
+Okay good.
+Was that in computer science or in electronics?
+Computer science.
+Okay.
+, that's quite fun.
+It's even more fun.
+Did you actually build circuits on Breadboards and fun, which
+it's making little lights light up.
+It's more fun when you're younger than you usually get
+to do it in school, but it can still be
+fun even in later life.
+.
+Now, there's one way in which circuits are radically different
+from formulae, and this is something that we're now going
+to notice and then exploit.
+If I take a circuit, I can use the same
+output more than once, because if I'm building a circuit,
+I can put wires between things.
+And when you build on breadboards and the , then
+you can plug wires anywhere you .
+So here's a little circuit.
+It's got an A and B and then it's got
+the not C but also it's got a bunch of
+other stuff going on.
+If you look at what this circuit is trying to
+do as a formula, what it's doing is A or
+B is being negated there and then it's fed into
+an Or and the rest of that.
+Or is the negation.
+That's the negation.
+So that's the not sign of an or of not
+c and a and b because I've got a wire
+here which is leading this output into this gate again.
+Now in real circuits you have to worry about how
+many gates you can feed one particular output into, because
+in actual circuits, these there are voltages on the output
+of these things.
+And the current it can draw may be quite small.
+So there are usually strict limits.
+, anybody remember what the CMOs limit is five ish
+I don't know.
+So you can't duplicate arbitrary but you can arbitrarily.
+But you can feed the output of a circuit into
+at least 2 or 3 other gates.
+Informally, we don't have a way to do that.
+When I wrote down the formula, I wrote down A
+or B twice, even though this gate only occurs once.
+Can I do the same trick using formulae that I've
+just done in the circuit?
+And yes, we can, because I can define a new
+variable.
+And I actually think it's more helpful to think of
+this as if it were a piece of Haskell.
+So think about the red stuff as being a temporary
+variable called v.
+So this formula here is not v or not v
+or not c where v is equal to a and
+b okay.
+That's how you would write it in Haskell if you
+turned them logical symbols into Haskell operators.
+Of course Haskell where is not pure logic, but what
+is the Haskell where if you think about it in
+logic, what it says is we have this formula with
+an extra variable v in it.
+And by the way, v is exactly the same as
+a and b.
+So this and v if and only if a and
+b is just a logical way of writing down where
+v equals a and b.
+So what have I done?
+What I've done is avoided reuse of an and operator.
+Here I had to write the and operator twice.
+Here I've written it just once and I've used the
+variable.
+Of course the formula has got a bit longer, but
+that may not be too much of a problem if
+we've saved space.
+If we can save lots of ands that the cost
+of introducing a few variables, that makes the formula shorter.
+Now what I'm really trying to do in this whole
+exercise that we've been working on for 3 or 4
+weeks now is work out whether a formula has an
+a satisfying assignment.
+Can I make it true or is it a tautology
+or is it a contradiction?
+Is this formula the same formula as this formula?
+That doesn't require any thought.
+Shouldn't require any thought.
+Is it the same formula?
+No.
+Okay.
+Is it a logically equivalent formula?
+Is it a logically equivalent formula?
+, this formula has a V in it.
+This formula doesn't have a V in it.
+The value of V might be true or false.
+So how can the formulas possibly be logically equivalent?
+How can a formula about two variables be equivalent to
+a formula about three variables?
+And the by implication, is tying them together.
+But if you look at this formula, you still have
+to write down the truth table with three variables in
+it.
+So we can't really say that the formulae are exactly
+equal.
+It's not the case that this formula is true if
+and only if this formula is true, because this has
+a v in it that we have to worry about,
+and this one doesn't.
+What is true is that if one of them can
+be made true, the other can be made true.
+That's where the fact that V is actually completely determined
+by A and B comes in.
+If I know that I have values of A and
+B that make this true, then I know that I
+have values of a, b, and v that make this
+true.
+The value of v is completely determined by a and
+b because I've written down a definition.
+It's still there, but it's determined.
+So that's the the key point.
+What we've got here is two formulae that or equi
+satisfiable.
+If this one can be made true, then this one
+can be made true and vice versa.
+So it looks a bit of a cheat, but
+it turns out to be a very useful treat.
+Cheat.
+So let me see what I do.
+What I've done here is just do it for one
+variable here.
+This is quite a complicated formula.
+So there are several other outputs.
+We could do it for all of them.
+It gets a bit messy.
+So I have to introduce additional variables v w x
+y z r r is quite important because it's the
+output of the whole gate.
+And I can just write down this bunch of things
+and say is r satisfiable?
+What's r or is that what's x.
+Is that what's v?
+Is that what's z.
+, z is that and so on.
+And then I try to find values of r xy,
+the w z a b that make all this true.
+And what I'm trying to do is find an assignment
+of these variables where R is true, where the output
+of the formula is true.
+.
+Now, I could now move into the actual work, but
+I think probably we should save that for tomorrow.
+And now I've introduced a lot of stuff.
+So I've introduced algebra equation, manipulating equation and manipulations.
+And this idea that we can use ideas from circuits
+to reduce the number of times we use stuff in
+logic to allow us to reuse the same formula more
+than once in logic.
+So are there any questions at this point about anything
+we've done so far today?
+What are the characteristics of a formula that are going
+to make doing this a sensible thing?
+Because if I look at the difference between this thing
+and this thing, especially when I've added all these in,
+I seem to be making life a bit more complicated.
+I'm adding stuff.
+Under what circumstances might it be a big win to
+do what I'm doing here?
+When you're computer.
+When you're a computer, well, I mean, even so, we
+want our computer to be inefficient.
+But what what kind of formula would actually get significantly
+shorter when I do this kind of thing.
+Suppose I have a formula with 10,000 clauses in it.
+What property of the 10,000 or 10,000 sub formulae?
+What property of the sub formulae would make this quite
+a sensible thing to do?
+Repetition.
+So if I have a formula with 10,000 sub formulae
+in it, and 5000 of the sub formulae happened to
+be the same, then it's a big win.
+If I only write that formula down once with a
+bunch of variables, instead of writing the perhaps quite long
+sub formula down 5000 times.
+, why does this happen?
+Because any formula that is 10,000 some formerly long, is
+going to be generated automatically by something, and automatic generations
+from complex problems tend to have quite a lot of
+repetition in them.
+, so in practice, this thing that looks as if
+it might get longer turns out to make things shorter
+a lot of the time.
+And one of the cases in which you get a
+lot of repetition is actually when you convert formulae into
+conjunctive normal form.
+What's the last stage of the algebraic manipulation I said
+before?
+So we do the basic stuff of getting rid of
+the derived operators.
+We push negation inwards.
+That doesn't change the difficulty at all.
+And then we use distributive property to push or inside.
+And that tends to blow up the formula.
+Because if I do a, or b and c
+that turns into a or B and A or C,
+so I end up generating lots of little formulae, and
+by the time I've pushed an or through an an,
+through an author and an to an author, and, and
+I get an enormous blow up of formulae, many of
+which look pretty much the same.
+So that's the kind of example where this trick with
+circuits can seriously reduce the overall complexity of the formulae.
+So tomorrow I will define this formally applied directly to
+formulae.
+So we'll take the circuit idea, define it on formulae.
+And I will very courageously do a live demonstration of
+this stuff working in my own Haskell programming.
+And I will show you a simple example.
+And then I'll show you an example which demonstrates how
+actually it's a serious win in many cases.
+And then we'll go on to talk about something completely
+different and slightly weird if there's time.
+So please have a look through this stuff before tomorrow
+and at the start of tomorrow.
+If you have any clarification questions, make sure we cover
+it at the beginning because you'll need to know this
+to understand what happens next.
+Okay.
+One minute earlier.
+Let's finish.
+This.

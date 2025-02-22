@@ -1,0 +1,905 @@
+We're recruitment secretaries for Informatics Rugby.
+We're a casual intramural rugby team created, , last year.
+And, , we're here to talk to you a little
+bit about what we do, hopefully recruit you.
+, we play games most Wednesdays at Peppermill.
+We train most Sundays, , in the Meadows, just out
+the back of the library.
+, yeah.
+, just exactly what he said.
+, we have a QR code up there on the
+screen.
+, it's a mix of different subjects, but it is
+supposed to be informatics.
+Hence why we're here talking to you.
+, training as a mix of contact, fitness, skill level
+building, , then, , and set up for ML
+on Wednesdays against other subjects to play.
+You will need, , rugby boots and you will need,
+, gum guard if you want to take part in
+contact.
+We also have socials every Wednesday and Sunday after whatever's
+been on that day.
+and it would be really great to see all the
+majority of you here.
+And for anyone who's not interested in rugby, if you
+look up and from our sport on Instagram, you'll find
+links to various different sports and depending on what you're
+interested in.
+So yeah, thanks guys.
+Hope to see all of you there.
+Right.
+Rugby of course, is not the only sport.
+If you haven't realised there are lots of sports found
+here.
+My sport is target shooting.
+Edinburgh University Rifle Club is or.
+Okay.
+It's 30 years since I was last in it, but
+it's a great place.
+Used to be.
+, so we started on some content yesterday.
+Fairly mild content, especially if you've done computer science.
+And let me just recap a bit.
+So generally speaking, at the start of each lecture I
+take any questions you have on what happened in the
+previous lecture.
+So yesterday we were talking about the notion of binary
+information, the notion of bit, the use of decision trees
+or yes, no questions in a particular order to allow
+us to assign binary codes to things, because we're going
+to be working entirely in terms of true and false
+for most of this course.
+And yesterday one of you asked me if I could
+talk louder.
+The volume on this thing is hiked up to maximum.
+Is it okay at the moment or should I increase
+my speaking volume as well?
+Okay.
+Yep.
+A bit of a For tickle in the throat today.
+So are there any questions about the stuff we covered
+yesterday?
+If you have any uncertainties at all, and let me
+remind you that if you have a question, probably 20
+other people have the questions.
+So never feel shy about asking a question.
+There are no stupid questions.
+It's possible for me to give a stupid answer.
+Okay, so you know you have a tutorial next week
+and you also know that you haven't been allocated to
+them yet.
+We are hoping very much that you will be allocated
+to them before they happen.
+, here's a little thing that some of you might
+to do.
+I guess you watch films on phones or possibly even
+laptops, but maybe tablets.
+in theory.
+How many possible one hour HD digital movies are there?
+So in order to do that, you need to do
+the kind of estimate and calculation that hopefully you learned
+in the sciences.
+, have a go and talk with your colleagues in
+tutorial and see how many different answers you get.
+Experience tells me that some of you are going to
+do it right now, and we'll have an answer in
+five minutes, but if I have time at the end
+of the lecture, then I'll take any answers from the
+class.
+Now, I don't know what the answer is, I can't
+remember.
+I have a note somewhere, but frankly, who cares?
+But it's quite an alarming number.
+So what I want to do today is move on
+to something which is actually more about what we're doing
+in this course and is more fun.
+Yesterday was just setting up the framework that we're only
+going to be thinking about true and false things.
+So now I want to talk a little bit about
+logic.
+I said that logic was the language of reasoning.
+Why do we need a language of reasoning?
+Because the language we speak and write is often ambiguous.
+It's often imprecise, which is usually often a good thing.
+And it's also very verbose and long winded.
+It takes us a lot of words to say something
+that could be specified precisely.
+And this is true even when people are trying really,
+really hard not to be any of those things.
+And this is why we have lawyers.
+And unfortunately, lawyers do not get trained in logic.
+And over the last four weeks, I had a very
+painful experience with a lawyer who doesn't understand basic logic.
+So logic is useful if you ever have to argue.
+Why is logic core to a computer science course?
+Because informatics is fundamentally mathematics and logic applied to things
+that are going to do computing for us.
+And the reason we have mathematics and logic is because
+they enable us to talk clearly, precisely and concisely.
+But perhaps more importantly, they require us to talk clearly,
+precisely and concisely.
+It's quite hard to be imprecise in mathematics.
+It's possible to write down a precise mathematical statement without
+understanding what you're writing down.
+And I imagine that you've had that experience at some
+stage in your mathematics learning.
+But what you wrote down had a meaning, even if
+it wasn't the one you intended.
+So logic is a language, an artificial language intended to
+achieve precise communication about a narrow range of things.
+It's a very old subject in Western European civilisation.
+It's about 2500 years old.
+In other civilisations, it's older, although not developed in the
+same way.
+And we're going to be starting with something which most
+of you have probably seen before.
+If you've done computer science at school, you've probably seen
+this before.
+If you haven't, you might not.
+So if I say propositional logic, Boolean logic, how many
+of you know what I mean?
+How many of you think you should know what I
+mean?
+If you remembered what happened last year or two years
+ago?
+Okay, so not as many, which could mean computer science
+syllabuses have changed.
+So yesterday we were talking about reducing our conversation to
+a series of yes no statements or questions.
+Well, the question is something that comes from a statement,
+and we're going to use a technical term proposition.
+So it's written in purple.
+It's something I'm defining for the purposes of this course.
+So a proposition is something that is a statement.
+It's simple in some way.
+And it's either true or false.
+So here are some examples of statements that might be
+considered to be either true or false.
+The moon is round.
+It is raining here and now I mooncakes.
+That book is yellow.
+, so I said that those were simple statements, but
+they're not really simple statements.
+Is the moon round?
+Yes, yes.
+I mean, it's sort of round in much the same
+way that the Earth is sort of round.
+It depends what you mean by round, doesn't it?
+In most useful conversations, the moon is round.
+But if by round you mean perfectly spherical, then of
+course it isn't.
+So there's an complexity there.
+What do we mean by round the moon?
+I suppose we agreed.
+Is it raining here or now?
+Well, that depends whether by here and now I mean
+inside this lecture theatre or whether I mean up there
+outside.
+So again, that apparently simple statement has a lot of
+external information.
+I mooncakes.
+Well, I'm the one speaking, so presumably I'm the only
+one who can answer that.
+And the answer to it is in fact, yes.
+Until I ate one too many and then I haven't
+been able to eat one since.
+, that book is yellow.
+That's a quite a complex linguistic statement because it has
+that in it.
+So there's a lot of language in there which is
+telling you which book I'm talking about.
+I don't actually have any books.
+Anybody have a yellow book?
+No, sir.
+Thank you.
+Is that book yellow?
+Well.
+Or that book is yellow?
+Yep.
+A true false statement.
+So all of that complexity is not logical.
+Or at least it's not logical in the sense of
+logic that we're going to be talking about it.
+It's more to do with linguistics.
+Semantics is the area of linguistics we might be talking
+about.
+What does a word mean?
+So that's not the kind of logic we're going to
+assume that we know what we're talking about, and all
+our questions have definitive answers about whether they're yes or
+no.
+, any questions or challenges about that?
+So quite often during the course, I'm going to make
+statements and some of them will be obvious and some
+of them will be obvious and false.
+So if you think I might have made an obviously
+a statement that is false, do shout because it might
+be deliberate.
+, I don't have any plan for this lecture as
+far as I know.
+So because we're working as mathematicians or logicians or whatever.
+We're going to introduce symbolic notation.
+And there's a lot of useful convention that we use
+in maths and in logic to save words.
+So conventionally I'm going to use uppercase Letters from about
+the middle of the alphabet from Pcast.
+And those are going to be things that stand for
+propositions.
+And most of the time, I don't really care what
+propositions they stand for, because I'm going to be reasoning
+abstractly about what we can do with propositions.
+But occasionally I might want them to talk about a
+particular proposition, such as the moon is round.
+So the key things are propositions or statements that are
+true or false.
+And I'm going to use letters such as P and
+Q to range over them, as we say.
+One of the things that we experience in this course
+is that Don and I are both both mathematicians, computer
+scientists, whatever you want to call us of 40 or
+50 years standing, which means we have forgotten what it
+was not to be a mathematician or logician.
+So if I use a word and you don't know
+what it means, or you don't know what it means
+in the context.
+Shout because there will be others, and it will simply
+mean that I've forgotten that it wasn't taught in school.
+So I try to avoid these because every year I
+learn a new one.
+But please shout as soon as there is anything you
+don't understand.
+Okay, so what can we do with propositions?
+The statement that the moon is round is not all
+that interesting.
+Well, I suppose it is interesting because it tells us
+a lot about the nature of the universe and the
+solar system and the way it formed.
+But for more complex forms of reasoning, we usually want
+to be able to start with some proposition and end
+up with another proposition, because we know something and we
+want to work something out from it.
+For example.
+If you get 71% on an assessment, then that is
+a grade A, so that's a rule that is actually
+embedded somewhere in the university's regulations.
+And there's a reasoning process that takes you from Mark
+greater than 71 to grade is a.
+, so much of logic is about combining propositions in
+some sense.
+Almost all of logic is about combining combining propositions.
+So the question is how many ways can we combine
+them.
+And this is where things can get a bit confusing
+to start with, because we use words in logic with
+very specific meanings, although those words are also everyday words,
+where they also have a meaning that we think we
+understand and that may not be precisely the same.
+So one of the main combinations in logic is, and
+I think we all know what and means in most
+circumstances.
+So if I say p and q, I mean that
+p is q and q is true.
+And that sounds a circular definition, right?
+But it is because I have to define logic in
+terms of something.
+Where things get slightly more interesting will be a bit
+in the next operator.
+But another thing I need to warn you about logic
+is that there are lots and lots of different notations.
+Because it's an old subject.
+Modern logic is not so old.
+Modern logic is about 150 years old, but it's changed
+a great deal over those 150 years.
+And people's preferred notations vary.
+So when I want to write and and I'm talking
+in logical sense, I will usually use a symbol, because
+that makes it clear that it's the precise meaning.
+This thing which I'm going to pronounce and and various
+people pronounce in various other ways, is the symbol that
+we use in this course.
+Other people, typically in a slightly older and more philosophical
+tradition, will usually use the and symbol, the ampersand symbol.
+IDE or curiosity?
+How many of you know what ampersand means as a
+word?
+So you know it means this symbol.
+But do you know why it means that symbol?
+Yeah.
+Sorry.
+, it used to be a letter.
+, so I'm actually talking about the word ampersand.
+So why is this particular symbol called an ampersand?
+, It's a curious thing to know.
+May be useful for pub pub quizzes.
+Ampersand is actually a contraction by natural usage for the
+phrase and per se, and per se is Latin, which
+means by itself.
+So this means and by itself.
+And this is the symbol that by itself means and
+, and that also demonstrates interesting linguistics things because we
+have and pair turning into Ampere.
+So that's a process of assimilation which is common in
+language.
+So it's a nice word useful for both basic phonology
+and linguistics.
+You will also see the dot, the dot you're familiar
+with as a sign for multiplication, and we'll see a
+bit later why and is a bit multiplication so
+and is pretty straightforward.
+Any questions about and.
+We can write down a precise definition of what it
+means using a truth table.
+So who knows.
+Truth tables should be a lot more of you.
+Yes.
+Good.
+Okay, so those of you who haven't seen truth tables,
+they're very boring things.
+I write in the columns the values of P and
+I write in the row, the value of q.
+And in the table I just write down what the
+value of p and q is.
+So false and false is false.
+False and true is true.
+True and false is false.
+False.
+True and true is true.
+So it's just a tabulation, the logical equivalent of a
+multiplication table.
+A more interesting conjunction is or.
+So when I say p or q and the word
+disjunction is the fancy Latin word for putting two propositions
+together with or p or true q is true exactly
+when at least one of p and q is true.
+And you'll notice I've already confused matters by saying at
+least one of P and Q when I'm talking about
+or.
+But I hope you see what I'm meaning there.
+So P or q is true.
+If p is true or q is true, or both
+are true.
+Does that match with the way you use or in
+everyday language?
+Yeah.
+Shout!
+Yeah.
+So sometimes not always, but probably more often when we
+use or in everyday language, we mean either or one
+or the other, but not both.
+So that's something to be careful to remember.
+In logical usage, the plain or always means one or
+the other, or both.
+So an example of.
+That might be.
+You will not get an MSC distinction if you don't
+get a distinction on the coursework, or you don't get
+a distinction on the exam.
+So in the way our MSC works, to get a
+distinction, you have to get a distinction both from the
+dissertation and the exam.
+So if you fail either of them or both, then
+you don't get a distinction.
+But frequently in everyday life we mean one or the
+other.
+So if somebody offers you an apple or an orange,
+then you're going to get one unless you explicitly say,
+actually, I'd both, which may not be what they
+meant to offer.
+And again, there are many symbols in logic.
+In modern logic, we tend to this symbol.
+Computer scientists tend to the symbol.
+It's the other way round.
+I'm going to pronounce it, or some people will call
+it V.
+The same people who write the ampersand for and will
+often write a vertical stroke for or not quite so
+common.
+You will also see plus because we will see that
+or is the logical equivalent of addition in some ways.
+But I'm going to use this one.
+We can write a truth table for it.
+Looks this.
+False and false is false.
+False and true is true.
+True and false is true.
+True and true is true.
+, so any any questions about or.
+The only catch is remembering that it includes the case
+when both are true.
+If I put the truth tables for and and or
+side by side, what do you notice about them?
+Sorry.
+They're similar.
+Can anybody say more precisely?
+Where?
+In the Lord there are three.
+In the end, there's only one truth.
+Yep.
+And if you look, you see that this one is
+got from this one by flipping it about the axis
+and swapping.
+True and false.
+So that general thing is called duality.
+And I'm not going to talk much about it now,
+but a bit later in the course we will talk
+about duality quite a lot.
+Really what this is saying is that false and or
+go together in the same way that true and and
+go together.
+So you'll see more of this later on, and eventually
+it will become embedded in your brain so that you
+can think about such things automatically.
+Right.
+Are we doing.
+There's another proposition way of combining propositions that we use
+a lot in everyday life, and that's denying something.
+So not the negation of a proposition is true exactly
+when the proposition is false, which I hope is what
+we think not means in everyday life.
+And again, there are lots and lots of symbols for
+it.
+So the one that we and the modern logicians
+tend to use is this thing which we just pronounce
+not.
+It probably has some other name that I don't know.
+Older logicians will use the twiddle, and if you want
+to be formal about it, it's called a swung dash.
+But twiddle is easier.
+Sometimes we will use an over bar to say not
+p, and we will do that sometimes in the course
+because it has its uses.
+But our main symbol for negation is this, , dash
+with a tic at the end.
+We can write a truth table for it.
+It's a simpler truth table because there's only P, so
+not p is true if p is false, and false
+if p is true.
+, do you think there's anything complicated about not.
+Is it generally easier to show that something is true,
+or to show that something is not true?
+If it's not true?
+Do you think it's easier to show that it's not
+true?
+All right.
+So let me give you an example against that.
+So my unpleasant legal experience over the last four weeks
+because I've been buying a place, and one of the
+issues that arose was whether there had been any alterations
+to the property since it was converted into a flat.
+I had an annoying, pedantic lawyer who said there might
+have been.
+Is it easier to demonstrate that an alteration has been
+done, or to demonstrate that nothing has been done?
+I mean, if an alteration has been done, then at
+least you can see it.
+But how do you look at the whole thing and
+say nothing has been done?
+, so there is a sense in which this is
+true in logic as well, but that's a more complex
+form of logic.
+So proving something is something is usually easier than proving
+that you can't prove something.
+But proving something false is a different matter.
+But for most purposes negation is easy because we know
+what true and false are.
+We have possibilities true and false.
+And if we have the negation, we just flip them.
+Where it gets complicated is if you have a don't
+know.
+So I don't know whether something is true, but then
+I also don't know whether it's false.
+And so negation becomes more interesting.
+There are logics for dealing with that which I might
+possibly mention right at the end of the course, but
+for our purposes logic is very straightforward.
+So I've given you three ways of combining propositions and
+or and not.
+So if we have combinations then we can build up
+complex things.
+In basic arithmetic you have plus minus times divide and
+you build up complex expressions in some time, which is
+probably fading from your memories.
+You had to do evaluate expressions by hand, whereas now
+you probably use calculators or hopefully not.
+ChatGPT.
+, so I can write down an expression that.
+So if I say, what does that mean?
+What do you say?
+I want to go somewhere else.
+Yeah.
+Or not?
+.
+Okay.
+So that's basically reading the statement.
+What does the statement say?
+Notice the brackets.
+So we use brackets in logic in the same way
+that we use them in arithmetic.
+This means the sort of main operator here is an
+or.
+So I'm saying that either this is true or this
+is true or both.
+And this thing on the left says that both P
+and Q are true.
+And this thing on the left says that it's not
+the case that both R and S are true.
+So rather useless statement because you don't know what p,
+q, r and s is.
+But the point is that we can take arbitrary propositions
+and build them up in the normal mathematical notation with
+brackets in order to group things together.
+So hopefully that's just familiar notation, maybe with some new
+symbols.
+Any questions about it or comments.
+Do you think I need to tell you any more
+ways of combining propositions?
+A couple more.
+Do I have to or are they just handy?
+So actually, these four propositions are enough for all the
+possible ways you can combine propositions.
+And it's a reasonably good exercise to check that.
+So I mean maybe not check it in detail, but
+go and convince yourself that every possible way of combining
+two propositions can be written in terms of and or
+not, but in everyday reasoning, and especially in mathematical everyday
+reasoning.
+There's a combination of propositions that we use a lot
+more than the others, in fact, and that is if
+then implication.
+So if I write if P, then q, then what
+I mean is that if whenever p is true, q
+has to be true.
+If P, then q.
+That is the combination you use in most of the
+mathematical reasoning you do, because all mathematical, all mathematical theorems
+have the form.
+If something is true, then something else is true.
+And again, there are lots and lots and lots of
+symbols.
+So you will see people using a single arrow.
+You will see people using a double arrow.
+You'll see people using this thing which looks a
+back, which looks a superset symbol.
+There's a reason for that.
+And many others.
+The one we're going to use is the single arrow.
+And again, this is an operator which can be defined
+with a truth table.
+It works this.
+So this is p implies q.
+False implies true.
+False implies true.
+True implies false is false.
+True implies true is true.
+So look carefully at this first row here.
+Does that actually make sense to you?
+Good.
+How many other people find it slightly disturbing?
+Yep.
+Why?
+Why is it a bit disturbing?
+Yeah, because he is false.
+If P is false, shouldn't you be false as well?
+And this truth table says that if P is false,
+then it's okay for Q to be either false or
+true.
+So this is the single biggest difference between logic and
+everyday life.
+So to give you an example, here is an if
+then statement with two propositions in it.
+And I want you to tell me whether the if
+then statement is true.
+If the moon is made of green cheese, then I
+am a banana.
+It's true.
+Right?
+Which seems a bit odd.
+.
+The reason it's.
+Why do we do this?
+Why do we do this?
+Fundamentally, we do this because things work better if we
+do that.
+And the real reason we do it is that we're
+just talking about yes and no.
+So we don't have any idea of an actual connection
+between things.
+So the statement I just made is absurd, because there's
+no possible reasonable connection between the moon being made of
+green cheese and me being a banana.
+I mean, unless maybe you say the only way the
+moon can be made of green cheese is if an
+evil wizard has done it, and he might turn me
+into a banana.
+So the kind of logic we're dealing with has no
+conception of connections between propositions.
+It only knows whether they are true or false.
+And in that setting, if you don't know anything about
+if you know that P is false, then the safest
+thing to do is say, I don't know anything about
+Q.
+It could be true.
+It could be false.
+So if then is a statement about P being true,
+making a positive requirement that Q is true and not
+the other way round?
+Not about the negative.
+There's a buzzword for this.
+It's called the problem of material implication.
+So this kind of implication is called material implication because
+it only looks at the matter, the content of the
+proposition, and doesn't think at all about whether there's any
+sensible relation between them.
+So if we look at what P implies, Q says,
+if we look at that truth table, consider this statement
+here.
+Either q is true or p is false, q or
+not p so Q is true or p is false.
+If you check this formula against that truth table, you'll
+see that they're the same.
+So we don't actually need the implication operator around.
+We could always just write it out this.
+However we tend to think in terms of implication.
+We think in terms of one thing implying another.
+So this is a very useful operator to have for
+the purpose of human reasoning.
+But it is also important in a lot of cases
+to be able instantly to convert it to this form.
+So try to get that into your brains now.
+And again, just a side note going on to this.
+The reason this first row looks odd is because it
+says false implies everything.
+Whatever you form, whatever you have on the right of
+the arrow, false implies it.
+At the moment we're only talking about propositions, but later
+in the course we'll get on to proving things, proving
+theorems, taking some assumptions.
+And in normal mathematics, in normal logic, it's also the
+case that if you can prove false, then you can
+prove everything.
+So the Latin term for that which was popular when
+logic was a philosophical subject, is ex Folsom quarterly bit
+out of falsehood.
+You can get anything you .
+And the reason that's used a lot is because it's
+what underlies proof by contradiction.
+So I guess in your school maths you have done
+how many people have done proof by contradiction at school?
+So most but not all.
+Okay.
+You're going to see more of it.
+Proof by contradiction actually relies on force behaving in this
+way.
+There is a more refined branch of reasoning and logic
+where that's no longer true, but that's a harder to
+deal with.
+Okay, any questions about if and then.
+Yeah.
+Was that a question?
+But.
+You have to shout really loud from back there.
+Or, you know, you almost.
+Yeah.
+How is that possible?
+Well, just so just check the truth tables.
+So take this expression, write down the truth table for
+it, and you'll see that it's the same as that.
+But if you think about it without looking at the
+truth table P implies q.
+That means if p is true, then q has to
+be true.
+If q is true, then we have nothing to check
+because p can be true or false.
+If Q is not true, then P has to be
+false because otherwise P would be true, which would force
+Q to be true.
+So you can do it by reasoning or you can
+just check the truth table.
+Okay.
+So that's all the logical combinators that we're going to
+use.
+A little bit later, we'll introduce 1 or 2 more
+that are useful for special purposes, but these are the
+main ones we use when we write down systems of
+reasoning.
+Now I want to just make an observation.
+Does everybody know Venn diagrams?
+Does anybody not know Venn diagrams?
+That's good because we told you to read about them
+before coming here.
+So, , if you look at logic, it looks very
+much Venn diagram P and q looks p
+intersect q, p or q looks p union Q,
+not P looks complement of P.
+That is not, of course, a coincidence.
+So what's the meaning of P?
+Well, the meaning of p is the things of which
+p is true.
+And then what's the meaning of P and q?
+The meaning of p and q is the things that
+have of which p is true, and q is true,
+and that is the intersection of the things for which
+p and q, and the set of things for which
+q are true.
+So fundamentally and an intersection of the same or and
+union of the same, not and complement of the same,
+it's just that up here we're thinking about abstract propositions.
+And down here we're thinking about the sets of things
+that have that proposition as one of their characteristics.
+So I'm just mentioning this.
+Yeah.
+Absolute values.
+, so kind of a side note.
+So I'm this double bar is a computer science notation
+for the meaning of p.
+And by definition it's the set of things of which
+p holds.
+So if I have a universe, the meaning of p
+in that universe is the set of objects at which
+P is true.
+And that's that's how we actually define logic applied to
+universes when we're being really, really formal, which we're not
+going to do in this course because we're just going
+to assume we know what it means.
+Okay.
+So that's propositions, simple statements.
+You don't get very far with simple statements.
+So in everyday life we want to make statements not
+just true or false, but we want to make statements
+about things.
+So if we look back at the proposition I had
+I said the moon is round.
+Well, obviously that breaks down into two things.
+There's the thing I'm talking about the moon, and there's
+the thing I'm saying about it, which is is round.
+if you learned the grammar of your own language or
+any other language in a traditional style, you may be
+familiar with terms subject, predicate, and complement.
+How many are familiar with that as a grammar term?
+Yep, there isn't enough old fashioned grammar teaching in logic.
+We sometimes talk about such things.
+So in logic, a predicate is a proposition about things.
+So it's the proposition is round about a thing.
+And the point of a predicate is that we can
+apply it to lots of different things.
+So the predicate round can be applied to the moon
+to say the moon is round.
+And I can also apply it to the sun and
+say the sun is round.
+So now I've abstracted away from particular objects, and I
+have a notion of predicate which is about properties of
+objects.
+So.
+Is round is something that takes one argument.
+As we say, it takes the object I'm talking about
+the predicate is something that has two arguments because
+the statement I mooncakes can be plugged in with
+different things for AI and mooncake.
+, I don't know.
+You rigatoni.
+So is what we call a two place predicate.
+So individual things might have names the moon or
+eye.
+And there's a misprint there.
+And we have variables.
+We will use variables x and y lowercase x and
+y.
+So this is the same kind of variable that you're
+familiar with.
+In mathematical usage you use a variable to range over
+numbers in a problem.
+So x and y refers to some arbitrary thing.
+And we will represent predicates by the same letters as
+the propositions.
+But we will give them arguments as well.
+So if p is a unary predicate is round,
+then p of x is a proposition, and it means
+that the predicate p is true of the thing x.
+So for example, is round applied to the moon, likes
+is a binary predicate, takes an x and a y,
+and its true if x likes y.
+So this would be likes I comma mooncakes.
+Is that a reasonably comfortable notation?
+Are there any issues with that notation.
+It should be yeah.
+Thank you.
+Good.
+, there are an awful lot of Latin and Greek
+words floating around in mathematics in the days when everybody
+learned Latin and Greek at school.
+That was fine, but that's no longer the case, and
+many of you are from places where it would be
+quite reasonable, for you have learned Classical Arabic or Sanskrit
+or Middle Chinese instead of Latin or Greek.
+So unary means one issue.
+Binary means two.
+Okay, I just want to mention that there is one
+very special binary predicate, which is equality.
+We're going to write equality in the usual way
+that.
+So x equals y.
+This is true if x and y are the same
+thing.
+In this course we won't get into the reasons why
+it's special.
+So in more advanced logic than it behaves slightly different
+from others.
+But for our purposes It's just a predicate that we're
+going to write in a particular way.
+So I've told you about propositional logic.
+I'm just going to put up a little bit about
+first order logic.
+We're not going to do first order logic.
+It makes us sorry.
+First order logic allows us to make more complex statements.
+So again, let me do a quick check.
+These are the symbols usually used in modern maths.
+How many of you are familiar with these two symbols?
+About one fifth or less.
+Okay.
+So we will introduce them a bit later because they
+have their uses.
+So this is for all.
+This says for every x p of x is true.
+And this says there exists an x such that p
+of x is true.
+So you make statements this in mathematics .
+, every prime number greater than two is odd or.
+I can't think of an existential statement right now, but
+you make statements that are true of all things, or
+you might want to exhibit an example of something.
+And the thing I want to say now is that
+this lets you say an awful lot.
+So those of you who are CS math students are
+probably going to do an analysis course this year, next
+year.
+Third year there is definitely honours analysis, but you probably
+do some analysis in second year.
+And in analysis you will see a concept called a
+function from the rails to rails being everywhere continuous.
+And you will see it written out defined this.
+This is a complicated formula.
+It says for all something for all something there exists
+something for all.
+Something.
+And there's an implication.
+This is pretty much about the limit of where normal
+humans can understand formulae.
+So mathematicians have ways of understanding much worse formulae by
+breaking them down.
+But it illustrates that first order logic is quite difficult
+for two reasons.
+Firstly, it's hard to understand.
+This is a very short formula, but it's already quite
+hard to understand.
+And computers can produce formulae that are thousands of pages
+long.
+The other reason first order logic is hard is that
+if you write down an arbitrary statement in first order
+logic about an arbitrary universe, I can't necessarily tell you
+whether it's true or not.
+That's why mathematics is not trivial.
+If this were not the case, then mathematics would be
+a trivial subject.
+We could just feed it to a computer and get
+the answer.
+, first order logic is what mathematicians use in everyday
+life and much other reasoning.
+It's a remarkably recent discovery about 140 years old.
+But because it's hard in both these ways, we are
+not going to teach you first order logic in this
+course, except a bit right at the end.
+What we're going to do in this course is to
+teach you something that is a bit more powerful than
+propositional logic.
+It lets you say useful things, but it's manageable.
+It's not so hideously complex as first order logic.
+And so that's what we will introduce next week.
+We will introduce the logic that was developed about 2000
+years ago.
+And then we'll spend a few years going through 1500
+years of logic.
+So next week I see you on Tuesday because Don
+and I are swapping lectures and if anybody has questions
+come down.

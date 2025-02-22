@@ -1,0 +1,1064 @@
+Okay.
+That was, , foggy mountain breakdown on the five string
+banjo.
+, so.
+And now for lambda expressions.
+Okay, this is carrying on.
+Just carrying on from my lecture on Friday.
+Yesterday.
+, on, , higher order functions where I showed you
+map, filter and fold.
+So here's some more stuff about, , about functions in
+higher order functions relating to that stuff.
+Okay.
+So, , lambda expressions.
+.
+So the first thing I want to do is, ,
+to explain.
+Well, it's called currying.
+Okay.
+, what is that?
+, what I want to explain now is, , I
+told you a long time ago now seems a
+long time ago.
+It's only a few weeks.
+I told you, when you have a function that has
+more than one argument, you write it.
+You write the type.
+this.
+Okay, first argument arrow, second argument arrow result.
+Or if there's more than two, then you know more
+arrows.
+Okay, I said, I said at the time, this is,
+, what you do in Haskell.
+, I said I would explain it later.
+, so later has now arrived.
+, so it's now time for me to explain this.
+Okay.
+This is something that's a little strange at first, but,
+, it's cool once you get used to it.
+So.
+, so here's an example.
+Oops.
+Here's the example adding, you know, it's very simple about
+adding two numbers.
+Okay.
+So if I would write that as a function add
+with the definition this okay.
+It's just it's just calling the plus function.
+I just wanted to give it a name so I
+could so I could kind of talk about its type
+and so forth.
+So, , okay, if I apply that to three and
+four, , it takes three plus four and I get
+seven.
+Okay.
+There's another way of thinking about this.
+Okay.
+So I give it two arguments.
+It gives me the answer.
+Simple, right.
+Another way of thinking about this is to think about
+where are.
+Where are the implicit parentheses and these in this definition
+okay.
+implicit parentheses.
+So when you, when you have an expression , computer
+looks at it and figures out, , the structure of
+the expression.
+And there's things grouping, you know, so multiplication before
+addition and so forth.
+So if you would want to put in all of
+the, , the structure, you, you, you parentheses it, put
+in all the parentheses.
+So , and so here's, here's how this would work
+for this, for this definition.
+Okay.
+The same definition is before.
+And I've just put in these parentheses which are which
+are the way that Haskell views, views this this
+stuff okay.
+So first of all, , it parentheses rises to the
+right.
+, when you have arrows this okay.
+This is called right associative.
+And when you have, a function with applied to multiple
+parameters, it parentheses to the left left associative.
+Okay.
+So what this means is that add of x.
+So this is a this is a thing.
+It's not just ad x y it's out of x
+is a thing.
+It's a function and you apply it to y.
+Okay.
+So AD has this type which means if you apply
+it to an int x you get a function of
+this type.
+Okay.
+You apply it to an integer x and you get
+a function of type into arrow int I've done
+here okay.
+Add ad apply to three.
+I get a function from end to end and then
+I can apply that to four.
+The result is the same as before three plus four,
+namely seven.
+Okay, but what I've done here is I'm breaking down
+this process of applying a function to two arguments to
+two steps of applying the function to one argument.
+Okay.
+Because.
+You know why?
+Okay.
+Because something add three a function add three.
+This makes sense on its own okay.
+It doesn't it doesn't only make sense when I when
+I add 3 to 4 it makes sense just adding
+three.
+It's the function that adds three to things.
+Okay.
+You could you could you know, if that's a function
+that you that you're, that you would to define,
+then you can define a function, add three to things.
+You can apply it to various numbers.
+It will add three to whatever those numbers are.
+Okay.
+Or the function that adds one to things.
+Okay.
+So that's a perfectly good function on its own.
+And it's produced by applying this function.
+Add here to just one of its two arguments in
+order to get a function that, , you know, that
+that takes integers to integers, adding three to them.
+All right.
+So, , this is kind of summarised by this slogan.
+A function of two numbers is the same as a
+function of the first number that returns a function of
+the second number.
+Okay.
+And I said this is the way that Haskell, ,
+puts in the parentheses.
+If you, if you wanted to, to sort of view
+the way that it's that it's understanding these things and
+, interestingly, parentheses rising to the right in the type
+and parenthesis to the left in the, in the expression,
+these actually match.
+Okay.
+As you can see if x has type int, then
+this thing in parentheses here is a function from end
+to int.
+And that's what the type says.
+You apply.
+You apply to something of type int and it gives
+you a function from end to end.
+All right.
+This is I'll come to partial application which
+is what's happening here.
+Okay.
+, function can be partially applied to, you know, if
+it has multiple multiple arguments can be partially applied to
+one argument or to, , you know, fewer arguments than
+all the ones that it has.
+Okay.
+I can write this in a different way.
+Okay.
+I can give a name to the function, , that
+I produce when I apply ad to a single, ,
+parameter argument.
+Okay.
+So out of x is the function g where g
+is defined here as a helper function.
+I don't know if this makes it any clearer, but
+it gives the same result, and it just gives a
+name to the function that I that I get when
+I apply ad to x.
+Okay, so out of x is a function g which
+when applied to y gives you x plus y okay
+x.
+X is there and it appears in the helper function.
+And y is .
+It's part of the definition of the helper function okay.
+So and so if we would add , if we
+would apply do this application add three.
+applied to four.
+This would give us the function g applied to four
+where where g is defined this.
+Now we've got x instantiated to to three which again
+gives us 3 to 3 plus four, which is equal
+to seven.
+Okay.
+, this is just all kind of explaining how you
+can define functions of multiple arguments in terms of functions
+of one argument, where you kind of partially apply the
+function of multiple arguments to first its first argument and
+then second argument, so forth.
+Okay.
+And , this is again higher order functions.
+This is not, , functions as arguments of other functions,
+but functions as results of functions.
+Okay.
+So this function ad it takes an int and it
+gives a function as its result.
+Okay.
+You saw with map, filter and fold functions that take
+functions.
+The result here is functions taking giving functions as a
+as results.
+Sorry I said I said map, filter and fold.
+They're functions that take functions as inputs or as arguments.
+Here's functions producing functions as results or outputs.
+Okay, so this idea happens to be named after Haskell
+Curry.
+Have you heard of something else that's named after Haskell
+Curry yes.
+Programming language you're learning.
+Okay.
+, so, , currying, it's not Indian food.
+It's, , it's it's named after him.
+, and the joke in functional programming is you could
+have called it.
+Sure.
+And fingerling, but that's harder to pronounce.
+, or fragging.
+So these are some other people.
+, so these are, these are people who did work
+in about the 1930s on, , theory of functions, sort
+of a pure theory of functions in mathematics and logic
+before computers were invented.
+, so the idea of, of what functions are and,
+, you know, the meaning of, , function, application and
+so forth.
+And currying is about transforming a two argument function into
+a one argument function, producing a one argument function.
+Let me, , explain a little bit.
+So we've got here a function, , type that has
+this shape.
+, is that in focus?
+Wait a second.
+There's various buttons that I'm trying to.
+It's not working.
+I guess it's in focus.
+Okay, so the function, the type that I've got has
+this shape A, B and C or all int in
+this case.
+Okay.
+Now, , it's possible to define a function which takes
+a pair.
+Of values as a as argument.
+I mean, I could have, I could have, , defined
+ad I'll call it ad prime.
+I could have defined add prime.
+This is kind of more what you might be used
+to in programming.
+Okay.
+It's actually possible to do that.
+I said in Haskell you usually don't do that.
+But it's it's it's a permissible definition.
+We don't do it usually because this there's some, this,
+, idea of partial applications is handy.
+Okay.
+So , there's, there's add define in that with that
+style of with that style of type and here's
+add prime define with this style of type.
+Okay.
+, so currying is the is the , taking a
+function of this type and turning it into a function
+of this type.
+And it's actually a function in Haskell built in function
+in Haskell.
+And the other direction is called an currying.
+Okay.
+So it's a function also a function Haskell.
+So curry curry is actually a function which takes.
+Something of that type and turns it into something of
+that type.
+Okay.
+And now we are really talking about higher order functions
+here.
+This is this is a function which takes a function
+as argument produces a function as its result.
+And the function that it produces a result is a
+function which takes a value and produces a function.
+Okay.
+So it's it's nested, , several levels deep.
+The arrows, the arrows are nested several levels deep.
+And, , curry.
+, has the, , the result has the, the type
+where the arrow.
+I mean, it's it's this arrow that.
+Okay.
+And if you would apply this so curry apply to
+add prime gives you add okay.
+Now this is at the moment just to kind of
+playing with simple sort of thing to get you a
+little bit used to the idea of of types
+that have lots of arrows in them and the way
+that you can kind of move between different, different kinds
+of functions, types.
+, these, these functions are sometimes useful.
+, not all that often, but sometimes.
+, anyway, I just explained that to, to talk about
+this terminology that you don't have to really know about,
+but it's, , it's something you might come across.
+I will just briefly mention that functions.
+When we talk about functions that have these kind of
+higher order types this.
+, the type system in Haskell is , , is
+sometimes, , well, I'll say that, that if you try
+to write a definition of a function that.
+Okay.
+Suppose I want to write a definition of this function.
+Curry.
+Okay.
+If I want to write a definition of curry, it's
+almost impossible to, , to make a mistake because, ,
+the, the function almost writes itself.
+So let's try to do this, okay.
+Curry.
+It takes a function as its argument.
+So let's call that f.
+So f has that type.
+And the result should be a function of this type
+okay.
+So it's a function that takes something of type A
+and something of type B and gives you something of
+type C.
+So here's the something of type A, let's call it
+x.
+Here's the something of type B, let's call it y.
+And now I want something of type C.
+So how do I get something of type C.
+Okay.
+The only way that I can do that is using
+F, because it's the only thing that delivers me a
+result of type C.
+Okay.
+So I have to apply F to something.
+And what do I apply f two.
+Well I have to apply to pair to a pair
+which has an A and B.
+Okay.
+The only things I have that have types A and
+B are x and y.
+So that's the definition.
+And there's nothing else I can write that has it
+that has the correct type.
+That's what I meant by the definition kind of writes
+itself.
+Okay.
+, no need for, you know, if then else case
+analysis.
+, list, , you know, list comprehension or anything.
+It's the only thing I can write that has that
+type.
+And, , you can, as an exercise, try to define
+on curry if you want.
+It's not very much.
+It's not very different.
+Okay.
+I hope that's, .
+Understandable.
+Anyway, , even if it's not helpful, go back to
+my slides.
+.
+So partial evaluation.
+As I said, you can, , if you have a
+function of multiple arguments, you can, , if you wish,
+apply it to, , not all of its arguments.
+You could apply just one of its arguments or two
+or in this, you know, this one has this this
+function folder has, , has three arguments function, value and
+list.
+Okay, before you get a result and defining some, I
+define some by defining fold by applying fold to three
+arguments okay.
+Which gives me a result.
+Okay I can instead define some okay.
+This is sum of x is I define sum of
+x is by saying it's the same as fold applied
+to these three arguments.
+I could instead equivalently say well fold is a
+is a function which takes two arguments and produces a
+function as a result.
+Okay.
+Here's, you know, argument one, argument two producing a function
+as a result.
+What function is that?
+It's the function which takes the empty list to to.
+, for some reason I've called this u rather than
+v, , and a list that's non-empty to to this
+to this result here.
+Okay.
+And then I can define some, , as you know,
+the application of fold to the two arguments plus and
+zero.
+This is, this is very similar to what I wrote
+up here.
+The only difference is this is sum of x is
+is equal to fold applied to three arguments.
+And this is some which is fold applied to two
+arguments.
+Okay.
+So we're , we're leaving the part about the fact
+that it takes I mean here we've got X is
+here and we've got X is here.
+I'm not explaining this as well as I as I
+perhaps should, but basically if you define f of x
+equals something of x, it's equivalent to saying f equals
+the something you can kind of the x's cancel.
+Does that make sense.
+Any questions.
+Okay.
+The point here is that we can partially apply functions
+okay.
+We can apply fold to not all of its arguments.
+First one second one.
+And we choose not to apply it to the third
+one in this definition here.
+Okay.
+, you'll find this is sometimes useful.
+And I'll show you some things coming up where it,
+, where it's kind of useful, this kind of thing.
+Okay.
+So, , so all of these definitions that I had
+before in the last lecture, some product concat and an
+or defined in terms of fold.
+So sum of x is equals.
+This thing with x is at the end.
+And similarly product concat and an or .
+Exactly the same definition could be given by , leaving
+off the , you know, the list argument.
+Okay.
+Because saying that, saying that some apply to a list
+is equal to fold applied to these two arguments.
+And that list is the same as saying that some
+hoops sum is equal to fold.
+Apply to these first two arguments okay.
+The list.
+The list is the thing that is the argument of
+the resulting or the resulting , function.
+Okay, so looking at these two it says simplified.
+You may or may not find this to be simpler.
+It's it's, , four characters fewer.
+Okay, so in that sense, it's simpler.
+Okay.
+We've dropped we dropped the, , the X's on both
+sides.
+So in that sense, it's simpler.
+You might find it a little bit harder to read,
+but, , anyway, , this is a style of, ,
+so this, this idea of kind of dropping parameters wherever
+possible.
+, this is this is a style of functional programming,
+and it's sometimes called, , point free style, , or
+by people who don't it.
+It's called pointless style.
+Okay.
+Point here is in the, in the mathematical sense, where
+you've got a space of, of values and you're, you're
+talking about points in the space.
+So these are the arguments of the function.
+So point free or pointless means you're not talking about
+the the, the, the points and the space of
+arguments.
+You're, you're you're abstracting away from that.
+Okay, so point free style versus pointed style.
+, it's not about there being no point.
+It's about the points in the space of arguments.
+Anyway, , that's a bit of jargon that you don't
+have to remember.
+, it's just something that functional programmers, , to
+kid each other with in their spare time.
+Okay.
+Is that all halfway clear?
+, yeah, I see a thumbs up for, , not
+everybody.
+Anyway, you can ask questions if you want.
+I want to get on to Lambda Expressions now.
+Okay.
+.
+Lambda expressions.
+You might have heard of lambda expressions before.
+, , they have been making their way into programming
+languages.
+, other than Haskell.
+, let me explain what's going.
+Let me explain lambda expressions in Haskell.
+Okay.
+So so , this is an example.
+This is an example that I showed you already.
+Okay.
+This is this is the sum of the squares of
+the positive numbers in a list.
+My previous example was the sum of the squares of
+the odd numbers in the list.
+And the only reason why I've changed that is so
+that I can have two helper functions rather than one
+here.
+Okay, so so when I write this thing okay, I
+can write this down.
+And I might think, well, this is kind of a
+pain.
+I have to define these, , these helper functions here.
+And I'm only using them once.
+I'm using square here and I'm using pause here.
+And, , there should be some better way of doing
+this where I can, , you know, replace square by
+its definition and replace pause by its definition.
+So I might think, well, let me just sort of
+bung the, , the body of the function definition in
+place of the function name.
+Okay, so I'm replacing square here by by x
+times x okay.
+Because whoops because square is equal to x times x
+okay I might do that.
+I might try to do that.
+And I might try to replace pause by its body
+okay.
+And this will not work unfortunately.
+Okay.
+it will not work.
+The computer will say , I don't understand.
+Okay.
+It will say, actually, it'll complain three times, it'll complain
+about it'll complain about this X, it will complain about
+this X and it'll complain about this x.
+And it will say each time I don't know what
+x is.
+Okay.
+It will say not in scope.
+It means I don't know what X is.
+Okay.
+The problem is, what we want here is a function
+which takes a value x.
+You know here we have it.
+It takes a value x and it produces x times
+x.
+Okay.
+So we've got x times x here.
+But we don't have the parts saying I want a
+function that takes x and produces that result.
+Okay.
+So I need a way to say a function taking
+a value and producing this result in this case okay.
+Assuming that x is the argument return x times x.
+So how do we do this okay so lambda
+expressions.
+So here is a lambda expression okay.
+It's it's Haskell's way of saying the function which given
+x produces the result x times x.
+Okay, so what was missing before is the bit at
+the beginning that says you know the function which given
+x produces.
+X times x.
+Okay.
+And and the the this pause thing.
+Similarly the function which given x checks to see
+whether or not x is greater than zero okay.
+So these are called lambda expressions.
+I'll explain in a minute why they're called lambda expressions.
+They are functions.
+They're functions nameless functions.
+They don't you don't have to give them a name.
+You don't have to call this square or pause.
+You can just write the function without giving it a
+name.
+And you use a variable here.
+And it can be any variable.
+Obviously it could X is arbitrary.
+You could use any variable as long as it's the
+same in , you know, as long as you use
+the same x here and here.
+And this one of course could be y.
+All right.
+These, these I happen to have used x twice here.
+It doesn't have to be.
+Okay.
+Is that clear so far I hope.
+And why is this called lambda calculus?
+, because logicians in the 1930s invented the lambda calculus.
+And mathematicians to use, , Greek, Greek letters.
+And so they used lambda.
+, they, they wrote what we're writing as, as as
+this.
+They wrote that.
+Okay.
+So, , lambda x dot x greater than x.
+We're writing backslash x.
+right.
+Pointing arrow x greater than x.
+Okay.
+We write this because , this this backslash is the
+closest thing on the keyboard to the Greek letter lambda?
+That's the only reason.
+Okay.
+And instead of dot, , because dots used for other
+things in Haskell, we use this sort of arrow.
+Okay.
+.
+So we use black backslash because it looks lambda,
+a little bit lambda.
+Okay.
+Why did, , why did these logicians and mathematicians use
+lambda?
+, they just picked a Greek letter.
+There's no reason they just picked that one.
+Okay, so, .
+And what they were doing were they they were, ,
+defining and and studying a theory of functions.
+A pure theory of functions.
+And this was before computers existed.
+And, , there's actually a lot of a lot of
+kind of mathematics you can do about functions.
+And this is functions independent of, , of, of, of
+numbers and strings and all those other things independent of
+values, just functions.
+And one of them was Alonzo Church, and another one
+was Haskell Curry.
+And these are now in functional programming, and they're in
+functional programming via a language called Lisp, which was invented
+in 1960s, the first functional programming language.
+And it was invented by a guy named John McCarthy,
+who was for many years a professor at Stanford University.
+, and he took a course in lambda calculus from
+Alonzo Church in the 50s or something 40s or 50s,
+I guess, in the 50s.
+And, , and he thought it might be useful.
+So he put it in lisp.
+And since then it's been in all functional programming languages.
+And nowadays it's even in conventional programming languages.
+, so it's you can do lambda expressions in Java
+as of 2004.
+So 20 years ago.
+So, .
+Java got lambda expressions only, , 44 years after Lisp
+had them.
+And you have them now in, I think in Python
+as well.
+Okay.
+So ideas from functional programming gradually make their way into,
+into other programming languages.
+This is a prime example okay.
+So the ability to write functions without names basically.
+Okay.
+So this is how you evaluate lambda expressions.
+So if you have the, you know, the lambda expression
+that we've just seen, lambda x arrow, I'm going to
+pronounce this lambda even though it's the backslash okay.
+Lambda x arrow x greater than zero if you apply
+this to three okay.
+So what happens you replace okay.
+So so the argument x is three in this
+case.
+So you replace you replace x in the body.
+This is the body by three.
+Okay.
+Giving you three greater than zero, which is true.
+Okay.
+Or in this other case, you replace x in the
+body.
+By three.
+In this case it occurs twice.
+Okay.
+So three times three that equals nine.
+Okay.
+So we're replacing the formal parameter.
+Remember this terminology formal parameter by the actual parameter.
+Okay.
+Formal parameter is the name of the parameter.
+And the function definition actual parameter is the the actual
+value that you use when you do that.
+Okay.
+And you can , you can do this.
+You know, this this gets more complicated.
+So this is a this is a definition.
+This is my add function from the beginning.
+Okay.
+Without the name Add so lambda x y arrow x
+plus y.
+This notation actually is a is an abbreviation for.
+.
+Sorry.
+Let me see.
+, won't let me do this, okay.
+I don't want to include all these parentheses.
+Never mind.
+, this notation where you've got lambda and then two
+variables.
+It's an abbreviation for this notation where we've got lambda
+x arrow lambda x arrow so and so and so
+if you're applying this to two arguments three and four
+you first apply it to three which results in
+x here whoops x here being replaced by three.
+And then in the second stage you can apply that
+lambda expression to four resulting in y here being replaced
+by four.
+Okay.
+Two steps of a value of of of application.
+Okay.
+So you can you can actually use lambda expressions to
+kind of explain what's going on in this, in this
+world of, of of functions and partial applications and so
+forth.
+And in fact, lambda lambda calculus is the basis of
+all functional programming.
+You can you can translate every Haskell program into lambda
+calculus.
+And the meaning of things in Haskell can be explained
+by translating them to lambda calculus and then looking at
+what you get.
+Okay.
+So lambda calculus is the, the fundamental, ,
+basis of, of functional programming.
+And in fact, there's something there's something more primitive even
+than lambda calculus.
+It's called it's called combinators, which I'm not going to
+tell you about.
+I'll just mention combinators.
+All All lambda calculus can be translated into combinators.
+And there are two combinators.
+So you can translate all Haskell programs into lambda calculus.
+And then all the lambda calculus.
+You get into big strings of two letters.
+It's DNA.
+The basis in DNA.
+DNA has four letters.
+, and you can, you know, all the genes can
+be expressed with these four letters.
+And then in programming, you can express all your programs
+using two letters.
+And so if you're, if you're , and then, ,
+sorry, this is a diversion.
+Okay.
+In physics, , you've got atoms and automatic and elementary
+particles and they, they all boil down into quarks and
+there's six kinds of quarks.
+Okay.
+So if you're ever at a party with, , biologists
+or physicists and they tell you about DNA and, you
+know, , the miracle of life, and there's four there's
+four bases in DNA or with physicists who tell you
+about the origins of the universe and and the Big
+Bang and quarks and so forth.
+You can tell them about combinators, and you can compete
+on whose elementary particles are better.
+Okay.
+So we've only we only need two, , for programming.
+They require, , four for biology and six for physics.
+Anyway, , , I'll just skip this.
+This is this is the kind of, , mathematical explanation
+of this function application rule.
+It's called beta.
+Again.
+, logicians and mathematicians Greek letters.
+So beta.
+.
+Okay.
+Any questions about that?
+You're numbed.
+Okay.
+I'm going to now talk about something called sections.
+And this is a this is kind of a convenient
+notation.
+, convenient shorthand for partially applied functions.
+Okay.
+In Haskell, it's a way to abbreviate, , essentially abbreviate
+lambda expressions.
+, here are five sections.
+They're called sections okay.
+And they always have parentheses around them.
+I mean, you remember that we've seen already, , parentheses
+used for kind of turning, , operators plus into
+functions.
+Okay.
+So.
+Here we've got parentheses, parentheses around a little expression which
+is an operator And an argument.
+Okay, here we've got greater than zero.
+So argument on the right hand side here we've got
+two times argument on the left hand side.
+Okay.
+So the argument might be in the left or the
+right okay.
+The thing that, that, that, that the thing is
+in common here.
+We've got a binary function.
+Okay.
+Greater than times plus exponentiation okay.
+And we've got it's a function with two arguments.
+And we give it one of the arguments.
+And sometimes it's the second argument and sometimes it's the
+first argument okay.
+Second argument, first argument, second argument, first argument, second argument.
+Okay.
+And that's the idea is it's the partial application of
+that function to one of its arguments.
+And the the argument that is not present is the
+one that remains.
+Okay.
+So so greater than zero.
+This stands for the function which takes x and checks
+to see if it's greater than zero.
+Okay so here's greater than zero.
+Whoops.
+Anyway here's the greater than zero thing here over here.
+All right.
+So that's the that's the thing in this section.
+Okay.
+Two times stands for the function which takes x and
+takes two times x okay.
+So here's the two times bit of that.
+Okay.
+Here's the one plus.
+For this okay.
+Here's two to the power of from the from this
+expression.
+And you know you can use the same you can
+use the same operator.
+leaving off the first door the second argument.
+Okay.
+So this is two to the power of X because
+it's it's two to the power of.
+And this is to the power of to the
+power of two.
+Okay.
+So , second argument omitted means we were talking about
+exponentiation or.
+Yeah.
+Exponentiation meaning two to the power of something.
+And , leaving off the first argument means we're talking
+about squaring something.
+Okay, so this is a convenient notation which just saves
+the trouble of writing, , this full lambda expression.
+You just have to write down this, this, this little,
+, abbreviation for this thing kind of handy.
+Okay.
+So what it allows us to do is, for example,
+, you know, a few minutes ago, I showed you
+this, , this definition.
+This is the sum of the squares of the of
+the positive numbers in a list.
+And I can further simplify that to this to this
+definition here.
+Okay so I've replaced.
+I've replaced this lambda expression with this section.
+And I've replaced this lambda expression with this section.
+Okay.
+This is okay.
+X0X times x.
+That's the same as X0X squared.
+And this section expresses the function that squares things okay.
+And lambda X0X greater than zero is a function
+checking to see whether a value is greater than zero
+or not.
+And that's this section here okay.
+So that sum that's.
+That's a kind of nice definition.
+You can read that.
+You know what it means.
+Or at least I hope you know what it means.
+You've got an application of fold to plus, and then
+the, , you know, the squaring function and the checking
+to see whether something is positive function.
+Okay.
+Any questions about that.
+Yeah.
+Let me give you the read.
+You had a question.
+Yeah.
+For the sections does it only work for the numbers
+that is stated there.
+Or we can use any number for example larger.
+Does it only work for numbers you're saying.
+Yeah.
+For example the larger than is it only work for
+zero or any number.
+Yeah.
+So it works for any any type of data.
+So not just integers.
+Is that the answer you're asking for?
+Yeah.
+Okay, so it only works for binary binary operators.
+Can you use a variable instead of an integer?
+, yes.
+You can use a variable instead of integer.
+Yeah.
+Yeah.
+Something else.
+Yeah.
+You can use a variable instead of integer.
+By the way, you can also before I answer the
+next question, you can also use if you want.
+Remember remember I said you can write , any,
+any function as an infix by putting back quotes around
+it.
+Okay.
+You can also write, if you wanted to, you could
+write.
+That as a section okay.
+Because that's now a binary A binary function, and you
+can partially apply it to either its first or second
+argument.
+Okay.
+, you know, .
+Okay.
+, you had a question.
+, would.
+You be able to that bottom function definition, would you
+be able to carry that to remove the XS, or
+does the filter bit require, , the access to either.
+I'm coming to that.
+Okay.
+Okay.
+So good question.
+, you're asking about whether you can kind of drop
+the X's.
+Yeah.
+.
+Zero way to define this for prefix functions.
+For prefix.
+Functions.
+, you mean you mean sections.
+Yeah.
+Yeah, sections.
+So that's what I was writing up there.
+Okay, so if f is a prefix function.
+So normally you'd write f.
+Normally you'd write f.
+You know, that.
+That's prefix.
+And you can turn it into infix by, by putting
+back quotes around it.
+Okay.
+Anybody else?
+Chance with the, , the red foam thing.
+No.
+Okay.
+.
+Whoops.
+Okay, let me just finish by talking about function composition.
+So, , you can you can apply functions to values
+to get results, and you can compose, , functions to
+get other functions.
+And of course, , in Haskell a function composition is
+a built in function.
+And it has it has this type.
+Okay.
+It's written using dot.
+, in mathematics function composition is usually a little circle
+okay.
+So we're using a dot here.
+It's kind of a circle.
+And it, it takes two functions and it produces
+a function.
+And here's the definition f composed with g is a
+function which when you apply it to x gives you
+f of g of x.
+Now .
+The type okay, the idea of function composition is you've
+got a function from here to here, okay.
+It goes from here to there.
+And you've got another function from here to there.
+Okay.
+And that direction and you compose them to get a
+function from here to here okay.
+First function from here to their second function to here
+to there.
+You get from here to there okay.
+This is the idea.
+Okay.
+The, , it might be somewhat surprising the type up
+there because you'd kind of expect first function from A
+to B, second function from B to C, okay.
+And this is the other way around.
+Okay.
+And that's because.
+That's because of the way that this definition is, is
+I mean if you want to write f dot g
+apply to x equals f of g of x.
+Okay.
+So g is the first thing being applied.
+So there's g and there's f okay.
+But we're applying composition to f and then to g.
+Okay.
+So the definition the the the type has to be
+be rock arrow a Arab.
+And then you get.
+A rock is the result.
+Okay.
+, this is sometimes, , confusing.
+I to use the, , to to to pronounce
+dot as, , as after f after g.
+Okay.
+Because it's, it's g followed by f, so f after
+g to remind myself of the way around that this
+is.
+, you can use this to compose, for example, pause
+with square to get, , , you know, the fact
+that, well, to check whether the square of a number
+is positive or not, , and, .
+I'm running out of time, so I just want to
+see what I have to say.
+So composition is associative.
+.
+Is it commutative?
+Anybody commutative?
+No, it's not commutative.
+, the types don't I mean.
+Yeah.
+It isn't commutative.
+You know, doing one thing and another is not the
+same as doing the other one.
+And then the first okay.
+Does it have an identity.
+What's the identity element?
+Anybody.
+Did you say identity function?
+I didn't hear you, but okay.
+I don't have time.
+The identity function.
+The identity is the identity function is the function taking
+x to x.
+Okay.
+If you take that, if you take that identity function,
+you compose it with anything.
+It's the same as the anything.
+Okay.
+And then finally, if you want, you can , you
+can define this some there's some of the squares of
+the positive numbers are using function composition.
+So it's it's the composition of the fold function applied
+to two arguments.
+The map function applied to one argument and the filter
+function apply to one argument.
+Okay.
+And this is the answer to your question over there.
+You're not looking at me, but there was a question
+about whether you can leave or it was no, it
+was here somewhere.
+Right.
+It was whether you could leave out the X's.
+So this is how you leave out the X's, okay.
+You define the thing instead of defining it as a
+as you know, fold applied to map apply to filter
+apply to X's, you define it as the composition of
+those three partial functions.
+Okay.
+, I'm out of time.
+Thank you.
+By the way, let me just say something about thanks
+for applause.
+It's very, very kind of you.
+, the lecture is here on Monday.
+After me, , is a guy I know from engineering.
+He teaches fluid mechanics and he always says, you know,
+Don, your students applaud.
+My students never applaud.
+, so he's jealous.
+So keep it up.
+, do you mind if I ask you a question?
+Of course.
+Yeah.
+Go ahead.
+So my previous question about pretext functions in sections.
+So.

@@ -1,0 +1,1129 @@
+Hello.
+So I don't know if you could hear that.
+I'm trying different things to get the music to be
+louder.
+.
+Did you hear that at all back there?
+Yeah.
+Okay.
+Given the volume of talking, I wasn't sure.
+, right.
+So that was, , Gerry O'Connor on tenor banjo with
+some Irish music.
+Today, , I'm going to be talking about lists and
+comprehensions.
+And I've got.
+I hope I can get my technology to work, ,
+so that I can show you.
+Haskell running.
+Sometimes this gives me difficulty.
+So listing comprehensions.
+, so, , lists, , I've mentioned lists.
+I think it's the most important data structure in functional
+programming.
+, , think if you're if you're used to Java
+or, , or some other conventional language C plus plus.
+It's arrays but different.
+It's so-called compound data structure, meaning that it's for collecting
+simpler items of data together.
+Okay.
+So I'm going to start by talking about lists.
+And then I'm going to get on to list comprehensions
+okay.
+So it's for collecting together a bunch of data items
+of the same kind.
+and here are some examples.
+Okay.
+, a list of integers.
+, all right.
+So here's a list which has three integers in it
+one, two and three.
+It could be one, seven, 92.
+It doesn't have to be an order okay.
+But they're all integers.
+They're all the same type.
+, the type is called int.
+These values or values of type int in for integers.
+, the you create a list by taking a
+bunch of values, putting commas between them and square brackets
+around them that.
+And you can give them a name if you want.
+So nums is what I've decided to call this one
+nums equals, , this, , this list value.
+And, , when I, when I, , define things, it's
+nice to give them, , types type signature.
+, good practice.
+So here's the type of nums and it says it's
+a, it's a list of integers okay.
+The type of the list.
+The list type is written also with square brackets okay.
+Square brackets.
+And in the middle the type that it's a list
+of.
+All right.
+, so first example list of numbers or a list
+of integers called nums.
+the order is significant.
+So one two, three.
+The list containing one, two, three is different from the
+list containing three, 321.
+It's different from the list containing one, one, two, three.
+Okay, so unlike unlike sets in mathematics, okay, sets in
+mathematics, all that matters is the values that are in
+the set.
+In lists, the order that they appear is also significant.
+So that's our first example.
+Second example list of characters.
+Okay.
+So in Haskell you have a type called char which
+is short for character.
+And you write the values of that type using single
+quotation marks.
+So for example capital I small n small f this
+is a the digit one.
+And this is the capital letter A.
+So that's a list of characters five characters okay.
+And the type is list of char.
+Okay, list of characters occur a lot.
+And so we have a special notation for them in
+Haskell.
+, and a special name for the type.
+So the name of the type list of char is
+a synonym for that is the type string okay.
+String is a list of characters.
+And instead of having to write these square brackets and
+all these quotation marks I can write, I can just
+write this string that.
+Okay.
+Double quotation marks.
+And then the, the the letters one at a time,
+the characters one at a time.
+Okay.
+So that's these two are identical in meaning.
+Okay.
+, only difference is that that's got a different name
+than that does.
+Okay.
+But writing a string this or writing it
+that, , whoops.
+Same same list of characters Okay.
+That's easy.
+By the way, this here.
+, this is a comment.
+, Haskell comments are introduced with double double dashes.
+Okay.
+So those are two kinds of lists.
+Those are two examples of lists.
+Lists of different kinds of things.
+Important is that, , in the list of integers, you've
+only got integers.
+And the list of characters, you've only got characters.
+Okay.
+You can have all kinds of things in lists.
+, for example, you can have lists in lists.
+So here's a list of lists of integers.
+Okay.
+So all of the , all of the items in
+this list are lists of integers.
+, they happen to have different lengths.
+Okay.
+So here's a list of a list of integers containing
+the single integer one.
+Here's a list of three integers two, two, four, two.
+Here's an empty list of integers, and here's a list
+of length two containing three and five.
+Okay, so these are four lists of integers.
+And each of those four lists we put them together
+with with commas and then square brackets on the outside.
+That's a list of lists of integers okay.
+And that's what the type says.
+List of list of integers.
+Okay.
+So , , this example shows you can have lists
+containing one thing.
+List containing one thing is different from the thing that's
+in that list okay.
+The list containing one is different from the number one.
+They have different types.
+You can have empty lists.
+Okay.
+You can have listed or as long as you want.
+Even.
+Even infinitely long, which is an unusual thing.
+It's a special thing in Haskell that you can have
+infinite lists.
+And I'll show you how to write programs using infinite
+lists in a few lectures.
+Okay.
+All the ones we're going to see in this lecture
+are finite lists okay.
+Small finite lists.
+So list of list of list of list of integers
+here.
+Okay with me so far I hope.
+, the next example is a list of functions.
+So a list of functions of type picture arrow picture.
+So these are a list of two functions.
+They're from your tutorial exercise.
+And they both have the type picture arrow picture
+okay.
+Invert and flip v okay.
+So you can have lists of functions.
+Functions can be used as data just the same as
+anything else can be used as data.
+You know, integers strings, whatever.
+Okay.
+They're the same type of function both of these and.
+And so it's a list of functions of that type.
+so here's an here's an error.
+Okay.
+This is what happens if you try to, , try
+to create a list that has different kinds of, ,
+of, , different types of values in it.
+So this is a, an integer, a string, and a
+list of integers.
+Okay.
+So I said all lists have to have the same,
+, they have to have homogeneous types of values so
+that all the values and the list have to be
+the same type.
+This is obviously not satisfying that okay.
+So integer string list of integers.
+This will be a type error.
+Okay.
+, in doing your tutorial exercise, I hope you've all
+started by now.
+If not, your, your your your late, , deadline
+tomorrow.
+Okay.
+Have any of you encountered a type error?
+Okay, many.
+Not all.
+Okay.
+, I'll talk about type errors in a minute.
+, you'll you'll see that it's a type error because
+it says type error.
+Okay.
+And then it'll tell you some stuff about your about
+your mistake.
+, okay.
+There are some here's, here's a final example on this
+on this page here.
+This is , the example of some notations that we
+have in Haskell for some, some useful second special cases.
+So, , here's a list containing the numbers from one
+up to ten.
+So 123456789 ten.
+We write 1.. ten.
+Okay.
+We could have written 1.. 1000.
+, , by the way, all these numbers, all these
+integers on this on this page are positive integers.
+There are of course negative ones as well.
+Okay.
+So so this is a this is a notation for
+you can use it for , you know, lists
+containing sequences of numbers.
+You can also use it for , , sequences of
+, this containing sequences of letters.
+For example, you could put, you could put character a
+dot dot character Z to get the, the, the alphabet
+as a list.
+Okay.
+And there's some and there's slightly more complicated notations if
+you want to do things have the even numbers,
+you can write two, you can write zero comma 2..
+100 to get all the even numbers from 0 to
+100.
+Haskell sees that you've got zero comma two and ,
+and decides that you mean you want, you don't want
+okay, you don't want zero, one, two, etc. you want
+zero, two, and then four, six, eight and so forth.
+So there's these notations.
+I'm not going to talk about them anymore in the
+lecture.
+They're in the book.
+Okay.
+So , sometimes they're useful.
+.
+Okay.
+Got that.
+Those are lists.
+Okay.
+What do we do with lists?
+Well, one of the things we can do is put
+them together and take them apart.
+Okay.
+, so, , there is a function for putting, ,
+values or an extra item onto the front of a
+list.
+So if we've got a list containing, , two and
+three, we can put another element on the front one
+and we get this list.
+One, two, three.
+Okay.
+And there's an operation or a function for doing that.
+It's written as a colon here.
+Okay.
+And this is pronounced cons.
+cons short for construct.
+This is a kind of historical , name , for,
+for this function, Dysfunction.
+It's, , originates with, , functional programming language Lisp from
+1960.
+Okay.
+And, , nevermind.
+That's what that's what it's called.
+You just have to remember that or I mean, I'm
+going to be using the word I'm going to be
+using the words cons.
+When you see a colon, I'm going to be saying
+cons okay.
+So cons what is cons.
+It is a function.
+And it goes .
+Let's see the type of cons is.
+A arrow list of a arrow.
+List of a.
+Can you see that in the back?
+Yeah.
+Okay.
+, right.
+So, , these, these variables can stand for any type.
+So for example in our list of int our list
+of int.
+Okay.
+And that's the type we're using here.
+We take an integer and we take a list of
+integers.
+And we apply this this cons this cons function.
+It's an infix meaning it goes in between the two
+arguments because it's a symbol okay.
+plus or something that.
+And we get this list of integers.
+Okay.
+, if we try using it the other way around,
+it can only be used to put, , values onto
+the front of lists.
+If we try to put a value on the on
+the back of a list at the, at the at
+the other end of the list, we get a type
+error.
+Okay.
+And , here's an example of a Haskell type error.
+, and unfortunately, , Haskell type errors are often, ,
+confusing and, , difficult to read.
+So what's happening here?
+So first of all, what what have I done wrong?
+Okay.
+It says there that the type of this operation of
+this function cons is it takes a value of a
+type and another value lists of that type and produce
+values of lists of that type.
+Okay.
+So we haven't done that here.
+We've got a list as the first as the first
+argument.
+And we've got a a value which isn't a list
+as a second argument.
+It's the wrong it's the wrong way around.
+It doesn't fit the type of that of that function.
+And so what I get from Haskell is a type
+error.
+And as I said, the what it actually gives you
+as a type error is often difficult to read.
+And especially when you're starting off okay at this stage,
+you know, second lecture about functional programming, , you you
+can't understand this.
+I mean, I can I can barely understand this.
+It's, , Haskell has a complex, powerful type system, and
+when you make a type error, it it tries to
+figure out what you might have meant and gives you
+some helpful information about that.
+And in this case, it's guessed wrong and giving you
+some, some useless information about something that's that you don't
+understand.
+And it's okay.
+It thinks that there's something going on with numerical types
+and lists of lists and things that.
+Okay.
+So at this stage you see a type error.
+The thing to, to think, to, to sort of understand
+from it is I've made a mistake with the types.
+Okay.
+, , it's probably a waste of time to try
+to figure out what this means.
+Okay.
+In this case, it's guessed wrong.
+The thing that might be useful here, , when you're
+when you're, , you know, using a file with, with
+the program in it which has multiple lines, , this,
+, this thing right here.
+I don't know if you see what I'm pointing at.
+It says one, one colon, one.
+Okay.
+That means that the error is in line one.
+, column one of my of my, , of my
+input.
+In this case, it's interactive input.
+Okay.
+But if it was a file, it would sort of
+say which line of the file it is, would have
+the file name, and it would say, you know, line
+17, , you know, column six or something that.
+This is sometimes useful or it's often useful for localising
+what it is, , where it is that, well, which,
+which expression it is that Haskell is complaining about.
+Okay.
+In this case, it's obvious because it's just one line,
+and the problem starts at the first and the first
+character.
+Okay.
+.
+Okay.
+Anyway, , you'll be seeing type errors sometimes, , it'll
+be easier to understand than what's happening right here.
+, and as time goes by, you'll you'll begin to
+understand some of what it's trying to tell you, okay.
+So that's putting together lists.
+We can take apart lists.
+, using functions head and tail.
+These are actually built in.
+But, , so what head does is if you give
+it a list, , it gives you the first item
+in the list.
+So it's type has, it's the type.
+, the type of head is a list of a
+arrow a.
+So you give it a list of values of some
+type, and it gives you a value of that type.
+And the one it gives you is the first one.
+Okay.
+And if you wanted to define it the definition would
+be this here.
+Okay.
+.
+Let me well, let me first say, , this is
+a, , this definition features something called pattern matching, which
+I think we're seeing here for the first time.
+So pattern matching is a powerful, , device used in,
+, writing Haskell functions.
+Okay.
+So what this says is if you take the function
+head and you apply it to a list formed by
+taking x cons xs.
+, then the value should be x.
+Okay.
+So this is given an actual value
+the list containing one two, three.
+It will match, , this pattern against that actual value.
+And it will say well the first element.
+So this could be formed by taking one whoops one
+cons list containing two three.
+So x matches one x is matches list containing two
+three.
+The result is x.
+And that's one okay.
+You're going to be seeing pattern matching function definitions a
+lot.
+Okay.
+That's the head.
+The tail is everything except the head.
+And if I wrote a definition of it, it would
+be , tail of x.
+Cons xz equals xz.
+So it's everything after the head.
+These are built in functions.
+, so I'm introducing things as I go, , through
+examples.
+Okay.
+So here's the first example of pattern matching this type
+and the type of cons up.
+There are examples of what's known as polymorphic function types.
+Polymorphic means that the types have variables in them.
+Okay I mentioned this terminology because you're going to be
+seeing it in the book and I'll mention it in
+lectures sometimes, okay.
+Sometimes without thinking of, , whether you've seen it or
+not.
+Okay.
+, here's a little bit of a hassle convention.
+It's not.
+It's not required, but it's common.
+Okay, so I've got a value x I'm using
+the variable x here okay.
+So it's an item of this list okay.
+And the thing after the cons is a list containing
+the same type of items okay.
+So we've got x.
+And then we got a bunch of , a list
+containing things of the same type as x.
+And often we use the same variable with an S
+after it.
+Okay.
+This is an item x.
+And this is a list of things x okay.
+So and it's pronounced x's.
+Okay.
+Just it's just sometimes convenient.
+It means you can get a little bit of information
+about the type from the variable names.
+As I said you can use any variable names you
+want.
+So this is just something you'll see commonly, but it's
+not required.
+Okay.
+So far so good.
+This is about this is about lists.
+Building lists, taking them apart.
+, now what do I mean by list comprehensions?
+Okay, so this is one way to compute with lists.
+And in the last lecture you remember that I talked
+about, , programming style.
+Right.
+So doing a computation on a whole data structure at
+once.
+So this is, this is what I'm going to be
+doing now, , with list comprehension.
+So this is doing computation with a whole list at
+once.
+Okay.
+.
+And starting off, .
+Starting off easy here.
+Okay.
+The notation.
+Well, I'll come to this in a second.
+I'll just say list comprehensions.
+, in the book you will read in chapter one
+about set comprehensions.
+Okay.
+And this is supposed to be, , the same Idea.
+Okay.
+Sets are from mathematics.
+Lists are from programming in Haskell.
+Okay.
+So, , the same, same type of notation.
+So again I'm going to proceed by showing you some
+examples.
+Okay.
+So here is our first example of a list comprehension
+okay.
+What it does is it's taking it's taking a
+list.
+123 okay.
+Let's containing three values.
+And what it says is that for every value x
+from that list, I want you to give me, ,
+x times x.
+And I want a list of those values.
+Okay.
+So, , it's the list of x times x such
+that x is drawn from the list one, two, three
+is the way you would read that if you were
+to want to want to read it.
+Okay.
+So, .
+So, , what is the result?
+It's one for nine.
+Okay.
+One is is the value of x times x if
+x is equal to one for is the value of
+x times x if x is equal to two and
+likewise nine is the value of x times x if
+x is equal to three.
+So it's taking each of those values one at a
+time and giving you the list of all the, ,
+the squares.
+Okay.
+.
+Okay.
+Here's another example.
+Here's a string.
+Remember, a string is a list of characters.
+So here's a list of 13 characters.
+And what I want is the list containing the result
+for each one of those characters.
+See, I want the result of this computation to lower
+of C.
+I want a list of those values to lower is
+a built in function in Haskell.
+It's in one of the libraries, , , and it
+converts characters to lowercase, okay.
+And if it's already in lowercase, it leaves it alone.
+Okay.
+So hello world with h and w and capital letters.
+, turns into Hello world with h and w in
+lowercase.
+Okay, remember, this string is exactly the same as a
+list of characters.
+Okay, H followed by E, followed by L, followed by
+L, and so forth.
+Okay.
+As I as I wrote, , up here, this example,
+remember that okay.
+Next example.
+The next example introduces something called pairs.
+Over on the right hand side.
+Okay, I'll talk it through and then explain.
+Okay, so for X drawn from the list 1 to
+3 I want to pair containing x.
+And whether or not x is even.
+Okay.
+Even is a built in function.
+It takes an integer and it tells you whether it's
+even or not.
+So apply to zero.
+It will say true apply to one.
+It will say false, apply to two, it will say
+true, and so forth okay.
+So we get the values.
+So so this is a yeah I want a list
+of all those pairs okay.
+So here's the result for for the first
+value one.
+If x is one then the result of this expression
+is one comma false.
+So one this is the value x comma.
+The, , whether or not one is is even
+okay.
+It isn't.
+So we have false.
+And then two true because true is because two is
+even.
+And then three comma false because three is not even.
+Okay.
+So three values in this list we get three values
+in the result list.
+And each of them is a pair okay.
+What is a pair.
+Well there are three pairs.
+Okay.
+.
+So there's there's one of those pairs.
+The type of that is Int comma bool in round.
+In round brackets okay.
+In parentheses okay.
+So pairs.
+You can also have triples and quadruples and quintuple and
+so forth okay.
+So one comma .
+Okay.
+This would be a, a triple.
+So it's a three.
+It's a three tuple.
+This is a this is called a pair.
+, this is called a triple or a this
+is a two tuple.
+This is a three tuple and so forth okay.
+So this would be of type bum int comma string
+comma bool okay.
+So value a value of type pair is written.
+It's kind of a list except with round brackets
+or parentheses around it.
+Okay.
+Commas in between the values.
+, the type.
+Again is written similarly to the value.
+Okay.
+But here we've got type names.
+Round brackets around common in between.
+Okay.
+so those are, those are tuples.
+, first first being a pair, the second being a
+triple.
+, in this thing.
+OOP.
+in here.
+, difference between lists and and tuples okay.
+Lists.
+You can only have , values of the same type
+in a list.
+And you can expand a list.
+You can make it.
+You can you can grow it by putting things on
+the front with cons tuples.
+These are fixed length.
+And I mean, of course you can take them
+apart, you can take the values out, you can make
+something bigger out of those values.
+But there's no operation which takes a tuple and kind
+of puts things on the front of it, no matter
+how long it is, and then makes it one longer.
+Okay.
+So there are particular length and the the type of
+the things in the list can be different.
+They don't have to be different, but they can be
+different as shown here okay.
+So different ways of putting values together.
+All right with me so far okay.
+Last example here is so we take extra
+n from the list containing 4 or 5 and six
+and then the, the results, the values that are in
+this list that I get out of this are the
+result of this so-called conditional expression.
+Okay.
+If then else you might have seen in other programming
+languages if you've used other programming languages, , if condition,
+then result.
+Else.
+Other result.
+Okay, if the condition is true.
+If x is even, then the result here will be
+x.
+If x is not even, then the result will be
+x plus one.
+Okay.
+So if we take x equals four the result so
+four is even.
+So the value is for.
+If we take the x equals five x is not
+even.
+So the result is x plus one which is six.
+Okay.
+If x is six it's even.
+So the result is x which is six okay.
+So this is why we get the result four comma
+six comma six.
+Okay.
+So those are some simple examples of set of list
+comprehensions.
+Notice that the I mean we've always got a variable
+here.
+And the variable name doesn't matter.
+I've used x three times and I've used C once.
+Doesn't matter, okay?
+But whatever the variable is, it will normally occur in
+the expression at the beginning here.
+Okay.
+You take values from a list and then you do
+something with those values.
+You square them, you convert them to lowercase, etc..
+Okay.
+, , this this part of the list comprehension is
+called a generator.
+And this symbol is pronounced drawn from.
+.
+So I said this is in, in mathematics set
+comprehensions.
+So for example, .
+So this is this is list notation curly brackets for
+lists.
+So this is not Haskell.
+This is mathematics okay.
+Curly brackets for lists.
+Membership.
+operation okay.
+It says for all , for all people P who
+are students?
+I want the ones that have red hair.
+Okay.
+, actually, this was a bad example to show you
+right now, because I haven't I haven't written I haven't
+yet shown you an example that that would compare with
+this.
+Exactly.
+Okay.
+But it's a this is a this is a set
+notation for producing a subset of the set of all
+students containing the ones that have red hair.
+Okay.
+And what's kind of similar with this notation.
+And that notation okay.
+We've got square brackets instead of a set of curly
+brackets.
+We've got a vertical bar in the middle.
+Okay.
+The the order of the things is, is a little
+bit the other way around.
+We've got we've this this is thing is kind of
+a generator.
+And then we do something with the, with the, the
+values okay.
+Over here.
+So it's, it's kind of the opposite order okay.
+, in case you forget in list notation, in the
+list comprehension notation whether you should write, I mean, it's
+easy to forget things.
+Okay.
+So, , my examples all look kind of this
+up there.
+Okay.
+It's sometimes easy to forget, you know, there's some arrow
+in here.
+Okay.
+So do I mean, this arrow or that arrow?
+, okay.
+Well, Haskell will tell you which ones, right?
+Okay.
+But a useful little, , mnemonic device Is to notice
+that membership here.
+This epsilon symbol looks a little bit that arrow.
+Okay, it's not exactly the same, but, , similar sort
+of shape.
+Okay.
+, I'll push on a little bit, and then I'll
+give you.
+I mean, nobody's kind of raised their hand yet.
+Okay, but let me do a little bit more, and
+then maybe you'll have some questions.
+, what time is it?
+Oh, no.
+I'm way behind schedule.
+, okay.
+Here are examples that are a little bit more complicated.
+They involve what's known as guards.
+These things at the end here.
+Okay.
+So I want, , the list, , containing the values
+from, from this list.
+So x from 1 to 3.
+But I only want the odd ones.
+Okay.
+Or here I take an okay.
+So here are the odd ones one and three okay.
+Here the X from the from the list 1 to
+3.
+I only want the odd ones and I want to
+square the result okay one and nine.
+Here's another list I want x from this list.
+I only want the ones that are greater than zero
+okay.
+Which happened to be 42 and 24 okay.
+There's the list.
+Okay.
+, here's a list containing a list of characters.
+Okay.
+I only want the I only want the ones that
+are alphabetic.
+This is a built in function.
+Alphabetic means.
+It's a letter.
+Okay.
+So a comma is not a letter.
+A space is not a letter.
+Exclamation mark is not a letter.
+Okay.
+And I want to convert them to lowercase.
+So I want all the alphabetic Characters and I want
+them converted to lowercase.
+And so this is the result of that.
+Okay.
+.
+Okay.
+These things are called guards.
+Okay.
+This thing after the comma.
+Okay.
+These are expressions that give a Boolean result truth values.
+Else true or false okay.
+Or it applied to an integer.
+It gives you true or false.
+, you know x greater than zero.
+True or false is alpha of C is true or
+false.
+Now, .
+So the components this this this this is a kind
+of simple example of, of, , of list comprehension, but
+it has all the components in it.
+We've got a, , this thing here is called a
+generator.
+I said already this thing here is called a guard.
+And then we've got a kind of result expression.
+So this is this is what we will normally have
+in a list comprehension is a generator a guard and
+a result expression okay.
+Sometimes the result expression is very simple here.
+Sometimes there's no guard in these examples.
+Okay.
+, so that's the way it works okay.
+Of course.
+, the guard will usually, , mention the element, the
+generator, , you know, the variable and the generator.
+Okay.
+Ord x here.
+X is the thing in the generator.
+By the way, I'm, , taking trouble to tell you
+how to pronounce things.
+Okay, this is the list of x times x such
+that x is drawn from the list containing one, two,
+three such that x is odd.
+Okay.
+I think it's helpful if you can pronounce things when
+you're reading them.
+Otherwise, it's hard to think about the think about the
+things that you're talking about.
+Okay.
+, if you're reading, if you're reading a book or
+something and you've got a bit of notation and you
+don't know how to pronounce it, then you have no
+way when you're reading to kind of read to yourself,
+you know, sort of blah, blah, blah, blah.
+And then you come to a formula or something and
+you just say, , formula, okay?
+If you can't pronounce it, you don't know, you can't
+think about it very well.
+Is a question there?
+What's that?
+if you use multiple guides.
+Could you use multiple cards?
+Yes.
+That's a good question.
+Yeah.
+You can use multiple guards.
+So this example these examples all use only one guard.
+You can have multiple guards.
+In fact you can also have multiple generators.
+But I'm going to come to that later okay?
+You can have multiple guards and generators.
+Good question.
+, another question up there to.
+Catch.
+Speak into the black thing.
+All right.
+, do you have to define the types if you
+do list comprehensions?
+Okay.
+Do you have to define types?
+, no, you don't have to define the types.
+, Haskell figures it out for you.
+It's a good idea to define the type.
+It's kind of useful, , documentation about what you're doing.
+Okay.
+Anybody else with pressing questions?
+I'm kind of.
+I'm going to have trouble with time here, so I
+want to kind of press on, , because I need
+more examples.
+So, .
+Some in product.
+Okay.
+These are built in.
+These are built in functions.
+, and here's just the reason I'm talking about this
+now is because you put them together.
+You can put them together with comprehensions this.
+Okay.
+Sum is adding together all the values in a list
+of integers.
+, product is multiplying all the values together in a
+list of integers.
+Okay.
+And so, for example, the sum of the odd numbers
+in the list one, two, three is is ten.
+Because you take, , you know, one is odd, two
+is not odd, three is odd.
+So, , the result of the squares of the result
+of this , list comprehension is, is, , one comma
+nine and the sum of that is ten.
+The product of these numbers is 24.
+Okay.
+.
+Now interesting special cases, the sum of the list of
+odd of the list of the empty list of numbers
+is zero.
+That's that's what you would expect, right?
+Okay.
+, and the product of the list of empty numbers
+is is is zero.
+Two.
+Right.
+No it isn't, it's one.
+Okay.
+Why is it one?
+Does anybody know why it's one?
+Because it works better that way.
+It works better that way.
+But there's another reason.
+Yeah.
+Sorry.
+What's that?
+Yeah, that's another reason.
+Yeah.
+Zero factorial is one.
+.
+Identity?
+Yes.
+That's what I wanted to hear.
+, one one is the multiplicative identity.
+One is the is the identity value for the function
+multiplication okay.
+Zero is the identity value for the function addition.
+Okay.
+That's why.
+And that's the reason why it works better.
+And that's the reason why factorial of zero is one.
+Okay.
+.
+So when you meet a function, come up to a
+function in the street.
+And the first question you should ask is what is
+your type?
+And, , and if it's a, if it's a binary
+function of type A arrow a our a whatever
+that is.
+Then the second question should be are you associative and
+then are you commutative.
+And then what is your identity element okay.
+It's useful to know these things about functions.
+okay.
+As you will see.
+So here are actually some some functions defined using
+comprehensions okay.
+We can use these these comprehension expressions in function definitions.
+So for example the the function which, which takes a
+list of integers and gives you a list of integers
+and it gives you the squares of all the integers
+in the in the argument.
+Okay.
+So we've already seen that we can do that using
+this list comprehension.
+And so this will of course work for any list.
+X is not just the list containing one, two and
+three.
+Okay, and here's another example.
+We want a function to take the odd numbers of
+a list of integers.
+Okay.
+So we know how to do that because it was
+an example we've already seen.
+And so here's a list a function that will do
+that for any list.
+Not just the list.
+Whatever it was that my example was okay, odds of
+X is equals.
+You know this this list comprehension.
+And finally, the most exciting example here is the sum
+of the squares of the odd numbers in a in
+a list of integers okay.
+And we can compute that this okay.
+We take the the sum applied to the list of
+x times x such that x is drawn from x
+is and x is odd.
+Okay, the sum of the squares of the odd numbers
+in the list.
+Now will I get?
+Yeah.
+Okay.
+.
+You got that?
+Now quick check.
+You've seen this already in your tutorial exercise.
+If you've if you've done it already, which you should
+have or or should be doing it.
+Anyway, I want to show you, , this running if
+it will work.
+Right.
+Okay.
+.
+Whoops.
+Here's here's this.
+The same code is is on the on the screen.
+.
+Up there.
+Okay.
+Except I I'm going to be able to run it
+in, , in Haskell on my laptop here.
+Okay.
+, I've added another, , function at the bottom here.
+, okay.
+So, , these are the functions I had a minute
+ago.
+, some, , squares odds.
+Some squares odds.
+And, .
+And so what's quick check.
+Quick check you've seen is a is a thing in
+Haskell which allows you to do random, , testing on
+random value, so generates 100 random values.
+And then you can, , and it'll tell you what
+the results of the tests are.
+So for example, I might want to know if, ,
+if the, , the some let me do this over
+here.
+If the, , if the, if I take the odds
+from XS and then I take the squares of those
+values and then take the sum of that, if that's
+the same as what I would do by applying this
+function.
+Okay.
+And so let's see whether what, what so quick.
+Quick check.
+Notice the capitalisation.
+Small q big big C and I need to apply
+it to the , to that function.
+oh.
+Wait.
+I first have to load in the.
+.
+Needed to load the code first.
+.
+What is it called?
+Why did this not.
+Why is this not.
+.
+Oh, yeah.
+Okay.
+It worked.
+Okay, so so it, , it says.
+Yes.
+That's right.
+It passed 100 tests.
+Okay.
+Passing 100 test doesn't mean it's it's, , it's guaranteed
+to to be true for all the other values.
+Okay, maybe only those hundred values and not any other.
+Okay.
+But, , it gives you a little bit of confidence.
+Okay, , let's look at the other function that I,
+that I, , that I had down here.
+So here's another property.
+So that was a property that takes a list of
+integers and produces a boolean value.
+And it's, it's checking whether this equation holds for each
+of the values.
+Okay.
+, here's another one.
+, this is checking whether the, the, the sum of
+the squares of the odd, , , numbers in a
+list of integers is always positive.
+Okay.
+, is this true?
+We can ask QuickCheck.
+, it's called positive.
+No, it's not, , it's not true of the empty
+list.
+Okay.
+, and in fact, it would also not be true
+of, , a list containing, , a single, , well,
+a list containing only even numbers.
+Okay, so, , this is useful.
+, and in your exercises, you're going to be using
+it.
+, okay.
+And that is, , the almost the end of my
+lecture.
+I just want to say that, , , tomorrow you've
+got Julian.
+So the lectures this week are a little bit different,
+, in order.
+So I'm, I'm teaching on Monday and Friday.
+Julian's teaching on Tuesday and Thursday.
+, I am not able to take questions after this
+lecture because I'm running to the airport to go to
+Brussels.
+Okay.
+So but the answers to your questions here are the
+answers to your questions.
+If you're having trouble with the tutorial, okay.
+If you have any trouble with the tutorial, , go
+to the to the labs.
+Merchiston house from 3 to 5, Appleton Tower from 4
+to 6 Six.
+If you're having trouble with Haskell on your laptop, use
+dice.
+It's on the machines in Appleton Tower.
+It works.
+Okay, those are the answers to most of your questions.
+Okay.
+And, , yeah, good luck with the tutorial.
