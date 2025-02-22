@@ -1,0 +1,5246 @@
+WEBVTT
+
+00:00:09.360 --> 00:00:09.680
+<v Unknown>How are you?
+
+NOTE CONF {"raw":[43,41,41]}
+
+00:00:21.040 --> 00:00:22.640
+<v Speaker 0>Okay, let's get started.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:25.000 --> 00:00:26.600
+<v Speaker 0>And, uh.
+
+NOTE CONF {"raw":[100,97]}
+
+00:00:30.200 --> 00:00:30.560
+<v Speaker 0>Hi.
+
+NOTE CONF {"raw":[96]}
+
+00:00:30.760 --> 00:00:34.640
+<v Speaker 0>So today we're going to start talking about back propagation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,73,73]}
+
+00:00:35.760 --> 00:00:39.520
+<v Speaker 0>Uh, this was meant to be on Friday, and we
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,100]}
+
+00:00:39.520 --> 00:00:41.200
+<v Speaker 0>didn't get to it because of the storm.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:00:42.240 --> 00:00:45.240
+<v Speaker 0>Um, I have compressed the rest of the course so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:45.240 --> 00:00:48.800
+<v Speaker 0>that we can make up for the for the missing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:48.800 --> 00:00:49.320
+<v Speaker 0>lecture.
+
+NOTE CONF {"raw":[100]}
+
+00:00:50.280 --> 00:00:53.560
+<v Speaker 0>Um, back propagation is obviously important, so I haven't compressed
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:53.560 --> 00:00:53.760
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:00:53.760 --> 00:00:54.760
+<v Speaker 0>I've just moved it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:00:55.120 --> 00:01:00.650
+<v Speaker 0>Uh, and, uh, I'll start by actually giving you a
+
+NOTE CONF {"raw":[81,100,100,100,100,100,100,100,100,100]}
+
+00:01:00.650 --> 00:01:04.089
+<v Speaker 0>brief recap of the perceptron, which is what we talked
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:04.089 --> 00:01:06.210
+<v Speaker 0>about on Thursday.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:07.130 --> 00:01:07.650
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:07.690 --> 00:01:11.170
+<v Speaker 0>Here's also the wall clock in case people haven't signed
+
+NOTE CONF {"raw":[52,100,100,34,27,100,100,100,100,100]}
+
+00:01:11.170 --> 00:01:11.490
+<v Speaker 0>up.
+
+NOTE CONF {"raw":[100]}
+
+00:01:11.970 --> 00:01:15.010
+<v Speaker 0>Give you a second or 2 or 2 to scan
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,100,100,100]}
+
+00:01:15.010 --> 00:01:15.930
+<v Speaker 0>the QR code.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:01:16.770 --> 00:01:19.170
+<v Speaker 0>And then we'll start with the perceptron.
+
+NOTE CONF {"raw":[100,100,100,100,100,93,100]}
+
+00:01:20.810 --> 00:01:25.530
+<v Speaker 0>So just to to remind you of the big picture,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:25.530 --> 00:01:28.410
+<v Speaker 0>the big picture is one where we want to basically
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:28.970 --> 00:01:32.490
+<v Speaker 0>learn from input patterns to generate output patterns.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:32.770 --> 00:01:37.170
+<v Speaker 0>So this could be, I don't know, sensory information coming
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:37.170 --> 00:01:39.130
+<v Speaker 0>in let's say from the retina.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:39.370 --> 00:01:43.290
+<v Speaker 0>And the output is an object classification right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97]}
+
+00:01:43.330 --> 00:01:45.930
+<v Speaker 0>We want to recognise dogs and cats and so on.
+
+NOTE CONF {"raw":[100,100,100,93,100,100,100,100,100,100]}
+
+00:01:46.450 --> 00:01:48.690
+<v Speaker 0>Or if you are in the speech domain then the
+
+NOTE CONF {"raw":[100,100,60,60,100,100,100,100,100,100]}
+
+00:01:48.690 --> 00:01:51.170
+<v Speaker 0>input could be the speech signal and the output could
+
+NOTE CONF {"raw":[100,91,100,100,100,100,100,100,100,100]}
+
+00:01:51.170 --> 00:01:53.250
+<v Speaker 0>then be the word that you've just heard.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:01:54.010 --> 00:01:54.330
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:01:54.370 --> 00:01:57.570
+<v Speaker 0>So in this general idea of associating inputs with outputs
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:58.350 --> 00:02:01.750
+<v Speaker 0>Um, that underlies essentially all of machine learning.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:02:01.750 --> 00:02:04.870
+<v Speaker 0>But in our case, it's also the basis of modelling
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:04.870 --> 00:02:06.350
+<v Speaker 0>certain cognitive functions.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:06.870 --> 00:02:11.390
+<v Speaker 0>And in particular, this is a purely empirical approach where
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:11.390 --> 00:02:14.110
+<v Speaker 0>you just learn from data using a very general learning
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:02:14.430 --> 00:02:18.710
+<v Speaker 0>mechanism and a very general model structure without having to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:18.950 --> 00:02:20.190
+<v Speaker 0>posit anything innate.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:02:20.190 --> 00:02:21.830
+<v Speaker 0>You don't have to posit any rules.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:22.190 --> 00:02:24.150
+<v Speaker 0>If you're in the linguistic domain, you don't have to
+
+NOTE CONF {"raw":[100,100,100,58,100,100,100,100,100,100]}
+
+00:02:24.190 --> 00:02:26.470
+<v Speaker 0>even posit a lexicon and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:02:27.430 --> 00:02:30.870
+<v Speaker 0>And but before we can talk about that aspect, we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:30.870 --> 00:02:33.710
+<v Speaker 0>first need to get the technicalities out of the way.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:34.390 --> 00:02:38.630
+<v Speaker 0>So just to remind you of the perceptron, um, this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,82,100]}
+
+00:02:38.630 --> 00:02:43.190
+<v Speaker 0>was a very simple neural, neural inspired, uh, structure which
+
+NOTE CONF {"raw":[100,100,100,100,69,100,100,79,100,100]}
+
+00:02:43.190 --> 00:02:43.950
+<v Speaker 0>looks like this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:02:44.670 --> 00:02:48.510
+<v Speaker 0>Uh, we have our inputs here, which range from x1
+
+NOTE CONF {"raw":[79,100,100,100,100,100,100,83,100,84]}
+
+00:02:48.550 --> 00:02:49.190
+<v Speaker 0>to xn.
+
+NOTE CONF {"raw":[100,84]}
+
+00:02:49.710 --> 00:02:53.030
+<v Speaker 0>For simplicity, we just assume the binary numbers and we
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100,100,100,100]}
+
+00:02:53.030 --> 00:02:54.550
+<v Speaker 0>have our outputs y here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:54.990 --> 00:02:57.390
+<v Speaker 0>In this case just one output, which we also assume
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:02:57.390 --> 00:03:02.360
+<v Speaker 0>to be binary and the the cell body of the
+
+NOTE CONF {"raw":[100,100,100,95,76,100,100,100,100,100]}
+
+00:03:02.360 --> 00:03:02.920
+<v Speaker 0>neurone.
+
+NOTE CONF {"raw":[100]}
+
+00:03:03.120 --> 00:03:06.440
+<v Speaker 0>If you want to call it that, computes a very
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,94,100]}
+
+00:03:06.440 --> 00:03:08.880
+<v Speaker 0>simple function which is just a weighted sum of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:08.880 --> 00:03:09.400
+<v Speaker 0>input.
+
+NOTE CONF {"raw":[100]}
+
+00:03:09.880 --> 00:03:12.680
+<v Speaker 0>So you have the inputs coming in, and then you
+
+NOTE CONF {"raw":[100,100,100,84,100,100,100,100,100,100]}
+
+00:03:12.680 --> 00:03:15.160
+<v Speaker 0>have your weights which are the weights of the connection
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:15.160 --> 00:03:20.520
+<v Speaker 0>from the input x1 to this simple computational unit.
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100]}
+
+00:03:20.840 --> 00:03:23.880
+<v Speaker 0>And the weights are called w1 to w n.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100,100]}
+
+00:03:25.400 --> 00:03:28.520
+<v Speaker 0>And so the input function is simply the weighted sum.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:28.520 --> 00:03:30.760
+<v Speaker 0>And we will call this u of x, where x
+
+NOTE CONF {"raw":[100,96,96,100,100,100,100,100,100,100]}
+
+00:03:30.800 --> 00:03:33.920
+<v Speaker 0>is the input and the function just computes the weighted
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:33.920 --> 00:03:34.160
+<v Speaker 0>sum.
+
+NOTE CONF {"raw":[100]}
+
+00:03:34.160 --> 00:03:39.680
+<v Speaker 0>So w w I times w times x I over
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,90,100]}
+
+00:03:39.680 --> 00:03:41.760
+<v Speaker 0>all the i's over all the inputs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:42.640 --> 00:03:45.040
+<v Speaker 0>And then how do we decide whether to generate an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:45.040 --> 00:03:45.560
+<v Speaker 0>output.
+
+NOTE CONF {"raw":[100]}
+
+00:03:45.600 --> 00:03:48.720
+<v Speaker 0>We pass the input through an activation function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:03:48.960 --> 00:03:51.600
+<v Speaker 0>In this case we've assumed a simple threshold function.
+
+NOTE CONF {"raw":[100,100,100,98,100,95,100,100,100]}
+
+00:03:51.960 --> 00:03:55.640
+<v Speaker 0>If we reach a threshold of theta then we output
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:55.640 --> 00:03:56.120
+<v Speaker 0>a one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:56.290 --> 00:03:57.730
+<v Speaker 0>Otherwise we output at zero.
+
+NOTE CONF {"raw":[100,100,98,100,100]}
+
+00:03:58.090 --> 00:03:58.930
+<v Speaker 0>So it's.
+
+NOTE CONF {"raw":[100,87]}
+
+00:03:59.130 --> 00:04:00.930
+<v Speaker 0>You can think of it as a neurone that needs
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:00.930 --> 00:04:04.530
+<v Speaker 0>to reach a certain activation state, a certain level of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:04.530 --> 00:04:06.810
+<v Speaker 0>excitation before it can fire.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:07.330 --> 00:04:09.170
+<v Speaker 0>And that's what's going on here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:04:10.210 --> 00:04:13.250
+<v Speaker 0>And here again, we are assuming the activation is just
+
+NOTE CONF {"raw":[100,100,100,74,74,100,100,100,100,99]}
+
+00:04:13.250 --> 00:04:14.010
+<v Speaker 0>0 or 1.
+
+NOTE CONF {"raw":[97,97,97]}
+
+00:04:14.210 --> 00:04:17.690
+<v Speaker 0>And we've seen how a simple computational unit like this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:17.690 --> 00:04:22.690
+<v Speaker 0>can for example implement binary logical functions like and and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:22.690 --> 00:04:25.210
+<v Speaker 0>or not as well actually.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:04:25.770 --> 00:04:28.730
+<v Speaker 0>But there are certain functions it's not able to implement
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100,100,100]}
+
+00:04:28.730 --> 00:04:29.970
+<v Speaker 0>for example XOR.
+
+NOTE CONF {"raw":[100,100,99]}
+
+00:04:30.610 --> 00:04:36.850
+<v Speaker 0>And we said that this is because certain functions can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:36.850 --> 00:04:39.970
+<v Speaker 0>be represented by simple lines where you have a set
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:39.970 --> 00:04:41.770
+<v Speaker 0>of points on each side of the line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:04:42.050 --> 00:04:44.570
+<v Speaker 0>So for example, the ones in the zero for and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:44.570 --> 00:04:47.570
+<v Speaker 0>or or but then there are certain other functions where
+
+NOTE CONF {"raw":[97,68,100,100,96,96,100,100,100,100]}
+
+00:04:47.570 --> 00:04:49.970
+<v Speaker 0>a single line is not sufficient sufficient.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:50.450 --> 00:04:55.050
+<v Speaker 0>And the XOR function is one of these functions because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:55.350 --> 00:04:58.110
+<v Speaker 0>here the output should be zero for one one and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:58.110 --> 00:05:01.830
+<v Speaker 0>zero zero, but it should be one for one for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:01.830 --> 00:05:03.950
+<v Speaker 0>zero one and one zero.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:04.670 --> 00:05:04.910
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:04.950 --> 00:05:06.030
+<v Speaker 0>So we need two lines.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:05:06.030 --> 00:05:08.910
+<v Speaker 0>Or we need a curve which is something more complicated
+
+NOTE CONF {"raw":[100,100,100,100,100,39,39,100,100,100]}
+
+00:05:09.150 --> 00:05:11.790
+<v Speaker 0>to separate the two classes the zero class and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:11.790 --> 00:05:12.430
+<v Speaker 0>one class.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:12.910 --> 00:05:15.870
+<v Speaker 0>And this is a non-linearly separable function.
+
+NOTE CONF {"raw":[100,100,100,100,90,100,100]}
+
+00:05:16.310 --> 00:05:19.710
+<v Speaker 0>And a single layer perceptron is not able to capture
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:19.710 --> 00:05:20.590
+<v Speaker 0>these functions.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:21.230 --> 00:05:25.390
+<v Speaker 0>And so that is obviously a very serious restriction because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:25.390 --> 00:05:28.390
+<v Speaker 0>most interesting functions are not linearly separable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:05:29.870 --> 00:05:32.950
+<v Speaker 0>And today we're going to talk about the multilayer perceptron,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,54,100]}
+
+00:05:33.270 --> 00:05:37.830
+<v Speaker 0>which is really just a way of stacking simple perceptron,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,90]}
+
+00:05:37.830 --> 00:05:41.350
+<v Speaker 0>simple computational units to compute more complicated functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:41.350 --> 00:05:44.790
+<v Speaker 0>And in fact the the MLP, the multi-layer perceptron can
+
+NOTE CONF {"raw":[100,100,100,79,100,100,100,62,100,100]}
+
+00:05:45.110 --> 00:05:47.390
+<v Speaker 0>compute arbitrary function functions.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:47.630 --> 00:05:50.470
+<v Speaker 0>This is actually something you could show mathematically.
+
+NOTE CONF {"raw":[100,100,100,100,100,71,100,100]}
+
+00:05:52.270 --> 00:05:52.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:53.590 --> 00:05:55.960
+<v Speaker 0>Then the second question is, so we have this lovely
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:55.960 --> 00:05:59.880
+<v Speaker 0>architecture, but where do the weights come from?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:00.000 --> 00:06:00.240
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:06:00.280 --> 00:06:03.720
+<v Speaker 0>So where do you how do you get these W's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,83]}
+
+00:06:04.400 --> 00:06:06.640
+<v Speaker 0>to make the model compute the right functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:06.640 --> 00:06:08.120
+<v Speaker 0>And this is the question of learning.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:08.160 --> 00:06:10.720
+<v Speaker 0>Of of learning the weights of computing the parameters of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:10.720 --> 00:06:11.280
+<v Speaker 0>the model.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:11.920 --> 00:06:20.800
+<v Speaker 0>And here we've used a simple idea, um, that if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:20.800 --> 00:06:22.240
+<v Speaker 0>we learn from examples.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:06:22.520 --> 00:06:25.480
+<v Speaker 0>So we have a set of inputs associated with the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:25.480 --> 00:06:26.480
+<v Speaker 0>correct outputs.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:26.480 --> 00:06:27.560
+<v Speaker 0>Call them targets.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:28.120 --> 00:06:29.520
+<v Speaker 0>So this is our training data.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:29.520 --> 00:06:31.360
+<v Speaker 0>This is the data we learn from right.
+
+NOTE CONF {"raw":[100,100,100,100,100,80,100,100]}
+
+00:06:31.400 --> 00:06:32.840
+<v Speaker 0>Everything is binary at this point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:06:32.840 --> 00:06:35.720
+<v Speaker 0>This is not a necessary assumption but we're just making
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,58,100,100]}
+
+00:06:35.720 --> 00:06:36.680
+<v Speaker 0>it for simplicity.
+
+NOTE CONF {"raw":[70,100,100]}
+
+00:06:36.840 --> 00:06:39.840
+<v Speaker 0>So for example we have this input here 0100.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:06:39.840 --> 00:06:41.720
+<v Speaker 0>And then we know that the output should be one
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:41.720 --> 00:06:42.360
+<v Speaker 0>and so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:06:42.720 --> 00:06:47.960
+<v Speaker 0>So we can use this data this training data to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:48.360 --> 00:06:50.360
+<v Speaker 0>compute what the correct weights should be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:06:50.440 --> 00:06:52.680
+<v Speaker 0>And this is this is how we model learning here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:53.850 --> 00:06:58.170
+<v Speaker 0>Uh, so, uh, and we do this by computing the
+
+NOTE CONF {"raw":[71,100,73,100,100,100,100,100,100,100]}
+
+00:06:58.170 --> 00:06:59.090
+<v Speaker 0>current output.
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:59.090 --> 00:07:01.850
+<v Speaker 0>So we assume we have the weights somewhere, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98]}
+
+00:07:02.210 --> 00:07:04.970
+<v Speaker 0>Just assume all the weights are zero or we assign
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:04.970 --> 00:07:08.730
+<v Speaker 0>them random numbers, but we have the weights and we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:08.770 --> 00:07:09.970
+<v Speaker 0>compute the current output.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:09.970 --> 00:07:11.570
+<v Speaker 0>And this is here an orange the O.
+
+NOTE CONF {"raw":[100,100,100,100,63,100,100,50]}
+
+00:07:12.170 --> 00:07:15.450
+<v Speaker 0>And then we compare the current output to the target.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:15.530 --> 00:07:17.010
+<v Speaker 0>So here this is incorrect.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:07:17.010 --> 00:07:19.330
+<v Speaker 0>It output zero even though the target is one this
+
+NOTE CONF {"raw":[92,68,100,100,100,100,100,100,100,100]}
+
+00:07:19.330 --> 00:07:20.090
+<v Speaker 0>one is correct.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:07:20.090 --> 00:07:22.050
+<v Speaker 0>The target is zero, the output is zero and so
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:22.050 --> 00:07:22.290
+<v Speaker 0>on.
+
+NOTE CONF {"raw":[100]}
+
+00:07:22.890 --> 00:07:26.810
+<v Speaker 0>And then we essentially take this difference, this error that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:26.810 --> 00:07:29.530
+<v Speaker 0>the model makes and use it to adjust the weights.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:29.930 --> 00:07:32.210
+<v Speaker 0>So this is how learning works in the perceptron.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:07:32.210 --> 00:07:34.850
+<v Speaker 0>And we have a very simple rule where we update
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:34.890 --> 00:07:35.730
+<v Speaker 0>a weight.
+
+NOTE CONF {"raw":[100,100]}
+
+00:07:36.090 --> 00:07:40.770
+<v Speaker 0>We uh by taking w I and adding a small
+
+NOTE CONF {"raw":[77,79,100,100,91,89,100,100,100,100]}
+
+00:07:40.770 --> 00:07:44.650
+<v Speaker 0>quantity delta w I, which we compute by taking the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:44.650 --> 00:07:47.650
+<v Speaker 0>difference between the target and the output right down here,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,64,100,100]}
+
+00:07:48.450 --> 00:07:52.270
+<v Speaker 0>target and output, uh, multiplied by ETA.
+
+NOTE CONF {"raw":[100,76,100,74,94,100,90]}
+
+00:07:52.310 --> 00:07:54.590
+<v Speaker 0>ETA is a learning rate which allows you to control
+
+NOTE CONF {"raw":[100,95,99,100,100,100,100,100,100,100]}
+
+00:07:54.590 --> 00:07:56.550
+<v Speaker 0>how fast you're going to learn, how big the changes
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:07:56.550 --> 00:07:57.510
+<v Speaker 0>are that you're going to make.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:57.950 --> 00:08:00.390
+<v Speaker 0>And x I x I is the input at this
+
+NOTE CONF {"raw":[96,93,93,93,93,100,100,100,100,100]}
+
+00:08:00.390 --> 00:08:00.790
+<v Speaker 0>point.
+
+NOTE CONF {"raw":[100]}
+
+00:08:00.790 --> 00:08:03.430
+<v Speaker 0>So the intuition is if there's a big input, then
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100,100]}
+
+00:08:03.430 --> 00:08:05.550
+<v Speaker 0>you want to make larger changes as small input.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,60,100,100]}
+
+00:08:05.550 --> 00:08:07.150
+<v Speaker 0>You want to make smaller changes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:08.470 --> 00:08:09.870
+<v Speaker 0>And this actually works.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:08:10.070 --> 00:08:13.190
+<v Speaker 0>And if you've already been to the tutorial this week,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:13.190 --> 00:08:15.790
+<v Speaker 0>then you will have worked through an example where you
+
+NOTE CONF {"raw":[100,100,91,100,100,100,100,100,100,100]}
+
+00:08:15.790 --> 00:08:21.710
+<v Speaker 0>actually compute the weight updates and keep keep applying this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:21.710 --> 00:08:25.230
+<v Speaker 0>learning rule until the weights stabilised, until the weights don't
+
+NOTE CONF {"raw":[100,100,100,100,62,94,100,100,100,100]}
+
+00:08:25.230 --> 00:08:27.270
+<v Speaker 0>change anymore, and then learning terminates.
+
+NOTE CONF {"raw":[100,96,100,100,100,100]}
+
+00:08:27.630 --> 00:08:31.270
+<v Speaker 0>And if it's a function that the perceptron can learn,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:31.710 --> 00:08:34.270
+<v Speaker 0>then you will have learned the function at that point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:34.750 --> 00:08:36.950
+<v Speaker 0>So and this is a worked example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:38.270 --> 00:08:42.070
+<v Speaker 0>Um, let's just go through this quickly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:42.070 --> 00:08:43.990
+<v Speaker 0>I don't want to spend too much time on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:43.990 --> 00:08:44.470
+<v Speaker 0>recap.
+
+NOTE CONF {"raw":[100]}
+
+00:08:44.630 --> 00:08:46.510
+<v Speaker 0>So this is our update rule.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:46.910 --> 00:08:48.670
+<v Speaker 0>This is how we compute our delta.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:49.230 --> 00:08:51.840
+<v Speaker 0>And let's assume we have a simple example where the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:08:51.840 --> 00:08:55.640
+<v Speaker 0>weights the weight is 0.5, the threshold is zero, and
+
+NOTE CONF {"raw":[100,100,100,100,92,100,100,100,100,100]}
+
+00:08:55.640 --> 00:08:57.200
+<v Speaker 0>we have an input x y.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:57.240 --> 00:08:58.640
+<v Speaker 0>Learning rate is 0.6.
+
+NOTE CONF {"raw":[100,100,100,88]}
+
+00:08:59.120 --> 00:09:01.960
+<v Speaker 0>So we first compute the output right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95]}
+
+00:09:02.000 --> 00:09:04.280
+<v Speaker 0>We need the output because otherwise we don't know what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:04.320 --> 00:09:05.200
+<v Speaker 0>error we're making.
+
+NOTE CONF {"raw":[100,80,96]}
+
+00:09:05.360 --> 00:09:09.440
+<v Speaker 0>So that's just y times x 0.5 times minus one
+
+NOTE CONF {"raw":[100,100,100,95,100,100,91,100,100,100]}
+
+00:09:09.440 --> 00:09:10.520
+<v Speaker 0>is -0.5.
+
+NOTE CONF {"raw":[100,61]}
+
+00:09:10.680 --> 00:09:12.080
+<v Speaker 0>This is smaller than theta.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:12.120 --> 00:09:14.680
+<v Speaker 0>Theta was zero so the output is zero.
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100]}
+
+00:09:15.520 --> 00:09:20.200
+<v Speaker 0>And the the target what's the target.
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100]}
+
+00:09:20.200 --> 00:09:23.120
+<v Speaker 0>The target is one so output is zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:23.120 --> 00:09:23.960
+<v Speaker 0>Target is one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:24.200 --> 00:09:25.680
+<v Speaker 0>So it's an error.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:25.680 --> 00:09:27.040
+<v Speaker 0>We need to update our weights.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:27.320 --> 00:09:31.120
+<v Speaker 0>So we compute our delta W1 by taking the learning
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:09:31.120 --> 00:09:37.160
+<v Speaker 0>rate 0.6 times the difference between the target which is
+
+NOTE CONF {"raw":[100,67,100,100,100,100,100,100,100,100]}
+
+00:09:37.160 --> 00:09:39.920
+<v Speaker 0>one, and the current output which is zero times minus
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:39.920 --> 00:09:41.680
+<v Speaker 0>one, which is the input at this point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:09:41.960 --> 00:09:44.400
+<v Speaker 0>It's the same input like here.
+
+NOTE CONF {"raw":[86,100,100,100,51,100]}
+
+00:09:44.960 --> 00:09:47.320
+<v Speaker 0>And we get -0.6.
+
+NOTE CONF {"raw":[100,100,100,75]}
+
+00:09:47.520 --> 00:09:48.840
+<v Speaker 0>So we make an update.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:48.880 --> 00:09:50.220
+<v Speaker 0>Current weight is 0.5.
+
+NOTE CONF {"raw":[100,95,95,100]}
+
+00:09:50.500 --> 00:09:52.940
+<v Speaker 0>-0.6 is -0.1.
+
+NOTE CONF {"raw":[55,100,72]}
+
+00:09:52.940 --> 00:09:55.540
+<v Speaker 0>So we reduce the weight by 0.1.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94]}
+
+00:09:56.300 --> 00:09:59.380
+<v Speaker 0>And now in this particular example I've chosen it such
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,89,100]}
+
+00:09:59.380 --> 00:09:59.740
+<v Speaker 0>that.
+
+NOTE CONF {"raw":[100]}
+
+00:09:59.820 --> 00:10:05.820
+<v Speaker 0>That's actually enough so that the new output w1 x1
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:05.820 --> 00:10:09.100
+<v Speaker 0>where w1 is now the updated w1 gives us the
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,87]}
+
+00:10:09.100 --> 00:10:09.980
+<v Speaker 0>correct output.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:10.580 --> 00:10:14.020
+<v Speaker 0>Often you'll take multiple steps and multiple examples, or you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:14.020 --> 00:10:17.580
+<v Speaker 0>need to go through a training set several times to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:17.580 --> 00:10:18.620
+<v Speaker 0>get the correct weights.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:10:18.620 --> 00:10:21.460
+<v Speaker 0>Here the example is set up so that a single
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:21.460 --> 00:10:24.660
+<v Speaker 0>weight update is enough to now give us the correct
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:24.700 --> 00:10:25.300
+<v Speaker 0>output.
+
+NOTE CONF {"raw":[100]}
+
+00:10:27.020 --> 00:10:27.580
+<v Speaker 0>Okay?
+
+NOTE CONF {"raw":[100]}
+
+00:10:27.940 --> 00:10:32.060
+<v Speaker 0>And in general the learning algorithm goes as follows.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:10:32.100 --> 00:10:33.900
+<v Speaker 0>You initialise your weights randomly.
+
+NOTE CONF {"raw":[100,100,73,100,100]}
+
+00:10:34.980 --> 00:10:36.900
+<v Speaker 0>Then you look at each training example.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:36.940 --> 00:10:37.100
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[80]}
+
+00:10:37.100 --> 00:10:39.700
+<v Speaker 0>We have a set of examples where we know the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:39.700 --> 00:10:40.540
+<v Speaker 0>correct output.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:40.900 --> 00:10:42.820
+<v Speaker 0>You apply the learning rule right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:42.860 --> 00:10:47.220
+<v Speaker 0>The one up here, and you end until you do
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:47.220 --> 00:10:50.310
+<v Speaker 0>this, until you've seen all the Examples, and then you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:50.310 --> 00:10:56.150
+<v Speaker 0>repeat the whole thing until the error is either zero
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:56.270 --> 00:10:58.830
+<v Speaker 0>or small or doesn't change anymore.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:58.950 --> 00:11:02.710
+<v Speaker 0>Whatever your criterion you're using, sometimes you also use a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:02.710 --> 00:11:03.790
+<v Speaker 0>timeout, right?
+
+NOTE CONF {"raw":[100,83]}
+
+00:11:03.830 --> 00:11:06.550
+<v Speaker 0>You say, let's do 100 epochs and then stop.
+
+NOTE CONF {"raw":[100,100,100,100,99,100,100,100,100]}
+
+00:11:08.670 --> 00:11:12.230
+<v Speaker 0>Because the error in realistic cases will never reach zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:13.190 --> 00:11:13.510
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:13.550 --> 00:11:15.750
+<v Speaker 0>So here the for loop goes through all the training
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:15.750 --> 00:11:18.910
+<v Speaker 0>example and the repeat until the error is small enough.
+
+NOTE CONF {"raw":[72,100,100,100,100,100,100,100,100,100]}
+
+00:11:19.950 --> 00:11:21.190
+<v Speaker 0>This is the epochs.
+
+NOTE CONF {"raw":[100,100,100,80]}
+
+00:11:21.430 --> 00:11:23.350
+<v Speaker 0>Epoch is what we call if we go through the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:23.350 --> 00:11:25.150
+<v Speaker 0>whole training set okay.
+
+NOTE CONF {"raw":[100,100,100,84]}
+
+00:11:25.190 --> 00:11:27.150
+<v Speaker 0>And often you need to go through the training set
+
+NOTE CONF {"raw":[100,100,100,100,100,100,70,100,100,100]}
+
+00:11:27.190 --> 00:11:30.030
+<v Speaker 0>multiple times before you reach the error.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:30.830 --> 00:11:31.190
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:11:31.230 --> 00:11:32.350
+<v Speaker 0>So this is all great.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:33.070 --> 00:11:35.470
+<v Speaker 0>However it's too simple right?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:35.510 --> 00:11:37.510
+<v Speaker 0>Remember this is just a linear classifier.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:37.750 --> 00:11:40.830
+<v Speaker 0>If a problem is not linearly separable then we cannot
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:11:40.830 --> 00:11:41.470
+<v Speaker 0>compute it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:11:41.470 --> 00:11:43.430
+<v Speaker 0>So we need something more complicated.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:44.110 --> 00:11:47.470
+<v Speaker 0>And this is the multi-layer perceptron which is the.
+
+NOTE CONF {"raw":[100,100,100,100,60,100,100,100,100]}
+
+00:11:48.800 --> 00:11:52.640
+<v Speaker 0>that is the, uh, the object of today's lecture.
+
+NOTE CONF {"raw":[100,100,91,60,100,100,100,100,100]}
+
+00:11:54.720 --> 00:11:56.960
+<v Speaker 0>Okay, so this is what I've just talked about.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:56.960 --> 00:11:58.440
+<v Speaker 0>So multi-layer perceptron.
+
+NOTE CONF {"raw":[100,74,99]}
+
+00:11:59.480 --> 00:12:04.120
+<v Speaker 0>Basically, you just take lots of perceptrons of the kind
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:04.120 --> 00:12:06.120
+<v Speaker 0>we've just seen and you stack them.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:12:07.200 --> 00:12:12.080
+<v Speaker 0>And for this to be a maximally powerful, you need
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:12.080 --> 00:12:12.960
+<v Speaker 0>at least three layers.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:12:12.960 --> 00:12:16.000
+<v Speaker 0>You need an input layer which is one set of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:16.000 --> 00:12:16.480
+<v Speaker 0>neurones.
+
+NOTE CONF {"raw":[100]}
+
+00:12:16.480 --> 00:12:19.960
+<v Speaker 0>And then you have a hidden layer and an output
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:19.960 --> 00:12:20.280
+<v Speaker 0>layer.
+
+NOTE CONF {"raw":[100]}
+
+00:12:20.360 --> 00:12:22.440
+<v Speaker 0>So the hidden layer is the is called the hidden
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:22.440 --> 00:12:25.200
+<v Speaker 0>layer because it's not directly connected to either the input
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:25.200 --> 00:12:25.840
+<v Speaker 0>or the output.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:12:25.840 --> 00:12:28.080
+<v Speaker 0>It's hidden in that sense, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:28.120 --> 00:12:32.040
+<v Speaker 0>It does an implicit computation that is not directly dependent
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:32.040 --> 00:12:33.240
+<v Speaker 0>on the input and output.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:12:33.840 --> 00:12:38.600
+<v Speaker 0>So in an architecture like this uh, is called multi-layer
+
+NOTE CONF {"raw":[100,47,100,100,100,100,81,100,100,66]}
+
+00:12:38.600 --> 00:12:42.000
+<v Speaker 0>perceptron, obviously because it has multiple layers, the individual units
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:42.000 --> 00:12:45.520
+<v Speaker 0>are just perceptrons, just in different colours depending on which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100,100,100]}
+
+00:12:45.520 --> 00:12:46.160
+<v Speaker 0>layer they're in.
+
+NOTE CONF {"raw":[100,93,100]}
+
+00:12:46.700 --> 00:12:48.140
+<v Speaker 0>And it's fully connected.
+
+NOTE CONF {"raw":[100,98,100,100]}
+
+00:12:48.140 --> 00:12:50.700
+<v Speaker 0>So that means that here we have weights.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:12:50.700 --> 00:12:55.660
+<v Speaker 0>So these lines are weights connecting each unit in each
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:55.660 --> 00:12:58.660
+<v Speaker 0>layer to the previous layer or the subsequent layer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:12:58.900 --> 00:13:01.980
+<v Speaker 0>So this green unit here is connected to all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:01.980 --> 00:13:04.340
+<v Speaker 0>units in the input layer and all the units in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:04.340 --> 00:13:06.060
+<v Speaker 0>the output layer okay.
+
+NOTE CONF {"raw":[100,100,100,67]}
+
+00:13:06.100 --> 00:13:07.540
+<v Speaker 0>So this is a really small network.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:07.540 --> 00:13:09.460
+<v Speaker 0>But as you can see we already get a lot
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,100,100]}
+
+00:13:09.460 --> 00:13:15.060
+<v Speaker 0>of weights because obviously this multiplies out with the number
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:15.060 --> 00:13:16.260
+<v Speaker 0>of units in each layer.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:13:17.620 --> 00:13:21.820
+<v Speaker 0>And this is a feed forward network, which means that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:21.820 --> 00:13:25.740
+<v Speaker 0>the information only flows in this way in input to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,52,57,100,100]}
+
+00:13:25.740 --> 00:13:26.220
+<v Speaker 0>output.
+
+NOTE CONF {"raw":[100]}
+
+00:13:26.460 --> 00:13:30.300
+<v Speaker 0>There's other more complicated architectures that don't that are not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:30.300 --> 00:13:30.900
+<v Speaker 0>feedforward.
+
+NOTE CONF {"raw":[99]}
+
+00:13:30.900 --> 00:13:33.900
+<v Speaker 0>But this is the simplest architecture that and that's the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:33.900 --> 00:13:36.100
+<v Speaker 0>one we'll we'll look at here today.
+
+NOTE CONF {"raw":[100,85,91,100,100,100,100]}
+
+00:13:36.260 --> 00:13:38.060
+<v Speaker 0>You can have multiple hidden layers.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:39.420 --> 00:13:43.020
+<v Speaker 0>Mathematically a single hidden layer is enough to approximate any
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:43.020 --> 00:13:43.580
+<v Speaker 0>function.
+
+NOTE CONF {"raw":[100]}
+
+00:13:44.020 --> 00:13:46.670
+<v Speaker 0>But Well.
+
+NOTE CONF {"raw":[100,100]}
+
+00:13:47.030 --> 00:13:49.150
+<v Speaker 0>Deep learning takes its name from the fact that the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:49.150 --> 00:13:50.950
+<v Speaker 0>models have lots of hidden layers, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,78]}
+
+00:13:50.990 --> 00:13:53.390
+<v Speaker 0>They're very deep in the sense that there's lots of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:53.390 --> 00:13:55.590
+<v Speaker 0>these green units stacked on top of each other.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:13:56.030 --> 00:13:59.110
+<v Speaker 0>And this doesn't make the network more powerful, but it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:59.110 --> 00:14:00.470
+<v Speaker 0>makes it much easier to train.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:14:01.110 --> 00:14:01.550
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[99]}
+
+00:14:02.190 --> 00:14:05.110
+<v Speaker 0>Deep networks are easier to train than shallow ones, even
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:05.150 --> 00:14:08.430
+<v Speaker 0>if they have the same number of hidden hidden units.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:08.590 --> 00:14:10.950
+<v Speaker 0>So that was the the inside.
+
+NOTE CONF {"raw":[100,100,100,100,100,90]}
+
+00:14:10.950 --> 00:14:16.390
+<v Speaker 0>That's that's behind the recent developments in neural networks.
+
+NOTE CONF {"raw":[100,100,100,99,100,100,100,100,100]}
+
+00:14:17.910 --> 00:14:19.990
+<v Speaker 0>And as I said, it's fully connected in the sense
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:19.990 --> 00:14:21.270
+<v Speaker 0>that each layer is connected.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:21.390 --> 00:14:23.990
+<v Speaker 0>Each unit in a layer is connected to each unit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:23.990 --> 00:14:25.430
+<v Speaker 0>in a previous previous layer.
+
+NOTE CONF {"raw":[100,100,93,100,100]}
+
+00:14:27.270 --> 00:14:31.590
+<v Speaker 0>And this kind of architecture solves the problem of linear
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:31.590 --> 00:14:33.270
+<v Speaker 0>separability, right.
+
+NOTE CONF {"raw":[100,92]}
+
+00:14:33.310 --> 00:14:36.430
+<v Speaker 0>So it can learn functions that are not linearly separable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:38.950 --> 00:14:41.230
+<v Speaker 0>There's another change that we're going to make.
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100]}
+
+00:14:41.870 --> 00:14:43.750
+<v Speaker 0>Remember in our perceptron.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:45.120 --> 00:14:45.720
+<v Speaker 0>What it does.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:14:45.720 --> 00:14:47.640
+<v Speaker 0>It sums up the input, and then it pipes it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:14:47.640 --> 00:14:50.640
+<v Speaker 0>through a function f, which we've called activation function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:14:51.000 --> 00:14:53.480
+<v Speaker 0>And here we're going to vary the activation function.
+
+NOTE CONF {"raw":[100,100,99,100,100,100,100,100,100]}
+
+00:14:53.600 --> 00:14:57.160
+<v Speaker 0>So far we've assumed the step function which basically goes
+
+NOTE CONF {"raw":[100,100,100,100,76,100,100,100,100,100]}
+
+00:14:57.160 --> 00:14:58.040
+<v Speaker 0>from 1 to 0.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:14:58.160 --> 00:15:00.960
+<v Speaker 0>Once a threshold is reached which is here h.
+
+NOTE CONF {"raw":[100,68,100,100,100,100,100,100,100]}
+
+00:15:00.960 --> 00:15:02.840
+<v Speaker 0>But I've called theta so far.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:03.520 --> 00:15:07.080
+<v Speaker 0>We're moving to what's called a sigmoid function, which is
+
+NOTE CONF {"raw":[72,100,100,100,100,98,100,100,100,100]}
+
+00:15:07.080 --> 00:15:10.600
+<v Speaker 0>an exponential function like this which is essentially similar to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:10.640 --> 00:15:11.680
+<v Speaker 0>a step function.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:15:11.920 --> 00:15:15.520
+<v Speaker 0>But we've sort of cut off the the edges, right.
+
+NOTE CONF {"raw":[100,75,100,100,100,100,97,100,100,97]}
+
+00:15:15.560 --> 00:15:17.800
+<v Speaker 0>So it's smooth at the edges.
+
+NOTE CONF {"raw":[100,100,100,99,100,100]}
+
+00:15:18.280 --> 00:15:22.360
+<v Speaker 0>And it has a gradual change from 0 to 1
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:22.360 --> 00:15:26.840
+<v Speaker 0>rather than an abrupt threshold.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:27.840 --> 00:15:31.640
+<v Speaker 0>And this has a bunch of advantages that will come
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:31.640 --> 00:15:33.840
+<v Speaker 0>to in a moment.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:34.960 --> 00:15:37.280
+<v Speaker 0>That's why we're moving to the sigmoid function here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:15:39.160 --> 00:15:40.880
+<v Speaker 0>There's other activation functions.
+
+NOTE CONF {"raw":[99,100,100,100]}
+
+00:15:41.280 --> 00:15:44.980
+<v Speaker 0>There's a whole set of maybe a dozen different activation
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:44.980 --> 00:15:46.140
+<v Speaker 0>functions to choose from.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:48.700 --> 00:15:49.220
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:49.540 --> 00:15:52.540
+<v Speaker 0>So again we need to find a way of finding
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:52.540 --> 00:15:53.060
+<v Speaker 0>the weights.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:53.220 --> 00:15:53.500
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[95]}
+
+00:15:53.540 --> 00:15:58.060
+<v Speaker 0>So the weights are the numbers associated with each connections
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:59.060 --> 00:16:04.620
+<v Speaker 0>with the connections which you can think of as the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:04.620 --> 00:16:06.140
+<v Speaker 0>strength of a synapse.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:06.180 --> 00:16:06.380
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:16:06.420 --> 00:16:09.340
+<v Speaker 0>If you go back to the biological metaphor and then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:09.540 --> 00:16:12.580
+<v Speaker 0>the red units and the green units are unit neurones
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,48,100]}
+
+00:16:12.860 --> 00:16:14.780
+<v Speaker 0>and they're connected through synapses.
+
+NOTE CONF {"raw":[100,60,100,100,100]}
+
+00:16:14.940 --> 00:16:17.820
+<v Speaker 0>Synapses are actually where the learning happens in biology.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:17.860 --> 00:16:18.060
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[96]}
+
+00:16:18.100 --> 00:16:21.180
+<v Speaker 0>You can change the strength of the synapse in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:21.180 --> 00:16:24.740
+<v Speaker 0>sense that you can regulate when it fires, you can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:24.740 --> 00:16:26.140
+<v Speaker 0>modulate the threshold.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:26.260 --> 00:16:27.420
+<v Speaker 0>And that's what we're doing here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:27.420 --> 00:16:31.540
+<v Speaker 0>Basically we're changing learning changes, the connections here, the strength
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:31.540 --> 00:16:34.140
+<v Speaker 0>of these connections that can be zero, which means there's
+
+NOTE CONF {"raw":[100,100,100,89,100,100,100,100,100,63]}
+
+00:16:34.140 --> 00:16:37.460
+<v Speaker 0>no connection or there can be positive or negative values,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:37.460 --> 00:16:43.070
+<v Speaker 0>which means there's an excitatory or inhibitory Connection between the
+
+NOTE CONF {"raw":[100,100,96,100,100,100,100,100,100,100]}
+
+00:16:43.070 --> 00:16:43.750
+<v Speaker 0>two units.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:44.750 --> 00:16:49.430
+<v Speaker 0>Okay, so learning is now more difficult because we have
+
+NOTE CONF {"raw":[99,99,100,100,100,100,100,100,100,100]}
+
+00:16:49.430 --> 00:16:50.390
+<v Speaker 0>these hidden units.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:16:50.910 --> 00:16:52.550
+<v Speaker 0>And we'll talk about this in a second.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:16:52.550 --> 00:16:55.590
+<v Speaker 0>Why learning with hidden units is more complicated.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,100]}
+
+00:16:55.790 --> 00:16:58.270
+<v Speaker 0>And so we need a more complicated algorithm which is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:58.270 --> 00:17:02.430
+<v Speaker 0>called backpropagation, which is essentially a generalisation of the perceptron
+
+NOTE CONF {"raw":[100,85,100,100,100,100,100,100,100,100]}
+
+00:17:02.430 --> 00:17:04.030
+<v Speaker 0>learning rule that we've already seen.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:04.790 --> 00:17:08.150
+<v Speaker 0>So the idea remains the same.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:08.310 --> 00:17:10.949
+<v Speaker 0>We minimise the error in the training set.
+
+NOTE CONF {"raw":[100,99,100,100,100,100,100,100]}
+
+00:17:11.230 --> 00:17:13.870
+<v Speaker 0>So this is still a supervised learning algorithm right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:13.910 --> 00:17:15.069
+<v Speaker 0>So we have a training set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:15.069 --> 00:17:17.709
+<v Speaker 0>And for the training examples we know the correct output.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:18.069 --> 00:17:22.790
+<v Speaker 0>And from that we derive the errors that the model
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:22.790 --> 00:17:23.270
+<v Speaker 0>makes.
+
+NOTE CONF {"raw":[100]}
+
+00:17:23.270 --> 00:17:25.390
+<v Speaker 0>And the errors tell us how we need to adjust
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:25.390 --> 00:17:25.910
+<v Speaker 0>the weights.
+
+NOTE CONF {"raw":[100,100]}
+
+00:17:28.430 --> 00:17:28.830
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:28.870 --> 00:17:33.390
+<v Speaker 0>So this is this idea just written down more cleanly.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:33.390 --> 00:17:37.150
+<v Speaker 0>So we have our MLP our multi-layer perceptron.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,81,100]}
+
+00:17:37.350 --> 00:17:39.470
+<v Speaker 0>We have a pattern X from our training set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:40.470 --> 00:17:44.520
+<v Speaker 0>We get the output Y or O, as it's often
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:44.520 --> 00:17:46.480
+<v Speaker 0>called, and in the rest of the lecture this will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,98,100,100]}
+
+00:17:46.480 --> 00:17:47.920
+<v Speaker 0>be called oh, that's the output.
+
+NOTE CONF {"raw":[100,100,83,100,100,100]}
+
+00:17:48.320 --> 00:17:50.560
+<v Speaker 0>And then we compare this to the correct answer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:51.480 --> 00:17:54.480
+<v Speaker 0>And we take the difference between the correct answer, what
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:54.480 --> 00:17:55.520
+<v Speaker 0>we've called the target.
+
+NOTE CONF {"raw":[95,100,100,100]}
+
+00:17:55.760 --> 00:17:58.400
+<v Speaker 0>So we have a set of examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:00.400 --> 00:18:04.560
+<v Speaker 0>And for each of let's write it like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:18:04.560 --> 00:18:07.320
+<v Speaker 0>So x is our our input.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:10.000 --> 00:18:10.800
+<v Speaker 0>And so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:10.800 --> 00:18:13.360
+<v Speaker 0>And for each of these we have the correct answer
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:13.360 --> 00:18:14.320
+<v Speaker 0>which we call t.
+
+NOTE CONF {"raw":[100,96,94,100]}
+
+00:18:16.920 --> 00:18:21.200
+<v Speaker 0>And then we compute the the actual output of the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:21.200 --> 00:18:22.440
+<v Speaker 0>network at this point.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:22.600 --> 00:18:24.920
+<v Speaker 0>And this may be the same or may be different.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,94,100]}
+
+00:18:25.640 --> 00:18:28.960
+<v Speaker 0>And the learning happens by taking these differences between the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:28.960 --> 00:18:31.240
+<v Speaker 0>target and the and the correct output.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:32.160 --> 00:18:32.480
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:32.520 --> 00:18:35.000
+<v Speaker 0>And in the perceptron learning rule actually we wrote this
+
+NOTE CONF {"raw":[99,52,100,100,100,100,100,100,100,100]}
+
+00:18:35.000 --> 00:18:36.720
+<v Speaker 0>directly T minus o.
+
+NOTE CONF {"raw":[100,100,100,67]}
+
+00:18:37.040 --> 00:18:39.400
+<v Speaker 0>And here it's slightly more complicated but not much more
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:39.460 --> 00:18:40.220
+<v Speaker 0>complicated.
+
+NOTE CONF {"raw":[100]}
+
+00:18:42.020 --> 00:18:42.340
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[99]}
+
+00:18:42.380 --> 00:18:43.980
+<v Speaker 0>And so we go through all the axes for all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,44,100,100]}
+
+00:18:43.980 --> 00:18:46.780
+<v Speaker 0>the examples, through all the examples in the training set.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:48.300 --> 00:18:48.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:18:49.100 --> 00:18:52.780
+<v Speaker 0>Um, as I said, this was the perceptron learning rule
+
+NOTE CONF {"raw":[64,100,100,100,100,100,100,100,100,100]}
+
+00:18:53.180 --> 00:18:54.340
+<v Speaker 0>which we've just seen.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:18:54.580 --> 00:18:56.220
+<v Speaker 0>So we take t minus.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:56.220 --> 00:18:57.020
+<v Speaker 0>Oh right.
+
+NOTE CONF {"raw":[74,95]}
+
+00:18:57.060 --> 00:19:00.900
+<v Speaker 0>The target that we want to have in blue and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:00.900 --> 00:19:03.420
+<v Speaker 0>the actual output that we're seeing in black here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:03.860 --> 00:19:06.220
+<v Speaker 0>And this gives us our error if these two are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:06.220 --> 00:19:08.100
+<v Speaker 0>the same right.
+
+NOTE CONF {"raw":[100,100,97]}
+
+00:19:08.500 --> 00:19:10.020
+<v Speaker 0>Do I have an example like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:12.100 --> 00:19:13.580
+<v Speaker 0>Let's assume they're the same here.
+
+NOTE CONF {"raw":[100,100,85,100,100,100]}
+
+00:19:14.140 --> 00:19:15.340
+<v Speaker 0>Then the error is zero.
+
+NOTE CONF {"raw":[100,100,75,100,100]}
+
+00:19:15.500 --> 00:19:18.220
+<v Speaker 0>Nothing to learn here as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:18.500 --> 00:19:21.700
+<v Speaker 0>Here, however, the target and the output are different.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:21.940 --> 00:19:24.420
+<v Speaker 0>So that's something I can learn from.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:19:25.740 --> 00:19:25.980
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:26.020 --> 00:19:27.380
+<v Speaker 0>So it's this quantity here.
+
+NOTE CONF {"raw":[100,87,100,100,100]}
+
+00:19:28.220 --> 00:19:30.620
+<v Speaker 0>And then we have our ETA which controls how how
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,73,100]}
+
+00:19:30.700 --> 00:19:32.900
+<v Speaker 0>quickly we learn how big the changes are that we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:32.900 --> 00:19:33.220
+<v Speaker 0>make.
+
+NOTE CONF {"raw":[100]}
+
+00:19:33.700 --> 00:19:36.180
+<v Speaker 0>And we have the x which is the output at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:36.180 --> 00:19:36.660
+<v Speaker 0>that point.
+
+NOTE CONF {"raw":[100,100]}
+
+00:19:36.660 --> 00:19:38.430
+<v Speaker 0>So if you think of this as a network work,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:39.230 --> 00:19:39.830
+<v Speaker 0>like here.
+
+NOTE CONF {"raw":[77,100]}
+
+00:19:40.510 --> 00:19:41.870
+<v Speaker 0>Then you have your.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:46.510 --> 00:19:50.630
+<v Speaker 0>Uh, you have your inputs, and you're adjusting this weight.
+
+NOTE CONF {"raw":[82,100,100,100,100,100,73,100,100,99]}
+
+00:19:50.950 --> 00:19:53.710
+<v Speaker 0>So you want to make this dependent on the input,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:19:53.990 --> 00:19:54.270
+<v Speaker 0>right?
+
+NOTE CONF {"raw":[99]}
+
+00:19:54.270 --> 00:19:55.630
+<v Speaker 0>Because the overall error.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:56.030 --> 00:19:56.230
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[96]}
+
+00:19:56.350 --> 00:19:57.950
+<v Speaker 0>You're interested in all the errors here.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100]}
+
+00:19:58.630 --> 00:20:00.750
+<v Speaker 0>Depends on how big the input is at that point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:00.750 --> 00:20:03.470
+<v Speaker 0>If it's if the input is large, then you get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,77,100,100,100]}
+
+00:20:03.470 --> 00:20:04.310
+<v Speaker 0>more of an error.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:04.630 --> 00:20:10.270
+<v Speaker 0>So this is why this is weighted by XI okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,50,100]}
+
+00:20:10.310 --> 00:20:13.990
+<v Speaker 0>So in order to make this work in in the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:13.990 --> 00:20:19.430
+<v Speaker 0>general case with various activation functions but also in a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:19.430 --> 00:20:24.070
+<v Speaker 0>larger network, we need something slightly more complicated than just
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:24.070 --> 00:20:26.670
+<v Speaker 0>taking the difference here between T and O.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,80]}
+
+00:20:27.710 --> 00:20:33.990
+<v Speaker 0>Um, we actually compute an error function e of w
+
+NOTE CONF {"raw":[52,100,100,100,100,100,100,100,100,100]}
+
+00:20:34.390 --> 00:20:37.150
+<v Speaker 0>uh, where w is a vector of weights.
+
+NOTE CONF {"raw":[84,100,100,100,84,100,100,100]}
+
+00:20:37.600 --> 00:20:40.720
+<v Speaker 0>So let's assume that all the weights in our network,
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100,100]}
+
+00:20:42.520 --> 00:20:46.520
+<v Speaker 0>and we take this by taking the the error t
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:20:46.560 --> 00:20:46.920
+<v Speaker 0>minus.
+
+NOTE CONF {"raw":[100]}
+
+00:20:46.920 --> 00:20:49.600
+<v Speaker 0>Oh just like here for a given pattern p.
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100,100]}
+
+00:20:50.200 --> 00:20:52.720
+<v Speaker 0>And we square it so that it's positive.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100]}
+
+00:20:53.440 --> 00:20:57.040
+<v Speaker 0>And then we sum this over all the training examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:57.560 --> 00:21:01.320
+<v Speaker 0>And then we just have a simple constant here which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:01.320 --> 00:21:06.040
+<v Speaker 0>is one over 2NN is the number of training examples
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,100,100]}
+
+00:21:06.040 --> 00:21:07.840
+<v Speaker 0>training patterns okay.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:07.880 --> 00:21:10.080
+<v Speaker 0>So this gives us the overall error not over a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:10.080 --> 00:21:14.680
+<v Speaker 0>single output in target but over all the targets and
+
+NOTE CONF {"raw":[100,100,71,100,100,100,100,100,100,100]}
+
+00:21:14.680 --> 00:21:16.360
+<v Speaker 0>outputs okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:21:17.200 --> 00:21:20.480
+<v Speaker 0>And then we square this to make this positive.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:21:20.480 --> 00:21:24.560
+<v Speaker 0>So n is the number of patterns p is the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:24.560 --> 00:21:27.400
+<v Speaker 0>pattern T is the target owes the output.
+
+NOTE CONF {"raw":[100,100,100,100,100,38,100,100]}
+
+00:21:28.200 --> 00:21:31.640
+<v Speaker 0>And the two is really just there for mathematical convenience.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:33.160 --> 00:21:36.440
+<v Speaker 0>It's just a constant okay.
+
+NOTE CONF {"raw":[100,100,99,100,100]}
+
+00:21:37.340 --> 00:21:39.340
+<v Speaker 0>So this was quite a lot of stuff.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:21:39.780 --> 00:21:44.460
+<v Speaker 0>So let's take a take a step back and look
+
+NOTE CONF {"raw":[100,100,100,63,100,100,100,100,100,100]}
+
+00:21:44.460 --> 00:21:48.420
+<v Speaker 0>at a few things that are entailed by what I've
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:48.420 --> 00:21:50.300
+<v Speaker 0>said and think about.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:50.460 --> 00:21:52.620
+<v Speaker 0>For example the error function we've just seen.
+
+NOTE CONF {"raw":[100,100,100,75,100,100,100,100]}
+
+00:21:53.660 --> 00:21:57.500
+<v Speaker 0>Also think about conceptually what's going on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:21:58.340 --> 00:22:00.380
+<v Speaker 0>Think about the activation functions and so on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:00.380 --> 00:22:04.220
+<v Speaker 0>So I have a few questions prepared.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:04.620 --> 00:22:08.860
+<v Speaker 0>So in case you haven't scanned the QR code now's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:22:08.860 --> 00:22:09.460
+<v Speaker 0>a good time.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:25.820 --> 00:22:26.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:26.180 --> 00:22:27.180
+<v Speaker 0>Let's get started.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:22:30.180 --> 00:22:34.060
+<v Speaker 0>So I have just assumed that our architecture is a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,90,100]}
+
+00:22:34.060 --> 00:22:37.830
+<v Speaker 0>feedforward architecture where we have multiple layers and they are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:37.830 --> 00:22:38.990
+<v Speaker 0>connected to each other.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:39.870 --> 00:22:42.390
+<v Speaker 0>What kind of other architectures could you imagine?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:43.310 --> 00:22:45.390
+<v Speaker 0>Could we use lots of layers?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:22:45.430 --> 00:22:48.190
+<v Speaker 0>I've already indicated that that's that's possible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:49.310 --> 00:22:51.510
+<v Speaker 0>Could we use maybe backwards connections?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:22:51.670 --> 00:22:54.950
+<v Speaker 0>Could we use connections within the same layer connection that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,84,100]}
+
+00:22:54.950 --> 00:22:55.790
+<v Speaker 0>skip layers?
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:56.430 --> 00:22:59.230
+<v Speaker 0>Could we use something called attention which you may have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,94,100,100,100]}
+
+00:22:59.230 --> 00:22:59.910
+<v Speaker 0>heard about?
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:00.190 --> 00:23:03.710
+<v Speaker 0>So how would you make this even more complicated and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:03.710 --> 00:23:04.750
+<v Speaker 0>maybe more powerful?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:05.910 --> 00:23:07.950
+<v Speaker 0>What kind of alternative architectures?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:08.670 --> 00:23:10.990
+<v Speaker 0>Here we'll just talk about feedforward networks.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:23:11.630 --> 00:23:12.870
+<v Speaker 0>Multilayer perceptrons.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:12.870 --> 00:23:16.470
+<v Speaker 0>But there's a lot of different architectures out there.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:20.950 --> 00:23:22.710
+<v Speaker 1>I want to.
+
+NOTE CONF {"raw":[97,96,97]}
+
+00:23:28.110 --> 00:23:29.550
+<v Unknown>Thank you all.
+
+NOTE CONF {"raw":[98,98,99]}
+
+00:23:33.950 --> 00:23:47.090
+<v Speaker 1>So Thank you.
+
+NOTE CONF {"raw":[98,80,83]}
+
+00:23:47.210 --> 00:23:48.570
+<v Speaker 1>Thank you so.
+
+NOTE CONF {"raw":[93,93,90]}
+
+00:23:51.930 --> 00:23:52.210
+<v Unknown>Much.
+
+NOTE CONF {"raw":[90]}
+
+00:23:52.290 --> 00:23:53.330
+<v Unknown>Thank you.
+
+NOTE CONF {"raw":[64,69]}
+
+00:23:54.810 --> 00:23:55.290
+<v Unknown>Thank you.
+
+NOTE CONF {"raw":[87,89]}
+
+00:23:55.410 --> 00:23:55.610
+<v Unknown>Thank.
+
+NOTE CONF {"raw":[91]}
+
+00:23:57.690 --> 00:23:57.850
+<v Speaker 1>You.
+
+NOTE CONF {"raw":[95]}
+
+00:24:02.250 --> 00:24:02.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:02.650 --> 00:24:04.210
+<v Speaker 0>Let's look at a few examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:06.050 --> 00:24:07.250
+<v Speaker 0>So what do people think?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:07.290 --> 00:24:07.650
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:24:07.690 --> 00:24:11.570
+<v Speaker 0>So more or less everything possible.
+
+NOTE CONF {"raw":[100,100,100,100,100,96]}
+
+00:24:12.010 --> 00:24:12.290
+<v Speaker 0>Maybe.
+
+NOTE CONF {"raw":[100]}
+
+00:24:12.330 --> 00:24:12.730
+<v Speaker 0>Attention.
+
+NOTE CONF {"raw":[100]}
+
+00:24:12.730 --> 00:24:13.810
+<v Speaker 0>People don't like that much.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:18.250 --> 00:24:18.690
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[100]}
+
+00:24:25.090 --> 00:24:27.250
+<v Speaker 0>Let's look at each of the examples.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:24:27.250 --> 00:24:30.810
+<v Speaker 0>So first of all let's look at the things that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:30.810 --> 00:24:31.770
+<v Speaker 0>actually make sense.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:32.250 --> 00:24:34.660
+<v Speaker 0>So connections within the same layer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:35.140 --> 00:24:38.180
+<v Speaker 0>So you might be wondering is this actually possible?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:24:38.780 --> 00:24:43.700
+<v Speaker 0>Well, you can have these connections of units to themselves
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:43.700 --> 00:24:45.540
+<v Speaker 0>or of the layer to itself.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:45.700 --> 00:24:47.620
+<v Speaker 0>And this is called the recurrent connection.
+
+NOTE CONF {"raw":[100,100,100,100,73,100,100]}
+
+00:24:51.060 --> 00:24:53.380
+<v Speaker 0>And actually in the next lecture we will see an
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:53.380 --> 00:24:53.940
+<v Speaker 0>example.
+
+NOTE CONF {"raw":[100]}
+
+00:24:54.340 --> 00:24:54.980
+<v Speaker 0>Very high level.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:24:54.980 --> 00:24:57.020
+<v Speaker 0>But we'll see an example of a network that uses
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:57.020 --> 00:24:58.100
+<v Speaker 0>recurrent connections.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:58.460 --> 00:25:01.540
+<v Speaker 0>So you might think that is really silly.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100]}
+
+00:25:01.540 --> 00:25:03.220
+<v Speaker 0>Why would you connect it to yourself.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:03.500 --> 00:25:08.540
+<v Speaker 0>But this makes sense because you can then model information
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:08.540 --> 00:25:09.820
+<v Speaker 0>that flows over time.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:10.580 --> 00:25:14.220
+<v Speaker 0>That where the recurrent connection corresponds to different time steps.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:25:14.380 --> 00:25:15.980
+<v Speaker 0>So this is actually a clever thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:16.940 --> 00:25:20.620
+<v Speaker 0>Then this number four was connections that skip layers.
+
+NOTE CONF {"raw":[100,100,100,95,100,100,100,98,100]}
+
+00:25:20.980 --> 00:25:24.020
+<v Speaker 0>So for example we could have a connection like this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:24.460 --> 00:25:25.700
+<v Speaker 0>that skips that layer here.
+
+NOTE CONF {"raw":[100,90,100,100,100]}
+
+00:25:26.700 --> 00:25:28.340
+<v Speaker 0>That is also possible.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:30.620 --> 00:25:34.750
+<v Speaker 0>This is Um, a so-called bottleneck connection.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:25:35.310 --> 00:25:40.510
+<v Speaker 0>And in, let's say, about 4 to 5 years ago,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:41.070 --> 00:25:44.270
+<v Speaker 0>this type of architecture was very common in computer vision
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:44.270 --> 00:25:44.790
+<v Speaker 0>models.
+
+NOTE CONF {"raw":[100]}
+
+00:25:46.550 --> 00:25:50.670
+<v Speaker 0>So again, it's not something we'll talk about here, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:50.670 --> 00:25:52.070
+<v Speaker 0>it's a possible connection.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:25:53.030 --> 00:25:55.630
+<v Speaker 0>I need to remove this because I want to use.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:58.190 --> 00:25:59.470
+<v Speaker 0>The diagram later on.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:01.510 --> 00:26:02.910
+<v Speaker 0>Let's quickly talk about the others.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:26:02.910 --> 00:26:03.750
+<v Speaker 0>Lots of layers.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:04.150 --> 00:26:06.230
+<v Speaker 0>Um, yes, that's fine.
+
+NOTE CONF {"raw":[75,100,100,100]}
+
+00:26:06.230 --> 00:26:08.950
+<v Speaker 0>But that's not really an alternative to using forward connections.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:08.950 --> 00:26:10.070
+<v Speaker 0>Backward connections.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:10.310 --> 00:26:12.510
+<v Speaker 0>It's not entirely clear what this would mean.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:12.510 --> 00:26:16.350
+<v Speaker 0>So let's assume these are forward connections and then backward
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:16.350 --> 00:26:17.750
+<v Speaker 0>connections like this.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:19.150 --> 00:26:22.590
+<v Speaker 0>Um these are type of recurrent connections as well.
+
+NOTE CONF {"raw":[100,100,100,94,100,100,71,100,100]}
+
+00:26:22.670 --> 00:26:25.110
+<v Speaker 0>So it's this is not commonly used but it would
+
+NOTE CONF {"raw":[100,56,100,100,100,100,100,100,100,100]}
+
+00:26:25.110 --> 00:26:26.310
+<v Speaker 0>not be impossible.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:26:27.870 --> 00:26:32.490
+<v Speaker 0>Attention is a different mechanism that people have used, for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:32.490 --> 00:26:35.530
+<v Speaker 0>example, in Transformers, and it's not something that we'll talk
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,93,100]}
+
+00:26:35.570 --> 00:26:39.570
+<v Speaker 0>about in this in this course, but it's basically a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:39.570 --> 00:26:42.490
+<v Speaker 0>way of selecting your input or figuring out which parts
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:42.490 --> 00:26:45.530
+<v Speaker 0>of the input are most important and learning separate weights
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:45.530 --> 00:26:46.050
+<v Speaker 0>for that.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:46.570 --> 00:26:48.970
+<v Speaker 0>So that's also possible.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:50.290 --> 00:26:50.730
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:26:50.770 --> 00:26:53.010
+<v Speaker 0>So now let's think about the activation function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:53.090 --> 00:26:57.170
+<v Speaker 0>Remember we we take a add a unit here.
+
+NOTE CONF {"raw":[100,100,100,100,55,83,100,100,100]}
+
+00:26:58.090 --> 00:26:59.530
+<v Speaker 0>We take all the inputs.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:59.530 --> 00:27:01.810
+<v Speaker 0>We multiply them with the weight.
+
+NOTE CONF {"raw":[100,100,100,100,98,100]}
+
+00:27:02.210 --> 00:27:07.930
+<v Speaker 0>And then we pass the weighted sum through an activation
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:07.930 --> 00:27:08.530
+<v Speaker 0>function.
+
+NOTE CONF {"raw":[100]}
+
+00:27:08.970 --> 00:27:11.450
+<v Speaker 0>So we've said we are going to use the sigmoid
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:11.450 --> 00:27:12.890
+<v Speaker 0>function rather than the step function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:12.890 --> 00:27:14.250
+<v Speaker 0>Why do you think this is good.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:14.770 --> 00:27:17.210
+<v Speaker 0>Here's the number of possible solutions.
+
+NOTE CONF {"raw":[100,75,100,100,100,100]}
+
+00:27:17.450 --> 00:27:19.490
+<v Speaker 0>Sigmoid function is easy to compute.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:20.050 --> 00:27:21.130
+<v Speaker 0>It's differentiable.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:22.330 --> 00:27:25.290
+<v Speaker 0>It returns a continuous value, not just zero and one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:26.170 --> 00:27:28.170
+<v Speaker 0>The derivative is easy to compute.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:28.490 --> 00:27:30.500
+<v Speaker 0>Which of these things do you think are important?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:27:38.700 --> 00:27:39.780
+<v Speaker 1>Do you?
+
+NOTE CONF {"raw":[37,52]}
+
+00:27:44.300 --> 00:27:44.540
+<v Speaker 1>Think.
+
+NOTE CONF {"raw":[34]}
+
+00:27:53.660 --> 00:27:57.180
+<v Unknown>What do we do?
+
+NOTE CONF {"raw":[98,98,54,97]}
+
+00:27:57.220 --> 00:27:58.380
+<v Unknown>What do?
+
+NOTE CONF {"raw":[98,96]}
+
+00:28:03.300 --> 00:28:03.500
+<v Unknown>We.
+
+NOTE CONF {"raw":[62]}
+
+00:28:06.580 --> 00:28:06.780
+<v Unknown>Do.
+
+NOTE CONF {"raw":[73]}
+
+00:28:08.340 --> 00:28:09.580
+<v Speaker 0>Okay, let's have a look.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:12.260 --> 00:28:12.980
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:12.980 --> 00:28:13.380
+<v Speaker 0>So.
+
+NOTE CONF {"raw":[84]}
+
+00:28:16.260 --> 00:28:18.260
+<v Speaker 0>Uh, differentiable and derivative.
+
+NOTE CONF {"raw":[68,100,100,100]}
+
+00:28:18.260 --> 00:28:19.100
+<v Speaker 0>Easy to compute.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:19.100 --> 00:28:21.300
+<v Speaker 0>Is is the most important properties.
+
+NOTE CONF {"raw":[47,100,100,100,100,100]}
+
+00:28:22.140 --> 00:28:25.940
+<v Speaker 0>Um, the sigmoid function is easy to compute, but so
+
+NOTE CONF {"raw":[42,100,100,100,100,100,100,100,100,100]}
+
+00:28:25.980 --> 00:28:27.260
+<v Speaker 0>is the threshold function.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:27.300 --> 00:28:27.500
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[94]}
+
+00:28:27.540 --> 00:28:30.390
+<v Speaker 0>So it's not really an advantage.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:30.630 --> 00:28:31.750
+<v Speaker 0>It's differentiable.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:31.830 --> 00:28:36.750
+<v Speaker 0>Whereas the step function of course here at our threshold
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:37.270 --> 00:28:38.870
+<v Speaker 0>it's not differentiable, right?
+
+NOTE CONF {"raw":[100,100,100,94]}
+
+00:28:38.910 --> 00:28:39.990
+<v Speaker 0>It goes to infinity.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:40.550 --> 00:28:42.390
+<v Speaker 0>And that can be a problem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:42.710 --> 00:28:44.470
+<v Speaker 0>And we'll see why in a moment.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:44.710 --> 00:28:46.430
+<v Speaker 0>Returns continuous values.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:47.310 --> 00:28:48.390
+<v Speaker 0>Yeah we don't really care.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:48.430 --> 00:28:48.830
+<v Speaker 0>Either way.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:48.830 --> 00:28:51.430
+<v Speaker 0>We can set up the threshold function so that it
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,58]}
+
+00:28:51.430 --> 00:28:52.910
+<v Speaker 0>returns continuous values.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:53.350 --> 00:28:55.110
+<v Speaker 0>The derivative is easy to compute.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:55.110 --> 00:28:57.110
+<v Speaker 0>That's also something we will care about.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:28:57.790 --> 00:29:02.310
+<v Speaker 0>Okay here we don't even have a derivative at all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:02.310 --> 00:29:03.430
+<v Speaker 0>points right.
+
+NOTE CONF {"raw":[100,96]}
+
+00:29:03.470 --> 00:29:06.070
+<v Speaker 0>So that's why the function isn't good.
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100]}
+
+00:29:07.710 --> 00:29:10.710
+<v Speaker 0>And last one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:29:12.710 --> 00:29:16.030
+<v Speaker 0>So this error function which I've given you here again
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:16.430 --> 00:29:20.870
+<v Speaker 0>where we take the target and the output and we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:20.870 --> 00:29:22.350
+<v Speaker 0>take the difference and square it.
+
+NOTE CONF {"raw":[100,100,100,100,95,95]}
+
+00:29:22.350 --> 00:29:24.510
+<v Speaker 0>And then we sum this up over all the input
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:24.510 --> 00:29:26.870
+<v Speaker 0>patterns of all the training patterns.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:27.310 --> 00:29:30.930
+<v Speaker 0>Is it something that maybe you've seen before in other
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:30.930 --> 00:29:31.610
+<v Speaker 0>contexts?
+
+NOTE CONF {"raw":[100]}
+
+00:29:32.050 --> 00:29:34.050
+<v Speaker 0>And here's a few possibilities.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:29:34.090 --> 00:29:36.610
+<v Speaker 0>So is it like the perceptron error function?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:29:37.370 --> 00:29:39.970
+<v Speaker 0>Is it like the variance in statistics?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:40.690 --> 00:29:43.170
+<v Speaker 0>Have you seen this in the context of linear regression?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:43.170 --> 00:29:43.810
+<v Speaker 0>Perhaps.
+
+NOTE CONF {"raw":[100]}
+
+00:29:44.330 --> 00:29:46.450
+<v Speaker 0>Or maybe it's a statistical estimator.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:48.730 --> 00:29:52.770
+<v Speaker 0>So this term is hopefully or maybe familiar to some
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:52.770 --> 00:29:53.170
+<v Speaker 0>of you.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:23.730 --> 00:30:24.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[99]}
+
+00:30:24.170 --> 00:30:24.410
+<v Speaker 0>Sure.
+
+NOTE CONF {"raw":[77]}
+
+00:30:24.410 --> 00:30:25.170
+<v Speaker 0>My answers.
+
+NOTE CONF {"raw":[100,88]}
+
+00:30:31.060 --> 00:30:31.620
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[93]}
+
+00:30:31.660 --> 00:30:32.380
+<v Speaker 0>Variants.
+
+NOTE CONF {"raw":[79]}
+
+00:30:32.700 --> 00:30:34.020
+<v Speaker 0>Most of you like variants.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:36.780 --> 00:30:39.700
+<v Speaker 0>So all these all three things are correct.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:39.700 --> 00:30:42.900
+<v Speaker 0>So I mean, arguably even one is correct because we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:42.900 --> 00:30:43.820
+<v Speaker 0>have the T minus.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:43.820 --> 00:30:44.220
+<v Speaker 0>All right.
+
+NOTE CONF {"raw":[45,100]}
+
+00:30:44.220 --> 00:30:46.260
+<v Speaker 0>Which is similar to what we have in the perceptron
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:46.260 --> 00:30:47.020
+<v Speaker 0>error function.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:47.540 --> 00:30:50.500
+<v Speaker 0>But the variance in statistics is basically defined like this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:50.500 --> 00:30:53.980
+<v Speaker 0>Except that we write this as the mean right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,88]}
+
+00:30:54.020 --> 00:30:57.020
+<v Speaker 0>So it's the difference between the individual points and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:57.020 --> 00:30:59.980
+<v Speaker 0>mean in linear regression.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:01.300 --> 00:31:05.700
+<v Speaker 0>This mean squared error is actually the error that we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:05.700 --> 00:31:07.700
+<v Speaker 0>use to fit the line right.
+
+NOTE CONF {"raw":[96,100,100,100,100,75]}
+
+00:31:07.740 --> 00:31:11.660
+<v Speaker 0>In regression we have a bunch of points.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:12.500 --> 00:31:16.500
+<v Speaker 0>And then we fit the line that's closest to those
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:16.500 --> 00:31:17.020
+<v Speaker 0>points.
+
+NOTE CONF {"raw":[100]}
+
+00:31:18.220 --> 00:31:23.820
+<v Speaker 0>And these distances here they're called residuals in in regression
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,80,100,100]}
+
+00:31:23.820 --> 00:31:24.660
+<v Speaker 0>terminology.
+
+NOTE CONF {"raw":[100]}
+
+00:31:25.260 --> 00:31:26.550
+<v Speaker 0>But these are the errors.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:27.310 --> 00:31:28.350
+<v Speaker 0>And we fit the line.
+
+NOTE CONF {"raw":[100,100,100,100,97]}
+
+00:31:28.350 --> 00:31:29.710
+<v Speaker 0>So that minimises the error.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:29.870 --> 00:31:32.630
+<v Speaker 0>So it actually minimises the same error function that we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:32.630 --> 00:31:33.510
+<v Speaker 0>minimising here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:31:33.830 --> 00:31:36.830
+<v Speaker 0>And you can actually show that certain architectures of neural
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:36.830 --> 00:31:39.590
+<v Speaker 0>networks are equivalent to linear regression.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:31:41.870 --> 00:31:48.190
+<v Speaker 0>And in statistics this is a moment based maximum entropy
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:31:48.270 --> 00:31:49.790
+<v Speaker 0>maximum likelihood estimator.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:50.150 --> 00:31:53.630
+<v Speaker 0>But that's sort of a yeah, sort of, you know,
+
+NOTE CONF {"raw":[100,57,100,100,64,89,100,100,100,100]}
+
+00:31:53.670 --> 00:31:55.230
+<v Speaker 0>if you're interested in that kind of thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:31:55.430 --> 00:31:59.070
+<v Speaker 0>So there's a connection to statistical estimation as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:32:00.870 --> 00:32:03.350
+<v Speaker 0>So this is of course no coincidence.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:03.390 --> 00:32:03.630
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[99]}
+
+00:32:03.670 --> 00:32:07.270
+<v Speaker 0>This error function was chosen to do something meaningful.
+
+NOTE CONF {"raw":[100,94,100,100,100,100,100,100,100]}
+
+00:32:07.270 --> 00:32:11.310
+<v Speaker 0>And that is something that occurs in other contexts such
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:11.310 --> 00:32:13.590
+<v Speaker 0>as regression or statistical estimation as well.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:15.190 --> 00:32:15.710
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[97]}
+
+00:32:16.870 --> 00:32:18.350
+<v Speaker 0>Let's go back to.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:18.790 --> 00:32:19.150
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:32:24.810 --> 00:32:25.250
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:25.250 --> 00:32:27.450
+<v Speaker 0>So now we're going to talk about gradient descent which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:27.450 --> 00:32:30.010
+<v Speaker 0>is at the heart of backpropagation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:30.490 --> 00:32:32.730
+<v Speaker 0>And I'll start with an intuition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:33.210 --> 00:32:36.010
+<v Speaker 0>So what we want to do now is to update
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:36.010 --> 00:32:38.450
+<v Speaker 0>the weights which I've written slightly differently.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:32:38.490 --> 00:32:38.730
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[84]}
+
+00:32:38.770 --> 00:32:45.730
+<v Speaker 0>So the weights now have two indices indicating the unit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:45.730 --> 00:32:46.130
+<v Speaker 0>that.
+
+NOTE CONF {"raw":[100]}
+
+00:32:48.530 --> 00:32:51.530
+<v Speaker 0>So this is unit j and this is unit I.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,93]}
+
+00:32:52.570 --> 00:32:54.890
+<v Speaker 0>So and the weight that connects the two is called
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:32:55.050 --> 00:32:56.650
+<v Speaker 0>w I j right.
+
+NOTE CONF {"raw":[100,100,100,96]}
+
+00:32:56.690 --> 00:32:58.130
+<v Speaker 0>We have a more complicated structure.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:58.130 --> 00:33:00.090
+<v Speaker 0>Everything has multiple weights.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:00.290 --> 00:33:03.610
+<v Speaker 0>So we need slightly more complicated indices.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:33:04.010 --> 00:33:07.330
+<v Speaker 0>So we update this w I j by taking the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:07.330 --> 00:33:12.330
+<v Speaker 0>previous uh weight w I j and adding a small
+
+NOTE CONF {"raw":[100,56,97,100,100,100,100,100,100,100]}
+
+00:33:12.330 --> 00:33:12.890
+<v Speaker 0>delta.
+
+NOTE CONF {"raw":[100]}
+
+00:33:13.010 --> 00:33:15.850
+<v Speaker 0>So at that abstract level, it's exactly the same thing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:15.850 --> 00:33:17.250
+<v Speaker 0>that we did for perceptrons.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:17.690 --> 00:33:19.730
+<v Speaker 0>So and now the question is of course how do
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100,100]}
+
+00:33:19.730 --> 00:33:21.250
+<v Speaker 0>we get our delta ij.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:33:22.130 --> 00:33:23.780
+<v Speaker 0>And the idea is.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:33:23.980 --> 00:33:26.860
+<v Speaker 0>So we have painstakingly defined this error function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:33:27.460 --> 00:33:29.580
+<v Speaker 0>Why don't we pick the why?
+
+NOTE CONF {"raw":[100,100,100,100,100,43]}
+
+00:33:29.620 --> 00:33:32.300
+<v Speaker 0>To minimise that error function function.
+
+NOTE CONF {"raw":[100,98,100,100,100,91]}
+
+00:33:33.460 --> 00:33:35.260
+<v Speaker 0>And how do you minimise functions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:35.740 --> 00:33:39.260
+<v Speaker 0>Well this is something that you should remember from high
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:39.260 --> 00:33:39.860
+<v Speaker 0>school math.
+
+NOTE CONF {"raw":[100,87]}
+
+00:33:40.980 --> 00:33:44.060
+<v Speaker 0>The derivative is very useful when you want to minimise
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:44.060 --> 00:33:44.460
+<v Speaker 0>functions.
+
+NOTE CONF {"raw":[100]}
+
+00:33:44.540 --> 00:33:47.660
+<v Speaker 0>That's also why we wanted the activation function to be
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:47.980 --> 00:33:51.700
+<v Speaker 0>differentiable, because otherwise it would be very hard to compute
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:51.700 --> 00:33:52.460
+<v Speaker 0>the derivative.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:53.180 --> 00:33:53.660
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:53.700 --> 00:33:57.260
+<v Speaker 0>So and this is exploited in a technique called gradient
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:57.260 --> 00:33:59.500
+<v Speaker 0>descent which takes the error function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:59.620 --> 00:34:01.540
+<v Speaker 0>So here it's a simple parabola.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:34:01.860 --> 00:34:04.260
+<v Speaker 0>And then on the y axis we have the error.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:04.260 --> 00:34:06.660
+<v Speaker 0>On the x axis we have the possible values for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:06.660 --> 00:34:07.140
+<v Speaker 0>the weight.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:07.500 --> 00:34:09.220
+<v Speaker 0>In this case it's just a single weight.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:09.460 --> 00:34:11.500
+<v Speaker 0>If you have multiple weights then this would be a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:11.500 --> 00:34:13.500
+<v Speaker 0>multi-dimensional space, right?
+
+NOTE CONF {"raw":[62,100,93]}
+
+00:34:13.500 --> 00:34:15.500
+<v Speaker 0>If you have two weights it will be three dimensional
+
+NOTE CONF {"raw":[100,100,100,100,100,89,78,100,100,100]}
+
+00:34:15.500 --> 00:34:16.060
+<v Speaker 0>and so on.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:17.100 --> 00:34:19.820
+<v Speaker 0>And we want to go to this point here where
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:19.820 --> 00:34:20.860
+<v Speaker 0>the error is minimal.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:34:21.139 --> 00:34:23.320
+<v Speaker 0>And then we take the weight at that point.
+
+NOTE CONF {"raw":[100,100,100,100,100,92,100,100,100]}
+
+00:34:24.159 --> 00:34:24.679
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[92]}
+
+00:34:25.080 --> 00:34:27.360
+<v Speaker 0>And of course we're starting with random weights.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:34:27.360 --> 00:34:31.600
+<v Speaker 0>We're initialising the weights in in a random way so
+
+NOTE CONF {"raw":[62,100,100,100,80,100,100,100,100,100]}
+
+00:34:31.600 --> 00:34:33.720
+<v Speaker 0>we can be anywhere on this parabola.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:34.120 --> 00:34:35.879
+<v Speaker 0>And we need to find the minimum.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:36.320 --> 00:34:36.639
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:34:36.679 --> 00:34:39.840
+<v Speaker 0>So and doing the step by step, let's say we're
+
+NOTE CONF {"raw":[100,100,100,62,100,100,100,97,100,100]}
+
+00:34:39.840 --> 00:34:40.360
+<v Speaker 0>starting here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:40.360 --> 00:34:43.480
+<v Speaker 0>And then we're moving towards the minimum.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:43.480 --> 00:34:44.639
+<v Speaker 0>And then we're stopping here.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:44.960 --> 00:34:48.280
+<v Speaker 0>This is called gradient descent because we're going along the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:48.280 --> 00:34:48.960
+<v Speaker 0>gradient.
+
+NOTE CONF {"raw":[100]}
+
+00:34:49.200 --> 00:34:52.760
+<v Speaker 0>So along the derivative to try and find the minimum.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:52.760 --> 00:34:56.440
+<v Speaker 0>And then we stop right when the error is minimal
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100,100,100,98]}
+
+00:34:56.879 --> 00:34:57.160
+<v Speaker 0>okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:57.200 --> 00:34:59.680
+<v Speaker 0>So this sounds great as a concept but how does
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:59.680 --> 00:35:01.240
+<v Speaker 0>it work in practice.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:01.680 --> 00:35:05.000
+<v Speaker 0>So as I've said the derivative is useful here because
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:35:05.000 --> 00:35:07.320
+<v Speaker 0>it indicates the rate of change of a function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:35:07.680 --> 00:35:12.160
+<v Speaker 0>So let's assume we have a function y equals f
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:12.160 --> 00:35:12.680
+<v Speaker 0>of x.
+
+NOTE CONF {"raw":[100,100]}
+
+00:35:12.880 --> 00:35:16.800
+<v Speaker 0>Then the derivative is dy dx and it indicates how
+
+NOTE CONF {"raw":[100,100,100,100,87,100,100,100,100,100]}
+
+00:35:16.880 --> 00:35:21.450
+<v Speaker 0>much the function how much y changes in response to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:21.490 --> 00:35:22.330
+<v Speaker 0>a change in X.
+
+NOTE CONF {"raw":[100,100,100,60]}
+
+00:35:23.410 --> 00:35:23.770
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:35:23.810 --> 00:35:28.330
+<v Speaker 0>So again if you remember from from high school hopefully
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:28.330 --> 00:35:31.730
+<v Speaker 0>that uh, if you have our function here in blue
+
+NOTE CONF {"raw":[100,68,100,100,100,100,100,100,100,100]}
+
+00:35:32.330 --> 00:35:35.170
+<v Speaker 0>then the derivative is a tangent line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:36.050 --> 00:35:42.370
+<v Speaker 0>Uh, and the slope of that line indicates the um
+
+NOTE CONF {"raw":[97,100,100,100,100,100,100,100,94,94]}
+
+00:35:42.410 --> 00:35:44.490
+<v Speaker 0>whether the function is going up or down.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:35:44.610 --> 00:35:46.890
+<v Speaker 0>Essentially the direction of change.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:35:48.970 --> 00:35:53.490
+<v Speaker 0>Uh, so we want to look at the slope or
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,72]}
+
+00:35:53.490 --> 00:35:55.450
+<v Speaker 0>gradient for our gradient descent.
+
+NOTE CONF {"raw":[100,100,94,100,100]}
+
+00:35:55.850 --> 00:35:56.090
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:35:56.130 --> 00:35:58.050
+<v Speaker 0>We want to move along the error function to find
+
+NOTE CONF {"raw":[100,100,100,100,100,100,74,100,100,100]}
+
+00:35:58.050 --> 00:35:59.810
+<v Speaker 0>the minimum bit by bit.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:03.210 --> 00:36:06.490
+<v Speaker 0>So and if the derivative is bigger than zero then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:06.490 --> 00:36:10.730
+<v Speaker 0>that implies that y increases as x increases.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:10.770 --> 00:36:11.050
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:36:11.090 --> 00:36:12.170
+<v Speaker 0>So we're going this way.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:12.770 --> 00:36:14.970
+<v Speaker 0>So we need to move in the opposite direction to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:14.970 --> 00:36:15.810
+<v Speaker 0>reach the minimum.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:17.130 --> 00:36:20.740
+<v Speaker 0>If the derivative is smaller than zero then y decreases
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:20.740 --> 00:36:21.940
+<v Speaker 0>as x increases.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:36:22.180 --> 00:36:23.460
+<v Speaker 0>So we're moving this way.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:36:23.580 --> 00:36:25.300
+<v Speaker 0>So we're moving towards the minimum.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:36:25.580 --> 00:36:27.900
+<v Speaker 0>So we need to keep increasing x.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,92]}
+
+00:36:30.060 --> 00:36:33.980
+<v Speaker 0>If the derivative is zero then we found the minimum
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:33.980 --> 00:36:37.900
+<v Speaker 0>or the maximum or a plateau where the function doesn't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:37.900 --> 00:36:38.300
+<v Speaker 0>change.
+
+NOTE CONF {"raw":[100]}
+
+00:36:41.820 --> 00:36:42.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:36:42.220 --> 00:36:45.060
+<v Speaker 0>So that brings us to the following idea.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:36:46.460 --> 00:36:48.900
+<v Speaker 0>If we want to move closer to the minimum then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:36:48.900 --> 00:36:50.820
+<v Speaker 0>we need to update our x value.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:36:50.980 --> 00:36:51.180
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[98]}
+
+00:36:51.220 --> 00:36:54.500
+<v Speaker 0>So the value here on the parabola from the old
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:36:54.500 --> 00:36:57.780
+<v Speaker 0>value minus the derivative.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:36:58.380 --> 00:37:01.660
+<v Speaker 0>And eta is again our learning rate.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:37:02.460 --> 00:37:02.700
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:02.740 --> 00:37:07.980
+<v Speaker 0>So either increase or decrease the x and okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,89,94]}
+
+00:37:08.020 --> 00:37:09.180
+<v Speaker 0>So that sounds good.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:09.220 --> 00:37:10.860
+<v Speaker 0>But how do we do this for our weights.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:37:11.580 --> 00:37:11.980
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:12.020 --> 00:37:13.140
+<v Speaker 0>Let's take stock first.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:13.140 --> 00:37:15.540
+<v Speaker 0>So we have looked at multilayer perceptrons.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:37:15.940 --> 00:37:18.340
+<v Speaker 0>We have looked at the learning rule here which is
+
+NOTE CONF {"raw":[82,82,100,100,100,100,100,100,100,100]}
+
+00:37:18.760 --> 00:37:21.520
+<v Speaker 0>essentially the same as our perception learning rule.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:37:22.000 --> 00:37:25.200
+<v Speaker 0>And now the delta y needs to tell us the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:25.200 --> 00:37:28.720
+<v Speaker 0>direction of the change and how much we need to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:28.720 --> 00:37:33.360
+<v Speaker 0>change each weight, and for that, we're hoping to set
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:33.360 --> 00:37:38.040
+<v Speaker 0>it up so that we follow our error function, and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:38.840 --> 00:37:42.600
+<v Speaker 0>the direction will be indicated by the slope, by the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:42.600 --> 00:37:45.920
+<v Speaker 0>gradient, by the derivative of that error function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100]}
+
+00:37:46.880 --> 00:37:47.160
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:47.200 --> 00:37:48.640
+<v Speaker 0>So how do we calculate this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:49.240 --> 00:37:54.880
+<v Speaker 0>And this is called the generalised delta rule or perceptron.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:55.040 --> 00:37:55.280
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[94]}
+
+00:37:55.320 --> 00:37:59.120
+<v Speaker 0>Or MLP update rule okay.
+
+NOTE CONF {"raw":[100,100,100,100,76]}
+
+00:37:59.360 --> 00:38:01.640
+<v Speaker 0>So this is just our error function again.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:38:04.480 --> 00:38:07.560
+<v Speaker 0>How do we compute the oh here.
+
+NOTE CONF {"raw":[100,100,100,100,100,86,100]}
+
+00:38:07.840 --> 00:38:08.080
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[99]}
+
+00:38:08.120 --> 00:38:14.800
+<v Speaker 0>The output we need to take our input UI.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,74]}
+
+00:38:14.960 --> 00:38:16.560
+<v Speaker 0>Apply the activation function.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:17.040 --> 00:38:20.530
+<v Speaker 0>This slightly complicated term is the sigmoid function, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,58]}
+
+00:38:20.570 --> 00:38:24.890
+<v Speaker 0>Where a is the constant and u is the input.
+
+NOTE CONF {"raw":[98,100,100,86,100,100,100,100,100,100]}
+
+00:38:25.650 --> 00:38:25.970
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:38:26.010 --> 00:38:31.250
+<v Speaker 0>So this gives us the the curvy threshold function here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,95,100,100,100]}
+
+00:38:35.090 --> 00:38:36.290
+<v Speaker 0>And how do we get the U.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:36.450 --> 00:38:39.130
+<v Speaker 0>Well as before we just do the weighted sum of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:39.130 --> 00:38:42.690
+<v Speaker 0>the inputs x is the input w I j is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,98,98,100]}
+
+00:38:42.690 --> 00:38:43.290
+<v Speaker 0>the weights.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:43.530 --> 00:38:45.330
+<v Speaker 0>So this u goes in here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:38:45.930 --> 00:38:47.650
+<v Speaker 0>This gives us the o.
+
+NOTE CONF {"raw":[100,100,100,100,98]}
+
+00:38:48.370 --> 00:38:50.770
+<v Speaker 0>And the o goes into the error function here.
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100]}
+
+00:38:56.170 --> 00:38:56.610
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[69]}
+
+00:38:56.650 --> 00:38:59.370
+<v Speaker 0>But how do we then turn this into a weight
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:59.410 --> 00:38:59.890
+<v Speaker 0>update.
+
+NOTE CONF {"raw":[100]}
+
+00:39:00.370 --> 00:39:03.570
+<v Speaker 0>Well we compute the difference between t and O as
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:03.570 --> 00:39:05.770
+<v Speaker 0>before the target and the output.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:39:07.170 --> 00:39:12.330
+<v Speaker 0>Then we look at the derivative of our input right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,96]}
+
+00:39:12.370 --> 00:39:16.570
+<v Speaker 0>So this is the this here the activation function we
+
+NOTE CONF {"raw":[100,100,100,71,100,100,100,100,100,100]}
+
+00:39:16.570 --> 00:39:17.620
+<v Speaker 0>look at the derivative.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:17.660 --> 00:39:21.940
+<v Speaker 0>This tells us which direction we're moving, whether we need
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:21.940 --> 00:39:26.180
+<v Speaker 0>to decrease or increase the weights, and then we multiply
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:26.180 --> 00:39:28.420
+<v Speaker 0>it by the input, which is x I j.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,99,61,79]}
+
+00:39:29.820 --> 00:39:31.700
+<v Speaker 0>Just like in the perceptron learning rule.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:32.420 --> 00:39:32.700
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:39:32.740 --> 00:39:36.540
+<v Speaker 0>So this is basically a fancier version of the perceptron
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:36.540 --> 00:39:39.540
+<v Speaker 0>learning rule where we've stuck in the derivative derivative.
+
+NOTE CONF {"raw":[100,100,100,66,100,100,100,65,96]}
+
+00:39:39.580 --> 00:39:45.580
+<v Speaker 0>Here f I ui to be able to figure out
+
+NOTE CONF {"raw":[96,74,75,97,100,100,100,100,100,100]}
+
+00:39:45.580 --> 00:39:47.220
+<v Speaker 0>which direction we should be moving in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:39:48.060 --> 00:39:51.460
+<v Speaker 0>So f f prime of UI is the derivative.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,100]}
+
+00:39:51.460 --> 00:39:53.060
+<v Speaker 0>So that's df over.
+
+NOTE CONF {"raw":[100,91,100,100]}
+
+00:39:53.100 --> 00:39:53.820
+<v Speaker 0>DUI.
+
+NOTE CONF {"raw":[96]}
+
+00:39:55.860 --> 00:39:59.900
+<v Speaker 0>DUI was our our input function.
+
+NOTE CONF {"raw":[95,98,76,99,100,100]}
+
+00:40:01.420 --> 00:40:04.100
+<v Speaker 0>And for the sigmoid function the derivative is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:40:04.100 --> 00:40:09.100
+<v Speaker 0>This is AF times f of ui times one minus
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:09.100 --> 00:40:09.860
+<v Speaker 0>f of UI.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:10.740 --> 00:40:16.800
+<v Speaker 0>Okay, so if we have this sigmoid as our activation
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:16.800 --> 00:40:21.240
+<v Speaker 0>function, then the derivative as promised, the derivative is really
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:21.240 --> 00:40:22.200
+<v Speaker 0>easy to compute.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:22.520 --> 00:40:25.000
+<v Speaker 0>So we can just plug this term in here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:40:27.520 --> 00:40:29.080
+<v Speaker 0>And then we're essentially done.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:29.640 --> 00:40:33.280
+<v Speaker 0>Um note that this is specific to this particular error
+
+NOTE CONF {"raw":[62,100,100,100,100,100,100,100,100,98]}
+
+00:40:33.320 --> 00:40:35.760
+<v Speaker 0>function and this particular activation function.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:36.400 --> 00:40:42.440
+<v Speaker 0>In the literature people have decided that other error functions
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,61]}
+
+00:40:42.440 --> 00:40:43.120
+<v Speaker 0>are also.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:43.480 --> 00:40:45.440
+<v Speaker 0>Other error functions are also useful.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:45.480 --> 00:40:46.000
+<v Speaker 0>Sorry.
+
+NOTE CONF {"raw":[100]}
+
+00:40:46.960 --> 00:40:50.520
+<v Speaker 0>Here we have assumed this function right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98]}
+
+00:40:50.560 --> 00:40:51.640
+<v Speaker 0>The mean squared error.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:52.040 --> 00:40:56.520
+<v Speaker 0>Other error functions are possible and we have assumed this
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:40:56.640 --> 00:41:00.760
+<v Speaker 0>activation function, but other activation functions are also possible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:41:01.200 --> 00:41:04.720
+<v Speaker 0>However, if we make these two assumptions mean squared error
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:04.720 --> 00:41:09.200
+<v Speaker 0>and sigmoid function, then we can compute the derivative like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:09.200 --> 00:41:09.520
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:41:09.520 --> 00:41:13.880
+<v Speaker 0>And our perceptron learning rule becomes really easy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:13.880 --> 00:41:14.010
+<v Speaker 1>See.
+
+NOTE CONF {"raw":[89]}
+
+00:41:15.730 --> 00:41:16.290
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:16.970 --> 00:41:19.450
+<v Speaker 0>In order to generalise this a little bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:41:19.490 --> 00:41:22.810
+<v Speaker 0>We take the blue bits here, which is the magnitude
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:22.810 --> 00:41:24.130
+<v Speaker 0>and the direction of the error.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:24.250 --> 00:41:24.570
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[94]}
+
+00:41:24.610 --> 00:41:27.010
+<v Speaker 0>So this is the magnitude and this is the direction
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:27.010 --> 00:41:27.650
+<v Speaker 0>of the error.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:41:28.890 --> 00:41:32.010
+<v Speaker 0>And we just write it as delta pi where p
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,82,100,100]}
+
+00:41:32.050 --> 00:41:35.850
+<v Speaker 0>is the pattern and is the the weight we're updating.
+
+NOTE CONF {"raw":[100,100,100,100,100,99,100,100,100,100]}
+
+00:41:36.490 --> 00:41:38.930
+<v Speaker 0>And this is known as the generalised delta rule.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100]}
+
+00:41:41.970 --> 00:41:44.850
+<v Speaker 0>And now we have one problem.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:45.490 --> 00:41:48.730
+<v Speaker 0>And this is really where sort of the all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:48.730 --> 00:41:50.730
+<v Speaker 0>magic happens in back propagation.
+
+NOTE CONF {"raw":[100,100,100,71,71]}
+
+00:41:51.610 --> 00:41:52.290
+<v Speaker 0>Let's see.
+
+NOTE CONF {"raw":[100,100]}
+
+00:41:53.410 --> 00:41:57.370
+<v Speaker 0>So let's here we've just substituted this by delta.
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100]}
+
+00:41:57.370 --> 00:41:58.690
+<v Speaker 0>But let's go one step back.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:41:59.330 --> 00:42:03.250
+<v Speaker 0>So let's try to actually compute these things.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:03.730 --> 00:42:08.130
+<v Speaker 0>So f prime of UI easy to compute right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97]}
+
+00:42:08.170 --> 00:42:13.660
+<v Speaker 0>We just need to to sum up the input times
+
+NOTE CONF {"raw":[100,100,100,78,100,97,65,100,100,79]}
+
+00:42:13.660 --> 00:42:14.140
+<v Speaker 0>the weight.
+
+NOTE CONF {"raw":[52,52]}
+
+00:42:14.820 --> 00:42:17.780
+<v Speaker 0>Take the derivative using this function here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:18.860 --> 00:42:19.380
+<v Speaker 0>Fine.
+
+NOTE CONF {"raw":[96]}
+
+00:42:20.100 --> 00:42:20.900
+<v Speaker 0>This here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:21.380 --> 00:42:22.820
+<v Speaker 0>Also easy to compute.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:23.340 --> 00:42:26.380
+<v Speaker 0>I just take the the target pattern and the output
+
+NOTE CONF {"raw":[100,100,100,64,100,100,100,100,100,100]}
+
+00:42:26.380 --> 00:42:27.580
+<v Speaker 0>and the difference.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:28.780 --> 00:42:32.740
+<v Speaker 0>So that is the case for let's say this unit
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:32.740 --> 00:42:34.860
+<v Speaker 0>here which has these inputs.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:35.100 --> 00:42:37.660
+<v Speaker 0>And I can just take in each case I can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:37.660 --> 00:42:39.980
+<v Speaker 0>take the the target.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:41.420 --> 00:42:43.700
+<v Speaker 0>So I know the target here.
+
+NOTE CONF {"raw":[100,81,100,100,100,100]}
+
+00:42:46.220 --> 00:42:47.500
+<v Speaker 0>And I can compute.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:48.660 --> 00:42:54.020
+<v Speaker 0>Uh no sorry I have written this the wrong way
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,100,100]}
+
+00:42:54.020 --> 00:42:54.380
+<v Speaker 0>around.
+
+NOTE CONF {"raw":[89]}
+
+00:42:55.180 --> 00:42:56.020
+<v Speaker 1>So sorry.
+
+NOTE CONF {"raw":[100,100]}
+
+00:42:58.300 --> 00:42:59.540
+<v Speaker 0>This is my input.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:00.020 --> 00:43:02.100
+<v Speaker 0>And then the output, let's say.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:02.460 --> 00:43:03.100
+<v Speaker 0>So the output.
+
+NOTE CONF {"raw":[93,79,100]}
+
+00:43:03.100 --> 00:43:04.620
+<v Speaker 0>So I and the target is here.
+
+NOTE CONF {"raw":[100,100,93,94,100,97,100]}
+
+00:43:04.620 --> 00:43:06.860
+<v Speaker 0>So I can just compute the difference.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:06.860 --> 00:43:08.500
+<v Speaker 0>And then I can update this weight.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:43:09.900 --> 00:43:12.220
+<v Speaker 0>But what if I want to update that weight.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:43:12.220 --> 00:43:12.240
+<v Speaker 0>Wait.
+
+NOTE CONF {"raw":[92]}
+
+00:43:14.240 --> 00:43:15.480
+<v Speaker 0>What is the problem there?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:15.960 --> 00:43:16.720
+<v Speaker 0>So here.
+
+NOTE CONF {"raw":[100,100]}
+
+00:43:17.640 --> 00:43:18.880
+<v Speaker 0>This weight is easy.
+
+NOTE CONF {"raw":[100,38,100,100]}
+
+00:43:19.000 --> 00:43:21.480
+<v Speaker 0>I plug in the O and the T.
+
+NOTE CONF {"raw":[100,100,100,100,93,100,100,100]}
+
+00:43:22.160 --> 00:43:23.320
+<v Speaker 0>If I want to update that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:23.320 --> 00:43:26.840
+<v Speaker 0>Wait, do I have an output here?
+
+NOTE CONF {"raw":[61,100,100,100,100,100,100]}
+
+00:43:27.760 --> 00:43:28.920
+<v Speaker 0>Do I have a target here?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:29.640 --> 00:43:31.760
+<v Speaker 0>Output is actually possible to compute right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,78]}
+
+00:43:31.800 --> 00:43:33.520
+<v Speaker 0>It's just the the weighted sum.
+
+NOTE CONF {"raw":[100,100,48,91,100,100]}
+
+00:43:34.320 --> 00:43:35.640
+<v Speaker 0>But I don't have a target.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:36.200 --> 00:43:36.400
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[96]}
+
+00:43:36.440 --> 00:43:39.520
+<v Speaker 0>It's a hidden unit and it's called hidden unit because
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:39.520 --> 00:43:43.040
+<v Speaker 0>it's not directly connected to the inputs X or the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:43.040 --> 00:43:44.400
+<v Speaker 0>outputs O or y.
+
+NOTE CONF {"raw":[100,99,100,100]}
+
+00:43:45.760 --> 00:43:47.400
+<v Speaker 0>And that means I don't have a target.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:47.400 --> 00:43:48.520
+<v Speaker 0>So how can I learn.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:50.080 --> 00:43:52.520
+<v Speaker 0>So that's the problem with the hidden units right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,96]}
+
+00:43:52.560 --> 00:43:57.120
+<v Speaker 0>So here if I adjust the weight that's directly connected
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:57.120 --> 00:43:59.560
+<v Speaker 0>to an output unit, then I know the correct answer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:00.080 --> 00:44:02.240
+<v Speaker 0>If I want to adjust the weight that's connected to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:02.240 --> 00:44:04.680
+<v Speaker 0>a hidden unit, then I don't know the correct answer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:05.680 --> 00:44:10.720
+<v Speaker 0>And the idea is to distribute, to take the errors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:10.720 --> 00:44:12.250
+<v Speaker 0>from here and distribute them.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:14.530 --> 00:44:16.490
+<v Speaker 0>Distribute them across all the inputs.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:17.890 --> 00:44:21.010
+<v Speaker 0>So this is what backpropagation does, right?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91]}
+
+00:44:21.050 --> 00:44:26.010
+<v Speaker 0>You you compute all the outputs at each at each
+
+NOTE CONF {"raw":[71,82,100,100,100,100,100,100,100,100]}
+
+00:44:26.010 --> 00:44:26.330
+<v Speaker 0>unit.
+
+NOTE CONF {"raw":[100]}
+
+00:44:26.330 --> 00:44:27.210
+<v Speaker 0>So here and here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:27.890 --> 00:44:30.050
+<v Speaker 0>And then you can compute the error.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:44:30.770 --> 00:44:31.010
+<v Speaker 1>At.
+
+NOTE CONF {"raw":[100]}
+
+00:44:31.010 --> 00:44:31.770
+<v Speaker 0>This point.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:31.770 --> 00:44:34.570
+<v Speaker 0>And you take the error at this point to also
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:34.570 --> 00:44:36.130
+<v Speaker 0>adjust the errors at that point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:37.170 --> 00:44:42.770
+<v Speaker 0>So that seems a bit magic but it's actually relatively
+
+NOTE CONF {"raw":[100,72,100,100,100,100,100,100,100,100]}
+
+00:44:42.770 --> 00:44:43.370
+<v Speaker 0>straightforward.
+
+NOTE CONF {"raw":[100]}
+
+00:44:43.370 --> 00:44:46.850
+<v Speaker 0>So let's start with the generalised delta rule.
+
+NOTE CONF {"raw":[100,100,100,100,100,97,100,100]}
+
+00:44:47.050 --> 00:44:51.690
+<v Speaker 0>So remember we want to compute delta w I j.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:52.530 --> 00:44:55.170
+<v Speaker 0>And this is our delta which is our update times
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:55.170 --> 00:44:56.930
+<v Speaker 0>the learning rate times the input.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:57.810 --> 00:45:02.370
+<v Speaker 0>And we've computed the delta by taking the difference between
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:02.370 --> 00:45:05.050
+<v Speaker 0>the target and the output and the derivative to know
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:05.050 --> 00:45:06.650
+<v Speaker 0>which direction we need to move on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:07.210 --> 00:45:09.210
+<v Speaker 0>So this doesn't work for hidden units.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:09.290 --> 00:45:11.460
+<v Speaker 0>So what do we do for hidden units instead?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:11.820 --> 00:45:14.260
+<v Speaker 0>For hidden units instead of the arrow here in blue?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100,100,100]}
+
+00:45:14.780 --> 00:45:20.340
+<v Speaker 0>We compute the error at the previous layer and weighted
+
+NOTE CONF {"raw":[100,100,100,79,100,100,100,100,100,100]}
+
+00:45:20.340 --> 00:45:23.100
+<v Speaker 0>by the weights, and sum this all up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:23.580 --> 00:45:28.260
+<v Speaker 0>So let's assume we have more outputs here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:34.900 --> 00:45:39.380
+<v Speaker 1>Uh one two.
+
+NOTE CONF {"raw":[93,100,100]}
+
+00:45:40.780 --> 00:45:45.100
+<v Speaker 0>So we can compute the delta here and here right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,87]}
+
+00:45:45.140 --> 00:45:45.700
+<v Speaker 0>That's easy.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:45.700 --> 00:45:48.780
+<v Speaker 0>We can use the first equation here because we have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:48.780 --> 00:45:49.500
+<v Speaker 0>the targets.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:50.140 --> 00:45:51.540
+<v Speaker 0>So here we have a target.
+
+NOTE CONF {"raw":[100,100,100,100,45,100]}
+
+00:45:51.540 --> 00:45:52.540
+<v Speaker 0>Here we have a target.
+
+NOTE CONF {"raw":[100,100,100,95,100]}
+
+00:45:53.100 --> 00:45:54.860
+<v Speaker 0>And that gives us these two deltas.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:57.020 --> 00:45:59.860
+<v Speaker 0>But let's assume we want to adjust this weight here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:00.860 --> 00:46:04.860
+<v Speaker 0>Then what we do is instead of relying on the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:04.860 --> 00:46:09.280
+<v Speaker 0>output we take the deltas from here and from here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:09.920 --> 00:46:13.520
+<v Speaker 0>and we add these deltas and each of them weighted
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:13.520 --> 00:46:15.120
+<v Speaker 0>by the connection.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:46:15.360 --> 00:46:18.360
+<v Speaker 0>So basically we're saying okay so you have a certain
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:18.800 --> 00:46:19.800
+<v Speaker 0>output at this point.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:19.800 --> 00:46:22.280
+<v Speaker 0>And this output depends on these weights.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:22.680 --> 00:46:25.600
+<v Speaker 0>And these weights are responsible for the error to some
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:25.600 --> 00:46:26.120
+<v Speaker 0>extent.
+
+NOTE CONF {"raw":[100]}
+
+00:46:26.280 --> 00:46:26.520
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:46:26.560 --> 00:46:29.440
+<v Speaker 0>This weight is responsible for the error at this output.
+
+NOTE CONF {"raw":[100,92,100,100,100,100,100,97,100,100]}
+
+00:46:29.480 --> 00:46:32.000
+<v Speaker 0>This is responsible for the error this output.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:46:32.120 --> 00:46:37.000
+<v Speaker 0>And we take these errors in terms of the deltas.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:37.240 --> 00:46:39.600
+<v Speaker 0>And we sum them up to compute the weight update
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:39.600 --> 00:46:40.840
+<v Speaker 0>here okay.
+
+NOTE CONF {"raw":[100,84]}
+
+00:46:40.880 --> 00:46:44.440
+<v Speaker 0>So we basically distribute the error over all the previous
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:44.840 --> 00:46:46.360
+<v Speaker 0>over the whole previous layer.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:46.960 --> 00:46:49.640
+<v Speaker 0>So this is this is why we're writing here delta
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:49.640 --> 00:46:50.000
+<v Speaker 0>k.
+
+NOTE CONF {"raw":[100]}
+
+00:46:50.560 --> 00:46:53.480
+<v Speaker 0>So this is the delta of the previous layer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:54.160 --> 00:46:58.360
+<v Speaker 0>And we update this by the weight between I which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,89,100]}
+
+00:46:58.360 --> 00:47:00.840
+<v Speaker 0>is the current the current weight we're updating.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:01.360 --> 00:47:04.280
+<v Speaker 0>And this k that the delta belongs to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:04.560 --> 00:47:06.360
+<v Speaker 0>And we sum this this up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:47:06.360 --> 00:47:10.450
+<v Speaker 0>So over here we sum up over the over the
+
+NOTE CONF {"raw":[97,55,100,100,100,100,100,100,100,100]}
+
+00:47:10.450 --> 00:47:14.050
+<v Speaker 0>deltas and so we can get a delta at this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,91,100,100,100]}
+
+00:47:14.050 --> 00:47:14.450
+<v Speaker 0>point.
+
+NOTE CONF {"raw":[100]}
+
+00:47:14.570 --> 00:47:16.330
+<v Speaker 0>We're basically distributing the blame.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:16.930 --> 00:47:17.170
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[97]}
+
+00:47:17.210 --> 00:47:19.610
+<v Speaker 0>We know that at some point there is the output.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:19.610 --> 00:47:21.370
+<v Speaker 0>And at that point we know the error.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:21.530 --> 00:47:24.770
+<v Speaker 0>But we're distributing this across all the units that were
+
+NOTE CONF {"raw":[100,62,100,100,100,100,100,100,100,100]}
+
+00:47:24.770 --> 00:47:26.570
+<v Speaker 0>involved in generating this output.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:28.090 --> 00:47:28.570
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[97]}
+
+00:47:28.810 --> 00:47:31.090
+<v Speaker 0>And we call this delta AI.
+
+NOTE CONF {"raw":[100,100,100,100,99,61]}
+
+00:47:31.890 --> 00:47:35.290
+<v Speaker 0>So now we have a version of this update that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:35.290 --> 00:47:37.730
+<v Speaker 0>we can apply to the output units and to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:37.730 --> 00:47:38.490
+<v Speaker 0>hidden units.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:40.690 --> 00:47:41.050
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:41.090 --> 00:47:42.610
+<v Speaker 0>So this is a lot to take in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:47:42.730 --> 00:47:48.010
+<v Speaker 0>But we have a few minutes for a quick quiz.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:53.090 --> 00:47:53.530
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:53.570 --> 00:47:58.690
+<v Speaker 0>So let's actually let's skip this just in the interest
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:58.690 --> 00:47:59.250
+<v Speaker 0>of time.
+
+NOTE CONF {"raw":[100,100]}
+
+00:47:59.570 --> 00:48:02.530
+<v Speaker 0>So I have written down the different delta rules here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:02.930 --> 00:48:05.850
+<v Speaker 0>And I would like you to associate them with the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:05.850 --> 00:48:06.450
+<v Speaker 0>correct.
+
+NOTE CONF {"raw":[100]}
+
+00:48:07.900 --> 00:48:08.580
+<v Speaker 0>expression.
+
+NOTE CONF {"raw":[100]}
+
+00:48:08.580 --> 00:48:10.020
+<v Speaker 0>So Delta rule for hidden units.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:48:10.180 --> 00:48:11.620
+<v Speaker 0>Delta rule for output units.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:12.020 --> 00:48:15.500
+<v Speaker 0>That rule for the perceptron, which we've seen from last
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:48:15.500 --> 00:48:15.860
+<v Speaker 0>time.
+
+NOTE CONF {"raw":[100]}
+
+00:48:22.420 --> 00:48:26.620
+<v Speaker 0>I have left out the ETA the the learning rate.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:46.100 --> 00:48:46.500
+<v Speaker 1>Or.
+
+NOTE CONF {"raw":[90]}
+
+00:48:54.300 --> 00:48:55.060
+<v Unknown>Something like that.
+
+NOTE CONF {"raw":[90,83,91]}
+
+00:48:57.580 --> 00:48:58.180
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:48:58.180 --> 00:49:01.300
+<v Speaker 0>Let's quickly look at the correct answer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,90]}
+
+00:49:01.300 --> 00:49:03.020
+<v Speaker 0>So most people got this correct.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:03.620 --> 00:49:07.160
+<v Speaker 0>This is the one for Uh.
+
+NOTE CONF {"raw":[100,100,100,100,100,94]}
+
+00:49:09.760 --> 00:49:11.240
+<v Speaker 0>This is the one for the hidden units.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:49:11.240 --> 00:49:13.200
+<v Speaker 0>This is the one for the perceptron, which doesn't have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:13.200 --> 00:49:14.240
+<v Speaker 0>the derivative in it.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:14.480 --> 00:49:16.160
+<v Speaker 0>And this is the one for the output.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:49:18.480 --> 00:49:21.240
+<v Speaker 0>Okay, so we're out of time, but I'll leave you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:21.240 --> 00:49:28.120
+<v Speaker 0>with a, uh, quick animation.
+
+NOTE CONF {"raw":[100,100,84,100,100]}
+
+00:49:28.120 --> 00:49:28.760
+<v Speaker 0>So why?
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:29.360 --> 00:49:31.520
+<v Speaker 0>Why is this even called backpropagation?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:32.160 --> 00:49:32.400
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[92]}
+
+00:49:32.400 --> 00:49:33.600
+<v Speaker 0>You might have been wondering.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:34.400 --> 00:49:36.600
+<v Speaker 0>Uh, and this you can, you can illustrate with an
+
+NOTE CONF {"raw":[75,100,100,100,100,100,100,100,100,100]}
+
+00:49:36.600 --> 00:49:37.760
+<v Speaker 0>animation quite easily.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:49:37.760 --> 00:49:39.600
+<v Speaker 0>So we have our input.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:39.760 --> 00:49:42.240
+<v Speaker 0>This is the axis here x1, x2, x3.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:49:42.520 --> 00:49:45.400
+<v Speaker 0>You have your output y which is your prediction.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:49:45.880 --> 00:49:48.480
+<v Speaker 0>And then you have the correct output which we've called
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,95]}
+
+00:49:48.520 --> 00:49:48.800
+<v Speaker 0>t.
+
+NOTE CONF {"raw":[97]}
+
+00:49:49.160 --> 00:49:50.640
+<v Speaker 0>And the difference is the error.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:51.200 --> 00:49:55.280
+<v Speaker 0>So you start by doing forward propagation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:55.320 --> 00:49:55.520
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:49:55.560 --> 00:49:59.320
+<v Speaker 0>So you you compute the output at this layer at
+
+NOTE CONF {"raw":[98,92,100,100,100,79,100,100,100,100]}
+
+00:49:59.320 --> 00:50:00.840
+<v Speaker 0>the second layer third layer.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:50:01.480 --> 00:50:03.760
+<v Speaker 0>And then you get the overall output.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:50:04.120 --> 00:50:06.090
+<v Speaker 0>This allows you to calculate your error.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:50:06.970 --> 00:50:08.850
+<v Speaker 0>And then you.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:50:11.410 --> 00:50:14.730
+<v Speaker 0>You do the update here at the output right which
+
+NOTE CONF {"raw":[92,100,100,83,100,100,100,100,97,100]}
+
+00:50:14.730 --> 00:50:16.770
+<v Speaker 0>is just error minus output t minus.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:50:16.810 --> 00:50:17.050
+<v Speaker 0>Oh.
+
+NOTE CONF {"raw":[52]}
+
+00:50:17.690 --> 00:50:22.690
+<v Speaker 0>And then the updates here at the hidden layers you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:22.690 --> 00:50:26.050
+<v Speaker 0>do by taking the deltas right.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:50:26.090 --> 00:50:27.010
+<v Speaker 0>So you go back.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:27.570 --> 00:50:31.330
+<v Speaker 0>So you basically do forward propagation to calculate calculate the
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:50:31.330 --> 00:50:31.570
+<v Speaker 0>error.
+
+NOTE CONF {"raw":[100]}
+
+00:50:31.570 --> 00:50:35.330
+<v Speaker 0>And then you do back propagation in the opposite direction
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:36.650 --> 00:50:38.010
+<v Speaker 0>to calculate the output.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:50:39.330 --> 00:50:42.810
+<v Speaker 0>This is the learning algorithm and I'm afraid we're out
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:50:42.810 --> 00:50:43.290
+<v Speaker 0>of time.
+
+NOTE CONF {"raw":[100,100]}
+
+00:50:44.370 --> 00:50:46.050
+<v Speaker 0>Uh I'll skip the remaining quiz.
+
+NOTE CONF {"raw":[43,100,100,100,100,100]}
+
+00:50:47.010 --> 00:50:47.810
+<v Speaker 0>Thank you very much.
+
+NOTE CONF {"raw":[100,100,100,100]}
