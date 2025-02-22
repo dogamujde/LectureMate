@@ -1,0 +1,849 @@
+Okay.
+Welcome to the first lecture of week nine.
+Before we start, this is the Attendance Book club.
+So I will be putting on the one for the
+problems of today shortly.
+But before we start that, there is a short announcement,
+which is that the School of Mathematics is running some
+exam preparation and effective revision, or the other way around.
+I don't remember workshops which are running from the 20th
+of November.
+So approximately a week from now up until the 29th,
+you can register there is a link which, , which
+Andreas is going to share on the learn page.
+So my job here at the moment is just telling
+you that, , just keep an eye out on learn
+for the announcement if you're interested.
+It can be useful if you're struggling with the organisational
+aspect of, , preparing for your exams.
+Okay.
+Having said that, let's, , have a quick look at
+the outline for today.
+, in the meantime, I'm going to switch the book
+club behind the scenes.
+There we go.
+So now the book club is no longer the attendance.
+This one should be.
+If it comes out, yes, this one should be the
+one for the problems of today.
+So if you could scan it in the meantime, that'd
+be great.
+Okay, in the meantime, this week, as you've seen from
+the from the reading, we have two slightly different things
+to juggle.
+The first one is the concept of similarity for matrices,
+which is an interesting concept in itself.
+, we will talk a little bit more about why
+similarity is interested as an equivalence relation, and how ,
+theoretical algebra, , thing in terms of, , equivalence relations.
+But it's also interesting because similar matrices share quite a
+long list of property among themselves.
+And we can then exploit similarity to say something interesting
+about about those matrices.
+And instead tomorrow we will tackle the other main topic
+of the reading of this of this week, which has
+more to do about, , sort of, , extension of
+the similarity procedures that we have seen.
+We're now familiar with how to calculate eigenvectors and eigenspaces,
+, for matrices of, , any, any size, any square
+size through the characteristic polynomial.
+And we will generalise the concept of eigenvectors to eigenspaces.
+and we will give some equivalence relation between, , between
+those two.
+, definitions that we've seen one in this week and
+one a couple weeks ago.
+And in particular the concept of multiplicity will come out
+and we will relate it with what you already already
+know.
+So this is the, , sort of a bird's eye
+view of the content of the week.
+, okay, let's have a look.
+This is the same book club.
+Hopefully.
+Yes.
+The code is still the same.
+And today, instead of jumping right into an exercise, I
+thought that, , given that the central concept will be
+similarity, let's give it a definition first.
+I'm sure you remember it, but, , two matrices are
+similar, and we write a tilde B if it is
+an invertible matrix P such that.
+The second matrix in the in the similarity b can
+be written as p minus one, a p, and.
+I hope it was clear from the reading and from
+the video that I've made in the in the reading
+section.
+, this this definition has a little bit of flexibility
+built in it because the similarity is, , symmetric.
+So if A similar to b, b is similar to
+a.
+And so we could actually rewrite that that expression as
+a equal p minus 1ABP that is an equivalent version
+of that.
+And because p is invertible p minus one is invertible
+as well.
+And so we can also rewrite that as b equals
+p a p minus one.
+They're all equivalent version.
+But the original one that we've seen from the from
+the book Was was this one.
+Okay.
+And, , just a quick example of how we calculate
+the similar matrix.
+Well, I put this example just to show you that,
+, , similar matrices do not share structure between themselves.
+So by choosing this, , , this matrix A and
+this and this invertible matrix P, we can move A
+to another matrix B, which is this one here, and
+B is lower triangular and A was not.
+So , similarity preserves a lot of characteristic of the
+matrix.
+, but , not the structure in general.
+So it is , , it is interesting.
+It's not that if we move from one matrix to
+a similar one, we are not really doing anything.
+And if you've watched the video, I make the point
+that similarity moves between different matrix representation of the same
+linear transformation.
+And what I mean by that is that, , linear
+transformations are the fundamental concept of linear algebra, and matrices
+express linear transformations in terms of a specific base.
+And so what we're doing when we pass from one
+matrix to the other with the similarity, we are rephrasing
+the same linear transformation acting on our n into
+from one, from the expression in one base to the
+expression to the other base, and the matrix that allows
+us to move from the basis of the first, ,
+sorry, from the vectors of the first space to the
+vector of the second base we've seen is p minus
+one.
+And we know that because p minus one is the
+matrix that moves the eigenvectors of the matrices.
+We'll see more about that a little bit later.
+But this was the two minute summary of what we're
+trying to do and why we're trying, and why
+matrix similarity is interesting at its core.
+Okay.
+, having done the introduction, we have five exercises today.
+One is, , just last, last week with the
+tiered exercises.
+I will ask you to, , pick and choose the
+level that you feel comfortable dealing with.
+, one is a new addition, which is a brainstorming
+exercises.
+We will reuse a reconstruction of the proof.
+But the first one that we start with is something
+that, , we've always used.
+It's a good old, , number of statements that, ,
+you need to, .
+You need to analyse and tell me if they're true
+or not.
+And they're all based on the similarity definition.
+And so let's try to build an understanding on how,
+, matrix similarity and more generally, , equivalence relation work.
+Okay.
+So there's five of them.
+They should be fairly, fairly straightforward.
+, I'll just come around very quickly to check that
+everything is working out for you.
+And then we can we can go through them together.
+Okay, I can see the book club is working and
+everything is working fine from the IT side of things.
+As usual, try and discuss share ideas, especially if you
+disagree with your neighbours.
+That's, , that's the best case scenario, because then, ,
+at least 50% of you will learn something new.
+Okay, I see I have almost 60 answers already, so
+I would invite those of you who are still submitting
+them, , to put in your answer, lock them in
+and let's have a look.
+, okay.
+Great response rate for the first one.
+, I made it too simple, Probably.
+And then you think, broadly speaking, that three and 5th
+May be, , may be correct.
+And two and four are definitely not, not, not the
+right one.
+And I didn't specify this, but I hope it was
+clear by notation.
+When I have the similarity crossed out, just as equal
+becomes not equal to the tilde crossed would mean
+b in the second case a not similar to be.
+Okay.
+, okay.
+The first statement you've identified, 97% got this right.
+It's true.
+, we have shown that the proof for transitivity, and
+we know that transitivity is, , property of, , equivalence
+relations.
+, I've just copy pasted the proof from my video
+here.
+, there is just one, , little bit that we
+need to, that we need to add in that transitivity
+is done for normally two pairs of matrices.
+So the transitivity is normally expressed as a similar to
+b be similar to see A similar to c.
+Here we're skipping one step more.
+We're doing a similar to b b similar to c
+c similar to d a similar to d, but you
+can just repeat the same proof twice to extend to
+as many to as many matrices you to .
+Okay, so nothing.
+Nothing particularly nothing particularly deep here.
+It's just the same proof all over again.
+And you get to the to the result.
+A little bit more interesting was probably this one.
+If A is the not similar to B, and B
+is not similar to C, then A is not similar
+to C and only between a quarter and a third
+of you think this is true?
+, can someone from the majority, from the people that
+answered that this is false?
+Give me a quick reason why they think so.
+Yeah.
+Well, this is false because it is true that the
+contrapositive would be true.
+And we are we would be saying if A is
+similar to C, then it k is similar to any
+matrix B.
+Yes.
+Yeah.
+So you're right.
+That is one way of seeing it.
+If we know that this is equivalent to the contrapositive
+statement, which would be if A is similar to C
+because that's the negation of what's on the right hand
+side, then the negation of what's on the left hand
+side is true.
+And so we would be saying if A similar to
+C, then A must also be similar to B, which
+is a random matrix that doesn't appear in the hypothesis.
+And so that that's a that's a nice giveaway that
+this must in fact be be false.
+And it is.
+I was going along slightly different lines here, and the
+point that I was trying to make is that, ,
+if transitivity works for a property, it doesn't necessarily mean
+that it works for the opposite property.
+Okay.
+So we have proven that, , that, , , that
+being similar to is a transitive property.
+That doesn't imply that not being similar, , also has
+that property.
+And that is true in general.
+It goes way beyond, , matrix similarity.
+It's true for any possible, , an equivalence relation that
+you will find in mathematics.
+And , you can also construct a very simple counterexample
+in which you pick a equal to C, , and
+b a matrix that's not similar to A and therefore
+not, not similar to C because they're the same matrix.
+And then if two matrices are similar then obviously sorry.
+If two matrices are the same then they're obviously similar
+because you can pick the matrix P that moves from
+the that moves you from one to the other state
+entity matrix okay.
+If A is invertible, then a b similar to be
+a for all b.
+Here we have a split down the middle.
+Almost only 58%.
+thinks that this is true.
+, so maybe I'll give you one more minute to
+discuss.
+If you have anyone in your neighbourhood that is, ,
+that is not convinced one way or the other, you
+can try and change their mind very quickly, given that
+we're roughly down the middle.
+, and then we'll do it.
+We'll do it together.
+Okay, just with the raising of hands now, just to
+see how percentages have shifted.
+, those who think that number three is true.
+Now, if number three is true.
+Okay, I see two hands, so we don't have big
+statistics to see if that 50% has moved.
+Who thinks it's false?
+I see four hands.
+, I don't think we can draw any statistically relevant
+conclusion with that.
+, so let's have a look.
+, let's have a look at that.
+It's true.
+, it seems that it has shifted more towards the
+false side, but it's actually true.
+, this one was, , I think I took this
+one from one of the exercises at the end of
+the chapter.
+, why is it true?
+Well, , then we want to write this thing here,
+right?
+BA equals p minus one ab for, , times, P
+for some appropriate p Invertible.
+But, , here the thing is that we can pick
+p equal to A because A is invertible, and invertibility
+is everything that is needed for a P to be
+picked.
+And if we do that, that equation here, which is
+what we need to prove again, look at how we've
+how we're formulating this.
+We need to prove that this is correct.
+But we are free to choose P however we .
+If we choose p equal to A, then well the
+left hand side stays the same, but the right hand
+side becomes a minus one a which go away and
+then BP becomes ba.
+So ba ba which is always true.
+And so for that specific choices of p because this
+one is true.
+This one also needs needs to be true.
+And thus , , and thus satisfy the condition of
+similarity between these two matrices.
+Okay.
+And note that, , there can be any shenanigan going
+on with the dimensions because A is invertible, so it's
+square.
+And , therefore, , that, , thing makes sense from
+a dimensional point of view as well.
+Okay.
+This one is interesting.
+At least I found it interesting.
+, if A similar to B and C is similar
+to D, then we can sum or subtract the matrices.
+And most of you want to know, and I'd be
+curious to hear from someone who says no.
+Well, your thought process is.
+You are correct.
+The answer to this is false.
+This is not true in general, but it's one of
+those that, , they're quite tricky to prove.
+In fact, I tried to come up with a explicit
+counterexample and I didn't find one very easily.
+So because I was expecting this to be more mixed.
+But you all seem confident that it's false.
+So how?
+I'm genuinely curious how how you got that.
+And very quickly.
+Anyone?
+Okay.
+Well, , the way I, I went about doing that
+was, , was to write explicitly to, to the two
+conditions and note that, , , in general, the matrix
+that allows us to pass from A to B under
+similarity and from C to D and the similarity, they're
+not the same matrix.
+Right.
+We cannot suppose in these two writings here that p
+is equal to q to to q.
+So we can't collect.
+We can collect p and q there.
+The problem with this proof is it looks it's
+a sound proof, but it's incomplete because there could be
+another matrix that is not neither p nor q.
+Another matrix U such that a plus c is equal
+to u b plus or minus d u minus one,
+and proving that that that matrix does not exist is
+actually quite hard.
+So I decided not to include that.
+But your intuition is correct in the sense that, ,
+, you can't , you can straight up collect that.
+And for that reason in general, there is some requirement
+between the the P and the Q that allow you
+to pass between the two pairs of matrices.
+, for this to work.
+Okay.
+And finally, there is no matrix similar to the zero
+matrix.
+You know that a0.
+, I pick it to be the matrix in which
+will all entries are zero, and, .
+Okay.
+And, , you're about in the middle, except, , slim
+majority of you thinks it's true.
+And this is actually false.
+oh.
+I wrote true, but, .
+But but it's false.
+And, , the zero matrix is similar only to itself.
+And you can see that because if you try to
+write out the definition, if you put a zero matrix
+in between these two matrices here.
+, well, the zero matrix multiply everything to zero.
+So if you're trying to do a matrix multiplication that
+involves the matrix, all you're going to get is the
+zero matrix itself.
+So, , this one, , perhaps I should have
+phrased it as there is no other matrix similar to
+the zero matrix, in the sense that the zero matrix
+is only similar, , to itself.
+Okay.
+Do you have any questions about any of these statements
+or any of the properties that we've seen about matrix
+similarity, anything at all?
+Nope.
+Okay.
+In that case, let's move on to, , question number
+two, which is the oh, this is showing the correct
+order.
+Excellent.
+, which was the proof.
+, this was the proof of, , I don't remember
+the number of the theorem, but it's one of the
+theorems in the book.
+And the reason why I have you reordering the proof
+is not for the proof itself, which is quite, ,
+quite standard.
+I just want to make a few comments along the
+way when we when we go over the proof together,
+why some of the steps need to be in this
+order and not another order.
+And also this proof has, , the pleasant property that,
+unlike the ones from the last two times, there's only
+one sort of correct solution into the to the reordering
+assignment.
+So I'll give you a couple of minutes to work
+through it.
+, ideally, I would you to focus on the
+relation between the the subsequent steps.
+, I don't particularly mind if you get a few
+wrong, but really trying to focus your attention on why
+does this step necessarily follow this one?
+Why does this step.
+Why can't this step go before this one?
+Okay.
+Try to reconstruct so that the logical flow of things.
+Oh.
+It's usual.
+, , this gas compare.
+.
+Very welcome.
+So if you want to jot it down for your
+reference.
+This is a part of the proof of theorem 5.5.1.
+So if you if you need to have a look
+at it later, you can find it quickly.
+Slowly trying to make her way through the proof.
+.
+Well, this one isn't at this point.
+One isn't really saying anything, is it?
+We're just, , clearly stating what we need to prove.
+What's our thesis?
+, we we are assuming the two matrices are similar,
+and we want to show that they have the same
+eigenvalues.
+And I just wrote out, , wrote out the set
+of the two, , of the eigenvalues of the two
+matrices.
+Okay.
+.
+What the first.
+Let's have a look at the first, , , real
+step of the proof, which is step two, which, .
+It's a sleight of hand.
+Instead of proving something.
+We're proving something else that implies what we want to
+prove.
+Once again, a classic trick in mathematical proof.
+Because the eigenvalues, the eigenvalues are the roots of the
+characteristic polynomial.
+If we show that the matrices have the same characteristic
+polynomial, , two polynomials that are the same will have
+the same roots, of course, and so the two matrices
+will have the same eigenvalues.
+So this was the first point that I wanted to,
+, to hammer home.
+, this is , prove something else instead.
+That then automatically proves what you want.
+In fact, in this proof, we won't even talk about,
+, eigenvalues anymore.
+We just limit the discussion to about eigenvalues two, noting
+that two implies one.
+Okay.
+And then we forget completely about eigenvalues, which I thought
+was really interesting because in principle you think that this
+proof is just messing around with eigenvalues until you get
+something useful out of them.
+Okay.
+Step number three doesn't really add much to that.
+It's just the definition of what the characteristic polynomial polynomial
+is.
+And now we feed into this into this definition the
+hypothesis of the of the of the theorem.
+Now we know that be similar to a and so
+this a here can be written as the similarity
+definition as a function of b.
+This step I want to break down into two.
+But then I left it in just because the identity
+matrix is so is so simple.
+What I've done here is I multiplied only the last
+term here to the right by p minus one p,
+which is the identity.
+So I'm not really changing that term anymore because here
+what I'm saying is x minus x identity is equal
+to minus x identity times the identity.
+Again because the identity is essentially just multiplying by
+one.
+And then I say because the identity I can write
+that second identity as p minus one p by the
+definition of the inverse.
+And now the identity matrix commutes with every other matrix.
+So what was originally x I p minus one p
+becomes x p minus 1IP.
+Okay.
+, might have , might have been better if I
+had split that step up.
+But again, we're comfortable with working with the identity by
+now.
+Okay.
+Then we can use associativity Collect the terms that are
+before and after the interesting bit, which will be b
+minus x I x I.
+We see that both terms are multiplied by p minus
+one on the left and p on the right, so
+we can collect.
+And then we use the the property of the determinant
+that the determinant of the product of matrices is just
+the product of determinants.
+And now we have directly related the expression of the
+CA with the expression of CB through their definition.
+So everything that we left to do is to show
+that any remaining terms that we have inputted during the
+way they simplify to one, and indeed they do, because
+the determinant of the inverse of a certain matrix is
+one over the determinant.
+So they so they simplify.
+So k is equal to the determinant of only this
+thing here.
+But that is the expression of CB.
+And so we conclude by 0.2.
+Okay.
+So two things to bring home.
+The first one I already said.
+The second one is about recreating the structure that we're
+interested in.
+In a way we're using this two way relations from
+CA to the determinant of a minus x I and
+from CB to the to, to this determinant here.
+And so the relation between CA and CB is written
+through through this quantity here that we can then
+manipulate, , using the properties of the determinant which do
+not otherwise apply to , to polynomials.
+Right.
+, the polynomials of this matrix, , we can't really
+say, , we can't really say if it's the same
+as the polynomial of , CB directly.
+So again, a two standard way of doing the proofs.
+, which are really the same thing.
+If it's something is difficult to prove, you can always
+change to something else which is better suited for your
+intentions.
+Okay.
+And in the very same spirit of this, I have
+prepared a new question, which is a brainstorm.
+And what I'm asking you to do is to write
+down, , various possible options that complete, , these, ,
+these two very common, , conditions in linear algebra.
+Right.
+So, , as an example, we've just seen if A
+similar to B.
+, yes.
+B similar to a would be one.
+But , for for example, another one that we have
+just seen would be eigenvalues of A equals eigenvalues of
+B.
+And I've done this for something in the in in
+today in, in this week's lecture.
+But also something from from from last lecture.
+Sorry.
+From last week.
+Just because this is also very important property.
+And I think it's a useful exercise to think about
+how different property relates.
+I am going to leave the solutions on the board
+because I'm going to ask you to, instead of keeping
+writing down everything so that we have 100 different lines
+here.
+If you see something that you are going to write
+anyway, you can just the comment.
+And so the top one will rise to the one
+rise at the top, okay.
+And also give some love to number two as well.
+I can see that you're all focussed on similarity, but
+give the full rank properties and love.
+And again, this exercise really relies on you discussing with
+someone else because you might not remember all properties, but
+hopefully together with your two neighbours or three neighbours, you
+will, you will be able to reconstruct most of them.
+I have , I think I have written down five
+for the first one for the similarity, and I've written
+down eight for the second one.
+So a property of a matrix being full rank is
+connected to a lot of stuff.
+Let's see if you, , collectively get all eight that
+I've written down.
+And I'm sure you will get more that I didn't
+think of.
+Okay, let's have a look to at which properties you
+have found out.
+So B is similar to a , second one.
+I'm not sure it's a property of A.
+You're just multiplying it many times.
+, the determinants are the same.
+Yes.
+That was part of the theorem 5.5.1.
+, the inverses of the matrix of the two matrices
+are also similar.
+That's an excellent one.
+That's actually part of the next exercise.
+So well done for spotting that.
+, the determinants are the same.
+The trees are the same, the ranks are the same.
+Once again, , , point of the theorem.
+5.5.1 , can someone translate these two for me, please?
+Anyone?
+Nope.
+Okay, I'll look them up afterwards.
+, okay.
+Same characteristic.
+Polynomial.
+Yes, absolutely.
+They're transpose.
+Are, , also similar?
+Excellent.
+Row A and row B, , this one.
+.
+I would need to think about it.
+It's not immediately obvious because we're not.
+If we assume that they're both full rank, then.
+Well, if we assume that A's will rank, this follows
+immediately, right.
+Because, , because, , , then B has the same
+rank.
+So it's full rank and so they both spam the
+same.
+The same space, but without that added property, that might
+not be that might not be correct.
+Okay.
+If it's full rank.
+So by, , just as, , these are the five
+properties that are, , included in theorem 5.5.1.
+And these are the five ones that I've included as
+well.
+, what about, , number two?
+The dimension of the null space is zero.
+Yes, absolutely.
+And Andrea is going to come back for the revision
+week only.
+So week 11, you will see him, , the dimension
+of the images and yes, of course, that's the definition
+of being full rank invertible.
+Absolutely.
+Except the existing inverse.
+oh.
+Okay.
+I this one.
+I really this one.
+.
+Be careful.
+This was in the very first workshop.
+Be careful with words in mathematics.
+What does this act will be has a as a
+solution mean?
+It could be interpreted as it has at least one
+solution, or it has exactly one solution.
+So careful with the with how you phrase thing.
+The correct version here is.
+At least or exactly.
+Exactly.
+You can write it out by multiplying a minus one
+on the left right x equal a minus one times
+b, and because a minus one is uniquely defined, a
+minus a minus one b is also unique.
+So it has exactly one solution.
+And you can actually write it out columns in independent.
+And then yes I can see you've got most of
+it.
+Right okay.
+So these are the eight ones.
+So that I was able to come up with okay.
+Now I was planning oh yeah okay.
+Let's do it.
+I was planning a short break from the exercises and
+talk about the general properties of the equivalence relationships.
+Because I think it's helpful to understand how they work.
+From an algebraic point of view, and this is not
+examined in theory.
+, but, , the set of all matrices that have
+dimension n at times n.
+Mathematician call it the Glenn.
+It's called the general linear group of size n.
+So in here you have all n times n matrices
+that you can come up with.
+They're all points in this in this space in the
+set.
+here we have the matrix with all zeros.
+Here we have the identity matrix that we know.
+Here we have I called one in the matrix that
+has every entry equal to one.
+, and here we have the diagonal matrix with 123,
+four, five n , for example.
+Okay.
+What are we doing in this representation when we're talking
+about, .
+About equivalence relations.
+Well, we are cutting up that space in a, in
+a different in a number of different subset of that
+bigger picture there.
+And each of these slices, and they are the set
+of the matrices that, that are similar to the other
+one that are in the same slice.
+So for example, we we can prove that the diagonal
+matrix is similar to the to the identity matrix.
+So they live in the same slice.
+The matrix with all ones is not, , is not
+similar to the identity matrix because it's not invertible.
+So it doesn't have the same rank.
+And so it lives in another slice of the space.
+And there are two things.
+Oh, and finally the zero matrix.
+We've shown that it's similar only to itself.
+So the set of all matrix n times n that
+are similar to the zero matrix is the set that
+contains only the zero matrix itself.
+Okay.
+, why is this interesting?
+Well, there's really two properties that are interesting here.
+The first one is now the three characteristic that we've
+seen.
+, reflexivity, symmetry and transitivity means that each matrix is
+in one and only one of these partitions.
+Okay.
+This matrix cannot be both here and here because otherwise
+these two slices must be the same one.
+And this is something that you will see much better
+when you see a course in theoretical algebra.
+But I think it's just, , , too nice of
+an example to, , to let it slide.
+And the other one is that every single matrix n
+times n that you can come up with is in
+one of these slices here.
+And so this nicely, completely cover the set of all
+the matrices that exist in this group here, which is
+all the square matrices n times n.
+So this is again not part of this course and
+not not examined here.
+But I just wanted to give you this picture because
+you will see this again further down the line and
+sort of start to build your understanding on how equivalence
+relation work in terms of the big picture of the
+space.
+Okay.
+Next up, because , , we've been going on for
+quite some time, I'm going to skip the lecture summary
+and move straight to question five instead.
+Question five is , just last, , last, ,
+last week, , you're not supposed to pick all five.
+Just pick the ones you're confident with.
+According to the, , to the traffic line symbol.
+, this is supposed to be yellow, but some of
+this is yellow.
+It just looks very much red.
+, you can pick whichever difficulty you want, and I'm
+going to go through all of them in a couple
+of minutes.
+But you really drill down, , to one of 1
+or 2 of them.
+So let's have a look at the first one, because
+we only have a few minutes left to do.
+, okay.
+This one says if the rank is different, then they
+can be similar.
+And this once again is the contrapositive, , trick that
+I pulled on you.
+, we saw in the previous theorem that if two
+matrices are similar, that the rank must be the same.
+, so if the rank is not the same, they
+can't possibly be similar.
+Okay.
+And, .
+Statement two was an observation to theorem 5.5.1, which was
+that similarity preserve the eigenvalues, but not the eigenvectors.
+And the reasoning behind it was exactly that.
+, we're seeing the same linear transformation in different basis.
+So, , I've shown you this in the in the
+reading video, if x is a eigenvector associated to a
+with eigenvalue lambda, then the eigenvector associated to lambda and
+b transforms with p minus one.
+So p minus one x is the corresponding eigenvector.
+And I didn't include it in this, but I
+invite you to try a counterexample.
+And , this is one of those easy counterexample to
+to see.
+Because if you just throw down a random matrix, chances
+are that the eigenvalues, the eigenvectors will not be the
+same.
+You need to be extremely lucky to pick by chance
+a matrix.
+, well, two similar matrices for which this is a
+is true.
+You have to pick them essentially in such a way
+that, , x is an eigenvalue, is an eigenvector of
+p one of p minus one as well.
+So if that is true then obviously a p minus
+one x is aligned with x because you get p
+minus one x equals lambda x.
+But otherwise you're safe.
+Okay.
+next up, if A is diagonalisable then A is
+similar to its transpose.
+And this one is true, although I put it down
+as an orange because it requires a little bit of,
+, quite a bit more of, , manipulation.
+And the first bit is easy.
+, if ace is diagonalisable, then we can transform it
+into a matrix D, which is orthogonal, which was the
+main result of the diagonalization theorem that we've seen, ,
+a few weeks ago.
+And then we can invert this relation by multiplying p
+minus one on the left, p on the right.
+And next we can transpose, , this whole thing and
+we get the a transpose is PD p minus one
+transpose.
+But we know that taking the transpose of a product
+is equal to taking the product of the transpose in
+the opposite direction.
+So taking the transpose of p d, p minus one
+is actually the same thing as doing p minus one
+transpose d transpose p transposed.
+But d transpose is the same as d because it's
+diagonal.
+So if you switch rows and columns, the diagonal stays
+the same.
+And now you have these two relations and you can
+take this D here and put it in here essentially.
+That's what what what we're doing here.
+And then you you regroup and you see that.
+You also know that when you take an inverse of
+a product, it's also the same as taking the product
+of the inverses but in the reverse order.
+So you can collect this to be p t p
+p t minus one.
+And so a, t and a are related by through
+similarity by the matrix p p transpose.
+And you know that the transpose of the invertible matrix
+is invertible.
+And you can know that from the fact, for example,
+that, , , if A is invertible, its full rank.
+So the span of the columns is n.
+And so the span of the rows of T is
+also n.
+But the span of the rows of 80 is ,
+the rank itself.
+So its full rank.
+So 80 also works.
+, also works that way.
+And so we conclude that this is in fact true.
+And it's 101.
+So I'm going to call it a day for the
+last two ones.
+We are going to do them first thing tomorrow.
+Okay.

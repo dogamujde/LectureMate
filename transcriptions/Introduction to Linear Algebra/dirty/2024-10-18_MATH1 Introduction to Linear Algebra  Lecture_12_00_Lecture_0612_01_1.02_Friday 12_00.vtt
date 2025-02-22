@@ -1,0 +1,5531 @@
+WEBVTT
+
+00:00:14.580 --> 00:00:15.450
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:00:15.450 --> 00:00:17.610
+<v Speaker 0>We have the red light to go.
+
+NOTE CONF {"raw":[100,100,100,100,100,91,100]}
+
+00:00:17.640 --> 00:00:19.770
+<v Speaker 0>So it's Friday.
+
+NOTE CONF {"raw":[100,91,100]}
+
+00:00:19.770 --> 00:00:21.630
+<v Speaker 0>Your numbers have decreased further.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:00:21.900 --> 00:00:24.240
+<v Speaker 0>Maybe this is unsurprising for a Friday.
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100]}
+
+00:00:24.720 --> 00:00:31.440
+<v Speaker 0>Um, so yesterday we looked at eigenvalues and eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:00:31.440 --> 00:00:33.780
+<v Speaker 0>While we looked at the definition of an eigenvalue and
+
+NOTE CONF {"raw":[54,100,100,100,100,100,100,100,100,100]}
+
+00:00:33.780 --> 00:00:34.650
+<v Speaker 0>an eigenvector.
+
+NOTE CONF {"raw":[63,100]}
+
+00:00:34.650 --> 00:00:38.940
+<v Speaker 0>Today is all about actually finding eigenvalues and eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:00:38.940 --> 00:00:41.610
+<v Speaker 0>So at the end of yesterday we just reached the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:41.610 --> 00:00:42.270
+<v Speaker 0>point where we saw.
+
+NOTE CONF {"raw":[100,100,100,98]}
+
+00:00:42.270 --> 00:00:45.270
+<v Speaker 0>To calculate an eigenvalue you essentially have to solve this
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,100]}
+
+00:00:45.270 --> 00:00:46.050
+<v Speaker 0>equation.
+
+NOTE CONF {"raw":[100]}
+
+00:00:46.230 --> 00:00:52.260
+<v Speaker 0>So lambda times the identity um minus whatever matrix you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:00:52.410 --> 00:00:52.980
+<v Speaker 0>want.
+
+NOTE CONF {"raw":[100]}
+
+00:00:53.580 --> 00:00:55.050
+<v Speaker 0>And you find the determine to that you want to
+
+NOTE CONF {"raw":[100,100,100,100,73,78,100,100,100,100]}
+
+00:00:55.050 --> 00:00:56.310
+<v Speaker 0>make it equal to zero.
+
+NOTE CONF {"raw":[100,100,94,67,100]}
+
+00:00:56.310 --> 00:00:59.960
+<v Speaker 0>So in order to get going today.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97]}
+
+00:01:01.790 --> 00:01:04.519
+<v Speaker 0>Here is a first question to warm us all up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:04.730 --> 00:01:08.810
+<v Speaker 0>Get our brains working for Friday lunchtime.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,97]}
+
+00:01:08.810 --> 00:01:10.190
+<v Speaker 0>There is a matrix.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:10.730 --> 00:01:14.150
+<v Speaker 0>What are the eigenvalues of the matrix?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:15.020 --> 00:01:17.990
+<v Speaker 0>Uh, I will give you the hint that they are
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:01:17.990 --> 00:01:21.710
+<v Speaker 0>all between the values of one 0 to 5.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:01:22.640 --> 00:01:24.170
+<v Speaker 0>Uh, what do I want to do?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:01:24.170 --> 00:01:25.100
+<v Speaker 0>That's what I want to do.
+
+NOTE CONF {"raw":[97,100,100,100,100,100]}
+
+00:01:25.460 --> 00:01:27.410
+<v Speaker 0>They are all between 0 and 5.
+
+NOTE CONF {"raw":[78,67,100,100,100,100,100]}
+
+00:01:27.890 --> 00:01:28.700
+<v Speaker 0>They shouldn't.
+
+NOTE CONF {"raw":[100,94]}
+
+00:01:28.700 --> 00:01:30.620
+<v Speaker 0>Actually, this is quite a nice matrix to find the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:01:30.620 --> 00:01:31.430
+<v Speaker 0>determinant of.
+
+NOTE CONF {"raw":[100,100]}
+
+00:01:31.460 --> 00:01:33.290
+<v Speaker 0>So hopefully shouldn't be too bad.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:01:33.290 --> 00:01:35.510
+<v Speaker 0>So I'm not going to give you too long but
+
+NOTE CONF {"raw":[92,73,100,100,100,100,100,100,100,100]}
+
+00:01:35.510 --> 00:01:36.650
+<v Speaker 0>just to warm up.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:01:37.220 --> 00:01:39.710
+<v Speaker 0>What are the eigenvalues for that.
+
+NOTE CONF {"raw":[100,100,100,95,100,100]}
+
+00:01:39.710 --> 00:01:40.790
+<v Speaker 0>Is that a hand up.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:01:40.790 --> 00:01:43.610
+<v Speaker 0>Know something at the corner of my eye okay.
+
+NOTE CONF {"raw":[87,100,98,100,100,100,100,100,71]}
+
+00:01:48.350 --> 00:01:50.600
+<v Speaker 0>Feel free to have a chat with your friend.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:01:53.510 --> 00:01:55.520
+<v Speaker 0>We essentially want to find this determinant.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100]}
+
+00:01:55.520 --> 00:01:58.010
+<v Speaker 0>Let's think about what that means.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:02:33.850 --> 00:02:36.430
+<v Speaker 0>Hopefully this isn't too bad.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:02:44.140 --> 00:02:46.120
+<v Speaker 0>Oh, we've reached a third of voters.
+
+NOTE CONF {"raw":[100,100,100,68,98,94,99]}
+
+00:02:46.120 --> 00:02:47.260
+<v Speaker 0>Then we seem to have stalled.
+
+NOTE CONF {"raw":[45,77,100,100,100,100]}
+
+00:02:47.290 --> 00:02:48.790
+<v Speaker 0>I'm going to give you an extra.
+
+NOTE CONF {"raw":[52,100,100,100,100,100,100]}
+
+00:02:53.140 --> 00:02:55.060
+<v Speaker 0>I'm going to give you an extra 15 seconds.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:02:55.060 --> 00:02:57.360
+<v Speaker 0>We seem quite happy there, actually.
+
+NOTE CONF {"raw":[100,100,100,100,91,100]}
+
+00:02:57.360 --> 00:02:58.680
+<v Speaker 0>Lots of people voting.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:09.450 --> 00:03:12.210
+<v Speaker 0>I'm going to give you another 10s.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:23.070 --> 00:03:25.440
+<v Speaker 0>Five seconds.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:31.290 --> 00:03:34.680
+<v Speaker 0>Two, one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:38.100 --> 00:03:41.280
+<v Speaker 0>And magically, it's all going to appear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:03:41.310 --> 00:03:42.090
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:42.120 --> 00:03:45.480
+<v Speaker 0>Okay, so we all seem fairly happy that it is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,85,85]}
+
+00:03:45.480 --> 00:03:46.830
+<v Speaker 0>one, 2 or 5.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:03:47.430 --> 00:03:48.900
+<v Speaker 0>Um, yeah.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:48.900 --> 00:03:49.800
+<v Speaker 0>Well done everyone.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:03:49.800 --> 00:03:51.360
+<v Speaker 0>It's one, two and five.
+
+NOTE CONF {"raw":[99,100,100,100,100]}
+
+00:03:51.390 --> 00:03:52.320
+<v Speaker 0>Yay!
+
+NOTE CONF {"raw":[100]}
+
+00:03:52.320 --> 00:03:54.300
+<v Speaker 0>We have a brain even though it's a Friday.
+
+NOTE CONF {"raw":[100,100,100,96,100,100,94,100,88]}
+
+00:03:54.300 --> 00:03:54.990
+<v Speaker 0>Well done.
+
+NOTE CONF {"raw":[100,100]}
+
+00:03:54.990 --> 00:03:58.790
+<v Speaker 0>So hopefully we all kind of got to something like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:03:58.790 --> 00:03:59.180
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:03:59.180 --> 00:04:01.940
+<v Speaker 0>And then we think about the term to this matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,87,100,100,100]}
+
+00:04:01.940 --> 00:04:04.250
+<v Speaker 0>We can expand along the first column.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:04.520 --> 00:04:08.780
+<v Speaker 0>And then so it's lambda minus one times the determinant
+
+NOTE CONF {"raw":[100,100,100,100,91,100,100,100,100,100]}
+
+00:04:08.780 --> 00:04:13.310
+<v Speaker 0>of this two by two which relatively clearly hopefully should
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:13.310 --> 00:04:15.650
+<v Speaker 0>be lambda minus two lambda minus five.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:15.650 --> 00:04:16.970
+<v Speaker 0>And that all equals zero.
+
+NOTE CONF {"raw":[100,100,100,67,100]}
+
+00:04:16.970 --> 00:04:20.299
+<v Speaker 0>So our three roots are one, two and five.
+
+NOTE CONF {"raw":[100,95,100,100,100,100,100,100,100]}
+
+00:04:20.840 --> 00:04:22.880
+<v Speaker 0>Are we all fairly happy with that.
+
+NOTE CONF {"raw":[100,100,96,48,100,100,100]}
+
+00:04:23.390 --> 00:04:26.150
+<v Speaker 0>Yay happy people.
+
+NOTE CONF {"raw":[98,100,100]}
+
+00:04:26.180 --> 00:04:27.830
+<v Speaker 0>I'm going to bounce a bit because I feel like
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100,100,100]}
+
+00:04:27.830 --> 00:04:30.380
+<v Speaker 0>we're all asleep, so if I'm energetic, maybe that will
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:30.380 --> 00:04:30.980
+<v Speaker 0>pass on.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:31.430 --> 00:04:33.320
+<v Speaker 0>The downside of this is I will crash halfway through
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:04:33.320 --> 00:04:33.890
+<v Speaker 0>the lecture.
+
+NOTE CONF {"raw":[100,100]}
+
+00:04:34.340 --> 00:04:36.740
+<v Speaker 0>Um, okay, so we found eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,94,100,100]}
+
+00:04:36.740 --> 00:04:37.190
+<v Speaker 0>Yay!
+
+NOTE CONF {"raw":[98]}
+
+00:04:37.190 --> 00:04:38.660
+<v Speaker 0>Hopefully not too terrible.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:38.660 --> 00:04:39.560
+<v Speaker 0>Do we all agree?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:04:40.490 --> 00:04:41.300
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:04:41.570 --> 00:04:46.220
+<v Speaker 0>So how do we actually find eigenvalues?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:04:47.300 --> 00:04:50.150
+<v Speaker 0>It turns out you find eigenvalues by casting your mind
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:04:50.150 --> 00:04:52.040
+<v Speaker 0>back to the last time I was here on a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:04:52.040 --> 00:04:54.970
+<v Speaker 0>Friday when we were solving systems of equations.
+
+NOTE CONF {"raw":[100,62,100,100,100,100,100,100]}
+
+00:04:54.970 --> 00:04:56.950
+<v Speaker 0>Yeah, everyone's favourite thing to do.
+
+NOTE CONF {"raw":[87,100,79,100,100,100]}
+
+00:04:57.820 --> 00:05:00.040
+<v Speaker 0>Well, that's what we're doing again.
+
+NOTE CONF {"raw":[51,100,100,100,100,100]}
+
+00:05:00.250 --> 00:05:01.090
+<v Speaker 1>Yay!
+
+NOTE CONF {"raw":[100]}
+
+00:05:01.090 --> 00:05:02.620
+<v Speaker 0>So wonderful calculation.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:02.620 --> 00:05:06.070
+<v Speaker 0>To kick off our Friday, let us find the eigen
+
+NOTE CONF {"raw":[100,100,100,93,100,100,100,100,100,98]}
+
+00:05:06.430 --> 00:05:10.390
+<v Speaker 0>vectors for our matrix A.
+
+NOTE CONF {"raw":[98,100,97,100,100]}
+
+00:05:10.420 --> 00:05:10.930
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:10.930 --> 00:05:15.520
+<v Speaker 0>So each eigenvalue is going to have a different eigenvector
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,90]}
+
+00:05:15.520 --> 00:05:17.530
+<v Speaker 0>because that kind of follows from the definition.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:18.340 --> 00:05:22.120
+<v Speaker 0>So we need to do to find the eigenvectors of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:22.120 --> 00:05:24.760
+<v Speaker 0>this matrix.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:24.760 --> 00:05:27.190
+<v Speaker 0>That's the word we're going to have to do three
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:27.190 --> 00:05:28.150
+<v Speaker 0>times.
+
+NOTE CONF {"raw":[100]}
+
+00:05:28.150 --> 00:05:28.990
+<v Speaker 0>Yay.
+
+NOTE CONF {"raw":[100]}
+
+00:05:28.990 --> 00:05:30.640
+<v Speaker 0>Who's really going to talk on a Friday for a
+
+NOTE CONF {"raw":[98,87,52,52,43,100,100,100,100,84]}
+
+00:05:30.640 --> 00:05:32.020
+<v Speaker 0>somewhat long calculation.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:05:32.440 --> 00:05:35.170
+<v Speaker 0>Um so let us start.
+
+NOTE CONF {"raw":[92,100,100,100,100]}
+
+00:05:35.530 --> 00:05:39.040
+<v Speaker 0>We're going to look at our first eigenvalue lambda equals
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:39.040 --> 00:05:41.080
+<v Speaker 0>one okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:05:41.170 --> 00:05:46.570
+<v Speaker 0>So we want to consider the matrix one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:05:46.780 --> 00:05:48.790
+<v Speaker 0>There's a secret one there that we don't write because
+
+NOTE CONF {"raw":[100,100,88,100,100,100,100,100,70,100]}
+
+00:05:48.790 --> 00:05:50.620
+<v Speaker 0>it's one minus a.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:05:50.620 --> 00:05:52.900
+<v Speaker 0>And if we think about what that matrix is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:05:54.240 --> 00:05:56.070
+<v Speaker 0>yell at me when I make a sign error, but
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:05:56.070 --> 00:05:57.900
+<v Speaker 0>I'm just going to write this down and hopefully you'll
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,94]}
+
+00:05:57.900 --> 00:06:03.480
+<v Speaker 0>all agree we should end up with that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:06:07.260 --> 00:06:08.940
+<v Speaker 0>Do we all somewhat agree?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:13.290 --> 00:06:15.360
+<v Speaker 0>Yeah, I'm agreeing with myself.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:16.050 --> 00:06:16.560
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:06:16.560 --> 00:06:18.990
+<v Speaker 0>Okay, so so we've got to that matrix and we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:18.990 --> 00:06:25.110
+<v Speaker 0>are trying to find the, the the solving that homogeneous
+
+NOTE CONF {"raw":[100,100,100,100,97,100,100,100,100,100]}
+
+00:06:25.110 --> 00:06:27.930
+<v Speaker 0>system thing to bear in mind with an eigenvector.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100,100]}
+
+00:06:27.960 --> 00:06:29.820
+<v Speaker 0>Let's think about what we talked about yesterday.
+
+NOTE CONF {"raw":[100,100,100,100,100,66,100,100]}
+
+00:06:29.850 --> 00:06:32.640
+<v Speaker 0>These are the directions the lines that get mapped to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:32.640 --> 00:06:35.880
+<v Speaker 0>themselves the directions fixed lines.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:06:36.810 --> 00:06:38.280
+<v Speaker 0>That is a line.
+
+NOTE CONF {"raw":[91,91,100,100]}
+
+00:06:38.730 --> 00:06:42.120
+<v Speaker 0>Do you remember when way back when we were actually
+
+NOTE CONF {"raw":[100,67,100,63,100,100,100,100,100,100]}
+
+00:06:42.120 --> 00:06:45.420
+<v Speaker 0>solving homogeneous systems, when we knew the answer was geometrically
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:45.420 --> 00:06:45.930
+<v Speaker 0>a line?
+
+NOTE CONF {"raw":[81,81]}
+
+00:06:45.930 --> 00:06:48.870
+<v Speaker 0>What did we kind of expect to come out of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:06:48.870 --> 00:06:49.710
+<v Speaker 0>our system?
+
+NOTE CONF {"raw":[100,100]}
+
+00:06:51.390 --> 00:06:54.440
+<v Speaker 0>What do we expect the rank to be, for example?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:00.680 --> 00:07:02.390
+<v Speaker 0>I had someone whisper not three.
+
+NOTE CONF {"raw":[100,100,100,100,100,96]}
+
+00:07:02.390 --> 00:07:04.550
+<v Speaker 0>Yes, we do not expect the rank to be three.
+
+NOTE CONF {"raw":[100,100,94,94,100,100,100,100,100,100]}
+
+00:07:04.550 --> 00:07:05.990
+<v Speaker 0>Or do we expect the rank to be?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:05.990 --> 00:07:07.820
+<v Speaker 0>If we're expecting like two, wonderful.
+
+NOTE CONF {"raw":[100,100,100,92,100,100]}
+
+00:07:07.820 --> 00:07:10.280
+<v Speaker 0>We expect at least one free verbal.
+
+NOTE CONF {"raw":[100,100,100,100,100,99,91]}
+
+00:07:10.280 --> 00:07:12.350
+<v Speaker 0>If we have a line, we expect a free verbal.
+
+NOTE CONF {"raw":[100,62,62,100,100,100,100,100,100,100]}
+
+00:07:12.350 --> 00:07:13.700
+<v Speaker 0>And so far we're looking good.
+
+NOTE CONF {"raw":[97,100,100,98,100,100]}
+
+00:07:13.700 --> 00:07:14.930
+<v Speaker 0>We've got a column of zeros.
+
+NOTE CONF {"raw":[100,100,100,100,100,63]}
+
+00:07:14.930 --> 00:07:16.430
+<v Speaker 0>So we're definitely not rank three.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:16.640 --> 00:07:20.360
+<v Speaker 0>So yeah, we're looking good okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:07:20.360 --> 00:07:22.250
+<v Speaker 0>We're now going to do a bit of a reduction.
+
+NOTE CONF {"raw":[100,100,100,100,100,93,100,100,44,75]}
+
+00:07:22.250 --> 00:07:23.090
+<v Speaker 0>Yay.
+
+NOTE CONF {"raw":[100]}
+
+00:07:24.350 --> 00:07:29.000
+<v Speaker 0>Um does anyone have a first step they think we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:29.000 --> 00:07:31.100
+<v Speaker 0>should do before actually we do anything.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:07:37.790 --> 00:07:38.630
+<v Speaker 1>Multiplied by negative.
+
+NOTE CONF {"raw":[63,100,100]}
+
+00:07:38.960 --> 00:07:40.460
+<v Speaker 0>Multiplied by negative one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:40.460 --> 00:07:41.300
+<v Speaker 0>I like that one.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:07:41.300 --> 00:07:41.630
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[98]}
+
+00:07:42.260 --> 00:07:45.530
+<v Speaker 0>Um, so we've discussed this briefly yesterday.
+
+NOTE CONF {"raw":[100,100,40,39,100,100,100]}
+
+00:07:45.530 --> 00:07:50.300
+<v Speaker 0>Sometimes you have lambda times the identity minus a, sometimes
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:50.300 --> 00:07:52.630
+<v Speaker 0>you have a minus lambda times the identity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:07:52.660 --> 00:07:55.060
+<v Speaker 0>If you do it this way, the identity minus A,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,87]}
+
+00:07:55.060 --> 00:07:57.130
+<v Speaker 0>you end up with a lot of negative signs generally.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:07:57.130 --> 00:08:00.550
+<v Speaker 0>So it's worth just let's times everything by minus one.
+
+NOTE CONF {"raw":[100,100,100,100,60,98,100,100,100,100]}
+
+00:08:00.940 --> 00:08:02.650
+<v Speaker 0>Um, cool.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:02.650 --> 00:08:03.130
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:03.130 --> 00:08:04.570
+<v Speaker 0>We've changed everything by minus one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:04.570 --> 00:08:05.230
+<v Speaker 0>That's good.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:05.830 --> 00:08:06.310
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:08:08.320 --> 00:08:10.420
+<v Speaker 0>Let's then do a bit of row reduction.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,97,100]}
+
+00:08:10.960 --> 00:08:13.210
+<v Speaker 0>So I'm going to start by swapping.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:13.210 --> 00:08:14.680
+<v Speaker 0>Which two shall I swap.
+
+NOTE CONF {"raw":[100,100,91,100,100]}
+
+00:08:21.310 --> 00:08:22.420
+<v Speaker 0>First and second.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:08:22.420 --> 00:08:25.780
+<v Speaker 0>Yeah I like that okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:08:25.780 --> 00:08:26.470
+<v Speaker 0>First and second.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:08:26.470 --> 00:08:32.140
+<v Speaker 0>So we've now got 010023 and 044.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:08:33.580 --> 00:08:35.020
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:08:36.039 --> 00:08:37.150
+<v Speaker 0>Uh what do we do next?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:45.880 --> 00:08:48.160
+<v Speaker 2>Subtract two times the third one from the rotate.
+
+NOTE CONF {"raw":[100,100,100,52,52,99,75,71,96]}
+
+00:08:48.360 --> 00:08:49.590
+<v Speaker 0>Yay!
+
+NOTE CONF {"raw":[100]}
+
+00:08:51.720 --> 00:08:53.520
+<v Speaker 0>So who's going to go to row two?
+
+NOTE CONF {"raw":[100,77,97,97,100,100,95,100]}
+
+00:08:53.520 --> 00:08:54.030
+<v Speaker 0>Minus two.
+
+NOTE CONF {"raw":[100,100]}
+
+00:08:54.030 --> 00:08:56.850
+<v Speaker 0>Lots of row 10100.
+
+NOTE CONF {"raw":[98,100,100,100]}
+
+00:08:56.880 --> 00:08:58.410
+<v Speaker 0>I know this does get a bit dull.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:08:58.440 --> 00:08:59.820
+<v Speaker 0>You've done this a lot now.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:08:59.970 --> 00:09:01.440
+<v Speaker 0>And what should I do for the last row?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:09:03.930 --> 00:09:06.270
+<v Speaker 1>No one can be good.
+
+NOTE CONF {"raw":[68,76,60,54,100]}
+
+00:09:07.530 --> 00:09:10.890
+<v Speaker 0>Still worth practising because you will do this a lot.
+
+NOTE CONF {"raw":[100,100,87,100,100,89,100,100,100,100]}
+
+00:09:10.890 --> 00:09:12.330
+<v Speaker 0>And if you can do it in your sleep, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:12.330 --> 00:09:13.530
+<v Speaker 0>can do it in the exam.
+
+NOTE CONF {"raw":[100,100,100,99,100,100]}
+
+00:09:13.950 --> 00:09:16.440
+<v Speaker 0>Okay, so there is the matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:09:17.250 --> 00:09:18.570
+<v Speaker 0>Anything else I should do?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:09:18.570 --> 00:09:20.070
+<v Speaker 0>One last step maybe.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:09:30.450 --> 00:09:31.350
+<v Unknown>2 or 3.
+
+NOTE CONF {"raw":[96,96,96]}
+
+00:09:32.010 --> 00:09:32.460
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:09:32.460 --> 00:09:33.270
+<v Speaker 0>Let's do that.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:39.660 --> 00:09:40.890
+<v Speaker 0>001.
+
+NOTE CONF {"raw":[96]}
+
+00:09:40.890 --> 00:09:43.830
+<v Speaker 0>And we could we'll leave it on trust that you
+
+NOTE CONF {"raw":[100,100,100,94,100,100,100,100,100,100]}
+
+00:09:43.830 --> 00:09:44.910
+<v Speaker 0>can get rid of that fall.
+
+NOTE CONF {"raw":[100,100,100,100,100,52]}
+
+00:09:45.210 --> 00:09:48.530
+<v Speaker 0>Um, okay, so we are in reduced row echelon form,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:09:48.530 --> 00:09:50.870
+<v Speaker 0>actually, because everything's zeros and ones.
+
+NOTE CONF {"raw":[100,100,73,98,100,100]}
+
+00:09:51.290 --> 00:09:58.040
+<v Speaker 0>Um, and we have no leading one at the bar.
+
+NOTE CONF {"raw":[78,100,100,100,100,100,100,23,65,27]}
+
+00:09:58.070 --> 00:09:58.550
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:09:58.970 --> 00:09:59.660
+<v Speaker 0>Thank you.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:00.320 --> 00:10:03.050
+<v Speaker 0>Um, like, we have no leading one in the first
+
+NOTE CONF {"raw":[100,38,100,100,100,100,100,100,100,100]}
+
+00:10:03.050 --> 00:10:03.410
+<v Speaker 0>column.
+
+NOTE CONF {"raw":[100]}
+
+00:10:03.410 --> 00:10:04.370
+<v Speaker 0>So what does that mean?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:10:04.370 --> 00:10:06.470
+<v Speaker 0>What is our free variable going to be?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:10:10.280 --> 00:10:10.760
+<v Speaker 0>The first one.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:10:10.760 --> 00:10:11.090
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+00:10:11.510 --> 00:10:11.990
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:10:11.990 --> 00:10:12.410
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:12.410 --> 00:10:15.890
+<v Speaker 0>So if we're thinking about general solutions we're going to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:15.890 --> 00:10:18.290
+<v Speaker 0>set X to be a free variable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:21.110 --> 00:10:22.430
+<v Speaker 0>Then what's y going to be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:28.730 --> 00:10:29.660
+<v Speaker 0>Good zero.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:29.660 --> 00:10:30.200
+<v Speaker 0>Well done.
+
+NOTE CONF {"raw":[100,100]}
+
+00:10:32.210 --> 00:10:35.960
+<v Speaker 0>There was someone put A0A fist with zero fingers up.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:10:35.960 --> 00:10:37.220
+<v Speaker 0>I'm taking that to be zero.
+
+NOTE CONF {"raw":[98,98,100,100,100,100]}
+
+00:10:37.220 --> 00:10:38.540
+<v Speaker 0>What is that going to be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:10:39.170 --> 00:10:43.520
+<v Speaker 1>Yes I like the the yes okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:43.520 --> 00:10:44.090
+<v Speaker 0>Zero.
+
+NOTE CONF {"raw":[100]}
+
+00:10:44.090 --> 00:10:44.840
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:10:44.840 --> 00:10:45.440
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:10:45.440 --> 00:10:49.030
+<v Speaker 0>So we have to zero zero at general solution looks
+
+NOTE CONF {"raw":[100,100,100,41,93,100,68,100,100,100]}
+
+00:10:49.030 --> 00:10:53.260
+<v Speaker 0>like x, y z looks like T00.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:10:53.350 --> 00:10:56.080
+<v Speaker 0>So I can factor out that t and we get
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:10:56.080 --> 00:10:58.270
+<v Speaker 0>a we get a nice vector there.
+
+NOTE CONF {"raw":[58,100,100,100,100,100,96]}
+
+00:10:58.270 --> 00:10:58.870
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:10:58.870 --> 00:11:00.280
+<v Speaker 0>What's our eigenvector.
+
+NOTE CONF {"raw":[98,100,100]}
+
+00:11:02.530 --> 00:11:03.580
+<v Speaker 1>100.
+
+NOTE CONF {"raw":[100]}
+
+00:11:03.610 --> 00:11:04.390
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:11:05.320 --> 00:11:06.700
+<v Speaker 0>Actually I disagree with you.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:11:06.700 --> 00:11:08.470
+<v Speaker 0>The eigenvectors 200.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:08.470 --> 00:11:09.040
+<v Speaker 0>Who's right?
+
+NOTE CONF {"raw":[94,100]}
+
+00:11:09.040 --> 00:11:09.790
+<v Speaker 0>Who's wrong?
+
+NOTE CONF {"raw":[96,100]}
+
+00:11:11.350 --> 00:11:12.610
+<v Speaker 1>Yes, yes.
+
+NOTE CONF {"raw":[79,100]}
+
+00:11:12.610 --> 00:11:13.450
+<v Speaker 0>We're all right.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:11:13.450 --> 00:11:14.020
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:11:14.020 --> 00:11:14.740
+<v Speaker 0>It's a Friday.
+
+NOTE CONF {"raw":[92,100,100]}
+
+00:11:14.740 --> 00:11:16.240
+<v Speaker 0>Everyone can be correct today.
+
+NOTE CONF {"raw":[100,93,100,100,100]}
+
+00:11:16.840 --> 00:11:20.260
+<v Speaker 0>Yeah, it doesn't matter, frankly, because it's a line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:20.260 --> 00:11:21.910
+<v Speaker 0>I care a lot about the direction.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:21.910 --> 00:11:24.310
+<v Speaker 0>I don't really care the magnitude of this line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:11:24.310 --> 00:11:29.800
+<v Speaker 0>So yes 100 is an eigenvector but so is 200.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:11:29.800 --> 00:11:32.560
+<v Speaker 0>So is -2020 400.
+
+NOTE CONF {"raw":[100,87,100,100]}
+
+00:11:32.560 --> 00:11:35.830
+<v Speaker 0>So is pick your favourite number zero zero.
+
+NOTE CONF {"raw":[100,100,100,100,96,100,100,100]}
+
+00:11:36.070 --> 00:11:37.870
+<v Speaker 0>They're all eigenvectors.
+
+NOTE CONF {"raw":[87,100,100]}
+
+00:11:37.960 --> 00:11:40.300
+<v Speaker 0>So we're expecting a line of solutions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:11:40.300 --> 00:11:42.520
+<v Speaker 0>This is just saying go off in the x direction
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:42.520 --> 00:11:45.420
+<v Speaker 0>and don't do anything in y and Z Okay.
+
+NOTE CONF {"raw":[100,100,100,100,80,100,100,100,100]}
+
+00:11:45.420 --> 00:11:48.660
+<v Speaker 0>Are we all kind of happy with how we did
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:11:48.660 --> 00:11:49.260
+<v Speaker 0>that?
+
+NOTE CONF {"raw":[100]}
+
+00:11:50.430 --> 00:11:51.420
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:11:51.450 --> 00:11:54.420
+<v Speaker 0>Generally, you probably would write 100.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:11:54.420 --> 00:11:57.420
+<v Speaker 0>You want to be as nice as possible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:11:57.420 --> 00:12:00.390
+<v Speaker 0>You probably want to reduce it to the lowest common
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:00.390 --> 00:12:01.080
+<v Speaker 0>factors.
+
+NOTE CONF {"raw":[100]}
+
+00:12:01.740 --> 00:12:02.430
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:12:02.430 --> 00:12:04.230
+<v Speaker 0>So that was our first one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:05.460 --> 00:12:07.770
+<v Speaker 0>Let us do our second one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:07.770 --> 00:12:09.900
+<v Speaker 0>So our second eigenvalue is two.
+
+NOTE CONF {"raw":[100,100,100,100,71,100]}
+
+00:12:09.930 --> 00:12:11.580
+<v Speaker 0>I'm not going to do all three.
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100]}
+
+00:12:11.700 --> 00:12:14.220
+<v Speaker 0>But I am going to do two because something special
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:14.220 --> 00:12:15.030
+<v Speaker 0>happens or two.
+
+NOTE CONF {"raw":[100,82,100]}
+
+00:12:16.200 --> 00:12:20.460
+<v Speaker 0>Um so we've now lost the matrix A let's bring
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:12:20.460 --> 00:12:22.830
+<v Speaker 0>the matrix A there you go.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:12:22.830 --> 00:12:26.430
+<v Speaker 0>There's a matrix A so if I think about what
+
+NOTE CONF {"raw":[100,100,100,87,100,100,100,100,100,100]}
+
+00:12:26.430 --> 00:12:27.870
+<v Speaker 0>lambda times the identity.
+
+NOTE CONF {"raw":[100,93,100,100]}
+
+00:12:27.870 --> 00:12:31.470
+<v Speaker 0>Well, two lots of the identity minus that matrix is
+
+NOTE CONF {"raw":[67,96,97,100,100,100,100,100,100,100]}
+
+00:12:31.500 --> 00:12:35.070
+<v Speaker 0>again telling me when I make a mistake, but I
+
+NOTE CONF {"raw":[100,75,100,100,100,100,100,100,100,100]}
+
+00:12:35.070 --> 00:12:38.130
+<v Speaker 0>make it to be minus one, minus two, minus three
+
+NOTE CONF {"raw":[100,100,80,82,100,100,100,100,100,100]}
+
+00:12:38.130 --> 00:12:42.300
+<v Speaker 0>0000, minus four.
+
+NOTE CONF {"raw":[100,100,96]}
+
+00:12:42.300 --> 00:12:43.380
+<v Speaker 0>What's the last number?
+
+NOTE CONF {"raw":[64,100,100,100]}
+
+00:12:45.840 --> 00:12:46.620
+<v Speaker 0>Minus three.
+
+NOTE CONF {"raw":[100,100]}
+
+00:12:46.620 --> 00:12:47.160
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:12:47.160 --> 00:12:47.640
+<v Speaker 0>Cool.
+
+NOTE CONF {"raw":[95]}
+
+00:12:47.670 --> 00:12:49.260
+<v Speaker 0>Are we all happy with how we got there?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:12:49.650 --> 00:12:50.760
+<v Speaker 0>I think the first one is.
+
+NOTE CONF {"raw":[45,45,100,100,100,94]}
+
+00:12:51.390 --> 00:12:54.600
+<v Speaker 0>Yeah, the first one is a one.
+
+NOTE CONF {"raw":[99,100,100,100,100,100,98]}
+
+00:12:54.600 --> 00:12:55.170
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:12:55.740 --> 00:12:56.310
+<v Speaker 1>See.
+
+NOTE CONF {"raw":[56]}
+
+00:12:57.330 --> 00:12:58.650
+<v Speaker 0>Everyone has a Friday brain.
+
+NOTE CONF {"raw":[100,100,100,60,66]}
+
+00:12:58.770 --> 00:12:59.790
+<v Speaker 0>Be careful with minus.
+
+NOTE CONF {"raw":[100,100,100,99]}
+
+00:12:59.790 --> 00:13:00.420
+<v Speaker 0>Sounds good.
+
+NOTE CONF {"raw":[52,100]}
+
+00:13:00.420 --> 00:13:02.820
+<v Speaker 0>Okay, so we have one minus two minus c.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,31,42]}
+
+00:13:03.900 --> 00:13:05.190
+<v Speaker 0>We've got two zeros.
+
+NOTE CONF {"raw":[100,100,56,86]}
+
+00:13:05.190 --> 00:13:07.170
+<v Speaker 0>Again with quite obviously rank two.
+
+NOTE CONF {"raw":[100,72,100,100,100,100]}
+
+00:13:07.200 --> 00:13:08.310
+<v Speaker 0>This is looking good.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:08.310 --> 00:13:11.400
+<v Speaker 0>We're going to have a free variable okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:11.400 --> 00:13:15.420
+<v Speaker 0>So let's reduce again I'm going to do this a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:15.420 --> 00:13:19.800
+<v Speaker 0>bit quickly because hopefully we're all good with row reduction.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,97,100]}
+
+00:13:20.610 --> 00:13:22.350
+<v Speaker 0>Uh so I'm going to move that row to the
+
+NOTE CONF {"raw":[68,100,100,100,100,100,100,100,100,100]}
+
+00:13:22.350 --> 00:13:23.040
+<v Speaker 0>bottom.
+
+NOTE CONF {"raw":[100]}
+
+00:13:23.940 --> 00:13:26.520
+<v Speaker 0>Everyone happy I might make a mistake.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:13:26.520 --> 00:13:28.350
+<v Speaker 0>So do follow along and yell at me when I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:28.350 --> 00:13:29.220
+<v Speaker 0>make a mistake.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:13:29.910 --> 00:13:32.130
+<v Speaker 0>Um, and then I'm actually just going to divide by
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:13:32.130 --> 00:13:32.460
+<v Speaker 0>four.
+
+NOTE CONF {"raw":[100]}
+
+00:13:32.460 --> 00:13:33.330
+<v Speaker 0>Actually, this ones.
+
+NOTE CONF {"raw":[100,100,66]}
+
+00:13:33.330 --> 00:13:35.220
+<v Speaker 0>I don't think I have made a mistake.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:35.520 --> 00:13:35.910
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:13:36.300 --> 00:13:37.890
+<v Speaker 0>Oh, I have made a mistake.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:13:41.490 --> 00:13:42.920
+<v Speaker 0>Yeah, actually, I can keep those signs.
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100]}
+
+00:13:42.920 --> 00:13:44.270
+<v Speaker 0>Yeah, that's what I get.
+
+NOTE CONF {"raw":[98,100,100,100,100]}
+
+00:13:44.840 --> 00:13:46.340
+<v Speaker 0>Do we all somewhat agree?
+
+NOTE CONF {"raw":[97,100,100,100,100]}
+
+00:13:46.610 --> 00:13:48.050
+<v Speaker 0>I swapped the rows.
+
+NOTE CONF {"raw":[100,100,100,90]}
+
+00:13:48.350 --> 00:13:51.260
+<v Speaker 0>I times the first row by nothing at times.
+
+NOTE CONF {"raw":[79,87,100,100,100,97,100,87,100]}
+
+00:13:51.260 --> 00:13:53.450
+<v Speaker 0>The second row I divided by minus four.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:13:53.990 --> 00:13:55.100
+<v Speaker 0>Are we all happy?
+
+NOTE CONF {"raw":[99,100,100,100]}
+
+00:13:55.730 --> 00:13:56.570
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:13:56.780 --> 00:13:57.350
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:13:57.350 --> 00:13:58.550
+<v Speaker 0>Don't do maths quickly.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:13:59.060 --> 00:14:01.250
+<v Speaker 0>Um, so what's off?
+
+NOTE CONF {"raw":[100,100,96,58]}
+
+00:14:01.250 --> 00:14:05.180
+<v Speaker 0>We verbal in this case going to be Z.
+
+NOTE CONF {"raw":[83,100,100,93,100,100,100,100,100]}
+
+00:14:05.180 --> 00:14:08.570
+<v Speaker 0>Good Z equals t.
+
+NOTE CONF {"raw":[100,100,100,94]}
+
+00:14:08.870 --> 00:14:10.640
+<v Speaker 0>Um, what should I take y to be?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:14:19.370 --> 00:14:20.870
+<v Speaker 0>Minus three.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:24.260 --> 00:14:25.160
+<v Speaker 0>T yes.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:25.160 --> 00:14:26.570
+<v Speaker 0>Minus three quarters d.
+
+NOTE CONF {"raw":[91,100,100,63]}
+
+00:14:26.720 --> 00:14:28.640
+<v Speaker 0>Good okay.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:28.640 --> 00:14:30.260
+<v Speaker 0>And x.
+
+NOTE CONF {"raw":[100,100]}
+
+00:14:34.160 --> 00:14:35.090
+<v Speaker 0>Plus two.
+
+NOTE CONF {"raw":[100,47]}
+
+00:14:35.090 --> 00:14:35.360
+<v Speaker 0>One.
+
+NOTE CONF {"raw":[97]}
+
+00:14:36.110 --> 00:14:37.160
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:14:37.160 --> 00:14:40.070
+<v Speaker 0>So it's two y plus three z.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:40.070 --> 00:14:42.070
+<v Speaker 0>And if you stick that in terms of teas, you're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,32,100]}
+
+00:14:42.070 --> 00:14:46.210
+<v Speaker 0>going to get minus three halves of tea plus three
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100,100,100]}
+
+00:14:46.210 --> 00:14:48.880
+<v Speaker 0>tea, which is three halves of tea.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:14:48.910 --> 00:14:49.600
+<v Speaker 0>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:14:49.600 --> 00:14:50.350
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[96]}
+
+00:14:50.710 --> 00:14:52.510
+<v Speaker 0>Are we all happy people?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:14:52.810 --> 00:14:54.010
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:14:54.460 --> 00:14:58.510
+<v Speaker 0>So the eigenvector I can factor out the tea and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,70,100]}
+
+00:14:58.510 --> 00:15:03.880
+<v Speaker 0>I'm going to have, uh, three halves minus three quarters
+
+NOTE CONF {"raw":[89,100,100,100,52,100,100,100,100,100]}
+
+00:15:03.880 --> 00:15:04.510
+<v Speaker 0>one.
+
+NOTE CONF {"raw":[100]}
+
+00:15:06.280 --> 00:15:06.880
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:08.500 --> 00:15:09.700
+<v Speaker 0>We could do that.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:15:09.970 --> 00:15:12.760
+<v Speaker 0>Equally we would probably most people probably.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:15:12.760 --> 00:15:12.970
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[48]}
+
+00:15:12.970 --> 00:15:15.640
+<v Speaker 0>This eigenvector as you go on and do stuff with
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:15.640 --> 00:15:16.630
+<v Speaker 0>eigenvectors.
+
+NOTE CONF {"raw":[100]}
+
+00:15:16.660 --> 00:15:18.460
+<v Speaker 0>We don't care about the size.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:15:18.460 --> 00:15:20.680
+<v Speaker 0>So what might we want to do with that eigenvector
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:20.680 --> 00:15:23.980
+<v Speaker 0>in particular multiplied by four.
+
+NOTE CONF {"raw":[100,100,68,100,100]}
+
+00:15:24.010 --> 00:15:24.370
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[98]}
+
+00:15:24.400 --> 00:15:26.230
+<v Speaker 0>Let's get rid of the.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:15:28.600 --> 00:15:29.200
+<v Speaker 0>Whole.
+
+NOTE CONF {"raw":[71]}
+
+00:15:29.230 --> 00:15:30.940
+<v Speaker 0>Let's learn to multiply by four.
+
+NOTE CONF {"raw":[100,85,100,100,100,100]}
+
+00:15:31.120 --> 00:15:33.070
+<v Speaker 0>Um there we go.
+
+NOTE CONF {"raw":[96,100,100,100]}
+
+00:15:33.220 --> 00:15:33.640
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:15:33.640 --> 00:15:35.440
+<v Speaker 0>Let's get rid of the fractions where possible.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:36.670 --> 00:15:37.210
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:15:37.210 --> 00:15:37.540
+<v Speaker 0>Are we.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:37.540 --> 00:15:38.200
+<v Speaker 1>Still.
+
+NOTE CONF {"raw":[100]}
+
+00:15:38.800 --> 00:15:39.760
+<v Speaker 0>All good?
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:39.790 --> 00:15:40.180
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[75]}
+
+00:15:40.180 --> 00:15:41.340
+<v Speaker 0>I'm not going to do the last one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:41.340 --> 00:15:43.170
+<v Speaker 0>I'm going to leave that one to you.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:43.170 --> 00:15:44.940
+<v Speaker 0>I will give you the answer and let you double
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:44.940 --> 00:15:45.750
+<v Speaker 0>check this.
+
+NOTE CONF {"raw":[100,100]}
+
+00:15:46.590 --> 00:15:50.490
+<v Speaker 0>But lambda equals five is the last one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:15:51.060 --> 00:15:55.290
+<v Speaker 0>Um, and you should end up with your third eigenvalue
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:55.290 --> 00:15:59.730
+<v Speaker 0>to be minus three zero four, I hope, um, go
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:15:59.730 --> 00:16:01.620
+<v Speaker 0>forth and check that at some point.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:01.740 --> 00:16:02.820
+<v Speaker 0>But there you go.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:02.820 --> 00:16:05.400
+<v Speaker 0>Are we all happy with how to find eigenvectors?
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100]}
+
+00:16:05.730 --> 00:16:06.660
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:16:07.110 --> 00:16:10.560
+<v Speaker 0>It's slightly long winded, but not actually too hot.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,92,90]}
+
+00:16:10.560 --> 00:16:13.530
+<v Speaker 0>Well, it's the same method you've been using for five
+
+NOTE CONF {"raw":[58,100,100,100,83,100,100,100,100,100]}
+
+00:16:13.530 --> 00:16:16.290
+<v Speaker 0>weeks now, um, in various different guises.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:16.290 --> 00:16:18.030
+<v Speaker 0>So hopefully.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:18.030 --> 00:16:18.570
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:16:19.410 --> 00:16:19.950
+<v Speaker 0>Right.
+
+NOTE CONF {"raw":[100]}
+
+00:16:19.950 --> 00:16:20.850
+<v Speaker 0>Okay, good.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:20.850 --> 00:16:25.290
+<v Speaker 0>So that is how to find eigenvalues and eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:16:25.830 --> 00:16:27.180
+<v Speaker 0>So that's all good.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:28.230 --> 00:16:31.440
+<v Speaker 0>Um what if though.
+
+NOTE CONF {"raw":[100,100,100,97]}
+
+00:16:32.370 --> 00:16:33.360
+<v Speaker 0>So that was quite nice.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:33.360 --> 00:16:36.600
+<v Speaker 0>I had two I had three eigenvectors and I had
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:36.600 --> 00:16:37.920
+<v Speaker 0>three eigenvalues.
+
+NOTE CONF {"raw":[100,100]}
+
+00:16:37.920 --> 00:16:42.440
+<v Speaker 0>What if when we find our characteristic polynomial, though, we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:16:42.440 --> 00:16:43.670
+<v Speaker 0>end up with a double root?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:44.150 --> 00:16:45.950
+<v Speaker 0>What do we think could happen then?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:16:49.820 --> 00:16:51.920
+<v Speaker 0>So let's think about another matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:16:51.920 --> 00:16:54.470
+<v Speaker 0>I'm going to call this one B just to change
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,99]}
+
+00:16:54.470 --> 00:16:55.190
+<v Speaker 0>stuff up a bit.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:16:55.190 --> 00:16:56.900
+<v Speaker 0>Let's think about this matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:16:57.920 --> 00:16:58.310
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:17:01.010 --> 00:17:02.720
+<v Speaker 0>What are the eigenvalues there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:17:02.870 --> 00:17:04.040
+<v Speaker 0>If we just yell at me.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:06.050 --> 00:17:07.490
+<v Speaker 0>One zero and one.
+
+NOTE CONF {"raw":[97,100,100,100]}
+
+00:17:07.490 --> 00:17:07.910
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:17:09.350 --> 00:17:12.500
+<v Speaker 0>But if we think about the characteristic polynomial, it's actually
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:12.500 --> 00:17:15.500
+<v Speaker 0>going to be lambda lambda minus one squared.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:17:15.890 --> 00:17:18.290
+<v Speaker 0>So we've only got two roots but we've kind of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,94,94]}
+
+00:17:18.290 --> 00:17:22.610
+<v Speaker 0>got three eigenvalues because lambda is a repeated eigenvalue.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:17:23.720 --> 00:17:24.140
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:17:24.140 --> 00:17:25.459
+<v Speaker 0>So what's happening here.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:17:27.620 --> 00:17:29.930
+<v Speaker 0>What do people think's going to happen when we find
+
+NOTE CONF {"raw":[100,100,100,68,100,100,100,100,100,100]}
+
+00:17:29.930 --> 00:17:32.420
+<v Speaker 0>eigenvectors one.
+
+NOTE CONF {"raw":[63,100]}
+
+00:17:32.420 --> 00:17:34.310
+<v Speaker 1>Has two parameter two three.
+
+NOTE CONF {"raw":[100,100,35,100,79]}
+
+00:17:34.820 --> 00:17:35.270
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:17:35.270 --> 00:17:35.630
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:17:35.630 --> 00:17:39.430
+<v Speaker 0>So let's just consider I mean finding the eigenvectors for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:39.430 --> 00:17:40.960
+<v Speaker 0>zero, I will leave you to do.
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100]}
+
+00:17:41.290 --> 00:17:43.720
+<v Speaker 0>Let's consider the eigenvectors for one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:17:44.350 --> 00:17:47.080
+<v Speaker 0>If we do the identity minus this matrix, we're going
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,78,100]}
+
+00:17:47.080 --> 00:17:50.110
+<v Speaker 0>to end up with minus one, minus seven plus 17
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:17:50.110 --> 00:17:54.370
+<v Speaker 0>minus eight 000000.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:17:55.270 --> 00:17:58.780
+<v Speaker 0>What ranks that matrix one.
+
+NOTE CONF {"raw":[75,91,100,100,100]}
+
+00:17:58.780 --> 00:18:01.360
+<v Speaker 0>So how many free free variables do we have.
+
+NOTE CONF {"raw":[100,100,100,65,100,100,100,100,100]}
+
+00:18:01.930 --> 00:18:02.470
+<v Speaker 0>Two.
+
+NOTE CONF {"raw":[100]}
+
+00:18:02.470 --> 00:18:03.190
+<v Speaker 0>Wonderful.
+
+NOTE CONF {"raw":[100]}
+
+00:18:03.310 --> 00:18:07.390
+<v Speaker 0>So we could times everything by minus one to make
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:07.390 --> 00:18:09.220
+<v Speaker 0>this nice and quickly solve it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:18:09.220 --> 00:18:13.030
+<v Speaker 0>And we're going to get y equals one free variable
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:13.030 --> 00:18:14.770
+<v Speaker 0>z equals another free variable.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:14.770 --> 00:18:16.840
+<v Speaker 0>And x is going to be 17.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:18:16.840 --> 00:18:19.090
+<v Speaker 0>Lots of t minus eight lots of s.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:18:19.090 --> 00:18:22.600
+<v Speaker 0>And if we solve this I appreciate I'm doing this
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:22.600 --> 00:18:24.130
+<v Speaker 0>relatively quickly.
+
+NOTE CONF {"raw":[100,100]}
+
+00:18:24.670 --> 00:18:31.450
+<v Speaker 0>We're going to have 17 one zero plus zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95]}
+
+00:18:31.960 --> 00:18:32.260
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[73]}
+
+00:18:32.260 --> 00:18:36.130
+<v Speaker 0>Minus eight zero one okay.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:18:38.520 --> 00:18:39.060
+<v Speaker 1>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:18:41.310 --> 00:18:41.940
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:18:41.970 --> 00:18:47.550
+<v Speaker 0>So we now have two basic solutions, and both of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:18:47.550 --> 00:18:49.290
+<v Speaker 0>them are eigenvectors.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:18:49.950 --> 00:18:55.020
+<v Speaker 0>So in this case we actually have two eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:02.820 --> 00:19:03.570
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:03.570 --> 00:19:05.280
+<v Speaker 0>So this is quite funky.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:05.850 --> 00:19:08.010
+<v Speaker 0>We so we did the algebra.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:08.010 --> 00:19:09.330
+<v Speaker 0>We found two roots.
+
+NOTE CONF {"raw":[100,100,100,81]}
+
+00:19:09.570 --> 00:19:11.790
+<v Speaker 0>This is known as the.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:19:11.790 --> 00:19:14.610
+<v Speaker 0>So yeah every eigenvalue has a corresponding eigenvector.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:19:14.760 --> 00:19:17.280
+<v Speaker 0>And if you find a double root when you're doing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:17.280 --> 00:19:20.880
+<v Speaker 0>your determinant that is known as the algebraic multiplicity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:19:21.060 --> 00:19:23.940
+<v Speaker 0>If you find a triple root it's got multiplicity three.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,89,100,100,100]}
+
+00:19:24.060 --> 00:19:25.830
+<v Speaker 0>So it's how much when you do the all the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,63,90,100]}
+
+00:19:25.830 --> 00:19:28.020
+<v Speaker 0>algebra how often does your root appear.
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100]}
+
+00:19:28.500 --> 00:19:30.450
+<v Speaker 0>That's known as the algebraic multiplicity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:31.020 --> 00:19:31.350
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:19:31.350 --> 00:19:32.940
+<v Speaker 0>But let's start thinking geometrically.
+
+NOTE CONF {"raw":[98,100,95,100,100]}
+
+00:19:32.940 --> 00:19:34.500
+<v Speaker 0>We like thinking geometrically.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:34.500 --> 00:19:38.960
+<v Speaker 0>What is happening geometrically when I have got two eigenvalues?
+
+NOTE CONF {"raw":[91,100,100,100,100,73,73,100,100,100]}
+
+00:19:41.210 --> 00:19:41.690
+<v Speaker 2>Do you get it?
+
+NOTE CONF {"raw":[91,100,99,91]}
+
+00:19:42.350 --> 00:19:43.130
+<v Speaker 0>I get a plane.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:19:43.130 --> 00:19:43.430
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[94]}
+
+00:19:43.430 --> 00:19:45.380
+<v Speaker 0>So instead of having a fixed line, instead of a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:45.380 --> 00:19:48.140
+<v Speaker 0>line being mapped to itself, I've now got a whole
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:48.140 --> 00:19:50.390
+<v Speaker 0>plane that's getting mapped to itself.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:50.720 --> 00:19:53.000
+<v Speaker 0>So you can think about it as a reflection in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:19:53.000 --> 00:19:53.810
+<v Speaker 0>3D.
+
+NOTE CONF {"raw":[92]}
+
+00:19:53.810 --> 00:19:56.030
+<v Speaker 0>That mirror gets reflected to itself.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:19:56.030 --> 00:20:00.470
+<v Speaker 0>So the eigenvalues of that mirror, well they're going to
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,100,100]}
+
+00:20:00.470 --> 00:20:04.160
+<v Speaker 0>have eigenvector one, but it's going to have two parameters.
+
+NOTE CONF {"raw":[100,88,100,100,100,100,100,100,100,100]}
+
+00:20:04.550 --> 00:20:07.340
+<v Speaker 0>So that mirror gets mapped entirely to itself.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:07.940 --> 00:20:09.440
+<v Speaker 0>And we get a fixed plane.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:10.070 --> 00:20:13.340
+<v Speaker 0>And that is the geometric multiplicity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:13.340 --> 00:20:18.860
+<v Speaker 0>So how many eigenvectors you get for your algebraic multiplicity
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:19.310 --> 00:20:22.010
+<v Speaker 0>is your geometric multiplicity.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:22.130 --> 00:20:23.030
+<v Speaker 0>Does that make sense.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:20:23.030 --> 00:20:24.830
+<v Speaker 0>So you have the algebra that gives you how many
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:20:24.830 --> 00:20:26.480
+<v Speaker 0>times an eigenvalue appears.
+
+NOTE CONF {"raw":[100,100,97,91]}
+
+00:20:26.480 --> 00:20:29.570
+<v Speaker 0>And then for every eigenvalue you have.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:20:30.050 --> 00:20:30.560
+<v Speaker 1>Different.
+
+NOTE CONF {"raw":[100]}
+
+00:20:30.560 --> 00:20:32.420
+<v Speaker 0>Number of eigenvectors that can appear.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:33.050 --> 00:20:35.410
+<v Speaker 0>And that's your geometric multiplicity.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:36.850 --> 00:20:38.620
+<v Speaker 0>So far, so happy still?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:38.650 --> 00:20:39.580
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:20:39.670 --> 00:20:41.050
+<v Speaker 1>So the transformation.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:20:41.050 --> 00:20:44.650
+<v Speaker 2>Applied by matrix B it's reflecting it out.
+
+NOTE CONF {"raw":[76,100,100,86,97,100,100,52]}
+
+00:20:45.280 --> 00:20:49.750
+<v Speaker 0>So this one um yeah actually this one, this one's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,80]}
+
+00:20:49.750 --> 00:20:52.510
+<v Speaker 0>not a reflection because we've got eigenvalue zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:20:52.540 --> 00:20:54.970
+<v Speaker 0>So if it was a reflection you'd only have eigenvalues
+
+NOTE CONF {"raw":[100,100,100,100,61,100,100,100,100,100]}
+
+00:20:54.970 --> 00:20:55.900
+<v Speaker 0>one and minus one.
+
+NOTE CONF {"raw":[100,86,100,100]}
+
+00:20:56.050 --> 00:20:57.490
+<v Speaker 0>That's what we saw yesterday.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:20:57.490 --> 00:20:58.990
+<v Speaker 0>But here we've got a plane.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:20:58.990 --> 00:21:02.050
+<v Speaker 0>So the plane spanned by these two vectors a plane.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,36,100]}
+
+00:21:02.050 --> 00:21:08.620
+<v Speaker 0>Anything that can be written like this, um is fixed
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:08.620 --> 00:21:09.910
+<v Speaker 0>by this matrix.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:10.060 --> 00:21:13.630
+<v Speaker 0>And then everything that's not on that plane is kind
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:13.630 --> 00:21:15.490
+<v Speaker 0>of where it's got eigenvalue zero.
+
+NOTE CONF {"raw":[100,92,96,100,100,100]}
+
+00:21:15.490 --> 00:21:18.220
+<v Speaker 0>So that's getting what happens if you have eigenvalue zero
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:21:18.220 --> 00:21:18.880
+<v Speaker 0>actually.
+
+NOTE CONF {"raw":[100]}
+
+00:21:24.730 --> 00:21:26.620
+<v Speaker 0>Let's go back to the definition.
+
+NOTE CONF {"raw":[81,100,100,100,100,100]}
+
+00:21:27.250 --> 00:21:31.510
+<v Speaker 0>What happens if your eigenvalue zero you will get mapped
+
+NOTE CONF {"raw":[100,100,100,58,100,100,100,98,100,100]}
+
+00:21:31.510 --> 00:21:31.960
+<v Speaker 0>to the origin.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:31.960 --> 00:21:32.140
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[91]}
+
+00:21:32.160 --> 00:21:34.080
+<v Speaker 0>So you get pushed down to everything.
+
+NOTE CONF {"raw":[100,100,100,100,100,99,58]}
+
+00:21:34.080 --> 00:21:37.620
+<v Speaker 0>So actually if we think about this a bit, this
+
+NOTE CONF {"raw":[100,100,100,93,100,100,100,100,100,100]}
+
+00:21:37.620 --> 00:21:41.070
+<v Speaker 0>matrix here, it's got a plane that's being fixed and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,93,100,100,100]}
+
+00:21:41.070 --> 00:21:42.900
+<v Speaker 0>everything else is being mapped to the origin.
+
+NOTE CONF {"raw":[100,100,95,95,100,100,100,100]}
+
+00:21:42.900 --> 00:21:45.720
+<v Speaker 0>So it's kind of collapsing everything just down to the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:21:45.720 --> 00:21:46.170
+<v Speaker 0>plane.
+
+NOTE CONF {"raw":[100]}
+
+00:21:48.570 --> 00:21:49.080
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:21:50.430 --> 00:21:51.600
+<v Speaker 1>So for each.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:21:51.600 --> 00:21:57.000
+<v Speaker 2>Line that was presented by those two classic solutions, we
+
+NOTE CONF {"raw":[46,7,7,7,38,100,100,49,100,69]}
+
+00:21:57.240 --> 00:21:57.900
+<v Speaker 2>think of the map.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:21:57.900 --> 00:22:01.170
+<v Unknown>To itself and very linear combination which is represented by
+
+NOTE CONF {"raw":[70,100,95,100,100,99,100,91,100,100]}
+
+00:22:01.170 --> 00:22:01.950
+<v Unknown>the plane as well.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:22:01.950 --> 00:22:04.200
+<v Unknown>So it's going to also be mapped to itself.
+
+NOTE CONF {"raw":[90,100,100,100,100,100,93,98,97]}
+
+00:22:04.230 --> 00:22:04.620
+<v Unknown>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:22:04.890 --> 00:22:08.460
+<v Speaker 0>Because even if I have say if I have three
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:08.460 --> 00:22:11.580
+<v Speaker 0>lots of this vector plus two lots of this vector,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:11.580 --> 00:22:13.770
+<v Speaker 0>well three lots of that vector is getting mapped to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:13.770 --> 00:22:14.820
+<v Speaker 0>three lots of that vector.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:22:14.820 --> 00:22:16.200
+<v Speaker 0>And two lots of that one is getting mapped to
+
+NOTE CONF {"raw":[100,100,100,100,100,54,54,100,100,100]}
+
+00:22:16.200 --> 00:22:16.800
+<v Speaker 0>that one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:22:16.800 --> 00:22:19.380
+<v Speaker 0>And we know linear transformation is respect addition.
+
+NOTE CONF {"raw":[100,100,100,100,76,72,100,98]}
+
+00:22:19.530 --> 00:22:21.540
+<v Speaker 0>So it's still going to be those three.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:21.540 --> 00:22:22.980
+<v Speaker 0>Lots of that plus two lots of that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:22:23.130 --> 00:22:25.710
+<v Speaker 0>So we get exactly the plane gets exactly mapped to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,87,100,100,100]}
+
+00:22:25.710 --> 00:22:26.310
+<v Speaker 0>itself.
+
+NOTE CONF {"raw":[100]}
+
+00:22:27.330 --> 00:22:27.960
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:22:27.960 --> 00:22:32.360
+<v Speaker 0>Any other questions or Queries or comments.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:22:34.730 --> 00:22:36.620
+<v Speaker 0>But actually that's quite good if we think about what
+
+NOTE CONF {"raw":[100,100,96,100,100,100,93,100,100,100]}
+
+00:22:36.620 --> 00:22:38.870
+<v Speaker 0>we just did there geometrically, just by looking at the
+
+NOTE CONF {"raw":[100,100,100,98,100,100,100,100,100,100]}
+
+00:22:38.870 --> 00:22:43.280
+<v Speaker 0>eigenvalues and eigenvectors, we could tell what that matrix did
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:43.280 --> 00:22:44.300
+<v Speaker 0>geometrically.
+
+NOTE CONF {"raw":[100]}
+
+00:22:44.420 --> 00:22:46.670
+<v Speaker 0>I can't look at that matrix off the top of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:46.670 --> 00:22:52.010
+<v Speaker 0>my head and go, that is pushing everything is observing
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,76]}
+
+00:22:52.010 --> 00:22:55.040
+<v Speaker 0>the plane and taking everything else down to the origin.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:55.310 --> 00:22:57.800
+<v Speaker 0>But we can do that with the eigenvalues and eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:22:57.830 --> 00:23:00.380
+<v Speaker 0>That is, the power of eigenvalues and eigenvectors is.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:00.380 --> 00:23:03.590
+<v Speaker 0>They allow us to do the geometry without doing any
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:03.590 --> 00:23:08.150
+<v Speaker 0>geometry, which is nice because in higher dimensions I can't
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:08.150 --> 00:23:09.140
+<v Speaker 0>draw things.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:10.130 --> 00:23:10.790
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:23:10.790 --> 00:23:16.130
+<v Speaker 0>So we know if the eigenvalue has an eigenvector.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:23:16.280 --> 00:23:20.270
+<v Speaker 0>So how does the algebraic multiplicity and the geometric multiplicity
+
+NOTE CONF {"raw":[100,100,100,100,100,100,89,100,100,100]}
+
+00:23:20.270 --> 00:23:20.990
+<v Speaker 0>relate to each other?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:23:20.990 --> 00:23:23.240
+<v Speaker 0>Which one's got to be bigger than the other one.
+
+NOTE CONF {"raw":[100,73,98,100,100,100,100,100,100,96]}
+
+00:23:23.240 --> 00:23:24.560
+<v Speaker 0>One's got to be bigger than the other.
+
+NOTE CONF {"raw":[62,93,100,100,100,100,100,100]}
+
+00:23:24.560 --> 00:23:25.340
+<v Speaker 0>Which one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:26.420 --> 00:23:29.180
+<v Speaker 0>Yeah, yeah.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:29.180 --> 00:23:33.640
+<v Speaker 0>The outbreaks got to be bigger because for every algebraic
+
+NOTE CONF {"raw":[100,43,100,100,100,100,100,100,100,100]}
+
+00:23:33.640 --> 00:23:37.870
+<v Speaker 0>one, you can't have more eigenvectors than you can eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:39.610 --> 00:23:39.820
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:23:39.820 --> 00:23:40.120
+<v Speaker 0>Hang on.
+
+NOTE CONF {"raw":[100,100]}
+
+00:23:40.120 --> 00:23:42.130
+<v Speaker 0>I said that completely backwards and all that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:23:42.130 --> 00:23:44.650
+<v Speaker 0>You can't have more eigenvectors than you do.
+
+NOTE CONF {"raw":[100,97,100,100,100,100,100,100]}
+
+00:23:44.650 --> 00:23:48.820
+<v Speaker 0>The number of eigenvalues, each eigenvalue even repeated, only gives
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:48.820 --> 00:23:51.100
+<v Speaker 0>you at most one eigenvector.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:23:51.910 --> 00:23:56.230
+<v Speaker 0>So we know that the algebraic multiplicity is bigger than
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:23:56.230 --> 00:23:57.610
+<v Speaker 0>the geometric multiplicity.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:23:58.510 --> 00:23:59.110
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:23:59.110 --> 00:24:00.850
+<v Speaker 0>So we actually have this inequality.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:01.540 --> 00:24:03.580
+<v Speaker 0>We also know both of them are bigger than one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:03.580 --> 00:24:07.930
+<v Speaker 0>Because if you have one eigenvalue, you have a eigenvector
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:24:07.930 --> 00:24:08.800
+<v Speaker 0>by definition.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:08.800 --> 00:24:11.140
+<v Speaker 0>If you do not have an eigenvector, then you're not
+
+NOTE CONF {"raw":[100,100,83,83,100,100,100,100,85,100]}
+
+00:24:11.140 --> 00:24:12.070
+<v Speaker 0>an eigenvalue.
+
+NOTE CONF {"raw":[100,100]}
+
+00:24:13.150 --> 00:24:14.320
+<v Speaker 0>So they come in a pest.
+
+NOTE CONF {"raw":[100,100,100,100,100,96]}
+
+00:24:14.320 --> 00:24:17.380
+<v Speaker 0>You have at least one eigenvector, but you don't have
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:17.380 --> 00:24:20.020
+<v Speaker 0>to have all of the.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:20.020 --> 00:24:22.300
+<v Speaker 0>So this we will see it in a bit a
+
+NOTE CONF {"raw":[100,100,100,100,100,70,100,100,100,100]}
+
+00:24:22.300 --> 00:24:27.670
+<v Speaker 0>case where we have algebraic multiplicity but not geometric multiplicity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:24:27.670 --> 00:24:29.400
+<v Speaker 0>So we don't have two eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:29.400 --> 00:24:31.020
+<v Speaker 0>We only have one eigenvector.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:24:31.620 --> 00:24:33.930
+<v Speaker 0>Even though the eigenvalue appears twice.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:24:35.970 --> 00:24:36.750
+<v Speaker 1>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:24:39.030 --> 00:24:42.840
+<v Speaker 0>I feel like we kind of went boring calculation boring
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,71]}
+
+00:24:42.840 --> 00:24:44.220
+<v Speaker 0>calculation calculation hard.
+
+NOTE CONF {"raw":[97,100,39]}
+
+00:24:44.220 --> 00:24:46.470
+<v Speaker 0>But the theory we're about to go back to born
+
+NOTE CONF {"raw":[68,73,76,100,100,100,100,100,100,87]}
+
+00:24:46.470 --> 00:24:47.070
+<v Speaker 0>calculation.
+
+NOTE CONF {"raw":[100]}
+
+00:24:47.070 --> 00:24:49.650
+<v Speaker 0>But does anyone have questions about the spiking theory?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,95,97]}
+
+00:24:49.680 --> 00:24:50.190
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:24:56.160 --> 00:24:58.440
+<v Speaker 1>Let me get back to finish.
+
+NOTE CONF {"raw":[58,58,77,62,98,87]}
+
+00:24:58.650 --> 00:24:59.370
+<v Speaker 1>I think I.
+
+NOTE CONF {"raw":[100,100,41]}
+
+00:24:59.910 --> 00:25:00.060
+<v Speaker 2>Got.
+
+NOTE CONF {"raw":[46]}
+
+00:25:02.820 --> 00:25:02.940
+<v Speaker 0>It.
+
+NOTE CONF {"raw":[97]}
+
+00:25:03.090 --> 00:25:03.570
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:25:03.570 --> 00:25:09.150
+<v Speaker 0>So we got two eigenvectors because our eigenvalue appeared twice,
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:25:09.240 --> 00:25:11.100
+<v Speaker 0>but it's not always the case.
+
+NOTE CONF {"raw":[100,97,100,100,100,100]}
+
+00:25:11.100 --> 00:25:15.510
+<v Speaker 0>Even if your eigenvalue appears multiple times, that doesn't guarantees
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,91]}
+
+00:25:15.510 --> 00:25:20.490
+<v Speaker 0>you one eigenvector, but it doesn't guarantee you two eigenvectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:20.490 --> 00:25:21.300
+<v Speaker 0>for example.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:21.960 --> 00:25:23.850
+<v Speaker 0>So we'll see that in a in a bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:25:27.200 --> 00:25:27.860
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:25:27.860 --> 00:25:32.390
+<v Speaker 0>So we're actually going to go back to somewhat boolean
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,78]}
+
+00:25:32.390 --> 00:25:33.260
+<v Speaker 0>calculation now.
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:33.530 --> 00:25:34.580
+<v Speaker 0>Um yay.
+
+NOTE CONF {"raw":[100,88]}
+
+00:25:34.580 --> 00:25:35.720
+<v Speaker 0>Hopefully or not.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:35.720 --> 00:25:36.380
+<v Speaker 0>Not yay.
+
+NOTE CONF {"raw":[100,98]}
+
+00:25:37.010 --> 00:25:41.510
+<v Speaker 0>Um, hopefully by now you've realised we like diagonal matrices.
+
+NOTE CONF {"raw":[100,100,100,100,99,72,100,100,100,100]}
+
+00:25:42.470 --> 00:25:44.540
+<v Speaker 0>Can anyone give me a reason why we like diagonal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:44.540 --> 00:25:44.960
+<v Speaker 0>matrix?
+
+NOTE CONF {"raw":[100]}
+
+00:25:44.990 --> 00:25:47.210
+<v Speaker 0>What do they make life really easy for?
+
+NOTE CONF {"raw":[100,63,100,100,100,100,100,100]}
+
+00:25:48.320 --> 00:25:49.100
+<v Speaker 0>The determinants.
+
+NOTE CONF {"raw":[100,60]}
+
+00:25:49.130 --> 00:25:49.610
+<v Speaker 0>Easy, yeah.
+
+NOTE CONF {"raw":[100,99]}
+
+00:25:49.610 --> 00:25:50.360
+<v Speaker 0>What else?
+
+NOTE CONF {"raw":[100,100]}
+
+00:25:51.530 --> 00:25:52.640
+<v Speaker 0>Multiplications.
+
+NOTE CONF {"raw":[100]}
+
+00:25:52.640 --> 00:25:52.940
+<v Speaker 0>Easy.
+
+NOTE CONF {"raw":[100]}
+
+00:25:52.940 --> 00:25:54.200
+<v Speaker 0>What else did I have?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:25:54.470 --> 00:25:55.580
+<v Speaker 0>Finding the inverse.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:25:55.730 --> 00:25:58.280
+<v Speaker 0>Why is finding the inverse of a diagonal matrix really
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:25:58.280 --> 00:25:58.820
+<v Speaker 0>easy?
+
+NOTE CONF {"raw":[100]}
+
+00:26:00.860 --> 00:26:03.140
+<v Speaker 0>Yeah it's basically the reciprocal.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:03.260 --> 00:26:05.930
+<v Speaker 0>More or less you find the reciprocal of everything on
+
+NOTE CONF {"raw":[93,93,93,100,100,100,100,100,100,100]}
+
+00:26:05.930 --> 00:26:06.560
+<v Speaker 0>the diagonal.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:07.010 --> 00:26:09.560
+<v Speaker 0>Um why is it easier to interpret transformation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:09.560 --> 00:26:11.570
+<v Speaker 0>What is the diagonal transformation doing?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:26:12.230 --> 00:26:14.990
+<v Speaker 1>It's a combination of matrices.
+
+NOTE CONF {"raw":[73,94,100,100,100]}
+
+00:26:14.990 --> 00:26:17.900
+<v Speaker 2>So it's really easy to think of a combination of
+
+NOTE CONF {"raw":[100,100,98,100,100,100,100,100,100,79]}
+
+00:26:17.900 --> 00:26:18.140
+<v Speaker 2>those.
+
+NOTE CONF {"raw":[71]}
+
+00:26:18.200 --> 00:26:18.980
+<v Speaker 0>Yeah exactly.
+
+NOTE CONF {"raw":[100,100]}
+
+00:26:18.980 --> 00:26:21.500
+<v Speaker 0>And we know geometrically what the elementary matrices are doing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:21.500 --> 00:26:23.300
+<v Speaker 0>So actually it's quite easy to interpret.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:26:23.300 --> 00:26:26.590
+<v Speaker 0>It's easy to calculate with we like diagonal matrices.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:26:27.550 --> 00:26:30.850
+<v Speaker 0>If we have a matrix like that, though, that's less
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:26:30.850 --> 00:26:31.450
+<v Speaker 0>nice.
+
+NOTE CONF {"raw":[100]}
+
+00:26:31.480 --> 00:26:33.130
+<v Speaker 0>I mean, that one's got a load of zeros in.
+
+NOTE CONF {"raw":[100,100,100,99,100,100,96,100,83,100]}
+
+00:26:33.130 --> 00:26:34.240
+<v Speaker 0>That's not too bad.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:26:35.230 --> 00:26:37.360
+<v Speaker 0>I'm picking ones of loads of zeros in deliberately.
+
+NOTE CONF {"raw":[100,100,95,66,100,100,99,100,100]}
+
+00:26:37.360 --> 00:26:40.780
+<v Speaker 0>But, um, if you had a big matrix they're not
+
+NOTE CONF {"raw":[100,81,100,100,100,100,100,100,58,100]}
+
+00:26:41.050 --> 00:26:43.330
+<v Speaker 0>with not zeros in they're less nice.
+
+NOTE CONF {"raw":[100,100,99,100,79,100,83]}
+
+00:26:43.330 --> 00:26:46.240
+<v Speaker 0>So you have to think about inverses and determinants and
+
+NOTE CONF {"raw":[83,100,100,100,100,100,100,100,100,100]}
+
+00:26:46.240 --> 00:26:46.780
+<v Speaker 0>things.
+
+NOTE CONF {"raw":[100]}
+
+00:26:46.780 --> 00:26:49.330
+<v Speaker 0>So we actually want things to be diagonal.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:26:49.390 --> 00:26:51.520
+<v Speaker 0>We want we prefer diagonal matrices.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:26:51.520 --> 00:26:53.860
+<v Speaker 0>So we're going to diagonalise our matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,58]}
+
+00:26:54.520 --> 00:26:57.490
+<v Speaker 0>Um this is a very typical mass thing.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,38,100]}
+
+00:26:57.490 --> 00:26:59.380
+<v Speaker 0>We have a diagonal matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:26:59.380 --> 00:27:00.940
+<v Speaker 0>We want to make something diagonal.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:27:00.940 --> 00:27:05.200
+<v Speaker 0>So we make diagonal a verb and call it diagonalise.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,69]}
+
+00:27:05.680 --> 00:27:08.200
+<v Speaker 0>Um, so we are diagonalising our matrix.
+
+NOTE CONF {"raw":[100,100,99,99,100,100,85]}
+
+00:27:08.740 --> 00:27:10.870
+<v Speaker 0>Um there we go.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:27:11.110 --> 00:27:13.090
+<v Speaker 0>So when are we diagonalisable?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:27:13.090 --> 00:27:15.820
+<v Speaker 0>When can we make a matrix diagonal?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:16.240 --> 00:27:21.490
+<v Speaker 0>It's when we've got some matrix P where Papp holds
+
+NOTE CONF {"raw":[95,100,100,100,100,100,100,100,43,100]}
+
+00:27:21.760 --> 00:27:25.080
+<v Speaker 0>p inverse AP equals our diagonal matrix D for some
+
+NOTE CONF {"raw":[100,100,92,100,100,100,100,100,100,100]}
+
+00:27:25.080 --> 00:27:26.100
+<v Speaker 0>matrix P.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:26.250 --> 00:27:27.630
+<v Speaker 0>Later on we'll see.
+
+NOTE CONF {"raw":[100,100,86,100]}
+
+00:27:27.630 --> 00:27:30.510
+<v Speaker 0>This is known as a similar relationship, but don't worry
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100,100,100,100]}
+
+00:27:30.510 --> 00:27:32.010
+<v Speaker 0>about that too much at the moment.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:27:32.670 --> 00:27:34.770
+<v Speaker 0>Um, but we need to know that such a P
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:27:34.770 --> 00:27:35.550
+<v Speaker 0>exists.
+
+NOTE CONF {"raw":[100]}
+
+00:27:35.550 --> 00:27:41.880
+<v Speaker 0>You cannot always diagonalise a matrix, but you can sometimes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:41.880 --> 00:27:43.470
+<v Speaker 0>And when you can, that's what we mean.
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100]}
+
+00:27:43.470 --> 00:27:47.760
+<v Speaker 0>We mean that p inverse a p equals a diagonal
+
+NOTE CONF {"raw":[100,100,100,100,100,78,78,100,100,100]}
+
+00:27:47.760 --> 00:27:48.720
+<v Speaker 0>matrix D.
+
+NOTE CONF {"raw":[100,100]}
+
+00:27:50.520 --> 00:27:54.300
+<v Speaker 0>So let us think about why this preserves all our
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:27:54.300 --> 00:27:55.770
+<v Speaker 0>nice diagonal things.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:27:56.640 --> 00:27:59.490
+<v Speaker 0>Um so one thing that we said was nice was
+
+NOTE CONF {"raw":[100,100,100,95,85,100,100,100,100,100]}
+
+00:27:59.610 --> 00:28:05.490
+<v Speaker 0>we could, uh, multiply diagonal matrices together nicely.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:05.490 --> 00:28:07.530
+<v Speaker 0>Let's actually just think about taking a power.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:28:09.150 --> 00:28:11.670
+<v Speaker 0>Taking a power of a diagonal matrix isn't bad.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:28:13.110 --> 00:28:15.930
+<v Speaker 0>Um, we know if this is the same as d
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:15.930 --> 00:28:16.590
+<v Speaker 0>times d.
+
+NOTE CONF {"raw":[100,100]}
+
+00:28:17.340 --> 00:28:22.080
+<v Speaker 0>If we're diagonalisable, then we have p inverse a p
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:22.110 --> 00:28:23.990
+<v Speaker 0>times p inverse a p.
+
+NOTE CONF {"raw":[100,100,100,50,50]}
+
+00:28:24.410 --> 00:28:25.820
+<v Speaker 0>How does that simplify?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:28:28.700 --> 00:28:29.300
+<v Speaker 0>Brilliant.
+
+NOTE CONF {"raw":[100]}
+
+00:28:31.160 --> 00:28:33.500
+<v Speaker 0>P inverse a squared p.
+
+NOTE CONF {"raw":[100,100,100,100,89]}
+
+00:28:33.830 --> 00:28:34.220
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:28:34.220 --> 00:28:36.830
+<v Speaker 0>So say, if I actually wanted to find a squared.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:28:37.070 --> 00:28:38.690
+<v Speaker 0>How can I find a squared?
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:28:41.960 --> 00:28:43.820
+<v Speaker 0>How can I rearrange this?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:28:45.530 --> 00:28:46.100
+<v Speaker 0>Brilliant.
+
+NOTE CONF {"raw":[100]}
+
+00:28:50.840 --> 00:28:51.470
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:28:51.500 --> 00:28:53.060
+<v Speaker 0>I can now find a squared.
+
+NOTE CONF {"raw":[100,100,100,100,100,92]}
+
+00:28:53.090 --> 00:28:55.970
+<v Speaker 0>That's a lot easier than doing matrix multiplication with the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,97]}
+
+00:28:55.970 --> 00:28:57.890
+<v Speaker 0>three by three, which doesn't have zeros in.
+
+NOTE CONF {"raw":[100,100,100,100,93,100,71,100]}
+
+00:28:57.890 --> 00:29:00.260
+<v Speaker 0>Particularly when we see the finding p is actually quite
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:00.260 --> 00:29:00.770
+<v Speaker 0>easy.
+
+NOTE CONF {"raw":[100]}
+
+00:29:01.580 --> 00:29:05.030
+<v Speaker 0>So suddenly it's easy to square matrices.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:06.170 --> 00:29:11.180
+<v Speaker 0>Um, what do we know about the determinant of of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:11.180 --> 00:29:11.600
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:29:11.600 --> 00:29:17.900
+<v Speaker 0>So when we have a p inverse AP equals d
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,70,100,100]}
+
+00:29:18.140 --> 00:29:19.610
+<v Speaker 0>what do we know about the determinant.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:29:19.790 --> 00:29:23.080
+<v Speaker 2>This is the product of that.
+
+NOTE CONF {"raw":[100,82,81,97,81,64]}
+
+00:29:23.440 --> 00:29:23.980
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:29:24.490 --> 00:29:27.670
+<v Speaker 0>So the weak easily find the determinant of D.
+
+NOTE CONF {"raw":[100,100,97,100,100,100,100,100,98]}
+
+00:29:28.090 --> 00:29:31.630
+<v Speaker 0>And we know the determinant of p and p inverse
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:31.630 --> 00:29:32.770
+<v Speaker 0>are reciprocal.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:32.770 --> 00:29:34.360
+<v Speaker 0>Determinants are just numbers.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:34.360 --> 00:29:37.240
+<v Speaker 0>So actually we can quite easily see the determinant of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:37.240 --> 00:29:39.400
+<v Speaker 0>A is just the determinant of d.
+
+NOTE CONF {"raw":[100,80,100,100,100,97,100]}
+
+00:29:39.670 --> 00:29:41.620
+<v Speaker 0>And I can do that one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:41.650 --> 00:29:43.270
+<v Speaker 0>That's an easy calculation.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:29:43.810 --> 00:29:49.150
+<v Speaker 0>So determinants are nice to um and equally finding inverses
+
+NOTE CONF {"raw":[100,99,97,100,40,100,100,100,100,100]}
+
+00:29:49.150 --> 00:29:49.690
+<v Speaker 0>is good.
+
+NOTE CONF {"raw":[100,100]}
+
+00:29:49.690 --> 00:29:53.110
+<v Speaker 0>And we'll talk more about interpreting transformations when we talk
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:29:53.110 --> 00:29:56.770
+<v Speaker 0>about similar matrices more generally okay.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:29:56.770 --> 00:30:00.460
+<v Speaker 0>So diagonal matrices this does retain the properties we want
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:00.460 --> 00:30:01.300
+<v Speaker 0>to retain.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:01.300 --> 00:30:02.440
+<v Speaker 0>It's really nice.
+
+NOTE CONF {"raw":[98,100,100]}
+
+00:30:02.440 --> 00:30:03.670
+<v Speaker 0>So how do we find P.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:03.670 --> 00:30:04.990
+<v Speaker 0>I've said it's kind of easy.
+
+NOTE CONF {"raw":[86,100,100,100,100,100]}
+
+00:30:06.040 --> 00:30:08.770
+<v Speaker 0>Um so we're diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:08.770 --> 00:30:14.680
+<v Speaker 0>If our eigenvectors can form a matrix like that which
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:14.680 --> 00:30:15.580
+<v Speaker 0>is invertible.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:15.580 --> 00:30:18.370
+<v Speaker 0>So what I mean there is you take your first
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:18.370 --> 00:30:19.990
+<v Speaker 0>eigenvector as your first column.
+
+NOTE CONF {"raw":[65,72,100,100,100]}
+
+00:30:19.990 --> 00:30:22.110
+<v Speaker 0>Your second eigenvector is the second column.
+
+NOTE CONF {"raw":[100,100,100,92,100,100,100]}
+
+00:30:22.320 --> 00:30:22.770
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[77]}
+
+00:30:22.770 --> 00:30:23.760
+<v Speaker 0>Third eigenvectors.
+
+NOTE CONF {"raw":[100,100]}
+
+00:30:23.790 --> 00:30:24.750
+<v Speaker 0>Your third column.
+
+NOTE CONF {"raw":[62,100,100]}
+
+00:30:25.260 --> 00:30:26.940
+<v Speaker 0>Keep going, keep going, keep going.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:30:27.630 --> 00:30:29.820
+<v Speaker 0>So all you've got to do is find your eigenvectors
+
+NOTE CONF {"raw":[100,100,50,92,100,100,100,100,100,100]}
+
+00:30:29.820 --> 00:30:33.030
+<v Speaker 0>and then bung them together in a matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:33.030 --> 00:30:35.160
+<v Speaker 0>You don't actually have to do anything more with that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:35.790 --> 00:30:38.820
+<v Speaker 0>Um, and then if we have it our diagonal matrix
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:38.820 --> 00:30:39.390
+<v Speaker 0>is really nice.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:30:39.390 --> 00:30:42.660
+<v Speaker 0>It's just the eigenvalues again eigenvalues and eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:30:42.660 --> 00:30:43.920
+<v Speaker 0>Making life really easy.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:30:44.970 --> 00:30:45.390
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:30:45.390 --> 00:30:46.800
+<v Speaker 0>So we know we're diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:46.800 --> 00:30:50.520
+<v Speaker 0>If that matrix is invertible, is there a shortcut to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:30:50.520 --> 00:30:51.660
+<v Speaker 0>working out for that invertible.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:30:51.690 --> 00:30:56.490
+<v Speaker 0>Because that's also a bit of a tricky calculation.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:30:56.490 --> 00:30:57.000
+<v Speaker 0>Yep.
+
+NOTE CONF {"raw":[64]}
+
+00:30:59.340 --> 00:31:01.440
+<v Speaker 2>Uh, no eigenvector is good.
+
+NOTE CONF {"raw":[89,65,78,36,33]}
+
+00:31:02.790 --> 00:31:06.330
+<v Speaker 0>So even if your eigenvector is zero, you can still
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:06.900 --> 00:31:10.860
+<v Speaker 0>that means your matrix is not invertible, but that we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,78,100]}
+
+00:31:10.860 --> 00:31:13.350
+<v Speaker 0>not trying to invert A we're trying to invert P,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:13.350 --> 00:31:14.760
+<v Speaker 0>which is our new matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:31:15.000 --> 00:31:15.420
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:31:15.420 --> 00:31:16.110
+<v Speaker 0>At the back.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:31:18.870 --> 00:31:22.880
+<v Speaker 0>So the determinant of the matrix A or the determinant
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:22.880 --> 00:31:23.270
+<v Speaker 0>of P.
+
+NOTE CONF {"raw":[92,100]}
+
+00:31:23.570 --> 00:31:24.050
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[98]}
+
+00:31:24.080 --> 00:31:24.410
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:31:24.410 --> 00:31:26.330
+<v Speaker 0>We want to determine a p not to be zero.
+
+NOTE CONF {"raw":[100,100,100,100,58,100,100,100,100,100]}
+
+00:31:26.330 --> 00:31:30.710
+<v Speaker 0>But again working out the determinant of a disease and
+
+NOTE CONF {"raw":[100,100,94,100,100,100,100,100,71,100]}
+
+00:31:30.710 --> 00:31:32.990
+<v Speaker 0>its p is going to allow us to prove that
+
+NOTE CONF {"raw":[80,100,100,100,100,100,100,100,100,98]}
+
+00:31:32.990 --> 00:31:33.710
+<v Speaker 0>A is easy.
+
+NOTE CONF {"raw":[98,98,100]}
+
+00:31:33.710 --> 00:31:36.560
+<v Speaker 0>But P is a different matter altogether.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:31:37.250 --> 00:31:39.770
+<v Speaker 0>And actually we have a result to do this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:31:39.770 --> 00:31:42.440
+<v Speaker 0>So that theorem just gave us those two results.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:31:43.640 --> 00:31:45.140
+<v Speaker 0>Turns out we're diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:31:45.140 --> 00:31:50.690
+<v Speaker 0>If every eigenvalue of some algebraic multiplicity has m corresponding
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:50.690 --> 00:31:54.140
+<v Speaker 0>basic eigenvectors, or to put it in the language we
+
+NOTE CONF {"raw":[100,100,100,100,100,87,100,100,100,100]}
+
+00:31:54.140 --> 00:31:59.060
+<v Speaker 0>just said, your algebraic multiplicity always equals your geometric multiplicity.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:31:59.330 --> 00:32:04.400
+<v Speaker 0>So in this case we are diagonalisable because yes we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:04.400 --> 00:32:08.960
+<v Speaker 0>had algebraic multiplicity two, but we also had geometric multiplicity
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:08.960 --> 00:32:09.350
+<v Speaker 0>two.
+
+NOTE CONF {"raw":[100]}
+
+00:32:10.040 --> 00:32:14.570
+<v Speaker 0>So for every eigenvalue including repeats we have a different
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:14.570 --> 00:32:15.380
+<v Speaker 0>eigenvector.
+
+NOTE CONF {"raw":[100]}
+
+00:32:15.380 --> 00:32:18.130
+<v Speaker 0>If that happens then we're all good and happy.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:32:18.130 --> 00:32:19.120
+<v Speaker 0>And we're diagonalisable.
+
+NOTE CONF {"raw":[100,72,100]}
+
+00:32:21.700 --> 00:32:23.020
+<v Speaker 0>Are people happy so far?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:32:24.220 --> 00:32:24.940
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:32:25.570 --> 00:32:29.230
+<v Speaker 0>Okay, so, did I have anything else I wanted to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,65,100]}
+
+00:32:29.230 --> 00:32:29.650
+<v Speaker 0>say here?
+
+NOTE CONF {"raw":[100,100]}
+
+00:32:29.680 --> 00:32:30.100
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:30.100 --> 00:32:30.460
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+00:32:31.300 --> 00:32:34.180
+<v Speaker 0>Kind of corollary, if you've not got any repeated eigenvector
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,60]}
+
+00:32:34.270 --> 00:32:37.840
+<v Speaker 0>values at all, then you would definitely diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,97]}
+
+00:32:37.870 --> 00:32:40.840
+<v Speaker 0>Because of that inequality, we know every eigenvalue has to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:40.840 --> 00:32:42.040
+<v Speaker 0>have an eigenvector.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:32:42.340 --> 00:32:45.250
+<v Speaker 0>So if you've got and we know that there are
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,70,73,74]}
+
+00:32:45.250 --> 00:32:47.980
+<v Speaker 0>going to be n eigenvalues for an n by n
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,96,100,100]}
+
+00:32:47.980 --> 00:32:48.670
+<v Speaker 0>matrix.
+
+NOTE CONF {"raw":[100]}
+
+00:32:48.670 --> 00:32:52.000
+<v Speaker 0>So if you've got n distinct eigenvalues you've got to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:32:52.000 --> 00:32:53.800
+<v Speaker 0>have n distinct eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:32:53.800 --> 00:32:55.210
+<v Speaker 0>And you've not got to go any further.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:32:57.130 --> 00:32:57.550
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:32:57.550 --> 00:32:58.660
+<v Speaker 0>So let us do a bit.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:32:58.660 --> 00:32:59.200
+<v Speaker 1>Of.
+
+NOTE CONF {"raw":[100]}
+
+00:33:00.340 --> 00:33:04.240
+<v Speaker 0>Um a bit of practice here.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:04.240 --> 00:33:06.370
+<v Speaker 0>How am I going to get this all up on
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:33:06.370 --> 00:33:07.480
+<v Speaker 0>the board.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:07.510 --> 00:33:09.880
+<v Speaker 0>Oh I'm going to do something I've not done before,
+
+NOTE CONF {"raw":[74,100,100,100,100,100,100,100,100,100]}
+
+00:33:10.720 --> 00:33:12.520
+<v Speaker 0>and I'm going to put both of these up.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:33:12.550 --> 00:33:13.780
+<v Speaker 0>This is exciting.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:15.520 --> 00:33:15.940
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:33:15.940 --> 00:33:17.100
+<v Speaker 0>So let us go back to.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:33:17.130 --> 00:33:17.910
+<v Speaker 0>Is that working?
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:33:17.910 --> 00:33:18.420
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:33:18.420 --> 00:33:18.990
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[97]}
+
+00:33:19.830 --> 00:33:21.720
+<v Speaker 0>Why are you both showing the same side?
+
+NOTE CONF {"raw":[100,100,100,100,100,94,100,100]}
+
+00:33:27.060 --> 00:33:27.630
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:33:27.630 --> 00:33:28.080
+<v Speaker 0>Brilliant.
+
+NOTE CONF {"raw":[100]}
+
+00:33:28.380 --> 00:33:31.140
+<v Speaker 0>Okay, so let us go back to this matrix A.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,98]}
+
+00:33:34.230 --> 00:33:37.410
+<v Speaker 0>What would the matrix P be for this matrix A?
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:33:39.840 --> 00:33:41.490
+<v Speaker 0>What is the first column going to be.
+
+NOTE CONF {"raw":[69,69,100,100,100,100,100,100]}
+
+00:33:42.900 --> 00:33:44.580
+<v Speaker 0>One zero is zero good.
+
+NOTE CONF {"raw":[100,100,76,100,100]}
+
+00:33:47.520 --> 00:33:49.050
+<v Speaker 0>What's the second column going to be.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:33:53.520 --> 00:33:54.180
+<v Speaker 0>Minus three.
+
+NOTE CONF {"raw":[100,100]}
+
+00:33:54.180 --> 00:33:55.530
+<v Speaker 0>Therefore I'll take that.
+
+NOTE CONF {"raw":[85,100,100,100]}
+
+00:33:55.530 --> 00:33:55.860
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:33:56.760 --> 00:33:58.200
+<v Speaker 0>And what's the last column going to be.
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100]}
+
+00:34:01.140 --> 00:34:01.500
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[87]}
+
+00:34:02.370 --> 00:34:02.820
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:34:02.820 --> 00:34:03.150
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:34:03.150 --> 00:34:04.950
+<v Speaker 0>And then what's the corresponding vector D.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:04.950 --> 00:34:05.910
+<v Speaker 0>What's the diagonal.
+
+NOTE CONF {"raw":[95,100,100]}
+
+00:34:05.910 --> 00:34:07.470
+<v Speaker 0>I don't even have to do a matrix multiplication.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:34:07.470 --> 00:34:08.159
+<v Speaker 0>This is nice.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:08.310 --> 00:34:09.629
+<v Speaker 0>What's d going to be.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:13.470 --> 00:34:14.940
+<v Speaker 0>152 on the diagonal here.
+
+NOTE CONF {"raw":[100,52,100,100,100]}
+
+00:34:14.940 --> 00:34:16.040
+<v Speaker 0>And zeros everywhere else.
+
+NOTE CONF {"raw":[100,98,100,100]}
+
+00:34:16.970 --> 00:34:17.510
+<v Speaker 1>Done.
+
+NOTE CONF {"raw":[98]}
+
+00:34:18.620 --> 00:34:19.399
+<v Speaker 0>That's easy.
+
+NOTE CONF {"raw":[100,100]}
+
+00:34:19.850 --> 00:34:22.550
+<v Speaker 0>Hopefully you just copied out what you've already worked out.
+
+NOTE CONF {"raw":[100,100,100,73,71,100,100,100,100,100]}
+
+00:34:22.550 --> 00:34:24.139
+<v Speaker 0>You've not got to do anything more.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:34:24.649 --> 00:34:26.629
+<v Speaker 0>Are we all happy with how to find a diagonal
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,99,100]}
+
+00:34:26.629 --> 00:34:26.990
+<v Speaker 0>matrix?
+
+NOTE CONF {"raw":[100]}
+
+00:34:26.990 --> 00:34:27.590
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[99]}
+
+00:34:30.169 --> 00:34:31.100
+<v Speaker 0>Does it matter?
+
+NOTE CONF {"raw":[34,34,34]}
+
+00:34:32.629 --> 00:34:33.560
+<v Speaker 0>Not at all.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:33.560 --> 00:34:39.260
+<v Speaker 0>So provided that the eigenvector corresponds to the eigenvalue in
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:39.260 --> 00:34:41.149
+<v Speaker 0>your diagonal matrix, that's fine.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:41.149 --> 00:34:45.290
+<v Speaker 0>So we could have written these 1006 minus three four
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:45.290 --> 00:34:47.540
+<v Speaker 0>minus three zero four and swapped the two and the
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,98,100]}
+
+00:34:47.540 --> 00:34:48.110
+<v Speaker 0>five.
+
+NOTE CONF {"raw":[100]}
+
+00:34:50.090 --> 00:34:51.379
+<v Speaker 0>But this also.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:34:51.379 --> 00:34:52.010
+<v Speaker 1>Works.
+
+NOTE CONF {"raw":[100]}
+
+00:34:52.159 --> 00:34:53.450
+<v Speaker 0>So there's not one answer.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:34:53.450 --> 00:34:54.230
+<v Speaker 0>There were several answers.
+
+NOTE CONF {"raw":[100,61,100,100]}
+
+00:34:54.230 --> 00:34:57.860
+<v Speaker 0>However many ways you want to order your eigenvectors, all
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:34:57.860 --> 00:34:59.840
+<v Speaker 0>of them are going to give you a diagonal matrix.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:03.650 --> 00:35:06.140
+<v Speaker 0>Any other questions or queries or thoughts?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:09.830 --> 00:35:11.600
+<v Speaker 0>In which case, let's do a question.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:35:12.680 --> 00:35:14.060
+<v Speaker 0>Um, so there we go.
+
+NOTE CONF {"raw":[94,100,100,100,100]}
+
+00:35:14.060 --> 00:35:15.010
+<v Speaker 0>And Eigen.
+
+NOTE CONF {"raw":[100,99]}
+
+00:35:16.030 --> 00:35:20.890
+<v Speaker 0>A matrix has double eigenvalue one with that corresponding eigenvector,
+
+NOTE CONF {"raw":[86,100,100,100,100,100,100,100,100,98]}
+
+00:35:21.070 --> 00:35:26.110
+<v Speaker 0>and eigenvalue three with that corresponding eigenvector is a diagonalisable.
+
+NOTE CONF {"raw":[93,100,100,100,100,100,100,100,100,100]}
+
+00:35:27.940 --> 00:35:28.750
+<v Speaker 0>I will give you.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:35:28.750 --> 00:35:30.640
+<v Speaker 0>Oh hang on, you can't see this at all, can
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:30.640 --> 00:35:31.030
+<v Speaker 0>you?
+
+NOTE CONF {"raw":[100]}
+
+00:35:31.570 --> 00:35:31.960
+<v Speaker 0>Oh.
+
+NOTE CONF {"raw":[52]}
+
+00:35:37.810 --> 00:35:38.410
+<v Speaker 0>There we go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:38.410 --> 00:35:39.370
+<v Speaker 0>And magically appeared.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:35:40.090 --> 00:35:40.510
+<v Speaker 0>Um.
+
+NOTE CONF {"raw":[100]}
+
+00:35:44.290 --> 00:35:47.530
+<v Speaker 0>I will give you 30 odd seconds to think about
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:35:47.530 --> 00:35:48.160
+<v Speaker 0>this.
+
+NOTE CONF {"raw":[100]}
+
+00:35:58.300 --> 00:36:00.400
+<v Speaker 0>Feel free to have a chat with your neighbour.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,95]}
+
+00:36:52.920 --> 00:36:56.640
+<v Speaker 0>Okay, I'm going to give you another few.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,32]}
+
+00:36:56.670 --> 00:36:57.240
+<v Speaker 0>What should we have?
+
+NOTE CONF {"raw":[100,91,100,100]}
+
+00:36:57.240 --> 00:36:59.010
+<v Speaker 0>Let's have another 20s.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:07.020 --> 00:37:09.060
+<v Speaker 0>10s.
+
+NOTE CONF {"raw":[100]}
+
+00:37:17.720 --> 00:37:21.230
+<v Speaker 0>Let's have a late rush of votes, five seconds or
+
+NOTE CONF {"raw":[96,100,100,96,100,100,89,100,100,100]}
+
+00:37:21.230 --> 00:37:22.910
+<v Speaker 0>however long it takes me to walk back over to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:37:22.910 --> 00:37:23.780
+<v Speaker 0>the screen.
+
+NOTE CONF {"raw":[100,100]}
+
+00:37:25.580 --> 00:37:26.660
+<v Speaker 0>Four.
+
+NOTE CONF {"raw":[100]}
+
+00:37:27.380 --> 00:37:28.550
+<v Speaker 0>Three.
+
+NOTE CONF {"raw":[100]}
+
+00:37:29.330 --> 00:37:30.830
+<v Speaker 0>Two.
+
+NOTE CONF {"raw":[100]}
+
+00:37:31.610 --> 00:37:32.240
+<v Speaker 0>One.
+
+NOTE CONF {"raw":[100]}
+
+00:37:33.770 --> 00:37:37.280
+<v Speaker 0>Okay, so we seem tossed up.
+
+NOTE CONF {"raw":[100,100,100,100,76,76]}
+
+00:37:37.280 --> 00:37:37.610
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:37:37.730 --> 00:37:40.010
+<v Speaker 0>We all seem quite happy that it's that it's not
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:37:40.010 --> 00:37:41.600
+<v Speaker 0>too good.
+
+NOTE CONF {"raw":[100,100]}
+
+00:37:41.960 --> 00:37:45.950
+<v Speaker 0>Okay, then it's a toss up between 1 and 3.
+
+NOTE CONF {"raw":[100,100,89,89,100,100,100,100,100,100]}
+
+00:37:45.950 --> 00:37:48.080
+<v Speaker 0>So three seems the most popular.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:37:48.200 --> 00:37:49.010
+<v Speaker 0>What are we saying?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:37:49.010 --> 00:37:51.440
+<v Speaker 0>There is not invertible and not n by n.
+
+NOTE CONF {"raw":[100,67,100,100,100,100,52,100,100]}
+
+00:37:52.790 --> 00:37:55.910
+<v Speaker 0>Uh, number of eigenvalues equals the number of eigenvectors.
+
+NOTE CONF {"raw":[90,100,100,100,100,100,100,100,100]}
+
+00:37:56.870 --> 00:38:02.270
+<v Speaker 0>Um, well what we've got two eigenvalues and two eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:02.270 --> 00:38:05.240
+<v Speaker 0>So that looks nice.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:05.570 --> 00:38:09.170
+<v Speaker 0>Um, columns are identical and P is therefore not invertible.
+
+NOTE CONF {"raw":[100,100,100,100,100,98,100,100,100,100]}
+
+00:38:11.060 --> 00:38:13.430
+<v Speaker 0>The algebraic multiplicity of eigenvalue one does not cause one
+
+NOTE CONF {"raw":[100,100,100,96,100,100,100,100,73,100]}
+
+00:38:13.430 --> 00:38:15.230
+<v Speaker 0>to its geometric multiplicity.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:15.260 --> 00:38:15.740
+<v Speaker 0>What does?
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:15.770 --> 00:38:16.700
+<v Speaker 0>What does that mean?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:16.700 --> 00:38:17.900
+<v Speaker 0>What someone saying there.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:24.680 --> 00:38:26.270
+<v Unknown>Is only two vectors.
+
+NOTE CONF {"raw":[85,97,100,100]}
+
+00:38:26.840 --> 00:38:27.260
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:38:27.260 --> 00:38:28.220
+<v Speaker 0>Yeah, exactly.
+
+NOTE CONF {"raw":[100,100]}
+
+00:38:28.220 --> 00:38:30.530
+<v Speaker 0>So this this eigenvalue, we're counting twice.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:30.530 --> 00:38:31.490
+<v Speaker 0>It's got one and one.
+
+NOTE CONF {"raw":[92,100,100,100,100]}
+
+00:38:31.490 --> 00:38:34.190
+<v Speaker 0>So we've actually got three eigenvalues one, one and three
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:34.310 --> 00:38:36.020
+<v Speaker 0>and two eigenvectors.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:36.020 --> 00:38:37.460
+<v Speaker 0>So we are not diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:37.460 --> 00:38:42.680
+<v Speaker 0>Actually um this one I can can see why you
+
+NOTE CONF {"raw":[100,100,100,100,100,55,100,100,100,100]}
+
+00:38:42.680 --> 00:38:45.920
+<v Speaker 0>think that this is, you know, this is a classic,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:38:46.010 --> 00:38:47.750
+<v Speaker 0>classic thing people do.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:47.750 --> 00:38:49.970
+<v Speaker 0>They go, well, it's got eigenvalue one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:38:49.970 --> 00:38:50.720
+<v Speaker 0>There you go.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:38:51.200 --> 00:38:53.390
+<v Speaker 0>But you might as one of those comments said, this
+
+NOTE CONF {"raw":[100,100,85,100,100,100,100,100,100,100]}
+
+00:38:53.390 --> 00:38:55.190
+<v Speaker 0>has got a repeated column.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:38:55.190 --> 00:38:56.720
+<v Speaker 0>So it's not invertible.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:38:57.770 --> 00:39:01.670
+<v Speaker 0>Um, this is invertible.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:01.670 --> 00:39:03.470
+<v Speaker 0>I can't find the inverse.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:39:03.740 --> 00:39:04.310
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:39:04.310 --> 00:39:04.820
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:39:04.820 --> 00:39:09.580
+<v Speaker 0>So um, let's do one more like that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:39:10.000 --> 00:39:12.790
+<v Speaker 0>So here's another matrix with eigenvalue one and a double
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:12.790 --> 00:39:13.600
+<v Speaker 0>eigenvalue.
+
+NOTE CONF {"raw":[100]}
+
+00:39:14.680 --> 00:39:16.180
+<v Speaker 0>Is this one diagonalisable.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:39:16.180 --> 00:39:17.890
+<v Speaker 0>And if so what is p and d?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:39:19.000 --> 00:39:21.640
+<v Speaker 0>I'll give you another 30s to think about this one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:39:35.440 --> 00:39:37.060
+<v Speaker 0>That's a very similar question.
+
+NOTE CONF {"raw":[99,92,100,100,100]}
+
+00:39:37.060 --> 00:39:40.240
+<v Speaker 0>So I'm not going to give you too much longer.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,72,100,100]}
+
+00:40:08.850 --> 00:40:12.180
+<v Speaker 0>Give you ten more seconds.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:21.210 --> 00:40:24.030
+<v Speaker 0>Five more seconds.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:26.430 --> 00:40:27.690
+<v Speaker 0>Three more.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:27.690 --> 00:40:29.040
+<v Speaker 1>Seconds.
+
+NOTE CONF {"raw":[100]}
+
+00:40:31.860 --> 00:40:34.620
+<v Speaker 0>Two, one.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:36.030 --> 00:40:37.710
+<v Speaker 0>Okay, good.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:37.740 --> 00:40:39.480
+<v Speaker 0>So lots of people saying one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:39.480 --> 00:40:40.320
+<v Speaker 0>What are the comments?
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:40.320 --> 00:40:41.310
+<v Speaker 0>Both the correct.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:40:41.310 --> 00:40:42.360
+<v Speaker 0>Both are correct.
+
+NOTE CONF {"raw":[100,84,100]}
+
+00:40:42.360 --> 00:40:43.470
+<v Speaker 0>I have no idea.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:40:43.470 --> 00:40:44.760
+<v Speaker 0>You made a good guess though.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:40:44.760 --> 00:40:46.350
+<v Speaker 0>And sometimes that is good enough.
+
+NOTE CONF {"raw":[100,100,54,54,100,100]}
+
+00:40:46.620 --> 00:40:47.730
+<v Speaker 0>Um, yeah.
+
+NOTE CONF {"raw":[100,100]}
+
+00:40:47.730 --> 00:40:48.180
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:40:48.180 --> 00:40:51.270
+<v Speaker 0>So we seem quite happy that it is this one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:40:51.690 --> 00:40:54.180
+<v Speaker 0>Um, I've taken my eigenvectors.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:40:54.180 --> 00:40:57.690
+<v Speaker 0>I've smushed them together into a matrix, and I've labelled
+
+NOTE CONF {"raw":[93,65,100,100,100,100,100,100,98,95]}
+
+00:40:57.690 --> 00:41:01.230
+<v Speaker 0>the corresponding columns with the eigenvector value.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:41:01.230 --> 00:41:02.220
+<v Speaker 0>The eigenvalue.
+
+NOTE CONF {"raw":[96,95]}
+
+00:41:02.730 --> 00:41:03.390
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:03.420 --> 00:41:05.370
+<v Speaker 0>Um, lots of people said too though.
+
+NOTE CONF {"raw":[100,100,100,100,100,52,95]}
+
+00:41:05.370 --> 00:41:07.610
+<v Speaker 0>And some of those comments were saying both were correct.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:07.610 --> 00:41:09.440
+<v Speaker 0>What what's going on there?
+
+NOTE CONF {"raw":[56,100,100,100,100]}
+
+00:41:13.040 --> 00:41:14.000
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[96]}
+
+00:41:14.000 --> 00:41:14.780
+<v Speaker 0>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:41:14.780 --> 00:41:15.110
+<v Speaker 0>No.
+
+NOTE CONF {"raw":[100]}
+
+00:41:15.110 --> 00:41:19.400
+<v Speaker 0>You you've spoken less today you know.
+
+NOTE CONF {"raw":[100,63,89,99,100,98,84]}
+
+00:41:19.970 --> 00:41:20.480
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:41:20.510 --> 00:41:21.230
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:41:21.230 --> 00:41:23.420
+<v Speaker 0>So all I've done in this one is swap to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,64,52]}
+
+00:41:23.420 --> 00:41:25.550
+<v Speaker 0>these two eigenvectors.
+
+NOTE CONF {"raw":[100,100,58]}
+
+00:41:25.700 --> 00:41:28.400
+<v Speaker 0>There's nothing special about the order of an eigenvector at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:41:28.400 --> 00:41:28.790
+<v Speaker 0>all.
+
+NOTE CONF {"raw":[100]}
+
+00:41:28.940 --> 00:41:32.150
+<v Speaker 0>So actually yay!
+
+NOTE CONF {"raw":[100,100,94]}
+
+00:41:32.150 --> 00:41:33.470
+<v Speaker 0>Both of them are correct.
+
+NOTE CONF {"raw":[100,100,100,96,100]}
+
+00:41:34.280 --> 00:41:35.330
+<v Speaker 0>Yay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:36.350 --> 00:41:37.040
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:41:37.040 --> 00:41:39.020
+<v Speaker 0>Does anyone have any questions?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:41:39.020 --> 00:41:39.320
+<v Speaker 0>Thoughts?
+
+NOTE CONF {"raw":[100]}
+
+00:41:39.320 --> 00:41:39.770
+<v Speaker 0>Feelings?
+
+NOTE CONF {"raw":[100]}
+
+00:41:39.770 --> 00:41:40.550
+<v Speaker 0>Complaints?
+
+NOTE CONF {"raw":[100]}
+
+00:41:40.550 --> 00:41:41.480
+<v Speaker 0>Queries?
+
+NOTE CONF {"raw":[100]}
+
+00:41:41.870 --> 00:41:42.860
+<v Speaker 0>Comments?
+
+NOTE CONF {"raw":[100]}
+
+00:41:44.510 --> 00:41:45.230
+<v Speaker 1>Yes.
+
+NOTE CONF {"raw":[100]}
+
+00:41:45.470 --> 00:41:50.030
+<v Speaker 2>So the first question we have just so one but
+
+NOTE CONF {"raw":[100,91,79,99,6,7,98,54,97,65]}
+
+00:41:50.030 --> 00:41:53.450
+<v Speaker 2>two proponents of double eigenvalue.
+
+NOTE CONF {"raw":[47,62,81,100,91]}
+
+00:41:53.570 --> 00:41:57.020
+<v Speaker 2>Yeah I think we split it up into two.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100,87,70]}
+
+00:41:57.110 --> 00:41:57.470
+<v Speaker 2>Okay.
+
+NOTE CONF {"raw":[56]}
+
+00:41:57.470 --> 00:42:01.940
+<v Speaker 2>Linear combination of tobacco like here vectors up there.
+
+NOTE CONF {"raw":[100,100,100,40,98,31,96,77,100]}
+
+00:42:03.020 --> 00:42:05.860
+<v Speaker 0>So actually if we so if we think about what's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:05.860 --> 00:42:09.790
+<v Speaker 0>going on in this case, we are preserving a plane.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,74]}
+
+00:42:09.790 --> 00:42:13.270
+<v Speaker 0>We've got two we've got two eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:42:13.270 --> 00:42:14.590
+<v Speaker 0>We're preserving the plane.
+
+NOTE CONF {"raw":[97,100,100,100]}
+
+00:42:15.160 --> 00:42:22.210
+<v Speaker 0>Um, so geometrically, anything that plane is mapped to, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:23.500 --> 00:42:26.770
+<v Speaker 0>I double by two is mapped to double itself.
+
+NOTE CONF {"raw":[100,97,88,100,100,100,100,100,100]}
+
+00:42:26.770 --> 00:42:31.000
+<v Speaker 0>But that plane is kind of, um, preserved as a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:31.000 --> 00:42:31.480
+<v Speaker 0>play.
+
+NOTE CONF {"raw":[100]}
+
+00:42:31.720 --> 00:42:33.670
+<v Speaker 0>In the second case, though.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:42:35.050 --> 00:42:35.530
+<v Speaker 0>Oops.
+
+NOTE CONF {"raw":[100]}
+
+00:42:35.530 --> 00:42:36.670
+<v Speaker 0>That's the wrong question.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:42:37.810 --> 00:42:42.970
+<v Speaker 0>Uh, in this case, um, we've got eigenvalue one is
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:42.970 --> 00:42:45.430
+<v Speaker 0>occurring twice, but it's only preserving the line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:42:45.430 --> 00:42:47.470
+<v Speaker 0>You can kind of think of it as like preserving
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,86,100]}
+
+00:42:47.470 --> 00:42:48.670
+<v Speaker 0>the line twice.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:42:49.840 --> 00:42:54.520
+<v Speaker 0>Um, and so it's a doubly preserved line, but you've
+
+NOTE CONF {"raw":[100,100,100,97,100,100,100,100,100,100]}
+
+00:42:54.520 --> 00:42:56.590
+<v Speaker 0>not got that plane, so you've only got a line
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:56.590 --> 00:42:58.960
+<v Speaker 0>that's fixed by one, and then you've got this other
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:42:58.960 --> 00:43:00.310
+<v Speaker 0>line fixed by three.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:43:01.420 --> 00:43:04.410
+<v Speaker 0>Um, there are reasons later on that we will come
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:04.410 --> 00:43:07.200
+<v Speaker 0>to about what you need to preserve the whole space
+
+NOTE CONF {"raw":[100,100,52,100,100,100,100,100,100,100]}
+
+00:43:07.200 --> 00:43:08.700
+<v Speaker 0>in some degree or another.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:08.700 --> 00:43:13.020
+<v Speaker 0>So you need three directions that are kind of, uh,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:13.320 --> 00:43:15.390
+<v Speaker 0>either fixed or mapped to zero.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:43:15.660 --> 00:43:17.760
+<v Speaker 0>And at the moment you've not got that, you've got
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:17.760 --> 00:43:20.550
+<v Speaker 0>one line that's fixed, another line that's fixed, and then
+
+NOTE CONF {"raw":[100,100,100,100,100,100,98,100,100,100]}
+
+00:43:20.550 --> 00:43:25.560
+<v Speaker 0>you've kind of got a third dimension that's doing something,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:25.560 --> 00:43:29.100
+<v Speaker 0>but it's not being a linear, it's not being invertible.
+
+NOTE CONF {"raw":[100,100,100,100,83,100,100,100,100,100]}
+
+00:43:29.520 --> 00:43:34.680
+<v Speaker 0>Um, so we can't diagonalise it later on.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:43:34.680 --> 00:43:36.630
+<v Speaker 0>We when we do kind of Jordan normal form and
+
+NOTE CONF {"raw":[100,100,100,100,100,100,48,100,100,90]}
+
+00:43:36.630 --> 00:43:39.810
+<v Speaker 0>other forms of diagonalization, we'll see what actually is happening
+
+NOTE CONF {"raw":[100,100,100,100,95,100,100,100,100,100]}
+
+00:43:39.810 --> 00:43:40.680
+<v Speaker 0>in that case.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:43:41.430 --> 00:43:43.830
+<v Speaker 0>Um, so, so it might kind of the crux of
+
+NOTE CONF {"raw":[100,87,100,87,87,100,100,100,100,100]}
+
+00:43:43.830 --> 00:43:46.620
+<v Speaker 0>my answer is C later linear bits of linear algebra,
+
+NOTE CONF {"raw":[100,100,100,67,100,100,82,98,100,100]}
+
+00:43:46.620 --> 00:43:48.480
+<v Speaker 0>which I appreciate is disappointing.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:43:48.810 --> 00:43:51.270
+<v Speaker 0>Um, but yeah, essentially this is only fixing a line
+
+NOTE CONF {"raw":[100,100,83,100,100,100,100,100,100,100]}
+
+00:43:51.270 --> 00:43:53.880
+<v Speaker 0>was when you've got eigenvalue two eigenvectors, you're fixing a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:53.880 --> 00:43:54.390
+<v Speaker 0>plane.
+
+NOTE CONF {"raw":[100]}
+
+00:43:54.390 --> 00:43:57.840
+<v Speaker 0>And we kind of want to fix the same dimension
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:43:57.840 --> 00:44:00.030
+<v Speaker 0>space as we do eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:44:00.600 --> 00:44:01.200
+<v Speaker 0>Cool.
+
+NOTE CONF {"raw":[100]}
+
+00:44:01.200 --> 00:44:02.190
+<v Speaker 0>Is that a question?
+
+NOTE CONF {"raw":[79,82,91,100]}
+
+00:44:02.190 --> 00:44:02.520
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[82]}
+
+00:44:03.170 --> 00:44:04.370
+<v Unknown>How is it possible?
+
+NOTE CONF {"raw":[86,99,87,98]}
+
+00:44:04.370 --> 00:44:08.720
+<v Unknown>Even though the region values repeat, that we still have
+
+NOTE CONF {"raw":[100,100,100,65,76,50,44,33,100,100]}
+
+00:44:08.720 --> 00:44:10.040
+<v Unknown>only one practice.
+
+NOTE CONF {"raw":[100,100,79]}
+
+00:44:10.850 --> 00:44:13.520
+<v Unknown>I saw what you said before.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:44:15.140 --> 00:44:17.270
+<v Unknown>When it's repeated, it means that there are going to.
+
+NOTE CONF {"raw":[100,71,100,95,100,90,100,95,100,100]}
+
+00:44:17.270 --> 00:44:18.620
+<v Speaker 2>Be playing and therefore.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:44:19.610 --> 00:44:24.230
+<v Speaker 0>So when it's repeated algebraically, that doesn't guarantee that a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:24.230 --> 00:44:25.460
+<v Speaker 0>plane is fixed.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:25.460 --> 00:44:28.070
+<v Speaker 0>It just means um.
+
+NOTE CONF {"raw":[100,100,100,76]}
+
+00:44:29.690 --> 00:44:31.190
+<v Speaker 0>So for example you can have that.
+
+NOTE CONF {"raw":[100,100,100,100,94,100,94]}
+
+00:44:31.190 --> 00:44:35.030
+<v Speaker 0>In this case you can have the line is fixed
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:35.030 --> 00:44:38.570
+<v Speaker 0>but kind of twice I am glossing over some geometry
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:44:38.570 --> 00:44:38.810
+<v Speaker 0>here.
+
+NOTE CONF {"raw":[100]}
+
+00:44:38.810 --> 00:44:39.830
+<v Speaker 0>I'm sorry.
+
+NOTE CONF {"raw":[100,100]}
+
+00:44:39.980 --> 00:44:42.710
+<v Speaker 0>Um, but you've kind of got the line fixed twice
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:44:42.710 --> 00:44:46.190
+<v Speaker 0>as opposed to a plane of solutions being fixed.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:44:46.190 --> 00:44:52.070
+<v Speaker 0>So yes, the eigenvalues counted twice algebraically, but geometrically that's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,52]}
+
+00:44:52.070 --> 00:44:53.120
+<v Speaker 0>not matching up.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:44:53.120 --> 00:44:55.580
+<v Speaker 1>Those two values.
+
+NOTE CONF {"raw":[67,100,100]}
+
+00:44:55.580 --> 00:44:57.980
+<v Speaker 0>They're not d and they're just yeah.
+
+NOTE CONF {"raw":[52,55,58,99,69,97,100]}
+
+00:44:57.980 --> 00:44:58.820
+<v Speaker 0>There's just t.
+
+NOTE CONF {"raw":[80,100,100]}
+
+00:44:58.820 --> 00:44:59.330
+<v Speaker 1>Yeah.
+
+NOTE CONF {"raw":[100]}
+
+00:45:01.990 --> 00:45:03.820
+<v Speaker 0>Actually, if we think about if we think about that
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:03.820 --> 00:45:06.580
+<v Speaker 0>matrix and we think about what happens with one, we're
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:06.580 --> 00:45:10.810
+<v Speaker 0>going to end up with three minus two, minus three,
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:11.020 --> 00:45:16.630
+<v Speaker 0>two, zero, minus two, zero minus two, and then minus
+
+NOTE CONF {"raw":[49,100,100,100,100,100,100,100,100,100]}
+
+00:45:16.630 --> 00:45:19.060
+<v Speaker 0>one, minus two minus one.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:45:19.780 --> 00:45:23.560
+<v Speaker 0>Which if you think about these two rows, actually if
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:23.560 --> 00:45:26.680
+<v Speaker 0>you think about that that's a degenerate matrix altogether.
+
+NOTE CONF {"raw":[100,100,100,100,99,100,51,100,100]}
+
+00:45:27.280 --> 00:45:31.570
+<v Speaker 0>Um, so that's what's going on there.
+
+NOTE CONF {"raw":[75,100,100,100,100,100,100]}
+
+00:45:32.350 --> 00:45:33.760
+<v Speaker 0>Um, and why it's not working.
+
+NOTE CONF {"raw":[92,100,100,100,100,100]}
+
+00:45:35.230 --> 00:45:35.920
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[97]}
+
+00:45:36.010 --> 00:45:39.400
+<v Speaker 0>Um, so one other thing I just want to say
+
+NOTE CONF {"raw":[92,100,100,100,100,100,100,100,100,100]}
+
+00:45:39.400 --> 00:45:42.460
+<v Speaker 0>kind of before the end, that's more or less I
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:42.460 --> 00:45:43.630
+<v Speaker 0>do need a bit of time at the end.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:45:44.080 --> 00:45:45.250
+<v Speaker 0>Uh, two things I want to say.
+
+NOTE CONF {"raw":[96,100,100,100,100,100,100]}
+
+00:45:45.250 --> 00:45:48.940
+<v Speaker 0>Firstly, sometimes you have to check this.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:45:48.940 --> 00:45:51.250
+<v Speaker 0>It's always worth checking your answer, partly because it's a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:45:51.250 --> 00:45:52.870
+<v Speaker 0>good check to make sure you actually work at your
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,93,100,100]}
+
+00:45:52.870 --> 00:45:54.370
+<v Speaker 0>eigenvectors correctly.
+
+NOTE CONF {"raw":[100,100]}
+
+00:45:55.000 --> 00:45:56.800
+<v Speaker 0>So you might be tempted to do that.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100]}
+
+00:45:56.800 --> 00:45:59.970
+<v Speaker 0>Matrix multiplication do p inverse AP equals D.
+
+NOTE CONF {"raw":[100,100,79,79,100,100,100,85]}
+
+00:46:00.180 --> 00:46:02.310
+<v Speaker 0>Can anyone think of an easier way of doing this
+
+NOTE CONF {"raw":[100,100,100,100,100,80,100,100,100,100]}
+
+00:46:02.310 --> 00:46:02.970
+<v Speaker 0>calculation?
+
+NOTE CONF {"raw":[100]}
+
+00:46:02.970 --> 00:46:05.220
+<v Speaker 0>What's the hard bit of doing that calculation?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,96,100]}
+
+00:46:06.390 --> 00:46:09.180
+<v Speaker 0>Yeah I don't want to find p inverse but I'm
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:09.180 --> 00:46:10.620
+<v Speaker 0>quite happy to do that.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:46:10.950 --> 00:46:12.330
+<v Speaker 0>That's a lot easier.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:46:12.330 --> 00:46:14.640
+<v Speaker 0>So if you're doing a check try not to check
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:14.640 --> 00:46:14.970
+<v Speaker 0>that.
+
+NOTE CONF {"raw":[100]}
+
+00:46:14.970 --> 00:46:16.440
+<v Speaker 0>Check that you should do a check.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:46:16.440 --> 00:46:17.370
+<v Speaker 0>Checks a nice.
+
+NOTE CONF {"raw":[66,62,100]}
+
+00:46:17.820 --> 00:46:20.730
+<v Speaker 0>That's a much easier check than than the other one.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:22.110 --> 00:46:23.490
+<v Speaker 0>Um, the other thing I want to say is to
+
+NOTE CONF {"raw":[98,100,100,100,100,100,100,100,100,100]}
+
+00:46:23.490 --> 00:46:25.830
+<v Speaker 0>kind of go back to where this all started.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:46:26.280 --> 00:46:32.640
+<v Speaker 0>Um, so I've kind of said linear transformations have eigenvectors
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:32.640 --> 00:46:34.080
+<v Speaker 0>and eigenvalues.
+
+NOTE CONF {"raw":[100,100]}
+
+00:46:34.770 --> 00:46:38.130
+<v Speaker 0>Um, it turns out every matrix has an eigenvalue at
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:46:38.130 --> 00:46:40.500
+<v Speaker 0>least one and at least one eigenvector.
+
+NOTE CONF {"raw":[100,100,100,83,100,100,100]}
+
+00:46:40.530 --> 00:46:47.250
+<v Speaker 0>Therefore, um, but yesterday we said that rotations don't fix
+
+NOTE CONF {"raw":[99,100,100,100,100,100,100,100,62,100]}
+
+00:46:47.250 --> 00:46:47.760
+<v Speaker 0>lines.
+
+NOTE CONF {"raw":[100]}
+
+00:46:47.760 --> 00:46:48.600
+<v Speaker 0>That's the one.
+
+NOTE CONF {"raw":[100,100,66]}
+
+00:46:51.540 --> 00:46:51.900
+<v Speaker 0>That's the one.
+
+NOTE CONF {"raw":[100,49,56]}
+
+00:46:52.680 --> 00:46:53.910
+<v Speaker 0>Uh, rotations don't.
+
+NOTE CONF {"raw":[97,100,78]}
+
+00:46:53.910 --> 00:46:54.630
+<v Speaker 1>Fix.
+
+NOTE CONF {"raw":[100]}
+
+00:46:56.490 --> 00:46:57.330
+<v Speaker 0>Lines.
+
+NOTE CONF {"raw":[100]}
+
+00:46:57.330 --> 00:46:59.690
+<v Speaker 0>What does a rotation fix?
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:02.690 --> 00:47:05.270
+<v Speaker 0>The plane distance of.
+
+NOTE CONF {"raw":[100,84,100,56]}
+
+00:47:05.630 --> 00:47:06.500
+<v Speaker 0>Actually, that's a good point.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:06.530 --> 00:47:10.460
+<v Speaker 0>If we're preserving distance, then we're preserving the circle.
+
+NOTE CONF {"raw":[100,99,100,100,100,89,100,100,100]}
+
+00:47:10.460 --> 00:47:12.230
+<v Speaker 0>So actually I can go back to this picture.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100]}
+
+00:47:12.710 --> 00:47:15.590
+<v Speaker 0>Um, I have preserved I have preserved a line.
+
+NOTE CONF {"raw":[97,94,77,100,100,100,100,100,100]}
+
+00:47:15.590 --> 00:47:16.490
+<v Speaker 0>This is not a straight line.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:47:16.490 --> 00:47:17.510
+<v Speaker 0>It's a curved line.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:47:18.890 --> 00:47:23.300
+<v Speaker 0>Um, turns out that in a rotation, you do have
+
+NOTE CONF {"raw":[100,100,100,100,86,100,100,100,100,100]}
+
+00:47:23.300 --> 00:47:24.800
+<v Speaker 0>eigenvalues and eigenvectors.
+
+NOTE CONF {"raw":[100,100,100]}
+
+00:47:26.810 --> 00:47:32.240
+<v Speaker 0>Um, but your eigenvalue is complex.
+
+NOTE CONF {"raw":[100,100,100,77,100,100]}
+
+00:47:32.990 --> 00:47:34.760
+<v Speaker 0>How many people have seen complex numbers?
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:47:36.140 --> 00:47:36.560
+<v Speaker 0>Okay.
+
+NOTE CONF {"raw":[100]}
+
+00:47:36.560 --> 00:47:37.460
+<v Speaker 0>Decent fortune for you.
+
+NOTE CONF {"raw":[100,73,45,58]}
+
+00:47:37.460 --> 00:47:37.910
+<v Speaker 0>Good.
+
+NOTE CONF {"raw":[100]}
+
+00:47:38.330 --> 00:47:41.060
+<v Speaker 0>Um, I'm not going to go into this right now,
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:47:41.060 --> 00:47:42.950
+<v Speaker 0>but I am going to in the reading video.
+
+NOTE CONF {"raw":[100,89,89,100,100,100,100,97,100]}
+
+00:47:42.950 --> 00:47:44.600
+<v Speaker 0>In the reading quiz, I'm going to put an extra
+
+NOTE CONF {"raw":[100,100,100,100,98,100,100,100,100,100]}
+
+00:47:44.600 --> 00:47:47.960
+<v Speaker 0>video at the end that U is absolutely optional and
+
+NOTE CONF {"raw":[100,100,100,100,100,71,100,100,100,100]}
+
+00:47:47.960 --> 00:47:51.200
+<v Speaker 0>goes into a down a weird rabbit hole of maths
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:51.200 --> 00:47:52.850
+<v Speaker 0>into conic sections and stuff.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:47:52.850 --> 00:47:54.590
+<v Speaker 0>Feel absolutely free to skip it.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:47:54.590 --> 00:47:57.580
+<v Speaker 0>It will mainly be me getting excited over conic sections
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:47:58.000 --> 00:48:02.440
+<v Speaker 0>and explaining why these are imaginary eigenvalues.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:02.740 --> 00:48:04.300
+<v Speaker 0>But that's what's happening there.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:04.540 --> 00:48:05.740
+<v Speaker 0>Okay, before you go.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:05.770 --> 00:48:07.000
+<v Speaker 0>One last thing though.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:07.000 --> 00:48:09.520
+<v Speaker 0>So that is everything on this week's reading.
+
+NOTE CONF {"raw":[100,100,100,100,100,90,100,100]}
+
+00:48:10.300 --> 00:48:13.720
+<v Speaker 0>Um, I will warn you now, next week's reading, you
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:13.720 --> 00:48:14.050
+<v Speaker 0>again.
+
+NOTE CONF {"raw":[100]}
+
+00:48:14.050 --> 00:48:15.910
+<v Speaker 0>Have me, for better or for worse.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:48:15.940 --> 00:48:18.580
+<v Speaker 0>Next week's reading is not different.
+
+NOTE CONF {"raw":[100,100,100,100,100,64]}
+
+00:48:18.790 --> 00:48:21.730
+<v Speaker 0>Most of you should be somewhat familiar with most of
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:21.730 --> 00:48:22.270
+<v Speaker 0>it.
+
+NOTE CONF {"raw":[100]}
+
+00:48:22.300 --> 00:48:23.320
+<v Speaker 0>It's not.
+
+NOTE CONF {"raw":[72,98]}
+
+00:48:23.590 --> 00:48:26.140
+<v Speaker 0>It's basically basic vector theory.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:26.470 --> 00:48:31.210
+<v Speaker 0>Um, so it's somewhat okay content wise, hopefully, but there's
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:48:31.210 --> 00:48:32.470
+<v Speaker 0>quite a lot of it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:48:32.470 --> 00:48:34.750
+<v Speaker 0>So I'm going to try and release the reading a
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,85]}
+
+00:48:34.750 --> 00:48:35.830
+<v Speaker 0>slightly earlier.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:36.070 --> 00:48:37.960
+<v Speaker 0>Um, just so you have a chance to maybe flick
+
+NOTE CONF {"raw":[85,100,100,100,100,100,100,100,100,100]}
+
+00:48:37.960 --> 00:48:38.560
+<v Speaker 0>through it.
+
+NOTE CONF {"raw":[100,100]}
+
+00:48:38.590 --> 00:48:40.420
+<v Speaker 0>It's basically all of chapter four.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:48:40.450 --> 00:48:43.570
+<v Speaker 0>It's quite long, but it should not be too taxing.
+
+NOTE CONF {"raw":[88,100,100,100,100,94,94,100,100,100]}
+
+00:48:43.990 --> 00:48:46.090
+<v Speaker 0>Um, and then the last thing I want to say
+
+NOTE CONF {"raw":[94,100,100,100,100,100,100,100,100,100]}
+
+00:48:46.090 --> 00:48:47.890
+<v Speaker 0>is we've still got five minutes.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:48:47.920 --> 00:48:48.850
+<v Speaker 0>Don't pack up yet.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:48:49.480 --> 00:48:52.240
+<v Speaker 0>Um, I do not know how many of you have
+
+NOTE CONF {"raw":[100,100,79,79,100,100,100,100,100,100]}
+
+00:48:52.240 --> 00:48:56.580
+<v Speaker 0>seen this, but, um, if you go to the stack
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,61]}
+
+00:48:56.580 --> 00:48:57.390
+<v Speaker 0>page.
+
+NOTE CONF {"raw":[100]}
+
+00:49:00.540 --> 00:49:04.440
+<v Speaker 0>We have the mid-semester feedback form.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:04.440 --> 00:49:05.790
+<v Speaker 0>Some of you have filled this in.
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100]}
+
+00:49:05.910 --> 00:49:06.960
+<v Speaker 0>Some of you have not.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:06.960 --> 00:49:07.590
+<v Speaker 0>Please.
+
+NOTE CONF {"raw":[100]}
+
+00:49:07.590 --> 00:49:10.680
+<v Speaker 0>Now I am giving you a couple of minutes to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:10.710 --> 00:49:12.570
+<v Speaker 0>sit and fill in this form.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:12.570 --> 00:49:14.070
+<v Speaker 0>Please do fill in this form.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:14.070 --> 00:49:15.990
+<v Speaker 0>Let us know how we are getting on, how the
+
+NOTE CONF {"raw":[100,100,100,100,79,79,100,100,100,100]}
+
+00:49:15.990 --> 00:49:18.390
+<v Speaker 0>tutors are getting on, and we will get back to
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:18.390 --> 00:49:19.380
+<v Speaker 0>you about your feedback.
+
+NOTE CONF {"raw":[100,100,100,100]}
+
+00:49:19.380 --> 00:49:22.710
+<v Speaker 0>So you will have, at some point, someone standing here
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:22.710 --> 00:49:25.440
+<v Speaker 0>and explaining how we are going to be better for
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:25.440 --> 00:49:25.620
+<v Speaker 0>you.
+
+NOTE CONF {"raw":[100]}
+
+00:49:25.620 --> 00:49:27.360
+<v Speaker 0>So it does have an impact.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:27.810 --> 00:49:30.060
+<v Speaker 0>So yeah, have a couple of minutes to do that
+
+NOTE CONF {"raw":[100,98,100,100,100,100,100,100,100,100]}
+
+00:49:30.270 --> 00:49:32.760
+<v Speaker 0>and then please leave through the front again as we
+
+NOTE CONF {"raw":[100,100,100,100,100,100,100,100,100,100]}
+
+00:49:32.760 --> 00:49:33.690
+<v Speaker 0>did yesterday.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:33.900 --> 00:49:35.760
+<v Speaker 0>I am here for any questions.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:36.660 --> 00:49:37.350
+<v Speaker 0>It's optional.
+
+NOTE CONF {"raw":[100,100]}
+
+00:49:37.350 --> 00:49:38.190
+<v Speaker 0>You don't have to do it.
+
+NOTE CONF {"raw":[100,56,100,100,100,100]}
+
+00:49:38.190 --> 00:49:39.120
+<v Speaker 0>But please do do it.
+
+NOTE CONF {"raw":[100,100,100,100,100]}
+
+00:49:39.120 --> 00:49:40.650
+<v Speaker 0>It's nice to have some feedback.
+
+NOTE CONF {"raw":[100,100,100,100,100,100]}
+
+00:49:42.210 --> 00:49:44.670
+<v Speaker 0>Otherwise I'll see you all next week.
+
+NOTE CONF {"raw":[100,96,100,100,100,100,100]}
+
+00:49:44.790 --> 00:49:46.260
+<v Speaker 0>Have a nice weekend.
+
+NOTE CONF {"raw":[100,100,100,100]}

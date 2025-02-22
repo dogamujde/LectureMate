@@ -1,0 +1,832 @@
+Okay.
+Welcome to week four of Introduction to Linear Algebra.
+, I'll leave the QR code for attendance.
+Just a few more seconds.
+If anyone hasn't managed to scan it already.
+But as we will see, week four is a very
+packed week and a very important one because we start
+talking about determinants and invertibility and which are all things,
+all topics that essentially will serve as the basis for
+the big thing that's coming up, which is matrix diagonalization,
+eigenvalues, eigenvector and everything else.
+Okay.
+So I hope everyone has managed to take the attendance
+And let's start with a quick overview of what we
+are discussing this this week together.
+So as you as you are familiar with now, the
+week is divided in sort of two parts.
+You have two readings and two lectures.
+And so today we will look at the definition of
+determinants.
+And we will look at cofactor expansion.
+We will look at some basic property of determinants and
+determinants of spatial matrices.
+On the other hand is something wrong.
+No.
+Okay.
+Thank you.
+Okay.
+Whereas tomorrow we will focus more on some other
+things, which is how to use determinants to check whether
+or not a matrix is invertible and how to calculate
+explicitly the inverse using the aggregate matrix.
+There's plenty of material about this, but in the reading,
+and I also created a few videos that sort of
+summarise all of these topics.
+Yes, I see hands.
+There's no question.
+There's no question.
+.
+That's okay.
+I'm not the manager of that.
+The core secretary is.
+So we will try again at the end of the
+lecture.
+But now I need to go to go on.
+.
+Anything else?
+Nope.
+Okay.
+, okay.
+So let's start straight with hopefully this book club would
+will work.
+, so just make sure you sign in for, ,
+for the time being.
+, this should be the same code, by the way.
+It's just one is embedded in the in the slide,
+and the other one isn't.
+, and we will start with some sort of, ,
+very simple getting to know the tool a little bit.
+, question.
+You should be seeing question one already, which should be,
+, filling the gap question.
+, so I'm going to give you a minute or
+two to make club work and to, .
+Start thinking about what you're reading and submit the answers.
+If anyone has any problem with this book club, please
+tell me sooner rather than later because otherwise this one
+not working would be a problem.
+Okay.
+I do not have a timer for the bookclub question,
+but I will wrap them up myself.
+Okay, so a lot of questions are in.
+And, , okay, let's go over them together.
+The question asks is the definition of the cofactor cij.
+I represents the row or column while j represents.
+Well, it's going to be the other one obviously.
+And really we could, we could choose, , whatever.
+We to answer this question, but we need to
+stay consistent throughout the course.
+We can decide to have rows first and column seconds
+or column first row seconds, that's fine.
+But because the entire mathematical community has sort of agreed
+that the first number refers to the row and the
+second number refers to the column, then it's just a
+useful to go with that, because then everything we read
+of the of the of the book, everything that we
+lecture prepare in the lecture notes, we'll use that convention.
+So in a matrix, in a matrix A and I
+represent the row that we're looking at.
+And J represents the column.
+And that was the easy part.
+The more difficult bit was the second one which
+ask what are the dimension of the cofactor?
+And , I see that I have a great number
+of answers.
+I have n and minus one.
+I am J all over the place.
+What is the cofactor?
+How is the cofactor defined?
+The cofactor is something, but the crucial thing is the
+part that the cofactor is a determinant.
+It's the determinant of the a j a ij
+matrix, which is the one that is stripped of the
+ith column and the jth and the jth row.
+So the cofactor is a scalar number.
+It has dimension one times one okay.
+The reduced matrix will have dimensions m minus one and
+minus one.
+That is correct.
+But the cofactor is defined as its determinant.
+And so for that reason C I j of
+a will be.
+In.
+Have you seen this notation here before?
+R to the power of one times one.
+It's essentially means that it's a it's a single number.
+Okay.
+Doesn't have any columns.
+Doesn't have any row.
+It's a scalar.
+Okay.
+Hopefully that clarifies things a little bit.
+, because we're going to use that in the, in
+the rest of the lecture quite extensively.
+Okay.
+Please don't log out of book club in this lecture
+because I haven't copied the QR all the time.
+So while we while we are still at the beginning,
+I'm happy to go back and show you the QR
+to log in again.
+But as we go further down, , it would take
+me quite a long time.
+Okay.
+.
+Second question.
+True or false?
+Let's keep investigating.
+, the cofactor and how the cofactor is related to
+the determinant.
+We've seen that the the determinant of the matrix and
+the cofactors are, , are strictly related.
+We've seen an important theorem which states that we can
+take the cofactor expansion over all rows and all columns,
+and we get the determinant.
+And so I'm going to update the question on bookclub.
+Hopefully that should update it for you as well.
+just going to show you the the QR once
+more.
+If you are having trouble perhaps you've been locked out.
+And in the meantime I'll give you some time to
+think.
+But what I'm saying is the determinant.
+We can write as the sum over.
+For example, am I taking the sum of our column
+or a row there?
+Raise your hand if you think I'm taking the expansion
+over a row.
+Okay.
+Raise your hand if you think I'm taking it over
+the column.
+Okay.
+Those are still too few hands, so let's think again
+and we will vote again in 30s.
+Anyone who thinks I'm taking the the expansion of a
+row now.
+Okay.
+Anyone who thinks I'm taking it over a column.
+Okay, so the key, the key thing to see here
+is how does that some behaves that some changes.
+The second element of the indices of the of the
+matrix.
+So it changes the j.
+And I'm and I'm expanding over the element I, j
+and j refers to the column as we've just seen
+in question one.
+And so that may be a little bit confusing.
+But if you think about that, the column is changing
+all the time.
+And the row which is expressed by IE stays constant
+instead.
+So that is a deceptive.
+It's a correct but a little bit deceptive.
+You have to think about it a little bit.
+, because the column is changing, I am actually expanding
+over the ith row because if you think about what
+that would, that expression really is, is something as a
+, I one times the determinant of a i1 plus
+a I2 plus a i3, and so on and so
+forth.
+And so as you can see, these is just the
+ith row of the matrix.
+Okay.
+Cool.
+Back to the main question now is that the right
+, the right formula for the cofactor expansion.
+Let me see.
+How's it going?
+Oh, split down in the middle.
+Excellent.
+, okay.
+Since we are so split, I would to to
+take a minute and discuss with your neighbours Why do
+you think your opinion is the correct one?
+All right.
+I'm going to mute myself for a minute and hopefully.
+Okay, let's see how we are doing now via a
+raise of hands once again.
+If you think that is the correct excuse me.
+If you think that that is the correct expansion expansion
+for the determinant.
+Now raise your hands.
+Okay.
+Down.
+If you think it's not, raise your hands.
+It is not.
+That is correct.
+And again these expressions are tricky right.
+They're they're they're deceptive.
+If they're I would have put if I put their
+I j psi of a then that would have been
+the right the right expansion.
+But here I just put the determinant of the minor
+matrix.
+And so what am I missing.
+Anyone?
+The sign.
+The sign of the cofactor I forgot to put in
+here.
+And that's.
+Right.
+The cofactor expansion down.
+And as you can see, it looks much the same.
+But when we really go to the to the origin
+of how we expand the determinants, we have three terms.
+And then what we do is we collect the first
+and the third one and we call it the the
+cofactor.
+Right.
+So in there I've always I've also put the definition
+of the cofactor implicitly if you want whatever multiplies I
+j to get the determinant into that sum that will
+be the cofactor.
+Okay.
+So these exercises are quite.
+Quite tricky.
+, because matrices are trickier than numbers, right?
+There's much more structure about matrices.
+There's much more results that that we're going to see
+in this course than on numbers alone.
+So we need to tread carefully when we engage with
+matrices.
+It's very important to make sure that you're following the
+results, , quite closely because even something that may look
+it's correct, the expression above, which is
+very similar to the correct one, but it's slightly off.
+, it may not work.
+Okay.
+Any questions so far?
+Right.
+Okay.
+The next exercise is a little bit, , more structured
+in the sense that, , I don't know if you've
+done this during the reading, but one of the suggestions
+that I really have for anyone approaching determinants and cofactor
+expansion for the for the first time is trying to
+get used to them as much as possible.
+And so I've set aside four minutes, five minutes in
+this lecture for you to practice on a three by
+three matrix.
+So what I would you to do is to
+write down the cofactor, the determinant cofactor expansion for that
+matrix and choosing two different rows, and then show that
+you get the same result.
+As a spoiler alert.
+I'll be doing that for the first and second rows.
+So if you do that then you can check against
+my work.
+If you do something else and you still find that
+they're the same.
+That's still a pretty solid suggestion that you're that you
+have done things correctly as an extra if you finish
+early, , or maybe at home, because calculating three in
+a row gets pretty boring.
+You can try and prove that also along the column
+and everything works okay.
+That is the big result of the reading for this,
+for this, for this lecture that we are not able
+to prove yet.
+If you notice in the in the in the book,
+there's a note that, well that says something we
+we were going to prove this result in section 3.6
+I think, which is in a few weeks.
+Okay.
+So we have to take it for granted for now,
+but we can check on some special cases.
+I don't know what's happening with the connection to my
+tablet, but I can plug it in again and see
+how it goes.
+Okay, I'm going to start my solution to this.
+If you haven't finished, that's fine.
+You can catch up as we go.
+, okay, so this is the first, , cofactor expansion
+along the first row.
+What I've done is exactly applying the first formula where
+I was equal to one.
+I controls the row.
+And as you can see in the first sum, the
+second index of the of the elements that multiply the
+determinant changes, and so the row is going through the
+three rows of the matrix.
+And then I expand the smaller determinants which for a
+two by two matrix we know we can write out
+explicitly.
+And then I expand everything okay.
+So that is the correct hopefully expression of the determinant
+of A.
+And the result that we have seen was that if
+I do it along another row then everything works out.
+And if you do it for another row, , you
+get that expression there.
+And how do we check that they are the same?
+Well, we need to check that they contain the same,
+, the same, , triple products.
+And I'm just going to highlight a few and then
+I'll let you finish this, For example, the triple product
+of the three diagonal members are here and here.
+This triple product here, which contains minus A1 one, also
+appears here.
+I think that's the same.
+Yes.
+, the third one here contains minus A1221, three three.
+That's this one here.
+Oh, you know what?
+Let's just do them all.
+It's not that long.
+122331 is here.
+One, three with plus must be this one because the
+other one has minus.
+And in fact, it's the same.
+And then the last one is here okay.
+So the theorem in this particular case is working if
+we expand over different rows , then everything, , everything,
+, provides us with the with the same correct result.
+So in the summary that I was presenting to you
+earlier about the cofactor expansion and the determined.
+Sorry, that is shaking.
+I don't know what was happening.
+, which was this one?
+I need to add a little remark here that also
+says we can actually do it however we .
+Okay.
+Why is this important?
+It's important because if you have a row that is
+mostly zeros or mostly ones, but zeros are better.
+If we choose that row or column, then our expansion
+is greatly, greatly simplified because whenever an element is zero,
+the whole term, including the determinant of the matrix multiplies.
+It goes away.
+Right?
+, so it's it's a practically important result.
+In that sense, it helps us calculate determinants a little
+bit easier.
+Okay.
+Any questions about this?
+Right.
+Note that this is not a proof.
+We've proven it for two rows in a three by
+three matrix.
+If I were to ask you to prove it for
+a five by five matrix, then we'd be spending the
+whole hour just doing my nodes, minor determinants and then
+calculating everything.
+Okay.
+So okay.
+Question five.
+, now the question starts to become, in my opinion,
+at least a little bit more interesting.
+, we're sort of approaching assessment territory here, you know,
+so far was just some definitions here.
+We need to think about it.
+Okay.
+So we have that matrix M which has that structure
+there.
+We have some numbers that I haven't specified but I
+want those numbers to be non zeros.
+So d1 d2 and d3 are non zeros.
+And then we have zeros below them and above them.
+we can choose.
+We have if we choose them positive numbers we
+get matrix A some some positive numbers.
+If we choose them equal to zero we get matrix
+B, and if we choose them negative we get matrix
+C.
+And my question to you again refer to the book
+club is I'm not am I showing it.
+Yes.
+, what is the relation between the determinants of the
+three matrices.
+You will have a few options to choose from.
+Is there anything we can say?
+Do we have enough information to make an informed decision
+about how the three determinants sort of work and or
+compare against each other, or we don't have enough information?
+I'll give you a minute to discuss and come up
+with your with your solution to this.
+Okay, let's see how the first answers are coming in.
+Yep.
+, there's a pretty clear majority that thinks that the
+three.
+Oh, I forgot the last determinant there.
+That should be determinant of C, obviously.
+Sorry about that.
+But you correctly guess the answer despite my error.
+Well what is going on here.
+Can anyone summarise in a few words what's happening here?
+Yeah, just just go for it.
+Yeah.
+The determinant is the product of the entry.
+Yeah.
+It doesn't matter what the start values are.
+Yeah.
+Absolutely correct.
+Yes.
+Thank you.
+The key observation here is that if we take those
+values to be zero, we get a diagonal matrix.
+If we take them to be anything else, we get
+an upper triangular matrix.
+But the second key observation is that for both the
+formula to calculate the determinant, the simplified version of the
+determinant is the same.
+It's just the product of the three diagonal well, the
+n diagonal terms in general, in this case three.
+So you have correctly identified that, , that is indeed,
+, that it's it's indeed irrelevant whether we assign zero
+or non-zero values to the stars up there.
+And so these are the two propositions that were in
+one of the videos, , literally taken from the same
+deck of slides.
+, and that works.
+Even if we had put the stars on the lower
+triangle, because for both upper and lower triangular matrices, ,
+the formula still holds.
+Okay.
+Right.
+And if you have seen the video, I make a
+comment.
+I say because of this, diagonal matrices are nice.
+And actually triangular matrices are just as nice as, ,
+diagonal matrices if we have one of them calculating the
+determinant.
+I'm so sorry.
+, calculating the determinant.
+The determinant is not about taking a minor determinant and
+combining them and expanding.
+We just do a multiplication of a few numbers and
+we're done.
+So 1st May think, well, we have seen how to
+reduce a matrix to an upper triangular matrix.
+Right.
+What's the keyword for doing that.
+How how did we call the result of that of
+that operation.
+Yeah.
+Just scream it if you have it.
+Yeah.
+The row operation that puts it in row echelon form.
+That is an upper an upper triangular matrix.
+So one might think, well, if I don't know how
+to calculate the determinant, but I know how to put
+it in row echelon form.
+Could I do a row echelon form and then just
+multiply the diagonal and find the determinant.
+The answer is yes.
+And that is the next exercise that I invite you
+to do.
+This is not this is a matrix that already starts
+to be a little bit in row echelon form.
+So you can see I put some zeros and some
+easy numbers in the lower part.
+, and I would you to try to put
+in row echelon form for the sake of time.
+I know that you're very familiar with that, but I'm
+going to give you the row operation so we don't
+waste time with that.
+And I want you to calculate the determinant by using
+the row echelon form okay.
+So again it's not a massive amount of computation but
+it is some computations.
+So I'm going to give you two more minutes.
+I'll come around and then we will wrap up this
+question together.
+Any questions.
+Okay.
+So.
+I had muted myself now.
+Okay, so as usual, lectures are very short.
+I'm sorry but I need to move on if we
+have done.
+Oh okay.
+Right.
+I put it in the other order okay.
+And we know that these type of , of operations
+are allowed because they don't change the solutions of the
+system, right?
+That's week one, Ila.
+Do they change the determinant?
+Raise your hand if yes.
+Raise your hand if no.
+Right.
+They do, but they do it in a predictable way.
+So we can account for the change that we introduced
+by doing that and then go back and correct for
+that.
+And what I mean is this.
+And when we do so it's a valid method to
+calculate the determinant by putting everything in row echelon form.
+But we need to be careful about how we're changing
+the determinant.
+So this these are the three rules.
+As we've seen in one of the videos.
+If you swap two columns or two rows the determinant
+changes sign.
+So whenever we swap columns or rows we need to
+remember that we are introducing a times minus one into
+the determinant.
+If we're multiplying a row again, that was one of
+the basic results of the determinant one of the basic
+properties.
+Then if we multiply a row or a column, we
+multiply the determinant by the same factor.
+Same needs to be different than zero here.
+I cannot multiply.
+I mean I can multiply something by zero.
+But then I get the determinant equal to zero and
+I never recover.
+So it's not a smart move.
+And instead if I combine two or more rows then
+it doesn't matter.
+Linear combinations of rows or columns do not change the
+determinant.
+Okay, with that in mind.
+Hopefully I have done the calculations through variational form correctly.
+We should check with one of you probably, but let's
+assume that this is what we get.
+.
+The determinant of this matrix is just minus four, because
+it's just the product of the elements on the diagonal.
+And if you remember which operations we've done, which were
+these ones.
+, the first three are linear combination.
+So we don't change the determinant at all.
+But the last one we have to swap the last
+and the second to last row, because otherwise the minus
+two two would spoil the lower triangular property of the
+matrix.
+And so if this matrix that the reduced row echelon
+form of the first one has determined and minus four,
+then the original determinant.
+How to be four okay, because we changed its sign
+when we swapped the rows at the last step okay.
+So this is another option for calculating determinants a little
+bit more effectively and more and with less probability of
+making an algebra mistake, probably then just going through the
+whole expansion for big matrices.
+Note that this one was a 4x4, and so in
+principle, a 4x4 is very hard to do.
+, to do directly.
+Well, it's not hard, it's just long.
+And the chances of making mistakes are plentiful.
+And with that in mind, the next exercise.
+Can we do a five by five?
+Okay.
+There's no way we can fit the calculation of general
+determinants five by five by the end of the lecture.
+that's just something that we cannot do.
+So we need to do something a little bit smarter
+and use one of the properties that that we've seen
+in the, in the reading and in the videos.
+Okay.
+And .
+can you see how to do that?
+Now, again, only for the interest of time.
+, I'm going to give you one minute to think
+about it, and then I'm going to spoil the result
+for you.
+But give it a think.
+Look at the structure of the matrix.
+Maybe you can manipulate a little bit and obtain something
+that's a little bit more reasonable than doing a five
+by five or in one go.
+Remember, whenever you do a five by five, at every
+step of the expansion, you get a determinant 4x4, which
+you need to expand again.
+And then so you get five determinants 4x4 each expanded
+four times.
+That's 20.
+And those are determinants three by three.
+So you get 60 terms to compute.
+If you were doing that directly you can cut it
+down by expanding along the first column for example which
+has two zeros.
+But it's it's still going to leave you with a
+lot of algebra to do.
+So.
+What do you see in the structure of that matrix?
+Anyone?
+Yeah.
+The third and fourth columns we get a block of
+zeros.
+Yeah.
+So it's not quite in block format, but almost if
+we swap the the third and the fourth column, we
+get a upper triangular block matrix, a matrix which has
+it's divided in blocks.
+And the lower block and the lower block on the
+left hand side is all made of zeros.
+And as we've seen, this is what we get.
+And as we've seen in the, in the, in the
+reading, , this is much easier to calculate because for
+an upper or lower triangular block matrix.
+The determinant is just the product of the determinant of
+the blocks and the diagonal.
+Okay, we started with 60 terms a little bit less
+because there were zeros in the original matrix.
+Here we do just for the three expansion for the
+three by three and the two by two block at
+the bottom right hand side.
+Okay.
+, so this is just, , , an exercise to
+really point out that looking at possible structural properties of
+the matrix, if you can identify patterns in how the
+matrix is constructed, you can really count down your computations
+with respect to a normal, , sort of direct approach.
+Yeah.
+Well, swapping the columns.
+Yes, you have you have to keep in mind that
+when you swap the column, you change that.
+And I think I kept track of that.
+Yeah.
+Here.
+Don't forget the minus sign.
+It's all good.
+But we need.
+And in fact, if you see there it's minus the
+determinant times the determinant.
+Yeah.
+That is always a good point.
+Whenever you touch the matrix to manipulate it, you have
+to keep track of the three rules that that we've
+seen above.
+Okay.
+And then if you want to do the calculations, but
+there's really not anything particularly interesting in that you should
+get assuming I've done the calculations correct myself.
+-1014 okay.
+Right.
+So we've seen a 4x4, five by five.
+Let's do a six by six.
+No no no no no no I'm joking I'm joking.
+There's no six by six today.
+, let's instead do this one here.
+Let's go back to a three by three with an
+Within with a single element that it's not it's not
+known.
+, so before essentially we had a matrix which had
+a lot of unknowns, but it was either diagonal or
+upper triangular, and we could say something about the determinant.
+Now I'm sort of swapping the the premise here instead
+of giving you a matrix with structure, I'm giving you
+a matrix that you know much better, but it has
+just one element which we don't know.
+And the question is, can we say anything about the
+sign of the determinant of that matrix?
+And do I have a question for this?
+Yes.
+If you go in the book club there's a question
+about this itself.
+Okay.
+Right.
+Think about how the expression of the determinant is constructed.
+Or you can try substituting in some values and see
+what you get.
+But essentially I'm asking if you don't know X.
+Can you tell me anything about the determinant of being
+positive negative or zero?
+Okay.
+Okay.
+let's have a look at what the answers are coming
+in.
+I'll give you a few more seconds to vote.
+Just because I see that only 50 have voted.
+Try to make up your mind and send me a
+yes or no.
+But it's not a yes or no.
+It's a multiple choice.
+But I mean.
+Okay, I'm going to uncover the answers now.
+All right.
+So the majority of you, almost two thirds think that
+there's no enough there's not enough information.
+And, , that would be the correct answer.
+But why?
+Well, this matrix has no structure, right?
+There's no result.
+Theorem, proposition.
+Corollary.
+We can hope.
+can in our help.
+So the best approach to do this is to just
+calculate the determinant in the boring way of expanding along
+row of or a column.
+Now, because we want to isolate X, because we want
+to study what what the dependence on X is would
+be smart to choose either the third column or the
+second row, because then x is not in another determinant.
+It just appears as one coefficient multiplying another determinant, which
+is just a number.
+And what I mean by that is is this if
+we do, , let's expand it along the third column,
+we get that and X is still our unknown.
+Right.
+Just for reference, let's have a look at the matrix
+back.
+So I'm going to multiply one then x.
+Then three x has the minus because of the rules
+of the signs.
+And the rest are the determinants of the two by
+two remaining.
+And this does this help you?
+No.
+I see head shaking.
+It doesn't help you.
+But what if I tell you that those determinants are
+just numbers.
+You can just calculate those determinants.
+Right.
+The first one is ten minus two eight.
+The second one is ten minus three seven.
+And the third one is eight -12 minus four.
+Right.
+Sorry four -12 minus eight.
+let's try and do that.
+And we get the determinant.
+And x are, are related by essentially what is
+a line.
+It's minus seven x minus six okay.
+So obviously if we write the determinant as y and
+we plot it in the plane, and then we study
+the sign of our determinant for some values of x,
+the determinant will be, , negative for some values will
+be zero and for some values will be positive.
+Right.
+And in particular for minus six seventh that matrix reduces
+to a matrix with zero determinant.
+You can go back and check why that is.
+It will make it so you can express the third
+row as combination of the first two.
+Okay.
+I invite you to go back and check that for
+minus six seven, always assuming that my calculations are right.
+Okay, finally we have just shy of five minutes to
+go.
+, the last question, , which is, , sum up
+of everything we've seen today.
+I'm telling you, I'm giving you some properties.
+Some may be real, some may be made up by
+me this morning.
+And I'm asking you which ones are actually true.
+And you have a few options on this.
+Some of them.
+All of them.
+None of them.
+Only a combinations of them.
+Take.
+Take your time to discuss.
+I'll give you two minutes, because this one I can
+prove to you in, in just a couple of minutes
+at the end.
+Just just something.
+Note that some of them say a i.j.
+The second and the fourth one are I.
+So I'm just talking about the diagonal.
+Just something to be aware of because sometimes it's easy
+to, , misinterpret a J with a with I.
+All right, let's see the results.
+Okay.
+There's a good mixture of two.
+Seems to be the preferred ones, but there's also a
+fair amount of people that they think that I just
+wake up this morning and decided to make up for
+properties out of nowhere.
+And the funny thing is, they're right.
+I just that's how I spend my mornings anyway.
+So yes, they're all made up.
+I just made up.
+And this is this plugs into the main in the
+into the main message that I would you to
+take home today, which is at least for determinants, the
+structure of the matrix is much more important than the
+actual values that it's that it contains.
+And if you go back and see the other exercises
+that we've done, they all sort of hint towards that.
+If you have some structure, it's easy to tell something
+about the determinant of the matrix, even with incomplete information.
+If you know everything about the values but you are
+having complete information about the structure, then it's very hard
+to do anything.
+And how very quickly.
+We still have a minute.
+Sorry.
+Very quickly.
+Can we give some can we give some counterexamples to
+show that they they are wrong, and I'm just going
+to write them down so you can check at home
+because the lecture is almost done.
+And the counterexample for one, you can look at the
+matrix one to.
+Two, one for number two you can look at 0110.
+For number three you can look at minus two, minus
+two, minus one, minus one.
+And for the last one possibly the easiest one you
+could look at just the the the matrix that has
+all ones.
+And all of that will , will show you that
+while the premise, the hypothesis is satisfied, the determinant
+does not, , does not satisfy the property that I
+just invented this morning.
+All right.
+Thank you for coming.
+I'll see you tomorrow.
+Same time, same place.

@@ -1,0 +1,1046 @@
+Okay.
+It is ten past, so we will get started.
+It's week ten.
+Yeah, it's the end.
+There are vision lectures next week, but this week is
+the last week of new material.
+.
+And then you've learnt every bit of linear algebra you
+ever need to know.
+, so please do log on to both the attendance
+and the questions will clap.
+, but while we do that, .
+Oh, talkative.
+We've turn.
+.
+So we've jumped to chapter eight.
+We may have skipped over a couple of chapters there.
+, feel free to go and read chapter six and
+seven if you want.
+, they're not actually got much new material in there.
+All stuff you've seen before, but they're generalising away from
+real vectors.
+So when we've been talking about vectors, we've been talking
+about vectors in our n.
+So lists of real numbers.
+, and kind of we've built up what that means
+geometrically and algebraically.
+Turns out you can generalise everything we've done to vectors
+that aren't necessarily just lists of numbers.
+, so that's what chapter six and seven are doing.
+They're building up this definition of a vector space and
+looking at kind of generalised linear algebra, where you've not
+just got vectors.
+In some ways the linear algebra is not changed.
+It's just the vectors have changed.
+Feel free to go give it a read if you
+want.
+At some point, lots of you will end up studying
+that type of linear algebra.
+But that is not what we're doing in this course.
+So we skip to chapter eight sticking with our real
+vectors.
+And we are this week going to talk about orthogonal
+stuff.
+, so I'm going to get rid of I think
+this is the attendance will clap is going to go
+away.
+But there's the code for people who want it.
+, so this week.
+We're in Thursday's lecture.
+, let's start with the true and false question.
+If I have a list of vectors that is a
+basis of some subspace, you in R1.
+So I'm giving you some subspace and I'm giving you
+a basis for that subspace.
+And then I'm going to give you a point in
+your subspace.
+Is it true that I can write x as this
+sum.
+So the dot product of x with v1 times v1.
+And then the dot product of x with v2 times
+v2, , and so on and so forth.
+So I'm going to give you a minute to think
+about that.
+Is it true that x can be written as a
+linear sum of dot products and vectors?
+Well, I'm going to give you.
+What are we up to?
+About nearly halfway.
+If you voted.
+So I'll give you an extra 30s.
+Have a chat.
+What are we thinking?
+Take a guess.
+Okay, over half you have voted, so you've got ten
+more seconds.
+Take a guess.
+Put your vote in.
+Now is the chance.
+Five more seconds.
+Two more seconds.
+One more second.
+Oh, okay.
+This is interesting.
+We are fairly split.
+Quite neatly split, actually.
+, we're about 5050.
+Which?
+Which is.
+This is impressive.
+This is good.
+We have some discussion.
+, let's see what the comments are.
+Lemma 8.1.1 Thursday.
+Slump.
+Absolutely fair.
+, Thursday slump in week ten, no less.
+, adding the scalar multiplied by a vector gives a
+vector.
+Yes.
+So we are.
+We are.
+This thing should be a vector.
+We're adding a load of vectors together.
+, what are false people saying we're missing the vice
+needed divide, not normalised.
+Okay.
+, anyone got anything else to add to that?
+Why is it important that we're normalised?
+Why?
+Why are people talking about normalisation?
+Hmm.
+Is normalisation important at all?
+Actually, that's a good question.
+, let us have another moment, then.
+Talk to your neighbour.
+Try and convince them you're right and they're wrong.
+Because, you know half of you are wrong, right?
+And half are you wrong.
+So find someone and let's have another 30s.
+See if you can convince me whether we points have
+been raised or not.
+And hey, it's Thursday.
+Feel free to just guess.
+And just under.
+Him he doesn't have my little eye.
+Equals one on the bottom.
+What?
+I'm going to give you another 30s then.
+What are we thinking?
+Oh, you've all gone very quiet.
+Take this chance to vote.
+We've still not had half of you vote.
+So vote.
+Enter the democratic spirit.
+It's important.
+I'll give you 20 more seconds of voting time.
+The electorate seems to be growing, though, so.
+Okay, we're exactly halfway.
+Ten more seconds.
+No, we're not anymore.
+There we go.
+Okay, let's keep going.
+Can we get to 80?
+I'm going to close voting when we get to 80
+votes.
+So I need eight more voters, please.
+Oh, seven more voters.
+Five more voters, two more voters.
+One more voter.
+Yay!
+We made 80.
+How exciting.
+Okay, what are we saying this time?
+Okay, now we seem to have lots more.
+People are saying we're false.
+We seem to have had a change of heart.
+, I do not think they're necessarily orthogonal, , magnitudes
+to be incorrect if not divided by the norm, because
+they're not linearly dependent guessing.
+That's absolutely fine.
+You're allowed to guess.
+It's only true when the basis is orthonormal.
+Otherwise it is false.
+Linear combinations of basis vectors.
+Combinations of linearly independent vectors.
+You're right.
+Both of those statements are right.
+Actually, they are combinations of linear independent vectors.
+How do I know that my vectors are linearly independent
+because they're a basis?
+Yeah.
+To be a basis you need two conditions one linear
+independence.
+What's the other one.
+Begins with s spanning.
+Yeah.
+Perfect.
+So you need to span and you need to be
+linearly independent.
+We know we're linearly independent and we know we span.
+So so far is looking so good.
+, the correct answer is false.
+Yay!
+Well done.
+We moved in the right direction.
+, part of the reason is because we do need
+to divide by the norm.
+, let's just talk about Oopsy daisy.
+That's not what I wanted to do.
+Let's talk about this one.
+, I do not think so.
+Unless they're orthogonal.
+Are they orthogonal?
+That is true.
+It is not true unless all your vectors are orthogonal.
+Actually, this other statement is very true.
+, blah blah blah.
+It's only when the basis is orthonormal are we orthogonal
+though.
+So we're not normalised.
+We know it's false because they're not normalised.
+Are our vectors orthogonal?
+What are we thinking.
+No okay.
+Let's let's I this thumbs down for no.
+Thumbs up for yes.
+Shoulder shrug for I don't know.
+Okay.
+Yes.
+We are generally voting no.
+I'm liking this.
+No voting.
+Yeah good.
+It is true that so all of these things are
+true.
+It is true that they're not normalised.
+We need them to be normalised.
+Otherwise this number they're that dot product is going to
+be the wrong size.
+So we need them to be normalised.
+But we also need them to be orthogonal.
+If they're not orthogonal then things go very wrong as
+I am hopefully about to demonstrate.
+, that is the one I want.
+I don't want the axes there.
+Okay.
+So, .
+Can I shift this over?
+Do do do do do.
+, sorry.
+Give me half a second.
+Let's do this.
+, I don't know why I'm in Spanish today, but
+there we go.
+Okay, so let us.
+Look at this vector.
+So we're going to have two basis vectors.
+We've got we've got this blue one and we've
+got this orange one.
+So those are my two basis vectors that are sitting
+on my plane.
+, they span my plane.
+They they are not they're linearly independent.
+So these two vectors are a basis.
+, we're then going to consider this vector x, which
+doesn't lie on my plane.
+It's just some vector over here.
+, and we're going to consider a projection down onto
+my basis.
+And the projection is this, , little green vector here.
+, if my vectors are not orthogonal, then this projection,
+we kind of want it to be where that dotted
+line is.
+That would kind of is our intuitive understanding of what
+the projection should be.
+, but but the green vector is not going to
+the dotted line.
+, when they're not orthogonal, we do not get the
+projection we kind of want.
+We're not getting the kind of straightforward coordinates.
+, this isn't telling us what we want to what
+it kind of wants us to tell.
+Even if all of these are normalised.
+It's still not.
+It's not even pointing in the right direction.
+So if we're not got a normalised basis, then at
+least that formula in the question would give us a
+vector in the right direction.
+It would just be.
+Actually, that's not necessarily true.
+, but but here it's it's giving us kind of
+complete nonsense.
+That projection vector is not at all what we want.
+, whereas if I fix it so my basis vectors
+are orthogonal, , then I do get exactly the projection
+vector that I want, which makes me happy because I
+get maths as being nice.
+It's doing what I wanted to do.
+The other thing to bear in mind is if when
+they're not, , when they're not orthogonal, then if I
+change my basis vectors, my projection changes.
+So all I'm doing there is changing one of my
+basis vectors and my projection keeps changing.
+It shouldn't be the case that when I project down
+onto a plane, if I change how I'm put
+vectors on that plane, it shouldn't matter what how I'm
+defining that plane, the projection should always be the same.
+Whereas when I am orthogonal, I can change those bases,
+but my projection is not changing, which is exactly what
+we want.
+So actually we only ever want an orthonormal normal basis
+norm also gives us the right sizes.
+, but we really do want that orthogonality condition.
+Otherwise, weird and wonderful terrible things happen and we don't
+want that case.
+Cool.
+Are we all happy?
+Do we have any questions or thoughts?
+Feelings?
+Comments?
+No.
+Okay.
+, so the normalised basis makes life easier.
+But we can of course do, , we could change
+this formula to make it work for a non normalised
+basis.
+We just have to divide by the norm of VI's.
+, cool.
+Okay.
+So what this allows us to do is we're essentially
+saying we can always this is that form is giving
+us the coordinates of a point with regards to a
+certain basis.
+So if we think about it in terms of standard,
+, or when the be used to.
+So let's do R2.
+We have x and y we're very used to.
+If I give you a vector we can write this
+as the .23 for example, which is saying we're going
+to along in the x and three along in the
+y.
+That's exactly what that formula is saying to this projection
+is giving us.
+The kind of coordinate points, , well, when it's, when
+it's normalised, , in relation to whatever basis we're picking,
+I could equally pick this basis.
+, there we go.
+That's still at right angles.
+And if I pick the same vector, then I'm going
+to have different coordinates depending on my different basis.
+But I'm still finding essentially the coordinates with that projection.
+So what would essentially be able to do is splitting
+up our subspace into the different orthogonal directions we can
+walk into.
+Everybody happy with that thought?
+Yeah.
+Okay.
+, it also means something quite cool.
+It's saying we can always put coordinate system on any
+vector space, which I appreciate.
+We've skipped chapters six and seven, which generally deal with
+generalised vector spaces, but that's still quite a cool thing
+if you think about it.
+You could always put coordinates on how big your vector
+space gets.
+Even if you're talking about a subspace, you can always
+put a coordinate system on it, which is fun because
+coordinate geometry is a lot easier to do than anything
+else.
+Okay, so, , that is false.
+If I give you a subspace, though, does there exist
+one orthonormal basis I've just said.
+Yes.
+Sorry.
+Yeah.
+So the.
+Previous one, if that was specified as an orthonormal.
+Basis, that would be true.
+Yeah, it'd be true if it was an orthonormal basis.
+, okay.
+So now we know there's always an orthonormal basis.
+That's that's what we find out in the reading.
+If I give you a subspace that exists an orthonormal
+basis, is it true that there is only one orthonormal
+basis?
+, so another true false question I'm going to give
+you again a couple of minutes to sit and talk
+this through.
+, we can always find a orthonormal basis.
+Is it true there is one orthonormal basis?
+About a quarter of the way there.
+Bom bom bom bom.
+I'm going to give you an extra oh about half
+you voted.
+So I'm going to give you an extra 10s.
+Five seconds.
+Three seconds.
+Two seconds.
+What do I want to change?
+I want to change this one.
+Okay.
+, so we're split about two thirds to one third.
+False to true.
+, anyone want to justify an answer?
+Anyone want to pick a side?
+Why are we thinking false?
+That seems popular.
+, because you can rotate your basis.
+, you can have multiple orthonormal basis.
+Because the Gram-Schmidt process, you can rotate all orthonormal vectors.
+, yeah, I think I agree.
+Anything with false.
+No.
+You can rotate your basis vectors.
+, yes.
+You can rotate your basis vectors, which means your false.
+, yeah.
+It is true.
+It is true that you can rotate your basis vectors
+and therefore the statement is false.
+, there is not exactly one orthonormal basis except in
+one case.
+Can anyone think of the one case where it is
+true?
+Yeah.
+The zero vector.
+The zero.
+Vector.
+Okay.
+There are two cases.
+There's the null case.
+There was one other one, which is a bit boring
+in some regards where there was only one orthonormal basis.
+Anyone think of it?
+There's the boring null.
+Well, the null case isn't boring, but you know the
+special case.
+What about when my basis only has one vector?
+What's my subspace, then?
+If I've only got one vector in my basis, what
+am I, a line?
+Yeah.
+If I've only got one vector in my subspace, then
+I've only got one orthonormal vector.
+So yes.
+Yes.
+But that's basically the same vector.
+We don't really you know, my minus one is I
+wouldn't count that as a different basis.
+, it's not a different vector.
+It's just you've scaled it.
+, so yeah, there is only one orthonormal basis.
+, in that case.
+Cool.
+Okay.
+So we are going well.
+And lots of people have mentioned the Gram-Schmidt process, which
+is great because it's one of my favourite bits of
+this course.
+I love the Gram-Schmidt process.
+I don't really know why.
+Everyone I know loves the Gram-Schmidt process.
+, but there we go.
+So, , let us consider a three dimensional vector space
+subspace.
+, I'm going to call it U, and it's going
+to sit in R4.
+There we go.
+And it's going to be spanned by three vectors.
+you one, you two and you three.
+, so hopefully these are all sufficiently nice numbers.
+, does anyone want to tell me what step one
+of the Gram-Schmidt process is?
+What do I do?
+What is the Gram-Schmidt process first?
+What's the aim here?
+The aim is to find what kind of basis.
+And yeah, an orthogonal basis.
+You can even go further and find an orthonormal basis.
+So you can take any basis you want and make
+it an orthogonal basis, which is really quite fun because
+orthogonal stuff is a lot more fun, whereas finding a
+basis, it's a lot easier to find a general basis
+than it is an orthogonal basis.
+But to do any calculations, it's a lot easier to
+do an orthogonal basis.
+So that's kind of bridges the calculation gap.
+Okay.
+So there is a basis.
+What is step one of the Gram-Schmidt process.
+Does anyone.
+Yeah.
+Yeah.
+Perfect I'm going to set the first vector to be
+the first bit of my orthogonal basis.
+There we go.
+Step one.
+Done.
+Hooray!
+One vector down two to go.
+, what is step two?
+Oops.
+That's not what I meant to do.
+, so there I've got three vectors, and I've now
+set one to be my basis vectors.
+I've made it blue.
+What?
+Step two.
+Anyone got any ideas?
+Anyone got a word they want to throw at me?
+Projection.
+That's the word I was looking for.
+Good.
+So, as we've seen several times, the second one we're
+going to project onto the basis vector we have and
+then throw away the bit that's in the direction.
+So I'm going to take I'm going to ignore you
+the third vector for a bit because we don't
+really worry about that.
+And I'm just going to consider, , let's see if
+I can move this so we can see.
+There we go.
+I'm going to project it down onto the basis vector
+we have.
+And then I'm going to think about the bit we
+have left over.
+And that's going to be orthogonal.
+So let's do that.
+Mathematically we've got I'm going to take you to the
+second vector and I'm going to project it down onto
+F1.
+So I'm going to subtract away the projection.
+How do I do what's on the top of my
+projection?
+What do I need to dot with what.
+I've got you to what am I going to dot
+you to with F1.
+Good.
+And then I'm going to divide by F1 divided dotted
+with F1 the norm of F1.
+Okay.
+What is this dot product?
+Anyone want to yell it out to me?
+Minus one times one plus minus one times one, minus
+two.
+Good.
+So minus two.
+And then what's this dot product on the bottom.
+Six.
+Good.
+And I'm times seeing this by minus one zero.
+No I'm not I'm doing it minus one.
+I'm doing plus one.
+What am I doing?
+I don't know, it's week ten.
+Okay, that's what I'm typing by.
+Okay.
+Can I trust myself to do maths up here?
+I don't know, yell at me when I make a
+mistake.
+Minus one plus a third is minus two thirds zero
+plus two thirds.
+Minus two thirds is minus two thirds.
+Zero plus zero is zero.
+I hope minus one plus a third is still minus
+two thirds.
+Does anyone disagree with me?
+No.
+Cool.
+Okay, so that is one vector that is perfectly it's
+orthogonal.
+We're good to go.
+But I'm actually going to take F2 just to be
+1101.
+Why am I going to do that.
+Yeah the numbers are nicer.
+There are no fractions.
+There are no negative signs.
+I'm far, far less likely to make a mistake with
+that one than I am that one.
+I contaminate by one.
+Something by minus two thirds is, you know, maybe left
+to when it's not a Thursday afternoon and week ten.
+, so let's make our lives easier.
+All we care about is the direction.
+At this point, we don't care about the size, so
+I might as well pick a vector that's got nice
+numbers in any questions or we all happy so far.
+Okay.
+So then we've got so what have we done here.
+Let's go back to this thing.
+We've taken away the we found this vector.
+We did the subtraction.
+And then we're going to set that to be our
+second basis vector.
+So all we're doing is shifting this vector so its
+tail is at the origin.
+So everything meets at the origin.
+It makes life easier.
+Okay.
+So I've now got, , let's get rid of some
+stuff.
+There we go.
+I've now just got two vectors, , but I also
+have with U3 I've got my third vector.
+, so what should I do for you three?
+How can I find my third basis vector in my
+on all basis?
+Yeah.
+Small projections.
+Well done.
+, so we're going to do the same thing again,
+but we need to project both onto the U1 vector
+and onto the, the both onto the F1 vector and
+the F2 vector.
+So we're going to and then subtract both.
+So we are doing F3 is going to be this
+initial vector minus its projection onto F1.
+we can steal a bit from F1.
+We now know that this denominator is going to be
+six.
+So let's save ourselves some time.
+.
+What is this dot product, though?
+, one minus two zero one.
+Anyone got any ideas?
+What's this?
+Minus one.
+Yeah.
+Good.
+So we have 1100 times minus one over six minus.
+So let's just make that plus a sixth of one
+minus two zero one.
+Then what's this dot product two.
+Yeah.
+And this one three.
+Good.
+Okay I'm going to leave you to do vector addition
+because hopefully you've had enough practice now.
+But hopefully if you do all of that and it
+all works out and nothing goes terribly wrong.
+You should end up with a half zero zero one
+half.
+Hopefully that's what I got this morning.
+, are we all happy with how that works, though?
+It's very iterative, so I can keep going.
+I'm just projecting down each time.
+So let's think about what we just did.
+Geometrically.
+We projected onto v one, , and then we did
+a bit of subtraction.
+, and we can also project onto V2 and do
+some subtraction.
+And if we do both those subtractions at the same
+time, we end up with this vector v three.
+And all we're going to do is shift that vector.
+So it's at the origin.
+And that's going to give us our orthonormal basis from
+our.
+Well no it's not.
+It's going to give us an orthogonal basis from our
+general basis that we found somewhere, which is really fun
+and cool.
+Okay.
+Are we all happy.
+Wonderful.
+So we now have I'm going to make again, make
+this a bit nicer, I'm going to say it's 1001
+for hopefully obvious reasons.
+.
+So that we've got an orthogonal basis also looking good.
+I can make it an orthonormal basis.
+How can I make it an orthonormal basis?
+Normalise it.
+Yeah.
+Which is yet another reason for picking nice numbers that
+I can immediately see the norm is root two.
+, I didn't really have to do any maths for
+that one.
+I might have to think for half a second more.
+.
+Not loads time or hopefully that is not that hard
+to do, but it's harder than that.
+And if we're trying to do lots of things, let's
+always pick the easier.
+Which mathematicians are lazy.
+I've said that before.
+Okay, so we can find an orthonormal basis just by
+normalising all of that.
+And then life is really easy and we're all good
+to go.
+, okay.
+So this example is in R3 because I can't show
+you an example in our food because the world doesn't
+work that way.
+, but this example is actually in our force.
+So I've got a fourth direction to play with.
+It's not on my plane.
+You it's in another direction.
+But we could keep going.
+So does someone want to yell at me?
+Another vector?
+, hopefully with nicest numbers, I'm going to make the
+first one zero.
+Someone yell a number at me.
+One.
+I that number.
+Someone yell another number of me, minus one I also
+that number and I'm going to pick zero.
+There we go.
+Okay, this is another vector which.
+I.
+Believe you can.
+You can take a stab in the dark and or
+you, you check this yourself or you can believe me,
+this does not lie in the span of the previous
+three vectors.
+This does not lie in you.
+, so what if we do Gram-Schmidt again?
+What are we going to happen?
+What's going to happen now?
+I could keep going.
+What's going to happen?
+Let's try let's do X and then I'm going to
+minus.
+The projection onto you War or F1 of x times
+x minus the projection onto F2.
+That should be an F1.
+Sorry of x f2 minus the projection of f3
+x times f3.
+That's a lot of maths.
+Let's feel free to go away and do that.
+But you should end up with the answer zero zero.
+, minus one and zero.
+Okay, I magically did a load of maths very quickly
+in front of you.
+Feel free to take my word for that.
+But that's the answer.
+, what is that vector?
+How does that relate to what we had before?
+How does that relate to you?
+It's orthogonal.
+Yeah.
+It's by definition orthogonal, , to everything in you, to
+anything in the span of F1, F2 and F3 it's
+got to be orthogonal to .
+And this gives us this is known as.
+Do you remember in the book what this was called.
+Everything that's orthogonal to a subset words beginning with C.
+And you all remember this.
+Yeah.
+Yeah.
+So this is U perp this is the orthogonal complement.
+And this is the entire the orthogonal complement for the
+in this case.
+So where we have a plane a three dimensional plane
+in four dimensional space, the orthogonal complement is a line.
+Because I've got four dimensions overall I used three of
+them up in my plane and I've only got one
+left.
+So it's a line.
+In fact, it's the normal line to the plane.
+, I'll give you a little hint about how I
+quickly did a load of maths.
+, if we look at the original subspace, , this
+was the plane defined by Z equals zero.
+, this vector doesn't have z equals zero.
+The normal is just the z axis.
+, x3 equals zero.
+.
+But there we go.
+There were several ways of doing that.
+That's just a kind of sneaky fun trick.
+.
+So yes, the orthogonal complement is just everything that is
+left over.
+If you have a subspace, you can always form an
+orthogonal basis.
+You can always keep adding to your orthogonal basis to
+cover your whole space, because your whole space is in
+a subspace too.
+So it has also has an orthogonal basis and everything
+that is not in your subspace, everything afterwards that defines
+the basis for your orthogonal complement.
+, which also means that the dimension of your orthogonal
+complement is n minus the dimension of your subspace, which
+again makes sense.
+Okay, let us do another question, because you have listened
+to me, Witter, for a while.
+.
+Oops, that's not what I meant to click.
+So, yes, we can always extend our basis.
+Which of the following is true?
+If you have a subspace W and a point X
+in Arwen, which is not in W, which is true.
+Which of the following is true?
+So I'm going to give you.
+Oh, we've not got long left.
+I'm going to give you a minute or two to,
+, have a think about this.
+And then we will.
+Come back together.
+Feel free to have a chat.
+Have a vote.
+What are we thinking?
+You all being very quiet.
+It's that because this is a very easy question.
+Very hard question.
+It's one or the other.
+But a third of the way there.
+No, a quarter of the way there do do do.
+doo.
+I'm going to give you an extra 30s.
+Okay.
+We're nearly halfway there, so an extra 15.
+We've not got much time left.
+How are you?
+Ever so slightly.
+Okay.
+Ten more seconds.
+Five more seconds.
+Three more seconds.
+Two.
+One.
+Okay, so, , again, we're fairly divided.
+I mean, even even the first option that no one's
+commented on is it's about 20%.
+Is it?
+Nothing.
+, so, yes, we seem a bit divided.
+Okay, let's see what the comments are saying.
+, so we've got a point that's not in W,
+which is the following is true.
+, I saw your screen and it was the most
+popular.
+Fair enough.
+It didn't remain the most popular.
+, for one x equals w t.
+It would not be in w o.
+I assume that means w perp.
+Fair enough.
+, it's the orthogonal complement.
+Since x is not on, W, must have some component
+w and some in W perpendicular.
+.
+Yeah.
+Any other thoughts?
+What does it mean if your projection onto something is
+the identity?
+What does that mean for the thing you're projecting?
+Yeah.
+It's got to be in your subspace.
+Because if you're projecting something, if I'm projecting something that's
+already in my subspace, then I'm projecting it to itself.
+, if my vector is in my hand, then I
+can't project it onto my hand anymore.
+, so one would be true if X is in
+the perp.
+If in the bum.
+Huh?
+Let's try that sentence again.
+The first one would be true if X was in
+W complement?
+That makes sense.
+, when would the second one be true?
+When would our projection be absolutely zero?
+Yeah, if you're completely orthogonal.
+So if it was in W.
+So actually bear in mind we know we're not in
+W.
+It absolutely can't be the second one because we're not
+we're not in W and W is perpendicular to
+w perp hence their names.
+, so two is the one that is absolutely never
+the case.
+, three.
+It's something else.
+Why might it be something else?
+It could be a mix of both.
+Exactly.
+All we've said is X is not in W.
+We've not said X is in the orthogonal complement.
+So if x is in the orthogonal complement then we're
+in the case one.
+And the projection is going to be x.
+If we're not we know we're definitely not two because
+that would mean we're in W.
+But if we're just a vector with some component in
+the complement and some component in W, then overall we're
+going to be neither x or zero.
+We're going to be something in between.
+Cool.
+Do we have any other questions or comments or anything
+else?
+Yes.
+Why does that projection not be the orthogonal complement?
+Which what do you mean?
+Surely it's projecting onto the, , complement of that, ,
+subspace.
+So it would be complementary.
+Yes.
+But there could be a component of X that is
+in the is in W.
+So we can split X into something that's there's a
+part of x that projects down onto W and pop
+the projects down onto W, so it's neither in W
+or W perp.
+It's a mixture of the two.
+Does that make sense?
+Yeah.
+Any other questions?
+Okay.
+If you think about it in terms of the
+standard basis, you're not in E1, you're not in E2,
+not in the x direction.
+In the y direction.
+You could be some line in between.
+So you've got some component of the x direction of
+some component in the y direction.
+Okay.
+, let us say yes.
+If it was true we'd line W if it was
+an we'd line w perp.
+, okay.
+So now let's look at a firm 8.4.1, , which
+kind of brings up, brings together everything we've said so
+far.
+, so it turns out the projection is a linear
+transformation.
+We've seen this, I think you saw back in week.
+I'm going to say week three, maybe four.
+I can't remember one of those weeks when you did
+linear transformations, we saw the projection was a linear transformation.
+We just hadn't done much projection yet.
+And now you've done lots of projection.
+So we know Italian transformation.
+More importantly, it turns out the image of your linear
+transformation is your space subspace U, which again makes perfect
+sense because if I'm projecting down onto U, then I'm
+going to get all of you because I can project
+you onto you.
+That covers everything.
+And I'm not going to get something that's not on
+you because I'm projecting onto you.
+So I know the image is you.
+It turns out the kernel is you, pop.
+Because for exactly this reason, I only get to have
+my projection to be zero if I'm perpendicular.
+So the kernel is all the stuff that gets mapped
+to zero.
+That's all going to be in in the perpendicular complement.
+Everyone so far so happy with me so far.
+Good.
+, this last part This is the bit that's not
+proved in the textbook, but actually it is the
+simplest one line of proof.
+We know that the dimension of the image plus the
+dimension of the kernel equals.
+What?
+What firm am I getting ahead?
+Another really big theorem.
+N yeah.
+Good.
+What firm's this?
+Rank.
+Nullity.
+Good.
+.
+But the dimension of the image.
+What?
+We just said that the image is you.
+And we also know that the dimension this is u
+perp equals n.
+Cool.
+I mean, we'd already worked that out because we said
+we could extend a basis of U.
+Into a basis of our N, and the number of
+vectors we'd need was going to be n and minus
+the basis of vectors we needed for you.
+So it makes perfect sense, but it follows quite nicely
+from this.
+Okay, we have two minutes.
+Do I want to do the last question?
+Let's do this.
+Last question.
+We won't formally vote.
+I don't think we've got time, but let's, , feel
+free to shout out to me.
+What do we think?
+So we've got a linear transformation given by a projection
+onto a subspace which has some matrix.
+It's a linear transformation.
+So we know there's going to be a matrix.
+If the nullity of my matrix is zero, what does
+my subspace have to be.
+We're kind of working backwards here.
+Slightly harder question.
+So I know the only vector that's getting mapped to
+zero is zero.
+So what am I mapping to.
+Any guesses I win.
+Yeah we've got to be mapping to everything.
+Because if we weren't mapping to everything then there'd be
+some other vector that would get mapped to zero.
+There would be an orthogonal complement that got mapped to
+zero.
+Turns out if the only thing mapped to zero zero.
+Which always happens.
+It means we're being quite boring and just projecting onto
+ourselves.
+Cool.
+Okay.
+That is it for today.
+I will see you tomorrow for our final new content
+lecture.
+We can all be awake for Friday of week ten.
+It will be loads of fun and then that will
+be that.
+Awful lot with you.
+Yes.
+It just seemed it was repeatedly interesting.
+, it shouldn't matter too much, but it will still
+be open now, so feel free to give it a
+go now.
+It might still.
+Work.
+I know.
+Let's say.
+Really?
+Really?
+Yeah.
+Yes.
+From last week.
+Mhm.
+Yeah.
+So all all symmetric matrix is diagonal diagonalisable.
+so we're talking a lot more about that tomorrow
+actually.
+but essentially.
+Yes.
+Do they have to be invertible or.
+Yes.
+So they'd have to be invertible.
+Yeah.
+No.
+Why's.
+Come up.
+Yeah.
+No, no that's fine.
+Okay.
+So yeah.
+First related to the previous question of the more
+construction of axe on W firm.
+Yeah.
+And but also because I thought it's going to be
+here, it's going to be mapped into w perm because
+of in my mind construction works we, I
+imagine the line our project onto the line and gets
+on the line.
+But when you start that, it can be something either
+because components can be different.
+I got a little bit confused.
+So how exactly what does it look .
+So so the case to think about here I should
+probably turn this microphone off.

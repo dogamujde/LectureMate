@@ -1,0 +1,859 @@
+All right.
+Welcome to today's lecture.
+, today we don't have attendance.
+So this, , this QR code should take you straight
+to the, , exercise book club, and, , just let
+me check.
+Okay.
+The projector has shifted a bit, but hopefully the slides
+are still visible there, so no harm in having it
+there.
+Okay.
+Wonderful.
+, start logging in into the book club, please.
+But before we go there, , we need to finish
+what we were doing yesterday because we had two statements
+that we left, , unfinished.
+So we're going to go through that, and then we
+will start talking about eigenvalues and eigenspaces and eigenvalues, multiplicity
+and how they play into each other.
+So, , you don't have the book club questions Students
+today.
+You've.
+You've had your chance to have a look at them
+yesterday.
+, but let's pick it up where we left.
+And I realised that I need also statement three.
+So statement three in the last, , in the last
+exercise yesterday was the last thing we saw together.
+And it asks to prove that if A is diagonalisable,
+then it's similar to its transposed.
+And yesterday we saw that this was in fact true.
+And we saw how to get it.
+And the idea was, okay, let's start with the definition
+of diagonal diagonalise ability, which essentially means that the matrix
+is similar to the diagonalised version of it, the matrix
+that is diagonal and has the eigenvector, the eigenvalues on
+the diagonal.
+And then we can invert that the relation.
+And if we calculate the the diagonal matrix of the
+transpose, we find that it can be written this way.
+P minus one t dt, which in which p and
+p minus one are the exact matrices that appear for
+the diagonalization of A, and then we notice that d
+t is equal to d because transposing matrices leave the
+diagonal unchanged.
+And so from here we can then substitute this expression
+here and reorganising, we see that.
+In fact we can find a new invertible matrix p
+p transposed, for which the similarity definition between 80 and
+A holds.
+And we say okay, p t is invertible because if
+P is invertible, then its transpose is also invertible, and
+the product of two invertible matrices is itself and is
+itself invertible.
+Now, why do I , redo this, because the next
+statement that we saw, well, that we didn't see yesterday,
+rather was that if A is Diagonalisable and B similar
+to A, then B has non-zero eigenvalues.
+And the reason why I read it, number three is
+that this is also true.
+And the proof is essentially exactly the same.
+We use different matrices.
+We use different properties.
+But if you write it down, , it looks and
+feels exactly , , the proof before we
+start by, , the Diagonalisable definition, , a similar to
+it's diagonal form.
+D we invert that and then instead of of ,
+plugging in this D into some, , into the, ,
+diagonalisable property for a transpose, we use, , the similarity,
+, definition instead.
+And then we can, , .
+We can do basically the same substitution.
+And if we work, , again with the same way
+with the associativity and remembering, then taking the inverse of
+a product is taking the product of the inverses
+in the opposite order.
+We find something, , that, , , that show us
+that both A and B reduces to the same diagonal
+matrix D.
+And so because A had non-zero eigenvalue to begin with
+for hypothesis, then also B must follow.
+Okay.
+, this is the explicit proof.
+, we can also take a shortcut if we remember
+theorem I think it was 5.5.1.
+I'm going by memory, but I think it was that
+which says that, , if A similar to B, then
+they have the same eigenvalues.
+And if it is diagonalisable, it has non-zero eigenvalues, and
+so b must have the same.
+And this is essentially how we build the proof for
+that theorem.
+So going back to first principles rather than using one
+of the results in your in your bit okay.
+And then the last statement which was the only one
+that I marked read as the most difficult one, was
+that if a similar to B, then all powers of
+A are similar to the same powers of B, and
+that is true for all integers positive or negative or
+zero.
+And the reason why I marked this red is not
+because it's a.
+The proof itself is particularly difficult.
+It's because of the first step.
+You need an intuition that you can use the divide
+and conquer method that we that we talked about last
+week and here, how would you split the the big
+heart proof into smaller, simpler cases?
+Any.
+Anyone has any idea about how I can split this
+into simpler things to check?
+Yeah.
+Precisely, yes.
+That is the natural thing.
+So it turns out that this statement yesterday was true.
+And the key idea here is that we can split
+an equal zero and positive and negative.
+And we it's good practice to start with the easiest
+one first.
+If n is equal zero then both matrices are the
+identity.
+Because a matrix raised to the zero power is the
+identity.
+And and so it's done.
+Then for the case n greater than zero.
+There's a key observation that we really need to prove.
+I'm sorry.
+This is a squared similar to b squared.
+.
+And why is that.
+Well because if a similar to B then we can
+write B this way.
+And when we iterate b we write b squared as
+b times p.
+This becomes the product of this two.
+And so by by regrouping p minus one p go
+away.
+And b square is similar to a squared through the
+same matrix P that allows you to move from A
+to B to begin with.
+And so this shows that of course a squared is
+similar to b squared.
+And , if we can just redo everything with more
+with more multiplication of the same matrix, we will
+get p minus one p in between every copy
+of A on the right hand side.
+And so , that shows it for all positive integers.
+And what about negative integers?
+Well, we.
+The key observation for negative integers is that a to
+the power of minus n can be written as the
+inverse of a to the power of n, and .
+We know from an exercise and I'm sure you've seen
+this, is that if a similar to be their inverse
+are also similar.
+And so the case and less than zero or n
+negative is exactly equal to the first part in which
+you substitute b with its inverse and A with its
+inverse.
+Okay.
+So again this exercise was marked as hard because not
+because the individual cases are particularly hard.
+But if you try to approach it straight away for
+any n then , you won't get you won't
+get far because you can just prove it in one
+go.
+I mean, there might be a way, but I, I
+can't, I can see it myself.
+Okay.
+So once again, standard, , technique for proving things in
+mathematics.
+Divide and conquer.
+That was the point of this last part.
+Question.
+Do you have any questions about any of these statements
+that we left over from yesterday?
+Okay.
+So, , this is the same slide as before, but
+now I'm highlighting what we do today.
+, I'm sure you've, , you have seen all of
+this in the readings.
+, but before we start doing exercises, much yesterday,
+, let's give out a couple of definitions that are
+going to be very important in today's exercises.
+First is the multiplicity of an eigenvalue.
+So if lambda is an eigenvalue of a matrix A,
+its multiplicity is the the the algebraic multiplicity of lambda
+as a root of the characteristic polynomial okay.
+So we've seen a theorem that the roots of the
+of the characteristic polynomials are the eigenvalues of the matrix,
+and that is the basis on which we can on
+which we perform our typical calculation to find eigenvalues.
+So to find the eigenvalues we solve the determinant of
+a minus lambda I or x I minus a.
+They're all equivalent formulation.
+And the reason why that works is precisely that theorem.
+Because the determinant of I minus a minus lambda I
+is a method to write the characteristic polynomial of the
+matrix and the roots.
+We set the determinant equal to zero.
+We solve and the roots are the eigenvalues.
+And of course a polynomial.
+You are all familiar with the number of solutions or
+the multiplicity rather of the solutions of a polynomial, something
+that looks, for example, .
+X minus a times x minus b equals zero.
+Those both x will be equal to a and b,
+and both will have multiplicity one.
+And the multiplicity increase.
+If we have something this now b now A
+has multiplicity equal to okay.
+And we've seen that this factor is connected to the
+fact that the characteristic polynomial factors completely and factors completely
+means that it can be written all in this form
+here of, , a succession of product of simple.
+Right.
+And just to be extra, extra clear.
+Raising this to some power is allowed.
+This is still completely factored.
+Okay.
+What is not allowed is to have terms that do
+not factors, , any further.
+So for example x squared plus one okay.
+This is not allowed if, if the characteristic polynomial has
+any of these type of terms that you can't reduce
+any further into terms in which the x has power
+one, then the characteristic polynomial does not factor completely.
+And then we've seen a theorem that states that
+if, , the characteristic polynomial factor is completely.
+We have two equivalent to equivalent properties a being diagonalisable
+and the dimension of the eigenspaces associated to each eigenvalue
+being equal to the algebraic multiplicity of that eigenvalue.
+Okay, so it's an if and only if if you
+have something this.
+That theorem is not true.
+And we will see an example okay.
+It is required to have , , a completely, ,
+a completely factorised characteristic polynomial.
+, by the way, if the characteristic polynomial is not
+completely factorised.
+Is the matrix invertible or not?
+If the if the characteristic polynomial is in this form.
+Here, together with this, , with this factor here.
+Now.
+Can we find the diagonal form of the matrix.
+Okay, we will see it later, but spoiler alert.
+No, because we don't find enough eigenvalues to, , to,
+, to to diagonalise the matrix.
+Okay.
+We will see all of this in the following two
+exercises.
+So the first one is just, , to do something
+that is slightly different than usual.
+Instead of , doing both true and false.
+I've created a matching exercise, , of logical implications.
+So on the left hand side, you have the hypothesis.
+And on the right hand side you have thesis.
+And then for some reason, this math bit didn't pick
+up this.
+This should be lambda.
+, and then, , yeah, it's your job to match
+the numbers with the letters And as usual with these
+things, there might be multiple that are allowed and we
+will go through them together in a couple of minutes.
+So discuss with your neighbours why you think some are
+better than others as matches between the left and the
+right.
+And we'll pick it up in a couple of minutes.
+I have, , approximately 30 answers so far.
+If you can, , submit your answers now, we're going
+to check them very quickly.
+But in the meantime, without giving too much away.
+Just a reminder of three results that we're going to
+use to solve these.
+These are three theorem that I lifted straight from your
+reading.
+Straight from part 5.5 of the of the book.
+, essay is diagonalisable if and only if, , ,
+the eigenvectors spun around and , when, , when both
+conditions, both equivalent conditions are satisfied.
+So A is the is Diagonalisable.
+Then if the matrix P is invertible, there exists, ,
+one.
+, sorry, there exists one matrix B, which is invertible,
+and it's exactly the matrix of the eigenvectors put by
+columns such that the matrix returns through similarity the diagonalised
+version of a.
+Okay, so that's the first result that that we use.
+The second one is that if VN are the eigenvectors
+with corresponding eigenvalues lambda one, lambda two, lambda
+n all distinct, , then , the set of the
+eigenvectors is a linearly independent set.
+And here another type of pair.
+It should be a backslash that makes em both mathematics.
+And finally, , if which is really a consequence
+of the previous two, if, , a matrix are n
+times n has and distinct eigenvalues, then it's diagonalisable.
+That is the second theorem, together with the first part
+of the first.
+Okay, 55 answers in the meantime 56.
+Excellent.
+, let's have a look at some of these statements.
+.
+If A is Diagonalisable.
+Well, actually, let's have a look at the the answer
+that you submitted.
+Now, , if A is diagonalisable in case of X
+factor is completely, then the dimension of the eigenspace is
+equal to the multiplicity for all lambdas.
+Correct.
+That was the first theorem that we saw earlier.
+If A is triangular upper lower than the eigenvalues are
+equal to the diagonal elements.
+Yes absolutely.
+And let's do the first three.
+And then we're going to go through them a little
+bit more systematically.
+And if we can factor out a factor x minus
+lambda to the power of n, then the then lambda
+will be an eigenvalue.
+Because setting x equal lambda makes the characteristic polynomial zero,
+of course, and the multiplicity will be equal to the
+exponent.
+Absolutely.
+Okay.
+, so let's , give some more constructive proof rather
+than say, oh.
+It's just, , that that statement is , is obviously
+true.
+Let's start with the triangular matrix result.
+Why are the eigenvalues equal to the diagonal entries?
+, well, we can we can write down the eigenvalues
+as the roots of the characteristic polynomial.
+Nothing nothing new here.
+And now we want to notice something that if A
+is triangular then the matrix that appear inside here is
+It's also triangular because when we take the matrix A
+minus x that we use to calculate the characteristic polynomial,
+and the only elements that are modified are the diagonal
+ones, the ones that are on the diagonal gets a
+minus x.
+Component after them, and all other elements of the matrix
+are completely untouched.
+So the resulting matrix of which we're calculating the determinant
+is also triangular.
+And we've seen in week four that a determinant of
+a triangular matrix and is just the product of the
+of the diagonal terms.
+Okay.
+So , I'm not sure you've seen this symbol.
+If you haven't, this is a good time to grow
+familiar with this.
+, this is just the sigma for the sum
+where you sum all the terms, , the at various
+values for I.
+Sorry.
+So if you have, , the sum over, I equal
+one n of x I.
+This is x one plus x two plus six, three,
+six, four and so on and so forth.
+This symbol here works exactly the same way, but instead
+of having a sum, this is the Greek letter sigma.
+For some this is the letter the Greek letter capital
+pi for product.
+So this would be x one times x two times
+x three times.
+Okay.
+So what I'm writing there is just that the determinant
+is the product of all the of the diagonal elements
+of the matrices of the matrix, which are the I
+minus one times x.
+Coming from the fact that I've subtracted the identity times
+x.
+Okay, so what are the eigenvalues?
+I'm sorry, what are the roots of this polynomial?
+Well, all the roots of this polynomial are exactly the
+A's, because if x is equal to one of the
+A's, it would cancel out one of these factors here,
+which are written this way here.
+And the whole polynomial would be would be easier.
+Okay, so the roots of the of the characteristic polynomial
+are exactly the diagonal entries of A, and therefore the
+diagonal entries are the eigenvalues.
+Okay.
+So this is a bit more constructive than what we've
+done before.
+okay.
+Therefore the eigenvalues are lambda equal.
+Okay.
+.
+Next up there was a a statement that
+was this one.
+Right.
+Which was if the eigenvectors Vectors span.
+If the span of the eigenvector is a proper subset
+of n, so not equal to n, it's A, it's
+a proper subset.
+Then a singular .
+Correct.
+Absolutely correct.
+And , once again, being singular is the opposite of
+being diagonalisable it means that the determinant is zero.
+And so this is just, , , negation of the
+if and only if theorem that we've seen before
+that if A is diagonalisable, then the eigenvectors span the
+entire RN.
+But now the eigenvectors do not span the entire n.
+And so it's it's not invertible.
+Okay.
+Next up the last one I think that we see
+, more more constructively here.
+oh no.
+There's, there's a couple more, actually.
+Okay, well, this one, that's not much to say.
+We've pretty much said it out loud earlier.
+If we can factor out a term x minus lambda
+and then then of course, , the oh it was,
+it was right here.
+And then the multiplicity of lambda is n oh that
+is.
+And then I thought that was A0I misread.
+Okay.
+, this is just the definition of multiplicity, right.
+There's nothing going on here.
+, the, , the multiplicity of an eigenvector of an
+eigenvalue is the number of is the, the algebraic multiplicity
+of that eigenvalue as a root of this polynomial okay.
+And if A is diagonalisable in k factors completely, then
+the dimension of the eigen space is equal to the
+to the multiplicity.
+That is the theorem that we saw before referenced in
+the book as theorem 5.5.6.
+Okay.
+Do you have any questions about any of these statements,
+any of these combinations?
+, this one was also an allowed one.
+As I mentioned, these questions in book club are not
+perfect.
+This is an equivalent condition for not being diagonalisable, hence
+singular.
+So both of these , matching are are fine.
+I just picked another one.
+Yes.
+Which one does not consider.
+Which one goes to matches?
+, let's see if the determinant of A is equal
+than zero or is different than zero.
+.
+I think it was, .
+Oh, that's a touch screen.
+Interesting.
+I think it was this one.
+Right?
+Because if the owner.
+Because that is invertible, , then a.
+Singular.
+No, then m o none.
+Actually, , this was supposed to be if the determinant
+is, .
+Right.
+And so it's not equivalent to this hypothesis here because
+we're not sure whether or not the factor is completely.
+.
+Let's see what I put in.
+, the determinant is.
+Zero.
+Yeah.
+It was supposed to go with this one.
+Did I get that right?
+, we.
+Said that is diagonalisable.
+If And it says.
+Yeah, yeah, , yeah.
+No, you're right, you're probably.
+Yeah, you've probably spotted something wrong either equal to zero
+or equal here.
+Yeah.
+Yeah.
+You're right.
+Sorry about that.
+Any any other questions.
+Yes.
+I feel I've been in space which for all
+of.
+The eigenspace.
+Well each eigenvector each eigenvector creates an eigenspace.
+Yes.
+Yes.
+So e lambda a is the eigenspace created by the
+eigenvectors associated to lambda as an eigenvalue.
+Right?
+It's the one for which lambda is the corresponding eigenvalue.
+So in other words, it would be the x.
+It's this one is the span of all the axis
+vectors for which a x is equal to lambda x.
+There could be multiple or not.
+Only one.
+Eigenvector.
+That's the eigen.
+Vector.
+It depends on the matrix.
+If two.
+If two.
+If.
+If an eigen.
+.
+If an eigen.
+.
+If an eigenvalue has a multiplicity two, it could be
+that two different eigenvectors correspond to that.
+And that's that's why this dimension will be equal to
+two.
+And the multiplicity of that eigenvalue in turn will be
+two.
+Okay.
+, for, for for the dimension of the eigenspace to
+be two you need to independent eigenvectors corresponding to that
+eigenvalue.
+Right.
+Two linearly independent ones.
+Otherwise the span of that eigenvalue of that eigenvector can
+never be more than one.
+If you only have one vector as a basis of
+that subspace.
+Okay.
+Right.
+So , next up, , question two.
+This one I couldn't I couldn't turn it into anything
+else.
+So this is a good old true and false four
+statements.
+I didn't classify them in hard and non hard, although
+the last one is the one that's a little bit,
+, a little bit more interesting perhaps just because, ,
+you probably haven't seen this.
+, the other ones are applications of what we've seen.
+.
+Five more minutes to walk, to work through, , the
+ones that you, , that you feel comfortable with.
+And then, , then we're going to go over them
+together.
+Okay, I have almost 50 answers.
+If you submit them, we can start going through them
+together.
+Okay?
+Okay.
+Okay.
+Let's see the first one for which you're mostly confident
+that it's true, but I have purposefully omitted a condition
+there.
+You don't know that the characteristic polynomial factor is completely
+for that matrix, right?
+That is an equivalency only if the characteristic polynomial factors
+completely.
+And for that reason why we can produce a counterexample
+to that.
+We can produce a matrix for which the dimension of
+the eigenspace is equal to the multiplicity for all eigenvalues.
+But we're missing out on eigenvalues.
+And so the matrix is not diagonalisable.
+Okay.
+So that was one of the points that I was
+really hoping to make during this, , during this lecture.
+And again, the catch must factor completely.
+And we can have this counterexample here.
+If you write down the determinant of that matrix, you
+get, , , this, , this expression here and the
+characteristic polynomial only has , one root which is
+x equal one.
+And you do that by putting x minus on the
+on the diagonal and expanding over the third row, you
+get x minus one and then x squared plus one.
+Okay.
+So this matrix here in principle satisfy the right hand
+side condition here.
+The dimension of the eigenspace we will check has multiplicity
+one.
+But because it doesn't have a full set of eigenvectors
+corresponding to our spanning R3, it won't be, , it
+won't be, , won't be diagonalisable.
+, the eigenspace corresponding to that eigenvalue is spanned by
+this vector here.
+And so the dimension is one.
+And note that this is an if and only if.
+So.
+For this to be true we must be able to
+suppose that if if the dimension equals the multiplicity of
+lambda, then a is diagonalisable.
+Okay.
+Do you have any question about this question here?
+Because because the next remark is a consequence but mostly
+unrelated.
+So this would be a good time.
+Okay.
+Okay.
+Well in that case let's have a look at the
+characteristic polynomial once again.
+what is what does it mean to factor completely.
+Well I've written it down earlier, but .
+It, it you can rephrase that as meaning that the
+sum of the multiplicity of the eigenvalues are equal to
+the matrix dimension.
+And, , and let's see why very quickly, if it
+factors completely, we know that we can, , that we
+can write it as a product of first order terms
+raised to some powers.
+And of course lambda one to lambda m will be
+our eigenvalues.
+And because the characteristic polynomial has degree equal to the
+dimension of the matrix, we know that the sum of
+all these n's and one plus n two plus n
+that must be less than or equal to n, right?
+Because if there are some was greater than end and
+this would be an n plus something degree polynomial.
+And that's not possible because the characteristic polynomial is at
+most the dimension of the matrix.
+So we really have only two options.
+And we can either have the exact strictly smaller
+than or equal to n.
+And if it's smaller than n then it means that
+there's that.
+We're missing some factor here, because the degree of the
+polynomial on the right hand side will be n one
+plus n two plus n n, and we know that
+the degree of the polynomial on the right hand side
+on the left hand side, sorry, is n because it's
+the characteristic polynomial.
+And so we're missing one of those factors in the
+form this.
+Right.
+Because if if the remaining degrees on the right hand
+side would have been written in this form here as
+x minus lambda n plus one and n plus one,
+it would be in this in this form already it
+would be included in this product.
+But it's not.
+So I'm missing out on on an factor that I
+can factor that I can factorise completely.
+And so the fact that the, the, the sum of
+the multiplicity of the eigenvalues is strictly less than the
+size of the matrix implies that I'm, I'm leaving out
+one of those factors that prevents me to factor completely
+the polynomial, and vice versa.
+If n one N1 plus n2 plus n m already
+give me a polynomial of degree n, then I can't
+have any more factor that can create me problem with
+factorising completely the polynomial, right?
+Because the factors that I have already written in already
+account for the maximum degree that the polynomial can be.
+Okay, so I put this remark here mostly because, ,
+it's , something that , I use to build that,
+, counterexample to number one.
+It's a counterexample I've built by selecting a matrix that
+had exactly one of these terms here, and a non
+factorising term, and exploiting the fact that the multiplicity doesn't
+add up to the dimension of the space in which
+the matrix acts, which in our example here was of
+course R3.
+Okay.
+Yes.
+So that first one, if you just added the characteristic
+polynomial factorises completely, it would be true.
+Yes.
+It's a it's a.
+If you go back and read the theorem we had
+it in the previous slide.
+The theorem goes .
+.
+Can find it now.
+Oh yes.
+There it is.
+The following are equivalent for a square matrix for which
+the characteristic polynomial k of x factor is completely right.
+So if you add that then you can prove it
+this by looking at this theorem which again I
+lifted straight from the writing.
+So it's in section 5.5 somewhere.
+But here I didn't include it.
+And so I could build I could build the counterexample
+that way.
+Okay.
+, where were we.
+This is still question one.
+Question two.
+Remark.
+Okay Number two, if the eigenvectors of a, , error
+are n times n.
+Oh, my God, I'm sorry.
+Spun our n, so do the ones of a minus
+one.
+, you're pretty much okay.
+There's there's a tendency towards being this being true.
+, we're going to do a raise of hands for
+number three.
+This is indeed true.
+, why?
+Well, , let's pick the eigenvalues of A.
+We know that they span RN, and for all the
+eigenvectors, we get this equation here, which, , , we
+can multiply by a minus one.
+, again, if I give you a minus one in
+the in the hypothesis, it's, , it's implied that A's
+is diagonalisable.
+And it's also implied by the fact that the eigenvectors
+span.
+So , we can multiply by a minus one, which
+exist, and we get, , what do we get?
+We get a minus one A on one side and
+lambda a minus one v, I can simplify a minus
+one a on one side.
+Divide by lambda and I get a swap sides here.
+This this used to be this part here multiplied by
+a minus one on the left.
+And I also divide it by lambda.
+So here what I'm left is a minus one lambda
+divided by lambda goes away v.
+So a minus one v.
+And here I have a minus one a goes away
+as the identity one over lambda v.
+And so one minus lambda is an eigenvalue of a
+minus one which we don't particularly care about.
+But crucially it has the same eigenvector v.
+And this is true for all pair of eigenvalues eigenvectors
+of a minus one.
+And so a minus one will also have , eigenvectors
+that span RN because it will be the same.
+Okay.
+So.
+I don't know where the duplicates come, , came from.
+, number three, the sum of the eigenvalue multiplicities of
+an n times n matrix sums to n.
+Okay.
+This one, it's good that I gave you, , before
+the remark.
+This is essentially the remark that we have just shown.
+That is false.
+It's not really true.
+, the same counterexample that I used for the first
+one also applies to this one here.
+, again, this is exactly what we've proven in the
+remark.
+, this is if and only if the polynomial of
+the matrix factors completely.
+If it doesn't factor is completely.
+We're missing out.
+Non factorised terms that make it so that the some
+of the the, some of the multiplicities is strictly
+less than em.
+Okay.
+Any questions?
+Yes.
+I want to understand the formal definition of, , an
+eigenvalue.
+Because if we see it as a root of the
+characteristic polynomial, then the statement is true, because the sum
+of the multiplicity of all the roots of the polynomial
+is the degree of the polynomial.
+That is not true.
+That is true only if you're if you can factorise
+the polynomial.
+But we can't because we're using real numbers.
+Yeah.
+So it is not true that the polynomial p of
+x once again x squared plus one.
+This has no roots, but has a degree too.
+Polynomial is any number that makes the polynomial be zero.
+So any real number for us, because we're not working
+on the complex numbers.
+We are going to say that, , an eigenvalue.
+Yes.
+Yes, because we're working with the real numbers on in
+this course.
+But what you're saying is absolutely correct.
+What this points all all of this points to something
+that we're not treating in this course that now if
+you allow the elements of the matrices and the eigenvalues,
+the eigenvalues of the matrices to be complex number, you
+don't have this problem anymore, because then sure, you can
+write this as x minus I and x plus I.
+And there's actually something called the fundamental theorem of algebra
+that says that a polynomial of degree n has roots.
+And all of these problems go away.
+But these problems are created by the fact that we're
+not allowing a complex number in this course.
+And this is also why the section on complex number
+was excluded from the reading.
+So we we have to work with that with that
+restriction in mind, which is a restriction that makes sense
+in some applications.
+Right.
+So it's also useful content mathematically creates problem.
+It's more elegant to go to complex numbers.
+But in some in some application it's a limitation you
+have to deal with okay.
+Anything else.
+Yes.
+Have anything to do with how whether whether the
+matrix is organised or is it simple could you
+add if I expected completely.
+Yes.
+, if, , If the sorry if the matrix A
+if the characteristic polynomial factor is completely.
+So yeah.
+So if somebody argue about it.
+And see the characteristic polynomial factors completely.
+Does that right.
+does that tell you anything about how diagonalisable the
+matrix is or not.
+, I would need to think about my first.
+My first, , answer to that is yes.
+Then the matrix is diagonalisable.
+But I'll think about it because I'm not 100% sure
+here on the spot.
+And also we only have two minutes.
+So unfortunately I have to go through the fourth statement
+because there's one last book club for your feedback about
+what you're sure, most sure and least sure about because,
+, I need to send that data on to Andreas,
+who's going to do the the review.
+So let's have a look at statement number four quickly.
+And this one was true.
+So another one in which most of you got this
+wrong.
+And the proof here is fairly simple in the fact
+that you can write the definition of eigenvector of A
+this, and you can prove that the same eigenvectors
+of A will also be eigenvectors of A plus I
+with eigenvalue lambda plus one.
+Okay.
+, and that comes basically because , all vectors are
+eigenvectors of the identity matrix because they get transformed to
+itself.
+Ta ta ta themselves.
+So v is eigenvector of a plus one with eigenvalue
+lambda plus one.
+And so they have the same sets of eigenvectors.
+And because the first set spanned r n then the
+other set which is the same set will also span
+the same one as well.
+Okay.
+So the last bit is this can take a little
+bit longer, but I'm going to leave it open until
+the over the end of the lesson so it can
+have a chance of, , of doing this.
+, this is just, , it's a 1 to 4.
+Four means that you're very confident in doing that.
+, and one means you're not at all confident.
+And, , as you can see, this only covers the
+some topics from my week.
+So week for week eight and week nine because it
+was responsible for those weeks.
+So I'm going to send that data through.
+So very important that you get this.
+And I'm just going to cover.
+So you're, , completely anonymous.
+And other than that, it's 1 p.m..
+Thank you for coming.
+And I'll see you all at the tutorials.

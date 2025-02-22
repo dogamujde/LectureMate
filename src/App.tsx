@@ -24,20 +24,108 @@ function App() {
 
   const firstTermCourses = [
     {
-      id: '1',
-      name: 'Functional Programming',
+      id: '7',
+      name: 'Introduction to Computation',
       weeks: [
-        { number: 1, title: 'Introduction to Lambda Calculus' },
-        { number: 2, title: 'Higher Order Functions' },
-        { number: 3, title: 'Recursion and Pattern Matching' },
-        { number: 4, title: 'Type Systems' },
-        { number: 5, title: 'Monads and Functors' },
-        { number: 6, title: 'Lazy Evaluation' },
-        { number: 7, title: 'Concurrent Programming' },
-        { number: 8, title: 'Property Testing' },
-        { number: 9, title: 'Parser Combinators' },
-        { number: 10, title: 'Domain Specific Languages' },
-        { number: 11, title: 'Advanced Applications' }
+        {
+          number: 1,
+          title: 'Introduction and Functional Programming',
+          summaries: [
+            '2024-09-16_Informatics 1 - Introduction to Computation, Introductory Lecture.pdf',
+            '2024-09-17_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-09-19_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-09-20_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+          ]
+        },
+        {
+          number: 2,
+          title: 'Computation and Logic',
+          summaries: [
+            '2024-09-23_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-09-24_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-09-26_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-09-27_Informatics 1 - Introduction to Computation, Functional Programming.pdf'
+          ]
+        },
+        {
+          number: 3,
+          title: 'Functional Programming Basics',
+          summaries: [
+            '2024-09-30_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-10-01_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-10-03_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-10-04_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+          ]
+        },
+        {
+          number: 4,
+          title: 'Advanced Concepts',
+          summaries: [
+            '2024-10-08_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-10-10_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-10-11_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+          ]
+        },
+        {
+          number: 5,
+          title: 'Functional Programming Applications',
+          summaries: [
+            '2024-10-14_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-10-15_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-10-17_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-10-18_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+          ]
+        },
+        {
+          number: 6,
+          title: 'Advanced Logic',
+          summaries: [
+            '2024-10-21_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-10-22_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-10-24_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-10-25_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+          ]
+        },
+        {
+          number: 7,
+          title: 'Guest Lecture and Applications',
+          summaries: [
+            '2024-10-28_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-10-29_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-10-31_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-11-01_Informatics 1 - Introduction to Computation, John Hughes guest lecture.pdf'
+          ]
+        },
+        {
+          number: 8,
+          title: 'Advanced Programming Concepts',
+          summaries: [
+            '2024-11-04_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-11-05_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-11-07_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-11-08_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+          ]
+        },
+        {
+          number: 9,
+          title: 'Complex Applications',
+          summaries: [
+            '2024-11-11_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-11-12_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-11-14_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-11-15_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+          ]
+        },
+        {
+          number: 10,
+          title: 'Final Topics',
+          summaries: [
+            '2024-11-25_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-11-26_Informatics 1 - Introduction to Computation, Functional Programming.pdf',
+            '2024-11-28_Informatics 1 - Introduction to Computation, Computation and Logic.pdf',
+            '2024-11-29_Informatics 1 - Introduction to Computation, Computation and Logic.pdf'
+          ]
+        }
       ]
     },
     {
@@ -212,6 +300,8 @@ function App() {
         basePath = '/transcriptions/Calculus and Its Applications/summaries/pdf/';
       } else if (courseName === 'Cognitive Science') {
         basePath = '/transcriptions/Cognitive Science/summaries/pdf/';
+      } else if (courseName === 'Introduction to Computation') {
+        basePath = '/transcriptions/Introduction to Computation/summaries/pdf/';
       } else {
         throw new Error('Course not supported');
       }
@@ -384,6 +474,17 @@ function App() {
   });
 
   const courses = currentTerm === 'first' ? firstTermCourses : updatedSecondTermCourses;
+
+  const handleViewPDF = (lecture: string, courseName: string) => {
+    const coursePath = courseName === 'Calculus and its Applications' ? 'calculus' : 
+                      courseName === 'Object Oriented Programming' ? 'oop' : 
+                      courseName === 'Introduction to Computation' ? 'Introduction to Computation' :
+                      'cognitive science';
+    const encodedLecture = encodeURIComponent(lecture);
+    const encodedCoursePath = encodeURIComponent(coursePath);
+    const pdfUrl = `http://localhost:5173/transcriptions/${encodedCoursePath}/summaries/pdf/${encodedLecture}`;
+    window.open(pdfUrl, '_blank');
+  };
 
   if (!isSetupComplete) {
     return (

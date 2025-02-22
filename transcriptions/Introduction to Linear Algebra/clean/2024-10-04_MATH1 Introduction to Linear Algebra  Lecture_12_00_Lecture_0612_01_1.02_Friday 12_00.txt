@@ -1,0 +1,958 @@
+Okay.
+, just about time to start.
+So, , welcome to my second lecture for this week.
+, so after last time, we've done elementary matrices and
+we've done all this sort of linking matrix algebra with,
+, Gaussian elimination, we're now going on to something quite
+different, , namely transformations.
+, so we talked a little bit about matrices, ,
+induced transformation.
+, what we're going to go far more down that
+avenue now.
+And this will become important for the remainder of this
+course, but also, , for things you will do later.
+, so without further ado, let's have a sort of
+warm up poll.
+, as we had yesterday.
+, so we pretty much had something this before.
+I just thought, I'll just repeat it and again, you
+will see that we'll, .
+were go and do stuff that or we'll need
+that for something later.
+So if I just go out of here, I'm giving
+you four choices.
+So composite functions again.
+, and I'll just play this.
+All right.
+Okay.
+Another 10s.
+Okay.
+Yes.
+So vast majority have done be.
+As I say, it was a bit of a reminder.
+, and just to remind you again, sort of what's
+going on here.
+, so we're wanting to have, , the chain of
+G and F apply to vector u.
+, and really, all you need to remember with that
+is that g chain f really is shorthand for g
+or sorry, g of f of u.
+Yeah.
+So, , so if this is g of f of
+u, right.
+Okay.
+So why does that change the other one as well.
+.
+Right.
+Okay.
+So if I have g of f of u, I
+can now start looking up.
+So f of u there it says that is f.
+, that is v.
+Sorry.
+So this is g of v.
+.
+And on the other hand G of v I can
+look up.
+That is still v.
+So this is v.
+, and indeed the g of f of u
+being v.
+That was the option B that most of you chosen.
+And , just to complete this, , so the idea
+is a little bit that if I've got, , sort
+of a point U.
+, then the slightly confusing thing is that evaluate something
+G of F of your of course evaluate inside
+out.
+, so the first thing I would apply here is
+that I'm going to apply f here.
+, and then I am applying g, , to that,
+, the combination of the two things.
+I'm actually going to call G trained with F.
+Yeah.
+So this is down here is where the order compared
+to this one is slightly different okay.
+So that as a reminder as I say I'm going
+to come back to that at some point today.
+So let's go straight into , what the main topic
+of today is going to be.
+, right.
+So something is something's funny here.
+.
+No.
+No idea.
+Those are correct.
+Right.
+Okay.
+Just ignored.
+, I'm just trying to the display of half years
+that it may be that the online thing doesn't look
+Correct.
+, what?
+It records here.
+But I just hope it's going to be okay.
+Let's see.
+I can't figure out what is wrong at the moment.
+So, , so the main thing that we had as
+a definition here was this, , definition of linear transformations.
+, so we can talk about transformation, something functions.
+We've done that.
+, we now have the definition of linear transformation.
+, and this is defined through two properties there.
+, and we say that the linear transformation or the
+transformation preserves addition and it preserves scalar multiplication.
+So that means if I've got a sort of addition,
+, that if I apply the transformation on x plus
+y, this is the same as deploying it from x,
+applying it on Y and summing those up.
+, and I can also take a sort of a
+out of here.
+, so that might not look very much.
+, but it actually it might have the claim of
+actually being the central definition of the whole course, so
+that this course is about vectors and matrices.
+Another thing you can view it is that this course
+really is about linear transformations.
+We see later today actually what the connection there is.
+One interesting thing that I want to point out is
+that's again one of these things where we define something
+through its properties, rather than selling explicitly what it is,
+rather than giving examples of something that.
+We just saying with these properties, and this is quite
+powerful because we've got two quite simple properties there.
+And for anything that we might somebody might throw at
+us, we can quite easily check whether it satisfies these
+properties or not.
+And if it does, then we know, hey, this is
+a linear transformation.
+We've got a whole load of things that we suddenly
+know about that.
+So this is actually quite powerful.
+And I will give you at least one example later
+where you didn't probably didn't think that this was a
+linear transformation.
+, right.
+Okay.
+So, , okay, so the next thing I want to
+do is just play around with it and think a
+little bit about examples.
+Now what is linear.
+What isn't linear.
+So I've given here near two.
+so if define this here I think the definition
+was general or n to RM.
+But nothing stops me from choosing n and m equal
+to one.
+So just having functions from R to R giving
+you two functions x plus one and minus two x.
+And I'd you to think about which of these,
+if any, are a linear transformation.
+So I just, , reset my pole here, , and
+then give you the same one again.
+Right.
+It's okay.
+Another 10s.
+Right.
+So most people think that both are linear transformations Summations
+and a few things that G is linear transformation, but
+f is not.
+, right.
+Can somebody of those who thinks f is not a
+linear transformation tells me why?
+, the corner there.
+Because if you were to have f of x plus
+y, that that would not be the same as f
+of x plus.
+Y, because f of x x and y is y
+plus one.
+So then if.
+You add them together you get you get x plus
+y equals to not x.
+Plus y.
+Right okay.
+Yeah.
+No that is right.
+And I probably should just , repeat this here.
+, so.
+I.
+He's not doing the right thing.
+Sorry.
+I have no idea why this is decided to.
+Know this.
+Right?
+Right.
+Okay, good.
+So I hope it remembers that.
+Okay, so we wanted to have a look at the
+function f of x equals to x plus one.
+Yeah.
+, and what we want to check is whether this
+is a linear transformation.
+So if I just go back here on our definition,
+, so that says if I've got x plus y,
+, I need to have t of x plus t
+of y.
+So I can check this with the first property.
+So I would have to have that f of x
+plus y.
+so what is this.
+f of x plus y.
+, well, if I apply the transformation to that, ,
+that is just that I'm going to add another one
+to it.
+So this would x plus y plus one.
+, on the other hand, if I have x f
+of x plus f of y, , so I have
+.
+This would give me an x plus one from f
+of x plus y plus one from the f of
+y.
+So this is x plus y plus two.
+which clearly isn't the same as above.
+Yeah.
+, so that's correct.
+Now you have, , sent me, taught me that something
+for general X and Y.
+, indeed.
+If I just want to show that the property does
+not hold, , I would just need to come up
+with one counter example.
+Yeah, it would be enough to just say, , I
+just choose some values here for x and y, ,
+and show you that it doesn't work.
+, and , I could, for example, just say choose
+x equal to while I can choose anything here.
+, I can choose x equals.
+Well, I can't use anything else y.
+Well no.
+, so x equal to zero.
+y equal to zero will actually do it.
+Yeah.
+And I can just plug it in and show that
+for £1 example this doesn't work.
+Right.
+Okay.
+So on the other hand, , we are thinking that
+the function g.
+, and I think pretty much everybody thought that the
+function g of x here, , which is minus two
+x, , that this is linear.
+Yeah.
+, now if I want to show that this is
+linear, that this satisfies the properties, , so just go
+back to the properties there.
+, and I actually have to go through and in
+general work out both these properties.
+Yeah.
+, so let's just check that.
+So property one , says I want to have.
+Good.
+So I want to have t of x plus y
+equals to t of x plus t of y.
+Well right okay.
+So let's check that for the function g.
+So if I now have g of x plus y.
+, the definition here is that my function is just
+minus two times whatever the argument is.
+So this is minus two times x plus y.
+, now I can use the distributive ness and say
+this is minus two x minus two y.
+And then I see that minus two x was just
+the definition of t of x.
+and on the other hand minus two y
+is just t of y.
+Yeah.
+So that one works.
+, and I can do the same thing for the
+second one.
+So the second , property was that I have t
+of axe should be equal to a t of x.
+and again I can check that.
+So if I apply this to g g of axe
+again applying g to something is just multiplying the argument
+by minus two.
+So this is minus two.
+Sorry Minus two times a x.
+And then I can reorder this a little bit by
+saying this is a times minus two x.
+Because I know I need to eat this minus two
+x.
+That is just a times t of x.
+Well, , so I need to show this for general
+a, x and y.
+, now I should sort of write this down in
+one line, starting from one and ending at the other.
+, there's no shame in these things of just starting
+from both sides and seeing whether you get to the
+same, get to the same thing.
+That's perfectly fine.
+So we had two things here.
+, one of them turns out to be linear.
+The other one turns out not to be linear.
+You might be slightly surprised that the first one isn't
+linear, because you might think about linear.
+While I'm just not allowed any products between variables or
+any squares or signs or something that.
+, I've just had a single X, but translations which
+is what the plus one does, is also something that
+you are not allowed, and sometimes functions that where
+it's linear plus a translation are called affine linear.
+But strictly speaking, as a definition of a linear function
+f of x, there isn't a linear function, right?
+Okay.
+So this is something concrete that we can work with
+mathematically.
+, let's just think about , if I don't give
+you get get into R2 if I don't actually
+give you formula, but just tell you what this function
+does.
+So, , and here I would to know from
+you which of these are linear functions.
+, I've now got potentially more than one correct answer.
+, and I suspect that you may need to think
+a little bit about this.
+So I'm going to give you two minutes.
+.
+I think I if not.
+Right.
+Okay.
+Go back again.
+Sorry.
+No.
+Sorry.
+Back.
+I need to reset this reset and this plate.
+Okay.
+Good.
+So I've got another 10s.
+Okay.
+Yeah.
+And that looks, .
+That looks quite good.
+, I suspect the, , people weren't quite sure about
+the first one.
+Is that it?
+It's probably a little bit of ambiguity.
+What I mean by do nothing.
+, right.
+Okay.
+Let's again, , start having a look at each of
+these in turn.
+.
+Right.
+Okay.
+Let's remember that.
+I just want that.
+Right.
+Okay.
+So a do nothing.
+So as far as I'm concerned, do nothing means
+f of x sends x just to x.
+Yeah.
+So this is just the identity.
+And the identity is a linear transformation.
+, works pretty much.
+, while do that, , works pretty much the same
+way as we've done it or just from the definition,
+, part B so part B stretch every vector by
+a factor of three.
+, now if I wanted to write that down as
+a formula, I'll probably just say , g of x
+is going to be sent to three x.
+, it's pretty much the same as the example we
+had earlier with minus two times x, just that I'm
+now saying this x there, , it's a vector in
+R2 rather than a number.
+, but the proof here, , goes verbatim the same
+way as the one that I've just showed you.
+Yeah.
+So this works.
+This works as well.
+Now, see, , send every vector to one zero.
+, so I have here, , that, , my h
+here, , is just saying h of X is going
+to be one zero.
+, , and again, , I can sort of try
+to choose a counterexample there, , by saying, for example,
+I could take something a equals to two, ,
+and x equals to the vector one, one.
+Yeah.
+And then work out, , if I go back to
+my definition there, I'm going to have a look at
+this T2 here now.
+So T2 says that I want to know what
+h of a of x is.
+, well that is going to be h of ,
+well two times one one to h of two, two.
+, and that will become , the vector one zero.
+Everything will become the vector one zero.
+, on the other hand, if I have a times
+h of x, , this is two times h of
+one one.
+, now h of one one again is going to
+become one zero.
+But I still have to multiply by two.
+So this is going to be two zero.
+, which is not the same as here.
+So this doesn't work.
+, and indeed pretty much everything that you try as
+a counter example.
+, you will see, , that that does not work.
+Yeah.
+, if I were to not say I'm going to
+send everything to one zero, but I sent everything to
+zero zero.
+Would that work?
+Yeah.
+Yeah.
+It would.
+, trivially so actually, because if you look at these
+conditions, if I have, if t just sends everything to
+zero zero, then everything both sides would be zero.
+, on all those conditions.
+So that would hold.
+Yes.
+Sending everything to zero zero, , does indeed work.
+, now the last one that I have there, rotate
+the entire plane is probably the most interesting.
+, and I'll try to do this actually graphically.
+, so if I have d , is the rotation
+.
+Rotation by what did I say by 90 degrees?
+, and I'm just going to take one of those.
+I'm not going to do the other one.
+I'm just going to take a t of x plus
+y equals to t of x plus t of y.
+So I now have to have a look a little
+bit of what the geometry is.
+So let me let me sort of have a coordinate
+system.
+This is R2 here.
+Yeah.
+And I'm going to say here's my vector x.
+and something this here is my vector y.
+Yeah.
+If I now want to look at what is x
+plus y.
+, I take one vector and sort of add it
+onto the end of the other one or the same
+thing here.
+And this point that I get to that is the
+point x plus y.
+Yeah.
+Now I want to rotate the whole thing.
+, so I'm going to start with the same thing
+again.
+I'm just going to copy this here.
+x and y.
+, and x plus y.
+Right.
+Okay.
+Now, I didn't leave me enough space.
+, and I'm rotating everything, so I'm going to start
+with I'm rotating this vector x here by 90 degrees.
+So that will go there.
+and this will give a vector here , which
+I'm going to call.
+, so this one is going to be t of
+x.
+, I can also rotate my vector y.
+So that will go somewhere here.
+So this one here is the image of y.
+This is t of y.
+and then I'm going to add those two together.
+So again sort of adding those.
+something this, something that.
+That will give me this point here and that won't
+here is going to be T of x plus t
+of y.
+Sorry.
+.
+I hope this is at least half way visible.
+, right.
+Okay.
+So t of x plus two of y.
+But at the same time I can actually see that
+I could have gotten here also by just rotating this
+point.
+So I could have gotten here by doing that, in
+which case this one here would be t applied to
+x plus y.
+Yeah.
+, and those two end up being the same thing.
+Right.
+If you see what I mean.
+, so this is sort of a bit of a
+geometrical.
+Well, not really proof, but I'm trying to to convince
+you that indeed the rotation is a linear, , it's
+a linear transformation.
+, and that might be slightly surprising.
+You might have thought in the rotation that seems to
+maybe, maybe something non-linear happening.
+But the properties tell us that this indeed is a
+linear transformation.
+Okay.
+Now, , we can now go to a sort of
+much larger class of linear transformations.
+, namely, if I remind you that we had matrix
+transformations.
+, so we said that we have got a matrix
+A, then this induces a transformation by saying my vector
+X is mapped onto A times x.
+And again, just to sort of get you back into
+that way of thinking, , if I could just do
+a poll, which I think we have done very similar.
+, so here is a matrix that I'm giving you.
+And I'm asking you what matrix, what sort of actually
+transformation in the plane is induced by that matrix?
+, and again, , let me just bring this up
+here.
+, reset that reset display back to one minute, because
+I think it's not particularly difficult.
+Okay.
+10s.
+Right.
+So most think this is C .
+And indeed it is.
+, let me just quickly again, , sort of go
+through that.
+, so if I have got my matrix A here
+which is 0110, , and apply this to vector x,
+y, , that this times this will just give me
+y that times that will just give me x.
+So I'm swapping the x and the y component.
+, and I can now think about what that means.
+If I've got this vector, for example, here and say
+this has coordinates to one that would be mapped to
+something with the coordinates one, two, and you can think
+about that, what this generally does.
+But it basically mirrors at this line which is
+the line x equals to y.
+Yep.
+Right.
+Okay.
+I just realised why we were doing the pole.
+That was slightly ahead of myself.
+, so when I was describing things that are linear,
+not linear here, I want to give you one other
+example.
+, that is to some extent completely different.
+So this is all sort of in R and doing
+it with either giving you a function or giving you
+a something geometrical.
+But you could think, for example, something the following.
+I could think about a space that says I've got
+the space of all functions.
+, and let's, let's clarify that a little bit.
+Let's all functions with a variable with a variable x.
+Yeah.
+, and these should be functions that go from R
+to R.
+Yeah.
+So I'm thinking of all the functions , and I
+mapped this that I say if I've got a function
+f here, , I want to map this by saying
+I want to associate with this a function which is
+the derivative.
+So I'm going to call this mapping d by d
+x.
+and I'm going to map this to the derivative
+of f.
+Yeah.
+and again this is all functions.
+Well I should really say all differentiable functions.
+But all functions with variable x.
+Yeah.
+So every function I'm mapping to its derivative that is
+a transformation.
+And it looks completely different.
+You might not have thought of this as a transformation,
+but if you start checking it, This transformation that I
+call your d by D, X does actually satisfy all
+my requirements for being a linear transformation.
+And again, this is something that you say that you
+have a structure that we've defined for something completely different.
+That certainly does apply to stuff the derivative.
+all right okay.
+Hope that doesn't confuse you.
+Just wanted to throw that in.
+, but you will see quite a bit of these
+sorts of things.
+Okay.
+Let's go back to what we just had about that.
+We've got a matrix transformation.
+What matrix transformations are.
+So I'm so this is the matrix transformation.
+, so I'm claiming that the matrix transformation for every
+matrix that I have, the matrix transformation is actually a
+linear function.
+So a matrix transformation.
+What if I called a matrix the transformation is induces
+is linear.
+No matter what the matrix is.
+, and I encourage you to check that I'm not
+going to take it now.
+, you will find, actually, again, that the proof I've
+given you earlier here.
+, when I went through the whole thing, , down
+here, when I went through the whole thing through g
+of x equals to minus two x, , that pretty
+much holds verbatim if you replace the minus two just
+with an A, so you can check for yourself, ,
+that the matrix transformation is linear.
+If you want to do it a little bit more
+elaborate.
+And with time to think, I believe I do this
+on the reading quiz on next Monday.
+You have an example.
+, where we're going to go through that.
+, now let me see where I am.
+Right.
+Okay.
+So, so far, so good.
+.
+Right there we are, there we are.
+So far, so good.
+So I've got an example here.
+Matrix transformations are linear.
+, the important thing and the sort of unexpected thing
+is that these are all there are no others.
+Every linear transformation that I could think of is actually
+a matrix transformation for some matrix.
+So , so we've got the following, , that the
+matrix T or a transformation T is linear if and
+only if it is actually a matrix transformation.
+So for every matrix the transformation is linear.
+That is what we had that I think is quite
+believable.
+But the surprising thing is that every linear transformation that
+you could think of is actually induced by a matrix.
+And I think this is one of the things that
+you didn't see coming, and that to some extent it's
+just pure magic at this point.
+Why this should hold.
+Well, , and there's more to that.
+Actually.
+There's a little bit more to the magic that actually
+the proof is constructive.
+We cannot just say there is a matrix out there
+that satisfies this, but we can actually quite easily, ,
+say what that matrix looks .
+If I give you a transformation, I can quite easily,
+you can quite easily tell me what it looks .
+, so in order to do that, , we need
+sort of what is called the standard basis, , of
+I'm going a little bit ahead of myself here because
+we haven't really said what a basis is.
+That will come later, but at the moment we're just
+talking about the standard basis.
+, so these are just the unit vectors or the
+columns of the identity, , if you , or indeed,
+, obviously geometrically, I can think about that in a
+coordinate system.
+So I might have a coordinate system here.
+, and let's say I'm going to have a third
+dimension in my coordinate system and I write it
+this on my core this x here, this y here,
+this z here.
+, and then the unit vectors are sort of ,
+just unit one and x direction, , unit one here
+in y direction.
+, and unit one here in z direction.
+So think about that.
+, however you , the vectors just sort of spanned
+the coordinate system or just as the columns of the
+identity matrix.
+That's what I mean by the standard basis.
+, and then I can think about that.
+And before I show you the result, I think I
+just want to actually do that on the Visualiser.
+Yeah, I can now think about that.
+I say, , if I've got a matrix A and
+I want to know what is to, , the, transformation
+induced by that matrix apply to the first unit vector
+to E1.
+Yeah, that column there.
+, so , doing that, the definition is that this
+is just a times E1.
+Yeah.
+, now the matrix A, I'm doing what I've done
+a few times, I'm going to take apart by its
+columns.
+, so I'm going to say this is A1 column
+A1, column A2 and so on up to column A,
+N or however many I have times e1.
+, and then I remember that we said matrix vector
+product.
+Our first definition is that we say we just take
+the first column type, the first element of our of
+a vector plus the second column times the second element,
+and so on.
+We realise all elements of the vector part from the
+first one are zero, so this will just give me
+a one.
+Yeah.
+So if I have a matrix A, then I know
+at least that in the first column that should map,
+, the, , the unit vector to something that I
+know that in the first column of the matrix must
+be the image of that unit vector.
+Right.
+And that indeed is what the construction says.
+, this is not only says if it is a
+unit transformation, it says if I've got given a transformation,
+, then I can simply write down the matrix of
+the transformation.
+I can, given a transformation means something geometrically,
+telling you, , it rotates something in R2 or in
+R3 or whatever it does.
+I can just take the unit vectors e1, e2, e3.
+Look what this transformation does for the unit vector.
+And that is my matrix.
+If I put all these images just into the matrix.
+Right.
+And I think that's again just a piece of pure
+magic, you know.
+So the magic here to some extent I've given you
+the explanation there of why this is sensible or why
+you would expect something that in the matrix.
+But that is only for looking at the at the
+standard basis vectors at the unit vectors.
+Why should this work for everything else you know?
+And indeed it does work for everything else.
+Because precisely is that is how we define linear transformations.
+So to some extent we define linear transformation or definition
+came from that.
+We want this trickier to work.
+So it's all all inter interlinked to some extent.
+But again this is something worth worth thinking about is
+actually a very powerful thing that suddenly we know how
+this mapping between linear transformations and matrices Matrix works.
+Exactly.
+, right.
+Okay.
+, let's apply this to some example.
+, so starting relatively easy.
+I've given you a linear transformation.
+I'm just telling you what it does to the unit
+vectors.
+, up there.
+, and I'd to know from you which matrix
+corresponds to that linear transformation.
+And there's only one correct answer.
+So let me just set up the pole.
+Display.
+Okay.
+Another 10s.
+Right.
+So almost everybody thinks that.
+See, , let me check.
+, so we first of all, the first column, we
+need to think what is the image of the first
+unit vector?
+, first unit vector.
+There's t is up on the right there, T of
+one zero.
+That is one five.
+Indeed.
+And then the image of the second unit vector two
+minus three.
+That is the second column.
+Right.
+That I've done that in the wrong order.
+There didn't seem to confuse people.
+Great.
+Okay.
+So, , that was straightforward enough.
+, let's go to something which is slightly more complicated.
+Let's talk about a rotation matrix.
+So, , the I've written this down theorem.
+I've given you a slight bit of a story to
+that.
+So I say a rotation of the plane through and
+this time not 90 degrees.
+We've done that.
+That was relatively easy.
+But any number of degrees or any number of radians,
+, is induced by this matrix.
+And we now have everything that we need in order
+to, , show that, , and I just want to
+quickly do that.
+So what we need to think is if we want
+to do that, we need to think about, , what
+is the image of the sort of first unit vector?
+So this should be E1 here.
+That is going to be one zero.
+, and we want to rotate this here by some
+number of degrees for this theta degrees here that we
+are rotating this by.
+now what do we do.
+We can sort of draw a so this is, this
+is the rotated vector here.
+Yeah.
+So we can now draw some sort of lines
+and realise that this, this is triangles.
+This was my rotated vector here.
+So I've got two triangles here.
+And that one the hypotenuse is just length one.
+Because that was just this one rotated.
+the length doesn't change.
+and I can now think what is this here,
+that one there.
+, and that is the, .
+Right.
+Okay.
+There's my angle here.
+This actually is the angle theta.
+So that's the opposite divided by the, the hypotenuse.
+So this is the sine of theta.
+And by the same thing we can say that this
+length here adjacent divided by hypotenuse hypothesis is just
+one.
+this is the cosine of theta.
+, so if I now want to know the components
+of this vector, , so this one here, , there's
+components where the x component is this one here.
+So x component is the cosine of theta.
+and then the y component is is this length
+here.
+So that is the sine of theta right okay.
+So first column has to be cos theta sine theta.
+and then of course you can do the same
+thing for the other unit vector and think where that
+goes to.
+So that quickly we do have the rotation matrix.
+now I've written this down actually the sort of
+full diagram is here as well.
+, so I've given this down here as a theorem
+and says, , so this gives me that matrix because,
+if I rotate each one, I'm going to get this
+vector here that I showed you.
+If I rotate e2 I'm going to get that vector.
+So that must be the rotation matrix.
+Is that correct.
+That argument , correct and complete.
+So and I do want to make a poll of
+that.
+Let me just check whether this works.
+, right.
+Where does the proof go wrong.
+Let me see.
+Oh, this is working.
+.
+It reset.
+Reset.
+, added.
+You get two minutes, and I think I can display
+this now.
+Do I believe this is life.
+, and I think what you should be able to
+do is you see this?
+You should be able to see on your screen, or
+so pick out where you think in this proof where
+a gap might be, why this isn't quite working as
+easily as I've presented this to you.
+I don't want to show the results at the moment.
+All right.
+We've got another 10s.
+Yeah, yeah, it's a bit hard to read.
+It is a bit hard to reach.
+So we have to do now a little bit of
+it.
+Right.
+Okay.
+So.
+The problem is that the DSL theorem, some of you
+think is the wrong theorem that that it implies I
+think I see quite a lot of the thus there
+some people think that the second vector isn't correct.
+That is not the case.
+The second vector is correct.
+The minus is correct.
+, the boundaries.
+I can do that.
+That is quite correct.
+I do see quite a lot of people that think
+the theorem also is correct, but a quite a few
+half on the implies or the.
+Thus there , anybody of if I interpret that correctly,
+anybody of those can tell me where the problem is.
+That the rotation of the video.
+Yeah, exactly.
+So, , if I go back to what I had
+in my theorem here, maybe I should have shown you.
+.
+It says okay, in the beginning.
+It says its linear transformation if and only if it
+is a matrix transformation.
+In that case, I can do this well.
+So I first of all this only works if I've
+got a linear transformation.
+So I can't just write down the the matrix for
+every transformation.
+I first of all need to convince myself that this
+is indeed a linear transformation.
+, so to fix the whole thing, I would have
+to.
+So thus it implies there.
+Okay, I have to give some sort of argument of
+saying why this is a linear transformation.
+Yeah.
+So be careful.
+At least only works for linear transformations.
+Right.
+Okay, I am almost at the end I think.
+Right.
+I have this little bit here.
+So we have rotation matrices.
+that's a bit bit of a silly thing.
+So what happens if I apply this to the vector
+a1 a2 the.
+.
+That probably.
+Turns it on its side.
+, but anyhow.
+Anyhow, , so I can now play a little bit
+around with it if I had to.
+Just about out of time.
+, if I had more time, I would do another
+poll here.
+, so we've got quite a few matrices that we
+know what they're doing now in our tune.
+We understand this a little bit better.
+, so we could now answer something, for example, by
+saying if I've got a combination of several different, ,
+of several different, , , transformations here, for example, reflection
+across the x axis and then reflection across the line
+and combine them and want to know what if I
+do one and then the other, I can take the
+matrices, , multiply them together.
+, and then just saying look up in our selection
+of things that we have where we end up with
+him.
+I can do that.
+As I say, I'm running out of time, so I
+won't do the poll now.
+, what I want to remind you is that this
+other win.
+Although if I've given you a transformation, you can tell
+me what the matrix is going the other way around.
+If I've given you a matrix, knowing what transformation corresponds
+to that geometrically is still something we can't quite answer.
+Yeah, for our theory, you can sort of look at
+this zero and trying to match it.
+, but we still need, need to know a little
+bit more about that.
+So what is the geometrical interpretation of a matrix in
+general.
+And this indeed will be answered later in this course
+by the concept of eigenvalues and eigenvectors.
+So a bit of a sort of looking ahead.
+We'll come to that later to answer that question.
+But that's it for me at the moment.
+, I think you will see me again in week
+seven.
+, next week Erik is going to do the lectures
+here.

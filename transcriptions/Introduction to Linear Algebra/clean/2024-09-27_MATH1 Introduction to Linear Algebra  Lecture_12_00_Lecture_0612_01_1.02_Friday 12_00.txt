@@ -1,0 +1,1030 @@
+Right.
+Okay.
+, so welcome back.
+, this is the QR code for my lecture polls.
+, that I'm using.
+I'm going to take that down in a second.
+, we don't have an attendance poll today on Fridays.
+Good.
+Before I go into what we're doing today.
+, I just want to go back to something that
+yesterday and make you aware I made a mistake.
+, so I asked you, , where are we?
+, we were on the PC.
+On the PC?
+There we go.
+, I ask you what the middle one there is.
+The second row is and said that is associativity.
+, I have to say, I've only looked at the
+last two items there.
+, the first equation sign, of course, isn't associativity, but
+rather you're taking the A out of the whole thing
+so that Commutativity.
+That part.
+It'll sort of both together.
+Yeah.
+, sorry.
+I've only sort of glanced at it and thought, oh,
+yeah.
+Associativity.
+, , what's wrong there anyhow?
+Right.
+Okay.
+Once we have that, where are we for today?
+So here's one thing.
+I'm going to start with something that sort of fits
+in yesterday.
+, but we've got to go back to that, make
+it slightly lighter.
+And, , it is a relatively important application of matrix
+vector multiplication that we've done yesterday.
+, so I remind you that we're talking about functions.
+, so functions is something that you've seen as a
+function from R to R from mapping numbers into numbers.
+, so you just you just basically function as a
+rule.
+You have an input, you have a rule, and then
+you have an output.
+So I could have for example x squared.
+, so here's my rule square the input , and
+I write this down as f of x, you know.
+, but you can obviously do something that to
+anything.
+We can do something that to for vectors, ,
+where we have also rules how to transform a vector
+into somebody else and something else we tend to call
+this transformations here.
+, to some extent it's interchanged with the name with
+functions.
+So that is really it.
+But think about a transformation as a function applied to
+a vector.
+So something that I can do to transform a vector.
+For example I could use the matrix as that yesterday
+and do a matrix vector product.
+So I could say if I've got the vector X1X2
+here, I could transform it into the vector that I'm
+getting by multiplying this vector with the matrix from the
+left.
+You know, , so I can work this out.
+We've done that.
+, and we can write this again as a transformation.
+So I can say in this case, t of x
+T for transformation rather than f of functions is defined
+by of a vector, x is defined by axe.
+, and quite often we use a notation just to
+indicate that this T with a subscript a, and we
+call this the transformation that is induced by a matrix.
+And this is actually very, very important application of matrices.
+You can think about matrices actually as transformations to some
+extent.
+There's a certain equivalence there.
+We'll come to that quite a bit later.
+So I said here we call this or typically call
+this to of x.
+But remember the Ta is really just a name a
+label that we put to that.
+Yeah we could call it anything else we .
+And it's the transformation induced by a.
+So that's an important concept that keeps coming up throughout
+this course.
+, and the reason I'm doing this here is because
+it will come up once we do matrix matrix multiplication,
+, and matrix inverses.
+, it's quite often , , if there's duality or
+thinking about what is the matrix, what are the properties
+of the matrix.
+And on the other hand, very closely related to that
+is thinking about what is the transformation induced by the
+matrix and what are the properties of this transformation.
+So let's start , I've got here, so I'll start
+with a poll and saying I've got a matrix given
+up there, which is relatively simple, almost the identity.
+And what is the transformation geometrically, what happens to
+a vector in R2 space.
+, if I multiply that by that matrix there.
+, and let me just go quickly onto my.
+So you've got my ruler pole there.
+, remember that was it.
+And I just need to go, , reset this from
+yesterday and display it.
+So do you see that?
+You do see that.
+And somebody's answering.
+Right.
+Okay.
+All right.
+The results.
+All right.
+See if we can get a few more.
+, about 15 seconds left.
+Right.
+Okay.
+Time's up.
+And so vast majority says that this reflection on the
+y axis.
+And indeed it is.
+, and just to, , for completeness, , I think
+I'm just going to go through this.
+Right.
+, go through this in detail.
+So if I have, , let's work this out.
+What is minus one 001 times X1X2.
+Right.
+Okay.
+You don't see anything?
+, there we go.
+Right.
+Okay.
+, so I can work out what happens here.
+, and this is if you do the matrix vector
+multiplication, this is a minus x one and x two.
+, so in other words, , if I've got a
+sort of vector here, , I'm going to leave the
+x2 component intact.
+And the x1 component, I'm going to flip around the
+y axis.
+, so it is a reflection on the y axis.
+Yeah.
+So in a simple example that you can just
+do that by sort of just working out what it
+is and then thinking what is this dramatically.
+, once it gets more complicated and higher dimensions, obviously
+more difficult.
+But we were quite a few of the things we're
+doing here.
+We deriving in the course will help you then to
+classify pretty much any matrix into the sort of transformation
+geometrically, that it induces.
+Okay.
+So , that was just, I said just hanging on
+from yesterday a little bit.
+Now get into, , the matrix matrix multiplication.
+So, , assuming we've now got two matrices A is
+M times n, b is n times k.
+.
+And I say a little bit something about the dimensions.
+, and so we know how to do , how
+to do matrix vector multiplication.
+Yeah.
+, so we're just applying this Here.
+We use pretty much the same trick as we've done
+yesterday.
+This matrix B that we now want to multiply.
+What were we saying a times b.
+So we divide this up into its columns b1 b2
+b k.
+And now we're saying that the product a times b
+is simply that we multiply the matrix A here with
+every vector with every sort of column of the matrix
+B or the other way round.
+We take every column of the matrix B in turn,
+multiply that with a, and then put them all together
+in a new matrix.
+So that is the matrix matrix product.
+Again general principle we know how to do something something
+more extended.
+We'll try to we try to use what we know
+in the new definition.
+So what's the size of what we've got here.
+, so this new matrix A times B, , in
+terms of, , rows and column dimensions, what is the
+size?
+, I'm just going to do that by asking somebody
+if you've got an idea rather than a poll here.
+Right.
+M times K yes, that is correct.
+, I'm not going to go through sort of working
+that out.
+I'm just going to give you the common rule or
+rule of thumb or memory aid for that.
+So if you've got an M times n matrix
+a here, , that you're multiplying with an n times
+k matrix B here.
+, then in order for that to work the multiplication,
+the middle dimensions here have to match.
+And then it basically cancels them out and you're left
+with the with the two n dimension.
+So that's quite useful.
+And another reason why this rows before columns is, is
+quite sensible, right?
+I'll show you that for everybody else.
+Okay.
+, now, this is to some extent arbitrary.
+So you might ask, , this is relatively complicated.
+I mean, apart from saying we know matrix vector multiplication,
+we try to use it again, matrix addition we've just
+done component wise.
+Yeah.
+So why why do we not just the matrix multiplication
+component wise?
+, and the answer is , we could do ,
+I mean, of course, nothing nothing prevents us from doing
+that.
+And we could see whether that is useful.
+, it just turns out that this way of doing
+matrix matrix multiplication is very useful.
+And again, we will see, , during the time of
+this course of what it is indeed useful for.
+, it's not obvious.
+, it's been sort of suggested that this, that this
+is what we should do relatively recently, now and then
+people have worked that out But it raises sort of
+I think an interesting question is, our mathematicians, what
+do we do?
+Do we discover things or do we invent things?
+Yeah.
+So it's all the mathematics out there just for us
+to to uncover it or are we actively inventing stuff?
+And I think this very much shows we are actively
+inventing stuff that might be useful.
+It's not obvious that you have to do matrix matrix
+multiplication that way.
+It's just somebody suggested it turns out to be useful.
+, okay.
+So once we've got that, I've got a number of
+poles here.
+I won't do all of them.
+I'll have a selection.
+I think I won't do that one there.
+I would quite to do this one here.
+So we've seen these matrices yesterday.
+, and ask whether I can add them together.
+, turns out none of them can, but we can
+multiply quite a few of them together.
+So I'd to know what you think.
+Which of these a, b, d down to e?
+Which of these possibilities which of the matrices canyon will
+deploy it, which you can't because it quite need to
+check a couple of things.
+There is a bit more complicated.
+I'm going to give you two minutes for this poll.
+So and I do need five choices now.
+So just reset this in case it hadn't been.
+And then I'll give you a five choices poll now
+on the laptop that should appear there in a second
+hold.
+Wait wait wait wait wait I did say five.
+What I did say two minutes.
+I will give you two minutes.
+I just have to reset the timer once it's time
+down.
+.
+And another minute.
+Yeah.
+So almost up.
+Right.
+Eh.
+And quite a few.
+None of them.
+, the other only half a little bit.
+So a is correct.
+Indeed.
+, so all of them, I, , I tend to
+think that, , in order to check that, I sort
+of take a column of the second matrix, say a,
+that's got three elements, and see if I can sort
+of the matrix vector multiplication, turn its on its
+side and put it over the top of the other
+matrix.
+So BA that works.
+D has three dimensions that I can put that on
+top of C.
+C has just one dimension.
+The columns.
+But I can put that on top of D.
+And then C has one and A has three dimensional.
+I can put that on top of C.
+So A does indeed work, but sort of get into
+the habit of checking whether these things work.
+Right.
+Okay.
+, so yeah.
+Yeah.
+No, I think I've deleted the other one that I
+didn't have.
+, so this is an interesting one, actually.
+, so assuming that you've got, you've got matrices and
+all these, the dimensions match that all these products work
+and you've got a b equal to c b.
+Well, if this was numbers you'd be sort of cancelling
+the b out as long as it's not equal to
+zero.
+, we have not equal to zero.
+Does this work here?
+Am I right?
+For choices and it's life.
+Ha ha ha ha!
+Now, this looks very, very interesting.
+Pretty much equally divided between all of those options.
+So can I, .
+This is actually complicated because there isn't a direct answer.
+It depends a little bit on how you understand the
+question.
+So who who says somebody who says this is true.
+Can you give me can somebody give me an argument
+why this is true?
+I've seen you first.
+Multiply both sides by b minus one.
+You will end up paying me then.
+Thank you.
+Thank you very much.
+That is exactly the answer that I was looking for.
+So if you multiply both sides by b minus one
+by b inverse, , you can derive that.
+And indeed that's true.
+, let me just, , quickly show you that.
+So, .
+All right.
+Got too many pens here.
+, so if I start with something if I
+start with a B equals to CB.
+Yeah.
+, there we go.
+this a little bit bigger, right?
+And, , so I can multiply this if I half
+b minus one here, I can multiply both from the
+left on both sides.
+So I can do a b b minus one equals
+to c b b minus one.
+and okay I mean I need to think about
+the order there.
+But that is associative.
+And I have here b b minus one.
+That just gives us an identity.
+So this is a identity equals to see identity.
+And then we see multiplying anything with the identity keeps
+the identity.
+So this is a equals to c.
+right.
+Yeah that's that's okay.
+But it only works if you have B inverse.
+Yeah.
+You need to have B inverse for that.
+We only have given b is not equal to zero.
+And that's not the same thing.
+Indeed for a lot of these things if you if
+you have stuff that, something that works in real
+numbers under the condition that B equals is not equal
+to zero.
+Typically it works for matrices under the condition that that
+matrix is invertible rather than not equal to zero.
+That is the condition that you need.
+But it doesn't always work.
+And I was wondering whether anybody of those that are
+thought and they're certain have a counterexample.
+, you've got your.
+Sorry.
+It's coming true.
+There isn't always an inverse to matrix.
+No.
+Chips and.
+Right.
+Okay.
+It doesn't work.
+But I mean, this argument doesn't work all the time.
+But the question is, it might just be true anyhow
+or without the argument.
+, so you have an example matrix.
+With the rows 1101.
+As.
+A1101.
+Yeah.
+The 0001.
+And if I do that out I'll get 0101.
+Yep okay.
+Instead if I use see if I use a say
+2111.
+.
+Which matrix?
+The first.
+122111.
+And keep be the same.
+I still get 010 on.
+The wrong pen here.
+So this is zero.
+, this is one.
+This is zero.
+This one seems to work.
+Yeah.
+Good, good, good.
+Excellent, excellent.
+, I.
+All right.
+I didn't see that one immediately.
+, although.
+So the zero is here.
+Yeah.
+No, no, you're right, you're right, you're right.
+.
+The zero one in the second column will be kind
+of extracts the second column.
+Okay.
+And C.
+Yeah.
+Yeah, yeah.
+So it's just so it's a bit, it's a bit
+, .
+Right.
+Okay.
+Let's take it.
+Let's take this example.
+I think the point I was going to make, you
+can actually see from your example just as well.
+So the first column there of zeros here just maps
+everything to zero.
+Doesn't really matter what you're doing.
+, and as you said, the second column there, the
+zero one that you have there will just extract the
+second column from the first matrix.
+Yeah.
+So it doesn't matter what you put in the first
+column there.
+You could have put anything there.
+Yeah.
+So, , what you effectively doing by multiplying with another
+matrix?
+If it's not invertible, you're losing information that is not
+able to reconstruct again.
+So that's why something that doesn't always work.
+Okay.
+Good, good.
+, it's a bit I don't think I want
+to do that.
+I think I'll actually want to go on a little
+bit.
+I think I want to do this one here.
+So matrix matrix multiplication we said.
+And that's why I've done it.
+We can think of a matrix or matrix vector multiplication
+as being a transformation.
+There's some sort of equivalence.
+Now what is a matrix?
+Matrix multiplication.
+That is equivalent to some sense.
+Or that means in some sense that we're chaining to
+transformations.
+So if you've got the matrix A here we say
+to is the transformation that is induced by it.
+And we've got another matrix B.
+And we say TB is the transformation induced by that.
+So what transformation will be induced by a b.
+And I've just given those transformations there in a slightly
+obscure notation.
+You have two choices.
+And I just need to get a two choices.
+This is just there's just two choices.
+You're not true or false.
+Two choices are good eight.
+We got a bit longer to think about.
+This reset this one reset to choices?
+.
+Right.
+Okay.
+It doesn't give me a timer.
+I have to do this manually.
+.
+Right?
+10s.
+Okay.
+, just a few more coming in.
+Let's have a look at the results.
+So.
+Okay, this is interesting.
+The majority thinks B.
+Actually, a is correct.
+, there's not much I can give you to do
+that.
+It's just.
+You are right.
+There's something confusing there.
+At some point, the thing that looks the other way
+round than what you think.
+But it's not this.
+So just to just to recapture what is going on
+here.
+So I mean, to some extent it's just obscure notation.
+You know, the question is I've got this to train
+with TB applied to X, what do we actually mean
+by that.
+And TR trained by TB.
+What we actually mean by that is simply that we
+say this is to of t a of TB of
+x.
+Yeah.
+so that's, that's simply what it is to of
+TB of x.
+Yeah.
+And then if I have a vector x.
+So that means if I evaluate this I first of
+all apply the matrix and multiply by the matrix B
+from the left.
+And then I multiply with a matrix A from the
+left.
+So this gives me a b x.
+Yeah.
+So that's the transformation induced by that.
+now the thing where it does become confusing is
+that you think so what does this what does this
+do.
+So I've got to make a vector x here.
+, so if I do want to evaluate this to
+of TB of x, I'm actually evaluating from the middle
+outside.
+Yeah.
+So I'm not doing first hire and then TB.
+I'm doing first TB and then to.
+So I first of all applying TB to this here.
+so this will give me the matrix B x
+here.
+and I think what we've had here, this was
+living in our case space, , this is living in
+MB space.
+And then I'm doing the TR transformation here.
+, that now will give me a b x.
+, this is living in r n space.
+, and I can do everything at the same time
+here and this transformation here.
+I'm going to call to change with TB.
+Yeah.
+Okay.
+So, but.
+, how does TB map X from.
+K to M.
+So b is an n times k matrix.
+Yeah.
+So I have to multiply the k vector.
+And it would give me an n vector.
+And I've done right.
+I've got my M's and the ends the wrong way
+round.
+Yeah.
+All right okay.
+Sorry.
+Sorry.
+You're right.
+Good.
+Okay.
+So the confusing thing was something that.
+Is this operation.
+If I see if I see a B times X
+or to apply to TB of x, which operation do
+I do first?
+Well, , that's the thing that you have to think
+about, , how this works.
+, okay.
+So there is sort of matrix matrix multiplication.
+, the other big topic that we're doing today is
+inverses.
+, and give you a little bit of a motivation.
+I'll just put this on both sides that, .
+You all see this?
+, I am there.
+Yeah, right.
+Okay.
+So, , if I had an equation that, a
+x equals to B for an A, which isn't equal
+to zero.
+, in numbers, what would you do?
+You know, divide divide by a.
+Yeah.
+You just divide by a.
+So I would just say I can divide through by
+a and then I get x equals to b over
+a.
+Yeah.
+Now we've seen that a linear system of equations
+something that.
+We've seen yesterday that we can write this in this
+form axe equals to b which formally looks the same
+as we've got there.
+, so how do we do proceed there.
+Now, , if we divide by a.
+Times the inverse.
+Yeah.
+So very important.
+You never divide by a Via matrix.
+Yeah.
+Just never.
+Even if you think while dividing by a matrix is
+the same thing as having an inverse.
+And we do have inverses, just don't.
+, and the reason is simple.
+.
+So if I write, if I were to write something
+, , in this case this is the other way
+round B divided by a.
+Yeah.
+And I say, oh, well, this is the same by
+multiplying by an inverse.
+Well, what do I mean.
+Is this b minus one times a or is this
+a times b minus one.
+Well , those in general are not the same thing.
+Matrix.
+Matrix multiplication doesn't commute, so those are not the same
+thing.
+I have to decide what I want, what I want
+this to mean.
+And that's why this this one would be ambiguous.
+, I wouldn't know what it means.
+So don't don't do that here.
+, Always decide on one of those two.
+, if you need to do something , ,
+dividing by a matrix.
+, okay.
+So, , back to where we were.
+Yeah.
+, so we can't divide three by a, we have
+to use inverses instead.
+, so, , just back to the drawing board, but,
+, the answer, the right answer already came from there.
+, so in real numbers, rather than dividing through by
+a, we can of course multiply by the inverse by
+the reciprocal there.
+, and we can do the same thing in linear
+systems.
+So , what does this mean.
+, I'll do it this way round.
+Same thing.
+We've got a linear system.
+We realised we can write this as a matrix vector
+equation there.
+, we say we can multiply by a minus one.
+So, , let's just have a look at this matrix
+here.
+You know, And try to work out what this is.
+So what is B times a?
+And I probably before I do this here in just
+three I'll give you a couple of seconds.
+Really.
+Well I'm not doing anything where you can do this
+in your head or write this down and just check.
+Right.
+Okay.
+Anybody has got an answer.
+It's the identity.
+Matrix.
+It is the identity matrix, indeed.
+So let's just check a few things.
+So first element here I'd have to use that column
+and that row and take the take the scalar product.
+So three times five is 15 two times two is
+four.
+That is 19 together divided by 19 is one.
+next one here minus two times five plus plus
+two times five is zero.
+And the others work the same.
+Yeah.
+So I've got zero one.
+So indeed this is the identity matrix.
+so so this is the inverse.
+I'll come to that in a, I come to that
+in a second.
+, strictly speaking actually at the moment, our definition of
+inverse, I think I have that in a couple of
+slides.
+But the definition of inverse that we had so far,
+, required us to do A times B as well
+and check that one, that that also gives the identity.
+Just to make you aware, I'm not doing that at
+the moment.
+I'll have a justification for that later.
+, but if I have this matrix B now, what
+I can do is if I want to solve axe
+equals to B, I can multiply everything from the left
+by b, , and then realise that the left hand
+side of what I've written there, , b times axe
+I can, I can use associativity, I can move the
+brackets, that is ba times x b a.
+I've just worked out as the identity.
+So that's the identity matrix.
+It is x.
+So I've got a formula there.
+Yeah I've got a formula.
+I know that a x is equal to b.
+so I've got a formula that x equals b
+times the right hand side of my system now.
+So I can now go and just work this out
+here.
+, the matrix vector multiplication and multiplication by this scalar
+there.
+And that gives me x equals one one.
+, so what I've just done is I solve this
+system of equations without using Gaussian elimination.
+That bit surprise you.
+, thing, of course, is that I've made up this
+matrix B there, , which are sort of.
+Well, you've read in in Nicholson.
+I haven't told you how to find that, but of
+course you do find it through Gaussian elimination.
+So, , it's, , you haven't really won anything.
+It's just an interesting observation.
+If you have an inverse.
+, you don't have to do Gaussian elimination.
+You can just solve the system, , by multiplying it.
+, okay, so I think I've got a definition here.
+Yeah, we have this.
+So a matrix is an inverse.
+If we have able to , both BA and a,
+b are equal to the identity matrix, , then it's
+called an invertible matrix.
+I denote this by minus one.
+, and just to remind you, you might be used
+that for numbers.
+If I have a minus one, that's just another way
+of writing one over a in this case don't divide
+by matrices.
+So , do not write that.
+, yes.
+And indeed what we have there is the inverse, ,
+this matrix P that we had earlier was the inverse.
+, okay.
+So just a couple of things on inverses that I
+had before, I sort of go back to doing something,
+, for a few matrices.
+We just know the inverse.
+For example, if you have a diagonal matrix, , we
+can just invert every element on the diagonal and that
+gives us the inverse.
+Yeah.
+This strictly only works for diagonal matrices.
+If you've got any off diagonal elements.
+, that doesn't work anymore.
+Yeah.
+, also for 2 or 3 matrices, Is there an
+explicit formula.
+And you will see if I have if you have
+a look at my my b there, my A there,
+you will see that this is one over 19.
+And swapping the elements about a little bit is exactly
+what comes out of this formula here.
+I have to say, I don't remember that formula.
+I know that it exists forever.
+Knitted.
+I look it up.
+There are corresponding formulae for higher dimensions, but they get
+pretty unwieldy.
+, so tend to not to be used.
+I should point out this thing in the denominator.
+There is.
+You will later see this is called the determinant of
+the matrix a , it's a very useful thing.
+And what it is, what it does determine is indeed
+whether a matrix is invertible or not.
+Yeah.
+, and the determinant, unlike this formula, the determinant is
+very useful in higher dimensions.
+And also having it as a criteria of whether a
+matrix is invertible or not.
+, right.
+Okay.
+So what can go wrong?
+, so I'm claiming this matrix T is not invertible.
+, and I do this in the following manner.
+They say let's calculate those two matrix vector products there.
+And again while I'll write down here I'll do
+this.
+Do this together with you while I write down the
+stuff.
+, here, I encourage you to try to work this
+out.
+, yourself.
+Sorry.
+Okay.
+So, .
+Anybody got an answer?
+714.
+Yes, that's what I got.
+, and then for the next one, let's do this
+together.
+, minus two and three times one, three.
+So this is a minus two plus three.
+Three.
+, that's a seven.
+And this is a minus four plus 18.
+This is also a 14.
+Yep.
+So.
+All right.
+Okay.
+In view of that.
+, what then is the solution to this system of
+equations?
+Hmm.
+Two answers.
+Actually, not just two answers.
+You'll know from what you've done last week that if
+you've got two answers, you've got infinite, infinitely many.
+So any combination of those two will also be an
+answer.
+But we have several answers.
+Now, if this here where an invertible matrix, if we
+did have an A minus one, we could just write
+down the solution to the system as a minus one
+times b.
+So that would just give us a single answer.
+But we have two answers.
+So by contradiction this cannot be an invertible matrix that
+we have out there.
+Yeah.
+Right.
+Okay.
+Let me just check.
+I've got ten minutes or so.
+Where am I and what did I want to do.
+, and what was important to do.
+No, I think we're pretty much we're good on time.
+We're very good on time, I think so, of course.
+Yeah.
+In order to check, I should say that in order
+to check whether it's invertible or not, you can have
+a look at this determinant.
+, a times D is six and b times C
+is also six.
+So determinant is zero.
+This is not an invertible matrix.
+Yeah.
+.
+Right I might as well give you that one here
+a Po.
+So if I've got an invertible matrix and a scalar
+which is not equal to zero, so it's k is
+the scalar times k, is that invertible.
+True or false.
+Okay.
+Ten.
+Oh, I haven't given you.
+I haven't shown you the poll.
+What is that?
+Is counting down.
+.
+It's a bit late.
+I think you've seen the countdown on your app or,
+.
+So we've got.
+It's Count it down.
+Results are the vast majority think it is true.
+And in this case, that is true.
+There's no trick question here involved.
+, I can just say one over k times a
+minus one.
+, that is the inverse.
+You can check it by multiplying things together and see
+whether that works.
+, so I'm not I do this in a second.
+I'll do this.
+, so I've got a couple of properties.
+An inverse is unique if it exists, the identity itself.
+Invert.
+These two are quite useful as calculations rule.
+If I have a product a times P and invert
+that, I have to change the order of the matrices.
+, same as we've had for transposition.
+, and again, same as for transposition.
+If I take the inverse and invert that again, I'll
+get my original matrix back.
+Just to summarise that.
+Now Nicholson then has this monster theorem there, the inverse
+theorem 2.4.5.
+, and if you skip that because it just looks
+too long.
+I encourage you to really do look at it because
+this is very, very useful.
+Now, , so it'll tell us, I want to say
+two things about it.
+Tell us a few things that are equivalent.
+, so what does it mean that a matrix is
+invertible?
+It means, for example, that a homogeneous system has only
+a unique solution, which is the trivial solution.
+, it also tells us I'll go to for first,
+, that any system of equations with that matrix has
+at least one solution, no matter what the right hand
+side is.
+So, , it tells us under three that we can
+carry the matrix to the identity matrix for elementary row
+operations.
+, we've seen that that because the rank in that
+case, if it's the identity of the row operations that
+has rank N, so it's a full rank matrix.
+, and it says the existing matrix such as AC
+is I n that a times C is the identity.
+Yeah.
+So the thing that I want to, as I say,
+these things are very useful to, to have in mind
+and indeed will later get another inverse theorem.
+I want to point out the way that Nicholson proves
+this is quite, is quite, , interesting because it says
+everything of this is equivalent.
+And he proves that by saying from one follows, two
+from two follows, three from 3 or 4 from 4
+or 5, and then from five follows one to complete
+the circle.
+And if you proved all of that, you can pretty
+much go from anything to anything else.
+So it's an interesting and useful proof technique to keep
+that in mind.
+I encourage you to look through all of them.
+.
+Right.
+Okay.
+And, , I just want to point out the step
+from 5 to 1.
+So we've got a matrix that AC that we've got
+a matrix C and we know A times C is
+the the the the identity matrix.
+Why do we still need to prove that then A
+is invertible.
+Is that not the same thing.
+What remains to be proven there.
+Somewhere in the middle there is.
+You have to prove that C times.
+Yeah.
+Invert from what we've had so far about identity would
+have to move proof the other direction as well.
+Now this tells us it's part of the equivalent.
+So this theorem tells us actually we don't have to
+do the other direction.
+Yeah.
+It comes for free.
+So that's that's interesting.
+Okay.
+So the last thing I want to do, what I
+skipped over here is, , how do we get inverses?
+, and I think this is from Nicholson.
+, so it's a matrix inversion algorithm.
+Rather than explaining that, then slide to you.
+, I will just, , quickly show you on the
+visualiser.
+And I'm not going to do the full example, ,
+on the reading quest on Monday.
+, if you look through, I do work on a
+video through the full example, but if I want to
+find an inverse of a matrix, say, , the matrix
+that I had earlier, where where did I have that?
+.
+, right.
+Well, my.
+Matrices, if I.
+Want them.
+There we go.
+, so we have this matrix A that we had,
+it was three minus two, two five.
+, there we go.
+So if I want to have the inverse of that,
+, what I do is I do Gaussian elimination and
+I do Gaussian elimination with two right hand side.
+So I'm just using one zero.
+But I also use zero one.
+, other words on the right hand side I just
+put the identity matrix in the correct dimension.
+, and then I go through Gaussian elimination and I
+go through a glass formation trying to get this to
+reduce excellent form.
+And I've just known that if I've got reduced, if
+this is an invertible matrix, my reduced reduced row echelon
+form is actually the identity will look that.
+And this one will just end up being a minus
+one here.
+Yeah.
+, and that might look pure magic to you
+at the moment.
+, I will go into quite a bit detail why
+that works next week.
+, if you think about.
+Right.
+Okay.
+, no, I just make this thing.
+If you think about what we're doing here.
+So a times B, we want a half as equal
+to the identity.
+Yeah.
+, now we defined A times B as this being
+a times the first column of a times a times
+this the or the other columns of B by doing
+that matrix in that way.
+Yeah.
+, and if we, , if this would be equal
+to the identity.
+The identity.
+We can also take apart into its columns.
+Yeah.
+So this is exactly what we've done there.
+So what we're doing here, we really need to just
+solve n linear systems of equations to find the identity.
+And that is exactly, , what this thing here is
+doing.
+So as I say on the on the reading quiz
+on Monday, I work, I think, through three by three
+examples in detail and we will get next week much
+more sort of insight of how these things work and
+why they work.
+Right.
+Okay.
+That's it for today.
+Oh, I should say somebody came in and said, can
+you please leave through that door?
+, that because in order for some fire regulations or
+so, , that has stairs, if you don't fancy the
+stairs for some reason to go up there.

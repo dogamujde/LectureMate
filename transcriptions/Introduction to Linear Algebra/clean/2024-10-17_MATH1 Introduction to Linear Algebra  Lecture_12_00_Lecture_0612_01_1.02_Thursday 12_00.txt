@@ -1,0 +1,1157 @@
+Hello.
+Hello.
+Oh, good.
+The microphone is working, I hope.
+Is it working?
+Sounds it's working.
+Cool.
+Hello.
+I have returned.
+You've had a whole cycle.
+So you get me again?
+.
+For better or for worse.
+So.
+Yes, we are back.
+Here it is week five.
+We are halfway through.
+We have the attendance poll, which I think is that
+one.
+And we have the questions from today, which I think
+is that one.
+So do make sure you've done both and not just
+one or the other.
+, yes.
+So it is week five of Ila.
+Hopefully you have settled into it somewhat.
+I notice less people are coming, which sounds about right.
+, hopefully more of you are watching online.
+, but yes.
+So there's nothing really happening.
+This it's kind of just same old, same old this
+week.
+It's a bit quiet.
+There's one announcement I'm going to make at the end
+of the lecture, but that is kind of it.
+So we don't actually have all that many announcements today.
+I'm about to take away the attendance thing.
+So if you've not done your attendance I'm going to
+give you another 10s and then I'm moving on.
+, cool.
+Okay.
+So this week we are doing eigenvalues and eigenvectors, which
+are very important.
+Actually they are one of those Method things that you
+do everywhere in maths.
+So we're back to doing computational stuff.
+It's not overly theoretical this week.
+It's a lot of computations.
+, so to get us started, a little bit of
+a revision.
+, which of these are linear transformations.
+So some revision from week three I think week two,
+week three, , which are the following geometrically all linear
+transformations.
+I'll give you a minute.
+Have a chat, have a vote, and then we'll discuss
+these all a bit more.
+Yeah, yeah.
+Yeah.
+Yeah.
+Hmm.
+Okay, let's have another 20s.
+What are we thinking?
+10s.
+Maybe.
+Five.
+Four.
+Three.
+Two.
+One.
+Cool.
+Okay, let's have a look at what we've got.
+, actually, I clicked the wrong thing off there, didn't
+I?
+There we go.
+Okay.
+We seem overwhelmingly happy that a reflection and a rotation
+around the origin are both linear transformations.
+What are the comments matrix?
+Leave your comment to explain your choice.
+, yes.
+Good, good.
+.
+And only if it's about the origin.
+Perfect.
+Yeah.
+It's only for.
+Why is it only for about the origin?
+What's very important about the origin and a linear transformation?
+Yeah.
+Yeah, exactly.
+Cardinal rule of linear transformations.
+The origin is a fixed point.
+It's got to be mapped to itself.
+Okay, so we're happy with those two.
+We seem we seem also relatively happy that a translation
+is not a linear transformation.
+Why is the translation not a linear transformation?
+You learned about it at school when you're doing all
+your geometric transformations.
+So in hand.
+Conditions which yeah.
+Good.
+Which one does it break?
+Was white because it was too white.
+Yeah, exactly.
+You you.
+It actually breaks both of them.
+Yeah.
+Translations are very bad.
+They don't fix the origin.
+They don't.
+They're not linear with respect to addition.
+They're not linear with respect to multiplication.
+So yes.
+Not a translation.
+Good okay.
+Then we seem to have the two kind of.
+We seem fairly happy that stretching the y component by
+a factor of four is.
+Does anyone want to explain that to me?
+Oh, we fit the middle of term and everyone's tight.
+Yes.
+Hello?
+Orange jumper.
+.
+Yeah.
+Good.
+So you could, you could, you can fix the, the,
+as a matrix, for example, in two dimensions is
+1004, where you're scaling the x component of any vector
+you put in by one and the y component by
+four.
+So the y component is changing, but the x component
+is not.
+good.
+Okay.
+Hello.
+Person who said hi.
+So the only one we seem to be slightly conflicted
+about is mapping every point to the origin.
+, multiplied by zero is our comment, which is a
+good comment.
+, what do we think?
+Let's let's have another.
+Does anyone want to kind of either argue to for
+or against everything being mapped to zero being.
+Yeah.
+It's not linear because it's not linear in multiplication.
+Two times two of X is not intended to x.
+Oh okay.
+That's a very good argument.
+Not the way you were meaning it to be, but.
+Yeah.
+.
+Anyone else got anything?
+Yeah.
+Yeah.
+So it can be represented by the matrix of zeros.
+Perfect.
+So, .
+Yes.
+Actually, turns out that one also is a linear transformation.
+You just have a big matrix full of zeros.
+Okay.
+So four out of my five were linear transformations.
+, hooray!
+We got that right.
+What are we doing?
+Yay!
+We were right.
+.
+There we go.
+So let's just think about these geometrically.
+Then let's just draw some pictures, because it's always good
+to draw pictures.
+, and hopefully this will work and you'll be able
+to see everything.
+So let us consider the first one.
+If we're reflecting in the x axis, what's going to
+happen to that point there.
+Where is that going to get reflected to itself?
+Yeah, it's not moving.
+Okay, that's a bit boring.
+What about this point?
+Where is that going to get mapped to?
+Down, down.
+Are we all happy with down okay, good.
+Where's that new point getting mapped to.
+Oh yeah okay we'll take that.
+So those two just kind of swap that point
+stays the same.
+Are there any other points that may be a kind
+of generally interesting that I should draw my little diagram.
+The origin.
+Yeah.
+Okay.
+What's happening to my origin.
+Yeah.
+So it's the same.
+Has to stay the same.
+It's a linear transformation.
+Cool.
+Important one.
+But yeah okay.
+So we have what happens to the x axis
+generally this whole line.
+Where does that get mapped to itself.
+Yeah it's not moving.
+So we have a fixed line.
+It's not moving.
+It's completely fixed.
+Can anyone see another line that might be fixed?
+Yet as well.
+Why?
+Because it's.
+Kind of just being.
+Identically.
+Yeah.
+So actually if we if we consider that line there,
+we know that point is getting mapped to that point.
+So actually this whole vector is just getting mapped to
+that whole vector.
+But that preserves the whole line.
+So we have another fixed line.
+The line's fixed but the points aren't fixed on the
+line.
+So on the red line every point is fixed and
+not moving and is mapped to itself identically on a
+kind of vertical line on the y axis.
+The line's fixed, but it's not happening in the same
+pointwise way.
+What actually is v?
+So if we call this one v, what's v getting
+mapped to minus v.
+Yeah.
+So in blue we have whatever our matrix is is
+getting mapped to minus three.
+Whereas here, if I call that one x because it's
+the x axis that's getting mapped to itself.
+Okay.
+Everybody happy so far?
+Good.
+Okay.
+What about if we stretch the y component by a
+factor of four.
+What happens there.
+Let's let's do the same game.
+What happens to my origin.
+Fixed.
+Good.
+What happens to a point on the x axis stays
+the same.
+Why does it stay the same?
+Yeah okay.
+So again this picture is looking remarkably similar to the
+first one.
+Let's consider this point here then.
+Where does that get mapped to.
+Up.
+Yeah I've, I realised I've fairly steeply made a bit
+of a mistake.
+I'm going to actually take it to be that point
+and we're mapping that one up.
+Otherwise I'm off the sheet of paper.
+, okay.
+So we're now mapping that one up.
+Okay.
+So let's think about fixed lines.
+Again.
+This looks fairly similar to this picture but a bit
+different.
+Can anyone give me a fixed line whereas another fixed
+line the x axis.
+Yet we've seen nothing happens on the x axis.
+That's a fixed line.
+Good.
+, and actually it's just we had before.
+It's fixed.
+Absolutely.
+Point wise.
+Okay.
+Anybody else think of another fixed line?
+, yes.
+Parallel to the y axis.
+Any line is parallel to the y axis.
+Yeah.
+Why.
+Get maximum four times their y value.
+So they would stay on the line.
+Yeah.
+Exactly.
+So anything here is going to again going to have
+this fixed line.
+And what's the kind of matrix equation that I can
+write in this case as opposed to this case.
+Feel free to yell it out.
+It'd.
+Be good for.
+You.
+Yeah.
+Perfect.
+So we're just stretching.
+Well, technically, actually, that's if that's a V, but but
+but.
+Yeah.
+Good.
+Okay.
+Are we generally happy so far?
+So actually looking at the fixed points tells us quite
+a lot about the geometry.
+We don't actually have to know what the, , transformation
+is if we can just kind of look at the
+fixed points, and that's helping us.
+Okay.
+What about a rotation by pi by two around the
+origin.
+Whereas let's do the origin again.
+Where's that going.
+It's.
+Yeah.
+Good.
+Where's my point to my x axis going.
+Yeah.
+It's going round to the y axis.
+Okay.
+And where's my general point x going.
+I've got various hand movements, which is quite fun.
+I think we're all kind of suggesting something that,
+but, but, but round as opposed to a flipping, ,
+good.
+Okay, so what's fixed?
+Is there anything fixed here?
+Do we have a fixed line?
+Do we have a fixed point?
+The origin?
+Yeah.
+Anything else?
+Nope.
+Yeah.
+So there's no fixed line.
+Okay.
+So that's quite interesting.
+We've now got nothing fixed.
+, but but there's still some kind of structure being
+preserved.
+We're going to come back to that a bit later.
+, so let's just look at the last one.
+Everything mapping to the origin.
+Where does the origin go?
+To the.
+Origin.
+Hopefully you're not bored of me saying that.
+I know you might remember it.
+, what about my point here?
+Where does that go?
+The origin?
+Yeah.
+What about my point here?
+Where does that go?
+The origin?
+Yeah.
+Everything's going to be origin.
+Is there anything fixed other than the origin?
+No, because we're just all going to the origin.
+So there's, , nothing here.
+No fixed line at all.
+Okay.
+So actually and they feel something slightly different about these
+two than these two.
+There's a kind of these feel a lot more restricted
+in what they're doing to our plane than these two.
+These are kind of changing a lot more.
+So actually knowing about what's fixed and what's not fixed
+tells us quite a lot about the geometry.
+And we're going to kind of explore a lot of
+that today and tomorrow.
+So we've written out these equations here.
+, and we can do that more generally if we
+have a matrix times a non-trivial vector, we need this
+to be non-trivial.
+It's very important because if it's trivial, why is it
+important?
+If it's trivial, what do we know happens?
+It goes to the origin.
+It always goes to the origin.
+We're bored of the origin being mapped to the origin.
+It's a fact.
+We know.
+It's a very boring fact.
+That's very important.
+But I've now got you to say I think about
+six times, so it's a bit boring.
+We're not interested.
+That's not telling us anything we didn't already know.
+, what we want is vectors, the kind of preserve
+lines.
+And if I've got a vector and I'm observing the
+line, then I can scale it.
+But I'm not changing the vector so I can multiply
+it.
+That's what we saw in the kind of blue cases.
+, and that's telling us something about fixing fixing a
+line.
+Okay.
+So then we have special words for these.
+This is known as an eigenvector, the vector x provided
+it's non-trivial.
+That's very important.
+And this lambda this number is known as an eigenvalue.
+Cool has anyone.
+How many people seen eigenvalues and eigenvectors before this thing?
+Some of you okay.
+So it's not entirely new.
+, slight history lesson just because it's quite cool.
+David Hilbert coined the phrase eigen.
+People were kind of studying these things with these properties
+beforehand, but he called them Eigen.
+He was German.
+Eigen means own in German, so it's the matrix's
+own a vector and own a value, which kind of
+makes sense.
+It's quite defining of the matrix transformation.
+, side note about David Hilbert.
+He you might have heard of.
+Have you heard of the Millennium Maths Prize problems?
+Yeah.
+So they kind of they were loads of problems, ,
+set out in the year 2000.
+And if you solve one of them, you get $1
+million.
+Only one has been solved.
+Go forth and solve them.
+They're hard.
+Don't try it tomorrow.
+You probably won't manage it.
+I'll be impressed if you do.
+.
+And demand that I can come to the party.
+Anyway, , he they were inspired by the Hilbert problems,
+which he did a similar thing in actually 1902.
+And actually, if you look at how the maths research
+we did in the 1900s, about 80% of it could
+be tracked back to one of Hilbert's problems.
+So he essentially just wrote a list of things he
+wanted to know, and mathematics did what he wanted to
+know.
+, I don't quite know how he got that power,
+but he did.
+, so there we go.
+Hilbert.
+, right.
+I'm going to now show a little Mona Lisa picture,
+because that's fun.
+Right.
+Okay.
+Here is my friend Mona Lisa.
+, and I've got a little matrix, and I've transformed
+a picture into some less pretty picture of the Mona
+Lisa.
+, and actually, I can keep going.
+I could change my matrix And we keep distorting this
+picture.
+Does anything anybody notice anything that's not changing with this
+picture, though?
+The origin.
+Thank you.
+I wasn't expecting that answer, but yes, the origin is
+not changing.
+.
+, what else isn't changing?
+What else is kind of staying the same?
+The lines?
+Yeah, the edges of the picture.
+We're keeping the edges of the picture.
+I mean, it's being very distorted.
+But.
+Her nose is still between her eyes.
+, somewhat.
+, so this is what a linear transformation is.
+It's distorting stuff.
+But the fundamental thing we have still retains its kind
+of basic properties.
+So a picture is still going to kind of look
+the picture.
+That was a good bit of timing.
+, for the most of the case.
+Pardon Was.
+That a.
+Nope.
+.
+And that's.
+So actually we can find out quite a lot.
+Now I have to pause this at exactly the right
+time, and I just missed it.
+, something does happen a bit.
+Oh, I missed it.
+We'll have to wait for the next one.
+, let's see if I can do it this time.
+Oh, nearly.
+What happens at that point?
+She disappears.
+How have we got rid of the Mona Lisa?
+I have stolen the Mona Lisa.
+This is not good.
+.
+What's happened there?
+Yeah.
+The determinant of our matrix is zero.
+Quite clearly.
+Hopefully, we all notice our matrix is determined.
+And if we think about our two lines, what's happened
+to our two lines?
+They became one line.
+So our two lines started overlapping.
+, so that's a kind of degenerative Case that we
+should have in the back of our mind.
+Okay, so I've talked for a long time now.
+We have the definition of an eigenvector and an eigenvalue.
+So let us think of some of some questions.
+, if I have given you the identity matrix what
+are the eigenvalues.
+so I will that question is up on.
+Thingy.
+Have a moment to think about it.
+Actually, maybe it's more useful for you to see the
+definition.
+Let's keep the definition up.
+, what is, .
+So.
+Yeah.
+Have a moment.
+Talk to a friend.
+If I give you the identity matrix, what are the
+eigenvalues?
+Of the Vectors.
+Eigen vectors even.
+Yeah.
+Okay.
+Okay.
+I'm going to give you another 30s.
+Let's say.
+I feel everyone's really sleepy today.
+Oh.
+Another 20s.
+Get your votes in.
+10s.
+Five.
+Four.
+Three.
+Two one.
+Okay.
+What we have, we have that.
+So we have all of our when all of our
+when except the origin.
+None of our when all of our when except the
+axes and none of the above.
+Okay.
+.
+Why?
+We see.
+We seem quite divided.
+There doesn't seem to be a really clear winner.
+Lots of people saying all of our.
+And why are we thinking all of our when.
+It's the identity.
+Yeah, exactly.
+It's every matrix gets into itself.
+Why all of our own except the origin?
+We've just spent a long time saying the origins fixed.
+Why is not the origin?
+Pardon?
+It's supposed to be non-trivial.
+Okay, that's a good point.
+.
+What about everything apart from the axes?
+Why not the axes?
+And you all want to justify that one?
+No.
+I mean, they're getting mapped to themselves.
+, none of the above.
+Hmm.
+Okay, let us have another 10s to talk to your
+neighbour, and then another 10s to vote again and we
+will see what we think.
+Is.
+Good.
+You just have ten more seconds.
+Some taxes.
+Five four.
+Not many people have voted.
+Actually, I might give you another five seconds to vote.
+See if we can get numbers up over.
+Let's see if we can get over halfway.
+Can we get to 110 race?
+Who's going to be the 100?
+Well, let's do 113.
+That's halfway 114.
+111.
+I need three more people.
+Two.
+One.
+One more person who's going to be the last person.
+Yay!
+We made it.
+Okay, good.
+What do we say?
+Okay.
+Now we now we seem to have flipped fortunes.
+We seem to be quite happy that it's all of
+our win and all of our when except the origin,
+but we still seem a bit split.
+We're not, we're not.
+We've only got one answer here.
+So let's let's come back to the definition and think
+about what's going on.
+So actually let's look at the actual definition in the
+book.
+Where's that.
+There we go.
+So, , we have an n by n matrix.
+We have a scalar number lambda, which is the eigenvalue.
+If this equation holds for some column that doesn't equal
+zero in n we'll call x a vector rather than
+a column.
+but yeah we want x to be nontrivial.
+We want it to be not the origin because we
+always know what the origin does.
+It's boring.
+The origin goes to the origin.
+That's what happens.
+We know that.
+So we're not actually very interested in the origin because
+we know what happens to it.
+So actually in the eigenvalue equation we very much want
+it not to be the origin.
+So if we have the identity yes, the identity sends
+the origin to the origin.
+But the origin is never an eigenvector.
+So everything is an eigenvector except the origin.
+Because we don't care.
+The origin is never an eigenvector.
+It's a technical point.
+It's one of those technical definitions where you've got to
+be a bit careful about what's being excluded.
+Yes, the origin that equation axe equals lambda x will
+always hold for the origin, but the origin is never
+an eigenvector.
+Okay, let's try a second question then.
+What if we have a line?
+Any old line.
+But this line happens to be two x plus three
+y.
+And again we're thinking about linear transformation.
+We're going to reflect in this line what are the
+potential eigenvalues for this line.
+So there are multiple answers here.
+But what are the potential eigenvalues that we could have
+for.
+Yes.
+You can see the answers for for a reflection
+in a line.
+Again, I'm going to give you 30s to think about
+it.
+You have a line we reflecting in that line.
+What eigenvalues could we have on my line?
+Reflecting in a line.
+What happens to points on my line?
+That's a good thing to think about.
+What happens to points off my line.
+Where do they go?
+Hopefully I'm giving you movement hints.
+Do you have a chat?
+I know it's lunchtime in week five and everyone's tired,
+but yeah.
+Yes.
+Yes.
+Yes.
+Yes.
+Oh, let's have another 30s.
+Oh, we've gone very quiet.
+What happens to my line?
+Thank you.
+Thank you.
+Thank you.
+Okay, 10s.
+Let's see if we can get halfway again.
+We need another ten votes.
+Can I have ten more votes?
+And then we'll sit and discuss it a bit.
+We'll be.
+Okay.
+Five.
+Four.
+Three.
+Two.
+One.
+Okay.
+So so far we've got that lots of people saying
+minus two thirds whereas was why have I got minus
+two thirds up there whereas minus two thirds come from.
+Gradient.
+Yes.
+Good.
+So actually this is the line and we know the
+gradient of this line is minus two thirds.
+So it kind of that that is a number that's
+floating around.
+We've got some people saying one, some people say minus
+1Y1.
+Anyone got an idea what to say Y one is.
+Yeah.
+So so the eigenvalues for them would be good.
+Yes.
+If we have if we have a vector there then
+that's getting mapped to itself.
+So so that v there is an eigenvector.
+Okay.
+what about minus one.
+That seems the second.
+Another popular one more popular than one, actually.
+Wears a vector with minus one.
+Yeah.
+Yeah.
+Good.
+So here's another vector.
+And that one's going to get reflected to there.
+So there's v and there's minus v.
+I've called everything v red v and blue v.
+Okay good.
+So one and minus one seem happy.
+what about two okay.
+Two thirds.
+Where's the eigenvector for two thirds?
+Minus two thirds.
+Anybody got any ideas?
+Yes.
+, so what kind of vector here is?
+So kind of.
+Over here.
+There.
+Somewhere.
+.
+One way to think about this is we know that
+if you're reflecting, then let's just consider vectors through the
+origin.
+, that distance from the origin is going to get
+reflected to something that has the same distance from the
+origin.
+So actually what minus two thirds is going to do
+that as an eigenvalue that's going to scale your vector.
+And none of your vectors are actually changing their size
+in a reflection.
+They're changing their position but they're not changing the size
+you are away from, from the line, your perpendicular distance
+to the line that is a perpendicular projection, which you
+should have seen week before last with Andreas.
+, so actually we only have two eigenvalues here.
+We have eigenvalue one and we have eigenvalue minus one.
+And that is true for any reflection in the world.
+If you have a matrix and you find out the
+eigenvalues are only 1 or -1, then that is a
+reflection of some sort, , a straight up reflection, which
+is quite a helpful thing to know.
+So now we're getting to the point where actually we
+can identify geometrically what a matrix is doing just by
+looking at the eigenvalues, which is really helpful in high
+dimensions, because, I mean, I can just about draw something
+in two dimensions.
+Three dimensions is iffy.
+Four dimensions is just wrong.
+Oh, I can't do four dimensions.
+So but I can use this maths.
+I can use this maths to identify when we've got
+a reflection in higher dimensions, which is always useful.
+Okay, so let's actually think about how we can calculate
+eigenvalues.
+And we have a theorem.
+So A is a eigenvalue of our matrix A.
+if you can't see it that is a good
+point.
+Actually I think I probably wanted to do that, but
+I will we'll do that.
+There we go.
+Good.
+So so have we actually come across the term.
+The following are equivalent before.
+This is a proper maths term that sometimes get
+shortened to TFA.
+You get TFA.
+The following are equivalent to theorems where they just write
+tf a, and then they write a load of statements.
+And you have to kind of.
+I remember the first time I saw that, I was
+, what?
+What is TFA?
+It's the following or equivalent when you see that.
+, so you get a list of statements and you
+earn, you have to show them all the same.
+So you have an eigenvalue.
+If lambda of I n minus a is not invertible,
+which is equivalent to the determinant being zero.
+Okay.
+, so that is a theorem that's really important because
+this last bit this determinant is a is called the
+characteristic polynomial.
+And as of last week we all learnt how to
+calculate determinants.
+So that is something we can calculate with relative ease
+hopefully.
+particularly in nice cases.
+, what we are going to do now for bit
+though is , pause slightly before we actually find an
+eigenvalue and discuss proof, because I'm not sure anyone's actually
+discussed proof with you.
+.
+So what is a maths proof?
+, the point of maths quite quickly, hopefully you kind
+of realise this is we quite quickly build up to
+stuff that we can't draw pictures of.
+That's a bit abstract and that's a bit theoretical and
+out there.
+, have people experienced this?
+Yeah.
+You go from the calculations and the numbers they're all
+happy with, and then quite suddenly it's , here's a
+load of letters and stuff you can't touch.
+Yeah.
+, it's not the same in physics potentially, or chemistry
+or bits where you can do an actual experiment.
+You can't do an experiment in maths and write down
+what the results are, because you're dealing with stuff that
+doesn't exist.
+, physically it exists in our heads.
+So we kind of have to have and we build
+upon it.
+It's I always think of maths as a tower.
+You learn something and then you learn the next thing,
+and then you learn the next thing, and then you
+learn the next thing.
+And quite quickly, your ten floors up and you're literally
+in the clouds and no one knows what anything is.
+, but we do that from a very, very small
+we're building very tall skyscrapers that have a tiny, tiny
+footprint.
+I'm.
+This is me just going off at one slightly, but
+Euclid's Elements, oldest textbook in the world, used for 2000
+plus years to teach any maths.
+You can literally trace the history of maths from the
+use of the translations of this textbook.
+Builds all of geometry from five axioms.
+You take five facts, you build 2000 plus years of
+maths.
+, which is actually quite scary when you think about
+it.
+So you take five things to be true and you
+get all of maths, well, all of geometry, lots of
+maths for centuries.
+.
+So a bit.
+Scary.
+The.
+Way we do that and we can do that is
+because we have very firm foundations and we build our
+tower very firmly.
+And to do that we have to use proof.
+We have to use proof that is so irrefutable.
+No one is going to come and knock our tower
+down.
+No one can come and go.
+I do not think that bricks laid correctly because you're
+, no, I proved it.
+That brick has definitely laid correctly.
+, so that is kind of the point.
+That is why we are we bang on about proof
+all the time because you can't really do anything.
+You can't go on to the next step unless you
+know that your step you've just done is firm and
+concrete and not going to break on you.
+, so let's actually try and prove this statement and
+write it down concretely.
+, so we're going to start with , lambda is
+an eigenvector.
+Does anyone have any suggestions for what the first line
+of this proof should be?
+That's not in the thing.
+Oh, what is the thing?
+That was the thing I've zoomed in, that's why.
+There we go.
+Okay.
+Anyone got any ideas?
+What the first.
+Where should I start writing this proof?
+It's a definition I gave.
+I'm actually going to do something before I even use
+the definition.
+Does anyone have any?
+I need to be really concrete about where I am.
+So what's the first thing I need to do before
+actually, I yeah.
+Land is not equal to zero, but if I start
+writing land in or equal to zero, the first question
+someone comes along who's trying to, you know, throw away
+all of this is what's lambda?
+So actually we're starting even earlier.
+We are starting with the question.
+Let us define things.
+And this is really important.
+We need somebody has to come along and know what
+you're talking about.
+So we're actually going to start with a we're going
+to say let n be an n by n matrix.
+That's step one.
+Let's define what we're actually doing.
+And then we can and then we can use the
+definition of an eigenvalue.
+So then we can say then lambda is an eigenvalue.
+We could even say it's a real number.
+Lambda is a real number a real number.
+We will later come and see.
+That doesn't always have to be the case.
+, of a if what's the definition of an eigenvalue.
+Yeah.
+So if there exists some x again we're defining.
+This.
+, some non-trivial x.
+Let's not forget that important point.
+If they exist some non-trivial x such that axe minus
+equals lambda x.
+Cool.
+Okay.
+So I've got up to that statement.
+Any ideas where I can go from there to show
+that lambda times I n minus a is not invertible?
+Suggestions for the next line?
+Yeah.
+Let's move everything to one side.
+Yeah, I that one.
+Okay.
+That equals zero.
+Okay.
+That's not a vector.
+Zero.
+That's just zero.
+I take a vector away from this vector, I get
+zero.
+.
+Cool.
+Okay.
+What next?
+Yeah.
+You can write lambda x as lambda.
+Times the identity matrix times X.
+Yeah, exactly.
+, so why why do I.
+What's the next step?
+Why is that important?
+Yeah.
+Factorise.
+So I'm going to factorise.
+Yeah.
+Good.
+So why is it important that I wrote, , this
+identity before I factorised.
+Yeah.
+Otherwise, I'd be saying a matrix minus a number times
+x, which doesn't make sense.
+So I need a matrix minus a matrix.
+, so I need that that identity matrix there to
+make my lambda a matrix and not just a number.
+I can't take away a number from a matrix.
+So that's another important thing we need to kind of
+bear in mind what are the elements we're talking about.
+Okay.
+So I've got to that point.
+, why I'm now going to say I can therefore
+write.
+Therefore a minus lambda x is not invertible.
+Why if it's invertible, then it's, it's.
+Yeah, exactly.
+So we can say as x is a non-trivial solution
+to a homogeneous system.
+, then by , I looked this up, theorem 2.4.5,
+in the book, 2.4.5.
+The inverse theorem.
+.
+We know.
+I could write that.
+I could times everything by minus one.
+Let's times everything by minus one.
+, is not invertible.
+Okay, good.
+Everyone happy so far?
+Okay.
+, what about next?
+What are, .
+What's the last line?
+The determinant equals zero.
+They're the same thing.
+Yeah.
+So I could say, , it's actually it's actually a
+theorem.
+So it's another term.
+So I could say by theorem 3.2.2 non invertible
+matrices.
+Have determinant equal to zero.
+Cool.
+And then we're done.
+So I draw a little square box or I
+QED or something.
+, to say it's the end of my proof, but
+that's all you need to prove that statement.
+That's quite a big statement.
+, and that's a kind of textbook proof.
+That's exactly what you need to write to formally prove
+that statement.
+You don't need loads and loads of stuff, but you
+do need to define your objects, justify every step.
+, and kind of explain why each line follows from
+the previous one.
+You don't have to go into lots of little bits
+of depth.
+You don't need to go.
+I can subtract two things.
+, but you do need to bear in mind, particularly
+in this step, what our objects are.
+Okay.
+Are we happy?
+Good.
+Was that helpful?
+To see what a proof was?
+How do I to prove I don't?
+Yeah.
+We kind of expected you to write proofs without telling
+you what a proof was, which was maybe a bit
+interesting.
+Okay, we have five more minutes, so.
+Let us have a quick go using this this thing.
+So we want to find the determinant of a matrix,
+, to find the eigenvalues.
+So what are the easiest matrices.
+We can find the determinants for two by two.
+What about general n by n diagonal.
+Yeah.
+Let's actually go up a triangular because I can someone
+yell numbers at me.
+1335992.
+Any one more.
+42.
+There we go.
+Why not?
+Okay, so there is a matrix.
+Let us find the eigenvalues of that matrix.
+So we want to consider the matrix a lambda I
+n minus a one point I will actually make which
+kind of highlights in this proof.
+Lots of people.
+So the textbook and lots of people talk about lambda
+I n minus a other people talk about a minus
+lambda in these are equivalent when we're finding eigenvalues because
+we're making it the determinant equals zero.
+It doesn't matter.
+this one's nicer for the polynomial.
+You're going to get out.
+This one's nicer.
+From a calculation point of view they are entirely equivalent.
+Some textbooks go one way, some go the other.
+Do not worry which way you go.
+.
+Okay, so we have lambda I n minus a.
+What's this matrix going to be if this is the
+matrix A.
+What's this term going to be.
+Yeah.
+What's the next term.
+Three.
+Yeah.
+Yep.
+No.
+Lambda minus nine.
+Yeah.
+Two.
+Yeah zero.
+What's the last 42.
+There we go.
+Good.
+Okay.
+And what's the determined to that matrix.
+Which is now the same as.
+And yes, that is very true.
+Good point.
+Don't trust.
+Me with negative.
+Signs.
+Don't trust anyone with negative signs.
+Good.
+Okay.
+, what's the determinant of this matrix?
+Lambda.
+Yeah.
+Nice.
+Perfect.
+Cool.
+And so if we want that to be zero.
+So what are the eigenvalues of our completely made up
+matrix.
+One nine and 42.
+Perfect.
+Look, we just found some eigenvalues.
+There we go.
+That was nice and easy.
+It is nice and easy with a diagonal or triangular
+matrix.
+, even one that's completely made up on the spot
+that so eigenvalues aren't too bad to calculate.
+Even if we had not an upper triangular matrix.
+You're still going to just end up with with a
+polynomial that you can solve most of the time.
+.
+We know that polynomials have roots and we can find
+those roots.
+Cool.
+, do we have any questions?
+Okay.
+One last question then.
+, which is more about tomorrow's lecture, actually.
+, let's go for that one.
+What?
+.
+What?
+So, so tomorrow we are going to talk about finding
+eigenvectors and diagonalising.
+And we probably will have a bit of time at
+the end.
+Is there anything that you particularly want to spend more
+time on, anything from today or anything from this week
+reading that you want to spend a bit more time
+on eigenvectors?
+Yeah.
+We will discuss eigenvectors.
+, good.
+, and then we will think about next week's, ,
+tomorrow's lecture.
+Cool.
+Okay.
+It is 3:00, 1:00, not 3:00, 1:00.
+, there is now a one way system in this
+lecture.
+Apparently, they've unblocked this door, so I'm supposed to encourage
+you to leave via this door here as opposed to
+the door?
+The back, so people can come in.
+Thank you for coming.
+I will see you next week, you know, tomorrow.
+I'll see you tomorrow.
+, yeah.
