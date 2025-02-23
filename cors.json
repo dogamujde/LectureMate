@@ -1,6 +1,15 @@
 [
   {
-    "origin": ["*"],
+    "origin": [
+      "https://lecturemate-ad674.web.app",
+      "http://localhost:5173",
+      "http://localhost:3000",
+      "capacitor://localhost",
+      "http://localhost",
+      "https://firebasestorage.googleapis.com",
+      "https://storage.googleapis.com",
+      "*"
+    ],
     "method": ["GET", "HEAD", "PUT", "POST", "DELETE", "OPTIONS"],
     "responseHeader": [
       "Content-Type",
@@ -17,7 +26,9 @@
       "Range",
       "X-Firebase-Storage-Version",
       "x-goog-meta-*",
-      "x-goog-*"
+      "x-goog-*",
+      "alt",
+      "token"
     ],
     "maxAgeSeconds": 3600
   }
