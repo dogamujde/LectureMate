@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Listbox, Transition } from '@headlessui/react'
+import { storage, metadata } from './firebase'
+import { ref, getDownloadURL } from 'firebase/storage'
 
 interface Course {
   id: string;
@@ -22,6 +24,7 @@ function App() {
   const [field, setField] = useState('')
   const [isSetupComplete, setIsSetupComplete] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   const firstTermCourses = [
     {
@@ -456,71 +459,99 @@ function App() {
 
   const handleDownloadSummary = async (lecture: string, courseName: string) => {
     try {
-      // Use the actual directory names
-      const courseMapping = {
-        'Object Oriented Programming': 'Object Oriented Programming',
-        'Calculus and Its Applications': 'Calculus and Its Applications',
-        'Cognitive Science': 'Cognitive Science',
-        'Introduction to Computation': 'Introduction to Computation',
-        'Introduction to Linear Algebra': 'Introduction to Linear Algebra'
-      };
-
-      console.log('Course name received:', courseName);
-      console.log('Available mappings:', Object.keys(courseMapping));
+      setIsLoading(true);
+      setError(null);
       
-      const coursePath = courseMapping[courseName];
-      console.log('Course path resolved:', coursePath);
+      // Construct the file path
+      const filePath = `transcriptions/${courseName}/summaries/pdf/${lecture}`;
+      console.log('Attempting to download from Firebase Storage:', filePath);
       
-      if (!coursePath) {
-        throw new Error(`Unknown course: ${courseName}`);
+      // Get reference to the file in Firebase Storage
+      const fileRef = ref(storage, filePath);
+      
+      try {
+        // Try to get the download URL from Firebase Storage
+        const downloadURL = await getDownloadURL(fileRef);
+        console.log('Got download URL:', downloadURL);
+        
+        try {
+          // Try to fetch the file directly with proper headers
+          const response = await fetch(downloadURL, {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+              'Accept': 'application/pdf',
+              'Content-Type': 'application/pdf',
+              'Range': 'bytes=0-'
+            }
+          });
+          
+          if (!response.ok) {
+            console.error('Response not OK:', response.status, response.statusText);
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          
+          const blob = await response.blob();
+          const url = window.URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = lecture;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(url);
+          
+        } catch (fetchError) {
+          console.error('Error fetching file directly:', fetchError);
+          console.log('Attempting to open in new tab...');
+          
+          // Try opening in new tab as fallback
+          window.open(downloadURL, '_blank');
+        }
+        
+      } catch (storageError) {
+        console.error('Error getting Firebase download URL:', storageError);
+        console.log('Attempting local server fallback...');
+        
+        // Try local server as final fallback
+        const encodedCourseName = encodeURIComponent(courseName);
+        const encodedLecture = encodeURIComponent(lecture);
+        const localUrl = `http://localhost:3000/transcriptions/${encodedCourseName}/summaries/pdf/${encodedLecture}`;
+        
+        try {
+          const response = await fetch(localUrl, {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/pdf',
+              'Content-Type': 'application/pdf'
+            }
+          });
+          
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          
+          const blob = await response.blob();
+          const url = window.URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = lecture;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(url);
+          
+        } catch (localError) {
+          console.error('Error fetching from local server:', localError);
+          throw new Error('Failed to download file from all sources');
+        }
       }
-
-      // Construct the full URL using the backend server
-      const encodedLecture = encodeURIComponent(lecture);
-      const encodedCoursePath = encodeURIComponent(coursePath);
-      const fullUrl = `http://localhost:3000/transcriptions/${encodedCoursePath}/summaries/pdf/${encodedLecture}`;
       
-      console.log('Attempting to download from:', fullUrl);
-      
-      const response = await fetch(fullUrl);
-      if (!response.ok) {
-        console.error(`Failed to fetch summary: ${lecture}`, response.status, response.statusText);
-        throw new Error('Failed to fetch summary');
-      }
-
-      // Check content type
-      const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/pdf')) {
-        console.error('Invalid content type:', contentType);
-        throw new Error('Invalid file type received');
-      }
-
-      // Get the blob from the response
-      const blob = await response.blob();
-      
-      // Check if the blob is empty
-      if (blob.size === 0) {
-        throw new Error('Empty file received');
-      }
-      
-      // Create a temporary link element
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = lecture; // Set the filename
-      
-      // Append to body, click, and cleanup
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-      
-      setError(null); // Clear any previous errors
     } catch (error) {
-      console.error('Error downloading summary:', error);
-      setError('Failed to download summary. Please try again.');
+      console.error('Download error:', error);
+      setError('Failed to download the summary. Please try again later.');
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
   const updatedSecondTermCourses = secondTermCourses.map(course => {
     if (course.name === 'Object Oriented Programming') {
