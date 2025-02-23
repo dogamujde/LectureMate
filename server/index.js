@@ -4,22 +4,41 @@ const { exec } = require('child_process');
 const fs = require('fs').promises;
 const path = require('path');
 const os = require('os');
+const { initializeApp } = require('firebase/app');
+const { getStorage, ref, getDownloadURL } = require('firebase/storage');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCvcdiMNJ6K8J47JZ3WE4PNH99sOS2HTa8",
+  authDomain: "lecturemate-ad674.firebaseapp.com",
+  projectId: "lecturemate-ad674",
+  storageBucket: "lecturemate-ad674.firebasestorage.app",
+  messagingSenderId: "372498362553",
+  appId: "1:372498362553:web:0f75a6865f72f1debc6b68"
+};
+
+// Initialize Firebase
+const firebaseApp = initializeApp(firebaseConfig);
+const storage = getStorage(firebaseApp);
+
 // Enable CORS for the frontend
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174'], // Allow both Vite ports
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type'],
-  credentials: true
+  origin: '*',
+  methods: ['GET', 'HEAD', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Range'],
+  exposedHeaders: ['Content-Range', 'Content-Length', 'Accept-Ranges'],
+  credentials: true,
+  maxAge: 3600
 }));
 
 app.use(express.json({ limit: '50mb' })); // Increase payload limit for large LaTeX documents
 
 // Create base directories
 const TRANSCRIPTIONS_DIR = path.join(__dirname, '..', 'transcriptions');
+const TEMP_DIR = path.join(os.tmpdir(), 'lecturemate');
 
 // Define course directory mapping
 const COURSE_MAPPING = {
@@ -62,14 +81,22 @@ app.use('/transcriptions', express.static(TRANSCRIPTIONS_DIR, {
     if (filePath.endsWith('.pdf')) {
       res.set({
         'Content-Type': 'application/pdf',
-        'Content-Disposition': 'attachment; filename="' + path.basename(filePath) + '"',
-        'Cache-Control': 'no-cache'
+        'Content-Disposition': 'inline',
+        'Cache-Control': 'no-cache',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept, Range',
+        'Access-Control-Expose-Headers': 'Content-Range, Content-Length, Accept-Ranges',
+        'Access-Control-Max-Age': '3600'
       });
     }
   }
 }));
 
-// Add a custom route handler for PDF files
+// Add preflight handler for all routes
+app.options('*', cors());
+
+// Handle PDF file requests
 app.get('/transcriptions/:course/summaries/pdf/:filename', async (req, res) => {
   try {
     const { course, filename } = req.params;
@@ -77,23 +104,48 @@ app.get('/transcriptions/:course/summaries/pdf/:filename', async (req, res) => {
     const decodedFilename = decodeURIComponent(filename);
     
     console.log('Received request for:', decodedFilename);
-    const filePath = path.join(TRANSCRIPTIONS_DIR, decodedCourse, 'summaries', 'pdf', decodedFilename);
-    console.log('Attempting to serve file from:', filePath);
+    
+    // First try to serve from local filesystem
+    const localFilePath = path.join(TRANSCRIPTIONS_DIR, decodedCourse, 'summaries', 'pdf', decodedFilename);
+    try {
+      const fileExists = await fs.access(localFilePath).then(() => true).catch(() => false);
+      if (fileExists) {
+        console.log('File exists:', localFilePath);
+        res.set({
+          'Content-Type': 'application/pdf',
+          'Content-Disposition': 'attachment; filename="' + decodedFilename + '"',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept',
+          'Access-Control-Max-Age': '3600'
+        });
+        return res.sendFile(localFilePath);
+      }
+    } catch (error) {
+      console.log('Error checking local file:', error);
+    }
+    
+    // If local file not found, try Firebase Storage
+    const filePath = `transcriptions/${decodedCourse}/summaries/pdf/${decodedFilename}`;
+    console.log('Attempting to fetch file from Firebase Storage:', filePath);
     
     try {
-      await fs.access(filePath);
-      console.log('File exists:', filePath);
+      const fileRef = ref(storage, filePath);
+      const downloadURL = await getDownloadURL(fileRef);
       
+      // Set CORS headers
       res.set({
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': 'attachment; filename="' + decodedFilename + '"',
-        'Cache-Control': 'no-cache'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept',
+        'Access-Control-Max-Age': '3600'
       });
       
-      const fileStream = require('fs').createReadStream(filePath);
-      fileStream.pipe(res);
+      // Redirect to the download URL
+      res.redirect(downloadURL);
     } catch (error) {
-      console.log('File not found:', filePath);
+      console.log('File not found in Firebase Storage:', filePath);
+      console.error('Firebase Storage error:', error);
       res.status(404).send('File not found');
     }
   } catch (error) {
@@ -118,14 +170,11 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is healthy' });
 });
 
-// Create a temporary directory for LaTeX files
-const TMP_DIR = path.join(os.tmpdir(), 'lecturemate');
-
 // Ensure temp directory exists
 async function ensureTmpDir() {
   try {
-    await fs.mkdir(TMP_DIR, { recursive: true });
-    console.log(`Temporary directory created at ${TMP_DIR}`);
+    await fs.mkdir(TEMP_DIR, { recursive: true });
+    console.log(`Temporary directory created at ${TEMP_DIR}`);
   } catch (error) {
     console.error('Error creating temp directory:', error);
     throw error;
@@ -176,8 +225,8 @@ app.post('/generate-pdf', async (req, res) => {
 
   const timestamp = Date.now();
   const baseFilename = `document_${timestamp}`;
-  const texFile = path.join(TMP_DIR, `${baseFilename}.tex`);
-  const pdfFile = path.join(TMP_DIR, `${baseFilename}.pdf`);
+  const texFile = path.join(TEMP_DIR, `${baseFilename}.tex`);
+  const pdfFile = path.join(TEMP_DIR, `${baseFilename}.pdf`);
 
   try {
     // Add required LaTeX packages to the content
@@ -206,7 +255,7 @@ ${latex}
     // Run pdflatex twice to resolve references
     const runPdfLatex = () => new Promise((resolve, reject) => {
       const process = exec(
-        `cd ${TMP_DIR} && pdflatex -interaction=nonstopmode ${baseFilename}.tex`,
+        `cd ${TEMP_DIR} && pdflatex -interaction=nonstopmode ${baseFilename}.tex`,
         { maxBuffer: 1024 * 1024 * 10 }, // Increase buffer size to 10MB
         (error, stdout, stderr) => {
           if (error) {
@@ -297,7 +346,7 @@ ${latex}
       `${baseFilename}.log`,
       `${baseFilename}.out`,
       `${baseFilename}.toc`
-    ].map(file => path.join(TMP_DIR, file));
+    ].map(file => path.join(TEMP_DIR, file));
 
     await Promise.all(cleanupFiles.map(file => fs.unlink(file).catch(() => {})));
     console.log('Cleanup completed');
@@ -311,7 +360,7 @@ ${latex}
     
     // Try to read the log file if it exists
     try {
-      const logFile = path.join(TMP_DIR, `${baseFilename}.log`);
+      const logFile = path.join(TEMP_DIR, `${baseFilename}.log`);
       const logContent = await fs.readFile(logFile, 'utf8');
       console.error('LaTeX log file contents:', logContent);
     } catch (logError) {
@@ -329,7 +378,7 @@ ${latex}
         `${baseFilename}.log`,
         `${baseFilename}.out`,
         `${baseFilename}.toc`
-      ].map(file => path.join(TMP_DIR, file));
+      ].map(file => path.join(TEMP_DIR, file));
       
       await Promise.all(cleanupFiles.map(file => fs.unlink(file).catch(() => {})));
       console.log('Error cleanup completed');
