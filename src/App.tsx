@@ -462,92 +462,52 @@ function App() {
       setIsLoading(true);
       setError(null);
       
-      // Construct the file path
-      const filePath = `transcriptions/${courseName}/summaries/pdf/${lecture}`;
-      console.log('Attempting to download from Firebase Storage:', filePath);
+      const encodedLecture = encodeURIComponent(lecture);
+      const encodedCourseName = encodeURIComponent(courseName);
+      const proxyUrl = `https://lecturemate-ad674.web.app/proxy-pdf/${encodedCourseName}/${encodedLecture}`;
       
-      // Get reference to the file in Firebase Storage
-      const fileRef = ref(storage, filePath);
+      console.log('Attempting to fetch PDF from:', proxyUrl);
       
-      try {
-        // Try to get the download URL from Firebase Storage
-        const downloadURL = await getDownloadURL(fileRef);
-        console.log('Got download URL:', downloadURL);
-        
-        try {
-          // Try to fetch the file directly with proper headers
-          const response = await fetch(downloadURL, {
-            method: 'GET',
-            mode: 'cors',
-            headers: {
-              'Accept': 'application/pdf',
-              'Content-Type': 'application/pdf',
-              'Range': 'bytes=0-'
-            }
-          });
-          
-          if (!response.ok) {
-            console.error('Response not OK:', response.status, response.statusText);
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          
-          const blob = await response.blob();
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = lecture;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-          
-        } catch (fetchError) {
-          console.error('Error fetching file directly:', fetchError);
-          console.log('Attempting to open in new tab...');
-          
-          // Try opening in new tab as fallback
-          window.open(downloadURL, '_blank');
+      // First try to fetch the PDF to check if it's accessible
+      const response = await fetch(proxyUrl, {
+        headers: {
+          'Accept': 'application/pdf'
         }
-        
-      } catch (storageError) {
-        console.error('Error getting Firebase download URL:', storageError);
-        console.log('Attempting local server fallback...');
-        
-        // Try local server as final fallback
-        const encodedCourseName = encodeURIComponent(courseName);
-        const encodedLecture = encodeURIComponent(lecture);
-        const localUrl = `http://localhost:3000/transcriptions/${encodedCourseName}/summaries/pdf/${encodedLecture}`;
-        
-        try {
-          const response = await fetch(localUrl, {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/pdf',
-              'Content-Type': 'application/pdf'
-            }
-          });
-          
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-          
-          const blob = await response.blob();
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = lecture;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-          
-        } catch (localError) {
-          console.error('Error fetching from local server:', localError);
-          throw new Error('Failed to download file from all sources');
-        }
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        console.error('PDF fetch failed:', {
+          status: response.status,
+          statusText: response.statusText,
+          errorData,
+          contentType: response.headers.get('content-type')
+        });
+        throw new Error(`Failed to fetch PDF: ${response.statusText}`);
       }
+      
+      // Check if we got a PDF
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/pdf')) {
+        console.error('Invalid content type:', contentType);
+        throw new Error('Invalid response type from server');
+      }
+      
+      // Create object URL for the PDF
+      const pdfBlob = await response.blob();
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+      
+      // Open PDF in new tab
+      window.open(pdfUrl, '_blank');
+      
+      // Clean up the object URL after a delay
+      setTimeout(() => {
+        URL.revokeObjectURL(pdfUrl);
+      }, 1000);
       
     } catch (error) {
       console.error('Download error:', error);
-      setError('Failed to download the summary. Please try again later.');
+      setError('Failed to download the PDF. Please try again later.');
     } finally {
       setIsLoading(false);
     }
@@ -1031,7 +991,7 @@ function App() {
                 key={selectedCourse.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
+                exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
                 className="min-w-0"
               >

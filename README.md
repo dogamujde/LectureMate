@@ -1,63 +1,87 @@
 # LectureMate
 
-LectureMate is a React-based web application that helps students generate and manage lecture notes using AI. The application allows users to paste lecture transcripts and automatically generates structured notes with key points and summaries.
+LectureMate is a web application that helps students access and manage their lecture summaries and course materials. It provides an organized interface for viewing and downloading lecture PDFs across different courses and terms.
 
 ## Features
 
-- 🎓 Education level and field-specific customization
-- 📚 Course organization by terms
-- 📝 AI-powered note generation from lecture transcripts
-- 📥 PDF export functionality
-- 🎨 Clean, modern UI built with Tailwind CSS
+- Course organization by terms
+- Weekly lecture summaries
+- PDF viewing and downloading
+- Mobile-friendly interface
+- Firebase integration for storage
+- Beautiful and modern UI with animations
 
 ## Tech Stack
 
-- React 18
-- TypeScript
-- Vite
+- React
+- Firebase (Storage & Hosting)
+- Express.js
 - Tailwind CSS
-- Lucide React (for icons)
+- Framer Motion
+- Headless UI
 
-## Getting Started
+## Prerequisites
 
-### Prerequisites
-
-- Node.js (v16 or higher)
+- Node.js (v14 or higher)
 - npm or yarn
+- Firebase account and project
+- LaTeX installation (for PDF generation)
 
-### Installation
+## Setup
 
 1. Clone the repository:
-
 ```bash
-git clone 
+git clone https://github.com/yourusername/LectureMate.git
+cd LectureMate
 ```
 
-3. Create a `.env` file in the root directory and add your OpenAI API key:
-
-```env
-VITE_OPENAI_API_KEY=your_api_key_here
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Configure Firebase:
+   - Create a Firebase project
+   - Enable Firebase Storage
+   - Update the Firebase configuration in `src/firebase.js`
 
 4. Start the development server:
-
 ```bash
 npm run dev
 ```
 
-The application should now be running at `http://localhost:5173`
+5. Start the backend server:
+```bash
+node server/index.js
+```
 
-## Development
+## Deployment
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Deploy to Firebase:
+```bash
+firebase deploy
+```
+
+## Project Structure
+
+- `/src` - React frontend code
+- `/server` - Express.js backend
+- `/public` - Static assets
+- `/transcriptions` - PDF storage (local development)
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
