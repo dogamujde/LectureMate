@@ -20,7 +20,17 @@ app.use(express.json({ limit: '50mb' })); // Increase payload limit for large La
 
 // Create base directories
 const TRANSCRIPTIONS_DIR = path.join(__dirname, '..', 'transcriptions');
-const COURSE_DIRS = ['oop', 'calculus', 'cognitive-science'];
+
+// Define course directory mapping
+const COURSE_MAPPING = {
+  'Object Oriented Programming': 'Object Oriented Programming',
+  'Calculus and its Applications': 'Calculus and Its Applications',
+  'Cognitive Science': 'Cognitive Science',
+  'Introduction to Computation': 'Introduction to Computation',
+  'Introduction to Linear Algebra': 'Introduction to Linear Algebra'
+};
+
+const COURSE_DIRS = Object.keys(COURSE_MAPPING);
 
 // Ensure all required directories exist
 async function ensureDirectories() {
@@ -30,9 +40,16 @@ async function ensureDirectories() {
     
     // Create course directories and their subdirectories
     for (const courseDir of COURSE_DIRS) {
-      await fs.mkdir(path.join(TRANSCRIPTIONS_DIR, courseDir, 'summaries', 'pdf'), { recursive: true });
+      const normalizedDir = COURSE_MAPPING[courseDir];
+      const targetDir = path.join(TRANSCRIPTIONS_DIR, normalizedDir, 'summaries', 'pdf');
+      try {
+        await fs.mkdir(targetDir, { recursive: true });
+        console.log(`Verified/created directory: ${targetDir}`);
+      } catch (error) {
+        console.error(`Error creating directory ${targetDir}:`, error);
+      }
     }
-    console.log('All required directories created successfully');
+    console.log('All required directories verified/created successfully');
   } catch (error) {
     console.error('Error creating directories:', error);
     throw error;
@@ -40,7 +57,56 @@ async function ensureDirectories() {
 }
 
 // Serve static files from the transcriptions directory
-app.use('/transcriptions', express.static(TRANSCRIPTIONS_DIR));
+app.use('/transcriptions', express.static(TRANSCRIPTIONS_DIR, {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.pdf')) {
+      res.set({
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': 'attachment; filename="' + path.basename(filePath) + '"',
+        'Cache-Control': 'no-cache'
+      });
+    }
+  }
+}));
+
+// Add a custom route handler for PDF files
+app.get('/transcriptions/:course/summaries/pdf/:filename', async (req, res) => {
+  try {
+    const { course, filename } = req.params;
+    const decodedCourse = decodeURIComponent(course);
+    const decodedFilename = decodeURIComponent(filename);
+    
+    console.log('Received request for:', decodedFilename);
+    const filePath = path.join(TRANSCRIPTIONS_DIR, decodedCourse, 'summaries', 'pdf', decodedFilename);
+    console.log('Attempting to serve file from:', filePath);
+    
+    try {
+      await fs.access(filePath);
+      console.log('File exists:', filePath);
+      
+      res.set({
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': 'attachment; filename="' + decodedFilename + '"',
+        'Cache-Control': 'no-cache'
+      });
+      
+      const fileStream = require('fs').createReadStream(filePath);
+      fileStream.pipe(res);
+    } catch (error) {
+      console.log('File not found:', filePath);
+      res.status(404).send('File not found');
+    }
+  } catch (error) {
+    console.error('Error serving file:', error);
+    res.status(500).send('Internal server error');
+  }
+});
+
+// Add a fallback route for file not found
+app.use('/transcriptions/*', (req, res) => {
+  console.log('File not found:', req.path);
+  res.status(404).send('File not found');
+});
 
 // Root route handler
 app.get('/', (req, res) => {
