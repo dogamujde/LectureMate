@@ -12,12 +12,12 @@ const port = process.env.PORT || 3000;
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCvcdiMNJ6K8J47JZ3WE4PNH99sOS2HTa8",
-  authDomain: "lecturemate-ad674.firebaseapp.com",
-  projectId: "lecturemate-ad674",
-  storageBucket: "lecturemate-ad674.firebasestorage.app",
-  messagingSenderId: "372498362553",
-  appId: "1:372498362553:web:0f75a6865f72f1debc6b68"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 };
 
 // Initialize Firebase
