@@ -6,18 +6,19 @@ const path = require('path');
 const os = require('os');
 const { initializeApp } = require('firebase/app');
 const { getStorage, ref, getDownloadURL } = require('firebase/storage');
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCvcdiMNJ6K8J47JZ3WE4PNH99sOS2HTa8",
-  authDomain: "lecturemate-ad674.firebaseapp.com",
-  projectId: "lecturemate-ad674",
-  storageBucket: "lecturemate-ad674.firebasestorage.app",
-  messagingSenderId: "372498362553",
-  appId: "1:372498362553:web:0f75a6865f72f1debc6b68"
+  apiKey: process.env.VITE_FIREBASE_API_KEY,
+  authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
@@ -28,8 +29,8 @@ const storage = getStorage(firebaseApp);
 app.use(cors({
   origin: '*',
   methods: ['GET', 'HEAD', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Range'],
-  exposedHeaders: ['Content-Range', 'Content-Length', 'Accept-Ranges'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Range', 'X-Requested-With'],
+  exposedHeaders: ['Content-Range', 'Content-Length', 'Accept-Ranges', 'Content-Disposition'],
   credentials: true,
   maxAge: 3600
 }));
@@ -102,8 +103,12 @@ app.get('/transcriptions/:course/summaries/pdf/:filename', async (req, res) => {
     const { course, filename } = req.params;
     const decodedCourse = decodeURIComponent(course);
     const decodedFilename = decodeURIComponent(filename);
+    const userAgent = req.headers['user-agent'] || '';
+    const isMobileSafari = /iPhone.*Safari/.test(userAgent) && !/Chrome/.test(userAgent);
     
     console.log('Received request for:', decodedFilename);
+    console.log('User Agent:', userAgent);
+    console.log('Is Mobile Safari:', isMobileSafari);
     
     // First try to serve from local filesystem
     const localFilePath = path.join(TRANSCRIPTIONS_DIR, decodedCourse, 'summaries', 'pdf', decodedFilename);
@@ -111,14 +116,25 @@ app.get('/transcriptions/:course/summaries/pdf/:filename', async (req, res) => {
       const fileExists = await fs.access(localFilePath).then(() => true).catch(() => false);
       if (fileExists) {
         console.log('File exists:', localFilePath);
-        res.set({
+        
+        // Set headers based on the client
+        const headers = {
           'Content-Type': 'application/pdf',
-          'Content-Disposition': 'attachment; filename="' + decodedFilename + '"',
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept',
-          'Access-Control-Max-Age': '3600'
-        });
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept, Range, X-Requested-With',
+          'Access-Control-Expose-Headers': 'Content-Range, Content-Length, Accept-Ranges, Content-Disposition',
+          'Access-Control-Max-Age': '3600',
+          'Cache-Control': 'no-cache'
+        };
+
+        if (isMobileSafari) {
+          headers['Content-Disposition'] = 'inline';
+        } else {
+          headers['Content-Disposition'] = `attachment; filename="${decodedFilename}"`;
+        }
+
+        res.set(headers);
         return res.sendFile(localFilePath);
       }
     } catch (error) {
@@ -133,16 +149,34 @@ app.get('/transcriptions/:course/summaries/pdf/:filename', async (req, res) => {
       const fileRef = ref(storage, filePath);
       const downloadURL = await getDownloadURL(fileRef);
       
-      // Set CORS headers
-      res.set({
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept',
-        'Access-Control-Max-Age': '3600'
-      });
-      
-      // Redirect to the download URL
-      res.redirect(downloadURL);
+      if (isMobileSafari) {
+        // For Mobile Safari, proxy the request through our server
+        const response = await fetch(downloadURL);
+        const pdfBuffer = await response.arrayBuffer();
+        
+        res.set({
+          'Content-Type': 'application/pdf',
+          'Content-Disposition': 'inline',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept, Range, X-Requested-With',
+          'Access-Control-Expose-Headers': 'Content-Range, Content-Length, Accept-Ranges, Content-Disposition',
+          'Access-Control-Max-Age': '3600',
+          'Cache-Control': 'no-cache'
+        });
+        
+        return res.send(Buffer.from(pdfBuffer));
+      } else {
+        // For other browsers, redirect to the download URL
+        res.set({
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept, Range, X-Requested-With',
+          'Access-Control-Max-Age': '3600'
+        });
+        
+        res.redirect(downloadURL);
+      }
     } catch (error) {
       console.log('File not found in Firebase Storage:', filePath);
       console.error('Firebase Storage error:', error);
@@ -385,6 +419,81 @@ ${latex}
     } catch (cleanupError) {
       console.error('Error during cleanup:', cleanupError);
     }
+  }
+});
+
+// Add new proxy endpoint for mobile Safari
+app.get('/proxy-pdf/:course/:filename', async (req, res) => {
+  try {
+    const { course, filename } = req.params;
+    const decodedCourse = decodeURIComponent(course);
+    const decodedFilename = decodeURIComponent(filename);
+    
+    console.log('Proxying PDF request for:', { course: decodedCourse, filename: decodedFilename });
+    
+    // Try Firebase Storage
+    const storagePath = `transcriptions/${decodedCourse}/summaries/pdf/${decodedFilename}`;
+    console.log('Fetching from Firebase Storage:', storagePath);
+    
+    try {
+      const fileRef = ref(storage, storagePath);
+      const downloadURL = await getDownloadURL(fileRef);
+      console.log('Got download URL:', downloadURL);
+      
+      // Make request to Firebase Storage with proper headers
+      const response = await fetch(downloadURL, {
+        headers: {
+          'Accept': 'application/pdf',
+          'Range': 'bytes=0-'
+        }
+      });
+      
+      if (!response.ok) {
+        console.error('Firebase response error:', {
+          status: response.status,
+          statusText: response.statusText,
+          headers: Object.fromEntries(response.headers)
+        });
+        throw new Error(`Firebase fetch failed: ${response.status} ${response.statusText}`);
+      }
+      
+      const contentType = response.headers.get('content-type');
+      console.log('Response content type:', contentType);
+      
+      const pdfBuffer = await response.arrayBuffer();
+      
+      if (!pdfBuffer || pdfBuffer.byteLength === 0) {
+        throw new Error('Received empty PDF buffer');
+      }
+      
+      console.log('Successfully fetched PDF, size:', pdfBuffer.byteLength);
+      
+      // Set response headers
+      res.set({
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': 'inline',
+        'Content-Length': pdfBuffer.byteLength,
+        'Accept-Ranges': 'bytes',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Expose-Headers': '*',
+        'Cache-Control': 'no-cache'
+      });
+      
+      // Send the PDF
+      return res.send(Buffer.from(pdfBuffer));
+      
+    } catch (firebaseError) {
+      console.error('Firebase fetch failed:', firebaseError);
+      throw new Error(`Failed to fetch PDF: ${firebaseError.message}`);
+    }
+  } catch (error) {
+    console.error('Error proxying PDF:', error);
+    res.status(500).json({
+      error: 'Failed to fetch PDF',
+      details: error.message
+    });
   }
 });
 

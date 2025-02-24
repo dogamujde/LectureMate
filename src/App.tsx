@@ -24,7 +24,7 @@ function App() {
   const [field, setField] = useState('')
   const [isSetupComplete, setIsSetupComplete] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [isLoading, setIsLoading] = useState(false)
+  const [loadingLecture, setLoadingLecture] = useState<string | null>(null)
 
   const firstTermCourses = [
     {
@@ -459,36 +459,80 @@ function App() {
 
   const handleDownloadSummary = async (lecture: string, courseName: string) => {
     try {
-      setIsLoading(true);
+      setLoadingLecture(lecture);
       setError(null);
       
-      // Construct the file path
-      const filePath = `transcriptions/${courseName}/summaries/pdf/${lecture}`;
-      console.log('Attempting to download from Firebase Storage:', filePath);
+      // Check if running on mobile Safari
+      const isMobileSafari = /iPhone.*Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
       
-      // Get reference to the file in Firebase Storage
-      const fileRef = ref(storage, filePath);
-      
-      try {
-        // Try to get the download URL from Firebase Storage
-        const downloadURL = await getDownloadURL(fileRef);
-        console.log('Got download URL:', downloadURL);
+      if (isMobileSafari) {
+        const encodedLecture = encodeURIComponent(lecture);
+        const encodedCourseName = encodeURIComponent(courseName);
+        const proxyUrl = `https://lecturemate-ad674.web.app/proxy-pdf/${encodedCourseName}/${encodedLecture}`;
+        
+        console.log('Attempting to fetch PDF from:', proxyUrl);
+        
+        // First try to fetch the PDF to check if it's accessible
+        const response = await fetch(proxyUrl, {
+          headers: {
+            'Accept': 'application/pdf'
+          }
+        });
+        
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => null);
+          console.error('PDF fetch failed:', {
+            status: response.status,
+            statusText: response.statusText,
+            errorData,
+            contentType: response.headers.get('content-type')
+          });
+          throw new Error(`Failed to fetch PDF: ${response.statusText}`);
+        }
+        
+        // Check if we got a PDF
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/pdf')) {
+          console.error('Invalid content type:', contentType);
+          throw new Error('Invalid response type from server');
+        }
+        
+        // Create object URL for the PDF
+        const pdfBlob = await response.blob();
+        const pdfUrl = URL.createObjectURL(pdfBlob);
+        
+        // Open PDF in new tab
+        window.open(pdfUrl, '_blank');
+        
+        // Clean up the object URL after a delay
+        setTimeout(() => {
+          URL.revokeObjectURL(pdfUrl);
+        }, 1000);
+      } else {
+        // For non-mobile Safari browsers, use direct Firebase Storage download
+        const filePath = `transcriptions/${courseName}/summaries/pdf/${lecture}`;
+        console.log('Attempting to download from Firebase Storage:', filePath);
+        
+        const fileRef = ref(storage, filePath);
         
         try {
-          // Try to fetch the file directly with proper headers
+          const downloadURL = await getDownloadURL(fileRef);
+          console.log('Got download URL:', downloadURL);
+          
           const response = await fetch(downloadURL, {
             method: 'GET',
             mode: 'cors',
             headers: {
               'Accept': 'application/pdf',
-              'Content-Type': 'application/pdf',
               'Range': 'bytes=0-'
             }
           });
           
           if (!response.ok) {
             console.error('Response not OK:', response.status, response.statusText);
-            throw new Error(`HTTP error! status: ${response.status}`);
+            // If direct download fails, try opening in new tab
+            window.open(downloadURL, '_blank');
+            return;
           }
           
           const blob = await response.blob();
@@ -500,56 +544,16 @@ function App() {
           link.click();
           document.body.removeChild(link);
           window.URL.revokeObjectURL(url);
-          
-        } catch (fetchError) {
-          console.error('Error fetching file directly:', fetchError);
-          console.log('Attempting to open in new tab...');
-          
-          // Try opening in new tab as fallback
-          window.open(downloadURL, '_blank');
-        }
-        
-      } catch (storageError) {
-        console.error('Error getting Firebase download URL:', storageError);
-        console.log('Attempting local server fallback...');
-        
-        // Try local server as final fallback
-        const encodedCourseName = encodeURIComponent(courseName);
-        const encodedLecture = encodeURIComponent(lecture);
-        const localUrl = `http://localhost:3000/transcriptions/${encodedCourseName}/summaries/pdf/${encodedLecture}`;
-        
-        try {
-          const response = await fetch(localUrl, {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/pdf',
-              'Content-Type': 'application/pdf'
-            }
-          });
-          
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-          
-          const blob = await response.blob();
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = lecture;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-          
-        } catch (localError) {
-          console.error('Error fetching from local server:', localError);
-          throw new Error('Failed to download file from all sources');
+        } catch (error) {
+          console.error('Error with Firebase Storage:', error);
+          setError('Failed to download the PDF. Please try again later.');
         }
       }
-      
     } catch (error) {
       console.error('Download error:', error);
-      setError('Failed to download the summary. Please try again later.');
+      setError('Failed to download the PDF. Please try again later.');
     } finally {
-      setIsLoading(false);
+      setLoadingLecture(null);
     }
   };
 
@@ -1069,16 +1073,25 @@ function App() {
                                   whileTap={{ scale: 0.98 }}
                                   onClick={() => handleDownloadSummary(summary, selectedCourse.name)}
                                   className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 transition-colors duration-200"
+                                  disabled={loadingLecture === summary}
                                 >
                                   <motion.div
                                     whileHover={{ y: -2 }}
                                     transition={{ duration: 0.2 }}
+                                    className="flex items-center"
                                   >
-                                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                                      <path d="M12 4v12m0 0l-4-4m4 4l4-4m-5 8H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
+                                    {loadingLecture === summary ? (
+                                      <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                      </svg>
+                                    ) : (
+                                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 4v12m0 0l-4-4m4 4l4-4m-5 8H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                      </svg>
+                                    )}
                                   </motion.div>
-                                  <span className="text-sm sm:text-base">
+                                  <span className={`text-sm sm:text-base ${loadingLecture === summary ? 'opacity-50' : ''}`}>
                                     {(() => {
                                       const datePart = summary.split('_')[0];
                                       const date = new Date(datePart);
